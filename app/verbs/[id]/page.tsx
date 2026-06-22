@@ -5,8 +5,9 @@ function SpeakButton({ text }: { text: string }) {
   return <button className="rounded-lg border px-3 py-1 text-xs text-muted" type="button">音声</button>;
 }
 
-export default function VerbDetail({ params }: { params: { id: string } }) {
-  const verb = verbs.find((v) => v.id === params.id);
+export default async function VerbDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const verb = verbs.find((v) => v.id === id);
   if (!verb) notFound();
   return (
     <div className="space-y-5">

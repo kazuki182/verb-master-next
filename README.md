@@ -1,12 +1,15 @@
-# Verb Master
+# Verb Master Next v3
 
-Know the verb. Use the verb.
+更新内容:
+- GET詳細ページを強化
+- 動詞を赤文字表示
+- 発音記号・読み方・読み上げ追加
+- 自動詞/他動詞、文型、目的語表示追加
+- 熟語・句動詞にコアイメージ、型、例文、読み上げ追加
+- テストを瞬発英作文形式に変更
 
-## Vercel
-Application Preset: Next.js
-Root Directory: ./
-Build Command: npm run build
-
-## Supabase env
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
+アップロード方法:
+1. ZIPを右クリックして「すべて展開」
+2. 中身をGitHubへ上書きアップロード
+3. Commit changes
+4. VercelでDeployを確認

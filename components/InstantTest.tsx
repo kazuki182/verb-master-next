@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { testItems, getVerb, getTestItemById } from "@/lib/data";
 import SpeakButton from "./SpeakButton";
-import { recordTestResult } from "@/lib/account";
+import { recordTestResult, recordVerbMastery } from "@/lib/account";
 
 type InstantTestProps = {
   verbId?: string;
@@ -57,8 +57,13 @@ export default function InstantTest({ verbId = "get", itemIds, title, descriptio
   const mark = (isCorrect: boolean) => {
     recordTestResult(item.verbId, item.id, isCorrect);
     if (isCorrect) {
-      setCorrect((n) => n + 1);
-      setIndex((i) => i + 1);
+      const nextCorrect = correct + 1;
+      const nextIndex = index + 1;
+      if (!reviewMode && wrong === 0 && nextCorrect === items.length) {
+        recordVerbMastery(item.verbId);
+      }
+      setCorrect(nextCorrect);
+      setIndex(nextIndex);
       setShown(false);
     } else {
       setWrong((n) => n + 1);

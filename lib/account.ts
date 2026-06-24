@@ -350,3 +350,52 @@ export function formatDate(value?: string) {
 export function getAllProgress() {
   return Object.values(progressMap()).map(normalizeProgress).sort((a, b) => b.xp - a.xp);
 }
+
+
+const TARGET_DATE_KEY = "verbMaster.targetDate";
+
+function isoDate(date: Date) {
+  return date.toISOString().slice(0, 10);
+}
+
+export function getTargetDate() {
+  if (typeof window === "undefined") return "";
+  const saved = localStorage.getItem(TARGET_DATE_KEY);
+  if (saved) return saved;
+  const defaultDate = new Date();
+  defaultDate.setDate(defaultDate.getDate() + 60);
+  const value = isoDate(defaultDate);
+  localStorage.setItem(TARGET_DATE_KEY, value);
+  return value;
+}
+
+export function setTargetDate(value: string) {
+  if (typeof window === "undefined") return;
+  if (value) localStorage.setItem(TARGET_DATE_KEY, value);
+}
+
+export function getLearningPlan(totalVerbs: number, completedVerbs: number) {
+  const targetDate = getTargetDate();
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const target = targetDate ? new Date(`${targetDate}T00:00:00`) : today;
+  const diffMs = target.getTime() - today.getTime();
+  const daysLeft = Math.max(1, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
+  const remaining = Math.max(0, totalVerbs - completedVerbs);
+  const dailyGoal = Math.max(remaining > 0 ? 1 : 0, Math.ceil(remaining / daysLeft));
+  const progressPercent = totalVerbs ? Math.round((completedVerbs / totalVerbs) * 100) : 0;
+  return { targetDate, daysLeft, remaining, dailyGoal, progressPercent };
+}
+
+export function recordVerbMastery(verbId: string) {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  updateStreak(progress);
+  if (!progress.studiedVerbIds.includes(verbId)) {
+    progress.studiedVerbIds.push(verbId);
+    progress.totalStudied += 1;
+    progress.xp += 100;
+  }
+  saveProgress(progress);
+  return progress;
+}

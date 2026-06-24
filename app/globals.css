@@ -26,3 +26,8 @@ a { color: inherit; text-decoration: none; }
   .card { border-radius: 18px; }
   .btn { min-height: 48px; }
 }
+.digital-card { background: radial-gradient(circle at top left, #164e63 0%, #0f172a 45%, #020617 100%); border: 1px solid rgba(103,232,249,.24); border-radius: 22px; box-shadow: 0 16px 40px rgba(15,23,42,.20); color: white; }
+.digital-panel { border: 1px solid rgba(103,232,249,.18); border-radius: 16px; background: rgba(2,6,23,.55); padding: 12px 8px; min-height: 92px; display: flex; flex-direction: column; justify-content: center; }
+.digital-label { color: #a5f3fc; font-size: 10px; font-weight: 800; letter-spacing: .14em; }
+.digital-number { color: #f8fafc; font-size: 28px; line-height: 1.1; font-weight: 900; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+@media (max-width: 380px) { .digital-number { font-size: 22px; } .digital-label { font-size: 9px; } }

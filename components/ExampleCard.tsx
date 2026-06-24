@@ -1,24 +1,35 @@
 import SpeakButton from "./SpeakButton";
 import type { Example } from "@/lib/data";
 
-function highlight(en: string, focus?: string, object?: string) {
-  let parts: React.ReactNode[] = [en];
-  if (focus && en.includes(focus)) {
-    const [before, after] = en.split(focus);
-    parts = [before, <span key="v" className="example-verb">{focus}</span>, after];
-  }
-  return <>{parts}</>;
+function highlightText(text: string, target?: string, className = "example-verb") {
+  if (!target || !text.includes(target)) return text;
+  const index = text.indexOf(target);
+  return (
+    <>
+      {text.slice(0, index)}
+      <span className={className}>{target}</span>
+      {text.slice(index + target.length)}
+    </>
+  );
 }
 
 export default function ExampleCard({ example }: { example: Example }) {
   return (
-    <div className="rounded-2xl bg-paper p-4">
-      <div className="mb-2 flex items-start justify-between gap-3">
-        <p className="text-lg leading-relaxed">{highlight(example.en, example.focus, example.object)}</p>
+    <div className="rounded-2xl bg-paper p-4 sm:p-5">
+      <div className="mb-3 flex items-start justify-between gap-3">
+        <p className="text-lg font-semibold leading-relaxed sm:text-xl">
+          {highlightText(example.en, example.focus)}
+        </p>
         <SpeakButton text={example.en} label="例文" />
       </div>
-      {example.object && <p className="mb-2 text-sm text-muted">目的語：<span className="object-chip">{example.object}</span></p>}
-      <p className="text-muted">{example.ja}</p>
+      {example.object && (
+        <p className="mb-3 text-sm text-muted">
+          目的語：<span className="object-chip">{example.object}</span>
+        </p>
+      )}
+      <p className="leading-relaxed text-muted">
+        {highlightText(example.ja, example.jaFocus, "ja-focus")}
+      </p>
     </div>
   );
 }

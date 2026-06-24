@@ -14,3 +14,11 @@
 ## Upload
 
 ZIPを右クリックで「すべて展開」し、中身をGitHubへ上書きアップロードしてください。
+
+
+## Ver.5.3 今日のミッション
+- /mission を追加
+- GET/TAKE/MAKE 各3問のデイリーミッション
+- 達成で+50XP
+- HOMEと学習記録に進捗表示
+- localStorage保存。後でSupabase保存へ拡張可能。

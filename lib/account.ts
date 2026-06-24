@@ -19,6 +19,19 @@ export type ReviewItem = {
   lastResult: "correct" | "wrong";
 };
 
+export type DailyMissionTask = {
+  verbId: string;
+  target: number;
+  correct: number;
+};
+
+export type DailyMission = {
+  date: string;
+  tasks: DailyMissionTask[];
+  completed: boolean;
+  rewardClaimed: boolean;
+};
+
 export type UserProgress = {
   username: string;
   xp: number;
@@ -32,6 +45,8 @@ export type UserProgress = {
   testWrong: number;
   weakItems: string[];
   reviewItems?: Record<string, ReviewItem>;
+  dailyMission?: DailyMission;
+  missionCompletedCount?: number;
   lastStudyDate?: string;
   lastLoginAt?: string;
 };
@@ -58,6 +73,28 @@ function nextReviewDelay(wrongCount: number) {
   if (wrongCount <= 1) return 1;
   if (wrongCount === 2) return 3;
   return 7;
+}
+
+const DAILY_MISSION_VERBS = ["get", "take", "make"];
+const DAILY_MISSION_TARGET = 3;
+const DAILY_MISSION_REWARD_XP = 50;
+
+function createDailyMission(date = todayKey()): DailyMission {
+  return {
+    date,
+    tasks: DAILY_MISSION_VERBS.map((verbId) => ({ verbId, target: DAILY_MISSION_TARGET, correct: 0 })),
+    completed: false,
+    rewardClaimed: false
+  };
+}
+
+function normalizeMission(progress: UserProgress) {
+  const today = todayKey();
+  if (!progress.dailyMission || progress.dailyMission.date !== today) {
+    progress.dailyMission = createDailyMission(today);
+  }
+  if (typeof progress.missionCompletedCount !== "number") progress.missionCompletedCount = 0;
+  return progress.dailyMission;
 }
 
 export function initAdminAccount() {
@@ -140,6 +177,7 @@ function saveProgressMap(map: Record<string, UserProgress>) {
 function normalizeProgress(progress: UserProgress) {
   if (!progress.weakItems) progress.weakItems = [];
   if (!progress.reviewItems) progress.reviewItems = {};
+  normalizeMission(progress);
   return progress;
 }
 
@@ -158,7 +196,9 @@ export function ensureProgress(username: string): UserProgress {
       testCorrect: 0,
       testWrong: 0,
       weakItems: [],
-      reviewItems: {}
+      reviewItems: {},
+      dailyMission: createDailyMission(),
+      missionCompletedCount: 0
     };
     saveProgressMap(map);
   }
@@ -216,6 +256,15 @@ export function recordTestResult(verbId: string, itemId: string, correct: boolea
     progress.testCorrect += 1;
     progress.xp += 5;
     progress.weakItems = progress.weakItems.filter((id) => id !== itemId);
+    const mission = normalizeMission(progress);
+    const task = mission.tasks.find((t) => t.verbId === verbId);
+    if (task && task.correct < task.target) task.correct += 1;
+    if (!mission.completed && mission.tasks.every((t) => t.correct >= t.target)) {
+      mission.completed = true;
+      mission.rewardClaimed = true;
+      progress.xp += DAILY_MISSION_REWARD_XP;
+      progress.missionCompletedCount = (progress.missionCompletedCount || 0) + 1;
+    }
     if (existing) {
       existing.correctCount += 1;
       existing.lastResult = "correct";
@@ -258,6 +307,26 @@ export function getFutureReviewItems() {
   return Object.values(reviewItems)
     .filter((item) => item.lastResult !== "wrong" && item.nextReviewAt > today)
     .sort((a, b) => a.nextReviewAt.localeCompare(b.nextReviewAt));
+}
+
+export function getTodayMission() {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  const mission = normalizeMission(progress);
+  saveProgress(progress);
+  return mission;
+}
+
+export function getMissionSummary() {
+  const mission = getTodayMission();
+  if (!mission) return null;
+  const total = mission.tasks.reduce((sum, task) => sum + task.target, 0);
+  const done = mission.tasks.reduce((sum, task) => sum + Math.min(task.correct, task.target), 0);
+  return { mission, total, done, remaining: Math.max(0, total - done), percent: total ? Math.round((done / total) * 100) : 0 };
+}
+
+export function getMissionConfig() {
+  return { target: DAILY_MISSION_TARGET, rewardXp: DAILY_MISSION_REWARD_XP, verbIds: DAILY_MISSION_VERBS };
 }
 
 export function formatDateTime(value?: string) {

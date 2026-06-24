@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { verbs } from "@/lib/data";
-import { getCurrentProgress, getCurrentUsername, getDueReviewItems, initAdminAccount, logout, type UserProgress } from "@/lib/account";
+import { getCurrentProgress, getCurrentUsername, getDueReviewItems, getMissionSummary, initAdminAccount, logout, type UserProgress } from "@/lib/account";
 
 export default function Home() {
   const [username, setUsername] = useState<string | null>(null);
@@ -22,6 +22,7 @@ export default function Home() {
 
   const todayVerbs = useMemo(() => verbs.slice(0, 3), []);
   const reviewCount = typeof window === "undefined" ? 0 : getDueReviewItems().length;
+  const missionSummary = typeof window === "undefined" ? null : getMissionSummary();
 
   if (!username) return <p className="text-muted">ログイン確認中...</p>;
 
@@ -46,6 +47,21 @@ export default function Home() {
             <p>総XP <span className="font-bold text-ink">{progress?.xp ?? 0}</span></p>
             <p>連続学習 <span className="font-bold text-ink">{progress?.currentStreak ?? 0}日</span></p>
           </div>
+        </div>
+      </section>
+
+
+      <section className="card p-6">
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <p className="text-sm font-bold text-muted">今日のミッション</p>
+            <p className="mt-1 text-2xl font-bold">{missionSummary?.done ?? 0}/{missionSummary?.total ?? 9}問</p>
+            <p className="mt-1 text-sm text-muted">GET / TAKE / MAKEを各3問。達成でXPボーナス。</p>
+          </div>
+          <Link className="btn btn-primary whitespace-nowrap" href="/mission">開始</Link>
+        </div>
+        <div className="mt-4 h-2 overflow-hidden rounded-full bg-gray-200">
+          <div className="h-full rounded-full bg-[#1f4e5f]" style={{ width: `${missionSummary?.percent ?? 0}%` }} />
         </div>
       </section>
 
@@ -74,7 +90,7 @@ export default function Home() {
 
       <section className="grid grid-cols-2 gap-3">
         <Link className="card block p-5 font-bold" href="/verbs">動詞一覧</Link>
-        <Link className="card block p-5 font-bold" href="/tests">単語別テスト</Link>
+        <Link className="card block p-5 font-bold" href="/mission">ミッション</Link>
         <Link className="card block p-5 font-bold" href="/profile">学習記録</Link>
         <Link className="card block p-5 font-bold" href="/study-method">勉強方法</Link>
       </section>

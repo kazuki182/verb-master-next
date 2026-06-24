@@ -15,9 +15,10 @@ import {
   type UserProgress
 } from "@/lib/account";
 
-function formatTarget(value: string) {
-  if (!value) return "----.--.--";
-  return value.replaceAll("-", ".");
+function splitTarget(value: string) {
+  if (!value) return { year: "----", day: "--.--" };
+  const [year, month, day] = value.split("-");
+  return { year: year ?? "----", day: `${month ?? "--"}.${day ?? "--"}` };
 }
 
 export default function Home() {
@@ -43,6 +44,7 @@ export default function Home() {
 
   const completed = progress.studiedVerbIds.length;
   const plan = getLearningPlan(verbs.length, completed);
+  const targetParts = splitTarget(plan.targetDate);
   const updateTarget = (value: string) => {
     setTarget(value);
     setTargetDate(value);
@@ -84,36 +86,36 @@ export default function Home() {
 
         <div className="mt-5 grid grid-cols-3 gap-3 text-center text-sm">
           <div className="digital-panel">
-            <p className="digital-label">TOTAL</p>
+            <p className="digital-label">登録動詞</p>
             <p className="digital-number">{verbs.length}</p>
-            <p className="text-xs text-cyan-200">VERBS</p>
+            <p className="text-xs text-cyan-200">語</p>
           </div>
           <div className="digital-panel">
-            <p className="digital-label">MASTERED</p>
+            <p className="digital-label">習得済み</p>
             <p className="digital-number">{completed}</p>
-            <p className="text-xs text-cyan-200">DONE</p>
+            <p className="text-xs text-cyan-200">語</p>
           </div>
           <div className="digital-panel">
-            <p className="digital-label">REMAINING</p>
+            <p className="digital-label">残り</p>
             <p className="digital-number">{plan.remaining}</p>
-            <p className="text-xs text-cyan-200">LEFT</p>
+            <p className="text-xs text-cyan-200">語</p>
           </div>
         </div>
 
         <div className="mt-4 grid grid-cols-3 gap-3 text-center">
           <div className="digital-panel">
-            <p className="digital-label">TARGET DATE</p>
-            <p className="digital-number text-lg">{formatTarget(plan.targetDate)}</p>
+            <p className="digital-label">目標日</p>
+            <p className="digital-year">{targetParts.year}</p>
+            <p className="digital-date">{targetParts.day}</p>
           </div>
           <div className="digital-panel">
-            <p className="digital-label">DAYS LEFT</p>
+            <p className="digital-label">残り日数</p>
             <p className="digital-number">{plan.daysLeft}</p>
-            <p className="text-xs text-cyan-200">DAYS</p>
+            <p className="text-xs text-cyan-200">日</p>
           </div>
           <div className="digital-panel">
-            <p className="digital-label">DAILY GOAL</p>
-            <p className="digital-number">{plan.dailyGoal}</p>
-            <p className="text-xs text-cyan-200">VERBS / DAY</p>
+            <p className="digital-label">推奨ペース</p>
+            <p className="daily-goal-main">1日{plan.dailyGoal}語</p>
           </div>
         </div>
 

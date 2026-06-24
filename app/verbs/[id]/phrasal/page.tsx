@@ -32,7 +32,7 @@ export default async function VerbPhrasalPage({ params }: { params: Promise<{ id
               <p className="text-sm font-bold text-muted">#{index + 1}</p>
               <h2 className="mt-1 text-3xl font-bold leading-tight"><span className="phrasal-text">{p.phrase}</span></h2>
               <p className="mt-1 text-lg text-muted">{p.ja}</p>
-              <div className="mt-3"><SpeakButton text={p.phrase} label="句動詞の発音" /></div>
+              <div className="mt-3"><SpeakButton text={p.phrase} label="通常" /></div>
               <div className="type-card type-card-blue mt-4">
                 <p className="text-xs font-bold uppercase tracking-wide text-muted">型</p>
                 <p className="mt-1 text-xl font-extrabold">{p.pattern}</p>
@@ -50,9 +50,10 @@ export default async function VerbPhrasalPage({ params }: { params: Promise<{ id
       )}
 
       <section className="card p-5 text-center sm:p-6">
-        <h2 className="text-xl font-bold">総合テストへ</h2>
-        <p className="mt-2 text-muted">基本・熟語・句動詞をまとめて瞬発英作文で確認します。</p>
-        <Link href={`/tests/${verb.id}`} className="btn btn-primary mt-5 block">{verb.word} のテストへ</Link>
+        <h2 className="text-xl font-bold">STEP 3 完了</h2>
+        <p className="mt-2 text-muted">句動詞だけをテストしてから、総合テストへ進みます。</p>
+        <Link href={`/tests/${verb.id}/phrasal`} className="btn btn-primary mt-5 block">句動詞テストへ</Link>
+        <Link href={`/tests/${verb.id}`} className="btn btn-soft mt-3 block">総合テストへ進む</Link>
       </section>
     </div>
   );

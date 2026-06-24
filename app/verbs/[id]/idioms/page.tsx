@@ -32,7 +32,7 @@ export default async function VerbIdiomsPage({ params }: { params: Promise<{ id:
               <p className="text-sm font-bold text-muted">#{index + 1}</p>
               <h2 className="mt-1 text-3xl font-bold leading-tight"><span className="collocation-text">{p.phrase}</span></h2>
               <p className="mt-1 text-lg text-muted">{p.ja}</p>
-              <div className="mt-3"><SpeakButton text={p.phrase} label="熟語の発音" /></div>
+              <div className="mt-3"><SpeakButton text={p.phrase} label="通常" /></div>
               <div className="type-card type-card-green mt-4">
                 <p className="text-xs font-bold uppercase tracking-wide text-muted">型</p>
                 <p className="mt-1 text-xl font-extrabold">{p.pattern}</p>
@@ -51,8 +51,9 @@ export default async function VerbIdiomsPage({ params }: { params: Promise<{ id:
 
       <section className="card p-5 text-center sm:p-6">
         <h2 className="text-xl font-bold">STEP 2 完了</h2>
-        <p className="mt-2 text-muted">次は {verb.word} の句動詞を学習します。</p>
-        <Link href={`/verbs/${verb.id}/phrasal`} className="btn btn-primary mt-5 block">句動詞へ進む</Link>
+        <p className="mt-2 text-muted">熟語だけをテストしてから、句動詞へ進みます。</p>
+        <Link href={`/tests/${verb.id}/idioms`} className="btn btn-primary mt-5 block">熟語テストへ</Link>
+        <Link href={`/verbs/${verb.id}/phrasal`} className="btn btn-soft mt-3 block">テストせず句動詞へ進む</Link>
       </section>
     </div>
   );

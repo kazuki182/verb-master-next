@@ -47,6 +47,7 @@ export type UserProgress = {
   reviewItems?: Record<string, ReviewItem>;
   dailyMission?: DailyMission;
   missionCompletedCount?: number;
+  sectionClearIds?: string[];
   lastStudyDate?: string;
   lastLoginAt?: string;
 };
@@ -177,6 +178,7 @@ function saveProgressMap(map: Record<string, UserProgress>) {
 function normalizeProgress(progress: UserProgress) {
   if (!progress.weakItems) progress.weakItems = [];
   if (!progress.reviewItems) progress.reviewItems = {};
+  if (!progress.sectionClearIds) progress.sectionClearIds = [];
   normalizeMission(progress);
   return progress;
 }
@@ -198,7 +200,8 @@ export function ensureProgress(username: string): UserProgress {
       weakItems: [],
       reviewItems: {},
       dailyMission: createDailyMission(),
-      missionCompletedCount: 0
+      missionCompletedCount: 0,
+      sectionClearIds: []
     };
     saveProgressMap(map);
   }
@@ -395,6 +398,21 @@ export function recordVerbMastery(verbId: string) {
     progress.studiedVerbIds.push(verbId);
     progress.totalStudied += 1;
     progress.xp += 100;
+  }
+  saveProgress(progress);
+  return progress;
+}
+
+
+export function recordSectionClear(verbId: string, section: string, xp: number) {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  updateStreak(progress);
+  progress.sectionClearIds = progress.sectionClearIds || [];
+  const key = `${verbId}:${section}`;
+  if (!progress.sectionClearIds.includes(key)) {
+    progress.sectionClearIds.push(key);
+    progress.xp += xp;
   }
   saveProgress(progress);
   return progress;

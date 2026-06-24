@@ -20,7 +20,7 @@ export default function ExampleCard({ example }: { example: Example }) {
         <p className="text-lg font-semibold leading-relaxed sm:text-xl">
           {highlightText(example.en, example.focus)}
         </p>
-        <SpeakButton text={example.en} label="例文" />
+        <SpeakButton text={example.en} label="通常" />
       </div>
       {example.object && (
         <p className="mb-3 text-sm text-muted">

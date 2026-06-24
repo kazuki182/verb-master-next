@@ -122,7 +122,7 @@ export default function Home() {
 
         <label className="mt-5 block text-sm text-slate-300">
           目標日を変更
-          <input className="mt-2 w-full rounded-xl border border-cyan-300/20 bg-slate-950 px-4 py-3 text-white" type="date" value={target} onChange={(e) => updateTarget(e.target.value)} />
+          <input className="mt-2 block w-full max-w-full box-border rounded-xl border border-cyan-300/20 bg-slate-950 px-4 py-3 text-white overflow-hidden" type="date" value={target} onChange={(e) => updateTarget(e.target.value)} />
         </label>
       </section>
 

@@ -6637,25 +6637,64 @@ export const verbs: Verb[] = [
   }
 ];
 
-export const testItems = verbs.flatMap((verb) =>
-  verb.meanings.flatMap((m) =>
-    m.examples.map((e) => ({
-      id: `${verb.id}-${m.id}-${e.en}`,
+export type TestSection = "basic" | "idioms" | "phrasal" | "all";
+
+export type TestItem = {
+  id: string;
+  verbId: string;
+  section: Exclude<TestSection, "all">;
+  meaningTitle: string;
+  pattern: string;
+  ja: string;
+  en: string;
+};
+
+function safeId(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 80);
+}
+
+export const testItems: TestItem[] = verbs.flatMap((verb) => [
+  ...verb.meanings.flatMap((m) =>
+    m.examples.slice(0, 3).map((e, index) => ({
+      id: `${verb.id}-basic-${m.id}-${index}-${safeId(e.en)}`,
       verbId: verb.id,
+      section: "basic" as const,
       meaningTitle: m.title,
       pattern: m.pattern,
       ja: e.ja,
       en: e.en
     }))
+  ),
+  ...verb.collocations.slice(0, 10).flatMap((p, phraseIndex) =>
+    p.examples.slice(0, 3).map((e, index) => ({
+      id: `${verb.id}-idioms-${phraseIndex}-${index}-${safeId(e.en)}`,
+      verbId: verb.id,
+      section: "idioms" as const,
+      meaningTitle: `熟語：${p.phrase}`,
+      pattern: p.pattern,
+      ja: e.ja,
+      en: e.en
+    }))
+  ),
+  ...verb.phrasalVerbs.slice(0, 10).flatMap((p, phraseIndex) =>
+    p.examples.slice(0, 3).map((e, index) => ({
+      id: `${verb.id}-phrasal-${phraseIndex}-${index}-${safeId(e.en)}`,
+      verbId: verb.id,
+      section: "phrasal" as const,
+      meaningTitle: `句動詞：${p.phrase}`,
+      pattern: p.pattern,
+      ja: e.ja,
+      en: e.en
+    }))
   )
-);
+]);
 
 export function getVerb(id: string) {
   return verbs.find((v) => v.id === id) ?? verbs[0];
 }
 
-export function getTestItemsForVerb(verbId: string) {
-  return testItems.filter((item) => item.verbId === verbId);
+export function getTestItemsForVerb(verbId: string, section: TestSection = "all") {
+  return testItems.filter((item) => item.verbId === verbId && (section === "all" || item.section === section));
 }
 
 export function getTestItemById(itemId: string) {

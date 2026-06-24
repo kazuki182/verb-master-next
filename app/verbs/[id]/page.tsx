@@ -22,7 +22,7 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
           <p>読み方：{verb.kana}</p>
         </div>
         <div className="mt-4">
-          <SpeakButton text={verb.word.toLowerCase()} label="動詞の発音を聞く" />
+          <SpeakButton text={verb.word.toLowerCase()} label="通常" />
         </div>
         <div className="mt-4 flex flex-wrap gap-2 text-sm">
           <span className="rounded-full bg-paper px-3 py-1 font-semibold">{verb.transitivity}</span>
@@ -83,8 +83,9 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
 
       <section className="card p-5 text-center sm:p-6">
         <h2 className="text-xl font-bold">STEP 1 完了</h2>
-        <p className="mt-2 text-muted">次は {verb.word} の熟語を学習します。</p>
-        <Link href={`/verbs/${verb.id}/idioms`} className="btn btn-primary mt-5 block">熟語へ進む</Link>
+        <p className="mt-2 text-muted">まず基本動詞だけをテストしてから、熟語へ進みます。</p>
+        <Link href={`/tests/${verb.id}/basic`} className="btn btn-primary mt-5 block">基本動詞テストへ</Link>
+        <Link href={`/verbs/${verb.id}/idioms`} className="btn btn-soft mt-3 block">テストせず熟語へ進む</Link>
       </section>
     </div>
   );

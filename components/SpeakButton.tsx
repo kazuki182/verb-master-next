@@ -1,11 +1,11 @@
 "use client";
 
-export default function SpeakButton({ text, label = "聞く", rate = 0.9 }: { text: string; label?: string; rate?: number }) {
+export default function SpeakButton({ text, label = "聞く", rate = 0.9, lang = "en-US" }: { text: string; label?: string; rate?: number; lang?: string }) {
   const speak = () => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "en-US";
+    utterance.lang = lang;
     utterance.rate = rate;
     window.speechSynthesis.speak(utterance);
   };

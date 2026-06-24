@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getVerb, verbs } from "@/lib/data";
 import SpeakButton from "@/components/SpeakButton";
 import ExampleCard from "@/components/ExampleCard";
@@ -94,6 +95,12 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
           </div>
         </section>
       )}
+      <section className="card p-6 text-center">
+        <h2 className="text-xl font-bold">学習チェック</h2>
+        <p className="mt-2 text-muted">内容を確認したら、瞬発英作文テストへ進みましょう。</p>
+        <Link href={`/tests/${verb.id}`} className="btn btn-primary mt-5 block">この動詞のテストへ</Link>
+      </section>
+
     </div>
   );
 }

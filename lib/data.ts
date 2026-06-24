@@ -539,3 +539,11 @@ export const testItems = verbs.flatMap((verb) =>
 export function getVerb(id: string) {
   return verbs.find((v) => v.id === id) ?? verbs[0];
 }
+
+export function getTestItemsForVerb(verbId: string) {
+  return testItems.filter((item) => item.verbId === verbId);
+}
+
+export function getTestItemById(itemId: string) {
+  return testItems.find((item) => item.id === itemId);
+}

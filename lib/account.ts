@@ -1,3 +1,4 @@
+
 "use client";
 
 export type Account = {
@@ -6,6 +7,16 @@ export type Account = {
   role: "admin" | "user";
   createdAt: string;
   lastLoginAt?: string;
+};
+
+export type ReviewItem = {
+  itemId: string;
+  verbId: string;
+  wrongCount: number;
+  correctCount: number;
+  nextReviewAt: string;
+  lastAnsweredAt: string;
+  lastResult: "correct" | "wrong";
 };
 
 export type UserProgress = {
@@ -20,6 +31,7 @@ export type UserProgress = {
   testCorrect: number;
   testWrong: number;
   weakItems: string[];
+  reviewItems?: Record<string, ReviewItem>;
   lastStudyDate?: string;
   lastLoginAt?: string;
 };
@@ -34,6 +46,18 @@ function todayKey() {
 
 function nowText() {
   return new Date().toISOString();
+}
+
+function addDays(days: number) {
+  const date = new Date();
+  date.setDate(date.getDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
+function nextReviewDelay(wrongCount: number) {
+  if (wrongCount <= 1) return 1;
+  if (wrongCount === 2) return 3;
+  return 7;
 }
 
 export function initAdminAccount() {
@@ -101,6 +125,7 @@ export function logout() {
 }
 
 function progressMap(): Record<string, UserProgress> {
+  if (typeof window === "undefined") return {};
   try {
     return JSON.parse(localStorage.getItem(PROGRESS_KEY) || "{}");
   } catch {
@@ -110,6 +135,12 @@ function progressMap(): Record<string, UserProgress> {
 
 function saveProgressMap(map: Record<string, UserProgress>) {
   localStorage.setItem(PROGRESS_KEY, JSON.stringify(map));
+}
+
+function normalizeProgress(progress: UserProgress) {
+  if (!progress.weakItems) progress.weakItems = [];
+  if (!progress.reviewItems) progress.reviewItems = {};
+  return progress;
 }
 
 export function ensureProgress(username: string): UserProgress {
@@ -126,11 +157,12 @@ export function ensureProgress(username: string): UserProgress {
       studiedVerbIds: [],
       testCorrect: 0,
       testWrong: 0,
-      weakItems: []
+      weakItems: [],
+      reviewItems: {}
     };
     saveProgressMap(map);
   }
-  return map[username];
+  return normalizeProgress(map[username]);
 }
 
 export function getCurrentProgress() {
@@ -142,7 +174,7 @@ export function getCurrentProgress() {
 export function saveProgress(progress: UserProgress) {
   const map = progressMap();
   progress.level = Math.max(1, Math.floor(progress.xp / 100) + 1);
-  map[progress.username] = progress;
+  map[progress.username] = normalizeProgress(progress);
   saveProgressMap(map);
 }
 
@@ -177,16 +209,55 @@ export function recordTestResult(verbId: string, itemId: string, correct: boolea
   const progress = getCurrentProgress();
   if (!progress) return null;
   updateStreak(progress);
+  progress.reviewItems = progress.reviewItems || {};
+  const existing = progress.reviewItems[itemId];
+
   if (correct) {
     progress.testCorrect += 1;
     progress.xp += 5;
     progress.weakItems = progress.weakItems.filter((id) => id !== itemId);
+    if (existing) {
+      existing.correctCount += 1;
+      existing.lastResult = "correct";
+      existing.lastAnsweredAt = nowText();
+      existing.nextReviewAt = addDays(existing.correctCount >= 2 ? 7 : 3);
+    }
   } else {
     progress.testWrong += 1;
+    const wrongCount = (existing?.wrongCount || 0) + 1;
     progress.weakItems = Array.from(new Set([...progress.weakItems, itemId]));
+    progress.reviewItems[itemId] = {
+      itemId,
+      verbId,
+      wrongCount,
+      correctCount: existing?.correctCount || 0,
+      nextReviewAt: addDays(nextReviewDelay(wrongCount)),
+      lastAnsweredAt: nowText(),
+      lastResult: "wrong"
+    };
   }
   saveProgress(progress);
   return progress;
+}
+
+export function getDueReviewItems() {
+  const progress = getCurrentProgress();
+  if (!progress) return [] as ReviewItem[];
+  const today = todayKey();
+  const reviewItems = progress.reviewItems || {};
+  return Object.values(reviewItems)
+    .filter((item) => item.lastResult === "wrong" || item.nextReviewAt <= today)
+    .sort((a, b) => a.nextReviewAt.localeCompare(b.nextReviewAt));
+}
+
+export function getFutureReviewItems() {
+  const progress = getCurrentProgress();
+  if (!progress) return [] as ReviewItem[];
+  const today = todayKey();
+  const reviewItems = progress.reviewItems || {};
+  return Object.values(reviewItems)
+    .filter((item) => item.lastResult !== "wrong" && item.nextReviewAt > today)
+    .sort((a, b) => a.nextReviewAt.localeCompare(b.nextReviewAt));
 }
 
 export function formatDateTime(value?: string) {
@@ -198,6 +269,15 @@ export function formatDateTime(value?: string) {
   }
 }
 
+export function formatDate(value?: string) {
+  if (!value) return "未定";
+  try {
+    return new Intl.DateTimeFormat("ja-JP", { month: "short", day: "numeric" }).format(new Date(`${value}T00:00:00`));
+  } catch {
+    return value;
+  }
+}
+
 export function getAllProgress() {
-  return Object.values(progressMap()).sort((a, b) => b.xp - a.xp);
+  return Object.values(progressMap()).map(normalizeProgress).sort((a, b) => b.xp - a.xp);
 }

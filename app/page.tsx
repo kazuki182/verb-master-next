@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { verbs } from "@/lib/data";
-import { getCurrentProgress, getCurrentUsername, initAdminAccount, logout, type UserProgress } from "@/lib/account";
+import { getCurrentProgress, getCurrentUsername, getDueReviewItems, initAdminAccount, logout, type UserProgress } from "@/lib/account";
 
 export default function Home() {
   const [username, setUsername] = useState<string | null>(null);
@@ -21,7 +21,7 @@ export default function Home() {
   }, []);
 
   const todayVerbs = useMemo(() => verbs.slice(0, 3), []);
-  const reviewCount = progress?.weakItems?.length ?? 0;
+  const reviewCount = typeof window === "undefined" ? 0 : getDueReviewItems().length;
 
   if (!username) return <p className="text-muted">ログイン確認中...</p>;
 
@@ -68,7 +68,7 @@ export default function Home() {
             <p className="mt-1 text-2xl font-bold">{reviewCount}問</p>
             <p className="mt-1 text-sm text-muted">×だった問題を優先して再確認します。</p>
           </div>
-          <Link className="btn btn-soft whitespace-nowrap" href="/tests">復習する</Link>
+          <Link className="btn btn-soft whitespace-nowrap" href="/review">復習する</Link>
         </div>
       </section>
 

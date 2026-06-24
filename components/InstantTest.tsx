@@ -2,13 +2,27 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { testItems, getVerb } from "@/lib/data";
+import { testItems, getVerb, getTestItemById } from "@/lib/data";
 import SpeakButton from "./SpeakButton";
 import { recordTestResult } from "@/lib/account";
 
-export default function InstantTest({ verbId = "get" }: { verbId?: string }) {
-  const items = testItems.filter((item) => item.verbId === verbId);
-  const verb = getVerb(verbId);
+type InstantTestProps = {
+  verbId?: string;
+  itemIds?: string[];
+  title?: string;
+  description?: string;
+  reviewMode?: boolean;
+};
+
+export default function InstantTest({ verbId = "get", itemIds, title, description, reviewMode = false }: InstantTestProps) {
+  const items = useMemo(() => {
+    if (itemIds && itemIds.length > 0) {
+      return itemIds.map((id) => getTestItemById(id)).filter(Boolean) as typeof testItems;
+    }
+    return testItems.filter((item) => item.verbId === verbId);
+  }, [itemIds, verbId]);
+
+  const verb = getVerb(items[0]?.verbId || verbId);
   const [index, setIndex] = useState(0);
   const [shown, setShown] = useState(false);
   const [correct, setCorrect] = useState(0);
@@ -20,15 +34,21 @@ export default function InstantTest({ verbId = "get" }: { verbId?: string }) {
     setIndex((i) => (i + 1) % Math.max(items.length, 1));
   };
 
-  const progress = useMemo(() => `${index + 1} / ${items.length}`, [index, items.length]);
+  const progress = useMemo(() => `${Math.min(index + 1, items.length)} / ${items.length}`, [index, items.length]);
+  const finished = items.length > 0 && index >= items.length;
 
-  if (!item) {
+  if (!item || finished) {
     return (
       <div className="space-y-5">
-        <h1 className="text-3xl font-bold">{verb.word} テスト</h1>
-        <section className="card p-6">
-          <p className="text-muted">この動詞のテストはまだ準備中です。</p>
-          <Link href={`/verbs/${verb.id}`} className="btn btn-primary mt-5 block text-center">先に学習する</Link>
+        <section className="card p-6 text-center">
+          <p className="text-sm text-muted">Instant Composition</p>
+          <h1 className="mt-2 text-3xl font-bold">{reviewMode ? "復習完了" : `${verb.word} テスト完了`}</h1>
+          <p className="mt-3 text-muted">できた {correct}問 / だめ {wrong}問</p>
+          <div className="mt-6 grid gap-3">
+            <Link href="/tests" className="btn btn-primary block text-center">単語別テストへ</Link>
+            <Link href="/review" className="btn btn-soft block text-center">復習リストを見る</Link>
+            <Link href={`/verbs/${verb.id}`} className="btn btn-soft block text-center">再学習する</Link>
+          </div>
         </section>
       </div>
     );
@@ -38,7 +58,8 @@ export default function InstantTest({ verbId = "get" }: { verbId?: string }) {
     recordTestResult(item.verbId, item.id, isCorrect);
     if (isCorrect) {
       setCorrect((n) => n + 1);
-      next();
+      setIndex((i) => i + 1);
+      setShown(false);
     } else {
       setWrong((n) => n + 1);
     }
@@ -47,9 +68,9 @@ export default function InstantTest({ verbId = "get" }: { verbId?: string }) {
   return (
     <div className="space-y-5">
       <div className="card p-5">
-        <p className="text-sm text-muted">瞬発英作文</p>
-        <h1 className="mt-1 text-3xl font-bold"><span className="verb-red">{verb.word}</span> 日本語 → 英語</h1>
-        <p className="mt-2 text-muted">日本語を見て、すぐ英語で言ってから答えを確認します。</p>
+        <p className="text-sm text-muted">{reviewMode ? "Auto Review" : "Instant Composition"}</p>
+        <h1 className="mt-1 text-3xl font-bold">{title || <><span className="verb-red">{verb.word}</span> 日本語 → 英語</>}</h1>
+        <p className="mt-2 text-muted">{description || "日本語を見て、すぐ英語で言ってから答えを確認します。"}</p>
       </div>
 
       <div className="card p-6">
@@ -78,7 +99,7 @@ export default function InstantTest({ verbId = "get" }: { verbId?: string }) {
             {wrong > 0 && (
               <Link href={`/verbs/${item.verbId}`} className="btn btn-soft block text-center">再学習する</Link>
             )}
-            <button onClick={next} className="btn btn-soft w-full">次の問題へ</button>
+            <button onClick={next} className="btn btn-soft w-full">スキップして次へ</button>
           </div>
         )}
       </div>

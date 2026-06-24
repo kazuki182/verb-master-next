@@ -52,7 +52,7 @@ export default function Home() {
   };
 
   return (
-    <div className="space-y-5 pb-4">
+    <div className="space-y-5 pb-28">
       <header className="flex items-start justify-between gap-3">
         <div>
           <p className="text-muted">Know the verb. Use the verb.</p>
@@ -102,20 +102,21 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-4 grid grid-cols-3 gap-3 text-center">
-          <div className="digital-panel">
+        <div className="mt-4 space-y-3 text-center">
+          <div className="digital-panel digital-panel-wide">
             <p className="digital-label">目標日</p>
-            <p className="digital-year">{targetParts.year}</p>
-            <p className="digital-date">{targetParts.day}</p>
+            <p className="target-date-line">{targetParts.year}/{targetParts.day.replace('.', '/')}</p>
           </div>
-          <div className="digital-panel">
-            <p className="digital-label">残り日数</p>
-            <p className="digital-number">{plan.daysLeft}</p>
-            <p className="text-xs text-cyan-200">日</p>
-          </div>
-          <div className="digital-panel">
-            <p className="digital-label">推奨ペース</p>
-            <p className="daily-goal-main">1日{plan.dailyGoal}語</p>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="digital-panel">
+              <p className="digital-label">残り日数</p>
+              <p className="digital-number">{plan.daysLeft}</p>
+              <p className="text-xs text-cyan-200">日</p>
+            </div>
+            <div className="digital-panel">
+              <p className="digital-label">推奨ペース</p>
+              <p className="daily-goal-main">1日{plan.dailyGoal}語</p>
+            </div>
           </div>
         </div>
 

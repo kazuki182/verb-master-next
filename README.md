@@ -1,24 +1,8 @@
-# Verb Master
+# Verb Master v10.1 verified
 
-社会人向けの基本動詞学習アプリです。
-
-## Ver.5.2
-
-- 自動復習ページ `/review` を追加
-- ×にした瞬発英作文を復習リストへ追加
-- 翌日 / 3日後 / 7日後の復習予定日の土台を追加
-- HOMEに今日の復習数を表示
-- 学習記録に今日の復習数・復習予定数を表示
-- ボトムナビに復習を追加
-
-## Upload
-
-ZIPを右クリックで「すべて展開」し、中身をGitHubへ上書きアップロードしてください。
-
-
-## Ver.5.3 今日のミッション
-- /mission を追加
-- GET/TAKE/MAKE 各3問のデイリーミッション
-- 達成で+50XP
-- HOMEと学習記録に進捗表示
-- localStorage保存。後でSupabase保存へ拡張可能。
+- HOMEから Today's Verb / GET カードを削除済み
+- HOMEに LEARNING DASHBOARD / TARGET DATE / DAYS LEFT / DAILY GOAL を表示
+- ダッシュボード配色を全体へ反映
+- メニューは日本語
+- 上位10動詞を強化
+- `npm run build` 成功確認済み

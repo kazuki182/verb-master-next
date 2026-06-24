@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getVerb, verbs } from "@/lib/data";
 import SpeakButton from "@/components/SpeakButton";
 import ExampleCard from "@/components/ExampleCard";
+import AutoBookmark from "@/components/AutoBookmark";
+import BookmarkButton from "@/components/BookmarkButton";
 
 export function generateStaticParams() {
   return verbs.map((verb) => ({ id: verb.id }));
@@ -21,14 +23,18 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
           <p>発音：{verb.ipa}</p>
           <p>読み方：{verb.kana}</p>
         </div>
-        <div className="mt-4">
+        <div className="mt-4 flex flex-wrap items-center gap-2">
           <SpeakButton text={verb.word.toLowerCase()} label="通常" />
+          <BookmarkButton verbId={verb.id} section="basic" label={`${verb.word} 基本動詞`} href={`/verbs/${verb.id}`} compact />
         </div>
         <div className="mt-4 flex flex-wrap gap-2 text-sm">
           <span className="rounded-full bg-paper px-3 py-1 font-semibold">{verb.transitivity}</span>
           <span className="rounded-full bg-paper px-3 py-1 font-semibold">{verb.importance}</span>
         </div>
       </header>
+
+      <AutoBookmark verbId={verb.id} section="basic" label={`${verb.word} 基本動詞`} href={`/verbs/${verb.id}`} />
+
 
       <section className="card p-5 sm:p-6">
         <h2 className="text-xl font-bold">コアイメージ</h2>
@@ -50,7 +56,10 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
           <h2 className="px-1 text-xl font-bold">動詞単体の使い方</h2>
           {verb.meanings.map((meaning) => (
             <article key={meaning.id} className="card p-5 sm:p-6">
-              <h3 className="text-2xl font-bold leading-tight">{meaning.title}</h3>
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-2xl font-bold leading-tight">{meaning.title}</h3>
+                <BookmarkButton verbId={verb.id} section="basic" label={`${verb.word} 基本動詞`} href={`/verbs/${verb.id}`} itemTitle={meaning.title} compact />
+              </div>
 
               <div className="type-card mt-4">
                 <p className="text-xs font-bold uppercase tracking-wide text-muted">型</p>

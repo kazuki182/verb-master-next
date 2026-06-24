@@ -8,6 +8,8 @@ import {
   getCurrentUsername,
   getDueReviewItems,
   getLearningPlan,
+  getCurrentBookmark,
+  getBookmarkSectionLabel,
   getTargetDate,
   initAdminAccount,
   logout,
@@ -26,6 +28,7 @@ export default function Home() {
   const [progress, setProgress] = useState<UserProgress | null>(null);
   const [target, setTarget] = useState("");
   const [reviewCount, setReviewCount] = useState(0);
+  const [bookmark, setBookmark] = useState<ReturnType<typeof getCurrentBookmark>>(null);
 
   useEffect(() => {
     initAdminAccount();
@@ -38,6 +41,7 @@ export default function Home() {
     setProgress(getCurrentProgress());
     setTarget(getTargetDate());
     setReviewCount(getDueReviewItems().length);
+    setBookmark(getCurrentBookmark());
   }, []);
 
   if (!username || !progress) return <p className="text-muted">Loading...</p>;
@@ -122,9 +126,25 @@ export default function Home() {
 
         <label className="mt-5 block text-sm text-slate-300">
           目標日を変更
-          <input className="mt-2 block w-full max-w-full box-border rounded-xl border border-cyan-300/20 bg-slate-950 px-4 py-3 text-white overflow-hidden" type="date" value={target} onChange={(e) => updateTarget(e.target.value)} />
+          <div className="mt-2 overflow-hidden rounded-xl">
+            <input className="block w-full max-w-full box-border rounded-xl border border-cyan-300/20 bg-slate-950 px-4 py-3 text-white" type="date" value={target} onChange={(e) => updateTarget(e.target.value)} />
+          </div>
         </label>
       </section>
+
+
+      {bookmark && (
+        <section className="resume-card p-5">
+          <p className="text-sm font-bold text-cyan-200">🔖 前回の続き</p>
+          <div className="mt-3 flex items-end justify-between gap-3">
+            <div>
+              <p className="text-2xl font-extrabold uppercase">{bookmark.verbId}</p>
+              <p className="mt-1 text-sm text-slate-300">{getBookmarkSectionLabel(bookmark.section)}{bookmark.itemTitle ? ` / ${bookmark.itemTitle}` : ""}</p>
+            </div>
+            <Link className="rounded-full bg-cyan-300 px-4 py-2 text-sm font-bold text-slate-950" href={bookmark.href}>再開する</Link>
+          </div>
+        </section>
+      )}
 
       <section className="grid grid-cols-1 gap-3">
         <Link className="btn btn-primary block text-center text-base" href="/verbs">学習を始める</Link>

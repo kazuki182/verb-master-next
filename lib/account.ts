@@ -32,6 +32,18 @@ export type DailyMission = {
   rewardClaimed: boolean;
 };
 
+export type BookmarkSection = "basic" | "idioms" | "phrasal" | "test" | "review";
+
+export type StudyBookmark = {
+  verbId: string;
+  section: BookmarkSection;
+  label: string;
+  href: string;
+  itemTitle?: string;
+  itemIndex?: number;
+  savedAt: string;
+};
+
 export type UserProgress = {
   username: string;
   xp: number;
@@ -48,6 +60,7 @@ export type UserProgress = {
   dailyMission?: DailyMission;
   missionCompletedCount?: number;
   sectionClearIds?: string[];
+  bookmark?: StudyBookmark;
   lastStudyDate?: string;
   lastLoginAt?: string;
 };
@@ -101,10 +114,16 @@ function normalizeMission(progress: UserProgress) {
 export function initAdminAccount() {
   if (typeof window === "undefined") return;
   const accounts = getAccounts();
+  let changed = false;
   if (!accounts.some((a) => a.username === "kazurillex")) {
     accounts.push({ username: "kazurillex", password: "0074", role: "admin", createdAt: nowText() });
-    saveAccounts(accounts);
+    changed = true;
   }
+  if (!accounts.some((a) => a.username === "shun")) {
+    accounts.push({ username: "shun", password: "1234", role: "user", createdAt: nowText() });
+    changed = true;
+  }
+  if (changed) saveAccounts(accounts);
 }
 
 export function getAccounts(): Account[] {
@@ -416,4 +435,34 @@ export function recordSectionClear(verbId: string, section: string, xp: number) 
   }
   saveProgress(progress);
   return progress;
+}
+
+
+export function saveBookmark(bookmark: Omit<StudyBookmark, "savedAt">) {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  progress.bookmark = { ...bookmark, savedAt: nowText() };
+  saveProgress(progress);
+  return progress.bookmark;
+}
+
+export function getCurrentBookmark() {
+  const progress = getCurrentProgress();
+  return progress?.bookmark ?? null;
+}
+
+export function clearBookmark() {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  delete progress.bookmark;
+  saveProgress(progress);
+  return progress;
+}
+
+export function getBookmarkSectionLabel(section: BookmarkSection) {
+  if (section === "basic") return "基本動詞";
+  if (section === "idioms") return "熟語";
+  if (section === "phrasal") return "句動詞";
+  if (section === "test") return "テスト";
+  return "復習";
 }

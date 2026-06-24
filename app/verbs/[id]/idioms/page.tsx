@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getVerb, verbs } from "@/lib/data";
 import SpeakButton from "@/components/SpeakButton";
 import ExampleCard from "@/components/ExampleCard";
+import AutoBookmark from "@/components/AutoBookmark";
+import BookmarkButton from "@/components/BookmarkButton";
 
 export function generateStaticParams() {
   return verbs.map((verb) => ({ id: verb.id }));
@@ -21,16 +23,22 @@ export default async function VerbIdiomsPage({ params }: { params: Promise<{ id:
         <div className="mt-4 flex flex-wrap gap-2">
           <Link href={`/verbs/${verb.id}`} className="rounded-full bg-white/5 px-3 py-2 text-sm font-bold">基本へ戻る</Link>
           <Link href={`/verbs/${verb.id}/phrasal`} className="rounded-full bg-white/5 px-3 py-2 text-sm font-bold">句動詞へ</Link>
+          <BookmarkButton verbId={verb.id} section="idioms" label={`${verb.word} 熟語`} href={`/verbs/${verb.id}/idioms`} compact />
         </div>
       </header>
+
+      <AutoBookmark verbId={verb.id} section="idioms" label={`${verb.word} 熟語`} href={`/verbs/${verb.id}/idioms`} />
 
       {items.length > 0 ? (
         <section className="space-y-5">
           <div className="section-label section-label-collocation">🟢 熟語 10</div>
           {items.map((p, index) => (
             <article key={p.phrase} className="card border-green-200 p-5 sm:p-6">
-              <p className="text-sm font-bold text-muted">#{index + 1}</p>
-              <h2 className="mt-1 text-3xl font-bold leading-tight"><span className="collocation-text">{p.phrase}</span></h2>
+              <div className="flex items-start justify-between gap-3">
+                <p className="text-sm font-bold text-muted">#{index + 1}</p>
+                <BookmarkButton verbId={verb.id} section="idioms" label={`${verb.word} 熟語`} href={`/verbs/${verb.id}/idioms#item-${index + 1}`} itemTitle={p.phrase} itemIndex={index + 1} compact />
+              </div>
+              <h2 id={`item-${index + 1}`} className="mt-1 scroll-mt-24 text-3xl font-bold leading-tight"><span className="collocation-text">{p.phrase}</span></h2>
               <p className="mt-1 text-lg text-muted">{p.ja}</p>
               <div className="mt-3"><SpeakButton text={p.phrase} label="通常" /></div>
               <div className="type-card type-card-green mt-4">

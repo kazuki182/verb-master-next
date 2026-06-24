@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
+import ScrollButtons from "@/components/ScrollButtons";
 
 export const metadata: Metadata = {
   title: "Verb Master",
@@ -12,6 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ja">
       <body>
         <main className="mx-auto min-h-screen max-w-xl px-5 pb-28 pt-8">{children}</main>
+        <ScrollButtons />
         <Nav />
       </body>
     </html>

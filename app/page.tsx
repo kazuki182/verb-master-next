@@ -55,9 +55,9 @@ export default function Home() {
         <div>
           <p className="text-muted">Know the verb. Use the verb.</p>
           <h1 className="mt-1 text-4xl font-bold tracking-tight">Verb Master</h1>
-          <p className="mt-2 text-sm text-muted">Business-ready basic verb training.</p>
+          <p className="mt-2 text-sm text-muted">社会人向け・基本動詞トレーニング</p>
         </div>
-        <button className="rounded-full border border-gray-200 bg-white px-3 py-2 text-sm" onClick={() => { logout(); window.location.href = "/login"; }}>Logout</button>
+        <button className="rounded-full border border-gray-200 bg-white px-3 py-2 text-sm" onClick={() => { logout(); window.location.href = "/login"; }}>ログアウト</button>
       </header>
 
       <section className="card p-5">
@@ -77,7 +77,7 @@ export default function Home() {
         <div className="flex items-center justify-between gap-3">
           <div>
             <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">LEARNING DASHBOARD</p>
-            <p className="mt-2 text-sm text-slate-300">Set a target date and finish your verbs with a clear pace.</p>
+            <p className="mt-2 text-sm text-slate-300">目標日から逆算して、毎日の学習ペースを見える化します。</p>
           </div>
           <span className="rounded-full border border-cyan-300/30 px-3 py-1 text-xs font-bold text-cyan-100">{plan.progressPercent}%</span>
         </div>
@@ -118,27 +118,27 @@ export default function Home() {
         </div>
 
         <label className="mt-5 block text-sm text-slate-300">
-          Change target date
+          目標日を変更
           <input className="mt-2 w-full rounded-xl border border-cyan-300/20 bg-slate-950 px-4 py-3 text-white" type="date" value={target} onChange={(e) => updateTarget(e.target.value)} />
         </label>
       </section>
 
       <section className="grid grid-cols-1 gap-3">
-        <Link className="btn btn-primary block text-center text-base" href="/verbs">START LEARNING</Link>
-        {reviewCount > 0 && <Link className="btn btn-soft block text-center text-base" href="/review">REVIEW {reviewCount} ITEMS</Link>}
+        <Link className="btn btn-primary block text-center text-base" href="/verbs">学習を始める</Link>
+        {reviewCount > 0 && <Link className="btn btn-soft block text-center text-base" href="/review">復習する {reviewCount}問</Link>}
       </section>
 
       <section className="grid grid-cols-2 gap-3">
-        <Link className="card block p-5 font-bold" href="/verbs">50 Verbs</Link>
-        <Link className="card block p-5 font-bold" href="/tests">Instant Tests</Link>
-        <Link className="card block p-5 font-bold" href="/profile">Progress</Link>
-        <Link className="card block p-5 font-bold" href="/study-method">How to Study</Link>
+        <Link className="card block p-5 font-bold" href="/verbs">動詞一覧</Link>
+        <Link className="card block p-5 font-bold" href="/tests">瞬発英作文テスト</Link>
+        <Link className="card block p-5 font-bold" href="/profile">進捗</Link>
+        <Link className="card block p-5 font-bold" href="/study-method">勉強方法</Link>
       </section>
 
       <section className="card p-5">
-        <p className="text-sm font-bold text-muted">CONCEPT</p>
-        <p className="mt-2 leading-relaxed">Master core verbs through structure, examples, audio, and instant output training.</p>
-        <Link className="mt-4 inline-block font-bold text-accent" href="/about">About this app</Link>
+        <p className="text-sm font-bold text-muted">コンセプト</p>
+        <p className="mt-2 leading-relaxed">基本動詞を、型・例文・音声・瞬発英作文で使える形にします。</p>
+        <Link className="mt-4 inline-block font-bold text-accent" href="/about">このアプリについて</Link>
       </section>
     </div>
   );

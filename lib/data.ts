@@ -83,20 +83,6 @@ export const verbs: Verb[] = [
             "focus": "got",
             "object": "approval",
             "jaFocus": "得た"
-          },
-          {
-            "en": "Did you get the information from the client?",
-            "ja": "クライアントから情報を入手しましたか？",
-            "focus": "get",
-            "object": "the information",
-            "jaFocus": "入手"
-          },
-          {
-            "en": "We finally got the budget for this project.",
-            "ja": "ようやくこの案件の予算を確保した。",
-            "focus": "got",
-            "object": "the budget",
-            "jaFocus": "確保した"
           }
         ]
       },
@@ -126,18 +112,6 @@ export const verbs: Verb[] = [
             "ja": "私たちのコミュニケーションは良くなっている。",
             "focus": "getting",
             "jaFocus": "良くなって"
-          },
-          {
-            "en": "The issue got complicated.",
-            "ja": "その問題は複雑になった。",
-            "focus": "got",
-            "jaFocus": "複雑になった"
-          },
-          {
-            "en": "Let's get ready for the meeting.",
-            "ja": "会議の準備をしましょう。",
-            "focus": "get",
-            "jaFocus": "準備"
           }
         ]
       },
@@ -230,13 +204,6 @@ export const verbs: Verb[] = [
             "focus": "got",
             "object": "the quotation",
             "jaFocus": "受け取りました"
-          },
-          {
-            "en": "Did you get my message?",
-            "ja": "私のメッセージを確認しましたか？",
-            "focus": "get",
-            "object": "my message",
-            "jaFocus": "確認しました"
           }
         ]
       },

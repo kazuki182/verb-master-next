@@ -1,12 +1,15 @@
-# Verb Master Ver.16
+# Verb Master Ver.18
 
-## Update
-- フレーズ登録帳を追加
-- 例文横に「☆ 保存」ボタンを追加
-- 保存した例文を `/phrase-book` で一覧表示
-- 保存フレーズだけで `/phrase-book/test` のシャッフルテストが可能
-- 下部メニューに「フレーズ」を追加
-- Ver.15のしおり・進捗、Ver.14のアンダーラインテスト、0.5倍速音声を維持
+## Theme
+GET content refinement for adult learners.
+
+## Changes
+- GET page content refined for business/adult usage.
+- GET basic meanings kept at 10 sections.
+- Each GET meaning now shows 3 example sentences for easier study sessions.
+- GET idioms: 10 items, 3 examples each.
+- GET phrasal verbs: 10 items, 3 examples each.
+- Existing features preserved: section tests, underline answer hints, bookmark/progress, phrase book, 0.5x audio, learning pace dashboard.
 
 ## Build
-`npm run build` 成功確認済み
+`npm run build` succeeded before packaging.

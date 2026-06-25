@@ -389,9 +389,78 @@ export function getAllProgress() {
 
 
 const TARGET_DATE_KEY = "verbMaster.targetDate";
+const TARGET_START_DATE_KEY = "verbMaster.targetStartDate";
+const STUDY_DAYS_KEY = "verbMaster.studyDays";
+
+export type StudyDaysSetting = {
+  mode: "everyday" | "weekdays" | "custom";
+  days: number[];
+};
 
 function isoDate(date: Date) {
   return date.toISOString().slice(0, 10);
+}
+
+function normalizeDate(date: Date) {
+  const next = new Date(date);
+  next.setHours(0, 0, 0, 0);
+  return next;
+}
+
+function getDefaultStudyDays(): StudyDaysSetting {
+  return { mode: "everyday", days: [0, 1, 2, 3, 4, 5, 6] };
+}
+
+function normalizeStudyDays(value: StudyDaysSetting): StudyDaysSetting {
+  const unique = Array.from(new Set((value.days || []).filter((day) => day >= 0 && day <= 6))).sort((a, b) => a - b);
+  if (value.mode === "weekdays") return { mode: "weekdays", days: [1, 2, 3, 4, 5] };
+  if (value.mode === "custom") return { mode: "custom", days: unique.length ? unique : [1, 2, 3, 4, 5] };
+  return getDefaultStudyDays();
+}
+
+export function getStudyDaysSetting(): StudyDaysSetting {
+  if (typeof window === "undefined") return getDefaultStudyDays();
+  try {
+    const saved = localStorage.getItem(STUDY_DAYS_KEY);
+    if (!saved) return getDefaultStudyDays();
+    return normalizeStudyDays(JSON.parse(saved));
+  } catch {
+    return getDefaultStudyDays();
+  }
+}
+
+export function setStudyDaysSetting(value: StudyDaysSetting) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(STUDY_DAYS_KEY, JSON.stringify(normalizeStudyDays(value)));
+}
+
+export function getStudyDaysLabel(setting = getStudyDaysSetting()) {
+  const labels = ["日", "月", "火", "水", "木", "金", "土"];
+  if (setting.mode === "everyday") return "毎日";
+  if (setting.mode === "weekdays") return "平日のみ";
+  return setting.days.map((day) => labels[day]).join("・");
+}
+
+function countStudyDays(start: Date, end: Date, studyDays: number[]) {
+  const from = normalizeDate(start);
+  const to = normalizeDate(end);
+  if (to < from) return 0;
+  let count = 0;
+  const current = new Date(from);
+  while (current <= to) {
+    if (studyDays.includes(current.getDay())) count += 1;
+    current.setDate(current.getDate() + 1);
+  }
+  return count;
+}
+
+function getTargetStartDate() {
+  if (typeof window === "undefined") return isoDate(new Date());
+  const saved = localStorage.getItem(TARGET_START_DATE_KEY);
+  if (saved) return saved;
+  const value = isoDate(new Date());
+  localStorage.setItem(TARGET_START_DATE_KEY, value);
+  return value;
 }
 
 export function getTargetDate() {
@@ -402,25 +471,47 @@ export function getTargetDate() {
   defaultDate.setDate(defaultDate.getDate() + 60);
   const value = isoDate(defaultDate);
   localStorage.setItem(TARGET_DATE_KEY, value);
+  localStorage.setItem(TARGET_START_DATE_KEY, isoDate(new Date()));
   return value;
 }
 
 export function setTargetDate(value: string) {
   if (typeof window === "undefined") return;
-  if (value) localStorage.setItem(TARGET_DATE_KEY, value);
+  if (value) {
+    localStorage.setItem(TARGET_DATE_KEY, value);
+    localStorage.setItem(TARGET_START_DATE_KEY, isoDate(new Date()));
+  }
 }
 
 export function getLearningPlan(totalVerbs: number, completedVerbs: number) {
   const targetDate = getTargetDate();
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const target = targetDate ? new Date(`${targetDate}T00:00:00`) : today;
+  const studyDays = getStudyDaysSetting();
+  const today = normalizeDate(new Date());
+  const target = targetDate ? normalizeDate(new Date(`${targetDate}T00:00:00`)) : today;
+  const start = normalizeDate(new Date(`${getTargetStartDate()}T00:00:00`));
   const diffMs = target.getTime() - today.getTime();
-  const daysLeft = Math.max(1, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
+  const calendarDaysLeft = Math.max(1, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
+  const studyDaysLeft = Math.max(1, countStudyDays(today, target, studyDays.days));
   const remaining = Math.max(0, totalVerbs - completedVerbs);
-  const dailyGoal = Math.max(remaining > 0 ? 1 : 0, Math.ceil(remaining / daysLeft));
+  const dailyGoal = Math.max(remaining > 0 ? 1 : 0, Math.ceil(remaining / studyDaysLeft));
   const progressPercent = totalVerbs ? Math.round((completedVerbs / totalVerbs) * 100) : 0;
-  return { targetDate, daysLeft, remaining, dailyGoal, progressPercent };
+  const totalPlanStudyDays = Math.max(1, countStudyDays(start, target, studyDays.days));
+  const elapsedStudyDays = Math.max(0, countStudyDays(start, today, studyDays.days) - 1);
+  const expectedCompleted = Math.min(totalVerbs, Math.floor((totalVerbs * elapsedStudyDays) / totalPlanStudyDays));
+  const paceDiff = completedVerbs - expectedCompleted;
+  const paceStatus = paceDiff > 0 ? "ahead" : paceDiff < 0 ? "behind" : "onTrack";
+  return {
+    targetDate,
+    daysLeft: calendarDaysLeft,
+    studyDaysLeft,
+    studyDayLabel: getStudyDaysLabel(studyDays),
+    remaining,
+    dailyGoal,
+    progressPercent,
+    expectedCompleted,
+    paceDiff,
+    paceStatus
+  };
 }
 
 export function recordVerbMastery(verbId: string) {

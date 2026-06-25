@@ -17,6 +17,14 @@ type InstantTestProps = {
   finishLabel?: string;
 };
 
+
+function answerUnderline(sentence: string) {
+  const words = sentence.trim().split(/\s+/).filter(Boolean);
+  return words.map((_, i) => (
+    <span key={i} className="inline-block h-3 w-14 max-w-[22vw] rounded-full border-b-4 border-cyan-300/70" />
+  ));
+}
+
 function sectionName(section: TestSection) {
   if (section === "basic") return "基本動詞テスト";
   if (section === "idioms") return "熟語テスト";
@@ -29,30 +37,6 @@ function sectionReward(section: TestSection) {
   if (section === "idioms") return 30;
   if (section === "phrasal") return 30;
   return 100;
-}
-
-function answerWordParts(answer: string) {
-  return answer.trim().split(/\s+/).filter(Boolean);
-}
-
-function AnswerUnderline({ answer }: { answer: string }) {
-  const words = answerWordParts(answer);
-  return (
-    <div className="mt-5 rounded-2xl border border-cyan-300/15 bg-slate-950/70 p-4">
-      <div className="mb-3 flex items-center justify-between gap-2">
-        <p className="text-sm font-bold text-cyan-100">英語の語数ヒント</p>
-        <span className="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-100">{words.length}語</span>
-      </div>
-      <div className="flex flex-wrap gap-2" aria-label={`答えは${words.length}語です`}>
-        {words.map((word, i) => (
-          <span
-            key={`${word}-${i}`}
-            className="inline-block h-7 min-w-[44px] rounded-sm border-b-2 border-cyan-200/80 px-2"
-          />
-        ))}
-      </div>
-    </div>
-  );
 }
 
 export default function InstantTest({
@@ -109,12 +93,6 @@ export default function InstantTest({
               <p className="mt-1">{section === "all" ? `${verb.word} MASTER 獲得 / +${reward}XP` : `このセクションをクリア / +${reward}XP`}</p>
             </div>
           )}
-          {!allCorrect && !reviewMode && items.length > 0 && (
-            <div className="mt-5 rounded-2xl border border-red-300/20 bg-red-950/25 p-4 text-left">
-              <p className="font-bold text-red-100">満点まであと少し</p>
-              <p className="mt-2 text-sm text-red-100/80">×にした問題は復習リストへ入ります。もう一度このセクションに挑戦できます。</p>
-            </div>
-          )}
           <div className="mt-6 grid gap-3">
             {finishHref && <Link href={finishHref} className="btn btn-primary block text-center">{finishLabel || "次へ進む"}</Link>}
             <Link href={`/verbs/${verb.id}`} className="btn btn-soft block text-center">{verb.word} を再学習する</Link>
@@ -156,8 +134,14 @@ export default function InstantTest({
           <div className="mt-4"><SpeakButton text={item.ja} label="通常" slowLabel="ゆっくり" lang="ja-JP" rate={0.95} slowRate={0.5} /></div>
         </div>
         {!shown ? (
-          <div className="mt-6 space-y-5">
-            <AnswerUnderline answer={item.en} />
+          <div className="mt-8 space-y-5">
+            <div className="rounded-2xl border border-cyan-300/20 bg-slate-950/50 p-5">
+              <p className="text-sm font-bold text-cyan-100">英語の語数ヒント</p>
+              <div className="mt-4 flex flex-wrap gap-x-3 gap-y-4">
+                {answerUnderline(item.en)}
+              </div>
+              <p className="mt-3 text-xs text-slate-400">下線の数だけ英単語を入れて考えます。</p>
+            </div>
             <button className="btn btn-primary w-full" onClick={() => setShown(true)}>答えを見る</button>
           </div>
         ) : (

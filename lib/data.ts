@@ -904,18 +904,28 @@ export const verbs: Verb[] = [
     "syllable": "take",
     "transitivity": "他動詞中心",
     "importance": "★★★★★ 超重要",
-    "core": "自分から取りに行き、自分の側で扱う",
-    "coreDetail": "TAKEは、物・時間・責任・行動・役割を自分側に引き取って扱う感覚です。仕事では責任を取る、時間がかかる、対応する、引き継ぐという使い方につながります。",
-    "coreVisual": { "from": ["📄 仕事", "⏰ 時間", "🧩 役割", "📞 対応", "📝 メモ"], "to": "自分が取る", "label": "自分 → 対象を取る" },
+    "core": "自分から取りに行き、自分の側で引き受けて扱う",
+    "coreDetail": "TAKEは、外にある物・時間・責任・行動・情報・機会を、自分から取って自分の側で扱うイメージです。仕事では、責任を取る、時間がかかる、対応する、メモを取る、確認する、引き継ぐなどに広がります。",
+    "coreVisual": {
+      "from": [
+        "📄 タスク",
+        "⏰ 時間",
+        "✅ 責任",
+        "📝 情報",
+        "📞 対応"
+      ],
+      "to": "自分が引き受ける",
+      "label": "自分 → 対象を取る"
+    },
     "meanings": [
       {
         "id": "responsibility",
-        "title": "① 責任を引き受ける",
-        "pattern": "TAKE + responsibility / charge",
+        "title": "① 責任・役割を引き受ける",
+        "pattern": "TAKE + responsibility / charge / ownership",
         "transitivity": "他動詞",
         "structure": "S + take + O",
         "image": "責任や担当を自分の側に引き受ける。",
-        "point": "仕事では take responsibility / take charge / take ownership が重要。誰が担当するかを明確にする表現。",
+        "point": "仕事では take responsibility / take charge / take ownership が重要。誰が責任を持つか、誰が主導するかをはっきり言える。",
         "examples": [
           {
             "en": "I will take responsibility for this project.",
@@ -927,13 +937,27 @@ export const verbs: Verb[] = [
             "en": "She took charge of the meeting.",
             "ja": "彼女が会議を取り仕切りました。",
             "focus": "took charge",
-            "jaFocus": "取り仕切り"
+            "jaFocus": "取り仕切りました"
           },
           {
             "en": "We need to take ownership of this issue.",
             "ja": "この問題は私たちが責任を持って対応する必要があります。",
             "focus": "take ownership",
             "jaFocus": "責任を持って"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I'll take responsibility for dinner tonight.",
+            "ja": "今夜の夕食は私が責任を持つよ。",
+            "focus": "take responsibility",
+            "jaFocus": "責任を持つ"
+          },
+          {
+            "en": "She took charge of the trip plan.",
+            "ja": "彼女が旅行計画を仕切りました。",
+            "focus": "took charge",
+            "jaFocus": "仕切りました"
           }
         ]
       },
@@ -943,8 +967,8 @@ export const verbs: Verb[] = [
         "pattern": "TAKE + 時間",
         "transitivity": "他動詞",
         "structure": "It / This + takes + 時間",
-        "image": "時間を自分の中で消費するイメージ。",
-        "point": "作業時間や納期感を伝える時に必須。It takes ... / This will take ... が基本。",
+        "image": "作業や手続きが時間を必要とする。",
+        "point": "時間見積もりを伝える時の必須表現。It takes ... / This will take ... をまず覚える。",
         "examples": [
           {
             "en": "This task will take about two hours.",
@@ -965,16 +989,30 @@ export const verbs: Verb[] = [
             "focus": "take",
             "jaFocus": "かかります"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "It takes ten minutes to walk there.",
+            "ja": "そこまで歩いて10分かかります。",
+            "focus": "takes",
+            "jaFocus": "かかります"
+          },
+          {
+            "en": "The movie takes about two hours.",
+            "ja": "その映画は約2時間あります。",
+            "focus": "takes",
+            "jaFocus": "約2時間"
+          }
         ]
       },
       {
         "id": "action",
-        "title": "③ 行動を取る",
+        "title": "③ 行動・対応を取る",
         "pattern": "TAKE + action / steps / measures",
         "transitivity": "他動詞",
         "structure": "S + take + O",
         "image": "必要な対応を自分の側で実行する。",
-        "point": "ビジネスでは take action, take steps, take measures が非常によく使われる。",
+        "point": "take action は『行動する』、take steps/measures は『手を打つ・対策を取る』。問題解決の場面でよく使う。",
         "examples": [
           {
             "en": "We need to take action immediately.",
@@ -986,13 +1024,27 @@ export const verbs: Verb[] = [
             "en": "The team took steps to reduce costs.",
             "ja": "チームはコスト削減に向けて手を打ちました。",
             "focus": "took steps",
-            "jaFocus": "手を打ち"
+            "jaFocus": "手を打ちました"
           },
           {
             "en": "We should take measures to prevent delays.",
             "ja": "遅延を防ぐ対策を取るべきです。",
             "focus": "take measures",
             "jaFocus": "対策を取る"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We should take action before it gets worse.",
+            "ja": "悪化する前に行動した方がいいです。",
+            "focus": "take action",
+            "jaFocus": "行動"
+          },
+          {
+            "en": "They took steps to improve their health.",
+            "ja": "彼らは健康改善のために行動を取りました。",
+            "focus": "took steps",
+            "jaFocus": "行動を取りました"
           }
         ]
       },
@@ -1002,55 +1054,298 @@ export const verbs: Verb[] = [
         "pattern": "TAKE + notes / minutes",
         "transitivity": "他動詞",
         "structure": "S + take + O",
-        "image": "情報を自分の手元に記録として取る。",
-        "point": "会議では take notes / take minutes が基本。minutes は議事録。",
+        "image": "聞いた情報を自分の手元に記録として取る。",
+        "point": "会議では take notes がメモ、take minutes が議事録。minutes は『会議の記録』という意味。",
         "examples": [
           {
             "en": "Let me take notes during the meeting.",
             "ja": "会議中に私がメモを取ります。",
             "focus": "take notes",
-            "jaFocus": "メモ"
+            "jaFocus": "メモを取ります"
           },
           {
             "en": "Can you take the minutes today?",
             "ja": "今日、議事録を取ってもらえますか？",
             "focus": "take the minutes",
-            "jaFocus": "議事録"
+            "jaFocus": "議事録を取って"
           },
           {
             "en": "I took notes on the client’s request.",
             "ja": "クライアントの要望をメモしました。",
             "focus": "took notes",
-            "jaFocus": "メモ"
+            "jaFocus": "メモしました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I took notes while watching the lecture.",
+            "ja": "講義を見ながらメモを取りました。",
+            "focus": "took notes",
+            "jaFocus": "メモを取りました"
+          },
+          {
+            "en": "She takes notes in her phone.",
+            "ja": "彼女はスマホにメモを取ります。",
+            "focus": "takes notes",
+            "jaFocus": "メモを取ります"
+          }
+        ]
+      },
+      {
+        "id": "look",
+        "title": "⑤ 確認する・見る",
+        "pattern": "TAKE + a look / a closer look",
+        "transitivity": "他動詞",
+        "structure": "S + take + a look + at O",
+        "image": "資料や状況を自分で確認する。",
+        "point": "ビジネスでは Please take a look at ... が便利。check より柔らかく、依頼表現として使いやすい。",
+        "examples": [
+          {
+            "en": "Could you take a look at this proposal?",
+            "ja": "この提案書を確認していただけますか？",
+            "focus": "take a look",
+            "jaFocus": "確認"
+          },
+          {
+            "en": "I’ll take a closer look at the numbers.",
+            "ja": "数字をもう少し詳しく確認します。",
+            "focus": "take a closer look",
+            "jaFocus": "詳しく確認"
+          },
+          {
+            "en": "Please take a look at the attached file.",
+            "ja": "添付ファイルをご確認ください。",
+            "focus": "take a look",
+            "jaFocus": "ご確認"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Can you take a look at my phone?",
+            "ja": "私のスマホをちょっと見てくれる？",
+            "focus": "take a look",
+            "jaFocus": "見て"
+          },
+          {
+            "en": "I took a look at the menu.",
+            "ja": "メニューを見ました。",
+            "focus": "took a look",
+            "jaFocus": "見ました"
+          }
+        ]
+      },
+      {
+        "id": "handle",
+        "title": "⑥ 対応する・処理する",
+        "pattern": "TAKE care of + 名詞",
+        "transitivity": "他動詞句",
+        "structure": "S + take care of + O",
+        "image": "問題・依頼・作業を自分の側で処理する。",
+        "point": "take care of は『世話をする』だけでなく、仕事では『対応する・処理する』として非常によく使う。",
+        "examples": [
+          {
+            "en": "I’ll take care of this request.",
+            "ja": "この依頼は私が対応します。",
+            "focus": "take care of",
+            "jaFocus": "対応します"
+          },
+          {
+            "en": "Can you take care of the client follow-up?",
+            "ja": "クライアントへのフォローを対応してもらえますか？",
+            "focus": "take care of",
+            "jaFocus": "対応"
+          },
+          {
+            "en": "The support team took care of the issue quickly.",
+            "ja": "サポートチームがその問題に素早く対応しました。",
+            "focus": "took care of",
+            "jaFocus": "対応しました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I’ll take care of the tickets.",
+            "ja": "チケットは私が手配します。",
+            "focus": "take care of",
+            "jaFocus": "手配します"
+          },
+          {
+            "en": "She takes care of her family.",
+            "ja": "彼女は家族の世話をしています。",
+            "focus": "takes care of",
+            "jaFocus": "世話"
           }
         ]
       },
       {
         "id": "over",
-        "title": "⑤ 引き継ぐ・対応を受け持つ",
-        "pattern": "TAKE over / TAKE care of",
-        "transitivity": "他動詞",
+        "title": "⑦ 引き継ぐ・引き受ける",
+        "pattern": "TAKE over + 名詞",
+        "transitivity": "他動詞句",
         "structure": "S + take over + O",
-        "image": "仕事や担当を自分の側へ移す。",
-        "point": "take over は担当や案件の引き継ぎ、take care of は処理・対応に使う。",
+        "image": "担当や業務を前任者から自分の側へ移す。",
+        "point": "take over は担当変更・引き継ぎで重要。project, account, role などと相性が良い。",
         "examples": [
           {
             "en": "I will take over this account next month.",
             "ja": "来月この顧客を引き継ぎます。",
             "focus": "take over",
-            "jaFocus": "引き継ぎ"
+            "jaFocus": "引き継ぎます"
           },
           {
-            "en": "Can you take care of this request?",
-            "ja": "この依頼に対応してもらえますか？",
-            "focus": "take care of",
-            "jaFocus": "対応"
-          },
-          {
-            "en": "He took over the project after the handover.",
-            "ja": "引き継ぎ後、彼がその案件を担当しました。",
+            "en": "She took over the project after the handover.",
+            "ja": "引き継ぎ後、彼女がその案件を担当しました。",
             "focus": "took over",
-            "jaFocus": "担当"
+            "jaFocus": "担当しました"
+          },
+          {
+            "en": "Who will take over his role?",
+            "ja": "彼の役割は誰が引き継ぎますか？",
+            "focus": "take over",
+            "jaFocus": "引き継ぎます"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "My brother took over the family business.",
+            "ja": "兄が家業を引き継ぎました。",
+            "focus": "took over",
+            "jaFocus": "引き継ぎました"
+          },
+          {
+            "en": "Can you take over driving for a while?",
+            "ja": "少し運転を代わってくれる？",
+            "focus": "take over",
+            "jaFocus": "代わって"
+          }
+        ]
+      },
+      {
+        "id": "part",
+        "title": "⑧ 参加する",
+        "pattern": "TAKE part in + 名詞",
+        "transitivity": "自動詞句に近い使い方",
+        "structure": "S + take part in + O",
+        "image": "会議・イベント・活動に自分も加わる。",
+        "point": "take part in は participate in に近い。ややフォーマルで、イベント・研修・プロジェクト参加に使える。",
+        "examples": [
+          {
+            "en": "I will take part in the training session.",
+            "ja": "その研修に参加します。",
+            "focus": "take part in",
+            "jaFocus": "参加します"
+          },
+          {
+            "en": "Our team took part in the online seminar.",
+            "ja": "私たちのチームはオンラインセミナーに参加しました。",
+            "focus": "took part in",
+            "jaFocus": "参加しました"
+          },
+          {
+            "en": "Several departments took part in the project.",
+            "ja": "複数の部署がそのプロジェクトに参加しました。",
+            "focus": "took part in",
+            "jaFocus": "参加しました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She took part in a local event.",
+            "ja": "彼女は地域イベントに参加しました。",
+            "focus": "took part in",
+            "jaFocus": "参加しました"
+          },
+          {
+            "en": "I want to take part in the workshop.",
+            "ja": "そのワークショップに参加したいです。",
+            "focus": "take part in",
+            "jaFocus": "参加したい"
+          }
+        ]
+      },
+      {
+        "id": "receive",
+        "title": "⑨ 受ける・受け取る",
+        "pattern": "TAKE + a call / message / order",
+        "transitivity": "他動詞",
+        "structure": "S + take + O",
+        "image": "電話・注文・メッセージなどを自分が受ける。",
+        "point": "電話対応では take a call / take a message が便利。注文受付では take an order。",
+        "examples": [
+          {
+            "en": "Can you take this call for me?",
+            "ja": "この電話に出てもらえますか？",
+            "focus": "take this call",
+            "jaFocus": "電話に出て"
+          },
+          {
+            "en": "I took a message from the client.",
+            "ja": "クライアントからの伝言を受けました。",
+            "focus": "took a message",
+            "jaFocus": "伝言を受けました"
+          },
+          {
+            "en": "The sales team took the order yesterday.",
+            "ja": "営業チームが昨日その注文を受けました。",
+            "focus": "took the order",
+            "jaFocus": "注文を受けました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I can’t take your call right now.",
+            "ja": "今は電話に出られません。",
+            "focus": "take your call",
+            "jaFocus": "電話に出られません"
+          },
+          {
+            "en": "The restaurant takes online orders.",
+            "ja": "そのレストランはオンライン注文を受け付けています。",
+            "focus": "takes online orders",
+            "jaFocus": "注文を受け付けて"
+          }
+        ]
+      },
+      {
+        "id": "choose",
+        "title": "⑩ 選ぶ・採用する",
+        "pattern": "TAKE + option / approach / position",
+        "transitivity": "他動詞",
+        "structure": "S + take + O",
+        "image": "選択肢・方針・立場を自分のものとして選ぶ。",
+        "point": "take this approach は『この方針で進める』。take a position は『立場を取る』。会議や提案で使いやすい。",
+        "examples": [
+          {
+            "en": "Let’s take this approach for the next proposal.",
+            "ja": "次の提案ではこの方針で進めましょう。",
+            "focus": "take this approach",
+            "jaFocus": "この方針で進め"
+          },
+          {
+            "en": "We should take a practical position.",
+            "ja": "現実的な立場を取るべきです。",
+            "focus": "take a practical position",
+            "jaFocus": "立場を取る"
+          },
+          {
+            "en": "The client decided to take the cheaper option.",
+            "ja": "クライアントはより安い選択肢を選びました。",
+            "focus": "take the cheaper option",
+            "jaFocus": "選びました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I’ll take the window seat.",
+            "ja": "窓側の席にします。",
+            "focus": "take the window seat",
+            "jaFocus": "席にします"
+          },
+          {
+            "en": "Which route should we take?",
+            "ja": "どの道を行きましょうか？",
+            "focus": "take",
+            "jaFocus": "行きましょう"
           }
         ]
       }
@@ -1080,6 +1375,20 @@ export const verbs: Verb[] = [
             "focus": "take responsibility",
             "jaFocus": "責任"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I’ll take responsibility for the booking.",
+            "ja": "予約は私が責任を持ちます。",
+            "focus": "take responsibility",
+            "jaFocus": "責任を持ちます"
+          },
+          {
+            "en": "He took responsibility for the mistake.",
+            "ja": "彼はそのミスの責任を取りました。",
+            "focus": "took responsibility",
+            "jaFocus": "責任を取りました"
+          }
         ]
       },
       {
@@ -1105,6 +1414,140 @@ export const verbs: Verb[] = [
             "ja": "彼女はいつも分かりやすくメモを取ります。",
             "focus": "takes clear notes",
             "jaFocus": "メモ"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I took notes while watching the video.",
+            "ja": "動画を見ながらメモを取りました。",
+            "focus": "took notes",
+            "jaFocus": "メモを取りました"
+          },
+          {
+            "en": "Take notes if you want to remember it.",
+            "ja": "覚えたいならメモを取って。",
+            "focus": "Take notes",
+            "jaFocus": "メモを取って"
+          }
+        ]
+      },
+      {
+        "phrase": "take a look",
+        "ja": "確認する・見る",
+        "image": "対象を自分の目で取って確認する。",
+        "pattern": "take + a look + at",
+        "examples": [
+          {
+            "en": "Please take a look at the contract.",
+            "ja": "契約書をご確認ください。",
+            "focus": "take a look",
+            "jaFocus": "ご確認"
+          },
+          {
+            "en": "I’ll take a look at the data later.",
+            "ja": "後でデータを確認します。",
+            "focus": "take a look",
+            "jaFocus": "確認"
+          },
+          {
+            "en": "Can you take a quick look at this email?",
+            "ja": "このメールを軽く確認してもらえますか？",
+            "focus": "take a quick look",
+            "jaFocus": "確認"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Take a look at this photo.",
+            "ja": "この写真を見て。",
+            "focus": "Take a look",
+            "jaFocus": "見て"
+          },
+          {
+            "en": "I took a look inside the shop.",
+            "ja": "その店の中を見てみました。",
+            "focus": "took a look",
+            "jaFocus": "見て"
+          }
+        ]
+      },
+      {
+        "phrase": "take action",
+        "ja": "行動する・対応する",
+        "image": "必要な対応を自分で取る。",
+        "pattern": "take + action",
+        "examples": [
+          {
+            "en": "We need to take action today.",
+            "ja": "今日中に対応する必要があります。",
+            "focus": "take action",
+            "jaFocus": "対応"
+          },
+          {
+            "en": "The company took action after the complaint.",
+            "ja": "会社はクレーム後に対応しました。",
+            "focus": "took action",
+            "jaFocus": "対応"
+          },
+          {
+            "en": "Let’s take action before the deadline.",
+            "ja": "締切前に手を打ちましょう。",
+            "focus": "take action",
+            "jaFocus": "手を打ち"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "You need to take action for your health.",
+            "ja": "健康のために行動する必要があります。",
+            "focus": "take action",
+            "jaFocus": "行動"
+          },
+          {
+            "en": "He finally took action.",
+            "ja": "彼はついに行動しました。",
+            "focus": "took action",
+            "jaFocus": "行動しました"
+          }
+        ]
+      },
+      {
+        "phrase": "take care of",
+        "ja": "対応する・処理する",
+        "image": "問題や依頼を自分が引き受けて処理する。",
+        "pattern": "take care of + 名詞",
+        "examples": [
+          {
+            "en": "I’ll take care of the invoice.",
+            "ja": "請求書は私が対応します。",
+            "focus": "take care of",
+            "jaFocus": "対応"
+          },
+          {
+            "en": "Can you take care of the booking?",
+            "ja": "予約を対応してもらえますか？",
+            "focus": "take care of",
+            "jaFocus": "対応"
+          },
+          {
+            "en": "The team took care of the urgent request.",
+            "ja": "チームが緊急依頼に対応しました。",
+            "focus": "took care of",
+            "jaFocus": "対応"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I’ll take care of dinner.",
+            "ja": "夕食は私が用意します。",
+            "focus": "take care of",
+            "jaFocus": "用意"
+          },
+          {
+            "en": "She takes care of her dog every morning.",
+            "ja": "彼女は毎朝犬の世話をします。",
+            "focus": "takes care of",
+            "jaFocus": "世話"
           }
         ]
       },
@@ -1132,57 +1575,179 @@ export const verbs: Verb[] = [
             "focus": "take a break",
             "jaFocus": "休憩"
           }
-        ]
-      },
-      {
-        "phrase": "take time",
-        "ja": "時間がかかる",
-        "image": "時間を消費する。",
-        "pattern": "take + time",
-        "examples": [
+        ],
+        "dailyExamples": [
           {
-            "en": "This will take time.",
-            "ja": "これは時間がかかります。",
-            "focus": "take time",
-            "jaFocus": "時間"
+            "en": "Let’s take a break at the café.",
+            "ja": "カフェで休憩しましょう。",
+            "focus": "take a break",
+            "jaFocus": "休憩"
           },
           {
-            "en": "The review took more time than expected.",
-            "ja": "確認に予想以上の時間がかかりました。",
-            "focus": "took more time",
-            "jaFocus": "時間"
-          },
-          {
-            "en": "Good communication takes time.",
-            "ja": "良いコミュニケーションには時間がかかります。",
-            "focus": "takes time",
-            "jaFocus": "時間"
+            "en": "I took a break from studying.",
+            "ja": "勉強を少し休みました。",
+            "focus": "took a break",
+            "jaFocus": "休みました"
           }
         ]
       },
       {
-        "phrase": "take a look",
-        "ja": "見る・確認する",
-        "image": "短く軽く確認する。",
-        "pattern": "take + a look",
+        "phrase": "take time",
+        "ja": "時間がかかる・時間を取る",
+        "image": "時間を必要とする、または時間を確保する。",
+        "pattern": "take + time",
         "examples": [
           {
-            "en": "Could you take a look at this file?",
-            "ja": "このファイルを確認してもらえますか？",
-            "focus": "take a look",
-            "jaFocus": "確認"
+            "en": "This review will take time.",
+            "ja": "この確認には時間がかかります。",
+            "focus": "take time",
+            "jaFocus": "時間がかかります"
           },
           {
-            "en": "I’ll take a look and get back to you.",
-            "ja": "確認して折り返します。",
-            "focus": "take a look",
-            "jaFocus": "確認"
+            "en": "Please take time to check the details.",
+            "ja": "詳細確認の時間を取ってください。",
+            "focus": "take time",
+            "jaFocus": "時間を取って"
           },
           {
-            "en": "Please take a quick look before the meeting.",
-            "ja": "会議前に軽く確認してください。",
-            "focus": "take a quick look",
-            "jaFocus": "確認"
+            "en": "The negotiation took time.",
+            "ja": "その交渉には時間がかかりました。",
+            "focus": "took time",
+            "jaFocus": "時間がかかりました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Take your time.",
+            "ja": "ゆっくりでいいですよ。",
+            "focus": "Take your time",
+            "jaFocus": "ゆっくり"
+          },
+          {
+            "en": "Learning English takes time.",
+            "ja": "英語学習には時間がかかります。",
+            "focus": "takes time",
+            "jaFocus": "時間がかかります"
+          }
+        ]
+      },
+      {
+        "phrase": "take part in",
+        "ja": "参加する",
+        "image": "活動や場に自分も加わる。",
+        "pattern": "take part in + 名詞",
+        "examples": [
+          {
+            "en": "I will take part in the workshop.",
+            "ja": "そのワークショップに参加します。",
+            "focus": "take part in",
+            "jaFocus": "参加"
+          },
+          {
+            "en": "Our team took part in the exhibition.",
+            "ja": "私たちのチームは展示会に参加しました。",
+            "focus": "took part in",
+            "jaFocus": "参加"
+          },
+          {
+            "en": "Several managers took part in the discussion.",
+            "ja": "数名の管理職が議論に参加しました。",
+            "focus": "took part in",
+            "jaFocus": "参加"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She took part in a marathon.",
+            "ja": "彼女はマラソンに参加しました。",
+            "focus": "took part in",
+            "jaFocus": "参加"
+          },
+          {
+            "en": "I want to take part in the event.",
+            "ja": "そのイベントに参加したいです。",
+            "focus": "take part in",
+            "jaFocus": "参加したい"
+          }
+        ]
+      },
+      {
+        "phrase": "take a call",
+        "ja": "電話に出る",
+        "image": "電話を自分が受ける。",
+        "pattern": "take + a call",
+        "examples": [
+          {
+            "en": "I need to take a call from the client.",
+            "ja": "クライアントからの電話に出る必要があります。",
+            "focus": "take a call",
+            "jaFocus": "電話に出る"
+          },
+          {
+            "en": "Can you take this call?",
+            "ja": "この電話に出てもらえますか？",
+            "focus": "take this call",
+            "jaFocus": "電話に出て"
+          },
+          {
+            "en": "She took a call during the break.",
+            "ja": "彼女は休憩中に電話に出ました。",
+            "focus": "took a call",
+            "jaFocus": "電話に出ました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I can’t take a call right now.",
+            "ja": "今は電話に出られません。",
+            "focus": "take a call",
+            "jaFocus": "電話に出られません"
+          },
+          {
+            "en": "He took a call outside.",
+            "ja": "彼は外で電話に出ました。",
+            "focus": "took a call",
+            "jaFocus": "電話に出ました"
+          }
+        ]
+      },
+      {
+        "phrase": "take an approach",
+        "ja": "方針を取る",
+        "image": "進め方や姿勢を自分たちの方針として選ぶ。",
+        "pattern": "take + an approach",
+        "examples": [
+          {
+            "en": "Let’s take a simple approach.",
+            "ja": "シンプルな方針で進めましょう。",
+            "focus": "take a simple approach",
+            "jaFocus": "方針で進め"
+          },
+          {
+            "en": "We took a different approach this time.",
+            "ja": "今回は別のやり方を取りました。",
+            "focus": "took a different approach",
+            "jaFocus": "やり方を取りました"
+          },
+          {
+            "en": "The client prefers to take a cautious approach.",
+            "ja": "クライアントは慎重な方針を好みます。",
+            "focus": "take a cautious approach",
+            "jaFocus": "方針"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I want to take a relaxed approach.",
+            "ja": "気楽なやり方でいきたいです。",
+            "focus": "take a relaxed approach",
+            "jaFocus": "やり方"
+          },
+          {
+            "en": "They took a new approach to cooking.",
+            "ja": "彼らは料理に新しい方法を取り入れました。",
+            "focus": "took a new approach",
+            "jaFocus": "方法を取り入れました"
           }
         ]
       }
@@ -1190,77 +1755,119 @@ export const verbs: Verb[] = [
     "phrasalVerbs": [
       {
         "phrase": "take over",
-        "ja": "引き継ぐ",
-        "image": "担当を自分の側へ移す。",
+        "ja": "引き継ぐ・引き受ける",
+        "image": "担当や権限を自分の側へ移す。",
         "pattern": "take over + 名詞",
         "examples": [
           {
-            "en": "I will take over the project.",
-            "ja": "その案件を引き継ぎます。",
+            "en": "I will take over the account next month.",
+            "ja": "来月その顧客を引き継ぎます。",
             "focus": "take over",
             "jaFocus": "引き継ぎ"
           },
           {
-            "en": "She took over my role last week.",
-            "ja": "先週、彼女が私の役割を引き継ぎました。",
+            "en": "She took over the project after the handover.",
+            "ja": "引き継ぎ後、彼女が案件を担当しました。",
             "focus": "took over",
-            "jaFocus": "引き継ぎ"
+            "jaFocus": "担当"
           },
           {
-            "en": "Can you take over this client?",
-            "ja": "この顧客を引き継いでもらえますか？",
+            "en": "Who will take over his tasks?",
+            "ja": "彼の業務は誰が引き継ぎますか？",
             "focus": "take over",
             "jaFocus": "引き継ぎ"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "My sister took over the shop.",
+            "ja": "姉がその店を引き継ぎました。",
+            "focus": "took over",
+            "jaFocus": "引き継ぎました"
+          },
+          {
+            "en": "Can you take over for a minute?",
+            "ja": "少し代わってくれる？",
+            "focus": "take over",
+            "jaFocus": "代わって"
           }
         ]
       },
       {
         "phrase": "take off",
-        "ja": "休みを取る・離れる",
-        "image": "仕事から一時的に離れる。",
-        "pattern": "take off + 時間",
+        "ja": "軌道に乗る・休む・離陸する",
+        "image": "元の場所や状態から離れる。",
+        "pattern": "take off",
         "examples": [
           {
-            "en": "I will take Friday off.",
-            "ja": "金曜日に休みを取ります。",
+            "en": "The new product is starting to take off.",
+            "ja": "新製品が軌道に乗り始めています。",
+            "focus": "take off",
+            "jaFocus": "軌道に乗り"
+          },
+          {
+            "en": "I’ll take Friday off.",
+            "ja": "金曜日は休みます。",
             "focus": "take Friday off",
-            "jaFocus": "休み"
+            "jaFocus": "休みます"
           },
           {
-            "en": "She took a day off.",
-            "ja": "彼女は1日休みを取りました。",
-            "focus": "took a day off",
-            "jaFocus": "休み"
+            "en": "Sales took off after the campaign.",
+            "ja": "キャンペーン後、売上が伸びました。",
+            "focus": "took off",
+            "jaFocus": "伸びました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The plane took off on time.",
+            "ja": "飛行機は定刻に離陸しました。",
+            "focus": "took off",
+            "jaFocus": "離陸しました"
           },
           {
-            "en": "Can I take the afternoon off?",
-            "ja": "午後休を取ってもいいですか？",
-            "focus": "take the afternoon off",
-            "jaFocus": "午後休"
+            "en": "Please take off your shoes.",
+            "ja": "靴を脱いでください。",
+            "focus": "take off",
+            "jaFocus": "脱いで"
           }
         ]
       },
       {
         "phrase": "take on",
-        "ja": "引き受ける",
-        "image": "新しい仕事や役割を自分に乗せる。",
+        "ja": "引き受ける・採用する",
+        "image": "新しい仕事・責任・人を自分の側に加える。",
         "pattern": "take on + 名詞",
         "examples": [
           {
-            "en": "We can take on one more project.",
-            "ja": "もう1件案件を引き受けられます。",
+            "en": "We can’t take on another project right now.",
+            "ja": "今は別の案件を引き受けられません。",
             "focus": "take on",
             "jaFocus": "引き受け"
           },
           {
-            "en": "He took on a new role.",
-            "ja": "彼は新しい役割を引き受けました。",
+            "en": "The team took on a new client.",
+            "ja": "チームは新しい顧客を担当しました。",
             "focus": "took on",
-            "jaFocus": "引き受け"
+            "jaFocus": "担当"
           },
           {
-            "en": "Don’t take on too much work.",
-            "ja": "仕事を抱え込みすぎないでください。",
+            "en": "She took on more responsibility this year.",
+            "ja": "彼女は今年さらに責任を引き受けました。",
+            "focus": "took on",
+            "jaFocus": "責任を引き受け"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "He took on a new challenge.",
+            "ja": "彼は新しい挑戦を始めました。",
+            "focus": "took on",
+            "jaFocus": "挑戦"
+          },
+          {
+            "en": "I don’t want to take on too much.",
+            "ja": "抱え込みすぎたくありません。",
             "focus": "take on",
             "jaFocus": "抱え込み"
           }
@@ -1268,53 +1875,281 @@ export const verbs: Verb[] = [
       },
       {
         "phrase": "take up",
-        "ja": "取り上げる・始める",
-        "image": "時間や議題を占める。",
+        "ja": "始める・場所/時間を取る",
+        "image": "新しい活動を自分の中に取り入れる、または場所や時間を占める。",
         "pattern": "take up + 名詞",
         "examples": [
           {
-            "en": "This issue will take up the whole meeting.",
-            "ja": "この問題で会議全体を使うことになります。",
-            "focus": "take up",
-            "jaFocus": "使う"
+            "en": "This issue takes up too much time.",
+            "ja": "この問題に時間を取られすぎています。",
+            "focus": "takes up",
+            "jaFocus": "時間を取られ"
           },
           {
-            "en": "Let’s take up this topic next.",
-            "ja": "次にこの議題を取り上げましょう。",
+            "en": "The new system takes up less space.",
+            "ja": "新しいシステムは場所をあまり取りません。",
+            "focus": "takes up",
+            "jaFocus": "場所を取り"
+          },
+          {
+            "en": "I’d like to take up that point later.",
+            "ja": "その点は後で取り上げたいです。",
             "focus": "take up",
             "jaFocus": "取り上げ"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I took up jogging last year.",
+            "ja": "昨年ジョギングを始めました。",
+            "focus": "took up",
+            "jaFocus": "始めました"
           },
           {
-            "en": "The task took up my morning.",
-            "ja": "その作業で午前中がつぶれました。",
-            "focus": "took up",
-            "jaFocus": "つぶれ"
+            "en": "This sofa takes up a lot of space.",
+            "ja": "このソファはかなり場所を取ります。",
+            "focus": "takes up",
+            "jaFocus": "場所を取ります"
           }
         ]
       },
       {
-        "phrase": "take care of",
-        "ja": "対応する・処理する",
-        "image": "相手や問題を自分の側で面倒見る。",
-        "pattern": "take care of + 名詞",
+        "phrase": "take back",
+        "ja": "取り戻す・撤回する",
+        "image": "一度外に出たものを自分の側へ戻す。",
+        "pattern": "take back + 名詞",
         "examples": [
           {
-            "en": "I’ll take care of it.",
-            "ja": "私が対応します。",
-            "focus": "take care of",
-            "jaFocus": "対応"
+            "en": "I need to take back my previous comment.",
+            "ja": "先ほどの発言を撤回する必要があります。",
+            "focus": "take back",
+            "jaFocus": "撤回"
           },
           {
-            "en": "Can you take care of the invoice?",
-            "ja": "請求書を処理してもらえますか？",
-            "focus": "take care of",
-            "jaFocus": "処理"
+            "en": "Can we take back the proposal and revise it?",
+            "ja": "提案書を一度戻して修正できますか？",
+            "focus": "take back",
+            "jaFocus": "戻して"
           },
           {
-            "en": "The team took care of the issue quickly.",
-            "ja": "チームはその問題に素早く対応しました。",
-            "focus": "took care of",
-            "jaFocus": "対応"
+            "en": "The client took back the request.",
+            "ja": "クライアントはその依頼を取り下げました。",
+            "focus": "took back",
+            "jaFocus": "取り下げました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I take back what I said.",
+            "ja": "さっき言ったことを撤回します。",
+            "focus": "take back",
+            "jaFocus": "撤回"
+          },
+          {
+            "en": "The store took back the item.",
+            "ja": "店はその商品を返品として受け取りました。",
+            "focus": "took back",
+            "jaFocus": "返品"
+          }
+        ]
+      },
+      {
+        "phrase": "take in",
+        "ja": "取り込む・理解する",
+        "image": "情報や内容を自分の中に入れる。",
+        "pattern": "take in + 名詞",
+        "examples": [
+          {
+            "en": "It was a lot of information to take in.",
+            "ja": "理解する情報量が多かったです。",
+            "focus": "take in",
+            "jaFocus": "理解する"
+          },
+          {
+            "en": "We need to take in customer feedback.",
+            "ja": "顧客の意見を取り入れる必要があります。",
+            "focus": "take in",
+            "jaFocus": "取り入れる"
+          },
+          {
+            "en": "The report takes in several market trends.",
+            "ja": "その報告書は複数の市場動向を取り込んでいます。",
+            "focus": "takes in",
+            "jaFocus": "取り込んで"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I couldn’t take in the news at first.",
+            "ja": "最初はそのニュースを受け止められませんでした。",
+            "focus": "take in",
+            "jaFocus": "受け止め"
+          },
+          {
+            "en": "This room takes in a lot of light.",
+            "ja": "この部屋は光をたくさん取り込みます。",
+            "focus": "takes in",
+            "jaFocus": "取り込みます"
+          }
+        ]
+      },
+      {
+        "phrase": "take out",
+        "ja": "取り出す・外へ出す",
+        "image": "中にあるものを外へ出す。",
+        "pattern": "take out + 名詞",
+        "examples": [
+          {
+            "en": "Please take out the unnecessary section.",
+            "ja": "不要な部分を削除してください。",
+            "focus": "take out",
+            "jaFocus": "削除"
+          },
+          {
+            "en": "I took out the old data from the file.",
+            "ja": "ファイルから古いデータを取り除きました。",
+            "focus": "took out",
+            "jaFocus": "取り除きました"
+          },
+          {
+            "en": "Let’s take out this slide.",
+            "ja": "このスライドを外しましょう。",
+            "focus": "take out",
+            "jaFocus": "外しましょう"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I took out my wallet.",
+            "ja": "財布を取り出しました。",
+            "focus": "took out",
+            "jaFocus": "取り出しました"
+          },
+          {
+            "en": "Let’s take out the trash.",
+            "ja": "ゴミを出しましょう。",
+            "focus": "take out",
+            "jaFocus": "出しましょう"
+          }
+        ]
+      },
+      {
+        "phrase": "take away",
+        "ja": "取り除く・持ち帰る",
+        "image": "何かをその場から離して持っていく。",
+        "pattern": "take away + 名詞",
+        "examples": [
+          {
+            "en": "This change will take away unnecessary work.",
+            "ja": "この変更で不要な作業をなくせます。",
+            "focus": "take away",
+            "jaFocus": "なくせます"
+          },
+          {
+            "en": "The main takeaway is clear.",
+            "ja": "主な学びは明確です。",
+            "focus": "takeaway",
+            "jaFocus": "学び"
+          },
+          {
+            "en": "Let’s take away one key lesson from this meeting.",
+            "ja": "この会議から重要な学びを1つ持ち帰りましょう。",
+            "focus": "take away",
+            "jaFocus": "持ち帰り"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I’ll take away the empty plates.",
+            "ja": "空いたお皿を下げます。",
+            "focus": "take away",
+            "jaFocus": "下げます"
+          },
+          {
+            "en": "What did you take away from the movie?",
+            "ja": "その映画から何を学びましたか？",
+            "focus": "take away",
+            "jaFocus": "学びました"
+          }
+        ]
+      },
+      {
+        "phrase": "take through",
+        "ja": "案内する・説明する",
+        "image": "相手を内容の流れに沿って連れていく。",
+        "pattern": "take 人 through + 名詞",
+        "examples": [
+          {
+            "en": "Let me take you through the proposal.",
+            "ja": "提案内容をご説明します。",
+            "focus": "take you through",
+            "jaFocus": "ご説明"
+          },
+          {
+            "en": "She took us through the new process.",
+            "ja": "彼女が新しい手順を説明してくれました。",
+            "focus": "took us through",
+            "jaFocus": "説明"
+          },
+          {
+            "en": "Can you take me through the numbers?",
+            "ja": "数字の内容を説明してもらえますか？",
+            "focus": "take me through",
+            "jaFocus": "説明して"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "He took me through the museum.",
+            "ja": "彼が博物館を案内してくれました。",
+            "focus": "took me through",
+            "jaFocus": "案内"
+          },
+          {
+            "en": "Can you take me through the setup?",
+            "ja": "設定方法を教えてくれる？",
+            "focus": "take me through",
+            "jaFocus": "教えて"
+          }
+        ]
+      },
+      {
+        "phrase": "take after",
+        "ja": "似ている",
+        "image": "性格や特徴を家族などから受け継ぐ。",
+        "pattern": "take after + 人",
+        "examples": [
+          {
+            "en": "The new branch takes after the Tokyo office model.",
+            "ja": "新支店は東京オフィスのモデルを踏襲しています。",
+            "focus": "takes after",
+            "jaFocus": "踏襲"
+          },
+          {
+            "en": "This design takes after our previous product.",
+            "ja": "このデザインは前製品の特徴を受け継いでいます。",
+            "focus": "takes after",
+            "jaFocus": "受け継いで"
+          },
+          {
+            "en": "The policy takes after last year’s approach.",
+            "ja": "その方針は昨年のアプローチを踏襲しています。",
+            "focus": "takes after",
+            "jaFocus": "踏襲"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She takes after her mother.",
+            "ja": "彼女は母親に似ています。",
+            "focus": "takes after",
+            "jaFocus": "似ています"
+          },
+          {
+            "en": "He takes after his father in personality.",
+            "ja": "彼は性格が父親に似ています。",
+            "focus": "takes after",
+            "jaFocus": "似ています"
           }
         ]
       }

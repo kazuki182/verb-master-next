@@ -44,6 +44,17 @@ export type StudyBookmark = {
   savedAt: string;
 };
 
+export type SavedPhrase = {
+  id: string;
+  verbId: string;
+  section: BookmarkSection;
+  meaningTitle: string;
+  pattern: string;
+  en: string;
+  ja: string;
+  savedAt: string;
+};
+
 export type UserProgress = {
   username: string;
   xp: number;
@@ -61,6 +72,7 @@ export type UserProgress = {
   missionCompletedCount?: number;
   sectionClearIds?: string[];
   bookmark?: StudyBookmark;
+  savedPhrases?: SavedPhrase[];
   lastStudyDate?: string;
   lastLoginAt?: string;
 };
@@ -198,6 +210,7 @@ function normalizeProgress(progress: UserProgress) {
   if (!progress.weakItems) progress.weakItems = [];
   if (!progress.reviewItems) progress.reviewItems = {};
   if (!progress.sectionClearIds) progress.sectionClearIds = [];
+  if (!progress.savedPhrases) progress.savedPhrases = [];
   normalizeMission(progress);
   return progress;
 }
@@ -220,7 +233,8 @@ export function ensureProgress(username: string): UserProgress {
       reviewItems: {},
       dailyMission: createDailyMission(),
       missionCompletedCount: 0,
-      sectionClearIds: []
+      sectionClearIds: [],
+      savedPhrases: []
     };
     saveProgressMap(map);
   }
@@ -465,4 +479,41 @@ export function getBookmarkSectionLabel(section: BookmarkSection) {
   if (section === "phrasal") return "句動詞";
   if (section === "test") return "テスト";
   return "復習";
+}
+
+
+export function getSavedPhrases() {
+  const progress = getCurrentProgress();
+  return progress?.savedPhrases ?? [];
+}
+
+export function isPhraseSaved(id: string) {
+  return getSavedPhrases().some((phrase) => phrase.id === id);
+}
+
+export function savePhrase(phrase: Omit<SavedPhrase, "savedAt">) {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  progress.savedPhrases = progress.savedPhrases || [];
+  if (!progress.savedPhrases.some((item) => item.id === phrase.id)) {
+    progress.savedPhrases.unshift({ ...phrase, savedAt: nowText() });
+  }
+  saveProgress(progress);
+  return progress.savedPhrases;
+}
+
+export function removeSavedPhrase(id: string) {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  progress.savedPhrases = (progress.savedPhrases || []).filter((phrase) => phrase.id !== id);
+  saveProgress(progress);
+  return progress.savedPhrases;
+}
+
+export function clearSavedPhrases() {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  progress.savedPhrases = [];
+  saveProgress(progress);
+  return progress.savedPhrases;
 }

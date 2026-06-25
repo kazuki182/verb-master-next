@@ -82,7 +82,21 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
               </div>
 
               <div className="mt-4 space-y-3">
-                {meaning.examples.slice(0, 3).map((example) => <ExampleCard key={example.en} example={example} />)}
+                {meaning.examples.slice(0, 3).map((example, exampleIndex) => (
+                  <ExampleCard
+                    key={example.en}
+                    example={example}
+                    phrase={{
+                      id: `${verb.id}:basic:${meaning.id}:${exampleIndex}`,
+                      verbId: verb.id,
+                      section: "basic",
+                      meaningTitle: meaning.title,
+                      pattern: meaning.pattern,
+                      en: example.en,
+                      ja: example.ja
+                    }}
+                  />
+                ))}
               </div>
             </article>
           ))}

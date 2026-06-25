@@ -1,5 +1,7 @@
 import SpeakButton from "./SpeakButton";
+import PhraseSaveButton from "./PhraseSaveButton";
 import type { Example } from "@/lib/data";
+import type { SavedPhrase } from "@/lib/account";
 
 function highlightText(text: string, target?: string, className = "example-verb") {
   if (!target || !text.includes(target)) return text;
@@ -13,7 +15,7 @@ function highlightText(text: string, target?: string, className = "example-verb"
   );
 }
 
-export default function ExampleCard({ example }: { example: Example }) {
+export default function ExampleCard({ example, phrase }: { example: Example; phrase?: Omit<SavedPhrase, "savedAt"> }) {
   return (
     <div className="rounded-2xl bg-paper p-4 sm:p-5">
       <div className="mb-3 flex items-start justify-between gap-3">
@@ -30,6 +32,11 @@ export default function ExampleCard({ example }: { example: Example }) {
       <p className="leading-relaxed text-muted">
         {highlightText(example.ja, example.jaFocus, "ja-focus")}
       </p>
+      {phrase && (
+        <div className="mt-4 flex justify-end">
+          <PhraseSaveButton phrase={phrase} compact />
+        </div>
+      )}
     </div>
   );
 }

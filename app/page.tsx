@@ -162,6 +162,7 @@ export default function Home() {
         <Link className="card block p-5 font-bold" href="/tests">瞬発英作文テスト</Link>
         <Link className="card block p-5 font-bold" href="/profile">進捗</Link>
         <Link className="card block p-5 font-bold" href="/study-method">勉強方法</Link>
+        <Link className="card block p-5 font-bold" href="/phrase-book">フレーズ帳</Link>
       </section>
 
       <section className="card p-5">

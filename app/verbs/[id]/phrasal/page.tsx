@@ -49,7 +49,21 @@ export default async function VerbPhrasalPage({ params }: { params: Promise<{ id
                 <p className="font-bold">💡 イメージ</p>
                 <p className="mt-2 leading-relaxed">{p.image}</p>
               </div>
-              <div className="mt-4 space-y-3">{p.examples.slice(0, 3).map((e) => <ExampleCard key={e.en} example={e} />)}</div>
+              <div className="mt-4 space-y-3">{p.examples.slice(0, 3).map((e, exampleIndex) => (
+                  <ExampleCard
+                    key={e.en}
+                    example={e}
+                    phrase={{
+                      id: `${verb.id}:phrasal:${index}:${exampleIndex}`,
+                      verbId: verb.id,
+                      section: "phrasal",
+                      meaningTitle: `句動詞：${p.phrase}`,
+                      pattern: p.pattern,
+                      en: e.en,
+                      ja: e.ja
+                    }}
+                  />
+                ))}</div>
             </article>
           ))}
         </section>

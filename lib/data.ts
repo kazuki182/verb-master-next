@@ -15,6 +15,7 @@ export type MeaningBlock = {
   image: string;
   point: string;
   examples: Example[];
+  dailyExamples?: Example[];
 };
 
 export type PhraseBlock = {
@@ -23,6 +24,7 @@ export type PhraseBlock = {
   image: string;
   pattern: string;
   examples: Example[];
+  dailyExamples?: Example[];
 };
 
 export type Verb = {
@@ -6603,6 +6605,166 @@ export const verbs: Verb[] = [
     "phrasalVerbs": []
   }
 ];
+
+
+const dailyMeaningExamples: Record<string, Record<string, Example[]>> = {
+  get: {
+    obtain: [
+      { en: "I got a new laptop last weekend.", ja: "先週末、新しいノートPCを手に入れた。", focus: "got", object: "a new laptop", jaFocus: "手に入れた" },
+      { en: "I got tickets for the concert.", ja: "コンサートのチケットを手に入れた。", focus: "got", object: "tickets", jaFocus: "手に入れた" }
+    ],
+    become: [
+      { en: "It got cold in the evening.", ja: "夕方に寒くなった。", focus: "got", jaFocus: "寒くなった" },
+      { en: "I got sleepy after dinner.", ja: "夕食後に眠くなった。", focus: "got", jaFocus: "眠くなった" }
+    ],
+    arrive: [
+      { en: "I got to the station early.", ja: "駅に早く着いた。", focus: "got", jaFocus: "着いた" },
+      { en: "What time did you get home?", ja: "何時に帰宅したの？", focus: "get", jaFocus: "帰宅" }
+    ],
+    understand: [
+      { en: "I finally got the story.", ja: "ようやくその話が分かった。", focus: "got", object: "the story", jaFocus: "分かった" },
+      { en: "I don't get this song title.", ja: "この曲名の意味が分からない。", focus: "get", object: "this song title", jaFocus: "分からない" }
+    ],
+    receive: [
+      { en: "I got a message from my friend.", ja: "友人からメッセージを受け取った。", focus: "got", object: "a message", jaFocus: "受け取った" },
+      { en: "I got a package this morning.", ja: "今朝、荷物を受け取った。", focus: "got", object: "a package", jaFocus: "受け取った" }
+    ],
+    permission: [
+      { en: "I got permission to use the car.", ja: "車を使う許可を得た。", focus: "got", object: "permission", jaFocus: "許可を得た" },
+      { en: "I got permission to stay out late.", ja: "遅くまで外出する許可を得た。", focus: "got", object: "permission", jaFocus: "許可を得た" }
+    ],
+    chance: [
+      { en: "I got a chance to travel abroad.", ja: "海外旅行に行く機会を得た。", focus: "got", object: "a chance", jaFocus: "機会を得た" },
+      { en: "I got a chance to meet the artist.", ja: "そのアーティストに会う機会を得た。", focus: "got", object: "a chance", jaFocus: "機会を得た" }
+    ],
+    sick: [
+      { en: "I got sick after the trip.", ja: "旅行の後に体調を崩した。", focus: "got sick", jaFocus: "体調を崩した" },
+      { en: "My brother got a cold last week.", ja: "兄は先週風邪をひいた。", focus: "got", object: "a cold", jaFocus: "風邪をひいた" }
+    ],
+    buy: [
+      { en: "Where did you get that jacket?", ja: "そのジャケットどこで買ったの？", focus: "get", object: "that jacket", jaFocus: "買った" },
+      { en: "I got this mug at a small shop.", ja: "このマグカップは小さなお店で買った。", focus: "got", object: "this mug", jaFocus: "買った" }
+    ],
+    make_happen: [
+      { en: "I got my brother to help me.", ja: "弟に手伝ってもらった。", focus: "got", jaFocus: "手伝ってもらった" },
+      { en: "I got my friend to drive me home.", ja: "友人に家まで送ってもらった。", focus: "got", jaFocus: "送ってもらった" }
+    ]
+  },
+  take: {
+    responsibility: [
+      { en: "I'll take care of dinner tonight.", ja: "今夜の夕食は私が担当するよ。", focus: "take care of", jaFocus: "担当" },
+      { en: "She takes care of her dog every morning.", ja: "彼女は毎朝犬の世話をしている。", focus: "takes care of", jaFocus: "世話" }
+    ],
+    time: [
+      { en: "It takes ten minutes to walk there.", ja: "そこまで歩いて10分かかる。", focus: "takes", jaFocus: "かかる" },
+      { en: "The movie took about two hours.", ja: "その映画は約2時間かかった。", focus: "took", jaFocus: "かかった" }
+    ],
+    action: [
+      { en: "I took a small step toward my goal.", ja: "目標に向けて小さな一歩を踏み出した。", focus: "took", jaFocus: "踏み出した" },
+      { en: "We took action to clean the room.", ja: "部屋を片付けるために行動した。", focus: "took action", jaFocus: "行動した" }
+    ],
+    notes: [
+      { en: "I took notes while watching the video.", ja: "動画を見ながらメモを取った。", focus: "took notes", jaFocus: "メモを取った" },
+      { en: "Can you take notes for me?", ja: "代わりにメモを取ってくれる？", focus: "take notes", jaFocus: "メモを取って" }
+    ],
+    over: [
+      { en: "My sister took over the kitchen.", ja: "姉がキッチンを使い始めた。", focus: "took over", jaFocus: "使い始めた" },
+      { en: "He took over the playlist at the party.", ja: "彼がパーティーの曲選びを引き継いだ。", focus: "took over", jaFocus: "引き継いだ" }
+    ]
+  },
+  make: {
+    decision: [
+      { en: "I made a decision to study every morning.", ja: "毎朝勉強すると決めた。", focus: "made a decision", jaFocus: "決めた" },
+      { en: "We made a choice to stay home.", ja: "私たちは家にいることを選んだ。", focus: "made a choice", jaFocus: "選んだ" }
+    ],
+    progress: [
+      { en: "I made progress with my guitar practice.", ja: "ギター練習が進んだ。", focus: "made progress", jaFocus: "進んだ" },
+      { en: "My English is making progress little by little.", ja: "英語が少しずつ上達している。", focus: "making progress", jaFocus: "上達" }
+    ],
+    create: [
+      { en: "I made breakfast this morning.", ja: "今朝、朝食を作った。", focus: "made", jaFocus: "作った" },
+      { en: "She made a birthday card for her friend.", ja: "彼女は友人に誕生日カードを作った。", focus: "made", jaFocus: "作った" }
+    ],
+    cause: [
+      { en: "The song made me happy.", ja: "その曲で嬉しい気持ちになった。", focus: "made", jaFocus: "気持ちになった" },
+      { en: "The news made everyone surprised.", ja: "そのニュースでみんな驚いた。", focus: "made", jaFocus: "驚いた" }
+    ],
+    arrange: [
+      { en: "Let's make plans for the weekend.", ja: "週末の予定を立てよう。", focus: "make plans", jaFocus: "予定を立て" },
+      { en: "I made time to watch a movie.", ja: "映画を見る時間を作った。", focus: "made time", jaFocus: "時間を作った" }
+    ]
+  },
+  give: {
+    update: [
+      { en: "I'll give you an update after dinner.", ja: "夕食後に状況を知らせるね。", focus: "give you an update", jaFocus: "知らせる" },
+      { en: "She gave me the latest news.", ja: "彼女が最新ニュースを教えてくれた。", focus: "gave me", jaFocus: "教えてくれた" }
+    ],
+    feedback: [
+      { en: "Can you give me feedback on my song?", ja: "私の曲に感想をくれる？", focus: "give me feedback", jaFocus: "感想" },
+      { en: "He gave me useful advice.", ja: "彼は役立つアドバイスをくれた。", focus: "gave me", jaFocus: "くれた" }
+    ],
+    permission: [
+      { en: "My parents gave me permission to go out.", ja: "両親が外出の許可をくれた。", focus: "gave me permission", jaFocus: "許可" },
+      { en: "She gave me permission to borrow her book.", ja: "彼女は本を借りる許可をくれた。", focus: "gave me permission", jaFocus: "許可" }
+    ],
+    presentation: [
+      { en: "I gave a short speech at the party.", ja: "パーティーで短いスピーチをした。", focus: "gave", jaFocus: "スピーチをした" },
+      { en: "She gave a toast at dinner.", ja: "彼女は夕食で乾杯の挨拶をした。", focus: "gave", jaFocus: "挨拶をした" }
+    ],
+    chance: [
+      { en: "Please give me a chance to try again.", ja: "もう一度挑戦するチャンスをください。", focus: "give me a chance", jaFocus: "チャンス" },
+      { en: "This app gives me a chance to practice.", ja: "このアプリは練習する機会をくれる。", focus: "gives me a chance", jaFocus: "機会" }
+    ]
+  },
+  have: {
+    m1: [
+      { en: "I have a new backpack.", ja: "新しいリュックを持っている。", focus: "have", jaFocus: "持っている" },
+      { en: "Do you have a charger?", ja: "充電器を持ってる？", focus: "have", jaFocus: "持ってる" }
+    ],
+    m2: [
+      { en: "I have time after lunch.", ja: "昼食後なら時間がある。", focus: "have", jaFocus: "時間がある" },
+      { en: "We have enough time today.", ja: "今日は十分な時間がある。", focus: "have", jaFocus: "時間がある" }
+    ],
+    m3: [
+      { en: "I have a question about this movie.", ja: "この映画について質問がある。", focus: "have", jaFocus: "質問がある" },
+      { en: "Do you have any ideas for dinner?", ja: "夕食のアイデアある？", focus: "have", jaFocus: "ある" }
+    ],
+    m4: [
+      { en: "I had coffee with my friend.", ja: "友人とコーヒーを飲んだ。", focus: "had", jaFocus: "飲んだ" },
+      { en: "We had lunch near the station.", ja: "駅の近くで昼食を食べた。", focus: "had", jaFocus: "食べた" }
+    ],
+    m5: [
+      { en: "I had a great time at the concert.", ja: "コンサートで楽しい時間を過ごした。", focus: "had", jaFocus: "過ごした" },
+      { en: "We had fun at the event.", ja: "イベントで楽しく過ごした。", focus: "had", jaFocus: "過ごした" }
+    ]
+  }
+};
+
+function fallbackDailyExamples(verb: Verb, title: string, focusText?: string): Example[] {
+  const base = focusText || verb.word.toLowerCase();
+  return [
+    { en: `I use ${base} in daily conversation.`, ja: `日常会話で${title}の感覚を使います。`, focus: base.split(" ")[0], jaFocus: "日常会話" },
+    { en: `This is a natural way to use ${base}.`, ja: `${title}を自然に使う言い方です。`, focus: base.split(" ")[0], jaFocus: "自然に使う" }
+  ];
+}
+
+function attachPremiumDailyExamples() {
+  const premiumVerbs = new Set(["get", "take", "make", "give", "have"]);
+  for (const verb of verbs) {
+    if (!premiumVerbs.has(verb.id)) continue;
+    for (const meaning of verb.meanings) {
+      meaning.dailyExamples = dailyMeaningExamples[verb.id]?.[meaning.id] ?? fallbackDailyExamples(verb, meaning.title, verb.word.toLowerCase());
+    }
+    for (const phrase of [...verb.collocations, ...verb.phrasalVerbs]) {
+      phrase.dailyExamples = [
+        { en: `I often ${phrase.phrase} on weekends.`, ja: `週末によく「${phrase.ja}」という場面があります。`, focus: phrase.phrase, jaFocus: phrase.ja },
+        { en: `It's useful to know how to ${phrase.phrase}.`, ja: `「${phrase.ja}」の言い方を知っておくと便利です。`, focus: phrase.phrase, jaFocus: phrase.ja }
+      ];
+    }
+  }
+}
+
+attachPremiumDailyExamples();
 
 export type TestSection = "basic" | "idioms" | "phrasal" | "all";
 

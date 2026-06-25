@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getVerb, verbs } from "@/lib/data";
 import SpeakButton from "@/components/SpeakButton";
 import ExampleCard from "@/components/ExampleCard";
+import PremiumExamples from "@/components/PremiumExamples";
 import AutoBookmark from "@/components/AutoBookmark";
 import BookmarkButton from "@/components/BookmarkButton";
 import VerbProgressPanel from "@/components/VerbProgressPanel";
@@ -82,6 +83,7 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
               </div>
 
               <div className="mt-4 space-y-3">
+                <div className="rounded-full border border-cyan-300/20 bg-slate-950/50 px-3 py-2 text-sm font-bold text-cyan-100">💼 仕事例文（標準）</div>
                 {meaning.examples.slice(0, 3).map((example, exampleIndex) => (
                   <ExampleCard
                     key={example.en}
@@ -98,6 +100,16 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
                   />
                 ))}
               </div>
+              <PremiumExamples
+                examples={meaning.dailyExamples}
+                phraseBase={{
+                  idPrefix: `${verb.id}:basic:${meaning.id}`,
+                  verbId: verb.id,
+                  section: "basic",
+                  meaningTitle: meaning.title,
+                  pattern: meaning.pattern
+                }}
+              />
             </article>
           ))}
         </section>

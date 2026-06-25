@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getVerb, verbs } from "@/lib/data";
 import SpeakButton from "@/components/SpeakButton";
 import ExampleCard from "@/components/ExampleCard";
+import PremiumExamples from "@/components/PremiumExamples";
 import AutoBookmark from "@/components/AutoBookmark";
 import BookmarkButton from "@/components/BookmarkButton";
 
@@ -49,7 +50,9 @@ export default async function VerbPhrasalPage({ params }: { params: Promise<{ id
                 <p className="font-bold">💡 イメージ</p>
                 <p className="mt-2 leading-relaxed">{p.image}</p>
               </div>
-              <div className="mt-4 space-y-3">{p.examples.slice(0, 3).map((e, exampleIndex) => (
+              <div className="mt-4 space-y-3">
+                <div className="rounded-full border border-blue-300/20 bg-slate-950/50 px-3 py-2 text-sm font-bold text-blue-100">💼 仕事例文（標準）</div>
+                {p.examples.slice(0, 3).map((e, exampleIndex) => (
                   <ExampleCard
                     key={e.en}
                     example={e}
@@ -63,7 +66,18 @@ export default async function VerbPhrasalPage({ params }: { params: Promise<{ id
                       ja: e.ja
                     }}
                   />
-                ))}</div>
+                ))}
+              </div>
+              <PremiumExamples
+                examples={p.dailyExamples}
+                phraseBase={{
+                  idPrefix: `${verb.id}:phrasal:${index}`,
+                  verbId: verb.id,
+                  section: "phrasal",
+                  meaningTitle: `句動詞：${p.phrase}`,
+                  pattern: p.pattern
+                }}
+              />
             </article>
           ))}
         </section>

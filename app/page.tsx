@@ -200,37 +200,40 @@ export default function Home() {
       </section>
 
       <section className="resume-card p-5">
-        <div className="flex items-end justify-between gap-3">
-          <div>
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
             <p className="text-sm font-bold text-cyan-200">現在攻略中</p>
             <p className="mt-1 text-3xl font-extrabold uppercase">{activeVerb.word}</p>
             <p className="mt-1 text-sm text-slate-300">基本動詞・熟語・句動詞の進捗を合算</p>
           </div>
-          <Link className="rounded-full bg-cyan-300 px-4 py-2 text-sm font-bold text-slate-950" href={`/verbs/${activeVerb.id}`}>開く</Link>
+          <Link
+            className="shrink-0 rounded-full bg-cyan-300 px-4 py-2 text-sm font-bold text-slate-950"
+            href={bookmark?.href ?? `/verbs/${activeVerb.id}`}
+          >
+            {bookmark ? "続きから" : "開く"}
+          </Link>
         </div>
+
         <div className="mt-4">
           <VerbProgressPanel verb={activeVerb} compact />
         </div>
-        <p className="mt-3 text-right text-sm font-bold text-cyan-100">達成率 {activeProgress}%</p>
-      </section>
 
-
-      {bookmark && bookmarkVerb && (
-        <section className="resume-card p-5">
-          <p className="text-sm font-bold text-cyan-200">🔖 前回の続き</p>
-          <div className="mt-3 flex items-end justify-between gap-3">
-            <div>
-              <p className="text-2xl font-extrabold uppercase">{bookmark.verbId}</p>
-              <p className="mt-1 text-sm text-slate-300">{getBookmarkSectionLabel(bookmark.section)}{bookmark.itemTitle ? ` / ${bookmark.itemTitle}` : ""}</p>
+        <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-slate-950/60 p-3">
+          <div className="flex items-center justify-between gap-3">
+            <div className="min-w-0">
+              <p className="text-xs font-bold tracking-[0.16em] text-cyan-200">前回の続き</p>
+              {bookmark ? (
+                <p className="mt-1 truncate text-sm text-slate-300">
+                  {getBookmarkSectionLabel(bookmark.section)}{bookmark.itemTitle ? ` / ${bookmark.itemTitle}` : ""}
+                </p>
+              ) : (
+                <p className="mt-1 text-sm text-slate-300">まだしおりはありません。</p>
+              )}
             </div>
-            <Link className="rounded-full bg-cyan-300 px-4 py-2 text-sm font-bold text-slate-950" href={bookmark.href}>再開する</Link>
+            <p className="shrink-0 text-right text-sm font-bold text-cyan-100">達成率 {activeProgress}%</p>
           </div>
-          <div className="mt-4">
-            <VerbProgressPanel verb={bookmarkVerb} compact />
-          </div>
-          <p className="mt-3 text-xs text-slate-300">次回もこの位置から再開できます。</p>
-        </section>
-      )}
+        </div>
+      </section>
 
       <section className="grid grid-cols-1 gap-3">
         <Link className="btn btn-primary block text-center text-base" href="/verbs">学習を始める</Link>

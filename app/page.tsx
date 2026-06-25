@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { verbs } from "@/lib/data";
+import { getVerb, verbs } from "@/lib/data";
+import VerbProgressPanel from "@/components/VerbProgressPanel";
 import {
   getCurrentProgress,
   getCurrentUsername,
@@ -48,6 +49,7 @@ export default function Home() {
 
   const completed = progress.studiedVerbIds.length;
   const plan = getLearningPlan(verbs.length, completed);
+  const bookmarkVerb = bookmark ? getVerb(bookmark.verbId) : null;
   const targetParts = splitTarget(plan.targetDate);
   const updateTarget = (value: string) => {
     setTarget(value);
@@ -133,7 +135,7 @@ export default function Home() {
       </section>
 
 
-      {bookmark && (
+      {bookmark && bookmarkVerb && (
         <section className="resume-card p-5">
           <p className="text-sm font-bold text-cyan-200">🔖 前回の続き</p>
           <div className="mt-3 flex items-end justify-between gap-3">
@@ -143,6 +145,10 @@ export default function Home() {
             </div>
             <Link className="rounded-full bg-cyan-300 px-4 py-2 text-sm font-bold text-slate-950" href={bookmark.href}>再開する</Link>
           </div>
+          <div className="mt-4">
+            <VerbProgressPanel verb={bookmarkVerb} compact />
+          </div>
+          <p className="mt-3 text-xs text-slate-300">次回もこの位置から再開できます。</p>
         </section>
       )}
 

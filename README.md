@@ -1,8 +1,13 @@
-# Verb Master v10.1 verified
+# Verb Master Ver.15
 
-- HOMEから Today's Verb / GET カードを削除済み
-- HOMEに LEARNING DASHBOARD / TARGET DATE / DAYS LEFT / DAILY GOAL を表示
-- ダッシュボード配色を全体へ反映
-- メニューは日本語
-- 上位10動詞を強化
-- `npm run build` 成功確認済み
+## Update
+- HOMEに前回の続きカードと進捗バーを追加
+- 動詞一覧に動詞ごとの進捗率を表示
+- 動詞詳細に基本動詞・熟語・句動詞ごとの進捗を表示
+- テスト満点で各セクション100%表示
+- しおり位置から途中進捗を%化
+- 既存のVer.14テスト下線、0.5倍速音声、上へ/下へボタンを維持
+
+## Build
+npm install
+npm run build

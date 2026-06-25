@@ -4,6 +4,7 @@ import SpeakButton from "@/components/SpeakButton";
 import ExampleCard from "@/components/ExampleCard";
 import AutoBookmark from "@/components/AutoBookmark";
 import BookmarkButton from "@/components/BookmarkButton";
+import VerbProgressPanel from "@/components/VerbProgressPanel";
 
 export function generateStaticParams() {
   return verbs.map((verb) => ({ id: verb.id }));
@@ -42,6 +43,8 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
         <p className="mt-3 leading-relaxed text-muted">{verb.coreDetail}</p>
       </section>
 
+      <VerbProgressPanel verb={verb} />
+
       <section className="card p-5 sm:p-6">
         <h2 className="text-xl font-bold">GET攻略フロー</h2>
         <div className="mt-4 grid grid-cols-3 gap-2 text-center text-sm">
@@ -54,11 +57,11 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
       {verb.meanings.length > 0 ? (
         <section className="space-y-5">
           <h2 className="px-1 text-xl font-bold">動詞単体の使い方</h2>
-          {verb.meanings.map((meaning) => (
-            <article key={meaning.id} className="card p-5 sm:p-6">
+          {verb.meanings.map((meaning, index) => (
+            <article key={meaning.id} id={`meaning-${index + 1}`} className="card scroll-mt-24 p-5 sm:p-6">
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-2xl font-bold leading-tight">{meaning.title}</h3>
-                <BookmarkButton verbId={verb.id} section="basic" label={`${verb.word} 基本動詞`} href={`/verbs/${verb.id}`} itemTitle={meaning.title} compact />
+                <BookmarkButton verbId={verb.id} section="basic" label={`${verb.word} 基本動詞`} href={`/verbs/${verb.id}#meaning-${index + 1}`} itemTitle={meaning.title} itemIndex={index + 1} compact />
               </div>
 
               <div className="type-card mt-4">

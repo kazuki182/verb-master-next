@@ -38,6 +38,11 @@ export type Verb = {
   importance: string;
   core: string;
   coreDetail: string;
+  coreVisual?: {
+    from: string[];
+    to: string;
+    label: string;
+  };
   meanings: MeaningBlock[];
   collocations: PhraseBlock[];
   phrasalVerbs: PhraseBlock[];
@@ -53,8 +58,9 @@ export const verbs: Verb[] = [
     "syllable": "get",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★★ 超重要",
-    "core": "自分のものになる",
-    "coreDetail": "物・情報・許可・機会・状態・場所が、自分の領域に入ってくるイメージ。社会人英語ではメール確認、承認取得、案件獲得、状況変化まで幅広く使う。",
+    "core": "外にあるもの・状態・情報が、自分のところへ入ってくる",
+    "coreDetail": "GETは、受け取る・得る・買う・到着する・理解するまで、外側にあったものが自分の領域に入る感覚で整理できます。仕事ではメール・承認・情報・機会・状態変化に使います。",
+    "coreVisual": { "from": ["📧 メール", "✅ 承認", "💡 情報", "🎯 機会", "📍 場所"], "to": "自分", "label": "外側 → 自分の領域" },
     "meanings": [
       {
         "id": "obtain",
@@ -898,8 +904,9 @@ export const verbs: Verb[] = [
     "syllable": "take",
     "transitivity": "他動詞中心",
     "importance": "★★★★★ 超重要",
-    "core": "自分の側に引き受ける",
-    "coreDetail": "物・時間・責任・行動・役割を自分の側に取って扱うイメージ。仕事では「責任を負う」「時間がかかる」「対応する」「引き継ぐ」で頻出。",
+    "core": "自分から取りに行き、自分の側で扱う",
+    "coreDetail": "TAKEは、物・時間・責任・行動・役割を自分側に引き取って扱う感覚です。仕事では責任を取る、時間がかかる、対応する、引き継ぐという使い方につながります。",
+    "coreVisual": { "from": ["📄 仕事", "⏰ 時間", "🧩 役割", "📞 対応", "📝 メモ"], "to": "自分が取る", "label": "自分 → 対象を取る" },
     "meanings": [
       {
         "id": "responsibility",
@@ -1322,8 +1329,9 @@ export const verbs: Verb[] = [
     "syllable": "make",
     "transitivity": "他動詞",
     "importance": "★★★★★ 超重要",
-    "core": "作り出す・結果を生む",
-    "coreDetail": "決定・進捗・資料・関係・状況を作り出すイメージ。仕事では「決める」「作成する」「進捗を出す」「調整する」で使う。",
+    "core": "手を加えて、形・結果・状態を作り出す",
+    "coreDetail": "MAKEは、資料・決定・進捗・関係・状況など、何かを作る、またはある状態を生み出す感覚です。仕事では決定する、作成する、進捗を出す、調整するに広がります。",
+    "coreVisual": { "from": ["🧱 材料", "💭 考え", "📊 情報", "🗓️ 予定", "👥 関係"], "to": "形・結果", "label": "材料 → 結果を作る" },
     "meanings": [
       {
         "id": "decision",
@@ -1745,8 +1753,9 @@ export const verbs: Verb[] = [
     "syllable": "give",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★★ 超重要",
-    "core": "相手に渡す",
-    "coreDetail": "情報・許可・説明・意見・機会を相手へ渡すイメージ。",
+    "core": "自分側のものを、相手へ渡す・届ける",
+    "coreDetail": "GIVEは、物だけでなく、情報・許可・説明・機会・印象などを相手側へ渡す感覚です。仕事ではフィードバックする、説明する、許可する、機会を与えるに広がります。",
+    "coreVisual": { "from": ["💬 説明", "📝 情報", "✅ 許可", "⭐ 機会", "📣 意見"], "to": "相手", "label": "自分 → 相手へ渡す" },
     "meanings": [
       {
         "id": "update",
@@ -2168,8 +2177,9 @@ export const verbs: Verb[] = [
     "syllable": "have",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★★ 超重要",
-    "core": "持っている",
-    "coreDetail": "会議・予定・問題・時間・経験を自分の状態として持っているイメージ。",
+    "core": "自分のところに、状態・予定・経験を持っている",
+    "coreDetail": "HAVEは、物の所有だけでなく、予定・会議・時間・問題・経験などを自分の状態として持っている感覚です。仕事では会議がある、時間がある、問題がある、経験があるに広がります。",
+    "coreVisual": { "from": ["📅 予定", "👥 会議", "⏳ 時間", "⚠️ 問題", "💼 経験"], "to": "自分が持つ", "label": "自分の状態として持つ" },
     "meanings": [
       {
         "id": "m1",

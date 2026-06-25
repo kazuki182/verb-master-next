@@ -41,6 +41,25 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
       <section className="card p-5 sm:p-6">
         <h2 className="text-xl font-bold">コアイメージ</h2>
         <p className="mt-3 text-2xl font-bold leading-snug">「{verb.core}」</p>
+        {verb.coreVisual && (
+          <div className="mt-4 rounded-3xl border border-cyan-300/20 bg-slate-950/50 p-4">
+            <p className="text-xs font-bold tracking-[0.2em] text-cyan-200">CORE IMAGE</p>
+            <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
+              <div className="flex flex-wrap gap-2">
+                {verb.coreVisual.from.map((item) => (
+                  <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-100">
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <div className="text-center text-2xl font-black text-cyan-200">→</div>
+              <div className="rounded-2xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-center font-bold text-cyan-50">
+                {verb.coreVisual.to}
+              </div>
+            </div>
+            <p className="mt-3 text-sm font-bold text-cyan-100">{verb.coreVisual.label}</p>
+          </div>
+        )}
         <p className="mt-3 leading-relaxed text-muted">{verb.coreDetail}</p>
       </section>
 

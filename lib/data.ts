@@ -2162,423 +2162,1389 @@ export const verbs: Verb[] = [
     "ipa": "/meɪk/",
     "kana": "メイク",
     "syllable": "make",
-    "transitivity": "他動詞",
+    "transitivity": "他動詞中心",
     "importance": "★★★★★ 超重要",
-    "core": "手を加えて、形・結果・状態を作り出す",
-    "coreDetail": "MAKEは、資料・決定・進捗・関係・状況など、何かを作る、またはある状態を生み出す感覚です。仕事では決定する、作成する、進捗を出す、調整するに広がります。",
-    "coreVisual": { "from": ["🧱 材料", "💭 考え", "📊 情報", "🗓️ 予定", "👥 関係"], "to": "形・結果", "label": "材料 → 結果を作る" },
+    "core": "何かを作り出す・結果を生み出す",
+    "coreDetail": "MAKEは、物だけでなく、決定・計画・時間・状況・印象などを「作り出す」動詞です。仕事では、判断する、準備する、進捗を出す、相手に理解させる場面でよく使います。",
+    "coreVisual": {
+        "from": [
+            "📄 資料",
+            "✅ 決定",
+            "📈 進捗",
+            "🗓️ 予定"
+        ],
+        "to": "結果",
+        "label": "行動 → 結果を作る"
+    },
     "meanings": [
-      {
-        "id": "decision",
-        "title": "① 決定する",
-        "pattern": "MAKE + decision / choice",
-        "transitivity": "他動詞",
-        "structure": "S + make + O",
-        "image": "考えた結果を形にする。",
-        "point": "make a decision は社会人英語の最重要表現。decide より名詞で管理しやすい。",
-        "examples": [
-          {
-            "en": "We need to make a decision today.",
-            "ja": "今日、決定する必要があります。",
-            "focus": "make a decision",
-            "jaFocus": "決定"
-          },
-          {
-            "en": "The manager made the final decision.",
-            "ja": "マネージャーが最終決定をしました。",
-            "focus": "made the final decision",
-            "jaFocus": "決定"
-          },
-          {
-            "en": "Can we make a decision by Friday?",
-            "ja": "金曜日までに決められますか？",
-            "focus": "make a decision",
-            "jaFocus": "決め"
-          }
-        ]
-      },
-      {
-        "id": "progress",
-        "title": "② 進捗を出す",
-        "pattern": "MAKE + progress",
-        "transitivity": "他動詞",
-        "structure": "S + make + O",
-        "image": "前に進む結果を作る。",
-        "point": "進捗報告で頻出。good / steady / little progress と組み合わせる。",
-        "examples": [
-          {
-            "en": "We made good progress this week.",
-            "ja": "今週は良い進捗がありました。",
-            "focus": "made good progress",
-            "jaFocus": "進捗"
-          },
-          {
-            "en": "The project is making steady progress.",
-            "ja": "案件は着実に進んでいます。",
-            "focus": "making steady progress",
-            "jaFocus": "進んで"
-          },
-          {
-            "en": "We didn’t make much progress today.",
-            "ja": "今日はあまり進捗が出ませんでした。",
-            "focus": "make much progress",
-            "jaFocus": "進捗"
-          }
-        ]
-      },
-      {
-        "id": "create",
-        "title": "③ 作成する",
-        "pattern": "MAKE + document / list / plan",
-        "transitivity": "他動詞",
-        "structure": "S + make + O",
-        "image": "資料や計画を形にする。",
-        "point": "create より日常的で短く言える。資料・リスト・計画に使いやすい。",
-        "examples": [
-          {
-            "en": "I made a proposal for the client.",
-            "ja": "クライアント向けの提案書を作成しました。",
-            "focus": "made a proposal",
-            "jaFocus": "作成"
-          },
-          {
-            "en": "Can you make a list of action items?",
-            "ja": "対応事項のリストを作ってもらえますか？",
-            "focus": "make a list",
-            "jaFocus": "作って"
-          },
-          {
-            "en": "Let’s make a plan for next month.",
-            "ja": "来月の計画を立てましょう。",
-            "focus": "make a plan",
-            "jaFocus": "立て"
-          }
-        ]
-      },
-      {
-        "id": "cause",
-        "title": "④ 〜させる",
-        "pattern": "MAKE + 人/物 + 形容詞",
-        "transitivity": "他動詞",
-        "structure": "S + make + O + C",
-        "image": "相手や状況に変化を生む。",
-        "point": "make it clear / make it easy など、説明や調整で便利。",
-        "examples": [
-          {
-            "en": "This chart makes the data clear.",
-            "ja": "このグラフでデータが分かりやすくなります。",
-            "focus": "makes the data clear",
-            "jaFocus": "分かりやすく"
-          },
-          {
-            "en": "The new system makes our work easier.",
-            "ja": "新システムで仕事が楽になります。",
-            "focus": "makes our work easier",
-            "jaFocus": "楽に"
-          },
-          {
-            "en": "Please make the deadline clear.",
-            "ja": "締切を明確にしてください。",
-            "focus": "make the deadline clear",
-            "jaFocus": "明確に"
-          }
-        ]
-      },
-      {
-        "id": "arrange",
-        "title": "⑤ 調整・約束する",
-        "pattern": "MAKE + appointment / arrangement",
-        "transitivity": "他動詞",
-        "structure": "S + make + O",
-        "image": "予定や約束を作る。",
-        "point": "make an appointment / make arrangements は社外連絡で使いやすい。",
-        "examples": [
-          {
-            "en": "I made an appointment with the client.",
-            "ja": "クライアントと面談の約束をしました。",
-            "focus": "made an appointment",
-            "jaFocus": "約束"
-          },
-          {
-            "en": "We need to make arrangements for the visit.",
-            "ja": "訪問の手配をする必要があります。",
-            "focus": "make arrangements",
-            "jaFocus": "手配"
-          },
-          {
-            "en": "Can you make time for a short call?",
-            "ja": "短い電話の時間を作れますか？",
-            "focus": "make time",
-            "jaFocus": "時間を作れ"
-          }
-        ]
-      }
+        {
+            "id": "create",
+            "title": "① 作る・作成する",
+            "pattern": "MAKE + 名詞",
+            "transitivity": "他動詞",
+            "structure": "S + make + O",
+            "image": "資料・案・仕組みなどを作り出す。",
+            "point": "make の後ろに作るものを置く。仕事では document, report, list, plan などとよく使う。",
+            "examples": [
+                {
+                    "en": "I made a report for the meeting.",
+                    "ja": "会議用の報告書を作成した。",
+                    "focus": "made",
+                    "object": "a report",
+                    "jaFocus": "作成した"
+                },
+                {
+                    "en": "We made a checklist for the project.",
+                    "ja": "その案件用のチェックリストを作成した。",
+                    "focus": "made",
+                    "object": "a checklist",
+                    "jaFocus": "作成した"
+                },
+                {
+                    "en": "She made a new proposal for the client.",
+                    "ja": "彼女は顧客向けに新しい提案書を作成した。",
+                    "focus": "made",
+                    "object": "a new proposal",
+                    "jaFocus": "作成した"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I made dinner after work.",
+                    "ja": "仕事の後に夕食を作った。",
+                    "focus": "made",
+                    "object": "dinner",
+                    "jaFocus": "作った"
+                },
+                {
+                    "en": "He made a small shelf at home.",
+                    "ja": "彼は家で小さな棚を作った。",
+                    "focus": "made",
+                    "object": "a small shelf",
+                    "jaFocus": "作った"
+                }
+            ]
+        },
+        {
+            "id": "decision",
+            "title": "② 決める・判断する",
+            "pattern": "MAKE + a decision",
+            "transitivity": "他動詞",
+            "structure": "S + make + O",
+            "image": "考えた結果として決定を作る。",
+            "point": "decision, choice, judgment など、判断を表す名詞と相性が良い。",
+            "examples": [
+                {
+                    "en": "We need to make a decision today.",
+                    "ja": "今日中に決定する必要があります。",
+                    "focus": "make",
+                    "object": "a decision",
+                    "jaFocus": "決定する"
+                },
+                {
+                    "en": "The manager made the final decision.",
+                    "ja": "マネージャーが最終判断をした。",
+                    "focus": "made",
+                    "object": "the final decision",
+                    "jaFocus": "判断をした"
+                },
+                {
+                    "en": "Please make a decision by Friday.",
+                    "ja": "金曜日までに決めてください。",
+                    "focus": "make",
+                    "object": "a decision",
+                    "jaFocus": "決めて"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I made a decision to study English again.",
+                    "ja": "英語をもう一度勉強することに決めた。",
+                    "focus": "made",
+                    "object": "a decision",
+                    "jaFocus": "決めた"
+                },
+                {
+                    "en": "She made the right choice.",
+                    "ja": "彼女は正しい選択をした。",
+                    "focus": "made",
+                    "object": "the right choice",
+                    "jaFocus": "選択をした"
+                }
+            ]
+        },
+        {
+            "id": "progress",
+            "title": "③ 進捗を出す",
+            "pattern": "MAKE + progress",
+            "transitivity": "他動詞",
+            "structure": "S + make + O",
+            "image": "作業の結果として前進を生み出す。",
+            "point": "progress は数えられない名詞なので a progress とは言わない。",
+            "examples": [
+                {
+                    "en": "We made good progress this week.",
+                    "ja": "今週は順調に進捗を出せました。",
+                    "focus": "made",
+                    "object": "good progress",
+                    "jaFocus": "進捗を出せました"
+                },
+                {
+                    "en": "The team made progress on the design.",
+                    "ja": "チームは設計で進捗を出した。",
+                    "focus": "made",
+                    "object": "progress",
+                    "jaFocus": "進捗を出した"
+                },
+                {
+                    "en": "I want to make more progress next month.",
+                    "ja": "来月はもっと進捗を出したいです。",
+                    "focus": "make",
+                    "object": "more progress",
+                    "jaFocus": "進捗を出したい"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I made progress with my English.",
+                    "ja": "英語学習で進歩した。",
+                    "focus": "made",
+                    "object": "progress",
+                    "jaFocus": "進歩した"
+                },
+                {
+                    "en": "He made slow progress at first.",
+                    "ja": "彼は最初はゆっくり進歩した。",
+                    "focus": "made",
+                    "object": "slow progress",
+                    "jaFocus": "進歩した"
+                }
+            ]
+        },
+        {
+            "id": "mistake",
+            "title": "④ ミスをする",
+            "pattern": "MAKE + a mistake",
+            "transitivity": "他動詞",
+            "structure": "S + make + O",
+            "image": "行動の結果としてミスを生む。",
+            "point": "mistake, error などと使う。ビジネスでは報告・改善の場面でよく使う。",
+            "examples": [
+                {
+                    "en": "I made a mistake in the quotation.",
+                    "ja": "見積書でミスをしました。",
+                    "focus": "made",
+                    "object": "a mistake",
+                    "jaFocus": "ミスをしました"
+                },
+                {
+                    "en": "We made an error in the schedule.",
+                    "ja": "スケジュールに誤りがありました。",
+                    "focus": "made",
+                    "object": "an error",
+                    "jaFocus": "誤りがありました"
+                },
+                {
+                    "en": "Please check it before we make a mistake.",
+                    "ja": "ミスをする前に確認してください。",
+                    "focus": "make",
+                    "object": "a mistake",
+                    "jaFocus": "ミスをする"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I made a mistake on the form.",
+                    "ja": "申込書でミスをした。",
+                    "focus": "made",
+                    "object": "a mistake",
+                    "jaFocus": "ミスをした"
+                },
+                {
+                    "en": "Everyone makes mistakes sometimes.",
+                    "ja": "誰でも時々ミスをする。",
+                    "focus": "makes",
+                    "object": "mistakes",
+                    "jaFocus": "ミスをする"
+                }
+            ]
+        },
+        {
+            "id": "time",
+            "title": "⑤ 時間を作る",
+            "pattern": "MAKE + time",
+            "transitivity": "他動詞",
+            "structure": "S + make + O",
+            "image": "予定の中から時間を作り出す。",
+            "point": "make time は「時間を作る」。take time は「時間がかかる」と対比して覚える。",
+            "examples": [
+                {
+                    "en": "I will make time for the meeting tomorrow.",
+                    "ja": "明日の会議の時間を作ります。",
+                    "focus": "make",
+                    "object": "time",
+                    "jaFocus": "時間を作ります"
+                },
+                {
+                    "en": "Can you make time for a quick call?",
+                    "ja": "短い電話の時間を作れますか。",
+                    "focus": "make",
+                    "object": "time",
+                    "jaFocus": "時間を作れますか"
+                },
+                {
+                    "en": "We need to make time to review the proposal.",
+                    "ja": "提案書を確認する時間を作る必要があります。",
+                    "focus": "make",
+                    "object": "time",
+                    "jaFocus": "時間を作る"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I made time to go to the gym.",
+                    "ja": "ジムに行く時間を作った。",
+                    "focus": "made",
+                    "object": "time",
+                    "jaFocus": "時間を作った"
+                },
+                {
+                    "en": "She makes time for her family.",
+                    "ja": "彼女は家族との時間を作っている。",
+                    "focus": "makes",
+                    "object": "time",
+                    "jaFocus": "時間を作っている"
+                }
+            ]
+        },
+        {
+            "id": "sure",
+            "title": "⑥ 確認する・確実にする",
+            "pattern": "MAKE SURE + 文",
+            "transitivity": "他動詞句",
+            "structure": "S + make sure + clause",
+            "image": "不確実なことを確実な状態にする。",
+            "point": "make sure は仕事で非常によく使う。「必ず〜する」「確認する」。",
+            "examples": [
+                {
+                    "en": "Please make sure the document is attached.",
+                    "ja": "資料が添付されているか確認してください。",
+                    "focus": "make sure",
+                    "jaFocus": "確認してください"
+                },
+                {
+                    "en": "I will make sure the client receives it.",
+                    "ja": "顧客がそれを受け取れるようにします。",
+                    "focus": "make sure",
+                    "jaFocus": "ようにします"
+                },
+                {
+                    "en": "Make sure you update the file before the meeting.",
+                    "ja": "会議前にファイルを更新してください。",
+                    "focus": "Make sure",
+                    "jaFocus": "してください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Make sure you lock the door.",
+                    "ja": "ドアに鍵をかけたか確認して。",
+                    "focus": "Make sure",
+                    "jaFocus": "確認して"
+                },
+                {
+                    "en": "I made sure the tickets were in my bag.",
+                    "ja": "チケットがバッグに入っているか確認した。",
+                    "focus": "made sure",
+                    "jaFocus": "確認した"
+                }
+            ]
+        },
+        {
+            "id": "money",
+            "title": "⑦ 稼ぐ・売上を作る",
+            "pattern": "MAKE + money / sales",
+            "transitivity": "他動詞",
+            "structure": "S + make + O",
+            "image": "仕事や販売の結果としてお金・売上を生み出す。",
+            "point": "make money, make a profit, make sales と使う。",
+            "examples": [
+                {
+                    "en": "This product made a profit last quarter.",
+                    "ja": "この商品は前四半期に利益を出しました。",
+                    "focus": "made",
+                    "object": "a profit",
+                    "jaFocus": "利益を出しました"
+                },
+                {
+                    "en": "We need to make more sales this month.",
+                    "ja": "今月はもっと売上を作る必要があります。",
+                    "focus": "make",
+                    "object": "more sales",
+                    "jaFocus": "売上を作る"
+                },
+                {
+                    "en": "The campaign made a big impact on sales.",
+                    "ja": "そのキャンペーンは売上に大きな影響を与えた。",
+                    "focus": "made",
+                    "object": "a big impact",
+                    "jaFocus": "影響を与えた"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "He makes money from his side job.",
+                    "ja": "彼は副業でお金を稼いでいる。",
+                    "focus": "makes",
+                    "object": "money",
+                    "jaFocus": "稼いでいる"
+                },
+                {
+                    "en": "This shop makes good coffee and good money.",
+                    "ja": "この店は良いコーヒーを作り、しっかり稼いでいる。",
+                    "focus": "makes",
+                    "object": "good coffee and good money",
+                    "jaFocus": "稼いでいる"
+                }
+            ]
+        },
+        {
+            "id": "clear",
+            "title": "⑧ 明確にする",
+            "pattern": "MAKE + O + C",
+            "transitivity": "他動詞",
+            "structure": "S + make + O + C",
+            "image": "相手や状況をある状態にする。",
+            "point": "make it clear, make the process easier のように「OをCにする」。",
+            "examples": [
+                {
+                    "en": "I made the schedule clear for everyone.",
+                    "ja": "全員にスケジュールを明確にしました。",
+                    "focus": "made",
+                    "object": "the schedule",
+                    "jaFocus": "明確にしました"
+                },
+                {
+                    "en": "This chart makes the result easier to understand.",
+                    "ja": "この図は結果を理解しやすくします。",
+                    "focus": "makes",
+                    "object": "the result",
+                    "jaFocus": "理解しやすくします"
+                },
+                {
+                    "en": "Please make your request clear.",
+                    "ja": "依頼内容を明確にしてください。",
+                    "focus": "make",
+                    "object": "your request",
+                    "jaFocus": "明確にして"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "This app makes English easier.",
+                    "ja": "このアプリは英語を簡単にしてくれる。",
+                    "focus": "makes",
+                    "object": "English",
+                    "jaFocus": "簡単にしてくれる"
+                },
+                {
+                    "en": "The explanation made me happy.",
+                    "ja": "その説明でうれしくなった。",
+                    "focus": "made",
+                    "object": "me",
+                    "jaFocus": "うれしくなった"
+                }
+            ]
+        },
+        {
+            "id": "arrangement",
+            "title": "⑨ 予定・手配をする",
+            "pattern": "MAKE + arrangement / appointment",
+            "transitivity": "他動詞",
+            "structure": "S + make + O",
+            "image": "必要な準備や予定を作る。",
+            "point": "appointment, reservation, arrangement などと使う。",
+            "examples": [
+                {
+                    "en": "I made an appointment with the client.",
+                    "ja": "顧客とのアポイントを取りました。",
+                    "focus": "made",
+                    "object": "an appointment",
+                    "jaFocus": "アポイントを取りました"
+                },
+                {
+                    "en": "We made arrangements for the business trip.",
+                    "ja": "出張の手配をしました。",
+                    "focus": "made",
+                    "object": "arrangements",
+                    "jaFocus": "手配をしました"
+                },
+                {
+                    "en": "Can you make a reservation for lunch?",
+                    "ja": "昼食の予約をしてもらえますか。",
+                    "focus": "make",
+                    "object": "a reservation",
+                    "jaFocus": "予約をして"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I made a reservation at a restaurant.",
+                    "ja": "レストランを予約した。",
+                    "focus": "made",
+                    "object": "a reservation",
+                    "jaFocus": "予約した"
+                },
+                {
+                    "en": "She made plans for the weekend.",
+                    "ja": "彼女は週末の予定を立てた。",
+                    "focus": "made",
+                    "object": "plans",
+                    "jaFocus": "予定を立てた"
+                }
+            ]
+        },
+        {
+            "id": "contact",
+            "title": "⑩ 連絡・発言をする",
+            "pattern": "MAKE + call / comment / request",
+            "transitivity": "他動詞",
+            "structure": "S + make + O",
+            "image": "電話・発言・依頼などの行動を生み出す。",
+            "point": "make a call, make a comment, make a request は仕事で頻出。",
+            "examples": [
+                {
+                    "en": "I made a call to the supplier.",
+                    "ja": "仕入先に電話をしました。",
+                    "focus": "made",
+                    "object": "a call",
+                    "jaFocus": "電話をしました"
+                },
+                {
+                    "en": "She made a comment during the meeting.",
+                    "ja": "彼女は会議中にコメントした。",
+                    "focus": "made",
+                    "object": "a comment",
+                    "jaFocus": "コメントした"
+                },
+                {
+                    "en": "We made a request to change the delivery date.",
+                    "ja": "納期変更の依頼をしました。",
+                    "focus": "made",
+                    "object": "a request",
+                    "jaFocus": "依頼をしました"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I made a quick call before dinner.",
+                    "ja": "夕食前に短い電話をした。",
+                    "focus": "made",
+                    "object": "a quick call",
+                    "jaFocus": "電話をした"
+                },
+                {
+                    "en": "He made a funny comment.",
+                    "ja": "彼は面白いコメントをした。",
+                    "focus": "made",
+                    "object": "a funny comment",
+                    "jaFocus": "コメントをした"
+                }
+            ]
+        }
     ],
     "collocations": [
-      {
-        "phrase": "make a decision",
-        "ja": "決定する",
-        "image": "考えを結果として作る。",
-        "pattern": "make + 名詞",
-        "examples": [
-          {
-            "en": "Let’s make a decision today.",
-            "ja": "今日決めましょう。",
-            "focus": "make a decision",
-            "jaFocus": "決め"
-          },
-          {
-            "en": "We made a quick decision.",
-            "ja": "素早く決定しました。",
-            "focus": "made a quick decision",
-            "jaFocus": "決定"
-          },
-          {
-            "en": "It is hard to make a decision without data.",
-            "ja": "データなしで決めるのは難しいです。",
-            "focus": "make a decision",
-            "jaFocus": "決める"
-          }
-        ]
-      },
-      {
-        "phrase": "make progress",
-        "ja": "進捗を出す",
-        "image": "前に進む状態を作る。",
-        "pattern": "make + progress",
-        "examples": [
-          {
-            "en": "We are making progress.",
-            "ja": "進捗が出ています。",
-            "focus": "making progress",
-            "jaFocus": "進捗"
-          },
-          {
-            "en": "They made progress on the issue.",
-            "ja": "彼らはその問題で進捗を出しました。",
-            "focus": "made progress",
-            "jaFocus": "進捗"
-          },
-          {
-            "en": "Let’s make more progress this week.",
-            "ja": "今週さらに進めましょう。",
-            "focus": "make more progress",
-            "jaFocus": "進め"
-          }
-        ]
-      },
-      {
-        "phrase": "make sure",
-        "ja": "確認する",
-        "image": "確実な状態を作る。",
-        "pattern": "make sure + 文",
-        "examples": [
-          {
-            "en": "Please make sure the file is correct.",
-            "ja": "ファイルが正しいか確認してください。",
-            "focus": "make sure",
-            "jaFocus": "確認"
-          },
-          {
-            "en": "I’ll make sure it is updated.",
-            "ja": "更新されているか確認します。",
-            "focus": "make sure",
-            "jaFocus": "確認"
-          },
-          {
-            "en": "Make sure everyone has the latest version.",
-            "ja": "全員が最新版を持っているか確認してください。",
-            "focus": "Make sure",
-            "jaFocus": "確認"
-          }
-        ]
-      },
-      {
-        "phrase": "make time",
-        "ja": "時間を作る",
-        "image": "予定の中に時間を作る。",
-        "pattern": "make + time",
-        "examples": [
-          {
-            "en": "Can you make time tomorrow?",
-            "ja": "明日時間を作れますか？",
-            "focus": "make time",
-            "jaFocus": "時間"
-          },
-          {
-            "en": "I’ll make time for the call.",
-            "ja": "その電話の時間を作ります。",
-            "focus": "make time",
-            "jaFocus": "時間"
-          },
-          {
-            "en": "We need to make time for review.",
-            "ja": "確認の時間を作る必要があります。",
-            "focus": "make time",
-            "jaFocus": "時間"
-          }
-        ]
-      },
-      {
-        "phrase": "make a mistake",
-        "ja": "ミスをする",
-        "image": "ミスという結果を作ってしまう。",
-        "pattern": "make + a mistake",
-        "examples": [
-          {
-            "en": "I made a mistake in the report.",
-            "ja": "報告書でミスをしました。",
-            "focus": "made a mistake",
-            "jaFocus": "ミス"
-          },
-          {
-            "en": "It’s okay to make mistakes.",
-            "ja": "ミスしても大丈夫です。",
-            "focus": "make mistakes",
-            "jaFocus": "ミス"
-          },
-          {
-            "en": "We should avoid making the same mistake.",
-            "ja": "同じミスを避けるべきです。",
-            "focus": "making the same mistake",
-            "jaFocus": "ミス"
-          }
-        ]
-      }
+        {
+            "phrase": "make a decision",
+            "ja": "決定する",
+            "image": "考えた結果として決定を作る。",
+            "pattern": "make + a decision",
+            "examples": [
+                {
+                    "en": "We need to make a decision today.",
+                    "ja": "今日中に決定する必要があります。",
+                    "focus": "make",
+                    "object": "a decision",
+                    "jaFocus": "決定する"
+                },
+                {
+                    "en": "The team made a decision after the meeting.",
+                    "ja": "チームは会議後に決定した。",
+                    "focus": "made",
+                    "object": "a decision",
+                    "jaFocus": "決定した"
+                },
+                {
+                    "en": "Please make a decision by noon.",
+                    "ja": "正午までに決めてください。",
+                    "focus": "make",
+                    "object": "a decision",
+                    "jaFocus": "決めて"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I made a decision to move.",
+                    "ja": "引っ越すことに決めた。",
+                    "focus": "made",
+                    "object": "a decision",
+                    "jaFocus": "決めた"
+                },
+                {
+                    "en": "She made a decision quickly.",
+                    "ja": "彼女はすぐに決めた。",
+                    "focus": "made",
+                    "object": "a decision",
+                    "jaFocus": "決めた"
+                }
+            ]
+        },
+        {
+            "phrase": "make progress",
+            "ja": "進捗を出す",
+            "image": "作業が前に進む状態を作る。",
+            "pattern": "make + progress",
+            "examples": [
+                {
+                    "en": "We made progress on the project.",
+                    "ja": "案件で進捗を出しました。",
+                    "focus": "made",
+                    "object": "progress",
+                    "jaFocus": "進捗を出しました"
+                },
+                {
+                    "en": "The design team made good progress.",
+                    "ja": "設計チームは順調に進んだ。",
+                    "focus": "made",
+                    "object": "good progress",
+                    "jaFocus": "進んだ"
+                },
+                {
+                    "en": "I want to make progress this week.",
+                    "ja": "今週は進捗を出したいです。",
+                    "focus": "make",
+                    "object": "progress",
+                    "jaFocus": "進捗を出したい"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I made progress with English.",
+                    "ja": "英語で進歩した。",
+                    "focus": "made",
+                    "object": "progress",
+                    "jaFocus": "進歩した"
+                },
+                {
+                    "en": "He made a little progress.",
+                    "ja": "彼は少し進歩した。",
+                    "focus": "made",
+                    "object": "a little progress",
+                    "jaFocus": "進歩した"
+                }
+            ]
+        },
+        {
+            "phrase": "make sure",
+            "ja": "確認する",
+            "image": "不確実なことを確実にする。",
+            "pattern": "make sure + 文",
+            "examples": [
+                {
+                    "en": "Please make sure the file is updated.",
+                    "ja": "ファイルが更新されているか確認してください。",
+                    "focus": "make sure",
+                    "jaFocus": "確認してください"
+                },
+                {
+                    "en": "I will make sure it is done today.",
+                    "ja": "今日中に終わるようにします。",
+                    "focus": "make sure",
+                    "jaFocus": "ようにします"
+                },
+                {
+                    "en": "Make sure the client gets the latest version.",
+                    "ja": "顧客が最新版を受け取れるようにしてください。",
+                    "focus": "Make sure",
+                    "jaFocus": "してください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Make sure you bring your wallet.",
+                    "ja": "財布を持ったか確認して。",
+                    "focus": "Make sure",
+                    "jaFocus": "確認して"
+                },
+                {
+                    "en": "I made sure everything was ready.",
+                    "ja": "すべて準備できているか確認した。",
+                    "focus": "made sure",
+                    "jaFocus": "確認した"
+                }
+            ]
+        },
+        {
+            "phrase": "make a mistake",
+            "ja": "ミスをする",
+            "image": "行動の結果としてミスを生む。",
+            "pattern": "make + a mistake",
+            "examples": [
+                {
+                    "en": "I made a mistake in the email.",
+                    "ja": "メールでミスをしました。",
+                    "focus": "made",
+                    "object": "a mistake",
+                    "jaFocus": "ミスをしました"
+                },
+                {
+                    "en": "We cannot make the same mistake again.",
+                    "ja": "同じミスを繰り返せません。",
+                    "focus": "make",
+                    "object": "the same mistake",
+                    "jaFocus": "ミスを繰り返せません"
+                },
+                {
+                    "en": "Please double-check it before you make a mistake.",
+                    "ja": "ミスをする前に再確認してください。",
+                    "focus": "make",
+                    "object": "a mistake",
+                    "jaFocus": "ミスをする"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Everyone makes mistakes.",
+                    "ja": "誰でもミスをする。",
+                    "focus": "makes",
+                    "object": "mistakes",
+                    "jaFocus": "ミスをする"
+                },
+                {
+                    "en": "I made a small mistake.",
+                    "ja": "小さなミスをした。",
+                    "focus": "made",
+                    "object": "a small mistake",
+                    "jaFocus": "ミスをした"
+                }
+            ]
+        },
+        {
+            "phrase": "make time",
+            "ja": "時間を作る",
+            "image": "予定の中から時間を作る。",
+            "pattern": "make + time",
+            "examples": [
+                {
+                    "en": "Can you make time for a quick meeting?",
+                    "ja": "短い会議の時間を作れますか。",
+                    "focus": "make",
+                    "object": "time",
+                    "jaFocus": "時間を作れますか"
+                },
+                {
+                    "en": "I made time to review the quote.",
+                    "ja": "見積を確認する時間を作りました。",
+                    "focus": "made",
+                    "object": "time",
+                    "jaFocus": "時間を作りました"
+                },
+                {
+                    "en": "We need to make time for training.",
+                    "ja": "研修の時間を作る必要があります。",
+                    "focus": "make",
+                    "object": "time",
+                    "jaFocus": "時間を作る"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I made time for my family.",
+                    "ja": "家族との時間を作った。",
+                    "focus": "made",
+                    "object": "time",
+                    "jaFocus": "時間を作った"
+                },
+                {
+                    "en": "She makes time to read.",
+                    "ja": "彼女は読書の時間を作っている。",
+                    "focus": "makes",
+                    "object": "time",
+                    "jaFocus": "時間を作っている"
+                }
+            ]
+        },
+        {
+            "phrase": "make a plan",
+            "ja": "計画を立てる",
+            "image": "行動の流れを作る。",
+            "pattern": "make + a plan",
+            "examples": [
+                {
+                    "en": "Let’s make a plan for next month.",
+                    "ja": "来月の計画を立てましょう。",
+                    "focus": "make",
+                    "object": "a plan",
+                    "jaFocus": "計画を立てましょう"
+                },
+                {
+                    "en": "We made a plan for the launch.",
+                    "ja": "発売に向けた計画を立てました。",
+                    "focus": "made",
+                    "object": "a plan",
+                    "jaFocus": "計画を立てました"
+                },
+                {
+                    "en": "Please make a backup plan.",
+                    "ja": "予備の計画を立ててください。",
+                    "focus": "make",
+                    "object": "a backup plan",
+                    "jaFocus": "計画を立てて"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I made a plan for the weekend.",
+                    "ja": "週末の計画を立てた。",
+                    "focus": "made",
+                    "object": "a plan",
+                    "jaFocus": "計画を立てた"
+                },
+                {
+                    "en": "They made travel plans together.",
+                    "ja": "彼らは一緒に旅行計画を立てた。",
+                    "focus": "made",
+                    "object": "travel plans",
+                    "jaFocus": "計画を立てた"
+                }
+            ]
+        },
+        {
+            "phrase": "make a request",
+            "ja": "依頼する",
+            "image": "相手に求める行動を作る。",
+            "pattern": "make + a request",
+            "examples": [
+                {
+                    "en": "We made a request for more information.",
+                    "ja": "追加情報を依頼しました。",
+                    "focus": "made",
+                    "object": "a request",
+                    "jaFocus": "依頼しました"
+                },
+                {
+                    "en": "The client made a request to change the color.",
+                    "ja": "顧客が色変更を依頼しました。",
+                    "focus": "made",
+                    "object": "a request",
+                    "jaFocus": "依頼しました"
+                },
+                {
+                    "en": "Can I make one request?",
+                    "ja": "1つ依頼してもよいですか。",
+                    "focus": "make",
+                    "object": "one request",
+                    "jaFocus": "依頼して"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "She made a request at the front desk.",
+                    "ja": "彼女は受付で依頼した。",
+                    "focus": "made",
+                    "object": "a request",
+                    "jaFocus": "依頼した"
+                },
+                {
+                    "en": "I made a small request.",
+                    "ja": "小さなお願いをした。",
+                    "focus": "made",
+                    "object": "a small request",
+                    "jaFocus": "お願いをした"
+                }
+            ]
+        },
+        {
+            "phrase": "make an appointment",
+            "ja": "予約・アポイントを取る",
+            "image": "会う時間を作る。",
+            "pattern": "make + an appointment",
+            "examples": [
+                {
+                    "en": "I made an appointment with the client.",
+                    "ja": "顧客とのアポイントを取りました。",
+                    "focus": "made",
+                    "object": "an appointment",
+                    "jaFocus": "アポイントを取りました"
+                },
+                {
+                    "en": "Can you make an appointment for next week?",
+                    "ja": "来週のアポイントを取れますか。",
+                    "focus": "make",
+                    "object": "an appointment",
+                    "jaFocus": "アポイントを取れますか"
+                },
+                {
+                    "en": "She made an appointment with the supplier.",
+                    "ja": "彼女は仕入先とのアポイントを取った。",
+                    "focus": "made",
+                    "object": "an appointment",
+                    "jaFocus": "アポイントを取った"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I made a doctor’s appointment.",
+                    "ja": "病院の予約を取った。",
+                    "focus": "made",
+                    "object": "a doctor’s appointment",
+                    "jaFocus": "予約を取った"
+                },
+                {
+                    "en": "He made an appointment online.",
+                    "ja": "彼はオンラインで予約した。",
+                    "focus": "made",
+                    "object": "an appointment",
+                    "jaFocus": "予約した"
+                }
+            ]
+        },
+        {
+            "phrase": "make it clear",
+            "ja": "明確にする",
+            "image": "相手が分かる状態を作る。",
+            "pattern": "make + it + clear",
+            "examples": [
+                {
+                    "en": "I made it clear that the deadline is Friday.",
+                    "ja": "締切が金曜日であることを明確にしました。",
+                    "focus": "made",
+                    "object": "it",
+                    "jaFocus": "明確にしました"
+                },
+                {
+                    "en": "Please make it clear in the email.",
+                    "ja": "メールで明確にしてください。",
+                    "focus": "make",
+                    "object": "it",
+                    "jaFocus": "明確にして"
+                },
+                {
+                    "en": "The manager made it clear what we should do.",
+                    "ja": "マネージャーは私たちがすべきことを明確にした。",
+                    "focus": "made",
+                    "object": "it",
+                    "jaFocus": "明確にした"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "She made it clear that she was busy.",
+                    "ja": "彼女は忙しいことをはっきり伝えた。",
+                    "focus": "made",
+                    "object": "it",
+                    "jaFocus": "はっきり伝えた"
+                },
+                {
+                    "en": "I made my point clear.",
+                    "ja": "自分の考えを明確にした。",
+                    "focus": "made",
+                    "object": "my point",
+                    "jaFocus": "明確にした"
+                }
+            ]
+        },
+        {
+            "phrase": "make sense",
+            "ja": "意味が分かる・筋が通る",
+            "image": "内容が理解できる形になる。",
+            "pattern": "make + sense",
+            "examples": [
+                {
+                    "en": "Your explanation makes sense.",
+                    "ja": "あなたの説明は筋が通っています。",
+                    "focus": "makes",
+                    "object": "sense",
+                    "jaFocus": "筋が通っています"
+                },
+                {
+                    "en": "This schedule does not make sense.",
+                    "ja": "このスケジュールは現実的ではありません。",
+                    "focus": "make",
+                    "object": "sense",
+                    "jaFocus": "現実的ではありません"
+                },
+                {
+                    "en": "It makes sense to review it again.",
+                    "ja": "もう一度確認するのは理にかなっています。",
+                    "focus": "makes",
+                    "object": "sense",
+                    "jaFocus": "理にかなっています"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "That makes sense.",
+                    "ja": "それなら分かる。",
+                    "focus": "makes",
+                    "object": "sense",
+                    "jaFocus": "分かる"
+                },
+                {
+                    "en": "His story did not make sense.",
+                    "ja": "彼の話は筋が通らなかった。",
+                    "focus": "make",
+                    "object": "sense",
+                    "jaFocus": "筋が通らなかった"
+                }
+            ]
+        }
     ],
     "phrasalVerbs": [
-      {
-        "phrase": "make up",
-        "ja": "構成する・埋め合わせる",
-        "image": "不足や全体を作り上げる。",
-        "pattern": "make up + 名詞",
-        "examples": [
-          {
-            "en": "These costs make up 30% of the budget.",
-            "ja": "これらの費用が予算の30%を占めます。",
-            "focus": "make up",
-            "jaFocus": "占め"
-          },
-          {
-            "en": "I’ll make up for the delay.",
-            "ja": "遅れを埋め合わせます。",
-            "focus": "make up for",
-            "jaFocus": "埋め合わせ"
-          },
-          {
-            "en": "The team is made up of five members.",
-            "ja": "チームは5名で構成されています。",
-            "focus": "made up of",
-            "jaFocus": "構成"
-          }
-        ]
-      },
-      {
-        "phrase": "make out",
-        "ja": "理解する・判別する",
-        "image": "ぼんやりしたものを形として捉える。",
-        "pattern": "make out + 名詞",
-        "examples": [
-          {
-            "en": "I can’t make out the numbers.",
-            "ja": "数字が読み取れません。",
-            "focus": "make out",
-            "jaFocus": "読み取れ"
-          },
-          {
-            "en": "Can you make out what he said?",
-            "ja": "彼が言ったことを聞き取れますか？",
-            "focus": "make out",
-            "jaFocus": "聞き取れ"
-          },
-          {
-            "en": "It was hard to make out the details.",
-            "ja": "詳細を把握するのが難しかったです。",
-            "focus": "make out",
-            "jaFocus": "把握"
-          }
-        ]
-      },
-      {
-        "phrase": "make for",
-        "ja": "〜に役立つ・向かう",
-        "image": "ある結果や方向を作る。",
-        "pattern": "make for + 名詞",
-        "examples": [
-          {
-            "en": "Clear rules make for better communication.",
-            "ja": "明確なルールはより良いコミュニケーションにつながります。",
-            "focus": "make for",
-            "jaFocus": "つながり"
-          },
-          {
-            "en": "This update makes for a smoother process.",
-            "ja": "この更新で手順がよりスムーズになります。",
-            "focus": "makes for",
-            "jaFocus": "スムーズ"
-          },
-          {
-            "en": "Small improvements make for big results.",
-            "ja": "小さな改善が大きな結果につながります。",
-            "focus": "make for",
-            "jaFocus": "つながり"
-          }
-        ]
-      },
-      {
-        "phrase": "make it",
-        "ja": "間に合う・成功する",
-        "image": "目的地や目標に到達する状態を作る。",
-        "pattern": "make it",
-        "examples": [
-          {
-            "en": "I can make it to the meeting.",
-            "ja": "会議に間に合います。",
-            "focus": "make it",
-            "jaFocus": "間に合い"
-          },
-          {
-            "en": "Can you make it by three?",
-            "ja": "3時までに来られますか？",
-            "focus": "make it",
-            "jaFocus": "来られ"
-          },
-          {
-            "en": "We made it before the deadline.",
-            "ja": "締切前に間に合いました。",
-            "focus": "made it",
-            "jaFocus": "間に合い"
-          }
-        ]
-      },
-      {
-        "phrase": "make do with",
-        "ja": "〜で間に合わせる",
-        "image": "あるもので何とか形にする。",
-        "pattern": "make do with + 名詞",
-        "examples": [
-          {
-            "en": "We need to make do with the current budget.",
-            "ja": "現行予算で何とかする必要があります。",
-            "focus": "make do with",
-            "jaFocus": "何とか"
-          },
-          {
-            "en": "Can we make do with this version?",
-            "ja": "この版で間に合わせられますか？",
-            "focus": "make do with",
-            "jaFocus": "間に合わせ"
-          },
-          {
-            "en": "They made do with limited resources.",
-            "ja": "限られたリソースで何とかしました。",
-            "focus": "made do with",
-            "jaFocus": "何とか"
-          }
-        ]
-      }
+        {
+            "phrase": "make up",
+            "ja": "構成する・作り上げる",
+            "image": "複数の要素が全体を作る。",
+            "pattern": "make up + 名詞",
+            "examples": [
+                {
+                    "en": "This part makes up 30% of the cost.",
+                    "ja": "この部分がコストの30%を占めます。",
+                    "focus": "makes up",
+                    "object": "30% of the cost",
+                    "jaFocus": "占めます"
+                },
+                {
+                    "en": "Five members make up the project team.",
+                    "ja": "5名でプロジェクトチームを構成しています。",
+                    "focus": "make up",
+                    "object": "the project team",
+                    "jaFocus": "構成しています"
+                },
+                {
+                    "en": "These items make up the final price.",
+                    "ja": "これらの項目が最終価格を構成します。",
+                    "focus": "make up",
+                    "object": "the final price",
+                    "jaFocus": "構成します"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "The story was made up.",
+                    "ja": "その話は作り話だった。",
+                    "focus": "made up",
+                    "jaFocus": "作り話だった"
+                },
+                {
+                    "en": "Women make up half of the group.",
+                    "ja": "女性がグループの半分を占めている。",
+                    "focus": "make up",
+                    "object": "half of the group",
+                    "jaFocus": "占めている"
+                }
+            ]
+        },
+        {
+            "phrase": "make out",
+            "ja": "理解する・読み取る",
+            "image": "ぼんやりしたものを理解できる形にする。",
+            "pattern": "make out + 名詞",
+            "examples": [
+                {
+                    "en": "I cannot make out the numbers in this photo.",
+                    "ja": "この写真の数字を読み取れません。",
+                    "focus": "make out",
+                    "object": "the numbers",
+                    "jaFocus": "読み取れません"
+                },
+                {
+                    "en": "Can you make out the client’s handwriting?",
+                    "ja": "顧客の手書き文字を読めますか。",
+                    "focus": "make out",
+                    "object": "the client’s handwriting",
+                    "jaFocus": "読めますか"
+                },
+                {
+                    "en": "It is hard to make out the details.",
+                    "ja": "詳細を把握するのが難しいです。",
+                    "focus": "make out",
+                    "object": "the details",
+                    "jaFocus": "把握する"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I could not make out what he said.",
+                    "ja": "彼が何と言ったか分からなかった。",
+                    "focus": "make out",
+                    "jaFocus": "分からなかった"
+                },
+                {
+                    "en": "We could barely make out the sign.",
+                    "ja": "その標識がかろうじて見えた。",
+                    "focus": "make out",
+                    "object": "the sign",
+                    "jaFocus": "見えた"
+                }
+            ]
+        },
+        {
+            "phrase": "make for",
+            "ja": "〜へ向かう・〜につながる",
+            "image": "ある方向や結果へ進む。",
+            "pattern": "make for + 名詞",
+            "examples": [
+                {
+                    "en": "These changes make for better communication.",
+                    "ja": "これらの変更はより良いコミュニケーションにつながります。",
+                    "focus": "make for",
+                    "object": "better communication",
+                    "jaFocus": "つながります"
+                },
+                {
+                    "en": "A clear agenda makes for a better meeting.",
+                    "ja": "明確な議題はより良い会議につながります。",
+                    "focus": "makes for",
+                    "object": "a better meeting",
+                    "jaFocus": "つながります"
+                },
+                {
+                    "en": "This rule makes for faster approval.",
+                    "ja": "このルールは承認の迅速化につながります。",
+                    "focus": "makes for",
+                    "object": "faster approval",
+                    "jaFocus": "つながります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "We made for the station.",
+                    "ja": "私たちは駅へ向かった。",
+                    "focus": "made for",
+                    "object": "the station",
+                    "jaFocus": "向かった"
+                },
+                {
+                    "en": "Good sleep makes for a better day.",
+                    "ja": "良い睡眠は良い一日につながる。",
+                    "focus": "makes for",
+                    "object": "a better day",
+                    "jaFocus": "つながる"
+                }
+            ]
+        },
+        {
+            "phrase": "make of",
+            "ja": "〜をどう思うか",
+            "image": "情報から判断を作る。",
+            "pattern": "make of + 名詞",
+            "examples": [
+                {
+                    "en": "What do you make of this proposal?",
+                    "ja": "この提案をどう思いますか。",
+                    "focus": "make of",
+                    "object": "this proposal",
+                    "jaFocus": "どう思いますか"
+                },
+                {
+                    "en": "What should we make of the client’s feedback?",
+                    "ja": "顧客のフィードバックをどう受け止めるべきですか。",
+                    "focus": "make of",
+                    "object": "the client’s feedback",
+                    "jaFocus": "どう受け止める"
+                },
+                {
+                    "en": "I do not know what to make of this data.",
+                    "ja": "このデータをどう判断すべきか分かりません。",
+                    "focus": "make of",
+                    "object": "this data",
+                    "jaFocus": "判断すべき"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "What do you make of this movie?",
+                    "ja": "この映画をどう思う。",
+                    "focus": "make of",
+                    "object": "this movie",
+                    "jaFocus": "どう思う"
+                },
+                {
+                    "en": "I do not know what to make of him.",
+                    "ja": "彼をどう見ればいいか分からない。",
+                    "focus": "make of",
+                    "object": "him",
+                    "jaFocus": "分からない"
+                }
+            ]
+        },
+        {
+            "phrase": "make up for",
+            "ja": "埋め合わせる",
+            "image": "不足や損失を補う。",
+            "pattern": "make up for + 名詞",
+            "examples": [
+                {
+                    "en": "We need to make up for the delay.",
+                    "ja": "遅れを取り戻す必要があります。",
+                    "focus": "make up for",
+                    "object": "the delay",
+                    "jaFocus": "取り戻す"
+                },
+                {
+                    "en": "The discount made up for the inconvenience.",
+                    "ja": "割引で不便さを補いました。",
+                    "focus": "made up for",
+                    "object": "the inconvenience",
+                    "jaFocus": "補いました"
+                },
+                {
+                    "en": "Extra support helped make up for the lost time.",
+                    "ja": "追加支援が失った時間の埋め合わせになりました。",
+                    "focus": "make up for",
+                    "object": "the lost time",
+                    "jaFocus": "埋め合わせ"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I will make up for it next time.",
+                    "ja": "次回埋め合わせるよ。",
+                    "focus": "make up for",
+                    "object": "it",
+                    "jaFocus": "埋め合わせる"
+                },
+                {
+                    "en": "Sleep cannot always make up for stress.",
+                    "ja": "睡眠がいつもストレスを補えるとは限らない。",
+                    "focus": "make up for",
+                    "object": "stress",
+                    "jaFocus": "補える"
+                }
+            ]
+        },
+        {
+            "phrase": "make do with",
+            "ja": "〜で間に合わせる",
+            "image": "十分でないものを使って何とかする。",
+            "pattern": "make do with + 名詞",
+            "examples": [
+                {
+                    "en": "We have to make do with the current budget.",
+                    "ja": "現在の予算で何とかする必要があります。",
+                    "focus": "make do with",
+                    "object": "the current budget",
+                    "jaFocus": "何とかする"
+                },
+                {
+                    "en": "Can we make do with this material?",
+                    "ja": "この材料で間に合わせられますか。",
+                    "focus": "make do with",
+                    "object": "this material",
+                    "jaFocus": "間に合わせられますか"
+                },
+                {
+                    "en": "The team made do with limited resources.",
+                    "ja": "チームは限られたリソースで何とかした。",
+                    "focus": "made do with",
+                    "object": "limited resources",
+                    "jaFocus": "何とかした"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "We made do with what we had.",
+                    "ja": "あるもので何とかした。",
+                    "focus": "made do with",
+                    "object": "what we had",
+                    "jaFocus": "何とかした"
+                },
+                {
+                    "en": "I can make do with a small room.",
+                    "ja": "小さい部屋でも何とかなる。",
+                    "focus": "make do with",
+                    "object": "a small room",
+                    "jaFocus": "何とかなる"
+                }
+            ]
+        },
+        {
+            "phrase": "make it",
+            "ja": "間に合う・成功する",
+            "image": "目的地や目標に到達する。",
+            "pattern": "make it",
+            "examples": [
+                {
+                    "en": "I can make it to the meeting by three.",
+                    "ja": "3時までに会議に間に合います。",
+                    "focus": "make it",
+                    "jaFocus": "間に合います"
+                },
+                {
+                    "en": "Can you make it tomorrow morning?",
+                    "ja": "明日の朝は都合がつきますか。",
+                    "focus": "make it",
+                    "jaFocus": "都合がつきますか"
+                },
+                {
+                    "en": "We made it before the deadline.",
+                    "ja": "締切前に間に合いました。",
+                    "focus": "made it",
+                    "jaFocus": "間に合いました"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I made it home safely.",
+                    "ja": "無事に家に着いた。",
+                    "focus": "made it",
+                    "jaFocus": "着いた"
+                },
+                {
+                    "en": "She finally made it.",
+                    "ja": "彼女はついに成功した。",
+                    "focus": "made it",
+                    "jaFocus": "成功した"
+                }
+            ]
+        },
+        {
+            "phrase": "make over",
+            "ja": "作り替える・改装する",
+            "image": "見た目や形を大きく変える。",
+            "pattern": "make over + 名詞",
+            "examples": [
+                {
+                    "en": "We made over the showroom for the event.",
+                    "ja": "イベント用にショールームを改装しました。",
+                    "focus": "made over",
+                    "object": "the showroom",
+                    "jaFocus": "改装しました"
+                },
+                {
+                    "en": "The team made over the presentation slides.",
+                    "ja": "チームはプレゼン資料を作り直した。",
+                    "focus": "made over",
+                    "object": "the presentation slides",
+                    "jaFocus": "作り直した"
+                },
+                {
+                    "en": "They made over the office layout.",
+                    "ja": "彼らはオフィスレイアウトを変更した。",
+                    "focus": "made over",
+                    "object": "the office layout",
+                    "jaFocus": "変更した"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "She made over her room.",
+                    "ja": "彼女は部屋を模様替えした。",
+                    "focus": "made over",
+                    "object": "her room",
+                    "jaFocus": "模様替えした"
+                },
+                {
+                    "en": "The shop was made over last year.",
+                    "ja": "その店は昨年改装された。",
+                    "focus": "made over",
+                    "jaFocus": "改装された"
+                }
+            ]
+        },
+        {
+            "phrase": "make into",
+            "ja": "〜に変える",
+            "image": "あるものを別の形に作り変える。",
+            "pattern": "make + O + into + 名詞",
+            "examples": [
+                {
+                    "en": "We made the data into a simple chart.",
+                    "ja": "データを簡単な図にしました。",
+                    "focus": "made",
+                    "object": "the data",
+                    "jaFocus": "図にしました"
+                },
+                {
+                    "en": "The designer made the idea into a visual plan.",
+                    "ja": "デザイナーはアイデアを視覚的な計画にしました。",
+                    "focus": "made",
+                    "object": "the idea",
+                    "jaFocus": "計画にしました"
+                },
+                {
+                    "en": "Can you make this memo into a report?",
+                    "ja": "このメモを報告書にできますか。",
+                    "focus": "make",
+                    "object": "this memo",
+                    "jaFocus": "報告書に"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "She made old clothes into a bag.",
+                    "ja": "彼女は古い服をバッグに作り替えた。",
+                    "focus": "made",
+                    "object": "old clothes",
+                    "jaFocus": "作り替えた"
+                },
+                {
+                    "en": "They made the story into a movie.",
+                    "ja": "彼らはその物語を映画にした。",
+                    "focus": "made",
+                    "object": "the story",
+                    "jaFocus": "映画にした"
+                }
+            ]
+        },
+        {
+            "phrase": "make off with",
+            "ja": "持ち逃げする",
+            "image": "物を持って素早く逃げる。",
+            "pattern": "make off with + 名詞",
+            "examples": [
+                {
+                    "en": "Someone made off with the sample from the booth.",
+                    "ja": "誰かがブースからサンプルを持ち去りました。",
+                    "focus": "made off with",
+                    "object": "the sample",
+                    "jaFocus": "持ち去りました"
+                },
+                {
+                    "en": "A visitor made off with the display item.",
+                    "ja": "来場者が展示品を持ち去った。",
+                    "focus": "made off with",
+                    "object": "the display item",
+                    "jaFocus": "持ち去った"
+                },
+                {
+                    "en": "We should secure small items so no one makes off with them.",
+                    "ja": "小物を持ち去られないよう固定すべきです。",
+                    "focus": "makes off with",
+                    "object": "them",
+                    "jaFocus": "持ち去られ"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "A thief made off with my bag.",
+                    "ja": "泥棒がバッグを持ち逃げした。",
+                    "focus": "made off with",
+                    "object": "my bag",
+                    "jaFocus": "持ち逃げした"
+                },
+                {
+                    "en": "The dog made off with my sandwich.",
+                    "ja": "犬がサンドイッチを持って逃げた。",
+                    "focus": "made off with",
+                    "object": "my sandwich",
+                    "jaFocus": "逃げた"
+                }
+            ]
+        }
     ]
-  },
+},
   {
     "id": "give",
     "rank": 4,
@@ -2586,423 +3552,1277 @@ export const verbs: Verb[] = [
     "ipa": "/ɡɪv/",
     "kana": "ギヴ",
     "syllable": "give",
-    "transitivity": "他動詞・自動詞",
+    "transitivity": "他動詞中心",
     "importance": "★★★★★ 超重要",
-    "core": "自分側のものを、相手へ渡す・届ける",
-    "coreDetail": "GIVEは、物だけでなく、情報・許可・説明・機会・印象などを相手側へ渡す感覚です。仕事ではフィードバックする、説明する、許可する、機会を与えるに広がります。",
-    "coreVisual": { "from": ["💬 説明", "📝 情報", "✅ 許可", "⭐ 機会", "📣 意見"], "to": "相手", "label": "自分 → 相手へ渡す" },
+    "core": "自分から相手へ渡す・与える",
+    "coreDetail": "GIVEは、物・情報・許可・機会・印象などを自分から相手側へ出す動詞です。仕事では、説明する、共有する、許可する、フィードバックする場面でよく使います。",
+    "coreVisual": {
+        "from": [
+            "🙋 自分",
+            "📄 情報",
+            "💬 意見",
+            "✅ 許可"
+        ],
+        "to": "相手",
+        "label": "自分 → 相手へ渡す"
+    },
     "meanings": [
-      {
-        "id": "update",
-        "title": "1 ① 共有する",
-        "pattern": "GIVE + 人 + update",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "相手に渡す",
-        "point": "進捗や情報を相手に渡す。",
-        "examples": [
-          {
-            "en": "I’ll give you an update tomorrow.",
-            "ja": "明日、進捗を共有します。",
-            "focus": "give you an update",
-            "jaFocus": "共有"
-          },
-          {
-            "en": "Can you give me a quick update?",
-            "ja": "簡単に進捗を共有してもらえますか？",
-            "focus": "give me a quick update",
-            "jaFocus": "共有"
-          },
-          {
-            "en": "She gave us an update on the project.",
-            "ja": "彼女が案件の進捗を共有してくれました。",
-            "focus": "gave us an update",
-            "jaFocus": "共有"
-          }
-        ]
-      },
-      {
-        "id": "feedback",
-        "title": "2 ② 意見を伝える",
-        "pattern": "GIVE + feedback / advice",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "相手に渡す",
-        "point": "相手に改善材料を渡す。",
-        "examples": [
-          {
-            "en": "Can you give me feedback?",
-            "ja": "フィードバックをもらえますか？",
-            "focus": "give me feedback",
-            "jaFocus": "フィードバック"
-          },
-          {
-            "en": "I gave him advice on the proposal.",
-            "ja": "提案書について彼に助言しました。",
-            "focus": "gave him advice",
-            "jaFocus": "助言"
-          },
-          {
-            "en": "Please give honest feedback.",
-            "ja": "率直なフィードバックをください。",
-            "focus": "give honest feedback",
-            "jaFocus": "フィードバック"
-          }
-        ]
-      },
-      {
-        "id": "permission",
-        "title": "3 ③ 許可する",
-        "pattern": "GIVE + permission / approval",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "相手に渡す",
-        "point": "許可や承認を相手に渡す。",
-        "examples": [
-          {
-            "en": "The manager gave us approval.",
-            "ja": "上司が承認してくれました。",
-            "focus": "gave us approval",
-            "jaFocus": "承認"
-          },
-          {
-            "en": "Who gave permission for this change?",
-            "ja": "この変更を誰が許可しましたか？",
-            "focus": "gave permission",
-            "jaFocus": "許可"
-          },
-          {
-            "en": "They gave us the green light.",
-            "ja": "彼らは実行許可を出してくれました。",
-            "focus": "gave us the green light",
-            "jaFocus": "許可"
-          }
-        ]
-      },
-      {
-        "id": "presentation",
-        "title": "4 ④ 行う・実施する",
-        "pattern": "GIVE + presentation / explanation",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "相手に渡す",
-        "point": "説明や発表を相手へ渡す。",
-        "examples": [
-          {
-            "en": "I will give a presentation next week.",
-            "ja": "来週プレゼンをします。",
-            "focus": "give a presentation",
-            "jaFocus": "プレゼン"
-          },
-          {
-            "en": "She gave a clear explanation.",
-            "ja": "彼女は分かりやすく説明しました。",
-            "focus": "gave a clear explanation",
-            "jaFocus": "説明"
-          },
-          {
-            "en": "Can you give a short overview?",
-            "ja": "簡単な概要を説明してもらえますか？",
-            "focus": "give a short overview",
-            "jaFocus": "説明"
-          }
-        ]
-      },
-      {
-        "id": "chance",
-        "title": "5 ⑤ 機会を与える",
-        "pattern": "GIVE + 人 + chance",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "相手に渡す",
-        "point": "相手に機会を渡す。",
-        "examples": [
-          {
-            "en": "Please give me a chance to explain.",
-            "ja": "説明する機会をください。",
-            "focus": "give me a chance",
-            "jaFocus": "機会"
-          },
-          {
-            "en": "This project gave us a good opportunity.",
-            "ja": "この案件は良い機会になりました。",
-            "focus": "gave us a good opportunity",
-            "jaFocus": "機会"
-          },
-          {
-            "en": "Can we give the supplier another chance?",
-            "ja": "その仕入先にもう一度機会を与えられますか？",
-            "focus": "give the supplier another chance",
-            "jaFocus": "機会"
-          }
-        ]
-      }
+        {
+            "id": "provide",
+            "title": "① 渡す・提供する",
+            "pattern": "GIVE + 名詞",
+            "transitivity": "他動詞中心",
+            "structure": "S + give + O",
+            "image": "自分から相手へ渡す・与える",
+            "point": "GIVEの中心イメージ「自分から相手へ渡す・与える」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "I gave the client the updated file.",
+                    "ja": "顧客に更新版ファイルを渡した。",
+                    "focus": "gave",
+                    "object": "the updated file",
+                    "jaFocus": "渡した"
+                },
+                {
+                    "en": "We gave the client the updated file.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "gave",
+                    "object": "the updated file",
+                    "jaFocus": "渡した"
+                },
+                {
+                    "en": "Please give this to the team.",
+                    "ja": "これをチームに共有してください。",
+                    "focus": "give",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I gave home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "gave",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "share",
+            "title": "② 情報を共有する",
+            "pattern": "GIVE + information",
+            "transitivity": "他動詞中心",
+            "structure": "S + give + O",
+            "image": "自分から相手へ渡す・与える",
+            "point": "GIVEの中心イメージ「自分から相手へ渡す・与える」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "Please give me the details by noon.",
+                    "ja": "正午までに詳細を共有してください。",
+                    "focus": "give",
+                    "object": "the details",
+                    "jaFocus": "共有して"
+                },
+                {
+                    "en": "We give this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "give",
+                    "object": "the details",
+                    "jaFocus": "共有して"
+                },
+                {
+                    "en": "Please give this to the team.",
+                    "ja": "これをチームに共有してください。",
+                    "focus": "give",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I gave home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "gave",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "feedback",
+            "title": "③ フィードバックする",
+            "pattern": "GIVE + feedback",
+            "transitivity": "他動詞中心",
+            "structure": "S + give + O",
+            "image": "自分から相手へ渡す・与える",
+            "point": "GIVEの中心イメージ「自分から相手へ渡す・与える」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "My manager gave me helpful feedback.",
+                    "ja": "上司が有益なフィードバックをくれた。",
+                    "focus": "gave",
+                    "object": "helpful feedback",
+                    "jaFocus": "くれた"
+                },
+                {
+                    "en": "We give this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "gave",
+                    "object": "helpful feedback",
+                    "jaFocus": "くれた"
+                },
+                {
+                    "en": "Please give this to the team.",
+                    "ja": "これをチームに共有してください。",
+                    "focus": "give",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I gave home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "gave",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "permission",
+            "title": "④ 許可する",
+            "pattern": "GIVE + permission",
+            "transitivity": "他動詞中心",
+            "structure": "S + give + O",
+            "image": "自分から相手へ渡す・与える",
+            "point": "GIVEの中心イメージ「自分から相手へ渡す・与える」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "The client gave us permission to proceed.",
+                    "ja": "顧客が進行の許可をくれた。",
+                    "focus": "gave",
+                    "object": "permission",
+                    "jaFocus": "許可をくれた"
+                },
+                {
+                    "en": "We give this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "gave",
+                    "object": "permission",
+                    "jaFocus": "許可をくれた"
+                },
+                {
+                    "en": "Please give this to the team.",
+                    "ja": "これをチームに共有してください。",
+                    "focus": "give",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I gave home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "gave",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "presentation",
+            "title": "⑤ 発表する",
+            "pattern": "GIVE + presentation",
+            "transitivity": "他動詞中心",
+            "structure": "S + give + O",
+            "image": "自分から相手へ渡す・与える",
+            "point": "GIVEの中心イメージ「自分から相手へ渡す・与える」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "I gave a presentation to the team.",
+                    "ja": "チームにプレゼンをした。",
+                    "focus": "gave",
+                    "object": "a presentation",
+                    "jaFocus": "プレゼンをした"
+                },
+                {
+                    "en": "We gave a presentation to the team.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "gave",
+                    "object": "a presentation",
+                    "jaFocus": "プレゼンをした"
+                },
+                {
+                    "en": "Please give this to the team.",
+                    "ja": "これをチームに共有してください。",
+                    "focus": "give",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I gave home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "gave",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "reason",
+            "title": "⑥ 理由を示す",
+            "pattern": "GIVE + reason",
+            "transitivity": "他動詞中心",
+            "structure": "S + give + O",
+            "image": "自分から相手へ渡す・与える",
+            "point": "GIVEの中心イメージ「自分から相手へ渡す・与える」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "He gave a clear reason for the delay.",
+                    "ja": "彼は遅延の明確な理由を示した。",
+                    "focus": "gave",
+                    "object": "a clear reason",
+                    "jaFocus": "示した"
+                },
+                {
+                    "en": "We give this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "gave",
+                    "object": "a clear reason",
+                    "jaFocus": "示した"
+                },
+                {
+                    "en": "Please give this to the team.",
+                    "ja": "これをチームに共有してください。",
+                    "focus": "give",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I gave home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "gave",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "opportunity",
+            "title": "⑦ 機会を与える",
+            "pattern": "GIVE + opportunity",
+            "transitivity": "他動詞中心",
+            "structure": "S + give + O",
+            "image": "自分から相手へ渡す・与える",
+            "point": "GIVEの中心イメージ「自分から相手へ渡す・与える」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "This project gave us a new opportunity.",
+                    "ja": "この案件は新しい機会を与えてくれた。",
+                    "focus": "gave",
+                    "object": "a new opportunity",
+                    "jaFocus": "与えてくれた"
+                },
+                {
+                    "en": "We give this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "gave",
+                    "object": "a new opportunity",
+                    "jaFocus": "与えてくれた"
+                },
+                {
+                    "en": "Please give this to the team.",
+                    "ja": "これをチームに共有してください。",
+                    "focus": "give",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I gave home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "gave",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "impression",
+            "title": "⑧ 印象を与える",
+            "pattern": "GIVE + impression",
+            "transitivity": "他動詞中心",
+            "structure": "S + give + O",
+            "image": "自分から相手へ渡す・与える",
+            "point": "GIVEの中心イメージ「自分から相手へ渡す・与える」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "The proposal gave a professional impression.",
+                    "ja": "その提案書はプロらしい印象を与えた。",
+                    "focus": "gave",
+                    "object": "a professional impression",
+                    "jaFocus": "印象を与えた"
+                },
+                {
+                    "en": "We give this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "gave",
+                    "object": "a professional impression",
+                    "jaFocus": "印象を与えた"
+                },
+                {
+                    "en": "Please give this to the team.",
+                    "ja": "これをチームに共有してください。",
+                    "focus": "give",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I gave home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "gave",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "support",
+            "title": "⑨ 支援する",
+            "pattern": "GIVE + support",
+            "transitivity": "他動詞中心",
+            "structure": "S + give + O",
+            "image": "自分から相手へ渡す・与える",
+            "point": "GIVEの中心イメージ「自分から相手へ渡す・与える」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "The sales team gave us strong support.",
+                    "ja": "営業チームが強力に支援してくれた。",
+                    "focus": "gave",
+                    "object": "strong support",
+                    "jaFocus": "支援してくれた"
+                },
+                {
+                    "en": "We give this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "gave",
+                    "object": "strong support",
+                    "jaFocus": "支援してくれた"
+                },
+                {
+                    "en": "Please give this to the team.",
+                    "ja": "これをチームに共有してください。",
+                    "focus": "give",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I gave home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "gave",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "priority",
+            "title": "⑩ 優先度を置く",
+            "pattern": "GIVE + priority",
+            "transitivity": "他動詞中心",
+            "structure": "S + give + O",
+            "image": "自分から相手へ渡す・与える",
+            "point": "GIVEの中心イメージ「自分から相手へ渡す・与える」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "We should give priority to existing clients.",
+                    "ja": "既存顧客を優先すべきです。",
+                    "focus": "give",
+                    "object": "priority",
+                    "jaFocus": "優先"
+                },
+                {
+                    "en": "We give this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "give",
+                    "object": "priority",
+                    "jaFocus": "優先"
+                },
+                {
+                    "en": "Please give this to the team.",
+                    "ja": "これをチームに共有してください。",
+                    "focus": "give",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I gave home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "gave",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        }
     ],
     "collocations": [
-      {
-        "phrase": "give feedback",
-        "ja": "フィードバックする",
-        "image": "意見を相手へ渡す。",
-        "pattern": "give + feedback",
-        "examples": [
-          {
-            "en": "I’ll give feedback by Friday.",
-            "ja": "金曜日までにフィードバックします。",
-            "focus": "give feedback",
-            "jaFocus": "フィードバック"
-          },
-          {
-            "en": "She gave useful feedback.",
-            "ja": "彼女は役立つフィードバックをくれました。",
-            "focus": "gave useful feedback",
-            "jaFocus": "フィードバック"
-          },
-          {
-            "en": "Please give feedback on the draft.",
-            "ja": "下書きにフィードバックをください。",
-            "focus": "give feedback",
-            "jaFocus": "フィードバック"
-          }
-        ]
-      },
-      {
-        "phrase": "give permission",
-        "ja": "許可する",
-        "image": "許可を相手へ渡す。",
-        "pattern": "give + permission",
-        "examples": [
-          {
-            "en": "They gave permission to proceed.",
-            "ja": "彼らは進行を許可しました。",
-            "focus": "gave permission",
-            "jaFocus": "許可"
-          },
-          {
-            "en": "Who can give permission?",
-            "ja": "誰が許可できますか？",
-            "focus": "give permission",
-            "jaFocus": "許可"
-          },
-          {
-            "en": "We need permission before starting.",
-            "ja": "開始前に許可が必要です。",
-            "focus": "permission",
-            "jaFocus": "許可"
-          }
-        ]
-      },
-      {
-        "phrase": "give a presentation",
-        "ja": "プレゼンする",
-        "image": "発表内容を相手へ渡す。",
-        "pattern": "give + presentation",
-        "examples": [
-          {
-            "en": "I’ll give a presentation tomorrow.",
-            "ja": "明日プレゼンします。",
-            "focus": "give a presentation",
-            "jaFocus": "プレゼン"
-          },
-          {
-            "en": "He gave a presentation to the client.",
-            "ja": "彼は顧客にプレゼンしました。",
-            "focus": "gave a presentation",
-            "jaFocus": "プレゼン"
-          },
-          {
-            "en": "Can you give the opening presentation?",
-            "ja": "冒頭プレゼンをお願いできますか？",
-            "focus": "give the opening presentation",
-            "jaFocus": "プレゼン"
-          }
-        ]
-      },
-      {
-        "phrase": "give notice",
-        "ja": "知らせる",
-        "image": "通知を相手へ渡す。",
-        "pattern": "give + notice",
-        "examples": [
-          {
-            "en": "Please give us notice in advance.",
-            "ja": "事前に知らせてください。",
-            "focus": "give us notice",
-            "jaFocus": "知らせ"
-          },
-          {
-            "en": "They gave short notice.",
-            "ja": "彼らは直前に知らせました。",
-            "focus": "gave short notice",
-            "jaFocus": "知らせ"
-          },
-          {
-            "en": "We should give notice to the team.",
-            "ja": "チームに知らせるべきです。",
-            "focus": "give notice",
-            "jaFocus": "知らせ"
-          }
-        ]
-      },
-      {
-        "phrase": "give priority",
-        "ja": "優先する",
-        "image": "優先順位を与える。",
-        "pattern": "give + priority",
-        "examples": [
-          {
-            "en": "We should give priority to this issue.",
-            "ja": "この問題を優先すべきです。",
-            "focus": "give priority",
-            "jaFocus": "優先"
-          },
-          {
-            "en": "Please give this order priority.",
-            "ja": "この注文を優先してください。",
-            "focus": "give this order priority",
-            "jaFocus": "優先"
-          },
-          {
-            "en": "The team gave priority to quality.",
-            "ja": "チームは品質を優先しました。",
-            "focus": "gave priority",
-            "jaFocus": "優先"
-          }
-        ]
-      }
+        {
+            "phrase": "give feedback",
+            "ja": "仕事でよく使う表現",
+            "image": "GIVEのコアイメージから広がる重要表現。",
+            "pattern": "give feedback",
+            "examples": [
+                {
+                    "en": "Please give feedback in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often give feedback with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us give feedback clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "give",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give feedback at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s give feedback today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "give",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "give permission",
+            "ja": "仕事でよく使う表現",
+            "image": "GIVEのコアイメージから広がる重要表現。",
+            "pattern": "give permission",
+            "examples": [
+                {
+                    "en": "We need to give permission this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often give permission with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us give permission clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "give",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give permission at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s give permission today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "give",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "give a presentation",
+            "ja": "仕事でよく使う表現",
+            "image": "GIVEのコアイメージから広がる重要表現。",
+            "pattern": "give a presentation",
+            "examples": [
+                {
+                    "en": "Please give a presentation in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often give a presentation with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us give a presentation clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "give",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give a presentation at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s give a presentation today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "give",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "give advice",
+            "ja": "仕事でよく使う表現",
+            "image": "GIVEのコアイメージから広がる重要表現。",
+            "pattern": "give advice",
+            "examples": [
+                {
+                    "en": "We need to give advice this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often give advice with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us give advice clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "give",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give advice at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s give advice today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "give",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "give priority",
+            "ja": "仕事でよく使う表現",
+            "image": "GIVEのコアイメージから広がる重要表現。",
+            "pattern": "give priority",
+            "examples": [
+                {
+                    "en": "Please give priority in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often give priority with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us give priority clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "give",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give priority at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s give priority today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "give",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "give notice",
+            "ja": "仕事でよく使う表現",
+            "image": "GIVEのコアイメージから広がる重要表現。",
+            "pattern": "give notice",
+            "examples": [
+                {
+                    "en": "We need to give notice this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often give notice with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us give notice clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "give",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give notice at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s give notice today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "give",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "give support",
+            "ja": "仕事でよく使う表現",
+            "image": "GIVEのコアイメージから広がる重要表現。",
+            "pattern": "give support",
+            "examples": [
+                {
+                    "en": "Please give support in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often give support with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us give support clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "give",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give support at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s give support today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "give",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "give an example",
+            "ja": "仕事でよく使う表現",
+            "image": "GIVEのコアイメージから広がる重要表現。",
+            "pattern": "give an example",
+            "examples": [
+                {
+                    "en": "We need to give an example this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often give an example with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us give an example clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "give",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give an example at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s give an example today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "give",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "give a reason",
+            "ja": "仕事でよく使う表現",
+            "image": "GIVEのコアイメージから広がる重要表現。",
+            "pattern": "give a reason",
+            "examples": [
+                {
+                    "en": "Please give a reason in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often give a reason with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us give a reason clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "give",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give a reason at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s give a reason today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "give",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "give someone a call",
+            "ja": "仕事でよく使う表現",
+            "image": "GIVEのコアイメージから広がる重要表現。",
+            "pattern": "give someone a call",
+            "examples": [
+                {
+                    "en": "We need to give someone a call this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often give someone a call with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us give someone a call clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "give",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give someone a call at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s give someone a call today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "give",
+                    "jaFocus": "使って"
+                }
+            ]
+        }
     ],
     "phrasalVerbs": [
-      {
-        "phrase": "give up",
-        "ja": "諦める",
-        "image": "持っていた努力を手放す。",
-        "pattern": "give up",
-        "examples": [
-          {
-            "en": "Don’t give up on this client.",
-            "ja": "この顧客を諦めないでください。",
-            "focus": "give up",
-            "jaFocus": "諦め"
-          },
-          {
-            "en": "We gave up on that option.",
-            "ja": "その選択肢は諦めました。",
-            "focus": "gave up",
-            "jaFocus": "諦め"
-          },
-          {
-            "en": "She never gives up easily.",
-            "ja": "彼女は簡単には諦めません。",
-            "focus": "gives up",
-            "jaFocus": "諦め"
-          }
-        ]
-      },
-      {
-        "phrase": "give in",
-        "ja": "譲る",
-        "image": "相手側へ折れる。",
-        "pattern": "give in",
-        "examples": [
-          {
-            "en": "We should not give in too quickly.",
-            "ja": "すぐに譲るべきではありません。",
-            "focus": "give in",
-            "jaFocus": "譲る"
-          },
-          {
-            "en": "The supplier finally gave in.",
-            "ja": "仕入先は最終的に譲歩しました。",
-            "focus": "gave in",
-            "jaFocus": "譲歩"
-          },
-          {
-            "en": "Don’t give in on the price.",
-            "ja": "価格では譲らないでください。",
-            "focus": "give in",
-            "jaFocus": "譲らない"
-          }
-        ]
-      },
-      {
-        "phrase": "give back",
-        "ja": "返す",
-        "image": "相手に戻して渡す。",
-        "pattern": "give back + 名詞",
-        "examples": [
-          {
-            "en": "I’ll give back the sample tomorrow.",
-            "ja": "明日サンプルを返します。",
-            "focus": "give back",
-            "jaFocus": "返し"
-          },
-          {
-            "en": "Please give the file back after review.",
-            "ja": "確認後にファイルを返してください。",
-            "focus": "give the file back",
-            "jaFocus": "返して"
-          },
-          {
-            "en": "They gave back the deposit.",
-            "ja": "彼らは保証金を返しました。",
-            "focus": "gave back",
-            "jaFocus": "返し"
-          }
-        ]
-      },
-      {
-        "phrase": "give out",
-        "ja": "配る・発表する",
-        "image": "外へ配る。",
-        "pattern": "give out + 名詞",
-        "examples": [
-          {
-            "en": "We gave out the materials.",
-            "ja": "資料を配布しました。",
-            "focus": "gave out",
-            "jaFocus": "配布"
-          },
-          {
-            "en": "Please give out the handouts.",
-            "ja": "配布資料を配ってください。",
-            "focus": "give out",
-            "jaFocus": "配って"
-          },
-          {
-            "en": "The company gave out new guidelines.",
-            "ja": "会社は新しいガイドラインを発表しました。",
-            "focus": "gave out",
-            "jaFocus": "発表"
-          }
-        ]
-      },
-      {
-        "phrase": "give off",
-        "ja": "発する",
-        "image": "外へ出す。",
-        "pattern": "give off + 名詞",
-        "examples": [
-          {
-            "en": "This product gives off very little heat.",
-            "ja": "この製品はほとんど熱を発しません。",
-            "focus": "gives off",
-            "jaFocus": "発し"
-          },
-          {
-            "en": "The device gave off a strange smell.",
-            "ja": "その機器は変なにおいを発しました。",
-            "focus": "gave off",
-            "jaFocus": "発し"
-          },
-          {
-            "en": "LEDs give off light efficiently.",
-            "ja": "LEDは効率よく光を発します。",
-            "focus": "give off",
-            "jaFocus": "発し"
-          }
-        ]
-      }
+        {
+            "phrase": "give feedback",
+            "ja": "句動詞・重要表現",
+            "image": "GIVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "give feedback",
+            "examples": [
+                {
+                    "en": "We should give feedback before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we give feedback in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "give",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will give feedback with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give feedback on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "give",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can give feedback in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "give",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "give permission",
+            "ja": "句動詞・重要表現",
+            "image": "GIVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "give permission",
+            "examples": [
+                {
+                    "en": "We should give permission before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we give permission in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "give",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will give permission with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give permission on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "give",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can give permission in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "give",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "give a presentation",
+            "ja": "句動詞・重要表現",
+            "image": "GIVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "give a presentation",
+            "examples": [
+                {
+                    "en": "We should give a presentation before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we give a presentation in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "give",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will give a presentation with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give a presentation on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "give",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can give a presentation in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "give",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "give advice",
+            "ja": "句動詞・重要表現",
+            "image": "GIVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "give advice",
+            "examples": [
+                {
+                    "en": "We should give advice before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we give advice in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "give",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will give advice with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give advice on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "give",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can give advice in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "give",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "give priority",
+            "ja": "句動詞・重要表現",
+            "image": "GIVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "give priority",
+            "examples": [
+                {
+                    "en": "We should give priority before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we give priority in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "give",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will give priority with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give priority on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "give",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can give priority in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "give",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "give notice",
+            "ja": "句動詞・重要表現",
+            "image": "GIVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "give notice",
+            "examples": [
+                {
+                    "en": "We should give notice before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we give notice in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "give",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will give notice with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give notice on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "give",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can give notice in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "give",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "give support",
+            "ja": "句動詞・重要表現",
+            "image": "GIVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "give support",
+            "examples": [
+                {
+                    "en": "We should give support before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we give support in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "give",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will give support with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give support on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "give",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can give support in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "give",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "give an example",
+            "ja": "句動詞・重要表現",
+            "image": "GIVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "give an example",
+            "examples": [
+                {
+                    "en": "We should give an example before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we give an example in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "give",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will give an example with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give an example on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "give",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can give an example in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "give",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "give a reason",
+            "ja": "句動詞・重要表現",
+            "image": "GIVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "give a reason",
+            "examples": [
+                {
+                    "en": "We should give a reason before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we give a reason in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "give",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will give a reason with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give a reason on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "give",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can give a reason in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "give",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "give someone a call",
+            "ja": "句動詞・重要表現",
+            "image": "GIVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "give someone a call",
+            "examples": [
+                {
+                    "en": "We should give someone a call before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we give someone a call in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "give",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will give someone a call with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "give",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I give someone a call on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "give",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can give someone a call in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "give",
+                    "jaFocus": "使えます"
+                }
+            ]
+        }
     ]
-  },
+},
   {
     "id": "have",
     "rank": 5,
@@ -3010,423 +4830,1277 @@ export const verbs: Verb[] = [
     "ipa": "/hæv/",
     "kana": "ハヴ",
     "syllable": "have",
-    "transitivity": "他動詞・自動詞",
+    "transitivity": "他動詞中心",
     "importance": "★★★★★ 超重要",
-    "core": "自分のところに、状態・予定・経験を持っている",
-    "coreDetail": "HAVEは、物の所有だけでなく、予定・会議・時間・問題・経験などを自分の状態として持っている感覚です。仕事では会議がある、時間がある、問題がある、経験があるに広がります。",
-    "coreVisual": { "from": ["📅 予定", "👥 会議", "⏳ 時間", "⚠️ 問題", "💼 経験"], "to": "自分が持つ", "label": "自分の状態として持つ" },
+    "core": "自分のところに持っている・抱えている",
+    "coreDetail": "HAVEは、物だけでなく、予定・問題・経験・権限・時間などを自分の領域に持っている動詞です。仕事では会議がある、情報がある、課題を抱える場面で使います。",
+    "coreVisual": {
+        "from": [
+            "📅 予定",
+            "📄 情報",
+            "⚠️ 問題",
+            "✅ 権限"
+        ],
+        "to": "自分の領域",
+        "label": "持っている・抱えている"
+    },
     "meanings": [
-      {
-        "id": "m1",
-        "title": "1 ① 予定がある",
-        "pattern": "HAVE + meeting / call",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "持っている・抱えている",
-        "point": "予定を持っている。",
-        "examples": [
-          {
-            "en": "I have a meeting at three.",
-            "ja": "3時に会議があります。",
-            "focus": "have a meeting",
-            "jaFocus": "会議"
-          },
-          {
-            "en": "We have a call with Singapore today.",
-            "ja": "今日はシンガポールと電話会議があります。",
-            "focus": "have a call",
-            "jaFocus": "電話会議"
-          },
-          {
-            "en": "Do you have plans after work?",
-            "ja": "仕事後に予定はありますか？",
-            "focus": "have plans",
-            "jaFocus": "予定"
-          }
-        ]
-      },
-      {
-        "id": "m2",
-        "title": "2 ② 問題がある",
-        "pattern": "HAVE + issue / problem",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "持っている・抱えている",
-        "point": "問題を抱えている。",
-        "examples": [
-          {
-            "en": "We have an issue with delivery.",
-            "ja": "納期に問題があります。",
-            "focus": "have an issue",
-            "jaFocus": "問題"
-          },
-          {
-            "en": "Do you have any concerns?",
-            "ja": "懸念点はありますか？",
-            "focus": "have any concerns",
-            "jaFocus": "懸念"
-          },
-          {
-            "en": "The client has a problem with the price.",
-            "ja": "顧客は価格に問題を感じています。",
-            "focus": "has a problem",
-            "jaFocus": "問題"
-          }
-        ]
-      },
-      {
-        "id": "m3",
-        "title": "3 ③ 時間がある",
-        "pattern": "HAVE + time",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "持っている・抱えている",
-        "point": "使える時間を持っている。",
-        "examples": [
-          {
-            "en": "Do you have time today?",
-            "ja": "今日お時間ありますか？",
-            "focus": "have time",
-            "jaFocus": "時間"
-          },
-          {
-            "en": "I don’t have much time before the meeting.",
-            "ja": "会議前にあまり時間がありません。",
-            "focus": "have much time",
-            "jaFocus": "時間"
-          },
-          {
-            "en": "We have enough time to review it.",
-            "ja": "確認する時間は十分あります。",
-            "focus": "have enough time",
-            "jaFocus": "時間"
-          }
-        ]
-      },
-      {
-        "id": "m4",
-        "title": "4 ④ 経験する",
-        "pattern": "HAVE + experience / trouble",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "持っている・抱えている",
-        "point": "出来事を経験として持つ。",
-        "examples": [
-          {
-            "en": "We had trouble with the system.",
-            "ja": "システムで問題がありました。",
-            "focus": "had trouble",
-            "jaFocus": "問題"
-          },
-          {
-            "en": "I had a good conversation with the client.",
-            "ja": "顧客と良い会話ができました。",
-            "focus": "had a good conversation",
-            "jaFocus": "会話"
-          },
-          {
-            "en": "Have you had this issue before?",
-            "ja": "以前この問題がありましたか？",
-            "focus": "had this issue",
-            "jaFocus": "問題"
-          }
-        ]
-      },
-      {
-        "id": "m5",
-        "title": "5 ⑤ 食事・休憩を取る",
-        "pattern": "HAVE + lunch / break",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "持っている・抱えている",
-        "point": "食事や休憩を取る。",
-        "examples": [
-          {
-            "en": "Let’s have lunch after the meeting.",
-            "ja": "会議後に昼食を取りましょう。",
-            "focus": "have lunch",
-            "jaFocus": "昼食"
-          },
-          {
-            "en": "Can we have a short break?",
-            "ja": "少し休憩できますか？",
-            "focus": "have a short break",
-            "jaFocus": "休憩"
-          },
-          {
-            "en": "I had coffee with the supplier.",
-            "ja": "仕入先とコーヒーを飲みました。",
-            "focus": "had coffee",
-            "jaFocus": "コーヒー"
-          }
-        ]
-      }
+        {
+            "id": "possess",
+            "title": "① 持っている",
+            "pattern": "HAVE + 名詞",
+            "transitivity": "他動詞中心",
+            "structure": "S + have + O",
+            "image": "自分のところに持っている・抱えている",
+            "point": "HAVEの中心イメージ「自分のところに持っている・抱えている」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "I have the latest price list.",
+                    "ja": "最新版の価格表を持っています。",
+                    "focus": "have",
+                    "object": "the latest price list",
+                    "jaFocus": "持っています"
+                },
+                {
+                    "en": "We have the latest price list.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "have",
+                    "object": "the latest price list",
+                    "jaFocus": "持っています"
+                },
+                {
+                    "en": "Please have this point in mind.",
+                    "ja": "この点を意識してください。",
+                    "focus": "have",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I had home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "had",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "meeting",
+            "title": "② 予定がある",
+            "pattern": "HAVE + meeting",
+            "transitivity": "他動詞中心",
+            "structure": "S + have + O",
+            "image": "自分のところに持っている・抱えている",
+            "point": "HAVEの中心イメージ「自分のところに持っている・抱えている」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "I have a meeting at three.",
+                    "ja": "3時に会議があります。",
+                    "focus": "have",
+                    "object": "a meeting",
+                    "jaFocus": "会議があります"
+                },
+                {
+                    "en": "We have a meeting at three.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "have",
+                    "object": "a meeting",
+                    "jaFocus": "会議があります"
+                },
+                {
+                    "en": "Please have this point in mind.",
+                    "ja": "この点を意識してください。",
+                    "focus": "have",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I had home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "had",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "problem",
+            "title": "③ 問題がある",
+            "pattern": "HAVE + problem",
+            "transitivity": "他動詞中心",
+            "structure": "S + have + O",
+            "image": "自分のところに持っている・抱えている",
+            "point": "HAVEの中心イメージ「自分のところに持っている・抱えている」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "We have a problem with the delivery date.",
+                    "ja": "納期に問題があります。",
+                    "focus": "have",
+                    "object": "a problem",
+                    "jaFocus": "問題があります"
+                },
+                {
+                    "en": "We have this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "have",
+                    "object": "a problem",
+                    "jaFocus": "問題があります"
+                },
+                {
+                    "en": "Please have this point in mind.",
+                    "ja": "この点を意識してください。",
+                    "focus": "have",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I had home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "had",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "question",
+            "title": "④ 質問がある",
+            "pattern": "HAVE + question",
+            "transitivity": "他動詞中心",
+            "structure": "S + have + O",
+            "image": "自分のところに持っている・抱えている",
+            "point": "HAVEの中心イメージ「自分のところに持っている・抱えている」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "I have a question about the specification.",
+                    "ja": "仕様について質問があります。",
+                    "focus": "have",
+                    "object": "a question",
+                    "jaFocus": "質問があります"
+                },
+                {
+                    "en": "We have a question about the specification.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "have",
+                    "object": "a question",
+                    "jaFocus": "質問があります"
+                },
+                {
+                    "en": "Please have this point in mind.",
+                    "ja": "この点を意識してください。",
+                    "focus": "have",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I had home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "had",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "experience",
+            "title": "⑤ 経験がある",
+            "pattern": "HAVE + experience",
+            "transitivity": "他動詞中心",
+            "structure": "S + have + O",
+            "image": "自分のところに持っている・抱えている",
+            "point": "HAVEの中心イメージ「自分のところに持っている・抱えている」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "She has experience in overseas sales.",
+                    "ja": "彼女は海外営業の経験があります。",
+                    "focus": "has",
+                    "object": "experience",
+                    "jaFocus": "経験があります"
+                },
+                {
+                    "en": "We have this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "has",
+                    "object": "experience",
+                    "jaFocus": "経験があります"
+                },
+                {
+                    "en": "Please have this point in mind.",
+                    "ja": "この点を意識してください。",
+                    "focus": "have",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I had home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "had",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "time",
+            "title": "⑥ 時間がある",
+            "pattern": "HAVE + time",
+            "transitivity": "他動詞中心",
+            "structure": "S + have + O",
+            "image": "自分のところに持っている・抱えている",
+            "point": "HAVEの中心イメージ「自分のところに持っている・抱えている」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "Do you have time to review this?",
+                    "ja": "これを確認する時間はありますか。",
+                    "focus": "have",
+                    "object": "time",
+                    "jaFocus": "時間はありますか"
+                },
+                {
+                    "en": "We have this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "have",
+                    "object": "time",
+                    "jaFocus": "時間はありますか"
+                },
+                {
+                    "en": "Please have this point in mind.",
+                    "ja": "この点を意識してください。",
+                    "focus": "have",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I had home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "had",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "responsibility",
+            "title": "⑦ 責任がある",
+            "pattern": "HAVE + responsibility",
+            "transitivity": "他動詞中心",
+            "structure": "S + have + O",
+            "image": "自分のところに持っている・抱えている",
+            "point": "HAVEの中心イメージ「自分のところに持っている・抱えている」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "I have responsibility for this account.",
+                    "ja": "この顧客を担当しています。",
+                    "focus": "have",
+                    "object": "responsibility",
+                    "jaFocus": "担当しています"
+                },
+                {
+                    "en": "We have responsibility for this account.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "have",
+                    "object": "responsibility",
+                    "jaFocus": "担当しています"
+                },
+                {
+                    "en": "Please have this point in mind.",
+                    "ja": "この点を意識してください。",
+                    "focus": "have",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I had home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "had",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "access",
+            "title": "⑧ アクセス権がある",
+            "pattern": "HAVE + access",
+            "transitivity": "他動詞中心",
+            "structure": "S + have + O",
+            "image": "自分のところに持っている・抱えている",
+            "point": "HAVEの中心イメージ「自分のところに持っている・抱えている」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "Do you have access to the shared folder?",
+                    "ja": "共有フォルダへのアクセス権はありますか。",
+                    "focus": "have",
+                    "object": "access",
+                    "jaFocus": "アクセス権はありますか"
+                },
+                {
+                    "en": "We have this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "have",
+                    "object": "access",
+                    "jaFocus": "アクセス権はありますか"
+                },
+                {
+                    "en": "Please have this point in mind.",
+                    "ja": "この点を意識してください。",
+                    "focus": "have",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I had home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "had",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "lunch",
+            "title": "⑨ 食べる・取る",
+            "pattern": "HAVE + meal",
+            "transitivity": "他動詞中心",
+            "structure": "S + have + O",
+            "image": "自分のところに持っている・抱えている",
+            "point": "HAVEの中心イメージ「自分のところに持っている・抱えている」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "Let’s have lunch after the meeting.",
+                    "ja": "会議後に昼食を取りましょう。",
+                    "focus": "have",
+                    "object": "lunch",
+                    "jaFocus": "昼食を取りましょう"
+                },
+                {
+                    "en": "We have this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "have",
+                    "object": "lunch",
+                    "jaFocus": "昼食を取りましょう"
+                },
+                {
+                    "en": "Please have this point in mind.",
+                    "ja": "この点を意識してください。",
+                    "focus": "have",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I had home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "had",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "done",
+            "title": "⑩ 〜してもらう",
+            "pattern": "HAVE + O + 過去分詞",
+            "transitivity": "他動詞中心",
+            "structure": "S + have + O + C",
+            "image": "自分のところに持っている・抱えている",
+            "point": "HAVEの中心イメージ「自分のところに持っている・抱えている」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "We had the sample delivered yesterday.",
+                    "ja": "昨日サンプルを納品してもらいました。",
+                    "focus": "had",
+                    "object": "the sample",
+                    "jaFocus": "納品してもらいました"
+                },
+                {
+                    "en": "We have this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "had",
+                    "object": "the sample",
+                    "jaFocus": "納品してもらいました"
+                },
+                {
+                    "en": "Please have this point in mind.",
+                    "ja": "この点を意識してください。",
+                    "focus": "have",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I had home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "had",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        }
     ],
     "collocations": [
-      {
-        "phrase": "have a meeting",
-        "ja": "会議がある",
-        "image": "予定を持っている。",
-        "pattern": "have + meeting",
-        "examples": [
-          {
-            "en": "We have a meeting tomorrow.",
-            "ja": "明日会議があります。",
-            "focus": "have a meeting",
-            "jaFocus": "会議"
-          },
-          {
-            "en": "I had a meeting with the client.",
-            "ja": "顧客と会議をしました。",
-            "focus": "had a meeting",
-            "jaFocus": "会議"
-          },
-          {
-            "en": "Do we have a meeting today?",
-            "ja": "今日会議はありますか？",
-            "focus": "have a meeting",
-            "jaFocus": "会議"
-          }
-        ]
-      },
-      {
-        "phrase": "have time",
-        "ja": "時間がある",
-        "image": "使える時間を持つ。",
-        "pattern": "have + time",
-        "examples": [
-          {
-            "en": "Do you have time now?",
-            "ja": "今時間ありますか？",
-            "focus": "have time",
-            "jaFocus": "時間"
-          },
-          {
-            "en": "I have time after lunch.",
-            "ja": "昼食後なら時間があります。",
-            "focus": "have time",
-            "jaFocus": "時間"
-          },
-          {
-            "en": "We don’t have enough time.",
-            "ja": "十分な時間がありません。",
-            "focus": "have enough time",
-            "jaFocus": "時間"
-          }
-        ]
-      },
-      {
-        "phrase": "have an issue",
-        "ja": "問題がある",
-        "image": "問題を抱えている。",
-        "pattern": "have + issue",
-        "examples": [
-          {
-            "en": "We have an issue.",
-            "ja": "問題があります。",
-            "focus": "have an issue",
-            "jaFocus": "問題"
-          },
-          {
-            "en": "They had an issue with payment.",
-            "ja": "支払いに問題がありました。",
-            "focus": "had an issue",
-            "jaFocus": "問題"
-          },
-          {
-            "en": "Do you have any issues?",
-            "ja": "何か問題はありますか？",
-            "focus": "have any issues",
-            "jaFocus": "問題"
-          }
-        ]
-      },
-      {
-        "phrase": "have a look",
-        "ja": "確認する",
-        "image": "軽く見る機会を持つ。",
-        "pattern": "have + a look",
-        "examples": [
-          {
-            "en": "Please have a look.",
-            "ja": "確認してください。",
-            "focus": "have a look",
-            "jaFocus": "確認"
-          },
-          {
-            "en": "I’ll have a look later.",
-            "ja": "後で確認します。",
-            "focus": "have a look",
-            "jaFocus": "確認"
-          },
-          {
-            "en": "Can you have a quick look?",
-            "ja": "軽く確認してもらえますか？",
-            "focus": "have a quick look",
-            "jaFocus": "確認"
-          }
-        ]
-      },
-      {
-        "phrase": "have a question",
-        "ja": "質問がある",
-        "image": "質問を持っている。",
-        "pattern": "have + question",
-        "examples": [
-          {
-            "en": "I have a question.",
-            "ja": "質問があります。",
-            "focus": "have a question",
-            "jaFocus": "質問"
-          },
-          {
-            "en": "Do you have any questions?",
-            "ja": "質問はありますか？",
-            "focus": "have any questions",
-            "jaFocus": "質問"
-          },
-          {
-            "en": "She had a question about the quote.",
-            "ja": "彼女は見積について質問がありました。",
-            "focus": "had a question",
-            "jaFocus": "質問"
-          }
-        ]
-      }
+        {
+            "phrase": "have a meeting",
+            "ja": "仕事でよく使う表現",
+            "image": "HAVEのコアイメージから広がる重要表現。",
+            "pattern": "have a meeting",
+            "examples": [
+                {
+                    "en": "Please have a meeting in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often have a meeting with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us have a meeting clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "have",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have a meeting at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s have a meeting today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "have",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "have a question",
+            "ja": "仕事でよく使う表現",
+            "image": "HAVEのコアイメージから広がる重要表現。",
+            "pattern": "have a question",
+            "examples": [
+                {
+                    "en": "We need to have a question this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often have a question with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us have a question clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "have",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have a question at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s have a question today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "have",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "have a problem",
+            "ja": "仕事でよく使う表現",
+            "image": "HAVEのコアイメージから広がる重要表現。",
+            "pattern": "have a problem",
+            "examples": [
+                {
+                    "en": "Please have a problem in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often have a problem with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us have a problem clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "have",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have a problem at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s have a problem today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "have",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "have access",
+            "ja": "仕事でよく使う表現",
+            "image": "HAVEのコアイメージから広がる重要表現。",
+            "pattern": "have access",
+            "examples": [
+                {
+                    "en": "We need to have access this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often have access with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us have access clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "have",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have access at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s have access today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "have",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "have experience",
+            "ja": "仕事でよく使う表現",
+            "image": "HAVEのコアイメージから広がる重要表現。",
+            "pattern": "have experience",
+            "examples": [
+                {
+                    "en": "Please have experience in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often have experience with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us have experience clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "have",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have experience at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s have experience today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "have",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "have time",
+            "ja": "仕事でよく使う表現",
+            "image": "HAVEのコアイメージから広がる重要表現。",
+            "pattern": "have time",
+            "examples": [
+                {
+                    "en": "We need to have time this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often have time with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us have time clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "have",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have time at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s have time today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "have",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "have responsibility",
+            "ja": "仕事でよく使う表現",
+            "image": "HAVEのコアイメージから広がる重要表現。",
+            "pattern": "have responsibility",
+            "examples": [
+                {
+                    "en": "Please have responsibility in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often have responsibility with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us have responsibility clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "have",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have responsibility at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s have responsibility today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "have",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "have lunch",
+            "ja": "仕事でよく使う表現",
+            "image": "HAVEのコアイメージから広がる重要表現。",
+            "pattern": "have lunch",
+            "examples": [
+                {
+                    "en": "We need to have lunch this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often have lunch with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us have lunch clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "have",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have lunch at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s have lunch today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "have",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "have a look",
+            "ja": "仕事でよく使う表現",
+            "image": "HAVEのコアイメージから広がる重要表現。",
+            "pattern": "have a look",
+            "examples": [
+                {
+                    "en": "Please have a look in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often have a look with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us have a look clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "have",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have a look at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s have a look today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "have",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "have something done",
+            "ja": "仕事でよく使う表現",
+            "image": "HAVEのコアイメージから広がる重要表現。",
+            "pattern": "have something done",
+            "examples": [
+                {
+                    "en": "We need to have something done this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often have something done with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us have something done clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "have",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have something done at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s have something done today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "have",
+                    "jaFocus": "使って"
+                }
+            ]
+        }
     ],
     "phrasalVerbs": [
-      {
-        "phrase": "have to",
-        "ja": "〜しなければならない",
-        "image": "義務を持つ。",
-        "pattern": "have to + 動詞",
-        "examples": [
-          {
-            "en": "We have to finish this today.",
-            "ja": "今日これを終わらせなければなりません。",
-            "focus": "have to",
-            "jaFocus": "しなければ"
-          },
-          {
-            "en": "I have to check the details.",
-            "ja": "詳細を確認しなければなりません。",
-            "focus": "have to",
-            "jaFocus": "しなければ"
-          },
-          {
-            "en": "Do we have to join the meeting?",
-            "ja": "会議に参加しなければなりませんか？",
-            "focus": "have to",
-            "jaFocus": "しなければ"
-          }
-        ]
-      },
-      {
-        "phrase": "have on",
-        "ja": "身につけている",
-        "image": "身に持っている。",
-        "pattern": "have on + 名詞",
-        "examples": [
-          {
-            "en": "He had a jacket on.",
-            "ja": "彼はジャケットを着ていました。",
-            "focus": "had a jacket on",
-            "jaFocus": "着て"
-          },
-          {
-            "en": "Do you have your badge on?",
-            "ja": "バッジを付けていますか？",
-            "focus": "have your badge on",
-            "jaFocus": "付けて"
-          },
-          {
-            "en": "She had headphones on during the call.",
-            "ja": "彼女は通話中ヘッドホンをしていました。",
-            "focus": "had headphones on",
-            "jaFocus": "して"
-          }
-        ]
-      },
-      {
-        "phrase": "have over",
-        "ja": "招く",
-        "image": "相手をこちら側に持つ。",
-        "pattern": "have over + 人",
-        "examples": [
-          {
-            "en": "We had the client over for a demo.",
-            "ja": "デモのため顧客を招きました。",
-            "focus": "had the client over",
-            "jaFocus": "招き"
-          },
-          {
-            "en": "Can we have them over next week?",
-            "ja": "来週彼らを招けますか？",
-            "focus": "have them over",
-            "jaFocus": "招け"
-          },
-          {
-            "en": "They had us over at their office.",
-            "ja": "彼らは私たちをオフィスに招いてくれました。",
-            "focus": "had us over",
-            "jaFocus": "招いて"
-          }
-        ]
-      },
-      {
-        "phrase": "have around",
-        "ja": "近くに置く",
-        "image": "周囲に持つ。",
-        "pattern": "have around + 名詞",
-        "examples": [
-          {
-            "en": "It’s useful to have samples around.",
-            "ja": "サンプルを手元に置いておくと便利です。",
-            "focus": "have samples around",
-            "jaFocus": "手元"
-          },
-          {
-            "en": "Do you have the catalog around?",
-            "ja": "カタログは手元にありますか？",
-            "focus": "have the catalog around",
-            "jaFocus": "手元"
-          },
-          {
-            "en": "We should have spare parts around.",
-            "ja": "予備部品を置いておくべきです。",
-            "focus": "have spare parts around",
-            "jaFocus": "置いて"
-          }
-        ]
-      },
-      {
-        "phrase": "have back",
-        "ja": "戻してもらう",
-        "image": "相手から戻る。",
-        "pattern": "have back + 名詞",
-        "examples": [
-          {
-            "en": "Can I have the document back?",
-            "ja": "資料を返してもらえますか？",
-            "focus": "have the document back",
-            "jaFocus": "返して"
-          },
-          {
-            "en": "We had the samples back yesterday.",
-            "ja": "昨日サンプルが戻ってきました。",
-            "focus": "had the samples back",
-            "jaFocus": "戻って"
-          },
-          {
-            "en": "I need to have my laptop back.",
-            "ja": "ノートPCを返してもらう必要があります。",
-            "focus": "have my laptop back",
-            "jaFocus": "返して"
-          }
-        ]
-      }
+        {
+            "phrase": "have a meeting",
+            "ja": "句動詞・重要表現",
+            "image": "HAVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "have a meeting",
+            "examples": [
+                {
+                    "en": "We should have a meeting before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we have a meeting in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "have",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will have a meeting with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have a meeting on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "have",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can have a meeting in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "have",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "have a question",
+            "ja": "句動詞・重要表現",
+            "image": "HAVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "have a question",
+            "examples": [
+                {
+                    "en": "We should have a question before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we have a question in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "have",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will have a question with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have a question on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "have",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can have a question in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "have",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "have a problem",
+            "ja": "句動詞・重要表現",
+            "image": "HAVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "have a problem",
+            "examples": [
+                {
+                    "en": "We should have a problem before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we have a problem in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "have",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will have a problem with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have a problem on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "have",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can have a problem in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "have",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "have access",
+            "ja": "句動詞・重要表現",
+            "image": "HAVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "have access",
+            "examples": [
+                {
+                    "en": "We should have access before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we have access in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "have",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will have access with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have access on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "have",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can have access in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "have",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "have experience",
+            "ja": "句動詞・重要表現",
+            "image": "HAVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "have experience",
+            "examples": [
+                {
+                    "en": "We should have experience before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we have experience in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "have",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will have experience with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have experience on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "have",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can have experience in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "have",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "have time",
+            "ja": "句動詞・重要表現",
+            "image": "HAVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "have time",
+            "examples": [
+                {
+                    "en": "We should have time before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we have time in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "have",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will have time with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have time on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "have",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can have time in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "have",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "have responsibility",
+            "ja": "句動詞・重要表現",
+            "image": "HAVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "have responsibility",
+            "examples": [
+                {
+                    "en": "We should have responsibility before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we have responsibility in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "have",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will have responsibility with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have responsibility on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "have",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can have responsibility in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "have",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "have lunch",
+            "ja": "句動詞・重要表現",
+            "image": "HAVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "have lunch",
+            "examples": [
+                {
+                    "en": "We should have lunch before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we have lunch in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "have",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will have lunch with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have lunch on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "have",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can have lunch in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "have",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "have a look",
+            "ja": "句動詞・重要表現",
+            "image": "HAVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "have a look",
+            "examples": [
+                {
+                    "en": "We should have a look before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we have a look in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "have",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will have a look with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have a look on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "have",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can have a look in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "have",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "have something done",
+            "ja": "句動詞・重要表現",
+            "image": "HAVEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "have something done",
+            "examples": [
+                {
+                    "en": "We should have something done before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we have something done in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "have",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will have something done with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "have",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I have something done on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "have",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can have something done in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "have",
+                    "jaFocus": "使えます"
+                }
+            ]
+        }
     ]
-  },
+},
   {
     "id": "go",
     "rank": 6,
@@ -3434,422 +6108,1260 @@ export const verbs: Verb[] = [
     "ipa": "/ɡoʊ/",
     "kana": "ゴー",
     "syllable": "go",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "離れて進む",
-    "coreDetail": "人・予定・案件・話題が次の場所や段階へ進む。",
+    "transitivity": "自動詞中心",
+    "importance": "★★★★★ 超重要",
+    "core": "今いる場所・状態から離れて進む",
+    "coreDetail": "GOは、場所へ進むだけでなく、計画・会議・仕事が進む、状態が変わるという流れにも使います。仕事では進行・移動・状態変化を表します。",
+    "coreVisual": {
+        "from": [
+            "現在地",
+            "今の状態",
+            "開始点"
+        ],
+        "to": "先・目的地",
+        "label": "今いる場所から進む"
+    },
     "meanings": [
-      {
-        "id": "m1",
-        "title": "① 行く",
-        "pattern": "GO TO + 場所",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "離れて進む",
-        "point": "仕事先や会議へ向かう。",
-        "examples": [
-          {
-            "en": "I will go to the client office tomorrow.",
-            "ja": "明日クライアント先へ行きます。",
-            "focus": "go to",
-            "jaFocus": "行き"
-          },
-          {
-            "en": "The project is going well.",
-            "ja": "案件は順調に進んでいます。",
-            "focus": "going well",
-            "jaFocus": "進んで"
-          },
-          {
-            "en": "Let’s go over the agenda.",
-            "ja": "議題を確認しましょう。",
-            "focus": "go over",
-            "jaFocus": "確認"
-          }
-        ]
-      },
-      {
-        "id": "m2",
-        "title": "② 進む",
-        "pattern": "GO + 副詞",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "離れて進む",
-        "point": "案件や状況が進行する。",
-        "examples": [
-          {
-            "en": "I will go to the client office tomorrow.",
-            "ja": "明日クライアント先へ行きます。",
-            "focus": "go to",
-            "jaFocus": "行き"
-          },
-          {
-            "en": "The project is going well.",
-            "ja": "案件は順調に進んでいます。",
-            "focus": "going well",
-            "jaFocus": "進んで"
-          },
-          {
-            "en": "Let’s go over the agenda.",
-            "ja": "議題を確認しましょう。",
-            "focus": "go over",
-            "jaFocus": "確認"
-          }
-        ]
-      },
-      {
-        "id": "m3",
-        "title": "③ 確認する",
-        "pattern": "GO OVER + 名詞",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "離れて進む",
-        "point": "資料や議題を一通り見る。",
-        "examples": [
-          {
-            "en": "I will go to the client office tomorrow.",
-            "ja": "明日クライアント先へ行きます。",
-            "focus": "go to",
-            "jaFocus": "行き"
-          },
-          {
-            "en": "The project is going well.",
-            "ja": "案件は順調に進んでいます。",
-            "focus": "going well",
-            "jaFocus": "進んで"
-          },
-          {
-            "en": "Let’s go over the agenda.",
-            "ja": "議題を確認しましょう。",
-            "focus": "go over",
-            "jaFocus": "確認"
-          }
-        ]
-      },
-      {
-        "id": "m4",
-        "title": "④ うまくいく",
-        "pattern": "GO WELL",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "離れて進む",
-        "point": "状況が良い方向に進む。",
-        "examples": [
-          {
-            "en": "I will go to the client office tomorrow.",
-            "ja": "明日クライアント先へ行きます。",
-            "focus": "go to",
-            "jaFocus": "行き"
-          },
-          {
-            "en": "The project is going well.",
-            "ja": "案件は順調に進んでいます。",
-            "focus": "going well",
-            "jaFocus": "進んで"
-          },
-          {
-            "en": "Let’s go over the agenda.",
-            "ja": "議題を確認しましょう。",
-            "focus": "go over",
-            "jaFocus": "確認"
-          }
-        ]
-      },
-      {
-        "id": "m5",
-        "title": "⑤ 実施される",
-        "pattern": "GO AHEAD",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "離れて進む",
-        "point": "予定通り進める。",
-        "examples": [
-          {
-            "en": "I will go to the client office tomorrow.",
-            "ja": "明日クライアント先へ行きます。",
-            "focus": "go to",
-            "jaFocus": "行き"
-          },
-          {
-            "en": "The project is going well.",
-            "ja": "案件は順調に進んでいます。",
-            "focus": "going well",
-            "jaFocus": "進んで"
-          },
-          {
-            "en": "Let’s go over the agenda.",
-            "ja": "議題を確認しましょう。",
-            "focus": "go over",
-            "jaFocus": "確認"
-          }
-        ]
-      }
+        {
+            "id": "move",
+            "title": "① 行く",
+            "pattern": "GO + to 場所",
+            "transitivity": "自動詞中心",
+            "structure": "S + go + 副詞句",
+            "image": "今いる場所・状態から離れて進む",
+            "point": "GOの中心イメージ「今いる場所・状態から離れて進む」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "I went to the client’s office yesterday.",
+                    "ja": "昨日、顧客の会社へ行きました。",
+                    "focus": "went",
+                    "jaFocus": "行きました"
+                },
+                {
+                    "en": "We went to the client’s office yesterday.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "went",
+                    "jaFocus": "行きました"
+                },
+                {
+                    "en": "Please go with this option.",
+                    "ja": "この案で進めてください。",
+                    "focus": "go",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I went home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "went",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "attend",
+            "title": "② 参加する",
+            "pattern": "GO + to meeting/event",
+            "transitivity": "自動詞中心",
+            "structure": "S + go + 副詞句",
+            "image": "今いる場所・状態から離れて進む",
+            "point": "GOの中心イメージ「今いる場所・状態から離れて進む」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "I will go to the trade show next week.",
+                    "ja": "来週展示会に行きます。",
+                    "focus": "go",
+                    "jaFocus": "行きます"
+                },
+                {
+                    "en": "We will go to the trade show next week.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "行きます"
+                },
+                {
+                    "en": "Please go with this option.",
+                    "ja": "この案で進めてください。",
+                    "focus": "go",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I went home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "went",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "proceed",
+            "title": "③ 進む",
+            "pattern": "GO + well/smoothly",
+            "transitivity": "自動詞中心",
+            "structure": "S + go + 副詞",
+            "image": "今いる場所・状態から離れて進む",
+            "point": "GOの中心イメージ「今いる場所・状態から離れて進む」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "The meeting went smoothly.",
+                    "ja": "会議は順調に進みました。",
+                    "focus": "went",
+                    "jaFocus": "進みました"
+                },
+                {
+                    "en": "We go this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "went",
+                    "jaFocus": "進みました"
+                },
+                {
+                    "en": "Please go with this option.",
+                    "ja": "この案で進めてください。",
+                    "focus": "go",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I went home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "went",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "change",
+            "title": "④ 状態になる",
+            "pattern": "GO + 形容詞",
+            "transitivity": "自動詞中心",
+            "structure": "S + V + C",
+            "image": "今いる場所・状態から離れて進む",
+            "point": "GOの中心イメージ「今いる場所・状態から離れて進む」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "The screen went dark during the demo.",
+                    "ja": "デモ中に画面が暗くなりました。",
+                    "focus": "went",
+                    "jaFocus": "暗くなりました"
+                },
+                {
+                    "en": "We go this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "went",
+                    "jaFocus": "暗くなりました"
+                },
+                {
+                    "en": "Please go with this option.",
+                    "ja": "この案で進めてください。",
+                    "focus": "go",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I went home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "went",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "fit",
+            "title": "⑤ 合う・合致する",
+            "pattern": "GO with + 名詞",
+            "transitivity": "自動詞中心",
+            "structure": "S + go with + O",
+            "image": "今いる場所・状態から離れて進む",
+            "point": "GOの中心イメージ「今いる場所・状態から離れて進む」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "This color goes well with the design.",
+                    "ja": "この色はデザインによく合います。",
+                    "focus": "goes",
+                    "object": "with the design",
+                    "jaFocus": "合います"
+                },
+                {
+                    "en": "We go this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "goes",
+                    "object": "with the design",
+                    "jaFocus": "合います"
+                },
+                {
+                    "en": "Please go with this option.",
+                    "ja": "この案で進めてください。",
+                    "focus": "go",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I went home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "went",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "be spent",
+            "title": "⑥ 使われる",
+            "pattern": "GO to + 用途",
+            "transitivity": "自動詞中心",
+            "structure": "S + go + 副詞句",
+            "image": "今いる場所・状態から離れて進む",
+            "point": "GOの中心イメージ「今いる場所・状態から離れて進む」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "Most of the budget went to materials.",
+                    "ja": "予算の大半は材料費に使われました。",
+                    "focus": "went",
+                    "jaFocus": "使われました"
+                },
+                {
+                    "en": "We go this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "went",
+                    "jaFocus": "使われました"
+                },
+                {
+                    "en": "Please go with this option.",
+                    "ja": "この案で進めてください。",
+                    "focus": "go",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I went home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "went",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "say",
+            "title": "⑦ 〜と書いてある",
+            "pattern": "GO like this",
+            "transitivity": "自動詞中心",
+            "structure": "S + go + 副詞",
+            "image": "今いる場所・状態から離れて進む",
+            "point": "GOの中心イメージ「今いる場所・状態から離れて進む」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "The instruction goes like this.",
+                    "ja": "説明はこのように書かれています。",
+                    "focus": "goes",
+                    "jaFocus": "書かれています"
+                },
+                {
+                    "en": "We go this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "goes",
+                    "jaFocus": "書かれています"
+                },
+                {
+                    "en": "Please go with this option.",
+                    "ja": "この案で進めてください。",
+                    "focus": "go",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I went home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "went",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "leave",
+            "title": "⑧ 退社する・帰る",
+            "pattern": "GO home",
+            "transitivity": "自動詞中心",
+            "structure": "S + go + 副詞",
+            "image": "今いる場所・状態から離れて進む",
+            "point": "GOの中心イメージ「今いる場所・状態から離れて進む」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "I went home after the client visit.",
+                    "ja": "顧客訪問の後に帰宅しました。",
+                    "focus": "went",
+                    "jaFocus": "帰宅しました"
+                },
+                {
+                    "en": "We went home after the client visit.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "went",
+                    "jaFocus": "帰宅しました"
+                },
+                {
+                    "en": "Please go with this option.",
+                    "ja": "この案で進めてください。",
+                    "focus": "go",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I went home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "went",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "operate",
+            "title": "⑨ 動く",
+            "pattern": "GO on/off",
+            "transitivity": "自動詞中心",
+            "structure": "S + go + 副詞",
+            "image": "今いる場所・状態から離れて進む",
+            "point": "GOの中心イメージ「今いる場所・状態から離れて進む」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "The power went off during the test.",
+                    "ja": "試験中に電源が落ちました。",
+                    "focus": "went off",
+                    "jaFocus": "落ちました"
+                },
+                {
+                    "en": "We go this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "went off",
+                    "jaFocus": "落ちました"
+                },
+                {
+                    "en": "Please go with this option.",
+                    "ja": "この案で進めてください。",
+                    "focus": "go",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I went home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "went",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "choose",
+            "title": "⑩ 選ぶ",
+            "pattern": "GO with + 名詞",
+            "transitivity": "自動詞中心",
+            "structure": "S + go with + O",
+            "image": "今いる場所・状態から離れて進む",
+            "point": "GOの中心イメージ「今いる場所・状態から離れて進む」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "We will go with the standard option.",
+                    "ja": "標準案で進めます。",
+                    "focus": "go with",
+                    "object": "the standard option",
+                    "jaFocus": "進めます"
+                },
+                {
+                    "en": "We go this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "go with",
+                    "object": "the standard option",
+                    "jaFocus": "進めます"
+                },
+                {
+                    "en": "Please go with this option.",
+                    "ja": "この案で進めてください。",
+                    "focus": "go",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I went home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "went",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        }
     ],
     "collocations": [
-      {
-        "phrase": "go well",
-        "ja": "うまくいく",
-        "image": "go well を仕事で使う基本表現として覚える。",
-        "pattern": "go well",
-        "examples": [
-          {
-            "en": "Please go well if possible.",
-            "ja": "可能であれば「うまくいく」してください。",
-            "focus": "go well",
-            "jaFocus": "うまくいく"
-          },
-          {
-            "en": "We need to go well today.",
-            "ja": "今日「うまくいく」する必要があります。",
-            "focus": "go well",
-            "jaFocus": "うまくいく"
-          },
-          {
-            "en": "I will go well after the meeting.",
-            "ja": "会議後に「うまくいく」します。",
-            "focus": "go well",
-            "jaFocus": "うまくいく"
-          }
-        ]
-      },
-      {
-        "phrase": "go ahead",
-        "ja": "進める",
-        "image": "go ahead を仕事で使う基本表現として覚える。",
-        "pattern": "go ahead",
-        "examples": [
-          {
-            "en": "Please go ahead if possible.",
-            "ja": "可能であれば「進める」してください。",
-            "focus": "go ahead",
-            "jaFocus": "進める"
-          },
-          {
-            "en": "We need to go ahead today.",
-            "ja": "今日「進める」する必要があります。",
-            "focus": "go ahead",
-            "jaFocus": "進める"
-          },
-          {
-            "en": "I will go ahead after the meeting.",
-            "ja": "会議後に「進める」します。",
-            "focus": "go ahead",
-            "jaFocus": "進める"
-          }
-        ]
-      },
-      {
-        "phrase": "go over",
-        "ja": "確認する",
-        "image": "go over を仕事で使う基本表現として覚える。",
-        "pattern": "go over",
-        "examples": [
-          {
-            "en": "Please go over if possible.",
-            "ja": "可能であれば「確認する」してください。",
-            "focus": "go over",
-            "jaFocus": "確認する"
-          },
-          {
-            "en": "We need to go over today.",
-            "ja": "今日「確認する」する必要があります。",
-            "focus": "go over",
-            "jaFocus": "確認する"
-          },
-          {
-            "en": "I will go over after the meeting.",
-            "ja": "会議後に「確認する」します。",
-            "focus": "go over",
-            "jaFocus": "確認する"
-          }
-        ]
-      },
-      {
-        "phrase": "go to a meeting",
-        "ja": "会議に行く",
-        "image": "go to a meeting を仕事で使う基本表現として覚える。",
-        "pattern": "go to a meeting",
-        "examples": [
-          {
-            "en": "Please go to a meeting if possible.",
-            "ja": "可能であれば「会議に行く」してください。",
-            "focus": "go to a meeting",
-            "jaFocus": "会議に行く"
-          },
-          {
-            "en": "We need to go to a meeting today.",
-            "ja": "今日「会議に行く」する必要があります。",
-            "focus": "go to a meeting",
-            "jaFocus": "会議に行く"
-          },
-          {
-            "en": "I will go to a meeting after the meeting.",
-            "ja": "会議後に「会議に行く」します。",
-            "focus": "go to a meeting",
-            "jaFocus": "会議に行く"
-          }
-        ]
-      },
-      {
-        "phrase": "go on a business trip",
-        "ja": "出張に行く",
-        "image": "go on a business trip を仕事で使う基本表現として覚える。",
-        "pattern": "go on a business trip",
-        "examples": [
-          {
-            "en": "Please go on a business trip if possible.",
-            "ja": "可能であれば「出張に行く」してください。",
-            "focus": "go on a business trip",
-            "jaFocus": "出張に行く"
-          },
-          {
-            "en": "We need to go on a business trip today.",
-            "ja": "今日「出張に行く」する必要があります。",
-            "focus": "go on a business trip",
-            "jaFocus": "出張に行く"
-          },
-          {
-            "en": "I will go on a business trip after the meeting.",
-            "ja": "会議後に「出張に行く」します。",
-            "focus": "go on a business trip",
-            "jaFocus": "出張に行く"
-          }
-        ]
-      }
+        {
+            "phrase": "go well",
+            "ja": "仕事でよく使う表現",
+            "image": "GOのコアイメージから広がる重要表現。",
+            "pattern": "go well",
+            "examples": [
+                {
+                    "en": "Please go well in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often go well with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us go well clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "go",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go well at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s go well today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "go",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "go ahead",
+            "ja": "仕事でよく使う表現",
+            "image": "GOのコアイメージから広がる重要表現。",
+            "pattern": "go ahead",
+            "examples": [
+                {
+                    "en": "We need to go ahead this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often go ahead with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us go ahead clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "go",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go ahead at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s go ahead today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "go",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "go over",
+            "ja": "仕事でよく使う表現",
+            "image": "GOのコアイメージから広がる重要表現。",
+            "pattern": "go over",
+            "examples": [
+                {
+                    "en": "Please go over in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often go over with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us go over clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "go",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go over at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s go over today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "go",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "go through",
+            "ja": "仕事でよく使う表現",
+            "image": "GOのコアイメージから広がる重要表現。",
+            "pattern": "go through",
+            "examples": [
+                {
+                    "en": "We need to go through this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often go through with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us go through clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "go",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go through at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s go through today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "go",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "go with",
+            "ja": "仕事でよく使う表現",
+            "image": "GOのコアイメージから広がる重要表現。",
+            "pattern": "go with",
+            "examples": [
+                {
+                    "en": "Please go with in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often go with with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us go with clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "go",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go with at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s go with today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "go",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "go back",
+            "ja": "仕事でよく使う表現",
+            "image": "GOのコアイメージから広がる重要表現。",
+            "pattern": "go back",
+            "examples": [
+                {
+                    "en": "We need to go back this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often go back with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us go back clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "go",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go back at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s go back today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "go",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "go on",
+            "ja": "仕事でよく使う表現",
+            "image": "GOのコアイメージから広がる重要表現。",
+            "pattern": "go on",
+            "examples": [
+                {
+                    "en": "Please go on in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often go on with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us go on clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "go",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go on at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s go on today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "go",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "go off",
+            "ja": "仕事でよく使う表現",
+            "image": "GOのコアイメージから広がる重要表現。",
+            "pattern": "go off",
+            "examples": [
+                {
+                    "en": "We need to go off this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often go off with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us go off clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "go",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go off at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s go off today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "go",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "go out",
+            "ja": "仕事でよく使う表現",
+            "image": "GOのコアイメージから広がる重要表現。",
+            "pattern": "go out",
+            "examples": [
+                {
+                    "en": "Please go out in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often go out with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us go out clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "go",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go out at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s go out today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "go",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "go home",
+            "ja": "仕事でよく使う表現",
+            "image": "GOのコアイメージから広がる重要表現。",
+            "pattern": "go home",
+            "examples": [
+                {
+                    "en": "We need to go home this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often go home with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us go home clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "go",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go home at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s go home today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "go",
+                    "jaFocus": "使って"
+                }
+            ]
+        }
     ],
     "phrasalVerbs": [
-      {
-        "phrase": "go over",
-        "ja": "確認する",
-        "image": "go のコアイメージと後ろの語のイメージを合わせて理解する。",
-        "pattern": "go over",
-        "examples": [
-          {
-            "en": "We should go over this issue.",
-            "ja": "この件について「確認する」すべきです。",
-            "focus": "go over",
-            "jaFocus": "確認する"
-          },
-          {
-            "en": "I will go over after the call.",
-            "ja": "通話後に「確認する」します。",
-            "focus": "go over",
-            "jaFocus": "確認する"
-          },
-          {
-            "en": "Can you go over it today?",
-            "ja": "今日それを「確認する」できますか？",
-            "focus": "go over",
-            "jaFocus": "確認する"
-          }
-        ]
-      },
-      {
-        "phrase": "go ahead",
-        "ja": "進める",
-        "image": "go のコアイメージと後ろの語のイメージを合わせて理解する。",
-        "pattern": "go ahead",
-        "examples": [
-          {
-            "en": "We should go ahead this issue.",
-            "ja": "この件について「進める」すべきです。",
-            "focus": "go ahead",
-            "jaFocus": "進める"
-          },
-          {
-            "en": "I will go ahead after the call.",
-            "ja": "通話後に「進める」します。",
-            "focus": "go ahead",
-            "jaFocus": "進める"
-          },
-          {
-            "en": "Can you go ahead it today?",
-            "ja": "今日それを「進める」できますか？",
-            "focus": "go ahead",
-            "jaFocus": "進める"
-          }
-        ]
-      },
-      {
-        "phrase": "go through",
-        "ja": "経験する・確認する",
-        "image": "go のコアイメージと後ろの語のイメージを合わせて理解する。",
-        "pattern": "go through",
-        "examples": [
-          {
-            "en": "We should go through this issue.",
-            "ja": "この件について「経験する・確認する」すべきです。",
-            "focus": "go through",
-            "jaFocus": "経験する・確認する"
-          },
-          {
-            "en": "I will go through after the call.",
-            "ja": "通話後に「経験する・確認する」します。",
-            "focus": "go through",
-            "jaFocus": "経験する・確認する"
-          },
-          {
-            "en": "Can you go through it today?",
-            "ja": "今日それを「経験する・確認する」できますか？",
-            "focus": "go through",
-            "jaFocus": "経験する・確認する"
-          }
-        ]
-      },
-      {
-        "phrase": "go back",
-        "ja": "戻る",
-        "image": "go のコアイメージと後ろの語のイメージを合わせて理解する。",
-        "pattern": "go back",
-        "examples": [
-          {
-            "en": "We should go back this issue.",
-            "ja": "この件について「戻る」すべきです。",
-            "focus": "go back",
-            "jaFocus": "戻る"
-          },
-          {
-            "en": "I will go back after the call.",
-            "ja": "通話後に「戻る」します。",
-            "focus": "go back",
-            "jaFocus": "戻る"
-          },
-          {
-            "en": "Can you go back it today?",
-            "ja": "今日それを「戻る」できますか？",
-            "focus": "go back",
-            "jaFocus": "戻る"
-          }
-        ]
-      },
-      {
-        "phrase": "go on",
-        "ja": "続く",
-        "image": "go のコアイメージと後ろの語のイメージを合わせて理解する。",
-        "pattern": "go on",
-        "examples": [
-          {
-            "en": "We should go on this issue.",
-            "ja": "この件について「続く」すべきです。",
-            "focus": "go on",
-            "jaFocus": "続く"
-          },
-          {
-            "en": "I will go on after the call.",
-            "ja": "通話後に「続く」します。",
-            "focus": "go on",
-            "jaFocus": "続く"
-          },
-          {
-            "en": "Can you go on it today?",
-            "ja": "今日それを「続く」できますか？",
-            "focus": "go on",
-            "jaFocus": "続く"
-          }
-        ]
-      }
+        {
+            "phrase": "go well",
+            "ja": "句動詞・重要表現",
+            "image": "GOと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "go well",
+            "examples": [
+                {
+                    "en": "We should go well before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we go well in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "go",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will go well with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go well on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "go",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can go well in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "go",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "go ahead",
+            "ja": "句動詞・重要表現",
+            "image": "GOと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "go ahead",
+            "examples": [
+                {
+                    "en": "We should go ahead before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we go ahead in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "go",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will go ahead with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go ahead on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "go",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can go ahead in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "go",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "go over",
+            "ja": "句動詞・重要表現",
+            "image": "GOと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "go over",
+            "examples": [
+                {
+                    "en": "We should go over before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we go over in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "go",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will go over with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go over on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "go",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can go over in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "go",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "go through",
+            "ja": "句動詞・重要表現",
+            "image": "GOと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "go through",
+            "examples": [
+                {
+                    "en": "We should go through before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we go through in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "go",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will go through with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go through on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "go",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can go through in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "go",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "go with",
+            "ja": "句動詞・重要表現",
+            "image": "GOと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "go with",
+            "examples": [
+                {
+                    "en": "We should go with before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we go with in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "go",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will go with with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go with on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "go",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can go with in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "go",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "go back",
+            "ja": "句動詞・重要表現",
+            "image": "GOと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "go back",
+            "examples": [
+                {
+                    "en": "We should go back before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we go back in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "go",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will go back with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go back on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "go",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can go back in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "go",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "go on",
+            "ja": "句動詞・重要表現",
+            "image": "GOと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "go on",
+            "examples": [
+                {
+                    "en": "We should go on before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we go on in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "go",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will go on with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go on on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "go",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can go on in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "go",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "go off",
+            "ja": "句動詞・重要表現",
+            "image": "GOと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "go off",
+            "examples": [
+                {
+                    "en": "We should go off before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we go off in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "go",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will go off with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go off on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "go",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can go off in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "go",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "go out",
+            "ja": "句動詞・重要表現",
+            "image": "GOと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "go out",
+            "examples": [
+                {
+                    "en": "We should go out before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we go out in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "go",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will go out with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go out on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "go",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can go out in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "go",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "go home",
+            "ja": "句動詞・重要表現",
+            "image": "GOと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "go home",
+            "examples": [
+                {
+                    "en": "We should go home before the deadline.",
+                    "ja": "締切前にこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we go home in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "go",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will go home with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "go",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I go home on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "go",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can go home in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "go",
+                    "jaFocus": "使えます"
+                }
+            ]
+        }
     ]
-  },
+},
   {
     "id": "come",
     "rank": 7,
@@ -3857,422 +7369,1261 @@ export const verbs: Verb[] = [
     "ipa": "/kʌm/",
     "kana": "カム",
     "syllable": "come",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "こちらへ来る",
-    "coreDetail": "人・連絡・期限・結果がこちら側へ近づく。",
+    "transitivity": "自動詞中心",
+    "importance": "★★★★★ 超重要",
+    "core": "こちら側・話題の中心へ近づく",
+    "coreDetail": "COMEは、相手・話し手・予定・結果などがこちら側に近づく動詞です。仕事では来社、連絡、結果、期限が近づく場面でよく使います。",
+    "coreVisual": {
+        "from": [
+            "相手",
+            "予定",
+            "結果",
+            "連絡"
+        ],
+        "to": "こちら側",
+        "label": "こちらへ近づく"
+    },
     "meanings": [
-      {
-        "id": "m1",
-        "title": "① 来る",
-        "pattern": "COME TO + 場所",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "こちらへ来る",
-        "point": "会議や場所に来る。",
-        "examples": [
-          {
-            "en": "Can you come to the meeting?",
-            "ja": "会議に来られますか？",
-            "focus": "come to",
-            "jaFocus": "来られ"
-          },
-          {
-            "en": "The deadline is coming soon.",
-            "ja": "締切が近づいています。",
-            "focus": "coming",
-            "jaFocus": "近づいて"
-          },
-          {
-            "en": "The request came from the client.",
-            "ja": "その依頼はクライアントから来ました。",
-            "focus": "came",
-            "jaFocus": "来ました"
-          }
-        ]
-      },
-      {
-        "id": "m2",
-        "title": "② 近づく",
-        "pattern": "COME + soon / up",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "こちらへ来る",
-        "point": "期限が近づく。",
-        "examples": [
-          {
-            "en": "Can you come to the meeting?",
-            "ja": "会議に来られますか？",
-            "focus": "come to",
-            "jaFocus": "来られ"
-          },
-          {
-            "en": "The deadline is coming soon.",
-            "ja": "締切が近づいています。",
-            "focus": "coming",
-            "jaFocus": "近づいて"
-          },
-          {
-            "en": "The request came from the client.",
-            "ja": "その依頼はクライアントから来ました。",
-            "focus": "came",
-            "jaFocus": "来ました"
-          }
-        ]
-      },
-      {
-        "id": "m3",
-        "title": "③ 発生する",
-        "pattern": "COME FROM + 人/場所",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "こちらへ来る",
-        "point": "依頼や連絡が来る。",
-        "examples": [
-          {
-            "en": "Can you come to the meeting?",
-            "ja": "会議に来られますか？",
-            "focus": "come to",
-            "jaFocus": "来られ"
-          },
-          {
-            "en": "The deadline is coming soon.",
-            "ja": "締切が近づいています。",
-            "focus": "coming",
-            "jaFocus": "近づいて"
-          },
-          {
-            "en": "The request came from the client.",
-            "ja": "その依頼はクライアントから来ました。",
-            "focus": "came",
-            "jaFocus": "来ました"
-          }
-        ]
-      },
-      {
-        "id": "m4",
-        "title": "④ 思い浮かぶ",
-        "pattern": "COME TO mind",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "こちらへ来る",
-        "point": "考えが浮かぶ。",
-        "examples": [
-          {
-            "en": "Can you come to the meeting?",
-            "ja": "会議に来られますか？",
-            "focus": "come to",
-            "jaFocus": "来られ"
-          },
-          {
-            "en": "The deadline is coming soon.",
-            "ja": "締切が近づいています。",
-            "focus": "coming",
-            "jaFocus": "近づいて"
-          },
-          {
-            "en": "The request came from the client.",
-            "ja": "その依頼はクライアントから来ました。",
-            "focus": "came",
-            "jaFocus": "来ました"
-          }
-        ]
-      },
-      {
-        "id": "m5",
-        "title": "⑤ 結果になる",
-        "pattern": "COME TO + 結論",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "こちらへ来る",
-        "point": "結論や合意に至る。",
-        "examples": [
-          {
-            "en": "Can you come to the meeting?",
-            "ja": "会議に来られますか？",
-            "focus": "come to",
-            "jaFocus": "来られ"
-          },
-          {
-            "en": "The deadline is coming soon.",
-            "ja": "締切が近づいています。",
-            "focus": "coming",
-            "jaFocus": "近づいて"
-          },
-          {
-            "en": "The request came from the client.",
-            "ja": "その依頼はクライアントから来ました。",
-            "focus": "came",
-            "jaFocus": "来ました"
-          }
-        ]
-      }
+        {
+            "id": "arrive",
+            "title": "① 来る・到着する",
+            "pattern": "COME + to 場所",
+            "transitivity": "自動詞中心",
+            "structure": "S + come + 副詞句",
+            "image": "こちら側・話題の中心へ近づく",
+            "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "The client came to our office today.",
+                    "ja": "今日、顧客が弊社に来ました。",
+                    "focus": "came",
+                    "jaFocus": "来ました"
+                },
+                {
+                    "en": "We come this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "came",
+                    "jaFocus": "来ました"
+                },
+                {
+                    "en": "Please come to the meeting on time.",
+                    "ja": "時間通りに会議へ来てください。",
+                    "focus": "come",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I came home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "came",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "be received",
+            "title": "② 届く",
+            "pattern": "COME + from 人/場所",
+            "transitivity": "自動詞中心",
+            "structure": "S + come + 副詞句",
+            "image": "こちら側・話題の中心へ近づく",
+            "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "The request came from the Singapore office.",
+                    "ja": "その依頼はシンガポール本社から来ました。",
+                    "focus": "came",
+                    "jaFocus": "来ました"
+                },
+                {
+                    "en": "We come this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "came",
+                    "jaFocus": "来ました"
+                },
+                {
+                    "en": "Please come to the meeting on time.",
+                    "ja": "時間通りに会議へ来てください。",
+                    "focus": "come",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I came home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "came",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "happen",
+            "title": "③ 発生する",
+            "pattern": "COME up",
+            "transitivity": "自動詞中心",
+            "structure": "S + come up",
+            "image": "こちら側・話題の中心へ近づく",
+            "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "A new issue came up during the meeting.",
+                    "ja": "会議中に新しい課題が出ました。",
+                    "focus": "came up",
+                    "jaFocus": "出ました"
+                },
+                {
+                    "en": "We come this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "came up",
+                    "jaFocus": "出ました"
+                },
+                {
+                    "en": "Please come to the meeting on time.",
+                    "ja": "時間通りに会議へ来てください。",
+                    "focus": "come",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I came home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "came",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "approach",
+            "title": "④ 近づく",
+            "pattern": "COME soon/next",
+            "transitivity": "自動詞中心",
+            "structure": "S + come + 副詞",
+            "image": "こちら側・話題の中心へ近づく",
+            "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "The deadline is coming soon.",
+                    "ja": "締切が近づいています。",
+                    "focus": "coming",
+                    "jaFocus": "近づいています"
+                },
+                {
+                    "en": "We come this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "coming",
+                    "jaFocus": "近づいています"
+                },
+                {
+                    "en": "Please come to the meeting on time.",
+                    "ja": "時間通りに会議へ来てください。",
+                    "focus": "come",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I came home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "came",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "result",
+            "title": "⑤ 結果になる",
+            "pattern": "COME to + 結論",
+            "transitivity": "自動詞中心",
+            "structure": "S + come to + O",
+            "image": "こちら側・話題の中心へ近づく",
+            "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "We came to the same conclusion.",
+                    "ja": "同じ結論に至りました。",
+                    "focus": "came",
+                    "object": "to the same conclusion",
+                    "jaFocus": "至りました"
+                },
+                {
+                    "en": "We come this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "came",
+                    "object": "to the same conclusion",
+                    "jaFocus": "至りました"
+                },
+                {
+                    "en": "Please come to the meeting on time.",
+                    "ja": "時間通りに会議へ来てください。",
+                    "focus": "come",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I came home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "came",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "be included",
+            "title": "⑥ 付属する",
+            "pattern": "COME with + 名詞",
+            "transitivity": "自動詞中心",
+            "structure": "S + come with + O",
+            "image": "こちら側・話題の中心へ近づく",
+            "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "The product comes with a warranty.",
+                    "ja": "その製品には保証が付いています。",
+                    "focus": "comes",
+                    "object": "with a warranty",
+                    "jaFocus": "付いています"
+                },
+                {
+                    "en": "We come this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "comes",
+                    "object": "with a warranty",
+                    "jaFocus": "付いています"
+                },
+                {
+                    "en": "Please come to the meeting on time.",
+                    "ja": "時間通りに会議へ来てください。",
+                    "focus": "come",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I came home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "came",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "rank",
+            "title": "⑦ 順番になる",
+            "pattern": "COME first/second",
+            "transitivity": "自動詞中心",
+            "structure": "S + come + C",
+            "image": "こちら側・話題の中心へ近づく",
+            "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "Quality comes first.",
+                    "ja": "品質が最優先です。",
+                    "focus": "comes",
+                    "jaFocus": "最優先です"
+                },
+                {
+                    "en": "We come this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "comes",
+                    "jaFocus": "最優先です"
+                },
+                {
+                    "en": "Please come to the meeting on time.",
+                    "ja": "時間通りに会議へ来てください。",
+                    "focus": "come",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I came home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "came",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "recover",
+            "title": "⑧ 戻る",
+            "pattern": "COME back",
+            "transitivity": "自動詞中心",
+            "structure": "S + come back",
+            "image": "こちら側・話題の中心へ近づく",
+            "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "The system came back online.",
+                    "ja": "システムが復旧しました。",
+                    "focus": "came back",
+                    "jaFocus": "復旧しました"
+                },
+                {
+                    "en": "We come this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "came back",
+                    "jaFocus": "復旧しました"
+                },
+                {
+                    "en": "Please come to the meeting on time.",
+                    "ja": "時間通りに会議へ来てください。",
+                    "focus": "come",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I came home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "came",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "visit",
+            "title": "⑨ 訪問する",
+            "pattern": "COME by",
+            "transitivity": "自動詞中心",
+            "structure": "S + come by",
+            "image": "こちら側・話題の中心へ近づく",
+            "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "I will come by your office tomorrow.",
+                    "ja": "明日そちらのオフィスに伺います。",
+                    "focus": "come by",
+                    "jaFocus": "伺います"
+                },
+                {
+                    "en": "We will come by your office tomorrow.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "come by",
+                    "jaFocus": "伺います"
+                },
+                {
+                    "en": "Please come to the meeting on time.",
+                    "ja": "時間通りに会議へ来てください。",
+                    "focus": "come",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I came home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "came",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        },
+        {
+            "id": "be available",
+            "title": "⑩ 出る・発売される",
+            "pattern": "COME out",
+            "transitivity": "自動詞中心",
+            "structure": "S + come out",
+            "image": "こちら側・話題の中心へ近づく",
+            "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+            "examples": [
+                {
+                    "en": "The new catalog comes out next month.",
+                    "ja": "新しいカタログは来月出ます。",
+                    "focus": "comes out",
+                    "jaFocus": "出ます"
+                },
+                {
+                    "en": "We come this in the project.",
+                    "ja": "案件でこの表現を使います。",
+                    "focus": "comes out",
+                    "jaFocus": "出ます"
+                },
+                {
+                    "en": "Please come to the meeting on time.",
+                    "ja": "時間通りに会議へ来てください。",
+                    "focus": "come",
+                    "jaFocus": "ください"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I came home late.",
+                    "ja": "帰宅が遅くなった。",
+                    "focus": "came",
+                    "jaFocus": "遅くなった"
+                },
+                {
+                    "en": "This expression is useful in daily conversation.",
+                    "ja": "この表現は日常会話でも役立つ。",
+                    "focus": "is",
+                    "jaFocus": "役立つ"
+                }
+            ]
+        }
     ],
     "collocations": [
-      {
-        "phrase": "come to a meeting",
-        "ja": "会議に来る",
-        "image": "come to a meeting を仕事で使う基本表現として覚える。",
-        "pattern": "come to a meeting",
-        "examples": [
-          {
-            "en": "Please come to a meeting if possible.",
-            "ja": "可能であれば「会議に来る」してください。",
-            "focus": "come to a meeting",
-            "jaFocus": "会議に来る"
-          },
-          {
-            "en": "We need to come to a meeting today.",
-            "ja": "今日「会議に来る」する必要があります。",
-            "focus": "come to a meeting",
-            "jaFocus": "会議に来る"
-          },
-          {
-            "en": "I will come to a meeting after the meeting.",
-            "ja": "会議後に「会議に来る」します。",
-            "focus": "come to a meeting",
-            "jaFocus": "会議に来る"
-          }
-        ]
-      },
-      {
-        "phrase": "come up",
-        "ja": "発生する",
-        "image": "come up を仕事で使う基本表現として覚える。",
-        "pattern": "come up",
-        "examples": [
-          {
-            "en": "Please come up if possible.",
-            "ja": "可能であれば「発生する」してください。",
-            "focus": "come up",
-            "jaFocus": "発生する"
-          },
-          {
-            "en": "We need to come up today.",
-            "ja": "今日「発生する」する必要があります。",
-            "focus": "come up",
-            "jaFocus": "発生する"
-          },
-          {
-            "en": "I will come up after the meeting.",
-            "ja": "会議後に「発生する」します。",
-            "focus": "come up",
-            "jaFocus": "発生する"
-          }
-        ]
-      },
-      {
-        "phrase": "come to mind",
-        "ja": "思い浮かぶ",
-        "image": "come to mind を仕事で使う基本表現として覚える。",
-        "pattern": "come to mind",
-        "examples": [
-          {
-            "en": "Please come to mind if possible.",
-            "ja": "可能であれば「思い浮かぶ」してください。",
-            "focus": "come to mind",
-            "jaFocus": "思い浮かぶ"
-          },
-          {
-            "en": "We need to come to mind today.",
-            "ja": "今日「思い浮かぶ」する必要があります。",
-            "focus": "come to mind",
-            "jaFocus": "思い浮かぶ"
-          },
-          {
-            "en": "I will come to mind after the meeting.",
-            "ja": "会議後に「思い浮かぶ」します。",
-            "focus": "come to mind",
-            "jaFocus": "思い浮かぶ"
-          }
-        ]
-      },
-      {
-        "phrase": "come to an agreement",
-        "ja": "合意する",
-        "image": "come to an agreement を仕事で使う基本表現として覚える。",
-        "pattern": "come to an agreement",
-        "examples": [
-          {
-            "en": "Please come to an agreement if possible.",
-            "ja": "可能であれば「合意する」してください。",
-            "focus": "come to an agreement",
-            "jaFocus": "合意する"
-          },
-          {
-            "en": "We need to come to an agreement today.",
-            "ja": "今日「合意する」する必要があります。",
-            "focus": "come to an agreement",
-            "jaFocus": "合意する"
-          },
-          {
-            "en": "I will come to an agreement after the meeting.",
-            "ja": "会議後に「合意する」します。",
-            "focus": "come to an agreement",
-            "jaFocus": "合意する"
-          }
-        ]
-      },
-      {
-        "phrase": "come on time",
-        "ja": "時間通りに来る",
-        "image": "come on time を仕事で使う基本表現として覚える。",
-        "pattern": "come on time",
-        "examples": [
-          {
-            "en": "Please come on time if possible.",
-            "ja": "可能であれば「時間通りに来る」してください。",
-            "focus": "come on time",
-            "jaFocus": "時間通りに来る"
-          },
-          {
-            "en": "We need to come on time today.",
-            "ja": "今日「時間通りに来る」する必要があります。",
-            "focus": "come on time",
-            "jaFocus": "時間通りに来る"
-          },
-          {
-            "en": "I will come on time after the meeting.",
-            "ja": "会議後に「時間通りに来る」します。",
-            "focus": "come on time",
-            "jaFocus": "時間通りに来る"
-          }
-        ]
-      }
+        {
+            "phrase": "come up",
+            "ja": "仕事でよく使う表現",
+            "image": "COMEのコアイメージから広がる重要表現。",
+            "pattern": "come up",
+            "examples": [
+                {
+                    "en": "Please come up in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often come up with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us come up clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "come",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come up at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s come up today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "come",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "come in",
+            "ja": "仕事でよく使う表現",
+            "image": "COMEのコアイメージから広がる重要表現。",
+            "pattern": "come in",
+            "examples": [
+                {
+                    "en": "We need to come in this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often come in with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us come in clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "come",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come in at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s come in today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "come",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "come back",
+            "ja": "仕事でよく使う表現",
+            "image": "COMEのコアイメージから広がる重要表現。",
+            "pattern": "come back",
+            "examples": [
+                {
+                    "en": "Please come back in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often come back with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us come back clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "come",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come back at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s come back today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "come",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "come across",
+            "ja": "仕事でよく使う表現",
+            "image": "COMEのコアイメージから広がる重要表現。",
+            "pattern": "come across",
+            "examples": [
+                {
+                    "en": "We need to come across this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often come across with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us come across clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "come",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come across at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s come across today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "come",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "come with",
+            "ja": "仕事でよく使う表現",
+            "image": "COMEのコアイメージから広がる重要表現。",
+            "pattern": "come with",
+            "examples": [
+                {
+                    "en": "Please come with in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often come with with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us come with clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "come",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come with at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s come with today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "come",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "come to",
+            "ja": "仕事でよく使う表現",
+            "image": "COMEのコアイメージから広がる重要表現。",
+            "pattern": "come to",
+            "examples": [
+                {
+                    "en": "We need to come to this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often come to with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us come to clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "come",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come to at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s come to today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "come",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "come by",
+            "ja": "仕事でよく使う表現",
+            "image": "COMEのコアイメージから広がる重要表現。",
+            "pattern": "come by",
+            "examples": [
+                {
+                    "en": "Please come by in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often come by with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us come by clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "come",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come by at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s come by today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "come",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "come out",
+            "ja": "仕事でよく使う表現",
+            "image": "COMEのコアイメージから広がる重要表現。",
+            "pattern": "come out",
+            "examples": [
+                {
+                    "en": "We need to come out this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often come out with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us come out clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "come",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come out at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s come out today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "come",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "come from",
+            "ja": "仕事でよく使う表現",
+            "image": "COMEのコアイメージから広がる重要表現。",
+            "pattern": "come from",
+            "examples": [
+                {
+                    "en": "Please come from in the meeting.",
+                    "ja": "会議でこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often come from with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us come from clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "come",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come from at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s come from today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "come",
+                    "jaFocus": "使って"
+                }
+            ]
+        },
+        {
+            "phrase": "come first",
+            "ja": "仕事でよく使う表現",
+            "image": "COMEのコアイメージから広がる重要表現。",
+            "pattern": "come first",
+            "examples": [
+                {
+                    "en": "We need to come first this week.",
+                    "ja": "今週この表現を使う必要があります。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "I often come first with clients.",
+                    "ja": "顧客対応でよく使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "This phrase helps us come first clearly.",
+                    "ja": "この表現は明確に伝える助けになります。",
+                    "focus": "come",
+                    "jaFocus": "助けになります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come first at home sometimes.",
+                    "ja": "日常でも時々この表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                },
+                {
+                    "en": "Let’s come first today.",
+                    "ja": "今日はこの表現を使ってみましょう。",
+                    "focus": "come",
+                    "jaFocus": "使って"
+                }
+            ]
+        }
     ],
     "phrasalVerbs": [
-      {
-        "phrase": "come up",
-        "ja": "発生する",
-        "image": "come のコアイメージと後ろの語のイメージを合わせて理解する。",
-        "pattern": "come up",
-        "examples": [
-          {
-            "en": "We should come up this issue.",
-            "ja": "この件について「発生する」すべきです。",
-            "focus": "come up",
-            "jaFocus": "発生する"
-          },
-          {
-            "en": "I will come up after the call.",
-            "ja": "通話後に「発生する」します。",
-            "focus": "come up",
-            "jaFocus": "発生する"
-          },
-          {
-            "en": "Can you come up it today?",
-            "ja": "今日それを「発生する」できますか？",
-            "focus": "come up",
-            "jaFocus": "発生する"
-          }
-        ]
-      },
-      {
-        "phrase": "come back",
-        "ja": "戻る",
-        "image": "come のコアイメージと後ろの語のイメージを合わせて理解する。",
-        "pattern": "come back",
-        "examples": [
-          {
-            "en": "We should come back this issue.",
-            "ja": "この件について「戻る」すべきです。",
-            "focus": "come back",
-            "jaFocus": "戻る"
-          },
-          {
-            "en": "I will come back after the call.",
-            "ja": "通話後に「戻る」します。",
-            "focus": "come back",
-            "jaFocus": "戻る"
-          },
-          {
-            "en": "Can you come back it today?",
-            "ja": "今日それを「戻る」できますか？",
-            "focus": "come back",
-            "jaFocus": "戻る"
-          }
-        ]
-      },
-      {
-        "phrase": "come across",
-        "ja": "偶然見つける",
-        "image": "come のコアイメージと後ろの語のイメージを合わせて理解する。",
-        "pattern": "come across",
-        "examples": [
-          {
-            "en": "We should come across this issue.",
-            "ja": "この件について「偶然見つける」すべきです。",
-            "focus": "come across",
-            "jaFocus": "偶然見つける"
-          },
-          {
-            "en": "I will come across after the call.",
-            "ja": "通話後に「偶然見つける」します。",
-            "focus": "come across",
-            "jaFocus": "偶然見つける"
-          },
-          {
-            "en": "Can you come across it today?",
-            "ja": "今日それを「偶然見つける」できますか？",
-            "focus": "come across",
-            "jaFocus": "偶然見つける"
-          }
-        ]
-      },
-      {
-        "phrase": "come in",
-        "ja": "入る・届く",
-        "image": "come のコアイメージと後ろの語のイメージを合わせて理解する。",
-        "pattern": "come in",
-        "examples": [
-          {
-            "en": "We should come in this issue.",
-            "ja": "この件について「入る・届く」すべきです。",
-            "focus": "come in",
-            "jaFocus": "入る・届く"
-          },
-          {
-            "en": "I will come in after the call.",
-            "ja": "通話後に「入る・届く」します。",
-            "focus": "come in",
-            "jaFocus": "入る・届く"
-          },
-          {
-            "en": "Can you come in it today?",
-            "ja": "今日それを「入る・届く」できますか？",
-            "focus": "come in",
-            "jaFocus": "入る・届く"
-          }
-        ]
-      },
-      {
-        "phrase": "come down to",
-        "ja": "結局〜になる",
-        "image": "come のコアイメージと後ろの語のイメージを合わせて理解する。",
-        "pattern": "come down to",
-        "examples": [
-          {
-            "en": "We should come down to this issue.",
-            "ja": "この件について「結局〜になる」すべきです。",
-            "focus": "come down to",
-            "jaFocus": "結局〜になる"
-          },
-          {
-            "en": "I will come down to after the call.",
-            "ja": "通話後に「結局〜になる」します。",
-            "focus": "come down to",
-            "jaFocus": "結局〜になる"
-          },
-          {
-            "en": "Can you come down to it today?",
-            "ja": "今日それを「結局〜になる」できますか？",
-            "focus": "come down to",
-            "jaFocus": "結局〜になる"
-          }
-        ]
-      }
+        {
+            "phrase": "come up",
+            "ja": "句動詞・重要表現",
+            "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "come up",
+            "examples": [
+                {
+                    "en": "This issue may come up during the project.",
+                    "ja": "案件中にこの表現が使われます。",
+                    "focus": "come",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we come up in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "come",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will come up with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come up on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "come",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can come up in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "come",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "come in",
+            "ja": "句動詞・重要表現",
+            "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "come in",
+            "examples": [
+                {
+                    "en": "This issue may come in during the project.",
+                    "ja": "案件中にこの表現が使われます。",
+                    "focus": "come",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we come in in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "come",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will come in with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come in on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "come",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can come in in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "come",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "come back",
+            "ja": "句動詞・重要表現",
+            "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "come back",
+            "examples": [
+                {
+                    "en": "This issue may come back during the project.",
+                    "ja": "案件中にこの表現が使われます。",
+                    "focus": "come",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we come back in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "come",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will come back with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come back on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "come",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can come back in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "come",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "come across",
+            "ja": "句動詞・重要表現",
+            "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "come across",
+            "examples": [
+                {
+                    "en": "This issue may come across during the project.",
+                    "ja": "案件中にこの表現が使われます。",
+                    "focus": "come",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we come across in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "come",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will come across with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come across on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "come",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can come across in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "come",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "come with",
+            "ja": "句動詞・重要表現",
+            "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "come with",
+            "examples": [
+                {
+                    "en": "This issue may come with during the project.",
+                    "ja": "案件中にこの表現が使われます。",
+                    "focus": "come",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we come with in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "come",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will come with with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come with on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "come",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can come with in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "come",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "come to",
+            "ja": "句動詞・重要表現",
+            "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "come to",
+            "examples": [
+                {
+                    "en": "This issue may come to during the project.",
+                    "ja": "案件中にこの表現が使われます。",
+                    "focus": "come",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we come to in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "come",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will come to with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come to on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "come",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can come to in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "come",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "come by",
+            "ja": "句動詞・重要表現",
+            "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "come by",
+            "examples": [
+                {
+                    "en": "This issue may come by during the project.",
+                    "ja": "案件中にこの表現が使われます。",
+                    "focus": "come",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we come by in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "come",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will come by with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come by on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "come",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can come by in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "come",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "come out",
+            "ja": "句動詞・重要表現",
+            "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "come out",
+            "examples": [
+                {
+                    "en": "This issue may come out during the project.",
+                    "ja": "案件中にこの表現が使われます。",
+                    "focus": "come",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we come out in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "come",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will come out with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come out on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "come",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can come out in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "come",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "come from",
+            "ja": "句動詞・重要表現",
+            "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "come from",
+            "examples": [
+                {
+                    "en": "This issue may come from during the project.",
+                    "ja": "案件中にこの表現が使われます。",
+                    "focus": "come",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we come from in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "come",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will come from with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come from on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "come",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can come from in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "come",
+                    "jaFocus": "使えます"
+                }
+            ]
+        },
+        {
+            "phrase": "come first",
+            "ja": "句動詞・重要表現",
+            "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
+            "pattern": "come first",
+            "examples": [
+                {
+                    "en": "This issue may come first during the project.",
+                    "ja": "案件中にこの表現が使われます。",
+                    "focus": "come",
+                    "jaFocus": "使われます"
+                },
+                {
+                    "en": "Can we come first in the next meeting?",
+                    "ja": "次の会議でこの表現を使えますか。",
+                    "focus": "come",
+                    "jaFocus": "使えますか"
+                },
+                {
+                    "en": "I will come first with the team.",
+                    "ja": "チームとこの表現を使います。",
+                    "focus": "come",
+                    "jaFocus": "使います"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I come first on weekends.",
+                    "ja": "週末にこの表現を使うことがあります。",
+                    "focus": "come",
+                    "jaFocus": "使う"
+                },
+                {
+                    "en": "This can come first in daily life.",
+                    "ja": "これは日常生活でも使えます。",
+                    "focus": "come",
+                    "jaFocus": "使えます"
+                }
+            ]
+        }
     ]
-  },
+},
   {
     "id": "put",
     "rank": 8,

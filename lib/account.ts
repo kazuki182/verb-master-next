@@ -86,6 +86,8 @@ export type UserProgress = {
   bookmark?: StudyBookmark;
   savedPhrases?: SavedPhrase[];
   testSessions?: Record<string, TestSession>;
+  unlockedVerbCount?: number;
+  purchaseTotalYen?: number;
   lastStudyDate?: string;
   lastLoginAt?: string;
 };
@@ -225,6 +227,8 @@ function normalizeProgress(progress: UserProgress) {
   if (!progress.sectionClearIds) progress.sectionClearIds = [];
   if (!progress.savedPhrases) progress.savedPhrases = [];
   if (!progress.testSessions) progress.testSessions = {};
+  if (typeof progress.unlockedVerbCount !== "number") progress.unlockedVerbCount = 0;
+  if (typeof progress.purchaseTotalYen !== "number") progress.purchaseTotalYen = 0;
   normalizeMission(progress);
   return progress;
 }
@@ -249,7 +253,9 @@ export function ensureProgress(username: string): UserProgress {
       missionCompletedCount: 0,
       sectionClearIds: [],
       savedPhrases: [],
-      testSessions: {}
+      testSessions: {},
+      unlockedVerbCount: 0,
+      purchaseTotalYen: 0
     };
     saveProgressMap(map);
   }
@@ -648,4 +654,29 @@ export function clearTestSession(key: string) {
     saveProgress(progress);
   }
   return progress.testSessions ?? {};
+}
+
+
+export function getUnlockedVerbCount() {
+  const progress = getCurrentProgress();
+  return progress?.unlockedVerbCount || 0;
+}
+
+export function hasGrammarAccess() {
+  const username = getCurrentUsername();
+  if (!username) return false;
+  const account = getAccounts().find((item) => item.username === username);
+  if (account?.role === "admin") return true;
+  const progress = getCurrentProgress();
+  return (progress?.unlockedVerbCount || 0) >= 30 || (progress?.purchaseTotalYen || 0) >= 500;
+}
+
+export function grantThirtyVerbPack(username?: string) {
+  const target = username || getCurrentUsername();
+  if (!target) return null;
+  const progress = ensureProgress(target);
+  progress.unlockedVerbCount = Math.max(progress.unlockedVerbCount || 0, 30);
+  progress.purchaseTotalYen = Math.max(progress.purchaseTotalYen || 0, 500);
+  saveProgress(progress);
+  return progress;
 }

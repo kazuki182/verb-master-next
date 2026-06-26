@@ -34,6 +34,8 @@ export default function PremiumExamples({
             <ExampleCard
               key={`${example.en}-${index}`}
               example={example}
+              verbPattern={phraseBase?.pattern}
+              sentenceStructure={phraseBase?.pattern}
               phrase={phraseBase ? {
                 id: `${phraseBase.idPrefix}:daily:${index}`,
                 verbId: phraseBase.verbId,

@@ -53,6 +53,8 @@ export default async function VerbPhrasalPage({ params }: { params: Promise<{ id
                   <ExampleCard
                     key={e.en}
                     example={e}
+                    verbPattern={p.pattern}
+                    sentenceStructure={p.pattern}
                     phrase={{
                       id: `${verb.id}:phrasal:${index}:${exampleIndex}`,
                       verbId: verb.id,

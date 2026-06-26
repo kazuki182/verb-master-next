@@ -104,10 +104,10 @@ export const verbs: Verb[] = [
         "point": "get の後ろに状態を表す形容詞を置く。busy, better, difficult, ready など社会人会話でよく使う。",
         "examples": [
           {
-            "en": "Things are getting busy this week.",
-            "ja": "今週は忙しくなってきている。",
+            "en": "I'm getting busy this week.",
+            "ja": "私は今週忙しくなってきています。",
             "focus": "getting",
-            "jaFocus": "忙しくなって"
+            "jaFocus": "忙しくなってきています"
           },
           {
             "en": "The schedule is getting tight.",

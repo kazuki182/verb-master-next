@@ -104,6 +104,8 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
                   <ExampleCard
                     key={example.en}
                     example={example}
+                    verbPattern={meaning.pattern}
+                    sentenceStructure={meaning.structure}
                     phrase={{
                       id: `${verb.id}:basic:${meaning.id}:${exampleIndex}`,
                       verbId: verb.id,

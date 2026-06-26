@@ -35,10 +35,24 @@ function simplifyStructure(structure?: string) {
 
 function guessPatternLabel(pattern?: string, structure?: string) {
   const text = `${pattern ?? ""} ${structure ?? ""}`;
-  if (text.includes("形容詞") || text.includes("C")) return "S + V + C";
-  if (text.includes("to 場所") || text.includes("場所")) return "S + V + 副詞句";
+
+  // 補語を取る型
+  if (text.includes("形容詞") || text.includes(" C") || text.includes("+ C")) return "S + V + C";
+
+  // 目的語＋補語を取る型
   if (text.includes("人 + to") || text.includes("to不定詞")) return "S + V + O + C";
   if (text.includes("過去分詞")) return "S + V + O + C";
+
+  // 場所・方向を表す副詞句を取る型
+  if (text.includes("to 場所") || text.includes("場所")) return "S + V + 副詞句";
+
+  // TAKE系の主要型。take a look / take notes / take responsibility などは目的語を取る。
+  if (text.toLowerCase().includes("take")) {
+    if (text.includes("時間")) return "S + V + O";
+    if (text.includes("care of") || text.includes("part in")) return "S + V + 句動詞/熟語 + O";
+    return "S + V + O";
+  }
+
   if (text.includes("名詞") || text.includes("O")) return "S + V + O";
   return simplifyStructure(structure) || "文型確認中";
 }

@@ -18019,100 +18019,4069 @@ export const verbs: Verb[] = [
     ]
   },
   {
-    "id": "leave",
-    "rank": 29,
-    "word": "LEAVE",
-    "ipa": "",
-    "kana": "リーヴ",
-    "syllable": "leave",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "離れる・残す",
-    "coreDetail": "場所を離れる、情報を残す",
-    "meanings": [
-      {
-        "id": "business-basic",
-        "title": "① ビジネスで使う基本形",
-        "pattern": "LEAVE + 名詞 / 文",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "場所を離れる、情報を残す",
-        "point": "まずは社会人の会話・メールで使いやすい基本形を覚える。",
-        "examples": [
+      "id": "run",
+      "rank": 29,
+      "word": "RUN",
+      "ipa": "/rʌn/",
+      "kana": "ラン",
+      "syllable": "run",
+      "transitivity": "自動詞・他動詞",
+      "importance": "★★★★★ 超重要",
+      "core": "人・物・仕組みが止まらず動き続ける",
+      "coreDetail": "RUNは「走る」だけでなく、会議・事業・システム・予定が動き続ける感覚で使います。仕事では運営する、実行する、時間が流れる、問題が発生するなどに広がります。",
+      "coreVisual": {
+          "from": [
+              "🏃 動く",
+              "⚙️ 稼働",
+              "📊 運営",
+              "⏱️ 時間",
+              "💻 実行"
+          ],
+          "to": "前へ進む流れ",
+          "label": "止まらず動く"
+      },
+      "meanings": [
           {
-            "en": "I will leave the details.",
-            "ja": "詳細を確認・対応します。",
-            "focus": "leave",
-            "object": "the details",
-            "jaFocus": "確認・対応"
+              "id": "operate",
+              "title": "1 運営する・動かす",
+              "pattern": "RUN + 名詞",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "会社・会議・仕組みを動かす。",
+              "point": "run a meeting / run a business のように、仕事では「運営する」で非常によく使う。",
+              "examples": [
+                  {
+                      "en": "She runs the sales meeting every Monday.",
+                      "ja": "彼女は毎週月曜日に営業会議を運営しています。",
+                      "focus": "runs",
+                      "object": "the sales meeting",
+                      "jaFocus": "運営しています"
+                  },
+                  {
+                      "en": "Our team runs the new project.",
+                      "ja": "私たちのチームが新しい案件を進めています。",
+                      "focus": "runs",
+                      "object": "the new project",
+                      "jaFocus": "進めています"
+                  },
+                  {
+                      "en": "He runs a small company in Tokyo.",
+                      "ja": "彼は東京で小さな会社を経営しています。",
+                      "focus": "runs",
+                      "object": "a small company",
+                      "jaFocus": "経営しています"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I run a small study group.",
+                      "ja": "小さな勉強会を運営しています。",
+                      "focus": "run",
+                      "object": "a small study group",
+                      "jaFocus": "運営しています"
+                  },
+                  {
+                      "en": "She runs a blog about music.",
+                      "ja": "彼女は音楽ブログを運営しています。",
+                      "focus": "runs",
+                      "object": "a blog",
+                      "jaFocus": "運営しています"
+                  }
+              ]
           },
           {
-            "en": "We need to leave this today.",
-            "ja": "今日これを進める必要があります。",
-            "focus": "leave",
-            "object": "this",
-            "jaFocus": "進める"
+              "id": "execute",
+              "title": "2 実行する",
+              "pattern": "RUN + プログラム / テスト",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "作業やプログラムを実行する。",
+              "point": "ITや業務確認では run a test / run the system が自然。",
+              "examples": [
+                  {
+                      "en": "Please run the test before release.",
+                      "ja": "リリース前にテストを実行してください。",
+                      "focus": "run",
+                      "object": "the test",
+                      "jaFocus": "実行してください"
+                  },
+                  {
+                      "en": "We ran the report this morning.",
+                      "ja": "今朝レポートを出力しました。",
+                      "focus": "ran",
+                      "object": "the report",
+                      "jaFocus": "出力しました"
+                  },
+                  {
+                      "en": "The system runs automatically every night.",
+                      "ja": "そのシステムは毎晩自動で稼働します。",
+                      "focus": "runs",
+                      "jaFocus": "稼働します"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I ran the app on my phone.",
+                      "ja": "スマホでアプリを起動しました。",
+                      "focus": "ran",
+                      "object": "the app",
+                      "jaFocus": "起動しました"
+                  },
+                  {
+                      "en": "This game runs smoothly.",
+                      "ja": "このゲームはスムーズに動きます。",
+                      "focus": "runs",
+                      "jaFocus": "動きます"
+                  }
+              ]
           },
           {
-            "en": "Can you leave it by tomorrow?",
-            "ja": "明日までに対応できますか？",
-            "focus": "leave",
-            "object": "it",
-            "jaFocus": "対応"
+              "id": "continue",
+              "title": "3 続く・継続する",
+              "pattern": "RUN + 副詞 / 時間表現",
+              "transitivity": "自動詞",
+              "structure": "S + V",
+              "image": "流れや状態が続く。",
+              "point": "meeting runs late のように予定が長引く場合にも使う。",
+              "examples": [
+                  {
+                      "en": "The meeting ran longer than expected.",
+                      "ja": "会議は予定より長引きました。",
+                      "focus": "ran",
+                      "jaFocus": "長引きました"
+                  },
+                  {
+                      "en": "The campaign runs until the end of this month.",
+                      "ja": "キャンペーンは今月末まで続きます。",
+                      "focus": "runs",
+                      "jaFocus": "続きます"
+                  },
+                  {
+                      "en": "This contract runs for one year.",
+                      "ja": "この契約は1年間有効です。",
+                      "focus": "runs",
+                      "jaFocus": "有効です"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "The event runs all weekend.",
+                      "ja": "イベントは週末中続きます。",
+                      "focus": "runs",
+                      "jaFocus": "続きます"
+                  },
+                  {
+                      "en": "The movie runs for two hours.",
+                      "ja": "その映画は2時間あります。",
+                      "focus": "runs",
+                      "jaFocus": "あります"
+                  }
+              ]
+          },
+          {
+              "id": "manage",
+              "title": "4 担当する・管理する",
+              "pattern": "RUN + 業務 / チーム",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "チームや業務を回す。",
+              "point": "manageよりカジュアルに「回す」「担当する」感覚で使える。",
+              "examples": [
+                  {
+                      "en": "I run the customer support team.",
+                      "ja": "私はカスタマーサポートチームを担当しています。",
+                      "focus": "run",
+                      "object": "the customer support team",
+                      "jaFocus": "担当しています"
+                  },
+                  {
+                      "en": "Who runs this account?",
+                      "ja": "この取引先は誰が担当していますか？",
+                      "focus": "runs",
+                      "object": "this account",
+                      "jaFocus": "担当しています"
+                  },
+                  {
+                      "en": "She runs daily operations.",
+                      "ja": "彼女は日々の業務を管理しています。",
+                      "focus": "runs",
+                      "object": "daily operations",
+                      "jaFocus": "管理しています"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "My brother runs the family schedule.",
+                      "ja": "兄が家族の予定を管理しています。",
+                      "focus": "runs",
+                      "object": "the family schedule",
+                      "jaFocus": "管理しています"
+                  },
+                  {
+                      "en": "I run most of the errands on weekends.",
+                      "ja": "週末はたいてい私が用事を済ませます。",
+                      "focus": "run",
+                      "object": "most of the errands",
+                      "jaFocus": "済ませます"
+                  }
+              ]
+          },
+          {
+              "id": "move-fast",
+              "title": "5 走る・急いで行く",
+              "pattern": "RUN",
+              "transitivity": "自動詞",
+              "structure": "S + V",
+              "image": "人が素早く移動する。",
+              "point": "基本の「走る」。仕事では急いで行くニュアンスでも使う。",
+              "examples": [
+                  {
+                      "en": "I ran to the station after the meeting.",
+                      "ja": "会議後、駅まで走りました。",
+                      "focus": "ran",
+                      "jaFocus": "走りました"
+                  },
+                  {
+                      "en": "He ran to the office because he was late.",
+                      "ja": "彼は遅れそうだったのでオフィスへ走りました。",
+                      "focus": "ran",
+                      "jaFocus": "走りました"
+                  },
+                  {
+                      "en": "I have to run to the next meeting.",
+                      "ja": "次の会議に急いで行かないといけません。",
+                      "focus": "run",
+                      "jaFocus": "急いで行かない"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I run every morning.",
+                      "ja": "毎朝走っています。",
+                      "focus": "run",
+                      "jaFocus": "走っています"
+                  },
+                  {
+                      "en": "The kids ran to the park.",
+                      "ja": "子どもたちは公園まで走りました。",
+                      "focus": "ran",
+                      "jaFocus": "走りました"
+                  }
+              ]
+          },
+          {
+              "id": "cost",
+              "title": "6 費用がかかる",
+              "pattern": "RUN + 金額",
+              "transitivity": "自動詞に近い表現",
+              "structure": "S + V + 金額",
+              "image": "費用がその金額まで達する。",
+              "point": "The cost runs to... はやや硬め。見積や費用説明で使える。",
+              "examples": [
+                  {
+                      "en": "The repair cost may run to 500 dollars.",
+                      "ja": "修理費は500ドルに達する可能性があります。",
+                      "focus": "run",
+                      "jaFocus": "達する"
+                  },
+                  {
+                      "en": "The total cost ran higher than expected.",
+                      "ja": "総費用は想定より高くなりました。",
+                      "focus": "ran",
+                      "jaFocus": "高くなりました"
+                  },
+                  {
+                      "en": "The project expenses could run over budget.",
+                      "ja": "案件費用が予算を超える可能性があります。",
+                      "focus": "run",
+                      "jaFocus": "超える"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "The trip may run over our budget.",
+                      "ja": "旅行費用が予算を超えるかもしれません。",
+                      "focus": "run",
+                      "jaFocus": "超える"
+                  },
+                  {
+                      "en": "The dinner bill ran higher than I expected.",
+                      "ja": "夕食代は思ったより高くなりました。",
+                      "focus": "ran",
+                      "jaFocus": "高くなりました"
+                  }
+              ]
+          },
+          {
+              "id": "be-available",
+              "title": "7 運行する・営業する",
+              "pattern": "RUN",
+              "transitivity": "自動詞",
+              "structure": "S + V",
+              "image": "電車・サービスが動いている。",
+              "point": "電車やサービスの運行に使う。",
+              "examples": [
+                  {
+                      "en": "The trains are running normally today.",
+                      "ja": "今日は電車が通常通り運行しています。",
+                      "focus": "running",
+                      "jaFocus": "運行しています"
+                  },
+                  {
+                      "en": "The shuttle bus runs every 20 minutes.",
+                      "ja": "シャトルバスは20分ごとに運行しています。",
+                      "focus": "runs",
+                      "jaFocus": "運行しています"
+                  },
+                  {
+                      "en": "The service runs from Monday to Friday.",
+                      "ja": "そのサービスは月曜から金曜まで利用できます。",
+                      "focus": "runs",
+                      "jaFocus": "利用できます"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "The buses run late at night.",
+                      "ja": "バスは夜遅くまで運行しています。",
+                      "focus": "run",
+                      "jaFocus": "運行しています"
+                  },
+                  {
+                      "en": "This shop runs until nine.",
+                      "ja": "この店は9時まで営業しています。",
+                      "focus": "runs",
+                      "jaFocus": "営業しています"
+                  }
+              ]
+          },
+          {
+              "id": "run-into",
+              "title": "8 遭遇する",
+              "pattern": "RUN INTO + 人 / 問題",
+              "transitivity": "句動詞的用法",
+              "structure": "S + V + 前置詞句",
+              "image": "人や問題に偶然ぶつかる。",
+              "point": "run into a problem は仕事で非常に便利。",
+              "examples": [
+                  {
+                      "en": "We ran into a problem during testing.",
+                      "ja": "テスト中に問題に直面しました。",
+                      "focus": "ran into",
+                      "object": "a problem",
+                      "jaFocus": "直面しました"
+                  },
+                  {
+                      "en": "I ran into an issue with the data.",
+                      "ja": "データで問題が発生しました。",
+                      "focus": "ran into",
+                      "object": "an issue",
+                      "jaFocus": "発生しました"
+                  },
+                  {
+                      "en": "We may run into delays next week.",
+                      "ja": "来週遅れが発生するかもしれません。",
+                      "focus": "run into",
+                      "object": "delays",
+                      "jaFocus": "発生する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I ran into an old friend yesterday.",
+                      "ja": "昨日、昔の友人に偶然会いました。",
+                      "focus": "ran into",
+                      "object": "an old friend",
+                      "jaFocus": "偶然会いました"
+                  },
+                  {
+                      "en": "We ran into heavy traffic.",
+                      "ja": "ひどい渋滞に遭いました。",
+                      "focus": "ran into",
+                      "object": "heavy traffic",
+                      "jaFocus": "遭いました"
+                  }
+              ]
+          },
+          {
+              "id": "run-out",
+              "title": "9 なくなる",
+              "pattern": "RUN OUT OF + 名詞",
+              "transitivity": "句動詞的用法",
+              "structure": "S + V + 前置詞句",
+              "image": "手持ちのものが尽きる。",
+              "point": "時間・在庫・予算がなくなる時に便利。",
+              "examples": [
+                  {
+                      "en": "We are running out of time.",
+                      "ja": "時間がなくなってきています。",
+                      "focus": "running out of",
+                      "object": "time",
+                      "jaFocus": "なくなって"
+                  },
+                  {
+                      "en": "We ran out of stock last week.",
+                      "ja": "先週在庫がなくなりました。",
+                      "focus": "ran out of",
+                      "object": "stock",
+                      "jaFocus": "なくなりました"
+                  },
+                  {
+                      "en": "The team is running out of options.",
+                      "ja": "チームの選択肢が少なくなっています。",
+                      "focus": "running out of",
+                      "object": "options",
+                      "jaFocus": "少なくなっています"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I ran out of coffee this morning.",
+                      "ja": "今朝コーヒーを切らしました。",
+                      "focus": "ran out of",
+                      "object": "coffee",
+                      "jaFocus": "切らしました"
+                  },
+                  {
+                      "en": "My phone is running out of battery.",
+                      "ja": "スマホの電池がなくなりそうです。",
+                      "focus": "running out of",
+                      "object": "battery",
+                      "jaFocus": "なくなりそう"
+                  }
+              ]
+          },
+          {
+              "id": "run-by",
+              "title": "10 確認する",
+              "pattern": "RUN + 物 + BY + 人",
+              "transitivity": "他動詞",
+              "structure": "S + V + O + 前置詞句",
+              "image": "相手に確認を通す。",
+              "point": "run it by someone は「念のため確認する」。仕事でかなり自然。",
+              "examples": [
+                  {
+                      "en": "Can I run this idea by you?",
+                      "ja": "このアイデアをあなたに確認してもいいですか？",
+                      "focus": "run",
+                      "object": "this idea",
+                      "jaFocus": "確認して"
+                  },
+                  {
+                      "en": "I will run the proposal by my manager.",
+                      "ja": "提案書を上司に確認します。",
+                      "focus": "run",
+                      "object": "the proposal",
+                      "jaFocus": "確認します"
+                  },
+                  {
+                      "en": "Please run the final draft by the client.",
+                      "ja": "最終案をクライアントに確認してください。",
+                      "focus": "run",
+                      "object": "the final draft",
+                      "jaFocus": "確認してください"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "Let me run this plan by my family.",
+                      "ja": "この計画を家族に確認させてください。",
+                      "focus": "run",
+                      "object": "this plan",
+                      "jaFocus": "確認させて"
+                  },
+                  {
+                      "en": "I ran the idea by my friend.",
+                      "ja": "そのアイデアを友人に相談しました。",
+                      "focus": "ran",
+                      "object": "the idea",
+                      "jaFocus": "相談しました"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": []
+      ],
+      "collocations": [
+          {
+              "phrase": "run a meeting",
+              "ja": "会議を運営する",
+              "image": "run a meeting は仕事で「会議を運営する」場面に使いやすい表現。",
+              "pattern": "RUN A MEETING + ...",
+              "examples": [
+                  {
+                      "en": "I will run a meeting this today.",
+                      "ja": "今日これを会議を運営するします。",
+                      "focus": "run a meeting",
+                      "object": "this",
+                      "jaFocus": "会議を運営する"
+                  },
+                  {
+                      "en": "We need to run a meeting the project.",
+                      "ja": "その案件を会議を運営するする必要があります。",
+                      "focus": "run a meeting",
+                      "object": "the project",
+                      "jaFocus": "会議を運営する"
+                  },
+                  {
+                      "en": "Please run a meeting it before the meeting.",
+                      "ja": "会議前にそれを会議を運営するしてください。",
+                      "focus": "run a meeting",
+                      "object": "it",
+                      "jaFocus": "会議を運営する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run a meeting at home.",
+                      "ja": "家でよく会議を運営するします。",
+                      "focus": "run a meeting",
+                      "jaFocus": "会議を運営する"
+                  },
+                  {
+                      "en": "It helps to run a meeting in daily life.",
+                      "ja": "日常生活で会議を運営するできると役立ちます。",
+                      "focus": "run a meeting",
+                      "jaFocus": "会議を運営する"
+                  }
+              ]
+          },
+          {
+              "phrase": "run a business",
+              "ja": "会社を経営する",
+              "image": "run a business は仕事で「会社を経営する」場面に使いやすい表現。",
+              "pattern": "RUN A BUSINESS + ...",
+              "examples": [
+                  {
+                      "en": "I will run a business this today.",
+                      "ja": "今日これを会社を経営するします。",
+                      "focus": "run a business",
+                      "object": "this",
+                      "jaFocus": "会社を経営する"
+                  },
+                  {
+                      "en": "We need to run a business the project.",
+                      "ja": "その案件を会社を経営するする必要があります。",
+                      "focus": "run a business",
+                      "object": "the project",
+                      "jaFocus": "会社を経営する"
+                  },
+                  {
+                      "en": "Please run a business it before the meeting.",
+                      "ja": "会議前にそれを会社を経営するしてください。",
+                      "focus": "run a business",
+                      "object": "it",
+                      "jaFocus": "会社を経営する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run a business at home.",
+                      "ja": "家でよく会社を経営するします。",
+                      "focus": "run a business",
+                      "jaFocus": "会社を経営する"
+                  },
+                  {
+                      "en": "It helps to run a business in daily life.",
+                      "ja": "日常生活で会社を経営するできると役立ちます。",
+                      "focus": "run a business",
+                      "jaFocus": "会社を経営する"
+                  }
+              ]
+          },
+          {
+              "phrase": "run a test",
+              "ja": "テストを実行する",
+              "image": "run a test は仕事で「テストを実行する」場面に使いやすい表現。",
+              "pattern": "RUN A TEST + ...",
+              "examples": [
+                  {
+                      "en": "I will run a test this today.",
+                      "ja": "今日これをテストを実行するします。",
+                      "focus": "run a test",
+                      "object": "this",
+                      "jaFocus": "テストを実行する"
+                  },
+                  {
+                      "en": "We need to run a test the project.",
+                      "ja": "その案件をテストを実行するする必要があります。",
+                      "focus": "run a test",
+                      "object": "the project",
+                      "jaFocus": "テストを実行する"
+                  },
+                  {
+                      "en": "Please run a test it before the meeting.",
+                      "ja": "会議前にそれをテストを実行するしてください。",
+                      "focus": "run a test",
+                      "object": "it",
+                      "jaFocus": "テストを実行する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run a test at home.",
+                      "ja": "家でよくテストを実行するします。",
+                      "focus": "run a test",
+                      "jaFocus": "テストを実行する"
+                  },
+                  {
+                      "en": "It helps to run a test in daily life.",
+                      "ja": "日常生活でテストを実行するできると役立ちます。",
+                      "focus": "run a test",
+                      "jaFocus": "テストを実行する"
+                  }
+              ]
+          },
+          {
+              "phrase": "run a report",
+              "ja": "レポートを出す",
+              "image": "run a report は仕事で「レポートを出す」場面に使いやすい表現。",
+              "pattern": "RUN A REPORT + ...",
+              "examples": [
+                  {
+                      "en": "I will run a report this today.",
+                      "ja": "今日これをレポートを出すします。",
+                      "focus": "run a report",
+                      "object": "this",
+                      "jaFocus": "レポートを出す"
+                  },
+                  {
+                      "en": "We need to run a report the project.",
+                      "ja": "その案件をレポートを出すする必要があります。",
+                      "focus": "run a report",
+                      "object": "the project",
+                      "jaFocus": "レポートを出す"
+                  },
+                  {
+                      "en": "Please run a report it before the meeting.",
+                      "ja": "会議前にそれをレポートを出すしてください。",
+                      "focus": "run a report",
+                      "object": "it",
+                      "jaFocus": "レポートを出す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run a report at home.",
+                      "ja": "家でよくレポートを出すします。",
+                      "focus": "run a report",
+                      "jaFocus": "レポートを出す"
+                  },
+                  {
+                      "en": "It helps to run a report in daily life.",
+                      "ja": "日常生活でレポートを出すできると役立ちます。",
+                      "focus": "run a report",
+                      "jaFocus": "レポートを出す"
+                  }
+              ]
+          },
+          {
+              "phrase": "run operations",
+              "ja": "業務を回す",
+              "image": "run operations は仕事で「業務を回す」場面に使いやすい表現。",
+              "pattern": "RUN OPERATIONS + ...",
+              "examples": [
+                  {
+                      "en": "I will run operations this today.",
+                      "ja": "今日これを業務を回すします。",
+                      "focus": "run operations",
+                      "object": "this",
+                      "jaFocus": "業務を回す"
+                  },
+                  {
+                      "en": "We need to run operations the project.",
+                      "ja": "その案件を業務を回すする必要があります。",
+                      "focus": "run operations",
+                      "object": "the project",
+                      "jaFocus": "業務を回す"
+                  },
+                  {
+                      "en": "Please run operations it before the meeting.",
+                      "ja": "会議前にそれを業務を回すしてください。",
+                      "focus": "run operations",
+                      "object": "it",
+                      "jaFocus": "業務を回す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run operations at home.",
+                      "ja": "家でよく業務を回すします。",
+                      "focus": "run operations",
+                      "jaFocus": "業務を回す"
+                  },
+                  {
+                      "en": "It helps to run operations in daily life.",
+                      "ja": "日常生活で業務を回すできると役立ちます。",
+                      "focus": "run operations",
+                      "jaFocus": "業務を回す"
+                  }
+              ]
+          },
+          {
+              "phrase": "run late",
+              "ja": "遅れる",
+              "image": "run late は仕事で「遅れる」場面に使いやすい表現。",
+              "pattern": "RUN LATE + ...",
+              "examples": [
+                  {
+                      "en": "I will run late this today.",
+                      "ja": "今日これを遅れるします。",
+                      "focus": "run late",
+                      "object": "this",
+                      "jaFocus": "遅れる"
+                  },
+                  {
+                      "en": "We need to run late the project.",
+                      "ja": "その案件を遅れるする必要があります。",
+                      "focus": "run late",
+                      "object": "the project",
+                      "jaFocus": "遅れる"
+                  },
+                  {
+                      "en": "Please run late it before the meeting.",
+                      "ja": "会議前にそれを遅れるしてください。",
+                      "focus": "run late",
+                      "object": "it",
+                      "jaFocus": "遅れる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run late at home.",
+                      "ja": "家でよく遅れるします。",
+                      "focus": "run late",
+                      "jaFocus": "遅れる"
+                  },
+                  {
+                      "en": "It helps to run late in daily life.",
+                      "ja": "日常生活で遅れるできると役立ちます。",
+                      "focus": "run late",
+                      "jaFocus": "遅れる"
+                  }
+              ]
+          },
+          {
+              "phrase": "run smoothly",
+              "ja": "順調に進む",
+              "image": "run smoothly は仕事で「順調に進む」場面に使いやすい表現。",
+              "pattern": "RUN SMOOTHLY + ...",
+              "examples": [
+                  {
+                      "en": "I will run smoothly this today.",
+                      "ja": "今日これを順調に進むします。",
+                      "focus": "run smoothly",
+                      "object": "this",
+                      "jaFocus": "順調に進む"
+                  },
+                  {
+                      "en": "We need to run smoothly the project.",
+                      "ja": "その案件を順調に進むする必要があります。",
+                      "focus": "run smoothly",
+                      "object": "the project",
+                      "jaFocus": "順調に進む"
+                  },
+                  {
+                      "en": "Please run smoothly it before the meeting.",
+                      "ja": "会議前にそれを順調に進むしてください。",
+                      "focus": "run smoothly",
+                      "object": "it",
+                      "jaFocus": "順調に進む"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run smoothly at home.",
+                      "ja": "家でよく順調に進むします。",
+                      "focus": "run smoothly",
+                      "jaFocus": "順調に進む"
+                  },
+                  {
+                      "en": "It helps to run smoothly in daily life.",
+                      "ja": "日常生活で順調に進むできると役立ちます。",
+                      "focus": "run smoothly",
+                      "jaFocus": "順調に進む"
+                  }
+              ]
+          },
+          {
+              "phrase": "run a campaign",
+              "ja": "キャンペーンを実施する",
+              "image": "run a campaign は仕事で「キャンペーンを実施する」場面に使いやすい表現。",
+              "pattern": "RUN A CAMPAIGN + ...",
+              "examples": [
+                  {
+                      "en": "I will run a campaign this today.",
+                      "ja": "今日これをキャンペーンを実施するします。",
+                      "focus": "run a campaign",
+                      "object": "this",
+                      "jaFocus": "キャンペーンを実施する"
+                  },
+                  {
+                      "en": "We need to run a campaign the project.",
+                      "ja": "その案件をキャンペーンを実施するする必要があります。",
+                      "focus": "run a campaign",
+                      "object": "the project",
+                      "jaFocus": "キャンペーンを実施する"
+                  },
+                  {
+                      "en": "Please run a campaign it before the meeting.",
+                      "ja": "会議前にそれをキャンペーンを実施するしてください。",
+                      "focus": "run a campaign",
+                      "object": "it",
+                      "jaFocus": "キャンペーンを実施する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run a campaign at home.",
+                      "ja": "家でよくキャンペーンを実施するします。",
+                      "focus": "run a campaign",
+                      "jaFocus": "キャンペーンを実施する"
+                  },
+                  {
+                      "en": "It helps to run a campaign in daily life.",
+                      "ja": "日常生活でキャンペーンを実施するできると役立ちます。",
+                      "focus": "run a campaign",
+                      "jaFocus": "キャンペーンを実施する"
+                  }
+              ]
+          },
+          {
+              "phrase": "run the system",
+              "ja": "システムを稼働させる",
+              "image": "run the system は仕事で「システムを稼働させる」場面に使いやすい表現。",
+              "pattern": "RUN THE SYSTEM + ...",
+              "examples": [
+                  {
+                      "en": "I will run the system this today.",
+                      "ja": "今日これをシステムを稼働させるします。",
+                      "focus": "run the system",
+                      "object": "this",
+                      "jaFocus": "システムを稼働させる"
+                  },
+                  {
+                      "en": "We need to run the system the project.",
+                      "ja": "その案件をシステムを稼働させるする必要があります。",
+                      "focus": "run the system",
+                      "object": "the project",
+                      "jaFocus": "システムを稼働させる"
+                  },
+                  {
+                      "en": "Please run the system it before the meeting.",
+                      "ja": "会議前にそれをシステムを稼働させるしてください。",
+                      "focus": "run the system",
+                      "object": "it",
+                      "jaFocus": "システムを稼働させる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run the system at home.",
+                      "ja": "家でよくシステムを稼働させるします。",
+                      "focus": "run the system",
+                      "jaFocus": "システムを稼働させる"
+                  },
+                  {
+                      "en": "It helps to run the system in daily life.",
+                      "ja": "日常生活でシステムを稼働させるできると役立ちます。",
+                      "focus": "run the system",
+                      "jaFocus": "システムを稼働させる"
+                  }
+              ]
+          },
+          {
+              "phrase": "run a project",
+              "ja": "案件を進める",
+              "image": "run a project は仕事で「案件を進める」場面に使いやすい表現。",
+              "pattern": "RUN A PROJECT + ...",
+              "examples": [
+                  {
+                      "en": "I will run a project this today.",
+                      "ja": "今日これを案件を進めるします。",
+                      "focus": "run a project",
+                      "object": "this",
+                      "jaFocus": "案件を進める"
+                  },
+                  {
+                      "en": "We need to run a project the project.",
+                      "ja": "その案件を案件を進めるする必要があります。",
+                      "focus": "run a project",
+                      "object": "the project",
+                      "jaFocus": "案件を進める"
+                  },
+                  {
+                      "en": "Please run a project it before the meeting.",
+                      "ja": "会議前にそれを案件を進めるしてください。",
+                      "focus": "run a project",
+                      "object": "it",
+                      "jaFocus": "案件を進める"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run a project at home.",
+                      "ja": "家でよく案件を進めるします。",
+                      "focus": "run a project",
+                      "jaFocus": "案件を進める"
+                  },
+                  {
+                      "en": "It helps to run a project in daily life.",
+                      "ja": "日常生活で案件を進めるできると役立ちます。",
+                      "focus": "run a project",
+                      "jaFocus": "案件を進める"
+                  }
+              ]
+          }
+      ],
+      "phrasalVerbs": [
+          {
+              "phrase": "run into",
+              "ja": "遭遇する",
+              "image": "run into は仕事で「遭遇する」場面に使いやすい表現。",
+              "pattern": "RUN INTO + ...",
+              "examples": [
+                  {
+                      "en": "I will run into this today.",
+                      "ja": "今日これを遭遇するします。",
+                      "focus": "run into",
+                      "object": "this",
+                      "jaFocus": "遭遇する"
+                  },
+                  {
+                      "en": "We need to run into the project.",
+                      "ja": "その案件を遭遇するする必要があります。",
+                      "focus": "run into",
+                      "object": "the project",
+                      "jaFocus": "遭遇する"
+                  },
+                  {
+                      "en": "Please run into it before the meeting.",
+                      "ja": "会議前にそれを遭遇するしてください。",
+                      "focus": "run into",
+                      "object": "it",
+                      "jaFocus": "遭遇する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run into at home.",
+                      "ja": "家でよく遭遇するします。",
+                      "focus": "run into",
+                      "jaFocus": "遭遇する"
+                  },
+                  {
+                      "en": "It helps to run into in daily life.",
+                      "ja": "日常生活で遭遇するできると役立ちます。",
+                      "focus": "run into",
+                      "jaFocus": "遭遇する"
+                  }
+              ]
+          },
+          {
+              "phrase": "run out of",
+              "ja": "なくなる",
+              "image": "run out of は仕事で「なくなる」場面に使いやすい表現。",
+              "pattern": "RUN OUT OF + ...",
+              "examples": [
+                  {
+                      "en": "I will run out of this today.",
+                      "ja": "今日これをなくなるします。",
+                      "focus": "run out of",
+                      "object": "this",
+                      "jaFocus": "なくなる"
+                  },
+                  {
+                      "en": "We need to run out of the project.",
+                      "ja": "その案件をなくなるする必要があります。",
+                      "focus": "run out of",
+                      "object": "the project",
+                      "jaFocus": "なくなる"
+                  },
+                  {
+                      "en": "Please run out of it before the meeting.",
+                      "ja": "会議前にそれをなくなるしてください。",
+                      "focus": "run out of",
+                      "object": "it",
+                      "jaFocus": "なくなる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run out of at home.",
+                      "ja": "家でよくなくなるします。",
+                      "focus": "run out of",
+                      "jaFocus": "なくなる"
+                  },
+                  {
+                      "en": "It helps to run out of in daily life.",
+                      "ja": "日常生活でなくなるできると役立ちます。",
+                      "focus": "run out of",
+                      "jaFocus": "なくなる"
+                  }
+              ]
+          },
+          {
+              "phrase": "run by",
+              "ja": "確認する",
+              "image": "run by は仕事で「確認する」場面に使いやすい表現。",
+              "pattern": "RUN BY + ...",
+              "examples": [
+                  {
+                      "en": "I will run by this today.",
+                      "ja": "今日これを確認するします。",
+                      "focus": "run by",
+                      "object": "this",
+                      "jaFocus": "確認する"
+                  },
+                  {
+                      "en": "We need to run by the project.",
+                      "ja": "その案件を確認するする必要があります。",
+                      "focus": "run by",
+                      "object": "the project",
+                      "jaFocus": "確認する"
+                  },
+                  {
+                      "en": "Please run by it before the meeting.",
+                      "ja": "会議前にそれを確認するしてください。",
+                      "focus": "run by",
+                      "object": "it",
+                      "jaFocus": "確認する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run by at home.",
+                      "ja": "家でよく確認するします。",
+                      "focus": "run by",
+                      "jaFocus": "確認する"
+                  },
+                  {
+                      "en": "It helps to run by in daily life.",
+                      "ja": "日常生活で確認するできると役立ちます。",
+                      "focus": "run by",
+                      "jaFocus": "確認する"
+                  }
+              ]
+          },
+          {
+              "phrase": "run over",
+              "ja": "超過する",
+              "image": "run over は仕事で「超過する」場面に使いやすい表現。",
+              "pattern": "RUN OVER + ...",
+              "examples": [
+                  {
+                      "en": "I will run over this today.",
+                      "ja": "今日これを超過するします。",
+                      "focus": "run over",
+                      "object": "this",
+                      "jaFocus": "超過する"
+                  },
+                  {
+                      "en": "We need to run over the project.",
+                      "ja": "その案件を超過するする必要があります。",
+                      "focus": "run over",
+                      "object": "the project",
+                      "jaFocus": "超過する"
+                  },
+                  {
+                      "en": "Please run over it before the meeting.",
+                      "ja": "会議前にそれを超過するしてください。",
+                      "focus": "run over",
+                      "object": "it",
+                      "jaFocus": "超過する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run over at home.",
+                      "ja": "家でよく超過するします。",
+                      "focus": "run over",
+                      "jaFocus": "超過する"
+                  },
+                  {
+                      "en": "It helps to run over in daily life.",
+                      "ja": "日常生活で超過するできると役立ちます。",
+                      "focus": "run over",
+                      "jaFocus": "超過する"
+                  }
+              ]
+          },
+          {
+              "phrase": "run through",
+              "ja": "一通り確認する",
+              "image": "run through は仕事で「一通り確認する」場面に使いやすい表現。",
+              "pattern": "RUN THROUGH + ...",
+              "examples": [
+                  {
+                      "en": "I will run through this today.",
+                      "ja": "今日これを一通り確認するします。",
+                      "focus": "run through",
+                      "object": "this",
+                      "jaFocus": "一通り確認する"
+                  },
+                  {
+                      "en": "We need to run through the project.",
+                      "ja": "その案件を一通り確認するする必要があります。",
+                      "focus": "run through",
+                      "object": "the project",
+                      "jaFocus": "一通り確認する"
+                  },
+                  {
+                      "en": "Please run through it before the meeting.",
+                      "ja": "会議前にそれを一通り確認するしてください。",
+                      "focus": "run through",
+                      "object": "it",
+                      "jaFocus": "一通り確認する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run through at home.",
+                      "ja": "家でよく一通り確認するします。",
+                      "focus": "run through",
+                      "jaFocus": "一通り確認する"
+                  },
+                  {
+                      "en": "It helps to run through in daily life.",
+                      "ja": "日常生活で一通り確認するできると役立ちます。",
+                      "focus": "run through",
+                      "jaFocus": "一通り確認する"
+                  }
+              ]
+          },
+          {
+              "phrase": "run across",
+              "ja": "偶然見つける",
+              "image": "run across は仕事で「偶然見つける」場面に使いやすい表現。",
+              "pattern": "RUN ACROSS + ...",
+              "examples": [
+                  {
+                      "en": "I will run across this today.",
+                      "ja": "今日これを偶然見つけるします。",
+                      "focus": "run across",
+                      "object": "this",
+                      "jaFocus": "偶然見つける"
+                  },
+                  {
+                      "en": "We need to run across the project.",
+                      "ja": "その案件を偶然見つけるする必要があります。",
+                      "focus": "run across",
+                      "object": "the project",
+                      "jaFocus": "偶然見つける"
+                  },
+                  {
+                      "en": "Please run across it before the meeting.",
+                      "ja": "会議前にそれを偶然見つけるしてください。",
+                      "focus": "run across",
+                      "object": "it",
+                      "jaFocus": "偶然見つける"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run across at home.",
+                      "ja": "家でよく偶然見つけるします。",
+                      "focus": "run across",
+                      "jaFocus": "偶然見つける"
+                  },
+                  {
+                      "en": "It helps to run across in daily life.",
+                      "ja": "日常生活で偶然見つけるできると役立ちます。",
+                      "focus": "run across",
+                      "jaFocus": "偶然見つける"
+                  }
+              ]
+          },
+          {
+              "phrase": "run after",
+              "ja": "追いかける",
+              "image": "run after は仕事で「追いかける」場面に使いやすい表現。",
+              "pattern": "RUN AFTER + ...",
+              "examples": [
+                  {
+                      "en": "I will run after this today.",
+                      "ja": "今日これを追いかけるします。",
+                      "focus": "run after",
+                      "object": "this",
+                      "jaFocus": "追いかける"
+                  },
+                  {
+                      "en": "We need to run after the project.",
+                      "ja": "その案件を追いかけるする必要があります。",
+                      "focus": "run after",
+                      "object": "the project",
+                      "jaFocus": "追いかける"
+                  },
+                  {
+                      "en": "Please run after it before the meeting.",
+                      "ja": "会議前にそれを追いかけるしてください。",
+                      "focus": "run after",
+                      "object": "it",
+                      "jaFocus": "追いかける"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run after at home.",
+                      "ja": "家でよく追いかけるします。",
+                      "focus": "run after",
+                      "jaFocus": "追いかける"
+                  },
+                  {
+                      "en": "It helps to run after in daily life.",
+                      "ja": "日常生活で追いかけるできると役立ちます。",
+                      "focus": "run after",
+                      "jaFocus": "追いかける"
+                  }
+              ]
+          },
+          {
+              "phrase": "run away",
+              "ja": "逃げる",
+              "image": "run away は仕事で「逃げる」場面に使いやすい表現。",
+              "pattern": "RUN AWAY + ...",
+              "examples": [
+                  {
+                      "en": "I will run away this today.",
+                      "ja": "今日これを逃げるします。",
+                      "focus": "run away",
+                      "object": "this",
+                      "jaFocus": "逃げる"
+                  },
+                  {
+                      "en": "We need to run away the project.",
+                      "ja": "その案件を逃げるする必要があります。",
+                      "focus": "run away",
+                      "object": "the project",
+                      "jaFocus": "逃げる"
+                  },
+                  {
+                      "en": "Please run away it before the meeting.",
+                      "ja": "会議前にそれを逃げるしてください。",
+                      "focus": "run away",
+                      "object": "it",
+                      "jaFocus": "逃げる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run away at home.",
+                      "ja": "家でよく逃げるします。",
+                      "focus": "run away",
+                      "jaFocus": "逃げる"
+                  },
+                  {
+                      "en": "It helps to run away in daily life.",
+                      "ja": "日常生活で逃げるできると役立ちます。",
+                      "focus": "run away",
+                      "jaFocus": "逃げる"
+                  }
+              ]
+          },
+          {
+              "phrase": "run up",
+              "ja": "積み上がる",
+              "image": "run up は仕事で「積み上がる」場面に使いやすい表現。",
+              "pattern": "RUN UP + ...",
+              "examples": [
+                  {
+                      "en": "I will run up this today.",
+                      "ja": "今日これを積み上がるします。",
+                      "focus": "run up",
+                      "object": "this",
+                      "jaFocus": "積み上がる"
+                  },
+                  {
+                      "en": "We need to run up the project.",
+                      "ja": "その案件を積み上がるする必要があります。",
+                      "focus": "run up",
+                      "object": "the project",
+                      "jaFocus": "積み上がる"
+                  },
+                  {
+                      "en": "Please run up it before the meeting.",
+                      "ja": "会議前にそれを積み上がるしてください。",
+                      "focus": "run up",
+                      "object": "it",
+                      "jaFocus": "積み上がる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run up at home.",
+                      "ja": "家でよく積み上がるします。",
+                      "focus": "run up",
+                      "jaFocus": "積み上がる"
+                  },
+                  {
+                      "en": "It helps to run up in daily life.",
+                      "ja": "日常生活で積み上がるできると役立ちます。",
+                      "focus": "run up",
+                      "jaFocus": "積み上がる"
+                  }
+              ]
+          },
+          {
+              "phrase": "run down",
+              "ja": "要約する",
+              "image": "run down は仕事で「要約する」場面に使いやすい表現。",
+              "pattern": "RUN DOWN + ...",
+              "examples": [
+                  {
+                      "en": "I will run down this today.",
+                      "ja": "今日これを要約するします。",
+                      "focus": "run down",
+                      "object": "this",
+                      "jaFocus": "要約する"
+                  },
+                  {
+                      "en": "We need to run down the project.",
+                      "ja": "その案件を要約するする必要があります。",
+                      "focus": "run down",
+                      "object": "the project",
+                      "jaFocus": "要約する"
+                  },
+                  {
+                      "en": "Please run down it before the meeting.",
+                      "ja": "会議前にそれを要約するしてください。",
+                      "focus": "run down",
+                      "object": "it",
+                      "jaFocus": "要約する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often run down at home.",
+                      "ja": "家でよく要約するします。",
+                      "focus": "run down",
+                      "jaFocus": "要約する"
+                  },
+                  {
+                      "en": "It helps to run down in daily life.",
+                      "ja": "日常生活で要約するできると役立ちます。",
+                      "focus": "run down",
+                      "jaFocus": "要約する"
+                  }
+              ]
+          }
+      ]
   },
   {
-    "id": "move",
-    "rank": 30,
-    "word": "MOVE",
-    "ipa": "",
-    "kana": "ムーヴ",
-    "syllable": "move",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "動かす・移動する",
-    "coreDetail": "予定や物を動かす",
-    "meanings": [
-      {
-        "id": "business-basic",
-        "title": "① ビジネスで使う基本形",
-        "pattern": "MOVE + 名詞 / 文",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "予定や物を動かす",
-        "point": "まずは社会人の会話・メールで使いやすい基本形を覚える。",
-        "examples": [
+      "id": "leave",
+      "rank": 29,
+      "word": "LEAVE",
+      "ipa": "/liːv/",
+      "kana": "リーヴ",
+      "syllable": "leave",
+      "transitivity": "他動詞・自動詞",
+      "importance": "★★★★☆ 重要",
+      "core": "その場から離れる・何かを残す",
+      "coreDetail": "LEAVEは場所を離れる、物やメッセージを残す、判断を相手に任せるなど「離れる/残す」の両方で使います。",
+      "coreVisual": {
+          "from": [
+              "📄 資料",
+              "📅 予定",
+              "👥 チーム",
+              "💬 連絡",
+              "✅ 判断"
+          ],
+          "to": "仕事の流れ",
+          "label": "コアイメージ"
+      },
+      "meanings": [
           {
-            "en": "I will move the details.",
-            "ja": "詳細を確認・対応します。",
-            "focus": "move",
-            "object": "the details",
-            "jaFocus": "確認・対応"
+              "id": "depart",
+              "title": "1 出発する・退社する",
+              "pattern": "LEAVE + 場所",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "場所を離れる。",
+              "point": "leave the office は退社する。",
+              "examples": [
+                  {
+                      "en": "I will leave the office at six.",
+                      "ja": "6時に退社します。",
+                      "focus": "leave",
+                      "object": "the office",
+                      "jaFocus": "退社します"
+                  },
+                  {
+                      "en": "She left the meeting early.",
+                      "ja": "彼女は会議を早めに退席しました。",
+                      "focus": "left",
+                      "object": "the meeting",
+                      "jaFocus": "退席しました"
+                  },
+                  {
+                      "en": "We need to leave for the airport soon.",
+                      "ja": "そろそろ空港へ出発する必要があります。",
+                      "focus": "leave",
+                      "jaFocus": "出発する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I leave this on weekends.",
+                      "ja": "週末にこれを出発する・退社することがあります。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "出発する・退社する"
+                  },
+                  {
+                      "en": "It is useful to leave this in daily life.",
+                      "ja": "日常生活でこれを出発する・退社すると便利です。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "出発する・退社する"
+                  }
+              ]
           },
           {
-            "en": "We need to move this today.",
-            "ja": "今日これを進める必要があります。",
-            "focus": "move",
-            "object": "this",
-            "jaFocus": "進める"
+              "id": "keep-behind",
+              "title": "2 残す",
+              "pattern": "LEAVE + 名詞",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "物や情報を残す。",
+              "point": "leave a message は最重要。",
+              "examples": [
+                  {
+                      "en": "Please leave a message after the tone.",
+                      "ja": "発信音の後にメッセージを残してください。",
+                      "focus": "leave",
+                      "object": "a message",
+                      "jaFocus": "残してください"
+                  },
+                  {
+                      "en": "I left the documents on your desk.",
+                      "ja": "資料をあなたの机に置いておきました。",
+                      "focus": "left",
+                      "object": "the documents",
+                      "jaFocus": "置いておきました"
+                  },
+                  {
+                      "en": "Can you leave your contact information?",
+                      "ja": "連絡先を残していただけますか？",
+                      "focus": "leave",
+                      "object": "your contact information",
+                      "jaFocus": "残して"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I leave this on weekends.",
+                      "ja": "週末にこれを残すことがあります。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "残す"
+                  },
+                  {
+                      "en": "It is useful to leave this in daily life.",
+                      "ja": "日常生活でこれを残すと便利です。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "残す"
+                  }
+              ]
           },
           {
-            "en": "Can you move it by tomorrow?",
-            "ja": "明日までに対応できますか？",
-            "focus": "move",
-            "object": "it",
-            "jaFocus": "対応"
+              "id": "make-state",
+              "title": "3 〜の状態にしておく",
+              "pattern": "LEAVE + O + C",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "物事をある状態のままにする。",
+              "point": "leave it open など。",
+              "examples": [
+                  {
+                      "en": "Please leave the door open.",
+                      "ja": "ドアは開けたままにしてください。",
+                      "focus": "leave",
+                      "object": "the door",
+                      "jaFocus": "開けたまま"
+                  },
+                  {
+                      "en": "We should leave this issue open for now.",
+                      "ja": "この件はいったん未解決のままにしましょう。",
+                      "focus": "leave",
+                      "object": "this issue",
+                      "jaFocus": "未解決のまま"
+                  },
+                  {
+                      "en": "Do not leave the system unlocked.",
+                      "ja": "システムをロック解除のままにしないでください。",
+                      "focus": "leave",
+                      "object": "the system",
+                      "jaFocus": "ロック解除のまま"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I leave this on weekends.",
+                      "ja": "週末にこれを〜の状態にしておくことがあります。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "〜の状態にしておく"
+                  },
+                  {
+                      "en": "It is useful to leave this in daily life.",
+                      "ja": "日常生活でこれを〜の状態にしておくと便利です。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "〜の状態にしておく"
+                  }
+              ]
+          },
+          {
+              "id": "entrust",
+              "title": "4 任せる",
+              "pattern": "LEAVE + O + to 人",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "判断や作業を任せる。",
+              "point": "leave it to me は「任せて」。",
+              "examples": [
+                  {
+                      "en": "Please leave this task to me.",
+                      "ja": "この作業は私に任せてください。",
+                      "focus": "leave",
+                      "object": "this task",
+                      "jaFocus": "任せて"
+                  },
+                  {
+                      "en": "We left the final decision to the client.",
+                      "ja": "最終判断はクライアントに任せました。",
+                      "focus": "left",
+                      "object": "the final decision",
+                      "jaFocus": "任せました"
+                  },
+                  {
+                      "en": "I will leave the details to the engineer.",
+                      "ja": "詳細はエンジニアに任せます。",
+                      "focus": "leave",
+                      "object": "the details",
+                      "jaFocus": "任せます"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I leave this on weekends.",
+                      "ja": "週末にこれを任せることがあります。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "任せる"
+                  },
+                  {
+                      "en": "It is useful to leave this in daily life.",
+                      "ja": "日常生活でこれを任せると便利です。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "任せる"
+                  }
+              ]
+          },
+          {
+              "id": "remain",
+              "title": "5 残る",
+              "pattern": "LEAVE + 数量 / 時間",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "残りがある状態を作る。",
+              "point": "time left など。",
+              "examples": [
+                  {
+                      "en": "We have three days left before the deadline.",
+                      "ja": "締切まで残り3日あります。",
+                      "focus": "left",
+                      "jaFocus": "残り"
+                  },
+                  {
+                      "en": "There is little time left.",
+                      "ja": "残り時間はほとんどありません。",
+                      "focus": "left",
+                      "jaFocus": "残り"
+                  },
+                  {
+                      "en": "The delay left us with fewer options.",
+                      "ja": "遅延により選択肢が少なくなりました。",
+                      "focus": "left",
+                      "object": "us",
+                      "jaFocus": "少なくなりました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I leave this on weekends.",
+                      "ja": "週末にこれを残ることがあります。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "残る"
+                  },
+                  {
+                      "en": "It is useful to leave this in daily life.",
+                      "ja": "日常生活でこれを残ると便利です。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "残る"
+                  }
+              ]
+          },
+          {
+              "id": "quit",
+              "title": "6 辞める",
+              "pattern": "LEAVE + 会社 / 役職",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "会社や役職を離れる。",
+              "point": "退職にも使う。",
+              "examples": [
+                  {
+                      "en": "He left the company last month.",
+                      "ja": "彼は先月退職しました。",
+                      "focus": "left",
+                      "object": "the company",
+                      "jaFocus": "退職しました"
+                  },
+                  {
+                      "en": "She left her position in April.",
+                      "ja": "彼女は4月に役職を離れました。",
+                      "focus": "left",
+                      "object": "her position",
+                      "jaFocus": "役職を離れました"
+                  },
+                  {
+                      "en": "Many employees left after the merger.",
+                      "ja": "合併後、多くの社員が退職しました。",
+                      "focus": "left",
+                      "jaFocus": "退職しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I leave this on weekends.",
+                      "ja": "週末にこれを辞めることがあります。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "辞める"
+                  },
+                  {
+                      "en": "It is useful to leave this in daily life.",
+                      "ja": "日常生活でこれを辞めると便利です。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "辞める"
+                  }
+              ]
+          },
+          {
+              "id": "forget",
+              "title": "7 置き忘れる",
+              "pattern": "LEAVE + 物 + 場所",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "物を置いてきてしまう。",
+              "point": "忘れ物表現。",
+              "examples": [
+                  {
+                      "en": "I left my laptop in the meeting room.",
+                      "ja": "会議室にノートPCを置き忘れました。",
+                      "focus": "left",
+                      "object": "my laptop",
+                      "jaFocus": "置き忘れました"
+                  },
+                  {
+                      "en": "She left her phone at the office.",
+                      "ja": "彼女は会社にスマホを置き忘れました。",
+                      "focus": "left",
+                      "object": "her phone",
+                      "jaFocus": "置き忘れました"
+                  },
+                  {
+                      "en": "Do not leave your ID card at home.",
+                      "ja": "社員証を家に忘れないでください。",
+                      "focus": "leave",
+                      "object": "your ID card",
+                      "jaFocus": "忘れないで"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I leave this on weekends.",
+                      "ja": "週末にこれを置き忘れることがあります。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "置き忘れる"
+                  },
+                  {
+                      "en": "It is useful to leave this in daily life.",
+                      "ja": "日常生活でこれを置き忘れると便利です。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "置き忘れる"
+                  }
+              ]
+          },
+          {
+              "id": "exclude",
+              "title": "8 除外する",
+              "pattern": "LEAVE + O + out",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "外しておく。",
+              "point": "leave out は資料作成で使う。",
+              "examples": [
+                  {
+                      "en": "Please leave out the old data.",
+                      "ja": "古いデータは除外してください。",
+                      "focus": "leave out",
+                      "object": "the old data",
+                      "jaFocus": "除外して"
+                  },
+                  {
+                      "en": "We left out the confidential details.",
+                      "ja": "機密情報は省きました。",
+                      "focus": "left out",
+                      "object": "the confidential details",
+                      "jaFocus": "省きました"
+                  },
+                  {
+                      "en": "Do not leave out this point.",
+                      "ja": "この点を抜かさないでください。",
+                      "focus": "leave out",
+                      "object": "this point",
+                      "jaFocus": "抜かさないで"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I leave this on weekends.",
+                      "ja": "週末にこれを除外することがあります。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "除外する"
+                  },
+                  {
+                      "en": "It is useful to leave this in daily life.",
+                      "ja": "日常生活でこれを除外すると便利です。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "除外する"
+                  }
+              ]
+          },
+          {
+              "id": "result",
+              "title": "9 結果を残す",
+              "pattern": "LEAVE + 印象 / 影響",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "印象や影響を残す。",
+              "point": "leave an impression は便利。",
+              "examples": [
+                  {
+                      "en": "The presentation left a strong impression.",
+                      "ja": "そのプレゼンは強い印象を残しました。",
+                      "focus": "left",
+                      "object": "a strong impression",
+                      "jaFocus": "印象を残しました"
+                  },
+                  {
+                      "en": "The mistake left a negative impact.",
+                      "ja": "そのミスは悪い影響を残しました。",
+                      "focus": "left",
+                      "object": "a negative impact",
+                      "jaFocus": "影響を残しました"
+                  },
+                  {
+                      "en": "His support left a positive impression on the client.",
+                      "ja": "彼のサポートは顧客に良い印象を残しました。",
+                      "focus": "left",
+                      "object": "a positive impression",
+                      "jaFocus": "印象を残しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I leave this on weekends.",
+                      "ja": "週末にこれを結果を残すことがあります。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "結果を残す"
+                  },
+                  {
+                      "en": "It is useful to leave this in daily life.",
+                      "ja": "日常生活でこれを結果を残すと便利です。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "結果を残す"
+                  }
+              ]
+          },
+          {
+              "id": "postpone",
+              "title": "10 そのままにする",
+              "pattern": "LEAVE + O + for later",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "後回しにする。",
+              "point": "判断を保留する表現。",
+              "examples": [
+                  {
+                      "en": "Let us leave this topic for later.",
+                      "ja": "この話題は後で扱いましょう。",
+                      "focus": "leave",
+                      "object": "this topic",
+                      "jaFocus": "後で扱い"
+                  },
+                  {
+                      "en": "We can leave the minor issues for next week.",
+                      "ja": "小さな問題は来週に回せます。",
+                      "focus": "leave",
+                      "object": "the minor issues",
+                      "jaFocus": "回せます"
+                  },
+                  {
+                      "en": "Please leave the formatting until the end.",
+                      "ja": "書式調整は最後まで残しておいてください。",
+                      "focus": "leave",
+                      "object": "the formatting",
+                      "jaFocus": "残して"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I leave this on weekends.",
+                      "ja": "週末にこれをそのままにすることがあります。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "そのままにする"
+                  },
+                  {
+                      "en": "It is useful to leave this in daily life.",
+                      "ja": "日常生活でこれをそのままにすると便利です。",
+                      "focus": "leave",
+                      "object": "this",
+                      "jaFocus": "そのままにする"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": []
+      ],
+      "collocations": [
+          {
+              "phrase": "leave a message",
+              "ja": "メッセージを残す",
+              "image": "leave a message は仕事で「メッセージを残す」場面に使いやすい表現。",
+              "pattern": "LEAVE A MESSAGE + ...",
+              "examples": [
+                  {
+                      "en": "I will leave a message this today.",
+                      "ja": "今日これをメッセージを残すします。",
+                      "focus": "leave a message",
+                      "object": "this",
+                      "jaFocus": "メッセージを残す"
+                  },
+                  {
+                      "en": "We need to leave a message the project.",
+                      "ja": "その案件をメッセージを残すする必要があります。",
+                      "focus": "leave a message",
+                      "object": "the project",
+                      "jaFocus": "メッセージを残す"
+                  },
+                  {
+                      "en": "Please leave a message it before the meeting.",
+                      "ja": "会議前にそれをメッセージを残すしてください。",
+                      "focus": "leave a message",
+                      "object": "it",
+                      "jaFocus": "メッセージを残す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave a message at home.",
+                      "ja": "家でよくメッセージを残すします。",
+                      "focus": "leave a message",
+                      "jaFocus": "メッセージを残す"
+                  },
+                  {
+                      "en": "It helps to leave a message in daily life.",
+                      "ja": "日常生活でメッセージを残すできると役立ちます。",
+                      "focus": "leave a message",
+                      "jaFocus": "メッセージを残す"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave the office",
+              "ja": "退社する",
+              "image": "leave the office は仕事で「退社する」場面に使いやすい表現。",
+              "pattern": "LEAVE THE OFFICE + ...",
+              "examples": [
+                  {
+                      "en": "I will leave the office this today.",
+                      "ja": "今日これを退社するします。",
+                      "focus": "leave the office",
+                      "object": "this",
+                      "jaFocus": "退社する"
+                  },
+                  {
+                      "en": "We need to leave the office the project.",
+                      "ja": "その案件を退社するする必要があります。",
+                      "focus": "leave the office",
+                      "object": "the project",
+                      "jaFocus": "退社する"
+                  },
+                  {
+                      "en": "Please leave the office it before the meeting.",
+                      "ja": "会議前にそれを退社するしてください。",
+                      "focus": "leave the office",
+                      "object": "it",
+                      "jaFocus": "退社する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave the office at home.",
+                      "ja": "家でよく退社するします。",
+                      "focus": "leave the office",
+                      "jaFocus": "退社する"
+                  },
+                  {
+                      "en": "It helps to leave the office in daily life.",
+                      "ja": "日常生活で退社するできると役立ちます。",
+                      "focus": "leave the office",
+                      "jaFocus": "退社する"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave a note",
+              "ja": "メモを残す",
+              "image": "leave a note は仕事で「メモを残す」場面に使いやすい表現。",
+              "pattern": "LEAVE A NOTE + ...",
+              "examples": [
+                  {
+                      "en": "I will leave a note this today.",
+                      "ja": "今日これをメモを残すします。",
+                      "focus": "leave a note",
+                      "object": "this",
+                      "jaFocus": "メモを残す"
+                  },
+                  {
+                      "en": "We need to leave a note the project.",
+                      "ja": "その案件をメモを残すする必要があります。",
+                      "focus": "leave a note",
+                      "object": "the project",
+                      "jaFocus": "メモを残す"
+                  },
+                  {
+                      "en": "Please leave a note it before the meeting.",
+                      "ja": "会議前にそれをメモを残すしてください。",
+                      "focus": "leave a note",
+                      "object": "it",
+                      "jaFocus": "メモを残す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave a note at home.",
+                      "ja": "家でよくメモを残すします。",
+                      "focus": "leave a note",
+                      "jaFocus": "メモを残す"
+                  },
+                  {
+                      "en": "It helps to leave a note in daily life.",
+                      "ja": "日常生活でメモを残すできると役立ちます。",
+                      "focus": "leave a note",
+                      "jaFocus": "メモを残す"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave time",
+              "ja": "時間を残す",
+              "image": "leave time は仕事で「時間を残す」場面に使いやすい表現。",
+              "pattern": "LEAVE TIME + ...",
+              "examples": [
+                  {
+                      "en": "I will leave time this today.",
+                      "ja": "今日これを時間を残すします。",
+                      "focus": "leave time",
+                      "object": "this",
+                      "jaFocus": "時間を残す"
+                  },
+                  {
+                      "en": "We need to leave time the project.",
+                      "ja": "その案件を時間を残すする必要があります。",
+                      "focus": "leave time",
+                      "object": "the project",
+                      "jaFocus": "時間を残す"
+                  },
+                  {
+                      "en": "Please leave time it before the meeting.",
+                      "ja": "会議前にそれを時間を残すしてください。",
+                      "focus": "leave time",
+                      "object": "it",
+                      "jaFocus": "時間を残す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave time at home.",
+                      "ja": "家でよく時間を残すします。",
+                      "focus": "leave time",
+                      "jaFocus": "時間を残す"
+                  },
+                  {
+                      "en": "It helps to leave time in daily life.",
+                      "ja": "日常生活で時間を残すできると役立ちます。",
+                      "focus": "leave time",
+                      "jaFocus": "時間を残す"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave room",
+              "ja": "余地を残す",
+              "image": "leave room は仕事で「余地を残す」場面に使いやすい表現。",
+              "pattern": "LEAVE ROOM + ...",
+              "examples": [
+                  {
+                      "en": "I will leave room this today.",
+                      "ja": "今日これを余地を残すします。",
+                      "focus": "leave room",
+                      "object": "this",
+                      "jaFocus": "余地を残す"
+                  },
+                  {
+                      "en": "We need to leave room the project.",
+                      "ja": "その案件を余地を残すする必要があります。",
+                      "focus": "leave room",
+                      "object": "the project",
+                      "jaFocus": "余地を残す"
+                  },
+                  {
+                      "en": "Please leave room it before the meeting.",
+                      "ja": "会議前にそれを余地を残すしてください。",
+                      "focus": "leave room",
+                      "object": "it",
+                      "jaFocus": "余地を残す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave room at home.",
+                      "ja": "家でよく余地を残すします。",
+                      "focus": "leave room",
+                      "jaFocus": "余地を残す"
+                  },
+                  {
+                      "en": "It helps to leave room in daily life.",
+                      "ja": "日常生活で余地を残すできると役立ちます。",
+                      "focus": "leave room",
+                      "jaFocus": "余地を残す"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave a decision",
+              "ja": "判断を任せる",
+              "image": "leave a decision は仕事で「判断を任せる」場面に使いやすい表現。",
+              "pattern": "LEAVE A DECISION + ...",
+              "examples": [
+                  {
+                      "en": "I will leave a decision this today.",
+                      "ja": "今日これを判断を任せるします。",
+                      "focus": "leave a decision",
+                      "object": "this",
+                      "jaFocus": "判断を任せる"
+                  },
+                  {
+                      "en": "We need to leave a decision the project.",
+                      "ja": "その案件を判断を任せるする必要があります。",
+                      "focus": "leave a decision",
+                      "object": "the project",
+                      "jaFocus": "判断を任せる"
+                  },
+                  {
+                      "en": "Please leave a decision it before the meeting.",
+                      "ja": "会議前にそれを判断を任せるしてください。",
+                      "focus": "leave a decision",
+                      "object": "it",
+                      "jaFocus": "判断を任せる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave a decision at home.",
+                      "ja": "家でよく判断を任せるします。",
+                      "focus": "leave a decision",
+                      "jaFocus": "判断を任せる"
+                  },
+                  {
+                      "en": "It helps to leave a decision in daily life.",
+                      "ja": "日常生活で判断を任せるできると役立ちます。",
+                      "focus": "leave a decision",
+                      "jaFocus": "判断を任せる"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave a document",
+              "ja": "資料を置いておく",
+              "image": "leave a document は仕事で「資料を置いておく」場面に使いやすい表現。",
+              "pattern": "LEAVE A DOCUMENT + ...",
+              "examples": [
+                  {
+                      "en": "I will leave a document this today.",
+                      "ja": "今日これを資料を置いておくします。",
+                      "focus": "leave a document",
+                      "object": "this",
+                      "jaFocus": "資料を置いておく"
+                  },
+                  {
+                      "en": "We need to leave a document the project.",
+                      "ja": "その案件を資料を置いておくする必要があります。",
+                      "focus": "leave a document",
+                      "object": "the project",
+                      "jaFocus": "資料を置いておく"
+                  },
+                  {
+                      "en": "Please leave a document it before the meeting.",
+                      "ja": "会議前にそれを資料を置いておくしてください。",
+                      "focus": "leave a document",
+                      "object": "it",
+                      "jaFocus": "資料を置いておく"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave a document at home.",
+                      "ja": "家でよく資料を置いておくします。",
+                      "focus": "leave a document",
+                      "jaFocus": "資料を置いておく"
+                  },
+                  {
+                      "en": "It helps to leave a document in daily life.",
+                      "ja": "日常生活で資料を置いておくできると役立ちます。",
+                      "focus": "leave a document",
+                      "jaFocus": "資料を置いておく"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave an impression",
+              "ja": "印象を残す",
+              "image": "leave an impression は仕事で「印象を残す」場面に使いやすい表現。",
+              "pattern": "LEAVE AN IMPRESSION + ...",
+              "examples": [
+                  {
+                      "en": "I will leave an impression this today.",
+                      "ja": "今日これを印象を残すします。",
+                      "focus": "leave an impression",
+                      "object": "this",
+                      "jaFocus": "印象を残す"
+                  },
+                  {
+                      "en": "We need to leave an impression the project.",
+                      "ja": "その案件を印象を残すする必要があります。",
+                      "focus": "leave an impression",
+                      "object": "the project",
+                      "jaFocus": "印象を残す"
+                  },
+                  {
+                      "en": "Please leave an impression it before the meeting.",
+                      "ja": "会議前にそれを印象を残すしてください。",
+                      "focus": "leave an impression",
+                      "object": "it",
+                      "jaFocus": "印象を残す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave an impression at home.",
+                      "ja": "家でよく印象を残すします。",
+                      "focus": "leave an impression",
+                      "jaFocus": "印象を残す"
+                  },
+                  {
+                      "en": "It helps to leave an impression in daily life.",
+                      "ja": "日常生活で印象を残すできると役立ちます。",
+                      "focus": "leave an impression",
+                      "jaFocus": "印象を残す"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave a task",
+              "ja": "作業を残す",
+              "image": "leave a task は仕事で「作業を残す」場面に使いやすい表現。",
+              "pattern": "LEAVE A TASK + ...",
+              "examples": [
+                  {
+                      "en": "I will leave a task this today.",
+                      "ja": "今日これを作業を残すします。",
+                      "focus": "leave a task",
+                      "object": "this",
+                      "jaFocus": "作業を残す"
+                  },
+                  {
+                      "en": "We need to leave a task the project.",
+                      "ja": "その案件を作業を残すする必要があります。",
+                      "focus": "leave a task",
+                      "object": "the project",
+                      "jaFocus": "作業を残す"
+                  },
+                  {
+                      "en": "Please leave a task it before the meeting.",
+                      "ja": "会議前にそれを作業を残すしてください。",
+                      "focus": "leave a task",
+                      "object": "it",
+                      "jaFocus": "作業を残す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave a task at home.",
+                      "ja": "家でよく作業を残すします。",
+                      "focus": "leave a task",
+                      "jaFocus": "作業を残す"
+                  },
+                  {
+                      "en": "It helps to leave a task in daily life.",
+                      "ja": "日常生活で作業を残すできると役立ちます。",
+                      "focus": "leave a task",
+                      "jaFocus": "作業を残す"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave a question",
+              "ja": "質問を残す",
+              "image": "leave a question は仕事で「質問を残す」場面に使いやすい表現。",
+              "pattern": "LEAVE A QUESTION + ...",
+              "examples": [
+                  {
+                      "en": "I will leave a question this today.",
+                      "ja": "今日これを質問を残すします。",
+                      "focus": "leave a question",
+                      "object": "this",
+                      "jaFocus": "質問を残す"
+                  },
+                  {
+                      "en": "We need to leave a question the project.",
+                      "ja": "その案件を質問を残すする必要があります。",
+                      "focus": "leave a question",
+                      "object": "the project",
+                      "jaFocus": "質問を残す"
+                  },
+                  {
+                      "en": "Please leave a question it before the meeting.",
+                      "ja": "会議前にそれを質問を残すしてください。",
+                      "focus": "leave a question",
+                      "object": "it",
+                      "jaFocus": "質問を残す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave a question at home.",
+                      "ja": "家でよく質問を残すします。",
+                      "focus": "leave a question",
+                      "jaFocus": "質問を残す"
+                  },
+                  {
+                      "en": "It helps to leave a question in daily life.",
+                      "ja": "日常生活で質問を残すできると役立ちます。",
+                      "focus": "leave a question",
+                      "jaFocus": "質問を残す"
+                  }
+              ]
+          }
+      ],
+      "phrasalVerbs": [
+          {
+              "phrase": "leave out",
+              "ja": "省く",
+              "image": "leave out は仕事で「省く」場面に使いやすい表現。",
+              "pattern": "LEAVE OUT + ...",
+              "examples": [
+                  {
+                      "en": "I will leave out this today.",
+                      "ja": "今日これを省くします。",
+                      "focus": "leave out",
+                      "object": "this",
+                      "jaFocus": "省く"
+                  },
+                  {
+                      "en": "We need to leave out the project.",
+                      "ja": "その案件を省くする必要があります。",
+                      "focus": "leave out",
+                      "object": "the project",
+                      "jaFocus": "省く"
+                  },
+                  {
+                      "en": "Please leave out it before the meeting.",
+                      "ja": "会議前にそれを省くしてください。",
+                      "focus": "leave out",
+                      "object": "it",
+                      "jaFocus": "省く"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave out at home.",
+                      "ja": "家でよく省くします。",
+                      "focus": "leave out",
+                      "jaFocus": "省く"
+                  },
+                  {
+                      "en": "It helps to leave out in daily life.",
+                      "ja": "日常生活で省くできると役立ちます。",
+                      "focus": "leave out",
+                      "jaFocus": "省く"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave behind",
+              "ja": "置いていく",
+              "image": "leave behind は仕事で「置いていく」場面に使いやすい表現。",
+              "pattern": "LEAVE BEHIND + ...",
+              "examples": [
+                  {
+                      "en": "I will leave behind this today.",
+                      "ja": "今日これを置いていくします。",
+                      "focus": "leave behind",
+                      "object": "this",
+                      "jaFocus": "置いていく"
+                  },
+                  {
+                      "en": "We need to leave behind the project.",
+                      "ja": "その案件を置いていくする必要があります。",
+                      "focus": "leave behind",
+                      "object": "the project",
+                      "jaFocus": "置いていく"
+                  },
+                  {
+                      "en": "Please leave behind it before the meeting.",
+                      "ja": "会議前にそれを置いていくしてください。",
+                      "focus": "leave behind",
+                      "object": "it",
+                      "jaFocus": "置いていく"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave behind at home.",
+                      "ja": "家でよく置いていくします。",
+                      "focus": "leave behind",
+                      "jaFocus": "置いていく"
+                  },
+                  {
+                      "en": "It helps to leave behind in daily life.",
+                      "ja": "日常生活で置いていくできると役立ちます。",
+                      "focus": "leave behind",
+                      "jaFocus": "置いていく"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave for",
+              "ja": "出発する",
+              "image": "leave for は仕事で「出発する」場面に使いやすい表現。",
+              "pattern": "LEAVE FOR + ...",
+              "examples": [
+                  {
+                      "en": "I will leave for this today.",
+                      "ja": "今日これを出発するします。",
+                      "focus": "leave for",
+                      "object": "this",
+                      "jaFocus": "出発する"
+                  },
+                  {
+                      "en": "We need to leave for the project.",
+                      "ja": "その案件を出発するする必要があります。",
+                      "focus": "leave for",
+                      "object": "the project",
+                      "jaFocus": "出発する"
+                  },
+                  {
+                      "en": "Please leave for it before the meeting.",
+                      "ja": "会議前にそれを出発するしてください。",
+                      "focus": "leave for",
+                      "object": "it",
+                      "jaFocus": "出発する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave for at home.",
+                      "ja": "家でよく出発するします。",
+                      "focus": "leave for",
+                      "jaFocus": "出発する"
+                  },
+                  {
+                      "en": "It helps to leave for in daily life.",
+                      "ja": "日常生活で出発するできると役立ちます。",
+                      "focus": "leave for",
+                      "jaFocus": "出発する"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave off",
+              "ja": "中断する",
+              "image": "leave off は仕事で「中断する」場面に使いやすい表現。",
+              "pattern": "LEAVE OFF + ...",
+              "examples": [
+                  {
+                      "en": "I will leave off this today.",
+                      "ja": "今日これを中断するします。",
+                      "focus": "leave off",
+                      "object": "this",
+                      "jaFocus": "中断する"
+                  },
+                  {
+                      "en": "We need to leave off the project.",
+                      "ja": "その案件を中断するする必要があります。",
+                      "focus": "leave off",
+                      "object": "the project",
+                      "jaFocus": "中断する"
+                  },
+                  {
+                      "en": "Please leave off it before the meeting.",
+                      "ja": "会議前にそれを中断するしてください。",
+                      "focus": "leave off",
+                      "object": "it",
+                      "jaFocus": "中断する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave off at home.",
+                      "ja": "家でよく中断するします。",
+                      "focus": "leave off",
+                      "jaFocus": "中断する"
+                  },
+                  {
+                      "en": "It helps to leave off in daily life.",
+                      "ja": "日常生活で中断するできると役立ちます。",
+                      "focus": "leave off",
+                      "jaFocus": "中断する"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave aside",
+              "ja": "脇に置く",
+              "image": "leave aside は仕事で「脇に置く」場面に使いやすい表現。",
+              "pattern": "LEAVE ASIDE + ...",
+              "examples": [
+                  {
+                      "en": "I will leave aside this today.",
+                      "ja": "今日これを脇に置くします。",
+                      "focus": "leave aside",
+                      "object": "this",
+                      "jaFocus": "脇に置く"
+                  },
+                  {
+                      "en": "We need to leave aside the project.",
+                      "ja": "その案件を脇に置くする必要があります。",
+                      "focus": "leave aside",
+                      "object": "the project",
+                      "jaFocus": "脇に置く"
+                  },
+                  {
+                      "en": "Please leave aside it before the meeting.",
+                      "ja": "会議前にそれを脇に置くしてください。",
+                      "focus": "leave aside",
+                      "object": "it",
+                      "jaFocus": "脇に置く"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave aside at home.",
+                      "ja": "家でよく脇に置くします。",
+                      "focus": "leave aside",
+                      "jaFocus": "脇に置く"
+                  },
+                  {
+                      "en": "It helps to leave aside in daily life.",
+                      "ja": "日常生活で脇に置くできると役立ちます。",
+                      "focus": "leave aside",
+                      "jaFocus": "脇に置く"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave over",
+              "ja": "残す",
+              "image": "leave over は仕事で「残す」場面に使いやすい表現。",
+              "pattern": "LEAVE OVER + ...",
+              "examples": [
+                  {
+                      "en": "I will leave over this today.",
+                      "ja": "今日これを残すします。",
+                      "focus": "leave over",
+                      "object": "this",
+                      "jaFocus": "残す"
+                  },
+                  {
+                      "en": "We need to leave over the project.",
+                      "ja": "その案件を残すする必要があります。",
+                      "focus": "leave over",
+                      "object": "the project",
+                      "jaFocus": "残す"
+                  },
+                  {
+                      "en": "Please leave over it before the meeting.",
+                      "ja": "会議前にそれを残すしてください。",
+                      "focus": "leave over",
+                      "object": "it",
+                      "jaFocus": "残す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave over at home.",
+                      "ja": "家でよく残すします。",
+                      "focus": "leave over",
+                      "jaFocus": "残す"
+                  },
+                  {
+                      "en": "It helps to leave over in daily life.",
+                      "ja": "日常生活で残すできると役立ちます。",
+                      "focus": "leave over",
+                      "jaFocus": "残す"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave alone",
+              "ja": "そのままにする",
+              "image": "leave alone は仕事で「そのままにする」場面に使いやすい表現。",
+              "pattern": "LEAVE ALONE + ...",
+              "examples": [
+                  {
+                      "en": "I will leave alone this today.",
+                      "ja": "今日これをそのままにするします。",
+                      "focus": "leave alone",
+                      "object": "this",
+                      "jaFocus": "そのままにする"
+                  },
+                  {
+                      "en": "We need to leave alone the project.",
+                      "ja": "その案件をそのままにするする必要があります。",
+                      "focus": "leave alone",
+                      "object": "the project",
+                      "jaFocus": "そのままにする"
+                  },
+                  {
+                      "en": "Please leave alone it before the meeting.",
+                      "ja": "会議前にそれをそのままにするしてください。",
+                      "focus": "leave alone",
+                      "object": "it",
+                      "jaFocus": "そのままにする"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave alone at home.",
+                      "ja": "家でよくそのままにするします。",
+                      "focus": "leave alone",
+                      "jaFocus": "そのままにする"
+                  },
+                  {
+                      "en": "It helps to leave alone in daily life.",
+                      "ja": "日常生活でそのままにするできると役立ちます。",
+                      "focus": "leave alone",
+                      "jaFocus": "そのままにする"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave to",
+              "ja": "任せる",
+              "image": "leave to は仕事で「任せる」場面に使いやすい表現。",
+              "pattern": "LEAVE TO + ...",
+              "examples": [
+                  {
+                      "en": "I will leave to this today.",
+                      "ja": "今日これを任せるします。",
+                      "focus": "leave to",
+                      "object": "this",
+                      "jaFocus": "任せる"
+                  },
+                  {
+                      "en": "We need to leave to the project.",
+                      "ja": "その案件を任せるする必要があります。",
+                      "focus": "leave to",
+                      "object": "the project",
+                      "jaFocus": "任せる"
+                  },
+                  {
+                      "en": "Please leave to it before the meeting.",
+                      "ja": "会議前にそれを任せるしてください。",
+                      "focus": "leave to",
+                      "object": "it",
+                      "jaFocus": "任せる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave to at home.",
+                      "ja": "家でよく任せるします。",
+                      "focus": "leave to",
+                      "jaFocus": "任せる"
+                  },
+                  {
+                      "en": "It helps to leave to in daily life.",
+                      "ja": "日常生活で任せるできると役立ちます。",
+                      "focus": "leave to",
+                      "jaFocus": "任せる"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave with",
+              "ja": "預ける",
+              "image": "leave with は仕事で「預ける」場面に使いやすい表現。",
+              "pattern": "LEAVE WITH + ...",
+              "examples": [
+                  {
+                      "en": "I will leave with this today.",
+                      "ja": "今日これを預けるします。",
+                      "focus": "leave with",
+                      "object": "this",
+                      "jaFocus": "預ける"
+                  },
+                  {
+                      "en": "We need to leave with the project.",
+                      "ja": "その案件を預けるする必要があります。",
+                      "focus": "leave with",
+                      "object": "the project",
+                      "jaFocus": "預ける"
+                  },
+                  {
+                      "en": "Please leave with it before the meeting.",
+                      "ja": "会議前にそれを預けるしてください。",
+                      "focus": "leave with",
+                      "object": "it",
+                      "jaFocus": "預ける"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave with at home.",
+                      "ja": "家でよく預けるします。",
+                      "focus": "leave with",
+                      "jaFocus": "預ける"
+                  },
+                  {
+                      "en": "It helps to leave with in daily life.",
+                      "ja": "日常生活で預けるできると役立ちます。",
+                      "focus": "leave with",
+                      "jaFocus": "預ける"
+                  }
+              ]
+          },
+          {
+              "phrase": "leave from",
+              "ja": "出発する",
+              "image": "leave from は仕事で「出発する」場面に使いやすい表現。",
+              "pattern": "LEAVE FROM + ...",
+              "examples": [
+                  {
+                      "en": "I will leave from this today.",
+                      "ja": "今日これを出発するします。",
+                      "focus": "leave from",
+                      "object": "this",
+                      "jaFocus": "出発する"
+                  },
+                  {
+                      "en": "We need to leave from the project.",
+                      "ja": "その案件を出発するする必要があります。",
+                      "focus": "leave from",
+                      "object": "the project",
+                      "jaFocus": "出発する"
+                  },
+                  {
+                      "en": "Please leave from it before the meeting.",
+                      "ja": "会議前にそれを出発するしてください。",
+                      "focus": "leave from",
+                      "object": "it",
+                      "jaFocus": "出発する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often leave from at home.",
+                      "ja": "家でよく出発するします。",
+                      "focus": "leave from",
+                      "jaFocus": "出発する"
+                  },
+                  {
+                      "en": "It helps to leave from in daily life.",
+                      "ja": "日常生活で出発するできると役立ちます。",
+                      "focus": "leave from",
+                      "jaFocus": "出発する"
+                  }
+              ]
+          }
+      ]
+  },
+  {
+      "id": "move",
+      "rank": 30,
+      "word": "MOVE",
+      "ipa": "/muːv/",
+      "kana": "ムーヴ",
+      "syllable": "move",
+      "transitivity": "他動詞・自動詞",
+      "importance": "★★★★☆ 重要",
+      "core": "位置・予定・状況を動かす",
+      "coreDetail": "MOVEは物理的に動く・動かすだけでなく、予定を変更する、案件を前に進める、気持ちを動かす感覚で使います。",
+      "coreVisual": {
+          "from": [
+              "📄 資料",
+              "📅 予定",
+              "👥 チーム",
+              "💬 連絡",
+              "✅ 判断"
+          ],
+          "to": "仕事の流れ",
+          "label": "コアイメージ"
+      },
+      "meanings": [
+          {
+              "id": "change-schedule",
+              "title": "1 予定を動かす",
+              "pattern": "MOVE + 日程",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "予定を別の日や時間へ移す。",
+              "point": "move the meeting は仕事でよく使う。",
+              "examples": [
+                  {
+                      "en": "Can we move the meeting to Friday?",
+                      "ja": "会議を金曜日に変更できますか？",
+                      "focus": "move",
+                      "object": "the meeting",
+                      "jaFocus": "変更できますか"
+                  },
+                  {
+                      "en": "We moved the deadline to next week.",
+                      "ja": "締切を来週に変更しました。",
+                      "focus": "moved",
+                      "object": "the deadline",
+                      "jaFocus": "変更しました"
+                  },
+                  {
+                      "en": "Please move the call to the afternoon.",
+                      "ja": "電話を午後に変更してください。",
+                      "focus": "move",
+                      "object": "the call",
+                      "jaFocus": "変更してください"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I move this on weekends.",
+                      "ja": "週末にこれを予定を動かすことがあります。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "予定を動かす"
+                  },
+                  {
+                      "en": "It is useful to move this in daily life.",
+                      "ja": "日常生活でこれを予定を動かすと便利です。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "予定を動かす"
+                  }
+              ]
+          },
+          {
+              "id": "progress",
+              "title": "2 進める",
+              "pattern": "MOVE + 案件 / 仕事",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "仕事を前に進める。",
+              "point": "move forward は「前に進める」。",
+              "examples": [
+                  {
+                      "en": "We need to move this project forward.",
+                      "ja": "この案件を前に進める必要があります。",
+                      "focus": "move",
+                      "object": "this project",
+                      "jaFocus": "前に進める"
+                  },
+                  {
+                      "en": "Let us move the discussion forward.",
+                      "ja": "議論を前に進めましょう。",
+                      "focus": "move",
+                      "object": "the discussion",
+                      "jaFocus": "前に進めましょう"
+                  },
+                  {
+                      "en": "The team moved the plan forward.",
+                      "ja": "チームは計画を前進させました。",
+                      "focus": "moved",
+                      "object": "the plan",
+                      "jaFocus": "前進させました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I move this on weekends.",
+                      "ja": "週末にこれを進めることがあります。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "進める"
+                  },
+                  {
+                      "en": "It is useful to move this in daily life.",
+                      "ja": "日常生活でこれを進めると便利です。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "進める"
+                  }
+              ]
+          },
+          {
+              "id": "transfer",
+              "title": "3 移す・移動させる",
+              "pattern": "MOVE + 名詞 + to 場所",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "物やデータを別の場所へ移す。",
+              "point": "ファイルや在庫移動にも使える。",
+              "examples": [
+                  {
+                      "en": "Please move the file to the shared folder.",
+                      "ja": "ファイルを共有フォルダへ移してください。",
+                      "focus": "move",
+                      "object": "the file",
+                      "jaFocus": "移してください"
+                  },
+                  {
+                      "en": "We moved the stock to another warehouse.",
+                      "ja": "在庫を別の倉庫へ移しました。",
+                      "focus": "moved",
+                      "object": "the stock",
+                      "jaFocus": "移しました"
+                  },
+                  {
+                      "en": "Can you move the data to the new system?",
+                      "ja": "データを新システムへ移せますか？",
+                      "focus": "move",
+                      "object": "the data",
+                      "jaFocus": "移せますか"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I move this on weekends.",
+                      "ja": "週末にこれを移す・移動させることがあります。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "移す・移動させる"
+                  },
+                  {
+                      "en": "It is useful to move this in daily life.",
+                      "ja": "日常生活でこれを移す・移動させると便利です。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "移す・移動させる"
+                  }
+              ]
+          },
+          {
+              "id": "relocate",
+              "title": "4 引っ越す・移転する",
+              "pattern": "MOVE to + 場所",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "人や会社が場所を変える。",
+              "point": "office移転にも使う。",
+              "examples": [
+                  {
+                      "en": "Our office moved to a new building.",
+                      "ja": "弊社オフィスは新しいビルへ移転しました。",
+                      "focus": "moved",
+                      "jaFocus": "移転しました"
+                  },
+                  {
+                      "en": "The team moved to a larger room.",
+                      "ja": "チームはより広い部屋へ移動しました。",
+                      "focus": "moved",
+                      "jaFocus": "移動しました"
+                  },
+                  {
+                      "en": "The branch will move next month.",
+                      "ja": "支店は来月移転します。",
+                      "focus": "move",
+                      "jaFocus": "移転します"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I move this on weekends.",
+                      "ja": "週末にこれを引っ越す・移転することがあります。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "引っ越す・移転する"
+                  },
+                  {
+                      "en": "It is useful to move this in daily life.",
+                      "ja": "日常生活でこれを引っ越す・移転すると便利です。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "引っ越す・移転する"
+                  }
+              ]
+          },
+          {
+              "id": "affect",
+              "title": "5 心を動かす",
+              "pattern": "MOVE + 人",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "人の感情を動かす。",
+              "point": "受け身 be moved も多い。",
+              "examples": [
+                  {
+                      "en": "His presentation moved the audience.",
+                      "ja": "彼のプレゼンは聴衆の心を動かしました。",
+                      "focus": "moved",
+                      "object": "the audience",
+                      "jaFocus": "心を動かしました"
+                  },
+                  {
+                      "en": "I was moved by her message.",
+                      "ja": "彼女のメッセージに心を動かされました。",
+                      "focus": "moved",
+                      "jaFocus": "心を動かされました"
+                  },
+                  {
+                      "en": "The story moved many employees.",
+                      "ja": "その話は多くの社員の心を動かしました。",
+                      "focus": "moved",
+                      "object": "many employees",
+                      "jaFocus": "心を動かしました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I move this on weekends.",
+                      "ja": "週末にこれを心を動かすことがあります。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "心を動かす"
+                  },
+                  {
+                      "en": "It is useful to move this in daily life.",
+                      "ja": "日常生活でこれを心を動かすと便利です。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "心を動かす"
+                  }
+              ]
+          },
+          {
+              "id": "act",
+              "title": "6 行動する",
+              "pattern": "MOVE quickly",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "素早く行動する。",
+              "point": "ビジネスで move quickly は「早く動く」。",
+              "examples": [
+                  {
+                      "en": "We need to move quickly on this issue.",
+                      "ja": "この件は早く動く必要があります。",
+                      "focus": "move",
+                      "jaFocus": "早く動く"
+                  },
+                  {
+                      "en": "The market is moving fast.",
+                      "ja": "市場は速く動いています。",
+                      "focus": "moving",
+                      "jaFocus": "動いています"
+                  },
+                  {
+                      "en": "Let us move before the deadline.",
+                      "ja": "締切前に動きましょう。",
+                      "focus": "move",
+                      "jaFocus": "動きましょう"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I move this on weekends.",
+                      "ja": "週末にこれを行動することがあります。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "行動する"
+                  },
+                  {
+                      "en": "It is useful to move this in daily life.",
+                      "ja": "日常生活でこれを行動すると便利です。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "行動する"
+                  }
+              ]
+          },
+          {
+              "id": "convince",
+              "title": "7 説得する・動かす",
+              "pattern": "MOVE + 人 + to 動詞",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "人に行動を促す。",
+              "point": "やや硬めだが使える。",
+              "examples": [
+                  {
+                      "en": "The data moved the client to approve the plan.",
+                      "ja": "データがクライアントに計画承認を促しました。",
+                      "focus": "moved",
+                      "object": "the client",
+                      "jaFocus": "促しました"
+                  },
+                  {
+                      "en": "His explanation moved us to reconsider.",
+                      "ja": "彼の説明で再検討する気になりました。",
+                      "focus": "moved",
+                      "object": "us",
+                      "jaFocus": "気になりました"
+                  },
+                  {
+                      "en": "The result moved management to act.",
+                      "ja": "その結果を受けて経営陣が動きました。",
+                      "focus": "moved",
+                      "object": "management",
+                      "jaFocus": "動きました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I move this on weekends.",
+                      "ja": "週末にこれを説得する・動かすことがあります。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "説得する・動かす"
+                  },
+                  {
+                      "en": "It is useful to move this in daily life.",
+                      "ja": "日常生活でこれを説得する・動かすと便利です。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "説得する・動かす"
+                  }
+              ]
+          },
+          {
+              "id": "change-topic",
+              "title": "8 話題を移す",
+              "pattern": "MOVE to + 議題",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "次の話題へ移る。",
+              "point": "会議進行で便利。",
+              "examples": [
+                  {
+                      "en": "Let us move to the next topic.",
+                      "ja": "次の議題に移りましょう。",
+                      "focus": "move",
+                      "jaFocus": "移りましょう"
+                  },
+                  {
+                      "en": "Can we move to pricing now?",
+                      "ja": "次に価格の話に移れますか？",
+                      "focus": "move",
+                      "jaFocus": "移れますか"
+                  },
+                  {
+                      "en": "We moved to the budget discussion.",
+                      "ja": "予算の議論に移りました。",
+                      "focus": "moved",
+                      "jaFocus": "移りました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I move this on weekends.",
+                      "ja": "週末にこれを話題を移すことがあります。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "話題を移す"
+                  },
+                  {
+                      "en": "It is useful to move this in daily life.",
+                      "ja": "日常生活でこれを話題を移すと便利です。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "話題を移す"
+                  }
+              ]
+          },
+          {
+              "id": "sell",
+              "title": "9 売れる・動く",
+              "pattern": "MOVE + 商品",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "商品が売れる。",
+              "point": "在庫や売れ行きで使う。",
+              "examples": [
+                  {
+                      "en": "This product moves well in summer.",
+                      "ja": "この商品は夏によく売れます。",
+                      "focus": "moves",
+                      "jaFocus": "売れます"
+                  },
+                  {
+                      "en": "The new model moved faster than expected.",
+                      "ja": "新モデルは想定より早く売れました。",
+                      "focus": "moved",
+                      "jaFocus": "売れました"
+                  },
+                  {
+                      "en": "Slow-moving items need a new strategy.",
+                      "ja": "動きの遅い商品には新しい戦略が必要です。",
+                      "focus": "moving",
+                      "jaFocus": "動きの遅い"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I move this on weekends.",
+                      "ja": "週末にこれを売れる・動くことがあります。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "売れる・動く"
+                  },
+                  {
+                      "en": "It is useful to move this in daily life.",
+                      "ja": "日常生活でこれを売れる・動くと便利です。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "売れる・動く"
+                  }
+              ]
+          },
+          {
+              "id": "make-progress",
+              "title": "10 進展する",
+              "pattern": "MOVE ahead / along",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "物事が進展する。",
+              "point": "案件の進捗説明に使える。",
+              "examples": [
+                  {
+                      "en": "The project is moving ahead smoothly.",
+                      "ja": "案件は順調に進んでいます。",
+                      "focus": "moving",
+                      "jaFocus": "進んでいます"
+                  },
+                  {
+                      "en": "Everything is moving along as planned.",
+                      "ja": "すべて予定通り進んでいます。",
+                      "focus": "moving",
+                      "jaFocus": "進んでいます"
+                  },
+                  {
+                      "en": "The negotiation moved slowly.",
+                      "ja": "交渉はゆっくり進みました。",
+                      "focus": "moved",
+                      "jaFocus": "進みました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I move this on weekends.",
+                      "ja": "週末にこれを進展することがあります。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "進展する"
+                  },
+                  {
+                      "en": "It is useful to move this in daily life.",
+                      "ja": "日常生活でこれを進展すると便利です。",
+                      "focus": "move",
+                      "object": "this",
+                      "jaFocus": "進展する"
+                  }
+              ]
+          }
+      ],
+      "collocations": [
+          {
+              "phrase": "move forward",
+              "ja": "前に進める",
+              "image": "move forward は仕事で「前に進める」場面に使いやすい表現。",
+              "pattern": "MOVE FORWARD + ...",
+              "examples": [
+                  {
+                      "en": "I will move forward this today.",
+                      "ja": "今日これを前に進めるします。",
+                      "focus": "move forward",
+                      "object": "this",
+                      "jaFocus": "前に進める"
+                  },
+                  {
+                      "en": "We need to move forward the project.",
+                      "ja": "その案件を前に進めるする必要があります。",
+                      "focus": "move forward",
+                      "object": "the project",
+                      "jaFocus": "前に進める"
+                  },
+                  {
+                      "en": "Please move forward it before the meeting.",
+                      "ja": "会議前にそれを前に進めるしてください。",
+                      "focus": "move forward",
+                      "object": "it",
+                      "jaFocus": "前に進める"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move forward at home.",
+                      "ja": "家でよく前に進めるします。",
+                      "focus": "move forward",
+                      "jaFocus": "前に進める"
+                  },
+                  {
+                      "en": "It helps to move forward in daily life.",
+                      "ja": "日常生活で前に進めるできると役立ちます。",
+                      "focus": "move forward",
+                      "jaFocus": "前に進める"
+                  }
+              ]
+          },
+          {
+              "phrase": "move ahead",
+              "ja": "進展する",
+              "image": "move ahead は仕事で「進展する」場面に使いやすい表現。",
+              "pattern": "MOVE AHEAD + ...",
+              "examples": [
+                  {
+                      "en": "I will move ahead this today.",
+                      "ja": "今日これを進展するします。",
+                      "focus": "move ahead",
+                      "object": "this",
+                      "jaFocus": "進展する"
+                  },
+                  {
+                      "en": "We need to move ahead the project.",
+                      "ja": "その案件を進展するする必要があります。",
+                      "focus": "move ahead",
+                      "object": "the project",
+                      "jaFocus": "進展する"
+                  },
+                  {
+                      "en": "Please move ahead it before the meeting.",
+                      "ja": "会議前にそれを進展するしてください。",
+                      "focus": "move ahead",
+                      "object": "it",
+                      "jaFocus": "進展する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move ahead at home.",
+                      "ja": "家でよく進展するします。",
+                      "focus": "move ahead",
+                      "jaFocus": "進展する"
+                  },
+                  {
+                      "en": "It helps to move ahead in daily life.",
+                      "ja": "日常生活で進展するできると役立ちます。",
+                      "focus": "move ahead",
+                      "jaFocus": "進展する"
+                  }
+              ]
+          },
+          {
+              "phrase": "move fast",
+              "ja": "素早く動く",
+              "image": "move fast は仕事で「素早く動く」場面に使いやすい表現。",
+              "pattern": "MOVE FAST + ...",
+              "examples": [
+                  {
+                      "en": "I will move fast this today.",
+                      "ja": "今日これを素早く動くします。",
+                      "focus": "move fast",
+                      "object": "this",
+                      "jaFocus": "素早く動く"
+                  },
+                  {
+                      "en": "We need to move fast the project.",
+                      "ja": "その案件を素早く動くする必要があります。",
+                      "focus": "move fast",
+                      "object": "the project",
+                      "jaFocus": "素早く動く"
+                  },
+                  {
+                      "en": "Please move fast it before the meeting.",
+                      "ja": "会議前にそれを素早く動くしてください。",
+                      "focus": "move fast",
+                      "object": "it",
+                      "jaFocus": "素早く動く"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move fast at home.",
+                      "ja": "家でよく素早く動くします。",
+                      "focus": "move fast",
+                      "jaFocus": "素早く動く"
+                  },
+                  {
+                      "en": "It helps to move fast in daily life.",
+                      "ja": "日常生活で素早く動くできると役立ちます。",
+                      "focus": "move fast",
+                      "jaFocus": "素早く動く"
+                  }
+              ]
+          },
+          {
+              "phrase": "move slowly",
+              "ja": "ゆっくり進む",
+              "image": "move slowly は仕事で「ゆっくり進む」場面に使いやすい表現。",
+              "pattern": "MOVE SLOWLY + ...",
+              "examples": [
+                  {
+                      "en": "I will move slowly this today.",
+                      "ja": "今日これをゆっくり進むします。",
+                      "focus": "move slowly",
+                      "object": "this",
+                      "jaFocus": "ゆっくり進む"
+                  },
+                  {
+                      "en": "We need to move slowly the project.",
+                      "ja": "その案件をゆっくり進むする必要があります。",
+                      "focus": "move slowly",
+                      "object": "the project",
+                      "jaFocus": "ゆっくり進む"
+                  },
+                  {
+                      "en": "Please move slowly it before the meeting.",
+                      "ja": "会議前にそれをゆっくり進むしてください。",
+                      "focus": "move slowly",
+                      "object": "it",
+                      "jaFocus": "ゆっくり進む"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move slowly at home.",
+                      "ja": "家でよくゆっくり進むします。",
+                      "focus": "move slowly",
+                      "jaFocus": "ゆっくり進む"
+                  },
+                  {
+                      "en": "It helps to move slowly in daily life.",
+                      "ja": "日常生活でゆっくり進むできると役立ちます。",
+                      "focus": "move slowly",
+                      "jaFocus": "ゆっくり進む"
+                  }
+              ]
+          },
+          {
+              "phrase": "move the deadline",
+              "ja": "締切を動かす",
+              "image": "move the deadline は仕事で「締切を動かす」場面に使いやすい表現。",
+              "pattern": "MOVE THE DEADLINE + ...",
+              "examples": [
+                  {
+                      "en": "I will move the deadline this today.",
+                      "ja": "今日これを締切を動かすします。",
+                      "focus": "move the deadline",
+                      "object": "this",
+                      "jaFocus": "締切を動かす"
+                  },
+                  {
+                      "en": "We need to move the deadline the project.",
+                      "ja": "その案件を締切を動かすする必要があります。",
+                      "focus": "move the deadline",
+                      "object": "the project",
+                      "jaFocus": "締切を動かす"
+                  },
+                  {
+                      "en": "Please move the deadline it before the meeting.",
+                      "ja": "会議前にそれを締切を動かすしてください。",
+                      "focus": "move the deadline",
+                      "object": "it",
+                      "jaFocus": "締切を動かす"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move the deadline at home.",
+                      "ja": "家でよく締切を動かすします。",
+                      "focus": "move the deadline",
+                      "jaFocus": "締切を動かす"
+                  },
+                  {
+                      "en": "It helps to move the deadline in daily life.",
+                      "ja": "日常生活で締切を動かすできると役立ちます。",
+                      "focus": "move the deadline",
+                      "jaFocus": "締切を動かす"
+                  }
+              ]
+          },
+          {
+              "phrase": "move the meeting",
+              "ja": "会議を変更する",
+              "image": "move the meeting は仕事で「会議を変更する」場面に使いやすい表現。",
+              "pattern": "MOVE THE MEETING + ...",
+              "examples": [
+                  {
+                      "en": "I will move the meeting this today.",
+                      "ja": "今日これを会議を変更するします。",
+                      "focus": "move the meeting",
+                      "object": "this",
+                      "jaFocus": "会議を変更する"
+                  },
+                  {
+                      "en": "We need to move the meeting the project.",
+                      "ja": "その案件を会議を変更するする必要があります。",
+                      "focus": "move the meeting",
+                      "object": "the project",
+                      "jaFocus": "会議を変更する"
+                  },
+                  {
+                      "en": "Please move the meeting it before the meeting.",
+                      "ja": "会議前にそれを会議を変更するしてください。",
+                      "focus": "move the meeting",
+                      "object": "it",
+                      "jaFocus": "会議を変更する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move the meeting at home.",
+                      "ja": "家でよく会議を変更するします。",
+                      "focus": "move the meeting",
+                      "jaFocus": "会議を変更する"
+                  },
+                  {
+                      "en": "It helps to move the meeting in daily life.",
+                      "ja": "日常生活で会議を変更するできると役立ちます。",
+                      "focus": "move the meeting",
+                      "jaFocus": "会議を変更する"
+                  }
+              ]
+          },
+          {
+              "phrase": "move data",
+              "ja": "データを移す",
+              "image": "move data は仕事で「データを移す」場面に使いやすい表現。",
+              "pattern": "MOVE DATA + ...",
+              "examples": [
+                  {
+                      "en": "I will move data this today.",
+                      "ja": "今日これをデータを移すします。",
+                      "focus": "move data",
+                      "object": "this",
+                      "jaFocus": "データを移す"
+                  },
+                  {
+                      "en": "We need to move data the project.",
+                      "ja": "その案件をデータを移すする必要があります。",
+                      "focus": "move data",
+                      "object": "the project",
+                      "jaFocus": "データを移す"
+                  },
+                  {
+                      "en": "Please move data it before the meeting.",
+                      "ja": "会議前にそれをデータを移すしてください。",
+                      "focus": "move data",
+                      "object": "it",
+                      "jaFocus": "データを移す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move data at home.",
+                      "ja": "家でよくデータを移すします。",
+                      "focus": "move data",
+                      "jaFocus": "データを移す"
+                  },
+                  {
+                      "en": "It helps to move data in daily life.",
+                      "ja": "日常生活でデータを移すできると役立ちます。",
+                      "focus": "move data",
+                      "jaFocus": "データを移す"
+                  }
+              ]
+          },
+          {
+              "phrase": "move stock",
+              "ja": "在庫を移す",
+              "image": "move stock は仕事で「在庫を移す」場面に使いやすい表現。",
+              "pattern": "MOVE STOCK + ...",
+              "examples": [
+                  {
+                      "en": "I will move stock this today.",
+                      "ja": "今日これを在庫を移すします。",
+                      "focus": "move stock",
+                      "object": "this",
+                      "jaFocus": "在庫を移す"
+                  },
+                  {
+                      "en": "We need to move stock the project.",
+                      "ja": "その案件を在庫を移すする必要があります。",
+                      "focus": "move stock",
+                      "object": "the project",
+                      "jaFocus": "在庫を移す"
+                  },
+                  {
+                      "en": "Please move stock it before the meeting.",
+                      "ja": "会議前にそれを在庫を移すしてください。",
+                      "focus": "move stock",
+                      "object": "it",
+                      "jaFocus": "在庫を移す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move stock at home.",
+                      "ja": "家でよく在庫を移すします。",
+                      "focus": "move stock",
+                      "jaFocus": "在庫を移す"
+                  },
+                  {
+                      "en": "It helps to move stock in daily life.",
+                      "ja": "日常生活で在庫を移すできると役立ちます。",
+                      "focus": "move stock",
+                      "jaFocus": "在庫を移す"
+                  }
+              ]
+          },
+          {
+              "phrase": "move location",
+              "ja": "場所を移す",
+              "image": "move location は仕事で「場所を移す」場面に使いやすい表現。",
+              "pattern": "MOVE LOCATION + ...",
+              "examples": [
+                  {
+                      "en": "I will move location this today.",
+                      "ja": "今日これを場所を移すします。",
+                      "focus": "move location",
+                      "object": "this",
+                      "jaFocus": "場所を移す"
+                  },
+                  {
+                      "en": "We need to move location the project.",
+                      "ja": "その案件を場所を移すする必要があります。",
+                      "focus": "move location",
+                      "object": "the project",
+                      "jaFocus": "場所を移す"
+                  },
+                  {
+                      "en": "Please move location it before the meeting.",
+                      "ja": "会議前にそれを場所を移すしてください。",
+                      "focus": "move location",
+                      "object": "it",
+                      "jaFocus": "場所を移す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move location at home.",
+                      "ja": "家でよく場所を移すします。",
+                      "focus": "move location",
+                      "jaFocus": "場所を移す"
+                  },
+                  {
+                      "en": "It helps to move location in daily life.",
+                      "ja": "日常生活で場所を移すできると役立ちます。",
+                      "focus": "move location",
+                      "jaFocus": "場所を移す"
+                  }
+              ]
+          },
+          {
+              "phrase": "move to the next topic",
+              "ja": "次の議題に移る",
+              "image": "move to the next topic は仕事で「次の議題に移る」場面に使いやすい表現。",
+              "pattern": "MOVE TO THE NEXT TOPIC + ...",
+              "examples": [
+                  {
+                      "en": "I will move to the next topic this today.",
+                      "ja": "今日これを次の議題に移るします。",
+                      "focus": "move to the next topic",
+                      "object": "this",
+                      "jaFocus": "次の議題に移る"
+                  },
+                  {
+                      "en": "We need to move to the next topic the project.",
+                      "ja": "その案件を次の議題に移るする必要があります。",
+                      "focus": "move to the next topic",
+                      "object": "the project",
+                      "jaFocus": "次の議題に移る"
+                  },
+                  {
+                      "en": "Please move to the next topic it before the meeting.",
+                      "ja": "会議前にそれを次の議題に移るしてください。",
+                      "focus": "move to the next topic",
+                      "object": "it",
+                      "jaFocus": "次の議題に移る"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move to the next topic at home.",
+                      "ja": "家でよく次の議題に移るします。",
+                      "focus": "move to the next topic",
+                      "jaFocus": "次の議題に移る"
+                  },
+                  {
+                      "en": "It helps to move to the next topic in daily life.",
+                      "ja": "日常生活で次の議題に移るできると役立ちます。",
+                      "focus": "move to the next topic",
+                      "jaFocus": "次の議題に移る"
+                  }
+              ]
+          }
+      ],
+      "phrasalVerbs": [
+          {
+              "phrase": "move on",
+              "ja": "次へ進む",
+              "image": "move on は仕事で「次へ進む」場面に使いやすい表現。",
+              "pattern": "MOVE ON + ...",
+              "examples": [
+                  {
+                      "en": "I will move on this today.",
+                      "ja": "今日これを次へ進むします。",
+                      "focus": "move on",
+                      "object": "this",
+                      "jaFocus": "次へ進む"
+                  },
+                  {
+                      "en": "We need to move on the project.",
+                      "ja": "その案件を次へ進むする必要があります。",
+                      "focus": "move on",
+                      "object": "the project",
+                      "jaFocus": "次へ進む"
+                  },
+                  {
+                      "en": "Please move on it before the meeting.",
+                      "ja": "会議前にそれを次へ進むしてください。",
+                      "focus": "move on",
+                      "object": "it",
+                      "jaFocus": "次へ進む"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move on at home.",
+                      "ja": "家でよく次へ進むします。",
+                      "focus": "move on",
+                      "jaFocus": "次へ進む"
+                  },
+                  {
+                      "en": "It helps to move on in daily life.",
+                      "ja": "日常生活で次へ進むできると役立ちます。",
+                      "focus": "move on",
+                      "jaFocus": "次へ進む"
+                  }
+              ]
+          },
+          {
+              "phrase": "move up",
+              "ja": "前倒しする",
+              "image": "move up は仕事で「前倒しする」場面に使いやすい表現。",
+              "pattern": "MOVE UP + ...",
+              "examples": [
+                  {
+                      "en": "I will move up this today.",
+                      "ja": "今日これを前倒しするします。",
+                      "focus": "move up",
+                      "object": "this",
+                      "jaFocus": "前倒しする"
+                  },
+                  {
+                      "en": "We need to move up the project.",
+                      "ja": "その案件を前倒しするする必要があります。",
+                      "focus": "move up",
+                      "object": "the project",
+                      "jaFocus": "前倒しする"
+                  },
+                  {
+                      "en": "Please move up it before the meeting.",
+                      "ja": "会議前にそれを前倒しするしてください。",
+                      "focus": "move up",
+                      "object": "it",
+                      "jaFocus": "前倒しする"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move up at home.",
+                      "ja": "家でよく前倒しするします。",
+                      "focus": "move up",
+                      "jaFocus": "前倒しする"
+                  },
+                  {
+                      "en": "It helps to move up in daily life.",
+                      "ja": "日常生活で前倒しするできると役立ちます。",
+                      "focus": "move up",
+                      "jaFocus": "前倒しする"
+                  }
+              ]
+          },
+          {
+              "phrase": "move back",
+              "ja": "後ろ倒しする",
+              "image": "move back は仕事で「後ろ倒しする」場面に使いやすい表現。",
+              "pattern": "MOVE BACK + ...",
+              "examples": [
+                  {
+                      "en": "I will move back this today.",
+                      "ja": "今日これを後ろ倒しするします。",
+                      "focus": "move back",
+                      "object": "this",
+                      "jaFocus": "後ろ倒しする"
+                  },
+                  {
+                      "en": "We need to move back the project.",
+                      "ja": "その案件を後ろ倒しするする必要があります。",
+                      "focus": "move back",
+                      "object": "the project",
+                      "jaFocus": "後ろ倒しする"
+                  },
+                  {
+                      "en": "Please move back it before the meeting.",
+                      "ja": "会議前にそれを後ろ倒しするしてください。",
+                      "focus": "move back",
+                      "object": "it",
+                      "jaFocus": "後ろ倒しする"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move back at home.",
+                      "ja": "家でよく後ろ倒しするします。",
+                      "focus": "move back",
+                      "jaFocus": "後ろ倒しする"
+                  },
+                  {
+                      "en": "It helps to move back in daily life.",
+                      "ja": "日常生活で後ろ倒しするできると役立ちます。",
+                      "focus": "move back",
+                      "jaFocus": "後ろ倒しする"
+                  }
+              ]
+          },
+          {
+              "phrase": "move into",
+              "ja": "入る・移転する",
+              "image": "move into は仕事で「入る・移転する」場面に使いやすい表現。",
+              "pattern": "MOVE INTO + ...",
+              "examples": [
+                  {
+                      "en": "I will move into this today.",
+                      "ja": "今日これを入る・移転するします。",
+                      "focus": "move into",
+                      "object": "this",
+                      "jaFocus": "入る・移転する"
+                  },
+                  {
+                      "en": "We need to move into the project.",
+                      "ja": "その案件を入る・移転するする必要があります。",
+                      "focus": "move into",
+                      "object": "the project",
+                      "jaFocus": "入る・移転する"
+                  },
+                  {
+                      "en": "Please move into it before the meeting.",
+                      "ja": "会議前にそれを入る・移転するしてください。",
+                      "focus": "move into",
+                      "object": "it",
+                      "jaFocus": "入る・移転する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move into at home.",
+                      "ja": "家でよく入る・移転するします。",
+                      "focus": "move into",
+                      "jaFocus": "入る・移転する"
+                  },
+                  {
+                      "en": "It helps to move into in daily life.",
+                      "ja": "日常生活で入る・移転するできると役立ちます。",
+                      "focus": "move into",
+                      "jaFocus": "入る・移転する"
+                  }
+              ]
+          },
+          {
+              "phrase": "move out",
+              "ja": "退去する",
+              "image": "move out は仕事で「退去する」場面に使いやすい表現。",
+              "pattern": "MOVE OUT + ...",
+              "examples": [
+                  {
+                      "en": "I will move out this today.",
+                      "ja": "今日これを退去するします。",
+                      "focus": "move out",
+                      "object": "this",
+                      "jaFocus": "退去する"
+                  },
+                  {
+                      "en": "We need to move out the project.",
+                      "ja": "その案件を退去するする必要があります。",
+                      "focus": "move out",
+                      "object": "the project",
+                      "jaFocus": "退去する"
+                  },
+                  {
+                      "en": "Please move out it before the meeting.",
+                      "ja": "会議前にそれを退去するしてください。",
+                      "focus": "move out",
+                      "object": "it",
+                      "jaFocus": "退去する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move out at home.",
+                      "ja": "家でよく退去するします。",
+                      "focus": "move out",
+                      "jaFocus": "退去する"
+                  },
+                  {
+                      "en": "It helps to move out in daily life.",
+                      "ja": "日常生活で退去するできると役立ちます。",
+                      "focus": "move out",
+                      "jaFocus": "退去する"
+                  }
+              ]
+          },
+          {
+              "phrase": "move away",
+              "ja": "離れる",
+              "image": "move away は仕事で「離れる」場面に使いやすい表現。",
+              "pattern": "MOVE AWAY + ...",
+              "examples": [
+                  {
+                      "en": "I will move away this today.",
+                      "ja": "今日これを離れるします。",
+                      "focus": "move away",
+                      "object": "this",
+                      "jaFocus": "離れる"
+                  },
+                  {
+                      "en": "We need to move away the project.",
+                      "ja": "その案件を離れるする必要があります。",
+                      "focus": "move away",
+                      "object": "the project",
+                      "jaFocus": "離れる"
+                  },
+                  {
+                      "en": "Please move away it before the meeting.",
+                      "ja": "会議前にそれを離れるしてください。",
+                      "focus": "move away",
+                      "object": "it",
+                      "jaFocus": "離れる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move away at home.",
+                      "ja": "家でよく離れるします。",
+                      "focus": "move away",
+                      "jaFocus": "離れる"
+                  },
+                  {
+                      "en": "It helps to move away in daily life.",
+                      "ja": "日常生活で離れるできると役立ちます。",
+                      "focus": "move away",
+                      "jaFocus": "離れる"
+                  }
+              ]
+          },
+          {
+              "phrase": "move along",
+              "ja": "進む",
+              "image": "move along は仕事で「進む」場面に使いやすい表現。",
+              "pattern": "MOVE ALONG + ...",
+              "examples": [
+                  {
+                      "en": "I will move along this today.",
+                      "ja": "今日これを進むします。",
+                      "focus": "move along",
+                      "object": "this",
+                      "jaFocus": "進む"
+                  },
+                  {
+                      "en": "We need to move along the project.",
+                      "ja": "その案件を進むする必要があります。",
+                      "focus": "move along",
+                      "object": "the project",
+                      "jaFocus": "進む"
+                  },
+                  {
+                      "en": "Please move along it before the meeting.",
+                      "ja": "会議前にそれを進むしてください。",
+                      "focus": "move along",
+                      "object": "it",
+                      "jaFocus": "進む"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move along at home.",
+                      "ja": "家でよく進むします。",
+                      "focus": "move along",
+                      "jaFocus": "進む"
+                  },
+                  {
+                      "en": "It helps to move along in daily life.",
+                      "ja": "日常生活で進むできると役立ちます。",
+                      "focus": "move along",
+                      "jaFocus": "進む"
+                  }
+              ]
+          },
+          {
+              "phrase": "move around",
+              "ja": "動き回る",
+              "image": "move around は仕事で「動き回る」場面に使いやすい表現。",
+              "pattern": "MOVE AROUND + ...",
+              "examples": [
+                  {
+                      "en": "I will move around this today.",
+                      "ja": "今日これを動き回るします。",
+                      "focus": "move around",
+                      "object": "this",
+                      "jaFocus": "動き回る"
+                  },
+                  {
+                      "en": "We need to move around the project.",
+                      "ja": "その案件を動き回るする必要があります。",
+                      "focus": "move around",
+                      "object": "the project",
+                      "jaFocus": "動き回る"
+                  },
+                  {
+                      "en": "Please move around it before the meeting.",
+                      "ja": "会議前にそれを動き回るしてください。",
+                      "focus": "move around",
+                      "object": "it",
+                      "jaFocus": "動き回る"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move around at home.",
+                      "ja": "家でよく動き回るします。",
+                      "focus": "move around",
+                      "jaFocus": "動き回る"
+                  },
+                  {
+                      "en": "It helps to move around in daily life.",
+                      "ja": "日常生活で動き回るできると役立ちます。",
+                      "focus": "move around",
+                      "jaFocus": "動き回る"
+                  }
+              ]
+          },
+          {
+              "phrase": "move over",
+              "ja": "横へずれる",
+              "image": "move over は仕事で「横へずれる」場面に使いやすい表現。",
+              "pattern": "MOVE OVER + ...",
+              "examples": [
+                  {
+                      "en": "I will move over this today.",
+                      "ja": "今日これを横へずれるします。",
+                      "focus": "move over",
+                      "object": "this",
+                      "jaFocus": "横へずれる"
+                  },
+                  {
+                      "en": "We need to move over the project.",
+                      "ja": "その案件を横へずれるする必要があります。",
+                      "focus": "move over",
+                      "object": "the project",
+                      "jaFocus": "横へずれる"
+                  },
+                  {
+                      "en": "Please move over it before the meeting.",
+                      "ja": "会議前にそれを横へずれるしてください。",
+                      "focus": "move over",
+                      "object": "it",
+                      "jaFocus": "横へずれる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move over at home.",
+                      "ja": "家でよく横へずれるします。",
+                      "focus": "move over",
+                      "jaFocus": "横へずれる"
+                  },
+                  {
+                      "en": "It helps to move over in daily life.",
+                      "ja": "日常生活で横へずれるできると役立ちます。",
+                      "focus": "move over",
+                      "jaFocus": "横へずれる"
+                  }
+              ]
+          },
+          {
+              "phrase": "move toward",
+              "ja": "向かう",
+              "image": "move toward は仕事で「向かう」場面に使いやすい表現。",
+              "pattern": "MOVE TOWARD + ...",
+              "examples": [
+                  {
+                      "en": "I will move toward this today.",
+                      "ja": "今日これを向かうします。",
+                      "focus": "move toward",
+                      "object": "this",
+                      "jaFocus": "向かう"
+                  },
+                  {
+                      "en": "We need to move toward the project.",
+                      "ja": "その案件を向かうする必要があります。",
+                      "focus": "move toward",
+                      "object": "the project",
+                      "jaFocus": "向かう"
+                  },
+                  {
+                      "en": "Please move toward it before the meeting.",
+                      "ja": "会議前にそれを向かうしてください。",
+                      "focus": "move toward",
+                      "object": "it",
+                      "jaFocus": "向かう"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often move toward at home.",
+                      "ja": "家でよく向かうします。",
+                      "focus": "move toward",
+                      "jaFocus": "向かう"
+                  },
+                  {
+                      "en": "It helps to move toward in daily life.",
+                      "ja": "日常生活で向かうできると役立ちます。",
+                      "focus": "move toward",
+                      "jaFocus": "向かう"
+                  }
+              ]
+          }
+      ]
   },
     {
     "id": "turn",
@@ -19420,100 +23389,2737 @@ export const verbs: Verb[] = [
     ]
   },
   {
-    "id": "bring",
-    "rank": 32,
-    "word": "BRING",
-    "ipa": "",
-    "kana": "ブリング",
-    "syllable": "bring",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "持ってくる",
-    "coreDetail": "相手の所へ持ってくる",
-    "meanings": [
-      {
-        "id": "business-basic",
-        "title": "① ビジネスで使う基本形",
-        "pattern": "BRING + 名詞 / 文",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "相手の所へ持ってくる",
-        "point": "まずは社会人の会話・メールで使いやすい基本形を覚える。",
-        "examples": [
+      "id": "bring",
+      "rank": 32,
+      "word": "BRING",
+      "ipa": "/brɪŋ/",
+      "kana": "ブリング",
+      "syllable": "bring",
+      "transitivity": "他動詞・自動詞",
+      "importance": "★★★★☆ 重要",
+      "core": "こちら側へ持ってくる・もたらす",
+      "coreDetail": "BRINGは物だけでなく、情報・人・結果・変化をこちら側へ持ってくる感覚です。仕事では資料提出、議題追加、成果をもたらす表現に使います。",
+      "coreVisual": {
+          "from": [
+              "📄 資料",
+              "📅 予定",
+              "👥 チーム",
+              "💬 連絡",
+              "✅ 判断"
+          ],
+          "to": "仕事の流れ",
+          "label": "コアイメージ"
+      },
+      "meanings": [
           {
-            "en": "I will bring the details.",
-            "ja": "詳細を確認・対応します。",
-            "focus": "bring",
-            "object": "the details",
-            "jaFocus": "確認・対応"
+              "id": "carry",
+              "title": "1 持ってくる",
+              "pattern": "BRING + 名詞",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "相手のいる場所へ持ってくる。",
+              "point": "資料・サンプル・PCなど仕事でよく使う。",
+              "examples": [
+                  {
+                      "en": "Please bring the documents to the meeting.",
+                      "ja": "会議に資料を持ってきてください。",
+                      "focus": "bring",
+                      "object": "the documents",
+                      "jaFocus": "持ってきて"
+                  },
+                  {
+                      "en": "I brought the samples for the client.",
+                      "ja": "クライアント用にサンプルを持参しました。",
+                      "focus": "brought",
+                      "object": "the samples",
+                      "jaFocus": "持参しました"
+                  },
+                  {
+                      "en": "Can you bring your laptop tomorrow?",
+                      "ja": "明日ノートPCを持ってきてもらえますか？",
+                      "focus": "bring",
+                      "object": "your laptop",
+                      "jaFocus": "持ってきて"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I bring this on weekends.",
+                      "ja": "週末にこれを持ってくることがあります。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "持ってくる"
+                  },
+                  {
+                      "en": "It is useful to bring this in daily life.",
+                      "ja": "日常生活でこれを持ってくると便利です。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "持ってくる"
+                  }
+              ]
           },
           {
-            "en": "We need to bring this today.",
-            "ja": "今日これを進める必要があります。",
-            "focus": "bring",
-            "object": "this",
-            "jaFocus": "進める"
+              "id": "cause",
+              "title": "2 もたらす",
+              "pattern": "BRING + 結果",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "結果や変化を引き起こす。",
+              "point": "bring results/change は仕事で便利。",
+              "examples": [
+                  {
+                      "en": "This strategy brought good results.",
+                      "ja": "この戦略は良い結果をもたらしました。",
+                      "focus": "brought",
+                      "object": "good results",
+                      "jaFocus": "もたらしました"
+                  },
+                  {
+                      "en": "The new system will bring major changes.",
+                      "ja": "新システムは大きな変化をもたらします。",
+                      "focus": "bring",
+                      "object": "major changes",
+                      "jaFocus": "もたらします"
+                  },
+                  {
+                      "en": "Better communication brings fewer mistakes.",
+                      "ja": "より良いコミュニケーションはミスを減らします。",
+                      "focus": "brings",
+                      "object": "fewer mistakes",
+                      "jaFocus": "減らします"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I bring this on weekends.",
+                      "ja": "週末にこれをもたらすことがあります。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "もたらす"
+                  },
+                  {
+                      "en": "It is useful to bring this in daily life.",
+                      "ja": "日常生活でこれをもたらすと便利です。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "もたらす"
+                  }
+              ]
           },
           {
-            "en": "Can you bring it by tomorrow?",
-            "ja": "明日までに対応できますか？",
-            "focus": "bring",
-            "object": "it",
-            "jaFocus": "対応"
+              "id": "introduce",
+              "title": "3 話題に出す",
+              "pattern": "BRING UP + 話題",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "議題として持ち出す。",
+              "point": "bring up は会議でよく使う。",
+              "examples": [
+                  {
+                      "en": "I will bring up this issue in the meeting.",
+                      "ja": "この件を会議で取り上げます。",
+                      "focus": "bring up",
+                      "object": "this issue",
+                      "jaFocus": "取り上げます"
+                  },
+                  {
+                      "en": "She brought up a good point.",
+                      "ja": "彼女は良い点を指摘しました。",
+                      "focus": "brought up",
+                      "object": "a good point",
+                      "jaFocus": "指摘しました"
+                  },
+                  {
+                      "en": "Please bring up any concerns.",
+                      "ja": "懸念点があれば挙げてください。",
+                      "focus": "bring up",
+                      "object": "any concerns",
+                      "jaFocus": "挙げて"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I bring this on weekends.",
+                      "ja": "週末にこれを話題に出すことがあります。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "話題に出す"
+                  },
+                  {
+                      "en": "It is useful to bring this in daily life.",
+                      "ja": "日常生活でこれを話題に出すと便利です。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "話題に出す"
+                  }
+              ]
+          },
+          {
+              "id": "lead",
+              "title": "4 連れてくる",
+              "pattern": "BRING + 人",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "人をこちらへ連れてくる。",
+              "point": "担当者やチーム参加に使う。",
+              "examples": [
+                  {
+                      "en": "Can you bring the engineer to the call?",
+                      "ja": "エンジニアを通話に参加させてもらえますか？",
+                      "focus": "bring",
+                      "object": "the engineer",
+                      "jaFocus": "参加させて"
+                  },
+                  {
+                      "en": "We brought a specialist to the meeting.",
+                      "ja": "専門家を会議に同席させました。",
+                      "focus": "brought",
+                      "object": "a specialist",
+                      "jaFocus": "同席させました"
+                  },
+                  {
+                      "en": "Please bring your manager next time.",
+                      "ja": "次回は上司も同席させてください。",
+                      "focus": "bring",
+                      "object": "your manager",
+                      "jaFocus": "同席させて"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I bring this on weekends.",
+                      "ja": "週末にこれを連れてくることがあります。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "連れてくる"
+                  },
+                  {
+                      "en": "It is useful to bring this in daily life.",
+                      "ja": "日常生活でこれを連れてくると便利です。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "連れてくる"
+                  }
+              ]
+          },
+          {
+              "id": "provide",
+              "title": "5 提供する",
+              "pattern": "BRING + 価値 / 経験",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "価値や経験を提供する。",
+              "point": "bring value は自然。",
+              "examples": [
+                  {
+                      "en": "This service brings value to our clients.",
+                      "ja": "このサービスは顧客に価値を提供します。",
+                      "focus": "brings",
+                      "object": "value",
+                      "jaFocus": "提供します"
+                  },
+                  {
+                      "en": "He brings a lot of experience to the team.",
+                      "ja": "彼はチームに多くの経験をもたらしています。",
+                      "focus": "brings",
+                      "object": "a lot of experience",
+                      "jaFocus": "もたらしています"
+                  },
+                  {
+                      "en": "The partner brings technical knowledge.",
+                      "ja": "そのパートナーは技術知識を提供します。",
+                      "focus": "brings",
+                      "object": "technical knowledge",
+                      "jaFocus": "提供します"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I bring this on weekends.",
+                      "ja": "週末にこれを提供することがあります。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "提供する"
+                  },
+                  {
+                      "en": "It is useful to bring this in daily life.",
+                      "ja": "日常生活でこれを提供すると便利です。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "提供する"
+                  }
+              ]
+          },
+          {
+              "id": "return",
+              "title": "6 戻す",
+              "pattern": "BRING + 物 + back",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "持ち帰る・戻す。",
+              "point": "bring back は資料や話題を戻す。",
+              "examples": [
+                  {
+                      "en": "Please bring back the signed contract.",
+                      "ja": "署名済み契約書を持ち帰ってください。",
+                      "focus": "bring back",
+                      "object": "the signed contract",
+                      "jaFocus": "持ち帰って"
+                  },
+                  {
+                      "en": "Let us bring the discussion back to cost.",
+                      "ja": "議論を費用の話に戻しましょう。",
+                      "focus": "bring",
+                      "object": "the discussion",
+                      "jaFocus": "戻しましょう"
+                  },
+                  {
+                      "en": "We need to bring back the previous version.",
+                      "ja": "前の版に戻す必要があります。",
+                      "focus": "bring back",
+                      "object": "the previous version",
+                      "jaFocus": "戻す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I bring this on weekends.",
+                      "ja": "週末にこれを戻すことがあります。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "戻す"
+                  },
+                  {
+                      "en": "It is useful to bring this in daily life.",
+                      "ja": "日常生活でこれを戻すと便利です。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "戻す"
+                  }
+              ]
+          },
+          {
+              "id": "reduce",
+              "title": "7 下げる",
+              "pattern": "BRING + 名詞 + down",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "数字や費用を下げる。",
+              "point": "bring down costs は頻出。",
+              "examples": [
+                  {
+                      "en": "We need to bring down the cost.",
+                      "ja": "コストを下げる必要があります。",
+                      "focus": "bring down",
+                      "object": "the cost",
+                      "jaFocus": "下げる"
+                  },
+                  {
+                      "en": "The new process brought down errors.",
+                      "ja": "新しい工程でミスが減りました。",
+                      "focus": "brought down",
+                      "object": "errors",
+                      "jaFocus": "減りました"
+                  },
+                  {
+                      "en": "Can we bring the price down?",
+                      "ja": "価格を下げられますか？",
+                      "focus": "bring",
+                      "object": "the price",
+                      "jaFocus": "下げられますか"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I bring this on weekends.",
+                      "ja": "週末にこれを下げることがあります。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "下げる"
+                  },
+                  {
+                      "en": "It is useful to bring this in daily life.",
+                      "ja": "日常生活でこれを下げると便利です。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "下げる"
+                  }
+              ]
+          },
+          {
+              "id": "increase",
+              "title": "8 引き上げる",
+              "pattern": "BRING + 名詞 + up",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "水準を上げる。",
+              "point": "bring up quality/level など。",
+              "examples": [
+                  {
+                      "en": "We need to bring up the quality level.",
+                      "ja": "品質レベルを上げる必要があります。",
+                      "focus": "bring up",
+                      "object": "the quality level",
+                      "jaFocus": "上げる"
+                  },
+                  {
+                      "en": "Training brought up team performance.",
+                      "ja": "研修でチームの成果が上がりました。",
+                      "focus": "brought up",
+                      "object": "team performance",
+                      "jaFocus": "上がりました"
+                  },
+                  {
+                      "en": "Please bring the issue up with management.",
+                      "ja": "その問題を経営陣に上げてください。",
+                      "focus": "bring",
+                      "object": "the issue",
+                      "jaFocus": "上げて"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I bring this on weekends.",
+                      "ja": "週末にこれを引き上げることがあります。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "引き上げる"
+                  },
+                  {
+                      "en": "It is useful to bring this in daily life.",
+                      "ja": "日常生活でこれを引き上げると便利です。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "引き上げる"
+                  }
+              ]
+          },
+          {
+              "id": "make-happen",
+              "title": "9 実現する",
+              "pattern": "BRING + 名詞 + to life",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "アイデアを形にする。",
+              "point": "bring to life は提案や企画に使える。",
+              "examples": [
+                  {
+                      "en": "The design brought the concept to life.",
+                      "ja": "そのデザインでコンセプトが形になりました。",
+                      "focus": "brought",
+                      "object": "the concept",
+                      "jaFocus": "形になりました"
+                  },
+                  {
+                      "en": "We can bring this idea to life.",
+                      "ja": "このアイデアを実現できます。",
+                      "focus": "bring",
+                      "object": "this idea",
+                      "jaFocus": "実現できます"
+                  },
+                  {
+                      "en": "The team brought the project to life.",
+                      "ja": "チームがその企画を実現しました。",
+                      "focus": "brought",
+                      "object": "the project",
+                      "jaFocus": "実現しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I bring this on weekends.",
+                      "ja": "週末にこれを実現することがあります。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "実現する"
+                  },
+                  {
+                      "en": "It is useful to bring this in daily life.",
+                      "ja": "日常生活でこれを実現すると便利です。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "実現する"
+                  }
+              ]
+          },
+          {
+              "id": "cause-state",
+              "title": "10 状態にする",
+              "pattern": "BRING + O + to 状態",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "特定の状態へ持っていく。",
+              "point": "bring to a close などで使う。",
+              "examples": [
+                  {
+                      "en": "Let us bring the meeting to a close.",
+                      "ja": "会議を締めくくりましょう。",
+                      "focus": "bring",
+                      "object": "the meeting",
+                      "jaFocus": "締めくくりましょう"
+                  },
+                  {
+                      "en": "The update brought the system back online.",
+                      "ja": "更新によりシステムが復旧しました。",
+                      "focus": "brought",
+                      "object": "the system",
+                      "jaFocus": "復旧しました"
+                  },
+                  {
+                      "en": "The report brought the issue to our attention.",
+                      "ja": "その報告で私たちは問題に気づきました。",
+                      "focus": "brought",
+                      "object": "the issue",
+                      "jaFocus": "気づきました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I bring this on weekends.",
+                      "ja": "週末にこれを状態にすることがあります。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "状態にする"
+                  },
+                  {
+                      "en": "It is useful to bring this in daily life.",
+                      "ja": "日常生活でこれを状態にすると便利です。",
+                      "focus": "bring",
+                      "object": "this",
+                      "jaFocus": "状態にする"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": []
+      ],
+      "collocations": [
+          {
+              "phrase": "bring documents",
+              "ja": "資料を持ってくる",
+              "image": "bring documents は仕事で「資料を持ってくる」場面に使いやすい表現。",
+              "pattern": "BRING DOCUMENTS + ...",
+              "examples": [
+                  {
+                      "en": "I will bring documents this today.",
+                      "ja": "今日これを資料を持ってくるします。",
+                      "focus": "bring documents",
+                      "object": "this",
+                      "jaFocus": "資料を持ってくる"
+                  },
+                  {
+                      "en": "We need to bring documents the project.",
+                      "ja": "その案件を資料を持ってくるする必要があります。",
+                      "focus": "bring documents",
+                      "object": "the project",
+                      "jaFocus": "資料を持ってくる"
+                  },
+                  {
+                      "en": "Please bring documents it before the meeting.",
+                      "ja": "会議前にそれを資料を持ってくるしてください。",
+                      "focus": "bring documents",
+                      "object": "it",
+                      "jaFocus": "資料を持ってくる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring documents at home.",
+                      "ja": "家でよく資料を持ってくるします。",
+                      "focus": "bring documents",
+                      "jaFocus": "資料を持ってくる"
+                  },
+                  {
+                      "en": "It helps to bring documents in daily life.",
+                      "ja": "日常生活で資料を持ってくるできると役立ちます。",
+                      "focus": "bring documents",
+                      "jaFocus": "資料を持ってくる"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring value",
+              "ja": "価値をもたらす",
+              "image": "bring value は仕事で「価値をもたらす」場面に使いやすい表現。",
+              "pattern": "BRING VALUE + ...",
+              "examples": [
+                  {
+                      "en": "I will bring value this today.",
+                      "ja": "今日これを価値をもたらすします。",
+                      "focus": "bring value",
+                      "object": "this",
+                      "jaFocus": "価値をもたらす"
+                  },
+                  {
+                      "en": "We need to bring value the project.",
+                      "ja": "その案件を価値をもたらすする必要があります。",
+                      "focus": "bring value",
+                      "object": "the project",
+                      "jaFocus": "価値をもたらす"
+                  },
+                  {
+                      "en": "Please bring value it before the meeting.",
+                      "ja": "会議前にそれを価値をもたらすしてください。",
+                      "focus": "bring value",
+                      "object": "it",
+                      "jaFocus": "価値をもたらす"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring value at home.",
+                      "ja": "家でよく価値をもたらすします。",
+                      "focus": "bring value",
+                      "jaFocus": "価値をもたらす"
+                  },
+                  {
+                      "en": "It helps to bring value in daily life.",
+                      "ja": "日常生活で価値をもたらすできると役立ちます。",
+                      "focus": "bring value",
+                      "jaFocus": "価値をもたらす"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring experience",
+              "ja": "経験をもたらす",
+              "image": "bring experience は仕事で「経験をもたらす」場面に使いやすい表現。",
+              "pattern": "BRING EXPERIENCE + ...",
+              "examples": [
+                  {
+                      "en": "I will bring experience this today.",
+                      "ja": "今日これを経験をもたらすします。",
+                      "focus": "bring experience",
+                      "object": "this",
+                      "jaFocus": "経験をもたらす"
+                  },
+                  {
+                      "en": "We need to bring experience the project.",
+                      "ja": "その案件を経験をもたらすする必要があります。",
+                      "focus": "bring experience",
+                      "object": "the project",
+                      "jaFocus": "経験をもたらす"
+                  },
+                  {
+                      "en": "Please bring experience it before the meeting.",
+                      "ja": "会議前にそれを経験をもたらすしてください。",
+                      "focus": "bring experience",
+                      "object": "it",
+                      "jaFocus": "経験をもたらす"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring experience at home.",
+                      "ja": "家でよく経験をもたらすします。",
+                      "focus": "bring experience",
+                      "jaFocus": "経験をもたらす"
+                  },
+                  {
+                      "en": "It helps to bring experience in daily life.",
+                      "ja": "日常生活で経験をもたらすできると役立ちます。",
+                      "focus": "bring experience",
+                      "jaFocus": "経験をもたらす"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring a laptop",
+              "ja": "PCを持ってくる",
+              "image": "bring a laptop は仕事で「PCを持ってくる」場面に使いやすい表現。",
+              "pattern": "BRING A LAPTOP + ...",
+              "examples": [
+                  {
+                      "en": "I will bring a laptop this today.",
+                      "ja": "今日これをPCを持ってくるします。",
+                      "focus": "bring a laptop",
+                      "object": "this",
+                      "jaFocus": "PCを持ってくる"
+                  },
+                  {
+                      "en": "We need to bring a laptop the project.",
+                      "ja": "その案件をPCを持ってくるする必要があります。",
+                      "focus": "bring a laptop",
+                      "object": "the project",
+                      "jaFocus": "PCを持ってくる"
+                  },
+                  {
+                      "en": "Please bring a laptop it before the meeting.",
+                      "ja": "会議前にそれをPCを持ってくるしてください。",
+                      "focus": "bring a laptop",
+                      "object": "it",
+                      "jaFocus": "PCを持ってくる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring a laptop at home.",
+                      "ja": "家でよくPCを持ってくるします。",
+                      "focus": "bring a laptop",
+                      "jaFocus": "PCを持ってくる"
+                  },
+                  {
+                      "en": "It helps to bring a laptop in daily life.",
+                      "ja": "日常生活でPCを持ってくるできると役立ちます。",
+                      "focus": "bring a laptop",
+                      "jaFocus": "PCを持ってくる"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring a specialist",
+              "ja": "専門家を同席させる",
+              "image": "bring a specialist は仕事で「専門家を同席させる」場面に使いやすい表現。",
+              "pattern": "BRING A SPECIALIST + ...",
+              "examples": [
+                  {
+                      "en": "I will bring a specialist this today.",
+                      "ja": "今日これを専門家を同席させるします。",
+                      "focus": "bring a specialist",
+                      "object": "this",
+                      "jaFocus": "専門家を同席させる"
+                  },
+                  {
+                      "en": "We need to bring a specialist the project.",
+                      "ja": "その案件を専門家を同席させるする必要があります。",
+                      "focus": "bring a specialist",
+                      "object": "the project",
+                      "jaFocus": "専門家を同席させる"
+                  },
+                  {
+                      "en": "Please bring a specialist it before the meeting.",
+                      "ja": "会議前にそれを専門家を同席させるしてください。",
+                      "focus": "bring a specialist",
+                      "object": "it",
+                      "jaFocus": "専門家を同席させる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring a specialist at home.",
+                      "ja": "家でよく専門家を同席させるします。",
+                      "focus": "bring a specialist",
+                      "jaFocus": "専門家を同席させる"
+                  },
+                  {
+                      "en": "It helps to bring a specialist in daily life.",
+                      "ja": "日常生活で専門家を同席させるできると役立ちます。",
+                      "focus": "bring a specialist",
+                      "jaFocus": "専門家を同席させる"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring change",
+              "ja": "変化をもたらす",
+              "image": "bring change は仕事で「変化をもたらす」場面に使いやすい表現。",
+              "pattern": "BRING CHANGE + ...",
+              "examples": [
+                  {
+                      "en": "I will bring change this today.",
+                      "ja": "今日これを変化をもたらすします。",
+                      "focus": "bring change",
+                      "object": "this",
+                      "jaFocus": "変化をもたらす"
+                  },
+                  {
+                      "en": "We need to bring change the project.",
+                      "ja": "その案件を変化をもたらすする必要があります。",
+                      "focus": "bring change",
+                      "object": "the project",
+                      "jaFocus": "変化をもたらす"
+                  },
+                  {
+                      "en": "Please bring change it before the meeting.",
+                      "ja": "会議前にそれを変化をもたらすしてください。",
+                      "focus": "bring change",
+                      "object": "it",
+                      "jaFocus": "変化をもたらす"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring change at home.",
+                      "ja": "家でよく変化をもたらすします。",
+                      "focus": "bring change",
+                      "jaFocus": "変化をもたらす"
+                  },
+                  {
+                      "en": "It helps to bring change in daily life.",
+                      "ja": "日常生活で変化をもたらすできると役立ちます。",
+                      "focus": "bring change",
+                      "jaFocus": "変化をもたらす"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring results",
+              "ja": "結果をもたらす",
+              "image": "bring results は仕事で「結果をもたらす」場面に使いやすい表現。",
+              "pattern": "BRING RESULTS + ...",
+              "examples": [
+                  {
+                      "en": "I will bring results this today.",
+                      "ja": "今日これを結果をもたらすします。",
+                      "focus": "bring results",
+                      "object": "this",
+                      "jaFocus": "結果をもたらす"
+                  },
+                  {
+                      "en": "We need to bring results the project.",
+                      "ja": "その案件を結果をもたらすする必要があります。",
+                      "focus": "bring results",
+                      "object": "the project",
+                      "jaFocus": "結果をもたらす"
+                  },
+                  {
+                      "en": "Please bring results it before the meeting.",
+                      "ja": "会議前にそれを結果をもたらすしてください。",
+                      "focus": "bring results",
+                      "object": "it",
+                      "jaFocus": "結果をもたらす"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring results at home.",
+                      "ja": "家でよく結果をもたらすします。",
+                      "focus": "bring results",
+                      "jaFocus": "結果をもたらす"
+                  },
+                  {
+                      "en": "It helps to bring results in daily life.",
+                      "ja": "日常生活で結果をもたらすできると役立ちます。",
+                      "focus": "bring results",
+                      "jaFocus": "結果をもたらす"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring a proposal",
+              "ja": "提案を持ってくる",
+              "image": "bring a proposal は仕事で「提案を持ってくる」場面に使いやすい表現。",
+              "pattern": "BRING A PROPOSAL + ...",
+              "examples": [
+                  {
+                      "en": "I will bring a proposal this today.",
+                      "ja": "今日これを提案を持ってくるします。",
+                      "focus": "bring a proposal",
+                      "object": "this",
+                      "jaFocus": "提案を持ってくる"
+                  },
+                  {
+                      "en": "We need to bring a proposal the project.",
+                      "ja": "その案件を提案を持ってくるする必要があります。",
+                      "focus": "bring a proposal",
+                      "object": "the project",
+                      "jaFocus": "提案を持ってくる"
+                  },
+                  {
+                      "en": "Please bring a proposal it before the meeting.",
+                      "ja": "会議前にそれを提案を持ってくるしてください。",
+                      "focus": "bring a proposal",
+                      "object": "it",
+                      "jaFocus": "提案を持ってくる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring a proposal at home.",
+                      "ja": "家でよく提案を持ってくるします。",
+                      "focus": "bring a proposal",
+                      "jaFocus": "提案を持ってくる"
+                  },
+                  {
+                      "en": "It helps to bring a proposal in daily life.",
+                      "ja": "日常生活で提案を持ってくるできると役立ちます。",
+                      "focus": "bring a proposal",
+                      "jaFocus": "提案を持ってくる"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring attention",
+              "ja": "注意を向ける",
+              "image": "bring attention は仕事で「注意を向ける」場面に使いやすい表現。",
+              "pattern": "BRING ATTENTION + ...",
+              "examples": [
+                  {
+                      "en": "I will bring attention this today.",
+                      "ja": "今日これを注意を向けるします。",
+                      "focus": "bring attention",
+                      "object": "this",
+                      "jaFocus": "注意を向ける"
+                  },
+                  {
+                      "en": "We need to bring attention the project.",
+                      "ja": "その案件を注意を向けるする必要があります。",
+                      "focus": "bring attention",
+                      "object": "the project",
+                      "jaFocus": "注意を向ける"
+                  },
+                  {
+                      "en": "Please bring attention it before the meeting.",
+                      "ja": "会議前にそれを注意を向けるしてください。",
+                      "focus": "bring attention",
+                      "object": "it",
+                      "jaFocus": "注意を向ける"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring attention at home.",
+                      "ja": "家でよく注意を向けるします。",
+                      "focus": "bring attention",
+                      "jaFocus": "注意を向ける"
+                  },
+                  {
+                      "en": "It helps to bring attention in daily life.",
+                      "ja": "日常生活で注意を向けるできると役立ちます。",
+                      "focus": "bring attention",
+                      "jaFocus": "注意を向ける"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring closure",
+              "ja": "締めくくる",
+              "image": "bring closure は仕事で「締めくくる」場面に使いやすい表現。",
+              "pattern": "BRING CLOSURE + ...",
+              "examples": [
+                  {
+                      "en": "I will bring closure this today.",
+                      "ja": "今日これを締めくくるします。",
+                      "focus": "bring closure",
+                      "object": "this",
+                      "jaFocus": "締めくくる"
+                  },
+                  {
+                      "en": "We need to bring closure the project.",
+                      "ja": "その案件を締めくくるする必要があります。",
+                      "focus": "bring closure",
+                      "object": "the project",
+                      "jaFocus": "締めくくる"
+                  },
+                  {
+                      "en": "Please bring closure it before the meeting.",
+                      "ja": "会議前にそれを締めくくるしてください。",
+                      "focus": "bring closure",
+                      "object": "it",
+                      "jaFocus": "締めくくる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring closure at home.",
+                      "ja": "家でよく締めくくるします。",
+                      "focus": "bring closure",
+                      "jaFocus": "締めくくる"
+                  },
+                  {
+                      "en": "It helps to bring closure in daily life.",
+                      "ja": "日常生活で締めくくるできると役立ちます。",
+                      "focus": "bring closure",
+                      "jaFocus": "締めくくる"
+                  }
+              ]
+          }
+      ],
+      "phrasalVerbs": [
+          {
+              "phrase": "bring up",
+              "ja": "取り上げる",
+              "image": "bring up は仕事で「取り上げる」場面に使いやすい表現。",
+              "pattern": "BRING UP + ...",
+              "examples": [
+                  {
+                      "en": "I will bring up this today.",
+                      "ja": "今日これを取り上げるします。",
+                      "focus": "bring up",
+                      "object": "this",
+                      "jaFocus": "取り上げる"
+                  },
+                  {
+                      "en": "We need to bring up the project.",
+                      "ja": "その案件を取り上げるする必要があります。",
+                      "focus": "bring up",
+                      "object": "the project",
+                      "jaFocus": "取り上げる"
+                  },
+                  {
+                      "en": "Please bring up it before the meeting.",
+                      "ja": "会議前にそれを取り上げるしてください。",
+                      "focus": "bring up",
+                      "object": "it",
+                      "jaFocus": "取り上げる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring up at home.",
+                      "ja": "家でよく取り上げるします。",
+                      "focus": "bring up",
+                      "jaFocus": "取り上げる"
+                  },
+                  {
+                      "en": "It helps to bring up in daily life.",
+                      "ja": "日常生活で取り上げるできると役立ちます。",
+                      "focus": "bring up",
+                      "jaFocus": "取り上げる"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring back",
+              "ja": "戻す",
+              "image": "bring back は仕事で「戻す」場面に使いやすい表現。",
+              "pattern": "BRING BACK + ...",
+              "examples": [
+                  {
+                      "en": "I will bring back this today.",
+                      "ja": "今日これを戻すします。",
+                      "focus": "bring back",
+                      "object": "this",
+                      "jaFocus": "戻す"
+                  },
+                  {
+                      "en": "We need to bring back the project.",
+                      "ja": "その案件を戻すする必要があります。",
+                      "focus": "bring back",
+                      "object": "the project",
+                      "jaFocus": "戻す"
+                  },
+                  {
+                      "en": "Please bring back it before the meeting.",
+                      "ja": "会議前にそれを戻すしてください。",
+                      "focus": "bring back",
+                      "object": "it",
+                      "jaFocus": "戻す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring back at home.",
+                      "ja": "家でよく戻すします。",
+                      "focus": "bring back",
+                      "jaFocus": "戻す"
+                  },
+                  {
+                      "en": "It helps to bring back in daily life.",
+                      "ja": "日常生活で戻すできると役立ちます。",
+                      "focus": "bring back",
+                      "jaFocus": "戻す"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring down",
+              "ja": "下げる",
+              "image": "bring down は仕事で「下げる」場面に使いやすい表現。",
+              "pattern": "BRING DOWN + ...",
+              "examples": [
+                  {
+                      "en": "I will bring down this today.",
+                      "ja": "今日これを下げるします。",
+                      "focus": "bring down",
+                      "object": "this",
+                      "jaFocus": "下げる"
+                  },
+                  {
+                      "en": "We need to bring down the project.",
+                      "ja": "その案件を下げるする必要があります。",
+                      "focus": "bring down",
+                      "object": "the project",
+                      "jaFocus": "下げる"
+                  },
+                  {
+                      "en": "Please bring down it before the meeting.",
+                      "ja": "会議前にそれを下げるしてください。",
+                      "focus": "bring down",
+                      "object": "it",
+                      "jaFocus": "下げる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring down at home.",
+                      "ja": "家でよく下げるします。",
+                      "focus": "bring down",
+                      "jaFocus": "下げる"
+                  },
+                  {
+                      "en": "It helps to bring down in daily life.",
+                      "ja": "日常生活で下げるできると役立ちます。",
+                      "focus": "bring down",
+                      "jaFocus": "下げる"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring in",
+              "ja": "導入する",
+              "image": "bring in は仕事で「導入する」場面に使いやすい表現。",
+              "pattern": "BRING IN + ...",
+              "examples": [
+                  {
+                      "en": "I will bring in this today.",
+                      "ja": "今日これを導入するします。",
+                      "focus": "bring in",
+                      "object": "this",
+                      "jaFocus": "導入する"
+                  },
+                  {
+                      "en": "We need to bring in the project.",
+                      "ja": "その案件を導入するする必要があります。",
+                      "focus": "bring in",
+                      "object": "the project",
+                      "jaFocus": "導入する"
+                  },
+                  {
+                      "en": "Please bring in it before the meeting.",
+                      "ja": "会議前にそれを導入するしてください。",
+                      "focus": "bring in",
+                      "object": "it",
+                      "jaFocus": "導入する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring in at home.",
+                      "ja": "家でよく導入するします。",
+                      "focus": "bring in",
+                      "jaFocus": "導入する"
+                  },
+                  {
+                      "en": "It helps to bring in in daily life.",
+                      "ja": "日常生活で導入するできると役立ちます。",
+                      "focus": "bring in",
+                      "jaFocus": "導入する"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring out",
+              "ja": "引き出す",
+              "image": "bring out は仕事で「引き出す」場面に使いやすい表現。",
+              "pattern": "BRING OUT + ...",
+              "examples": [
+                  {
+                      "en": "I will bring out this today.",
+                      "ja": "今日これを引き出すします。",
+                      "focus": "bring out",
+                      "object": "this",
+                      "jaFocus": "引き出す"
+                  },
+                  {
+                      "en": "We need to bring out the project.",
+                      "ja": "その案件を引き出すする必要があります。",
+                      "focus": "bring out",
+                      "object": "the project",
+                      "jaFocus": "引き出す"
+                  },
+                  {
+                      "en": "Please bring out it before the meeting.",
+                      "ja": "会議前にそれを引き出すしてください。",
+                      "focus": "bring out",
+                      "object": "it",
+                      "jaFocus": "引き出す"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring out at home.",
+                      "ja": "家でよく引き出すします。",
+                      "focus": "bring out",
+                      "jaFocus": "引き出す"
+                  },
+                  {
+                      "en": "It helps to bring out in daily life.",
+                      "ja": "日常生活で引き出すできると役立ちます。",
+                      "focus": "bring out",
+                      "jaFocus": "引き出す"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring along",
+              "ja": "連れてくる",
+              "image": "bring along は仕事で「連れてくる」場面に使いやすい表現。",
+              "pattern": "BRING ALONG + ...",
+              "examples": [
+                  {
+                      "en": "I will bring along this today.",
+                      "ja": "今日これを連れてくるします。",
+                      "focus": "bring along",
+                      "object": "this",
+                      "jaFocus": "連れてくる"
+                  },
+                  {
+                      "en": "We need to bring along the project.",
+                      "ja": "その案件を連れてくるする必要があります。",
+                      "focus": "bring along",
+                      "object": "the project",
+                      "jaFocus": "連れてくる"
+                  },
+                  {
+                      "en": "Please bring along it before the meeting.",
+                      "ja": "会議前にそれを連れてくるしてください。",
+                      "focus": "bring along",
+                      "object": "it",
+                      "jaFocus": "連れてくる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring along at home.",
+                      "ja": "家でよく連れてくるします。",
+                      "focus": "bring along",
+                      "jaFocus": "連れてくる"
+                  },
+                  {
+                      "en": "It helps to bring along in daily life.",
+                      "ja": "日常生活で連れてくるできると役立ちます。",
+                      "focus": "bring along",
+                      "jaFocus": "連れてくる"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring together",
+              "ja": "まとめる",
+              "image": "bring together は仕事で「まとめる」場面に使いやすい表現。",
+              "pattern": "BRING TOGETHER + ...",
+              "examples": [
+                  {
+                      "en": "I will bring together this today.",
+                      "ja": "今日これをまとめるします。",
+                      "focus": "bring together",
+                      "object": "this",
+                      "jaFocus": "まとめる"
+                  },
+                  {
+                      "en": "We need to bring together the project.",
+                      "ja": "その案件をまとめるする必要があります。",
+                      "focus": "bring together",
+                      "object": "the project",
+                      "jaFocus": "まとめる"
+                  },
+                  {
+                      "en": "Please bring together it before the meeting.",
+                      "ja": "会議前にそれをまとめるしてください。",
+                      "focus": "bring together",
+                      "object": "it",
+                      "jaFocus": "まとめる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring together at home.",
+                      "ja": "家でよくまとめるします。",
+                      "focus": "bring together",
+                      "jaFocus": "まとめる"
+                  },
+                  {
+                      "en": "It helps to bring together in daily life.",
+                      "ja": "日常生活でまとめるできると役立ちます。",
+                      "focus": "bring together",
+                      "jaFocus": "まとめる"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring about",
+              "ja": "引き起こす",
+              "image": "bring about は仕事で「引き起こす」場面に使いやすい表現。",
+              "pattern": "BRING ABOUT + ...",
+              "examples": [
+                  {
+                      "en": "I will bring about this today.",
+                      "ja": "今日これを引き起こすします。",
+                      "focus": "bring about",
+                      "object": "this",
+                      "jaFocus": "引き起こす"
+                  },
+                  {
+                      "en": "We need to bring about the project.",
+                      "ja": "その案件を引き起こすする必要があります。",
+                      "focus": "bring about",
+                      "object": "the project",
+                      "jaFocus": "引き起こす"
+                  },
+                  {
+                      "en": "Please bring about it before the meeting.",
+                      "ja": "会議前にそれを引き起こすしてください。",
+                      "focus": "bring about",
+                      "object": "it",
+                      "jaFocus": "引き起こす"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring about at home.",
+                      "ja": "家でよく引き起こすします。",
+                      "focus": "bring about",
+                      "jaFocus": "引き起こす"
+                  },
+                  {
+                      "en": "It helps to bring about in daily life.",
+                      "ja": "日常生活で引き起こすできると役立ちます。",
+                      "focus": "bring about",
+                      "jaFocus": "引き起こす"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring over",
+              "ja": "持ってくる",
+              "image": "bring over は仕事で「持ってくる」場面に使いやすい表現。",
+              "pattern": "BRING OVER + ...",
+              "examples": [
+                  {
+                      "en": "I will bring over this today.",
+                      "ja": "今日これを持ってくるします。",
+                      "focus": "bring over",
+                      "object": "this",
+                      "jaFocus": "持ってくる"
+                  },
+                  {
+                      "en": "We need to bring over the project.",
+                      "ja": "その案件を持ってくるする必要があります。",
+                      "focus": "bring over",
+                      "object": "the project",
+                      "jaFocus": "持ってくる"
+                  },
+                  {
+                      "en": "Please bring over it before the meeting.",
+                      "ja": "会議前にそれを持ってくるしてください。",
+                      "focus": "bring over",
+                      "object": "it",
+                      "jaFocus": "持ってくる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring over at home.",
+                      "ja": "家でよく持ってくるします。",
+                      "focus": "bring over",
+                      "jaFocus": "持ってくる"
+                  },
+                  {
+                      "en": "It helps to bring over in daily life.",
+                      "ja": "日常生活で持ってくるできると役立ちます。",
+                      "focus": "bring over",
+                      "jaFocus": "持ってくる"
+                  }
+              ]
+          },
+          {
+              "phrase": "bring forward",
+              "ja": "前倒しする",
+              "image": "bring forward は仕事で「前倒しする」場面に使いやすい表現。",
+              "pattern": "BRING FORWARD + ...",
+              "examples": [
+                  {
+                      "en": "I will bring forward this today.",
+                      "ja": "今日これを前倒しするします。",
+                      "focus": "bring forward",
+                      "object": "this",
+                      "jaFocus": "前倒しする"
+                  },
+                  {
+                      "en": "We need to bring forward the project.",
+                      "ja": "その案件を前倒しするする必要があります。",
+                      "focus": "bring forward",
+                      "object": "the project",
+                      "jaFocus": "前倒しする"
+                  },
+                  {
+                      "en": "Please bring forward it before the meeting.",
+                      "ja": "会議前にそれを前倒しするしてください。",
+                      "focus": "bring forward",
+                      "object": "it",
+                      "jaFocus": "前倒しする"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often bring forward at home.",
+                      "ja": "家でよく前倒しするします。",
+                      "focus": "bring forward",
+                      "jaFocus": "前倒しする"
+                  },
+                  {
+                      "en": "It helps to bring forward in daily life.",
+                      "ja": "日常生活で前倒しするできると役立ちます。",
+                      "focus": "bring forward",
+                      "jaFocus": "前倒しする"
+                  }
+              ]
+          }
+      ]
   },
   {
-    "id": "hold",
-    "rank": 33,
-    "word": "HOLD",
-    "ipa": "",
-    "kana": "ホールド",
-    "syllable": "hold",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "保持する・開催する",
-    "coreDetail": "会議や状態を保つ",
-    "meanings": [
-      {
-        "id": "business-basic",
-        "title": "① ビジネスで使う基本形",
-        "pattern": "HOLD + 名詞 / 文",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "会議や状態を保つ",
-        "point": "まずは社会人の会話・メールで使いやすい基本形を覚える。",
-        "examples": [
+      "id": "hold",
+      "rank": 33,
+      "word": "HOLD",
+      "ipa": "/hoʊld/",
+      "kana": "ホールド",
+      "syllable": "hold",
+      "transitivity": "他動詞・自動詞",
+      "importance": "★★★★☆ 重要",
+      "core": "手放さず保つ・場を持つ",
+      "coreDetail": "HOLDは「持つ」だけでなく、会議を開く、状態を保つ、責任や権利を持つなど、何かを一定の位置に保つ感覚で使います。",
+      "coreVisual": {
+          "from": [
+              "📄 資料",
+              "📅 予定",
+              "👥 チーム",
+              "💬 連絡",
+              "✅ 判断"
+          ],
+          "to": "仕事の流れ",
+          "label": "コアイメージ"
+      },
+      "meanings": [
           {
-            "en": "I will hold the details.",
-            "ja": "詳細を確認・対応します。",
-            "focus": "hold",
-            "object": "the details",
-            "jaFocus": "確認・対応"
+              "id": "meeting",
+              "title": "1 開催する",
+              "pattern": "HOLD + 会議 / イベント",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "会議やイベントを開く。",
+              "point": "hold a meeting は仕事で最重要。",
+              "examples": [
+                  {
+                      "en": "We will hold a meeting tomorrow.",
+                      "ja": "明日会議を開きます。",
+                      "focus": "hold",
+                      "object": "a meeting",
+                      "jaFocus": "開きます"
+                  },
+                  {
+                      "en": "The company held a training session.",
+                      "ja": "会社は研修を開催しました。",
+                      "focus": "held",
+                      "object": "a training session",
+                      "jaFocus": "開催しました"
+                  },
+                  {
+                      "en": "We hold weekly reviews every Friday.",
+                      "ja": "毎週金曜日にレビュー会議を開いています。",
+                      "focus": "hold",
+                      "object": "weekly reviews",
+                      "jaFocus": "開いています"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I hold this on weekends.",
+                      "ja": "週末にこれを開催することがあります。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "開催する"
+                  },
+                  {
+                      "en": "It is useful to hold this in daily life.",
+                      "ja": "日常生活でこれを開催すると便利です。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "開催する"
+                  }
+              ]
           },
           {
-            "en": "We need to hold this today.",
-            "ja": "今日これを進める必要があります。",
-            "focus": "hold",
-            "object": "this",
-            "jaFocus": "進める"
+              "id": "keep",
+              "title": "2 保つ",
+              "pattern": "HOLD + 状態",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "状態を維持する。",
+              "point": "hold steady などで使う。",
+              "examples": [
+                  {
+                      "en": "Sales held steady this quarter.",
+                      "ja": "今四半期の売上は安定していました。",
+                      "focus": "held",
+                      "jaFocus": "安定していました"
+                  },
+                  {
+                      "en": "Please hold the line for a moment.",
+                      "ja": "少々お待ちください。",
+                      "focus": "hold",
+                      "object": "the line",
+                      "jaFocus": "お待ちください"
+                  },
+                  {
+                      "en": "We need to hold the current price.",
+                      "ja": "現在の価格を維持する必要があります。",
+                      "focus": "hold",
+                      "object": "the current price",
+                      "jaFocus": "維持する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I hold this on weekends.",
+                      "ja": "週末にこれを保つことがあります。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "保つ"
+                  },
+                  {
+                      "en": "It is useful to hold this in daily life.",
+                      "ja": "日常生活でこれを保つと便利です。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "保つ"
+                  }
+              ]
           },
           {
-            "en": "Can you hold it by tomorrow?",
-            "ja": "明日までに対応できますか？",
-            "focus": "hold",
-            "object": "it",
-            "jaFocus": "対応"
+              "id": "possess",
+              "title": "3 持つ・保有する",
+              "pattern": "HOLD + 権利 / 役職",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "権利や役職を保有する。",
+              "point": "資格・株・役職などに使う。",
+              "examples": [
+                  {
+                      "en": "She holds a senior position.",
+                      "ja": "彼女は上級職に就いています。",
+                      "focus": "holds",
+                      "object": "a senior position",
+                      "jaFocus": "就いています"
+                  },
+                  {
+                      "en": "The company holds the patent.",
+                      "ja": "その会社が特許を保有しています。",
+                      "focus": "holds",
+                      "object": "the patent",
+                      "jaFocus": "保有しています"
+                  },
+                  {
+                      "en": "He holds a license for this work.",
+                      "ja": "彼はこの業務の資格を持っています。",
+                      "focus": "holds",
+                      "object": "a license",
+                      "jaFocus": "持っています"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I hold this on weekends.",
+                      "ja": "週末にこれを持つ・保有することがあります。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "持つ・保有する"
+                  },
+                  {
+                      "en": "It is useful to hold this in daily life.",
+                      "ja": "日常生活でこれを持つ・保有すると便利です。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "持つ・保有する"
+                  }
+              ]
+          },
+          {
+              "id": "delay",
+              "title": "4 保留する",
+              "pattern": "HOLD + 名詞",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "判断や処理を一時止める。",
+              "point": "hold the order は保留する。",
+              "examples": [
+                  {
+                      "en": "Please hold the order until we confirm the details.",
+                      "ja": "詳細確認まで注文を保留してください。",
+                      "focus": "hold",
+                      "object": "the order",
+                      "jaFocus": "保留してください"
+                  },
+                  {
+                      "en": "We held the decision for one week.",
+                      "ja": "決定を1週間保留しました。",
+                      "focus": "held",
+                      "object": "the decision",
+                      "jaFocus": "保留しました"
+                  },
+                  {
+                      "en": "Can you hold this request for now?",
+                      "ja": "この依頼はいったん保留できますか？",
+                      "focus": "hold",
+                      "object": "this request",
+                      "jaFocus": "保留できますか"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I hold this on weekends.",
+                      "ja": "週末にこれを保留することがあります。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "保留する"
+                  },
+                  {
+                      "en": "It is useful to hold this in daily life.",
+                      "ja": "日常生活でこれを保留すると便利です。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "保留する"
+                  }
+              ]
+          },
+          {
+              "id": "believe",
+              "title": "5 考えを持つ",
+              "pattern": "HOLD + opinion/view",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "意見や考えを持つ。",
+              "point": "やや硬めだが議論で使える。",
+              "examples": [
+                  {
+                      "en": "I hold a different view on this issue.",
+                      "ja": "この件について私は別の見方をしています。",
+                      "focus": "hold",
+                      "object": "a different view",
+                      "jaFocus": "見方をしています"
+                  },
+                  {
+                      "en": "Management holds the same position.",
+                      "ja": "経営陣も同じ立場です。",
+                      "focus": "holds",
+                      "object": "the same position",
+                      "jaFocus": "同じ立場です"
+                  },
+                  {
+                      "en": "The client holds a strong opinion about quality.",
+                      "ja": "顧客は品質について強い意見を持っています。",
+                      "focus": "holds",
+                      "object": "a strong opinion",
+                      "jaFocus": "持っています"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I hold this on weekends.",
+                      "ja": "週末にこれを考えを持つことがあります。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "考えを持つ"
+                  },
+                  {
+                      "en": "It is useful to hold this in daily life.",
+                      "ja": "日常生活でこれを考えを持つと便利です。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "考えを持つ"
+                  }
+              ]
+          },
+          {
+              "id": "contain",
+              "title": "6 収容する・入る",
+              "pattern": "HOLD + 数量",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "容量として入る。",
+              "point": "会場・箱・システム容量に使う。",
+              "examples": [
+                  {
+                      "en": "The room holds 30 people.",
+                      "ja": "その部屋は30人収容できます。",
+                      "focus": "holds",
+                      "object": "30 people",
+                      "jaFocus": "収容できます"
+                  },
+                  {
+                      "en": "This folder holds all project files.",
+                      "ja": "このフォルダに案件ファイルがすべて入っています。",
+                      "focus": "holds",
+                      "object": "all project files",
+                      "jaFocus": "入っています"
+                  },
+                  {
+                      "en": "The system can hold more data.",
+                      "ja": "そのシステムはより多くのデータを保持できます。",
+                      "focus": "hold",
+                      "object": "more data",
+                      "jaFocus": "保持できます"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I hold this on weekends.",
+                      "ja": "週末にこれを収容する・入ることがあります。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "収容する・入る"
+                  },
+                  {
+                      "en": "It is useful to hold this in daily life.",
+                      "ja": "日常生活でこれを収容する・入ると便利です。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "収容する・入る"
+                  }
+              ]
+          },
+          {
+              "id": "phone",
+              "title": "7 電話を切らず待つ",
+              "pattern": "HOLD",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "電話で待つ。",
+              "point": "Can you hold? は電話で自然。",
+              "examples": [
+                  {
+                      "en": "Can you hold for a moment?",
+                      "ja": "少々お待ちいただけますか？",
+                      "focus": "hold",
+                      "jaFocus": "お待ち"
+                  },
+                  {
+                      "en": "Please hold while I check the schedule.",
+                      "ja": "予定を確認しますのでお待ちください。",
+                      "focus": "hold",
+                      "jaFocus": "お待ちください"
+                  },
+                  {
+                      "en": "I was on hold for ten minutes.",
+                      "ja": "10分間保留で待っていました。",
+                      "focus": "hold",
+                      "jaFocus": "保留で待って"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I hold this on weekends.",
+                      "ja": "週末にこれを電話を切らず待つことがあります。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "電話を切らず待つ"
+                  },
+                  {
+                      "en": "It is useful to hold this in daily life.",
+                      "ja": "日常生活でこれを電話を切らず待つと便利です。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "電話を切らず待つ"
+                  }
+              ]
+          },
+          {
+              "id": "responsible",
+              "title": "8 責任を持つ",
+              "pattern": "HOLD + 人 + responsible",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "責任を問う。",
+              "point": "hold someone responsible は重要。",
+              "examples": [
+                  {
+                      "en": "We hold the supplier responsible for the delay.",
+                      "ja": "遅延について仕入先に責任があると考えています。",
+                      "focus": "hold",
+                      "object": "the supplier",
+                      "jaFocus": "責任がある"
+                  },
+                  {
+                      "en": "The manager held me responsible for the mistake.",
+                      "ja": "上司はそのミスについて私に責任があるとしました。",
+                      "focus": "held",
+                      "object": "me",
+                      "jaFocus": "責任がある"
+                  },
+                  {
+                      "en": "We should hold each team accountable.",
+                      "ja": "各チームに責任を持たせるべきです。",
+                      "focus": "hold",
+                      "object": "each team",
+                      "jaFocus": "責任を持たせる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I hold this on weekends.",
+                      "ja": "週末にこれを責任を持つことがあります。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "責任を持つ"
+                  },
+                  {
+                      "en": "It is useful to hold this in daily life.",
+                      "ja": "日常生活でこれを責任を持つと便利です。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "責任を持つ"
+                  }
+              ]
+          },
+          {
+              "id": "support",
+              "title": "9 支える",
+              "pattern": "HOLD + 名詞",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "物や考えを支える。",
+              "point": "hold up は支える/持ちこたえる。",
+              "examples": [
+                  {
+                      "en": "The data holds up our proposal.",
+                      "ja": "そのデータが提案を支えています。",
+                      "focus": "holds",
+                      "object": "our proposal",
+                      "jaFocus": "支えています"
+                  },
+                  {
+                      "en": "The plan held up under review.",
+                      "ja": "その計画はレビューに耐えました。",
+                      "focus": "held up",
+                      "jaFocus": "耐えました"
+                  },
+                  {
+                      "en": "The structure holds the sign safely.",
+                      "ja": "その構造が看板を安全に支えています。",
+                      "focus": "holds",
+                      "object": "the sign",
+                      "jaFocus": "支えています"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I hold this on weekends.",
+                      "ja": "週末にこれを支えることがあります。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "支える"
+                  },
+                  {
+                      "en": "It is useful to hold this in daily life.",
+                      "ja": "日常生活でこれを支えると便利です。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "支える"
+                  }
+              ]
+          },
+          {
+              "id": "reserve",
+              "title": "10 確保する",
+              "pattern": "HOLD + 場所 / 予約",
+              "transitivity": "他動詞・自動詞",
+              "structure": "S + V + O",
+              "image": "一時的に確保する。",
+              "point": "席や枠の確保に使える。",
+              "examples": [
+                  {
+                      "en": "Can you hold a seat for the client?",
+                      "ja": "クライアント用に席を確保できますか？",
+                      "focus": "hold",
+                      "object": "a seat",
+                      "jaFocus": "確保できますか"
+                  },
+                  {
+                      "en": "We held a room for the meeting.",
+                      "ja": "会議用に部屋を確保しました。",
+                      "focus": "held",
+                      "object": "a room",
+                      "jaFocus": "確保しました"
+                  },
+                  {
+                      "en": "Please hold this time slot.",
+                      "ja": "この時間枠を確保してください。",
+                      "focus": "hold",
+                      "object": "this time slot",
+                      "jaFocus": "確保してください"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I hold this on weekends.",
+                      "ja": "週末にこれを確保することがあります。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "確保する"
+                  },
+                  {
+                      "en": "It is useful to hold this in daily life.",
+                      "ja": "日常生活でこれを確保すると便利です。",
+                      "focus": "hold",
+                      "object": "this",
+                      "jaFocus": "確保する"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": []
+      ],
+      "collocations": [
+          {
+              "phrase": "hold a meeting",
+              "ja": "会議を開く",
+              "image": "hold a meeting は仕事で「会議を開く」場面に使いやすい表現。",
+              "pattern": "HOLD A MEETING + ...",
+              "examples": [
+                  {
+                      "en": "I will hold a meeting this today.",
+                      "ja": "今日これを会議を開くします。",
+                      "focus": "hold a meeting",
+                      "object": "this",
+                      "jaFocus": "会議を開く"
+                  },
+                  {
+                      "en": "We need to hold a meeting the project.",
+                      "ja": "その案件を会議を開くする必要があります。",
+                      "focus": "hold a meeting",
+                      "object": "the project",
+                      "jaFocus": "会議を開く"
+                  },
+                  {
+                      "en": "Please hold a meeting it before the meeting.",
+                      "ja": "会議前にそれを会議を開くしてください。",
+                      "focus": "hold a meeting",
+                      "object": "it",
+                      "jaFocus": "会議を開く"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold a meeting at home.",
+                      "ja": "家でよく会議を開くします。",
+                      "focus": "hold a meeting",
+                      "jaFocus": "会議を開く"
+                  },
+                  {
+                      "en": "It helps to hold a meeting in daily life.",
+                      "ja": "日常生活で会議を開くできると役立ちます。",
+                      "focus": "hold a meeting",
+                      "jaFocus": "会議を開く"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold a position",
+              "ja": "役職に就く",
+              "image": "hold a position は仕事で「役職に就く」場面に使いやすい表現。",
+              "pattern": "HOLD A POSITION + ...",
+              "examples": [
+                  {
+                      "en": "I will hold a position this today.",
+                      "ja": "今日これを役職に就くします。",
+                      "focus": "hold a position",
+                      "object": "this",
+                      "jaFocus": "役職に就く"
+                  },
+                  {
+                      "en": "We need to hold a position the project.",
+                      "ja": "その案件を役職に就くする必要があります。",
+                      "focus": "hold a position",
+                      "object": "the project",
+                      "jaFocus": "役職に就く"
+                  },
+                  {
+                      "en": "Please hold a position it before the meeting.",
+                      "ja": "会議前にそれを役職に就くしてください。",
+                      "focus": "hold a position",
+                      "object": "it",
+                      "jaFocus": "役職に就く"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold a position at home.",
+                      "ja": "家でよく役職に就くします。",
+                      "focus": "hold a position",
+                      "jaFocus": "役職に就く"
+                  },
+                  {
+                      "en": "It helps to hold a position in daily life.",
+                      "ja": "日常生活で役職に就くできると役立ちます。",
+                      "focus": "hold a position",
+                      "jaFocus": "役職に就く"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold a license",
+              "ja": "資格を持つ",
+              "image": "hold a license は仕事で「資格を持つ」場面に使いやすい表現。",
+              "pattern": "HOLD A LICENSE + ...",
+              "examples": [
+                  {
+                      "en": "I will hold a license this today.",
+                      "ja": "今日これを資格を持つします。",
+                      "focus": "hold a license",
+                      "object": "this",
+                      "jaFocus": "資格を持つ"
+                  },
+                  {
+                      "en": "We need to hold a license the project.",
+                      "ja": "その案件を資格を持つする必要があります。",
+                      "focus": "hold a license",
+                      "object": "the project",
+                      "jaFocus": "資格を持つ"
+                  },
+                  {
+                      "en": "Please hold a license it before the meeting.",
+                      "ja": "会議前にそれを資格を持つしてください。",
+                      "focus": "hold a license",
+                      "object": "it",
+                      "jaFocus": "資格を持つ"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold a license at home.",
+                      "ja": "家でよく資格を持つします。",
+                      "focus": "hold a license",
+                      "jaFocus": "資格を持つ"
+                  },
+                  {
+                      "en": "It helps to hold a license in daily life.",
+                      "ja": "日常生活で資格を持つできると役立ちます。",
+                      "focus": "hold a license",
+                      "jaFocus": "資格を持つ"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold the line",
+              "ja": "電話で待つ",
+              "image": "hold the line は仕事で「電話で待つ」場面に使いやすい表現。",
+              "pattern": "HOLD THE LINE + ...",
+              "examples": [
+                  {
+                      "en": "I will hold the line this today.",
+                      "ja": "今日これを電話で待つします。",
+                      "focus": "hold the line",
+                      "object": "this",
+                      "jaFocus": "電話で待つ"
+                  },
+                  {
+                      "en": "We need to hold the line the project.",
+                      "ja": "その案件を電話で待つする必要があります。",
+                      "focus": "hold the line",
+                      "object": "the project",
+                      "jaFocus": "電話で待つ"
+                  },
+                  {
+                      "en": "Please hold the line it before the meeting.",
+                      "ja": "会議前にそれを電話で待つしてください。",
+                      "focus": "hold the line",
+                      "object": "it",
+                      "jaFocus": "電話で待つ"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold the line at home.",
+                      "ja": "家でよく電話で待つします。",
+                      "focus": "hold the line",
+                      "jaFocus": "電話で待つ"
+                  },
+                  {
+                      "en": "It helps to hold the line in daily life.",
+                      "ja": "日常生活で電話で待つできると役立ちます。",
+                      "focus": "hold the line",
+                      "jaFocus": "電話で待つ"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold steady",
+              "ja": "安定を保つ",
+              "image": "hold steady は仕事で「安定を保つ」場面に使いやすい表現。",
+              "pattern": "HOLD STEADY + ...",
+              "examples": [
+                  {
+                      "en": "I will hold steady this today.",
+                      "ja": "今日これを安定を保つします。",
+                      "focus": "hold steady",
+                      "object": "this",
+                      "jaFocus": "安定を保つ"
+                  },
+                  {
+                      "en": "We need to hold steady the project.",
+                      "ja": "その案件を安定を保つする必要があります。",
+                      "focus": "hold steady",
+                      "object": "the project",
+                      "jaFocus": "安定を保つ"
+                  },
+                  {
+                      "en": "Please hold steady it before the meeting.",
+                      "ja": "会議前にそれを安定を保つしてください。",
+                      "focus": "hold steady",
+                      "object": "it",
+                      "jaFocus": "安定を保つ"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold steady at home.",
+                      "ja": "家でよく安定を保つします。",
+                      "focus": "hold steady",
+                      "jaFocus": "安定を保つ"
+                  },
+                  {
+                      "en": "It helps to hold steady in daily life.",
+                      "ja": "日常生活で安定を保つできると役立ちます。",
+                      "focus": "hold steady",
+                      "jaFocus": "安定を保つ"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold a seat",
+              "ja": "席を確保する",
+              "image": "hold a seat は仕事で「席を確保する」場面に使いやすい表現。",
+              "pattern": "HOLD A SEAT + ...",
+              "examples": [
+                  {
+                      "en": "I will hold a seat this today.",
+                      "ja": "今日これを席を確保するします。",
+                      "focus": "hold a seat",
+                      "object": "this",
+                      "jaFocus": "席を確保する"
+                  },
+                  {
+                      "en": "We need to hold a seat the project.",
+                      "ja": "その案件を席を確保するする必要があります。",
+                      "focus": "hold a seat",
+                      "object": "the project",
+                      "jaFocus": "席を確保する"
+                  },
+                  {
+                      "en": "Please hold a seat it before the meeting.",
+                      "ja": "会議前にそれを席を確保するしてください。",
+                      "focus": "hold a seat",
+                      "object": "it",
+                      "jaFocus": "席を確保する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold a seat at home.",
+                      "ja": "家でよく席を確保するします。",
+                      "focus": "hold a seat",
+                      "jaFocus": "席を確保する"
+                  },
+                  {
+                      "en": "It helps to hold a seat in daily life.",
+                      "ja": "日常生活で席を確保するできると役立ちます。",
+                      "focus": "hold a seat",
+                      "jaFocus": "席を確保する"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold responsibility",
+              "ja": "責任を持つ",
+              "image": "hold responsibility は仕事で「責任を持つ」場面に使いやすい表現。",
+              "pattern": "HOLD RESPONSIBILITY + ...",
+              "examples": [
+                  {
+                      "en": "I will hold responsibility this today.",
+                      "ja": "今日これを責任を持つします。",
+                      "focus": "hold responsibility",
+                      "object": "this",
+                      "jaFocus": "責任を持つ"
+                  },
+                  {
+                      "en": "We need to hold responsibility the project.",
+                      "ja": "その案件を責任を持つする必要があります。",
+                      "focus": "hold responsibility",
+                      "object": "the project",
+                      "jaFocus": "責任を持つ"
+                  },
+                  {
+                      "en": "Please hold responsibility it before the meeting.",
+                      "ja": "会議前にそれを責任を持つしてください。",
+                      "focus": "hold responsibility",
+                      "object": "it",
+                      "jaFocus": "責任を持つ"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold responsibility at home.",
+                      "ja": "家でよく責任を持つします。",
+                      "focus": "hold responsibility",
+                      "jaFocus": "責任を持つ"
+                  },
+                  {
+                      "en": "It helps to hold responsibility in daily life.",
+                      "ja": "日常生活で責任を持つできると役立ちます。",
+                      "focus": "hold responsibility",
+                      "jaFocus": "責任を持つ"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold an event",
+              "ja": "イベントを開催する",
+              "image": "hold an event は仕事で「イベントを開催する」場面に使いやすい表現。",
+              "pattern": "HOLD AN EVENT + ...",
+              "examples": [
+                  {
+                      "en": "I will hold an event this today.",
+                      "ja": "今日これをイベントを開催するします。",
+                      "focus": "hold an event",
+                      "object": "this",
+                      "jaFocus": "イベントを開催する"
+                  },
+                  {
+                      "en": "We need to hold an event the project.",
+                      "ja": "その案件をイベントを開催するする必要があります。",
+                      "focus": "hold an event",
+                      "object": "the project",
+                      "jaFocus": "イベントを開催する"
+                  },
+                  {
+                      "en": "Please hold an event it before the meeting.",
+                      "ja": "会議前にそれをイベントを開催するしてください。",
+                      "focus": "hold an event",
+                      "object": "it",
+                      "jaFocus": "イベントを開催する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold an event at home.",
+                      "ja": "家でよくイベントを開催するします。",
+                      "focus": "hold an event",
+                      "jaFocus": "イベントを開催する"
+                  },
+                  {
+                      "en": "It helps to hold an event in daily life.",
+                      "ja": "日常生活でイベントを開催するできると役立ちます。",
+                      "focus": "hold an event",
+                      "jaFocus": "イベントを開催する"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold data",
+              "ja": "データを保持する",
+              "image": "hold data は仕事で「データを保持する」場面に使いやすい表現。",
+              "pattern": "HOLD DATA + ...",
+              "examples": [
+                  {
+                      "en": "I will hold data this today.",
+                      "ja": "今日これをデータを保持するします。",
+                      "focus": "hold data",
+                      "object": "this",
+                      "jaFocus": "データを保持する"
+                  },
+                  {
+                      "en": "We need to hold data the project.",
+                      "ja": "その案件をデータを保持するする必要があります。",
+                      "focus": "hold data",
+                      "object": "the project",
+                      "jaFocus": "データを保持する"
+                  },
+                  {
+                      "en": "Please hold data it before the meeting.",
+                      "ja": "会議前にそれをデータを保持するしてください。",
+                      "focus": "hold data",
+                      "object": "it",
+                      "jaFocus": "データを保持する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold data at home.",
+                      "ja": "家でよくデータを保持するします。",
+                      "focus": "hold data",
+                      "jaFocus": "データを保持する"
+                  },
+                  {
+                      "en": "It helps to hold data in daily life.",
+                      "ja": "日常生活でデータを保持するできると役立ちます。",
+                      "focus": "hold data",
+                      "jaFocus": "データを保持する"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold a view",
+              "ja": "見解を持つ",
+              "image": "hold a view は仕事で「見解を持つ」場面に使いやすい表現。",
+              "pattern": "HOLD A VIEW + ...",
+              "examples": [
+                  {
+                      "en": "I will hold a view this today.",
+                      "ja": "今日これを見解を持つします。",
+                      "focus": "hold a view",
+                      "object": "this",
+                      "jaFocus": "見解を持つ"
+                  },
+                  {
+                      "en": "We need to hold a view the project.",
+                      "ja": "その案件を見解を持つする必要があります。",
+                      "focus": "hold a view",
+                      "object": "the project",
+                      "jaFocus": "見解を持つ"
+                  },
+                  {
+                      "en": "Please hold a view it before the meeting.",
+                      "ja": "会議前にそれを見解を持つしてください。",
+                      "focus": "hold a view",
+                      "object": "it",
+                      "jaFocus": "見解を持つ"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold a view at home.",
+                      "ja": "家でよく見解を持つします。",
+                      "focus": "hold a view",
+                      "jaFocus": "見解を持つ"
+                  },
+                  {
+                      "en": "It helps to hold a view in daily life.",
+                      "ja": "日常生活で見解を持つできると役立ちます。",
+                      "focus": "hold a view",
+                      "jaFocus": "見解を持つ"
+                  }
+              ]
+          }
+      ],
+      "phrasalVerbs": [
+          {
+              "phrase": "hold on",
+              "ja": "待つ",
+              "image": "hold on は仕事で「待つ」場面に使いやすい表現。",
+              "pattern": "HOLD ON + ...",
+              "examples": [
+                  {
+                      "en": "I will hold on this today.",
+                      "ja": "今日これを待つします。",
+                      "focus": "hold on",
+                      "object": "this",
+                      "jaFocus": "待つ"
+                  },
+                  {
+                      "en": "We need to hold on the project.",
+                      "ja": "その案件を待つする必要があります。",
+                      "focus": "hold on",
+                      "object": "the project",
+                      "jaFocus": "待つ"
+                  },
+                  {
+                      "en": "Please hold on it before the meeting.",
+                      "ja": "会議前にそれを待つしてください。",
+                      "focus": "hold on",
+                      "object": "it",
+                      "jaFocus": "待つ"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold on at home.",
+                      "ja": "家でよく待つします。",
+                      "focus": "hold on",
+                      "jaFocus": "待つ"
+                  },
+                  {
+                      "en": "It helps to hold on in daily life.",
+                      "ja": "日常生活で待つできると役立ちます。",
+                      "focus": "hold on",
+                      "jaFocus": "待つ"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold off",
+              "ja": "延期する",
+              "image": "hold off は仕事で「延期する」場面に使いやすい表現。",
+              "pattern": "HOLD OFF + ...",
+              "examples": [
+                  {
+                      "en": "I will hold off this today.",
+                      "ja": "今日これを延期するします。",
+                      "focus": "hold off",
+                      "object": "this",
+                      "jaFocus": "延期する"
+                  },
+                  {
+                      "en": "We need to hold off the project.",
+                      "ja": "その案件を延期するする必要があります。",
+                      "focus": "hold off",
+                      "object": "the project",
+                      "jaFocus": "延期する"
+                  },
+                  {
+                      "en": "Please hold off it before the meeting.",
+                      "ja": "会議前にそれを延期するしてください。",
+                      "focus": "hold off",
+                      "object": "it",
+                      "jaFocus": "延期する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold off at home.",
+                      "ja": "家でよく延期するします。",
+                      "focus": "hold off",
+                      "jaFocus": "延期する"
+                  },
+                  {
+                      "en": "It helps to hold off in daily life.",
+                      "ja": "日常生活で延期するできると役立ちます。",
+                      "focus": "hold off",
+                      "jaFocus": "延期する"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold up",
+              "ja": "支える・遅らせる",
+              "image": "hold up は仕事で「支える・遅らせる」場面に使いやすい表現。",
+              "pattern": "HOLD UP + ...",
+              "examples": [
+                  {
+                      "en": "I will hold up this today.",
+                      "ja": "今日これを支える・遅らせるします。",
+                      "focus": "hold up",
+                      "object": "this",
+                      "jaFocus": "支える・遅らせる"
+                  },
+                  {
+                      "en": "We need to hold up the project.",
+                      "ja": "その案件を支える・遅らせるする必要があります。",
+                      "focus": "hold up",
+                      "object": "the project",
+                      "jaFocus": "支える・遅らせる"
+                  },
+                  {
+                      "en": "Please hold up it before the meeting.",
+                      "ja": "会議前にそれを支える・遅らせるしてください。",
+                      "focus": "hold up",
+                      "object": "it",
+                      "jaFocus": "支える・遅らせる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold up at home.",
+                      "ja": "家でよく支える・遅らせるします。",
+                      "focus": "hold up",
+                      "jaFocus": "支える・遅らせる"
+                  },
+                  {
+                      "en": "It helps to hold up in daily life.",
+                      "ja": "日常生活で支える・遅らせるできると役立ちます。",
+                      "focus": "hold up",
+                      "jaFocus": "支える・遅らせる"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold back",
+              "ja": "控える",
+              "image": "hold back は仕事で「控える」場面に使いやすい表現。",
+              "pattern": "HOLD BACK + ...",
+              "examples": [
+                  {
+                      "en": "I will hold back this today.",
+                      "ja": "今日これを控えるします。",
+                      "focus": "hold back",
+                      "object": "this",
+                      "jaFocus": "控える"
+                  },
+                  {
+                      "en": "We need to hold back the project.",
+                      "ja": "その案件を控えるする必要があります。",
+                      "focus": "hold back",
+                      "object": "the project",
+                      "jaFocus": "控える"
+                  },
+                  {
+                      "en": "Please hold back it before the meeting.",
+                      "ja": "会議前にそれを控えるしてください。",
+                      "focus": "hold back",
+                      "object": "it",
+                      "jaFocus": "控える"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold back at home.",
+                      "ja": "家でよく控えるします。",
+                      "focus": "hold back",
+                      "jaFocus": "控える"
+                  },
+                  {
+                      "en": "It helps to hold back in daily life.",
+                      "ja": "日常生活で控えるできると役立ちます。",
+                      "focus": "hold back",
+                      "jaFocus": "控える"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold out",
+              "ja": "持ちこたえる",
+              "image": "hold out は仕事で「持ちこたえる」場面に使いやすい表現。",
+              "pattern": "HOLD OUT + ...",
+              "examples": [
+                  {
+                      "en": "I will hold out this today.",
+                      "ja": "今日これを持ちこたえるします。",
+                      "focus": "hold out",
+                      "object": "this",
+                      "jaFocus": "持ちこたえる"
+                  },
+                  {
+                      "en": "We need to hold out the project.",
+                      "ja": "その案件を持ちこたえるする必要があります。",
+                      "focus": "hold out",
+                      "object": "the project",
+                      "jaFocus": "持ちこたえる"
+                  },
+                  {
+                      "en": "Please hold out it before the meeting.",
+                      "ja": "会議前にそれを持ちこたえるしてください。",
+                      "focus": "hold out",
+                      "object": "it",
+                      "jaFocus": "持ちこたえる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold out at home.",
+                      "ja": "家でよく持ちこたえるします。",
+                      "focus": "hold out",
+                      "jaFocus": "持ちこたえる"
+                  },
+                  {
+                      "en": "It helps to hold out in daily life.",
+                      "ja": "日常生活で持ちこたえるできると役立ちます。",
+                      "focus": "hold out",
+                      "jaFocus": "持ちこたえる"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold together",
+              "ja": "まとまる",
+              "image": "hold together は仕事で「まとまる」場面に使いやすい表現。",
+              "pattern": "HOLD TOGETHER + ...",
+              "examples": [
+                  {
+                      "en": "I will hold together this today.",
+                      "ja": "今日これをまとまるします。",
+                      "focus": "hold together",
+                      "object": "this",
+                      "jaFocus": "まとまる"
+                  },
+                  {
+                      "en": "We need to hold together the project.",
+                      "ja": "その案件をまとまるする必要があります。",
+                      "focus": "hold together",
+                      "object": "the project",
+                      "jaFocus": "まとまる"
+                  },
+                  {
+                      "en": "Please hold together it before the meeting.",
+                      "ja": "会議前にそれをまとまるしてください。",
+                      "focus": "hold together",
+                      "object": "it",
+                      "jaFocus": "まとまる"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold together at home.",
+                      "ja": "家でよくまとまるします。",
+                      "focus": "hold together",
+                      "jaFocus": "まとまる"
+                  },
+                  {
+                      "en": "It helps to hold together in daily life.",
+                      "ja": "日常生活でまとまるできると役立ちます。",
+                      "focus": "hold together",
+                      "jaFocus": "まとまる"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold onto",
+              "ja": "手放さない",
+              "image": "hold onto は仕事で「手放さない」場面に使いやすい表現。",
+              "pattern": "HOLD ONTO + ...",
+              "examples": [
+                  {
+                      "en": "I will hold onto this today.",
+                      "ja": "今日これを手放さないします。",
+                      "focus": "hold onto",
+                      "object": "this",
+                      "jaFocus": "手放さない"
+                  },
+                  {
+                      "en": "We need to hold onto the project.",
+                      "ja": "その案件を手放さないする必要があります。",
+                      "focus": "hold onto",
+                      "object": "the project",
+                      "jaFocus": "手放さない"
+                  },
+                  {
+                      "en": "Please hold onto it before the meeting.",
+                      "ja": "会議前にそれを手放さないしてください。",
+                      "focus": "hold onto",
+                      "object": "it",
+                      "jaFocus": "手放さない"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold onto at home.",
+                      "ja": "家でよく手放さないします。",
+                      "focus": "hold onto",
+                      "jaFocus": "手放さない"
+                  },
+                  {
+                      "en": "It helps to hold onto in daily life.",
+                      "ja": "日常生活で手放さないできると役立ちます。",
+                      "focus": "hold onto",
+                      "jaFocus": "手放さない"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold over",
+              "ja": "延期する",
+              "image": "hold over は仕事で「延期する」場面に使いやすい表現。",
+              "pattern": "HOLD OVER + ...",
+              "examples": [
+                  {
+                      "en": "I will hold over this today.",
+                      "ja": "今日これを延期するします。",
+                      "focus": "hold over",
+                      "object": "this",
+                      "jaFocus": "延期する"
+                  },
+                  {
+                      "en": "We need to hold over the project.",
+                      "ja": "その案件を延期するする必要があります。",
+                      "focus": "hold over",
+                      "object": "the project",
+                      "jaFocus": "延期する"
+                  },
+                  {
+                      "en": "Please hold over it before the meeting.",
+                      "ja": "会議前にそれを延期するしてください。",
+                      "focus": "hold over",
+                      "object": "it",
+                      "jaFocus": "延期する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold over at home.",
+                      "ja": "家でよく延期するします。",
+                      "focus": "hold over",
+                      "jaFocus": "延期する"
+                  },
+                  {
+                      "en": "It helps to hold over in daily life.",
+                      "ja": "日常生活で延期するできると役立ちます。",
+                      "focus": "hold over",
+                      "jaFocus": "延期する"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold down",
+              "ja": "維持する",
+              "image": "hold down は仕事で「維持する」場面に使いやすい表現。",
+              "pattern": "HOLD DOWN + ...",
+              "examples": [
+                  {
+                      "en": "I will hold down this today.",
+                      "ja": "今日これを維持するします。",
+                      "focus": "hold down",
+                      "object": "this",
+                      "jaFocus": "維持する"
+                  },
+                  {
+                      "en": "We need to hold down the project.",
+                      "ja": "その案件を維持するする必要があります。",
+                      "focus": "hold down",
+                      "object": "the project",
+                      "jaFocus": "維持する"
+                  },
+                  {
+                      "en": "Please hold down it before the meeting.",
+                      "ja": "会議前にそれを維持するしてください。",
+                      "focus": "hold down",
+                      "object": "it",
+                      "jaFocus": "維持する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold down at home.",
+                      "ja": "家でよく維持するします。",
+                      "focus": "hold down",
+                      "jaFocus": "維持する"
+                  },
+                  {
+                      "en": "It helps to hold down in daily life.",
+                      "ja": "日常生活で維持するできると役立ちます。",
+                      "focus": "hold down",
+                      "jaFocus": "維持する"
+                  }
+              ]
+          },
+          {
+              "phrase": "hold against",
+              "ja": "不利に考える",
+              "image": "hold against は仕事で「不利に考える」場面に使いやすい表現。",
+              "pattern": "HOLD AGAINST + ...",
+              "examples": [
+                  {
+                      "en": "I will hold against this today.",
+                      "ja": "今日これを不利に考えるします。",
+                      "focus": "hold against",
+                      "object": "this",
+                      "jaFocus": "不利に考える"
+                  },
+                  {
+                      "en": "We need to hold against the project.",
+                      "ja": "その案件を不利に考えるする必要があります。",
+                      "focus": "hold against",
+                      "object": "the project",
+                      "jaFocus": "不利に考える"
+                  },
+                  {
+                      "en": "Please hold against it before the meeting.",
+                      "ja": "会議前にそれを不利に考えるしてください。",
+                      "focus": "hold against",
+                      "object": "it",
+                      "jaFocus": "不利に考える"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I often hold against at home.",
+                      "ja": "家でよく不利に考えるします。",
+                      "focus": "hold against",
+                      "jaFocus": "不利に考える"
+                  },
+                  {
+                      "en": "It helps to hold against in daily life.",
+                      "ja": "日常生活で不利に考えるできると役立ちます。",
+                      "focus": "hold against",
+                      "jaFocus": "不利に考える"
+                  }
+              ]
+          }
+      ]
   },
     {
     "id": "set",

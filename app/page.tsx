@@ -31,6 +31,7 @@ export default function Home() {
   const [progress, setProgress] = useState<UserProgress | null>(null);
   const [target, setTarget] = useState("");
   const [reviewCount, setReviewCount] = useState(0);
+  const [saveMessage, setSaveMessage] = useState("");
   const [bookmark, setBookmark] = useState<ReturnType<typeof getCurrentBookmark>>(null);
   const [studyMode, setStudyMode] = useState<"everyday" | "weekdays" | "custom">("everyday");
   const [customDays, setCustomDays] = useState<number[]>([1, 2, 3, 4, 5]);
@@ -62,8 +63,14 @@ export default function Home() {
   const targetParts = splitTarget(plan.targetDate);
   const updateTarget = (value: string) => {
     setTarget(value);
-    setTargetDate(value);
+    setSaveMessage("");
+  };
+
+  const saveTarget = () => {
+    if (!target) return;
+    setTargetDate(target);
     setProgress(getCurrentProgress());
+    setSaveMessage("保存しました");
   };
 
   const updateStudyMode = (mode: "everyday" | "weekdays" | "custom", days = customDays) => {
@@ -191,12 +198,28 @@ export default function Home() {
           <p className="mt-3 text-sm text-slate-300">現在の設定：{plan.studyDayLabel}</p>
         </div>
 
-        <label className="mt-5 block text-sm text-slate-300">
-          目標日を変更
-          <div className="mt-2 overflow-hidden rounded-xl">
-            <input className="block w-full max-w-full box-border rounded-xl border border-cyan-300/20 bg-slate-950 px-4 py-3 text-white" type="date" value={target} onChange={(e) => updateTarget(e.target.value)} />
+        <div className="mt-5 block text-sm text-slate-300">
+          <div className="flex items-center justify-between gap-3">
+            <span>目標日を変更</span>
+            {saveMessage && <span className="text-xs font-bold text-cyan-200">{saveMessage}</span>}
           </div>
-        </label>
+          <div className="mt-2 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
+            <input
+              className="date-input-safe block min-w-0 w-full max-w-full box-border rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center text-white"
+              type="date"
+              value={target}
+              onChange={(e) => updateTarget(e.target.value)}
+            />
+            <button
+              type="button"
+              className="shrink-0 rounded-xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950"
+              onClick={saveTarget}
+            >
+              保存
+            </button>
+          </div>
+          <p className="mt-2 text-xs text-slate-400">変更後は保存ボタンを押すと反映されます。</p>
+        </div>
       </section>
 
       <section className="resume-card p-5">

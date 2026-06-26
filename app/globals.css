@@ -71,3 +71,21 @@ input, select, textarea { color:#f8fafc; background:#0b1525; border-color:rgba(1
   font-weight: 900;
   box-shadow: 0 10px 28px rgba(0,0,0,.28);
 }
+.date-input-safe {
+  -webkit-appearance: none;
+  appearance: none;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  font-size: 16px;
+}
+.date-input-safe::-webkit-date-and-time-value {
+  text-align: center;
+  min-width: 0;
+}
+.date-input-safe::-webkit-calendar-picker-indicator {
+  margin-left: 0;
+}
+@media (max-width: 420px) {
+  .date-input-safe { font-size: 15px; padding-left: 8px; padding-right: 8px; }
+}

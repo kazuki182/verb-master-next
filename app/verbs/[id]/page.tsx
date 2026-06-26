@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getVerb, verbs } from "@/lib/data";
+import { getVerb } from "@/lib/data";
 import SpeakButton from "@/components/SpeakButton";
 import ExampleCard from "@/components/ExampleCard";
 import PremiumExamples from "@/components/PremiumExamples";
@@ -7,9 +7,6 @@ import AutoBookmark from "@/components/AutoBookmark";
 import BookmarkButton from "@/components/BookmarkButton";
 import VerbProgressPanel from "@/components/VerbProgressPanel";
 
-export function generateStaticParams() {
-  return verbs.map((verb) => ({ id: verb.id }));
-}
 
 export default async function VerbDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

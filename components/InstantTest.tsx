@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getVerb, getTestItemById, getTestItemsForVerb, type TestItem, type TestSection } from "@/lib/data";
 import SpeakButton from "./SpeakButton";
-import { recordSectionClear, recordTestResult, recordVerbMastery } from "@/lib/account";
+import { clearTestSession, getTestSession, recordSectionClear, recordTestResult, recordVerbMastery, saveTestSession } from "@/lib/account";
 
 type InstantTestProps = {
   verbId?: string;
@@ -57,15 +57,64 @@ export default function InstantTest({
   }, [itemIds, verbId, section]);
 
   const verb = getVerb(items[0]?.verbId || verbId);
+  const sessionKey = useMemo(() => {
+    const ids = itemIds && itemIds.length > 0 ? itemIds.join("|") : "all";
+    return reviewMode ? `review:${ids}` : `test:${verb.id}:${section}`;
+  }, [itemIds, reviewMode, section, verb.id]);
   const [index, setIndex] = useState(0);
   const [shown, setShown] = useState(false);
   const [correct, setCorrect] = useState(0);
   const [wrong, setWrong] = useState(0);
   const [rewardShown, setRewardShown] = useState(false);
+  const [loadedSession, setLoadedSession] = useState(false);
+  const [resumed, setResumed] = useState(false);
   const item = items[index];
   const finished = items.length > 0 && index >= items.length;
   const allCorrect = items.length > 0 && correct === items.length && wrong === 0;
   const reward = sectionReward(section);
+
+  useEffect(() => {
+    if (items.length === 0) return;
+    const saved = getTestSession(sessionKey);
+    if (saved && saved.itemIds.join("|") === items.map((i) => i.id).join("|")) {
+      setIndex(Math.min(saved.index, items.length));
+      setShown(saved.shown);
+      setCorrect(saved.correct);
+      setWrong(saved.wrong);
+      setResumed(saved.index > 0 || saved.correct > 0 || saved.wrong > 0);
+    } else {
+      setIndex(0);
+      setShown(false);
+      setCorrect(0);
+      setWrong(0);
+      setResumed(false);
+    }
+    setLoadedSession(true);
+  }, [items, sessionKey]);
+
+  useEffect(() => {
+    if (!loadedSession || items.length === 0 || finished) return;
+    saveTestSession({
+      key: sessionKey,
+      verbId: verb.id,
+      section,
+      itemIds: items.map((i) => i.id),
+      index,
+      shown,
+      correct,
+      wrong
+    });
+  }, [loadedSession, items, finished, sessionKey, verb.id, section, index, shown, correct, wrong]);
+
+  const restart = () => {
+    clearTestSession(sessionKey);
+    setIndex(0);
+    setShown(false);
+    setCorrect(0);
+    setWrong(0);
+    setRewardShown(false);
+    setResumed(false);
+  };
 
   const next = () => {
     setShown(false);
@@ -73,12 +122,17 @@ export default function InstantTest({
   };
 
   useEffect(() => {
+    if (finished) clearTestSession(sessionKey);
     if (finished && allCorrect && !reviewMode && !rewardShown) {
       setRewardShown(true);
       if (section === "all") recordVerbMastery(verb.id);
       else recordSectionClear(verb.id, section, reward);
     }
-  }, [finished, allCorrect, reviewMode, rewardShown, section, verb.id, reward]);
+  }, [finished, allCorrect, reviewMode, rewardShown, section, verb.id, reward, sessionKey]);
+
+  if (!loadedSession && items.length > 0) {
+    return <div className="card p-6 text-muted">テストを読み込んでいます...</div>;
+  }
 
   if (!item || finished) {
     return (
@@ -121,6 +175,12 @@ export default function InstantTest({
         <p className="text-sm text-muted">{reviewMode ? "復習" : sectionName(section)}</p>
         <h1 className="mt-1 text-3xl font-bold">{title || <><span className="verb-red">{verb.word}</span> 日本語 → 英語</>}</h1>
         <p className="mt-2 text-muted">{description || "日本語を見て、すぐ英語で言ってから答えを確認します。"}</p>
+        {resumed && (
+          <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-slate-950/60 p-4 text-sm text-cyan-100">
+            前回の続きから再開しています。
+            <button type="button" onClick={restart} className="ml-2 font-bold underline">最初からやり直す</button>
+          </div>
+        )}
       </div>
 
       <div className="card p-6">
@@ -131,7 +191,7 @@ export default function InstantTest({
         <div className="mt-8 rounded-2xl bg-slate-950/60 p-5">
           <p className="text-sm font-bold text-muted">日本語</p>
           <p className="mt-2 text-2xl font-bold leading-relaxed">{item.ja}</p>
-          <div className="mt-4"><SpeakButton text={item.ja} label="通常" slowLabel="ゆっくり" lang="ja-JP" rate={0.95} slowRate={0.5} /></div>
+          <p className="mt-4 text-xs text-slate-400">英語で言ってから「答えを見る」を押します。</p>
         </div>
         {!shown ? (
           <div className="mt-8 space-y-5">
@@ -150,7 +210,7 @@ export default function InstantTest({
               <p className="text-sm font-bold text-muted">正解</p>
               <p className="mt-2 text-xl font-bold">{item.en}</p>
               <p className="mt-2 text-sm text-muted">型：{item.pattern}</p>
-              <div className="mt-4"><SpeakButton text={item.en} label="通常" slowLabel="ゆっくり" /></div>
+              <div className="mt-4"><SpeakButton text={item.en} label="通常" slowLabel="ゆっくり" lang="en-US" /></div>
             </div>
             <div className="grid grid-cols-2 gap-3">
               <button onClick={() => mark(true)} className="btn bg-green-600 text-white">○ できた</button>

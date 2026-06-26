@@ -55,6 +55,18 @@ export type SavedPhrase = {
   savedAt: string;
 };
 
+export type TestSession = {
+  key: string;
+  verbId: string;
+  section: string;
+  itemIds: string[];
+  index: number;
+  shown: boolean;
+  correct: number;
+  wrong: number;
+  updatedAt: string;
+};
+
 export type UserProgress = {
   username: string;
   xp: number;
@@ -73,6 +85,7 @@ export type UserProgress = {
   sectionClearIds?: string[];
   bookmark?: StudyBookmark;
   savedPhrases?: SavedPhrase[];
+  testSessions?: Record<string, TestSession>;
   lastStudyDate?: string;
   lastLoginAt?: string;
 };
@@ -211,6 +224,7 @@ function normalizeProgress(progress: UserProgress) {
   if (!progress.reviewItems) progress.reviewItems = {};
   if (!progress.sectionClearIds) progress.sectionClearIds = [];
   if (!progress.savedPhrases) progress.savedPhrases = [];
+  if (!progress.testSessions) progress.testSessions = {};
   normalizeMission(progress);
   return progress;
 }
@@ -234,7 +248,8 @@ export function ensureProgress(username: string): UserProgress {
       dailyMission: createDailyMission(),
       missionCompletedCount: 0,
       sectionClearIds: [],
-      savedPhrases: []
+      savedPhrases: [],
+      testSessions: {}
     };
     saveProgressMap(map);
   }
@@ -607,4 +622,30 @@ export function clearSavedPhrases() {
   progress.savedPhrases = [];
   saveProgress(progress);
   return progress.savedPhrases;
+}
+
+
+export function saveTestSession(session: Omit<TestSession, "updatedAt">) {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  progress.testSessions = progress.testSessions || {};
+  progress.testSessions[session.key] = { ...session, updatedAt: nowText() };
+  saveProgress(progress);
+  return progress.testSessions[session.key];
+}
+
+export function getTestSession(key: string) {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  return progress.testSessions?.[key] ?? null;
+}
+
+export function clearTestSession(key: string) {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  if (progress.testSessions?.[key]) {
+    delete progress.testSessions[key];
+    saveProgress(progress);
+  }
+  return progress.testSessions ?? {};
 }

@@ -1,14 +1,11 @@
 import Link from "next/link";
-import { getVerb, verbs } from "@/lib/data";
+import { getVerb } from "@/lib/data";
 import SpeakButton from "@/components/SpeakButton";
 import ExampleCard from "@/components/ExampleCard";
 import PremiumExamples from "@/components/PremiumExamples";
 import AutoBookmark from "@/components/AutoBookmark";
 import BookmarkButton from "@/components/BookmarkButton";
 
-export function generateStaticParams() {
-  return verbs.map((verb) => ({ id: verb.id }));
-}
 
 export default async function VerbIdiomsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

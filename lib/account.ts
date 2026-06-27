@@ -67,6 +67,24 @@ export type TestSession = {
   updatedAt: string;
 };
 
+export type WeeklyStats = {
+  weekKey: string;
+  loginDays: string[];
+  masteredVerbIds: string[];
+  xp: number;
+  studyMinutes: number;
+};
+
+export type LeagueRow = {
+  username: string;
+  currentStreak: number;
+  masteredCount: number;
+  weeklyXp: number;
+  weeklyStudyMinutes: number;
+  mvpScore: number;
+  badges: string[];
+};
+
 export type UserProgress = {
   username: string;
   xp: number;
@@ -86,6 +104,8 @@ export type UserProgress = {
   bookmark?: StudyBookmark;
   savedPhrases?: SavedPhrase[];
   testSessions?: Record<string, TestSession>;
+  weeklyStats?: Record<string, WeeklyStats>;
+  badges?: string[];
   unlockedVerbCount?: number;
   purchaseTotalYen?: number;
   lastStudyDate?: string;
@@ -102,6 +122,48 @@ function todayKey() {
 
 function nowText() {
   return new Date().toISOString();
+}
+
+function weekKey(date = new Date()) {
+  const target = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const dayNumber = target.getUTCDay() || 7;
+  target.setUTCDate(target.getUTCDate() + 4 - dayNumber);
+  const yearStart = new Date(Date.UTC(target.getUTCFullYear(), 0, 1));
+  const weekNumber = Math.ceil((((target.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
+  return `${target.getUTCFullYear()}-W${String(weekNumber).padStart(2, "0")}`;
+}
+
+function currentWeekKey() {
+  return weekKey(new Date());
+}
+
+function getWeeklyStats(progress: UserProgress, key = currentWeekKey()) {
+  progress.weeklyStats = progress.weeklyStats || {};
+  if (!progress.weeklyStats[key]) {
+    progress.weeklyStats[key] = { weekKey: key, loginDays: [], masteredVerbIds: [], xp: 0, studyMinutes: 0 };
+  }
+  return progress.weeklyStats[key];
+}
+
+function recordWeeklyLogin(progress: UserProgress) {
+  const stats = getWeeklyStats(progress);
+  const today = todayKey();
+  if (!stats.loginDays.includes(today)) stats.loginDays.push(today);
+}
+
+function addWeeklyXp(progress: UserProgress, xp: number) {
+  const stats = getWeeklyStats(progress);
+  stats.xp += Math.max(0, xp);
+}
+
+function addStudyMinutes(progress: UserProgress, minutes = 1) {
+  const stats = getWeeklyStats(progress);
+  stats.studyMinutes += Math.max(0, minutes);
+}
+
+function addWeeklyMasteredVerb(progress: UserProgress, verbId: string) {
+  const stats = getWeeklyStats(progress);
+  if (!stats.masteredVerbIds.includes(verbId)) stats.masteredVerbIds.push(verbId);
 }
 
 function addDays(days: number) {
@@ -191,6 +253,7 @@ export function loginAccount(username: string, password: string) {
   setCurrentUser(account.username);
   const progress = ensureProgress(account.username);
   progress.lastLoginAt = loginAt;
+  recordWeeklyLogin(progress);
   saveProgress(progress);
   return { ok: true, message: "ログインしました。" };
 }
@@ -227,6 +290,9 @@ function normalizeProgress(progress: UserProgress) {
   if (!progress.sectionClearIds) progress.sectionClearIds = [];
   if (!progress.savedPhrases) progress.savedPhrases = [];
   if (!progress.testSessions) progress.testSessions = {};
+  if (!progress.weeklyStats) progress.weeklyStats = {};
+  if (!progress.badges) progress.badges = [];
+  recordWeeklyLogin(progress);
   if (typeof progress.unlockedVerbCount !== "number") progress.unlockedVerbCount = 0;
   if (typeof progress.purchaseTotalYen !== "number") progress.purchaseTotalYen = 0;
   normalizeMission(progress);
@@ -254,6 +320,8 @@ export function ensureProgress(username: string): UserProgress {
       sectionClearIds: [],
       savedPhrases: [],
       testSessions: {},
+      weeklyStats: {},
+      badges: [],
       unlockedVerbCount: 0,
       purchaseTotalYen: 0
     };
@@ -291,12 +359,18 @@ export function recordStudy(verbId: string, totalVerbs: number) {
   if (!progress) return null;
   updateStreak(progress);
   progress.xp += 10;
+  addWeeklyXp(progress, 10);
+  addStudyMinutes(progress, 2);
   progress.totalStudied += 1;
-  if (!progress.studiedVerbIds.includes(verbId)) progress.studiedVerbIds.push(verbId);
+  if (!progress.studiedVerbIds.includes(verbId)) {
+    progress.studiedVerbIds.push(verbId);
+    addWeeklyMasteredVerb(progress, verbId);
+  }
   if (progress.studiedVerbIds.length >= totalVerbs) {
     progress.currentRound += 1;
     progress.studiedVerbIds = [];
     progress.xp += 100;
+    addWeeklyXp(progress, 100);
   }
   saveProgress(progress);
   return progress;
@@ -312,6 +386,8 @@ export function recordTestResult(verbId: string, itemId: string, correct: boolea
   if (correct) {
     progress.testCorrect += 1;
     progress.xp += 5;
+    addWeeklyXp(progress, 5);
+    addStudyMinutes(progress, 1);
     progress.weakItems = progress.weakItems.filter((id) => id !== itemId);
     const mission = normalizeMission(progress);
     const task = mission.tasks.find((t) => t.verbId === verbId);
@@ -320,6 +396,7 @@ export function recordTestResult(verbId: string, itemId: string, correct: boolea
       mission.completed = true;
       mission.rewardClaimed = true;
       progress.xp += DAILY_MISSION_REWARD_XP;
+      addWeeklyXp(progress, DAILY_MISSION_REWARD_XP);
       progress.missionCompletedCount = (progress.missionCompletedCount || 0) + 1;
     }
     if (existing) {
@@ -330,6 +407,7 @@ export function recordTestResult(verbId: string, itemId: string, correct: boolea
     }
   } else {
     progress.testWrong += 1;
+    addStudyMinutes(progress, 1);
     const wrongCount = (existing?.wrongCount || 0) + 1;
     progress.weakItems = Array.from(new Set([...progress.weakItems, itemId]));
     progress.reviewItems[itemId] = {
@@ -406,6 +484,54 @@ export function formatDate(value?: string) {
 
 export function getAllProgress() {
   return Object.values(progressMap()).map(normalizeProgress).sort((a, b) => b.xp - a.xp);
+}
+
+export function getCurrentWeekKey() {
+  return currentWeekKey();
+}
+
+export function getComputedBadges(progress: UserProgress) {
+  const badges: string[] = [];
+  if (progress.currentStreak >= 7) badges.push("🔥 7日継続");
+  if (progress.currentStreak >= 30) badges.push("🔥 30日継続");
+  if (progress.currentStreak >= 100) badges.push("💎 100日継続");
+  if ((progress.studiedVerbIds || []).length >= 5) badges.push("📚 5動詞習得");
+  if ((progress.studiedVerbIds || []).length >= 30) badges.push("🏆 30動詞習得");
+  if ((progress.testCorrect || 0) >= 100) badges.push("🎯 100問正解");
+  if ((progress.savedPhrases || []).length >= 10) badges.push("⭐ 10フレーズ保存");
+  return badges;
+}
+
+export function getLeagueRows() {
+  const key = currentWeekKey();
+  return getAllProgress().map((progress) => {
+    const stats = progress.weeklyStats?.[key] || { weekKey: key, loginDays: [], masteredVerbIds: [], xp: 0, studyMinutes: 0 };
+    const masteredCount = stats.masteredVerbIds.length;
+    const weeklyXp = stats.xp;
+    const weeklyStudyMinutes = stats.studyMinutes;
+    const mvpScore = weeklyXp + masteredCount * 100 + stats.loginDays.length * 50 + weeklyStudyMinutes * 5;
+    return {
+      username: progress.username,
+      currentStreak: progress.currentStreak || 0,
+      masteredCount,
+      weeklyXp,
+      weeklyStudyMinutes,
+      mvpScore,
+      badges: getComputedBadges(progress)
+    };
+  });
+}
+
+export function getLeagueRanking(type: "streak" | "mastered" | "xp" | "minutes" | "mvp") {
+  const rows = getLeagueRows();
+  const value = (row: LeagueRow) => {
+    if (type === "streak") return row.currentStreak;
+    if (type === "mastered") return row.masteredCount;
+    if (type === "minutes") return row.weeklyStudyMinutes;
+    if (type === "mvp") return row.mvpScore;
+    return row.weeklyXp;
+  };
+  return rows.sort((a, b) => value(b) - value(a));
 }
 
 
@@ -541,8 +667,11 @@ export function recordVerbMastery(verbId: string) {
   updateStreak(progress);
   if (!progress.studiedVerbIds.includes(verbId)) {
     progress.studiedVerbIds.push(verbId);
+    addWeeklyMasteredVerb(progress, verbId);
     progress.totalStudied += 1;
     progress.xp += 100;
+    addWeeklyXp(progress, 100);
+    addStudyMinutes(progress, 5);
   }
   saveProgress(progress);
   return progress;
@@ -558,6 +687,8 @@ export function recordSectionClear(verbId: string, section: string, xp: number) 
   if (!progress.sectionClearIds.includes(key)) {
     progress.sectionClearIds.push(key);
     progress.xp += xp;
+    addWeeklyXp(progress, xp);
+    addStudyMinutes(progress, 3);
   }
   saveProgress(progress);
   return progress;

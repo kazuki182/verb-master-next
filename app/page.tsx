@@ -286,6 +286,7 @@ export default function Home() {
         <Link className="card block p-5 font-bold" href="/profile">進捗</Link>
         <Link className="card block p-5 font-bold" href="/study-method">勉強方法</Link>
         <Link className="card block p-5 font-bold" href="/phrase-book">フレーズ帳</Link>
+        <Link className="card block p-5 font-bold" href="/league">週間ランキング</Link>
       </section>
 
       <section className="card p-5">

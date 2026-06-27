@@ -15,7 +15,7 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
   return (
     <div className="space-y-5 pb-4">
       <header className="card p-5 sm:p-6">
-        <p className="text-sm text-muted">STEP 1 / 3　基本動詞</p>
+        <p className="text-sm text-muted">No.{String(verb.rank).padStart(2, "0")}　STEP 1 / 3　基本動詞</p>
         <h1 className="mt-2 text-5xl font-bold tracking-tight verb-red sm:text-6xl">{verb.word}</h1>
         <div className="mt-3 grid gap-2 text-sm text-muted">
           <p>音節：{verb.syllable}</p>
@@ -63,7 +63,7 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
       <VerbProgressPanel verb={verb} />
 
       <section className="card p-5 sm:p-6">
-        <h2 className="text-xl font-bold">GET攻略フロー</h2>
+        <h2 className="text-xl font-bold">{verb.word}攻略フロー</h2>
         <div className="mt-4 grid grid-cols-3 gap-2 text-center text-sm">
           <div className="rounded-2xl bg-cyan-400/10 p-3 font-bold text-cyan-100">1<br />基本</div>
           <Link href={`/verbs/${verb.id}/idioms`} className="rounded-2xl bg-white/5 p-3 font-bold text-muted">2<br />熟語</Link>

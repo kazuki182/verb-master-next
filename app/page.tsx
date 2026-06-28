@@ -6,7 +6,9 @@ import { getVerb, verbs } from "@/lib/data";
 import VerbProgressPanel, {
   getTotalVerbProgress,
 } from "@/components/VerbProgressPanel";
+import BadgeList from "@/components/BadgeList";
 import {
+  getComputedBadges,
   getCurrentProgress,
   getCurrentUsername,
   getDueReviewItems,
@@ -50,6 +52,7 @@ export default function Home() {
   const [paceDays, setPaceDays] = useState(3);
   const [paceVerbs, setPaceVerbs] = useState(1);
   const [paceSaveMessage, setPaceSaveMessage] = useState("");
+  const [paceSaving, setPaceSaving] = useState(false);
 
   useEffect(() => {
     initAdminAccount();
@@ -110,6 +113,7 @@ export default function Home() {
     setTargetDate(target);
     setProgress(getCurrentProgress());
     setSaveMessage("保存しました");
+    window.setTimeout(() => setSaveMessage(""), 2500);
   };
 
   const updateStudyMode = (
@@ -138,9 +142,12 @@ export default function Home() {
   };
 
   const saveStudyPace = () => {
+    setPaceSaving(true);
     setStudyPaceSetting({ days: paceDays, verbs: paceVerbs });
     setProgress(getCurrentProgress());
-    setPaceSaveMessage("学習ペースを保存しました");
+    setPaceSaveMessage("保存しました");
+    window.setTimeout(() => setPaceSaving(false), 350);
+    window.setTimeout(() => setPaceSaveMessage(""), 2500);
   };
 
   const paceMessage =
@@ -158,6 +165,15 @@ export default function Home() {
         : "text-cyan-200";
   const selectedPaceTone =
     plan.selectedPaceStatus === "ok" ? "text-emerald-300" : "text-amber-300";
+  const selectedPaceSummary =
+    plan.selectedPaceStatus === "ok"
+      ? `現在の設定なら、目標日までに${plan.selectedPaceCapacity}動詞まで学習できます。`
+      : `現在の設定では、目標日までに${plan.selectedPaceCapacity}動詞までの見込みです。`;
+  const selectedPaceResult =
+    plan.selectedPaceStatus === "ok"
+      ? `残り${plan.remaining}動詞に対して、${Math.max(0, plan.selectedPaceDiff)}動詞分の余裕があります。`
+      : `残り${plan.remaining}動詞に対して、あと${Math.abs(plan.selectedPaceDiff)}動詞分ペースアップが必要です。`;
+  const badges = getComputedBadges(progress);
 
   return (
     <div className="space-y-5 pb-28">
@@ -339,9 +355,9 @@ export default function Home() {
                 1日1語に固定せず、生活に合わせて設定できます。
               </p>
             </div>
-            {paceMessage && (
-              <span className="shrink-0 text-xs font-bold text-cyan-200">
-                {paceMessage}
+            {paceSaveMessage && (
+              <span className="shrink-0 rounded-full border border-cyan-300/30 px-3 py-1 text-xs font-bold text-cyan-200">
+                {paceSaveMessage}
               </span>
             )}
           </div>
@@ -371,23 +387,31 @@ export default function Home() {
           </div>
           <button
             type="button"
-            className="mt-3 w-full rounded-xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950"
+            className="mt-3 w-full rounded-xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950 transition active:scale-[0.99]"
             onClick={saveStudyPace}
+            disabled={paceSaving}
           >
-            学習ペースを保存
+            {paceSaving ? "保存中..." : paceSaveMessage ? "保存しました" : "学習ペースを保存"}
           </button>
           <div className="mt-3 rounded-xl bg-slate-900/80 p-3 text-sm">
-            <p>
-              保存中のペース：
-              <span className="font-bold text-white">
-                {plan.selectedPaceLabel}
-              </span>
+            <p className="text-slate-300">現在の学習設定</p>
+            <p className="mt-1 text-lg font-extrabold text-white">
+              {plan.selectedPaceLabel}
             </p>
-            <p className={`mt-1 font-bold ${selectedPaceTone}`}>
-              {plan.selectedPaceStatus === "ok"
-                ? `このペースなら目標までに進めます（余裕 ${Math.max(0, plan.selectedPaceDiff)}語）`
-                : `このペースだと目標までに${Math.abs(plan.selectedPaceDiff)}語不足します`}
+            <div className="mt-3 grid gap-2 rounded-xl border border-cyan-300/10 bg-slate-950/70 p-3">
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-slate-400">目標までに学習できる見込み</span>
+                <span className="font-bold text-white">{plan.selectedPaceCapacity}動詞</span>
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-slate-400">残りの動詞</span>
+                <span className="font-bold text-white">{plan.remaining}動詞</span>
+              </div>
+            </div>
+            <p className={`mt-3 font-bold ${selectedPaceTone}`}>
+              {selectedPaceSummary}
             </p>
+            <p className="mt-1 text-slate-300">{selectedPaceResult}</p>
           </div>
         </div>
 
@@ -418,6 +442,21 @@ export default function Home() {
           <p className="mt-2 text-xs text-slate-400">
             変更後は保存ボタンを押すと反映されます。
           </p>
+        </div>
+      </section>
+
+      <section className="card p-5">
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <p className="text-sm font-bold text-cyan-200">最近のバッジ</p>
+            <p className="mt-1 text-sm text-slate-300">継続・正解・MASTERで自動獲得します。</p>
+          </div>
+          <Link className="shrink-0 text-sm font-bold text-cyan-100" href="/profile">
+            すべて見る
+          </Link>
+        </div>
+        <div className="mt-4">
+          <BadgeList badges={badges} compact emptyText="まだバッジはありません。まずは1問正解を目指しましょう。" />
         </div>
       </section>
 

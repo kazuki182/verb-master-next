@@ -615,16 +615,33 @@ export function getCurrentWeekKey() {
 
 export function getComputedBadges(progress: UserProgress) {
   const badges: string[] = [];
+  const studiedCount = (progress.studiedVerbIds || []).length;
+  const sectionClearCount = (progress.sectionClearIds || []).length;
+  const phraseCount = (progress.savedPhrases || []).length;
+  const correctCount = progress.testCorrect || 0;
+
+  if (progress.totalStudied > 0 || sectionClearCount > 0 || correctCount > 0)
+    badges.push("🏁 初回学習");
+
   if (progress.currentStreak >= 7) badges.push("🔥 7日継続");
   if (progress.currentStreak >= 30) badges.push("🔥 30日継続");
   if (progress.currentStreak >= 100) badges.push("💎 100日継続");
-  if ((progress.studiedVerbIds || []).length >= 5) badges.push("📚 5動詞習得");
-  if ((progress.studiedVerbIds || []).length >= 30)
-    badges.push("🏆 30動詞習得");
-  if ((progress.testCorrect || 0) >= 100) badges.push("🎯 100問正解");
-  if ((progress.savedPhrases || []).length >= 10)
-    badges.push("⭐ 10フレーズ保存");
-  return badges;
+
+  if (studiedCount >= 1) badges.push("📚 初MASTER");
+  if (studiedCount >= 5) badges.push("📚 5動詞MASTER");
+  if (studiedCount >= 30) badges.push("🏆 30動詞MASTER");
+
+  (progress.studiedVerbIds || []).slice(0, 12).forEach((verbId) => {
+    badges.push(`🎯 ${verbId.toUpperCase()} MASTER`);
+  });
+
+  if (sectionClearCount >= 1) badges.push("💯 初セクションクリア");
+  if (sectionClearCount >= 10) badges.push("💯 10セクションクリア");
+  if (correctCount >= 10) badges.push("✅ 10問正解");
+  if (correctCount >= 100) badges.push("🎯 100問正解");
+  if (phraseCount >= 10) badges.push("⭐ 10フレーズ保存");
+
+  return Array.from(new Set([...(progress.badges || []), ...badges]));
 }
 
 export function getLeagueRows() {

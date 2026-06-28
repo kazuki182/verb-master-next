@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { formatDateTime, getAllProgress, getCurrentProgress, getCurrentUsername, getDueReviewItems, getFutureReviewItems, type UserProgress } from "@/lib/account";
+import { formatDateTime, getAllProgress, getComputedBadges, getCurrentProgress, getCurrentUsername, getDueReviewItems, getFutureReviewItems, type UserProgress } from "@/lib/account";
 import { verbs } from "@/lib/data";
 import VoiceSettingsPanel from "@/components/VoiceSettingsPanel";
+import BadgeList from "@/components/BadgeList";
 
 export default function ProfilePage() {
   const [username, setUsername] = useState<string | null>(null);
@@ -22,6 +23,7 @@ export default function ProfilePage() {
   const percent = Math.round((progress.studiedVerbIds.length / verbs.length) * 100);
   const dueReviewCount = getDueReviewItems().length;
   const futureReviewCount = getFutureReviewItems().length;
+  const badges = getComputedBadges(progress);
 
   return (
     <div className="space-y-5">
@@ -46,11 +48,15 @@ export default function ProfilePage() {
       <VoiceSettingsPanel />
 
       <section className="card p-5">
-        <h2 className="text-xl font-bold">ゲーム実績</h2>
-        <div className="mt-4 grid gap-3">
-          <div className="rounded-xl bg-paper p-4">🏁 初回学習：{progress.totalStudied > 0 ? "達成" : "未達成"}</div>
-          <div className="rounded-xl bg-paper p-4">🔥 3日連続：{progress.currentStreak >= 3 ? "達成" : "挑戦中"}</div>
-          <div className="rounded-xl bg-paper p-4">👑 1周完了：{progress.currentRound > 1 ? "達成" : "挑戦中"}</div>
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <h2 className="text-xl font-bold">獲得バッジ</h2>
+            <p className="mt-1 text-sm text-muted">継続・テスト・動詞MASTERで自動獲得します。</p>
+          </div>
+          <p className="shrink-0 text-2xl font-extrabold text-cyan-100">{badges.length}</p>
+        </div>
+        <div className="mt-4">
+          <BadgeList badges={badges} />
         </div>
       </section>
 

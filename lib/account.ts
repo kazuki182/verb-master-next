@@ -82,6 +82,11 @@ export type WeeklyStats = {
   studyMinutes: number;
 };
 
+export type LeagueAwards = {
+  weeklyMvpWeeks: string[];
+  seasonRanks: Record<string, { bestRank: number; xpRank: number; masteredRank: number; minutesRank: number }>;
+};
+
 export type LeagueRow = {
   username: string;
   currentStreak: number;
@@ -112,6 +117,7 @@ export type UserProgress = {
   savedPhrases?: SavedPhrase[];
   testSessions?: Record<string, TestSession>;
   weeklyStats?: Record<string, WeeklyStats>;
+  leagueAwards?: LeagueAwards;
   badges?: string[];
   voiceSettings?: VoiceSettings;
   unlockedVerbCount?: number;
@@ -335,6 +341,9 @@ function normalizeProgress(progress: UserProgress) {
   if (!progress.savedPhrases) progress.savedPhrases = [];
   if (!progress.testSessions) progress.testSessions = {};
   if (!progress.weeklyStats) progress.weeklyStats = {};
+  if (!progress.leagueAwards) progress.leagueAwards = { weeklyMvpWeeks: [], seasonRanks: {} };
+  if (!progress.leagueAwards.weeklyMvpWeeks) progress.leagueAwards.weeklyMvpWeeks = [];
+  if (!progress.leagueAwards.seasonRanks) progress.leagueAwards.seasonRanks = {};
   if (!progress.badges) progress.badges = [];
   if (!progress.voiceSettings) {
     progress.voiceSettings = { gender: "female", lang: "en-US" };
@@ -370,6 +379,7 @@ export function ensureProgress(username: string): UserProgress {
       savedPhrases: [],
       testSessions: {},
       weeklyStats: {},
+      leagueAwards: { weeklyMvpWeeks: [], seasonRanks: {} },
       badges: [],
       voiceSettings: { gender: "female", lang: "en-US" },
       unlockedVerbCount: 0,
@@ -642,6 +652,88 @@ export function getComputedBadges(progress: UserProgress) {
   if (phraseCount >= 10) badges.push("⭐ 10フレーズ保存");
 
   return Array.from(new Set([...(progress.badges || []), ...badges]));
+}
+
+
+export function getSeasonInfo(date = new Date()) {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const season = month <= 2 ? "Winter" : month <= 5 ? "Spring" : month <= 8 ? "Summer" : "Autumn";
+  const ja = season === "Winter" ? "冬" : season === "Spring" ? "春" : season === "Summer" ? "夏" : "秋";
+  return {
+    key: `${year}-${season}`,
+    label: `Season ${year} ${ja}`,
+    englishLabel: `${year} ${season}`,
+  };
+}
+
+function getValueForLeagueType(row: LeagueRow, type: "streak" | "mastered" | "xp" | "minutes" | "mvp") {
+  if (type === "streak") return row.currentStreak;
+  if (type === "mastered") return row.masteredCount;
+  if (type === "minutes") return row.weeklyStudyMinutes;
+  if (type === "mvp") return row.mvpScore;
+  return row.weeklyXp;
+}
+
+export function getCurrentUserRankInfo(type: "streak" | "mastered" | "xp" | "minutes" | "mvp") {
+  const username = getCurrentUsername();
+  const rows = getLeagueRanking(type);
+  if (!username) return null;
+  const index = rows.findIndex((row) => row.username === username);
+  if (index < 0) return null;
+  const current = rows[index];
+  const previous = rows[index - 1];
+  const currentValue = getValueForLeagueType(current, type);
+  const previousValue = previous ? getValueForLeagueType(previous, type) : null;
+  return {
+    rank: index + 1,
+    total: rows.length,
+    currentValue,
+    pointsToNext: previousValue == null ? 0 : Math.max(0, previousValue - currentValue + 1),
+  };
+}
+
+export function recordWeeklyMvpSnapshot() {
+  if (typeof window === "undefined") return null;
+  const rows = getLeagueRanking("mvp");
+  const winner = rows[0];
+  if (!winner) return null;
+  const map = progressMap();
+  const progress = map[winner.username] ? normalizeProgress(map[winner.username]) : null;
+  if (!progress) return null;
+  const key = currentWeekKey();
+  progress.leagueAwards = progress.leagueAwards || { weeklyMvpWeeks: [], seasonRanks: {} };
+  if (!progress.leagueAwards.weeklyMvpWeeks.includes(key)) {
+    progress.leagueAwards.weeklyMvpWeeks.push(key);
+  }
+  map[winner.username] = progress;
+  saveProgressMap(map);
+  return winner;
+}
+
+export function getWeeklyMvpCount(username?: string) {
+  const target = username || getCurrentUsername();
+  if (!target) return 0;
+  const progress = ensureProgress(target);
+  return progress.leagueAwards?.weeklyMvpWeeks?.length || 0;
+}
+
+export function getSeasonRankSummary(username?: string) {
+  const target = username || getCurrentUsername();
+  const season = getSeasonInfo();
+  if (!target) return null;
+  const xp = getCurrentUserRankInfo("xp");
+  const mastered = getCurrentUserRankInfo("mastered");
+  const minutes = getCurrentUserRankInfo("minutes");
+  const mvp = getCurrentUserRankInfo("mvp");
+  return {
+    season,
+    xpRank: xp?.rank || 0,
+    masteredRank: mastered?.rank || 0,
+    minutesRank: minutes?.rank || 0,
+    mvpRank: mvp?.rank || 0,
+    total: xp?.total || mastered?.total || minutes?.total || mvp?.total || 0,
+  };
 }
 
 export function getLeagueRows() {

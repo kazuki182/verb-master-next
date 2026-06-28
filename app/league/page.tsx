@@ -4,7 +4,10 @@ import { useEffect, useMemo, useState } from "react";
 import {
   getCurrentUsername,
   getCurrentWeekKey,
+  getCurrentUserRankInfo,
   getLeagueRanking,
+  getSeasonInfo,
+  recordWeeklyMvpSnapshot,
   type LeagueRow
 } from "@/lib/account";
 
@@ -15,22 +18,62 @@ function medal(index: number) {
   return `${index + 1}`;
 }
 
-function RankingCard({ title, subtitle, rows, valueLabel }: { title: string; subtitle: string; rows: LeagueRow[]; valueLabel: (row: LeagueRow) => string }) {
+function rankTypeValue(row: LeagueRow, type: "streak" | "mastered" | "xp" | "minutes" | "mvp") {
+  if (type === "streak") return row.currentStreak;
+  if (type === "mastered") return row.masteredCount;
+  if (type === "minutes") return row.weeklyStudyMinutes;
+  if (type === "mvp") return row.mvpScore;
+  return row.weeklyXp;
+}
+
+function RankingCard({
+  title,
+  subtitle,
+  rows,
+  valueLabel,
+  type,
+  username,
+}: {
+  title: string;
+  subtitle: string;
+  rows: LeagueRow[];
+  valueLabel: (row: LeagueRow) => string;
+  type: "streak" | "mastered" | "xp" | "minutes" | "mvp";
+  username: string;
+}) {
   const visible = rows.slice(0, 10);
+  const rankInfo = getCurrentUserRankInfo(type);
+  const unit = type === "xp" ? "XP" : type === "minutes" ? "分" : type === "mastered" ? "語" : type === "streak" ? "日" : "pt";
+
   return (
     <section className="card p-5">
       <div>
         <h2 className="text-xl font-bold">{title}</h2>
         <p className="mt-1 text-sm text-muted">{subtitle}</p>
       </div>
+
+      {rankInfo && (
+        <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-slate-950/70 p-3 text-sm">
+          <p className="font-bold text-cyan-100">現在 {rankInfo.rank}位 / {rankInfo.total}人</p>
+          {rankInfo.pointsToNext > 0 ? (
+            <p className="mt-1 text-cyan-200">あと{rankInfo.pointsToNext}{unit}で順位アップできます。</p>
+          ) : (
+            <p className="mt-1 text-emerald-300">現在トップです。</p>
+          )}
+        </div>
+      )}
+
       <div className="mt-4 space-y-2">
         {visible.length === 0 ? (
           <p className="text-sm text-muted">まだランキングデータがありません。</p>
         ) : (
           visible.map((row, index) => (
-            <div key={`${title}-${row.username}`} className="flex items-center justify-between gap-3 rounded-2xl bg-slate-950/60 p-3">
+            <div
+              key={`${title}-${row.username}`}
+              className={`flex items-center justify-between gap-3 rounded-2xl p-3 ${row.username === username ? "border border-cyan-300/40 bg-cyan-950/50" : "bg-slate-950/60"}`}
+            >
               <div className="min-w-0">
-                <p className="truncate font-bold"><span className="mr-2">{medal(index)}</span>{row.username}</p>
+                <p className="truncate font-bold"><span className="mr-2">{medal(index)}</span>{row.username}{row.username === username ? "（あなた）" : ""}</p>
                 {row.badges.length > 0 && <p className="mt-1 truncate text-xs text-cyan-200">{row.badges.slice(0, 2).join(" / ")}</p>}
               </div>
               <p className="shrink-0 text-right font-extrabold text-cyan-100">{valueLabel(row)}</p>
@@ -45,6 +88,7 @@ function RankingCard({ title, subtitle, rows, valueLabel }: { title: string; sub
 export default function LeaguePage() {
   const [username, setUsername] = useState<string | null>(null);
   const [loaded, setLoaded] = useState(false);
+  const [mvpSaved, setMvpSaved] = useState(false);
 
   useEffect(() => {
     const user = getCurrentUsername();
@@ -53,6 +97,8 @@ export default function LeaguePage() {
       return;
     }
     setUsername(user);
+    recordWeeklyMvpSnapshot();
+    setMvpSaved(true);
     setLoaded(true);
   }, []);
 
@@ -62,8 +108,9 @@ export default function LeaguePage() {
     xp: getLeagueRanking("xp"),
     minutes: getLeagueRanking("minutes"),
     mvp: getLeagueRanking("mvp")
-  }), [loaded]);
+  }), [loaded, mvpSaved]);
 
+  const season = getSeasonInfo();
   const mvp = rankings.mvp[0];
 
   if (!loaded || !username) return <p className="text-muted">リーグを読み込んでいます...</p>;
@@ -75,6 +122,19 @@ export default function LeaguePage() {
         <h1 className="text-3xl font-bold">週間ランキング</h1>
         <p className="text-muted">{getCurrentWeekKey()} / 毎週リセットされます。</p>
       </header>
+
+      <section className="digital-card p-5">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">SEASON</p>
+            <p className="mt-2 text-3xl font-extrabold">{season.label}</p>
+            <p className="mt-2 text-sm text-slate-300">シーズン成績はプロフィールに残ります。</p>
+          </div>
+          <div className="rounded-2xl border border-cyan-300/20 bg-slate-950/60 px-3 py-2 text-center text-xs font-bold text-cyan-100">
+            WEEKLY
+          </div>
+        </div>
+      </section>
 
       <section className="digital-card p-5">
         <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">WEEKLY MVP</p>
@@ -98,6 +158,8 @@ export default function LeaguePage() {
         subtitle="現在の連続学習日数で競います。"
         rows={rankings.streak}
         valueLabel={(row) => `${row.currentStreak}日`}
+        type="streak"
+        username={username}
       />
 
       <RankingCard
@@ -105,6 +167,8 @@ export default function LeaguePage() {
         subtitle="今週MASTERした動詞数で競います。"
         rows={rankings.mastered}
         valueLabel={(row) => `${row.masteredCount}語`}
+        type="mastered"
+        username={username}
       />
 
       <RankingCard
@@ -112,6 +176,8 @@ export default function LeaguePage() {
         subtitle="今週獲得したEXPで競います。"
         rows={rankings.xp}
         valueLabel={(row) => `${row.weeklyXp} XP`}
+        type="xp"
+        username={username}
       />
 
       <RankingCard
@@ -119,6 +185,8 @@ export default function LeaguePage() {
         subtitle="今週の学習時間で競います。"
         rows={rankings.minutes}
         valueLabel={(row) => `${row.weeklyStudyMinutes}分`}
+        type="minutes"
+        username={username}
       />
 
       <section className="card p-5">

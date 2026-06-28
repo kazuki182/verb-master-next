@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { formatDateTime, getAllProgress, getComputedBadges, getCurrentProgress, getCurrentUsername, getDueReviewItems, getFutureReviewItems, type UserProgress } from "@/lib/account";
+import { formatDateTime, getAllProgress, getComputedBadges, getCurrentProgress, getCurrentUsername, getDueReviewItems, getFutureReviewItems, getWeeklyMvpCount, getSeasonRankSummary, type UserProgress } from "@/lib/account";
 import { verbs } from "@/lib/data";
 import VoiceSettingsPanel from "@/components/VoiceSettingsPanel";
 import BadgeList from "@/components/BadgeList";
@@ -24,6 +24,8 @@ export default function ProfilePage() {
   const dueReviewCount = getDueReviewItems().length;
   const futureReviewCount = getFutureReviewItems().length;
   const badges = getComputedBadges(progress);
+  const mvpCount = getWeeklyMvpCount(username);
+  const seasonSummary = getSeasonRankSummary(username);
 
   return (
     <div className="space-y-5">
@@ -43,6 +45,33 @@ export default function ProfilePage() {
         <div className="card p-5"><p className="text-sm text-muted">今日の復習</p><p className="text-2xl font-bold">{dueReviewCount}問</p></div>
         <div className="card p-5"><p className="text-sm text-muted">復習予定</p><p className="text-2xl font-bold">{futureReviewCount}問</p></div>
         <div className="card p-5"><p className="text-sm text-muted">苦手累計</p><p className="text-2xl font-bold">{progress.weakItems.length}</p></div>
+      </section>
+
+
+
+      <section className="digital-card p-5">
+        <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">LEAGUE PROFILE</p>
+        <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+          <div className="digital-panel">
+            <p className="digital-label">Weekly MVP</p>
+            <p className="digital-number text-2xl">{mvpCount}</p>
+            <p className="text-xs text-cyan-200">回</p>
+          </div>
+          <div className="digital-panel">
+            <p className="digital-label">Season</p>
+            <p className="text-lg font-extrabold text-cyan-100">{seasonSummary?.season.label ?? "未参加"}</p>
+          </div>
+          <div className="digital-panel">
+            <p className="digital-label">EXP順位</p>
+            <p className="digital-number text-2xl">{seasonSummary?.xpRank || "-"}</p>
+            <p className="text-xs text-cyan-200">/ {seasonSummary?.total || "-"}人</p>
+          </div>
+          <div className="digital-panel">
+            <p className="digital-label">習得順位</p>
+            <p className="digital-number text-2xl">{seasonSummary?.masteredRank || "-"}</p>
+            <p className="text-xs text-cyan-200">/ {seasonSummary?.total || "-"}人</p>
+          </div>
+        </div>
       </section>
 
       <VoiceSettingsPanel />

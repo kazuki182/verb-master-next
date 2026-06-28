@@ -167,12 +167,16 @@ export default function Home() {
     plan.selectedPaceStatus === "ok" ? "text-emerald-300" : "text-amber-300";
   const selectedPaceSummary =
     plan.selectedPaceStatus === "ok"
-      ? `現在の設定なら、目標日までに${plan.selectedPaceCapacity}動詞まで学習できます。`
-      : `現在の設定では、目標日までに${plan.selectedPaceCapacity}動詞までの見込みです。`;
+      ? "このペースなら目標日に間に合います。"
+      : "このペースだと目標日に間に合いません。";
   const selectedPaceResult =
     plan.selectedPaceStatus === "ok"
-      ? `残り${plan.remaining}動詞に対して、${Math.max(0, plan.selectedPaceDiff)}動詞分の余裕があります。`
-      : `残り${plan.remaining}動詞に対して、あと${Math.abs(plan.selectedPaceDiff)}動詞分ペースアップが必要です。`;
+      ? `残り${plan.remaining}語に対して、目標日までに最大${plan.selectedPaceCapacity}語まで学習できます。`
+      : `目標日までに学習できる見込みは${plan.selectedPaceCapacity}語です。残り${plan.remaining}語なので、あと${Math.abs(plan.selectedPaceDiff)}語分ペースアップが必要です。`;
+  const recommendedAction =
+    plan.selectedPaceStatus === "ok"
+      ? "今の設定のまま進めれば大丈夫です。"
+      : `${plan.recommendedPaceLabel}に近づけると、目標に間に合いやすくなります。`;
   const badges = getComputedBadges(progress);
 
   return (
@@ -393,25 +397,33 @@ export default function Home() {
           >
             {paceSaving ? "保存中..." : paceSaveMessage ? "保存しました" : "学習ペースを保存"}
           </button>
-          <div className="mt-3 rounded-xl bg-slate-900/80 p-3 text-sm">
-            <p className="text-slate-300">現在の学習設定</p>
-            <p className="mt-1 text-lg font-extrabold text-white">
-              {plan.selectedPaceLabel}
-            </p>
-            <div className="mt-3 grid gap-2 rounded-xl border border-cyan-300/10 bg-slate-950/70 p-3">
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-slate-400">目標までに学習できる見込み</span>
-                <span className="font-bold text-white">{plan.selectedPaceCapacity}動詞</span>
+          <div className="mt-3 pace-explain-card text-sm">
+            <p className="text-xs font-bold tracking-[0.16em] text-cyan-200">ペースの見方</p>
+            <div className="mt-3 space-y-3">
+              <div>
+                <p className="text-slate-400">現在の目標</p>
+                <p className="mt-1 font-bold text-white">{plan.targetDate}までに残り{plan.remaining}語を学習する</p>
               </div>
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-slate-400">残りの動詞</span>
-                <span className="font-bold text-white">{plan.remaining}動詞</span>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="rounded-xl bg-slate-950/70 p-3">
+                  <p className="text-slate-400">残り学習日</p>
+                  <p className="mt-1 text-lg font-extrabold text-white">{plan.studyDaysLeft}日</p>
+                </div>
+                <div className="rounded-xl bg-slate-950/70 p-3">
+                  <p className="text-slate-400">必要ペース</p>
+                  <p className="mt-1 text-lg font-extrabold text-white">{plan.recommendedPaceLabel}</p>
+                </div>
               </div>
+              <div className="rounded-xl border border-cyan-300/10 bg-slate-950/70 p-3">
+                <p className="text-slate-400">あなたの設定</p>
+                <p className="mt-1 text-lg font-extrabold text-white">{plan.selectedPaceLabel}</p>
+                <p className={`mt-2 font-bold ${selectedPaceTone}`}>{selectedPaceSummary}</p>
+                <p className="mt-1 leading-6 text-slate-300">{selectedPaceResult}</p>
+              </div>
+              <p className="rounded-xl bg-cyan-300/10 p-3 font-bold leading-6 text-cyan-100">
+                おすすめ：{recommendedAction}
+              </p>
             </div>
-            <p className={`mt-3 font-bold ${selectedPaceTone}`}>
-              {selectedPaceSummary}
-            </p>
-            <p className="mt-1 text-slate-300">{selectedPaceResult}</p>
           </div>
         </div>
 

@@ -26,7 +26,7 @@ import {
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 48";
+const VERSION = "Version 52";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -40,6 +40,33 @@ function formatMinutes(minutes: number) {
   const m = minutes % 60;
   if (h <= 0) return `${m}分`;
   return `${h}時間${m}分`;
+}
+
+function cloudLabel(kind: "profile" | "avatar" | "premium" | "stats", status: CloudSyncStatus | null, hasAvatar = false) {
+  if (!status?.configured) {
+    if (kind === "avatar" && hasAvatar) return "端末内";
+    return "未設定";
+  }
+  const value = status[kind];
+  if (value === "saved") return kind === "avatar" ? "保存済み" : "保存済み";
+  if (value === "local-only") return "端末内";
+  if (value === "error") {
+    if (kind === "avatar") return "Storage確認";
+    return "SQL確認";
+  }
+  if (kind === "avatar" && hasAvatar) return "端末内";
+  return "待機";
+}
+
+function cloudMessage(status: CloudSyncStatus | null) {
+  if (!status) return "保存状態を確認しています。";
+  if (!status.configured) {
+    return "Supabase未設定です。VercelにNEXT_PUBLIC_SUPABASE_URLとNEXT_PUBLIC_SUPABASE_ANON_KEYを入れるとクラウド保存できます。";
+  }
+  if ([status.profile, status.avatar, status.premium, status.stats].includes("error")) {
+    return "Supabase接続はありますが、SQL実行またはStorage bucket作成が未完了の可能性があります。アプリ内データは端末側には残っています。";
+  }
+  return status.message || "保存ボタンでプロフィール・学習記録・Premium状態をクラウドへ保存できます。";
 }
 
 export default function ProfilePage() {
@@ -151,9 +178,9 @@ export default function ProfilePage() {
       </header>
 
       <section className="digital-card p-5">
-        <div className="flex items-center gap-4">
+        <div className="profile-hero flex items-center gap-4">
           <button
-            className="relative h-20 w-20 shrink-0 overflow-hidden rounded-3xl border border-cyan-300/30 bg-slate-900 text-4xl"
+            className="profile-avatar relative h-20 w-20 shrink-0 overflow-hidden rounded-3xl border border-cyan-300/30 bg-slate-900 text-4xl"
             onClick={() => fileRef.current?.click()}
             type="button"
             aria-label="プロフィール画像を変更"
@@ -182,9 +209,9 @@ export default function ProfilePage() {
 
           <div className="min-w-0 flex-1">
             <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">PROFILE</p>
-            <p className="mt-1 truncate text-2xl font-extrabold text-white">{displayName}</p>
-            <p className="mt-1 text-sm text-slate-300">ログインID：{username}</p>
-            <div className="mt-3 grid grid-cols-3 gap-2 text-center text-xs">
+            <p className="profile-name mt-1 truncate text-2xl font-extrabold text-white">{displayName}</p>
+            <p className="profile-login mt-1 text-sm text-slate-300">ログインID：{username}</p>
+            <div className="profile-mini-stats mt-3 grid grid-cols-3 gap-2 text-center text-xs">
               <div className="digital-panel py-2">
                 <p className="digital-label">Lv</p>
                 <p className="font-extrabold text-cyan-100">{progress.level}</p>
@@ -222,7 +249,7 @@ export default function ProfilePage() {
 
       <section className="card p-5">
         <h2 className="text-xl font-bold">学習記録</h2>
-        <div className="mt-4 grid grid-cols-2 gap-3">
+        <div className="mobile-card-grid mt-4 grid grid-cols-2 gap-3">
           <div className="rounded-2xl bg-paper p-4"><p className="text-sm text-muted">学習動詞</p><p className="text-2xl font-bold">{progress.studiedVerbIds.length}/{verbs.length}</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="text-sm text-muted">学習率</p><p className="text-2xl font-bold">{stats.percent}%</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="text-sm text-muted">総テスト数</p><p className="text-2xl font-bold">{stats.totalTests}問</p></div>
@@ -236,7 +263,7 @@ export default function ProfilePage() {
 
       <section className="digital-card p-5">
         <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">LEAGUE & ACHIEVEMENT</p>
-        <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+        <div className="mobile-card-grid mt-4 grid grid-cols-2 gap-3 text-sm">
           <div className="digital-panel">
             <p className="digital-label">Weekly MVP</p>
             <p className="digital-number text-2xl">{mvpCount}</p>
@@ -262,7 +289,7 @@ export default function ProfilePage() {
 
       <section className="digital-card p-5">
         <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">PREMIUM</p>
-        <div className="mt-4 grid grid-cols-2 gap-3 text-center">
+        <div className="mobile-card-grid mt-4 grid grid-cols-2 gap-3 text-center">
           <div className="digital-panel">
             <p className="digital-label">解放済み</p>
             <p className="digital-number text-2xl">{plan.unlocked}</p>
@@ -281,25 +308,32 @@ export default function ProfilePage() {
       </section>
 
       <section className="digital-card p-5">
-        <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">SUPABASE SAVE</p>
-        <h2 className="mt-2 text-xl font-bold text-white">クラウド保存状態</h2>
-        <p className="mt-2 text-sm text-slate-300">プロフィール・学習記録・Premium状態をSupabaseへ保存する準備版です。</p>
-        <div className="mt-4 grid grid-cols-2 gap-3 text-center text-sm">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-bold tracking-[0.18em] text-cyan-200">CLOUD</p>
+            <h2 className="mt-2 text-xl font-bold text-white">クラウド保存</h2>
+          </div>
+          <span className="cloud-status-chip">{cloudStatus?.configured ? "接続あり" : "未設定"}</span>
+        </div>
+        <p className="mt-3 text-sm leading-6 text-slate-300">
+          端末内のデータはそのまま残し、Supabase設定が完了している場合だけクラウドへ同期します。
+        </p>
+        <div className="mobile-card-grid mt-4 grid grid-cols-2 gap-3 text-center text-sm">
           <div className="digital-panel">
             <p className="digital-label">プロフィール</p>
-            <p className="mt-1 font-extrabold text-cyan-100">{cloudStatus?.profile === "saved" ? "保存済み" : cloudStatus?.profile === "error" ? "エラー" : "待機"}</p>
+            <p className="mt-1 font-extrabold text-cyan-100">{cloudLabel("profile", cloudStatus, Boolean(progress.avatarDataUrl))}</p>
           </div>
           <div className="digital-panel">
             <p className="digital-label">画像</p>
-            <p className="mt-1 font-extrabold text-cyan-100">{cloudStatus?.avatar === "saved" ? "Storage保存" : cloudStatus?.avatar === "error" ? "エラー" : progress.avatarDataUrl ? "ローカル" : "未設定"}</p>
+            <p className="mt-1 font-extrabold text-cyan-100">{cloudLabel("avatar", cloudStatus, Boolean(progress.avatarDataUrl))}</p>
           </div>
           <div className="digital-panel">
             <p className="digital-label">Premium</p>
-            <p className="mt-1 font-extrabold text-cyan-100">{cloudStatus?.premium === "saved" ? "保存済み" : cloudStatus?.premium === "error" ? "エラー" : "待機"}</p>
+            <p className="mt-1 font-extrabold text-cyan-100">{cloudLabel("premium", cloudStatus, Boolean(progress.avatarDataUrl))}</p>
           </div>
           <div className="digital-panel">
             <p className="digital-label">学習記録</p>
-            <p className="mt-1 font-extrabold text-cyan-100">{cloudStatus?.stats === "saved" ? "保存済み" : cloudStatus?.stats === "error" ? "エラー" : "待機"}</p>
+            <p className="mt-1 font-extrabold text-cyan-100">{cloudLabel("stats", cloudStatus, Boolean(progress.avatarDataUrl))}</p>
           </div>
         </div>
         <button
@@ -308,10 +342,12 @@ export default function ProfilePage() {
           onClick={() => syncToSupabase()}
           disabled={cloudSyncing}
         >
-          {cloudSyncing ? "Supabaseへ保存中..." : "Supabaseへ保存"}
+          {cloudSyncing ? "保存中..." : "クラウドへ保存"}
         </button>
-        {cloudStatus?.message && <p className="mt-3 text-sm text-cyan-100">{cloudStatus.message}</p>}
-        {cloudStatus?.updatedAt && <p className="mt-1 text-xs text-slate-400">最終同期：{formatDateTime(cloudStatus.updatedAt)}</p>}
+        <p className="mt-3 rounded-2xl border border-cyan-300/15 bg-slate-950/60 p-3 text-sm leading-6 text-cyan-50">
+          {cloudMessage(cloudStatus)}
+        </p>
+        {cloudStatus?.updatedAt && <p className="mt-2 text-xs text-slate-400">最終同期：{formatDateTime(cloudStatus.updatedAt)}</p>}
       </section>
 
       <section className="card p-5">
@@ -351,6 +387,10 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.52</p><p className="mt-1 text-muted">スマホ下タブ、マイページ表示、クラウド保存状態、学習ペース説明を改善。</p></div>
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.51</p><p className="mt-1 text-muted">Stripe Webhook、決済反映、キャンセルページの準備を追加。</p></div>
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.50</p><p className="mt-1 text-muted">Stripe決済モード、決済設定確認、管理画面の決済タブを追加。</p></div>
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.49</p><p className="mt-1 text-muted">購入確認、仮購入完了、購入履歴反映の導線を追加。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.48</p><p className="mt-1 text-muted">購入履歴、購入状態復元、Premium安全確認を追加。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.47</p><p className="mt-1 text-muted">無料3動詞、30/60/90/120動詞解放、Premiumロック判定を強化。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.46</p><p className="mt-1 text-muted">Supabase保存、Storage画像、Premium状態管理の土台を追加。</p></div>

@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja">
       <body>
-        <main className="mx-auto min-h-screen max-w-xl px-5 pb-28 pt-8">{children}</main>
+        <main className="mx-auto min-h-screen max-w-xl px-5 pb-32 pt-8">{children}</main>
         <ScrollButtons />
         <Nav />
       </body>

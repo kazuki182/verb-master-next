@@ -29,7 +29,7 @@ export async function POST(request: Request) {
     params.set("line_items[0][price]", priceId);
     params.set("line_items[0][quantity]", "1");
     params.set("success_url", `${origin}/checkout/complete?plan=${plan.count}&mode=stripe&session_id={CHECKOUT_SESSION_ID}`);
-    params.set("cancel_url", `${origin}/checkout?plan=${plan.count}&canceled=1`);
+    params.set("cancel_url", `${origin}/checkout/cancel?plan=${plan.count}`);
     params.set("metadata[username]", username);
     params.set("metadata[plan_id]", plan.planId);
     params.set("metadata[unlocked_verb_count]", String(plan.count));

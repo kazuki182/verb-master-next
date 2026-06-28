@@ -257,6 +257,15 @@ export default function AdminPage() {
           </div>
 
           <div className="card p-5">
+            <h2 className="text-xl font-bold">Webhook確認</h2>
+            <div className="mt-4 grid gap-3 text-sm">
+              <div className="rounded-2xl bg-paper p-4 font-bold">Webhook URL：/api/stripe/webhook</div>
+              <div className="rounded-2xl bg-paper p-4 font-bold">未登録でもOK：今は仮購入モードで開発できます</div>
+              <div className="rounded-2xl bg-amber-950/30 p-4 text-xs font-bold text-amber-100">Stripe登録後に STRIPE_WEBHOOK_SECRET と SUPABASE_SERVICE_ROLE_KEY をVercelへ設定します。</div>
+            </div>
+          </div>
+
+          <div className="card p-5">
             <h2 className="text-xl font-bold">Stripeプラン定義</h2>
             <div className="mt-4 grid gap-3">
               {PAYMENT_PLANS.map((plan) => (

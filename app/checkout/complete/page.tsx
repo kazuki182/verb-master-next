@@ -32,7 +32,7 @@ export default function CheckoutCompletePage() {
   const [targetPlan, setTargetPlan] = useState(30);
   const [mode, setMode] = useState("mock");
   const [sessionId, setSessionId] = useState("");
-  const [message, setMessage] = useState("購入状態を反映しています...");
+  const [message, setMessage] = useState("購入状態を確認しています...");
   const [summary, setSummary] = useState(getPurchasePlanSummary());
 
   useEffect(() => {
@@ -57,18 +57,18 @@ export default function CheckoutCompletePage() {
       return;
     }
 
-    const note = paymentMode === "stripe"
-      ? `Stripe Checkout戻り：${plan.label}を反映しました。session=${stripeSessionId || "未取得"}。Webhook検証は次工程で接続します。`
-      : `仮購入：${plan.label}を反映しました。正式決済接続前の確認用です。`;
+    if (paymentMode === "stripe") {
+      setSummary(before);
+      setMessage(
+        "Stripeから戻りました。Ver.51以降はWebhookで支払い完了を検証してから解放します。購入履歴・復元ページでSupabaseから復元してください。",
+      );
+      return;
+    }
 
-    const progress = setUserUnlockLevel(
-      user,
-      planCount,
-      paymentMode === "stripe" ? "stripe_ready" : "checkout_ready",
-      note,
-    );
+    const note = `仮購入：${plan.label}を反映しました。正式決済接続前の確認用です。`;
+    const progress = setUserUnlockLevel(user, planCount, "checkout_ready", note);
     setSummary(getPurchasePlanSummary());
-    setMessage(paymentMode === "stripe" ? "Stripe戻り情報をPremium状態に反映しました。" : "購入履歴とPremium状態に反映しました。");
+    setMessage("購入履歴とPremium状態に反映しました。");
     syncCurrentUserToSupabase(progress).catch(() => undefined);
   }, []);
 
@@ -80,7 +80,9 @@ export default function CheckoutCompletePage() {
     <div className="space-y-5 pb-24">
       <header className="digital-card p-6 text-center">
         <p className="text-sm font-bold tracking-[0.25em] text-cyan-200">COMPLETE</p>
-        <h1 className="mt-3 text-3xl font-black text-white">購入が完了しました</h1>
+        <h1 className="mt-3 text-3xl font-black text-white">
+          {mode === "stripe" ? "決済確認中" : "購入が完了しました"}
+        </h1>
         <p className="mt-3 text-sm text-slate-300">{message}</p>
       </header>
 
@@ -95,23 +97,26 @@ export default function CheckoutCompletePage() {
         </div>
       </section>
 
-      <section className="card p-5">
-        <h2 className="text-xl font-bold">本番決済の注意</h2>
-        <p className="mt-2 text-sm text-muted">
-          Ver.50ではStripeから戻った情報を記録できる形にしています。正式リリース前にはWebhookで支払い完了を検証してから解放する形にします。
-        </p>
-      </section>
+      {mode === "stripe" && (
+        <section className="card p-5">
+          <h2 className="text-xl font-bold">Webhook反映について</h2>
+          <p className="mt-2 text-sm text-muted">
+            本番決済では、画面に戻っただけでは解放しません。Stripe Webhookで支払い完了を検証し、SupabaseのPremium状態を更新します。
+          </p>
+          <Link className="btn btn-primary mt-4 block text-center" href="/purchases">購入状態を復元する</Link>
+        </section>
+      )}
 
       <section className="card p-5">
         <h2 className="text-xl font-bold">次にすること</h2>
         <div className="mt-4 grid gap-3">
-          <Link className="btn btn-primary block text-center" href="/verbs">解放された動詞を学習する</Link>
+          <Link className="btn btn-primary block text-center" href="/verbs">動詞を学習する</Link>
           <Link className="btn btn-soft block text-center" href="/purchases">購入履歴を確認する</Link>
           <Link className="btn btn-soft block text-center" href="/profile">マイページへ戻る</Link>
         </div>
       </section>
 
-      <p className="text-center text-xs text-muted">Verb Master Version 50</p>
+      <p className="text-center text-xs text-muted">Verb Master Version 51</p>
     </div>
   );
 }

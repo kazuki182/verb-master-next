@@ -77,7 +77,7 @@ export default function CheckoutPage() {
         <p className="text-sm font-bold text-cyan-200">CHECKOUT / PAYMENT READY</p>
         <h1 className="mt-2 text-3xl font-black">購入確認</h1>
         <p className="mt-2 text-sm text-slate-300">
-          Ver.50では仮購入モードとStripe決済モードを切り替えられるようにしました。本番前は仮購入で安全に確認できます。
+          Ver.51ではStripe未登録でも仮購入モードで確認できます。Stripe登録後はWebhookで支払い完了を検証してPremiumを反映します。
         </p>
       </header>
 
@@ -90,7 +90,7 @@ export default function CheckoutPage() {
               {paymentMode === "stripe" ? "Stripe Checkoutに接続する準備モードです。" : "今は本番決済を行わない安全な仮購入モードです。"}
             </p>
           </div>
-          <span className="rounded-full bg-cyan-300 px-3 py-1 text-xs font-black text-slate-950">Ver.50</span>
+          <span className="rounded-full bg-cyan-300 px-3 py-1 text-xs font-black text-slate-950">Ver.51</span>
         </div>
         <div className="mt-4 grid gap-2 text-sm">
           <div className="rounded-2xl bg-slate-950/50 p-3 font-bold">公開キー：{readiness.publishableKeyReady ? "設定済み" : "未設定"}</div>
@@ -169,7 +169,7 @@ export default function CheckoutPage() {
         </div>
       </section>
 
-      <p className="text-center text-xs text-muted">Verb Master Version 50</p>
+      <p className="text-center text-xs text-muted">Verb Master Version 51</p>
     </div>
   );
 }

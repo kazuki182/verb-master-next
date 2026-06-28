@@ -1,0 +1,15 @@
+Verb Master Ver.51 Stripe Webhook & Payment Sync
+
+追加内容:
+- Stripe Webhook受け取りAPIを追加: /api/stripe/webhook
+- Stripe署名検証の土台を追加
+- checkout.session.completedでSupabaseのPremium状態を更新する処理を追加
+- payment_events / purchase_events にStripe決済イベントを記録する処理を追加
+- /checkout/cancel を追加
+- Stripe決済戻り後は、Webhook検証後に解放する安全寄りの流れへ変更
+- 管理画面の決済タブにWebhook確認情報を追加
+- supabase/V51_STRIPE_WEBHOOK_PAYMENT_SYNC.sql を追加
+
+注意:
+- Stripe未登録でも問題ありません。今は仮購入モードのまま開発・確認できます。
+- Stripe登録後にVercel環境変数を設定すれば、本番決済テストへ進めます。

@@ -340,25 +340,21 @@ export default function ProfilePage() {
         </div>
       </section>
 
-      <section className="card p-5">
+      <section className="rounded-2xl border border-cyan-300/15 bg-slate-900/45 p-4">
         <div className="flex items-center justify-between gap-3">
-          <div>
-            <h2 className="text-xl font-bold">データ保存</h2>
-            <p className="mt-1 text-sm text-muted">学習記録・プロフィールは自動で保存されます。</p>
+          <div className="min-w-0">
+            <h2 className="text-base font-bold">保存状態</h2>
+            <p className="mt-1 text-sm text-muted">
+              学習データは自動保存されています。
+            </p>
           </div>
-          <span className="cloud-status-chip">{cloudStatus?.configured ? "同期準備OK" : "端末保存"}</span>
+          <span className="shrink-0 rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-bold text-cyan-100">
+            保存済み
+          </span>
         </div>
-        <div className="mt-4 rounded-2xl bg-paper p-4">
-          <p className="font-bold text-cyan-100">
-            {cloudStatus?.configured ? "クラウド同期の準備ができています" : "この端末に保存中です"}
-          </p>
-          <p className="mt-1 text-sm leading-6 text-muted">
-            {cloudStatus?.configured
-              ? "プロフィール変更や購入状態は、必要に応じて自動同期します。"
-              : "ログイン中の端末には学習データが保存されています。クラウド同期は今後の公開準備で有効にします。"}
-          </p>
-          {cloudStatus?.updatedAt && <p className="mt-2 text-xs text-slate-400">最終更新：{formatDateTime(cloudStatus.updatedAt)}</p>}
-        </div>
+        {cloudStatus?.updatedAt && (
+          <p className="mt-2 text-xs text-slate-400">最終更新：{formatDateTime(cloudStatus.updatedAt)}</p>
+        )}
         {isAdmin && (
           <details className="mt-3 rounded-2xl border border-cyan-300/15 bg-slate-950/50 p-3 text-sm">
             <summary className="cursor-pointer font-bold text-cyan-100">開発者用：同期状態</summary>
@@ -418,6 +414,8 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.55</p><p className="mt-1 text-muted">学習ペースと目標日を編集モード式に変更。保存ボタンは編集時だけ表示し、保存後は設定内容だけを表示。</p></div>
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.54</p><p className="mt-1 text-muted">学習ペースと目標日の編集をボタン式にして、保存後は画面がスマートに戻るように改善。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.53</p><p className="mt-1 text-muted">ホーム右上アイコン、ニックネーム編集、マイページのデータ保存表示をスマート化。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.52</p><p className="mt-1 text-muted">スマホ下タブ、マイページ表示、クラウド保存状態、学習ペース説明を改善。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.51</p><p className="mt-1 text-muted">Stripe Webhook、決済反映、キャンセルページの準備を追加。</p></div>

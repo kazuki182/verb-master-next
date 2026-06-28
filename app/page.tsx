@@ -53,6 +53,8 @@ export default function Home() {
   const [paceVerbs, setPaceVerbs] = useState(1);
   const [paceSaveMessage, setPaceSaveMessage] = useState("");
   const [paceSaving, setPaceSaving] = useState(false);
+  const [isPaceEditing, setIsPaceEditing] = useState(false);
+  const [isTargetEditing, setIsTargetEditing] = useState(false);
 
   useEffect(() => {
     initAdminAccount();
@@ -113,6 +115,7 @@ export default function Home() {
     setTargetDate(target);
     setProgress(getCurrentProgress());
     setSaveMessage("保存しました");
+    setIsTargetEditing(false);
     window.setTimeout(() => setSaveMessage(""), 2500);
   };
 
@@ -141,13 +144,28 @@ export default function Home() {
     updateStudyMode("custom", safeNext);
   };
 
+  const cancelStudyPaceEdit = () => {
+    const savedPace = getStudyPaceSetting();
+    setPaceDays(savedPace.days);
+    setPaceVerbs(savedPace.verbs);
+    setPaceSaveMessage("");
+    setIsPaceEditing(false);
+  };
+
   const saveStudyPace = () => {
     setPaceSaving(true);
     setStudyPaceSetting({ days: paceDays, verbs: paceVerbs });
     setProgress(getCurrentProgress());
-    setPaceSaveMessage("保存しました");
+    setPaceSaveMessage("学習ペースを保存しました");
+    setIsPaceEditing(false);
     window.setTimeout(() => setPaceSaving(false), 350);
     window.setTimeout(() => setPaceSaveMessage(""), 2500);
+  };
+
+  const cancelTargetEdit = () => {
+    setTarget(getTargetDate());
+    setSaveMessage("");
+    setIsTargetEditing(false);
   };
 
   const paceMessage =
@@ -365,52 +383,83 @@ export default function Home() {
 
         <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-slate-950/70 p-4">
           <div className="flex items-start justify-between gap-3">
-            <div>
+            <div className="min-w-0">
               <p className="text-xs font-bold tracking-[0.18em] text-cyan-200">
                 自分の学習ペース
               </p>
-              <p className="mt-2 text-sm text-slate-300">
-                1日1語に固定せず、生活に合わせて設定できます。
+              <p className="mt-2 text-2xl font-extrabold text-white">{plan.selectedPaceLabel}</p>
+              <p className="mt-1 text-sm text-slate-300">
+                変更したい時だけ編集できます。
               </p>
             </div>
-            {paceSaveMessage && (
-              <span className="shrink-0 rounded-full border border-cyan-300/30 px-3 py-1 text-xs font-bold text-cyan-200">
-                {paceSaveMessage}
-              </span>
+            {!isPaceEditing && (
+              <button
+                type="button"
+                className="shrink-0 rounded-full border border-cyan-300/25 px-4 py-2 text-xs font-bold text-cyan-100"
+                onClick={() => {
+                  const savedPace = getStudyPaceSetting();
+                  setPaceDays(savedPace.days);
+                  setPaceVerbs(savedPace.verbs);
+                  setIsPaceEditing(true);
+                  setPaceSaveMessage("");
+                }}
+              >
+                編集
+              </button>
             )}
           </div>
-          <div className="mt-3 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] items-center gap-2 text-sm">
-            <input
-              className="date-input-safe min-w-0 rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center font-bold text-white"
-              type="number"
-              min="1"
-              value={paceDays}
-              onChange={(e) => {
-                setPaceDays(Math.max(1, Number(e.target.value) || 1));
-                setPaceSaveMessage("");
-              }}
-            />
-            <span className="text-slate-300">日で</span>
-            <input
-              className="date-input-safe min-w-0 rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center font-bold text-white"
-              type="number"
-              min="1"
-              value={paceVerbs}
-              onChange={(e) => {
-                setPaceVerbs(Math.max(1, Number(e.target.value) || 1));
-                setPaceSaveMessage("");
-              }}
-            />
-            <span className="text-slate-300">語</span>
-          </div>
-          <button
-            type="button"
-            className="mt-3 w-full rounded-xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950 transition active:scale-[0.99]"
-            onClick={saveStudyPace}
-            disabled={paceSaving}
-          >
-            {paceSaving ? "保存中..." : paceSaveMessage ? "保存しました" : "学習ペースを保存"}
-          </button>
+          {isPaceEditing && (
+            <div className="mt-3 rounded-2xl border border-cyan-300/10 bg-slate-950/60 p-3">
+              <p className="mb-3 text-sm font-bold text-cyan-100">何日で何語 学習する？</p>
+              <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] items-center gap-2 text-sm">
+                <input
+                  className="date-input-safe min-w-0 rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center font-bold text-white"
+                  type="number"
+                  min="1"
+                  value={paceDays}
+                  onChange={(e) => {
+                    setPaceDays(Math.max(1, Number(e.target.value) || 1));
+                    setPaceSaveMessage("");
+                  }}
+                />
+                <span className="text-slate-300">日で</span>
+                <input
+                  className="date-input-safe min-w-0 rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center font-bold text-white"
+                  type="number"
+                  min="1"
+                  value={paceVerbs}
+                  onChange={(e) => {
+                    setPaceVerbs(Math.max(1, Number(e.target.value) || 1));
+                    setPaceSaveMessage("");
+                  }}
+                />
+                <span className="text-slate-300">語</span>
+              </div>
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  className="rounded-xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950 transition active:scale-[0.99]"
+                  onClick={saveStudyPace}
+                  disabled={paceSaving}
+                >
+                  {paceSaving ? "保存中..." : "保存"}
+                </button>
+                <button
+                  type="button"
+                  className="rounded-xl border border-cyan-300/20 px-4 py-3 text-sm font-bold text-cyan-100"
+                  onClick={cancelStudyPaceEdit}
+                  disabled={paceSaving}
+                >
+                  キャンセル
+                </button>
+              </div>
+            </div>
+          )}
+          {paceSaveMessage && (
+            <p className="mt-3 rounded-xl bg-cyan-300/10 p-3 text-sm font-bold text-cyan-100">
+              ✅ {paceSaveMessage}
+            </p>
+          )}
           <div className="mt-3 pace-explain-card text-sm">
             <p className="text-xs font-bold tracking-[0.16em] text-cyan-200">ペースの見方</p>
             <div className="mt-3 space-y-3">
@@ -429,9 +478,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="rounded-xl border border-cyan-300/10 bg-slate-950/70 p-3">
-                <p className="text-slate-400">あなたの設定</p>
-                <p className="mt-1 text-lg font-extrabold text-white">{plan.selectedPaceLabel}</p>
-                <p className={`mt-2 font-bold ${selectedPaceTone}`}>{selectedPaceSummary}</p>
+                <p className="text-slate-400">このままだと</p>
+                <p className={`mt-1 font-bold ${selectedPaceTone}`}>{selectedPaceSummary}</p>
                 <p className="mt-1 leading-6 text-slate-300">{selectedPaceResult}</p>
               </div>
               <p className="rounded-xl bg-cyan-300/10 p-3 font-bold leading-6 text-cyan-100">
@@ -441,33 +489,58 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-5 block text-sm text-slate-300">
+        <div className="mt-5 rounded-2xl border border-cyan-300/15 bg-slate-950/50 p-4 text-sm text-slate-300">
           <div className="flex items-center justify-between gap-3">
-            <span>目標日を変更</span>
-            {saveMessage && (
-              <span className="text-xs font-bold text-cyan-200">
-                {saveMessage}
-              </span>
+            <div>
+              <p className="text-xs font-bold tracking-[0.16em] text-cyan-200">目標日</p>
+              <p className="mt-1 text-xl font-extrabold text-white">{plan.targetDate}</p>
+            </div>
+            {!isTargetEditing && (
+              <button
+                type="button"
+                className="rounded-full border border-cyan-300/25 px-4 py-2 text-xs font-bold text-cyan-100"
+                onClick={() => {
+                  setTarget(getTargetDate());
+                  setIsTargetEditing(true);
+                  setSaveMessage("");
+                }}
+              >
+                変更
+              </button>
             )}
           </div>
-          <div className="mt-2 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
-            <input
-              className="date-input-safe block min-w-0 w-full max-w-full box-border rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center text-white"
-              type="date"
-              value={target}
-              onChange={(e) => updateTarget(e.target.value)}
-            />
-            <button
-              type="button"
-              className="shrink-0 rounded-xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950"
-              onClick={saveTarget}
-            >
-              保存
-            </button>
-          </div>
-          <p className="mt-2 text-xs text-slate-400">
-            変更後は保存ボタンを押すと反映されます。
-          </p>
+          {isTargetEditing && (
+            <div className="mt-3 rounded-2xl border border-cyan-300/10 bg-slate-950/60 p-3">
+              <p className="mb-3 text-sm font-bold text-cyan-100">目標日を変更する</p>
+              <input
+                className="date-input-safe block min-w-0 w-full max-w-full box-border rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center text-white"
+                type="date"
+                value={target}
+                onChange={(e) => updateTarget(e.target.value)}
+              />
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  className="rounded-xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950"
+                  onClick={saveTarget}
+                >
+                  保存
+                </button>
+                <button
+                  type="button"
+                  className="rounded-xl border border-cyan-300/20 px-4 py-3 text-sm font-bold text-cyan-100"
+                  onClick={cancelTargetEdit}
+                >
+                  キャンセル
+                </button>
+              </div>
+            </div>
+          )}
+          {saveMessage && (
+            <p className="mt-2 text-xs font-bold text-cyan-200">
+              ✅ {saveMessage}
+            </p>
+          )}
         </div>
       </section>
 

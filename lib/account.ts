@@ -120,6 +120,9 @@ export type UserProgress = {
   leagueAwards?: LeagueAwards;
   badges?: string[];
   voiceSettings?: VoiceSettings;
+  displayName?: string;
+  avatarDataUrl?: string;
+  notificationsEnabled?: boolean;
   unlockedVerbCount?: number;
   purchaseTotalYen?: number;
   lastStudyDate?: string;
@@ -260,6 +263,24 @@ export function initAdminAccount() {
   if (changed) saveAccounts(accounts);
 }
 
+
+export function updateUserProfile(settings: { displayName?: string; avatarDataUrl?: string; notificationsEnabled?: boolean }) {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  if (typeof settings.displayName === "string") {
+    const name = settings.displayName.trim();
+    progress.displayName = name || progress.username;
+  }
+  if (typeof settings.avatarDataUrl === "string") {
+    progress.avatarDataUrl = settings.avatarDataUrl;
+  }
+  if (typeof settings.notificationsEnabled === "boolean") {
+    progress.notificationsEnabled = settings.notificationsEnabled;
+  }
+  saveProgress(progress);
+  return progress;
+}
+
 export function getAccounts(): Account[] {
   if (typeof window === "undefined") return [];
   try {
@@ -353,6 +374,9 @@ function normalizeProgress(progress: UserProgress) {
   if (!progress.voiceSettings) {
     progress.voiceSettings = { gender: "female", lang: "en-US" };
   }
+  if (!progress.displayName) progress.displayName = progress.username;
+  if (typeof progress.notificationsEnabled !== "boolean")
+    progress.notificationsEnabled = true;
   recordWeeklyLogin(progress);
   if (typeof progress.unlockedVerbCount !== "number")
     progress.unlockedVerbCount = 0;
@@ -387,6 +411,9 @@ export function ensureProgress(username: string): UserProgress {
       leagueAwards: { weeklyMvpWeeks: [], seasonRanks: {} },
       badges: [],
       voiceSettings: { gender: "female", lang: "en-US" },
+      displayName: username,
+      avatarDataUrl: "",
+      notificationsEnabled: true,
       unlockedVerbCount: 0,
       purchaseTotalYen: 0,
     };

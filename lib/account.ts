@@ -486,6 +486,46 @@ export function recordTestResult(
   return progress;
 }
 
+
+export function recordReviewResult(
+  verbId: string,
+  itemId: string,
+  correct: boolean,
+) {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  updateStreak(progress);
+  progress.reviewItems = progress.reviewItems || {};
+  const existing = progress.reviewItems[itemId];
+
+  if (correct) {
+    progress.testCorrect += 1;
+    progress.xp += 8;
+    addWeeklyXp(progress, 8);
+    addStudyMinutes(progress, 1);
+    progress.weakItems = progress.weakItems.filter((id) => id !== itemId);
+    if (existing) {
+      delete progress.reviewItems[itemId];
+    }
+  } else {
+    progress.testWrong += 1;
+    addStudyMinutes(progress, 1);
+    const wrongCount = (existing?.wrongCount || 0) + 1;
+    progress.weakItems = Array.from(new Set([...progress.weakItems, itemId]));
+    progress.reviewItems[itemId] = {
+      itemId,
+      verbId,
+      wrongCount,
+      correctCount: existing?.correctCount || 0,
+      nextReviewAt: addDays(nextReviewDelay(wrongCount)),
+      lastAnsweredAt: nowText(),
+      lastResult: "wrong",
+    };
+  }
+  saveProgress(progress);
+  return progress;
+}
+
 export function getDueReviewItems() {
   const progress = getCurrentProgress();
   if (!progress) return [] as ReviewItem[];

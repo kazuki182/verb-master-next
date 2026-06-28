@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getVerb, getTestItemById, getTestItemsForVerb, type TestItem, type TestSection } from "@/lib/data";
 import SpeakButton from "./SpeakButton";
-import { clearTestSession, getTestSession, recordSectionClear, recordTestResult, recordVerbMastery, saveTestSession } from "@/lib/account";
+import { clearTestSession, getTestSession, recordReviewResult, recordSectionClear, recordTestResult, recordVerbMastery, saveTestSession } from "@/lib/account";
 
 type InstantTestProps = {
   verbId?: string;
@@ -141,6 +141,9 @@ export default function InstantTest({
           <p className="text-sm text-muted">{reviewMode ? "復習" : sectionName(section)}</p>
           <h1 className="mt-2 text-3xl font-bold">{reviewMode ? "復習完了" : `${verb.word} テスト完了`}</h1>
           <p className="mt-3 text-muted">できた {correct}問 / だめ {wrong}問</p>
+          {reviewMode && correct > 0 && (
+            <p className="mt-2 text-sm font-bold text-cyan-200">復習で正解した問題は苦手リストから外れます。+8XP</p>
+          )}
           {allCorrect && !reviewMode && (
             <div className="point-card mt-5">
               <p className="text-lg font-bold">満点クリア</p>
@@ -159,7 +162,7 @@ export default function InstantTest({
   }
 
   const mark = (isCorrect: boolean) => {
-    recordTestResult(item.verbId, item.id, isCorrect);
+    reviewMode ? recordReviewResult(item.verbId, item.id, isCorrect) : recordTestResult(item.verbId, item.id, isCorrect);
     if (isCorrect) {
       setCorrect((n) => n + 1);
       next();

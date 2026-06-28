@@ -477,20 +477,22 @@ export default function Home() {
       </section>
 
       <section className="grid grid-cols-1 gap-3">
+        {reviewCount > 0 && (
+          <Link
+            className="card block border-cyan-300/40 bg-cyan-300/10 p-5"
+            href="/review"
+          >
+            <p className="text-sm font-bold text-cyan-200">復習あり</p>
+            <p className="mt-1 text-2xl font-extrabold">{reviewCount}問</p>
+            <p className="mt-1 text-sm text-slate-300">間違えた問題だけを短時間で確認できます。</p>
+          </Link>
+        )}
         <Link
           className="btn btn-primary block text-center text-base"
           href="/verbs"
         >
           学習を始める
         </Link>
-        {reviewCount > 0 && (
-          <Link
-            className="btn btn-soft block text-center text-base"
-            href="/review"
-          >
-            復習する {reviewCount}問
-          </Link>
-        )}
       </section>
 
       <section className="grid grid-cols-2 gap-3">

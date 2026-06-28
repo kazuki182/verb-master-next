@@ -40,14 +40,14 @@ export default function ReviewPage() {
       <header>
         <p className="text-muted">Auto Review</p>
         <h1 className="text-3xl font-bold">自動復習</h1>
-        <p className="mt-2 text-muted">×にした例文を、翌日・3日後・7日後に出し直します。</p>
+        <p className="mt-2 text-muted">×にした例文を集めて、苦手問題だけ復習できます。正解すると苦手リストから外れます。</p>
       </header>
 
       <section className="card p-6">
-        <p className="text-sm font-bold text-muted">今日復習する問題</p>
+        <p className="text-sm font-bold text-muted">苦手問題・復習対象</p>
         <p className="mt-2 text-4xl font-bold">{due.length}問</p>
         <button disabled={due.length === 0} onClick={() => setStart(true)} className="btn btn-primary mt-5 w-full disabled:opacity-40">
-          復習を始める
+          苦手問題を復習する
         </button>
       </section>
 
@@ -62,7 +62,7 @@ export default function ReviewPage() {
                 <div key={review.itemId} className="rounded-2xl bg-paper p-4">
                   <p className="font-bold"><span className="verb-red">{verb.word}</span> / {item?.meaningTitle}</p>
                   <p className="mt-1 text-muted">{item?.ja || review.itemId}</p>
-                  <p className="mt-2 text-sm text-muted">次回予定：{formatDate(review.nextReviewAt)} / 間違い {review.wrongCount}回</p>
+                  <p className="mt-2 text-sm text-muted">復習予定：{formatDate(review.nextReviewAt)} / 間違い {review.wrongCount}回</p>
                 </div>
               );
             })}
@@ -73,7 +73,7 @@ export default function ReviewPage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">今後の復習予定</h2>
         {future.length === 0 ? (
-          <p className="mt-3 text-muted">予定はまだありません。テストで×にすると自動で追加されます。</p>
+          <p className="mt-3 text-muted">予定はまだありません。テストで×にすると自動で復習に追加されます。</p>
         ) : (
           <div className="mt-4 space-y-3">
             {future.slice(0, 8).map((review) => {

@@ -2,6 +2,7 @@ import { supabase } from "@/lib/supabase";
 import {
   FREE_VERB_LIMIT,
   TOTAL_VERB_TARGET,
+  restorePremiumEntitlement,
   type UserProgress,
   type VoiceSettings,
 } from "@/lib/account";
@@ -152,6 +153,7 @@ export async function syncCurrentUserToSupabase(progress: UserProgress): Promise
         unlocked_verb_count: progress.unlockedVerbCount || 0,
         purchase_total_yen: progress.purchaseTotalYen || 0,
         lyrics_english_access: (progress.unlockedVerbCount || 0) >= TOTAL_VERB_TARGET,
+        source: progress.premiumSource || "checkout_ready",
         updated_at: nowText(),
       },
       { onConflict: "username" },
@@ -177,5 +179,43 @@ export async function syncCurrentUserToSupabase(progress: UserProgress): Promise
   } catch (error) {
     const message = error instanceof Error ? error.message : "Supabase保存に失敗しました。";
     return { ...status, message };
+  }
+}
+
+
+export async function restorePremiumFromSupabase(username: string) {
+  if (!supabase) {
+    return { ok: false, message: "Supabase環境変数が未設定です。Vercelの環境変数を確認してください。" };
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from("premium_entitlements")
+      .select("unlocked_verb_count, purchase_total_yen, plan, updated_at")
+      .eq("username", username)
+      .maybeSingle();
+
+    if (error) throw error;
+    if (!data) {
+      return { ok: false, message: "Supabaseに購入状態が見つかりませんでした。" };
+    }
+
+    restorePremiumEntitlement(
+      username,
+      Number(data.unlocked_verb_count || 0),
+      Number(data.purchase_total_yen || 0),
+      `Supabaseから購入状態を復元しました。plan=${data.plan || "unknown"}`
+    );
+
+    return {
+      ok: true,
+      message: `購入状態を復元しました：${Number(data.unlocked_verb_count || 0)}動詞解放`,
+      updatedAt: data.updated_at || nowText(),
+    };
+  } catch (error) {
+    return {
+      ok: false,
+      message: error instanceof Error ? error.message : "購入状態の復元に失敗しました。",
+    };
   }
 }

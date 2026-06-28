@@ -87,6 +87,17 @@ export type LeagueAwards = {
   seasonRanks: Record<string, { bestRank: number; xpRank: number; masteredRank: number; minutesRank: number }>;
 };
 
+export type PurchaseRecord = {
+  id: string;
+  username: string;
+  unlockedVerbCount: number;
+  purchaseTotalYen: number;
+  planLabel: string;
+  source: "admin_test" | "restore" | "checkout_ready";
+  createdAt: string;
+  note?: string;
+};
+
 export type LeagueRow = {
   username: string;
   currentStreak: number;
@@ -125,6 +136,9 @@ export type UserProgress = {
   notificationsEnabled?: boolean;
   unlockedVerbCount?: number;
   purchaseTotalYen?: number;
+  purchaseHistory?: PurchaseRecord[];
+  premiumUpdatedAt?: string;
+  premiumSource?: "admin_test" | "restore" | "checkout_ready";
   lastStudyDate?: string;
   lastLoginAt?: string;
 };
@@ -382,6 +396,9 @@ function normalizeProgress(progress: UserProgress) {
     progress.unlockedVerbCount = 0;
   if (typeof progress.purchaseTotalYen !== "number")
     progress.purchaseTotalYen = 0;
+  if (!progress.purchaseHistory) progress.purchaseHistory = [];
+  if (!progress.premiumUpdatedAt) progress.premiumUpdatedAt = progress.purchaseHistory[0]?.createdAt || progress.lastLoginAt || nowText();
+  if (!progress.premiumSource) progress.premiumSource = progress.purchaseHistory[0]?.source || "checkout_ready";
   normalizeMission(progress);
   return progress;
 }
@@ -416,6 +433,9 @@ export function ensureProgress(username: string): UserProgress {
       notificationsEnabled: true,
       unlockedVerbCount: 0,
       purchaseTotalYen: 0,
+      purchaseHistory: [],
+      premiumUpdatedAt: nowText(),
+      premiumSource: "checkout_ready",
     };
     saveProgressMap(map);
   }
@@ -1250,11 +1270,55 @@ export function canAccessVerbByIndex(index: number) {
   return index < getEffectiveUnlockedVerbCount();
 }
 
-export function setUserUnlockLevel(username: string, unlockedVerbCount: number) {
+function planLabelForCount(count: number) {
+  if (count >= TOTAL_VERB_TARGET) return "全120動詞パック";
+  if (count >= 90) return "90動詞パック";
+  if (count >= 60) return "60動詞パック";
+  if (count >= 30) return "30動詞パック";
+  return "無料プラン";
+}
+
+function createPurchaseRecord(
+  username: string,
+  unlockedVerbCount: number,
+  purchaseTotalYen: number,
+  source: PurchaseRecord["source"],
+  note?: string,
+): PurchaseRecord {
+  const createdAt = nowText();
+  return {
+    id: `${username}-${createdAt}-${unlockedVerbCount}`,
+    username,
+    unlockedVerbCount,
+    purchaseTotalYen,
+    planLabel: planLabelForCount(unlockedVerbCount),
+    source,
+    createdAt,
+    note,
+  };
+}
+
+export function setUserUnlockLevel(
+  username: string,
+  unlockedVerbCount: number,
+  source: PurchaseRecord["source"] = "admin_test",
+  note?: string,
+) {
   const progress = ensureProgress(username);
+  const previousUnlocked = progress.unlockedVerbCount || 0;
   const normalized = Math.max(0, Math.min(TOTAL_VERB_TARGET, Math.floor(unlockedVerbCount)));
+  const purchaseTotal = Math.max(0, Math.ceil(normalized / VERB_PACK_SIZE) * VERB_PACK_PRICE_YEN);
   progress.unlockedVerbCount = normalized;
-  progress.purchaseTotalYen = Math.max(0, Math.ceil(normalized / VERB_PACK_SIZE) * VERB_PACK_PRICE_YEN);
+  progress.purchaseTotalYen = purchaseTotal;
+  progress.premiumUpdatedAt = nowText();
+  progress.premiumSource = source;
+  progress.purchaseHistory = progress.purchaseHistory || [];
+  if (normalized !== previousUnlocked || source === "restore") {
+    progress.purchaseHistory.unshift(
+      createPurchaseRecord(username, normalized, purchaseTotal, source, note || "Premium状態を更新しました。"),
+    );
+    progress.purchaseHistory = progress.purchaseHistory.slice(0, 20);
+  }
   saveProgress(progress);
   return progress;
 }
@@ -1265,7 +1329,43 @@ export function grantThirtyVerbPack(username?: string) {
   const progress = ensureProgress(target);
   const current = progress.unlockedVerbCount || 0;
   const next = Math.min(TOTAL_VERB_TARGET, Math.max(VERB_PACK_SIZE, current + VERB_PACK_SIZE));
-  return setUserUnlockLevel(target, next);
+  return setUserUnlockLevel(target, next, "admin_test", "開発確認用：30動詞パックを反映しました。");
+}
+
+export function getPurchaseHistory(username?: string) {
+  const target = username || getCurrentUsername();
+  if (!target) return [] as PurchaseRecord[];
+  const progress = ensureProgress(target);
+  return [...(progress.purchaseHistory || [])].sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+}
+
+export function restorePremiumEntitlement(
+  username: string,
+  unlockedVerbCount: number,
+  purchaseTotalYen?: number,
+  note = "購入状態を復元しました。",
+) {
+  const normalized = Math.max(0, Math.min(TOTAL_VERB_TARGET, Math.floor(unlockedVerbCount)));
+  const progress = setUserUnlockLevel(username, normalized, "restore", note);
+  if (typeof purchaseTotalYen === "number") {
+    progress.purchaseTotalYen = Math.max(progress.purchaseTotalYen || 0, purchaseTotalYen);
+    saveProgress(progress);
+  }
+  return progress;
+}
+
+export function getPremiumSafetySummary() {
+  const progress = getCurrentProgress();
+  const summary = getPurchasePlanSummary();
+  return {
+    source: progress?.premiumSource || "checkout_ready",
+    updatedAt: progress?.premiumUpdatedAt || progress?.lastLoginAt || "",
+    localUnlocked: progress?.unlockedVerbCount || 0,
+    effectiveUnlocked: summary.unlocked,
+    purchaseTotal: summary.purchaseTotal,
+    historyCount: progress?.purchaseHistory?.length || 0,
+    isConsistent: summary.unlocked >= FREE_VERB_LIMIT && summary.unlocked <= TOTAL_VERB_TARGET,
+  };
 }
 
 export function getVoiceSettings(): VoiceSettings {

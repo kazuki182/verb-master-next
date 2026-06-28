@@ -26,7 +26,7 @@ import {
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 46";
+const VERSION = "Version 48";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -274,7 +274,10 @@ export default function ProfilePage() {
             <p className="text-xs text-cyan-200">買い切り</p>
           </div>
         </div>
-        <Link className="btn btn-primary mt-4 block text-center" href="/upgrade">アップグレード</Link>
+        <div className="mt-4 grid gap-3">
+          <Link className="btn btn-primary block text-center" href="/upgrade">アップグレード</Link>
+          <Link className="btn btn-soft block text-center" href="/purchases">購入履歴・復元</Link>
+        </div>
       </section>
 
       <section className="digital-card p-5">
@@ -325,7 +328,8 @@ export default function ProfilePage() {
           </button>
           <div className="rounded-2xl bg-paper p-4">
             <p className="font-bold">バックアップ / 復元</p>
-            <p className="mt-1 text-sm text-muted">Ver.46でSupabase保存ボタンを追加しました。既存データは消さず、ローカル保存とクラウド同期を併用します。</p>
+            <p className="mt-1 text-sm text-muted">Supabase保存と購入状態の復元に対応しました。既存データは消さず、ローカル保存とクラウド同期を併用します。</p>
+            <Link className="mt-3 inline-block text-sm font-bold text-cyan-200" href="/purchases">購入履歴・復元を開く</Link>
           </div>
           {isAdmin && <Link className="rounded-2xl bg-paper p-4 font-bold" href="/admin">管理画面</Link>}
         </div>
@@ -347,6 +351,8 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.48</p><p className="mt-1 text-muted">購入履歴、購入状態復元、Premium安全確認を追加。</p></div>
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.47</p><p className="mt-1 text-muted">無料3動詞、30/60/90/120動詞解放、Premiumロック判定を強化。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.46</p><p className="mt-1 text-muted">Supabase保存、Storage画像、Premium状態管理の土台を追加。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.45</p><p className="mt-1 text-muted">マイページ強化、プロフィール画像、ニックネーム変更、学習記録整理。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.44</p><p className="mt-1 text-muted">下タブ整理、アップグレードページ、Premium土台。</p></div>

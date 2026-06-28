@@ -169,7 +169,7 @@ export default function UpgradePage() {
       {isAdmin && (
         <section className="card p-5">
           <h2 className="text-xl font-bold">管理者用テスト操作</h2>
-          <p className="mt-2 text-sm text-muted">正式決済前の表示確認用です。無料/各プラン/全解放をすぐ確認できます。</p>
+          <p className="mt-2 text-sm text-muted">正式決済前の表示確認用です。通常ユーザーには表示されません。無料/各プラン/全解放を確認できます。</p>
           <button className="btn btn-primary mt-4 block w-full" onClick={simulatePack}>30動詞パックを1回分反映</button>
           <div className="mt-3 grid grid-cols-5 gap-2">
             {[0, 30, 60, 90, 120].map((count) => (
@@ -179,7 +179,10 @@ export default function UpgradePage() {
         </section>
       )}
 
-      <Link href="/profile" className="btn btn-soft block text-center">マイページへ戻る</Link>
+      <div className="grid gap-3">
+        <Link href="/purchases" className="btn btn-soft block text-center">購入履歴・復元を見る</Link>
+        <Link href="/profile" className="btn btn-soft block text-center">マイページへ戻る</Link>
+      </div>
     </div>
   );
 }

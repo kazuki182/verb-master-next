@@ -1,4 +1,3 @@
-
 "use client";
 
 export type Account = {
@@ -32,7 +31,8 @@ export type DailyMission = {
   rewardClaimed: boolean;
 };
 
-export type BookmarkSection = "basic" | "idioms" | "phrasal" | "test" | "review";
+export type BookmarkSection =
+  "basic" | "idioms" | "phrasal" | "test" | "review";
 
 export type StudyBookmark = {
   verbId: string;
@@ -125,11 +125,15 @@ function nowText() {
 }
 
 function weekKey(date = new Date()) {
-  const target = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const target = new Date(
+    Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()),
+  );
   const dayNumber = target.getUTCDay() || 7;
   target.setUTCDate(target.getUTCDate() + 4 - dayNumber);
   const yearStart = new Date(Date.UTC(target.getUTCFullYear(), 0, 1));
-  const weekNumber = Math.ceil((((target.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
+  const weekNumber = Math.ceil(
+    ((target.getTime() - yearStart.getTime()) / 86400000 + 1) / 7,
+  );
   return `${target.getUTCFullYear()}-W${String(weekNumber).padStart(2, "0")}`;
 }
 
@@ -140,7 +144,13 @@ function currentWeekKey() {
 function getWeeklyStats(progress: UserProgress, key = currentWeekKey()) {
   progress.weeklyStats = progress.weeklyStats || {};
   if (!progress.weeklyStats[key]) {
-    progress.weeklyStats[key] = { weekKey: key, loginDays: [], masteredVerbIds: [], xp: 0, studyMinutes: 0 };
+    progress.weeklyStats[key] = {
+      weekKey: key,
+      loginDays: [],
+      masteredVerbIds: [],
+      xp: 0,
+      studyMinutes: 0,
+    };
   }
   return progress.weeklyStats[key];
 }
@@ -163,7 +173,8 @@ function addStudyMinutes(progress: UserProgress, minutes = 1) {
 
 function addWeeklyMasteredVerb(progress: UserProgress, verbId: string) {
   const stats = getWeeklyStats(progress);
-  if (!stats.masteredVerbIds.includes(verbId)) stats.masteredVerbIds.push(verbId);
+  if (!stats.masteredVerbIds.includes(verbId))
+    stats.masteredVerbIds.push(verbId);
 }
 
 function addDays(days: number) {
@@ -185,9 +196,13 @@ const DAILY_MISSION_REWARD_XP = 50;
 function createDailyMission(date = todayKey()): DailyMission {
   return {
     date,
-    tasks: DAILY_MISSION_VERBS.map((verbId) => ({ verbId, target: DAILY_MISSION_TARGET, correct: 0 })),
+    tasks: DAILY_MISSION_VERBS.map((verbId) => ({
+      verbId,
+      target: DAILY_MISSION_TARGET,
+      correct: 0,
+    })),
     completed: false,
-    rewardClaimed: false
+    rewardClaimed: false,
   };
 }
 
@@ -196,7 +211,8 @@ function normalizeMission(progress: UserProgress) {
   if (!progress.dailyMission || progress.dailyMission.date !== today) {
     progress.dailyMission = createDailyMission(today);
   }
-  if (typeof progress.missionCompletedCount !== "number") progress.missionCompletedCount = 0;
+  if (typeof progress.missionCompletedCount !== "number")
+    progress.missionCompletedCount = 0;
   return progress.dailyMission;
 }
 
@@ -205,11 +221,21 @@ export function initAdminAccount() {
   const accounts = getAccounts();
   let changed = false;
   if (!accounts.some((a) => a.username === "kazurillex")) {
-    accounts.push({ username: "kazurillex", password: "0074", role: "admin", createdAt: nowText() });
+    accounts.push({
+      username: "kazurillex",
+      password: "0074",
+      role: "admin",
+      createdAt: nowText(),
+    });
     changed = true;
   }
   if (!accounts.some((a) => a.username === "shun")) {
-    accounts.push({ username: "shun", password: "1234", role: "user", createdAt: nowText() });
+    accounts.push({
+      username: "shun",
+      password: "1234",
+      role: "user",
+      createdAt: nowText(),
+    });
     changed = true;
   }
   if (changed) saveAccounts(accounts);
@@ -232,10 +258,17 @@ export function registerAccount(username: string, password: string) {
   initAdminAccount();
   const name = username.trim();
   if (!name) return { ok: false, message: "ユーザー名を入力してください。" };
-  if (password.length < 4) return { ok: false, message: "パスワードは4文字以上にしてください。" };
+  if (password.length < 4)
+    return { ok: false, message: "パスワードは4文字以上にしてください。" };
   const accounts = getAccounts();
-  if (accounts.some((a) => a.username === name)) return { ok: false, message: "このユーザー名はすでに使われています。" };
-  accounts.push({ username: name, password, role: "user", createdAt: nowText() });
+  if (accounts.some((a) => a.username === name))
+    return { ok: false, message: "このユーザー名はすでに使われています。" };
+  accounts.push({
+    username: name,
+    password,
+    role: "user",
+    createdAt: nowText(),
+  });
   saveAccounts(accounts);
   setCurrentUser(name);
   ensureProgress(name);
@@ -245,8 +278,11 @@ export function registerAccount(username: string, password: string) {
 export function loginAccount(username: string, password: string) {
   initAdminAccount();
   const accounts = getAccounts();
-  const account = accounts.find((a) => a.username === username.trim() && a.password === password);
-  if (!account) return { ok: false, message: "ユーザー名またはパスワードが違います。" };
+  const account = accounts.find(
+    (a) => a.username === username.trim() && a.password === password,
+  );
+  if (!account)
+    return { ok: false, message: "ユーザー名またはパスワードが違います。" };
   const loginAt = nowText();
   account.lastLoginAt = loginAt;
   saveAccounts(accounts);
@@ -293,8 +329,10 @@ function normalizeProgress(progress: UserProgress) {
   if (!progress.weeklyStats) progress.weeklyStats = {};
   if (!progress.badges) progress.badges = [];
   recordWeeklyLogin(progress);
-  if (typeof progress.unlockedVerbCount !== "number") progress.unlockedVerbCount = 0;
-  if (typeof progress.purchaseTotalYen !== "number") progress.purchaseTotalYen = 0;
+  if (typeof progress.unlockedVerbCount !== "number")
+    progress.unlockedVerbCount = 0;
+  if (typeof progress.purchaseTotalYen !== "number")
+    progress.purchaseTotalYen = 0;
   normalizeMission(progress);
   return progress;
 }
@@ -323,7 +361,7 @@ export function ensureProgress(username: string): UserProgress {
       weeklyStats: {},
       badges: [],
       unlockedVerbCount: 0,
-      purchaseTotalYen: 0
+      purchaseTotalYen: 0,
     };
     saveProgressMap(map);
   }
@@ -349,8 +387,12 @@ function updateStreak(progress: UserProgress) {
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
   const y = yesterday.toISOString().slice(0, 10);
-  progress.currentStreak = progress.lastStudyDate === y ? progress.currentStreak + 1 : 1;
-  progress.longestStreak = Math.max(progress.longestStreak, progress.currentStreak);
+  progress.currentStreak =
+    progress.lastStudyDate === y ? progress.currentStreak + 1 : 1;
+  progress.longestStreak = Math.max(
+    progress.longestStreak,
+    progress.currentStreak,
+  );
   progress.lastStudyDate = today;
 }
 
@@ -376,7 +418,11 @@ export function recordStudy(verbId: string, totalVerbs: number) {
   return progress;
 }
 
-export function recordTestResult(verbId: string, itemId: string, correct: boolean) {
+export function recordTestResult(
+  verbId: string,
+  itemId: string,
+  correct: boolean,
+) {
   const progress = getCurrentProgress();
   if (!progress) return null;
   updateStreak(progress);
@@ -392,12 +438,16 @@ export function recordTestResult(verbId: string, itemId: string, correct: boolea
     const mission = normalizeMission(progress);
     const task = mission.tasks.find((t) => t.verbId === verbId);
     if (task && task.correct < task.target) task.correct += 1;
-    if (!mission.completed && mission.tasks.every((t) => t.correct >= t.target)) {
+    if (
+      !mission.completed &&
+      mission.tasks.every((t) => t.correct >= t.target)
+    ) {
       mission.completed = true;
       mission.rewardClaimed = true;
       progress.xp += DAILY_MISSION_REWARD_XP;
       addWeeklyXp(progress, DAILY_MISSION_REWARD_XP);
-      progress.missionCompletedCount = (progress.missionCompletedCount || 0) + 1;
+      progress.missionCompletedCount =
+        (progress.missionCompletedCount || 0) + 1;
     }
     if (existing) {
       existing.correctCount += 1;
@@ -417,7 +467,7 @@ export function recordTestResult(verbId: string, itemId: string, correct: boolea
       correctCount: existing?.correctCount || 0,
       nextReviewAt: addDays(nextReviewDelay(wrongCount)),
       lastAnsweredAt: nowText(),
-      lastResult: "wrong"
+      lastResult: "wrong",
     };
   }
   saveProgress(progress);
@@ -456,18 +506,34 @@ export function getMissionSummary() {
   const mission = getTodayMission();
   if (!mission) return null;
   const total = mission.tasks.reduce((sum, task) => sum + task.target, 0);
-  const done = mission.tasks.reduce((sum, task) => sum + Math.min(task.correct, task.target), 0);
-  return { mission, total, done, remaining: Math.max(0, total - done), percent: total ? Math.round((done / total) * 100) : 0 };
+  const done = mission.tasks.reduce(
+    (sum, task) => sum + Math.min(task.correct, task.target),
+    0,
+  );
+  return {
+    mission,
+    total,
+    done,
+    remaining: Math.max(0, total - done),
+    percent: total ? Math.round((done / total) * 100) : 0,
+  };
 }
 
 export function getMissionConfig() {
-  return { target: DAILY_MISSION_TARGET, rewardXp: DAILY_MISSION_REWARD_XP, verbIds: DAILY_MISSION_VERBS };
+  return {
+    target: DAILY_MISSION_TARGET,
+    rewardXp: DAILY_MISSION_REWARD_XP,
+    verbIds: DAILY_MISSION_VERBS,
+  };
 }
 
 export function formatDateTime(value?: string) {
   if (!value) return "未記録";
   try {
-    return new Intl.DateTimeFormat("ja-JP", { dateStyle: "medium", timeStyle: "short" }).format(new Date(value));
+    return new Intl.DateTimeFormat("ja-JP", {
+      dateStyle: "medium",
+      timeStyle: "short",
+    }).format(new Date(value));
   } catch {
     return value;
   }
@@ -476,14 +542,19 @@ export function formatDateTime(value?: string) {
 export function formatDate(value?: string) {
   if (!value) return "未定";
   try {
-    return new Intl.DateTimeFormat("ja-JP", { month: "short", day: "numeric" }).format(new Date(`${value}T00:00:00`));
+    return new Intl.DateTimeFormat("ja-JP", {
+      month: "short",
+      day: "numeric",
+    }).format(new Date(`${value}T00:00:00`));
   } catch {
     return value;
   }
 }
 
 export function getAllProgress() {
-  return Object.values(progressMap()).map(normalizeProgress).sort((a, b) => b.xp - a.xp);
+  return Object.values(progressMap())
+    .map(normalizeProgress)
+    .sort((a, b) => b.xp - a.xp);
 }
 
 export function getCurrentWeekKey() {
@@ -496,20 +567,32 @@ export function getComputedBadges(progress: UserProgress) {
   if (progress.currentStreak >= 30) badges.push("🔥 30日継続");
   if (progress.currentStreak >= 100) badges.push("💎 100日継続");
   if ((progress.studiedVerbIds || []).length >= 5) badges.push("📚 5動詞習得");
-  if ((progress.studiedVerbIds || []).length >= 30) badges.push("🏆 30動詞習得");
+  if ((progress.studiedVerbIds || []).length >= 30)
+    badges.push("🏆 30動詞習得");
   if ((progress.testCorrect || 0) >= 100) badges.push("🎯 100問正解");
-  if ((progress.savedPhrases || []).length >= 10) badges.push("⭐ 10フレーズ保存");
+  if ((progress.savedPhrases || []).length >= 10)
+    badges.push("⭐ 10フレーズ保存");
   return badges;
 }
 
 export function getLeagueRows() {
   const key = currentWeekKey();
   return getAllProgress().map((progress) => {
-    const stats = progress.weeklyStats?.[key] || { weekKey: key, loginDays: [], masteredVerbIds: [], xp: 0, studyMinutes: 0 };
+    const stats = progress.weeklyStats?.[key] || {
+      weekKey: key,
+      loginDays: [],
+      masteredVerbIds: [],
+      xp: 0,
+      studyMinutes: 0,
+    };
     const masteredCount = stats.masteredVerbIds.length;
     const weeklyXp = stats.xp;
     const weeklyStudyMinutes = stats.studyMinutes;
-    const mvpScore = weeklyXp + masteredCount * 100 + stats.loginDays.length * 50 + weeklyStudyMinutes * 5;
+    const mvpScore =
+      weeklyXp +
+      masteredCount * 100 +
+      stats.loginDays.length * 50 +
+      weeklyStudyMinutes * 5;
     return {
       username: progress.username,
       currentStreak: progress.currentStreak || 0,
@@ -517,12 +600,14 @@ export function getLeagueRows() {
       weeklyXp,
       weeklyStudyMinutes,
       mvpScore,
-      badges: getComputedBadges(progress)
+      badges: getComputedBadges(progress),
     };
   });
 }
 
-export function getLeagueRanking(type: "streak" | "mastered" | "xp" | "minutes" | "mvp") {
+export function getLeagueRanking(
+  type: "streak" | "mastered" | "xp" | "minutes" | "mvp",
+) {
   const rows = getLeagueRows();
   const value = (row: LeagueRow) => {
     if (type === "streak") return row.currentStreak;
@@ -534,14 +619,19 @@ export function getLeagueRanking(type: "streak" | "mastered" | "xp" | "minutes" 
   return rows.sort((a, b) => value(b) - value(a));
 }
 
-
 const TARGET_DATE_KEY = "verbMaster.targetDate";
 const TARGET_START_DATE_KEY = "verbMaster.targetStartDate";
 const STUDY_DAYS_KEY = "verbMaster.studyDays";
+const STUDY_PACE_KEY = "verbMaster.studyPace";
 
 export type StudyDaysSetting = {
   mode: "everyday" | "weekdays" | "custom";
   days: number[];
+};
+
+export type StudyPaceSetting = {
+  days: number;
+  verbs: number;
 };
 
 function isoDate(date: Date) {
@@ -554,14 +644,70 @@ function normalizeDate(date: Date) {
   return next;
 }
 
+function normalizePositiveInteger(value: unknown, fallback: number) {
+  const numberValue = typeof value === "number" ? value : Number(value);
+  if (!Number.isFinite(numberValue)) return fallback;
+  return Math.max(1, Math.floor(numberValue));
+}
+
+function getDefaultStudyPace(): StudyPaceSetting {
+  return { days: 3, verbs: 1 };
+}
+
+function normalizeStudyPace(
+  value: Partial<StudyPaceSetting> | null | undefined,
+): StudyPaceSetting {
+  return {
+    days: normalizePositiveInteger(value?.days, 3),
+    verbs: normalizePositiveInteger(value?.verbs, 1),
+  };
+}
+
+export function getStudyPaceSetting(): StudyPaceSetting {
+  if (typeof window === "undefined") return getDefaultStudyPace();
+  try {
+    const saved = localStorage.getItem(STUDY_PACE_KEY);
+    if (!saved) return getDefaultStudyPace();
+    return normalizeStudyPace(JSON.parse(saved));
+  } catch {
+    return getDefaultStudyPace();
+  }
+}
+
+export function setStudyPaceSetting(value: StudyPaceSetting) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(
+    STUDY_PACE_KEY,
+    JSON.stringify(normalizeStudyPace(value)),
+  );
+}
+
+export function formatStudyPace(value = getStudyPaceSetting()) {
+  const pace = normalizeStudyPace(value);
+  return `${pace.days}日で${pace.verbs}語`;
+}
+
+function getRecommendedPaceLabel(remaining: number, studyDaysLeft: number) {
+  if (remaining <= 0) return "完了";
+  if (studyDaysLeft <= 0) return `${remaining}語を早めに復習`;
+  if (remaining >= studyDaysLeft) {
+    return `1日${Math.ceil(remaining / studyDaysLeft)}語`;
+  }
+  return `${Math.ceil(studyDaysLeft / remaining)}日で1語`;
+}
+
 function getDefaultStudyDays(): StudyDaysSetting {
   return { mode: "everyday", days: [0, 1, 2, 3, 4, 5, 6] };
 }
 
 function normalizeStudyDays(value: StudyDaysSetting): StudyDaysSetting {
-  const unique = Array.from(new Set((value.days || []).filter((day) => day >= 0 && day <= 6))).sort((a, b) => a - b);
-  if (value.mode === "weekdays") return { mode: "weekdays", days: [1, 2, 3, 4, 5] };
-  if (value.mode === "custom") return { mode: "custom", days: unique.length ? unique : [1, 2, 3, 4, 5] };
+  const unique = Array.from(
+    new Set((value.days || []).filter((day) => day >= 0 && day <= 6)),
+  ).sort((a, b) => a - b);
+  if (value.mode === "weekdays")
+    return { mode: "weekdays", days: [1, 2, 3, 4, 5] };
+  if (value.mode === "custom")
+    return { mode: "custom", days: unique.length ? unique : [1, 2, 3, 4, 5] };
   return getDefaultStudyDays();
 }
 
@@ -578,7 +724,10 @@ export function getStudyDaysSetting(): StudyDaysSetting {
 
 export function setStudyDaysSetting(value: StudyDaysSetting) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(STUDY_DAYS_KEY, JSON.stringify(normalizeStudyDays(value)));
+  localStorage.setItem(
+    STUDY_DAYS_KEY,
+    JSON.stringify(normalizeStudyDays(value)),
+  );
 }
 
 export function getStudyDaysLabel(setting = getStudyDaysSetting()) {
@@ -634,19 +783,54 @@ export function getLearningPlan(totalVerbs: number, completedVerbs: number) {
   const targetDate = getTargetDate();
   const studyDays = getStudyDaysSetting();
   const today = normalizeDate(new Date());
-  const target = targetDate ? normalizeDate(new Date(`${targetDate}T00:00:00`)) : today;
+  const target = targetDate
+    ? normalizeDate(new Date(`${targetDate}T00:00:00`))
+    : today;
   const start = normalizeDate(new Date(`${getTargetStartDate()}T00:00:00`));
   const diffMs = target.getTime() - today.getTime();
-  const calendarDaysLeft = Math.max(1, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
-  const studyDaysLeft = Math.max(1, countStudyDays(today, target, studyDays.days));
+  const calendarDaysLeft = Math.max(
+    1,
+    Math.ceil(diffMs / (1000 * 60 * 60 * 24)),
+  );
+  const studyDaysLeft = Math.max(
+    1,
+    countStudyDays(today, target, studyDays.days),
+  );
   const remaining = Math.max(0, totalVerbs - completedVerbs);
-  const dailyGoal = Math.max(remaining > 0 ? 1 : 0, Math.ceil(remaining / studyDaysLeft));
-  const progressPercent = totalVerbs ? Math.round((completedVerbs / totalVerbs) * 100) : 0;
-  const totalPlanStudyDays = Math.max(1, countStudyDays(start, target, studyDays.days));
-  const elapsedStudyDays = Math.max(0, countStudyDays(start, today, studyDays.days) - 1);
-  const expectedCompleted = Math.min(totalVerbs, Math.floor((totalVerbs * elapsedStudyDays) / totalPlanStudyDays));
+  const dailyGoal = Math.max(
+    remaining > 0 ? 1 : 0,
+    Math.ceil(remaining / studyDaysLeft),
+  );
+  const recommendedPaceLabel = getRecommendedPaceLabel(
+    remaining,
+    studyDaysLeft,
+  );
+  const studyPace = getStudyPaceSetting();
+  const selectedPaceLabel = formatStudyPace(studyPace);
+  const selectedPaceCapacity = Math.floor(
+    (studyDaysLeft / studyPace.days) * studyPace.verbs,
+  );
+  const selectedPaceDiff = selectedPaceCapacity - remaining;
+  const selectedPaceStatus =
+    remaining <= 0 || selectedPaceDiff >= 0 ? "ok" : "short";
+  const progressPercent = totalVerbs
+    ? Math.round((completedVerbs / totalVerbs) * 100)
+    : 0;
+  const totalPlanStudyDays = Math.max(
+    1,
+    countStudyDays(start, target, studyDays.days),
+  );
+  const elapsedStudyDays = Math.max(
+    0,
+    countStudyDays(start, today, studyDays.days) - 1,
+  );
+  const expectedCompleted = Math.min(
+    totalVerbs,
+    Math.floor((totalVerbs * elapsedStudyDays) / totalPlanStudyDays),
+  );
   const paceDiff = completedVerbs - expectedCompleted;
-  const paceStatus = paceDiff > 0 ? "ahead" : paceDiff < 0 ? "behind" : "onTrack";
+  const paceStatus =
+    paceDiff > 0 ? "ahead" : paceDiff < 0 ? "behind" : "onTrack";
   return {
     targetDate,
     daysLeft: calendarDaysLeft,
@@ -654,10 +838,15 @@ export function getLearningPlan(totalVerbs: number, completedVerbs: number) {
     studyDayLabel: getStudyDaysLabel(studyDays),
     remaining,
     dailyGoal,
+    recommendedPaceLabel,
+    selectedPaceLabel,
+    selectedPaceCapacity,
+    selectedPaceDiff,
+    selectedPaceStatus,
     progressPercent,
     expectedCompleted,
     paceDiff,
-    paceStatus
+    paceStatus,
   };
 }
 
@@ -677,8 +866,11 @@ export function recordVerbMastery(verbId: string) {
   return progress;
 }
 
-
-export function recordSectionClear(verbId: string, section: string, xp: number) {
+export function recordSectionClear(
+  verbId: string,
+  section: string,
+  xp: number,
+) {
   const progress = getCurrentProgress();
   if (!progress) return null;
   updateStreak(progress);
@@ -693,7 +885,6 @@ export function recordSectionClear(verbId: string, section: string, xp: number) 
   saveProgress(progress);
   return progress;
 }
-
 
 export function saveBookmark(bookmark: Omit<StudyBookmark, "savedAt">) {
   const progress = getCurrentProgress();
@@ -724,7 +915,6 @@ export function getBookmarkSectionLabel(section: BookmarkSection) {
   return "復習";
 }
 
-
 export function getSavedPhrases() {
   const progress = getCurrentProgress();
   return progress?.savedPhrases ?? [];
@@ -748,7 +938,9 @@ export function savePhrase(phrase: Omit<SavedPhrase, "savedAt">) {
 export function removeSavedPhrase(id: string) {
   const progress = getCurrentProgress();
   if (!progress) return null;
-  progress.savedPhrases = (progress.savedPhrases || []).filter((phrase) => phrase.id !== id);
+  progress.savedPhrases = (progress.savedPhrases || []).filter(
+    (phrase) => phrase.id !== id,
+  );
   saveProgress(progress);
   return progress.savedPhrases;
 }
@@ -760,7 +952,6 @@ export function clearSavedPhrases() {
   saveProgress(progress);
   return progress.savedPhrases;
 }
-
 
 export function saveTestSession(session: Omit<TestSession, "updatedAt">) {
   const progress = getCurrentProgress();
@@ -812,7 +1003,6 @@ export function getTestSectionLabel(section: string) {
   return "テスト";
 }
 
-
 export function getUnlockedVerbCount() {
   const progress = getCurrentProgress();
   return progress?.unlockedVerbCount || 0;
@@ -824,7 +1014,10 @@ export function hasGrammarAccess() {
   const account = getAccounts().find((item) => item.username === username);
   if (account?.role === "admin") return true;
   const progress = getCurrentProgress();
-  return (progress?.unlockedVerbCount || 0) >= 30 || (progress?.purchaseTotalYen || 0) >= 500;
+  return (
+    (progress?.unlockedVerbCount || 0) >= 30 ||
+    (progress?.purchaseTotalYen || 0) >= 500
+  );
 }
 
 export function grantThirtyVerbPack(username?: string) {

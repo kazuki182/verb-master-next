@@ -1,0 +1,4 @@
+Version 37
+Repository: verb-master-next
+Update: custom learning pace dashboard
+Checks: custom pace setting, recommended pace, data safe

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import SpeakButton from "./SpeakButton";
-import { clearTestSession, getSavedPhrases, getTestSession, recordTestResult, saveTestSession, type SavedPhrase } from "@/lib/account";
+import { clearTestSession, getSavedPhrases, getTestSession, hasPremiumFeatureAccess, recordTestResult, saveTestSession, type SavedPhrase } from "@/lib/account";
 
 function answerUnderline(sentence: string) {
   const words = sentence.trim().split(/\s+/).filter(Boolean);
@@ -31,8 +31,15 @@ export default function PhraseShuffleTest() {
   const [wrong, setWrong] = useState(0);
   const [loadedSession, setLoadedSession] = useState(false);
   const [resumed, setResumed] = useState(false);
+  const [hasAccess, setHasAccess] = useState(false);
 
   useEffect(() => {
+    const premium = hasPremiumFeatureAccess();
+    setHasAccess(premium);
+    if (!premium) {
+      setLoadedSession(true);
+      return;
+    }
     const savedPhrases = getSavedPhrases();
     const saved = getTestSession(SESSION_KEY);
     if (saved && saved.itemIds.length > 0) {
@@ -109,6 +116,20 @@ export default function PhraseShuffleTest() {
 
   if (!loadedSession) {
     return <div className="card p-6 text-muted">テストを読み込んでいます...</div>;
+  }
+
+  if (!hasAccess) {
+    return (
+      <div className="space-y-5 pb-24">
+        <section className="card p-6 text-center">
+          <p className="text-sm font-bold text-amber-100">🔒 Premium Feature</p>
+          <h1 className="mt-2 text-3xl font-bold">シャッフルテスト</h1>
+          <p className="mt-3 text-muted">保存フレーズのシャッフルテストは30動詞パックで利用できます。</p>
+          <Link href="/upgrade" className="btn btn-primary mt-5 block">アップグレードを見る</Link>
+          <Link href="/phrase-book" className="btn btn-soft mt-3 block">フレーズ帳へ戻る</Link>
+        </section>
+      </div>
+    );
   }
 
   if (phrases.length === 0) {

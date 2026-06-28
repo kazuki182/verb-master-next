@@ -5,6 +5,7 @@ import ExampleCard from "@/components/ExampleCard";
 import PremiumExamples from "@/components/PremiumExamples";
 import AutoBookmark from "@/components/AutoBookmark";
 import BookmarkButton from "@/components/BookmarkButton";
+import VerbAccessGuard from "@/components/VerbAccessGuard";
 
 
 export default async function VerbIdiomsPage({ params }: { params: Promise<{ id: string }> }) {
@@ -13,6 +14,7 @@ export default async function VerbIdiomsPage({ params }: { params: Promise<{ id:
   const items = verb.collocations.slice(0, 10);
 
   return (
+    <VerbAccessGuard rank={verb.rank} verbWord={verb.word}>
     <div className="space-y-5 pb-4">
       <header className="card p-5 sm:p-6">
         <p className="text-sm text-muted">STEP 2 / 3　熟語</p>
@@ -91,5 +93,6 @@ export default async function VerbIdiomsPage({ params }: { params: Promise<{ id:
         <Link href={`/verbs/${verb.id}/phrasal`} className="btn btn-soft mt-3 block">テストせず句動詞へ進む</Link>
       </section>
     </div>
+    </VerbAccessGuard>
   );
 }

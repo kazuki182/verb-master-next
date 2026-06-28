@@ -6,6 +6,7 @@ import PremiumExamples from "@/components/PremiumExamples";
 import AutoBookmark from "@/components/AutoBookmark";
 import BookmarkButton from "@/components/BookmarkButton";
 import VerbProgressPanel from "@/components/VerbProgressPanel";
+import VerbAccessGuard from "@/components/VerbAccessGuard";
 
 
 export default async function VerbDetail({ params }: { params: Promise<{ id: string }> }) {
@@ -13,6 +14,7 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
   const verb = getVerb(id);
 
   return (
+    <VerbAccessGuard rank={verb.rank} verbWord={verb.word}>
     <div className="space-y-5 pb-4">
       <header className="card p-5 sm:p-6">
         <p className="text-sm text-muted">No.{String(verb.rank).padStart(2, "0")}　STEP 1 / 3　基本動詞</p>
@@ -144,5 +146,6 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
         <Link href={`/verbs/${verb.id}/idioms`} className="btn btn-soft mt-3 block">テストせず熟語へ進む</Link>
       </section>
     </div>
+    </VerbAccessGuard>
   );
 }

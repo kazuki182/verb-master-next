@@ -1,11 +1,13 @@
 import { getVerb } from "@/lib/data";
 import InstantTest from "@/components/InstantTest";
+import VerbAccessGuard from "@/components/VerbAccessGuard";
 
 
 export default async function BasicVerbTestPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const verb = getVerb(id);
   return (
+    <VerbAccessGuard rank={verb.rank} verbWord={verb.word}>
     <InstantTest
       verbId={verb.id}
       section="basic"
@@ -14,5 +16,6 @@ export default async function BasicVerbTestPage({ params }: { params: Promise<{ 
       finishHref={`/verbs/${verb.id}/idioms`}
       finishLabel="熟語へ進む"
     />
+    </VerbAccessGuard>
   );
 }

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import SpeakButton from "@/components/SpeakButton";
-import { getSavedPhrases, removeSavedPhrase, type SavedPhrase } from "@/lib/account";
+import { getSavedPhrases, hasPremiumFeatureAccess, removeSavedPhrase, type SavedPhrase } from "@/lib/account";
 
 function sectionLabel(section: SavedPhrase["section"]) {
   if (section === "basic") return "基本動詞";
@@ -16,10 +16,14 @@ function sectionLabel(section: SavedPhrase["section"]) {
 export default function PhraseBookPage() {
   const [phrases, setPhrases] = useState<SavedPhrase[]>([]);
   const [filter, setFilter] = useState<"all" | SavedPhrase["section"]>("all");
+  const [hasAccess, setHasAccess] = useState(false);
+  const [ready, setReady] = useState(false);
 
   const reload = () => setPhrases(getSavedPhrases());
 
   useEffect(() => {
+    setHasAccess(hasPremiumFeatureAccess());
+    setReady(true);
     reload();
   }, []);
 
@@ -31,6 +35,22 @@ export default function PhraseBookPage() {
     removeSavedPhrase(id);
     reload();
   };
+
+  if (!ready) return <div className="card p-6 text-muted">フレーズ帳を読み込んでいます...</div>;
+
+  if (!hasAccess) {
+    return (
+      <div className="space-y-5 pb-24">
+        <section className="card p-6 text-center">
+          <p className="text-sm font-bold text-amber-100">🔒 Premium Feature</p>
+          <h1 className="mt-2 text-3xl font-bold">フレーズ帳</h1>
+          <p className="mt-3 text-muted">フレーズ保存・フレーズ帳・シャッフルテストは30動詞パックで利用できます。</p>
+          <Link href="/upgrade" className="btn btn-primary mt-5 block">アップグレードを見る</Link>
+          <Link href="/verbs" className="btn btn-soft mt-3 block">動詞学習へ戻る</Link>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-5 pb-24">

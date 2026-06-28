@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import { formatDateTime, getAllProgress, getComputedBadges, getCurrentProgress, getCurrentUsername, getDueReviewItems, getFutureReviewItems, getWeeklyMvpCount, getSeasonRankSummary, type UserProgress } from "@/lib/account";
+import { formatDateTime, getAccounts, getAllProgress, getComputedBadges, getCurrentProgress, getCurrentUsername, getDueReviewItems, getFutureReviewItems, getWeeklyMvpCount, getSeasonRankSummary, type UserProgress } from "@/lib/account";
 import { verbs } from "@/lib/data";
 import VoiceSettingsPanel from "@/components/VoiceSettingsPanel";
 import BadgeList from "@/components/BadgeList";
@@ -26,6 +27,7 @@ export default function ProfilePage() {
   const badges = getComputedBadges(progress);
   const mvpCount = getWeeklyMvpCount(username);
   const seasonSummary = getSeasonRankSummary(username);
+  const isAdmin = getAccounts().some((account) => account.username === username && account.role === "admin");
 
   return (
     <div className="space-y-5">
@@ -34,6 +36,9 @@ export default function ProfilePage() {
         <p className="text-sm text-muted">アカウント</p>
         <p className="text-2xl font-bold">{username}</p>
         <p className="mt-2 text-sm text-muted">最終ログイン：{formatDateTime(progress.lastLoginAt)}</p>
+        {isAdmin && (
+          <Link className="btn btn-primary mt-4 inline-block" href="/admin">管理画面を開く</Link>
+        )}
       </section>
 
       <section className="grid grid-cols-2 gap-3">

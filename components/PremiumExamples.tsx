@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import ExampleCard from "./ExampleCard";
 import type { Example } from "@/lib/data";
-import type { SavedPhrase } from "@/lib/account";
+import { hasPremiumFeatureAccess, type SavedPhrase } from "@/lib/account";
 
 export default function PremiumExamples({
   examples,
@@ -13,6 +14,12 @@ export default function PremiumExamples({
   phraseBase?: Omit<SavedPhrase, "savedAt" | "id" | "en" | "ja"> & { idPrefix: string };
 }) {
   const [open, setOpen] = useState(false);
+  const [hasAccess, setHasAccess] = useState(false);
+
+  useEffect(() => {
+    setHasAccess(hasPremiumFeatureAccess());
+  }, []);
+
   if (!examples || examples.length === 0) return null;
 
   return (
@@ -28,7 +35,14 @@ export default function PremiumExamples({
       <p className="mt-2 text-sm text-slate-300">
         仕事例文で基本を押さえたあと、日常でも使える表現を追加で確認できます。
       </p>
-      {open && (
+      {open && !hasAccess && (
+        <div className="mt-4 rounded-2xl border border-amber-300/20 bg-amber-950/20 p-4 text-sm text-amber-100">
+          <p className="font-bold">🔒 日常例文は30動詞パックで利用できます。</p>
+          <p className="mt-2 text-amber-100/80">500円以上の課金で、日常例文・文型・Pattern・0.5倍速・フレーズ帳・シャッフルテストが解放されます。</p>
+          <Link href="/upgrade" className="mt-3 inline-block rounded-full bg-amber-300 px-4 py-2 font-bold text-slate-950">アップグレードを見る</Link>
+        </div>
+      )}
+      {open && hasAccess && (
         <div className="mt-4 space-y-3">
           {examples.map((example, index) => (
             <ExampleCard

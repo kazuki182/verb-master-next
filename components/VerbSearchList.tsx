@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Verb } from "@/lib/data";
 import VerbListProgress from "@/components/VerbListProgress";
+import { getEffectiveUnlockedVerbCount } from "@/lib/account";
 
 function twoDigit(value: number) {
   return String(value).padStart(2, "0");
@@ -20,6 +21,11 @@ function searchableText(verb: Verb) {
 
 export default function VerbSearchList({ verbs }: { verbs: Verb[] }) {
   const [query, setQuery] = useState("");
+  const [unlockedCount, setUnlockedCount] = useState(3);
+
+  useEffect(() => {
+    setUnlockedCount(getEffectiveUnlockedVerbCount());
+  }, []);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -48,8 +54,9 @@ export default function VerbSearchList({ verbs }: { verbs: Verb[] }) {
       <div className="space-y-3">
         {filtered.map((verb) => {
           const originalIndex = verbs.findIndex((v) => v.id === verb.id) + 1;
+          const locked = originalIndex > unlockedCount;
           return (
-            <Link key={verb.id} href={`/verbs/${verb.id}`} className="card block p-5">
+            <Link key={verb.id} href={locked ? "/upgrade" : `/verbs/${verb.id}`} className={`card block p-5 ${locked ? "opacity-75" : ""}`}>
               <div className="flex items-start gap-4">
                 <div className="shrink-0 rounded-2xl border border-cyan-300/20 bg-slate-950 px-3 py-2 text-center">
                   <p className="text-xs font-bold tracking-wider text-cyan-200">No.</p>
@@ -61,10 +68,16 @@ export default function VerbSearchList({ verbs }: { verbs: Verb[] }) {
                       <p className="text-2xl font-bold verb-red">{verb.word}</p>
                       <p className="mt-1 text-muted">{verb.core}</p>
                     </div>
-                    <span className="rounded-full bg-white/5 px-2 py-1 text-xs font-bold text-muted">#{verb.rank}</span>
+                    <span className="rounded-full bg-white/5 px-2 py-1 text-xs font-bold text-muted">{locked ? "🔒 Premium" : `#${verb.rank}`}</span>
                   </div>
                   <div className="mt-4">
-                    <VerbListProgress verb={verb} />
+                    {locked ? (
+                      <div className="rounded-2xl border border-amber-300/20 bg-amber-950/20 p-3 text-sm font-bold text-amber-100">
+                        30動詞パックで解放されます。タップしてアップグレードへ。
+                      </div>
+                    ) : (
+                      <VerbListProgress verb={verb} />
+                    )}
                   </div>
                 </div>
               </div>

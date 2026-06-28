@@ -10,6 +10,7 @@ import {
   getCurrentUsername,
   getDueReviewItems,
   getFutureReviewItems,
+  setUserUnlockLevel,
   type Account,
   type UserProgress,
 } from "@/lib/account";
@@ -111,6 +112,11 @@ export default function AdminPage() {
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [progressRows, setProgressRows] = useState<UserProgress[]>([]);
   const [tab, setTab] = useState<AdminTab>("dashboard");
+
+  const updateUnlock = (targetUsername: string, count: number) => {
+    setUserUnlockLevel(targetUsername, count);
+    setProgressRows(getAllProgress());
+  };
 
   useEffect(() => {
     const current = getCurrentUsername();
@@ -256,6 +262,16 @@ export default function AdminPage() {
                   <div className="rounded-xl bg-paper p-3"><p className="text-muted">習得</p><p className="text-lg font-black">{progress.studiedVerbIds.length}</p></div>
                   <div className="rounded-xl bg-paper p-3"><p className="text-muted">継続</p><p className="text-lg font-black">{progress.currentStreak}日</p></div>
                   <div className="rounded-xl bg-paper p-3"><p className="text-muted">購入額</p><p className="text-lg font-black">¥{(progress.purchaseTotalYen || 0).toLocaleString()}</p></div>
+                </div>
+                <div className="mt-3 rounded-2xl border border-cyan-300/20 bg-slate-950/40 p-3">
+                  <p className="text-xs font-bold text-cyan-200">Premium手動付与</p>
+                  <div className="mt-2 grid grid-cols-5 gap-2 text-xs">
+                    {[0, 30, 60, 90, 120].map((count) => (
+                      <button key={count} className="rounded-xl bg-paper px-2 py-2 font-bold" onClick={() => updateUnlock(progress.username, count)}>
+                        {count === 0 ? "無料" : count}
+                      </button>
+                    ))}
+                  </div>
                 </div>
                 <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
                   <div className="rounded-xl bg-paper p-3"><p className="text-muted">しおり</p><p className="font-bold">{progress.bookmark ? `${progress.bookmark.verbId.toUpperCase()} / ${progress.bookmark.label}` : "なし"}</p></div>

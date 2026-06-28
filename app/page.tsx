@@ -542,7 +542,10 @@ export default function Home() {
           瞬発英作文テスト
         </Link>
         <Link className="card block p-5 font-bold" href="/profile">
-          進捗
+          マイページ
+        </Link>
+        <Link className="card block p-5 font-bold" href="/upgrade">
+          アップグレード
         </Link>
         <Link className="card block p-5 font-bold" href="/study-method">
           勉強方法

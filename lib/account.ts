@@ -130,6 +130,11 @@ const ACCOUNTS_KEY = "verbMaster.accounts";
 const CURRENT_USER_KEY = "verbMaster.currentUser";
 const PROGRESS_KEY = "verbMaster.progress";
 
+export const TOTAL_VERB_TARGET = 120;
+export const FREE_VERB_LIMIT = 3;
+export const VERB_PACK_SIZE = 30;
+export const VERB_PACK_PRICE_YEN = 500;
+
 function todayKey() {
   return new Date().toISOString().slice(0, 10);
 }
@@ -1169,6 +1174,73 @@ export function getUnlockedVerbCount() {
   return progress?.unlockedVerbCount || 0;
 }
 
+export function getEffectiveUnlockedVerbCount() {
+  const username = getCurrentUsername();
+  const account = getAccounts().find((item) => item.username === username);
+  if (account?.role === "admin") return TOTAL_VERB_TARGET;
+  const progress = getCurrentProgress();
+  const purchasedUnlock = progress?.unlockedVerbCount || 0;
+  return Math.max(FREE_VERB_LIMIT, Math.min(TOTAL_VERB_TARGET, purchasedUnlock || FREE_VERB_LIMIT));
+}
+
+export function hasPremiumFeatureAccess() {
+  const username = getCurrentUsername();
+  if (!username) return false;
+  const account = getAccounts().find((item) => item.username === username);
+  if (account?.role === "admin") return true;
+  const progress = getCurrentProgress();
+  return (progress?.purchaseTotalYen || 0) >= VERB_PACK_PRICE_YEN || (progress?.unlockedVerbCount || 0) >= VERB_PACK_SIZE;
+}
+
+export function hasLyricsEnglishAccess() {
+  const username = getCurrentUsername();
+  if (!username) return false;
+  const account = getAccounts().find((item) => item.username === username);
+  if (account?.role === "admin") return true;
+  const progress = getCurrentProgress();
+  return (progress?.unlockedVerbCount || 0) >= TOTAL_VERB_TARGET;
+}
+
+export function getPurchasePlanSummary() {
+  const progress = getCurrentProgress();
+  const unlocked = getEffectiveUnlockedVerbCount();
+  const rawUnlocked = progress?.unlockedVerbCount || 0;
+  const purchaseTotal = progress?.purchaseTotalYen || 0;
+  const paidPacks = Math.ceil(Math.max(0, rawUnlocked) / VERB_PACK_SIZE);
+  return {
+    totalTarget: TOTAL_VERB_TARGET,
+    freeLimit: FREE_VERB_LIMIT,
+    unlocked,
+    rawUnlocked,
+    purchaseTotal,
+    paidPacks,
+    hasPremium: hasPremiumFeatureAccess(),
+    hasLyricsEnglish: hasLyricsEnglishAccess(),
+  };
+}
+
+export function canAccessVerbByIndex(index: number) {
+  return index < getEffectiveUnlockedVerbCount();
+}
+
+export function setUserUnlockLevel(username: string, unlockedVerbCount: number) {
+  const progress = ensureProgress(username);
+  const normalized = Math.max(0, Math.min(TOTAL_VERB_TARGET, Math.floor(unlockedVerbCount)));
+  progress.unlockedVerbCount = normalized;
+  progress.purchaseTotalYen = Math.max(0, Math.ceil(normalized / VERB_PACK_SIZE) * VERB_PACK_PRICE_YEN);
+  saveProgress(progress);
+  return progress;
+}
+
+export function grantThirtyVerbPack(username?: string) {
+  const target = username || getCurrentUsername();
+  if (!target) return null;
+  const progress = ensureProgress(target);
+  const current = progress.unlockedVerbCount || 0;
+  const next = Math.min(TOTAL_VERB_TARGET, Math.max(VERB_PACK_SIZE, current + VERB_PACK_SIZE));
+  return setUserUnlockLevel(target, next);
+}
+
 export function getVoiceSettings(): VoiceSettings {
   const progress = getCurrentProgress();
   return progress?.voiceSettings || { gender: "female", lang: "en-US" };
@@ -1183,23 +1255,6 @@ export function saveVoiceSettings(settings: VoiceSettings) {
 }
 
 export function hasGrammarAccess() {
-  const username = getCurrentUsername();
-  if (!username) return false;
-  const account = getAccounts().find((item) => item.username === username);
-  if (account?.role === "admin") return true;
-  const progress = getCurrentProgress();
-  return (
-    (progress?.unlockedVerbCount || 0) >= 30 ||
-    (progress?.purchaseTotalYen || 0) >= 500
-  );
+  return hasPremiumFeatureAccess();
 }
 
-export function grantThirtyVerbPack(username?: string) {
-  const target = username || getCurrentUsername();
-  if (!target) return null;
-  const progress = ensureProgress(target);
-  progress.unlockedVerbCount = Math.max(progress.unlockedVerbCount || 0, 30);
-  progress.purchaseTotalYen = Math.max(progress.purchaseTotalYen || 0, 500);
-  saveProgress(progress);
-  return progress;
-}

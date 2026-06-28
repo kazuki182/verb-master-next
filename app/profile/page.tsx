@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { formatDateTime, getAccounts, getAllProgress, getComputedBadges, getCurrentProgress, getCurrentUsername, getDueReviewItems, getFutureReviewItems, getWeeklyMvpCount, getSeasonRankSummary, type UserProgress } from "@/lib/account";
+import { formatDateTime, getAccounts, getAllProgress, getComputedBadges, getCurrentProgress, getCurrentUsername, getDueReviewItems, getFutureReviewItems, getWeeklyMvpCount, getSeasonRankSummary, getPurchasePlanSummary, type UserProgress } from "@/lib/account";
 import { verbs } from "@/lib/data";
 import VoiceSettingsPanel from "@/components/VoiceSettingsPanel";
 import BadgeList from "@/components/BadgeList";
@@ -28,17 +28,21 @@ export default function ProfilePage() {
   const mvpCount = getWeeklyMvpCount(username);
   const seasonSummary = getSeasonRankSummary(username);
   const isAdmin = getAccounts().some((account) => account.username === username && account.role === "admin");
+  const plan = getPurchasePlanSummary();
 
   return (
     <div className="space-y-5">
-      <h1 className="text-3xl font-bold">学習記録</h1>
+      <h1 className="text-3xl font-bold">マイページ</h1>
       <section className="card p-5">
         <p className="text-sm text-muted">アカウント</p>
         <p className="text-2xl font-bold">{username}</p>
         <p className="mt-2 text-sm text-muted">最終ログイン：{formatDateTime(progress.lastLoginAt)}</p>
-        {isAdmin && (
-          <Link className="btn btn-primary mt-4 inline-block" href="/admin">管理画面を開く</Link>
-        )}
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <Link className="btn btn-primary text-center" href="/upgrade">アップグレードを見る</Link>
+          {isAdmin && (
+            <Link className="btn btn-soft text-center" href="/admin">管理画面を開く</Link>
+          )}
+        </div>
       </section>
 
       <section className="grid grid-cols-2 gap-3">
@@ -77,6 +81,23 @@ export default function ProfilePage() {
             <p className="text-xs text-cyan-200">/ {seasonSummary?.total || "-"}人</p>
           </div>
         </div>
+      </section>
+
+      <section className="digital-card p-5">
+        <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">PREMIUM</p>
+        <div className="mt-4 grid grid-cols-2 gap-3 text-center">
+          <div className="digital-panel">
+            <p className="digital-label">解放済み</p>
+            <p className="digital-number text-2xl">{plan.unlocked}</p>
+            <p className="text-xs text-cyan-200">/ 120 動詞</p>
+          </div>
+          <div className="digital-panel">
+            <p className="digital-label">購入額</p>
+            <p className="digital-number text-2xl">¥{plan.purchaseTotal.toLocaleString()}</p>
+            <p className="text-xs text-cyan-200">買い切り</p>
+          </div>
+        </div>
+        <Link className="btn btn-primary mt-4 block text-center" href="/upgrade">アップグレード</Link>
       </section>
 
       <VoiceSettingsPanel />

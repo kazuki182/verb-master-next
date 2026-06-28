@@ -114,7 +114,7 @@ export default function UpgradePage() {
             <p className="text-sm font-bold text-amber-100">{nextPlan.label}</p>
             <p className="mt-1 text-3xl font-black">¥{nextPlan.price.toLocaleString()}</p>
             <p className="mt-2 text-sm text-amber-100/80">{nextPlan.range}動詞まで解放。{nextPlan.note}</p>
-            <button type="button" className="btn btn-primary mt-4 w-full" onClick={() => setMessage("正式決済は次Ver以降でStripe等と接続します。今は管理者用ボタンで表示確認してください。")}>購入へ進む（準備中）</button>
+            <Link className="btn btn-primary mt-4 block text-center" href={`/checkout?plan=${nextPlan.count}`}>購入確認へ進む</Link>
           </div>
         )}
         {message && <p className="mt-3 rounded-2xl bg-slate-950/50 p-3 text-sm font-bold text-cyan-100">{message}</p>}
@@ -139,6 +139,11 @@ export default function UpgradePage() {
                   {active && <p className="mt-2 rounded-full bg-cyan-300 px-3 py-1 text-xs font-bold text-slate-950">解放中</p>}
                 </div>
               </div>
+              {plan.count > 0 && !active && (
+                <Link className="btn btn-primary mt-4 block text-center" href={`/checkout?plan=${plan.count}`}>
+                  このプランを購入確認
+                </Link>
+              )}
             </article>
           );
         })}

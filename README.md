@@ -9,3 +9,12 @@
 注意:
 - この環境ではnpm installがタイムアウトしたため、ローカルビルド確認は未完了です。
 - VercelのBuild Logsで確認してください。
+
+## Version 49
+Checkout Flow Base / 購入確認・決済導線準備版
+
+- /checkout purchase confirmation page
+- /checkout/complete mock purchase completion page
+- Upgrade page now sends users into the checkout flow
+- Mock purchase updates local Premium entitlement and purchase history
+- Supabase sync is attempted when available

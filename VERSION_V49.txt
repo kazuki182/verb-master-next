@@ -1,0 +1,17 @@
+Verb Master Version 49
+Checkout Flow Base / 購入確認・決済導線準備版
+
+更新内容:
+- /checkout 購入確認ページを追加
+- /checkout/complete 仮購入完了ページを追加
+- /upgrade の各プランから購入確認へ遷移
+- 仮購入完了後にPremium解放数と購入履歴へ自動反映
+- Supabase同期は可能な場合だけ実行し、失敗してもローカルの購入履歴は保持
+- 本番決済ではなく、Stripe等へ差し替えやすい導線として実装
+
+確認項目:
+- /upgrade から購入確認へ進める
+- /checkout?plan=30/60/90/120 が開ける
+- 仮購入完了後に購入履歴へ残る
+- 解放数が動詞ロックに反映される
+- /purchases に購入履歴が表示される

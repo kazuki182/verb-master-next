@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { formatDateTime, getAllProgress, getCurrentProgress, getCurrentUsername, getDueReviewItems, getFutureReviewItems, type UserProgress } from "@/lib/account";
 import { verbs } from "@/lib/data";
+import VoiceSettingsPanel from "@/components/VoiceSettingsPanel";
 
 export default function ProfilePage() {
   const [username, setUsername] = useState<string | null>(null);
@@ -41,6 +42,8 @@ export default function ProfilePage() {
         <div className="card p-5"><p className="text-sm text-muted">復習予定</p><p className="text-2xl font-bold">{futureReviewCount}問</p></div>
         <div className="card p-5"><p className="text-sm text-muted">苦手累計</p><p className="text-2xl font-bold">{progress.weakItems.length}</p></div>
       </section>
+
+      <VoiceSettingsPanel />
 
       <section className="card p-5">
         <h2 className="text-xl font-bold">ゲーム実績</h2>

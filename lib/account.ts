@@ -67,6 +67,13 @@ export type TestSession = {
   updatedAt: string;
 };
 
+export type VoiceGender = "female" | "male";
+
+export type VoiceSettings = {
+  gender: VoiceGender;
+  lang: "en-US" | "en-GB";
+};
+
 export type WeeklyStats = {
   weekKey: string;
   loginDays: string[];
@@ -106,6 +113,7 @@ export type UserProgress = {
   testSessions?: Record<string, TestSession>;
   weeklyStats?: Record<string, WeeklyStats>;
   badges?: string[];
+  voiceSettings?: VoiceSettings;
   unlockedVerbCount?: number;
   purchaseTotalYen?: number;
   lastStudyDate?: string;
@@ -328,6 +336,9 @@ function normalizeProgress(progress: UserProgress) {
   if (!progress.testSessions) progress.testSessions = {};
   if (!progress.weeklyStats) progress.weeklyStats = {};
   if (!progress.badges) progress.badges = [];
+  if (!progress.voiceSettings) {
+    progress.voiceSettings = { gender: "female", lang: "en-US" };
+  }
   recordWeeklyLogin(progress);
   if (typeof progress.unlockedVerbCount !== "number")
     progress.unlockedVerbCount = 0;
@@ -360,6 +371,7 @@ export function ensureProgress(username: string): UserProgress {
       testSessions: {},
       weeklyStats: {},
       badges: [],
+      voiceSettings: { gender: "female", lang: "en-US" },
       unlockedVerbCount: 0,
       purchaseTotalYen: 0,
     };
@@ -1006,6 +1018,19 @@ export function getTestSectionLabel(section: string) {
 export function getUnlockedVerbCount() {
   const progress = getCurrentProgress();
   return progress?.unlockedVerbCount || 0;
+}
+
+export function getVoiceSettings(): VoiceSettings {
+  const progress = getCurrentProgress();
+  return progress?.voiceSettings || { gender: "female", lang: "en-US" };
+}
+
+export function saveVoiceSettings(settings: VoiceSettings) {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  progress.voiceSettings = settings;
+  saveProgress(progress);
+  return progress.voiceSettings;
 }
 
 export function hasGrammarAccess() {

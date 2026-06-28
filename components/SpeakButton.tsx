@@ -1,12 +1,54 @@
 "use client";
 
+import { getVoiceSettings, type VoiceGender } from "@/lib/account";
+
+function scoreVoiceName(name: string, gender: VoiceGender) {
+  const lower = name.toLowerCase();
+  const femaleNames = [
+    "samantha",
+    "victoria",
+    "karen",
+    "susan",
+    "zira",
+    "jenny",
+    "aria",
+    "sonia",
+    "ava",
+    "emma",
+    "female",
+  ];
+  const maleNames = [
+    "daniel",
+    "alex",
+    "fred",
+    "david",
+    "mark",
+    "guy",
+    "george",
+    "ryan",
+    "male",
+  ];
+  const preferred = gender === "female" ? femaleNames : maleNames;
+  return preferred.some((keyword) => lower.includes(keyword)) ? 2 : 0;
+}
+
+function pickVoice(voices: SpeechSynthesisVoice[], gender: VoiceGender, lang: string) {
+  const englishVoices = voices.filter((voice) => voice.lang.toLowerCase().startsWith(lang.toLowerCase().slice(0, 2)));
+  const candidates = englishVoices.length ? englishVoices : voices;
+  return [...candidates].sort((a, b) => {
+    const scoreA = scoreVoiceName(a.name, gender) + (a.lang === lang ? 1 : 0);
+    const scoreB = scoreVoiceName(b.name, gender) + (b.lang === lang ? 1 : 0);
+    return scoreB - scoreA;
+  })[0];
+}
+
 export default function SpeakButton({
   text,
   label = "通常",
   slowLabel = "ゆっくり",
   rate = 0.95,
   slowRate = 0.5,
-  lang = "en-US"
+  lang
 }: {
   text: string;
   label?: string;
@@ -17,10 +59,15 @@ export default function SpeakButton({
 }) {
   const speak = (speechRate: number) => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+    const settings = getVoiceSettings();
+    const selectedLang = lang || settings.lang || "en-US";
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = lang;
+    utterance.lang = selectedLang;
     utterance.rate = speechRate;
+    const voices = window.speechSynthesis.getVoices();
+    const voice = pickVoice(voices, settings.gender, selectedLang);
+    if (voice) utterance.voice = voice;
     window.speechSynthesis.speak(utterance);
   };
 

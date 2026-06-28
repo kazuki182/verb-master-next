@@ -1,0 +1,4 @@
+Version 38
+Repository: verb-master-next
+Update: Voice settings for unified male/female speech
+Build: to be verified

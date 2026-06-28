@@ -139,3 +139,13 @@ input, select, textarea { color:#f8fafc; background:#0b1525; border-color:rgba(1
   .bottom-nav-link { font-size: 11px; letter-spacing: -0.05em; }
   .mobile-card-grid { grid-template-columns: 1fr; }
 }
+
+/* Ver.53 smart profile/header fixes */
+.home-avatar img { display: block; }
+.home-profile-actions { max-width: 92px; }
+@media (max-width: 430px) {
+  .home-avatar { height: 52px !important; width: 52px !important; }
+  .home-profile-actions button { font-size: 11px; padding-left: 9px; padding-right: 9px; }
+  .profile-avatar { border-radius: 999px !important; }
+  details summary::-webkit-details-marker { display: none; }
+}

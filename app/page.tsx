@@ -182,7 +182,7 @@ export default function Home() {
   return (
     <div className="space-y-5 pb-28">
       <header className="flex items-start justify-between gap-3">
-        <div>
+        <div className="min-w-0">
           <p className="text-muted">Know the verb. Use the verb.</p>
           <h1 className="mt-1 text-4xl font-bold tracking-tight">
             Verb Master
@@ -191,15 +191,29 @@ export default function Home() {
             社会人向け・基本動詞トレーニング
           </p>
         </div>
-        <button
-          className="rounded-full border border-gray-200 bg-white px-3 py-2 text-sm"
-          onClick={() => {
-            logout();
-            window.location.href = "/login";
-          }}
-        >
-          ログアウト
-        </button>
+        <div className="home-profile-actions shrink-0 text-center">
+          <Link
+            className="home-avatar mx-auto flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-cyan-300/30 bg-slate-900 text-2xl shadow-lg"
+            href="/profile"
+            aria-label="マイページを開く"
+          >
+            {progress.avatarDataUrl ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={progress.avatarDataUrl} alt="プロフィール画像" className="h-full w-full object-cover" />
+            ) : (
+              <span>👤</span>
+            )}
+          </Link>
+          <button
+            className="mt-2 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs font-bold text-slate-200"
+            onClick={() => {
+              logout();
+              window.location.href = "/login";
+            }}
+          >
+            ログアウト
+          </button>
+        </div>
       </header>
 
       <section className="card p-5">

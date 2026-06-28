@@ -26,7 +26,7 @@ import {
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 52";
+const VERSION = "Version 53";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -77,6 +77,7 @@ export default function ProfilePage() {
   const [profileMessage, setProfileMessage] = useState("");
   const [cloudStatus, setCloudStatus] = useState<CloudSyncStatus | null>(null);
   const [cloudSyncing, setCloudSyncing] = useState(false);
+  const [isEditingName, setIsEditingName] = useState(false);
   const fileRef = useRef<HTMLInputElement | null>(null);
 
   const reload = () => {
@@ -108,7 +109,8 @@ export default function ProfilePage() {
   const onSaveProfile = async () => {
     const updated = updateUserProfile({ displayName: displayNameDraft });
     setProgress(updated);
-    setProfileMessage("ローカルに保存しました");
+    setProfileMessage("保存しました");
+    setIsEditingName(false);
     setTimeout(() => setProfileMessage(""), 1800);
     if (updated) await syncToSupabase(updated);
   };
@@ -125,7 +127,7 @@ export default function ProfilePage() {
       const result = typeof reader.result === "string" ? reader.result : "";
       const updated = updateUserProfile({ avatarDataUrl: result });
       setProgress(updated);
-      setProfileMessage("プロフィール画像をローカルに保存しました");
+      setProfileMessage("画像を保存しました");
       setTimeout(() => setProfileMessage(""), 1800);
       if (updated) void syncToSupabase(updated);
     };
@@ -228,19 +230,50 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-slate-950/70 p-4">
-          <label className="block text-sm font-bold text-slate-200">
-            ニックネーム
-            <input
-              className="mt-2 w-full rounded-xl border border-cyan-300/20 bg-slate-950 px-4 py-3 text-white outline-none"
-              value={displayNameDraft}
-              onChange={(event) => setDisplayNameDraft(event.target.value)}
-              placeholder="ニックネーム"
-            />
-          </label>
-          <button className="btn btn-primary mt-3 w-full" onClick={onSaveProfile} type="button">
-            プロフィールを保存
-          </button>
+        <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-slate-950/55 p-4">
+          <div className="flex items-center justify-between gap-3">
+            <div className="min-w-0">
+              <p className="text-xs font-bold tracking-[0.16em] text-cyan-200">ニックネーム</p>
+              <p className="mt-1 truncate text-lg font-extrabold text-white">{displayName}</p>
+            </div>
+            {!isEditingName && (
+              <button
+                className="rounded-full border border-cyan-300/25 px-4 py-2 text-sm font-bold text-cyan-100"
+                onClick={() => {
+                  setDisplayNameDraft(displayName);
+                  setIsEditingName(true);
+                }}
+                type="button"
+              >
+                編集
+              </button>
+            )}
+          </div>
+          {isEditingName && (
+            <div className="mt-3 space-y-3">
+              <input
+                className="w-full rounded-xl border border-cyan-300/20 bg-slate-950 px-4 py-3 text-white outline-none"
+                value={displayNameDraft}
+                onChange={(event) => setDisplayNameDraft(event.target.value)}
+                placeholder="ニックネーム"
+              />
+              <div className="grid grid-cols-2 gap-2">
+                <button className="btn btn-primary" onClick={onSaveProfile} type="button">
+                  保存
+                </button>
+                <button
+                  className="btn btn-soft"
+                  onClick={() => {
+                    setDisplayNameDraft(displayName);
+                    setIsEditingName(false);
+                  }}
+                  type="button"
+                >
+                  キャンセル
+                </button>
+              </div>
+            </div>
+          )}
           {profileMessage && <p className="mt-2 text-sm font-bold text-cyan-100">✅ {profileMessage}</p>}
         </div>
 
@@ -307,47 +340,45 @@ export default function ProfilePage() {
         </div>
       </section>
 
-      <section className="digital-card p-5">
-        <div className="flex items-start justify-between gap-3">
+      <section className="card p-5">
+        <div className="flex items-center justify-between gap-3">
           <div>
-            <p className="text-xs font-bold tracking-[0.18em] text-cyan-200">CLOUD</p>
-            <h2 className="mt-2 text-xl font-bold text-white">クラウド保存</h2>
+            <h2 className="text-xl font-bold">データ保存</h2>
+            <p className="mt-1 text-sm text-muted">学習記録・プロフィールは自動で保存されます。</p>
           </div>
-          <span className="cloud-status-chip">{cloudStatus?.configured ? "接続あり" : "未設定"}</span>
+          <span className="cloud-status-chip">{cloudStatus?.configured ? "同期準備OK" : "端末保存"}</span>
         </div>
-        <p className="mt-3 text-sm leading-6 text-slate-300">
-          端末内のデータはそのまま残し、Supabase設定が完了している場合だけクラウドへ同期します。
-        </p>
-        <div className="mobile-card-grid mt-4 grid grid-cols-2 gap-3 text-center text-sm">
-          <div className="digital-panel">
-            <p className="digital-label">プロフィール</p>
-            <p className="mt-1 font-extrabold text-cyan-100">{cloudLabel("profile", cloudStatus, Boolean(progress.avatarDataUrl))}</p>
-          </div>
-          <div className="digital-panel">
-            <p className="digital-label">画像</p>
-            <p className="mt-1 font-extrabold text-cyan-100">{cloudLabel("avatar", cloudStatus, Boolean(progress.avatarDataUrl))}</p>
-          </div>
-          <div className="digital-panel">
-            <p className="digital-label">Premium</p>
-            <p className="mt-1 font-extrabold text-cyan-100">{cloudLabel("premium", cloudStatus, Boolean(progress.avatarDataUrl))}</p>
-          </div>
-          <div className="digital-panel">
-            <p className="digital-label">学習記録</p>
-            <p className="mt-1 font-extrabold text-cyan-100">{cloudLabel("stats", cloudStatus, Boolean(progress.avatarDataUrl))}</p>
-          </div>
+        <div className="mt-4 rounded-2xl bg-paper p-4">
+          <p className="font-bold text-cyan-100">
+            {cloudStatus?.configured ? "クラウド同期の準備ができています" : "この端末に保存中です"}
+          </p>
+          <p className="mt-1 text-sm leading-6 text-muted">
+            {cloudStatus?.configured
+              ? "プロフィール変更や購入状態は、必要に応じて自動同期します。"
+              : "ログイン中の端末には学習データが保存されています。クラウド同期は今後の公開準備で有効にします。"}
+          </p>
+          {cloudStatus?.updatedAt && <p className="mt-2 text-xs text-slate-400">最終更新：{formatDateTime(cloudStatus.updatedAt)}</p>}
         </div>
-        <button
-          className="btn btn-primary mt-4 w-full"
-          type="button"
-          onClick={() => syncToSupabase()}
-          disabled={cloudSyncing}
-        >
-          {cloudSyncing ? "保存中..." : "クラウドへ保存"}
-        </button>
-        <p className="mt-3 rounded-2xl border border-cyan-300/15 bg-slate-950/60 p-3 text-sm leading-6 text-cyan-50">
-          {cloudMessage(cloudStatus)}
-        </p>
-        {cloudStatus?.updatedAt && <p className="mt-2 text-xs text-slate-400">最終同期：{formatDateTime(cloudStatus.updatedAt)}</p>}
+        {isAdmin && (
+          <details className="mt-3 rounded-2xl border border-cyan-300/15 bg-slate-950/50 p-3 text-sm">
+            <summary className="cursor-pointer font-bold text-cyan-100">開発者用：同期状態</summary>
+            <div className="mt-3 grid grid-cols-2 gap-2 text-center">
+              <div className="rounded-xl bg-slate-950 p-3">プロフィール<br /><b>{cloudLabel("profile", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
+              <div className="rounded-xl bg-slate-950 p-3">画像<br /><b>{cloudLabel("avatar", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
+              <div className="rounded-xl bg-slate-950 p-3">Premium<br /><b>{cloudLabel("premium", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
+              <div className="rounded-xl bg-slate-950 p-3">学習記録<br /><b>{cloudLabel("stats", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
+            </div>
+            <button
+              className="btn btn-soft mt-3 w-full"
+              type="button"
+              onClick={() => syncToSupabase()}
+              disabled={cloudSyncing}
+            >
+              {cloudSyncing ? "同期中..." : "手動同期テスト"}
+            </button>
+            <p className="mt-2 text-xs leading-5 text-muted">{cloudMessage(cloudStatus)}</p>
+          </details>
+        )}
       </section>
 
       <section className="card p-5">
@@ -364,7 +395,7 @@ export default function ProfilePage() {
           </button>
           <div className="rounded-2xl bg-paper p-4">
             <p className="font-bold">バックアップ / 復元</p>
-            <p className="mt-1 text-sm text-muted">Supabase保存と購入状態の復元に対応しました。既存データは消さず、ローカル保存とクラウド同期を併用します。</p>
+            <p className="mt-1 text-sm text-muted">購入状態の復元と学習データ保護に対応しました。既存データは消さず、端末保存とクラウド同期の準備を併用します。</p>
             <Link className="mt-3 inline-block text-sm font-bold text-cyan-200" href="/purchases">購入履歴・復元を開く</Link>
           </div>
           {isAdmin && <Link className="rounded-2xl bg-paper p-4 font-bold" href="/admin">管理画面</Link>}
@@ -387,6 +418,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.53</p><p className="mt-1 text-muted">ホーム右上アイコン、ニックネーム編集、マイページのデータ保存表示をスマート化。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.52</p><p className="mt-1 text-muted">スマホ下タブ、マイページ表示、クラウド保存状態、学習ペース説明を改善。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.51</p><p className="mt-1 text-muted">Stripe Webhook、決済反映、キャンセルページの準備を追加。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.50</p><p className="mt-1 text-muted">Stripe決済モード、決済設定確認、管理画面の決済タブを追加。</p></div>

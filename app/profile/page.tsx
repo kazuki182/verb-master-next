@@ -20,8 +20,13 @@ import {
 import { verbs } from "@/lib/data";
 import VoiceSettingsPanel from "@/components/VoiceSettingsPanel";
 import BadgeList from "@/components/BadgeList";
+import {
+  getCloudReadiness,
+  syncCurrentUserToSupabase,
+  type CloudSyncStatus,
+} from "@/lib/cloudSync";
 
-const VERSION = "Version 45";
+const VERSION = "Version 46";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -43,6 +48,8 @@ export default function ProfilePage() {
   const [ranking, setRanking] = useState<UserProgress[]>([]);
   const [displayNameDraft, setDisplayNameDraft] = useState("");
   const [profileMessage, setProfileMessage] = useState("");
+  const [cloudStatus, setCloudStatus] = useState<CloudSyncStatus | null>(null);
+  const [cloudSyncing, setCloudSyncing] = useState(false);
   const fileRef = useRef<HTMLInputElement | null>(null);
 
   const reload = () => {
@@ -50,6 +57,7 @@ export default function ProfilePage() {
     setProgress(next);
     setRanking(getAllProgress());
     setDisplayNameDraft(next?.displayName || next?.username || "");
+    setCloudStatus(getCloudReadiness());
   };
 
   useEffect(() => {
@@ -62,11 +70,20 @@ export default function ProfilePage() {
     reload();
   }, []);
 
-  const onSaveProfile = () => {
+  const syncToSupabase = async (target = progress) => {
+    if (!target) return;
+    setCloudSyncing(true);
+    const result = await syncCurrentUserToSupabase(target);
+    setCloudStatus(result);
+    setCloudSyncing(false);
+  };
+
+  const onSaveProfile = async () => {
     const updated = updateUserProfile({ displayName: displayNameDraft });
     setProgress(updated);
-    setProfileMessage("保存しました");
+    setProfileMessage("ローカルに保存しました");
     setTimeout(() => setProfileMessage(""), 1800);
+    if (updated) await syncToSupabase(updated);
   };
 
   const onAvatarChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -81,8 +98,9 @@ export default function ProfilePage() {
       const result = typeof reader.result === "string" ? reader.result : "";
       const updated = updateUserProfile({ avatarDataUrl: result });
       setProgress(updated);
-      setProfileMessage("プロフィール画像を保存しました");
+      setProfileMessage("プロフィール画像をローカルに保存しました");
       setTimeout(() => setProfileMessage(""), 1800);
+      if (updated) void syncToSupabase(updated);
     };
     reader.readAsDataURL(file);
   };
@@ -93,6 +111,7 @@ export default function ProfilePage() {
       notificationsEnabled: !progress.notificationsEnabled,
     });
     setProgress(updated);
+    if (updated) void syncToSupabase(updated);
   };
 
   const stats = useMemo(() => {
@@ -258,6 +277,40 @@ export default function ProfilePage() {
         <Link className="btn btn-primary mt-4 block text-center" href="/upgrade">アップグレード</Link>
       </section>
 
+      <section className="digital-card p-5">
+        <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">SUPABASE SAVE</p>
+        <h2 className="mt-2 text-xl font-bold text-white">クラウド保存状態</h2>
+        <p className="mt-2 text-sm text-slate-300">プロフィール・学習記録・Premium状態をSupabaseへ保存する準備版です。</p>
+        <div className="mt-4 grid grid-cols-2 gap-3 text-center text-sm">
+          <div className="digital-panel">
+            <p className="digital-label">プロフィール</p>
+            <p className="mt-1 font-extrabold text-cyan-100">{cloudStatus?.profile === "saved" ? "保存済み" : cloudStatus?.profile === "error" ? "エラー" : "待機"}</p>
+          </div>
+          <div className="digital-panel">
+            <p className="digital-label">画像</p>
+            <p className="mt-1 font-extrabold text-cyan-100">{cloudStatus?.avatar === "saved" ? "Storage保存" : cloudStatus?.avatar === "error" ? "エラー" : progress.avatarDataUrl ? "ローカル" : "未設定"}</p>
+          </div>
+          <div className="digital-panel">
+            <p className="digital-label">Premium</p>
+            <p className="mt-1 font-extrabold text-cyan-100">{cloudStatus?.premium === "saved" ? "保存済み" : cloudStatus?.premium === "error" ? "エラー" : "待機"}</p>
+          </div>
+          <div className="digital-panel">
+            <p className="digital-label">学習記録</p>
+            <p className="mt-1 font-extrabold text-cyan-100">{cloudStatus?.stats === "saved" ? "保存済み" : cloudStatus?.stats === "error" ? "エラー" : "待機"}</p>
+          </div>
+        </div>
+        <button
+          className="btn btn-primary mt-4 w-full"
+          type="button"
+          onClick={() => syncToSupabase()}
+          disabled={cloudSyncing}
+        >
+          {cloudSyncing ? "Supabaseへ保存中..." : "Supabaseへ保存"}
+        </button>
+        {cloudStatus?.message && <p className="mt-3 text-sm text-cyan-100">{cloudStatus.message}</p>}
+        {cloudStatus?.updatedAt && <p className="mt-1 text-xs text-slate-400">最終同期：{formatDateTime(cloudStatus.updatedAt)}</p>}
+      </section>
+
       <section className="card p-5">
         <h2 className="text-xl font-bold">設定</h2>
         <div className="mt-4 grid gap-3">
@@ -272,7 +325,7 @@ export default function ProfilePage() {
           </button>
           <div className="rounded-2xl bg-paper p-4">
             <p className="font-bold">バックアップ / 復元</p>
-            <p className="mt-1 text-sm text-muted">Supabase保存へ移行する時に本実装します。既存データは消さない方針です。</p>
+            <p className="mt-1 text-sm text-muted">Ver.46でSupabase保存ボタンを追加しました。既存データは消さず、ローカル保存とクラウド同期を併用します。</p>
           </div>
           {isAdmin && <Link className="rounded-2xl bg-paper p-4 font-bold" href="/admin">管理画面</Link>}
         </div>
@@ -294,6 +347,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.46</p><p className="mt-1 text-muted">Supabase保存、Storage画像、Premium状態管理の土台を追加。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.45</p><p className="mt-1 text-muted">マイページ強化、プロフィール画像、ニックネーム変更、学習記録整理。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.44</p><p className="mt-1 text-muted">下タブ整理、アップグレードページ、Premium土台。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.43</p><p className="mt-1 text-muted">管理画面の土台を追加。</p></div>

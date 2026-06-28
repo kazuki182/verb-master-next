@@ -93,7 +93,11 @@ export type PurchaseRecord = {
   unlockedVerbCount: number;
   purchaseTotalYen: number;
   planLabel: string;
-  source: "admin_test" | "restore" | "checkout_ready";
+  source: "admin_test" | "restore" | "checkout_ready" | "stripe_ready" | "stripe_test";
+  provider?: "local" | "stripe" | "manual";
+  paymentStatus?: "local_ready" | "stripe_checkout_created" | "paid" | "restored" | "refunded" | "void";
+  checkoutSessionId?: string;
+  planId?: string;
   createdAt: string;
   note?: string;
 };
@@ -138,7 +142,7 @@ export type UserProgress = {
   purchaseTotalYen?: number;
   purchaseHistory?: PurchaseRecord[];
   premiumUpdatedAt?: string;
-  premiumSource?: "admin_test" | "restore" | "checkout_ready";
+  premiumSource?: "admin_test" | "restore" | "checkout_ready" | "stripe_ready" | "stripe_test";
   lastStudyDate?: string;
   lastLoginAt?: string;
 };

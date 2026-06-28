@@ -1,0 +1,10 @@
+Verb Master Version 50
+Stripe Payment Preparation
+
+- Stripe決済モード切り替えの土台を追加
+- 500円/1000円/1500円/2000円のプラン定義を共通化
+- /checkoutで仮購入モードとStripe決済モードを表示
+- Stripe Checkout作成APIの準備を追加
+- 購入完了ページでStripeセッションIDを記録できる形に変更
+- 管理画面に決済準備・購入状態の確認タブを追加
+- Supabase本番購入テーブル用SQLを追加

@@ -15,8 +15,9 @@ import {
   type UserProgress,
 } from "@/lib/account";
 import { verbs, testItems, type Verb } from "@/lib/data";
+import { PAYMENT_PLANS, getPaymentReadiness } from "@/lib/paymentConfig";
 
-type AdminTab = "dashboard" | "verbs" | "users";
+type AdminTab = "dashboard" | "verbs" | "users" | "payments";
 
 type VerbQuality = {
   verb: Verb;
@@ -163,10 +164,11 @@ export default function AdminPage() {
         <p className="text-sm text-muted">教材品質・ユーザー状況・Premium管理の土台です。</p>
       </header>
 
-      <div className="grid grid-cols-3 gap-2 rounded-2xl bg-slate-950/70 p-2 text-center text-sm font-bold">
+      <div className="grid grid-cols-4 gap-2 rounded-2xl bg-slate-950/70 p-2 text-center text-sm font-bold">
         <button className={`rounded-xl px-3 py-2 ${tab === "dashboard" ? "bg-cyan-300 text-slate-950" : "text-slate-200"}`} onClick={() => setTab("dashboard")}>概要</button>
         <button className={`rounded-xl px-3 py-2 ${tab === "verbs" ? "bg-cyan-300 text-slate-950" : "text-slate-200"}`} onClick={() => setTab("verbs")}>動詞</button>
         <button className={`rounded-xl px-3 py-2 ${tab === "users" ? "bg-cyan-300 text-slate-950" : "text-slate-200"}`} onClick={() => setTab("users")}>ユーザー</button>
+        <button className={`rounded-xl px-3 py-2 ${tab === "payments" ? "bg-cyan-300 text-slate-950" : "text-slate-200"}`} onClick={() => setTab("payments")}>決済</button>
       </div>
 
       {tab === "dashboard" && (
@@ -233,6 +235,59 @@ export default function AdminPage() {
               <Link className="btn btn-soft mt-4 inline-block" href={`/verbs/${row.verb.id}`}>学習ページを確認</Link>
             </article>
           ))}
+        </section>
+      )}
+
+      {tab === "payments" && (
+        <section className="space-y-4">
+          <div className="digital-card p-5">
+            <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">PAYMENT READINESS</p>
+            <h2 className="mt-2 text-2xl font-black">Stripe本番決済準備</h2>
+            {(() => {
+              const readiness = getPaymentReadiness();
+              return (
+                <div className="mt-4 grid gap-3 text-sm">
+                  <div className="rounded-2xl bg-slate-950/50 p-3 font-bold">モード：{readiness.modeLabel}</div>
+                  <div className="rounded-2xl bg-slate-950/50 p-3 font-bold">公開キー：{readiness.publishableKeyReady ? "設定済み" : "未設定"}</div>
+                  <div className="rounded-2xl bg-slate-950/50 p-3 font-bold">Price ID：{readiness.priceIdsReady ? "設定済み" : "未設定あり"}</div>
+                  {!readiness.priceIdsReady && <p className="rounded-2xl bg-amber-950/30 p-3 text-xs font-bold text-amber-100">未設定：{readiness.missingPublicPriceIds.join(" / ")}</p>}
+                </div>
+              );
+            })()}
+          </div>
+
+          <div className="card p-5">
+            <h2 className="text-xl font-bold">Stripeプラン定義</h2>
+            <div className="mt-4 grid gap-3">
+              {PAYMENT_PLANS.map((plan) => (
+                <div key={plan.planId} className="rounded-2xl bg-paper p-4 text-sm">
+                  <p className="font-black">{plan.label} / ¥{plan.price.toLocaleString()}</p>
+                  <p className="mt-1 text-xs text-muted">{plan.planId} / {plan.range}動詞 / {plan.stripePriceId ? "Price ID設定済み" : `${plan.stripePriceEnvName} 未設定`}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="card p-5">
+            <h2 className="text-xl font-bold">ユーザー購入状態</h2>
+            <div className="mt-4 space-y-3">
+              {progressRows.map((progress) => (
+                <div key={progress.username} className="rounded-2xl bg-paper p-4 text-sm">
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <p className="font-black">{progress.username}</p>
+                      <p className="text-xs text-muted">source: {progress.premiumSource || "未記録"}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="font-black text-cyan-100">{progress.unlockedVerbCount || 0}動詞</p>
+                      <p className="text-xs text-muted">¥{(progress.purchaseTotalYen || 0).toLocaleString()}</p>
+                    </div>
+                  </div>
+                  <p className="mt-2 text-xs text-muted">購入履歴：{progress.purchaseHistory?.length || 0}件 / 更新：{formatDateTime(progress.premiumUpdatedAt)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
       )}
 

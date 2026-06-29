@@ -35334,11 +35334,1547 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   }
+,
 
+  {
+    "id": "report",
+    "rank": 66,
+    "word": "REPORT",
+    "ipa": "/rɪˈpɔːrt/",
+    "kana": "リポート",
+    "syllable": "re-port",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "情報を整理して相手に伝える",
+    "coreDetail": "REPORTは、結果・状況・問題点などを整理して報告する時に使います。仕事では上司・チーム・顧客への共有でよく使います。",
+    "meanings": [
+      {
+        "id": "tell-status",
+        "title": "① 報告する",
+        "pattern": "REPORT + 内容 / REPORT TO + 人",
+        "transitivity": "他動詞・自動詞",
+        "structure": "S + report + O / S + report + to 人",
+        "image": "分かったことを整理して相手へ伝える。",
+        "point": "report the result は結果を報告する。report to my manager は上司に報告する。",
+        "examples": [
+          {
+            "en": "I reported the issue to my manager.",
+            "ja": "私はその問題を上司に報告しました。",
+            "focus": "reported",
+            "object": "the issue",
+            "jaFocus": "報告しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "I"
+              },
+              {
+                "label": "V",
+                "text": "reported"
+              },
+              {
+                "label": "O",
+                "text": "the issue"
+              },
+              {
+                "label": "M",
+                "text": "to my manager"
+              }
+            ],
+            "grammarNote": "to my manager は「誰に報告したか」を表す補足です。"
+          },
+          {
+            "en": "We need to report the result by Friday.",
+            "ja": "私たちは金曜日までに結果を報告する必要があります。",
+            "focus": "report",
+            "object": "the result",
+            "jaFocus": "報告する",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "report"
+              },
+              {
+                "label": "O",
+                "text": "the result"
+              },
+              {
+                "label": "M",
+                "text": "by Friday"
+              }
+            ]
+          },
+          {
+            "en": "She reported a delay in the schedule.",
+            "ja": "彼女はスケジュールの遅れを報告しました。",
+            "focus": "reported",
+            "object": "a delay in the schedule",
+            "jaFocus": "報告しました",
+            "sentencePattern": "S + V + O",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "She"
+              },
+              {
+                "label": "V",
+                "text": "reported"
+              },
+              {
+                "label": "O",
+                "text": "a delay in the schedule"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "update",
+    "rank": 67,
+    "word": "UPDATE",
+    "ipa": "/ˌʌpˈdeɪt/",
+    "kana": "アップデイト",
+    "syllable": "up-date",
+    "transitivity": "他動詞・名詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "新しい情報に入れ替える・最新状態にする",
+    "coreDetail": "UPDATEは、情報・資料・システム・相手への連絡を新しくする時に使います。仕事メールでも非常によく使います。",
+    "meanings": [
+      {
+        "id": "make-current",
+        "title": "① 更新する・最新情報を伝える",
+        "pattern": "UPDATE + 名詞 / UPDATE + 人 + ON + 内容",
+        "transitivity": "他動詞",
+        "structure": "S + update + O / S + update + 人 + on 内容",
+        "image": "古い情報を新しい状態にする。",
+        "point": "update the file はファイルを更新する。update you on the status は状況をあなたに共有する。",
+        "examples": [
+          {
+            "en": "I updated the file this morning.",
+            "ja": "私は今朝そのファイルを更新しました。",
+            "focus": "updated",
+            "object": "the file",
+            "jaFocus": "更新しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "I"
+              },
+              {
+                "label": "V",
+                "text": "updated"
+              },
+              {
+                "label": "O",
+                "text": "the file"
+              },
+              {
+                "label": "M",
+                "text": "this morning"
+              }
+            ]
+          },
+          {
+            "en": "We will update you on the delivery schedule.",
+            "ja": "私たちは納品スケジュールについてあなたに最新情報を共有します。",
+            "focus": "update",
+            "object": "you",
+            "jaFocus": "共有します",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "update"
+              },
+              {
+                "label": "O",
+                "text": "you"
+              },
+              {
+                "label": "M",
+                "text": "on the delivery schedule"
+              }
+            ],
+            "grammarNote": "on the delivery schedule は「何について共有するか」を表します。"
+          },
+          {
+            "en": "Can you update the customer list?",
+            "ja": "あなたは顧客リストを更新できますか？",
+            "focus": "update",
+            "object": "the customer list",
+            "jaFocus": "更新できますか",
+            "sentencePattern": "S + V + O",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "you"
+              },
+              {
+                "label": "V",
+                "text": "update"
+              },
+              {
+                "label": "O",
+                "text": "the customer list"
+              }
+            ],
+            "grammarNote": "Can は可能かどうかを聞く助動詞です。"
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "review",
+    "rank": 68,
+    "word": "REVIEW",
+    "ipa": "/rɪˈvjuː/",
+    "kana": "リビュー",
+    "syllable": "re-view",
+    "transitivity": "他動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "内容を見直して確認する",
+    "coreDetail": "REVIEWは、資料・計画・結果・見積などを確認し、必要なら修正点を見つける時に使います。",
+    "meanings": [
+      {
+        "id": "check-again",
+        "title": "① 見直す・確認する",
+        "pattern": "REVIEW + 名詞",
+        "transitivity": "他動詞",
+        "structure": "S + review + O",
+        "image": "一度作ったものをもう一度見て確認する。",
+        "point": "check より少し丁寧で、内容をしっかり見る感じがあります。",
+        "examples": [
+          {
+            "en": "I reviewed the proposal before the meeting.",
+            "ja": "私は会議の前に提案書を見直しました。",
+            "focus": "reviewed",
+            "object": "the proposal",
+            "jaFocus": "見直しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "I"
+              },
+              {
+                "label": "V",
+                "text": "reviewed"
+              },
+              {
+                "label": "O",
+                "text": "the proposal"
+              },
+              {
+                "label": "M",
+                "text": "before the meeting"
+              }
+            ]
+          },
+          {
+            "en": "We need to review the quotation again.",
+            "ja": "私たちは見積書をもう一度確認する必要があります。",
+            "focus": "review",
+            "object": "the quotation",
+            "jaFocus": "確認する",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "review"
+              },
+              {
+                "label": "O",
+                "text": "the quotation"
+              },
+              {
+                "label": "M",
+                "text": "again"
+              }
+            ]
+          },
+          {
+            "en": "Please review this document by tomorrow.",
+            "ja": "あなたは明日までにこの資料を確認してください。",
+            "focus": "review",
+            "object": "this document",
+            "jaFocus": "確認してください",
+            "sentencePattern": "V + O + M",
+            "grammarParts": [
+              {
+                "label": "V",
+                "text": "review"
+              },
+              {
+                "label": "O",
+                "text": "this document"
+              },
+              {
+                "label": "M",
+                "text": "by tomorrow"
+              }
+            ],
+            "grammarNote": "Please で丁寧な依頼になります。命令文なので主語 you は省略されています。"
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "compare",
+    "rank": 69,
+    "word": "COMPARE",
+    "ipa": "/kəmˈper/",
+    "kana": "コンペア",
+    "syllable": "com-pare",
+    "transitivity": "他動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "2つ以上のものを並べて違いを見る",
+    "coreDetail": "COMPAREは、価格・仕様・条件・結果などを比べる時に使います。営業や資料作成で使いやすい動詞です。",
+    "meanings": [
+      {
+        "id": "look-at-differences",
+        "title": "① 比較する",
+        "pattern": "COMPARE + A + WITH/TO + B",
+        "transitivity": "他動詞",
+        "structure": "S + compare + O + M",
+        "image": "AとBを並べて、違い・良さ・問題点を見る。",
+        "point": "仕事では compare prices, compare specs, compare the results などが自然です。",
+        "examples": [
+          {
+            "en": "We compared the prices with last year.",
+            "ja": "私たちは価格を昨年と比較しました。",
+            "focus": "compared",
+            "object": "the prices",
+            "jaFocus": "比較しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "compared"
+              },
+              {
+                "label": "O",
+                "text": "the prices"
+              },
+              {
+                "label": "M",
+                "text": "with last year"
+              }
+            ]
+          },
+          {
+            "en": "I compared the two samples carefully.",
+            "ja": "私は2つのサンプルを注意深く比較しました。",
+            "focus": "compared",
+            "object": "the two samples",
+            "jaFocus": "比較しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "I"
+              },
+              {
+                "label": "V",
+                "text": "compared"
+              },
+              {
+                "label": "O",
+                "text": "the two samples"
+              },
+              {
+                "label": "M",
+                "text": "carefully"
+              }
+            ]
+          },
+          {
+            "en": "Can you compare these specifications?",
+            "ja": "あなたはこれらの仕様を比較できますか？",
+            "focus": "compare",
+            "object": "these specifications",
+            "jaFocus": "比較できますか",
+            "sentencePattern": "S + V + O",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "you"
+              },
+              {
+                "label": "V",
+                "text": "compare"
+              },
+              {
+                "label": "O",
+                "text": "these specifications"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "introduce",
+    "rank": 70,
+    "word": "INTRODUCE",
+    "ipa": "/ˌɪntrəˈduːs/",
+    "kana": "イントロデュース",
+    "syllable": "in-tro-duce",
+    "transitivity": "他動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "人・物・考えを相手に初めて示す",
+    "coreDetail": "INTRODUCEは、人を紹介するだけでなく、新しい商品・仕組み・考え方を導入する時にも使います。",
+    "meanings": [
+      {
+        "id": "show-for-first-time",
+        "title": "① 紹介する・導入する",
+        "pattern": "INTRODUCE + 名詞 / INTRODUCE + 人 + TO + 人",
+        "transitivity": "他動詞",
+        "structure": "S + introduce + O + M",
+        "image": "まだ知らない相手に、人・物・考えを見せる。",
+        "point": "introduce a product は商品を紹介する。introduce A to B はAをBに紹介する。",
+        "examples": [
+          {
+            "en": "I introduced our product to the customer.",
+            "ja": "私はお客様に私たちの商品を紹介しました。",
+            "focus": "introduced",
+            "object": "our product",
+            "jaFocus": "紹介しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "I"
+              },
+              {
+                "label": "V",
+                "text": "introduced"
+              },
+              {
+                "label": "O",
+                "text": "our product"
+              },
+              {
+                "label": "M",
+                "text": "to the customer"
+              }
+            ]
+          },
+          {
+            "en": "We introduced a new rule this month.",
+            "ja": "私たちは今月新しいルールを導入しました。",
+            "focus": "introduced",
+            "object": "a new rule",
+            "jaFocus": "導入しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "introduced"
+              },
+              {
+                "label": "O",
+                "text": "a new rule"
+              },
+              {
+                "label": "M",
+                "text": "this month"
+              }
+            ]
+          },
+          {
+            "en": "Can you introduce me to the new manager?",
+            "ja": "あなたは私を新しいマネージャーに紹介してくれますか？",
+            "focus": "introduce",
+            "object": "me",
+            "jaFocus": "紹介してくれますか",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "you"
+              },
+              {
+                "label": "V",
+                "text": "introduce"
+              },
+              {
+                "label": "O",
+                "text": "me"
+              },
+              {
+                "label": "M",
+                "text": "to the new manager"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  }
+,
+  {
+    "id": "request",
+    "rank": 71,
+    "word": "REQUEST",
+    "ipa": "/rɪˈkwest/",
+    "kana": "リクエスト",
+    "syllable": "re-quest",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "必要なものや対応を相手に丁寧に求める",
+    "coreDetail": "REQUESTは、資料・確認・対応・許可などを相手に正式または丁寧に求める時に使います。askより少しビジネス寄りで、メールでもよく使います。",
+    "meanings": [
+      {
+        "id": "main",
+        "title": "① 依頼する・要請する",
+        "pattern": "REQUEST + 名詞 / REQUEST 人 TO DO",
+        "transitivity": "基本動詞",
+        "structure": "S + request + O / S + request + 人 + to do",
+        "image": "必要なものや対応を相手に丁寧に求める",
+        "point": "REQUESTは、資料・確認・対応・許可などを相手に正式または丁寧に求める時に使います。askより少しビジネス寄りで、メールでもよく使います。",
+        "examples": [
+          {
+            "en": "I requested the latest price list.",
+            "ja": "私は最新の価格表を依頼しました。",
+            "focus": "requested",
+            "object": "the latest price list",
+            "jaFocus": "価格表を依頼しました",
+            "sentencePattern": "S + V + O",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "I"
+              },
+              {
+                "label": "V",
+                "text": "requested"
+              },
+              {
+                "label": "O",
+                "text": "the latest price list"
+              }
+            ]
+          },
+          {
+            "en": "We requested approval before ordering.",
+            "ja": "私たちは発注前に承認を依頼しました。",
+            "focus": "requested",
+            "object": "approval",
+            "jaFocus": "に承認を依頼しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "requested"
+              },
+              {
+                "label": "O",
+                "text": "approval"
+              },
+              {
+                "label": "M",
+                "text": "before ordering"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "The client requested us to revise the proposal.",
+            "ja": "その顧客は私たちに提案書を修正するよう依頼しました。",
+            "focus": "requested",
+            "object": "us",
+            "jaFocus": "するよう依頼しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "The client"
+              },
+              {
+                "label": "V",
+                "text": "requested"
+              },
+              {
+                "label": "O",
+                "text": "us"
+              },
+              {
+                "label": "M",
+                "text": "to revise the proposal"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "suggest",
+    "rank": 72,
+    "word": "SUGGEST",
+    "ipa": "/səˈdʒest/",
+    "kana": "サジェスト",
+    "syllable": "sug-gest",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "相手が判断しやすいように案を出す",
+    "coreDetail": "SUGGESTは、命令ではなく案を出す動詞です。仕事では改善案・日程・方法を提案する時に使います。",
+    "meanings": [
+      {
+        "id": "main",
+        "title": "① 提案する",
+        "pattern": "SUGGEST + 名詞 / SUGGEST THAT + 文",
+        "transitivity": "基本動詞",
+        "structure": "S + suggest + O / S + suggest + that節",
+        "image": "相手が判断しやすいように案を出す",
+        "point": "SUGGESTは、命令ではなく案を出す動詞です。仕事では改善案・日程・方法を提案する時に使います。",
+        "examples": [
+          {
+            "en": "I suggested a new schedule.",
+            "ja": "私は新しいスケジュールを提案しました。",
+            "focus": "suggested",
+            "object": "a new schedule",
+            "jaFocus": "ュールを提案しました",
+            "sentencePattern": "S + V + O",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "I"
+              },
+              {
+                "label": "V",
+                "text": "suggested"
+              },
+              {
+                "label": "O",
+                "text": "a new schedule"
+              }
+            ]
+          },
+          {
+            "en": "We suggested that they check the sample first.",
+            "ja": "私たちは彼らが先にサンプルを確認することを提案しました。",
+            "focus": "suggested",
+            "object": "that they check the sample first",
+            "jaFocus": "ることを提案しました",
+            "sentencePattern": "S + V + O",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "suggested"
+              },
+              {
+                "label": "O",
+                "text": "that they check the sample first"
+              }
+            ]
+          },
+          {
+            "en": "She suggested a better way to explain the product.",
+            "ja": "彼女はその商品を説明するより良い方法を提案しました。",
+            "focus": "suggested",
+            "object": "a better way to explain the product",
+            "jaFocus": "い方法を提案しました",
+            "sentencePattern": "S + V + O",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "She"
+              },
+              {
+                "label": "V",
+                "text": "suggested"
+              },
+              {
+                "label": "O",
+                "text": "a better way to explain the product"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "agree",
+    "rank": 73,
+    "word": "AGREE",
+    "ipa": "/əˈɡriː/",
+    "kana": "アグリー",
+    "syllable": "a-gree",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "相手の考え・条件・方針と同じ方向になる",
+    "coreDetail": "AGREEは、意見に同意する、条件に合意する時に使います。agree with 人/意見、agree on 条件・方針の形が重要です。",
+    "meanings": [
+      {
+        "id": "main",
+        "title": "① 同意する・合意する",
+        "pattern": "AGREE WITH + 人/意見 / AGREE ON + 内容",
+        "transitivity": "基本動詞",
+        "structure": "S + agree + M",
+        "image": "相手の考え・条件・方針と同じ方向になる",
+        "point": "AGREEは、意見に同意する、条件に合意する時に使います。agree with 人/意見、agree on 条件・方針の形が重要です。",
+        "examples": [
+          {
+            "en": "I agree with your idea.",
+            "ja": "私はあなたの考えに同意します。",
+            "focus": "agree",
+            "jaFocus": "たの考えに同意します",
+            "sentencePattern": "S + V + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "I"
+              },
+              {
+                "label": "V",
+                "text": "agree"
+              },
+              {
+                "label": "M",
+                "text": "with your idea"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "We agreed on the delivery date.",
+            "ja": "私たちは納品日に合意しました。",
+            "focus": "agreed",
+            "jaFocus": "納品日に合意しました",
+            "sentencePattern": "S + V + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "agreed"
+              },
+              {
+                "label": "M",
+                "text": "on the delivery date"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "The team agreed to change the plan.",
+            "ja": "そのチームは計画を変更することに同意しました。",
+            "focus": "agreed",
+            "jaFocus": "ることに同意しました",
+            "sentencePattern": "S + V + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "The team"
+              },
+              {
+                "label": "V",
+                "text": "agreed"
+              },
+              {
+                "label": "M",
+                "text": "to change the plan"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "arrange",
+    "rank": 74,
+    "word": "ARRANGE",
+    "ipa": "/əˈreɪndʒ/",
+    "kana": "アレンジ",
+    "syllable": "ar-range",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "予定・物・人を目的に合うように整える",
+    "coreDetail": "ARRANGEは、打ち合わせ・移動・資料・席などを手配する時に使います。日本語のアレンジより仕事では「手配する」の意味が強いです。",
+    "meanings": [
+      {
+        "id": "main",
+        "title": "① 手配する・調整する",
+        "pattern": "ARRANGE + 名詞 / ARRANGE TO DO",
+        "transitivity": "基本動詞",
+        "structure": "S + arrange + O / S + arrange + to do",
+        "image": "予定・物・人を目的に合うように整える",
+        "point": "ARRANGEは、打ち合わせ・移動・資料・席などを手配する時に使います。日本語のアレンジより仕事では「手配する」の意味が強いです。",
+        "examples": [
+          {
+            "en": "I arranged a meeting with the client.",
+            "ja": "私は顧客との打ち合わせを手配しました。",
+            "focus": "arranged",
+            "object": "a meeting",
+            "jaFocus": "合わせを手配しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "I"
+              },
+              {
+                "label": "V",
+                "text": "arranged"
+              },
+              {
+                "label": "O",
+                "text": "a meeting"
+              },
+              {
+                "label": "M",
+                "text": "with the client"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "We arranged the delivery for next Monday.",
+            "ja": "私たちは来週月曜日の配送を手配しました。",
+            "focus": "arranged",
+            "object": "the delivery",
+            "jaFocus": "の配送を手配しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "arranged"
+              },
+              {
+                "label": "O",
+                "text": "the delivery"
+              },
+              {
+                "label": "M",
+                "text": "for next Monday"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "She arranged to visit the site tomorrow.",
+            "ja": "彼女は明日現場を訪問する手配をしました。",
+            "focus": "arranged",
+            "object": "to visit the site tomorrow",
+            "jaFocus": "問する手配をしました",
+            "sentencePattern": "S + V + O",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "She"
+              },
+              {
+                "label": "V",
+                "text": "arranged"
+              },
+              {
+                "label": "O",
+                "text": "to visit the site tomorrow"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "attend",
+    "rank": 75,
+    "word": "ATTEND",
+    "ipa": "/əˈtend/",
+    "kana": "アテンド",
+    "syllable": "at-tend",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "会議・イベントなどに参加する",
+    "coreDetail": "ATTENDは、会議・研修・展示会などに参加する時に使います。日本語の「アテンドする」と違い、英語では基本的に「参加する」です。",
+    "meanings": [
+      {
+        "id": "main",
+        "title": "① 出席する・参加する",
+        "pattern": "ATTEND + 会議/イベント",
+        "transitivity": "基本動詞",
+        "structure": "S + attend + O",
+        "image": "会議・イベントなどに参加する",
+        "point": "ATTENDは、会議・研修・展示会などに参加する時に使います。日本語の「アテンドする」と違い、英語では基本的に「参加する」です。",
+        "examples": [
+          {
+            "en": "I attended the meeting this morning.",
+            "ja": "私は今朝その会議に出席しました。",
+            "focus": "attended",
+            "object": "the meeting",
+            "jaFocus": "の会議に出席しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "I"
+              },
+              {
+                "label": "V",
+                "text": "attended"
+              },
+              {
+                "label": "O",
+                "text": "the meeting"
+              },
+              {
+                "label": "M",
+                "text": "this morning"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "We attended a training session last week.",
+            "ja": "私たちは先週研修に参加しました。",
+            "focus": "attended",
+            "object": "a training session",
+            "jaFocus": "週研修に参加しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "attended"
+              },
+              {
+                "label": "O",
+                "text": "a training session"
+              },
+              {
+                "label": "M",
+                "text": "last week"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "They will attend the exhibition in Tokyo.",
+            "ja": "彼らは東京の展示会に参加する予定です。",
+            "focus": "attend",
+            "object": "the exhibition",
+            "jaFocus": "会に参加する予定です",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "They"
+              },
+              {
+                "label": "V",
+                "text": "will attend"
+              },
+              {
+                "label": "O",
+                "text": "the exhibition"
+              },
+              {
+                "label": "M",
+                "text": "in Tokyo"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "contact",
+    "rank": 76,
+    "word": "CONTACT",
+    "ipa": "/ˈkɑːntækt/",
+    "kana": "コンタクト",
+    "syllable": "con-tact",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "相手に連絡を取る",
+    "coreDetail": "CONTACTは、メール・電話・チャットなどで相手に連絡する時に使います。contact to 人 ではなく contact 人 が基本です。",
+    "meanings": [
+      {
+        "id": "main",
+        "title": "① 連絡する",
+        "pattern": "CONTACT + 人/会社",
+        "transitivity": "基本動詞",
+        "structure": "S + contact + O",
+        "image": "相手に連絡を取る",
+        "point": "CONTACTは、メール・電話・チャットなどで相手に連絡する時に使います。contact to 人 ではなく contact 人 が基本です。",
+        "examples": [
+          {
+            "en": "I contacted the supplier this morning.",
+            "ja": "私は今朝その仕入先に連絡しました。",
+            "focus": "contacted",
+            "object": "the supplier",
+            "jaFocus": "仕入先に連絡しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "I"
+              },
+              {
+                "label": "V",
+                "text": "contacted"
+              },
+              {
+                "label": "O",
+                "text": "the supplier"
+              },
+              {
+                "label": "M",
+                "text": "this morning"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "We need to contact the customer today.",
+            "ja": "私たちは今日その顧客に連絡する必要があります。",
+            "focus": "contact",
+            "object": "the customer",
+            "jaFocus": "絡する必要があります",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "need to contact"
+              },
+              {
+                "label": "O",
+                "text": "the customer"
+              },
+              {
+                "label": "M",
+                "text": "today"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "Please contact me if you have any questions.",
+            "ja": "質問があれば私に連絡してください。",
+            "focus": "contact",
+            "object": "me",
+            "jaFocus": "私に連絡してください",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "Please"
+              },
+              {
+                "label": "V",
+                "text": "contact"
+              },
+              {
+                "label": "O",
+                "text": "me"
+              },
+              {
+                "label": "M",
+                "text": "if you have any questions"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "share",
+    "rank": 77,
+    "word": "SHARE",
+    "ipa": "/ʃer/",
+    "kana": "シェア",
+    "syllable": "share",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "情報・物・考えを相手と分け合う",
+    "coreDetail": "SHAREは、情報共有・資料共有・考えの共有でよく使います。share information with 人 の形が重要です。",
+    "meanings": [
+      {
+        "id": "main",
+        "title": "① 共有する",
+        "pattern": "SHARE + 名詞 + WITH + 人",
+        "transitivity": "基本動詞",
+        "structure": "S + share + O + M",
+        "image": "情報・物・考えを相手と分け合う",
+        "point": "SHAREは、情報共有・資料共有・考えの共有でよく使います。share information with 人 の形が重要です。",
+        "examples": [
+          {
+            "en": "I shared the file with the team.",
+            "ja": "私はそのファイルをチームと共有しました。",
+            "focus": "shared",
+            "object": "the file",
+            "jaFocus": "チームと共有しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "I"
+              },
+              {
+                "label": "V",
+                "text": "shared"
+              },
+              {
+                "label": "O",
+                "text": "the file"
+              },
+              {
+                "label": "M",
+                "text": "with the team"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "We should share the schedule with the client.",
+            "ja": "私たちはそのスケジュールを顧客と共有するべきです。",
+            "focus": "share",
+            "object": "the schedule",
+            "jaFocus": "客と共有するべきです",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "should share"
+              },
+              {
+                "label": "O",
+                "text": "the schedule"
+              },
+              {
+                "label": "M",
+                "text": "with the client"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "She shared useful information during the meeting.",
+            "ja": "彼女は会議中に役立つ情報を共有しました。",
+            "focus": "shared",
+            "object": "useful information",
+            "jaFocus": "つ情報を共有しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "She"
+              },
+              {
+                "label": "V",
+                "text": "shared"
+              },
+              {
+                "label": "O",
+                "text": "useful information"
+              },
+              {
+                "label": "M",
+                "text": "during the meeting"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "collect",
+    "rank": 78,
+    "word": "COLLECT",
+    "ipa": "/kəˈlekt/",
+    "kana": "コレクト",
+    "syllable": "col-lect",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "必要なものを集めて一つにする",
+    "coreDetail": "COLLECTは、情報・資料・データ・意見などを集める時に使います。仕事では判断材料を集める場面でよく使います。",
+    "meanings": [
+      {
+        "id": "main",
+        "title": "① 集める・回収する",
+        "pattern": "COLLECT + 名詞",
+        "transitivity": "基本動詞",
+        "structure": "S + collect + O",
+        "image": "必要なものを集めて一つにする",
+        "point": "COLLECTは、情報・資料・データ・意見などを集める時に使います。仕事では判断材料を集める場面でよく使います。",
+        "examples": [
+          {
+            "en": "I collected the data for the report.",
+            "ja": "私はその報告書のためにデータを集めました。",
+            "focus": "collected",
+            "object": "the data",
+            "jaFocus": "にデータを集めました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "I"
+              },
+              {
+                "label": "V",
+                "text": "collected"
+              },
+              {
+                "label": "O",
+                "text": "the data"
+              },
+              {
+                "label": "M",
+                "text": "for the report"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "We need to collect feedback from users.",
+            "ja": "私たちはユーザーから感想を集める必要があります。",
+            "focus": "collect",
+            "object": "feedback",
+            "jaFocus": "集める必要があります",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "need to collect"
+              },
+              {
+                "label": "O",
+                "text": "feedback"
+              },
+              {
+                "label": "M",
+                "text": "from users"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "She collected all the documents before the meeting.",
+            "ja": "彼女は会議前にすべての資料を集めました。",
+            "focus": "collected",
+            "object": "all the documents",
+            "jaFocus": "ての資料を集めました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "She"
+              },
+              {
+                "label": "V",
+                "text": "collected"
+              },
+              {
+                "label": "O",
+                "text": "all the documents"
+              },
+              {
+                "label": "M",
+                "text": "before the meeting"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "reduce",
+    "rank": 79,
+    "word": "REDUCE",
+    "ipa": "/rɪˈduːs/",
+    "kana": "リデュース",
+    "syllable": "re-duce",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "量・時間・費用・負担を少なくする",
+    "coreDetail": "REDUCEは、コスト・時間・リスク・負担などを減らす時に使います。ビジネス改善の話でよく出ます。",
+    "meanings": [
+      {
+        "id": "main",
+        "title": "① 減らす",
+        "pattern": "REDUCE + 名詞",
+        "transitivity": "基本動詞",
+        "structure": "S + reduce + O",
+        "image": "量・時間・費用・負担を少なくする",
+        "point": "REDUCEは、コスト・時間・リスク・負担などを減らす時に使います。ビジネス改善の話でよく出ます。",
+        "examples": [
+          {
+            "en": "We need to reduce the cost.",
+            "ja": "私たちはコストを削減する必要があります。",
+            "focus": "reduce",
+            "object": "the cost",
+            "jaFocus": "減する必要があります",
+            "sentencePattern": "S + V + O",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "need to reduce"
+              },
+              {
+                "label": "O",
+                "text": "the cost"
+              }
+            ]
+          },
+          {
+            "en": "This tool reduces manual work.",
+            "ja": "このツールは手作業を減らします。",
+            "focus": "reduces",
+            "object": "manual work",
+            "jaFocus": "は手作業を減らします",
+            "sentencePattern": "S + V + O",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "This tool"
+              },
+              {
+                "label": "V",
+                "text": "reduces"
+              },
+              {
+                "label": "O",
+                "text": "manual work"
+              }
+            ]
+          },
+          {
+            "en": "They reduced the delivery time by two days.",
+            "ja": "彼らは納期を2日短縮しました。",
+            "focus": "reduced",
+            "object": "the delivery time",
+            "jaFocus": "期を2日短縮しました",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "They"
+              },
+              {
+                "label": "V",
+                "text": "reduced"
+              },
+              {
+                "label": "O",
+                "text": "the delivery time"
+              },
+              {
+                "label": "M",
+                "text": "by two days"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "increase",
+    "rank": 80,
+    "word": "INCREASE",
+    "ipa": "/ɪnˈkriːs/",
+    "kana": "インクリース",
+    "syllable": "in-crease",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★☆☆ 基本",
+    "core": "数・量・売上・可能性を増やす",
+    "coreDetail": "INCREASEは、売上・数量・時間・可能性などが増える、または増やす時に使います。increase sales / increase the chance の形がよく使われます。",
+    "meanings": [
+      {
+        "id": "main",
+        "title": "① 増える・増やす",
+        "pattern": "INCREASE + 名詞 / 数量 INCREASES",
+        "transitivity": "基本動詞",
+        "structure": "S + increase + O / S + increases",
+        "image": "数・量・売上・可能性を増やす",
+        "point": "INCREASEは、売上・数量・時間・可能性などが増える、または増やす時に使います。increase sales / increase the chance の形がよく使われます。",
+        "examples": [
+          {
+            "en": "We want to increase sales this year.",
+            "ja": "私たちは今年売上を増やしたいです。",
+            "focus": "increase",
+            "object": "sales",
+            "jaFocus": "売上を増やしたいです",
+            "sentencePattern": "S + V + O + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "want to increase"
+              },
+              {
+                "label": "O",
+                "text": "sales"
+              },
+              {
+                "label": "M",
+                "text": "this year"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "The number of inquiries increased last month.",
+            "ja": "先月、問い合わせの数が増えました。",
+            "focus": "increased",
+            "jaFocus": "わせの数が増えました",
+            "sentencePattern": "S + V + M",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "The number of inquiries"
+              },
+              {
+                "label": "V",
+                "text": "increased"
+              },
+              {
+                "label": "M",
+                "text": "last month"
+              }
+            ],
+            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+          },
+          {
+            "en": "This change will increase the chance of success.",
+            "ja": "この変更は成功の可能性を高めます。",
+            "focus": "increase",
+            "object": "the chance of success",
+            "jaFocus": "功の可能性を高めます",
+            "sentencePattern": "S + V + O",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "This change"
+              },
+              {
+                "label": "V",
+                "text": "will increase"
+              },
+              {
+                "label": "O",
+                "text": "the chance of success"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": []
+  }
 ];
 
 
-const dailyMeaningExamples: Record<string, Record<string, Example[]>> = {
+const dailyMeaningExamples
+: Record<string, Record<string, Example[]>> = {
   get: {
     obtain: [
       { en: "I got a new laptop last weekend.", ja: "先週末、新しいノートPCを手に入れた。", focus: "got", object: "a new laptop", jaFocus: "手に入れた" },

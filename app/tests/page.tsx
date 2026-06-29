@@ -5,6 +5,13 @@ import { useEffect, useState } from "react";
 import { verbs } from "@/lib/data";
 import { getEffectiveUnlockedVerbCount } from "@/lib/account";
 
+function testPackLabel(index: number) {
+  if (index <= 30) return "🔒 30語パック";
+  if (index <= 60) return "🔒 60語パック";
+  if (index <= 90) return "🔒 90語パック";
+  return "🔒 120語パック";
+}
+
 export default function TestsPage() {
   const [unlockedCount, setUnlockedCount] = useState(3);
 
@@ -42,7 +49,7 @@ export default function TestsPage() {
                 <div>
                   <p className="text-xs font-bold text-cyan-100">No.{String(index + 1).padStart(2, "0")}</p>
                   <p className="text-2xl font-bold verb-red">{verb.word}</p>
-                  <p className="mt-1 text-sm text-muted">{locked ? "🔒 Premiumで解放" : verb.core}</p>
+                  <p className="mt-1 text-sm text-muted">{locked ? testPackLabel(index + 1) : verb.core}</p>
                 </div>
                 <Link className={locked ? "rounded-full bg-amber-300 px-3 py-2 text-sm font-bold text-slate-950" : "rounded-full bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950"} href={href}>
                   {locked ? "解放" : "総合"}

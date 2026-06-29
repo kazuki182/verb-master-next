@@ -73,7 +73,7 @@ function checkVerbQuality(verb: Verb): VerbQuality {
 
   const checks = [coreOk, meaningsOk, workExamplesOk, dailyExamplesOk, collocationsOk, phrasalOk, testsOk];
   const score = percent(checks.filter(Boolean).length, checks.length);
-  const accessLabel = verb.rank <= 3 ? "無料" : "Premium";
+  const accessLabel = verb.rank <= 3 ? "無料" : verb.rank <= 30 ? "30語" : verb.rank <= 60 ? "60語" : verb.rank <= 90 ? "90語" : "120語";
 
   return {
     verb,

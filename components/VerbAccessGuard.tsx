@@ -48,6 +48,8 @@ export default function VerbAccessGuard({
 
   const nextPlan = rank <= 30 ? 30 : rank <= 60 ? 60 : rank <= 90 ? 90 : TOTAL_VERB_TARGET;
   const nextPrice = nextPlan === 30 ? 500 : nextPlan === 60 ? 1000 : nextPlan === 90 ? 1500 : 2000;
+  const stepLabel = nextPlan === 30 ? "Step 1：30語パック" : nextPlan === 60 ? "Step 2：60語パック" : nextPlan === 90 ? "Step 3：90語パック" : "Step 4：120語パック";
+  const futureNote = rank > 90 ? "91番以降は120語パック対象です。現在は91〜100番を先行収録し、101〜120番は今後追加予定です。" : "";
 
   return (
     <div className="space-y-5 pb-24">
@@ -60,8 +62,9 @@ export default function VerbAccessGuard({
         <div className="mt-5 rounded-3xl border border-amber-300/20 bg-amber-950/20 p-4 text-left text-sm text-amber-100">
           <p className="font-bold">おすすめ解放プラン</p>
           <p className="mt-2">
-            ¥{nextPrice.toLocaleString()}で {nextPlan} 動詞まで解放すると、この動詞を学習できます。
+            {stepLabel}（¥{nextPrice.toLocaleString()}）で {nextPlan} 動詞まで解放すると、この動詞を学習できます。
           </p>
+          {futureNote && <p className="mt-2 text-xs text-amber-100/80">{futureNote}</p>}
         </div>
         <Link href="/upgrade" className="btn btn-primary mt-5 block">アップグレードを見る</Link>
         <Link href="/verbs" className="btn btn-soft mt-3 block">動詞一覧へ戻る</Link>

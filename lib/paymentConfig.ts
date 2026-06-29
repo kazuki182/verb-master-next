@@ -58,7 +58,7 @@ export const PAYMENT_PLANS: PaymentPlan[] = [
     cumulativePrice: 2000,
     range: "1〜120",
     addRange: "91〜120",
-    recommend: "今後追加する120語まで含めて使いたい人向け",
+    recommend: "91〜100番の先行収録と、今後追加する101〜120番まで含めて使いたい人向け",
     stripePriceEnvName: "NEXT_PUBLIC_STRIPE_PRICE_120",
     stripePriceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_120,
   },

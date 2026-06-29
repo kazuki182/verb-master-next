@@ -20,7 +20,7 @@ export default function CheckoutCancelPage() {
         </div>
       </section>
 
-      <p className="text-center text-xs text-muted">Verb Master Version 70</p>
+      <p className="text-center text-xs text-muted">Verb Master Version 72</p>
     </div>
   );
 }

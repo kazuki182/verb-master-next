@@ -60,7 +60,7 @@ export default function CheckoutCompletePage() {
     if (paymentMode === "stripe") {
       setSummary(before);
       setMessage(
-        "Stripeから戻りました。Ver.70以降はWebhookで支払い完了を検証してから解放します。購入履歴・復元ページでSupabaseから復元してください。",
+        "Stripeから戻りました。Ver.72以降はWebhookで支払い完了を検証してから解放します。購入履歴・復元ページでSupabaseから復元してください。",
       );
       return;
     }
@@ -116,7 +116,7 @@ export default function CheckoutCompletePage() {
         </div>
       </section>
 
-      <p className="text-center text-xs text-muted">Verb Master Version 70</p>
+      <p className="text-center text-xs text-muted">Verb Master Version 72</p>
     </div>
   );
 }

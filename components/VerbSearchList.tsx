@@ -10,6 +10,23 @@ function twoDigit(value: number) {
   return String(value).padStart(2, "0");
 }
 
+
+function packLabel(index: number) {
+  if (index <= 3) return "無料";
+  if (index <= 30) return "30語パック";
+  if (index <= 60) return "60語パック";
+  if (index <= 90) return "90語パック";
+  if (index <= 100) return "120語パック先行";
+  return "120語パック";
+}
+
+function lockedMessage(index: number) {
+  if (index <= 30) return "Step 1：30語パックで解放されます。";
+  if (index <= 60) return "Step 2：60語パックで解放されます。";
+  if (index <= 90) return "Step 3：90語パックで解放されます。";
+  return "Step 4：120語パック対象です。91〜100番は先行収録、101〜120番は今後追加予定です。";
+}
+
 function searchableText(verb: Verb) {
   const meaningText = verb.meanings
     .map((m) => [m.title, m.pattern, m.point, m.examples.map((e) => `${e.en} ${e.ja}`).join(" ")].join(" "))
@@ -68,12 +85,12 @@ export default function VerbSearchList({ verbs }: { verbs: Verb[] }) {
                       <p className="text-2xl font-bold verb-red">{verb.word}</p>
                       <p className="mt-1 text-muted">{verb.core}</p>
                     </div>
-                    <span className="rounded-full bg-white/5 px-2 py-1 text-xs font-bold text-muted">{locked ? "🔒 Premium" : `#${verb.rank}`}</span>
+                    <span className="rounded-full bg-white/5 px-2 py-1 text-xs font-bold text-muted">{locked ? `🔒 ${packLabel(originalIndex)}` : packLabel(originalIndex)}</span>
                   </div>
                   <div className="mt-4">
                     {locked ? (
                       <div className="rounded-2xl border border-amber-300/20 bg-amber-950/20 p-3 text-sm font-bold text-amber-100">
-                        Premiumで解放されます。タップしてアップグレードへ。
+                        {lockedMessage(originalIndex)} タップしてアップグレードへ。
                       </div>
                     ) : (
                       <VerbListProgress verb={verb} />

@@ -175,7 +175,7 @@ async function upsertFullProgressBackup(progress: UserProgress) {
       username: progress.username,
       progress_json: progress,
       settings_json: settings,
-      app_version: "v76",
+      app_version: "v85",
       updated_at: nowText(),
     },
     { onConflict: "username" },
@@ -439,6 +439,12 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
     const progress = ensureProgress(username);
     let changed = false;
 
+    if (backup?.settings_json) {
+      // Ver.85: 目標日・学習ペースなどの端末設定は、PC→スマホ同期のため常にクラウド値を反映する。
+      applyClientStudySettingsSnapshot(backup.settings_json);
+      changed = true;
+    }
+
     if (backup?.progress_json && isRemoteProgressBetter(backup.progress_json, progress)) {
       const remoteProgress = backup.progress_json as UserProgress;
       const restored: UserProgress = {
@@ -459,7 +465,6 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
         avatarDataUrl: remoteProgress.avatarDataUrl || progress.avatarDataUrl,
       };
       Object.assign(progress, restored);
-      if (backup.settings_json) applyClientStudySettingsSnapshot(backup.settings_json);
       changed = true;
       status.stats = "saved";
     } else if (backup?.progress_json) {

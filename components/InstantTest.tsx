@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getVerb, getTestItemById, getTestItemsForVerb, type TestItem, type TestSection } from "@/lib/data";
 import SpeakButton from "./SpeakButton";
-import { clearTestSession, getCurrentProgress, getTestSession, recordReviewResult, recordSectionClear, recordTestResult, recordVerbMastery, saveProgress, saveTestSession, type UserProgress } from "@/lib/account";
+import { clearTestSession, getCurrentProgress, getTestSession, recordReviewResult, recordSectionClear, recordTestCompletion, recordTestResult, recordVerbMastery, saveProgress, saveTestSession, type UserProgress } from "@/lib/account";
 
 type InstantTestProps = {
   verbId?: string;
@@ -153,6 +153,7 @@ export default function InstantTest({
   const [correct, setCorrect] = useState(0);
   const [wrong, setWrong] = useState(0);
   const [rewardShown, setRewardShown] = useState(false);
+  const [completionRewardShown, setCompletionRewardShown] = useState(false);
   const [loadedSession, setLoadedSession] = useState(false);
   const [resumed, setResumed] = useState(false);
   const [history, setHistory] = useState<TestSnapshot[]>([]);
@@ -210,6 +211,7 @@ export default function InstantTest({
     setCorrect(0);
     setWrong(0);
     setRewardShown(false);
+    setCompletionRewardShown(false);
     setResumed(false);
     setHistory([]);
   };
@@ -221,12 +223,16 @@ export default function InstantTest({
 
   useEffect(() => {
     if (finished) clearTestSession(sessionKey);
+    if (finished && !completionRewardShown) {
+      setCompletionRewardShown(true);
+      recordTestCompletion(section, reviewMode ? 5 : 10);
+    }
     if (finished && allCorrect && !reviewMode && !rewardShown) {
       setRewardShown(true);
       if (section === "all") recordVerbMastery(verb.id);
       else recordSectionClear(verb.id, section, reward);
     }
-  }, [finished, allCorrect, reviewMode, rewardShown, section, verb.id, reward, sessionKey]);
+  }, [finished, allCorrect, reviewMode, rewardShown, completionRewardShown, section, verb.id, reward, sessionKey]);
 
   if (!loadedSession && items.length > 0) {
     return <div className="card p-6 text-muted">テストを読み込んでいます...</div>;
@@ -239,6 +245,7 @@ export default function InstantTest({
           <p className="text-sm text-muted">{reviewMode ? "復習" : sectionName(section)}</p>
           <h1 className="mt-2 text-3xl font-bold">{reviewMode ? "復習完了" : `${verb.word} テスト完了`}</h1>
           <p className="mt-3 text-muted">できた {correct}問 / だめ {wrong}問</p>
+          <p className="mt-2 text-sm font-bold text-cyan-100">完了ボーナス +{reviewMode ? 5 : 10}XP。テストは何回でも受けられ、正解XPも毎回加算されます。</p>
           {reviewMode && correct > 0 && (
             <p className="mt-2 text-sm font-bold text-cyan-200">復習で正解した問題は苦手リストから外れます。+8XP</p>
           )}
@@ -259,7 +266,8 @@ export default function InstantTest({
             </p>
           </div>
           <div className="mt-6 grid gap-3">
-            {finishHref && <Link href={finishHref} className="btn btn-primary block text-center">{finishLabel || "次へ進む"}</Link>}
+            <button type="button" onClick={restart} className="btn btn-primary block text-center">もう一度ランダム10問を受ける</button>
+            {finishHref && <Link href={finishHref} className="btn btn-soft block text-center">{finishLabel || "次へ進む"}</Link>}
             <Link href={`/verbs/${verb.id}`} className="btn btn-soft block text-center">{verb.word} を再学習する</Link>
             <Link href="/tests" className="btn btn-soft block text-center">単語別テストへ</Link>
             <Link href="/review" className="btn btn-soft block text-center">復習リストを見る</Link>
@@ -301,7 +309,8 @@ export default function InstantTest({
         <p className="text-sm text-muted">{reviewMode ? "復習" : sectionName(section)}</p>
         <h1 className="mt-1 text-3xl font-bold">{title || <><span className="verb-red">{verb.word}</span> 日本語 → 英語</>}</h1>
         <p className="mt-2 text-muted">{description || "日本語を見て、すぐ英語で言ってから答えを確認します。"}</p>
-        <p className="mt-2 text-sm font-bold text-cyan-100">出題は最大10問です。未出題・苦手・復習対象・最近やっていない問題をなるべく偏らないように出します。</p>
+        <p className="mt-2 text-sm font-bold text-cyan-100">出題は最大10問です。毎回ランダムで、未出題・苦手・復習対象・最近やっていない問題を混ぜて出します。</p>
+        <p className="mt-1 text-xs text-slate-400">途中で閉じても保存され、次回は続きから再開できます。完了後は何回でも再挑戦できます。</p>
         {items.length > 0 && (
           <div className="mt-3 grid grid-cols-3 gap-2 text-center text-xs">
             <div className="rounded-xl border border-cyan-300/15 bg-slate-950/50 p-2"><p className="text-muted">未出題</p><p className="font-bold text-cyan-100">{activeSummary.untested}</p></div>

@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { verbs } from "@/lib/data";
-import { getEffectiveUnlockedVerbCount } from "@/lib/account";
+import { getVerb, verbs } from "@/lib/data";
+import { getEffectiveUnlockedVerbCount, getLatestTestSession, type TestSession } from "@/lib/account";
 
 function testPackLabel(index: number) {
   if (index <= 30) return "🔒 30語パック";
@@ -14,10 +14,20 @@ function testPackLabel(index: number) {
 
 export default function TestsPage() {
   const [unlockedCount, setUnlockedCount] = useState(3);
+  const [latestSession, setLatestSession] = useState<TestSession | null>(null);
 
   useEffect(() => {
     setUnlockedCount(getEffectiveUnlockedVerbCount());
+    const latest = getLatestTestSession();
+    setLatestSession(latest && latest.verbId !== "phrase-book" ? latest : null);
   }, []);
+
+  const latestVerb = latestSession ? getVerb(latestSession.verbId) : null;
+  const latestHref = latestSession
+    ? latestSession.section === "all"
+      ? `/tests/${latestSession.verbId}`
+      : `/tests/${latestSession.verbId}/${latestSession.section}`
+    : "";
 
   return (
     <div className="space-y-5 pb-24">
@@ -26,6 +36,15 @@ export default function TestsPage() {
         <h1 className="text-3xl font-bold">単語別テスト</h1>
         <p className="mt-2 text-muted">基本動詞・熟語・句動詞を分けて復習できます。未解放の動詞はアップグレードへ移動します。</p>
       </header>
+      {latestSession && latestVerb && (
+        <section className="card border border-cyan-300/30 bg-cyan-950/20 p-5">
+          <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">途中保存</p>
+          <h2 className="mt-2 text-xl font-bold">{latestVerb.word} のテストを続きから再開できます</h2>
+          <p className="mt-2 text-sm text-muted">{latestSession.index + 1}問目 / {latestSession.itemIds.length}問中・できた {latestSession.correct} / だめ {latestSession.wrong}</p>
+          <Link href={latestHref} className="btn btn-primary mt-4 block text-center">途中から再開する</Link>
+        </section>
+      )}
+
       <section className="digital-card p-5">
         <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">TEST ACCESS</p>
         <div className="mt-4 grid grid-cols-2 gap-3 text-center">

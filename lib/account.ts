@@ -1183,6 +1183,18 @@ export function recordSectionClear(
   return progress;
 }
 
+export function recordTestCompletion(section: string, xp = 10) {
+  const progress = getCurrentProgress();
+  if (!progress) return null;
+  updateStreak(progress);
+  const safeXp = Math.max(0, xp);
+  progress.xp += safeXp;
+  addWeeklyXp(progress, safeXp);
+  addStudyMinutes(progress, 2);
+  saveProgress(progress);
+  return progress;
+}
+
 export function saveBookmark(bookmark: Omit<StudyBookmark, "savedAt">) {
   const progress = getCurrentProgress();
   if (!progress) return null;

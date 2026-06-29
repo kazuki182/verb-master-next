@@ -8,6 +8,7 @@ import VerbProgressPanel, {
 } from "@/components/VerbProgressPanel";
 import BadgeList from "@/components/BadgeList";
 import { HOME_NEWS } from "@/lib/news";
+import { restoreLearningDataFromSupabase, syncCurrentUserToSupabase } from "@/lib/cloudSync";
 import {
   getComputedBadges,
   getCurrentProgress,
@@ -65,18 +66,26 @@ export default function Home() {
       window.location.href = "/login";
       return;
     }
-    setUsername(user);
-    setProgress(getCurrentProgress());
-    setTarget(getTargetDate());
-    setReviewCount(getDueReviewItems().length);
-    setBookmark(getCurrentBookmark());
-    setTestSession(getLatestTestSession());
-    const savedStudyDays = getStudyDaysSetting();
-    setStudyMode(savedStudyDays.mode);
-    setCustomDays(savedStudyDays.days);
-    const savedPace = getStudyPaceSetting();
-    setPaceDays(String(savedPace.days));
-    setPaceVerbs(String(savedPace.verbs));
+
+    const loadLocalState = () => {
+      setUsername(user);
+      setProgress(getCurrentProgress());
+      setTarget(getTargetDate());
+      setReviewCount(getDueReviewItems().length);
+      setBookmark(getCurrentBookmark());
+      setTestSession(getLatestTestSession());
+      const savedStudyDays = getStudyDaysSetting();
+      setStudyMode(savedStudyDays.mode);
+      setCustomDays(savedStudyDays.days);
+      const savedPace = getStudyPaceSetting();
+      setPaceDays(String(savedPace.days));
+      setPaceVerbs(String(savedPace.verbs));
+    };
+
+    loadLocalState();
+    void restoreLearningDataFromSupabase(user)
+      .then(() => loadLocalState())
+      .catch(() => undefined);
   }, []);
 
   if (!username || !progress) return <p className="text-muted">Loading...</p>;
@@ -118,13 +127,18 @@ export default function Home() {
     setSaveMessage("");
   };
 
-  const saveTarget = () => {
+  const saveTarget = async () => {
     if (!target) return;
     setTargetDate(target);
-    setProgress(getCurrentProgress());
-    setSaveMessage("保存しました");
+    const latest = getCurrentProgress();
+    setProgress(latest);
+    setSaveMessage("保存しました。クラウドへ反映中...");
     setIsTargetEditing(false);
-    window.setTimeout(() => setSaveMessage(""), 2500);
+    if (latest) {
+      const result = await syncCurrentUserToSupabase(latest);
+      setSaveMessage(result.stats === "saved" ? "目標日をクラウド保存しました" : "端末に保存しました。クラウド保存は要確認です");
+    }
+    window.setTimeout(() => setSaveMessage(""), 3000);
   };
 
   const updateStudyMode = (
@@ -140,7 +154,9 @@ export default function Home() {
     setStudyMode(mode);
     setCustomDays(nextDays);
     setStudyDaysSetting({ mode, days: nextDays });
-    setProgress(getCurrentProgress());
+    const latest = getCurrentProgress();
+    setProgress(latest);
+    if (latest) void syncCurrentUserToSupabase(latest);
   };
 
   const toggleCustomDay = (day: number) => {
@@ -169,7 +185,9 @@ export default function Home() {
     setPaceVerbs(String(nextVerbs));
     setPaceSaving(true);
     setStudyPaceSetting({ days: nextDays, verbs: nextVerbs });
-    setProgress(getCurrentProgress());
+    const latest = getCurrentProgress();
+    setProgress(latest);
+    if (latest) void syncCurrentUserToSupabase(latest);
     setPaceSaveMessage("学習ペースを保存しました");
     setIsPaceEditing(false);
     window.setTimeout(() => setPaceSaving(false), 350);
@@ -274,30 +292,18 @@ export default function Home() {
               XP <span className="font-bold text-ink">{progress.xp}</span>
             </p>
             <p>
-              Streak{" "}
+              連続学習{" "}
               <span className="font-bold text-ink">
-                {progress.currentStreak} days
+                {progress.currentStreak}日
               </span>
+            </p>
+            <p>
+              バッジ <span className="font-bold text-ink">{badges.length}個</span>
             </p>
           </div>
         </div>
-      </section>
-
-      <section className="guide-home-card p-5">
-        <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            <p className="text-xs font-bold tracking-[0.22em] text-cyan-200">GUIDE</p>
-            <h2 className="mt-2 text-xl font-extrabold text-white">使い方ガイド</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-300">
-              機能が増えてきたので、各機能の使い方をまとめました。迷った時はここから確認できます。
-            </p>
-          </div>
-          <Link
-            className="shrink-0 rounded-full bg-cyan-300 px-4 py-2 text-sm font-extrabold text-slate-950"
-            href="/guide"
-          >
-            開く
-          </Link>
+        <div className="mt-4 rounded-2xl border border-cyan-300/15 bg-slate-950/45 p-3">
+          <BadgeList badges={badges} compact emptyText="バッジはまだありません。まずはテスト1問正解から始めましょう。" />
         </div>
       </section>
 
@@ -309,7 +315,7 @@ export default function Home() {
             </p>
             <h2 className="mt-2 text-xl font-extrabold text-white">学習状況</h2>
             <p className="mt-2 text-sm leading-6 text-slate-300">
-              今必要な情報だけを表示します。
+              隙間時間に必要な情報だけを表示します。
             </p>
           </div>
           <span className="rounded-full border border-cyan-300/30 px-3 py-1 text-xs font-bold text-cyan-100">
@@ -373,20 +379,6 @@ export default function Home() {
           </div>
         </details>
 
-        <div className="mt-5 rounded-2xl border border-cyan-300/15 bg-slate-950/50 p-4">
-          <div className="flex items-center justify-between gap-3">
-            <div>
-              <p className="text-sm font-bold text-cyan-200">バッジ</p>
-              <p className="mt-1 text-sm text-slate-300">継続・正解・MASTERで自動獲得します。</p>
-            </div>
-            <Link className="shrink-0 text-sm font-bold text-cyan-100" href="/profile">
-              すべて見る
-            </Link>
-          </div>
-          <div className="mt-4">
-            <BadgeList badges={badges} compact emptyText="まだバッジはありません。まずは1問正解を目指しましょう。" />
-          </div>
-        </div>
       </section>
 
       <section className="resume-card p-5">

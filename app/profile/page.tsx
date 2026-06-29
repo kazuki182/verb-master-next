@@ -33,7 +33,7 @@ import {
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 83";
+const VERSION = "Version 85";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -70,10 +70,13 @@ function cloudStatusBadge(status: CloudSyncStatus | null, syncing: boolean) {
   if (syncing) return { label: "同期中", className: "bg-amber-300/15 text-amber-100 border-amber-300/25" };
   if (!status) return { label: "確認中", className: "bg-slate-500/15 text-slate-100 border-slate-300/20" };
   if (!status.configured) return { label: "端末保存", className: "bg-slate-500/15 text-slate-100 border-slate-300/20" };
-  if ([status.profile, status.avatar, status.premium, status.stats].includes("error")) {
-    return { label: "要確認", className: "bg-rose-300/15 text-rose-100 border-rose-300/25" };
+  if (status.stats === "saved") {
+    return { label: "学習記録 保存済み", className: "bg-cyan-300/15 text-cyan-100 border-cyan-300/25" };
   }
-  if (status.stats === "saved" || status.profile === "saved" || status.premium === "saved") {
+  if ([status.profile, status.avatar, status.premium].includes("error")) {
+    return { label: "一部確認", className: "bg-amber-300/15 text-amber-100 border-amber-300/25" };
+  }
+  if (status.profile === "saved" || status.premium === "saved") {
     return { label: "クラウド保存済み", className: "bg-cyan-300/15 text-cyan-100 border-cyan-300/25" };
   }
   return { label: "待機", className: "bg-slate-500/15 text-slate-100 border-slate-300/20" };
@@ -92,6 +95,9 @@ function cloudMessage(status: CloudSyncStatus | null) {
   if (!status) return "保存状態を確認しています。";
   if (!status.configured) {
     return "Supabase未設定です。VercelにNEXT_PUBLIC_SUPABASE_URLとNEXT_PUBLIC_SUPABASE_ANON_KEYを入れるとクラウド保存できます。";
+  }
+  if (status.stats === "saved" && [status.profile, status.avatar, status.premium].includes("error")) {
+    return "学習記録はクラウド保存済みです。一部の補助データはSQL確認が必要ですが、学習記録の保存は維持されています。";
   }
   if ([status.profile, status.avatar, status.premium, status.stats].includes("error")) {
     return "Supabase接続はありますが、SQL実行またはStorage bucket作成が未完了の可能性があります。アプリ内データは端末側には残っています。";
@@ -308,7 +314,21 @@ export default function ProfilePage() {
 
           <div className="min-w-0 flex-1">
             <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">PROFILE</p>
-            <p className="profile-name mt-1 truncate text-2xl font-extrabold text-white">{displayName}</p>
+            <div className="mt-1 flex items-center gap-2">
+              <p className="profile-name min-w-0 flex-1 truncate text-2xl font-extrabold text-white">{displayName}</p>
+              {!isEditingName && (
+                <button
+                  className="shrink-0 rounded-full border border-cyan-300/25 px-3 py-1.5 text-xs font-bold text-cyan-100"
+                  onClick={() => {
+                    setDisplayNameDraft(displayName);
+                    setIsEditingName(true);
+                  }}
+                  type="button"
+                >
+                  編集
+                </button>
+              )}
+            </div>
             <p className="profile-login mt-1 text-sm text-slate-300">ログインID：{username}</p>
             <div className="profile-mini-stats mt-3 grid grid-cols-3 gap-2 text-center text-xs">
               <div className="digital-panel py-2">
@@ -452,7 +472,7 @@ export default function ProfilePage() {
 
         <div className="mt-3 rounded-2xl border border-cyan-300/15 bg-slate-950/55 p-3">
           <p className="text-sm font-bold text-cyan-100">
-            {restoreRecommended ? "クラウドに復元できる学習データがあります" : cloudSyncing ? "学習データを保存中です" : "学習データは自動保存されています"}
+            {restoreRecommended ? "クラウドに復元できる学習データがあります" : cloudSyncing ? "学習データを保存中です" : cloudStatus?.stats === "saved" ? "学習記録は自動保存されています" : "学習データを確認しています"}
           </p>
           <p className="mt-1 text-xs leading-5 text-slate-300">
             {cloudStatus?.updatedAt ? `最終保存：${formatDateTime(cloudStatus.updatedAt)}` : "最終保存：確認中"}
@@ -584,6 +604,8 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.85</p><p className="mt-1 text-muted">PCとスマホ間の目標日同期を改善。HOMEの使い方ガイドカードを削除し、レベル欄へバッジを移動。Streakを連続学習に日本語化し、保存状態の表示も学習記録中心に整理しました。</p></div>
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.84</p><p className="mt-1 text-muted">テスト途中保存を見える化。単語別テスト画面に途中保存カードを追加し、テスト完了後も何回でもランダム10問を受け直せるようにしました。完了ボーナスも毎回加算されます。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.83</p><p className="mt-1 text-muted">アップデート履歴を管理者だけに表示。一般ユーザー向けには、任意でHOMEに1行の新着ニュースだけを出せるように整理しました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.82</p><p className="mt-1 text-muted">仕事で使う頻度が高い negotiate / remind / require / select を単純追加。120語パック購入者向けの追加教材として124語まで学習できるようにし、動詞選定は大人の日本語文から逆算する方針を継続します。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.81</p><p className="mt-1 text-muted">マイページの保存状態をユーザー向けに簡素化。通常は自動保存と最終保存時刻だけ表示し、クラウド保存・復元・保存テストなどの詳細操作は折りたたみ内に整理しました。</p></div>

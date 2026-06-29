@@ -166,7 +166,7 @@ function emitProgressSaved(username: string) {
   window.dispatchEvent(new CustomEvent(PROGRESS_SAVED_EVENT, { detail: { username, at: new Date().toISOString() } }));
 }
 
-export const TOTAL_VERB_TARGET = 120;
+export const TOTAL_VERB_TARGET = 124;
 export const FREE_VERB_LIMIT = 3;
 export const PREMIUM_FULL_ACCESS_COUNT = 120;
 export const VERB_PACK_SIZE = 30;
@@ -184,7 +184,7 @@ export function purchaseTotalForUnlockCount(count: number) {
 
 export function getNextUnlockStep(currentCount: number) {
   const current = Math.max(FREE_VERB_LIMIT, Math.floor(currentCount || 0));
-  return PREMIUM_UNLOCK_STEPS.find((step) => step > current) || TOTAL_VERB_TARGET;
+  return PREMIUM_UNLOCK_STEPS.find((step) => step > current) || PREMIUM_FULL_ACCESS_COUNT;
 }
 
 
@@ -1311,7 +1311,8 @@ export function getEffectiveUnlockedVerbCount() {
   if (account?.role === "admin") return TOTAL_VERB_TARGET;
   const progress = getCurrentProgress();
   const purchasedUnlock = progress?.unlockedVerbCount || 0;
-  return Math.max(FREE_VERB_LIMIT, Math.min(TOTAL_VERB_TARGET, purchasedUnlock || FREE_VERB_LIMIT));
+  if (purchasedUnlock >= PREMIUM_FULL_ACCESS_COUNT) return TOTAL_VERB_TARGET;
+  return Math.max(FREE_VERB_LIMIT, Math.min(PREMIUM_FULL_ACCESS_COUNT, purchasedUnlock || FREE_VERB_LIMIT));
 }
 
 export function hasPremiumFeatureAccess() {
@@ -1329,7 +1330,7 @@ export function hasLyricsEnglishAccess() {
   const account = getAccounts().find((item) => item.username === username);
   if (account?.role === "admin") return true;
   const progress = getCurrentProgress();
-  return (progress?.unlockedVerbCount || 0) >= TOTAL_VERB_TARGET;
+  return (progress?.unlockedVerbCount || 0) >= PREMIUM_FULL_ACCESS_COUNT;
 }
 
 export function getPurchasePlanSummary() {
@@ -1355,7 +1356,7 @@ export function canAccessVerbByIndex(index: number) {
 }
 
 function planLabelForCount(count: number) {
-  if (count >= TOTAL_VERB_TARGET) return "Step 4：120動詞パック";
+  if (count >= PREMIUM_FULL_ACCESS_COUNT) return "Step 4：120動詞パック";
   if (count >= 90) return "Step 3：90動詞パック";
   if (count >= 60) return "Step 2：60動詞パック";
   if (count >= 30) return "Step 1：30動詞パック";
@@ -1391,7 +1392,7 @@ export function setUserUnlockLevel(
 ) {
   const progress = ensureProgress(username);
   const previousUnlocked = progress.unlockedVerbCount || 0;
-  const normalized = Math.max(0, Math.min(TOTAL_VERB_TARGET, Math.floor(unlockedVerbCount)));
+  const normalized = Math.max(0, Math.min(PREMIUM_FULL_ACCESS_COUNT, Math.floor(unlockedVerbCount)));
   const purchaseTotal = purchaseTotalForUnlockCount(normalized);
   progress.unlockedVerbCount = normalized;
   progress.purchaseTotalYen = purchaseTotal;
@@ -1430,7 +1431,7 @@ export function restorePremiumEntitlement(
   purchaseTotalYen?: number,
   note = "購入状態を復元しました。",
 ) {
-  const normalized = Math.max(0, Math.min(TOTAL_VERB_TARGET, Math.floor(unlockedVerbCount)));
+  const normalized = Math.max(0, Math.min(PREMIUM_FULL_ACCESS_COUNT, Math.floor(unlockedVerbCount)));
   const progress = setUserUnlockLevel(username, normalized, "restore", note);
   if (typeof purchaseTotalYen === "number") {
     progress.purchaseTotalYen = Math.max(progress.purchaseTotalYen || 0, purchaseTotalYen);

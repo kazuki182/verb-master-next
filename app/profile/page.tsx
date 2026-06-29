@@ -423,7 +423,7 @@ export default function ProfilePage() {
           <div className="digital-panel">
             <p className="digital-label">解放済み</p>
             <p className="digital-number text-2xl">{plan.unlocked}</p>
-            <p className="text-xs text-cyan-200">/ 120 動詞</p>
+            <p className="text-xs text-cyan-200">/ 124 動詞</p>
           </div>
           <div className="digital-panel">
             <p className="digital-label">購入額</p>
@@ -583,6 +583,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.82</p><p className="mt-1 text-muted">仕事で使う頻度が高い negotiate / remind / require / select を単純追加。120語パック購入者向けの追加教材として124語まで学習できるようにし、動詞選定は大人の日本語文から逆算する方針を継続します。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.81</p><p className="mt-1 text-muted">マイページの保存状態をユーザー向けに簡素化。通常は自動保存と最終保存時刻だけ表示し、クラウド保存・復元・保存テストなどの詳細操作は折りたたみ内に整理しました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.80</p><p className="mt-1 text-muted">HOMEのダッシュボードを簡素化。登録動詞・習得済み・残り・目標日・学習日数・バッジだけに絞り、スマホで見やすくしました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.79</p><p className="mt-1 text-muted">SV/SVO/SVC/SVOCなどの文型ラベルは、全例文を手動監査するまでユーザー画面から一旦非表示にしました。誤った文型で覚えてしまうリスクを避けるための品質優先対応です。</p></div>

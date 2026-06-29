@@ -32439,6 +32439,351 @@ export const verbs: Verb[] = [
       }
     ],
     "phrasalVerbs": []
+  },
+
+  {
+    "id": "negotiate",
+    "rank": 121,
+    "word": "NEGOTIATE",
+    "ipa": "/nɪˈɡoʊʃieɪt/",
+    "kana": "ネゴシエイト",
+    "syllable": "ne-go-ti-ate",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★★☆ 仕事で重要",
+    "core": "条件や意見をすり合わせて合意に近づける",
+    "coreDetail": "NEGOTIATEは、価格・条件・納期・契約などを相手と話し合い、合意できる形に近づける動詞です。仕事ではnegotiate the price / negotiate with a clientのように使います。",
+    "meanings": [
+      {
+        "id": "business-core",
+        "title": "① 交渉する・協議する",
+        "pattern": "negotiate with + 相手 / negotiate + 条件",
+        "transitivity": "他動詞・自動詞",
+        "structure": "文型ラベルは非表示。with + 相手は補足として扱います。",
+        "image": "相手と条件をすり合わせる",
+        "point": "negotiate with a client は「顧客と交渉する」。negotiate the price は「価格を交渉する」。withの後ろの相手をそのまま目的語扱いしないように注意します。",
+        "examples": [
+          {
+            "en": "We negotiated the price with the client yesterday.",
+            "ja": "私たちは昨日、顧客と価格を交渉しました。",
+            "focus": "negotiated the price",
+            "object": "the price",
+            "jaFocus": "価格を交渉しました"
+          },
+          {
+            "en": "I need to negotiate the delivery schedule with the supplier.",
+            "ja": "私は仕入先と納品スケジュールを交渉する必要があります。",
+            "focus": "negotiate the delivery schedule",
+            "object": "the delivery schedule",
+            "jaFocus": "納品スケジュールを交渉する"
+          },
+          {
+            "en": "Can we negotiate the payment terms before we sign the contract?",
+            "ja": "契約書に署名する前に、支払い条件を交渉できますか？",
+            "focus": "negotiate the payment terms",
+            "object": "the payment terms",
+            "jaFocus": "支払い条件を交渉"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I negotiated the rent before I moved in.",
+            "ja": "私は入居前に家賃を交渉しました。",
+            "focus": "negotiated the rent",
+            "object": "the rent",
+            "jaFocus": "家賃を交渉しました"
+          }
+        ]
+      }
+    ],
+    "collocations": [
+      {
+        "phrase": "negotiate the price",
+        "ja": "価格を交渉する",
+        "image": "価格について相手と条件をすり合わせる",
+        "pattern": "negotiate the price",
+        "examples": [
+          {
+            "en": "We negotiated the price with the client yesterday.",
+            "ja": "私たちは昨日、顧客と価格を交渉しました。",
+            "focus": "negotiate the price",
+            "jaFocus": "価格を交渉する"
+          }
+        ]
+      },
+      {
+        "phrase": "negotiate with a client",
+        "ja": "顧客と交渉する",
+        "image": "顧客と条件を話し合う",
+        "pattern": "negotiate with + 相手",
+        "examples": [
+          {
+            "en": "We negotiated with the client about the project scope.",
+            "ja": "私たちはプロジェクト範囲について顧客と交渉しました。",
+            "focus": "negotiated with the client",
+            "jaFocus": "顧客と交渉しました"
+          }
+        ]
+      }
+    ],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "remind",
+    "rank": 122,
+    "word": "REMIND",
+    "ipa": "/rɪˈmaɪnd/",
+    "kana": "リマインド",
+    "syllable": "re-mind",
+    "transitivity": "他動詞",
+    "importance": "★★★★☆ 仕事で重要",
+    "core": "忘れそうなことを相手の意識に戻す",
+    "coreDetail": "REMINDは、予定・締切・依頼内容などを思い出させる動詞です。仕事ではremind someone about ... や remind someone to do ... が非常に実用的です。",
+    "meanings": [
+      {
+        "id": "business-core",
+        "title": "① 思い出させる・リマインドする",
+        "pattern": "remind + 人 + about + 内容 / remind + 人 + to do",
+        "transitivity": "他動詞",
+        "structure": "文型ラベルは非表示。人と内容をセットで見る形です。",
+        "image": "相手に必要な予定や行動を思い出させる",
+        "point": "remind me about the meeting は「会議について私に思い出させる」。remind him to reply は「彼に返信するよう思い出させる」。",
+        "examples": [
+          {
+            "en": "Please remind me about the meeting tomorrow morning.",
+            "ja": "明日の朝、会議について私にリマインドしてください。",
+            "focus": "remind me about the meeting",
+            "object": "me",
+            "jaFocus": "リマインドしてください"
+          },
+          {
+            "en": "I reminded the client to send the signed document.",
+            "ja": "私は顧客に署名済み書類を送るようリマインドしました。",
+            "focus": "reminded the client to send",
+            "object": "the client",
+            "jaFocus": "リマインドしました"
+          },
+          {
+            "en": "Could you remind the team about the deadline?",
+            "ja": "チームに締切についてリマインドしてもらえますか？",
+            "focus": "remind the team about the deadline",
+            "object": "the team",
+            "jaFocus": "リマインドしてもらえますか"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Please remind me to buy milk after work.",
+            "ja": "仕事の後に牛乳を買うよう私にリマインドしてください。",
+            "focus": "remind me to buy",
+            "object": "me",
+            "jaFocus": "リマインドしてください"
+          }
+        ]
+      }
+    ],
+    "collocations": [
+      {
+        "phrase": "remind someone about something",
+        "ja": "人に何かをリマインドする",
+        "image": "相手に予定や内容を思い出させる",
+        "pattern": "remind + 人 + about + 内容",
+        "examples": [
+          {
+            "en": "Could you remind the team about the deadline?",
+            "ja": "チームに締切についてリマインドしてもらえますか？",
+            "focus": "remind the team about the deadline",
+            "jaFocus": "締切についてリマインド"
+          }
+        ]
+      },
+      {
+        "phrase": "remind someone to do",
+        "ja": "人に〜するよう思い出させる",
+        "image": "相手に必要な行動を思い出させる",
+        "pattern": "remind + 人 + to do",
+        "examples": [
+          {
+            "en": "I reminded the client to send the signed document.",
+            "ja": "私は顧客に署名済み書類を送るようリマインドしました。",
+            "focus": "reminded the client to send",
+            "jaFocus": "送るようリマインド"
+          }
+        ]
+      }
+    ],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "require",
+    "rank": 123,
+    "word": "REQUIRE",
+    "ipa": "/rɪˈkwaɪər/",
+    "kana": "リクワイア",
+    "syllable": "re-quire",
+    "transitivity": "他動詞",
+    "importance": "★★★★☆ 仕事で重要",
+    "core": "条件として必要とする",
+    "coreDetail": "REQUIREは、ルール・手続き・案件などが何かを必要とする時に使う動詞です。needより少し硬く、仕事の文書や説明でよく使います。",
+    "meanings": [
+      {
+        "id": "business-core",
+        "title": "① 必要とする・求める",
+        "pattern": "require + 名詞 / require + 人 + to do",
+        "transitivity": "他動詞",
+        "structure": "文型ラベルは非表示。必要なもの・必要な行動を後ろに置きます。",
+        "image": "条件として必要なものがある",
+        "point": "This process requires approval. は「この手続きには承認が必要です」。require someone to do は「人に〜することを求める」です。",
+        "examples": [
+          {
+            "en": "This order requires approval before shipment.",
+            "ja": "この注文は出荷前に承認が必要です。",
+            "focus": "requires approval",
+            "object": "approval",
+            "jaFocus": "承認が必要です"
+          },
+          {
+            "en": "The client requires us to submit the report by Friday.",
+            "ja": "顧客は私たちに金曜日までに報告書を提出するよう求めています。",
+            "focus": "requires us to submit",
+            "object": "us",
+            "jaFocus": "提出するよう求めています"
+          },
+          {
+            "en": "Does this project require an additional estimate?",
+            "ja": "この案件には追加見積が必要ですか？",
+            "focus": "require an additional estimate",
+            "object": "an additional estimate",
+            "jaFocus": "追加見積が必要"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "This form requires your signature.",
+            "ja": "この用紙にはあなたの署名が必要です。",
+            "focus": "requires your signature",
+            "object": "your signature",
+            "jaFocus": "署名が必要です"
+          }
+        ]
+      }
+    ],
+    "collocations": [
+      {
+        "phrase": "require approval",
+        "ja": "承認を必要とする",
+        "image": "手続き上、承認が条件になる",
+        "pattern": "require approval",
+        "examples": [
+          {
+            "en": "This order requires approval before shipment.",
+            "ja": "この注文は出荷前に承認が必要です。",
+            "focus": "requires approval",
+            "jaFocus": "承認が必要"
+          }
+        ]
+      },
+      {
+        "phrase": "require someone to do",
+        "ja": "人に〜することを求める",
+        "image": "必要な行動を相手に求める",
+        "pattern": "require + 人 + to do",
+        "examples": [
+          {
+            "en": "The client requires us to submit the report by Friday.",
+            "ja": "顧客は私たちに金曜日までに報告書を提出するよう求めています。",
+            "focus": "requires us to submit",
+            "jaFocus": "提出するよう求める"
+          }
+        ]
+      }
+    ],
+    "phrasalVerbs": []
+  },
+  {
+    "id": "select",
+    "rank": 124,
+    "word": "SELECT",
+    "ipa": "/sɪˈlekt/",
+    "kana": "セレクト",
+    "syllable": "se-lect",
+    "transitivity": "他動詞",
+    "importance": "★★★★☆ 仕事で重要",
+    "core": "複数の候補から目的に合うものを選び出す",
+    "coreDetail": "SELECTは、候補・条件・製品・担当者などを選定する時に使います。chooseより少し硬く、仕事の文書や画面操作でもよく使います。",
+    "meanings": [
+      {
+        "id": "business-core",
+        "title": "① 選定する・選ぶ",
+        "pattern": "select + 名詞 / select A from B",
+        "transitivity": "他動詞",
+        "structure": "文型ラベルは非表示。選ぶ対象を後ろに置きます。",
+        "image": "候補の中から条件に合うものを選ぶ",
+        "point": "select a product は「製品を選定する」。select A from B は「Bの中からAを選ぶ」です。",
+        "examples": [
+          {
+            "en": "We selected the best product for the client.",
+            "ja": "私たちは顧客に最適な製品を選定しました。",
+            "focus": "selected the best product",
+            "object": "the best product",
+            "jaFocus": "選定しました"
+          },
+          {
+            "en": "Please select one option from the list.",
+            "ja": "リストから選択肢を1つ選んでください。",
+            "focus": "select one option",
+            "object": "one option",
+            "jaFocus": "選んでください"
+          },
+          {
+            "en": "Did you select the supplier for this project?",
+            "ja": "あなたはこの案件の仕入先を選定しましたか？",
+            "focus": "select the supplier",
+            "object": "the supplier",
+            "jaFocus": "仕入先を選定しましたか"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I selected a seat near the window.",
+            "ja": "私は窓の近くの席を選びました。",
+            "focus": "selected a seat",
+            "object": "a seat",
+            "jaFocus": "席を選びました"
+          }
+        ]
+      }
+    ],
+    "collocations": [
+      {
+        "phrase": "select a product",
+        "ja": "製品を選定する",
+        "image": "条件に合う製品を選ぶ",
+        "pattern": "select a product",
+        "examples": [
+          {
+            "en": "We selected the best product for the client.",
+            "ja": "私たちは顧客に最適な製品を選定しました。",
+            "focus": "selected the best product",
+            "jaFocus": "製品を選定しました"
+          }
+        ]
+      },
+      {
+        "phrase": "select A from B",
+        "ja": "Bの中からAを選ぶ",
+        "image": "複数候補の中から一つを選ぶ",
+        "pattern": "select A from B",
+        "examples": [
+          {
+            "en": "Please select one option from the list.",
+            "ja": "リストから選択肢を1つ選んでください。",
+            "focus": "select one option from the list",
+            "jaFocus": "リストから選ぶ"
+          }
+        ]
+      }
+    ],
+    "phrasalVerbs": []
   }
 ];
 

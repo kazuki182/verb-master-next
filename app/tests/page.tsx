@@ -35,7 +35,7 @@ export default function TestsPage() {
           </div>
           <div className="digital-panel">
             <p className="digital-label">未解放</p>
-            <p className="digital-number text-3xl">{Math.max(0, 120 - unlockedCount)}</p>
+            <p className="digital-number text-3xl">{Math.max(0, verbs.length - unlockedCount)}</p>
           </div>
         </div>
       </section>

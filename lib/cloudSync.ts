@@ -2,6 +2,7 @@ import { supabase } from "@/lib/supabase";
 import {
   FREE_VERB_LIMIT,
   TOTAL_VERB_TARGET,
+  PREMIUM_FULL_ACCESS_COUNT,
   applyClientStudySettingsSnapshot,
   ensureProgress,
   getClientStudySettingsSnapshot,
@@ -119,7 +120,7 @@ export async function uploadAvatarToSupabase(username: string, avatarDataUrl?: s
 
 function premiumPlan(progress: UserProgress) {
   const unlocked = Math.max(FREE_VERB_LIMIT, progress.unlockedVerbCount || 0);
-  if (unlocked >= TOTAL_VERB_TARGET) return "all_access";
+  if (unlocked >= PREMIUM_FULL_ACCESS_COUNT) return "all_access";
   if (unlocked >= 90) return "premium_90";
   if (unlocked >= 60) return "premium_60";
   if (unlocked >= 30) return "premium_30";
@@ -361,7 +362,7 @@ export async function syncCurrentUserToSupabase(progress: UserProgress, options:
           plan: premiumPlan(progress),
           unlocked_verb_count: progress.unlockedVerbCount || 0,
           purchase_total_yen: progress.purchaseTotalYen || 0,
-          lyrics_english_access: (progress.unlockedVerbCount || 0) >= TOTAL_VERB_TARGET,
+          lyrics_english_access: (progress.unlockedVerbCount || 0) >= PREMIUM_FULL_ACCESS_COUNT,
           source: progress.premiumSource || "checkout_ready",
           updated_at: nowText(),
         },

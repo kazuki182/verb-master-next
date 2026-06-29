@@ -116,62 +116,15 @@ function GrammarInline({
   verbPattern?: string;
   sentenceStructure?: string;
 }) {
-  const hasAccess = hasGrammarAccess();
-  const sentencePattern = example.sentencePattern || guessPatternLabel(verbPattern, sentenceStructure);
-  const cleanStructure = simplifyStructure(sentenceStructure);
-  const parts = inferGrammarParts(example, sentencePattern);
-
-  if (!verbPattern && !sentenceStructure) return null;
-
-  if (!hasAccess) {
-    return (
-      <div className="mt-4 rounded-2xl border border-amber-300/20 bg-amber-950/20 p-3 text-sm text-amber-100">
-        🔒 文型表示はPremiumで利用できます。
-      </div>
-    );
-  }
-
-  return (
-    <div className="mt-4 rounded-2xl border border-cyan-300/15 bg-slate-950/45 p-3 text-sm">
-      <div className="flex items-center justify-between gap-3">
-        <p className="font-bold text-cyan-100">文型・動詞の型</p>
-        <span className="rounded-full border border-cyan-300/25 px-2 py-1 text-xs font-bold text-cyan-100">{sentencePattern}</span>
-      </div>
-
-      {parts.length > 0 && (
-        <div className="mt-3 flex flex-wrap gap-2">
-          {parts.map((part, index) => (
-            <div key={`${part.label}-${part.text}-${index}`} className="rounded-xl bg-slate-900/80 px-3 py-2">
-              <p className="border-b border-cyan-300/60 pb-1 text-base font-extrabold text-white">{part.text}</p>
-              <p className="mt-1 text-center text-xs font-bold text-cyan-200">{part.label}</p>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <div className="mt-3 grid gap-2">
-        {cleanStructure && (
-          <div className="rounded-xl bg-slate-900/70 p-3">
-            <p className="text-xs font-bold text-slate-400">文の骨組み</p>
-            <p className="mt-1 font-bold text-white">{cleanStructure}</p>
-          </div>
-        )}
-        {verbPattern && (
-          <div className="rounded-xl bg-slate-900/70 p-3">
-            <p className="text-xs font-bold text-slate-400">動詞の型</p>
-            <p className="mt-1 font-extrabold text-cyan-100">{verbPattern}</p>
-          </div>
-        )}
-        {example.grammarNote && (
-          <div className="rounded-xl bg-cyan-300/10 p-3">
-            <p className="text-xs font-bold text-cyan-100">補足</p>
-            <p className="mt-1 leading-6 text-slate-200">{example.grammarNote}</p>
-          </div>
-        )}
-      </div>
-    </div>
-  );
+  // Ver.79: SV / SVO / SVC / SVOC labels are intentionally hidden from the user screen.
+  // Reason: sentence-pattern labels must not be shown until each example has been manually double-checked.
+  // Showing a wrong grammar label is worse than not showing one in a learning app.
+  void example;
+  void verbPattern;
+  void sentenceStructure;
+  return null;
 }
+
 
 export default function ExampleCard({
   example,
@@ -194,11 +147,6 @@ export default function ExampleCard({
         </p>
         <SpeakButton text={example.en} label="通常" />
       </div>
-      {example.object && (
-        <p className="mb-3 text-sm text-muted">
-          目的語：<span className="object-chip">{example.object}</span>
-        </p>
-      )}
       <p className="leading-relaxed text-muted">
         {highlightText(example.ja, example.jaFocus, "ja-focus")}
       </p>

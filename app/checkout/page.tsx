@@ -77,7 +77,7 @@ export default function CheckoutPage() {
         <p className="text-sm font-bold text-cyan-200">CHECKOUT / PAYMENT READY</p>
         <h1 className="mt-2 text-3xl font-black">購入確認</h1>
         <p className="mt-2 text-sm text-slate-300">
-          Ver.72では段階課金と120語パック表示を整理しています。91〜100番は120語パックの先行収録、101〜120番は今後追加予定です。Stripe登録後はWebhookで支払い完了を検証して購入パックを反映します。
+          Ver.73では動詞データを120語まで完成しました。30・60・90・120の段階課金に合わせて、購入後は対象範囲まで解放されます。Stripe登録後はWebhookで支払い完了を検証して購入パックを反映します。
         </p>
       </header>
 
@@ -90,7 +90,7 @@ export default function CheckoutPage() {
               {paymentMode === "stripe" ? "Stripe Checkoutに接続する準備モードです。" : "今は本番決済を行わない安全な仮購入モードです。"}
             </p>
           </div>
-          <span className="rounded-full bg-cyan-300 px-3 py-1 text-xs font-black text-slate-950">Ver.72</span>
+          <span className="rounded-full bg-cyan-300 px-3 py-1 text-xs font-black text-slate-950">Ver.73</span>
         </div>
         <div className="mt-4 grid gap-2 text-sm">
           <div className="rounded-2xl bg-slate-950/50 p-3 font-bold">公開キー：{readiness.publishableKeyReady ? "設定済み" : "未設定"}</div>
@@ -127,7 +127,7 @@ export default function CheckoutPage() {
           <div className="rounded-2xl bg-paper p-4 font-bold">購入後の累計：¥{plan.cumulativePrice.toLocaleString()}</div>
           <div className="rounded-2xl bg-paper p-4 font-bold">Premium機能：0.5倍速音声 / 日常例文 / フレーズ帳 / シャッフルテスト / 文法パターン / 復習強化</div>
           {plan.count >= TOTAL_VERB_TARGET && (
-            <div className="rounded-2xl bg-amber-950/30 p-4 font-bold text-amber-100">91〜100番は先行収録済み。101〜120番は今後追加予定です。120語パック解放でLyrics Englishリンクも表示対象になります。</div>
+            <div className="rounded-2xl bg-amber-950/30 p-4 font-bold text-amber-100">91〜120番まで学習できます。120語パック解放でLyrics Englishリンクも表示対象になります。</div>
           )}
         </div>
       </section>

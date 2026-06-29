@@ -49,7 +49,7 @@ export default function VerbAccessGuard({
   const nextPlan = rank <= 30 ? 30 : rank <= 60 ? 60 : rank <= 90 ? 90 : TOTAL_VERB_TARGET;
   const nextPrice = nextPlan === 30 ? 500 : nextPlan === 60 ? 1000 : nextPlan === 90 ? 1500 : 2000;
   const stepLabel = nextPlan === 30 ? "Step 1：30語パック" : nextPlan === 60 ? "Step 2：60語パック" : nextPlan === 90 ? "Step 3：90語パック" : "Step 4：120語パック";
-  const futureNote = rank > 90 ? "91番以降は120語パック対象です。現在は91〜100番を先行収録し、101〜120番は今後追加予定です。" : "";
+  const futureNote = rank > 90 ? "91〜120番は120語パック対象です。Ver.73で120語まで学習できます。" : "";
 
   return (
     <div className="space-y-5 pb-24">

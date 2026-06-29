@@ -558,6 +558,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.73</p><p className="mt-1 text-muted">動詞を120語まで拡張。adjust / apply / approve / borrow / check / collect / communicate / describe / earn / estimate / focus / identify / introduce / join / lead / maintain / mention / protect / replace / train を追加し、120語パックを実データ化。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.72</p><p className="mt-1 text-muted">120語パック準備版。91〜100番を120語パック先行収録として表示し、30 / 60 / 90 / 120の段階解放、ロック表示、購入画面の説明を整理。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.71</p><p className="mt-1 text-muted">動詞を100語へ拡張。achieve / arrange / attend / cancel / connect / contact / control / handle / organize / share を追加し、91〜100番を120動詞パック側の教材として整備。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.69</p><p className="mt-1 text-muted">動詞を90語へ拡張。accept / avoid / consider / depend / expect / follow / include / notice / prefer / recommend を追加し、文型・例文・テスト文を社会人向けに整備。</p></div>

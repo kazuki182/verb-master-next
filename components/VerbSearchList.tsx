@@ -16,7 +16,6 @@ function packLabel(index: number) {
   if (index <= 30) return "30語パック";
   if (index <= 60) return "60語パック";
   if (index <= 90) return "90語パック";
-  if (index <= 100) return "120語パック先行";
   return "120語パック";
 }
 
@@ -24,7 +23,7 @@ function lockedMessage(index: number) {
   if (index <= 30) return "Step 1：30語パックで解放されます。";
   if (index <= 60) return "Step 2：60語パックで解放されます。";
   if (index <= 90) return "Step 3：90語パックで解放されます。";
-  return "Step 4：120語パック対象です。91〜100番は先行収録、101〜120番は今後追加予定です。";
+  return "Step 4：120語パックで解放されます。";
 }
 
 function searchableText(verb: Verb) {

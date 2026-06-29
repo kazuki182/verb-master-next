@@ -73,8 +73,8 @@ export default function UpgradePage() {
         <p className="text-sm font-bold text-cyan-200">UPGRADE / PREMIUM</p>
         <h1 className="mt-2 text-3xl font-black">Premium</h1>
         <p className="mt-2 text-sm text-slate-300">
-          Ver.72では、30・60・90・120の段階課金と、91番以降の120語パック対象表示を整理しました。
-          現在の100語のうち91〜100番は、120語パックの先行収録として扱います。
+          Ver.73では、30・60・90・120の段階課金に合わせて、動詞データを120語まで完成しました。
+          91〜120番は、120語パック対象として学習できます。
         </p>
       </header>
 
@@ -91,7 +91,7 @@ export default function UpgradePage() {
         <div className="mt-4 h-3 overflow-hidden rounded-full bg-slate-950">
           <div className="h-full rounded-full bg-cyan-300" style={{ width: `${progressPercent}%` }} />
         </div>
-        <p className="mt-2 text-xs text-muted">無料：1〜{FREE_VERB_LIMIT} / Step1：30 / Step2：60 / Step3：90 / Step4：120（91〜100は先行収録）</p>
+        <p className="mt-2 text-xs text-muted">無料：1〜{FREE_VERB_LIMIT} / Step1：30 / Step2：60 / Step3：90 / Step4：120（91〜120を解放）</p>
 
         {summary.unlocked >= TOTAL_VERB_TARGET ? (
           <div className="mt-4 rounded-2xl bg-emerald-950/30 p-4 text-sm font-bold text-emerald-100">全動詞が解放されています。</div>
@@ -116,7 +116,7 @@ export default function UpgradePage() {
           <div className="rounded-2xl bg-paper p-4"><b>Step 1</b><br />4〜30番：最初の課金で残り27動詞を解放</div>
           <div className="rounded-2xl bg-paper p-4"><b>Step 2</b><br />31〜60番：仕事と日常で使う基本動詞を拡張</div>
           <div className="rounded-2xl bg-paper p-4"><b>Step 3</b><br />61〜90番：主要動詞90語まで解放</div>
-          <div className="rounded-2xl border border-amber-300/25 bg-amber-950/20 p-4 text-amber-100"><b>Step 4</b><br />91〜120番：120語パック対象。現在は91〜100番を先行収録、101〜120番は今後追加予定です。</div>
+          <div className="rounded-2xl border border-amber-300/25 bg-amber-950/20 p-4 text-amber-100"><b>Step 4</b><br />91〜120番：120語パック対象。Ver.73で120語まで完成済みです。</div>
         </div>
       </section>
 
@@ -146,7 +146,7 @@ export default function UpgradePage() {
                   <p className="text-sm font-bold text-cyan-200">{plan.label}</p>
                   <p className="mt-1 text-3xl font-black">{plan.price === 0 ? "無料" : `¥${plan.price.toLocaleString()}`}</p>
                   <p className="mt-2 text-sm text-muted">{plan.range}動詞 / {plan.note}</p>
-                  {plan.count === 120 && <p className="mt-2 rounded-xl border border-amber-300/25 bg-amber-950/20 p-2 text-xs font-bold text-amber-100">91〜100番は先行収録済み。101〜120番は今後追加予定です。</p>}
+                  {plan.count === 120 && <p className="mt-2 rounded-xl border border-amber-300/25 bg-amber-950/20 p-2 text-xs font-bold text-amber-100">91〜120番まで学習できます。120語パックで全動詞を解放します。</p>}
                 </div>
                 <div className="text-right">
                   <p className="text-2xl font-black text-white">{targetCount}</p>

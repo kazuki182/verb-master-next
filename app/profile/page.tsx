@@ -28,7 +28,7 @@ import {
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 63";
+const VERSION = "Version 64";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -433,7 +433,8 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.62</p><p className="mt-1 text-muted">学習データ保護版。自動クラウド同期、Supabase復元、JSONバックアップ書き出し/復元、プライベート閲覧の注意表示を追加。</p></div>
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.64</p><p className="mt-1 text-muted">スマホ下部ナビを拡大。下部固定を強化し、横スワイプできるタブバーへ改善。</p></div>
+                    <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.62</p><p className="mt-1 text-muted">学習データ保護版。自動クラウド同期、Supabase復元、JSONバックアップ書き出し/復元、プライベート閲覧の注意表示を追加。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.61</p><p className="mt-1 text-muted">80動詞品質完成版。テストの戻る操作、学習ペース数字入力、文型品質ルール、教材データ監査メモを改善。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.60</p><p className="mt-1 text-muted">動詞データを80語まで拡張。REQUEST / SUGGEST / AGREE / ARRANGE / CONTACT など実務で使う動詞を追加。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.59</p><p className="mt-1 text-muted">動詞データを70語まで拡張。REPORT / UPDATE / REVIEW / COMPARE / INTRODUCE を追加。</p></div>

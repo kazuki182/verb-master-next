@@ -559,6 +559,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.77</p><p className="mt-1 text-muted">120語の品質監査を開始。重複動詞を解消し、reply / schedule / submit / respond / inform / verify / gather / propose へ差し替え。borrowは残し、SV/SVOや前置詞句の扱いをダブルチェックしました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.76</p><p className="mt-1 text-muted">プロフィール画像をSupabase Storageへ保存・復元しやすくし、更新時に画像URLを空で上書きしない保護を追加。型表示の英語大文字を自然な小文字表記へ統一する下準備も追加。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.75</p><p className="mt-1 text-muted">HOMEの学習ダッシュボードを現在の解放パックに連動。無料は3語、30/60/90/120語パックでは各解放語数を学習対象として、習得済み・残り・必要ペースを計算するよう修正。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.74</p><p className="mt-1 text-muted">右側の↑↓スクロールボタンが下部ナビに被って押せない問題を修正。スマホで押しやすい位置とサイズに調整しました。</p></div>

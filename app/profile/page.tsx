@@ -23,15 +23,17 @@ import DataBackupPanel from "@/components/DataBackupPanel";
 import BadgeList from "@/components/BadgeList";
 import {
   CLOUD_SYNC_EVENT,
+  getCloudBackupComparison,
   getCloudReadiness,
   restoreLearningDataFromSupabase,
   syncCurrentUserToSupabase,
   verifyCloudBackup,
+  type CloudBackupComparison,
   type CloudSyncEventDetail,
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 66";
+const VERSION = "Version 67";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -107,6 +109,7 @@ export default function ProfilePage() {
   const [cloudSyncing, setCloudSyncing] = useState(false);
   const [cloudEvent, setCloudEvent] = useState<CloudSyncEventDetail | null>(null);
   const [cloudTestMessage, setCloudTestMessage] = useState("");
+  const [backupComparison, setBackupComparison] = useState<CloudBackupComparison | null>(null);
   const [isEditingName, setIsEditingName] = useState(false);
   const fileRef = useRef<HTMLInputElement | null>(null);
 
@@ -118,6 +121,12 @@ export default function ProfilePage() {
     setCloudStatus(getCloudReadiness());
   };
 
+  const refreshBackupComparison = async (targetUsername = username) => {
+    if (!targetUsername) return;
+    const comparison = await getCloudBackupComparison(targetUsername);
+    setBackupComparison(comparison);
+  };
+
   useEffect(() => {
     const user = getCurrentUsername();
     if (!user) {
@@ -126,6 +135,7 @@ export default function ProfilePage() {
     }
     setUsername(user);
     reload();
+    void refreshBackupComparison(user);
   }, []);
 
   useEffect(() => {
@@ -142,9 +152,19 @@ export default function ProfilePage() {
   const syncToSupabase = async (target = progress) => {
     if (!target) return;
     setCloudSyncing(true);
+    const comparison = await getCloudBackupComparison(target.username);
+    setBackupComparison(comparison);
+    const shouldConfirmOverwrite = comparison.recommendation === "restore_remote" && comparison.remote && comparison.local.score <= 0;
+    if (shouldConfirmOverwrite) {
+      setCloudSyncing(false);
+      setProfileMessage("クラウド側に学習データがあります。空データ上書きを防ぐため、先に復元してください。");
+      setTimeout(() => setProfileMessage(""), 3600);
+      return;
+    }
     const result = await syncCurrentUserToSupabase(target);
     setCloudStatus(result);
     setCloudSyncing(false);
+    await refreshBackupComparison(target.username);
   };
 
   const restoreFromSupabase = async () => {
@@ -155,6 +175,7 @@ export default function ProfilePage() {
     setCloudSyncing(false);
     setProfileMessage(result.message);
     reload();
+    await refreshBackupComparison(username);
     setTimeout(() => setProfileMessage(""), 2400);
   };
 
@@ -176,6 +197,7 @@ export default function ProfilePage() {
     } else {
       setCloudTestMessage(`確認NG：${verify.message}`);
     }
+    await refreshBackupComparison(username);
   };
 
   const onSaveProfile = async () => {
@@ -244,6 +266,7 @@ export default function ProfilePage() {
   const plan = getPurchasePlanSummary();
   const displayName = progress.displayName || username;
   const cloudBadge = cloudStatusBadge(cloudStatus, cloudSyncing);
+  const restoreRecommended = backupComparison?.recommendation === "restore_remote";
 
   return (
     <div className="space-y-5 pb-24">
@@ -433,6 +456,28 @@ export default function ProfilePage() {
           <div className="rounded-xl bg-slate-950/70 p-3">音声・設定<br /><b>{cloudStatus?.stats === "saved" ? "保存対象" : cloudStatus?.configured ? "待機" : "端末内"}</b></div>
         </div>
 
+        {backupComparison && (
+          <div className={`mt-3 rounded-2xl border p-3 text-xs ${restoreRecommended ? "border-amber-300/30 bg-amber-300/10 text-amber-50" : "border-cyan-300/20 bg-slate-950/60 text-slate-200"}`}>
+            <p className="font-bold">データ比較：{restoreRecommended ? "復元おすすめ" : backupComparison.recommendation === "save_local" ? "保存おすすめ" : "確認OK"}</p>
+            <p className="mt-1 leading-5">{backupComparison.message}</p>
+            <div className="mt-2 grid grid-cols-2 gap-2 text-center">
+              <div className="rounded-xl bg-slate-950/70 p-2">
+                <p className="text-slate-400">端末</p>
+                <p className="font-bold">XP {backupComparison.local.xp}</p>
+                <p>学習 {backupComparison.local.studied}語 / テスト {backupComparison.local.tests}問</p>
+              </div>
+              <div className="rounded-xl bg-slate-950/70 p-2">
+                <p className="text-slate-400">クラウド</p>
+                <p className="font-bold">XP {backupComparison.remote?.xp ?? 0}</p>
+                <p>学習 {backupComparison.remote?.studied ?? 0}語 / テスト {backupComparison.remote?.tests ?? 0}問</p>
+              </div>
+            </div>
+            {backupComparison.remoteUpdatedAt && (
+              <p className="mt-2 text-slate-400">クラウド更新：{formatDateTime(backupComparison.remoteUpdatedAt)}</p>
+            )}
+          </div>
+        )}
+
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
           <button
             className="btn btn-soft w-full"
@@ -440,7 +485,7 @@ export default function ProfilePage() {
             onClick={() => syncToSupabase()}
             disabled={cloudSyncing}
           >
-            {cloudSyncing ? "同期中..." : "今すぐクラウド保存"}
+            {cloudSyncing ? "同期中..." : restoreRecommended ? "先に復元がおすすめ" : "今すぐクラウド保存"}
           </button>
           <button
             className="btn btn-soft w-full"
@@ -513,6 +558,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.67</p><p className="mt-1 text-muted">初回ログイン時の復元判断と空データ上書き防止を強化。端末データとクラウドデータの比較表示を追加。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.66</p><p className="mt-1 text-muted">クラウドバックアップを優先する保存/復元へ修正。補助テーブル未作成でも学習データ本体を守り、クラウド保存テストを追加。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.65</p><p className="mt-1 text-muted">クラウド同期状態をユーザー向けに表示。手動保存・復元ボタン、最終同期時間、プライベート閲覧時の注意を追加。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.64</p><p className="mt-1 text-muted">スマホ下部ナビを拡大。下部固定を強化し、横スワイプできるタブバーへ改善。</p></div>

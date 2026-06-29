@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { initAdminAccount, loginAccount } from "@/lib/account";
+import { loginCloudAccount } from "@/lib/cloudSync";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -11,10 +12,18 @@ export default function LoginPage() {
 
   useEffect(() => initAdminAccount(), []);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setMessage("ログイン確認中です...");
+
+    const cloud = await loginCloudAccount(username, password);
+    if (cloud.ok) {
+      window.location.href = "/";
+      return;
+    }
+
     const result = loginAccount(username, password);
-    if (!result.ok) return setMessage(result.message);
+    if (!result.ok) return setMessage(cloud.message || result.message);
     window.location.href = "/";
   };
 
@@ -26,7 +35,7 @@ export default function LoginPage() {
       </header>
       <section className="card p-6">
         <h2 className="text-2xl font-bold">ログイン</h2>
-        <p className="mt-2 text-muted">ユーザーごとに進捗・XP・周回数を保存します。</p>
+        <p className="mt-2 text-muted">ユーザーごとに進捗・XP・周回数を保存します。ログイン中はクラウド保存を優先します。</p>
         <form onSubmit={submit} className="mt-6 space-y-4">
           <div>
             <label className="text-sm font-bold">ユーザー名</label>

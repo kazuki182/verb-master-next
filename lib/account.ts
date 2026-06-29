@@ -150,6 +150,12 @@ export type UserProgress = {
 const ACCOUNTS_KEY = "verbMaster.accounts";
 const CURRENT_USER_KEY = "verbMaster.currentUser";
 const PROGRESS_KEY = "verbMaster.progress";
+export const PROGRESS_SAVED_EVENT = "verbmaster:progress-saved";
+
+function emitProgressSaved(username: string) {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new CustomEvent(PROGRESS_SAVED_EVENT, { detail: { username, at: new Date().toISOString() } }));
+}
 
 export const TOTAL_VERB_TARGET = 120;
 export const FREE_VERB_LIMIT = 3;
@@ -457,6 +463,7 @@ export function saveProgress(progress: UserProgress) {
   progress.level = Math.max(1, Math.floor(progress.xp / 100) + 1);
   map[progress.username] = normalizeProgress(progress);
   saveProgressMap(map);
+  emitProgressSaved(progress.username);
 }
 
 function updateStreak(progress: UserProgress) {
@@ -994,6 +1001,31 @@ export function setTargetDate(value: string) {
     localStorage.setItem(TARGET_DATE_KEY, value);
     localStorage.setItem(TARGET_START_DATE_KEY, isoDate(new Date()));
   }
+}
+
+export type ClientStudySettingsSnapshot = {
+  targetDate?: string;
+  targetStartDate?: string;
+  studyDays?: StudyDaysSetting;
+  studyPace?: StudyPaceSetting;
+};
+
+export function getClientStudySettingsSnapshot(): ClientStudySettingsSnapshot {
+  if (typeof window === "undefined") return {};
+  return {
+    targetDate: localStorage.getItem(TARGET_DATE_KEY) || undefined,
+    targetStartDate: localStorage.getItem(TARGET_START_DATE_KEY) || undefined,
+    studyDays: getStudyDaysSetting(),
+    studyPace: getStudyPaceSetting(),
+  };
+}
+
+export function applyClientStudySettingsSnapshot(snapshot?: ClientStudySettingsSnapshot | null) {
+  if (typeof window === "undefined" || !snapshot) return;
+  if (snapshot.targetDate) localStorage.setItem(TARGET_DATE_KEY, snapshot.targetDate);
+  if (snapshot.targetStartDate) localStorage.setItem(TARGET_START_DATE_KEY, snapshot.targetStartDate);
+  if (snapshot.studyDays) setStudyDaysSetting(snapshot.studyDays);
+  if (snapshot.studyPace) setStudyPaceSetting(snapshot.studyPace);
 }
 
 export function getLearningPlan(totalVerbs: number, completedVerbs: number) {

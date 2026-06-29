@@ -3,16 +3,25 @@
 import Link from "next/link";
 import { useState } from "react";
 import { registerAccount } from "@/lib/account";
+import { registerCloudAccount } from "@/lib/cloudSync";
 
 export default function SignupPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setMessage("アカウント作成中です...");
+
+    const cloud = await registerCloudAccount(username, password);
+    if (cloud.ok) {
+      window.location.href = "/";
+      return;
+    }
+
     const result = registerAccount(username, password);
-    if (!result.ok) return setMessage(result.message);
+    if (!result.ok) return setMessage(cloud.message || result.message);
     window.location.href = "/";
   };
 
@@ -23,7 +32,7 @@ export default function SignupPage() {
         <h1 className="mt-1 text-4xl font-bold">アカウント作成</h1>
       </header>
       <section className="card p-6">
-        <p className="text-muted">メール不要。ユーザー名とパスワードだけで登録できます。</p>
+        <p className="text-muted">メール不要。ユーザー名とパスワードだけで登録できます。Supabase設定済みならクラウドアカウントとして保存します。</p>
         <form onSubmit={submit} className="mt-6 space-y-4">
           <div>
             <label className="text-sm font-bold">ユーザー名</label>

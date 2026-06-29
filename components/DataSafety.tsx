@@ -1,16 +1,18 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { getCurrentProgress, getCurrentUsername } from "@/lib/account";
+import { getCurrentProgress, getCurrentUsername, PROGRESS_SAVED_EVENT } from "@/lib/account";
 import { restoreLearningDataFromSupabase, syncCurrentUserToSupabase } from "@/lib/cloudSync";
 
-const SYNC_INTERVAL_MS = 60 * 1000;
+const SYNC_INTERVAL_MS = 30 * 1000;
+const DEBOUNCE_MS = 1200;
 
 export default function DataSafety() {
   const runningRef = useRef(false);
+  const debounceRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const run = async (reason: "start" | "interval" | "visible" | "before-hide") => {
+    const run = async (reason: "start" | "interval" | "visible" | "before-hide" | "saved") => {
       if (runningRef.current) return;
       const username = getCurrentUsername();
       if (!username) return;
@@ -37,9 +39,17 @@ export default function DataSafety() {
     };
     document.addEventListener("visibilitychange", onVisibility);
 
+    const onProgressSaved = () => {
+      if (debounceRef.current) window.clearTimeout(debounceRef.current);
+      debounceRef.current = window.setTimeout(() => void run("saved"), DEBOUNCE_MS);
+    };
+    window.addEventListener(PROGRESS_SAVED_EVENT, onProgressSaved);
+
     return () => {
       window.clearInterval(timer);
+      if (debounceRef.current) window.clearTimeout(debounceRef.current);
       document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener(PROGRESS_SAVED_EVENT, onProgressSaved);
     };
   }, []);
 

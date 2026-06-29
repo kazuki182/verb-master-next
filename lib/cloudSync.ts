@@ -2,9 +2,14 @@ import { supabase } from "@/lib/supabase";
 import {
   FREE_VERB_LIMIT,
   TOTAL_VERB_TARGET,
+  applyClientStudySettingsSnapshot,
   ensureProgress,
+  getClientStudySettingsSnapshot,
   restorePremiumEntitlement,
   saveProgress,
+  setCurrentUser,
+  type Account,
+  type ClientStudySettingsSnapshot,
   type UserProgress,
   type VoiceSettings,
 } from "@/lib/account";
@@ -88,6 +93,113 @@ function premiumPlan(progress: UserProgress) {
   if (unlocked >= 60) return "premium_60";
   if (unlocked >= 30) return "premium_30";
   return "free";
+}
+
+function progressScore(progress: Partial<UserProgress> | null | undefined) {
+  if (!progress) return 0;
+  return (Number(progress.xp || 0) * 2) +
+    (Number(progress.totalStudied || 0) * 20) +
+    ((progress.studiedVerbIds || []).length * 100) +
+    (Number(progress.testCorrect || 0) * 10) +
+    (Number(progress.testWrong || 0) * 6) +
+    ((progress.weakItems || []).length * 5) +
+    (Object.keys(progress.reviewItems || {}).length * 8) +
+    ((progress.savedPhrases || []).length * 8);
+}
+
+function isRemoteProgressBetter(remote: Partial<UserProgress> | null | undefined, local: UserProgress) {
+  const remoteScore = progressScore(remote);
+  const localScore = progressScore(local);
+  if (remoteScore <= 0) return false;
+  if (localScore <= 0) return true;
+  return remoteScore >= localScore;
+}
+
+async function upsertFullProgressBackup(progress: UserProgress) {
+  if (!supabase) return;
+  const settings = getClientStudySettingsSnapshot();
+  const { error } = await supabase.from("user_progress_backups").upsert(
+    {
+      username: progress.username,
+      progress_json: progress,
+      settings_json: settings,
+      app_version: "v63",
+      updated_at: nowText(),
+    },
+    { onConflict: "username" },
+  );
+  if (error) throw error;
+}
+
+async function fetchFullProgressBackup(username: string) {
+  if (!supabase) return null;
+  const { data, error } = await supabase
+    .from("user_progress_backups")
+    .select("progress_json, settings_json, updated_at")
+    .eq("username", username)
+    .maybeSingle();
+  if (error) throw error;
+  return data as null | { progress_json: Partial<UserProgress>; settings_json?: ClientStudySettingsSnapshot; updated_at?: string };
+}
+
+async function hashPassword(password: string) {
+  const text = `verb-master-v63:${password}`;
+  const data = new TextEncoder().encode(text);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(digest)).map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+export async function registerCloudAccount(username: string, password: string) {
+  if (!supabase) return { ok: false, message: "Supabase未設定のため端末内登録のみになります。" };
+  const name = username.trim();
+  if (!name) return { ok: false, message: "ユーザー名を入力してください。" };
+  if (password.length < 4) return { ok: false, message: "パスワードは4文字以上にしてください。" };
+  try {
+    const { data: existing, error: findError } = await supabase
+      .from("cloud_accounts")
+      .select("username")
+      .eq("username", name)
+      .maybeSingle();
+    if (findError) throw findError;
+    if (existing) return { ok: false, message: "このユーザー名はすでに使われています。" };
+
+    const passwordHash = await hashPassword(password);
+    const { error } = await supabase.from("cloud_accounts").insert({
+      username: name,
+      password_hash: passwordHash,
+      role: "user",
+      created_at: nowText(),
+      last_login_at: nowText(),
+      updated_at: nowText(),
+    });
+    if (error) throw error;
+    setCurrentUser(name);
+    return { ok: true, message: "クラウドアカウントを作成しました。" };
+  } catch (error) {
+    return { ok: false, message: error instanceof Error ? error.message : "クラウド登録に失敗しました。" };
+  }
+}
+
+export async function loginCloudAccount(username: string, password: string) {
+  if (!supabase) return { ok: false, message: "Supabase未設定のため端末内ログインのみになります。" };
+  const name = username.trim();
+  try {
+    const { data, error } = await supabase
+      .from("cloud_accounts")
+      .select("username, password_hash, role")
+      .eq("username", name)
+      .maybeSingle();
+    if (error) throw error;
+    if (!data) return { ok: false, message: "ユーザー名またはパスワードが違います。" };
+    const passwordHash = await hashPassword(password);
+    if (data.password_hash !== passwordHash) return { ok: false, message: "ユーザー名またはパスワードが違います。" };
+
+    await supabase.from("cloud_accounts").update({ last_login_at: nowText(), updated_at: nowText() }).eq("username", name);
+    setCurrentUser(name);
+    return { ok: true, message: "クラウドログインしました。", account: { username: name, password: "", role: data.role === "admin" ? "admin" : "user", createdAt: nowText() } as Account };
+  } catch (error) {
+    return { ok: false, message: error instanceof Error ? error.message : "クラウドログインに失敗しました。" };
+  }
 }
 
 export async function syncCurrentUserToSupabase(progress: UserProgress): Promise<CloudSyncStatus> {
@@ -175,6 +287,8 @@ export async function syncCurrentUserToSupabase(progress: UserProgress): Promise
       { onConflict: "username" },
     );
 
+    await upsertFullProgressBackup(progress);
+
     status.message = "プロフィール・学習記録・Premium状態をSupabaseへ保存しました。";
     status.updatedAt = nowText();
     return status;
@@ -224,8 +338,31 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
     if (premiumError) throw premiumError;
     if (settingsError) throw settingsError;
 
+    const backup = await fetchFullProgressBackup(username);
+
     const progress = ensureProgress(username);
     let changed = false;
+
+    if (backup?.progress_json && isRemoteProgressBetter(backup.progress_json, progress)) {
+      const remoteProgress = backup.progress_json as UserProgress;
+      const restored: UserProgress = {
+        ...progress,
+        ...remoteProgress,
+        username,
+        level: Math.max(1, Number(remoteProgress.level || progress.level || 1)),
+        xp: Math.max(Number(progress.xp || 0), Number(remoteProgress.xp || 0)),
+        studiedVerbIds: Array.from(new Set([...(progress.studiedVerbIds || []), ...(remoteProgress.studiedVerbIds || [])])),
+        weakItems: Array.from(new Set([...(progress.weakItems || []), ...(remoteProgress.weakItems || [])])),
+        reviewItems: { ...(progress.reviewItems || {}), ...(remoteProgress.reviewItems || {}) },
+        savedPhrases: remoteProgress.savedPhrases?.length ? remoteProgress.savedPhrases : progress.savedPhrases,
+        testSessions: { ...(progress.testSessions || {}), ...(remoteProgress.testSessions || {}) },
+        weeklyStats: { ...(progress.weeklyStats || {}), ...(remoteProgress.weeklyStats || {}) },
+      };
+      Object.assign(progress, restored);
+      if (backup.settings_json) applyClientStudySettingsSnapshot(backup.settings_json);
+      changed = true;
+      status.stats = "saved";
+    }
 
     if (profile) {
       if (profile.display_name && !progress.displayName) {
@@ -297,7 +434,7 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
 
     status.message = changed
       ? "Supabaseに残っていた学習データを端末へ復元しました。"
-      : "Supabase復元を確認しました。端末側のデータを優先しています。";
+      : "Supabase復元を確認しました。最新の学習データを維持しています。";
     status.updatedAt = nowText();
     return { ok: true, changed, message: status.message, status };
   } catch (error) {

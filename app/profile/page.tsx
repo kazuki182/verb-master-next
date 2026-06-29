@@ -33,7 +33,7 @@ import {
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 81";
+const VERSION = "Version 83";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -580,9 +580,11 @@ export default function ProfilePage() {
         <div className="mt-4"><BadgeList badges={badges} /></div>
       </section>
 
+{isAdmin && (
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.83</p><p className="mt-1 text-muted">アップデート履歴を管理者だけに表示。一般ユーザー向けには、任意でHOMEに1行の新着ニュースだけを出せるように整理しました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.82</p><p className="mt-1 text-muted">仕事で使う頻度が高い negotiate / remind / require / select を単純追加。120語パック購入者向けの追加教材として124語まで学習できるようにし、動詞選定は大人の日本語文から逆算する方針を継続します。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.81</p><p className="mt-1 text-muted">マイページの保存状態をユーザー向けに簡素化。通常は自動保存と最終保存時刻だけ表示し、クラウド保存・復元・保存テストなどの詳細操作は折りたたみ内に整理しました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.80</p><p className="mt-1 text-muted">HOMEのダッシュボードを簡素化。登録動詞・習得済み・残り・目標日・学習日数・バッジだけに絞り、スマホで見やすくしました。</p></div>
@@ -623,6 +625,7 @@ export default function ProfilePage() {
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.43</p><p className="mt-1 text-muted">管理画面の土台を追加。</p></div>
         </div>
       </section>
+      )}
 
       <section className="card p-5">
         <h2 className="text-xl font-bold">XPランキング</h2>

@@ -7,6 +7,7 @@ import VerbProgressPanel, {
   getTotalVerbProgress,
 } from "@/components/VerbProgressPanel";
 import BadgeList from "@/components/BadgeList";
+import { HOME_NEWS } from "@/lib/news";
 import {
   getComputedBadges,
   getCurrentProgress,
@@ -246,6 +247,21 @@ export default function Home() {
           </button>
         </div>
       </header>
+
+      {HOME_NEWS.enabled && HOME_NEWS.text && (
+        HOME_NEWS.href ? (
+          <Link
+            className="block rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-3 text-sm font-bold text-cyan-100"
+            href={HOME_NEWS.href}
+          >
+            新着：{HOME_NEWS.text}
+          </Link>
+        ) : (
+          <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-3 text-sm font-bold text-cyan-100">
+            新着：{HOME_NEWS.text}
+          </div>
+        )
+      )}
 
       <section className="card p-5">
         <div className="flex items-end justify-between gap-3">

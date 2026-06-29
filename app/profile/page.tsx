@@ -26,11 +26,12 @@ import {
   getCloudReadiness,
   restoreLearningDataFromSupabase,
   syncCurrentUserToSupabase,
+  verifyCloudBackup,
   type CloudSyncEventDetail,
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 65";
+const VERSION = "Version 66";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -105,6 +106,7 @@ export default function ProfilePage() {
   const [cloudStatus, setCloudStatus] = useState<CloudSyncStatus | null>(null);
   const [cloudSyncing, setCloudSyncing] = useState(false);
   const [cloudEvent, setCloudEvent] = useState<CloudSyncEventDetail | null>(null);
+  const [cloudTestMessage, setCloudTestMessage] = useState("");
   const [isEditingName, setIsEditingName] = useState(false);
   const fileRef = useRef<HTMLInputElement | null>(null);
 
@@ -154,6 +156,26 @@ export default function ProfilePage() {
     setProfileMessage(result.message);
     reload();
     setTimeout(() => setProfileMessage(""), 2400);
+  };
+
+  const runCloudBackupTest = async () => {
+    if (!username) return;
+    setCloudSyncing(true);
+    setCloudTestMessage("クラウド保存テスト中です...");
+    const current = getCurrentProgress();
+    if (current) {
+      const syncResult = await syncCurrentUserToSupabase(current);
+      setCloudStatus(syncResult);
+    }
+    const verify = await verifyCloudBackup(username);
+    setCloudSyncing(false);
+    if (verify.ok && verify.summary) {
+      setCloudTestMessage(
+        `確認OK：XP ${verify.summary.xp} / 学習 ${verify.summary.studied}語 / テスト ${verify.summary.tests}問 / 保存フレーズ ${verify.summary.savedPhrases}件`,
+      );
+    } else {
+      setCloudTestMessage(`確認NG：${verify.message}`);
+    }
   };
 
   const onSaveProfile = async () => {
@@ -428,7 +450,21 @@ export default function ProfilePage() {
           >
             クラウドから復元
           </button>
+          <button
+            className="btn btn-primary w-full sm:col-span-2"
+            type="button"
+            onClick={runCloudBackupTest}
+            disabled={cloudSyncing}
+          >
+            クラウド保存テスト
+          </button>
         </div>
+
+        {cloudTestMessage && (
+          <p className="mt-2 rounded-xl border border-cyan-300/20 bg-cyan-300/10 p-3 text-xs font-bold text-cyan-100">
+            {cloudTestMessage}
+          </p>
+        )}
 
         {cloudEvent && (
           <p className="mt-2 text-xs text-slate-300">
@@ -477,6 +513,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.66</p><p className="mt-1 text-muted">クラウドバックアップを優先する保存/復元へ修正。補助テーブル未作成でも学習データ本体を守り、クラウド保存テストを追加。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.65</p><p className="mt-1 text-muted">クラウド同期状態をユーザー向けに表示。手動保存・復元ボタン、最終同期時間、プライベート閲覧時の注意を追加。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.64</p><p className="mt-1 text-muted">スマホ下部ナビを拡大。下部固定を強化し、横スワイプできるタブバーへ改善。</p></div>
                     <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.62</p><p className="mt-1 text-muted">学習データ保護版。自動クラウド同期、Supabase復元、JSONバックアップ書き出し/復元、プライベート閲覧の注意表示を追加。</p></div>

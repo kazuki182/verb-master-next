@@ -133,7 +133,7 @@ async function upsertFullProgressBackup(progress: UserProgress) {
       username: progress.username,
       progress_json: progress,
       settings_json: settings,
-      app_version: "v65",
+      app_version: "v66",
       updated_at: nowText(),
     },
     { onConflict: "username" },
@@ -225,86 +225,114 @@ export async function syncCurrentUserToSupabase(progress: UserProgress): Promise
     message: "Supabaseへ保存中です...",
   };
 
+  const optionalErrors: string[] = [];
+
   try {
+    // Ver.66: 学習データ保護を最優先。
+    // profiles / user_stats など旧テーブルが未作成でも、まず full backup へ保存できるようにする。
+    await upsertFullProgressBackup(progress);
+    status.stats = "saved";
+
     let avatarUrl = "";
     if (progress.avatarDataUrl) {
       const avatar = await uploadAvatarToSupabase(progress.username, progress.avatarDataUrl);
       status.avatar = avatar.ok ? "saved" : "error";
       avatarUrl = avatar.url;
+      if (!avatar.ok) optionalErrors.push(`avatar: ${avatar.message}`);
     }
 
-    const { error: profileError } = await supabase.from("profiles").upsert(
-      {
-        username: progress.username,
-        display_name: progress.displayName || progress.username,
-        avatar_url: avatarUrl || null,
-        notifications_enabled: progress.notificationsEnabled ?? true,
-        role: "user",
-        last_login_at: progress.lastLoginAt || null,
-        updated_at: nowText(),
-      },
-      { onConflict: "username" },
-    );
-    if (profileError) throw profileError;
-    status.profile = "saved";
+    try {
+      const { error: profileError } = await supabase.from("profiles").upsert(
+        {
+          username: progress.username,
+          display_name: progress.displayName || progress.username,
+          avatar_url: avatarUrl || null,
+          notifications_enabled: progress.notificationsEnabled ?? true,
+          role: "user",
+          last_login_at: progress.lastLoginAt || null,
+          updated_at: nowText(),
+        },
+        { onConflict: "username" },
+      );
+      if (profileError) throw profileError;
+      status.profile = "saved";
+    } catch (error) {
+      status.profile = "error";
+      optionalErrors.push(error instanceof Error ? `profiles: ${error.message}` : "profiles保存エラー");
+    }
 
-    const { error: statsError } = await supabase.from("user_stats").upsert(
-      {
-        username: progress.username,
-        xp: progress.xp || 0,
-        level: progress.level || 1,
-        current_streak: progress.currentStreak || 0,
-        longest_streak: progress.longestStreak || 0,
-        total_studied: progress.totalStudied || 0,
-        current_round: progress.currentRound || 1,
-        studied_verb_ids: progress.studiedVerbIds || [],
-        test_correct: progress.testCorrect || 0,
-        test_wrong: progress.testWrong || 0,
-        weak_items: progress.weakItems || [],
-        saved_phrase_count: progress.savedPhrases?.length || 0,
-        review_item_count: Object.keys(progress.reviewItems || {}).length,
-        updated_at: nowText(),
-      },
-      { onConflict: "username" },
-    );
-    if (statsError) throw statsError;
-    status.stats = "saved";
+    try {
+      const { error: statsError } = await supabase.from("user_stats").upsert(
+        {
+          username: progress.username,
+          xp: progress.xp || 0,
+          level: progress.level || 1,
+          current_streak: progress.currentStreak || 0,
+          longest_streak: progress.longestStreak || 0,
+          total_studied: progress.totalStudied || 0,
+          current_round: progress.currentRound || 1,
+          studied_verb_ids: progress.studiedVerbIds || [],
+          test_correct: progress.testCorrect || 0,
+          test_wrong: progress.testWrong || 0,
+          weak_items: progress.weakItems || [],
+          saved_phrase_count: progress.savedPhrases?.length || 0,
+          review_item_count: Object.keys(progress.reviewItems || {}).length,
+          updated_at: nowText(),
+        },
+        { onConflict: "username" },
+      );
+      if (statsError) throw statsError;
+      // full backup が保存できていれば stats は saved 扱いを維持する。
+      status.stats = "saved";
+    } catch (error) {
+      optionalErrors.push(error instanceof Error ? `user_stats: ${error.message}` : "user_stats保存エラー");
+    }
 
-    const { error: premiumError } = await supabase.from("premium_entitlements").upsert(
-      {
-        username: progress.username,
-        plan: premiumPlan(progress),
-        unlocked_verb_count: progress.unlockedVerbCount || 0,
-        purchase_total_yen: progress.purchaseTotalYen || 0,
-        lyrics_english_access: (progress.unlockedVerbCount || 0) >= TOTAL_VERB_TARGET,
-        source: progress.premiumSource || "checkout_ready",
-        updated_at: nowText(),
-      },
-      { onConflict: "username" },
-    );
-    if (premiumError) throw premiumError;
-    status.premium = "saved";
+    try {
+      const { error: premiumError } = await supabase.from("premium_entitlements").upsert(
+        {
+          username: progress.username,
+          plan: premiumPlan(progress),
+          unlocked_verb_count: progress.unlockedVerbCount || 0,
+          purchase_total_yen: progress.purchaseTotalYen || 0,
+          lyrics_english_access: (progress.unlockedVerbCount || 0) >= TOTAL_VERB_TARGET,
+          source: progress.premiumSource || "checkout_ready",
+          updated_at: nowText(),
+        },
+        { onConflict: "username" },
+      );
+      if (premiumError) throw premiumError;
+      status.premium = "saved";
+    } catch (error) {
+      status.premium = "error";
+      optionalErrors.push(error instanceof Error ? `premium: ${error.message}` : "premium保存エラー");
+    }
 
-    const voice: VoiceSettings = progress.voiceSettings || { gender: "female", lang: "en-US" };
-    await supabase.from("learning_settings").upsert(
-      {
-        username: progress.username,
-        voice_gender: voice.gender,
-        voice_lang: voice.lang,
-        notifications_enabled: progress.notificationsEnabled ?? true,
-        updated_at: nowText(),
-      },
-      { onConflict: "username" },
-    );
+    try {
+      const voice: VoiceSettings = progress.voiceSettings || { gender: "female", lang: "en-US" };
+      const { error: settingsError } = await supabase.from("learning_settings").upsert(
+        {
+          username: progress.username,
+          voice_gender: voice.gender,
+          voice_lang: voice.lang,
+          notifications_enabled: progress.notificationsEnabled ?? true,
+          updated_at: nowText(),
+        },
+        { onConflict: "username" },
+      );
+      if (settingsError) throw settingsError;
+    } catch (error) {
+      optionalErrors.push(error instanceof Error ? `learning_settings: ${error.message}` : "learning_settings保存エラー");
+    }
 
-    await upsertFullProgressBackup(progress);
-
-    status.message = "プロフィール・学習記録・Premium状態をSupabaseへ保存しました。";
+    status.message = optionalErrors.length
+      ? "学習データ本体はクラウドバックアップへ保存済みです。一部の補助テーブルはSQL確認が必要です。"
+      : "プロフィール・学習記録・Premium状態をSupabaseへ保存しました。";
     status.updatedAt = nowText();
     return status;
   } catch (error) {
     const message = error instanceof Error ? error.message : "Supabase保存に失敗しました。";
-    return { ...status, message };
+    return { ...status, stats: "error", message };
   }
 }
 
@@ -335,21 +363,12 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
     message: "Supabaseから復元確認中です...",
   };
 
+  const optionalErrors: string[] = [];
+
   try {
-    const [{ data: profile, error: profileError }, { data: stats, error: statsError }, { data: premium, error: premiumError }, { data: settings, error: settingsError }] = await Promise.all([
-      supabase.from("profiles").select("display_name, avatar_url, notifications_enabled, last_login_at, updated_at").eq("username", username).maybeSingle(),
-      supabase.from("user_stats").select("xp, level, current_streak, longest_streak, total_studied, current_round, studied_verb_ids, test_correct, test_wrong, weak_items, updated_at").eq("username", username).maybeSingle(),
-      supabase.from("premium_entitlements").select("unlocked_verb_count, purchase_total_yen, source, updated_at").eq("username", username).maybeSingle(),
-      supabase.from("learning_settings").select("voice_gender, voice_lang, notifications_enabled, updated_at").eq("username", username).maybeSingle(),
-    ]);
-
-    if (profileError) throw profileError;
-    if (statsError) throw statsError;
-    if (premiumError) throw premiumError;
-    if (settingsError) throw settingsError;
-
+    // Ver.66: user_progress_backups を復元の本命にする。
+    // 旧テーブルが未作成でも、学習データ本体の復元は止めない。
     const backup = await fetchFullProgressBackup(username);
-
     const progress = ensureProgress(username);
     let changed = false;
 
@@ -361,6 +380,9 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
         username,
         level: Math.max(1, Number(remoteProgress.level || progress.level || 1)),
         xp: Math.max(Number(progress.xp || 0), Number(remoteProgress.xp || 0)),
+        totalStudied: Math.max(Number(progress.totalStudied || 0), Number(remoteProgress.totalStudied || 0)),
+        testCorrect: Math.max(Number(progress.testCorrect || 0), Number(remoteProgress.testCorrect || 0)),
+        testWrong: Math.max(Number(progress.testWrong || 0), Number(remoteProgress.testWrong || 0)),
         studiedVerbIds: Array.from(new Set([...(progress.studiedVerbIds || []), ...(remoteProgress.studiedVerbIds || [])])),
         weakItems: Array.from(new Set([...(progress.weakItems || []), ...(remoteProgress.weakItems || [])])),
         reviewItems: { ...(progress.reviewItems || {}), ...(remoteProgress.reviewItems || {}) },
@@ -372,6 +394,45 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
       if (backup.settings_json) applyClientStudySettingsSnapshot(backup.settings_json);
       changed = true;
       status.stats = "saved";
+    } else if (backup?.progress_json) {
+      status.stats = "saved";
+    }
+
+    let profile: any = null;
+    let stats: any = null;
+    let premium: any = null;
+    let settings: any = null;
+
+    try {
+      const { data, error } = await supabase.from("profiles").select("display_name, avatar_url, notifications_enabled, last_login_at, updated_at").eq("username", username).maybeSingle();
+      if (error) throw error;
+      profile = data;
+    } catch (error) {
+      optionalErrors.push(error instanceof Error ? `profiles: ${error.message}` : "profiles読込エラー");
+    }
+
+    try {
+      const { data, error } = await supabase.from("user_stats").select("xp, level, current_streak, longest_streak, total_studied, current_round, studied_verb_ids, test_correct, test_wrong, weak_items, updated_at").eq("username", username).maybeSingle();
+      if (error) throw error;
+      stats = data;
+    } catch (error) {
+      optionalErrors.push(error instanceof Error ? `user_stats: ${error.message}` : "user_stats読込エラー");
+    }
+
+    try {
+      const { data, error } = await supabase.from("premium_entitlements").select("unlocked_verb_count, purchase_total_yen, source, updated_at").eq("username", username).maybeSingle();
+      if (error) throw error;
+      premium = data;
+    } catch (error) {
+      optionalErrors.push(error instanceof Error ? `premium: ${error.message}` : "premium読込エラー");
+    }
+
+    try {
+      const { data, error } = await supabase.from("learning_settings").select("voice_gender, voice_lang, notifications_enabled, updated_at").eq("username", username).maybeSingle();
+      if (error) throw error;
+      settings = data;
+    } catch (error) {
+      optionalErrors.push(error instanceof Error ? `learning_settings: ${error.message}` : "learning_settings読込エラー");
     }
 
     if (profile) {
@@ -444,12 +505,47 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
 
     status.message = changed
       ? "Supabaseに残っていた学習データを端末へ復元しました。"
-      : "Supabase復元を確認しました。最新の学習データを維持しています。";
-    status.updatedAt = nowText();
+      : optionalErrors.length && status.stats === "saved"
+        ? "学習データ本体のクラウドバックアップを確認しました。一部の補助テーブルはSQL確認が必要です。"
+        : "Supabase復元を確認しました。最新の学習データを維持しています。";
+    status.updatedAt = backup?.updated_at || nowText();
     return { ok: true, changed, message: status.message, status };
   } catch (error) {
     const message = error instanceof Error ? error.message : "Supabase復元に失敗しました。";
     return { ok: false, changed: false, message, status: { ...status, stats: "error", message } };
+  }
+}
+
+
+export async function verifyCloudBackup(username: string) {
+  if (!supabase) {
+    return { ok: false, message: "Supabase未設定です。", updatedAt: "", summary: null as null | { xp: number; studied: number; savedPhrases: number; tests: number } };
+  }
+  try {
+    const backup = await fetchFullProgressBackup(username);
+    if (!backup?.progress_json) {
+      return { ok: false, message: "クラウドバックアップがまだ見つかりません。先に保存してください。", updatedAt: "", summary: null };
+    }
+    const progress = backup.progress_json as Partial<UserProgress>;
+    const summary = {
+      xp: Number(progress.xp || 0),
+      studied: (progress.studiedVerbIds || []).length,
+      savedPhrases: (progress.savedPhrases || []).length,
+      tests: Number(progress.testCorrect || 0) + Number(progress.testWrong || 0),
+    };
+    return {
+      ok: true,
+      message: "クラウドバックアップを確認できました。",
+      updatedAt: backup.updated_at || "",
+      summary,
+    };
+  } catch (error) {
+    return {
+      ok: false,
+      message: error instanceof Error ? error.message : "クラウドバックアップ確認に失敗しました。",
+      updatedAt: "",
+      summary: null,
+    };
   }
 }
 

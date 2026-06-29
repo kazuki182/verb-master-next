@@ -6,7 +6,6 @@ import { getVerb, verbs } from "@/lib/data";
 import VerbProgressPanel, {
   getTotalVerbProgress,
 } from "@/components/VerbProgressPanel";
-import BadgeList from "@/components/BadgeList";
 import { HOME_NEWS } from "@/lib/news";
 import { restoreLearningDataFromSupabase, syncCurrentUserToSupabase } from "@/lib/cloudSync";
 import {
@@ -15,6 +14,7 @@ import {
   getCurrentUsername,
   getDueReviewItems,
   getLearningPlan,
+  getSeasonRankSummary,
   getEffectiveUnlockedVerbCount,
   getStudyDaysSetting,
   setStudyDaysSetting,
@@ -228,6 +228,11 @@ export default function Home() {
       ? "今の設定のまま進めれば大丈夫です。"
       : `${plan.recommendedPaceLabel}に近づけると、目標に間に合いやすくなります。`;
   const badges = getComputedBadges(progress);
+  const displayName = progress.displayName || username;
+  const seasonSummary = getSeasonRankSummary(username);
+  const leagueLine = seasonSummary?.total
+    ? `${seasonSummary.season.label} / XP ${seasonSummary.xpRank}位`
+    : seasonSummary?.season.label ?? "リーグ未参加";
 
   return (
     <div className="space-y-5 pb-28">
@@ -240,29 +245,6 @@ export default function Home() {
           <p className="mt-2 text-sm text-muted">
             社会人向け・基本動詞トレーニング
           </p>
-        </div>
-        <div className="home-profile-actions shrink-0 text-center">
-          <Link
-            className="home-avatar mx-auto flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-cyan-300/30 bg-slate-900 text-2xl shadow-lg"
-            href="/profile"
-            aria-label="マイページを開く"
-          >
-            {progress.avatarDataUrl ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={progress.avatarDataUrl} alt="プロフィール画像" className="h-full w-full object-cover" />
-            ) : (
-              <span>👤</span>
-            )}
-          </Link>
-          <button
-            className="mt-2 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs font-bold text-slate-200"
-            onClick={() => {
-              logout();
-              window.location.href = "/login";
-            }}
-          >
-            ログアウト
-          </button>
         </div>
       </header>
 
@@ -281,29 +263,38 @@ export default function Home() {
         )
       )}
 
-      <section className="card p-5">
-        <div className="flex items-end justify-between gap-3">
-          <div>
-            <p className="text-sm text-muted">{username}</p>
-            <p className="mt-1 text-3xl font-bold">Lv.{progress.level}</p>
+      <section className="home-level-card p-5">
+        <div className="flex items-center gap-4">
+          <Link
+            className="home-level-avatar flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-3xl border border-cyan-300/30 bg-slate-900 text-3xl shadow-lg"
+            href="/profile"
+            aria-label="マイページを開く"
+          >
+            {progress.avatarDataUrl ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={progress.avatarDataUrl} alt="プロフィール画像" className="h-full w-full object-cover" />
+            ) : (
+              <span>👤</span>
+            )}
+          </Link>
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-lg font-extrabold text-white">{displayName}</p>
+            <div className="mt-1 flex items-end justify-between gap-3">
+              <div>
+                <p className="home-level-main">Lv.{progress.level}</p>
+                <p className="mt-1 text-sm font-bold text-cyan-100">{leagueLine}</p>
+              </div>
+              <div className="shrink-0 rounded-2xl border border-cyan-300/20 bg-slate-950/55 px-3 py-2 text-center">
+                <p className="text-xs font-bold text-cyan-200">バッジ</p>
+                <p className="text-lg font-extrabold text-white">🏅 {badges.length}</p>
+              </div>
+            </div>
+            <p className="mt-2 text-sm font-bold text-slate-300">
+              XP <span className="text-white">{progress.xp}</span>
+              <span className="mx-2 text-slate-500">・</span>
+              連続学習 <span className="text-white">{progress.currentStreak}日</span>
+            </p>
           </div>
-          <div className="text-right text-sm text-muted">
-            <p>
-              XP <span className="font-bold text-ink">{progress.xp}</span>
-            </p>
-            <p>
-              連続学習{" "}
-              <span className="font-bold text-ink">
-                {progress.currentStreak}日
-              </span>
-            </p>
-            <p>
-              バッジ <span className="font-bold text-ink">{badges.length}個</span>
-            </p>
-          </div>
-        </div>
-        <div className="mt-4 rounded-2xl border border-cyan-300/15 bg-slate-950/45 p-3">
-          <BadgeList badges={badges} compact emptyText="バッジはまだありません。まずはテスト1問正解から始めましょう。" />
         </div>
       </section>
 
@@ -354,30 +345,6 @@ export default function Home() {
             <p className="text-xs text-cyan-200">日</p>
           </div>
         </div>
-
-        <details className="mt-4 rounded-2xl border border-cyan-300/15 bg-slate-950/55 p-4 text-sm text-slate-300">
-          <summary className="cursor-pointer font-bold text-cyan-100">目標日を変更する</summary>
-          <div className="mt-3 rounded-2xl border border-cyan-300/10 bg-slate-950/60 p-3">
-            <input
-              className="date-input-safe block min-w-0 w-full max-w-full box-border rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center text-white"
-              type="date"
-              value={target}
-              onChange={(e) => updateTarget(e.target.value)}
-            />
-            <button
-              type="button"
-              className="mt-3 w-full rounded-xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950"
-              onClick={saveTarget}
-            >
-              保存
-            </button>
-            {saveMessage && (
-              <p className="mt-2 text-xs font-bold text-cyan-200">
-                ✅ {saveMessage}
-              </p>
-            )}
-          </div>
-        </details>
 
       </section>
 
@@ -455,38 +422,49 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="grid grid-cols-2 gap-3">
-        <Link className="card block p-5 font-bold" href="/verbs">
-          動詞一覧
-        </Link>
-        <Link className="card block p-5 font-bold" href="/tests">
-          瞬発英作文テスト
-        </Link>
-        <Link className="card block p-5 font-bold" href="/profile">
-          マイページ
-        </Link>
-        <Link className="card block p-5 font-bold" href="/upgrade">
-          アップグレード
-        </Link>
-        <Link className="card block p-5 font-bold" href="/study-method">
-          勉強方法
-        </Link>
-        <Link className="card block p-5 font-bold" href="/phrase-book">
-          フレーズ帳
-        </Link>
-        <Link className="card block p-5 font-bold" href="/league">
-          週間ランキング
-        </Link>
-      </section>
-
       <section className="card p-5">
-        <p className="text-sm font-bold text-muted">コンセプト</p>
-        <p className="mt-2 leading-relaxed">
-          基本動詞を、型・例文・音声・瞬発英作文で使える形にします。
-        </p>
-        <Link className="mt-4 inline-block font-bold text-accent" href="/about">
-          このアプリについて
-        </Link>
+        <p className="text-sm font-bold text-muted">設定</p>
+        <details className="mt-3 rounded-2xl border border-cyan-300/15 bg-slate-950/55 p-4 text-sm text-slate-300">
+          <summary className="cursor-pointer font-bold text-cyan-100">目標日を変更する</summary>
+          <div className="mt-3 rounded-2xl border border-cyan-300/10 bg-slate-950/60 p-3">
+            <input
+              className="date-input-safe block min-w-0 w-full max-w-full box-border rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center text-white"
+              type="date"
+              value={target}
+              onChange={(e) => updateTarget(e.target.value)}
+            />
+            <button
+              type="button"
+              className="mt-3 w-full rounded-xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950"
+              onClick={saveTarget}
+            >
+              保存
+            </button>
+            {saveMessage && (
+              <p className="mt-2 text-xs font-bold text-cyan-200">
+                ✅ {saveMessage}
+              </p>
+            )}
+          </div>
+        </details>
+        <div className="mt-4 grid grid-cols-2 gap-2 text-sm font-bold">
+          <Link className="rounded-xl border border-slate-700 bg-slate-950/60 px-3 py-3 text-center text-slate-200" href="/study-method">
+            勉強方法
+          </Link>
+          <Link className="rounded-xl border border-slate-700 bg-slate-950/60 px-3 py-3 text-center text-slate-200" href="/about">
+            このアプリについて
+          </Link>
+        </div>
+        <button
+          className="mt-3 w-full rounded-xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm font-bold text-slate-300"
+          onClick={() => {
+            logout();
+            window.location.href = "/login";
+          }}
+          type="button"
+        >
+          ログアウト
+        </button>
       </section>
     </div>
   );

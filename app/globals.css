@@ -71,6 +71,34 @@ input, select, textarea { color:#f8fafc; background:#0b1525; border-color:rgba(1
   font-weight: 900;
   box-shadow: 0 10px 28px rgba(0,0,0,.28);
 }
+
+/* Ver.74 scroll buttons: keep jump buttons above the large fixed bottom nav */
+.scroll-buttons-fixed {
+  bottom: calc(138px + env(safe-area-inset-bottom));
+}
+.scroll-jump-button {
+  position: relative;
+  z-index: 61;
+  touch-action: manipulation;
+}
+@media (max-width: 430px) {
+  .scroll-buttons-fixed {
+    bottom: calc(150px + env(safe-area-inset-bottom));
+    right: 14px;
+  }
+  .scroll-jump-button {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+}
+@media (max-width: 360px) {
+  .scroll-buttons-fixed {
+    bottom: calc(142px + env(safe-area-inset-bottom));
+    right: 10px;
+  }
+}
+
 .date-input-safe {
   -webkit-appearance: none;
   appearance: none;

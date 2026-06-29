@@ -13,6 +13,7 @@ import {
   getCurrentUsername,
   getDueReviewItems,
   getLearningPlan,
+  getEffectiveUnlockedVerbCount,
   getStudyDaysSetting,
   setStudyDaysSetting,
   getStudyPaceSetting,
@@ -79,14 +80,20 @@ export default function Home() {
 
   if (!username || !progress) return <p className="text-muted">Loading...</p>;
 
-  const completed = progress.studiedVerbIds.length;
-  const plan = getLearningPlan(verbs.length, completed);
+  const unlockedVerbTotal = Math.min(verbs.length, getEffectiveUnlockedVerbCount());
+  const learningTargetVerbs = verbs.slice(0, unlockedVerbTotal);
+  const learningTargetIds = new Set(learningTargetVerbs.map((verb) => verb.id));
+  const completed = progress.studiedVerbIds.filter((verbId) =>
+    learningTargetIds.has(verbId),
+  ).length;
+  const plan = getLearningPlan(unlockedVerbTotal, completed);
   const testVerb = testSession ? getVerb(testSession.verbId) : null;
   const bookmarkVerb = bookmark ? getVerb(bookmark.verbId) : null;
   const activeVerb =
     testVerb ||
     bookmarkVerb ||
-    verbs.find((verb) => !progress.studiedVerbIds.includes(verb.id)) ||
+    learningTargetVerbs.find((verb) => !progress.studiedVerbIds.includes(verb.id)) ||
+    learningTargetVerbs[0] ||
     verbs[0];
   const activeBookmark = testSession
     ? {
@@ -295,8 +302,8 @@ export default function Home() {
 
         <div className="mt-5 grid grid-cols-3 gap-3 text-center text-sm">
           <div className="digital-panel">
-            <p className="digital-label">登録動詞</p>
-            <p className="digital-number">{verbs.length}</p>
+            <p className="digital-label">学習対象</p>
+            <p className="digital-number">{unlockedVerbTotal}</p>
             <p className="text-xs text-cyan-200">語</p>
           </div>
           <div className="digital-panel">
@@ -310,6 +317,10 @@ export default function Home() {
             <p className="text-xs text-cyan-200">語</p>
           </div>
         </div>
+
+        <p className="mt-3 text-center text-xs font-bold text-cyan-100/80">
+          現在の解放範囲：{unlockedVerbTotal} / {verbs.length}語
+        </p>
 
         <div className="mt-4 space-y-3 text-center">
           <div className="digital-panel digital-panel-wide">

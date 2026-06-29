@@ -36869,7 +36869,1185 @@ export const verbs: Verb[] = [
     ],
     "collocations": [],
     "phrasalVerbs": []
-  }
+  },
+{
+  "id": "accept",
+  "rank": 81,
+  "word": "ACCEPT",
+  "ipa": "/əkˈsept/",
+  "kana": "アクセプト",
+  "syllable": "ac-cept",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "提案・条件・事実を受け入れる",
+  "coreDetail": "ACCEPTは、相手から来た提案・依頼・条件・責任などを「受け入れる」動詞です。仕事では accept an offer / accept responsibility / accept the schedule のように使います。",
+  "meanings": [
+    {
+      "id": "main",
+      "title": "① 受け入れる・承諾する",
+      "pattern": "ACCEPT + 名詞",
+      "transitivity": "他動詞",
+      "structure": "S + accept + O",
+      "image": "相手から来たものを自分の側で受け止める",
+      "point": "agree よりも「条件や提案を正式に受け入れる」感じが強いです。",
+      "examples": [
+        {
+          "en": "We accepted the revised delivery date.",
+          "ja": "私たちは修正された納期を受け入れました。",
+          "focus": "accepted",
+          "jaFocus": "受け入れました",
+          "object": "the revised delivery date",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "We"
+            },
+            {
+              "label": "V",
+              "text": "accepted"
+            },
+            {
+              "label": "O",
+              "text": "the revised delivery date"
+            }
+          ]
+        },
+        {
+          "en": "The client accepted our proposal.",
+          "ja": "その顧客は私たちの提案を承諾しました。",
+          "focus": "accepted",
+          "jaFocus": "承諾しました",
+          "object": "our proposal",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "The client"
+            },
+            {
+              "label": "V",
+              "text": "accepted"
+            },
+            {
+              "label": "O",
+              "text": "our proposal"
+            }
+          ]
+        },
+        {
+          "en": "I accept responsibility for this mistake.",
+          "ja": "私はこのミスの責任を受け入れます。",
+          "focus": "accept",
+          "jaFocus": "責任を受け入れます",
+          "object": "responsibility",
+          "sentencePattern": "S + V + O + M",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "I"
+            },
+            {
+              "label": "V",
+              "text": "accept"
+            },
+            {
+              "label": "O",
+              "text": "responsibility"
+            },
+            {
+              "label": "M",
+              "text": "for this mistake"
+            }
+          ],
+          "grammarNote": "for this mistake は理由・対象を補足する語句です。"
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "accept an offer",
+      "ja": "申し出を受け入れる",
+      "image": "相手からの条件や申し出を正式に受ける",
+      "pattern": "ACCEPT + offer",
+      "examples": [
+        {
+          "en": "We decided to accept their offer.",
+          "ja": "私たちは彼らの申し出を受け入れることにしました。",
+          "focus": "accept their offer",
+          "jaFocus": "申し出を受け入れる",
+          "object": "their offer"
+        }
+      ]
+    },
+    {
+      "phrase": "accept responsibility",
+      "ja": "責任を受け入れる",
+      "image": "自分の担当・責任として認める",
+      "pattern": "ACCEPT + responsibility",
+      "examples": [
+        {
+          "en": "A good leader accepts responsibility.",
+          "ja": "良いリーダーは責任を受け入れます。",
+          "focus": "accepts responsibility",
+          "jaFocus": "責任を受け入れます",
+          "object": "responsibility"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "avoid",
+  "rank": 82,
+  "word": "AVOID",
+  "ipa": "/əˈvɔɪd/",
+  "kana": "アヴォイド",
+  "syllable": "a-void",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "問題・リスク・不要な行動を避ける",
+  "coreDetail": "AVOIDは、ミス・遅れ・混乱などを起こさないように避ける動詞です。後ろに動詞を置く時は avoid doing の形にします。",
+  "meanings": [
+    {
+      "id": "main",
+      "title": "① 避ける・防ぐ",
+      "pattern": "AVOID + 名詞 / AVOID + doing",
+      "transitivity": "他動詞",
+      "structure": "S + avoid + O",
+      "image": "問題が起きる方向へ行かないようにする",
+      "point": "avoid to do ではなく avoid doing が自然です。",
+      "examples": [
+        {
+          "en": "We should avoid mistakes in the quotation.",
+          "ja": "私たちは見積書でミスを避けるべきです。",
+          "focus": "avoid",
+          "jaFocus": "ミスを避けるべきです",
+          "object": "mistakes",
+          "sentencePattern": "S + V + O + M",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "We"
+            },
+            {
+              "label": "V",
+              "text": "should avoid"
+            },
+            {
+              "label": "O",
+              "text": "mistakes"
+            },
+            {
+              "label": "M",
+              "text": "in the quotation"
+            }
+          ]
+        },
+        {
+          "en": "Please avoid sending unclear emails.",
+          "ja": "不明確なメールを送ることは避けてください。",
+          "focus": "avoid sending",
+          "jaFocus": "避けてください",
+          "object": "sending unclear emails",
+          "sentencePattern": "V + O",
+          "grammarParts": [
+            {
+              "label": "V",
+              "text": "Please avoid"
+            },
+            {
+              "label": "O",
+              "text": "sending unclear emails"
+            }
+          ],
+          "grammarNote": "命令文では主語 you が省略されています。"
+        },
+        {
+          "en": "This check helps us avoid delivery delays.",
+          "ja": "この確認は私たちが納期遅れを避けるのに役立ちます。",
+          "focus": "avoid",
+          "jaFocus": "納期遅れを避ける",
+          "object": "delivery delays",
+          "sentencePattern": "S + V + O + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "This check"
+            },
+            {
+              "label": "V",
+              "text": "helps"
+            },
+            {
+              "label": "O",
+              "text": "us"
+            },
+            {
+              "label": "V",
+              "text": "avoid"
+            },
+            {
+              "label": "O",
+              "text": "delivery delays"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "avoid confusion",
+      "ja": "混乱を避ける",
+      "image": "相手が誤解しないようにする",
+      "pattern": "AVOID + confusion",
+      "examples": [
+        {
+          "en": "We added a note to avoid confusion.",
+          "ja": "私たちは混乱を避けるために注記を追加しました。",
+          "focus": "avoid confusion",
+          "jaFocus": "混乱を避ける",
+          "object": "confusion"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "consider",
+  "rank": 83,
+  "word": "CONSIDER",
+  "ipa": "/kənˈsɪdər/",
+  "kana": "コンシダー",
+  "syllable": "con-sid-er",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "選択肢・提案・状況をよく考える",
+  "coreDetail": "CONSIDERは、すぐ決めずに「よく検討する」動詞です。仕事では proposal, option, schedule, price などとよく使います。",
+  "meanings": [
+    {
+      "id": "main",
+      "title": "① 検討する・よく考える",
+      "pattern": "CONSIDER + 名詞 / CONSIDER + doing",
+      "transitivity": "他動詞",
+      "structure": "S + consider + O",
+      "image": "複数の条件を頭の中で比べながら考える",
+      "point": "consider to do ではなく consider doing が自然です。",
+      "examples": [
+        {
+          "en": "We are considering a new supplier.",
+          "ja": "私たちは新しい仕入先を検討しています。",
+          "focus": "considering",
+          "jaFocus": "検討しています",
+          "object": "a new supplier",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "We"
+            },
+            {
+              "label": "V",
+              "text": "are considering"
+            },
+            {
+              "label": "O",
+              "text": "a new supplier"
+            }
+          ]
+        },
+        {
+          "en": "Please consider our proposal.",
+          "ja": "私たちの提案をご検討ください。",
+          "focus": "consider",
+          "jaFocus": "ご検討ください",
+          "object": "our proposal",
+          "sentencePattern": "V + O",
+          "grammarParts": [
+            {
+              "label": "V",
+              "text": "Please consider"
+            },
+            {
+              "label": "O",
+              "text": "our proposal"
+            }
+          ],
+          "grammarNote": "命令文では主語 you が省略されています。"
+        },
+        {
+          "en": "I am considering changing the study plan.",
+          "ja": "私は学習計画を変更することを検討しています。",
+          "focus": "considering changing",
+          "jaFocus": "検討しています",
+          "object": "changing the study plan",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "I"
+            },
+            {
+              "label": "V",
+              "text": "am considering"
+            },
+            {
+              "label": "O",
+              "text": "changing the study plan"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "consider the cost",
+      "ja": "費用を考慮する",
+      "image": "価格や予算を判断材料に入れる",
+      "pattern": "CONSIDER + cost",
+      "examples": [
+        {
+          "en": "We need to consider the cost before ordering.",
+          "ja": "私たちは発注前に費用を考慮する必要があります。",
+          "focus": "consider the cost",
+          "jaFocus": "費用を考慮する",
+          "object": "the cost"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "depend",
+  "rank": 84,
+  "word": "DEPEND",
+  "ipa": "/dɪˈpend/",
+  "kana": "ディペンド",
+  "syllable": "de-pend",
+  "transitivity": "自動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "結果や判断が何かに左右される",
+  "coreDetail": "DEPENDは、予定・価格・結果などが「何に左右されるか」を表します。基本形は depend on + 名詞です。",
+  "meanings": [
+    {
+      "id": "main",
+      "title": "① 〜による・〜次第である",
+      "pattern": "DEPEND ON + 名詞",
+      "transitivity": "自動詞",
+      "structure": "S + depend on + O",
+      "image": "判断や結果が別の条件に支えられている",
+      "point": "depend は on とセットで使うことが多いです。on だけをCにせず、depend on をまとまりで見ます。",
+      "examples": [
+        {
+          "en": "The delivery date depends on the stock situation.",
+          "ja": "納期は在庫状況によります。",
+          "focus": "depends on",
+          "jaFocus": "在庫状況によります",
+          "object": "the stock situation",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "The delivery date"
+            },
+            {
+              "label": "V",
+              "text": "depends on"
+            },
+            {
+              "label": "O",
+              "text": "the stock situation"
+            }
+          ]
+        },
+        {
+          "en": "The final price depends on the quantity.",
+          "ja": "最終価格は数量によります。",
+          "focus": "depends on",
+          "jaFocus": "数量によります",
+          "object": "the quantity",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "The final price"
+            },
+            {
+              "label": "V",
+              "text": "depends on"
+            },
+            {
+              "label": "O",
+              "text": "the quantity"
+            }
+          ]
+        },
+        {
+          "en": "It depends on your schedule.",
+          "ja": "それはあなたの予定次第です。",
+          "focus": "depends on",
+          "jaFocus": "予定次第です",
+          "object": "your schedule",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "It"
+            },
+            {
+              "label": "V",
+              "text": "depends on"
+            },
+            {
+              "label": "O",
+              "text": "your schedule"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "depend on the schedule",
+      "ja": "スケジュール次第である",
+      "image": "予定に左右される",
+      "pattern": "DEPEND ON + schedule",
+      "examples": [
+        {
+          "en": "Our visit depends on the schedule.",
+          "ja": "私たちの訪問はスケジュール次第です。",
+          "focus": "depends on the schedule",
+          "jaFocus": "スケジュール次第です",
+          "object": "the schedule"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "expect",
+  "rank": 85,
+  "word": "EXPECT",
+  "ipa": "/ɪkˈspekt/",
+  "kana": "エクスペクト",
+  "syllable": "ex-pect",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "起こること・返事・結果を予想して待つ",
+  "coreDetail": "EXPECTは、返事・納品・結果などを「来るだろう」と見込む動詞です。hope よりも現実的な予想の感じがあります。",
+  "meanings": [
+    {
+      "id": "main",
+      "title": "① 予想する・期待する・見込む",
+      "pattern": "EXPECT + 名詞 / EXPECT + to do",
+      "transitivity": "他動詞",
+      "structure": "S + expect + O",
+      "image": "未来の出来事が来ると見込んで待つ",
+      "point": "仕事では expect a reply / expect delivery / expect a result のように使います。",
+      "examples": [
+        {
+          "en": "We expect a reply by Friday.",
+          "ja": "私たちは金曜日までに返信が来ると見込んでいます。",
+          "focus": "expect",
+          "jaFocus": "見込んでいます",
+          "object": "a reply",
+          "sentencePattern": "S + V + O + M",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "We"
+            },
+            {
+              "label": "V",
+              "text": "expect"
+            },
+            {
+              "label": "O",
+              "text": "a reply"
+            },
+            {
+              "label": "M",
+              "text": "by Friday"
+            }
+          ]
+        },
+        {
+          "en": "The client expects a clear explanation.",
+          "ja": "その顧客は分かりやすい説明を期待しています。",
+          "focus": "expects",
+          "jaFocus": "期待しています",
+          "object": "a clear explanation",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "The client"
+            },
+            {
+              "label": "V",
+              "text": "expects"
+            },
+            {
+              "label": "O",
+              "text": "a clear explanation"
+            }
+          ]
+        },
+        {
+          "en": "I expect to finish the report today.",
+          "ja": "私は今日その報告書を終える予定です。",
+          "focus": "expect to finish",
+          "jaFocus": "予定です",
+          "object": "to finish the report",
+          "sentencePattern": "S + V + O + M",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "I"
+            },
+            {
+              "label": "V",
+              "text": "expect"
+            },
+            {
+              "label": "O",
+              "text": "to finish the report"
+            },
+            {
+              "label": "M",
+              "text": "today"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "expect a reply",
+      "ja": "返信を見込む",
+      "image": "相手からの返信が来ると考える",
+      "pattern": "EXPECT + reply",
+      "examples": [
+        {
+          "en": "We expect a reply from the customer soon.",
+          "ja": "私たちはまもなく顧客から返信が来ると見込んでいます。",
+          "focus": "expect a reply",
+          "jaFocus": "返信が来ると見込んでいます",
+          "object": "a reply"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "follow",
+  "rank": 86,
+  "word": "FOLLOW",
+  "ipa": "/ˈfɑːloʊ/",
+  "kana": "フォロー",
+  "syllable": "fol-low",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "指示・手順・流れに沿って進む",
+  "coreDetail": "FOLLOWは、人について行く意味だけでなく、仕事では instructions, rules, process, schedule などに従う時によく使います。",
+  "meanings": [
+    {
+      "id": "main",
+      "title": "① 従う・沿う",
+      "pattern": "FOLLOW + 名詞",
+      "transitivity": "他動詞",
+      "structure": "S + follow + O",
+      "image": "決められた道筋やルールに沿って動く",
+      "point": "follow up は別の句動詞で「後で確認する」です。",
+      "examples": [
+        {
+          "en": "Please follow the instructions carefully.",
+          "ja": "指示に注意深く従ってください。",
+          "focus": "follow",
+          "jaFocus": "従ってください",
+          "object": "the instructions",
+          "sentencePattern": "V + O + M",
+          "grammarParts": [
+            {
+              "label": "V",
+              "text": "Please follow"
+            },
+            {
+              "label": "O",
+              "text": "the instructions"
+            },
+            {
+              "label": "M",
+              "text": "carefully"
+            }
+          ]
+        },
+        {
+          "en": "We need to follow the approval process.",
+          "ja": "私たちは承認プロセスに従う必要があります。",
+          "focus": "follow",
+          "jaFocus": "従う必要があります",
+          "object": "the approval process",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "We"
+            },
+            {
+              "label": "V",
+              "text": "need to follow"
+            },
+            {
+              "label": "O",
+              "text": "the approval process"
+            }
+          ]
+        },
+        {
+          "en": "I followed the recipe and made dinner.",
+          "ja": "私はレシピに従って夕食を作りました。",
+          "focus": "followed",
+          "jaFocus": "従って",
+          "object": "the recipe",
+          "sentencePattern": "S + V + O + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "I"
+            },
+            {
+              "label": "V",
+              "text": "followed"
+            },
+            {
+              "label": "O",
+              "text": "the recipe"
+            },
+            {
+              "label": "V",
+              "text": "made"
+            },
+            {
+              "label": "O",
+              "text": "dinner"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "follow the rules",
+      "ja": "ルールに従う",
+      "image": "決められた規則を守る",
+      "pattern": "FOLLOW + rules",
+      "examples": [
+        {
+          "en": "All team members must follow the rules.",
+          "ja": "すべてのチームメンバーはルールに従わなければなりません。",
+          "focus": "follow the rules",
+          "jaFocus": "ルールに従う",
+          "object": "the rules"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": [
+    {
+      "phrase": "follow up",
+      "ja": "後で確認する・追って連絡する",
+      "image": "前の話や依頼を後から確認する",
+      "pattern": "FOLLOW UP",
+      "examples": [
+        {
+          "en": "I will follow up with the client tomorrow.",
+          "ja": "私は明日その顧客に追って連絡します。",
+          "focus": "follow up",
+          "jaFocus": "追って連絡します",
+          "object": "with the client"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "include",
+  "rank": 87,
+  "word": "INCLUDE",
+  "ipa": "/ɪnˈkluːd/",
+  "kana": "インクルード",
+  "syllable": "in-clude",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "必要なものを中に含める",
+  "coreDetail": "INCLUDEは、資料・価格・メール・見積に必要な情報を「含める」動詞です。仕事では include tax / include the details / include shipping cost などが頻出です。",
+  "meanings": [
+    {
+      "id": "main",
+      "title": "① 含める・含む",
+      "pattern": "INCLUDE + 名詞",
+      "transitivity": "他動詞",
+      "structure": "S + include + O",
+      "image": "全体の中に必要な要素を入れる",
+      "point": "contain は中に入っている事実、include はリストや範囲に含める感じが強いです。",
+      "examples": [
+        {
+          "en": "Please include the delivery date in the quotation.",
+          "ja": "見積書に納期を含めてください。",
+          "focus": "include",
+          "jaFocus": "含めてください",
+          "object": "the delivery date",
+          "sentencePattern": "V + O + M",
+          "grammarParts": [
+            {
+              "label": "V",
+              "text": "Please include"
+            },
+            {
+              "label": "O",
+              "text": "the delivery date"
+            },
+            {
+              "label": "M",
+              "text": "in the quotation"
+            }
+          ]
+        },
+        {
+          "en": "The price includes tax.",
+          "ja": "その価格には税金が含まれています。",
+          "focus": "includes",
+          "jaFocus": "含まれています",
+          "object": "tax",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "The price"
+            },
+            {
+              "label": "V",
+              "text": "includes"
+            },
+            {
+              "label": "O",
+              "text": "tax"
+            }
+          ]
+        },
+        {
+          "en": "We included the product details in the email.",
+          "ja": "私たちはメールに製品詳細を含めました。",
+          "focus": "included",
+          "jaFocus": "含めました",
+          "object": "the product details",
+          "sentencePattern": "S + V + O + M",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "We"
+            },
+            {
+              "label": "V",
+              "text": "included"
+            },
+            {
+              "label": "O",
+              "text": "the product details"
+            },
+            {
+              "label": "M",
+              "text": "in the email"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "include the details",
+      "ja": "詳細を含める",
+      "image": "必要な情報を入れる",
+      "pattern": "INCLUDE + details",
+      "examples": [
+        {
+          "en": "Please include the details in your reply.",
+          "ja": "返信に詳細を含めてください。",
+          "focus": "include the details",
+          "jaFocus": "詳細を含めてください",
+          "object": "the details"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "notice",
+  "rank": 88,
+  "word": "NOTICE",
+  "ipa": "/ˈnoʊtɪs/",
+  "kana": "ノーティス",
+  "syllable": "no-tice",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "変化・問題・小さな点に気づく",
+  "coreDetail": "NOTICEは、問題・変化・違いなどを見たり聞いたりして気づく動詞です。仕事では notice an issue / notice a change などが便利です。",
+  "meanings": [
+    {
+      "id": "main",
+      "title": "① 気づく",
+      "pattern": "NOTICE + 名詞 / NOTICE + that節",
+      "transitivity": "他動詞",
+      "structure": "S + notice + O",
+      "image": "見落としそうな点が意識に入ってくる",
+      "point": "realize は頭で理解する感じ、notice は見たり聞いたりして気づく感じです。",
+      "examples": [
+        {
+          "en": "I noticed a mistake in the document.",
+          "ja": "私は書類の中のミスに気づきました。",
+          "focus": "noticed",
+          "jaFocus": "気づきました",
+          "object": "a mistake",
+          "sentencePattern": "S + V + O + M",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "I"
+            },
+            {
+              "label": "V",
+              "text": "noticed"
+            },
+            {
+              "label": "O",
+              "text": "a mistake"
+            },
+            {
+              "label": "M",
+              "text": "in the document"
+            }
+          ]
+        },
+        {
+          "en": "Did you notice the color difference?",
+          "ja": "あなたは色の違いに気づきましたか？",
+          "focus": "notice",
+          "jaFocus": "気づきましたか",
+          "object": "the color difference",
+          "sentencePattern": "Do + S + V + O",
+          "grammarParts": [
+            {
+              "label": "M",
+              "text": "Did"
+            },
+            {
+              "label": "S",
+              "text": "you"
+            },
+            {
+              "label": "V",
+              "text": "notice"
+            },
+            {
+              "label": "O",
+              "text": "the color difference"
+            }
+          ],
+          "grammarNote": "Did は疑問文を作る助動詞です。"
+        },
+        {
+          "en": "We noticed that the quantity was different.",
+          "ja": "私たちは数量が違うことに気づきました。",
+          "focus": "noticed",
+          "jaFocus": "気づきました",
+          "object": "that the quantity was different",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "We"
+            },
+            {
+              "label": "V",
+              "text": "noticed"
+            },
+            {
+              "label": "O",
+              "text": "that the quantity was different"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "notice a problem",
+      "ja": "問題に気づく",
+      "image": "早い段階で異常や問題を見つける",
+      "pattern": "NOTICE + problem",
+      "examples": [
+        {
+          "en": "We noticed a problem before shipment.",
+          "ja": "私たちは出荷前に問題に気づきました。",
+          "focus": "noticed a problem",
+          "jaFocus": "問題に気づきました",
+          "object": "a problem"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "prefer",
+  "rank": 89,
+  "word": "PREFER",
+  "ipa": "/prɪˈfɜːr/",
+  "kana": "プリファー",
+  "syllable": "pre-fer",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "複数の中からより好む",
+  "coreDetail": "PREFERは、AとBを比べてAの方を好む時に使います。prefer A to B / prefer to do の形がよく出ます。",
+  "meanings": [
+    {
+      "id": "main",
+      "title": "① 〜をより好む",
+      "pattern": "PREFER + 名詞 / PREFER A TO B / PREFER TO DO",
+      "transitivity": "他動詞",
+      "structure": "S + prefer + O",
+      "image": "いくつかの選択肢の中で一方を選びたい気持ち",
+      "point": "prefer A than B ではなく prefer A to B が基本です。",
+      "examples": [
+        {
+          "en": "I prefer online meetings to long emails.",
+          "ja": "私は長いメールよりオンライン会議の方を好みます。",
+          "focus": "prefer",
+          "jaFocus": "好みます",
+          "object": "online meetings",
+          "sentencePattern": "S + V + O + M",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "I"
+            },
+            {
+              "label": "V",
+              "text": "prefer"
+            },
+            {
+              "label": "O",
+              "text": "online meetings"
+            },
+            {
+              "label": "M",
+              "text": "to long emails"
+            }
+          ],
+          "grammarNote": "to long emails は比較対象を補足する語句です。"
+        },
+        {
+          "en": "Many customers prefer simple explanations.",
+          "ja": "多くの顧客は分かりやすい説明を好みます。",
+          "focus": "prefer",
+          "jaFocus": "好みます",
+          "object": "simple explanations",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "Many customers"
+            },
+            {
+              "label": "V",
+              "text": "prefer"
+            },
+            {
+              "label": "O",
+              "text": "simple explanations"
+            }
+          ]
+        },
+        {
+          "en": "I prefer to study in the morning.",
+          "ja": "私は朝に勉強する方が好きです。",
+          "focus": "prefer to study",
+          "jaFocus": "好きです",
+          "object": "to study",
+          "sentencePattern": "S + V + O + M",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "I"
+            },
+            {
+              "label": "V",
+              "text": "prefer"
+            },
+            {
+              "label": "O",
+              "text": "to study"
+            },
+            {
+              "label": "M",
+              "text": "in the morning"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "prefer A to B",
+      "ja": "BよりAを好む",
+      "image": "比較して一方を選ぶ",
+      "pattern": "PREFER A TO B",
+      "examples": [
+        {
+          "en": "I prefer this design to the old one.",
+          "ja": "私は古いものよりこのデザインを好みます。",
+          "focus": "prefer this design",
+          "jaFocus": "このデザインを好みます",
+          "object": "this design"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "recommend",
+  "rank": 90,
+  "word": "RECOMMEND",
+  "ipa": "/ˌrekəˈmend/",
+  "kana": "レコメンド",
+  "syllable": "rec-om-mend",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "相手に合う選択肢をすすめる",
+  "coreDetail": "RECOMMENDは、商品・方法・案などを相手にすすめる動詞です。営業・提案・日常のおすすめで使いやすい重要語です。",
+  "meanings": [
+    {
+      "id": "main",
+      "title": "① おすすめする・推奨する",
+      "pattern": "RECOMMEND + 名詞 / RECOMMEND + doing",
+      "transitivity": "他動詞",
+      "structure": "S + recommend + O",
+      "image": "相手にとって良いと思う選択肢を前に出す",
+      "point": "recommend to do より recommend doing / recommend that S V の形が自然です。",
+      "examples": [
+        {
+          "en": "We recommend this product for outdoor signs.",
+          "ja": "私たちは屋外サインにはこの製品をおすすめします。",
+          "focus": "recommend",
+          "jaFocus": "おすすめします",
+          "object": "this product",
+          "sentencePattern": "S + V + O + M",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "We"
+            },
+            {
+              "label": "V",
+              "text": "recommend"
+            },
+            {
+              "label": "O",
+              "text": "this product"
+            },
+            {
+              "label": "M",
+              "text": "for outdoor signs"
+            }
+          ]
+        },
+        {
+          "en": "I recommend checking the stock before ordering.",
+          "ja": "私は発注前に在庫を確認することをおすすめします。",
+          "focus": "recommend checking",
+          "jaFocus": "おすすめします",
+          "object": "checking the stock",
+          "sentencePattern": "S + V + O + M",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "I"
+            },
+            {
+              "label": "V",
+              "text": "recommend"
+            },
+            {
+              "label": "O",
+              "text": "checking the stock"
+            },
+            {
+              "label": "M",
+              "text": "before ordering"
+            }
+          ]
+        },
+        {
+          "en": "The manager recommended a simpler plan.",
+          "ja": "そのマネージャーはよりシンプルな計画をすすめました。",
+          "focus": "recommended",
+          "jaFocus": "すすめました",
+          "object": "a simpler plan",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "The manager"
+            },
+            {
+              "label": "V",
+              "text": "recommended"
+            },
+            {
+              "label": "O",
+              "text": "a simpler plan"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "recommend a solution",
+      "ja": "解決策をすすめる",
+      "image": "相手の問題に合う案を出す",
+      "pattern": "RECOMMEND + solution",
+      "examples": [
+        {
+          "en": "We recommended a solution for the installation issue.",
+          "ja": "私たちは施工上の問題に対する解決策をすすめました。",
+          "focus": "recommended a solution",
+          "jaFocus": "解決策をすすめました",
+          "object": "a solution"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+}
 ];
 
 

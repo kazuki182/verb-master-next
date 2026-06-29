@@ -33,7 +33,7 @@ import {
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 76";
+const VERSION = "Version 80";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -559,6 +559,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.80</p><p className="mt-1 text-muted">HOMEのダッシュボードを簡素化。登録動詞・習得済み・残り・目標日・学習日数・バッジだけに絞り、スマホで見やすくしました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.79</p><p className="mt-1 text-muted">SV/SVO/SVC/SVOCなどの文型ラベルは、全例文を手動監査するまでユーザー画面から一旦非表示にしました。誤った文型で覚えてしまうリスクを避けるための品質優先対応です。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.78</p><p className="mt-1 text-muted">例文・テスト日本語の品質を改善。不自然な自動生成文を削除し、主語・時制・目的語が分かる日本語へ調整。START / SHOW / RUNなどの熟語・句動詞例文も仕事向けの自然な表現に修正しました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.77</p><p className="mt-1 text-muted">120語の品質監査を開始。重複動詞を解消し、reply / schedule / submit / respond / inform / verify / gather / propose へ差し替え。borrowは残し、SV/SVOや前置詞句の扱いをダブルチェックしました。</p></div>

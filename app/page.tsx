@@ -286,13 +286,14 @@ export default function Home() {
       </section>
 
       <section className="digital-card p-5">
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex items-start justify-between gap-3">
           <div>
             <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">
-              LEARNING DASHBOARD
+              DASHBOARD
             </p>
-            <p className="mt-2 text-sm text-slate-300">
-              目標日と学習曜日から、必要なペースだけを自動計算します。
+            <h2 className="mt-2 text-xl font-extrabold text-white">学習状況</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              今必要な情報だけを表示します。
             </p>
           </div>
           <span className="rounded-full border border-cyan-300/30 px-3 py-1 text-xs font-bold text-cyan-100">
@@ -302,7 +303,7 @@ export default function Home() {
 
         <div className="mt-5 grid grid-cols-3 gap-3 text-center text-sm">
           <div className="digital-panel">
-            <p className="digital-label">学習対象</p>
+            <p className="digital-label">登録動詞</p>
             <p className="digital-number">{unlockedVerbTotal}</p>
             <p className="text-xs text-cyan-200">語</p>
           </div>
@@ -318,285 +319,57 @@ export default function Home() {
           </div>
         </div>
 
-        <p className="mt-3 text-center text-xs font-bold text-cyan-100/80">
-          現在の解放範囲：{unlockedVerbTotal} / {verbs.length}語
-        </p>
-
-        <div className="mt-4 space-y-3 text-center">
-          <div className="digital-panel digital-panel-wide">
+        <div className="mt-4 grid grid-cols-2 gap-3 text-center">
+          <div className="digital-panel">
             <p className="digital-label">目標日</p>
-            <p className="target-date-line">
+            <p className="target-date-line text-2xl">
               {targetParts.year}/{targetParts.day.replace(".", "/")}
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-3">
-            <div className="digital-panel">
-              <p className="digital-label">学習日数</p>
-              <p className="digital-number">{plan.studyDaysLeft}</p>
-              <p className="text-xs text-cyan-200">日</p>
-            </div>
-            <div className="digital-panel">
-              <p className="digital-label">必要ペース</p>
-              <p className="daily-goal-main text-base">
-                {plan.recommendedPaceLabel}
-              </p>
-            </div>
+          <div className="digital-panel">
+            <p className="digital-label">学習日数</p>
+            <p className="digital-number">{plan.studyDaysLeft}</p>
+            <p className="text-xs text-cyan-200">日</p>
           </div>
         </div>
 
-        <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-slate-950/70 p-4">
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <p className="text-xs font-bold tracking-[0.18em] text-cyan-200">
-                PACE CHECK
-              </p>
-              <p className={`mt-2 text-lg font-extrabold ${paceTone}`}>
-                {paceMessage}
-              </p>
-            </div>
-            <div className="text-right text-xs text-slate-300">
-              <p>予定目安</p>
-              <p className="text-base font-bold text-white">
-                {plan.expectedCompleted}語
-              </p>
-            </div>
-          </div>
-          {plan.paceStatus === "behind" && (
-            <p className="mt-3 text-sm text-slate-300">
-              焦らなくて大丈夫です。推奨ペース通り進めれば目標日に間に合います。
-            </p>
-          )}
-        </div>
-
-        <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-slate-950/70 p-4">
-          <p className="text-xs font-bold tracking-[0.18em] text-cyan-200">
-            学習する曜日
-          </p>
-          <div className="mt-3 grid grid-cols-3 gap-2 text-sm">
+        <details className="mt-4 rounded-2xl border border-cyan-300/15 bg-slate-950/55 p-4 text-sm text-slate-300">
+          <summary className="cursor-pointer font-bold text-cyan-100">目標日を変更する</summary>
+          <div className="mt-3 rounded-2xl border border-cyan-300/10 bg-slate-950/60 p-3">
+            <input
+              className="date-input-safe block min-w-0 w-full max-w-full box-border rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center text-white"
+              type="date"
+              value={target}
+              onChange={(e) => updateTarget(e.target.value)}
+            />
             <button
               type="button"
-              className={`rounded-xl px-3 py-2 font-bold ${studyMode === "everyday" ? "bg-cyan-300 text-slate-950" : "bg-slate-900 text-slate-200"}`}
-              onClick={() => updateStudyMode("everyday")}
+              className="mt-3 w-full rounded-xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950"
+              onClick={saveTarget}
             >
-              毎日
+              保存
             </button>
-            <button
-              type="button"
-              className={`rounded-xl px-3 py-2 font-bold ${studyMode === "weekdays" ? "bg-cyan-300 text-slate-950" : "bg-slate-900 text-slate-200"}`}
-              onClick={() => updateStudyMode("weekdays")}
-            >
-              平日
-            </button>
-            <button
-              type="button"
-              className={`rounded-xl px-3 py-2 font-bold ${studyMode === "custom" ? "bg-cyan-300 text-slate-950" : "bg-slate-900 text-slate-200"}`}
-              onClick={() => updateStudyMode("custom")}
-            >
-              曜日指定
-            </button>
-          </div>
-          {studyMode === "custom" && (
-            <div className="mt-3 grid grid-cols-7 gap-1 text-xs">
-              {["日", "月", "火", "水", "木", "金", "土"].map(
-                (label, index) => (
-                  <button
-                    key={label}
-                    type="button"
-                    className={`rounded-lg py-2 font-bold ${customDays.includes(index) ? "bg-cyan-300 text-slate-950" : "bg-slate-900 text-slate-400"}`}
-                    onClick={() => toggleCustomDay(index)}
-                  >
-                    {label}
-                  </button>
-                ),
-              )}
-            </div>
-          )}
-          <p className="mt-3 text-sm text-slate-300">
-            現在の設定：{plan.studyDayLabel}
-          </p>
-        </div>
-
-        <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-slate-950/70 p-4">
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0">
-              <p className="text-xs font-bold tracking-[0.18em] text-cyan-200">
-                自分の学習ペース
+            {saveMessage && (
+              <p className="mt-2 text-xs font-bold text-cyan-200">
+                ✅ {saveMessage}
               </p>
-              <p className="mt-2 text-2xl font-extrabold text-white">{plan.selectedPaceLabel}</p>
-              <p className="mt-1 text-sm text-slate-300">
-                変更したい時だけ編集できます。
-              </p>
-            </div>
-            {!isPaceEditing && (
-              <button
-                type="button"
-                className="shrink-0 rounded-full border border-cyan-300/25 px-4 py-2 text-xs font-bold text-cyan-100"
-                onClick={() => {
-                  const savedPace = getStudyPaceSetting();
-                  setPaceDays(String(savedPace.days));
-                  setPaceVerbs(String(savedPace.verbs));
-                  setIsPaceEditing(true);
-                  setPaceSaveMessage("");
-                }}
-              >
-                編集
-              </button>
             )}
           </div>
-          {isPaceEditing && (
-            <div className="mt-3 rounded-2xl border border-cyan-300/10 bg-slate-950/60 p-3">
-              <p className="mb-3 text-sm font-bold text-cyan-100">何日で何語 学習する？</p>
-              <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] items-center gap-2 text-sm">
-                <input
-                  className="date-input-safe min-w-0 rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center font-bold text-white"
-                  type="text"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
-                  value={paceDays}
-                  onFocus={(e) => e.currentTarget.select()}
-                  onChange={(e) => {
-                    setPaceDays(e.target.value.replace(/\D/g, ""));
-                    setPaceSaveMessage("");
-                  }}
-                  onBlur={() => setPaceDays((value) => String(parsePositiveNumber(value)))}
-                />
-                <span className="text-slate-300">日で</span>
-                <input
-                  className="date-input-safe min-w-0 rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center font-bold text-white"
-                  type="text"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
-                  value={paceVerbs}
-                  onFocus={(e) => e.currentTarget.select()}
-                  onChange={(e) => {
-                    setPaceVerbs(e.target.value.replace(/\D/g, ""));
-                    setPaceSaveMessage("");
-                  }}
-                  onBlur={() => setPaceVerbs((value) => String(parsePositiveNumber(value)))}
-                />
-                <span className="text-slate-300">語</span>
-              </div>
-              <div className="mt-3 grid grid-cols-2 gap-2">
-                <button
-                  type="button"
-                  className="rounded-xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950 transition active:scale-[0.99]"
-                  onClick={saveStudyPace}
-                  disabled={paceSaving}
-                >
-                  {paceSaving ? "保存中..." : "保存"}
-                </button>
-                <button
-                  type="button"
-                  className="rounded-xl border border-cyan-300/20 px-4 py-3 text-sm font-bold text-cyan-100"
-                  onClick={cancelStudyPaceEdit}
-                  disabled={paceSaving}
-                >
-                  キャンセル
-                </button>
-              </div>
-            </div>
-          )}
-          {paceSaveMessage && (
-            <p className="mt-3 rounded-xl bg-cyan-300/10 p-3 text-sm font-bold text-cyan-100">
-              ✅ {paceSaveMessage}
-            </p>
-          )}
-          <div className="mt-3 pace-explain-card text-sm">
-            <p className="text-xs font-bold tracking-[0.16em] text-cyan-200">ペースの見方</p>
-            <div className="mt-3 space-y-3">
-              <div>
-                <p className="text-slate-400">現在の目標</p>
-                <p className="mt-1 font-bold text-white">{plan.targetDate}までに残り{plan.remaining}語を学習する</p>
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <div className="rounded-xl bg-slate-950/70 p-3">
-                  <p className="text-slate-400">残り学習日</p>
-                  <p className="mt-1 text-lg font-extrabold text-white">{plan.studyDaysLeft}日</p>
-                </div>
-                <div className="rounded-xl bg-slate-950/70 p-3">
-                  <p className="text-slate-400">必要ペース</p>
-                  <p className="mt-1 text-lg font-extrabold text-white">{plan.recommendedPaceLabel}</p>
-                </div>
-              </div>
-              <div className="rounded-xl border border-cyan-300/10 bg-slate-950/70 p-3">
-                <p className="text-slate-400">このままだと</p>
-                <p className={`mt-1 font-bold ${selectedPaceTone}`}>{selectedPaceSummary}</p>
-                <p className="mt-1 leading-6 text-slate-300">{selectedPaceResult}</p>
-              </div>
-              <p className="rounded-xl bg-cyan-300/10 p-3 font-bold leading-6 text-cyan-100">
-                おすすめ：{recommendedAction}
-              </p>
-            </div>
-          </div>
-        </div>
+        </details>
 
-        <div className="mt-5 rounded-2xl border border-cyan-300/15 bg-slate-950/50 p-4 text-sm text-slate-300">
+        <div className="mt-5 rounded-2xl border border-cyan-300/15 bg-slate-950/50 p-4">
           <div className="flex items-center justify-between gap-3">
             <div>
-              <p className="text-xs font-bold tracking-[0.16em] text-cyan-200">目標日</p>
-              <p className="mt-1 text-xl font-extrabold text-white">{plan.targetDate}</p>
+              <p className="text-sm font-bold text-cyan-200">バッジ</p>
+              <p className="mt-1 text-sm text-slate-300">継続・正解・MASTERで自動獲得します。</p>
             </div>
-            {!isTargetEditing && (
-              <button
-                type="button"
-                className="rounded-full border border-cyan-300/25 px-4 py-2 text-xs font-bold text-cyan-100"
-                onClick={() => {
-                  setTarget(getTargetDate());
-                  setIsTargetEditing(true);
-                  setSaveMessage("");
-                }}
-              >
-                変更
-              </button>
-            )}
+            <Link className="shrink-0 text-sm font-bold text-cyan-100" href="/profile">
+              すべて見る
+            </Link>
           </div>
-          {isTargetEditing && (
-            <div className="mt-3 rounded-2xl border border-cyan-300/10 bg-slate-950/60 p-3">
-              <p className="mb-3 text-sm font-bold text-cyan-100">目標日を変更する</p>
-              <input
-                className="date-input-safe block min-w-0 w-full max-w-full box-border rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center text-white"
-                type="date"
-                value={target}
-                onChange={(e) => updateTarget(e.target.value)}
-              />
-              <div className="mt-3 grid grid-cols-2 gap-2">
-                <button
-                  type="button"
-                  className="rounded-xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950"
-                  onClick={saveTarget}
-                >
-                  保存
-                </button>
-                <button
-                  type="button"
-                  className="rounded-xl border border-cyan-300/20 px-4 py-3 text-sm font-bold text-cyan-100"
-                  onClick={cancelTargetEdit}
-                >
-                  キャンセル
-                </button>
-              </div>
-            </div>
-          )}
-          {saveMessage && (
-            <p className="mt-2 text-xs font-bold text-cyan-200">
-              ✅ {saveMessage}
-            </p>
-          )}
-        </div>
-      </section>
-
-      <section className="card p-5">
-        <div className="flex items-center justify-between gap-3">
-          <div>
-            <p className="text-sm font-bold text-cyan-200">最近のバッジ</p>
-            <p className="mt-1 text-sm text-slate-300">継続・正解・MASTERで自動獲得します。</p>
+          <div className="mt-4">
+            <BadgeList badges={badges} compact emptyText="まだバッジはありません。まずは1問正解を目指しましょう。" />
           </div>
-          <Link className="shrink-0 text-sm font-bold text-cyan-100" href="/profile">
-            すべて見る
-          </Link>
-        </div>
-        <div className="mt-4">
-          <BadgeList badges={badges} compact emptyText="まだバッジはありません。まずは1問正解を目指しましょう。" />
         </div>
       </section>
 

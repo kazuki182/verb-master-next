@@ -162,6 +162,10 @@ export default function AdminPage() {
         <p className="text-sm font-bold tracking-[0.2em] text-cyan-200">ADMIN DASHBOARD</p>
         <h1 className="text-3xl font-black">管理画面</h1>
         <p className="text-sm text-muted">教材品質・ユーザー状況・Premium管理の土台です。</p>
+        <div className="flex flex-wrap gap-2 text-xs font-bold">
+          <Link className="rounded-full bg-paper px-3 py-2 text-cyan-100" href="/admin/verb-quality">動詞品質チェック</Link>
+          <Link className="rounded-full bg-paper px-3 py-2 text-cyan-100" href="/verbs">動詞一覧</Link>
+        </div>
       </header>
 
       <div className="grid grid-cols-4 gap-2 rounded-2xl bg-slate-950/70 p-2 text-center text-sm font-bold">

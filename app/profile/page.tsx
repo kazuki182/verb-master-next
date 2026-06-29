@@ -604,6 +604,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.86</p><p className="mt-1 text-muted">管理者専用の動詞品質チェックページを追加。使い方数、例文数、Premium日常例文、大文字表記、仮文、テスト日本語、文型データの確認状態を一覧で見られるようにしました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.85</p><p className="mt-1 text-muted">PCとスマホ間の目標日同期を改善。HOMEの使い方ガイドカードを削除し、レベル欄へバッジを移動。Streakを連続学習に日本語化し、保存状態の表示も学習記録中心に整理しました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.84</p><p className="mt-1 text-muted">テスト途中保存を見える化。単語別テスト画面に途中保存カードを追加し、テスト完了後も何回でもランダム10問を受け直せるようにしました。完了ボーナスも毎回加算されます。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.83</p><p className="mt-1 text-muted">アップデート履歴を管理者だけに表示。一般ユーザー向けには、任意でHOMEに1行の新着ニュースだけを出せるように整理しました。</p></div>

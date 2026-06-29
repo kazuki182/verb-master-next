@@ -19,14 +19,16 @@ import {
 } from "@/lib/account";
 import { verbs } from "@/lib/data";
 import VoiceSettingsPanel from "@/components/VoiceSettingsPanel";
+import DataBackupPanel from "@/components/DataBackupPanel";
 import BadgeList from "@/components/BadgeList";
 import {
   getCloudReadiness,
+  restoreLearningDataFromSupabase,
   syncCurrentUserToSupabase,
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 60";
+const VERSION = "Version 62";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -104,6 +106,17 @@ export default function ProfilePage() {
     const result = await syncCurrentUserToSupabase(target);
     setCloudStatus(result);
     setCloudSyncing(false);
+  };
+
+  const restoreFromSupabase = async () => {
+    if (!username) return;
+    setCloudSyncing(true);
+    const result = await restoreLearningDataFromSupabase(username);
+    setCloudStatus(result.status);
+    setCloudSyncing(false);
+    setProfileMessage(result.message);
+    reload();
+    setTimeout(() => setProfileMessage(""), 2400);
   };
 
   const onSaveProfile = async () => {
@@ -364,14 +377,24 @@ export default function ProfilePage() {
               <div className="rounded-xl bg-slate-950 p-3">Premium<br /><b>{cloudLabel("premium", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
               <div className="rounded-xl bg-slate-950 p-3">学習記録<br /><b>{cloudLabel("stats", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
             </div>
-            <button
-              className="btn btn-soft mt-3 w-full"
-              type="button"
-              onClick={() => syncToSupabase()}
-              disabled={cloudSyncing}
-            >
-              {cloudSyncing ? "同期中..." : "手動同期テスト"}
-            </button>
+            <div className="mt-3 grid gap-2 sm:grid-cols-2">
+              <button
+                className="btn btn-soft w-full"
+                type="button"
+                onClick={() => syncToSupabase()}
+                disabled={cloudSyncing}
+              >
+                {cloudSyncing ? "同期中..." : "手動同期テスト"}
+              </button>
+              <button
+                className="btn btn-soft w-full"
+                type="button"
+                onClick={restoreFromSupabase}
+                disabled={cloudSyncing}
+              >
+                Supabaseから復元
+              </button>
+            </div>
             <p className="mt-2 text-xs leading-5 text-muted">{cloudMessage(cloudStatus)}</p>
           </details>
         )}
@@ -389,11 +412,7 @@ export default function ProfilePage() {
             通知設定：{progress.notificationsEnabled ? "ON" : "OFF"}
             <p className="mt-1 text-sm font-normal text-muted">通知機能は今後の実装準備です。</p>
           </button>
-          <div className="rounded-2xl bg-paper p-4">
-            <p className="font-bold">バックアップ / 復元</p>
-            <p className="mt-1 text-sm text-muted">購入状態の復元と学習データ保護に対応しました。既存データは消さず、端末保存とクラウド同期の準備を併用します。</p>
-            <Link className="mt-3 inline-block text-sm font-bold text-cyan-200" href="/purchases">購入履歴・復元を開く</Link>
-          </div>
+          <DataBackupPanel />
           {isAdmin && <Link className="rounded-2xl bg-paper p-4 font-bold" href="/admin">管理画面</Link>}
         </div>
       </section>
@@ -414,6 +433,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.62</p><p className="mt-1 text-muted">学習データ保護版。自動クラウド同期、Supabase復元、JSONバックアップ書き出し/復元、プライベート閲覧の注意表示を追加。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.61</p><p className="mt-1 text-muted">80動詞品質完成版。テストの戻る操作、学習ペース数字入力、文型品質ルール、教材データ監査メモを改善。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.60</p><p className="mt-1 text-muted">動詞データを80語まで拡張。REQUEST / SUGGEST / AGREE / ARRANGE / CONTACT など実務で使う動詞を追加。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.59</p><p className="mt-1 text-muted">動詞データを70語まで拡張。REPORT / UPDATE / REVIEW / COMPARE / INTRODUCE を追加。</p></div>

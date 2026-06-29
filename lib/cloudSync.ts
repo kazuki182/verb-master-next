@@ -2,7 +2,9 @@ import { supabase } from "@/lib/supabase";
 import {
   FREE_VERB_LIMIT,
   TOTAL_VERB_TARGET,
+  ensureProgress,
   restorePremiumEntitlement,
+  saveProgress,
   type UserProgress,
   type VoiceSettings,
 } from "@/lib/account";
@@ -179,6 +181,128 @@ export async function syncCurrentUserToSupabase(progress: UserProgress): Promise
   } catch (error) {
     const message = error instanceof Error ? error.message : "Supabase保存に失敗しました。";
     return { ...status, message };
+  }
+}
+
+function hasMeaningfulRemoteStats(data: any) {
+  if (!data) return false;
+  return Boolean(
+    Number(data.xp || 0) > 0 ||
+      Number(data.total_studied || 0) > 0 ||
+      Number(data.test_correct || 0) > 0 ||
+      Number(data.test_wrong || 0) > 0 ||
+      (Array.isArray(data.studied_verb_ids) && data.studied_verb_ids.length > 0) ||
+      (Array.isArray(data.weak_items) && data.weak_items.length > 0),
+  );
+}
+
+export async function restoreLearningDataFromSupabase(username: string): Promise<{ ok: boolean; changed: boolean; message: string; status: CloudSyncStatus }> {
+  const readiness = getCloudReadiness();
+  if (!supabase) {
+    return { ok: false, changed: false, message: readiness.message, status: readiness };
+  }
+
+  const status: CloudSyncStatus = {
+    configured: true,
+    profile: "idle",
+    avatar: "idle",
+    premium: "idle",
+    stats: "idle",
+    message: "Supabaseから復元確認中です...",
+  };
+
+  try {
+    const [{ data: profile, error: profileError }, { data: stats, error: statsError }, { data: premium, error: premiumError }, { data: settings, error: settingsError }] = await Promise.all([
+      supabase.from("profiles").select("display_name, avatar_url, notifications_enabled, last_login_at, updated_at").eq("username", username).maybeSingle(),
+      supabase.from("user_stats").select("xp, level, current_streak, longest_streak, total_studied, current_round, studied_verb_ids, test_correct, test_wrong, weak_items, updated_at").eq("username", username).maybeSingle(),
+      supabase.from("premium_entitlements").select("unlocked_verb_count, purchase_total_yen, source, updated_at").eq("username", username).maybeSingle(),
+      supabase.from("learning_settings").select("voice_gender, voice_lang, notifications_enabled, updated_at").eq("username", username).maybeSingle(),
+    ]);
+
+    if (profileError) throw profileError;
+    if (statsError) throw statsError;
+    if (premiumError) throw premiumError;
+    if (settingsError) throw settingsError;
+
+    const progress = ensureProgress(username);
+    let changed = false;
+
+    if (profile) {
+      if (profile.display_name && !progress.displayName) {
+        progress.displayName = profile.display_name;
+        changed = true;
+      }
+      if (typeof profile.notifications_enabled === "boolean") {
+        progress.notificationsEnabled = profile.notifications_enabled;
+        changed = true;
+      }
+      if (profile.last_login_at && (!progress.lastLoginAt || profile.last_login_at > progress.lastLoginAt)) {
+        progress.lastLoginAt = profile.last_login_at;
+        changed = true;
+      }
+      status.profile = "saved";
+    }
+
+    if (hasMeaningfulRemoteStats(stats)) {
+      const remoteStudied = Array.isArray(stats.studied_verb_ids) ? stats.studied_verb_ids : [];
+      const localStudied = progress.studiedVerbIds || [];
+      const remoteWeak = Array.isArray(stats.weak_items) ? stats.weak_items : [];
+      const localWeak = progress.weakItems || [];
+
+      const shouldMerge =
+        Number(stats.xp || 0) > (progress.xp || 0) ||
+        Number(stats.total_studied || 0) > (progress.totalStudied || 0) ||
+        remoteStudied.length > localStudied.length ||
+        Number(stats.test_correct || 0) + Number(stats.test_wrong || 0) > (progress.testCorrect || 0) + (progress.testWrong || 0);
+
+      if (shouldMerge) {
+        progress.xp = Math.max(progress.xp || 0, Number(stats.xp || 0));
+        progress.level = Math.max(progress.level || 1, Number(stats.level || 1));
+        progress.currentStreak = Math.max(progress.currentStreak || 0, Number(stats.current_streak || 0));
+        progress.longestStreak = Math.max(progress.longestStreak || 0, Number(stats.longest_streak || 0));
+        progress.totalStudied = Math.max(progress.totalStudied || 0, Number(stats.total_studied || 0));
+        progress.currentRound = Math.max(progress.currentRound || 1, Number(stats.current_round || 1));
+        progress.studiedVerbIds = Array.from(new Set([...localStudied, ...remoteStudied]));
+        progress.testCorrect = Math.max(progress.testCorrect || 0, Number(stats.test_correct || 0));
+        progress.testWrong = Math.max(progress.testWrong || 0, Number(stats.test_wrong || 0));
+        progress.weakItems = Array.from(new Set([...localWeak, ...remoteWeak]));
+        changed = true;
+      }
+      status.stats = "saved";
+    }
+
+    if (premium) {
+      const remoteUnlocked = Number(premium.unlocked_verb_count || 0);
+      const remotePurchaseTotal = Number(premium.purchase_total_yen || 0);
+      if (remoteUnlocked > (progress.unlockedVerbCount || 0) || remotePurchaseTotal > (progress.purchaseTotalYen || 0)) {
+        progress.unlockedVerbCount = Math.max(progress.unlockedVerbCount || 0, remoteUnlocked);
+        progress.purchaseTotalYen = Math.max(progress.purchaseTotalYen || 0, remotePurchaseTotal);
+        progress.premiumUpdatedAt = premium.updated_at || progress.premiumUpdatedAt;
+        progress.premiumSource = "restore";
+        changed = true;
+      }
+      status.premium = "saved";
+    }
+
+    if (settings) {
+      progress.voiceSettings = {
+        gender: settings.voice_gender === "male" ? "male" : "female",
+        lang: settings.voice_lang === "en-GB" ? "en-GB" : "en-US",
+      };
+      if (typeof settings.notifications_enabled === "boolean") progress.notificationsEnabled = settings.notifications_enabled;
+      changed = true;
+    }
+
+    if (changed) saveProgress(progress);
+
+    status.message = changed
+      ? "Supabaseに残っていた学習データを端末へ復元しました。"
+      : "Supabase復元を確認しました。端末側のデータを優先しています。";
+    status.updatedAt = nowText();
+    return { ok: true, changed, message: status.message, status };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Supabase復元に失敗しました。";
+    return { ok: false, changed: false, message, status: { ...status, stats: "error", message } };
   }
 }
 

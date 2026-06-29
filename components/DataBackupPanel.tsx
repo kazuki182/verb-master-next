@@ -91,7 +91,7 @@ export default function DataBackupPanel() {
       <input ref={fileRef} className="hidden" type="file" accept="application/json,.json" onChange={onImport} />
       {message && <p className="mt-2 text-xs leading-5 text-cyan-100">{message}</p>}
       <p className="mt-2 text-xs leading-5 text-amber-100/90">
-        注意：iPhoneの「プライベート」閲覧では保存データが消えやすいです。通常タブで使うか、更新前にバックアップしてください。
+        注意：プライベート閲覧では端末保存が消えやすいです。ログイン中はクラウド自動保存を優先しますが、更新前の手動バックアップも残せます。
       </p>
     </div>
   );

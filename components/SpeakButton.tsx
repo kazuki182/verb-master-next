@@ -84,7 +84,7 @@ export default function SpeakButton({
           type="button"
           onClick={openUpgrade}
           className="inline-flex items-center gap-1 rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-1.5 text-sm font-bold text-amber-100 shadow-sm"
-          title="30動詞パックで0.5倍速音声が使えます"
+          title="Premiumで0.5倍速音声が使えます"
         >
           🔒 {slowLabel}
         </button>

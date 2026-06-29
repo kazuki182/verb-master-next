@@ -44,7 +44,7 @@ export default function CheckoutPage() {
   const readiness = useMemo(() => getPaymentReadiness(), []);
   const paymentMode = getPaymentMode();
   const alreadyUnlocked = summary.rawUnlocked >= plan.count;
-  const additionalPrice = Math.max(0, plan.price - summary.purchaseTotal);
+  const additionalPrice = Math.max(0, plan.cumulativePrice - summary.purchaseTotal);
   const currentText = summary.rawUnlocked > 0 ? `${summary.rawUnlocked}動詞解放中` : `${FREE_VERB_LIMIT}動詞まで無料`;
 
   const startStripeCheckout = async () => {
@@ -77,7 +77,7 @@ export default function CheckoutPage() {
         <p className="text-sm font-bold text-cyan-200">CHECKOUT / PAYMENT READY</p>
         <h1 className="mt-2 text-3xl font-black">購入確認</h1>
         <p className="mt-2 text-sm text-slate-300">
-          Ver.51ではStripe未登録でも仮購入モードで確認できます。Stripe登録後はWebhookで支払い完了を検証してPremiumを反映します。
+          Ver.70では無料3動詞から、30・60・90・120動詞へ段階的に解放する課金設計へ整理しています。Stripe登録後はWebhookで支払い完了を検証して購入パックを反映します。
         </p>
       </header>
 
@@ -90,7 +90,7 @@ export default function CheckoutPage() {
               {paymentMode === "stripe" ? "Stripe Checkoutに接続する準備モードです。" : "今は本番決済を行わない安全な仮購入モードです。"}
             </p>
           </div>
-          <span className="rounded-full bg-cyan-300 px-3 py-1 text-xs font-black text-slate-950">Ver.51</span>
+          <span className="rounded-full bg-cyan-300 px-3 py-1 text-xs font-black text-slate-950">Ver.70</span>
         </div>
         <div className="mt-4 grid gap-2 text-sm">
           <div className="rounded-2xl bg-slate-950/50 p-3 font-bold">公開キー：{readiness.publishableKeyReady ? "設定済み" : "未設定"}</div>
@@ -109,11 +109,11 @@ export default function CheckoutPage() {
         <p className="mt-2 text-sm text-slate-300">{plan.range}動詞まで解放 / {plan.recommend}</p>
         <div className="mt-5 grid grid-cols-2 gap-3 text-center">
           <div className="digital-panel">
-            <p className="digital-label">プラン金額</p>
+            <p className="digital-label">このパック</p>
             <p className="digital-number text-3xl">¥{plan.price.toLocaleString()}</p>
           </div>
           <div className="digital-panel">
-            <p className="digital-label">今回の差額</p>
+            <p className="digital-label">今回の支払い</p>
             <p className="digital-number text-3xl">¥{additionalPrice.toLocaleString()}</p>
           </div>
         </div>
@@ -124,6 +124,7 @@ export default function CheckoutPage() {
         <div className="mt-4 grid gap-3 text-sm">
           <div className="rounded-2xl bg-paper p-4 font-bold">現在：{currentText}</div>
           <div className="rounded-2xl bg-paper p-4 font-bold">追加解放：{plan.addRange}番の動詞</div>
+          <div className="rounded-2xl bg-paper p-4 font-bold">購入後の累計：¥{plan.cumulativePrice.toLocaleString()}</div>
           <div className="rounded-2xl bg-paper p-4 font-bold">Premium機能：0.5倍速音声 / 日常例文 / フレーズ帳 / シャッフルテスト / 文法パターン / 復習強化</div>
           {plan.count >= TOTAL_VERB_TARGET && (
             <div className="rounded-2xl bg-amber-950/30 p-4 font-bold text-amber-100">全120動詞解放でLyrics Englishリンクも表示対象になります。</div>
@@ -169,7 +170,7 @@ export default function CheckoutPage() {
         </div>
       </section>
 
-      <p className="text-center text-xs text-muted">Verb Master Version 51</p>
+      <p className="text-center text-xs text-muted">Verb Master Version 70</p>
     </div>
   );
 }

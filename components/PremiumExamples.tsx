@@ -37,7 +37,7 @@ export default function PremiumExamples({
       </p>
       {open && !hasAccess && (
         <div className="mt-4 rounded-2xl border border-amber-300/20 bg-amber-950/20 p-4 text-sm text-amber-100">
-          <p className="font-bold">🔒 日常例文は30動詞パックで利用できます。</p>
+          <p className="font-bold">🔒 日常例文はPremiumで利用できます。</p>
           <p className="mt-2 text-amber-100/80">500円以上の課金で、日常例文・文型・Pattern・0.5倍速・フレーズ帳・シャッフルテストが解放されます。</p>
           <Link href="/upgrade" className="mt-3 inline-block rounded-full bg-amber-300 px-4 py-2 font-bold text-slate-950">アップグレードを見る</Link>
         </div>

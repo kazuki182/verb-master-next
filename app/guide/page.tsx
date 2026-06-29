@@ -60,7 +60,7 @@ const guideItems = [
   {
     title: "Premium",
     badge: "解放",
-    description: "無料では3動詞まで。Premiumでは30 / 60 / 90 / 120動詞の解放と追加機能が使えます。",
+    description: "無料では3動詞まで。課金ごとに30・60・90・120動詞へ段階解放し、復習強化、フレーズ保存、クラウド保存などを使えます。",
     steps: ["解放数と金額を確認", "購入確認画面へ進む", "購入履歴・復元で状態を確認"],
     href: "/upgrade",
     cta: "Premiumを見る",

@@ -73,7 +73,7 @@ export default function VerbSearchList({ verbs }: { verbs: Verb[] }) {
                   <div className="mt-4">
                     {locked ? (
                       <div className="rounded-2xl border border-amber-300/20 bg-amber-950/20 p-3 text-sm font-bold text-amber-100">
-                        30動詞パックで解放されます。タップしてアップグレードへ。
+                        Premiumで解放されます。タップしてアップグレードへ。
                       </div>
                     ) : (
                       <VerbListProgress verb={verb} />

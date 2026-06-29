@@ -12,15 +12,13 @@ import {
   hasLyricsEnglishAccess,
   setUserUnlockLevel,
 } from "@/lib/account";
+import { PAYMENT_PLANS } from "@/lib/paymentConfig";
 
 type PlanSummary = ReturnType<typeof getPurchasePlanSummary>;
 
-const unlockPlans = [
-  { count: 0, label: "無料", price: 0, range: `1〜${FREE_VERB_LIMIT}`, note: `${FREE_VERB_LIMIT}動詞までお試し` },
-  { count: 30, label: "30動詞パック", price: 500, range: "1〜30", note: "Premium機能も解放" },
-  { count: 60, label: "60動詞パック", price: 1000, range: "1〜60", note: "中級前半までまとめて学習" },
-  { count: 90, label: "90動詞パック", price: 1500, range: "1〜90", note: "主要動詞をかなり広く学習" },
-  { count: 120, label: "全120動詞パック", price: 2000, range: "1〜120", note: "Lyrics Englishリンクも解放" },
+const displayPlans = [
+  { count: 0, label: "無料", price: 0, range: `1〜${FREE_VERB_LIMIT}`, note: "基本動詞をしっかり試せる範囲" },
+  ...PAYMENT_PLANS.map((plan) => ({ count: plan.count, label: plan.label, price: plan.price, range: plan.range, note: plan.recommend })),
 ];
 
 function isAdminUser(username: string | null) {
@@ -29,7 +27,7 @@ function isAdminUser(username: string | null) {
 }
 
 function getNextPlan(unlocked: number) {
-  return unlockPlans.find((plan) => plan.count > Math.max(0, unlocked)) || unlockPlans[unlockPlans.length - 1];
+  return PAYMENT_PLANS.find((plan) => plan.count > Math.max(FREE_VERB_LIMIT, unlocked)) || PAYMENT_PLANS[PAYMENT_PLANS.length - 1];
 }
 
 export default function UpgradePage() {
@@ -57,10 +55,10 @@ export default function UpgradePage() {
   const lyricsUnlocked = hasLyricsEnglishAccess();
   const progressPercent = Math.min(100, Math.round((summary.unlocked / TOTAL_VERB_TARGET) * 100));
 
-  const simulatePack = () => {
+  const simulatePremium = () => {
     grantThirtyVerbPack(username);
     refresh();
-    setMessage("開発確認用：30動詞パックを1回分反映しました。正式版では決済後に自動反映します。");
+    setMessage("開発確認用：Premium範囲を反映しました。正式版では決済後に自動反映します。");
   };
 
   const setLevel = (count: number) => {
@@ -73,9 +71,10 @@ export default function UpgradePage() {
     <div className="space-y-5 pb-24">
       <header className="card p-5">
         <p className="text-sm font-bold text-cyan-200">UPGRADE / PREMIUM</p>
-        <h1 className="mt-2 text-3xl font-black">課金・アンロック</h1>
+        <h1 className="mt-2 text-3xl font-black">Premium</h1>
         <p className="mt-2 text-sm text-slate-300">
-          無料は3動詞まで。500円ごとに30動詞を追加解放します。1回でも課金すると、Lyrics Englishリンク以外のPremium機能が使えます。
+          Ver.70では無料3動詞から、30・60・90・120動詞へ段階的に解放する課金設計へ整理しました。
+          Stripe本番接続前でも、次に購入するパックと解放範囲が分かるようにしています。
         </p>
       </header>
 
@@ -86,44 +85,46 @@ export default function UpgradePage() {
             <h2 className="mt-2 text-2xl font-black">{summary.unlocked} / {TOTAL_VERB_TARGET} 動詞 解放中</h2>
           </div>
           <span className="rounded-full bg-cyan-300 px-3 py-1 text-xs font-black text-slate-950">
-            {summary.hasPremium ? "Premium" : "Free"}
+            {summary.hasPremium ? `Step ${summary.paidPacks}` : "Free 3"}
           </span>
         </div>
         <div className="mt-4 h-3 overflow-hidden rounded-full bg-slate-950">
           <div className="h-full rounded-full bg-cyan-300" style={{ width: `${progressPercent}%` }} />
         </div>
-        <div className="mt-4 grid grid-cols-2 gap-3 text-center">
-          <div className="digital-panel">
-            <p className="digital-label">購入額</p>
-            <p className="digital-number text-3xl">¥{summary.purchaseTotal.toLocaleString()}</p>
-          </div>
-          <div className="digital-panel">
-            <p className="digital-label">次のおすすめ</p>
-            <p className="digital-number text-2xl">{nextPlan.count || FREE_VERB_LIMIT}</p>
-            <p className="text-xs text-cyan-200">動詞まで</p>
-          </div>
-        </div>
-      </section>
+        <p className="mt-2 text-xs text-muted">無料：1〜{FREE_VERB_LIMIT} / Step1：30 / Step2：60 / Step3：90 / Step4：120</p>
 
-      <section className="card p-5">
-        <h2 className="text-xl font-bold">次におすすめ</h2>
         {summary.unlocked >= TOTAL_VERB_TARGET ? (
-          <p className="mt-3 text-sm text-slate-300">全120動詞が解放済みです。Lyrics Englishリンクも利用できます。</p>
+          <div className="mt-4 rounded-2xl bg-emerald-950/30 p-4 text-sm font-bold text-emerald-100">全動詞が解放されています。</div>
         ) : (
-          <div className="mt-4 rounded-3xl border border-amber-300/20 bg-amber-950/20 p-4">
-            <p className="text-sm font-bold text-amber-100">{nextPlan.label}</p>
-            <p className="mt-1 text-3xl font-black">¥{nextPlan.price.toLocaleString()}</p>
-            <p className="mt-2 text-sm text-amber-100/80">{nextPlan.range}動詞まで解放。{nextPlan.note}</p>
+          <div className="mt-5 rounded-3xl border border-amber-300/25 bg-amber-950/20 p-5">
+            <p className="text-sm font-bold text-amber-100">おすすめ</p>
+            <p className="mt-1 text-3xl font-black">{nextPlan.label}</p>
+            <p className="mt-1 text-2xl font-black">¥{nextPlan.price.toLocaleString()}</p>
+            <p className="mt-2 text-sm text-amber-100/80">{nextPlan.range}動詞まで解放。追加範囲：{nextPlan.addRange}。{nextPlan.recommend}</p>
             <Link className="btn btn-primary mt-4 block text-center" href={`/checkout?plan=${nextPlan.count}`}>購入確認へ進む</Link>
           </div>
         )}
         {message && <p className="mt-3 rounded-2xl bg-slate-950/50 p-3 text-sm font-bold text-cyan-100">{message}</p>}
       </section>
 
+      <section className="card p-5">
+        <h2 className="text-xl font-bold">無料とPremiumの違い</h2>
+        <div className="mt-4 grid gap-3 text-sm">
+          <div className="rounded-2xl bg-paper p-4">
+            <p className="font-black text-white">無料</p>
+            <p className="mt-1 text-muted">1〜{FREE_VERB_LIMIT}番の基本動詞、基本学習、10問テスト、通常音声を利用できます。</p>
+          </div>
+          <div className="rounded-2xl border border-cyan-300/20 bg-cyan-950/20 p-4">
+            <p className="font-black text-cyan-100">Premium</p>
+            <p className="mt-1 text-slate-300">課金ごとに30→60→90→120動詞へ段階解放。日常例文、0.5倍速音声、フレーズ保存、シャッフルテスト、復習強化、クラウド保存・復元を利用できます。</p>
+          </div>
+        </div>
+      </section>
+
       <section className="space-y-3">
-        <h2 className="text-xl font-bold">料金プラン</h2>
-        {unlockPlans.map((plan) => {
-          const active = plan.count === 0 ? summary.rawUnlocked === 0 : summary.rawUnlocked >= plan.count;
+        <h2 className="text-xl font-bold">プラン</h2>
+        {displayPlans.map((plan) => {
+          const active = plan.count === 0 ? summary.rawUnlocked <= FREE_VERB_LIMIT : summary.rawUnlocked >= plan.count;
           const targetCount = plan.count || FREE_VERB_LIMIT;
           return (
             <article key={plan.count} className={`card p-5 ${active ? "border-cyan-300/50" : ""}`}>
@@ -150,9 +151,9 @@ export default function UpgradePage() {
       </section>
 
       <section className="card p-5">
-        <h2 className="text-xl font-bold">Premiumで解放される機能</h2>
+        <h2 className="text-xl font-bold">有料パックで解放される機能</h2>
         <div className="mt-4 grid gap-3 text-sm">
-          {["🐢 0.5倍速音声", "🏠 日常例文", "⭐ フレーズ登録帳", "🔀 シャッフルテスト", "📘 文型 / Pattern表示", "📈 復習強化機能"].map((item) => (
+          {["🐢 0.5倍速音声", "🏠 日常例文", "⭐ フレーズ登録帳", "🔀 シャッフルテスト", "📘 文型 / Pattern表示", "📈 復習強化機能", "☁️ クラウド保存・復元"].map((item) => (
             <div key={item} className="rounded-2xl bg-paper p-3 font-bold">{item}</div>
           ))}
         </div>
@@ -174,8 +175,8 @@ export default function UpgradePage() {
       {isAdmin && (
         <section className="card p-5">
           <h2 className="text-xl font-bold">管理者用テスト操作</h2>
-          <p className="mt-2 text-sm text-muted">正式決済前の表示確認用です。通常ユーザーには表示されません。無料/各プラン/全解放を確認できます。</p>
-          <button className="btn btn-primary mt-4 block w-full" onClick={simulatePack}>30動詞パックを1回分反映</button>
+          <p className="mt-2 text-sm text-muted">正式決済前の表示確認用です。通常ユーザーには表示されません。</p>
+          <button className="btn btn-primary mt-4 block w-full" onClick={simulatePremium}>次の段階を反映</button>
           <div className="mt-3 grid grid-cols-5 gap-2">
             {[0, 30, 60, 90, 120].map((count) => (
               <button key={count} className="rounded-xl bg-paper px-3 py-2 text-sm font-bold" onClick={() => setLevel(count)}>{count === 0 ? "無料" : count}</button>

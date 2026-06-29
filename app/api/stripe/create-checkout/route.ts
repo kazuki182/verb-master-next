@@ -4,7 +4,7 @@ import { PAYMENT_PLANS } from "@/lib/paymentConfig";
 export async function POST(request: Request) {
   try {
     const body = await request.json().catch(() => ({}));
-    const planCount = Number(body.plan || 30);
+    const planCount = Number(body.plan || 90);
     const username = String(body.username || "guest");
     const plan = PAYMENT_PLANS.find((item) => item.count === planCount) || PAYMENT_PLANS[0];
 

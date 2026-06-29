@@ -124,7 +124,7 @@ export default function PhraseShuffleTest() {
         <section className="card p-6 text-center">
           <p className="text-sm font-bold text-amber-100">🔒 Premium Feature</p>
           <h1 className="mt-2 text-3xl font-bold">シャッフルテスト</h1>
-          <p className="mt-3 text-muted">保存フレーズのシャッフルテストは30動詞パックで利用できます。</p>
+          <p className="mt-3 text-muted">保存フレーズのシャッフルテストはPremiumで利用できます。</p>
           <Link href="/upgrade" className="btn btn-primary mt-5 block">アップグレードを見る</Link>
           <Link href="/phrase-book" className="btn btn-soft mt-3 block">フレーズ帳へ戻る</Link>
         </section>

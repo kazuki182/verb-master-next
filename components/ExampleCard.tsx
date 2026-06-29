@@ -126,7 +126,7 @@ function GrammarInline({
   if (!hasAccess) {
     return (
       <div className="mt-4 rounded-2xl border border-amber-300/20 bg-amber-950/20 p-3 text-sm text-amber-100">
-        🔒 文型表示は30動詞パックで利用できます。
+        🔒 文型表示はPremiumで利用できます。
       </div>
     );
   }

@@ -47,7 +47,11 @@ function planLabelForCount(count: number) {
 
 function totalForCount(count: number) {
   const normalized = Math.max(0, Math.min(120, Math.floor(count)));
-  return Math.max(0, Math.ceil(normalized / 30) * 500);
+  if (normalized <= 3) return 0;
+  if (normalized <= 30) return 500;
+  if (normalized <= 60) return 1000;
+  if (normalized <= 90) return 1500;
+  return 2000;
 }
 
 function planName(count: number) {

@@ -22,10 +22,11 @@ import {
 
 const planLabels: Record<number, string> = {
   0: "無料プラン",
-  30: "30動詞パック",
-  60: "60動詞パック",
-  90: "90動詞パック",
-  120: "全120動詞パック",
+  3: "無料3動詞プラン",
+  30: "Step 1：30動詞パック",
+  60: "Step 2：60動詞パック",
+  90: "Step 3：90動詞パック",
+  120: "Step 4：120動詞パック",
 };
 
 function isAdminUser(username: string | null) {
@@ -150,7 +151,7 @@ export default function PurchaseHistoryPage() {
             </p>
           </div>
           <span className="rounded-full bg-cyan-300 px-3 py-1 text-xs font-black text-slate-950">
-            {summary.hasPremium ? "Premium" : "Free"}
+            {summary.hasPremium ? `Step ${summary.paidPacks}` : "Free 3"}
           </span>
         </div>
         <div className="mt-4 grid grid-cols-2 gap-3 text-center">

@@ -44,7 +44,7 @@ export default function PhraseBookPage() {
         <section className="card p-6 text-center">
           <p className="text-sm font-bold text-amber-100">🔒 Premium Feature</p>
           <h1 className="mt-2 text-3xl font-bold">フレーズ帳</h1>
-          <p className="mt-3 text-muted">フレーズ保存・フレーズ帳・シャッフルテストは30動詞パックで利用できます。</p>
+          <p className="mt-3 text-muted">フレーズ保存・フレーズ帳・シャッフルテストはPremiumで利用できます。</p>
           <Link href="/upgrade" className="btn btn-primary mt-5 block">アップグレードを見る</Link>
           <Link href="/verbs" className="btn btn-soft mt-3 block">動詞学習へ戻る</Link>
         </section>

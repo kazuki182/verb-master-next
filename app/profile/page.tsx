@@ -22,13 +22,15 @@ import VoiceSettingsPanel from "@/components/VoiceSettingsPanel";
 import DataBackupPanel from "@/components/DataBackupPanel";
 import BadgeList from "@/components/BadgeList";
 import {
+  CLOUD_SYNC_EVENT,
   getCloudReadiness,
   restoreLearningDataFromSupabase,
   syncCurrentUserToSupabase,
+  type CloudSyncEventDetail,
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 64";
+const VERSION = "Version 65";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -60,6 +62,29 @@ function cloudLabel(kind: "profile" | "avatar" | "premium" | "stats", status: Cl
   return "待機";
 }
 
+
+function cloudStatusBadge(status: CloudSyncStatus | null, syncing: boolean) {
+  if (syncing) return { label: "同期中", className: "bg-amber-300/15 text-amber-100 border-amber-300/25" };
+  if (!status) return { label: "確認中", className: "bg-slate-500/15 text-slate-100 border-slate-300/20" };
+  if (!status.configured) return { label: "端末保存", className: "bg-slate-500/15 text-slate-100 border-slate-300/20" };
+  if ([status.profile, status.avatar, status.premium, status.stats].includes("error")) {
+    return { label: "要確認", className: "bg-rose-300/15 text-rose-100 border-rose-300/25" };
+  }
+  if (status.stats === "saved" || status.profile === "saved" || status.premium === "saved") {
+    return { label: "クラウド保存済み", className: "bg-cyan-300/15 text-cyan-100 border-cyan-300/25" };
+  }
+  return { label: "待機", className: "bg-slate-500/15 text-slate-100 border-slate-300/20" };
+}
+
+function cloudReasonText(reason?: string) {
+  if (reason === "start") return "起動時確認";
+  if (reason === "visible") return "画面復帰時";
+  if (reason === "before-hide") return "画面を閉じる前";
+  if (reason === "saved") return "学習データ変更時";
+  if (reason === "interval") return "自動確認";
+  return "手動確認";
+}
+
 function cloudMessage(status: CloudSyncStatus | null) {
   if (!status) return "保存状態を確認しています。";
   if (!status.configured) {
@@ -79,6 +104,7 @@ export default function ProfilePage() {
   const [profileMessage, setProfileMessage] = useState("");
   const [cloudStatus, setCloudStatus] = useState<CloudSyncStatus | null>(null);
   const [cloudSyncing, setCloudSyncing] = useState(false);
+  const [cloudEvent, setCloudEvent] = useState<CloudSyncEventDetail | null>(null);
   const [isEditingName, setIsEditingName] = useState(false);
   const fileRef = useRef<HTMLInputElement | null>(null);
 
@@ -98,6 +124,17 @@ export default function ProfilePage() {
     }
     setUsername(user);
     reload();
+  }, []);
+
+  useEffect(() => {
+    const onCloudSync = (event: Event) => {
+      const detail = (event as CustomEvent<CloudSyncEventDetail>).detail;
+      setCloudEvent(detail);
+      setCloudSyncing(detail.phase === "syncing");
+      if (detail.status) setCloudStatus(detail.status);
+    };
+    window.addEventListener(CLOUD_SYNC_EVENT, onCloudSync);
+    return () => window.removeEventListener(CLOUD_SYNC_EVENT, onCloudSync);
   }, []);
 
   const syncToSupabase = async (target = progress) => {
@@ -184,6 +221,7 @@ export default function ProfilePage() {
   );
   const plan = getPurchasePlanSummary();
   const displayName = progress.displayName || username;
+  const cloudBadge = cloudStatusBadge(cloudStatus, cloudSyncing);
 
   return (
     <div className="space-y-5 pb-24">
@@ -354,50 +392,56 @@ export default function ProfilePage() {
       </section>
 
       <section className="rounded-2xl border border-cyan-300/15 bg-slate-900/45 p-4">
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
             <h2 className="text-base font-bold">保存状態</h2>
             <p className="mt-1 text-sm text-muted">
-              学習データは自動保存されています。
+              学習データは端末にも残しつつ、ログイン中はクラウド保存を優先します。
             </p>
           </div>
-          <span className="shrink-0 rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-bold text-cyan-100">
-            保存済み
+          <span className={`shrink-0 rounded-full border px-3 py-1 text-xs font-bold ${cloudBadge.className}`}>
+            {cloudBadge.label}
           </span>
         </div>
+
+        <div className="mt-3 grid grid-cols-2 gap-2 text-center text-xs">
+          <div className="rounded-xl bg-slate-950/70 p-3">プロフィール<br /><b>{cloudLabel("profile", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
+          <div className="rounded-xl bg-slate-950/70 p-3">Premium<br /><b>{cloudLabel("premium", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
+          <div className="rounded-xl bg-slate-950/70 p-3">学習記録<br /><b>{cloudLabel("stats", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
+          <div className="rounded-xl bg-slate-950/70 p-3">音声・設定<br /><b>{cloudStatus?.stats === "saved" ? "保存対象" : cloudStatus?.configured ? "待機" : "端末内"}</b></div>
+        </div>
+
+        <div className="mt-3 grid gap-2 sm:grid-cols-2">
+          <button
+            className="btn btn-soft w-full"
+            type="button"
+            onClick={() => syncToSupabase()}
+            disabled={cloudSyncing}
+          >
+            {cloudSyncing ? "同期中..." : "今すぐクラウド保存"}
+          </button>
+          <button
+            className="btn btn-soft w-full"
+            type="button"
+            onClick={restoreFromSupabase}
+            disabled={cloudSyncing}
+          >
+            クラウドから復元
+          </button>
+        </div>
+
+        {cloudEvent && (
+          <p className="mt-2 text-xs text-slate-300">
+            {cloudReasonText(cloudEvent.reason)}：{cloudEvent.message}
+          </p>
+        )}
         {cloudStatus?.updatedAt && (
-          <p className="mt-2 text-xs text-slate-400">最終更新：{formatDateTime(cloudStatus.updatedAt)}</p>
+          <p className="mt-2 text-xs text-slate-400">最終クラウド確認：{formatDateTime(cloudStatus.updatedAt)}</p>
         )}
-        {isAdmin && (
-          <details className="mt-3 rounded-2xl border border-cyan-300/15 bg-slate-950/50 p-3 text-sm">
-            <summary className="cursor-pointer font-bold text-cyan-100">開発者用：同期状態</summary>
-            <div className="mt-3 grid grid-cols-2 gap-2 text-center">
-              <div className="rounded-xl bg-slate-950 p-3">プロフィール<br /><b>{cloudLabel("profile", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
-              <div className="rounded-xl bg-slate-950 p-3">画像<br /><b>{cloudLabel("avatar", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
-              <div className="rounded-xl bg-slate-950 p-3">Premium<br /><b>{cloudLabel("premium", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
-              <div className="rounded-xl bg-slate-950 p-3">学習記録<br /><b>{cloudLabel("stats", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
-            </div>
-            <div className="mt-3 grid gap-2 sm:grid-cols-2">
-              <button
-                className="btn btn-soft w-full"
-                type="button"
-                onClick={() => syncToSupabase()}
-                disabled={cloudSyncing}
-              >
-                {cloudSyncing ? "同期中..." : "手動同期テスト"}
-              </button>
-              <button
-                className="btn btn-soft w-full"
-                type="button"
-                onClick={restoreFromSupabase}
-                disabled={cloudSyncing}
-              >
-                Supabaseから復元
-              </button>
-            </div>
-            <p className="mt-2 text-xs leading-5 text-muted">{cloudMessage(cloudStatus)}</p>
-          </details>
-        )}
+        <p className="mt-2 text-xs leading-5 text-muted">{cloudMessage(cloudStatus)}</p>
+        <p className="mt-2 text-xs leading-5 text-cyan-100/80">
+          プライベート閲覧では端末保存が消えることがあります。ログイン後にこの表示が「クラウド保存済み」なら、更新後も復元しやすくなります。
+        </p>
       </section>
 
       <section className="card p-5">
@@ -433,6 +477,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.65</p><p className="mt-1 text-muted">クラウド同期状態をユーザー向けに表示。手動保存・復元ボタン、最終同期時間、プライベート閲覧時の注意を追加。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.64</p><p className="mt-1 text-muted">スマホ下部ナビを拡大。下部固定を強化し、横スワイプできるタブバーへ改善。</p></div>
                     <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.62</p><p className="mt-1 text-muted">学習データ保護版。自動クラウド同期、Supabase復元、JSONバックアップ書き出し/復元、プライベート閲覧の注意表示を追加。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.61</p><p className="mt-1 text-muted">80動詞品質完成版。テストの戻る操作、学習ペース数字入力、文型品質ルール、教材データ監査メモを改善。</p></div>

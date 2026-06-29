@@ -2,10 +2,23 @@
 
 import { useEffect, useRef } from "react";
 import { getCurrentProgress, getCurrentUsername, PROGRESS_SAVED_EVENT } from "@/lib/account";
-import { restoreLearningDataFromSupabase, syncCurrentUserToSupabase } from "@/lib/cloudSync";
+import { CLOUD_SYNC_EVENT, restoreLearningDataFromSupabase, syncCurrentUserToSupabase, type CloudSyncEventDetail, type CloudSyncStatus } from "@/lib/cloudSync";
 
 const SYNC_INTERVAL_MS = 30 * 1000;
 const DEBOUNCE_MS = 1200;
+
+function notifyCloudSync(detail: Omit<CloudSyncEventDetail, "updatedAt">) {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new CustomEvent<CloudSyncEventDetail>(CLOUD_SYNC_EVENT, {
+    detail: { ...detail, updatedAt: new Date().toISOString() },
+  }));
+}
+
+function statusPhase(status: CloudSyncStatus): CloudSyncEventDetail["phase"] {
+  if ([status.profile, status.avatar, status.premium, status.stats].includes("error")) return "error";
+  if (status.stats === "saved" || status.profile === "saved" || status.premium === "saved") return "saved";
+  return "idle";
+}
 
 export default function DataSafety() {
   const runningRef = useRef(false);
@@ -17,14 +30,33 @@ export default function DataSafety() {
       const username = getCurrentUsername();
       if (!username) return;
       runningRef.current = true;
+      notifyCloudSync({ phase: "syncing", reason, message: "クラウド保存を確認中です..." });
       try {
         if (reason === "start" || reason === "visible") {
-          await restoreLearningDataFromSupabase(username);
+          const restored = await restoreLearningDataFromSupabase(username);
+          notifyCloudSync({
+            phase: restored.changed ? "restored" : statusPhase(restored.status),
+            reason,
+            message: restored.message,
+            status: restored.status,
+          });
         }
         const progress = getCurrentProgress();
-        if (progress) await syncCurrentUserToSupabase(progress);
-      } catch {
-        // 画面操作を止めないため、同期失敗はマイページ側の状態表示に任せる。
+        if (progress) {
+          const status = await syncCurrentUserToSupabase(progress);
+          notifyCloudSync({
+            phase: statusPhase(status),
+            reason,
+            message: status.message,
+            status,
+          });
+        }
+      } catch (error) {
+        notifyCloudSync({
+          phase: "error",
+          reason,
+          message: error instanceof Error ? error.message : "クラウド同期に失敗しました。",
+        });
       } finally {
         runningRef.current = false;
       }

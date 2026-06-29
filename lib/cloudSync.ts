@@ -14,6 +14,16 @@ import {
   type VoiceSettings,
 } from "@/lib/account";
 
+export const CLOUD_SYNC_EVENT = "verbmaster:cloud-sync-status";
+
+export type CloudSyncEventDetail = {
+  phase: "syncing" | "saved" | "restored" | "error" | "idle";
+  reason?: string;
+  message: string;
+  updatedAt: string;
+  status?: CloudSyncStatus;
+};
+
 export type CloudSyncStatus = {
   configured: boolean;
   profile: "idle" | "saved" | "error";
@@ -123,7 +133,7 @@ async function upsertFullProgressBackup(progress: UserProgress) {
       username: progress.username,
       progress_json: progress,
       settings_json: settings,
-      app_version: "v63",
+      app_version: "v65",
       updated_at: nowText(),
     },
     { onConflict: "username" },

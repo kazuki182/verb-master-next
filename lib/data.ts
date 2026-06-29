@@ -57,7 +57,7 @@ export type Verb = {
 };
 
 export const verbs: Verb[] = [
-  {
+{
     "id": "get",
     "rank": 1,
     "word": "GET",
@@ -990,7 +990,7 @@ export const verbs: Verb[] = [
       }
     ]
   },
-  {
+{
     "id": "take",
     "rank": 2,
     "word": "TAKE",
@@ -2250,7 +2250,7 @@ export const verbs: Verb[] = [
       }
     ]
   },
-  {
+{
     "id": "make",
     "rank": 3,
     "word": "MAKE",
@@ -3640,7 +3640,7 @@ export const verbs: Verb[] = [
         }
     ]
 },
-  {
+{
     "id": "give",
     "rank": 4,
     "word": "GIVE",
@@ -4918,7 +4918,7 @@ export const verbs: Verb[] = [
         }
     ]
 },
-  {
+{
     "id": "have",
     "rank": 5,
     "word": "HAVE",
@@ -6196,7 +6196,7 @@ export const verbs: Verb[] = [
         }
     ]
 },
-  {
+{
     "id": "go",
     "rank": 6,
     "word": "GO",
@@ -7457,7 +7457,7 @@ export const verbs: Verb[] = [
         }
     ]
 },
-  {
+{
     "id": "come",
     "rank": 7,
     "word": "COME",
@@ -8719,7 +8719,7 @@ export const verbs: Verb[] = [
         }
     ]
 },
-  {
+{
     "id": "put",
     "rank": 8,
     "word": "PUT",
@@ -9828,7 +9828,7 @@ export const verbs: Verb[] = [
         }
     ]
 },
-  {
+{
     "id": "keep",
     "rank": 9,
     "word": "KEEP",
@@ -10758,7 +10758,7 @@ export const verbs: Verb[] = [
         }
     ]
 },
-  {
+{
     "id": "find",
     "rank": 10,
     "word": "FIND",
@@ -11654,7 +11654,7 @@ export const verbs: Verb[] = [
         }
     ]
 },
-  {
+{
     "id": "see",
     "rank": 11,
     "word": "SEE",
@@ -11701,7 +11701,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-    {
+{
     "id": "look",
     "rank": 12,
     "word": "LOOK",
@@ -13010,7 +13010,7 @@ export const verbs: Verb[] = [
       }
     ]
   },
-  {
+{
     "id": "watch",
     "rank": 13,
     "word": "WATCH",
@@ -13058,7 +13058,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "hear",
     "rank": 14,
     "word": "HEAR",
@@ -13105,7 +13105,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "listen",
     "rank": 15,
     "word": "LISTEN",
@@ -13152,7 +13152,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "think",
     "rank": 16,
     "word": "THINK",
@@ -13198,7 +13198,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "know",
     "rank": 17,
     "word": "KNOW",
@@ -13245,7 +13245,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "feel",
     "rank": 18,
     "word": "FEEL",
@@ -13290,9 +13290,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "work",
-    "rank": 18,
+    "rank": 19,
     "word": "WORK",
     "ipa": "/wɜːrk/",
     "kana": "ワーク",
@@ -13316,7 +13316,7 @@ export const verbs: Verb[] = [
         {
             "id": "job",
             "title": "① 働く",
-            "pattern": "WORK",
+            "pattern": "work",
             "transitivity": "他動詞",
             "structure": "S + work",
             "image": "仕事をする。",
@@ -13346,7 +13346,7 @@ export const verbs: Verb[] = [
         {
             "id": "function",
             "title": "② 機能する",
-            "pattern": "WORK",
+            "pattern": "work",
             "transitivity": "他動詞",
             "structure": "S + work",
             "image": "機械・システム・方法がうまく動く。",
@@ -13556,7 +13556,7 @@ export const verbs: Verb[] = [
         {
             "id": "out",
             "title": "⑨ うまくいく・解決する",
-            "pattern": "WORK OUT",
+            "pattern": "work out",
             "transitivity": "他動詞",
             "structure": "S + work out",
             "image": "物事がうまくまとまる。",
@@ -14160,9 +14160,9 @@ export const verbs: Verb[] = [
         }
     ]
 },
-  {
+{
     "id": "use",
-    "rank": 19,
+    "rank": 20,
     "word": "USE",
     "ipa": "/juːz/",
     "kana": "ユーズ",
@@ -15059,7 +15059,7 @@ export const verbs: Verb[] = [
         }
     ]
 },
-  {
+{
       "id": "start",
       "rank": 21,
       "word": "START",
@@ -15133,7 +15133,7 @@ export const verbs: Verb[] = [
           {
               "id": "begin-intransitive",
               "title": "2 始まる",
-              "pattern": "START",
+              "pattern": "start",
               "transitivity": "他動詞・自動詞",
               "structure": "S + V",
               "image": "イベントや会議が始まる。",
@@ -16417,7 +16417,7 @@ export const verbs: Verb[] = [
           }
       ]
   },
-  {
+{
     "id": "stop",
     "rank": 22,
     "word": "STOP",
@@ -16464,7 +16464,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "try",
     "rank": 23,
     "word": "TRY",
@@ -16511,7 +16511,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-    {
+{
     "id": "help",
     "rank": 24,
     "word": "HELP",
@@ -17893,7 +17893,7 @@ export const verbs: Verb[] = [
       }
     ]
   },
-  {
+{
       "id": "show",
       "rank": 25,
       "word": "SHOW",
@@ -18111,7 +18111,7 @@ export const verbs: Verb[] = [
           {
               "id": "show-up",
               "title": "5 現れる・出席する",
-              "pattern": "SHOW UP",
+              "pattern": "show up",
               "transitivity": "他動詞・自動詞",
               "structure": "S + V",
               "image": "人が現れる・参加する。",
@@ -19272,7 +19272,7 @@ export const verbs: Verb[] = [
           }
       ]
   },
-  {
+{
     "id": "tell",
     "rank": 26,
     "word": "TELL",
@@ -19320,7 +19320,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "ask",
     "rank": 27,
     "word": "ASK",
@@ -19368,7 +19368,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-    {
+{
     "id": "call",
     "rank": 28,
     "word": "CALL",
@@ -19776,7 +19776,7 @@ export const verbs: Verb[] = [
       {
         "id": "back",
         "title": "⑨ 折り返し電話する",
-        "pattern": "CALL BACK",
+        "pattern": "call back",
         "transitivity": "句動詞",
         "structure": "S + V",
         "image": "再度電話する。",
@@ -20754,7 +20754,7 @@ export const verbs: Verb[] = [
       }
     ]
   },
-  {
+{
       "id": "run",
       "rank": 29,
       "word": "RUN",
@@ -20965,7 +20965,7 @@ export const verbs: Verb[] = [
           {
               "id": "move-fast",
               "title": "5 走る・急いで行く",
-              "pattern": "RUN",
+              "pattern": "run",
               "transitivity": "自動詞",
               "structure": "S + V",
               "image": "人が素早く移動する。",
@@ -21051,7 +21051,7 @@ export const verbs: Verb[] = [
           {
               "id": "be-available",
               "title": "7 運行する・営業する",
-              "pattern": "RUN",
+              "pattern": "run",
               "transitivity": "自動詞",
               "structure": "S + V",
               "image": "電車・サービスが動いている。",
@@ -22101,9 +22101,9 @@ export const verbs: Verb[] = [
           }
       ]
   },
-  {
+{
       "id": "leave",
-      "rank": 29,
+      "rank": 30,
       "word": "LEAVE",
       "ipa": "/liːv/",
       "kana": "リーヴ",
@@ -23466,9 +23466,9 @@ export const verbs: Verb[] = [
           }
       ]
   },
-  {
+{
       "id": "move",
-      "rank": 30,
+      "rank": 31,
       "word": "MOVE",
       "ipa": "/muːv/",
       "kana": "ムーヴ",
@@ -24819,9 +24819,9 @@ export const verbs: Verb[] = [
           }
       ]
   },
-    {
+{
     "id": "turn",
-    "rank": 31,
+    "rank": 32,
     "word": "TURN",
     "ipa": "/tɜːrn/",
     "kana": "ターン",
@@ -26124,9 +26124,9 @@ export const verbs: Verb[] = [
       }
     ]
   },
-  {
+{
       "id": "bring",
-      "rank": 32,
+      "rank": 33,
       "word": "BRING",
       "ipa": "/brɪŋ/",
       "kana": "ブリング",
@@ -27493,9 +27493,9 @@ export const verbs: Verb[] = [
           }
       ]
   },
-  {
+{
       "id": "hold",
-      "rank": 33,
+      "rank": 34,
       "word": "HOLD",
       "ipa": "/hoʊld/",
       "kana": "ホールド",
@@ -27806,7 +27806,7 @@ export const verbs: Verb[] = [
           {
               "id": "phone",
               "title": "7 電話を切らず待つ",
-              "pattern": "HOLD",
+              "pattern": "hold",
               "transitivity": "他動詞・自動詞",
               "structure": "S + V + O",
               "image": "電話で待つ。",
@@ -28857,9 +28857,9 @@ export const verbs: Verb[] = [
           }
       ]
   },
-    {
+{
     "id": "set",
-    "rank": 34,
+    "rank": 35,
     "word": "SET",
     "ipa": "/set/",
     "kana": "セット",
@@ -30161,9 +30161,9 @@ export const verbs: Verb[] = [
       }
     ]
   },
-  {
+{
     "id": "change",
-    "rank": 35,
+    "rank": 36,
     "word": "CHANGE",
     "ipa": "",
     "kana": "チェンジ",
@@ -30209,9 +30209,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
       "id": "open",
-      "rank": 36,
+      "rank": 37,
       "word": "OPEN",
       "ipa": "/ˈoʊpən/",
       "kana": "オープン",
@@ -30425,7 +30425,7 @@ export const verbs: Verb[] = [
           {
               "id": "become-open",
               "title": "5 開く・営業する",
-              "pattern": "OPEN",
+              "pattern": "open",
               "transitivity": "他動詞・自動詞",
               "structure": "S + V",
               "image": "店やサービスが開く。",
@@ -30561,7 +30561,7 @@ export const verbs: Verb[] = [
           {
               "id": "open-up",
               "title": "8 打ち明ける・広げる",
-              "pattern": "OPEN UP",
+              "pattern": "open up",
               "transitivity": "他動詞・自動詞",
               "structure": "S + V",
               "image": "心や可能性が開く。",
@@ -31586,9 +31586,9 @@ export const verbs: Verb[] = [
           }
       ]
   },
-  {
+{
       "id": "close",
-      "rank": 37,
+      "rank": 38,
       "word": "CLOSE",
       "ipa": "/kloʊz/",
       "kana": "クローズ",
@@ -31754,7 +31754,7 @@ export const verbs: Verb[] = [
           {
               "id": "end-period",
               "title": "4 終了する",
-              "pattern": "CLOSE",
+              "pattern": "close",
               "transitivity": "他動詞・自動詞",
               "structure": "S + V",
               "image": "期間や受付が終わる。",
@@ -31979,7 +31979,7 @@ export const verbs: Verb[] = [
           {
               "id": "close-down",
               "title": "9 閉鎖する",
-              "pattern": "CLOSE DOWN",
+              "pattern": "close down",
               "transitivity": "他動詞・自動詞",
               "structure": "S + V",
               "image": "事業や店を閉じる。",
@@ -32954,9 +32954,9 @@ export const verbs: Verb[] = [
           }
       ]
   },
-  {
+{
       "id": "let",
-      "rank": 51,
+      "rank": 39,
       "word": "LET",
       "ipa": "/let/",
       "kana": "レット",
@@ -34338,9 +34338,9 @@ export const verbs: Verb[] = [
           }
       ]
   },
-  {
+{
     "id": "build",
-    "rank": 38,
+    "rank": 40,
     "word": "BUILD",
     "ipa": "",
     "kana": "ビルド",
@@ -34386,9 +34386,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "learn",
-    "rank": 39,
+    "rank": 41,
     "word": "LEARN",
     "ipa": "",
     "kana": "ラーン",
@@ -34434,9 +34434,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "meet",
-    "rank": 40,
+    "rank": 42,
     "word": "MEET",
     "ipa": "",
     "kana": "ミート",
@@ -34482,9 +34482,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "send",
-    "rank": 41,
+    "rank": 43,
     "word": "SEND",
     "ipa": "",
     "kana": "センド",
@@ -34530,9 +34530,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "pay",
-    "rank": 42,
+    "rank": 44,
     "word": "PAY",
     "ipa": "",
     "kana": "ペイ",
@@ -34578,9 +34578,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "buy",
-    "rank": 43,
+    "rank": 45,
     "word": "BUY",
     "ipa": "",
     "kana": "バイ",
@@ -34626,9 +34626,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "sell",
-    "rank": 44,
+    "rank": 46,
     "word": "SELL",
     "ipa": "",
     "kana": "セル",
@@ -34674,9 +34674,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "choose",
-    "rank": 45,
+    "rank": 47,
     "word": "CHOOSE",
     "ipa": "",
     "kana": "チューズ",
@@ -34722,9 +34722,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "follow",
-    "rank": 46,
+    "rank": 48,
     "word": "FOLLOW",
     "ipa": "",
     "kana": "フォロー",
@@ -34770,9 +34770,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "create",
-    "rank": 47,
+    "rank": 49,
     "word": "CREATE",
     "ipa": "",
     "kana": "クリエイト",
@@ -34818,9 +34818,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "reach",
-    "rank": 48,
+    "rank": 50,
     "word": "REACH",
     "ipa": "",
     "kana": "リーチ",
@@ -34866,9 +34866,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "return",
-    "rank": 49,
+    "rank": 51,
     "word": "RETURN",
     "ipa": "",
     "kana": "リターン",
@@ -34914,9 +34914,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "check",
-    "rank": 50,
+    "rank": 52,
     "word": "CHECK",
     "ipa": "",
     "kana": "チェック",
@@ -34962,10 +34962,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-
-  {
+{
     "id": "decide",
-    "rank": 51,
+    "rank": 53,
     "word": "DECIDE",
     "ipa": "/dɪˈsaɪd/",
     "kana": "ディサイド",
@@ -34998,9 +34997,9 @@ export const verbs: Verb[] = [
     ],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "explain",
-    "rank": 52,
+    "rank": 54,
     "word": "EXPLAIN",
     "ipa": "/ɪkˈspleɪn/",
     "kana": "イクスプレイン",
@@ -35026,9 +35025,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "improve",
-    "rank": 53,
+    "rank": 55,
     "word": "IMPROVE",
     "ipa": "/ɪmˈpruːv/",
     "kana": "インプルーヴ",
@@ -35054,9 +35053,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "manage",
-    "rank": 54,
+    "rank": 56,
     "word": "MANAGE",
     "ipa": "/ˈmænɪdʒ/",
     "kana": "マネージ",
@@ -35082,9 +35081,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "prepare",
-    "rank": 55,
+    "rank": 57,
     "word": "PREPARE",
     "ipa": "/prɪˈper/",
     "kana": "プリペア",
@@ -35110,9 +35109,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "plan",
-    "rank": 56,
+    "rank": 58,
     "word": "PLAN",
     "ipa": "/plæn/",
     "kana": "プラン",
@@ -35138,9 +35137,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "offer",
-    "rank": 57,
+    "rank": 59,
     "word": "OFFER",
     "ipa": "/ˈɔːfər/",
     "kana": "オファー",
@@ -35166,9 +35165,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "support",
-    "rank": 58,
+    "rank": 60,
     "word": "SUPPORT",
     "ipa": "/səˈpɔːrt/",
     "kana": "サポート",
@@ -35194,9 +35193,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "discuss",
-    "rank": 59,
+    "rank": 61,
     "word": "DISCUSS",
     "ipa": "/dɪˈskʌs/",
     "kana": "ディスカス",
@@ -35222,9 +35221,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "confirm",
-    "rank": 60,
+    "rank": 62,
     "word": "CONFIRM",
     "ipa": "/kənˈfɜːrm/",
     "kana": "コンファーム",
@@ -35250,9 +35249,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "receive",
-    "rank": 61,
+    "rank": 63,
     "word": "RECEIVE",
     "ipa": "/rɪˈsiːv/",
     "kana": "リシーヴ",
@@ -35278,9 +35277,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "deliver",
-    "rank": 62,
+    "rank": 64,
     "word": "DELIVER",
     "ipa": "/dɪˈlɪvər/",
     "kana": "デリバー",
@@ -35306,9 +35305,9 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "solve",
-    "rank": 63,
+    "rank": 65,
     "word": "SOLVE",
     "ipa": "/sɑːlv/",
     "kana": "ソルヴ",
@@ -35333,10 +35332,8 @@ export const verbs: Verb[] = [
     }],
     "collocations": [],
     "phrasalVerbs": []
-  }
-,
-
-  {
+  },
+{
     "id": "report",
     "rank": 66,
     "word": "REPORT",
@@ -35438,7 +35435,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "update",
     "rank": 67,
     "word": "UPDATE",
@@ -35541,7 +35538,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "review",
     "rank": 68,
     "word": "REVIEW",
@@ -35643,7 +35640,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "compare",
     "rank": 69,
     "word": "COMPARE",
@@ -35744,7 +35741,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "introduce",
     "rank": 70,
     "word": "INTRODUCE",
@@ -35848,9 +35845,8 @@ export const verbs: Verb[] = [
     ],
     "collocations": [],
     "phrasalVerbs": []
-  }
-,
-  {
+  },
+{
     "id": "request",
     "rank": 71,
     "word": "REQUEST",
@@ -35953,7 +35949,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "suggest",
     "rank": 72,
     "word": "SUGGEST",
@@ -36046,7 +36042,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "agree",
     "rank": 73,
     "word": "AGREE",
@@ -36139,7 +36135,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "arrange",
     "rank": 74,
     "word": "ARRANGE",
@@ -36242,7 +36238,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "attend",
     "rank": 75,
     "word": "ATTEND",
@@ -36350,7 +36346,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "contact",
     "rank": 76,
     "word": "CONTACT",
@@ -36458,7 +36454,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "share",
     "rank": 77,
     "word": "SHARE",
@@ -36566,7 +36562,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "collect",
     "rank": 78,
     "word": "COLLECT",
@@ -36674,7 +36670,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "reduce",
     "rank": 79,
     "word": "REDUCE",
@@ -36772,7 +36768,7 @@ export const verbs: Verb[] = [
     "collocations": [],
     "phrasalVerbs": []
   },
-  {
+{
     "id": "increase",
     "rank": 80,
     "word": "INCREASE",
@@ -37450,137 +37446,82 @@ export const verbs: Verb[] = [
   "phrasalVerbs": []
 },
 {
-  "id": "follow",
+  "id": "reply",
   "rank": 86,
-  "word": "FOLLOW",
-  "ipa": "/ˈfɑːloʊ/",
-  "kana": "フォロー",
-  "syllable": "fol-low",
-  "transitivity": "他動詞",
-  "importance": "★★★☆☆ 基本",
-  "core": "指示・手順・流れに沿って進む",
-  "coreDetail": "FOLLOWは、人について行く意味だけでなく、仕事では instructions, rules, process, schedule などに従う時によく使います。",
+  "word": "REPLY",
+  "ipa": "/rɪˈplaɪ/",
+  "kana": "リプライ",
+  "syllable": "re-ply",
+  "transitivity": "自動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "相手の連絡や質問に返事をする",
+  "coreDetail": "REPLYは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「返信する・返答する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "main",
-      "title": "① 従う・沿う",
-      "pattern": "FOLLOW + 名詞",
-      "transitivity": "他動詞",
-      "structure": "S + follow + O",
-      "image": "決められた道筋やルールに沿って動く",
-      "point": "follow up は別の句動詞で「後で確認する」です。",
+      "id": "business-core",
+      "title": "① 返信する・返答する",
+      "pattern": "reply to an email",
+      "transitivity": "自動詞",
+      "structure": "S + V + to + 相手・連絡",
+      "image": "受け取った連絡に対して返す",
+      "point": "reply は自動詞なので、相手やメールを続けるときは reply to ... を使います。to 以降は前置詞句で、目的語Oではありません。",
       "examples": [
         {
-          "en": "Please follow the instructions carefully.",
-          "ja": "指示に注意深く従ってください。",
-          "focus": "follow",
-          "jaFocus": "従ってください",
-          "object": "the instructions",
-          "sentencePattern": "V + O + M",
+          "en": "I will reply to the client by this afternoon.",
+          "ja": "私は今日の午後までにクライアントへ返信します。",
+          "focus": "reply to the client",
+          "jaFocus": "返信する・返答する",
+          "sentencePattern": "S + V + to + 相手・連絡",
           "grammarParts": [
             {
-              "label": "V",
-              "text": "Please follow"
+              "label": "S",
+              "text": "主語"
             },
             {
-              "label": "O",
-              "text": "the instructions"
+              "label": "V",
+              "text": "reply"
             },
             {
               "label": "M",
-              "text": "carefully"
+              "text": "to the client"
             }
-          ]
+          ],
+          "grammarNote": "この文は前置詞句を補足情報として扱います。前置詞の後ろの名詞だけを目的語Oにしないように注意します。"
         },
         {
-          "en": "We need to follow the approval process.",
-          "ja": "私たちは承認プロセスに従う必要があります。",
-          "focus": "follow",
-          "jaFocus": "従う必要があります",
-          "object": "the approval process",
-          "sentencePattern": "S + V + O",
-          "grammarParts": [
-            {
-              "label": "S",
-              "text": "We"
-            },
-            {
-              "label": "V",
-              "text": "need to follow"
-            },
-            {
-              "label": "O",
-              "text": "the approval process"
-            }
-          ]
-        },
+          "en": "Please reply to the email when you have time.",
+          "ja": "時間がある時にそのメールへ返信してください。",
+          "focus": "reply to an email",
+          "jaFocus": "メールに返信する"
+        }
+      ],
+      "dailyExamples": [
         {
-          "en": "I followed the recipe and made dinner.",
-          "ja": "私はレシピに従って夕食を作りました。",
-          "focus": "followed",
-          "jaFocus": "従って",
-          "object": "the recipe",
-          "sentencePattern": "S + V + O + V + O",
-          "grammarParts": [
-            {
-              "label": "S",
-              "text": "I"
-            },
-            {
-              "label": "V",
-              "text": "followed"
-            },
-            {
-              "label": "O",
-              "text": "the recipe"
-            },
-            {
-              "label": "V",
-              "text": "made"
-            },
-            {
-              "label": "O",
-              "text": "dinner"
-            }
-          ]
+          "en": "Please reply to the email when you have time.",
+          "ja": "時間がある時にそのメールへ返信してください。",
+          "focus": "reply to an email",
+          "jaFocus": "メールに返信する"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "follow the rules",
-      "ja": "ルールに従う",
-      "image": "決められた規則を守る",
-      "pattern": "FOLLOW + rules",
+      "phrase": "reply to an email",
+      "ja": "メールに返信する",
+      "image": "受け取った連絡に対して返す",
+      "pattern": "reply to an email",
       "examples": [
         {
-          "en": "All team members must follow the rules.",
-          "ja": "すべてのチームメンバーはルールに従わなければなりません。",
-          "focus": "follow the rules",
-          "jaFocus": "ルールに従う",
-          "object": "the rules"
+          "en": "Please reply to the email when you have time.",
+          "ja": "時間がある時にそのメールへ返信してください。",
+          "focus": "reply to an email",
+          "jaFocus": "メールに返信する"
         }
       ]
     }
   ],
-  "phrasalVerbs": [
-    {
-      "phrase": "follow up",
-      "ja": "後で確認する・追って連絡する",
-      "image": "前の話や依頼を後から確認する",
-      "pattern": "FOLLOW UP",
-      "examples": [
-        {
-          "en": "I will follow up with the client tomorrow.",
-          "ja": "私は明日その顧客に追って連絡します。",
-          "focus": "follow up",
-          "jaFocus": "追って連絡します",
-          "object": "with the client"
-        }
-      ]
-    }
-  ]
+  "phrasalVerbs": []
 },
 {
   "id": "include",
@@ -37917,7 +37858,7 @@ export const verbs: Verb[] = [
       "phrase": "prefer A to B",
       "ja": "BよりAを好む",
       "image": "比較して一方を選ぶ",
-      "pattern": "PREFER A TO B",
+      "pattern": "prefer a to b",
       "examples": [
         {
           "en": "I prefer this design to the old one.",
@@ -38063,7 +38004,7 @@ export const verbs: Verb[] = [
     {
       "id": "m1",
       "title": "① 達成する",
-      "pattern": "ACHIEVE A GOAL",
+      "pattern": "achieve a goal",
       "transitivity": "他動詞",
       "structure": "S + V + O（目的語）",
       "image": "努力して目標や成果に到達する",
@@ -38105,7 +38046,7 @@ export const verbs: Verb[] = [
       "phrase": "achieve results",
       "ja": "成果を出す",
       "image": "努力して目標や成果に到達する",
-      "pattern": "ACHIEVE RESULTS",
+      "pattern": "achieve results",
       "examples": [
         {
           "en": "Our team achieved strong results after improving the process.",
@@ -38120,70 +38061,77 @@ export const verbs: Verb[] = [
   "phrasalVerbs": []
 },
 {
-  "id": "arrange",
+  "id": "schedule",
   "rank": 92,
-  "word": "ARRANGE",
-  "ipa": "/əˈreɪndʒ/",
-  "kana": "アレインジ",
-  "syllable": "ar-range",
+  "word": "SCHEDULE",
+  "ipa": "/ˈskedʒuːl/",
+  "kana": "スケジュール",
+  "syllable": "sched-ule",
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "予定・物・人を使いやすい形に整える",
-  "coreDetail": "ARRANGEは、仕事でも日常でも使いやすい基本動詞です。まずは「手配する・整える」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "core": "予定や日程を決めて入れる",
+  "coreDetail": "SCHEDULEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「予定を組む・日程を決める」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
-      "title": "① 手配する・整える",
-      "pattern": "ARRANGE A MEETING",
+      "id": "business-core",
+      "title": "① 予定を組む・日程を決める",
+      "pattern": "schedule a meeting",
       "transitivity": "他動詞",
-      "structure": "S + V + O（目的語）",
-      "image": "予定・物・人を使いやすい形に整える",
-      "point": "arrange の後ろに「何を手配する・整えるのか」を置きます。仕事では arrange a meeting の形でよく使います。",
+      "structure": "S + V + O",
+      "image": "会議や作業を予定に入れる",
+      "point": "schedule は「何を予定するか」を目的語に置きます。仕事では meeting, call, visit, delivery とよく使います。",
       "examples": [
         {
-          "en": "I arranged a meeting with the client for next Tuesday.",
-          "ja": "私は来週火曜日にクライアントとの会議を手配しました。",
-          "focus": "arranged",
-          "object": "a meeting",
-          "jaFocus": "手配する",
+          "en": "We scheduled a meeting for next Monday.",
+          "ja": "私たちは来週月曜日に会議を予定しました。",
+          "focus": "scheduled a meeting",
+          "jaFocus": "予定を組む・日程を決める",
           "sentencePattern": "S + V + O",
           "grammarParts": [
             {
               "label": "S",
-              "text": "I"
+              "text": "主語"
             },
             {
               "label": "V",
-              "text": "arranged"
+              "text": "schedule"
             },
             {
               "label": "O",
-              "text": "a meeting"
+              "text": "scheduled a meeting"
             }
-          ]
+          ],
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "I arranged the books on the shelf.",
-          "ja": "私は棚の本を整理しました。",
-          "focus": "arrange",
-          "jaFocus": "手配する"
+          "en": "Can we schedule a call for tomorrow?",
+          "ja": "明日に電話打合せを設定できますか。",
+          "focus": "schedule a call",
+          "jaFocus": "電話・オンライン打合せを予定する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "Can we schedule a call for tomorrow?",
+          "ja": "明日に電話打合せを設定できますか。",
+          "focus": "schedule a call",
+          "jaFocus": "電話・オンライン打合せを予定する"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "arrange delivery",
-      "ja": "納品を手配する",
-      "image": "予定・物・人を使いやすい形に整える",
-      "pattern": "ARRANGE DELIVERY",
+      "phrase": "schedule a call",
+      "ja": "電話・オンライン打合せを予定する",
+      "image": "会議や作業を予定に入れる",
+      "pattern": "schedule a call",
       "examples": [
         {
-          "en": "We arranged delivery for Friday morning.",
-          "ja": "私たちは金曜日の午前に納品を手配しました。",
-          "focus": "arrange delivery",
-          "jaFocus": "納品を手配する",
-          "object": "delivery"
+          "en": "Can we schedule a call for tomorrow?",
+          "ja": "明日に電話打合せを設定できますか。",
+          "focus": "schedule a call",
+          "jaFocus": "電話・オンライン打合せを予定する"
         }
       ]
     }
@@ -38191,70 +38139,77 @@ export const verbs: Verb[] = [
   "phrasalVerbs": []
 },
 {
-  "id": "attend",
+  "id": "submit",
   "rank": 93,
-  "word": "ATTEND",
-  "ipa": "/əˈtend/",
-  "kana": "アテンド",
-  "syllable": "at-tend",
+  "word": "SUBMIT",
+  "ipa": "/səbˈmɪt/",
+  "kana": "サブミット",
+  "syllable": "sub-mit",
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "会議やイベントの場に行って参加する",
-  "coreDetail": "ATTENDは、仕事でも日常でも使いやすい基本動詞です。まずは「出席する・参加する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "core": "書類や申請を正式に提出する",
+  "coreDetail": "SUBMITは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「提出する・申請する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
-      "title": "① 出席する・参加する",
-      "pattern": "ATTEND A MEETING",
+      "id": "business-core",
+      "title": "① 提出する・申請する",
+      "pattern": "submit a document",
       "transitivity": "他動詞",
-      "structure": "S + V + O（目的語）",
-      "image": "会議やイベントの場に行って参加する",
-      "point": "attend の後ろに「何を出席する・参加するのか」を置きます。仕事では attend a meeting の形でよく使います。",
+      "structure": "S + V + O",
+      "image": "必要な書類や情報を相手に正式に渡す",
+      "point": "submit は report, application, document, form などを目的語にして使います。",
       "examples": [
         {
-          "en": "I attended the project meeting this morning.",
-          "ja": "私は今朝、プロジェクト会議に出席しました。",
-          "focus": "attended",
-          "object": "a meeting",
-          "jaFocus": "出席する",
+          "en": "We submitted the quotation yesterday.",
+          "ja": "私たちは昨日、見積書を提出しました。",
+          "focus": "submitted the quotation",
+          "jaFocus": "提出する・申請する",
           "sentencePattern": "S + V + O",
           "grammarParts": [
             {
               "label": "S",
-              "text": "I"
+              "text": "主語"
             },
             {
               "label": "V",
-              "text": "attended"
+              "text": "submit"
             },
             {
               "label": "O",
-              "text": "a meeting"
+              "text": "submitted the quotation"
             }
-          ]
+          ],
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "I attended a music event last weekend.",
-          "ja": "私は先週末、音楽イベントに参加しました。",
-          "focus": "attend",
-          "jaFocus": "出席する"
+          "en": "Please submit the report by Friday.",
+          "ja": "金曜日までに報告書を提出してください。",
+          "focus": "submit a report",
+          "jaFocus": "報告書を提出する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "Please submit the report by Friday.",
+          "ja": "金曜日までに報告書を提出してください。",
+          "focus": "submit a report",
+          "jaFocus": "報告書を提出する"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "attend a seminar",
-      "ja": "セミナーに参加する",
-      "image": "会議やイベントの場に行って参加する",
-      "pattern": "ATTEND A SEMINAR",
+      "phrase": "submit a report",
+      "ja": "報告書を提出する",
+      "image": "必要な書類や情報を相手に正式に渡す",
+      "pattern": "submit a report",
       "examples": [
         {
-          "en": "Our sales team attended a product seminar.",
-          "ja": "私たちの営業チームは製品セミナーに参加しました。",
-          "focus": "attend a seminar",
-          "jaFocus": "セミナーに参加する",
-          "object": "a seminar"
+          "en": "Please submit the report by Friday.",
+          "ja": "金曜日までに報告書を提出してください。",
+          "focus": "submit a report",
+          "jaFocus": "報告書を提出する"
         }
       ]
     }
@@ -38276,7 +38231,7 @@ export const verbs: Verb[] = [
     {
       "id": "m1",
       "title": "① キャンセルする・中止する",
-      "pattern": "CANCEL AN ORDER",
+      "pattern": "cancel an order",
       "transitivity": "他動詞",
       "structure": "S + V + O（目的語）",
       "image": "予定や注文を止める",
@@ -38318,7 +38273,7 @@ export const verbs: Verb[] = [
       "phrase": "cancel a meeting",
       "ja": "会議を中止する",
       "image": "予定や注文を止める",
-      "pattern": "CANCEL A MEETING",
+      "pattern": "cancel a meeting",
       "examples": [
         {
           "en": "We canceled the meeting because the client was unavailable.",
@@ -38347,7 +38302,7 @@ export const verbs: Verb[] = [
     {
       "id": "m1",
       "title": "① つなぐ・接続する",
-      "pattern": "CONNECT A TO B",
+      "pattern": "connect a to b",
       "transitivity": "他動詞",
       "structure": "S + V + O（目的語）",
       "image": "人・物・情報をつなげる",
@@ -38389,7 +38344,7 @@ export const verbs: Verb[] = [
       "phrase": "connect with a client",
       "ja": "顧客と関係を作る",
       "image": "人・物・情報をつなげる",
-      "pattern": "CONNECT WITH A CLIENT",
+      "pattern": "connect with a client",
       "examples": [
         {
           "en": "We need to connect with the client before sending the proposal.",
@@ -38404,70 +38359,77 @@ export const verbs: Verb[] = [
   "phrasalVerbs": []
 },
 {
-  "id": "contact",
+  "id": "respond",
   "rank": 96,
-  "word": "CONTACT",
-  "ipa": "/ˈkɑːntækt/",
-  "kana": "コンタクト",
-  "syllable": "con-tact",
-  "transitivity": "他動詞",
+  "word": "RESPOND",
+  "ipa": "/rɪˈspɑːnd/",
+  "kana": "リスポンド",
+  "syllable": "re-spond",
+  "transitivity": "自動詞",
   "importance": "★★★★☆ 重要",
-  "core": "必要な相手に連絡を取る",
-  "coreDetail": "CONTACTは、仕事でも日常でも使いやすい基本動詞です。まずは「連絡する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "core": "質問・依頼・状況に反応して返す",
+  "coreDetail": "RESPONDは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「対応する・返答する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
-      "title": "① 連絡する",
-      "pattern": "CONTACT A SUPPLIER",
-      "transitivity": "他動詞",
-      "structure": "S + V + O（目的語）",
-      "image": "必要な相手に連絡を取る",
-      "point": "contact の後ろに「何を連絡するのか」を置きます。仕事では contact a supplier の形でよく使います。",
+      "id": "business-core",
+      "title": "① 対応する・返答する",
+      "pattern": "respond to a request",
+      "transitivity": "自動詞",
+      "structure": "S + V + to + 内容",
+      "image": "相手の依頼や状況に対して返す・動く",
+      "point": "respond は自動詞なので、依頼や質問を続けるときは respond to ... を使います。to 以下は前置詞句です。",
       "examples": [
         {
-          "en": "I contacted the supplier about the delivery date.",
-          "ja": "私は納期について仕入先に連絡しました。",
-          "focus": "contacted",
-          "object": "a supplier",
-          "jaFocus": "連絡する",
-          "sentencePattern": "S + V + O",
+          "en": "We responded to the customer request quickly.",
+          "ja": "私たちは顧客の依頼にすばやく対応しました。",
+          "focus": "responded to the request",
+          "jaFocus": "対応する・返答する",
+          "sentencePattern": "S + V + to + 内容",
           "grammarParts": [
             {
               "label": "S",
-              "text": "I"
+              "text": "主語"
             },
             {
               "label": "V",
-              "text": "contacted"
+              "text": "respond"
             },
             {
-              "label": "O",
-              "text": "a supplier"
+              "label": "M",
+              "text": "to the customer request"
             }
-          ]
+          ],
+          "grammarNote": "この文は前置詞句を補足情報として扱います。前置詞の後ろの名詞だけを目的語Oにしないように注意します。"
         },
         {
-          "en": "I contacted my friend after work.",
-          "ja": "私は仕事の後、友人に連絡しました。",
-          "focus": "contact",
-          "jaFocus": "連絡する"
+          "en": "Please respond to the question by email.",
+          "ja": "その質問にはメールで回答してください。",
+          "focus": "respond to a question",
+          "jaFocus": "質問に答える"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "Please respond to the question by email.",
+          "ja": "その質問にはメールで回答してください。",
+          "focus": "respond to a question",
+          "jaFocus": "質問に答える"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "contact customer support",
-      "ja": "カスタマーサポートに連絡する",
-      "image": "必要な相手に連絡を取る",
-      "pattern": "CONTACT CUSTOMER SUPPORT",
+      "phrase": "respond to a question",
+      "ja": "質問に答える",
+      "image": "相手の依頼や状況に対して返す・動く",
+      "pattern": "respond to a question",
       "examples": [
         {
-          "en": "Please contact customer support if the issue continues.",
-          "ja": "問題が続く場合は、カスタマーサポートに連絡してください。",
-          "focus": "contact customer support",
-          "jaFocus": "カスタマーサポートに連絡する",
-          "object": "customer support"
+          "en": "Please respond to the question by email.",
+          "ja": "その質問にはメールで回答してください。",
+          "focus": "respond to a question",
+          "jaFocus": "質問に答える"
         }
       ]
     }
@@ -38489,7 +38451,7 @@ export const verbs: Verb[] = [
     {
       "id": "m1",
       "title": "① 管理する・制御する",
-      "pattern": "CONTROL THE SCHEDULE",
+      "pattern": "control the schedule",
       "transitivity": "他動詞",
       "structure": "S + V + O（目的語）",
       "image": "状況や機器が乱れないように管理する",
@@ -38531,7 +38493,7 @@ export const verbs: Verb[] = [
       "phrase": "control the brightness",
       "ja": "明るさを制御する",
       "image": "状況や機器が乱れないように管理する",
-      "pattern": "CONTROL THE BRIGHTNESS",
+      "pattern": "control the brightness",
       "examples": [
         {
           "en": "This system can control the brightness of the LED modules.",
@@ -38560,7 +38522,7 @@ export const verbs: Verb[] = [
     {
       "id": "m1",
       "title": "① 対応する・扱う",
-      "pattern": "HANDLE A COMPLAINT",
+      "pattern": "handle a complaint",
       "transitivity": "他動詞",
       "structure": "S + V + O（目的語）",
       "image": "問題・仕事・相手を受け止めて処理する",
@@ -38602,7 +38564,7 @@ export const verbs: Verb[] = [
       "phrase": "handle an urgent request",
       "ja": "急ぎの依頼に対応する",
       "image": "問題・仕事・相手を受け止めて処理する",
-      "pattern": "HANDLE AN URGENT REQUEST",
+      "pattern": "handle an urgent request",
       "examples": [
         {
           "en": "We handled an urgent request from the client yesterday.",
@@ -38631,7 +38593,7 @@ export const verbs: Verb[] = [
     {
       "id": "m1",
       "title": "① 整理する・企画する",
-      "pattern": "ORGANIZE DOCUMENTS",
+      "pattern": "organize documents",
       "transitivity": "他動詞",
       "structure": "S + V + O（目的語）",
       "image": "情報・物・予定を分かりやすくまとめる",
@@ -38673,7 +38635,7 @@ export const verbs: Verb[] = [
       "phrase": "organize an event",
       "ja": "イベントを企画する",
       "image": "情報・物・予定を分かりやすくまとめる",
-      "pattern": "ORGANIZE AN EVENT",
+      "pattern": "organize an event",
       "examples": [
         {
           "en": "Our team organized a small customer event.",
@@ -38688,70 +38650,77 @@ export const verbs: Verb[] = [
   "phrasalVerbs": []
 },
 {
-  "id": "share",
+  "id": "inform",
   "rank": 100,
-  "word": "SHARE",
-  "ipa": "/ʃer/",
-  "kana": "シェア",
-  "syllable": "share",
+  "word": "INFORM",
+  "ipa": "/ɪnˈfɔːrm/",
+  "kana": "インフォーム",
+  "syllable": "in-form",
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "情報・物・気持ちを相手と分け合う",
-  "coreDetail": "SHAREは、仕事でも日常でも使いやすい基本動詞です。まずは「共有する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "core": "必要な情報を相手に知らせる",
+  "coreDetail": "INFORMは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「知らせる・通知する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
-      "title": "① 共有する",
-      "pattern": "SHARE INFORMATION",
+      "id": "business-core",
+      "title": "① 知らせる・通知する",
+      "pattern": "inform a client",
       "transitivity": "他動詞",
-      "structure": "S + V + O（目的語）",
-      "image": "情報・物・気持ちを相手と分け合う",
-      "point": "share の後ろに「何を共有するのか」を置きます。仕事では share information の形でよく使います。",
+      "structure": "S + V + O + of/about + 内容",
+      "image": "相手が知らない情報を伝えて共有する",
+      "point": "inform は「誰に知らせるか」を目的語に置き、内容は of/about で続けることが多いです。",
       "examples": [
         {
-          "en": "Please share the latest information with the team.",
-          "ja": "最新情報をチームに共有してください。",
-          "focus": "share",
-          "object": "information",
-          "jaFocus": "共有する",
-          "sentencePattern": "S + V + O",
+          "en": "We informed the client about the schedule change.",
+          "ja": "私たちは日程変更についてクライアントに知らせました。",
+          "focus": "informed the client",
+          "jaFocus": "知らせる・通知する",
+          "sentencePattern": "S + V + O + of/about + 内容",
           "grammarParts": [
             {
               "label": "S",
-              "text": "you（省略）"
+              "text": "主語"
             },
             {
               "label": "V",
-              "text": "please"
+              "text": "inform"
             },
             {
               "label": "O",
-              "text": "information"
+              "text": "informed the client"
             }
-          ]
+          ],
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "I shared some snacks with my children.",
-          "ja": "私は子どもたちとお菓子を分け合いました。",
-          "focus": "share",
-          "jaFocus": "共有する"
+          "en": "Please inform the team about the new deadline.",
+          "ja": "新しい締切についてチームに知らせてください。",
+          "focus": "inform someone about a change",
+          "jaFocus": "変更について知らせる"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "Please inform the team about the new deadline.",
+          "ja": "新しい締切についてチームに知らせてください。",
+          "focus": "inform someone about a change",
+          "jaFocus": "変更について知らせる"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "share a file",
-      "ja": "ファイルを共有する",
-      "image": "情報・物・気持ちを相手と分け合う",
-      "pattern": "SHARE A FILE",
+      "phrase": "inform someone about a change",
+      "ja": "変更について知らせる",
+      "image": "相手が知らない情報を伝えて共有する",
+      "pattern": "inform someone about a change",
       "examples": [
         {
-          "en": "I shared the file with the client after the meeting.",
-          "ja": "私は会議後、クライアントにファイルを共有しました。",
-          "focus": "share a file",
-          "jaFocus": "ファイルを共有する",
-          "object": "a file"
+          "en": "Please inform the team about the new deadline.",
+          "ja": "新しい締切についてチームに知らせてください。",
+          "focus": "inform someone about a change",
+          "jaFocus": "変更について知らせる"
         }
       ]
     }
@@ -38767,52 +38736,69 @@ export const verbs: Verb[] = [
   "syllable": "ad-just",
   "transitivity": "他動詞・自動詞",
   "importance": "★★★★☆ 重要",
-  "core": "予定・数値・方法をちょうどよく直す",
-  "coreDetail": "ADJUSTは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「調整する」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "状況に合わせて少し変える",
+  "coreDetail": "ADJUSTは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「調整する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
+      "id": "business-core",
       "title": "① 調整する",
-      "pattern": "ADJUST THE SCHEDULE",
+      "pattern": "adjust the schedule",
       "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "予定・数値・方法を状況に合わせて直す",
-      "point": "adjust は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "予定・数値・やり方を合うように直す",
+      "point": "adjust は schedule, price, plan, settings などを目的語にして使います。",
       "examples": [
         {
-          "en": "We adjusted the delivery schedule for the client.",
-          "ja": "私たちはクライアント向けに納品スケジュールを調整しました。",
-          "focus": "adjust",
+          "en": "We adjusted the schedule after the client called.",
+          "ja": "クライアントから連絡があった後、私たちは予定を調整しました。",
+          "focus": "adjusted the schedule",
           "jaFocus": "調整する",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "adjust" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "adjust"
+            },
+            {
+              "label": "O",
+              "text": "adjusted the schedule"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "I adjusted the brightness on my phone.",
-          "ja": "私はスマホの明るさを調整しました。",
-          "focus": "adjust",
-          "jaFocus": "調整する"
+          "en": "Can we adjust the price for this order?",
+          "ja": "この注文の価格を調整できますか。",
+          "focus": "adjust the price",
+          "jaFocus": "価格を調整する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "Can we adjust the price for this order?",
+          "ja": "この注文の価格を調整できますか。",
+          "focus": "adjust the price",
+          "jaFocus": "価格を調整する"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "adjust the schedule",
-      "ja": "スケジュールを調整する",
-      "image": "予定・数値・方法を状況に合わせて直す",
-      "pattern": "ADJUST THE SCHEDULE",
+      "phrase": "adjust the price",
+      "ja": "価格を調整する",
+      "image": "予定・数値・やり方を合うように直す",
+      "pattern": "adjust the price",
       "examples": [
         {
-          "en": "Please adjust the schedule by Friday.",
-          "ja": "金曜日までにスケジュールを調整してください。",
-          "focus": "adjust the schedule",
-          "jaFocus": "スケジュールを調整する"
+          "en": "Can we adjust the price for this order?",
+          "ja": "この注文の価格を調整できますか。",
+          "focus": "adjust the price",
+          "jaFocus": "価格を調整する"
         }
       ]
     }
@@ -38826,54 +38812,71 @@ export const verbs: Verb[] = [
   "ipa": "/əˈplaɪ/",
   "kana": "アプライ",
   "syllable": "ap-ply",
-  "transitivity": "他動詞・自動詞",
+  "transitivity": "自動詞・他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "ルール・知識・申請を目的に向けて使う",
-  "coreDetail": "APPLYは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「申し込む・適用する」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "申し込む・適用する",
+  "coreDetail": "APPLYは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「申し込む・適用する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
+      "id": "business-core",
       "title": "① 申し込む・適用する",
-      "pattern": "APPLY FOR A JOB / APPLY A RULE",
-      "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "目的に向けて申請する、またはルールや知識を使う",
-      "point": "apply は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "pattern": "apply for approval",
+      "transitivity": "自動詞・他動詞",
+      "structure": "S + V + for + 申請内容",
+      "image": "制度や機会に申し込む、またはルールを当てはめる",
+      "point": "apply for は「申し込む」、apply A to B は「AをBに適用する」です。",
       "examples": [
         {
-          "en": "I applied for a new position last week.",
-          "ja": "私は先週、新しい職種に応募しました。",
-          "focus": "apply",
+          "en": "We need to apply for approval before ordering.",
+          "ja": "私たちは発注前に承認を申請する必要があります。",
+          "focus": "apply for approval",
           "jaFocus": "申し込む・適用する",
-          "sentencePattern": "S + V + O",
+          "sentencePattern": "S + V + for + 申請内容",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "apply" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "apply"
+            },
+            {
+              "label": "M",
+              "text": "for approval"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文は前置詞句を補足情報として扱います。前置詞の後ろの名詞だけを目的語Oにしないように注意します。"
         },
         {
-          "en": "You can apply this idea to daily life.",
-          "ja": "この考え方は日常生活にも応用できます。",
-          "focus": "apply",
-          "jaFocus": "申し込む・適用する"
+          "en": "Please apply the new rule to this case.",
+          "ja": "この件には新しいルールを適用してください。",
+          "focus": "apply a rule",
+          "jaFocus": "ルールを適用する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "Please apply the new rule to this case.",
+          "ja": "この件には新しいルールを適用してください。",
+          "focus": "apply a rule",
+          "jaFocus": "ルールを適用する"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "apply for approval",
-      "ja": "承認を申請する",
-      "image": "目的に向けて申請する、またはルールや知識を使う",
-      "pattern": "APPLY FOR APPROVAL",
+      "phrase": "apply a rule",
+      "ja": "ルールを適用する",
+      "image": "制度や機会に申し込む、またはルールを当てはめる",
+      "pattern": "apply a rule",
       "examples": [
         {
-          "en": "We need to apply for approval before ordering.",
-          "ja": "私たちは発注前に承認を申請する必要があります。",
-          "focus": "apply for approval",
-          "jaFocus": "承認を申請する"
+          "en": "Please apply the new rule to this case.",
+          "ja": "この件には新しいルールを適用してください。",
+          "focus": "apply a rule",
+          "jaFocus": "ルールを適用する"
         }
       ]
     }
@@ -38885,56 +38888,73 @@ export const verbs: Verb[] = [
   "rank": 103,
   "word": "APPROVE",
   "ipa": "/əˈpruːv/",
-  "kana": "アプルーブ",
+  "kana": "アプルーヴ",
   "syllable": "ap-prove",
-  "transitivity": "他動詞",
+  "transitivity": "他動詞・自動詞",
   "importance": "★★★★☆ 重要",
   "core": "内容を確認して正式に認める",
-  "coreDetail": "APPROVEは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「承認する」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "coreDetail": "APPROVEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「承認する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
+      "id": "business-core",
       "title": "① 承認する",
-      "pattern": "APPROVE A REQUEST",
-      "transitivity": "他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "依頼・見積・計画を確認して正式に認める",
-      "point": "approve は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "pattern": "approve a request",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O",
+      "image": "申請・見積・依頼にOKを出す",
+      "point": "approve は request, plan, quotation, budget などを目的語にして使います。",
       "examples": [
         {
-          "en": "My manager approved the quotation this morning.",
-          "ja": "私の上司は今朝、その見積を承認しました。",
-          "focus": "approve",
+          "en": "The manager approved the request this morning.",
+          "ja": "マネージャーは今朝その依頼を承認しました。",
+          "focus": "approved the request",
           "jaFocus": "承認する",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "approve" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "approve"
+            },
+            {
+              "label": "O",
+              "text": "approved the request"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "My parents approved my travel plan.",
-          "ja": "両親は私の旅行計画を認めてくれました。",
-          "focus": "approve",
-          "jaFocus": "承認する"
+          "en": "The client approved the quotation yesterday.",
+          "ja": "クライアントは昨日、その見積を承認しました。",
+          "focus": "approve a quotation",
+          "jaFocus": "見積を承認する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "The client approved the quotation yesterday.",
+          "ja": "クライアントは昨日、その見積を承認しました。",
+          "focus": "approve a quotation",
+          "jaFocus": "見積を承認する"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "approve the request",
-      "ja": "依頼を承認する",
-      "image": "依頼・見積・計画を確認して正式に認める",
-      "pattern": "APPROVE THE REQUEST",
+      "phrase": "approve a quotation",
+      "ja": "見積を承認する",
+      "image": "申請・見積・依頼にOKを出す",
+      "pattern": "approve a quotation",
       "examples": [
         {
-          "en": "The client approved the request yesterday.",
-          "ja": "クライアントは昨日、その依頼を承認しました。",
-          "focus": "approve the request",
-          "jaFocus": "依頼を承認する"
+          "en": "The client approved the quotation yesterday.",
+          "ja": "クライアントは昨日、その見積を承認しました。",
+          "focus": "approve a quotation",
+          "jaFocus": "見積を承認する"
         }
       ]
     }
@@ -38951,51 +38971,68 @@ export const verbs: Verb[] = [
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
   "core": "一時的に相手から借りて使う",
-  "coreDetail": "BORROWは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「借りる」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "coreDetail": "BORROWは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「借りる」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
+      "id": "business-core",
       "title": "① 借りる",
-      "pattern": "BORROW A TOOL",
+      "pattern": "borrow a charger",
       "transitivity": "他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
+      "structure": "S + V + O",
       "image": "相手の物やお金を一時的に借りる",
-      "point": "borrow は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "point": "borrow は「借りる」。相手を言うときは borrow A from B の形を使います。大人の日常・仕事でもよく使います。",
       "examples": [
         {
           "en": "Can I borrow your charger during the meeting?",
           "ja": "会議中にあなたの充電器を借りてもいいですか。",
-          "focus": "borrow",
+          "focus": "borrow your charger",
           "jaFocus": "借りる",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "borrow" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "borrow"
+            },
+            {
+              "label": "O",
+              "text": "borrow your charger"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "I borrowed a book from the library.",
-          "ja": "私は図書館で本を借りました。",
-          "focus": "borrow",
-          "jaFocus": "借りる"
+          "en": "I borrowed a projector from another team.",
+          "ja": "私は別のチームからプロジェクターを借りました。",
+          "focus": "borrow A from B",
+          "jaFocus": "BからAを借りる"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "I borrowed a projector from another team.",
+          "ja": "私は別のチームからプロジェクターを借りました。",
+          "focus": "borrow A from B",
+          "jaFocus": "BからAを借りる"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "borrow money",
-      "ja": "お金を借りる",
+      "phrase": "borrow A from B",
+      "ja": "BからAを借りる",
       "image": "相手の物やお金を一時的に借りる",
-      "pattern": "BORROW MONEY",
+      "pattern": "borrow A from B",
       "examples": [
         {
-          "en": "We should not borrow money without a clear plan.",
-          "ja": "私たちは明確な計画なしにお金を借りるべきではありません。",
-          "focus": "borrow money",
-          "jaFocus": "お金を借りる"
+          "en": "I borrowed a projector from another team.",
+          "ja": "私は別のチームからプロジェクターを借りました。",
+          "focus": "borrow A from B",
+          "jaFocus": "BからAを借りる"
         }
       ]
     }
@@ -39003,120 +39040,154 @@ export const verbs: Verb[] = [
   "phrasalVerbs": []
 },
 {
-  "id": "check",
+  "id": "verify",
   "rank": 105,
-  "word": "CHECK",
-  "ipa": "/tʃek/",
-  "kana": "チェック",
-  "syllable": "check",
-  "transitivity": "他動詞・自動詞",
-  "importance": "★★★★☆ 重要",
-  "core": "間違いがないか確認する",
-  "coreDetail": "CHECKは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「確認する」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
-  "meanings": [
-    {
-      "id": "m1",
-      "title": "① 確認する",
-      "pattern": "CHECK THE DETAILS",
-      "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "内容・状態・予定を確認する",
-      "point": "check は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
-      "examples": [
-        {
-          "en": "Please check the details before we send the email.",
-          "ja": "メールを送る前に詳細を確認してください。",
-          "focus": "check",
-          "jaFocus": "確認する",
-          "sentencePattern": "S + V + O",
-          "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "check" },
-            { "label": "O", "text": "目的語・内容" }
-          ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
-        },
-        {
-          "en": "I checked the weather before leaving home.",
-          "ja": "私は家を出る前に天気を確認しました。",
-          "focus": "check",
-          "jaFocus": "確認する"
-        }
-      ]
-    }
-  ],
-  "collocations": [
-    {
-      "phrase": "check with someone",
-      "ja": "人に確認する",
-      "image": "内容・状態・予定を確認する",
-      "pattern": "CHECK WITH SOMEONE",
-      "examples": [
-        {
-          "en": "I will check with the supplier and reply today.",
-          "ja": "私は仕入先に確認して本日返信します。",
-          "focus": "check with someone",
-          "jaFocus": "人に確認する"
-        }
-      ]
-    }
-  ],
-  "phrasalVerbs": []
-},
-{
-  "id": "collect",
-  "rank": 106,
-  "word": "COLLECT",
-  "ipa": "/kəˈlekt/",
-  "kana": "コレクト",
-  "syllable": "col-lect",
+  "word": "VERIFY",
+  "ipa": "/ˈverɪfaɪ/",
+  "kana": "ヴェリファイ",
+  "syllable": "ver-i-fy",
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "必要なものを集めて一か所にまとめる",
-  "coreDetail": "COLLECTは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「集める」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "正しいかどうかを確認する",
+  "coreDetail": "VERIFYは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「確認する・検証する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
-      "title": "① 集める",
-      "pattern": "COLLECT INFORMATION",
+      "id": "business-core",
+      "title": "① 確認する・検証する",
+      "pattern": "verify the details",
       "transitivity": "他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "情報・資料・お金などを集める",
-      "point": "collect は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "情報や数字が正しいか裏取りする",
+      "point": "verify は check より少し正式で、「正確性を確認する」ニュアンスです。",
       "examples": [
         {
-          "en": "We collected customer feedback after the event.",
-          "ja": "私たちはイベント後に顧客の意見を集めました。",
-          "focus": "collect",
+          "en": "We verified the order details before shipping.",
+          "ja": "私たちは出荷前に注文内容を確認しました。",
+          "focus": "verified the details",
+          "jaFocus": "確認する・検証する",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "verify"
+            },
+            {
+              "label": "O",
+              "text": "verified the details"
+            }
+          ],
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+        },
+        {
+          "en": "Please verify the information before sending it.",
+          "ja": "送信前にその情報を確認してください。",
+          "focus": "verify information",
+          "jaFocus": "情報を確認する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "Please verify the information before sending it.",
+          "ja": "送信前にその情報を確認してください。",
+          "focus": "verify information",
+          "jaFocus": "情報を確認する"
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "verify information",
+      "ja": "情報を確認する",
+      "image": "情報や数字が正しいか裏取りする",
+      "pattern": "verify information",
+      "examples": [
+        {
+          "en": "Please verify the information before sending it.",
+          "ja": "送信前にその情報を確認してください。",
+          "focus": "verify information",
+          "jaFocus": "情報を確認する"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "gather",
+  "rank": 106,
+  "word": "GATHER",
+  "ipa": "/ˈɡæðər/",
+  "kana": "ギャザー",
+  "syllable": "gath-er",
+  "transitivity": "他動詞・自動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "必要なものや情報を集める",
+  "coreDetail": "GATHERは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「集める」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+  "meanings": [
+    {
+      "id": "business-core",
+      "title": "① 集める",
+      "pattern": "gather information",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O",
+      "image": "バラバラの情報や資料を一か所に集める",
+      "point": "gather は information, feedback, data, documents と相性が良い仕事向け動詞です。",
+      "examples": [
+        {
+          "en": "We gathered feedback from the sales team.",
+          "ja": "私たちは営業チームから意見を集めました。",
+          "focus": "gathered feedback",
           "jaFocus": "集める",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "collect" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "gather"
+            },
+            {
+              "label": "O",
+              "text": "gathered feedback"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "My son collects toy cars.",
-          "ja": "私の息子はミニカーを集めています。",
-          "focus": "collect",
-          "jaFocus": "集める"
+          "en": "We need to gather data before making a decision.",
+          "ja": "決定する前にデータを集める必要があります。",
+          "focus": "gather data",
+          "jaFocus": "データを集める"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "We need to gather data before making a decision.",
+          "ja": "決定する前にデータを集める必要があります。",
+          "focus": "gather data",
+          "jaFocus": "データを集める"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "collect data",
+      "phrase": "gather data",
       "ja": "データを集める",
-      "image": "情報・資料・お金などを集める",
-      "pattern": "COLLECT DATA",
+      "image": "バラバラの情報や資料を一か所に集める",
+      "pattern": "gather data",
       "examples": [
         {
-          "en": "We need to collect data before making a proposal.",
-          "ja": "私たちは提案前にデータを集める必要があります。",
-          "focus": "collect data",
+          "en": "We need to gather data before making a decision.",
+          "ja": "決定する前にデータを集める必要があります。",
+          "focus": "gather data",
           "jaFocus": "データを集める"
         }
       ]
@@ -39134,35 +39205,52 @@ export const verbs: Verb[] = [
   "transitivity": "自動詞・他動詞",
   "importance": "★★★★☆ 重要",
   "core": "考えや情報を相手に伝えて共有する",
-  "coreDetail": "COMMUNICATEは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「伝える・連絡を取る」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "coreDetail": "COMMUNICATEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「伝える・連絡を取る」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
+      "id": "business-core",
       "title": "① 伝える・連絡を取る",
-      "pattern": "COMMUNICATE WITH CLIENTS",
+      "pattern": "communicate with clients",
       "transitivity": "自動詞・他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
+      "structure": "S + V + with + 相手",
       "image": "相手と情報や考えをやり取りする",
-      "point": "communicate は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "point": "communicate with ... は「〜と連絡を取る・意思疎通する」。with clients は前置詞句で、clientsだけを目的語Oにしません。",
       "examples": [
         {
-          "en": "We communicate with the client mainly by email.",
+          "en": "We communicate with clients mainly by email.",
           "ja": "私たちは主にメールでクライアントと連絡を取っています。",
-          "focus": "communicate",
+          "focus": "communicate with clients",
           "jaFocus": "伝える・連絡を取る",
-          "sentencePattern": "S + V + O",
+          "sentencePattern": "S + V + with + 相手",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "communicate" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "communicate"
+            },
+            {
+              "label": "M",
+              "text": "with clients"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文は前置詞句を補足情報として扱います。前置詞の後ろの名詞だけを目的語Oにしないように注意します。"
         },
         {
-          "en": "I want to communicate better in English.",
-          "ja": "私は英語でもっと上手に意思疎通したいです。",
-          "focus": "communicate",
-          "jaFocus": "伝える・連絡を取る"
+          "en": "Please communicate the deadline clearly to the team.",
+          "ja": "締切をチームに明確に伝えてください。",
+          "focus": "communicate clearly",
+          "jaFocus": "明確に伝える"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "Please communicate the deadline clearly to the team.",
+          "ja": "締切をチームに明確に伝えてください。",
+          "focus": "communicate clearly",
+          "jaFocus": "明確に伝える"
         }
       ]
     }
@@ -39172,7 +39260,7 @@ export const verbs: Verb[] = [
       "phrase": "communicate clearly",
       "ja": "明確に伝える",
       "image": "相手と情報や考えをやり取りする",
-      "pattern": "COMMUNICATE CLEARLY",
+      "pattern": "communicate clearly",
       "examples": [
         {
           "en": "Please communicate the deadline clearly to the team.",
@@ -39195,35 +39283,52 @@ export const verbs: Verb[] = [
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
   "core": "特徴や状況を言葉で説明する",
-  "coreDetail": "DESCRIBEは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「説明する・描写する」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "coreDetail": "DESCRIBEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「説明する・描写する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
+      "id": "business-core",
       "title": "① 説明する・描写する",
-      "pattern": "DESCRIBE THE SITUATION",
+      "pattern": "describe the situation",
       "transitivity": "他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "状況・特徴・問題を言葉で説明する",
-      "point": "describe は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "状況や特徴を言葉で相手に伝える",
+      "point": "describe は situation, problem, product, process と相性が良いです。",
       "examples": [
         {
-          "en": "Could you describe the problem in more detail?",
-          "ja": "その問題をもう少し詳しく説明していただけますか。",
-          "focus": "describe",
+          "en": "Please describe the issue in detail.",
+          "ja": "その問題を詳しく説明してください。",
+          "focus": "describe the issue",
           "jaFocus": "説明する・描写する",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "describe" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "describe"
+            },
+            {
+              "label": "O",
+              "text": "describe the issue"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "She described the restaurant very well.",
-          "ja": "彼女はそのレストランをとても上手に説明しました。",
-          "focus": "describe",
-          "jaFocus": "説明する・描写する"
+          "en": "Can you describe the product features?",
+          "ja": "製品の特徴を説明できますか。",
+          "focus": "describe a product",
+          "jaFocus": "製品を説明する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "Can you describe the product features?",
+          "ja": "製品の特徴を説明できますか。",
+          "focus": "describe a product",
+          "jaFocus": "製品を説明する"
         }
       ]
     }
@@ -39232,12 +39337,12 @@ export const verbs: Verb[] = [
     {
       "phrase": "describe a product",
       "ja": "製品を説明する",
-      "image": "状況・特徴・問題を言葉で説明する",
-      "pattern": "DESCRIBE A PRODUCT",
+      "image": "状況や特徴を言葉で相手に伝える",
+      "pattern": "describe a product",
       "examples": [
         {
-          "en": "We need to describe the product benefits clearly.",
-          "ja": "私たちは製品の利点を明確に説明する必要があります。",
+          "en": "Can you describe the product features?",
+          "ja": "製品の特徴を説明できますか。",
           "focus": "describe a product",
           "jaFocus": "製品を説明する"
         }
@@ -39255,52 +39360,69 @@ export const verbs: Verb[] = [
   "syllable": "earn",
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "努力の結果としてお金・信頼・評価を得る",
-  "coreDetail": "EARNは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「稼ぐ・得る」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "働きや結果によって得る",
+  "coreDetail": "EARNは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「稼ぐ・得る」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
+      "id": "business-core",
       "title": "① 稼ぐ・得る",
-      "pattern": "EARN MONEY / EARN TRUST",
+      "pattern": "earn trust",
       "transitivity": "他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "努力によってお金・信頼・評価を得る",
-      "point": "earn は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "努力や仕事の結果としてお金・信頼・評価を得る",
+      "point": "earn は money だけでなく trust, respect, experience とも使えます。",
       "examples": [
         {
-          "en": "Our team earned the client’s trust through quick support.",
-          "ja": "私たちのチームは迅速な対応でクライアントの信頼を得ました。",
-          "focus": "earn",
+          "en": "We earned the client's trust through quick support.",
+          "ja": "私たちは迅速なサポートを通じて顧客の信頼を得ました。",
+          "focus": "earned trust",
           "jaFocus": "稼ぐ・得る",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "earn" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "earn"
+            },
+            {
+              "label": "O",
+              "text": "earned trust"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "He earns money by teaching guitar.",
-          "ja": "彼はギターを教えてお金を稼いでいます。",
-          "focus": "earn",
-          "jaFocus": "稼ぐ・得る"
+          "en": "He earns money by doing freelance work.",
+          "ja": "彼はフリーランスの仕事でお金を稼いでいます。",
+          "focus": "earn money",
+          "jaFocus": "お金を稼ぐ"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "He earns money by doing freelance work.",
+          "ja": "彼はフリーランスの仕事でお金を稼いでいます。",
+          "focus": "earn money",
+          "jaFocus": "お金を稼ぐ"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "earn trust",
-      "ja": "信頼を得る",
-      "image": "努力によってお金・信頼・評価を得る",
-      "pattern": "EARN TRUST",
+      "phrase": "earn money",
+      "ja": "お金を稼ぐ",
+      "image": "努力や仕事の結果としてお金・信頼・評価を得る",
+      "pattern": "earn money",
       "examples": [
         {
-          "en": "Good service helps us earn trust.",
-          "ja": "良いサービスは私たちが信頼を得る助けになります。",
-          "focus": "earn trust",
-          "jaFocus": "信頼を得る"
+          "en": "He earns money by doing freelance work.",
+          "ja": "彼はフリーランスの仕事でお金を稼いでいます。",
+          "focus": "earn money",
+          "jaFocus": "お金を稼ぐ"
         }
       ]
     }
@@ -39316,52 +39438,69 @@ export const verbs: Verb[] = [
   "syllable": "es-ti-mate",
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "費用・数量・時間をおおよそ計算する",
-  "coreDetail": "ESTIMATEは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「見積もる」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "おおよその量・費用・時間を見積もる",
+  "coreDetail": "ESTIMATEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「見積もる」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
+      "id": "business-core",
       "title": "① 見積もる",
-      "pattern": "ESTIMATE THE COST",
+      "pattern": "estimate the cost",
       "transitivity": "他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "費用・時間・数量をおおよそ計算する",
-      "point": "estimate は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "正確な数字が出る前に大まかに計算する",
+      "point": "estimate は cost, time, amount, size とよく使います。",
       "examples": [
         {
-          "en": "We estimated the installation cost yesterday.",
-          "ja": "私たちは昨日、設置費用を見積もりました。",
-          "focus": "estimate",
+          "en": "We estimated the cost before sending the quotation.",
+          "ja": "私たちは見積書を送る前に費用を概算しました。",
+          "focus": "estimated the cost",
           "jaFocus": "見積もる",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "estimate" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "estimate"
+            },
+            {
+              "label": "O",
+              "text": "estimated the cost"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "I estimated the travel time before leaving.",
-          "ja": "私は出発前に移動時間を見積もりました。",
-          "focus": "estimate",
-          "jaFocus": "見積もる"
+          "en": "Can you estimate the time required for this task?",
+          "ja": "この作業に必要な時間を見積もれますか。",
+          "focus": "estimate the time",
+          "jaFocus": "時間を見積もる"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "Can you estimate the time required for this task?",
+          "ja": "この作業に必要な時間を見積もれますか。",
+          "focus": "estimate the time",
+          "jaFocus": "時間を見積もる"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "estimate the delivery time",
-      "ja": "納期を見積もる",
-      "image": "費用・時間・数量をおおよそ計算する",
-      "pattern": "ESTIMATE THE DELIVERY TIME",
+      "phrase": "estimate the time",
+      "ja": "時間を見積もる",
+      "image": "正確な数字が出る前に大まかに計算する",
+      "pattern": "estimate the time",
       "examples": [
         {
-          "en": "Can you estimate the delivery time for this order?",
-          "ja": "この注文の納期を見積もっていただけますか。",
-          "focus": "estimate the delivery time",
-          "jaFocus": "納期を見積もる"
+          "en": "Can you estimate the time required for this task?",
+          "ja": "この作業に必要な時間を見積もれますか。",
+          "focus": "estimate the time",
+          "jaFocus": "時間を見積もる"
         }
       ]
     }
@@ -39377,52 +39516,69 @@ export const verbs: Verb[] = [
   "syllable": "fo-cus",
   "transitivity": "自動詞・他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "注意や力を一点に向ける",
-  "coreDetail": "FOCUSは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「集中する」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "注意や力を一つの対象に向ける",
+  "coreDetail": "FOCUSは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「集中する・注力する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
-      "title": "① 集中する",
-      "pattern": "FOCUS ON A TASK",
+      "id": "business-core",
+      "title": "① 集中する・注力する",
+      "pattern": "focus on quality",
       "transitivity": "自動詞・他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "注意や力を一つの対象に向ける",
-      "point": "focus は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + on + 対象",
+      "image": "注意を一つの対象へ向ける",
+      "point": "focus on ... は「〜に集中する」。on quality は前置詞句で、qualityだけを目的語Oにしません。",
       "examples": [
         {
-          "en": "We should focus on the most urgent issue first.",
-          "ja": "私たちはまず最も緊急の問題に集中すべきです。",
-          "focus": "focus",
-          "jaFocus": "集中する",
-          "sentencePattern": "S + V + O",
+          "en": "We should focus on quality first.",
+          "ja": "私たちはまず品質に注力すべきです。",
+          "focus": "focus on quality",
+          "jaFocus": "集中する・注力する",
+          "sentencePattern": "S + V + on + 対象",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "focus" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "focus"
+            },
+            {
+              "label": "M",
+              "text": "on quality"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文は前置詞句を補足情報として扱います。前置詞の後ろの名詞だけを目的語Oにしないように注意します。"
         },
         {
-          "en": "I focus better in a quiet room.",
-          "ja": "私は静かな部屋の方が集中できます。",
-          "focus": "focus",
-          "jaFocus": "集中する"
+          "en": "I need to focus on this task today.",
+          "ja": "私は今日この作業に集中する必要があります。",
+          "focus": "focus on a task",
+          "jaFocus": "作業に集中する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "I need to focus on this task today.",
+          "ja": "私は今日この作業に集中する必要があります。",
+          "focus": "focus on a task",
+          "jaFocus": "作業に集中する"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "focus on quality",
-      "ja": "品質に集中する",
-      "image": "注意や力を一つの対象に向ける",
-      "pattern": "FOCUS ON QUALITY",
+      "phrase": "focus on a task",
+      "ja": "作業に集中する",
+      "image": "注意を一つの対象へ向ける",
+      "pattern": "focus on a task",
       "examples": [
         {
-          "en": "Our team focuses on quality and speed.",
-          "ja": "私たちのチームは品質とスピードに注力しています。",
-          "focus": "focus on quality",
-          "jaFocus": "品質に集中する"
+          "en": "I need to focus on this task today.",
+          "ja": "私は今日この作業に集中する必要があります。",
+          "focus": "focus on a task",
+          "jaFocus": "作業に集中する"
         }
       ]
     }
@@ -39438,36 +39594,53 @@ export const verbs: Verb[] = [
   "syllable": "i-den-ti-fy",
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "多くの中から問題・原因・対象を特定する",
-  "coreDetail": "IDENTIFYは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「特定する」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "何かを見分けて特定する",
+  "coreDetail": "IDENTIFYは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「特定する・見つけ出す」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
-      "title": "① 特定する",
-      "pattern": "IDENTIFY THE PROBLEM",
+      "id": "business-core",
+      "title": "① 特定する・見つけ出す",
+      "pattern": "identify the problem",
       "transitivity": "他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "問題・原因・対象を見つけて特定する",
-      "point": "identify は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "問題や原因を見つけてはっきりさせる",
+      "point": "identify は problem, cause, risk, need とよく使う仕事向け動詞です。",
       "examples": [
         {
           "en": "We identified the cause of the delay.",
           "ja": "私たちは遅延の原因を特定しました。",
-          "focus": "identify",
-          "jaFocus": "特定する",
+          "focus": "identified the cause",
+          "jaFocus": "特定する・見つけ出す",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "identify" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "identify"
+            },
+            {
+              "label": "O",
+              "text": "identified the cause"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "Can you identify this bird?",
-          "ja": "この鳥が何か分かりますか。",
-          "focus": "identify",
-          "jaFocus": "特定する"
+          "en": "We need to identify the main risk first.",
+          "ja": "まず主なリスクを特定する必要があります。",
+          "focus": "identify a risk",
+          "jaFocus": "リスクを特定する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "We need to identify the main risk first.",
+          "ja": "まず主なリスクを特定する必要があります。",
+          "focus": "identify a risk",
+          "jaFocus": "リスクを特定する"
         }
       ]
     }
@@ -39476,12 +39649,12 @@ export const verbs: Verb[] = [
     {
       "phrase": "identify a risk",
       "ja": "リスクを特定する",
-      "image": "問題・原因・対象を見つけて特定する",
-      "pattern": "IDENTIFY A RISK",
+      "image": "問題や原因を見つけてはっきりさせる",
+      "pattern": "identify a risk",
       "examples": [
         {
-          "en": "We need to identify the risk before starting.",
-          "ja": "私たちは開始前にリスクを特定する必要があります。",
+          "en": "We need to identify the main risk first.",
+          "ja": "まず主なリスクを特定する必要があります。",
           "focus": "identify a risk",
           "jaFocus": "リスクを特定する"
         }
@@ -39491,60 +39664,77 @@ export const verbs: Verb[] = [
   "phrasalVerbs": []
 },
 {
-  "id": "introduce",
+  "id": "propose",
   "rank": 113,
-  "word": "INTRODUCE",
-  "ipa": "/ˌɪntrəˈduːs/",
-  "kana": "イントロデュース",
-  "syllable": "in-tro-duce",
+  "word": "PROPOSE",
+  "ipa": "/prəˈpoʊz/",
+  "kana": "プロポーズ",
+  "syllable": "pro-pose",
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "人・物・仕組みを初めて相手に示す",
-  "coreDetail": "INTRODUCEは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「紹介する・導入する」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "案や方法を相手に提案する",
+  "coreDetail": "PROPOSEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「提案する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
-      "title": "① 紹介する・導入する",
-      "pattern": "INTRODUCE A NEW SYSTEM",
+      "id": "business-core",
+      "title": "① 提案する",
+      "pattern": "propose a solution",
       "transitivity": "他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "人を紹介する、または新しい仕組みを導入する",
-      "point": "introduce は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "相手に新しい案や解決策を出す",
+      "point": "propose は idea, plan, solution, change などを目的語に置きます。仕事では提案・改善案でよく使います。",
       "examples": [
         {
-          "en": "We introduced a new system to reduce mistakes.",
-          "ja": "私たちはミスを減らすために新しいシステムを導入しました。",
-          "focus": "introduce",
-          "jaFocus": "紹介する・導入する",
+          "en": "We proposed a new solution to the client.",
+          "ja": "私たちはクライアントに新しい解決策を提案しました。",
+          "focus": "proposed a solution",
+          "jaFocus": "提案する",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "introduce" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "propose"
+            },
+            {
+              "label": "O",
+              "text": "proposed a solution"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "Please introduce yourself to the group.",
-          "ja": "グループに自己紹介してください。",
-          "focus": "introduce",
-          "jaFocus": "紹介する・導入する"
+          "en": "She proposed a better plan for the project.",
+          "ja": "彼女はそのプロジェクトにより良い計画を提案しました。",
+          "focus": "propose a plan",
+          "jaFocus": "計画を提案する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "She proposed a better plan for the project.",
+          "ja": "彼女はそのプロジェクトにより良い計画を提案しました。",
+          "focus": "propose a plan",
+          "jaFocus": "計画を提案する"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "introduce a product",
-      "ja": "製品を紹介する",
-      "image": "人を紹介する、または新しい仕組みを導入する",
-      "pattern": "INTRODUCE A PRODUCT",
+      "phrase": "propose a plan",
+      "ja": "計画を提案する",
+      "image": "相手に新しい案や解決策を出す",
+      "pattern": "propose a plan",
       "examples": [
         {
-          "en": "I introduced our new product to the client.",
-          "ja": "私はクライアントに新製品を紹介しました。",
-          "focus": "introduce a product",
-          "jaFocus": "製品を紹介する"
+          "en": "She proposed a better plan for the project.",
+          "ja": "彼女はそのプロジェクトにより良い計画を提案しました。",
+          "focus": "propose a plan",
+          "jaFocus": "計画を提案する"
         }
       ]
     }
@@ -39560,36 +39750,53 @@ export const verbs: Verb[] = [
   "syllable": "join",
   "transitivity": "他動詞・自動詞",
   "importance": "★★★★☆ 重要",
-  "core": "人や活動の輪に加わる",
-  "coreDetail": "JOINは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「参加する・加わる」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "人や活動の中に加わる",
+  "coreDetail": "JOINは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「参加する・加わる」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
+      "id": "business-core",
       "title": "① 参加する・加わる",
-      "pattern": "JOIN A MEETING",
+      "pattern": "join a meeting",
       "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "会議・活動・グループに加わる",
-      "point": "join は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "会議・チーム・活動の中に入る",
+      "point": "join は meeting, team, project, event などを目的語にして使えます。",
       "examples": [
         {
-          "en": "I will join the online meeting at three.",
-          "ja": "私は3時にオンライン会議に参加します。",
-          "focus": "join",
+          "en": "I will join the meeting at three.",
+          "ja": "私は3時にその会議に参加します。",
+          "focus": "join the meeting",
           "jaFocus": "参加する・加わる",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "join" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "join"
+            },
+            {
+              "label": "O",
+              "text": "join the meeting"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "My daughter joined a dance class.",
-          "ja": "娘はダンス教室に参加しました。",
-          "focus": "join",
-          "jaFocus": "参加する・加わる"
+          "en": "She joined the project last month.",
+          "ja": "彼女は先月そのプロジェクトに参加しました。",
+          "focus": "join a project",
+          "jaFocus": "プロジェクトに参加する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "She joined the project last month.",
+          "ja": "彼女は先月そのプロジェクトに参加しました。",
+          "focus": "join a project",
+          "jaFocus": "プロジェクトに参加する"
         }
       ]
     }
@@ -39598,8 +39805,8 @@ export const verbs: Verb[] = [
     {
       "phrase": "join a project",
       "ja": "プロジェクトに参加する",
-      "image": "会議・活動・グループに加わる",
-      "pattern": "JOIN A PROJECT",
+      "image": "会議・チーム・活動の中に入る",
+      "pattern": "join a project",
       "examples": [
         {
           "en": "She joined the project last month.",
@@ -39621,36 +39828,53 @@ export const verbs: Verb[] = [
   "syllable": "lead",
   "transitivity": "他動詞・自動詞",
   "importance": "★★★★☆ 重要",
-  "core": "人や仕事を前に進める方向へ導く",
-  "coreDetail": "LEADは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「導く・率いる」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "人や仕事を前に進める",
+  "coreDetail": "LEADは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「導く・担当して進める」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
-      "title": "① 導く・率いる",
-      "pattern": "LEAD A TEAM",
+      "id": "business-core",
+      "title": "① 導く・担当して進める",
+      "pattern": "lead a project",
       "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "人・チーム・案件を前に進める",
-      "point": "lead は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "チームや案件を先頭に立って進める",
+      "point": "lead は team, project, meeting などを目的語にして使います。",
       "examples": [
         {
-          "en": "He led the project from start to finish.",
-          "ja": "彼は最初から最後までそのプロジェクトを率いました。",
-          "focus": "lead",
-          "jaFocus": "導く・率いる",
+          "en": "She will lead the new project.",
+          "ja": "彼女が新しいプロジェクトを主導します。",
+          "focus": "lead the project",
+          "jaFocus": "導く・担当して進める",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "lead" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "lead"
+            },
+            {
+              "label": "O",
+              "text": "lead the project"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "This road leads to the station.",
-          "ja": "この道は駅へ続いています。",
-          "focus": "lead",
-          "jaFocus": "導く・率いる"
+          "en": "Can you lead the meeting tomorrow?",
+          "ja": "明日の会議を進行してもらえますか。",
+          "focus": "lead a meeting",
+          "jaFocus": "会議を進行する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "Can you lead the meeting tomorrow?",
+          "ja": "明日の会議を進行してもらえますか。",
+          "focus": "lead a meeting",
+          "jaFocus": "会議を進行する"
         }
       ]
     }
@@ -39659,8 +39883,8 @@ export const verbs: Verb[] = [
     {
       "phrase": "lead a meeting",
       "ja": "会議を進行する",
-      "image": "人・チーム・案件を前に進める",
-      "pattern": "LEAD A MEETING",
+      "image": "チームや案件を先頭に立って進める",
+      "pattern": "lead a meeting",
       "examples": [
         {
           "en": "Can you lead the meeting tomorrow?",
@@ -39682,36 +39906,53 @@ export const verbs: Verb[] = [
   "syllable": "main-tain",
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "良い状態を保ち続ける",
-  "coreDetail": "MAINTAINは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「維持する」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "良い状態を保つ",
+  "coreDetail": "MAINTAINは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「維持する・保つ」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
-      "title": "① 維持する",
-      "pattern": "MAINTAIN QUALITY",
+      "id": "business-core",
+      "title": "① 維持する・保つ",
+      "pattern": "maintain quality",
       "transitivity": "他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "品質・関係・状態を保ち続ける",
-      "point": "maintain は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "品質・関係・状態を崩さず保つ",
+      "point": "maintain は quality, relationship, level, system とよく使います。",
       "examples": [
         {
-          "en": "We maintain quality by checking every product.",
-          "ja": "私たちはすべての製品を確認することで品質を維持しています。",
-          "focus": "maintain",
-          "jaFocus": "維持する",
+          "en": "We need to maintain product quality.",
+          "ja": "私たちは製品品質を維持する必要があります。",
+          "focus": "maintain quality",
+          "jaFocus": "維持する・保つ",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "maintain" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "maintain"
+            },
+            {
+              "label": "O",
+              "text": "maintain quality"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "I try to maintain a healthy routine.",
-          "ja": "私は健康的な習慣を維持しようとしています。",
-          "focus": "maintain",
-          "jaFocus": "維持する"
+          "en": "It is important to maintain a good relationship with clients.",
+          "ja": "顧客と良い関係を維持することは重要です。",
+          "focus": "maintain a relationship",
+          "jaFocus": "関係を維持する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "It is important to maintain a good relationship with clients.",
+          "ja": "顧客と良い関係を維持することは重要です。",
+          "focus": "maintain a relationship",
+          "jaFocus": "関係を維持する"
         }
       ]
     }
@@ -39720,12 +39961,12 @@ export const verbs: Verb[] = [
     {
       "phrase": "maintain a relationship",
       "ja": "関係を維持する",
-      "image": "品質・関係・状態を保ち続ける",
-      "pattern": "MAINTAIN A RELATIONSHIP",
+      "image": "品質・関係・状態を崩さず保つ",
+      "pattern": "maintain a relationship",
       "examples": [
         {
-          "en": "Regular communication helps maintain a good relationship.",
-          "ja": "定期的な連絡は良い関係を維持する助けになります。",
+          "en": "It is important to maintain a good relationship with clients.",
+          "ja": "顧客と良い関係を維持することは重要です。",
           "focus": "maintain a relationship",
           "jaFocus": "関係を維持する"
         }
@@ -39738,57 +39979,74 @@ export const verbs: Verb[] = [
   "id": "mention",
   "rank": 117,
   "word": "MENTION",
-  "ipa": "/ˈmenʃn/",
+  "ipa": "/ˈmenʃən/",
   "kana": "メンション",
   "syllable": "men-tion",
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "話の中で短く触れる",
-  "coreDetail": "MENTIONは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「言及する」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "話や文章の中で少し触れる",
+  "coreDetail": "MENTIONは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「言及する・触れる」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
-      "title": "① 言及する",
-      "pattern": "MENTION A POINT",
+      "id": "business-core",
+      "title": "① 言及する・触れる",
+      "pattern": "mention the issue",
       "transitivity": "他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "話・メール・会議で短く触れる",
-      "point": "mention は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "必要な内容を会話やメールの中で取り上げる",
+      "point": "mention は issue, detail, name, point と相性が良いです。",
       "examples": [
         {
-          "en": "I mentioned the delivery issue in my email.",
-          "ja": "私はメールで納期の問題に言及しました。",
-          "focus": "mention",
-          "jaFocus": "言及する",
+          "en": "Please mention the delivery date in your email.",
+          "ja": "メールの中で納期に触れてください。",
+          "focus": "mention the delivery date",
+          "jaFocus": "言及する・触れる",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "mention" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "mention"
+            },
+            {
+              "label": "O",
+              "text": "mention the delivery date"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "She mentioned a good cafe near the station.",
-          "ja": "彼女は駅近くの良いカフェについて少し話しました。",
-          "focus": "mention",
-          "jaFocus": "言及する"
+          "en": "He mentioned an important point during the meeting.",
+          "ja": "彼は会議中に重要な点に触れました。",
+          "focus": "mention a point",
+          "jaFocus": "ポイントに触れる"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "He mentioned an important point during the meeting.",
+          "ja": "彼は会議中に重要な点に触れました。",
+          "focus": "mention a point",
+          "jaFocus": "ポイントに触れる"
         }
       ]
     }
   ],
   "collocations": [
     {
-      "phrase": "mention a deadline",
-      "ja": "締切に言及する",
-      "image": "話・メール・会議で短く触れる",
-      "pattern": "MENTION A DEADLINE",
+      "phrase": "mention a point",
+      "ja": "ポイントに触れる",
+      "image": "必要な内容を会話やメールの中で取り上げる",
+      "pattern": "mention a point",
       "examples": [
         {
-          "en": "Please mention the deadline in the proposal.",
-          "ja": "提案書で締切に言及してください。",
-          "focus": "mention a deadline",
-          "jaFocus": "締切に言及する"
+          "en": "He mentioned an important point during the meeting.",
+          "ja": "彼は会議中に重要な点に触れました。",
+          "focus": "mention a point",
+          "jaFocus": "ポイントに触れる"
         }
       ]
     }
@@ -39804,36 +40062,53 @@ export const verbs: Verb[] = [
   "syllable": "pro-tect",
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "大切なものを危険や損失から守る",
-  "coreDetail": "PROTECTは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「守る・保護する」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "危険や損失から守る",
+  "coreDetail": "PROTECTは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「守る・保護する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
+      "id": "business-core",
       "title": "① 守る・保護する",
-      "pattern": "PROTECT DATA",
+      "pattern": "protect data",
       "transitivity": "他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "人・物・情報を危険から守る",
-      "point": "protect は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "情報・人・品質をリスクから守る",
+      "point": "protect は data, privacy, product, people と使えます。仕事でも情報管理でよく出ます。",
       "examples": [
         {
           "en": "We must protect customer data carefully.",
-          "ja": "私たちは顧客データを慎重に保護しなければなりません。",
-          "focus": "protect",
+          "ja": "私たちは顧客データを慎重に守らなければなりません。",
+          "focus": "protect data",
           "jaFocus": "守る・保護する",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "protect" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "protect"
+            },
+            {
+              "label": "O",
+              "text": "protect data"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "Sunscreen protects your skin.",
-          "ja": "日焼け止めは肌を守ります。",
-          "focus": "protect",
-          "jaFocus": "守る・保護する"
+          "en": "This rule protects user privacy.",
+          "ja": "このルールはユーザーのプライバシーを守ります。",
+          "focus": "protect privacy",
+          "jaFocus": "プライバシーを守る"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "This rule protects user privacy.",
+          "ja": "このルールはユーザーのプライバシーを守ります。",
+          "focus": "protect privacy",
+          "jaFocus": "プライバシーを守る"
         }
       ]
     }
@@ -39842,12 +40117,12 @@ export const verbs: Verb[] = [
     {
       "phrase": "protect privacy",
       "ja": "プライバシーを守る",
-      "image": "人・物・情報を危険から守る",
-      "pattern": "PROTECT PRIVACY",
+      "image": "情報・人・品質をリスクから守る",
+      "pattern": "protect privacy",
       "examples": [
         {
-          "en": "This setting helps protect user privacy.",
-          "ja": "この設定はユーザーのプライバシーを守る助けになります。",
+          "en": "This rule protects user privacy.",
+          "ja": "このルールはユーザーのプライバシーを守ります。",
           "focus": "protect privacy",
           "jaFocus": "プライバシーを守る"
         }
@@ -39865,36 +40140,53 @@ export const verbs: Verb[] = [
   "syllable": "re-place",
   "transitivity": "他動詞",
   "importance": "★★★★☆ 重要",
-  "core": "古いものを新しいものに入れ替える",
-  "coreDetail": "REPLACEは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「交換する・置き換える」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "core": "古いものを別のものに替える",
+  "coreDetail": "REPLACEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「交換する・置き換える」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
+      "id": "business-core",
       "title": "① 交換する・置き換える",
-      "pattern": "REPLACE AN OLD PART",
+      "pattern": "replace the old part",
       "transitivity": "他動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "古いもの・壊れたものを新しいものに入れ替える",
-      "point": "replace は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "古いものや合わないものを新しいものに替える",
+      "point": "replace A with B で「AをBに置き換える」です。",
       "examples": [
         {
-          "en": "We replaced the damaged LED module.",
-          "ja": "私たちは破損したLEDモジュールを交換しました。",
-          "focus": "replace",
+          "en": "We replaced the old part with a new one.",
+          "ja": "私たちは古い部品を新しいものに交換しました。",
+          "focus": "replaced the old part",
           "jaFocus": "交換する・置き換える",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "replace" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "replace"
+            },
+            {
+              "label": "O",
+              "text": "replaced the old part"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "I replaced my old phone last year.",
-          "ja": "私は昨年、古いスマホを買い替えました。",
-          "focus": "replace",
-          "jaFocus": "交換する・置き換える"
+          "en": "We replaced the old system with a new one.",
+          "ja": "私たちは古いシステムを新しいものに置き換えました。",
+          "focus": "replace A with B",
+          "jaFocus": "AをBに置き換える"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "We replaced the old system with a new one.",
+          "ja": "私たちは古いシステムを新しいものに置き換えました。",
+          "focus": "replace A with B",
+          "jaFocus": "AをBに置き換える"
         }
       ]
     }
@@ -39903,8 +40195,8 @@ export const verbs: Verb[] = [
     {
       "phrase": "replace A with B",
       "ja": "AをBに置き換える",
-      "image": "古いもの・壊れたものを新しいものに入れ替える",
-      "pattern": "REPLACE A WITH B",
+      "image": "古いものや合わないものを新しいものに替える",
+      "pattern": "replace A with B",
       "examples": [
         {
           "en": "We replaced the old system with a new one.",
@@ -39927,35 +40219,52 @@ export const verbs: Verb[] = [
   "transitivity": "他動詞・自動詞",
   "importance": "★★★★☆ 重要",
   "core": "練習や指導でできるようにする",
-  "coreDetail": "TRAINは、社会人の仕事でも日常会話でも使いやすい基本動詞です。まずは「訓練する・研修する」の感覚で、よく使う目的語や前置詞との組み合わせを覚えると会話で使いやすくなります。",
+  "coreDetail": "TRAINは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「研修する・訓練する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
   "meanings": [
     {
-      "id": "m1",
-      "title": "① 訓練する・研修する",
-      "pattern": "TRAIN NEW STAFF",
+      "id": "business-core",
+      "title": "① 研修する・訓練する",
+      "pattern": "train new staff",
       "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O / 必要に応じて前置詞句",
-      "image": "人を指導してできるようにする",
-      "point": "train は、後ろに目的語や前置詞句を置いて、仕事・日常の具体的な行動を表します。",
+      "structure": "S + V + O",
+      "image": "人に教えてできるようにする、または自分が練習する",
+      "point": "train は「人を研修する」と「自分が訓練する」の両方で使います。仕事では train new staff が実用的です。",
       "examples": [
         {
           "en": "We trained new staff on the product basics.",
           "ja": "私たちは新しいスタッフに製品の基本を研修しました。",
-          "focus": "train",
-          "jaFocus": "訓練する・研修する",
+          "focus": "trained new staff",
+          "jaFocus": "研修する・訓練する",
           "sentencePattern": "S + V + O",
           "grammarParts": [
-            { "label": "S", "text": "主語" },
-            { "label": "V", "text": "train" },
-            { "label": "O", "text": "目的語・内容" }
+            {
+              "label": "S",
+              "text": "主語"
+            },
+            {
+              "label": "V",
+              "text": "train"
+            },
+            {
+              "label": "O",
+              "text": "trained new staff"
+            }
           ],
-          "grammarNote": "初心者向けには、まず主語・動詞・目的語の流れで理解します。前置詞句は補足情報として扱います。"
+          "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
         },
         {
-          "en": "I train at the gym twice a week.",
-          "ja": "私は週2回ジムでトレーニングしています。",
-          "focus": "train",
-          "jaFocus": "訓練する・研修する"
+          "en": "The manager trained the team carefully.",
+          "ja": "そのマネージャーはチームを丁寧に育成しました。",
+          "focus": "train a team",
+          "jaFocus": "チームを育成する"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "The manager trained the team carefully.",
+          "ja": "そのマネージャーはチームを丁寧に育成しました。",
+          "focus": "train a team",
+          "jaFocus": "チームを育成する"
         }
       ]
     }
@@ -39964,8 +40273,8 @@ export const verbs: Verb[] = [
     {
       "phrase": "train a team",
       "ja": "チームを育成する",
-      "image": "人を指導してできるようにする",
-      "pattern": "TRAIN A TEAM",
+      "image": "人に教えてできるようにする、または自分が練習する",
+      "pattern": "train a team",
       "examples": [
         {
           "en": "The manager trained the team carefully.",

@@ -49,8 +49,8 @@ export default function Home() {
     "everyday" | "weekdays" | "custom"
   >("everyday");
   const [customDays, setCustomDays] = useState<number[]>([1, 2, 3, 4, 5]);
-  const [paceDays, setPaceDays] = useState(3);
-  const [paceVerbs, setPaceVerbs] = useState(1);
+  const [paceDays, setPaceDays] = useState("3");
+  const [paceVerbs, setPaceVerbs] = useState("1");
   const [paceSaveMessage, setPaceSaveMessage] = useState("");
   const [paceSaving, setPaceSaving] = useState(false);
   const [isPaceEditing, setIsPaceEditing] = useState(false);
@@ -73,8 +73,8 @@ export default function Home() {
     setStudyMode(savedStudyDays.mode);
     setCustomDays(savedStudyDays.days);
     const savedPace = getStudyPaceSetting();
-    setPaceDays(savedPace.days);
-    setPaceVerbs(savedPace.verbs);
+    setPaceDays(String(savedPace.days));
+    setPaceVerbs(String(savedPace.verbs));
   }, []);
 
   if (!username || !progress) return <p className="text-muted">Loading...</p>;
@@ -146,15 +146,21 @@ export default function Home() {
 
   const cancelStudyPaceEdit = () => {
     const savedPace = getStudyPaceSetting();
-    setPaceDays(savedPace.days);
-    setPaceVerbs(savedPace.verbs);
+    setPaceDays(String(savedPace.days));
+    setPaceVerbs(String(savedPace.verbs));
     setPaceSaveMessage("");
     setIsPaceEditing(false);
   };
 
+  const parsePositiveNumber = (value: string) => Math.max(1, Number(value) || 1);
+
   const saveStudyPace = () => {
+    const nextDays = parsePositiveNumber(paceDays);
+    const nextVerbs = parsePositiveNumber(paceVerbs);
+    setPaceDays(String(nextDays));
+    setPaceVerbs(String(nextVerbs));
     setPaceSaving(true);
-    setStudyPaceSetting({ days: paceDays, verbs: paceVerbs });
+    setStudyPaceSetting({ days: nextDays, verbs: nextVerbs });
     setProgress(getCurrentProgress());
     setPaceSaveMessage("学習ペースを保存しました");
     setIsPaceEditing(false);
@@ -416,8 +422,8 @@ export default function Home() {
                 className="shrink-0 rounded-full border border-cyan-300/25 px-4 py-2 text-xs font-bold text-cyan-100"
                 onClick={() => {
                   const savedPace = getStudyPaceSetting();
-                  setPaceDays(savedPace.days);
-                  setPaceVerbs(savedPace.verbs);
+                  setPaceDays(String(savedPace.days));
+                  setPaceVerbs(String(savedPace.verbs));
                   setIsPaceEditing(true);
                   setPaceSaveMessage("");
                 }}
@@ -432,26 +438,30 @@ export default function Home() {
               <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] items-center gap-2 text-sm">
                 <input
                   className="date-input-safe min-w-0 rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center font-bold text-white"
-                  type="number"
-                  min="1"
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   value={paceDays}
                   onFocus={(e) => e.currentTarget.select()}
                   onChange={(e) => {
-                    setPaceDays(Math.max(1, Number(e.target.value) || 1));
+                    setPaceDays(e.target.value.replace(/\D/g, ""));
                     setPaceSaveMessage("");
                   }}
+                  onBlur={() => setPaceDays((value) => String(parsePositiveNumber(value)))}
                 />
                 <span className="text-slate-300">日で</span>
                 <input
                   className="date-input-safe min-w-0 rounded-xl border border-cyan-300/20 bg-slate-950 px-3 py-3 text-center font-bold text-white"
-                  type="number"
-                  min="1"
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   value={paceVerbs}
                   onFocus={(e) => e.currentTarget.select()}
                   onChange={(e) => {
-                    setPaceVerbs(Math.max(1, Number(e.target.value) || 1));
+                    setPaceVerbs(e.target.value.replace(/\D/g, ""));
                     setPaceSaveMessage("");
                   }}
+                  onBlur={() => setPaceVerbs((value) => String(parsePositiveNumber(value)))}
                 />
                 <span className="text-slate-300">語</span>
               </div>

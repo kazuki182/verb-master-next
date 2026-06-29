@@ -269,6 +269,9 @@ export default function InstantTest({
               <SpeakButton text={item.en} label="英文を聞く" slowLabel="ゆっくり" lang="en-US" />
             </div>
             <button className="btn btn-primary w-full" onClick={() => setShown(true)}>答えを見る</button>
+            {history.length > 0 && (
+              <button onClick={undoLast} className="btn btn-soft w-full">1つ前の回答に戻る</button>
+            )}
           </div>
         ) : (
           <div className="mt-8 space-y-5">

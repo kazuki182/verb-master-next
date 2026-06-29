@@ -414,6 +414,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.61</p><p className="mt-1 text-muted">80動詞品質完成版。テストの戻る操作、学習ペース数字入力、文型品質ルール、教材データ監査メモを改善。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.60</p><p className="mt-1 text-muted">動詞データを80語まで拡張。REQUEST / SUGGEST / AGREE / ARRANGE / CONTACT など実務で使う動詞を追加。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.59</p><p className="mt-1 text-muted">動詞データを70語まで拡張。REPORT / UPDATE / REVIEW / COMPARE / INTRODUCE を追加。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.58</p><p className="mt-1 text-muted">動詞データを60語まで拡張。仕事で使いやすい自然な例文、主語が分かる日本語訳、文型表示の方針を追加。</p></div>

@@ -1,0 +1,11 @@
+Verb Master Ver.60
+
+動詞データ80語化・実務動詞追加版。
+
+追加内容:
+- REQUEST / SUGGEST / AGREE / ARRANGE / ATTEND を追加
+- CONTACT / SHARE / COLLECT / REDUCE / INCREASE を追加
+- 仕事で使いやすい例文と日本語訳を追加
+- 日本語問題文は主語・時制が分かる形に調整
+- 文型表示は S/V/O/C/M を句のまとまりで表示
+- contact 人、share O with 人、agree with/on など日本人が間違いやすい型を意識

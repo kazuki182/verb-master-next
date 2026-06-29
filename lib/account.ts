@@ -168,8 +168,25 @@ function emitProgressSaved(username: string) {
 
 export const TOTAL_VERB_TARGET = 120;
 export const FREE_VERB_LIMIT = 3;
+export const PREMIUM_FULL_ACCESS_COUNT = 120;
 export const VERB_PACK_SIZE = 30;
 export const VERB_PACK_PRICE_YEN = 500;
+export const PREMIUM_UNLOCK_STEPS = [30, 60, 90, 120] as const;
+
+export function purchaseTotalForUnlockCount(count: number) {
+  const normalized = Math.max(0, Math.min(TOTAL_VERB_TARGET, Math.floor(count)));
+  if (normalized <= FREE_VERB_LIMIT) return 0;
+  if (normalized <= 30) return VERB_PACK_PRICE_YEN;
+  if (normalized <= 60) return VERB_PACK_PRICE_YEN * 2;
+  if (normalized <= 90) return VERB_PACK_PRICE_YEN * 3;
+  return VERB_PACK_PRICE_YEN * 4;
+}
+
+export function getNextUnlockStep(currentCount: number) {
+  const current = Math.max(FREE_VERB_LIMIT, Math.floor(currentCount || 0));
+  return PREMIUM_UNLOCK_STEPS.find((step) => step > current) || TOTAL_VERB_TARGET;
+}
+
 
 function todayKey() {
   return new Date().toISOString().slice(0, 10);
@@ -1303,7 +1320,7 @@ export function hasPremiumFeatureAccess() {
   const account = getAccounts().find((item) => item.username === username);
   if (account?.role === "admin") return true;
   const progress = getCurrentProgress();
-  return (progress?.purchaseTotalYen || 0) >= VERB_PACK_PRICE_YEN || (progress?.unlockedVerbCount || 0) >= VERB_PACK_SIZE;
+  return (progress?.purchaseTotalYen || 0) >= VERB_PACK_PRICE_YEN || (progress?.unlockedVerbCount || 0) > FREE_VERB_LIMIT;
 }
 
 export function hasLyricsEnglishAccess() {
@@ -1320,7 +1337,7 @@ export function getPurchasePlanSummary() {
   const unlocked = getEffectiveUnlockedVerbCount();
   const rawUnlocked = progress?.unlockedVerbCount || 0;
   const purchaseTotal = progress?.purchaseTotalYen || 0;
-  const paidPacks = Math.ceil(Math.max(0, rawUnlocked) / VERB_PACK_SIZE);
+  const paidPacks = Math.max(0, Math.ceil(Math.max(0, rawUnlocked - FREE_VERB_LIMIT) / VERB_PACK_SIZE));
   return {
     totalTarget: TOTAL_VERB_TARGET,
     freeLimit: FREE_VERB_LIMIT,
@@ -1338,10 +1355,11 @@ export function canAccessVerbByIndex(index: number) {
 }
 
 function planLabelForCount(count: number) {
-  if (count >= TOTAL_VERB_TARGET) return "全120動詞パック";
-  if (count >= 90) return "90動詞パック";
-  if (count >= 60) return "60動詞パック";
-  if (count >= 30) return "30動詞パック";
+  if (count >= TOTAL_VERB_TARGET) return "Step 4：120動詞パック";
+  if (count >= 90) return "Step 3：90動詞パック";
+  if (count >= 60) return "Step 2：60動詞パック";
+  if (count >= 30) return "Step 1：30動詞パック";
+  if (count >= FREE_VERB_LIMIT) return "無料3動詞プラン";
   return "無料プラン";
 }
 
@@ -1374,7 +1392,7 @@ export function setUserUnlockLevel(
   const progress = ensureProgress(username);
   const previousUnlocked = progress.unlockedVerbCount || 0;
   const normalized = Math.max(0, Math.min(TOTAL_VERB_TARGET, Math.floor(unlockedVerbCount)));
-  const purchaseTotal = Math.max(0, Math.ceil(normalized / VERB_PACK_SIZE) * VERB_PACK_PRICE_YEN);
+  const purchaseTotal = purchaseTotalForUnlockCount(normalized);
   progress.unlockedVerbCount = normalized;
   progress.purchaseTotalYen = purchaseTotal;
   progress.premiumUpdatedAt = nowText();
@@ -1395,8 +1413,8 @@ export function grantThirtyVerbPack(username?: string) {
   if (!target) return null;
   const progress = ensureProgress(target);
   const current = progress.unlockedVerbCount || 0;
-  const next = Math.min(TOTAL_VERB_TARGET, Math.max(VERB_PACK_SIZE, current + VERB_PACK_SIZE));
-  return setUserUnlockLevel(target, next, "admin_test", "開発確認用：30動詞パックを反映しました。");
+  const next = getNextUnlockStep(current);
+  return setUserUnlockLevel(target, next, "admin_test", `開発確認用：${next}動詞まで段階解放しました。`);
 }
 
 export function getPurchaseHistory(username?: string) {

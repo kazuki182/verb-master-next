@@ -254,6 +254,24 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="guide-home-card p-5">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <p className="text-xs font-bold tracking-[0.22em] text-cyan-200">GUIDE</p>
+            <h2 className="mt-2 text-xl font-extrabold text-white">使い方ガイド</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              機能が増えてきたので、各機能の使い方をまとめました。迷った時はここから確認できます。
+            </p>
+          </div>
+          <Link
+            className="shrink-0 rounded-full bg-cyan-300 px-4 py-2 text-sm font-extrabold text-slate-950"
+            href="/guide"
+          >
+            開く
+          </Link>
+        </div>
+      </section>
+
       <section className="digital-card p-5">
         <div className="flex items-center justify-between gap-3">
           <div>

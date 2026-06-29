@@ -1,20 +1,20 @@
-# Verb Master v35
+# Verb Master Ver.56
 
-修正内容:
-- 動詞一覧の検索BOXを目立つ形に調整
-- HOMEの現在攻略中は、しおりよりもテスト途中保存を優先参照
-- テスト途中保存がある場合、HOMEから該当テストへ直接再開
-- 既存のXP/進捗/しおり/フレーズ帳/テスト途中保存は消さない方針を維持
+機能別使い方ガイド版です。
 
-注意:
-- この環境ではnpm installがタイムアウトしたため、ローカルビルド確認は未完了です。
-- VercelのBuild Logsで確認してください。
+## 追加内容
 
-## Version 49
-Checkout Flow Base / 購入確認・決済導線準備版
+- `/guide` 使い方ガイドページを追加
+- ダッシュボードに「使い方ガイド」カードを追加
+- 今日の動詞、動詞一覧、テスト、復習、フレーズ保存、学習ペース、マイページ、Premiumの使い方を説明
+- 各説明から該当ページへ移動できるリンクを追加
+- スマホで読みやすいカードUIを追加
 
-- /checkout purchase confirmation page
-- /checkout/complete mock purchase completion page
-- Upgrade page now sends users into the checkout flow
-- Mock purchase updates local Premium entitlement and purchase history
-- Supabase sync is attempted when available
+## 確認ポイント
+
+- ホームから使い方ガイドへ移動できるか
+- `/guide` が開けるか
+- 各機能の説明が分かりやすいか
+- 各「開く」ボタンで該当ページに移動できるか
+
+既存データは変更していません。

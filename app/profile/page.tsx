@@ -558,6 +558,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.71</p><p className="mt-1 text-muted">動詞を100語へ拡張。achieve / arrange / attend / cancel / connect / contact / control / handle / organize / share を追加し、91〜100番を120動詞パック側の教材として整備。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.69</p><p className="mt-1 text-muted">動詞を90語へ拡張。accept / avoid / consider / depend / expect / follow / include / notice / prefer / recommend を追加し、文型・例文・テスト文を社会人向けに整備。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.68</p><p className="mt-1 text-muted">テストを最大10問に整理。未出題・苦手・復習対象・最近やっていない問題を優先して、出題バランスと終了後の復習案内を改善。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.67</p><p className="mt-1 text-muted">初回ログイン時の復元判断と空データ上書き防止を強化。端末データとクラウドデータの比較表示を追加。</p></div>

@@ -38047,6 +38047,716 @@ export const verbs: Verb[] = [
     }
   ],
   "phrasalVerbs": []
+},
+{
+  "id": "achieve",
+  "rank": 91,
+  "word": "ACHIEVE",
+  "ipa": "/əˈtʃiːv/",
+  "kana": "アチーヴ",
+  "syllable": "a-chieve",
+  "transitivity": "他動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "努力して目標や成果に到達する",
+  "coreDetail": "ACHIEVEは、仕事でも日常でも使いやすい基本動詞です。まずは「達成する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "meanings": [
+    {
+      "id": "m1",
+      "title": "① 達成する",
+      "pattern": "ACHIEVE A GOAL",
+      "transitivity": "他動詞",
+      "structure": "S + V + O（目的語）",
+      "image": "努力して目標や成果に到達する",
+      "point": "achieve の後ろに「何を達成するのか」を置きます。仕事では achieve a goal の形でよく使います。",
+      "examples": [
+        {
+          "en": "We achieved our sales target this month.",
+          "ja": "私たちは今月、売上目標を達成しました。",
+          "focus": "achieved",
+          "object": "a goal",
+          "jaFocus": "達成する",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "We"
+            },
+            {
+              "label": "V",
+              "text": "achieved"
+            },
+            {
+              "label": "O",
+              "text": "a goal"
+            }
+          ]
+        },
+        {
+          "en": "I achieved my fitness goal this year.",
+          "ja": "私は今年、運動の目標を達成しました。",
+          "focus": "achieve",
+          "jaFocus": "達成する"
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "achieve results",
+      "ja": "成果を出す",
+      "image": "努力して目標や成果に到達する",
+      "pattern": "ACHIEVE RESULTS",
+      "examples": [
+        {
+          "en": "Our team achieved strong results after improving the process.",
+          "ja": "私たちのチームは工程を改善した後、良い成果を出しました。",
+          "focus": "achieve results",
+          "jaFocus": "成果を出す",
+          "object": "results"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "arrange",
+  "rank": 92,
+  "word": "ARRANGE",
+  "ipa": "/əˈreɪndʒ/",
+  "kana": "アレインジ",
+  "syllable": "ar-range",
+  "transitivity": "他動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "予定・物・人を使いやすい形に整える",
+  "coreDetail": "ARRANGEは、仕事でも日常でも使いやすい基本動詞です。まずは「手配する・整える」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "meanings": [
+    {
+      "id": "m1",
+      "title": "① 手配する・整える",
+      "pattern": "ARRANGE A MEETING",
+      "transitivity": "他動詞",
+      "structure": "S + V + O（目的語）",
+      "image": "予定・物・人を使いやすい形に整える",
+      "point": "arrange の後ろに「何を手配する・整えるのか」を置きます。仕事では arrange a meeting の形でよく使います。",
+      "examples": [
+        {
+          "en": "I arranged a meeting with the client for next Tuesday.",
+          "ja": "私は来週火曜日にクライアントとの会議を手配しました。",
+          "focus": "arranged",
+          "object": "a meeting",
+          "jaFocus": "手配する",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "I"
+            },
+            {
+              "label": "V",
+              "text": "arranged"
+            },
+            {
+              "label": "O",
+              "text": "a meeting"
+            }
+          ]
+        },
+        {
+          "en": "I arranged the books on the shelf.",
+          "ja": "私は棚の本を整理しました。",
+          "focus": "arrange",
+          "jaFocus": "手配する"
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "arrange delivery",
+      "ja": "納品を手配する",
+      "image": "予定・物・人を使いやすい形に整える",
+      "pattern": "ARRANGE DELIVERY",
+      "examples": [
+        {
+          "en": "We arranged delivery for Friday morning.",
+          "ja": "私たちは金曜日の午前に納品を手配しました。",
+          "focus": "arrange delivery",
+          "jaFocus": "納品を手配する",
+          "object": "delivery"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "attend",
+  "rank": 93,
+  "word": "ATTEND",
+  "ipa": "/əˈtend/",
+  "kana": "アテンド",
+  "syllable": "at-tend",
+  "transitivity": "他動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "会議やイベントの場に行って参加する",
+  "coreDetail": "ATTENDは、仕事でも日常でも使いやすい基本動詞です。まずは「出席する・参加する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "meanings": [
+    {
+      "id": "m1",
+      "title": "① 出席する・参加する",
+      "pattern": "ATTEND A MEETING",
+      "transitivity": "他動詞",
+      "structure": "S + V + O（目的語）",
+      "image": "会議やイベントの場に行って参加する",
+      "point": "attend の後ろに「何を出席する・参加するのか」を置きます。仕事では attend a meeting の形でよく使います。",
+      "examples": [
+        {
+          "en": "I attended the project meeting this morning.",
+          "ja": "私は今朝、プロジェクト会議に出席しました。",
+          "focus": "attended",
+          "object": "a meeting",
+          "jaFocus": "出席する",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "I"
+            },
+            {
+              "label": "V",
+              "text": "attended"
+            },
+            {
+              "label": "O",
+              "text": "a meeting"
+            }
+          ]
+        },
+        {
+          "en": "I attended a music event last weekend.",
+          "ja": "私は先週末、音楽イベントに参加しました。",
+          "focus": "attend",
+          "jaFocus": "出席する"
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "attend a seminar",
+      "ja": "セミナーに参加する",
+      "image": "会議やイベントの場に行って参加する",
+      "pattern": "ATTEND A SEMINAR",
+      "examples": [
+        {
+          "en": "Our sales team attended a product seminar.",
+          "ja": "私たちの営業チームは製品セミナーに参加しました。",
+          "focus": "attend a seminar",
+          "jaFocus": "セミナーに参加する",
+          "object": "a seminar"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "cancel",
+  "rank": 94,
+  "word": "CANCEL",
+  "ipa": "/ˈkænsəl/",
+  "kana": "キャンセル",
+  "syllable": "can-cel",
+  "transitivity": "他動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "予定や注文を止める",
+  "coreDetail": "CANCELは、仕事でも日常でも使いやすい基本動詞です。まずは「キャンセルする・中止する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "meanings": [
+    {
+      "id": "m1",
+      "title": "① キャンセルする・中止する",
+      "pattern": "CANCEL AN ORDER",
+      "transitivity": "他動詞",
+      "structure": "S + V + O（目的語）",
+      "image": "予定や注文を止める",
+      "point": "cancel の後ろに「何をキャンセルする・中止するのか」を置きます。仕事では cancel an order の形でよく使います。",
+      "examples": [
+        {
+          "en": "The customer canceled the order yesterday.",
+          "ja": "その顧客は昨日、注文をキャンセルしました。",
+          "focus": "customer",
+          "object": "an order",
+          "jaFocus": "キャンセルする",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "The"
+            },
+            {
+              "label": "V",
+              "text": "customer"
+            },
+            {
+              "label": "O",
+              "text": "an order"
+            }
+          ]
+        },
+        {
+          "en": "I canceled my plan because it rained.",
+          "ja": "雨が降ったので、私は予定をキャンセルしました。",
+          "focus": "cancel",
+          "jaFocus": "キャンセルする"
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "cancel a meeting",
+      "ja": "会議を中止する",
+      "image": "予定や注文を止める",
+      "pattern": "CANCEL A MEETING",
+      "examples": [
+        {
+          "en": "We canceled the meeting because the client was unavailable.",
+          "ja": "クライアントの都合が合わなかったため、私たちは会議を中止しました。",
+          "focus": "cancel a meeting",
+          "jaFocus": "会議を中止する",
+          "object": "a meeting"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "connect",
+  "rank": 95,
+  "word": "CONNECT",
+  "ipa": "/kəˈnekt/",
+  "kana": "コネクト",
+  "syllable": "con-nect",
+  "transitivity": "他動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "人・物・情報をつなげる",
+  "coreDetail": "CONNECTは、仕事でも日常でも使いやすい基本動詞です。まずは「つなぐ・接続する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "meanings": [
+    {
+      "id": "m1",
+      "title": "① つなぐ・接続する",
+      "pattern": "CONNECT A TO B",
+      "transitivity": "他動詞",
+      "structure": "S + V + O（目的語）",
+      "image": "人・物・情報をつなげる",
+      "point": "connect の後ろに「何をつなぐ・接続するのか」を置きます。仕事では connect A to B の形でよく使います。",
+      "examples": [
+        {
+          "en": "Please connect this cable to the controller.",
+          "ja": "このケーブルをコントローラーにつないでください。",
+          "focus": "connect",
+          "object": "A to B",
+          "jaFocus": "つなぐ",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "you（省略）"
+            },
+            {
+              "label": "V",
+              "text": "please"
+            },
+            {
+              "label": "O",
+              "text": "A to B"
+            }
+          ]
+        },
+        {
+          "en": "I connected my phone to the speaker.",
+          "ja": "私はスマホをスピーカーに接続しました。",
+          "focus": "connect",
+          "jaFocus": "つなぐ"
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "connect with a client",
+      "ja": "顧客と関係を作る",
+      "image": "人・物・情報をつなげる",
+      "pattern": "CONNECT WITH A CLIENT",
+      "examples": [
+        {
+          "en": "We need to connect with the client before sending the proposal.",
+          "ja": "提案書を送る前に、私たちは顧客と関係を作る必要があります。",
+          "focus": "connect with a client",
+          "jaFocus": "顧客と関係を作る",
+          "object": "with a client"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "contact",
+  "rank": 96,
+  "word": "CONTACT",
+  "ipa": "/ˈkɑːntækt/",
+  "kana": "コンタクト",
+  "syllable": "con-tact",
+  "transitivity": "他動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "必要な相手に連絡を取る",
+  "coreDetail": "CONTACTは、仕事でも日常でも使いやすい基本動詞です。まずは「連絡する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "meanings": [
+    {
+      "id": "m1",
+      "title": "① 連絡する",
+      "pattern": "CONTACT A SUPPLIER",
+      "transitivity": "他動詞",
+      "structure": "S + V + O（目的語）",
+      "image": "必要な相手に連絡を取る",
+      "point": "contact の後ろに「何を連絡するのか」を置きます。仕事では contact a supplier の形でよく使います。",
+      "examples": [
+        {
+          "en": "I contacted the supplier about the delivery date.",
+          "ja": "私は納期について仕入先に連絡しました。",
+          "focus": "contacted",
+          "object": "a supplier",
+          "jaFocus": "連絡する",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "I"
+            },
+            {
+              "label": "V",
+              "text": "contacted"
+            },
+            {
+              "label": "O",
+              "text": "a supplier"
+            }
+          ]
+        },
+        {
+          "en": "I contacted my friend after work.",
+          "ja": "私は仕事の後、友人に連絡しました。",
+          "focus": "contact",
+          "jaFocus": "連絡する"
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "contact customer support",
+      "ja": "カスタマーサポートに連絡する",
+      "image": "必要な相手に連絡を取る",
+      "pattern": "CONTACT CUSTOMER SUPPORT",
+      "examples": [
+        {
+          "en": "Please contact customer support if the issue continues.",
+          "ja": "問題が続く場合は、カスタマーサポートに連絡してください。",
+          "focus": "contact customer support",
+          "jaFocus": "カスタマーサポートに連絡する",
+          "object": "customer support"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "control",
+  "rank": 97,
+  "word": "CONTROL",
+  "ipa": "/kənˈtroʊl/",
+  "kana": "コントロール",
+  "syllable": "con-trol",
+  "transitivity": "他動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "状況や機器が乱れないように管理する",
+  "coreDetail": "CONTROLは、仕事でも日常でも使いやすい基本動詞です。まずは「管理する・制御する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "meanings": [
+    {
+      "id": "m1",
+      "title": "① 管理する・制御する",
+      "pattern": "CONTROL THE SCHEDULE",
+      "transitivity": "他動詞",
+      "structure": "S + V + O（目的語）",
+      "image": "状況や機器が乱れないように管理する",
+      "point": "control の後ろに「何を管理する・制御するのか」を置きます。仕事では control the schedule の形でよく使います。",
+      "examples": [
+        {
+          "en": "We need to control the schedule carefully.",
+          "ja": "私たちはスケジュールを慎重に管理する必要があります。",
+          "focus": "need",
+          "object": "the schedule",
+          "jaFocus": "管理する",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "We"
+            },
+            {
+              "label": "V",
+              "text": "need"
+            },
+            {
+              "label": "O",
+              "text": "the schedule"
+            }
+          ]
+        },
+        {
+          "en": "I try to control my spending every month.",
+          "ja": "私は毎月、支出を管理するようにしています。",
+          "focus": "control",
+          "jaFocus": "管理する"
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "control the brightness",
+      "ja": "明るさを制御する",
+      "image": "状況や機器が乱れないように管理する",
+      "pattern": "CONTROL THE BRIGHTNESS",
+      "examples": [
+        {
+          "en": "This system can control the brightness of the LED modules.",
+          "ja": "このシステムはLEDモジュールの明るさを制御できます。",
+          "focus": "control the brightness",
+          "jaFocus": "明るさを制御する",
+          "object": "the brightness"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "handle",
+  "rank": 98,
+  "word": "HANDLE",
+  "ipa": "/ˈhændl/",
+  "kana": "ハンドル",
+  "syllable": "han-dle",
+  "transitivity": "他動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "問題・仕事・相手を受け止めて処理する",
+  "coreDetail": "HANDLEは、仕事でも日常でも使いやすい基本動詞です。まずは「対応する・扱う」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "meanings": [
+    {
+      "id": "m1",
+      "title": "① 対応する・扱う",
+      "pattern": "HANDLE A COMPLAINT",
+      "transitivity": "他動詞",
+      "structure": "S + V + O（目的語）",
+      "image": "問題・仕事・相手を受け止めて処理する",
+      "point": "handle の後ろに「何を対応する・扱うのか」を置きます。仕事では handle a complaint の形でよく使います。",
+      "examples": [
+        {
+          "en": "Our team handled the customer complaint quickly.",
+          "ja": "私たちのチームは顧客のクレームにすばやく対応しました。",
+          "focus": "team",
+          "object": "a complaint",
+          "jaFocus": "対応する",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "Our"
+            },
+            {
+              "label": "V",
+              "text": "team"
+            },
+            {
+              "label": "O",
+              "text": "a complaint"
+            }
+          ]
+        },
+        {
+          "en": "I can handle this problem by myself.",
+          "ja": "私はこの問題に自分で対応できます。",
+          "focus": "handle",
+          "jaFocus": "対応する"
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "handle an urgent request",
+      "ja": "急ぎの依頼に対応する",
+      "image": "問題・仕事・相手を受け止めて処理する",
+      "pattern": "HANDLE AN URGENT REQUEST",
+      "examples": [
+        {
+          "en": "We handled an urgent request from the client yesterday.",
+          "ja": "私たちは昨日、クライアントからの急ぎの依頼に対応しました。",
+          "focus": "handle an urgent request",
+          "jaFocus": "急ぎの依頼に対応する",
+          "object": "an urgent request"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "organize",
+  "rank": 99,
+  "word": "ORGANIZE",
+  "ipa": "/ˈɔːrɡənaɪz/",
+  "kana": "オーガナイズ",
+  "syllable": "or-gan-ize",
+  "transitivity": "他動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "情報・物・予定を分かりやすくまとめる",
+  "coreDetail": "ORGANIZEは、仕事でも日常でも使いやすい基本動詞です。まずは「整理する・企画する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "meanings": [
+    {
+      "id": "m1",
+      "title": "① 整理する・企画する",
+      "pattern": "ORGANIZE DOCUMENTS",
+      "transitivity": "他動詞",
+      "structure": "S + V + O（目的語）",
+      "image": "情報・物・予定を分かりやすくまとめる",
+      "point": "organize の後ろに「何を整理する・企画するのか」を置きます。仕事では organize documents の形でよく使います。",
+      "examples": [
+        {
+          "en": "I organized the documents before the meeting.",
+          "ja": "私は会議の前に資料を整理しました。",
+          "focus": "organized",
+          "object": "documents",
+          "jaFocus": "整理する",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "I"
+            },
+            {
+              "label": "V",
+              "text": "organized"
+            },
+            {
+              "label": "O",
+              "text": "documents"
+            }
+          ]
+        },
+        {
+          "en": "I organized my photos on my phone.",
+          "ja": "私はスマホの写真を整理しました。",
+          "focus": "organize",
+          "jaFocus": "整理する"
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "organize an event",
+      "ja": "イベントを企画する",
+      "image": "情報・物・予定を分かりやすくまとめる",
+      "pattern": "ORGANIZE AN EVENT",
+      "examples": [
+        {
+          "en": "Our team organized a small customer event.",
+          "ja": "私たちのチームは小規模な顧客イベントを企画しました。",
+          "focus": "organize an event",
+          "jaFocus": "イベントを企画する",
+          "object": "an event"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
+},
+{
+  "id": "share",
+  "rank": 100,
+  "word": "SHARE",
+  "ipa": "/ʃer/",
+  "kana": "シェア",
+  "syllable": "share",
+  "transitivity": "他動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "情報・物・気持ちを相手と分け合う",
+  "coreDetail": "SHAREは、仕事でも日常でも使いやすい基本動詞です。まずは「共有する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+  "meanings": [
+    {
+      "id": "m1",
+      "title": "① 共有する",
+      "pattern": "SHARE INFORMATION",
+      "transitivity": "他動詞",
+      "structure": "S + V + O（目的語）",
+      "image": "情報・物・気持ちを相手と分け合う",
+      "point": "share の後ろに「何を共有するのか」を置きます。仕事では share information の形でよく使います。",
+      "examples": [
+        {
+          "en": "Please share the latest information with the team.",
+          "ja": "最新情報をチームに共有してください。",
+          "focus": "share",
+          "object": "information",
+          "jaFocus": "共有する",
+          "sentencePattern": "S + V + O",
+          "grammarParts": [
+            {
+              "label": "S",
+              "text": "you（省略）"
+            },
+            {
+              "label": "V",
+              "text": "please"
+            },
+            {
+              "label": "O",
+              "text": "information"
+            }
+          ]
+        },
+        {
+          "en": "I shared some snacks with my children.",
+          "ja": "私は子どもたちとお菓子を分け合いました。",
+          "focus": "share",
+          "jaFocus": "共有する"
+        }
+      ]
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "share a file",
+      "ja": "ファイルを共有する",
+      "image": "情報・物・気持ちを相手と分け合う",
+      "pattern": "SHARE A FILE",
+      "examples": [
+        {
+          "en": "I shared the file with the client after the meeting.",
+          "ja": "私は会議後、クライアントにファイルを共有しました。",
+          "focus": "share a file",
+          "jaFocus": "ファイルを共有する",
+          "object": "a file"
+        }
+      ]
+    }
+  ],
+  "phrasalVerbs": []
 }
 ];
 

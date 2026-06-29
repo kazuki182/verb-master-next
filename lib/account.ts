@@ -55,6 +55,14 @@ export type SavedPhrase = {
   savedAt: string;
 };
 
+export type TestItemStat = {
+  itemId: string;
+  verbId: string;
+  correct: number;
+  wrong: number;
+  lastAnsweredAt: string;
+};
+
 export type TestSession = {
   key: string;
   verbId: string;
@@ -131,6 +139,7 @@ export type UserProgress = {
   bookmark?: StudyBookmark;
   savedPhrases?: SavedPhrase[];
   testSessions?: Record<string, TestSession>;
+  testItemStats?: Record<string, TestItemStat>;
   weeklyStats?: Record<string, WeeklyStats>;
   leagueAwards?: LeagueAwards;
   badges?: string[];
@@ -390,6 +399,7 @@ function normalizeProgress(progress: UserProgress) {
   if (!progress.sectionClearIds) progress.sectionClearIds = [];
   if (!progress.savedPhrases) progress.savedPhrases = [];
   if (!progress.testSessions) progress.testSessions = {};
+  if (!progress.testItemStats) progress.testItemStats = {};
   if (!progress.weeklyStats) progress.weeklyStats = {};
   if (!progress.leagueAwards) progress.leagueAwards = { weeklyMvpWeeks: [], seasonRanks: {} };
   if (!progress.leagueAwards.weeklyMvpWeeks) progress.leagueAwards.weeklyMvpWeeks = [];
@@ -434,6 +444,7 @@ export function ensureProgress(username: string): UserProgress {
       sectionClearIds: [],
       savedPhrases: [],
       testSessions: {},
+      testItemStats: {},
       weeklyStats: {},
       leagueAwards: { weeklyMvpWeeks: [], seasonRanks: {} },
       badges: [],
@@ -503,6 +514,22 @@ export function recordStudy(verbId: string, totalVerbs: number) {
   return progress;
 }
 
+function recordTestItemStat(progress: UserProgress, verbId: string, itemId: string, correct: boolean) {
+  progress.testItemStats = progress.testItemStats || {};
+  const existing = progress.testItemStats[itemId] || {
+    itemId,
+    verbId,
+    correct: 0,
+    wrong: 0,
+    lastAnsweredAt: nowText(),
+  };
+  existing.verbId = verbId;
+  if (correct) existing.correct += 1;
+  else existing.wrong += 1;
+  existing.lastAnsweredAt = nowText();
+  progress.testItemStats[itemId] = existing;
+}
+
 export function recordTestResult(
   verbId: string,
   itemId: string,
@@ -513,6 +540,8 @@ export function recordTestResult(
   updateStreak(progress);
   progress.reviewItems = progress.reviewItems || {};
   const existing = progress.reviewItems[itemId];
+
+  recordTestItemStat(progress, verbId, itemId, correct);
 
   if (correct) {
     progress.testCorrect += 1;
@@ -570,6 +599,8 @@ export function recordReviewResult(
   updateStreak(progress);
   progress.reviewItems = progress.reviewItems || {};
   const existing = progress.reviewItems[itemId];
+
+  recordTestItemStat(progress, verbId, itemId, correct);
 
   if (correct) {
     progress.testCorrect += 1;

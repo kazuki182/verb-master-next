@@ -34,6 +34,27 @@ export type CloudSyncStatus = {
   updatedAt?: string;
 };
 
+export type CloudBackupSummary = {
+  xp: number;
+  level: number;
+  studied: number;
+  totalStudied: number;
+  tests: number;
+  weak: number;
+  reviews: number;
+  savedPhrases: number;
+  score: number;
+};
+
+export type CloudBackupComparison = {
+  ok: boolean;
+  message: string;
+  recommendation: "restore_remote" | "save_local" | "same" | "no_remote" | "unknown";
+  local: CloudBackupSummary;
+  remote: CloudBackupSummary | null;
+  remoteUpdatedAt?: string;
+};
+
 const PROFILE_BUCKET = "profile-images";
 
 function nowText() {
@@ -125,6 +146,26 @@ function isRemoteProgressBetter(remote: Partial<UserProgress> | null | undefined
   return remoteScore >= localScore;
 }
 
+function summarizeProgress(progress: Partial<UserProgress> | null | undefined): CloudBackupSummary {
+  return {
+    xp: Number(progress?.xp || 0),
+    level: Number(progress?.level || 1),
+    studied: (progress?.studiedVerbIds || []).length,
+    totalStudied: Number(progress?.totalStudied || 0),
+    tests: Number(progress?.testCorrect || 0) + Number(progress?.testWrong || 0),
+    weak: (progress?.weakItems || []).length,
+    reviews: Object.keys(progress?.reviewItems || {}).length,
+    savedPhrases: (progress?.savedPhrases || []).length,
+    score: progressScore(progress),
+  };
+}
+
+function shouldBlockEmptyOverwrite(local: UserProgress, remote: Partial<UserProgress> | null | undefined) {
+  const localScore = progressScore(local);
+  const remoteScore = progressScore(remote);
+  return remoteScore > 0 && localScore <= 0;
+}
+
 async function upsertFullProgressBackup(progress: UserProgress) {
   if (!supabase) return;
   const settings = getClientStudySettingsSnapshot();
@@ -133,7 +174,7 @@ async function upsertFullProgressBackup(progress: UserProgress) {
       username: progress.username,
       progress_json: progress,
       settings_json: settings,
-      app_version: "v66",
+      app_version: "v67",
       updated_at: nowText(),
     },
     { onConflict: "username" },
@@ -212,7 +253,7 @@ export async function loginCloudAccount(username: string, password: string) {
   }
 }
 
-export async function syncCurrentUserToSupabase(progress: UserProgress): Promise<CloudSyncStatus> {
+export async function syncCurrentUserToSupabase(progress: UserProgress, options: { allowEmptyOverwrite?: boolean } = {}): Promise<CloudSyncStatus> {
   const readiness = getCloudReadiness();
   if (!supabase) return readiness;
 
@@ -228,6 +269,13 @@ export async function syncCurrentUserToSupabase(progress: UserProgress): Promise
   const optionalErrors: string[] = [];
 
   try {
+    const existingBackup = await fetchFullProgressBackup(progress.username);
+    if (!options.allowEmptyOverwrite && shouldBlockEmptyOverwrite(progress, existingBackup?.progress_json)) {
+      status.stats = "saved";
+      status.message = "クラウドに学習データがあります。空の端末データで上書きしないため、保存を停止しました。先にクラウドから復元してください。";
+      status.updatedAt = existingBackup?.updated_at || nowText();
+      return status;
+    }
     // Ver.66: 学習データ保護を最優先。
     // profiles / user_stats など旧テーブルが未作成でも、まず full backup へ保存できるようにする。
     await upsertFullProgressBackup(progress);
@@ -516,6 +564,62 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
   }
 }
 
+
+export async function getCloudBackupComparison(username: string): Promise<CloudBackupComparison> {
+  const localProgress = ensureProgress(username);
+  const local = summarizeProgress(localProgress);
+  if (!supabase) {
+    return {
+      ok: false,
+      message: "Supabase未設定のため、端末データのみ確認できます。",
+      recommendation: "unknown",
+      local,
+      remote: null,
+    };
+  }
+  try {
+    const backup = await fetchFullProgressBackup(username);
+    if (!backup?.progress_json) {
+      return {
+        ok: true,
+        message: "クラウドバックアップはまだありません。端末データを保存できます。",
+        recommendation: local.score > 0 ? "save_local" : "no_remote",
+        local,
+        remote: null,
+      };
+    }
+    const remote = summarizeProgress(backup.progress_json);
+    let recommendation: CloudBackupComparison["recommendation"] = "same";
+    let message = "端末データとクラウドデータは大きな差がありません。";
+    if (remote.score > local.score) {
+      recommendation = "restore_remote";
+      message = "クラウド側により多くの学習データがあります。先に復元するのがおすすめです。";
+    } else if (local.score > remote.score) {
+      recommendation = "save_local";
+      message = "端末側に新しい学習データがあります。クラウド保存がおすすめです。";
+    }
+    if (local.score <= 0 && remote.score > 0) {
+      recommendation = "restore_remote";
+      message = "端末データが空に近く、クラウド側に学習データがあります。空データ上書きを防止中です。復元してください。";
+    }
+    return {
+      ok: true,
+      message,
+      recommendation,
+      local,
+      remote,
+      remoteUpdatedAt: backup.updated_at || "",
+    };
+  } catch (error) {
+    return {
+      ok: false,
+      message: error instanceof Error ? error.message : "クラウド比較に失敗しました。",
+      recommendation: "unknown",
+      local,
+      remote: null,
+    };
+  }
+}
 
 export async function verifyCloudBackup(username: string) {
   if (!supabase) {

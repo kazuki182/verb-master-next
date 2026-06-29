@@ -45,17 +45,69 @@ function shuffleItems(items: TestItem[]) {
     .map((entry) => entry.item);
 }
 
-function balancedTen(items: TestItem[]) {
-  if (items.length <= 10) return shuffleItems(items);
-  const groups: Record<string, TestItem[]> = { basic: [], idioms: [], phrasal: [] };
-  for (const item of shuffleItems(items)) groups[item.section].push(item);
+function todayKey() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function isDueReview(progress: UserProgress | null, item: TestItem) {
+  const review = progress?.reviewItems?.[item.id];
+  if (!review) return false;
+  return review.lastResult === "wrong" || review.nextReviewAt <= todayKey();
+}
+
+function itemScore(progress: UserProgress | null, item: TestItem) {
+  if (!progress) return Math.random();
+  const stat = progress.testItemStats?.[item.id];
+  const weak = progress.weakItems?.includes(item.id) ? 1000 : 0;
+  const due = isDueReview(progress, item) ? 1200 : 0;
+  const untested = !stat ? 700 : 0;
+  const wrong = (stat?.wrong || 0) * 80;
+  const correct = (stat?.correct || 0) * -15;
+  const lastAnswered = stat?.lastAnsweredAt ? new Date(stat.lastAnsweredAt).getTime() : 0;
+  const stale = lastAnswered ? Math.min(180, Math.floor((Date.now() - lastAnswered) / 86400000)) : 120;
+  return due + weak + untested + wrong + correct + stale + Math.random();
+}
+
+function takeRanked(source: TestItem[], count: number, used: Set<string>, progress: UserProgress | null) {
+  const ranked = [...source]
+    .filter((item) => !used.has(item.id))
+    .sort((a, b) => itemScore(progress, b) - itemScore(progress, a));
+  const picked = ranked.slice(0, count);
+  picked.forEach((item) => used.add(item.id));
+  return picked;
+}
+
+function balancedTen(items: TestItem[], progress: UserProgress | null) {
+  const limit = Math.min(10, items.length);
+  if (items.length <= limit) return [...items].sort((a, b) => itemScore(progress, b) - itemScore(progress, a));
+
+  const due = items.filter((item) => isDueReview(progress, item) || progress?.weakItems?.includes(item.id));
+  const untested = items.filter((item) => !progress?.testItemStats?.[item.id]);
+  const sections: Record<string, TestItem[]> = { basic: [], idioms: [], phrasal: [] };
+  for (const item of items) sections[item.section].push(item);
+
+  const used = new Set<string>();
   const selected: TestItem[] = [];
+
+  selected.push(...takeRanked(due, 4, used, progress));
+  selected.push(...takeRanked(untested, Math.max(0, 7 - selected.length), used, progress));
+
   for (const section of ["basic", "idioms", "phrasal"] as const) {
-    selected.push(...groups[section].splice(0, section === "basic" ? 4 : 3));
+    if (selected.length >= limit) break;
+    if (!selected.some((item) => item.section === section) && sections[section].length > 0) {
+      selected.push(...takeRanked(sections[section], 1, used, progress));
+    }
   }
-  const used = new Set(selected.map((item) => item.id));
-  const rest = shuffleItems(items).filter((item) => !used.has(item.id));
-  return [...selected, ...rest].slice(0, 10);
+
+  selected.push(...takeRanked(items, limit - selected.length, used, progress));
+  return selected.slice(0, limit);
+}
+
+function testSummary(items: TestItem[], progress: UserProgress | null) {
+  const weak = items.filter((item) => progress?.weakItems?.includes(item.id)).length;
+  const due = items.filter((item) => isDueReview(progress, item)).length;
+  const untested = items.filter((item) => !progress?.testItemStats?.[item.id]).length;
+  return { weak, due, untested };
 }
 
 function sectionName(section: TestSection) {
@@ -107,6 +159,7 @@ export default function InstantTest({
   const finished = items.length > 0 && index >= items.length;
   const allCorrect = items.length > 0 && correct === items.length && wrong === 0;
   const reward = sectionReward(section);
+  const activeSummary = useMemo(() => testSummary(items, getCurrentProgress()), [items, correct, wrong, index]);
 
   useEffect(() => {
     if (baseItems.length === 0) return;
@@ -114,7 +167,8 @@ export default function InstantTest({
     const savedItems = saved?.itemIds
       .map((id) => getTestItemById(id))
       .filter(Boolean) as TestItem[] | undefined;
-    const nextItems = savedItems && savedItems.length > 0 ? savedItems : balancedTen(baseItems);
+    const progress = getCurrentProgress();
+    const nextItems = savedItems && savedItems.length > 0 ? savedItems.slice(0, 10) : balancedTen(baseItems, progress);
     setItems(nextItems);
     if (saved && savedItems && savedItems.length > 0) {
       setIndex(Math.min(saved.index, nextItems.length));
@@ -149,7 +203,7 @@ export default function InstantTest({
 
   const restart = () => {
     clearTestSession(sessionKey);
-    setItems(balancedTen(baseItems));
+    setItems(balancedTen(baseItems, getCurrentProgress()));
     setIndex(0);
     setShown(false);
     setCorrect(0);
@@ -193,6 +247,16 @@ export default function InstantTest({
               <p className="mt-1">{section === "all" ? `${verb.word} MASTER 獲得 / +${reward}XP` : `このセクションをクリア / +${reward}XP`}</p>
             </div>
           )}
+          <div className="mt-5 rounded-2xl border border-cyan-300/20 bg-slate-950/50 p-4 text-left text-sm">
+            <p className="font-bold text-cyan-100">次のおすすめ</p>
+            <p className="mt-2 text-muted">
+              {wrong > 0
+                ? "間違えた問題は復習リストに入ります。あとで復習テストで確認しましょう。"
+                : activeSummary.untested > 0
+                  ? "未出題の問題がまだあります。もう一度テストすると別の問題が出やすくなります。"
+                  : "よくできています。次の動詞または熟語テストへ進みましょう。"}
+            </p>
+          </div>
           <div className="mt-6 grid gap-3">
             {finishHref && <Link href={finishHref} className="btn btn-primary block text-center">{finishLabel || "次へ進む"}</Link>}
             <Link href={`/verbs/${verb.id}`} className="btn btn-soft block text-center">{verb.word} を再学習する</Link>
@@ -236,7 +300,14 @@ export default function InstantTest({
         <p className="text-sm text-muted">{reviewMode ? "復習" : sectionName(section)}</p>
         <h1 className="mt-1 text-3xl font-bold">{title || <><span className="verb-red">{verb.word}</span> 日本語 → 英語</>}</h1>
         <p className="mt-2 text-muted">{description || "日本語を見て、すぐ英語で言ってから答えを確認します。"}</p>
-        <p className="mt-2 text-sm font-bold text-cyan-100">出題はランダム10問です。基本・熟語・句動詞がなるべく偏らないように出ます。</p>
+        <p className="mt-2 text-sm font-bold text-cyan-100">出題は最大10問です。未出題・苦手・復習対象・最近やっていない問題をなるべく偏らないように出します。</p>
+        {items.length > 0 && (
+          <div className="mt-3 grid grid-cols-3 gap-2 text-center text-xs">
+            <div className="rounded-xl border border-cyan-300/15 bg-slate-950/50 p-2"><p className="text-muted">未出題</p><p className="font-bold text-cyan-100">{activeSummary.untested}</p></div>
+            <div className="rounded-xl border border-cyan-300/15 bg-slate-950/50 p-2"><p className="text-muted">苦手</p><p className="font-bold text-cyan-100">{activeSummary.weak}</p></div>
+            <div className="rounded-xl border border-cyan-300/15 bg-slate-950/50 p-2"><p className="text-muted">復習</p><p className="font-bold text-cyan-100">{activeSummary.due}</p></div>
+          </div>
+        )}
         {resumed && (
           <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-slate-950/60 p-4 text-sm text-cyan-100">
             前回の続きから再開しています。

@@ -33,7 +33,7 @@ import {
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 67";
+const VERSION = "Version 68";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -558,6 +558,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.68</p><p className="mt-1 text-muted">テストを最大10問に整理。未出題・苦手・復習対象・最近やっていない問題を優先して、出題バランスと終了後の復習案内を改善。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.67</p><p className="mt-1 text-muted">初回ログイン時の復元判断と空データ上書き防止を強化。端末データとクラウドデータの比較表示を追加。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.66</p><p className="mt-1 text-muted">クラウドバックアップを優先する保存/復元へ修正。補助テーブル未作成でも学習データ本体を守り、クラウド保存テストを追加。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.65</p><p className="mt-1 text-muted">クラウド同期状態をユーザー向けに表示。手動保存・復元ボタン、最終同期時間、プライベート閲覧時の注意を追加。</p></div>

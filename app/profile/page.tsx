@@ -33,7 +33,7 @@ import {
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 80";
+const VERSION = "Version 81";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -110,6 +110,7 @@ export default function ProfilePage() {
   const [cloudEvent, setCloudEvent] = useState<CloudSyncEventDetail | null>(null);
   const [cloudTestMessage, setCloudTestMessage] = useState("");
   const [backupComparison, setBackupComparison] = useState<CloudBackupComparison | null>(null);
+  const [showSaveDetails, setShowSaveDetails] = useState(false);
   const [isEditingName, setIsEditingName] = useState(false);
   const fileRef = useRef<HTMLInputElement | null>(null);
 
@@ -439,91 +440,114 @@ export default function ProfilePage() {
       <section className="rounded-2xl border border-cyan-300/15 bg-slate-900/45 p-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <h2 className="text-base font-bold">保存状態</h2>
+            <h2 className="text-base font-bold">自動保存</h2>
             <p className="mt-1 text-sm text-muted">
-              学習データは端末にも残しつつ、ログイン中はクラウド保存を優先します。
+              ログイン中は学習データを自動でクラウド保存します。プライベート閲覧でも、保存先はクラウドを優先します。
             </p>
           </div>
           <span className={`shrink-0 rounded-full border px-3 py-1 text-xs font-bold ${cloudBadge.className}`}>
-            {cloudBadge.label}
+            {cloudSyncing ? "保存中" : cloudBadge.label}
           </span>
         </div>
 
-        <div className="mt-3 grid grid-cols-2 gap-2 text-center text-xs">
-          <div className="rounded-xl bg-slate-950/70 p-3">プロフィール<br /><b>{cloudLabel("profile", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
-          <div className="rounded-xl bg-slate-950/70 p-3">画像<br /><b>{cloudLabel("avatar", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
-          <div className="rounded-xl bg-slate-950/70 p-3">Premium<br /><b>{cloudLabel("premium", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
-          <div className="rounded-xl bg-slate-950/70 p-3">学習記録<br /><b>{cloudLabel("stats", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
-          <div className="rounded-xl bg-slate-950/70 p-3">音声・設定<br /><b>{cloudStatus?.stats === "saved" ? "保存対象" : cloudStatus?.configured ? "待機" : "端末内"}</b></div>
+        <div className="mt-3 rounded-2xl border border-cyan-300/15 bg-slate-950/55 p-3">
+          <p className="text-sm font-bold text-cyan-100">
+            {restoreRecommended ? "クラウドに復元できる学習データがあります" : cloudSyncing ? "学習データを保存中です" : "学習データは自動保存されています"}
+          </p>
+          <p className="mt-1 text-xs leading-5 text-slate-300">
+            {cloudStatus?.updatedAt ? `最終保存：${formatDateTime(cloudStatus.updatedAt)}` : "最終保存：確認中"}
+          </p>
+          {cloudEvent?.phase === "error" && (
+            <p className="mt-2 rounded-xl border border-rose-300/25 bg-rose-300/10 p-2 text-xs font-bold text-rose-100">
+              保存に失敗しました。通信環境を確認して、詳細から手動保存を試してください。
+            </p>
+          )}
         </div>
 
-        {backupComparison && (
-          <div className={`mt-3 rounded-2xl border p-3 text-xs ${restoreRecommended ? "border-amber-300/30 bg-amber-300/10 text-amber-50" : "border-cyan-300/20 bg-slate-950/60 text-slate-200"}`}>
-            <p className="font-bold">データ比較：{restoreRecommended ? "復元おすすめ" : backupComparison.recommendation === "save_local" ? "保存おすすめ" : "確認OK"}</p>
-            <p className="mt-1 leading-5">{backupComparison.message}</p>
-            <div className="mt-2 grid grid-cols-2 gap-2 text-center">
-              <div className="rounded-xl bg-slate-950/70 p-2">
-                <p className="text-slate-400">端末</p>
-                <p className="font-bold">XP {backupComparison.local.xp}</p>
-                <p>学習 {backupComparison.local.studied}語 / テスト {backupComparison.local.tests}問</p>
-              </div>
-              <div className="rounded-xl bg-slate-950/70 p-2">
-                <p className="text-slate-400">クラウド</p>
-                <p className="font-bold">XP {backupComparison.remote?.xp ?? 0}</p>
-                <p>学習 {backupComparison.remote?.studied ?? 0}語 / テスト {backupComparison.remote?.tests ?? 0}問</p>
-              </div>
+        <button
+          className="mt-3 w-full rounded-2xl border border-cyan-300/20 bg-slate-950/40 px-4 py-3 text-left text-sm font-bold text-cyan-100"
+          type="button"
+          onClick={() => setShowSaveDetails((value) => !value)}
+        >
+          {showSaveDetails ? "保存状態の詳細を閉じる" : "保存状態の詳細を見る"}
+        </button>
+
+        {showSaveDetails && (
+          <div className="mt-3 space-y-3">
+            <div className="grid grid-cols-2 gap-2 text-center text-xs">
+              <div className="rounded-xl bg-slate-950/70 p-3">プロフィール<br /><b>{cloudLabel("profile", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
+              <div className="rounded-xl bg-slate-950/70 p-3">画像<br /><b>{cloudLabel("avatar", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
+              <div className="rounded-xl bg-slate-950/70 p-3">Premium<br /><b>{cloudLabel("premium", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
+              <div className="rounded-xl bg-slate-950/70 p-3">学習記録<br /><b>{cloudLabel("stats", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
+              <div className="rounded-xl bg-slate-950/70 p-3">音声・設定<br /><b>{cloudStatus?.stats === "saved" ? "保存対象" : cloudStatus?.configured ? "待機" : "端末内"}</b></div>
             </div>
-            {backupComparison.remoteUpdatedAt && (
-              <p className="mt-2 text-slate-400">クラウド更新：{formatDateTime(backupComparison.remoteUpdatedAt)}</p>
+
+            {backupComparison && (
+              <div className={`rounded-2xl border p-3 text-xs ${restoreRecommended ? "border-amber-300/30 bg-amber-300/10 text-amber-50" : "border-cyan-300/20 bg-slate-950/60 text-slate-200"}`}>
+                <p className="font-bold">データ比較：{restoreRecommended ? "復元おすすめ" : backupComparison.recommendation === "save_local" ? "保存おすすめ" : "確認OK"}</p>
+                <p className="mt-1 leading-5">{backupComparison.message}</p>
+                <div className="mt-2 grid grid-cols-2 gap-2 text-center">
+                  <div className="rounded-xl bg-slate-950/70 p-2">
+                    <p className="text-slate-400">端末</p>
+                    <p className="font-bold">XP {backupComparison.local.xp}</p>
+                    <p>学習 {backupComparison.local.studied}語 / テスト {backupComparison.local.tests}問</p>
+                  </div>
+                  <div className="rounded-xl bg-slate-950/70 p-2">
+                    <p className="text-slate-400">クラウド</p>
+                    <p className="font-bold">XP {backupComparison.remote?.xp ?? 0}</p>
+                    <p>学習 {backupComparison.remote?.studied ?? 0}語 / テスト {backupComparison.remote?.tests ?? 0}問</p>
+                  </div>
+                </div>
+                {backupComparison.remoteUpdatedAt && (
+                  <p className="mt-2 text-slate-400">クラウド更新：{formatDateTime(backupComparison.remoteUpdatedAt)}</p>
+                )}
+              </div>
             )}
+
+            <div className="grid gap-2 sm:grid-cols-2">
+              <button
+                className="btn btn-soft w-full"
+                type="button"
+                onClick={() => syncToSupabase()}
+                disabled={cloudSyncing}
+              >
+                {cloudSyncing ? "同期中..." : restoreRecommended ? "先に復元がおすすめ" : "今すぐクラウド保存"}
+              </button>
+              <button
+                className="btn btn-soft w-full"
+                type="button"
+                onClick={restoreFromSupabase}
+                disabled={cloudSyncing}
+              >
+                クラウドから復元
+              </button>
+              <button
+                className="btn btn-primary w-full sm:col-span-2"
+                type="button"
+                onClick={runCloudBackupTest}
+                disabled={cloudSyncing}
+              >
+                クラウド保存テスト
+              </button>
+            </div>
+
+            {cloudTestMessage && (
+              <p className="rounded-xl border border-cyan-300/20 bg-cyan-300/10 p-3 text-xs font-bold text-cyan-100">
+                {cloudTestMessage}
+              </p>
+            )}
+
+            {cloudEvent && (
+              <p className="text-xs text-slate-300">
+                {cloudReasonText(cloudEvent.reason)}：{cloudEvent.message}
+              </p>
+            )}
+            <p className="text-xs leading-5 text-muted">{cloudMessage(cloudStatus)}</p>
+            <p className="text-xs leading-5 text-cyan-100/80">
+              プライベート閲覧では端末保存が消えることがあります。ログイン中はクラウド保存を優先し、空データで上書きしないよう保護しています。
+            </p>
           </div>
         )}
-
-        <div className="mt-3 grid gap-2 sm:grid-cols-2">
-          <button
-            className="btn btn-soft w-full"
-            type="button"
-            onClick={() => syncToSupabase()}
-            disabled={cloudSyncing}
-          >
-            {cloudSyncing ? "同期中..." : restoreRecommended ? "先に復元がおすすめ" : "今すぐクラウド保存"}
-          </button>
-          <button
-            className="btn btn-soft w-full"
-            type="button"
-            onClick={restoreFromSupabase}
-            disabled={cloudSyncing}
-          >
-            クラウドから復元
-          </button>
-          <button
-            className="btn btn-primary w-full sm:col-span-2"
-            type="button"
-            onClick={runCloudBackupTest}
-            disabled={cloudSyncing}
-          >
-            クラウド保存テスト
-          </button>
-        </div>
-
-        {cloudTestMessage && (
-          <p className="mt-2 rounded-xl border border-cyan-300/20 bg-cyan-300/10 p-3 text-xs font-bold text-cyan-100">
-            {cloudTestMessage}
-          </p>
-        )}
-
-        {cloudEvent && (
-          <p className="mt-2 text-xs text-slate-300">
-            {cloudReasonText(cloudEvent.reason)}：{cloudEvent.message}
-          </p>
-        )}
-        {cloudStatus?.updatedAt && (
-          <p className="mt-2 text-xs text-slate-400">最終クラウド確認：{formatDateTime(cloudStatus.updatedAt)}</p>
-        )}
-        <p className="mt-2 text-xs leading-5 text-muted">{cloudMessage(cloudStatus)}</p>
-        <p className="mt-2 text-xs leading-5 text-cyan-100/80">
-          プライベート閲覧では端末保存が消えることがあります。ログイン後にこの表示が「クラウド保存済み」なら、更新後も復元しやすくなります。
-        </p>
       </section>
 
       <section className="card p-5">
@@ -559,6 +583,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.81</p><p className="mt-1 text-muted">マイページの保存状態をユーザー向けに簡素化。通常は自動保存と最終保存時刻だけ表示し、クラウド保存・復元・保存テストなどの詳細操作は折りたたみ内に整理しました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.80</p><p className="mt-1 text-muted">HOMEのダッシュボードを簡素化。登録動詞・習得済み・残り・目標日・学習日数・バッジだけに絞り、スマホで見やすくしました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.79</p><p className="mt-1 text-muted">SV/SVO/SVC/SVOCなどの文型ラベルは、全例文を手動監査するまでユーザー画面から一旦非表示にしました。誤った文型で覚えてしまうリスクを避けるための品質優先対応です。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.78</p><p className="mt-1 text-muted">例文・テスト日本語の品質を改善。不自然な自動生成文を削除し、主語・時制・目的語が分かる日本語へ調整。START / SHOW / RUNなどの熟語・句動詞例文も仕事向けの自然な表現に修正しました。</p></div>

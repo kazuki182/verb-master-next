@@ -1,0 +1,17 @@
+Verb Master Ver.78
+
+例文・テスト日本語 品質改善版
+
+主な変更
+- 例文とテストに出る日本語を、主語・時制・目的語が分かりやすい文章へ改善
+- 不自然な自動生成文（this today / the details with the team / 詳細を確認・対応します）を削除
+- START / SHOW / RUN / LEAVE / MOVE / BRING / HOLD / OPEN / CLOSE / LET の熟語・句動詞例文を自然な仕事向け表現へ修正
+- TELL / CHANGE / BUILD / LEARN / MEET / PAY / BUY / SELL / CHOOSE / FOLLOW / CREATE / REACH / RETURN の基本例文を実用的な仕事・日常表現へ修正
+- TRAIN の文型表示を修正（new staff を目的語、on the product basics を補足として扱う）
+- Ver.77の120語構成、段階アンロック、クラウド保存、プロフィール画像保存の土台は維持
+
+品質ルール
+- 日本語テスト文は、英訳時に主語・時制・目的語が判断できるようにする
+- 前置詞句を目的語Oにしない
+- SV / SVO / SVC / SVOO / SVOC は必ず二重確認する
+- 1〜60語は基本動詞、61〜120語は仕事で使いやすい動詞を優先する

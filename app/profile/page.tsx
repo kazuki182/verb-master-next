@@ -414,6 +414,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.57</p><p className="mt-1 text-muted">GETの文型表示、例文品質、テスト音声、ランダム10問、途中保存、戻る機能、数字入力を改善。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.56</p><p className="mt-1 text-muted">ダッシュボードから見られる使い方ガイドを追加。各機能の目的と使い方をまとめました。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.55</p><p className="mt-1 text-muted">学習ペースと目標日を編集モード式に変更。保存ボタンは編集時だけ表示し、保存後は設定内容だけを表示。</p></div>
           <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.54</p><p className="mt-1 text-muted">学習ペースと目標日の編集をボタン式にして、保存後は画面がスマートに戻るように改善。</p></div>

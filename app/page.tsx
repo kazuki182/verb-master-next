@@ -435,6 +435,7 @@ export default function Home() {
                   type="number"
                   min="1"
                   value={paceDays}
+                  onFocus={(e) => e.currentTarget.select()}
                   onChange={(e) => {
                     setPaceDays(Math.max(1, Number(e.target.value) || 1));
                     setPaceSaveMessage("");
@@ -446,6 +447,7 @@ export default function Home() {
                   type="number"
                   min="1"
                   value={paceVerbs}
+                  onFocus={(e) => e.currentTarget.select()}
                   onChange={(e) => {
                     setPaceVerbs(Math.max(1, Number(e.target.value) || 1));
                     setPaceSaveMessage("");

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getVerb, getTestItemById, getTestItemsForVerb, type TestItem, type TestSection } from "@/lib/data";
 import SpeakButton from "./SpeakButton";
-import { clearTestSession, getTestSession, recordReviewResult, recordSectionClear, recordTestResult, recordVerbMastery, saveTestSession } from "@/lib/account";
+import { clearTestSession, getCurrentProgress, getTestSession, recordReviewResult, recordSectionClear, recordTestResult, recordVerbMastery, saveProgress, saveTestSession, type UserProgress } from "@/lib/account";
 
 type InstantTestProps = {
   verbId?: string;
@@ -23,6 +23,39 @@ function answerUnderline(sentence: string) {
   return words.map((_, i) => (
     <span key={i} className="inline-block h-3 w-14 max-w-[22vw] rounded-full border-b-4 border-cyan-300/70" />
   ));
+}
+
+
+type TestSnapshot = {
+  index: number;
+  shown: boolean;
+  correct: number;
+  wrong: number;
+  progress: UserProgress | null;
+};
+
+function cloneProgress(progress: UserProgress | null): UserProgress | null {
+  return progress ? JSON.parse(JSON.stringify(progress)) : null;
+}
+
+function shuffleItems(items: TestItem[]) {
+  return [...items]
+    .map((item) => ({ item, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map((entry) => entry.item);
+}
+
+function balancedTen(items: TestItem[]) {
+  if (items.length <= 10) return shuffleItems(items);
+  const groups: Record<string, TestItem[]> = { basic: [], idioms: [], phrasal: [] };
+  for (const item of shuffleItems(items)) groups[item.section].push(item);
+  const selected: TestItem[] = [];
+  for (const section of ["basic", "idioms", "phrasal"] as const) {
+    selected.push(...groups[section].splice(0, section === "basic" ? 4 : 3));
+  }
+  const used = new Set(selected.map((item) => item.id));
+  const rest = shuffleItems(items).filter((item) => !used.has(item.id));
+  return [...selected, ...rest].slice(0, 10);
 }
 
 function sectionName(section: TestSection) {
@@ -49,14 +82,15 @@ export default function InstantTest({
   finishHref,
   finishLabel
 }: InstantTestProps) {
-  const items = useMemo<TestItem[]>(() => {
+  const baseItems = useMemo<TestItem[]>(() => {
     if (itemIds && itemIds.length > 0) {
       return itemIds.map((id) => getTestItemById(id)).filter(Boolean) as TestItem[];
     }
     return getTestItemsForVerb(verbId, section);
   }, [itemIds, verbId, section]);
 
-  const verb = getVerb(items[0]?.verbId || verbId);
+  const [items, setItems] = useState<TestItem[]>([]);
+  const verb = getVerb(baseItems[0]?.verbId || verbId);
   const sessionKey = useMemo(() => {
     const ids = itemIds && itemIds.length > 0 ? itemIds.join("|") : "all";
     return reviewMode ? `review:${ids}` : `test:${verb.id}:${section}`;
@@ -68,16 +102,22 @@ export default function InstantTest({
   const [rewardShown, setRewardShown] = useState(false);
   const [loadedSession, setLoadedSession] = useState(false);
   const [resumed, setResumed] = useState(false);
+  const [history, setHistory] = useState<TestSnapshot[]>([]);
   const item = items[index];
   const finished = items.length > 0 && index >= items.length;
   const allCorrect = items.length > 0 && correct === items.length && wrong === 0;
   const reward = sectionReward(section);
 
   useEffect(() => {
-    if (items.length === 0) return;
+    if (baseItems.length === 0) return;
     const saved = getTestSession(sessionKey);
-    if (saved && saved.itemIds.join("|") === items.map((i) => i.id).join("|")) {
-      setIndex(Math.min(saved.index, items.length));
+    const savedItems = saved?.itemIds
+      .map((id) => getTestItemById(id))
+      .filter(Boolean) as TestItem[] | undefined;
+    const nextItems = savedItems && savedItems.length > 0 ? savedItems : balancedTen(baseItems);
+    setItems(nextItems);
+    if (saved && savedItems && savedItems.length > 0) {
+      setIndex(Math.min(saved.index, nextItems.length));
       setShown(saved.shown);
       setCorrect(saved.correct);
       setWrong(saved.wrong);
@@ -89,8 +129,9 @@ export default function InstantTest({
       setWrong(0);
       setResumed(false);
     }
+    setHistory([]);
     setLoadedSession(true);
-  }, [items, sessionKey]);
+  }, [baseItems, sessionKey]);
 
   useEffect(() => {
     if (!loadedSession || items.length === 0 || finished) return;
@@ -108,12 +149,14 @@ export default function InstantTest({
 
   const restart = () => {
     clearTestSession(sessionKey);
+    setItems(balancedTen(baseItems));
     setIndex(0);
     setShown(false);
     setCorrect(0);
     setWrong(0);
     setRewardShown(false);
     setResumed(false);
+    setHistory([]);
   };
 
   const next = () => {
@@ -162,6 +205,10 @@ export default function InstantTest({
   }
 
   const mark = (isCorrect: boolean) => {
+    setHistory((list) => [
+      ...list,
+      { index, shown, correct, wrong, progress: cloneProgress(getCurrentProgress()) },
+    ].slice(-5));
     reviewMode ? recordReviewResult(item.verbId, item.id, isCorrect) : recordTestResult(item.verbId, item.id, isCorrect);
     if (isCorrect) {
       setCorrect((n) => n + 1);
@@ -172,12 +219,24 @@ export default function InstantTest({
     }
   };
 
+  const undoLast = () => {
+    const last = history[history.length - 1];
+    if (!last) return;
+    if (last.progress) saveProgress(last.progress);
+    setIndex(last.index);
+    setShown(last.shown);
+    setCorrect(last.correct);
+    setWrong(last.wrong);
+    setHistory((list) => list.slice(0, -1));
+  };
+
   return (
     <div className="space-y-5 pb-24">
       <div className="card p-5">
         <p className="text-sm text-muted">{reviewMode ? "復習" : sectionName(section)}</p>
         <h1 className="mt-1 text-3xl font-bold">{title || <><span className="verb-red">{verb.word}</span> 日本語 → 英語</>}</h1>
         <p className="mt-2 text-muted">{description || "日本語を見て、すぐ英語で言ってから答えを確認します。"}</p>
+        <p className="mt-2 text-sm font-bold text-cyan-100">出題はランダム10問です。基本・熟語・句動詞がなるべく偏らないように出ます。</p>
         {resumed && (
           <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-slate-950/60 p-4 text-sm text-cyan-100">
             前回の続きから再開しています。
@@ -205,6 +264,10 @@ export default function InstantTest({
               </div>
               <p className="mt-3 text-xs text-slate-400">下線の数だけ英単語を入れて考えます。</p>
             </div>
+            <div className="rounded-2xl border border-cyan-300/20 bg-slate-950/50 p-4">
+              <p className="mb-3 text-sm font-bold text-cyan-100">リスニング確認</p>
+              <SpeakButton text={item.en} label="英文を聞く" slowLabel="ゆっくり" lang="en-US" />
+            </div>
             <button className="btn btn-primary w-full" onClick={() => setShown(true)}>答えを見る</button>
           </div>
         ) : (
@@ -220,6 +283,9 @@ export default function InstantTest({
               <button onClick={() => mark(false)} className="btn bg-red-600 text-white">× だめ</button>
             </div>
             <button onClick={next} className="btn btn-soft w-full">スキップして次へ</button>
+            {history.length > 0 && (
+              <button onClick={undoLast} className="btn btn-soft w-full">1つ前の回答に戻る</button>
+            )}
           </div>
         )}
       </div>

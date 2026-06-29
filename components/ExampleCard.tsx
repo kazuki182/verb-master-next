@@ -36,9 +36,9 @@ function simplifyStructure(structure?: string) {
 
 function guessPatternLabel(pattern?: string, structure?: string) {
   const text = `${pattern ?? ""} ${structure ?? ""}`;
-  if (text.includes("形容詞") || text.includes(" C") || text.includes("+ C")) return "S + V + C";
   if (text.includes("人 + to") || text.includes("to不定詞")) return "S + V + O + C";
-  if (text.includes("過去分詞")) return "S + V + O + C";
+  if (text.includes("過去分詞")) return "S + V + C";
+  if (text.includes("形容詞") || text.includes(" C") || text.includes("+ C")) return "S + V + C";
   if (text.includes("to 場所") || text.includes("場所")) return "S + V + 副詞句";
   if (text.toLowerCase().includes("take")) {
     if (text.includes("care of") || text.includes("part in")) return "S + V + 句動詞/熟語 + O";
@@ -86,6 +86,7 @@ function inferComplement(sentence: string, focus?: string) {
 }
 
 function inferGrammarParts(example: Example, sentencePattern: string): GrammarPart[] {
+  if (example.grammarParts && example.grammarParts.length > 0) return example.grammarParts;
   const subject = firstSubject(example.en);
   const verb = example.focus || "";
   const parts: GrammarPart[] = [];
@@ -116,7 +117,7 @@ function GrammarInline({
   sentenceStructure?: string;
 }) {
   const hasAccess = hasGrammarAccess();
-  const sentencePattern = guessPatternLabel(verbPattern, sentenceStructure);
+  const sentencePattern = example.sentencePattern || guessPatternLabel(verbPattern, sentenceStructure);
   const cleanStructure = simplifyStructure(sentenceStructure);
   const parts = inferGrammarParts(example, sentencePattern);
 
@@ -159,6 +160,12 @@ function GrammarInline({
           <div className="rounded-xl bg-slate-900/70 p-3">
             <p className="text-xs font-bold text-slate-400">動詞の型</p>
             <p className="mt-1 font-extrabold text-cyan-100">{verbPattern}</p>
+          </div>
+        )}
+        {example.grammarNote && (
+          <div className="rounded-xl bg-cyan-300/10 p-3">
+            <p className="text-xs font-bold text-cyan-100">補足</p>
+            <p className="mt-1 leading-6 text-slate-200">{example.grammarNote}</p>
           </div>
         )}
       </div>

@@ -1,9 +1,17 @@
+export type GrammarPart = {
+  label: "S" | "V" | "O" | "C" | "M";
+  text: string;
+};
+
 export type Example = {
   en: string;
   ja: string;
   focus?: string;
   object?: string;
   jaFocus?: string;
+  sentencePattern?: string;
+  grammarParts?: GrammarPart[];
+  grammarNote?: string;
 };
 
 export type MeaningBlock = {
@@ -177,9 +185,17 @@ export const verbs: Verb[] = [
           },
           {
             "en": "Do you get what I mean?",
-            "ja": "私の言いたいことは分かりますか？",
+            "ja": "あなたは私の言いたいことが分かりますか？",
             "focus": "get",
-            "jaFocus": "分かりますか"
+            "object": "what I mean",
+            "jaFocus": "分かりますか",
+            "sentencePattern": "S + V + O",
+            "grammarParts": [
+              { "label": "S", "text": "you" },
+              { "label": "V", "text": "get" },
+              { "label": "O", "text": "what I mean" }
+            ],
+            "grammarNote": "Do は疑問文を作る助動詞です。what I mean が get の目的語です。"
           }
         ]
       },
@@ -233,7 +249,7 @@ export const verbs: Verb[] = [
           },
           {
             "en": "We need to get approval before ordering.",
-            "ja": "発注前に承認を得る必要があります。",
+            "ja": "私たちは発注前に承認を得る必要があります。",
             "focus": "get",
             "object": "approval",
             "jaFocus": "承認を得る"
@@ -265,7 +281,7 @@ export const verbs: Verb[] = [
           },
           {
             "en": "We got an opportunity to work with a new client.",
-            "ja": "新しい顧客と仕事をする機会を得ました。",
+            "ja": "私たちは新しい顧客と仕事をする機会を得ました。",
             "focus": "got",
             "object": "an opportunity",
             "jaFocus": "機会を得ました"
@@ -333,7 +349,7 @@ export const verbs: Verb[] = [
           },
           {
             "en": "Can we get new samples by Friday?",
-            "ja": "金曜日までに新しいサンプルを入手できますか？",
+            "ja": "私たちは金曜日までに新しいサンプルを入手できますか？",
             "focus": "get",
             "object": "new samples",
             "jaFocus": "入手できますか"
@@ -351,21 +367,48 @@ export const verbs: Verb[] = [
         "examples": [
           {
             "en": "I'll get Tanaka to check the document.",
-            "ja": "田中さんに資料を確認してもらいます。",
+            "ja": "私は田中さんに資料を確認してもらいます。",
             "focus": "get",
-            "jaFocus": "確認してもらいます"
+            "object": "Tanaka",
+            "jaFocus": "確認してもらいます",
+            "sentencePattern": "S + V + O + C",
+            "grammarParts": [
+              { "label": "S", "text": "I" },
+              { "label": "V", "text": "get" },
+              { "label": "O", "text": "Tanaka" },
+              { "label": "C", "text": "to check the document" }
+            ],
+            "grammarNote": "get + 人 + to do は「人に〜してもらう」という型です。"
           },
           {
             "en": "Can you get the supplier to send the samples?",
-            "ja": "仕入先にサンプルを送ってもらえますか？",
+            "ja": "あなたは仕入先にサンプルを送ってもらえますか？",
             "focus": "get",
-            "jaFocus": "送ってもらえますか"
+            "object": "the supplier",
+            "jaFocus": "送ってもらえますか",
+            "sentencePattern": "S + V + O + C",
+            "grammarParts": [
+              { "label": "S", "text": "you" },
+              { "label": "V", "text": "get" },
+              { "label": "O", "text": "the supplier" },
+              { "label": "C", "text": "to send the samples" }
+            ],
+            "grammarNote": "Can は疑問文を作る助動詞です。the supplier が O、to send the samples が O の動きを説明します。"
           },
           {
             "en": "We need to get the team to agree on this.",
-            "ja": "チームにこの件で合意してもらう必要があります。",
+            "ja": "私たちはチームにこの件で合意してもらう必要があります。",
             "focus": "get",
-            "jaFocus": "合意してもらう"
+            "object": "the team",
+            "jaFocus": "合意してもらう",
+            "sentencePattern": "S + V + O + C",
+            "grammarParts": [
+              { "label": "S", "text": "We" },
+              { "label": "V", "text": "get" },
+              { "label": "O", "text": "the team" },
+              { "label": "C", "text": "to agree on this" }
+            ],
+            "grammarNote": "to agree on this は the team がする動きを表します。この文では get + 人 + to do の型です。"
           }
         ]
       }
@@ -381,13 +424,28 @@ export const verbs: Verb[] = [
             "en": "Let's get ready for the client meeting.",
             "ja": "クライアントとの会議の準備をしましょう。",
             "focus": "get ready",
-            "jaFocus": "準備"
+            "jaFocus": "準備",
+            "sentencePattern": "S + V + C + M",
+            "grammarParts": [
+              { "label": "S", "text": "we" },
+              { "label": "V", "text": "get" },
+              { "label": "C", "text": "ready" },
+              { "label": "M", "text": "for the client meeting" }
+            ],
+            "grammarNote": "Let's は Let us の短縮で「〜しましょう」。for だけでなく for the client meeting をまとまりで見ます。"
           },
           {
             "en": "I'm getting ready for the presentation.",
-            "ja": "プレゼンの準備をしています。",
+            "ja": "私はプレゼンの準備をしています。",
             "focus": "getting ready",
-            "jaFocus": "準備"
+            "jaFocus": "準備",
+            "sentencePattern": "S + V + C + M",
+            "grammarParts": [
+              { "label": "S", "text": "I" },
+              { "label": "V", "text": "am getting" },
+              { "label": "C", "text": "ready" },
+              { "label": "M", "text": "for the presentation" }
+            ]
           },
           {
             "en": "Please get ready by three.",
@@ -459,19 +517,40 @@ export const verbs: Verb[] = [
             "en": "Let's get started.",
             "ja": "始めましょう。",
             "focus": "get started",
-            "jaFocus": "始め"
+            "jaFocus": "始め",
+            "sentencePattern": "S + V + C",
+            "grammarParts": [
+              { "label": "S", "text": "we" },
+              { "label": "V", "text": "get" },
+              { "label": "C", "text": "started" }
+            ],
+            "grammarNote": "get started は「始まった状態になる」。Let's は Let us の短縮です。"
           },
           {
             "en": "We should get started with the agenda.",
-            "ja": "議題から始めましょう。",
+            "ja": "私たちは議題から始めましょう。",
             "focus": "get started",
-            "jaFocus": "始め"
+            "jaFocus": "始め",
+            "sentencePattern": "S + V + C + M",
+            "grammarParts": [
+              { "label": "S", "text": "We" },
+              { "label": "V", "text": "get" },
+              { "label": "C", "text": "started" },
+              { "label": "M", "text": "with the agenda" }
+            ]
           },
           {
             "en": "Can we get started now?",
-            "ja": "今始めてもいいですか？",
+            "ja": "私たちは今始めてもいいですか？",
             "focus": "get started",
-            "jaFocus": "始め"
+            "jaFocus": "始め",
+            "sentencePattern": "S + V + C + M",
+            "grammarParts": [
+              { "label": "S", "text": "we" },
+              { "label": "V", "text": "get" },
+              { "label": "C", "text": "started" },
+              { "label": "M", "text": "now" }
+            ]
           }
         ]
       },
@@ -483,15 +562,31 @@ export const verbs: Verb[] = [
         "examples": [
           {
             "en": "I got involved in this project last month.",
-            "ja": "先月このプロジェクトに関わるようになりました。",
+            "ja": "私は先月このプロジェクトに関わるようになりました。",
             "focus": "got involved",
-            "jaFocus": "関わる"
+            "jaFocus": "関わる",
+            "sentencePattern": "S + V + C + M",
+            "grammarParts": [
+              { "label": "S", "text": "I" },
+              { "label": "V", "text": "got" },
+              { "label": "C", "text": "involved" },
+              { "label": "M", "text": "in this project" }
+            ],
+            "grammarNote": "get involved in ... は「〜に関わるようになる」という自然なまとまりです。"
           },
           {
             "en": "We need to get the sales team involved.",
-            "ja": "営業チームにも関わってもらう必要があります。",
-            "focus": "get involved",
-            "jaFocus": "関わって"
+            "ja": "私たちは営業チームにも関わってもらう必要があります。",
+            "focus": "get",
+            "object": "the sales team",
+            "jaFocus": "関わって",
+            "sentencePattern": "S + V + O + C",
+            "grammarParts": [
+              { "label": "S", "text": "We" },
+              { "label": "V", "text": "get" },
+              { "label": "O", "text": "the sales team" },
+              { "label": "C", "text": "involved" }
+            ]
           },
           {
             "en": "He got involved in the discussion.",
@@ -35019,9 +35114,10 @@ function attachPremiumDailyExamples() {
       meaning.dailyExamples = dailyMeaningExamples[verb.id]?.[meaning.id] ?? fallbackDailyExamples(verb, meaning.title, verb.word.toLowerCase());
     }
     for (const phrase of [...verb.collocations, ...verb.phrasalVerbs]) {
+      if (phrase.dailyExamples && phrase.dailyExamples.length > 0) continue;
       phrase.dailyExamples = [
-        { en: `I often ${phrase.phrase} on weekends.`, ja: `週末によく「${phrase.ja}」という場面があります。`, focus: phrase.phrase, jaFocus: phrase.ja },
-        { en: `It's useful to know how to ${phrase.phrase}.`, ja: `「${phrase.ja}」の言い方を知っておくと便利です。`, focus: phrase.phrase, jaFocus: phrase.ja }
+        { en: `I want to learn how to use "${phrase.phrase}" naturally.`, ja: `「${phrase.ja}」を自然に使えるようになりたいです。`, focus: phrase.phrase, jaFocus: phrase.ja },
+        { en: `This phrase is useful in everyday conversation.`, ja: `この表現は日常会話でも役立ちます。`, focus: phrase.phrase, jaFocus: "役立ちます" }
       ];
     }
   }

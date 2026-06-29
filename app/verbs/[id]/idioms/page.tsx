@@ -6,6 +6,7 @@ import PremiumExamples from "@/components/PremiumExamples";
 import AutoBookmark from "@/components/AutoBookmark";
 import BookmarkButton from "@/components/BookmarkButton";
 import VerbAccessGuard from "@/components/VerbAccessGuard";
+import { naturalPatternText } from "@/lib/display";
 
 
 export default async function VerbIdiomsPage({ params }: { params: Promise<{ id: string }> }) {
@@ -43,7 +44,7 @@ export default async function VerbIdiomsPage({ params }: { params: Promise<{ id:
               <div className="mt-3"><SpeakButton text={p.phrase} label="通常" /></div>
               <div className="type-card type-card-green mt-4">
                 <p className="text-xs font-bold uppercase tracking-wide text-muted">型</p>
-                <p className="mt-1 text-xl font-extrabold">{p.pattern}</p>
+                <p className="mt-1 text-xl font-extrabold">{naturalPatternText(p.pattern)}</p>
               </div>
               <div className="point-card mt-4">
                 <p className="font-bold">💡 イメージ</p>
@@ -55,14 +56,14 @@ export default async function VerbIdiomsPage({ params }: { params: Promise<{ id:
                   <ExampleCard
                     key={e.en}
                     example={e}
-                    verbPattern={p.pattern}
-                    sentenceStructure={p.pattern}
+                    verbPattern={naturalPatternText(p.pattern)}
+                    sentenceStructure={naturalPatternText(p.pattern)}
                     phrase={{
                       id: `${verb.id}:idioms:${index}:${exampleIndex}`,
                       verbId: verb.id,
                       section: "idioms",
                       meaningTitle: `熟語：${p.phrase}`,
-                      pattern: p.pattern,
+                      pattern: naturalPatternText(p.pattern),
                       en: e.en,
                       ja: e.ja
                     }}
@@ -76,7 +77,7 @@ export default async function VerbIdiomsPage({ params }: { params: Promise<{ id:
                   verbId: verb.id,
                   section: "idioms",
                   meaningTitle: `熟語：${p.phrase}`,
-                  pattern: p.pattern
+                  pattern: naturalPatternText(p.pattern)
                 }}
               />
             </article>

@@ -174,7 +174,7 @@ async function upsertFullProgressBackup(progress: UserProgress) {
       username: progress.username,
       progress_json: progress,
       settings_json: settings,
-      app_version: "v67",
+      app_version: "v76",
       updated_at: nowText(),
     },
     { onConflict: "username" },
@@ -270,23 +270,41 @@ export async function syncCurrentUserToSupabase(progress: UserProgress, options:
 
   try {
     const existingBackup = await fetchFullProgressBackup(progress.username);
+    let existingAvatarUrl = "";
+    try {
+      const { data: existingProfile, error: existingProfileError } = await supabase
+        .from("profiles")
+        .select("avatar_url")
+        .eq("username", progress.username)
+        .maybeSingle();
+      if (existingProfileError) throw existingProfileError;
+      existingAvatarUrl = existingProfile?.avatar_url || "";
+    } catch (error) {
+      // profiles テーブル未作成でも学習データ保存は止めない。
+    }
     if (!options.allowEmptyOverwrite && shouldBlockEmptyOverwrite(progress, existingBackup?.progress_json)) {
       status.stats = "saved";
       status.message = "クラウドに学習データがあります。空の端末データで上書きしないため、保存を停止しました。先にクラウドから復元してください。";
       status.updatedAt = existingBackup?.updated_at || nowText();
       return status;
     }
-    // Ver.66: 学習データ保護を最優先。
-    // profiles / user_stats など旧テーブルが未作成でも、まず full backup へ保存できるようにする。
-    await upsertFullProgressBackup(progress);
+    // Ver.76: 学習データ保護を最優先。
+    // 端末側のプロフィール画像が空でも、既存クラウド画像を消さない。
+    const backupProgress: UserProgress = {
+      ...progress,
+      avatarDataUrl: progress.avatarDataUrl || existingBackup?.progress_json?.avatarDataUrl || existingAvatarUrl || "",
+    };
+    await upsertFullProgressBackup(backupProgress);
     status.stats = "saved";
 
-    let avatarUrl = "";
+    let avatarUrl = existingAvatarUrl;
     if (progress.avatarDataUrl) {
       const avatar = await uploadAvatarToSupabase(progress.username, progress.avatarDataUrl);
       status.avatar = avatar.ok ? "saved" : "error";
-      avatarUrl = avatar.url;
+      avatarUrl = avatar.url || existingAvatarUrl;
       if (!avatar.ok) optionalErrors.push(`avatar: ${avatar.message}`);
+    } else if (existingAvatarUrl || existingBackup?.progress_json?.avatarDataUrl) {
+      status.avatar = "saved";
     }
 
     try {
@@ -294,7 +312,7 @@ export async function syncCurrentUserToSupabase(progress: UserProgress, options:
         {
           username: progress.username,
           display_name: progress.displayName || progress.username,
-          avatar_url: avatarUrl || null,
+          avatar_url: avatarUrl || existingAvatarUrl || null,
           notifications_enabled: progress.notificationsEnabled ?? true,
           role: "user",
           last_login_at: progress.lastLoginAt || null,
@@ -437,6 +455,7 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
         savedPhrases: remoteProgress.savedPhrases?.length ? remoteProgress.savedPhrases : progress.savedPhrases,
         testSessions: { ...(progress.testSessions || {}), ...(remoteProgress.testSessions || {}) },
         weeklyStats: { ...(progress.weeklyStats || {}), ...(remoteProgress.weeklyStats || {}) },
+        avatarDataUrl: remoteProgress.avatarDataUrl || progress.avatarDataUrl,
       };
       Object.assign(progress, restored);
       if (backup.settings_json) applyClientStudySettingsSnapshot(backup.settings_json);
@@ -491,6 +510,11 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
       if (typeof profile.notifications_enabled === "boolean") {
         progress.notificationsEnabled = profile.notifications_enabled;
         changed = true;
+      }
+      if (profile.avatar_url && !progress.avatarDataUrl) {
+        progress.avatarDataUrl = profile.avatar_url;
+        changed = true;
+        status.avatar = "saved";
       }
       if (profile.last_login_at && (!progress.lastLoginAt || profile.last_login_at > progress.lastLoginAt)) {
         progress.lastLoginAt = profile.last_login_at;

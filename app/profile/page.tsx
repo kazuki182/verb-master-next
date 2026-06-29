@@ -33,7 +33,7 @@ import {
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 75";
+const VERSION = "Version 76";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -451,6 +451,7 @@ export default function ProfilePage() {
 
         <div className="mt-3 grid grid-cols-2 gap-2 text-center text-xs">
           <div className="rounded-xl bg-slate-950/70 p-3">プロフィール<br /><b>{cloudLabel("profile", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
+          <div className="rounded-xl bg-slate-950/70 p-3">画像<br /><b>{cloudLabel("avatar", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
           <div className="rounded-xl bg-slate-950/70 p-3">Premium<br /><b>{cloudLabel("premium", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
           <div className="rounded-xl bg-slate-950/70 p-3">学習記録<br /><b>{cloudLabel("stats", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
           <div className="rounded-xl bg-slate-950/70 p-3">音声・設定<br /><b>{cloudStatus?.stats === "saved" ? "保存対象" : cloudStatus?.configured ? "待機" : "端末内"}</b></div>
@@ -558,7 +559,8 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.75</p><p className="mt-1 text-muted">HOMEの学習ダッシュボードを現在の解放パックに連動。無料は3語、30/60/90/120語パックでは各解放語数を学習対象として、習得済み・残り・必要ペースを計算するよう修正。</p></div>
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.76</p><p className="mt-1 text-muted">プロフィール画像をSupabase Storageへ保存・復元しやすくし、更新時に画像URLを空で上書きしない保護を追加。型表示の英語大文字を自然な小文字表記へ統一する下準備も追加。</p></div>
+          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.75</p><p className="mt-1 text-muted">HOMEの学習ダッシュボードを現在の解放パックに連動。無料は3語、30/60/90/120語パックでは各解放語数を学習対象として、習得済み・残り・必要ペースを計算するよう修正。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.74</p><p className="mt-1 text-muted">右側の↑↓スクロールボタンが下部ナビに被って押せない問題を修正。スマホで押しやすい位置とサイズに調整しました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.73</p><p className="mt-1 text-muted">動詞を120語まで拡張。adjust / apply / approve / borrow / check / collect / communicate / describe / earn / estimate / focus / identify / introduce / join / lead / maintain / mention / protect / replace / train を追加し、120語パックを実データ化。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.72</p><p className="mt-1 text-muted">120語パック準備版。91〜100番を120語パック先行収録として表示し、30 / 60 / 90 / 120の段階解放、ロック表示、購入画面の説明を整理。</p></div>

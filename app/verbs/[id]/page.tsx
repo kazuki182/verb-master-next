@@ -7,6 +7,7 @@ import AutoBookmark from "@/components/AutoBookmark";
 import BookmarkButton from "@/components/BookmarkButton";
 import VerbProgressPanel from "@/components/VerbProgressPanel";
 import VerbAccessGuard from "@/components/VerbAccessGuard";
+import { naturalPatternText } from "@/lib/display";
 
 
 export default async function VerbDetail({ params }: { params: Promise<{ id: string }> }) {
@@ -85,7 +86,7 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
 
               <div className="type-card mt-4">
                 <p className="text-xs font-bold uppercase tracking-wide text-muted">型</p>
-                <p className="mt-1 text-2xl font-extrabold leading-tight">{meaning.pattern}</p>
+                <p className="mt-1 text-2xl font-extrabold leading-tight">{naturalPatternText(meaning.pattern)}</p>
                 <p className="mt-2 text-sm text-muted">{meaning.structure}</p>
                 <p className="mt-1 text-sm text-muted">{meaning.transitivity}</p>
               </div>
@@ -106,14 +107,14 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
                   <ExampleCard
                     key={example.en}
                     example={example}
-                    verbPattern={meaning.pattern}
+                    verbPattern={naturalPatternText(meaning.pattern)}
                     sentenceStructure={meaning.structure}
                     phrase={{
                       id: `${verb.id}:basic:${meaning.id}:${exampleIndex}`,
                       verbId: verb.id,
                       section: "basic",
                       meaningTitle: meaning.title,
-                      pattern: meaning.pattern,
+                      pattern: naturalPatternText(meaning.pattern),
                       en: example.en,
                       ja: example.ja
                     }}
@@ -127,7 +128,7 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
                   verbId: verb.id,
                   section: "basic",
                   meaningTitle: meaning.title,
-                  pattern: meaning.pattern
+                  pattern: naturalPatternText(meaning.pattern)
                 }}
               />
             </article>

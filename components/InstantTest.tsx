@@ -1,5 +1,6 @@
 "use client";
 
+import { naturalPatternText } from "@/lib/display";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getVerb, getTestItemById, getTestItemsForVerb, type TestItem, type TestSection } from "@/lib/data";
@@ -349,7 +350,7 @@ export default function InstantTest({
             <div className="rounded-2xl bg-slate-950/60 p-5">
               <p className="text-sm font-bold text-muted">正解</p>
               <p className="mt-2 text-xl font-bold">{item.en}</p>
-              <p className="mt-2 text-sm text-muted">型：{item.pattern}</p>
+              <p className="mt-2 text-sm text-muted">型：{naturalPatternText(item.pattern)}</p>
               <div className="mt-4"><SpeakButton text={item.en} label="通常" slowLabel="ゆっくり" lang="en-US" /></div>
             </div>
             <div className="grid grid-cols-2 gap-3">

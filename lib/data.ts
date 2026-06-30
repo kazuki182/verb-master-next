@@ -30308,163 +30308,1337 @@ export const verbs: Verb[] = [
   ]
 },
   {
-    "id": "improve",
-    "rank": 55,
-    "word": "IMPROVE",
-    "ipa": "/ɪmˈpruːv/",
-    "kana": "インプルーヴ",
-    "syllable": "im-prove",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "状態や質をより良くする・良くなる",
-    "coreDetail": "IMPROVEは、品質・スキル・状況・関係などが良くなる、または良くする時に使います。",
-    "meanings": [
-      {
-        "id": "make-better",
-        "title": "① 改善する・良くなる",
-        "pattern": "IMPROVE + 名詞 / improve by itself",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + improve + O / S + improve",
-        "image": "今より良い状態へ進む。",
-        "point": "他動詞なら improve the process、自動詞なら The process improved. の形。",
-        "examples": [
-          {
-            "en": "We need to improve the process.",
-            "ja": "私たちはその手順を改善する必要があります。",
-            "focus": "improve",
-            "object": "the process",
-            "jaFocus": "改善する"
-          },
-          {
-            "en": "Our response time improved last month.",
-            "ja": "私たちの対応時間は先月改善しました。",
-            "focus": "improved",
-            "jaFocus": "改善しました",
-            "sentencePattern": "S + V + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "Our response time"
-              },
-              {
-                "label": "V",
-                "text": "improved"
-              },
-              {
-                "label": "M",
-                "text": "last month"
-              }
-            ]
-          },
-          {
-            "en": "This update will improve the user experience.",
-            "ja": "この更新はユーザー体験を改善します。",
-            "focus": "improve",
-            "object": "the user experience",
-            "jaFocus": "改善します"
-          }
-        ]
-      }
+  "id": "improve",
+  "rank": 55,
+  "word": "IMPROVE",
+  "ipa": "/ɪmˈpruːv/",
+  "kana": "インプルーヴ",
+  "syllable": "im-prove",
+  "transitivity": "他動詞・自動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "今より良い状態へ進める・良くなる",
+  "coreDetail": "improve は、品質・手順・対応・数字・関係・スキルなどを、今より良い状態にする／良くなる動詞です。仕事では改善活動・数値改善・顧客対応・品質向上でよく使います。",
+  "coreVisual": {
+    "from": [
+      "今の状態",
+      "課題",
+      "不足",
+      "遅れ"
     ],
-    "collocations": [],
-    "phrasalVerbs": []
+    "to": "より良い状態",
+    "label": "現状 → 改善された状態"
   },
+  "meanings": [
+    {
+      "id": "improve-process",
+      "title": "① 手順・業務を改善する",
+      "pattern": "improve + 手順・業務・仕組み",
+      "transitivity": "他動詞",
+      "structure": "S + improve + O",
+      "image": "仕事の流れを今より良くする。",
+      "point": "process, workflow, system などと相性が良い。改善対象を目的語に置く。",
+      "examples": [
+        {
+          "en": "We need to improve the approval process.",
+          "ja": "私たちは承認プロセスを改善する必要があります。",
+          "focus": "improve",
+          "object": "the approval process"
+        },
+        {
+          "en": "The new checklist improved our workflow.",
+          "ja": "新しいチェックリストで私たちの業務フローが改善しました。",
+          "focus": "improved",
+          "object": "our workflow"
+        },
+        {
+          "en": "This system will improve how we handle orders.",
+          "ja": "このシステムは受注対応の方法を改善します。",
+          "focus": "improve",
+          "object": "how we handle orders"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "improve-quality",
+      "title": "② 品質・精度を高める",
+      "pattern": "improve + quality / accuracy",
+      "transitivity": "他動詞",
+      "structure": "S + improve + O",
+      "image": "品質や精度を一段上げる。",
+      "point": "quality, accuracy, performance など仕事で重要な名詞と使う。",
+      "examples": [
+        {
+          "en": "We improved the quality of the final report.",
+          "ja": "私たちは最終報告書の品質を高めました。",
+          "focus": "improved",
+          "object": "the quality of the final report"
+        },
+        {
+          "en": "Please improve the accuracy of the estimate.",
+          "ja": "見積の精度を高めてください。",
+          "focus": "improve",
+          "object": "the accuracy of the estimate"
+        },
+        {
+          "en": "The update improved the performance of the app.",
+          "ja": "その更新でアプリの性能が向上しました。",
+          "focus": "improved",
+          "object": "the performance of the app"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "improve-results",
+      "title": "③ 数値・結果を改善する",
+      "pattern": "improve + results / sales / rate",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + improve + O / S + improve",
+      "image": "数字や成果が良くなる。",
+      "point": "sales, score, rate, result など、数値で見える改善に使う。",
+      "examples": [
+        {
+          "en": "We improved our response rate this quarter.",
+          "ja": "私たちは今四半期の返信率を改善しました。",
+          "focus": "improved",
+          "object": "our response rate"
+        },
+        {
+          "en": "Sales improved after the new campaign.",
+          "ja": "新しいキャンペーン後に売上が改善しました。",
+          "focus": "improved"
+        },
+        {
+          "en": "The team improved the delivery success rate.",
+          "ja": "チームは納品成功率を改善しました。",
+          "focus": "improved",
+          "object": "the delivery success rate"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "improve-skills",
+      "title": "④ スキル・知識を伸ばす",
+      "pattern": "improve + skill / knowledge",
+      "transitivity": "他動詞",
+      "structure": "S + improve + O",
+      "image": "人の能力を今より使える状態にする。",
+      "point": "English, skills, knowledge など学習・研修文脈で使う。",
+      "examples": [
+        {
+          "en": "I want to improve my business English.",
+          "ja": "私はビジネス英語を上達させたいです。",
+          "focus": "improve",
+          "object": "my business English"
+        },
+        {
+          "en": "The training helped us improve our product knowledge.",
+          "ja": "その研修で私たちは製品知識を高めることができました。",
+          "focus": "improve",
+          "object": "our product knowledge"
+        },
+        {
+          "en": "She improved her presentation skills through practice.",
+          "ja": "彼女は練習を通じてプレゼン能力を高めました。",
+          "focus": "improved",
+          "object": "her presentation skills"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "improve-service",
+      "title": "⑤ サービス・対応を改善する",
+      "pattern": "improve + service / support / response",
+      "transitivity": "他動詞",
+      "structure": "S + improve + O",
+      "image": "顧客や社内への対応をより良くする。",
+      "point": "customer service, support, response time などに使う。",
+      "examples": [
+        {
+          "en": "We improved customer support by adding a new FAQ.",
+          "ja": "私たちは新しいFAQを追加して顧客サポートを改善しました。",
+          "focus": "improved",
+          "object": "customer support"
+        },
+        {
+          "en": "Please improve the response time for urgent requests.",
+          "ja": "緊急依頼への対応時間を改善してください。",
+          "focus": "improve",
+          "object": "the response time"
+        },
+        {
+          "en": "The team improved the follow-up process after meetings.",
+          "ja": "チームは会議後のフォロー手順を改善しました。",
+          "focus": "improved",
+          "object": "the follow-up process"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "improve-relationship",
+      "title": "⑥ 関係・状況を良くする",
+      "pattern": "improve + relationship / situation",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + improve + O / S + improve",
+      "image": "悪くない状態をさらに良くする、または問題のある状態を良くする。",
+      "point": "relationship, situation, communication など抽象的な対象にも使える。",
+      "examples": [
+        {
+          "en": "Regular updates improved the relationship with the client.",
+          "ja": "定期的な共有で顧客との関係が改善しました。",
+          "focus": "improved",
+          "object": "the relationship with the client"
+        },
+        {
+          "en": "The situation improved after we changed the schedule.",
+          "ja": "予定を変更した後、状況は改善しました。",
+          "focus": "improved"
+        },
+        {
+          "en": "Clear rules improved communication between the teams.",
+          "ja": "明確なルールでチーム間のコミュニケーションが改善しました。",
+          "focus": "improved",
+          "object": "communication between the teams"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "improve quality",
+      "ja": "品質を改善する",
+      "image": "製品・資料・サービスの質を上げる。",
+      "pattern": "improve quality",
+      "examples": [
+        {
+          "en": "We must improve quality before the final delivery.",
+          "ja": "最終納品前に品質を改善しなければなりません。",
+          "focus": "improve quality"
+        },
+        {
+          "en": "The new inspection process improved quality across the team.",
+          "ja": "新しい検査手順でチーム全体の品質が改善しました。",
+          "focus": "improved quality"
+        },
+        {
+          "en": "Please improve quality without increasing the cost.",
+          "ja": "コストを増やさずに品質を改善してください。",
+          "focus": "improve quality"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "improve efficiency",
+      "ja": "効率を改善する",
+      "image": "時間・手間・コストを減らして効率を上げる。",
+      "pattern": "improve efficiency",
+      "examples": [
+        {
+          "en": "This tool will improve efficiency in daily reporting.",
+          "ja": "このツールは日々の報告業務の効率を改善します。",
+          "focus": "improve efficiency"
+        },
+        {
+          "en": "We improved efficiency by reducing manual work.",
+          "ja": "手作業を減らして効率を改善しました。",
+          "focus": "improved efficiency"
+        },
+        {
+          "en": "The manager asked us to improve efficiency this month.",
+          "ja": "マネージャーは今月、効率改善を求めました。",
+          "focus": "improve efficiency"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "improve communication",
+      "ja": "コミュニケーションを改善する",
+      "image": "伝達不足や認識違いを減らす。",
+      "pattern": "improve communication",
+      "examples": [
+        {
+          "en": "We need to improve communication between sales and production.",
+          "ja": "営業と製造の間のコミュニケーションを改善する必要があります。",
+          "focus": "improve communication"
+        },
+        {
+          "en": "Daily updates improved communication with the client.",
+          "ja": "毎日の共有で顧客とのコミュニケーションが改善しました。",
+          "focus": "improved communication"
+        },
+        {
+          "en": "Clear meeting notes can improve communication.",
+          "ja": "明確な議事メモはコミュニケーションを改善できます。",
+          "focus": "improve communication"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "improve skills",
+      "ja": "スキルを伸ばす",
+      "image": "練習・研修で能力を高める。",
+      "pattern": "improve skills",
+      "examples": [
+        {
+          "en": "I joined the workshop to improve my sales skills.",
+          "ja": "私は営業スキルを伸ばすために研修に参加しました。",
+          "focus": "improve my sales skills"
+        },
+        {
+          "en": "The team improved their negotiation skills through role-play.",
+          "ja": "チームはロールプレイを通じて交渉スキルを伸ばしました。",
+          "focus": "improved their negotiation skills"
+        },
+        {
+          "en": "We should improve skills before handling larger projects.",
+          "ja": "より大きな案件を担当する前にスキルを伸ばすべきです。",
+          "focus": "improve skills"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "improve results",
+      "ja": "結果を改善する",
+      "image": "売上・成績・成果を良くする。",
+      "pattern": "improve results",
+      "examples": [
+        {
+          "en": "We changed the sales approach to improve results.",
+          "ja": "結果を改善するために営業方法を変えました。",
+          "focus": "improve results"
+        },
+        {
+          "en": "The new process improved results within two months.",
+          "ja": "新しい手順で2か月以内に結果が改善しました。",
+          "focus": "improved results"
+        },
+        {
+          "en": "Please review the data and suggest how to improve results.",
+          "ja": "データを確認し、結果を改善する方法を提案してください。",
+          "focus": "improve results"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ],
+  "phrasalVerbs": [
+    {
+      "phrase": "improve on",
+      "ja": "〜をさらに上回る・改善する",
+      "image": "既存のものより良くする。",
+      "pattern": "improve on + 名詞",
+      "examples": [
+        {
+          "en": "We need to improve on last year's proposal.",
+          "ja": "私たちは昨年の提案をさらに改善する必要があります。",
+          "focus": "improve on"
+        },
+        {
+          "en": "The new model improves on the previous design.",
+          "ja": "新モデルは前のデザインをさらに改善しています。",
+          "focus": "improves on"
+        },
+        {
+          "en": "Can we improve on this process before launch?",
+          "ja": "リリース前にこの手順をさらに改善できますか？",
+          "focus": "improve on"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "improve upon",
+      "ja": "〜を改良する",
+      "image": "improve on より少し硬い表現。",
+      "pattern": "improve upon + 名詞",
+      "examples": [
+        {
+          "en": "The team improved upon the original plan.",
+          "ja": "チームは当初の計画を改良しました。",
+          "focus": "improved upon"
+        },
+        {
+          "en": "We should improve upon the current quotation format.",
+          "ja": "現在の見積書フォーマットを改良すべきです。",
+          "focus": "improve upon"
+        },
+        {
+          "en": "This update improves upon the old workflow.",
+          "ja": "この更新は古い業務フローを改良しています。",
+          "focus": "improves upon"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "improve by",
+      "ja": "〜分改善する",
+      "image": "割合・数値を使って改善幅を示す。",
+      "pattern": "improve by + 数値",
+      "examples": [
+        {
+          "en": "Our response time improved by 20 percent.",
+          "ja": "対応時間は20パーセント改善しました。",
+          "focus": "improved by"
+        },
+        {
+          "en": "We want to improve productivity by ten percent.",
+          "ja": "生産性を10パーセント改善したいです。",
+          "focus": "improve productivity by"
+        },
+        {
+          "en": "The delivery rate improved by five points.",
+          "ja": "納品率は5ポイント改善しました。",
+          "focus": "improved by"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "improve with",
+      "ja": "〜によって良くなる",
+      "image": "道具・経験・練習で良くなる。",
+      "pattern": "improve with + 名詞",
+      "examples": [
+        {
+          "en": "The report improved with clearer charts.",
+          "ja": "より分かりやすいグラフで報告書が良くなりました。",
+          "focus": "improved with"
+        },
+        {
+          "en": "Our service improved with customer feedback.",
+          "ja": "顧客のフィードバックによってサービスが改善しました。",
+          "focus": "improved with"
+        },
+        {
+          "en": "The process will improve with more accurate data.",
+          "ja": "より正確なデータでその手順は改善します。",
+          "focus": "improve with"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "improve over",
+      "ja": "以前より改善する",
+      "image": "過去の状態と比べて良くなる。",
+      "pattern": "improve over + 期間・比較対象",
+      "examples": [
+        {
+          "en": "Sales improved over the last quarter.",
+          "ja": "売上は前四半期にかけて改善しました。",
+          "focus": "improved over"
+        },
+        {
+          "en": "The team's response improved over time.",
+          "ja": "チームの対応は時間とともに改善しました。",
+          "focus": "improved over"
+        },
+        {
+          "en": "Quality should improve over the next few months.",
+          "ja": "品質は今後数か月で改善するはずです。",
+          "focus": "improve over"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ]
+},
   {
-    "id": "manage",
-    "rank": 56,
-    "word": "MANAGE",
-    "ipa": "/ˈmænɪdʒ/",
-    "kana": "マネージ",
-    "syllable": "man-age",
-    "transitivity": "他動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "物事を管理し、何とかやり遂げる",
-    "coreDetail": "MANAGEは、管理するだけでなく、限られた条件の中で何とかできるという意味でも使います。",
-    "meanings": [
-      {
-        "id": "control-handle",
-        "title": "① 管理する・何とかやる",
-        "pattern": "MANAGE + 名詞 / manage to do",
-        "transitivity": "他動詞",
-        "structure": "S + manage + O / S + manage + to do",
-        "image": "状況をコントロールして前に進める。",
-        "point": "manage to do は「何とか〜する」。仕事で非常に使いやすい。",
-        "examples": [
-          {
-            "en": "I manage several projects at the same time.",
-            "ja": "私は複数の案件を同時に管理しています。",
-            "focus": "manage",
-            "object": "several projects",
-            "jaFocus": "管理しています"
-          },
-          {
-            "en": "We managed to finish the report today.",
-            "ja": "私たちは今日なんとか報告書を終えることができました。",
-            "focus": "managed",
-            "object": "to finish the report",
-            "jaFocus": "なんとか終えることができました"
-          },
-          {
-            "en": "Can you manage this task by Friday?",
-            "ja": "あなたは金曜日までにこの作業を対応できますか？",
-            "focus": "manage",
-            "object": "this task",
-            "jaFocus": "対応できますか"
-          }
-        ]
-      }
+  "id": "manage",
+  "rank": 56,
+  "word": "MANAGE",
+  "ipa": "/ˈmænɪdʒ/",
+  "kana": "マネージ",
+  "syllable": "man-age",
+  "transitivity": "他動詞・自動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "状況・人・仕事をコントロールして前に進める",
+  "coreDetail": "manage は、単に管理するだけでなく、限られた時間・人数・条件の中で何とか対応する感覚もあります。仕事では案件管理、チーム管理、時間管理、問題対応でよく使います。",
+  "coreVisual": {
+    "from": [
+      "人",
+      "案件",
+      "時間",
+      "問題",
+      "予算"
     ],
-    "collocations": [],
-    "phrasalVerbs": []
+    "to": "コントロールして進める",
+    "label": "ばらばらな要素 → 管理された状態"
   },
+  "meanings": [
+    {
+      "id": "manage-project",
+      "title": "① 案件・業務を管理する",
+      "pattern": "manage + 案件・業務",
+      "transitivity": "他動詞",
+      "structure": "S + manage + O",
+      "image": "案件や業務を動く状態に保つ。",
+      "point": "project, task, account, operation など仕事の対象に使う。",
+      "examples": [
+        {
+          "en": "I manage several projects at the same time.",
+          "ja": "私は複数の案件を同時に管理しています。",
+          "focus": "manage",
+          "object": "several projects"
+        },
+        {
+          "en": "She manages the daily operations of the team.",
+          "ja": "彼女はチームの日常業務を管理しています。",
+          "focus": "manages",
+          "object": "the daily operations"
+        },
+        {
+          "en": "We need someone to manage this account.",
+          "ja": "この取引先を管理する担当者が必要です。",
+          "focus": "manage",
+          "object": "this account"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "manage-people",
+      "title": "② 人・チームを管理する",
+      "pattern": "manage + 人・チーム",
+      "transitivity": "他動詞",
+      "structure": "S + manage + O",
+      "image": "人やチームの動きをまとめる。",
+      "point": "team, staff, members などに使う。",
+      "examples": [
+        {
+          "en": "He manages a team of five salespeople.",
+          "ja": "彼は5人の営業チームを管理しています。",
+          "focus": "manages",
+          "object": "a team of five salespeople"
+        },
+        {
+          "en": "We need to manage the new members carefully.",
+          "ja": "新しいメンバーを丁寧に管理する必要があります。",
+          "focus": "manage",
+          "object": "the new members"
+        },
+        {
+          "en": "The leader managed the team during the busy season.",
+          "ja": "リーダーは繁忙期にチームを管理しました。",
+          "focus": "managed",
+          "object": "the team"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "manage-time",
+      "title": "③ 時間・予定をやりくりする",
+      "pattern": "manage + time / schedule",
+      "transitivity": "他動詞",
+      "structure": "S + manage + O",
+      "image": "限られた時間をうまく使う。",
+      "point": "time, schedule, workload とよく使う。",
+      "examples": [
+        {
+          "en": "I need to manage my time better this week.",
+          "ja": "今週はもっと上手く時間管理をする必要があります。",
+          "focus": "manage",
+          "object": "my time"
+        },
+        {
+          "en": "Can you manage your schedule around the client visit?",
+          "ja": "顧客訪問に合わせて予定を調整できますか？",
+          "focus": "manage",
+          "object": "your schedule"
+        },
+        {
+          "en": "We managed the workload by sharing tasks.",
+          "ja": "作業を分担して業務量をやりくりしました。",
+          "focus": "managed",
+          "object": "the workload"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "manage-problem",
+      "title": "④ 問題・リスクに対応する",
+      "pattern": "manage + problem / risk",
+      "transitivity": "他動詞",
+      "structure": "S + manage + O",
+      "image": "問題を放置せず、被害を小さくしながら扱う。",
+      "point": "risk, issue, complaint, delay などに使う。",
+      "examples": [
+        {
+          "en": "We must manage the risk before signing the contract.",
+          "ja": "契約前にリスクを管理しなければなりません。",
+          "focus": "manage",
+          "object": "the risk"
+        },
+        {
+          "en": "The team managed the complaint quickly.",
+          "ja": "チームはそのクレームに素早く対応しました。",
+          "focus": "managed",
+          "object": "the complaint"
+        },
+        {
+          "en": "Please manage the delay and inform the client.",
+          "ja": "遅延に対応し、顧客へ知らせてください。",
+          "focus": "manage",
+          "object": "the delay"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "manage-to-do",
+      "title": "⑤ 何とか〜する",
+      "pattern": "manage to do",
+      "transitivity": "自動詞的表現",
+      "structure": "S + manage + to do",
+      "image": "難しい状況でも何とか達成する。",
+      "point": "manage to finish, manage to send など成果に焦点がある。",
+      "examples": [
+        {
+          "en": "We managed to finish the report today.",
+          "ja": "私たちは今日なんとか報告書を終えることができました。",
+          "focus": "managed to"
+        },
+        {
+          "en": "She managed to get approval before the deadline.",
+          "ja": "彼女は締切前になんとか承認を得ました。",
+          "focus": "managed to"
+        },
+        {
+          "en": "I managed to join the meeting on time.",
+          "ja": "私はなんとか時間通りに会議へ参加できました。",
+          "focus": "managed to"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "manage-without",
+      "title": "⑥ 〜なしで何とかする",
+      "pattern": "manage without + 名詞",
+      "transitivity": "自動詞的表現",
+      "structure": "S + manage + without + 名詞",
+      "image": "不足がある中で対応する。",
+      "point": "without extra staff, without the file など不足条件を置く。",
+      "examples": [
+        {
+          "en": "We had to manage without extra staff.",
+          "ja": "追加人員なしで何とか対応しなければなりませんでした。",
+          "focus": "manage without"
+        },
+        {
+          "en": "Can you manage without the original file?",
+          "ja": "元データなしで何とか対応できますか？",
+          "focus": "manage without"
+        },
+        {
+          "en": "The team managed without overtime this month.",
+          "ja": "チームは今月、残業なしで何とか対応しました。",
+          "focus": "managed without"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "manage a project",
+      "ja": "案件を管理する",
+      "image": "案件の進行・期限・関係者をまとめる。",
+      "pattern": "manage a project",
+      "examples": [
+        {
+          "en": "I will manage the project from next week.",
+          "ja": "来週から私がその案件を管理します。",
+          "focus": "manage the project"
+        },
+        {
+          "en": "She managed a project for a major client.",
+          "ja": "彼女は大口顧客向けの案件を管理しました。",
+          "focus": "managed a project"
+        },
+        {
+          "en": "We need a clear system to manage a project like this.",
+          "ja": "このような案件を管理するには明確な仕組みが必要です。",
+          "focus": "manage a project"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "manage a team",
+      "ja": "チームを管理する",
+      "image": "メンバーの役割や作業をまとめる。",
+      "pattern": "manage a team",
+      "examples": [
+        {
+          "en": "He manages a team in the Osaka office.",
+          "ja": "彼は大阪営業所のチームを管理しています。",
+          "focus": "manages a team"
+        },
+        {
+          "en": "It is difficult to manage a team remotely.",
+          "ja": "リモートでチームを管理するのは難しいです。",
+          "focus": "manage a team"
+        },
+        {
+          "en": "She learned how to manage a team under pressure.",
+          "ja": "彼女はプレッシャーの中でチームを管理する方法を学びました。",
+          "focus": "manage a team"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "manage time",
+      "ja": "時間を管理する",
+      "image": "限られた時間を上手く使う。",
+      "pattern": "manage time",
+      "examples": [
+        {
+          "en": "We need to manage time carefully during the meeting.",
+          "ja": "会議中は時間を慎重に管理する必要があります。",
+          "focus": "manage time"
+        },
+        {
+          "en": "Good preparation helps us manage time better.",
+          "ja": "良い準備は時間管理をしやすくします。",
+          "focus": "manage time"
+        },
+        {
+          "en": "I could not manage time well today.",
+          "ja": "今日は時間管理がうまくできませんでした。",
+          "focus": "manage time"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "manage risk",
+      "ja": "リスクを管理する",
+      "image": "問題が大きくならないように先回りする。",
+      "pattern": "manage risk",
+      "examples": [
+        {
+          "en": "We need to manage risk before changing suppliers.",
+          "ja": "仕入先を変更する前にリスクを管理する必要があります。",
+          "focus": "manage risk"
+        },
+        {
+          "en": "The contract helps us manage risk.",
+          "ja": "その契約はリスク管理に役立ちます。",
+          "focus": "manage risk"
+        },
+        {
+          "en": "Please prepare a plan to manage risk.",
+          "ja": "リスクを管理するための計画を準備してください。",
+          "focus": "manage risk"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "manage expectations",
+      "ja": "期待値を調整する",
+      "image": "相手が期待しすぎないように現実的に伝える。",
+      "pattern": "manage expectations",
+      "examples": [
+        {
+          "en": "We should manage expectations before sharing the schedule.",
+          "ja": "予定を共有する前に期待値を調整すべきです。",
+          "focus": "manage expectations"
+        },
+        {
+          "en": "Clear communication helps manage expectations.",
+          "ja": "明確な伝達は期待値の調整に役立ちます。",
+          "focus": "manage expectations"
+        },
+        {
+          "en": "The sales team managed expectations during the delay.",
+          "ja": "営業チームは遅延中に期待値を調整しました。",
+          "focus": "managed expectations"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ],
+  "phrasalVerbs": [
+    {
+      "phrase": "manage to",
+      "ja": "何とか〜する",
+      "image": "難しい状況でも達成する。",
+      "pattern": "manage to + 動詞",
+      "examples": [
+        {
+          "en": "We managed to send the quote before noon.",
+          "ja": "正午前になんとか見積を送ることができました。",
+          "focus": "managed to"
+        },
+        {
+          "en": "Did you manage to confirm the delivery date?",
+          "ja": "納期をなんとか確認できましたか？",
+          "focus": "manage to"
+        },
+        {
+          "en": "She managed to solve the issue quickly.",
+          "ja": "彼女はその問題を素早く何とか解決しました。",
+          "focus": "managed to"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "manage without",
+      "ja": "〜なしで何とかする",
+      "image": "足りないものがあっても対応する。",
+      "pattern": "manage without + 名詞",
+      "examples": [
+        {
+          "en": "We can manage without the extra sample today.",
+          "ja": "今日は追加サンプルなしでも何とか対応できます。",
+          "focus": "manage without"
+        },
+        {
+          "en": "They managed without a formal meeting.",
+          "ja": "彼らは正式な会議なしで何とか進めました。",
+          "focus": "managed without"
+        },
+        {
+          "en": "Can we manage without changing the design?",
+          "ja": "デザインを変更せずに何とかできますか？",
+          "focus": "manage without"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "manage with",
+      "ja": "〜で何とかする",
+      "image": "ある限られた条件や道具で対応する。",
+      "pattern": "manage with + 名詞",
+      "examples": [
+        {
+          "en": "We can manage with the current budget.",
+          "ja": "現在の予算で何とか対応できます。",
+          "focus": "manage with"
+        },
+        {
+          "en": "The team managed with limited information.",
+          "ja": "チームは限られた情報で何とか対応しました。",
+          "focus": "managed with"
+        },
+        {
+          "en": "Can you manage with this schedule?",
+          "ja": "この予定で何とか対応できますか？",
+          "focus": "manage with"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "manage through",
+      "ja": "〜を乗り切る",
+      "image": "難しい時期や問題を管理しながら進む。",
+      "pattern": "manage through + 困難",
+      "examples": [
+        {
+          "en": "We managed through the busy season with a small team.",
+          "ja": "少人数のチームで繁忙期を乗り切りました。",
+          "focus": "managed through"
+        },
+        {
+          "en": "The company managed through the supply issue.",
+          "ja": "会社は供給問題を乗り切りました。",
+          "focus": "managed through"
+        },
+        {
+          "en": "We need a plan to manage through this delay.",
+          "ja": "この遅延を乗り切るための計画が必要です。",
+          "focus": "manage through"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "manage up",
+      "ja": "上司や上層部と上手く調整する",
+      "image": "上の立場の人に必要な情報を渡して動きやすくする。",
+      "pattern": "manage up",
+      "examples": [
+        {
+          "en": "She knows how to manage up with clear reports.",
+          "ja": "彼女は明確な報告で上司と上手く調整する方法を知っています。",
+          "focus": "manage up"
+        },
+        {
+          "en": "We need to manage up before the budget meeting.",
+          "ja": "予算会議の前に上層部と上手く調整する必要があります。",
+          "focus": "manage up"
+        },
+        {
+          "en": "Good managers also teach their teams to manage up.",
+          "ja": "良い管理者は部下にも上司との調整方法を教えます。",
+          "focus": "manage up"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ]
+},
   {
-    "id": "prepare",
-    "rank": 57,
-    "word": "PREPARE",
-    "ipa": "/prɪˈper/",
-    "kana": "プリペア",
-    "syllable": "pre-pare",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "必要なものを前もって整える",
-    "coreDetail": "PREPAREは、会議・資料・提案・出張などに向けて準備する時に使います。",
-    "meanings": [
-      {
-        "id": "get-ready",
-        "title": "① 準備する",
-        "pattern": "PREPARE + 名詞 / prepare for + 名詞",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + prepare + O / S + prepare for + 名詞",
-        "image": "本番前に必要な状態を作る。",
-        "point": "prepare the document は資料を準備する。prepare for the meeting は会議に向けて準備する。",
-        "examples": [
-          {
-            "en": "I prepared the proposal yesterday.",
-            "ja": "私は昨日、提案書を準備しました。",
-            "focus": "prepared",
-            "object": "the proposal",
-            "jaFocus": "準備しました"
-          },
-          {
-            "en": "We need to prepare for the client meeting.",
-            "ja": "私たちはクライアントとの会議に向けて準備する必要があります。",
-            "focus": "prepare",
-            "object": "for the client meeting",
-            "jaFocus": "準備する"
-          },
-          {
-            "en": "Please prepare the latest data.",
-            "ja": "最新版のデータを準備してください。",
-            "focus": "prepare",
-            "object": "the latest data",
-            "jaFocus": "準備してください"
-          }
-        ]
-      }
+  "id": "prepare",
+  "rank": 57,
+  "word": "PREPARE",
+  "ipa": "/prɪˈper/",
+  "kana": "プリペア",
+  "syllable": "pre-pare",
+  "transitivity": "他動詞・自動詞",
+  "importance": "★★★★☆ 重要",
+  "core": "本番や必要な時に向けて、前もって整える",
+  "coreDetail": "prepare は、会議・資料・見積・出張・報告などに向けて、必要なものや状態を事前に整える動詞です。仕事では prepare A と prepare for B の違いが重要です。",
+  "coreVisual": {
+    "from": [
+      "資料",
+      "情報",
+      "人",
+      "予定",
+      "道具"
     ],
-    "collocations": [],
-    "phrasalVerbs": []
+    "to": "すぐ使える状態",
+    "label": "事前に整える → 本番に備える"
   },
+  "meanings": [
+    {
+      "id": "prepare-document",
+      "title": "① 資料・書類を準備する",
+      "pattern": "prepare + 資料・書類",
+      "transitivity": "他動詞",
+      "structure": "S + prepare + O",
+      "image": "必要なものを作って使える状態にする。",
+      "point": "document, report, proposal, quotation など仕事の書類に使う。",
+      "examples": [
+        {
+          "en": "I prepared the proposal yesterday.",
+          "ja": "私は昨日、提案書を準備しました。",
+          "focus": "prepared",
+          "object": "the proposal"
+        },
+        {
+          "en": "Please prepare the latest data for the meeting.",
+          "ja": "会議用に最新版のデータを準備してください。",
+          "focus": "prepare",
+          "object": "the latest data"
+        },
+        {
+          "en": "We prepared a quotation for the client.",
+          "ja": "私たちは顧客向けの見積を準備しました。",
+          "focus": "prepared",
+          "object": "a quotation"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "prepare-for",
+      "title": "② 〜に向けて準備する",
+      "pattern": "prepare for + 予定・相手・出来事",
+      "transitivity": "自動詞的表現",
+      "structure": "S + prepare for + 名詞",
+      "image": "これから来る予定や状況に備える。",
+      "point": "prepare for the meeting のように、目的の出来事を for の後ろに置く。",
+      "examples": [
+        {
+          "en": "We need to prepare for the client meeting.",
+          "ja": "私たちは顧客との会議に向けて準備する必要があります。",
+          "focus": "prepare for"
+        },
+        {
+          "en": "She prepared for the presentation all morning.",
+          "ja": "彼女は午前中ずっとプレゼンに向けて準備しました。",
+          "focus": "prepared for"
+        },
+        {
+          "en": "Please prepare for possible questions from the customer.",
+          "ja": "顧客からの質問に備えてください。",
+          "focus": "prepare for"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "prepare-someone",
+      "title": "③ 人に準備させる・心構えをさせる",
+      "pattern": "prepare + 人 + for + 事柄",
+      "transitivity": "他動詞",
+      "structure": "S + prepare + 人 + for + 名詞",
+      "image": "人をある状況に対応できる状態にする。",
+      "point": "新人研修・顧客説明・面談前などに使える。",
+      "examples": [
+        {
+          "en": "The training prepared new staff for customer visits.",
+          "ja": "その研修は新人を顧客訪問に備えさせました。",
+          "focus": "prepared",
+          "object": "new staff"
+        },
+        {
+          "en": "We prepared the team for the product launch.",
+          "ja": "私たちはチームを製品リリースに備えさせました。",
+          "focus": "prepared",
+          "object": "the team"
+        },
+        {
+          "en": "The manager prepared us for a difficult negotiation.",
+          "ja": "マネージャーは私たちに難しい交渉への心構えをさせました。",
+          "focus": "prepared",
+          "object": "us"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "prepare-to-do",
+      "title": "④ 〜する準備をする",
+      "pattern": "prepare to do",
+      "transitivity": "自動詞的表現",
+      "structure": "S + prepare + to do",
+      "image": "次の行動に移れるように準備する。",
+      "point": "prepare to send, prepare to explain など動作前に使う。",
+      "examples": [
+        {
+          "en": "We prepared to send the final data.",
+          "ja": "私たちは最終データを送る準備をしました。",
+          "focus": "prepared to"
+        },
+        {
+          "en": "The team prepared to explain the new process.",
+          "ja": "チームは新しい手順を説明する準備をしました。",
+          "focus": "prepared to"
+        },
+        {
+          "en": "Please prepare to answer questions after the demo.",
+          "ja": "デモ後の質問に答える準備をしてください。",
+          "focus": "prepare to"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "prepare-meal-product",
+      "title": "⑤ 商品・サンプル・現物を用意する",
+      "pattern": "prepare + 商品・サンプル・現物",
+      "transitivity": "他動詞",
+      "structure": "S + prepare + O",
+      "image": "相手に渡す物や確認用の現物をそろえる。",
+      "point": "sample, product, package, materials などに使う。",
+      "examples": [
+        {
+          "en": "Please prepare the samples for tomorrow's visit.",
+          "ja": "明日の訪問用にサンプルを用意してください。",
+          "focus": "prepare",
+          "object": "the samples"
+        },
+        {
+          "en": "We prepared the materials before the site check.",
+          "ja": "現場確認前に資材を用意しました。",
+          "focus": "prepared",
+          "object": "the materials"
+        },
+        {
+          "en": "The warehouse prepared the products for shipment.",
+          "ja": "倉庫は出荷用の商品を用意しました。",
+          "focus": "prepared",
+          "object": "the products"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "prepare-plan",
+      "title": "⑥ 計画・体制を整える",
+      "pattern": "prepare + plan / schedule / backup",
+      "transitivity": "他動詞",
+      "structure": "S + prepare + O",
+      "image": "問題が起きないように事前に計画や体制を整える。",
+      "point": "plan, schedule, backup, checklist などと使う。",
+      "examples": [
+        {
+          "en": "We prepared a backup plan for the delivery delay.",
+          "ja": "納品遅延に備えて代替案を準備しました。",
+          "focus": "prepared",
+          "object": "a backup plan"
+        },
+        {
+          "en": "Please prepare the schedule by Friday.",
+          "ja": "金曜日までに予定表を準備してください。",
+          "focus": "prepare",
+          "object": "the schedule"
+        },
+        {
+          "en": "The team prepared a checklist for the installation.",
+          "ja": "チームは施工用のチェックリストを準備しました。",
+          "focus": "prepared",
+          "object": "a checklist"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ],
+  "collocations": [
+    {
+      "phrase": "prepare a document",
+      "ja": "書類を準備する",
+      "image": "提出・共有できる状態にする。",
+      "pattern": "prepare a document",
+      "examples": [
+        {
+          "en": "Please prepare a document for the client meeting.",
+          "ja": "顧客会議用の書類を準備してください。",
+          "focus": "prepare a document"
+        },
+        {
+          "en": "I prepared a document that explains the changes.",
+          "ja": "変更点を説明する書類を準備しました。",
+          "focus": "prepared a document"
+        },
+        {
+          "en": "We need to prepare a document before asking for approval.",
+          "ja": "承認を求める前に書類を準備する必要があります。",
+          "focus": "prepare a document"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "prepare a proposal",
+      "ja": "提案書を準備する",
+      "image": "顧客や社内向けの提案を作る。",
+      "pattern": "prepare a proposal",
+      "examples": [
+        {
+          "en": "We prepared a proposal for the new project.",
+          "ja": "新しい案件向けの提案書を準備しました。",
+          "focus": "prepared a proposal"
+        },
+        {
+          "en": "Please prepare a proposal with two options.",
+          "ja": "2つの選択肢を入れた提案書を準備してください。",
+          "focus": "prepare a proposal"
+        },
+        {
+          "en": "The sales team prepared a proposal for next week's meeting.",
+          "ja": "営業チームは来週の会議向けに提案書を準備しました。",
+          "focus": "prepared a proposal"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "prepare for a meeting",
+      "ja": "会議に向けて準備する",
+      "image": "議題・資料・質問への準備をする。",
+      "pattern": "prepare for a meeting",
+      "examples": [
+        {
+          "en": "I need thirty minutes to prepare for a meeting.",
+          "ja": "会議に向けて準備するために30分必要です。",
+          "focus": "prepare for a meeting"
+        },
+        {
+          "en": "We prepared for a meeting with the supplier.",
+          "ja": "仕入先との会議に向けて準備しました。",
+          "focus": "prepared for a meeting"
+        },
+        {
+          "en": "Please prepare for a meeting before joining the call.",
+          "ja": "通話に参加する前に会議の準備をしてください。",
+          "focus": "prepare for a meeting"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "prepare in advance",
+      "ja": "事前に準備する",
+      "image": "直前ではなく早めに整える。",
+      "pattern": "prepare in advance",
+      "examples": [
+        {
+          "en": "We should prepare in advance for the busy season.",
+          "ja": "繁忙期に向けて事前に準備すべきです。",
+          "focus": "prepare in advance"
+        },
+        {
+          "en": "The team prepared in advance and avoided confusion.",
+          "ja": "チームは事前に準備し、混乱を避けました。",
+          "focus": "prepared in advance"
+        },
+        {
+          "en": "Please prepare in advance if you need approval.",
+          "ja": "承認が必要なら事前に準備してください。",
+          "focus": "prepare in advance"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "prepare a backup plan",
+      "ja": "代替案を準備する",
+      "image": "予定通り進まない場合に備える。",
+      "pattern": "prepare a backup plan",
+      "examples": [
+        {
+          "en": "We prepared a backup plan for the shipment issue.",
+          "ja": "出荷問題に備えて代替案を準備しました。",
+          "focus": "prepared a backup plan"
+        },
+        {
+          "en": "Please prepare a backup plan before the event.",
+          "ja": "イベント前に代替案を準備してください。",
+          "focus": "prepare a backup plan"
+        },
+        {
+          "en": "A good team always prepares a backup plan.",
+          "ja": "良いチームは常に代替案を準備します。",
+          "focus": "prepares a backup plan"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ],
+  "phrasalVerbs": [
+    {
+      "phrase": "prepare for",
+      "ja": "〜に向けて準備する",
+      "image": "出来事・会議・状況に備える。",
+      "pattern": "prepare for + 名詞",
+      "examples": [
+        {
+          "en": "We need to prepare for the audit next month.",
+          "ja": "来月の監査に向けて準備する必要があります。",
+          "focus": "prepare for"
+        },
+        {
+          "en": "She prepared for the client presentation.",
+          "ja": "彼女は顧客向けプレゼンの準備をしました。",
+          "focus": "prepared for"
+        },
+        {
+          "en": "Please prepare for a possible schedule change.",
+          "ja": "予定変更の可能性に備えてください。",
+          "focus": "prepare for"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "prepare to",
+      "ja": "〜する準備をする",
+      "image": "次の行動に移る前の準備。",
+      "pattern": "prepare to + 動詞",
+      "examples": [
+        {
+          "en": "We are preparing to launch the new service.",
+          "ja": "私たちは新サービスを開始する準備をしています。",
+          "focus": "preparing to"
+        },
+        {
+          "en": "Please prepare to share the latest numbers.",
+          "ja": "最新の数字を共有する準備をしてください。",
+          "focus": "prepare to"
+        },
+        {
+          "en": "The team prepared to visit the site.",
+          "ja": "チームは現場を訪問する準備をしました。",
+          "focus": "prepared to"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "prepare ahead of",
+      "ja": "〜の前に準備する",
+      "image": "期限や予定より前に準備する。",
+      "pattern": "prepare ahead of + 名詞",
+      "examples": [
+        {
+          "en": "We prepared ahead of the sales meeting.",
+          "ja": "営業会議の前に準備しました。",
+          "focus": "prepared ahead of"
+        },
+        {
+          "en": "Please prepare ahead of the installation date.",
+          "ja": "施工日の前に準備してください。",
+          "focus": "prepare ahead of"
+        },
+        {
+          "en": "The team prepared ahead of the product launch.",
+          "ja": "チームは製品リリース前に準備しました。",
+          "focus": "prepared ahead of"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "prepare with",
+      "ja": "〜を使って準備する",
+      "image": "資料・データ・確認事項を使って準備する。",
+      "pattern": "prepare with + 名詞",
+      "examples": [
+        {
+          "en": "Please prepare with the latest sales data.",
+          "ja": "最新の売上データを使って準備してください。",
+          "focus": "prepare with"
+        },
+        {
+          "en": "We prepared with a clear checklist.",
+          "ja": "私たちは明確なチェックリストを使って準備しました。",
+          "focus": "prepared with"
+        },
+        {
+          "en": "The manager prepared with notes from the last meeting.",
+          "ja": "マネージャーは前回会議のメモを使って準備しました。",
+          "focus": "prepared with"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "prepare against",
+      "ja": "〜に備える",
+      "image": "リスクや悪い状況に備える。少し硬い表現。",
+      "pattern": "prepare against + リスク",
+      "examples": [
+        {
+          "en": "We prepared against possible delivery delays.",
+          "ja": "納品遅延の可能性に備えました。",
+          "focus": "prepared against"
+        },
+        {
+          "en": "The company prepared against supply shortages.",
+          "ja": "会社は供給不足に備えました。",
+          "focus": "prepared against"
+        },
+        {
+          "en": "Please prepare against last-minute changes.",
+          "ja": "直前の変更に備えてください。",
+          "focus": "prepare against"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ]
+},
   {
     "id": "plan",
     "rank": 58,

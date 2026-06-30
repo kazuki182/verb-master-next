@@ -1,1 +1,2 @@
-Ver.100 - Verb quality batch 9: check / decide / explain
+Ver.102
+My Page profile compact UI and bottom navigation spacing fix.

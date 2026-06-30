@@ -1,20 +1,12 @@
-# QUALITY_AUDIT_CURRENT - Ver.100
+# QUALITY_AUDIT_CURRENT - Ver.102
 
-## Theme
-Verb quality improvement batch 9.
+## Scope
+- My Page profile card UI balance fix.
+- Bigger profile image with rounded-square design.
+- Slightly larger profile text and tighter profile card spacing.
+- Reduced empty space in profile card.
+- Bottom navigation spacing tightened while keeping icon size.
 
-## Updated verbs
-- check
-- decide
-- explain
-
-## Applied rules
-- Improve in 3-verb batches.
-- Order: basic verb usages -> common expressions/idioms -> phrasal/prepositional expressions.
-- Daily examples are not edited yet.
-- Add core image and business-focused examples.
-- English highlight focus only; Japanese highlight is not added.
-- Avoid unsupported SV/SVO/SVC/SVOC labels.
-
-## Notes
-Each updated verb now has 6 basic usage blocks, 5 common expression blocks, and 5 phrasal/prepositional expression blocks with 3 business examples each.
+## Not changed
+- Verb data was not changed in this version.
+- Learning/save logic was not changed in this version.

@@ -1,1 +1,15 @@
-Ver.105 - verb quality batch 13: deliver / solve / report
+Ver.106 - Verb quality batch 14
+
+Updated verbs:
+- update
+- review
+- compare
+
+Scope:
+- Improved core business usage coverage.
+- Added/organized 6 core usage patterns where sufficient for the verb.
+- Added 5 business collocations/common expressions.
+- Added 5 phrasal/prepositional expressions.
+- Added 3 business examples for each block.
+- Added core image direction for each verb.
+- Daily examples are not updated in this version.

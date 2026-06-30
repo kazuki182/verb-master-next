@@ -15204,74 +15204,194 @@ export const verbs: Verb[] = [
     "syllable": "start",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★★ 基本",
-    "core": "何かを始める・開始する",
-    "coreDetail": "STARTは、会議・作業・準備などを始める時に使う基本動詞です。仕事では start the meeting / start preparing / start with ... がよく使われます。",
+    "core": "止まっていた物事を動き出させる・始まりの地点に入る",
+    "coreDetail": "start は、会議・作業・準備・手続き・機械・期間などが始まる/始める時に使います。仕事では「何を始めるか」「いつ始まるか」「何から始めるか」を伝える場面で特に重要です。",
     "coreVisual": {
       "from": [
-        "▶️ 開始",
-        "📅 予定",
-        "📊 案件",
-        "💬 会議",
-        "⚙️ 作業"
+        "停止中の作業",
+        "予定前の会議",
+        "未着手の準備",
+        "止まっている機械"
       ],
-      "to": "仕事の流れ",
-      "label": "コアイメージ"
+      "to": "動き出した状態",
+      "label": "止まっている状態 → 動き出す"
     },
     "meanings": [
       {
-        "id": "begin",
+        "id": "begin-action",
         "title": "① 始める・開始する",
         "pattern": "start + 名詞 / start + V-ing",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + start + O / S + start + V-ing",
-        "image": "会議や作業を開始する",
-        "point": "start の後ろには、始める対象や動作を置きます。V-ingを置くと「〜し始める」です。",
+        "transitivity": "他動詞",
+        "structure": "start + 目的語 / start + 動名詞",
+        "image": "会議・作業・準備などを動き出させる。",
+        "point": "start の後ろに「始める対象」または V-ing を置きます。仕事では meeting, project, preparing, checking とよく使います。",
         "examples": [
           {
             "en": "Let's start the meeting.",
             "ja": "会議を始めましょう。",
             "focus": "start the meeting",
             "jaFocus": "会議を始める",
-            "object": "the meeting",
-            "sentencePattern": "V + O",
-            "grammarParts": [
-              {
-                "label": "V",
-                "text": "start"
-              },
-              {
-                "label": "O",
-                "text": "the meeting"
-              }
-            ]
+            "object": "the meeting"
           },
           {
-            "en": "We started the project last week.",
-            "ja": "私たちは先週その案件を始めました。",
-            "focus": "started the project",
-            "jaFocus": "案件を始めた",
-            "object": "the project"
+            "en": "We started checking the documents this morning.",
+            "ja": "私たちは今朝、資料の確認を始めました。",
+            "focus": "started checking",
+            "jaFocus": "確認を始めました"
           },
           {
-            "en": "I started preparing the report this morning.",
-            "ja": "私は今朝その報告書の準備を始めました。",
-            "focus": "started preparing",
-            "jaFocus": "準備を始めた"
+            "en": "Please start preparing the quotation today.",
+            "ja": "本日、見積書の準備を始めてください。",
+            "focus": "start preparing",
+            "jaFocus": "準備を始めてください"
           }
-        ],
-        "dailyExamples": [
+        ]
+      },
+      {
+        "id": "begin-happen",
+        "title": "② 始まる",
+        "pattern": "start + 時間 / start at + 時間",
+        "transitivity": "自動詞",
+        "structure": "主語 + start",
+        "image": "会議・イベント・期間などが自然に始まる。",
+        "point": "「何時に始まる」「いつ始まる」を伝える時の基本形です。",
+        "examples": [
           {
-            "en": "We started the project last week.",
-            "ja": "私たちは先週その案件を始めました。",
-            "focus": "started the project",
-            "jaFocus": "案件を始めた",
-            "object": "the project"
+            "en": "The meeting starts at ten.",
+            "ja": "会議は10時に始まります。",
+            "focus": "starts",
+            "jaFocus": "始まります"
           },
           {
-            "en": "I started preparing the report this morning.",
-            "ja": "私は今朝その報告書の準備を始めました。",
-            "focus": "started preparing",
-            "jaFocus": "準備を始めた"
+            "en": "The new campaign starts next month.",
+            "ja": "新しいキャンペーンは来月始まります。",
+            "focus": "starts",
+            "jaFocus": "始まります"
+          },
+          {
+            "en": "The training session started on time.",
+            "ja": "研修は時間通りに始まりました。",
+            "focus": "started",
+            "jaFocus": "始まりました"
+          }
+        ]
+      },
+      {
+        "id": "start-with",
+        "title": "③ 〜から始める",
+        "pattern": "start with + 名詞",
+        "transitivity": "自動詞",
+        "structure": "start with + 最初に扱うもの",
+        "image": "最初に扱う項目を示す。",
+        "point": "話し合いや作業の順番を決める時に便利です。",
+        "examples": [
+          {
+            "en": "Let's start with the delivery schedule.",
+            "ja": "まず納期スケジュールから始めましょう。",
+            "focus": "start with",
+            "jaFocus": "〜から始めましょう"
+          },
+          {
+            "en": "We should start with the most urgent issue.",
+            "ja": "私たちは最も緊急の問題から始めるべきです。",
+            "focus": "start with",
+            "jaFocus": "〜から始めるべきです"
+          },
+          {
+            "en": "The presentation will start with a brief company overview.",
+            "ja": "プレゼンは簡単な会社概要から始まります。",
+            "focus": "start with",
+            "jaFocus": "〜から始まります"
+          }
+        ]
+      },
+      {
+        "id": "start-from",
+        "title": "④ 〜から開始する・出発する",
+        "pattern": "start from + 場所・段階・価格",
+        "transitivity": "自動詞",
+        "structure": "start from + 起点",
+        "image": "場所・段階・価格などの起点を示す。",
+        "point": "from は「起点」を表します。価格・工程・場所に使えます。",
+        "examples": [
+          {
+            "en": "The price starts from 50,000 yen.",
+            "ja": "価格は50,000円からです。",
+            "focus": "starts from",
+            "jaFocus": "〜からです"
+          },
+          {
+            "en": "We will start from the design review.",
+            "ja": "私たちはデザインレビューから開始します。",
+            "focus": "start from",
+            "jaFocus": "〜から開始します"
+          },
+          {
+            "en": "The site visit starts from the main entrance.",
+            "ja": "現場確認は正面入口から始まります。",
+            "focus": "starts from",
+            "jaFocus": "〜から始まります"
+          }
+        ]
+      },
+      {
+        "id": "cause-start",
+        "title": "⑤ 動かす・起動する",
+        "pattern": "start + 機械・システム・車",
+        "transitivity": "他動詞",
+        "structure": "start + 動かす対象",
+        "image": "止まっている機械やシステムを動かす。",
+        "point": "システム・機械・車などを「起動する」意味でも使います。",
+        "examples": [
+          {
+            "en": "Please start the system after the update.",
+            "ja": "更新後にシステムを起動してください。",
+            "focus": "start the system",
+            "jaFocus": "システムを起動してください",
+            "object": "the system"
+          },
+          {
+            "en": "The engineer started the machine for testing.",
+            "ja": "エンジニアはテストのために機械を起動しました。",
+            "focus": "started the machine",
+            "jaFocus": "機械を起動しました",
+            "object": "the machine"
+          },
+          {
+            "en": "Do not start the equipment before the safety check.",
+            "ja": "安全確認前に機器を起動しないでください。",
+            "focus": "start the equipment",
+            "jaFocus": "機器を起動しないでください",
+            "object": "the equipment"
+          }
+        ]
+      },
+      {
+        "id": "start-as",
+        "title": "⑥ 〜として始まる・始める",
+        "pattern": "start as + 役割・形",
+        "transitivity": "自動詞",
+        "structure": "start as + 立場・形",
+        "image": "最初の状態や役割を示す。",
+        "point": "人の経歴や企画の初期状態を説明する時に使います。",
+        "examples": [
+          {
+            "en": "This project started as a small internal idea.",
+            "ja": "この案件は小さな社内アイデアとして始まりました。",
+            "focus": "started as",
+            "jaFocus": "〜として始まりました"
+          },
+          {
+            "en": "She started as a sales assistant and became a manager.",
+            "ja": "彼女は営業アシスタントとして始め、マネージャーになりました。",
+            "focus": "started as",
+            "jaFocus": "〜として始め"
+          },
+          {
+            "en": "The service started as a trial for existing clients.",
+            "ja": "そのサービスは既存顧客向けの試験運用として始まりました。",
+            "focus": "started as",
+            "jaFocus": "〜として始まりました"
           }
         ]
       }
@@ -15280,66 +15400,130 @@ export const verbs: Verb[] = [
       {
         "phrase": "start a meeting",
         "ja": "会議を始める",
-        "image": "会議を開始する",
+        "image": "会議を開始して進行に入る。",
         "pattern": "start a meeting",
         "examples": [
           {
-            "en": "Let's start the meeting.",
-            "ja": "会議を始めましょう。",
+            "en": "Let's start the meeting now.",
+            "ja": "今、会議を始めましょう。",
             "focus": "start the meeting",
-            "jaFocus": "会議を始める"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "会議を始めましょう"
+          },
           {
-            "en": "Let's start the meeting.",
-            "ja": "会議を始めましょう。",
+            "en": "The manager started the meeting with a quick update.",
+            "ja": "マネージャーは簡単な共有から会議を始めました。",
+            "focus": "started the meeting",
+            "jaFocus": "会議を始めました"
+          },
+          {
+            "en": "Can we start the meeting five minutes early?",
+            "ja": "会議を5分早く始めてもよいですか？",
             "focus": "start the meeting",
-            "jaFocus": "会議を始める"
+            "jaFocus": "会議を始めても"
           }
         ]
       },
       {
         "phrase": "start work",
         "ja": "仕事を始める",
-        "image": "作業を始める",
+        "image": "その日の業務や作業に入る。",
         "pattern": "start work",
         "examples": [
           {
             "en": "I start work at nine every day.",
             "ja": "私は毎日9時に仕事を始めます。",
             "focus": "start work",
-            "jaFocus": "仕事を始める"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "仕事を始めます"
+          },
           {
-            "en": "I start work at nine every day.",
-            "ja": "私は毎日9時に仕事を始めます。",
+            "en": "We started work on the new layout yesterday.",
+            "ja": "私たちは昨日、新しいレイアウトの作業を始めました。",
+            "focus": "started work",
+            "jaFocus": "作業を始めました"
+          },
+          {
+            "en": "Please start work after you receive approval.",
+            "ja": "承認を受けてから作業を始めてください。",
             "focus": "start work",
-            "jaFocus": "仕事を始める"
+            "jaFocus": "作業を始めてください"
           }
         ]
       },
       {
         "phrase": "start preparing",
         "ja": "準備を始める",
-        "image": "準備に取りかかる",
+        "image": "必要な資料・見積・段取りに取りかかる。",
         "pattern": "start preparing",
         "examples": [
           {
             "en": "We started preparing the proposal yesterday.",
             "ja": "私たちは昨日、提案書の準備を始めました。",
             "focus": "started preparing",
-            "jaFocus": "準備を始めた"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "準備を始めました"
+          },
           {
-            "en": "We started preparing the proposal yesterday.",
-            "ja": "私たちは昨日、提案書の準備を始めました。",
+            "en": "Please start preparing the samples for next week.",
+            "ja": "来週に向けてサンプルの準備を始めてください。",
+            "focus": "start preparing",
+            "jaFocus": "準備を始めてください"
+          },
+          {
+            "en": "The team started preparing for the client visit.",
+            "ja": "チームは顧客訪問の準備を始めました。",
             "focus": "started preparing",
-            "jaFocus": "準備を始めた"
+            "jaFocus": "準備を始めました"
+          }
+        ]
+      },
+      {
+        "phrase": "start a project",
+        "ja": "案件・プロジェクトを始める",
+        "image": "新しい案件を正式に動かし始める。",
+        "pattern": "start a project",
+        "examples": [
+          {
+            "en": "We will start the project after the contract is signed.",
+            "ja": "契約締結後に案件を開始します。",
+            "focus": "start the project",
+            "jaFocus": "案件を開始します"
+          },
+          {
+            "en": "The client wants to start the project in July.",
+            "ja": "顧客は7月に案件を開始したいと考えています。",
+            "focus": "start the project",
+            "jaFocus": "案件を開始したい"
+          },
+          {
+            "en": "Before we start the project, we need to confirm the scope.",
+            "ja": "案件を始める前に、範囲を確認する必要があります。",
+            "focus": "start the project",
+            "jaFocus": "案件を始める"
+          }
+        ]
+      },
+      {
+        "phrase": "start a discussion",
+        "ja": "議論を始める",
+        "image": "意見交換や検討を始める。",
+        "pattern": "start a discussion",
+        "examples": [
+          {
+            "en": "Let's start a discussion about the schedule.",
+            "ja": "スケジュールについて議論を始めましょう。",
+            "focus": "start a discussion",
+            "jaFocus": "議論を始めましょう"
+          },
+          {
+            "en": "This data started a useful discussion with the client.",
+            "ja": "このデータをきっかけに顧客と有益な議論が始まりました。",
+            "focus": "started a discussion",
+            "jaFocus": "議論が始まりました"
+          },
+          {
+            "en": "We should start a discussion before making a decision.",
+            "ja": "決定する前に議論を始めるべきです。",
+            "focus": "start a discussion",
+            "jaFocus": "議論を始めるべきです"
           }
         ]
       }
@@ -15348,44 +15532,130 @@ export const verbs: Verb[] = [
       {
         "phrase": "start over",
         "ja": "最初からやり直す",
-        "image": "もう一度初めから始める",
+        "image": "途中まで進めたものを一度リセットして、初めからやり直す。",
         "pattern": "start over",
         "examples": [
           {
             "en": "We started over after finding a mistake.",
             "ja": "私たちはミスを見つけた後、最初からやり直しました。",
             "focus": "started over",
-            "jaFocus": "やり直した"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "最初からやり直しました"
+          },
           {
-            "en": "We started over after finding a mistake.",
-            "ja": "私たちはミスを見つけた後、最初からやり直しました。",
-            "focus": "started over",
-            "jaFocus": "やり直した"
+            "en": "We need to start over because the data is incorrect.",
+            "ja": "データが間違っているので、最初からやり直す必要があります。",
+            "focus": "start over",
+            "jaFocus": "やり直す必要があります"
+          },
+          {
+            "en": "Let's start over with a new plan.",
+            "ja": "新しい計画で最初からやり直しましょう。",
+            "focus": "start over",
+            "jaFocus": "やり直しましょう"
           }
         ]
       },
       {
         "phrase": "start with",
         "ja": "〜から始める",
-        "image": "最初の対象を示す",
+        "image": "最初に扱う項目や手順を示す。",
         "pattern": "start with",
         "examples": [
           {
             "en": "Let's start with the delivery schedule.",
             "ja": "まず納期スケジュールから始めましょう。",
             "focus": "start with",
-            "jaFocus": "〜から始める"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "〜から始めましょう"
+          },
           {
-            "en": "Let's start with the delivery schedule.",
-            "ja": "まず納期スケジュールから始めましょう。",
+            "en": "We should start with the items that affect the cost.",
+            "ja": "コストに影響する項目から始めるべきです。",
             "focus": "start with",
-            "jaFocus": "〜から始める"
+            "jaFocus": "〜から始めるべきです"
+          },
+          {
+            "en": "The meeting started with a review of last month’s results.",
+            "ja": "会議は先月の結果確認から始まりました。",
+            "focus": "started with",
+            "jaFocus": "〜から始まりました"
+          }
+        ]
+      },
+      {
+        "phrase": "start off",
+        "ja": "始める・始まる",
+        "image": "会話・会議・説明などを始める。",
+        "pattern": "start off",
+        "examples": [
+          {
+            "en": "Let's start off with a quick introduction.",
+            "ja": "簡単な自己紹介から始めましょう。",
+            "focus": "start off",
+            "jaFocus": "〜から始めましょう"
+          },
+          {
+            "en": "The call started off with a question from the client.",
+            "ja": "その電話は顧客からの質問で始まりました。",
+            "focus": "started off",
+            "jaFocus": "始まりました"
+          },
+          {
+            "en": "We started off by checking the current stock.",
+            "ja": "私たちは現在の在庫確認から始めました。",
+            "focus": "started off",
+            "jaFocus": "〜から始めました"
+          }
+        ]
+      },
+      {
+        "phrase": "start up",
+        "ja": "起動する・立ち上げる",
+        "image": "機械・PC・事業などを立ち上げる。",
+        "pattern": "start up",
+        "examples": [
+          {
+            "en": "The computer takes time to start up.",
+            "ja": "そのパソコンは起動に時間がかかります。",
+            "focus": "start up",
+            "jaFocus": "起動に"
+          },
+          {
+            "en": "We started up the system after the inspection.",
+            "ja": "点検後にシステムを起動しました。",
+            "focus": "started up",
+            "jaFocus": "起動しました"
+          },
+          {
+            "en": "They started up a new service for small businesses.",
+            "ja": "彼らは中小企業向けの新サービスを立ち上げました。",
+            "focus": "started up",
+            "jaFocus": "立ち上げました"
+          }
+        ]
+      },
+      {
+        "phrase": "start out",
+        "ja": "最初は〜として始める",
+        "image": "初期段階の状態や役割を説明する。",
+        "pattern": "start out",
+        "examples": [
+          {
+            "en": "The project started out as a simple request.",
+            "ja": "その案件は簡単な依頼として始まりました。",
+            "focus": "started out",
+            "jaFocus": "〜として始まりました"
+          },
+          {
+            "en": "She started out in customer support.",
+            "ja": "彼女はカスタマーサポートから始めました。",
+            "focus": "started out",
+            "jaFocus": "〜から始めました"
+          },
+          {
+            "en": "The plan started out small but became a major project.",
+            "ja": "その計画は小さく始まりましたが、大型案件になりました。",
+            "focus": "started out",
+            "jaFocus": "小さく始まりました"
           }
         ]
       }
@@ -16874,84 +17144,172 @@ export const verbs: Verb[] = [
     "ipa": "/ʃoʊ/",
     "kana": "ショウ",
     "syllable": "show",
-    "transitivity": "他動詞",
+    "transitivity": "他動詞中心",
     "importance": "★★★★★ 基本",
-    "core": "見せる・示す",
-    "coreDetail": "SHOWは、資料・データ・結果・使い方などを相手に見せる、または明らかにする動詞です。",
+    "core": "見えない情報・状態・物を、相手が分かる形で見せる",
+    "coreDetail": "show は、物を見せるだけでなく、データが結果を示す、資料が進捗を示す、相手に方法を説明して見せるなど、仕事で幅広く使います。",
     "coreVisual": {
       "from": [
-        "👁️ 見える",
-        "📊 数字",
-        "📄 資料",
-        "✅ 結果",
-        "💬 説明"
+        "資料",
+        "データ",
+        "進捗",
+        "方法",
+        "場所"
       ],
-      "to": "仕事の流れ",
-      "label": "コアイメージ"
+      "to": "相手が見て分かる状態",
+      "label": "見えない情報 → 見える形にする"
     },
     "meanings": [
       {
-        "id": "present",
-        "title": "① 見せる・示す",
-        "pattern": "show + 人 + 物 / show + 物",
+        "id": "display",
+        "title": "① 見せる・提示する",
+        "pattern": "show + 人 + 物 / show + 物 to 人",
         "transitivity": "他動詞",
-        "structure": "S + show + O / S + show + 人 + O",
-        "image": "相手に情報を見える形で出す",
-        "point": "show は「人に何かを見せる」形が多いです。show you the data のように人と物を続けられます。",
+        "structure": "show + 相手 + 見せるもの",
+        "image": "相手に資料・製品・画面などを見える形で出す。",
+        "point": "show 人 物 は仕事でよく使う形です。show the client the sample のように使えます。",
         "examples": [
           {
-            "en": "I'll show you the data.",
-            "ja": "私があなたにそのデータを見せます。",
-            "focus": "show you the data",
-            "jaFocus": "データを見せる",
-            "object": "you / the data",
-            "sentencePattern": "S + V + O + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "show"
-              },
-              {
-                "label": "O",
-                "text": "you"
-              },
-              {
-                "label": "O",
-                "text": "the data"
-              }
-            ]
+            "en": "I showed the client the sample.",
+            "ja": "私は顧客にサンプルを見せました。",
+            "focus": "showed",
+            "jaFocus": "見せました",
+            "object": "the client / the sample"
           },
           {
-            "en": "The chart shows the sales trend.",
-            "ja": "そのグラフは売上の傾向を示しています。",
-            "focus": "shows the sales trend",
-            "jaFocus": "傾向を示す",
-            "object": "the sales trend"
+            "en": "Please show me the latest drawing.",
+            "ja": "最新の図面を私に見せてください。",
+            "focus": "show me",
+            "jaFocus": "見せてください",
+            "object": "me / the latest drawing"
           },
           {
-            "en": "Please show the client how to use the system.",
-            "ja": "そのシステムの使い方をクライアントに見せてください。",
-            "focus": "show the client",
-            "jaFocus": "クライアントに見せる"
+            "en": "We showed the new product to the distributor.",
+            "ja": "私たちは代理店に新製品を見せました。",
+            "focus": "showed",
+            "jaFocus": "見せました",
+            "object": "the new product"
           }
-        ],
-        "dailyExamples": [
+        ]
+      },
+      {
+        "id": "indicate",
+        "title": "② 示す・表す",
+        "pattern": "show + 結果・傾向・数値",
+        "transitivity": "他動詞",
+        "structure": "data/report + show + 内容",
+        "image": "データや資料が事実・結果・傾向を示す。",
+        "point": "人が見せるだけでなく、資料やデータを主語にできます。",
+        "examples": [
           {
-            "en": "The chart shows the sales trend.",
-            "ja": "そのグラフは売上の傾向を示しています。",
-            "focus": "shows the sales trend",
-            "jaFocus": "傾向を示す",
-            "object": "the sales trend"
+            "en": "The data shows a clear increase in sales.",
+            "ja": "そのデータは売上の明確な増加を示しています。",
+            "focus": "shows",
+            "jaFocus": "示しています",
+            "object": "a clear increase"
           },
           {
-            "en": "Please show the client how to use the system.",
-            "ja": "そのシステムの使い方をクライアントに見せてください。",
-            "focus": "show the client",
-            "jaFocus": "クライアントに見せる"
+            "en": "The report shows the reason for the delay.",
+            "ja": "その報告書は遅延の理由を示しています。",
+            "focus": "shows",
+            "jaFocus": "示しています",
+            "object": "the reason"
+          },
+          {
+            "en": "These numbers show that demand is growing.",
+            "ja": "これらの数値は需要が伸びていることを示しています。",
+            "focus": "show",
+            "jaFocus": "示しています"
+          }
+        ]
+      },
+      {
+        "id": "explain-how",
+        "title": "③ やり方を教える・実演する",
+        "pattern": "show + 人 + how to do",
+        "transitivity": "他動詞",
+        "structure": "show + 人 + how to + 動詞",
+        "image": "相手に手順や使い方を見せながら教える。",
+        "point": "操作説明や引き継ぎで非常に便利です。",
+        "examples": [
+          {
+            "en": "Can you show me how to use this system?",
+            "ja": "このシステムの使い方を教えてもらえますか？",
+            "focus": "show me",
+            "jaFocus": "教えてもらえますか"
+          },
+          {
+            "en": "I will show the new staff how to enter the order.",
+            "ja": "新入社員に受注入力の方法を教えます。",
+            "focus": "show",
+            "jaFocus": "教えます",
+            "object": "the new staff"
+          },
+          {
+            "en": "The engineer showed us how to reset the device.",
+            "ja": "エンジニアは私たちに機器のリセット方法を教えてくれました。",
+            "focus": "showed us",
+            "jaFocus": "教えてくれました"
+          }
+        ]
+      },
+      {
+        "id": "prove",
+        "title": "④ 分かる・明らかにする",
+        "pattern": "show that + 文",
+        "transitivity": "他動詞",
+        "structure": "show that + 内容",
+        "image": "事実や結果によって、何かが明らかになる。",
+        "point": "「データを見ると〜だと分かる」という表現に使います。",
+        "examples": [
+          {
+            "en": "The test results show that the product is stable.",
+            "ja": "テスト結果から、その製品が安定していることが分かります。",
+            "focus": "show that",
+            "jaFocus": "〜ことが分かります"
+          },
+          {
+            "en": "The customer feedback shows that the design needs improvement.",
+            "ja": "顧客の反応から、デザインの改善が必要だと分かります。",
+            "focus": "shows that",
+            "jaFocus": "〜だと分かります"
+          },
+          {
+            "en": "The sales trend shows that this area has potential.",
+            "ja": "売上傾向から、このエリアには可能性があると分かります。",
+            "focus": "shows that",
+            "jaFocus": "〜と分かります"
+          }
+        ]
+      },
+      {
+        "id": "guide",
+        "title": "⑤ 案内する",
+        "pattern": "show + 人 + 場所 / show 人 around",
+        "transitivity": "他動詞",
+        "structure": "show + 人 + 場所",
+        "image": "相手を場所へ案内する。",
+        "point": "来客・現場案内・社内案内で使います。",
+        "examples": [
+          {
+            "en": "I showed the visitor the showroom.",
+            "ja": "私は来客をショールームに案内しました。",
+            "focus": "showed",
+            "jaFocus": "案内しました",
+            "object": "the visitor"
+          },
+          {
+            "en": "Please show the client to the meeting room.",
+            "ja": "顧客を会議室まで案内してください。",
+            "focus": "show",
+            "jaFocus": "案内してください",
+            "object": "the client"
+          },
+          {
+            "en": "She showed us around the new office.",
+            "ja": "彼女は私たちに新しいオフィスを案内してくれました。",
+            "focus": "showed us around",
+            "jaFocus": "案内してくれました"
           }
         ]
       }
@@ -16959,67 +17317,131 @@ export const verbs: Verb[] = [
     "collocations": [
       {
         "phrase": "show data",
-        "ja": "データを見せる",
-        "image": "数字や資料を相手に示す",
+        "ja": "データを示す",
+        "image": "データを根拠として見せる。",
         "pattern": "show data",
         "examples": [
           {
-            "en": "I'll show you the data.",
-            "ja": "私があなたにそのデータを見せます。",
-            "focus": "show you the data",
-            "jaFocus": "データを見せる"
-          }
-        ],
-        "dailyExamples": [
+            "en": "The chart shows the monthly sales data.",
+            "ja": "そのグラフは月別売上データを示しています。",
+            "focus": "shows",
+            "jaFocus": "示しています"
+          },
           {
-            "en": "I'll show you the data.",
-            "ja": "私があなたにそのデータを見せます。",
-            "focus": "show you the data",
-            "jaFocus": "データを見せる"
+            "en": "Please show the data that supports this proposal.",
+            "ja": "この提案を裏付けるデータを示してください。",
+            "focus": "show the data",
+            "jaFocus": "データを示してください"
+          },
+          {
+            "en": "The dashboard shows real-time data from each store.",
+            "ja": "ダッシュボードは各店舗のリアルタイムデータを示しています。",
+            "focus": "shows",
+            "jaFocus": "示しています"
           }
         ]
       },
       {
         "phrase": "show results",
         "ja": "結果を示す",
-        "image": "結果を分かるように出す",
+        "image": "結果を相手が分かる形で出す。",
         "pattern": "show results",
         "examples": [
           {
             "en": "The report shows the results clearly.",
             "ja": "その報告書は結果を分かりやすく示しています。",
             "focus": "shows the results",
-            "jaFocus": "結果を示す"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "結果を示しています"
+          },
           {
-            "en": "The report shows the results clearly.",
-            "ja": "その報告書は結果を分かりやすく示しています。",
-            "focus": "shows the results",
-            "jaFocus": "結果を示す"
+            "en": "Please show the results of the test.",
+            "ja": "テスト結果を示してください。",
+            "focus": "show the results",
+            "jaFocus": "結果を示してください"
+          },
+          {
+            "en": "The graph shows better results than last month.",
+            "ja": "そのグラフは先月より良い結果を示しています。",
+            "focus": "shows",
+            "jaFocus": "示しています"
           }
         ]
       },
       {
         "phrase": "show progress",
         "ja": "進捗を示す",
-        "image": "進み具合を見せる",
+        "image": "進み具合を見える形で伝える。",
         "pattern": "show progress",
         "examples": [
           {
             "en": "The dashboard shows our progress.",
             "ja": "そのダッシュボードは私たちの進捗を示しています。",
             "focus": "shows our progress",
-            "jaFocus": "進捗を示す"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "進捗を示しています"
+          },
           {
-            "en": "The dashboard shows our progress.",
-            "ja": "そのダッシュボードは私たちの進捗を示しています。",
-            "focus": "shows our progress",
-            "jaFocus": "進捗を示す"
+            "en": "Please show your progress in the weekly report.",
+            "ja": "週報で進捗を示してください。",
+            "focus": "show your progress",
+            "jaFocus": "進捗を示してください"
+          },
+          {
+            "en": "The checklist shows how much progress we have made.",
+            "ja": "チェックリストを見ると、どれくらい進んだか分かります。",
+            "focus": "shows",
+            "jaFocus": "分かります"
+          }
+        ]
+      },
+      {
+        "phrase": "show a sample",
+        "ja": "サンプルを見せる",
+        "image": "実物・見本を相手に提示する。",
+        "pattern": "show a sample",
+        "examples": [
+          {
+            "en": "We showed a sample to the client.",
+            "ja": "私たちは顧客にサンプルを見せました。",
+            "focus": "showed a sample",
+            "jaFocus": "サンプルを見せました"
+          },
+          {
+            "en": "Can you show a sample before production?",
+            "ja": "製作前にサンプルを見せてもらえますか？",
+            "focus": "show a sample",
+            "jaFocus": "サンプルを見せて"
+          },
+          {
+            "en": "The supplier showed us a sample of the new material.",
+            "ja": "仕入先は新素材のサンプルを私たちに見せました。",
+            "focus": "showed us a sample",
+            "jaFocus": "サンプルを見せました"
+          }
+        ]
+      },
+      {
+        "phrase": "show evidence",
+        "ja": "根拠を示す",
+        "image": "主張を支える証拠や資料を示す。",
+        "pattern": "show evidence",
+        "examples": [
+          {
+            "en": "Please show evidence before we change the specification.",
+            "ja": "仕様を変更する前に根拠を示してください。",
+            "focus": "show evidence",
+            "jaFocus": "根拠を示してください"
+          },
+          {
+            "en": "The photos show evidence of damage.",
+            "ja": "写真は破損の証拠を示しています。",
+            "focus": "show evidence",
+            "jaFocus": "証拠を示しています"
+          },
+          {
+            "en": "We need to show evidence to support the claim.",
+            "ja": "その主張を裏付ける根拠を示す必要があります。",
+            "focus": "show evidence",
+            "jaFocus": "根拠を示す必要があります"
           }
         ]
       }
@@ -17028,44 +17450,130 @@ export const verbs: Verb[] = [
       {
         "phrase": "show up",
         "ja": "現れる・出席する",
-        "image": "予定された場所に来る",
+        "image": "予定された場所に来る。",
         "pattern": "show up",
         "examples": [
           {
             "en": "The client showed up on time.",
-            "ja": "そのクライアントは時間通りに来ました。",
+            "ja": "その顧客は時間通りに来ました。",
             "focus": "showed up",
-            "jaFocus": "来た"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "来ました"
+          },
           {
-            "en": "The client showed up on time.",
-            "ja": "そのクライアントは時間通りに来ました。",
-            "focus": "showed up",
-            "jaFocus": "来た"
+            "en": "Two members did not show up for the meeting.",
+            "ja": "2名のメンバーが会議に来ませんでした。",
+            "focus": "show up",
+            "jaFocus": "来ませんでした"
+          },
+          {
+            "en": "Please show up at the site by nine.",
+            "ja": "9時までに現場に来てください。",
+            "focus": "show up",
+            "jaFocus": "来てください"
           }
         ]
       },
       {
         "phrase": "show around",
         "ja": "案内して回る",
-        "image": "場所を案内する",
+        "image": "施設や場所を案内する。",
         "pattern": "show around",
         "examples": [
           {
             "en": "I showed the visitor around the office.",
             "ja": "私は来客をオフィス内で案内しました。",
             "focus": "showed around",
-            "jaFocus": "案内した"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "案内しました"
+          },
           {
-            "en": "I showed the visitor around the office.",
-            "ja": "私は来客をオフィス内で案内しました。",
+            "en": "Can you show the client around the showroom?",
+            "ja": "顧客をショールーム内で案内してもらえますか？",
+            "focus": "show around",
+            "jaFocus": "案内して"
+          },
+          {
+            "en": "She showed the new staff around the warehouse.",
+            "ja": "彼女は新入社員を倉庫内で案内しました。",
             "focus": "showed around",
-            "jaFocus": "案内した"
+            "jaFocus": "案内しました"
+          }
+        ]
+      },
+      {
+        "phrase": "show off",
+        "ja": "見せびらかす・強調して見せる",
+        "image": "能力や特徴を目立つように見せる。",
+        "pattern": "show off",
+        "examples": [
+          {
+            "en": "The demo shows off the product’s main features.",
+            "ja": "そのデモは製品の主な特徴を分かりやすく見せています。",
+            "focus": "shows off",
+            "jaFocus": "特徴を見せています"
+          },
+          {
+            "en": "The booth design shows off the brand image well.",
+            "ja": "そのブースデザインはブランドイメージをよく引き立てています。",
+            "focus": "shows off",
+            "jaFocus": "引き立てています"
+          },
+          {
+            "en": "We should not show off too much in the proposal.",
+            "ja": "提案書で過度に見せびらかすような表現は避けるべきです。",
+            "focus": "show off",
+            "jaFocus": "見せびらかす"
+          }
+        ]
+      },
+      {
+        "phrase": "show through",
+        "ja": "透けて見える・表に出る",
+        "image": "奥にあるものや考えが見える。",
+        "pattern": "show through",
+        "examples": [
+          {
+            "en": "The old sign color shows through the new film.",
+            "ja": "古い看板の色が新しいフィルム越しに透けて見えます。",
+            "focus": "shows through",
+            "jaFocus": "透けて見えます"
+          },
+          {
+            "en": "His concern showed through during the meeting.",
+            "ja": "会議中、彼の不安が表情に出ていました。",
+            "focus": "showed through",
+            "jaFocus": "表情に出ていました"
+          },
+          {
+            "en": "The background image shows through the text area.",
+            "ja": "背景画像が文字エリアに透けて見えます。",
+            "focus": "shows through",
+            "jaFocus": "透けて見えます"
+          }
+        ]
+      },
+      {
+        "phrase": "show someone in",
+        "ja": "人を中へ案内する",
+        "image": "来客を部屋や建物の中へ案内する。",
+        "pattern": "show someone in",
+        "examples": [
+          {
+            "en": "Please show the client in when they arrive.",
+            "ja": "顧客が到着したら中へ案内してください。",
+            "focus": "show the client in",
+            "jaFocus": "中へ案内してください"
+          },
+          {
+            "en": "The receptionist showed the visitor in.",
+            "ja": "受付担当者が来客を中へ案内しました。",
+            "focus": "showed the visitor in",
+            "jaFocus": "中へ案内しました"
+          },
+          {
+            "en": "Can you show Mr. Tanaka in after the call?",
+            "ja": "電話の後、田中様を中へ案内してもらえますか？",
+            "focus": "show Mr. Tanaka in",
+            "jaFocus": "中へ案内して"
           }
         ]
       }
@@ -18592,77 +19100,168 @@ export const verbs: Verb[] = [
     "kana": "ラン",
     "syllable": "run",
     "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 基本",
-    "core": "運営する・実行する",
-    "coreDetail": "RUNは、会議・テスト・システム・事業を動かす時に使う仕事向けの基本動詞です。",
+    "importance": "★★★★★ 基本",
+    "core": "人・仕組み・仕事が止まらずに動き続ける",
+    "coreDetail": "run は「走る」だけでなく、会議を運営する、事業を動かす、テストを実行する、在庫や時間がなくなるなど、仕事で非常に広く使います。中心は「動かす・動いている」です。",
     "coreVisual": {
       "from": [
-        "🏃 動く",
-        "⚙️ 稼働",
-        "📊 運営",
-        "⏱️ 時間",
-        "💻 実行"
+        "会議",
+        "事業",
+        "システム",
+        "テスト",
+        "在庫"
       ],
-      "to": "前へ進む流れ",
-      "label": "止まらず動く"
+      "to": "動いている状態",
+      "label": "止まらず動く・動かす"
     },
     "meanings": [
       {
         "id": "operate",
-        "title": "① 運営する・実行する",
-        "pattern": "run + 名詞",
+        "title": "① 運営する・管理する",
+        "pattern": "run + business / team / meeting",
         "transitivity": "他動詞",
-        "structure": "S + run + O",
-        "image": "仕組みや作業を動かす",
-        "point": "run は「走る」だけでなく、会議・テスト・事業を運営する意味でよく使います。",
+        "structure": "run + 運営する対象",
+        "image": "会議・事業・チームなどを動かして進める。",
+        "point": "run a meeting / run a business は社会人英語で重要です。",
         "examples": [
           {
             "en": "She runs the sales meeting every Monday.",
             "ja": "彼女は毎週月曜日に営業会議を運営しています。",
-            "focus": "runs the meeting",
-            "jaFocus": "会議を運営する",
-            "object": "the sales meeting",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "She"
-              },
-              {
-                "label": "V",
-                "text": "runs"
-              },
-              {
-                "label": "O",
-                "text": "the sales meeting"
-              }
-            ]
+            "focus": "runs",
+            "jaFocus": "運営しています",
+            "object": "the sales meeting"
           },
           {
-            "en": "Please run the test before release.",
-            "ja": "リリース前にそのテストを実行してください。",
-            "focus": "run the test",
-            "jaFocus": "テストを実行する"
+            "en": "He runs a small business with his family.",
+            "ja": "彼は家族と小さな事業を運営しています。",
+            "focus": "runs",
+            "jaFocus": "運営しています",
+            "object": "a small business"
           },
           {
-            "en": "We run the system every morning.",
-            "ja": "私たちは毎朝そのシステムを稼働させています。",
-            "focus": "run the system",
-            "jaFocus": "システムを稼働させる"
+            "en": "We need someone to run the project while she is away.",
+            "ja": "彼女が不在の間、その案件を進める担当者が必要です。",
+            "focus": "run the project",
+            "jaFocus": "案件を進める"
           }
-        ],
-        "dailyExamples": [
+        ]
+      },
+      {
+        "id": "execute",
+        "title": "② 実行する・稼働させる",
+        "pattern": "run + test / system / program",
+        "transitivity": "他動詞",
+        "structure": "run + 実行する対象",
+        "image": "テスト・システム・プログラムを動かす。",
+        "point": "IT・設備・検査・確認でよく使います。",
+        "examples": [
           {
             "en": "Please run the test before release.",
             "ja": "リリース前にそのテストを実行してください。",
             "focus": "run the test",
-            "jaFocus": "テストを実行する"
+            "jaFocus": "テストを実行してください",
+            "object": "the test"
           },
           {
             "en": "We run the system every morning.",
             "ja": "私たちは毎朝そのシステムを稼働させています。",
             "focus": "run the system",
-            "jaFocus": "システムを稼働させる"
+            "jaFocus": "システムを稼働させています",
+            "object": "the system"
+          },
+          {
+            "en": "The engineer ran a check on the device.",
+            "ja": "エンジニアはその機器の確認を実行しました。",
+            "focus": "ran a check",
+            "jaFocus": "確認を実行しました",
+            "object": "a check"
+          }
+        ]
+      },
+      {
+        "id": "be-scheduled",
+        "title": "③ 予定・期間が続く",
+        "pattern": "run from A to B / run until + 時間",
+        "transitivity": "自動詞",
+        "structure": "event/campaign + run",
+        "image": "キャンペーン・イベント・期間が続く。",
+        "point": "期間を伝える時に使える自然な表現です。",
+        "examples": [
+          {
+            "en": "The campaign runs until the end of July.",
+            "ja": "そのキャンペーンは7月末まで続きます。",
+            "focus": "runs until",
+            "jaFocus": "〜まで続きます"
+          },
+          {
+            "en": "The exhibition runs from Monday to Friday.",
+            "ja": "展示会は月曜日から金曜日まで開催されます。",
+            "focus": "runs from",
+            "jaFocus": "〜から開催されます"
+          },
+          {
+            "en": "The contract runs for one year.",
+            "ja": "契約期間は1年間です。",
+            "focus": "runs for",
+            "jaFocus": "期間は〜です"
+          }
+        ]
+      },
+      {
+        "id": "move-flow",
+        "title": "④ 流れる・通る",
+        "pattern": "run through / run along / run across",
+        "transitivity": "自動詞",
+        "structure": "line/cable/road + run",
+        "image": "線・ケーブル・道路などがある方向に通る。",
+        "point": "現場説明や配線説明で使える意味です。",
+        "examples": [
+          {
+            "en": "The cable runs along the wall.",
+            "ja": "ケーブルは壁に沿って通っています。",
+            "focus": "runs along",
+            "jaFocus": "沿って通っています"
+          },
+          {
+            "en": "The pipe runs through the ceiling.",
+            "ja": "配管は天井内を通っています。",
+            "focus": "runs through",
+            "jaFocus": "通っています"
+          },
+          {
+            "en": "The main road runs past the site.",
+            "ja": "幹線道路は現場のそばを通っています。",
+            "focus": "runs past",
+            "jaFocus": "そばを通っています"
+          }
+        ]
+      },
+      {
+        "id": "become-state",
+        "title": "⑤ 〜の状態になる",
+        "pattern": "run late / run short / run smoothly",
+        "transitivity": "自動詞",
+        "structure": "run + 状態",
+        "image": "進行状況がある状態になる。",
+        "point": "run late は「遅れる」、run smoothly は「順調に進む」です。",
+        "examples": [
+          {
+            "en": "The meeting ran late because of the long discussion.",
+            "ja": "長い議論のため、会議は長引きました。",
+            "focus": "ran late",
+            "jaFocus": "長引きました"
+          },
+          {
+            "en": "We are running short of time.",
+            "ja": "私たちは時間が足りなくなってきています。",
+            "focus": "running short",
+            "jaFocus": "足りなくなってきています"
+          },
+          {
+            "en": "The installation ran smoothly.",
+            "ja": "設置作業は順調に進みました。",
+            "focus": "ran smoothly",
+            "jaFocus": "順調に進みました"
           }
         ]
       }
@@ -18671,66 +19270,130 @@ export const verbs: Verb[] = [
       {
         "phrase": "run a meeting",
         "ja": "会議を運営する",
-        "image": "会議を進行する",
+        "image": "会議を進行し、議題を前に進める。",
         "pattern": "run a meeting",
         "examples": [
           {
             "en": "She runs the sales meeting every Monday.",
             "ja": "彼女は毎週月曜日に営業会議を運営しています。",
             "focus": "runs the meeting",
-            "jaFocus": "会議を運営する"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "会議を運営しています"
+          },
           {
-            "en": "She runs the sales meeting every Monday.",
-            "ja": "彼女は毎週月曜日に営業会議を運営しています。",
-            "focus": "runs the meeting",
-            "jaFocus": "会議を運営する"
+            "en": "Can you run the meeting while I am visiting the client?",
+            "ja": "私が顧客訪問中、会議を進行してもらえますか？",
+            "focus": "run the meeting",
+            "jaFocus": "会議を進行して"
+          },
+          {
+            "en": "He ran the meeting efficiently and finished on time.",
+            "ja": "彼は会議を効率よく進行し、時間通りに終えました。",
+            "focus": "ran the meeting",
+            "jaFocus": "会議を進行し"
           }
         ]
       },
       {
         "phrase": "run a test",
         "ja": "テストを実行する",
-        "image": "動作確認をする",
+        "image": "動作確認や検査を行う。",
         "pattern": "run a test",
         "examples": [
           {
             "en": "Please run the test before release.",
             "ja": "リリース前にそのテストを実行してください。",
             "focus": "run the test",
-            "jaFocus": "テストを実行する"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "テストを実行してください"
+          },
           {
-            "en": "Please run the test before release.",
-            "ja": "リリース前にそのテストを実行してください。",
-            "focus": "run the test",
-            "jaFocus": "テストを実行する"
+            "en": "We ran a test to check the brightness.",
+            "ja": "明るさを確認するためにテストを実行しました。",
+            "focus": "ran a test",
+            "jaFocus": "テストを実行しました"
+          },
+          {
+            "en": "The team will run another test after the update.",
+            "ja": "チームは更新後にもう一度テストを実行します。",
+            "focus": "run another test",
+            "jaFocus": "テストを実行します"
           }
         ]
       },
       {
         "phrase": "run a business",
         "ja": "事業を運営する",
-        "image": "会社や事業を動かす",
+        "image": "会社や事業を継続的に動かす。",
         "pattern": "run a business",
         "examples": [
           {
             "en": "He runs a small business with his family.",
             "ja": "彼は家族と小さな事業を運営しています。",
             "focus": "runs a business",
-            "jaFocus": "事業を運営する"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "事業を運営しています"
+          },
           {
-            "en": "He runs a small business with his family.",
-            "ja": "彼は家族と小さな事業を運営しています。",
-            "focus": "runs a business",
+            "en": "It is difficult to run a business without reliable suppliers.",
+            "ja": "信頼できる仕入先なしで事業を運営するのは難しいです。",
+            "focus": "run a business",
             "jaFocus": "事業を運営する"
+          },
+          {
+            "en": "She learned how to run a business from her father.",
+            "ja": "彼女は父親から事業運営の方法を学びました。",
+            "focus": "run a business",
+            "jaFocus": "事業運営"
+          }
+        ]
+      },
+      {
+        "phrase": "run a campaign",
+        "ja": "キャンペーンを実施する",
+        "image": "販売促進や告知施策を動かす。",
+        "pattern": "run a campaign",
+        "examples": [
+          {
+            "en": "We will run a campaign for the new product.",
+            "ja": "新製品向けのキャンペーンを実施します。",
+            "focus": "run a campaign",
+            "jaFocus": "キャンペーンを実施します"
+          },
+          {
+            "en": "The marketing team ran a campaign in June.",
+            "ja": "マーケティングチームは6月にキャンペーンを実施しました。",
+            "focus": "ran a campaign",
+            "jaFocus": "キャンペーンを実施しました"
+          },
+          {
+            "en": "Before we run the campaign, we need to confirm the budget.",
+            "ja": "キャンペーンを実施する前に、予算を確認する必要があります。",
+            "focus": "run the campaign",
+            "jaFocus": "キャンペーンを実施する"
+          }
+        ]
+      },
+      {
+        "phrase": "run smoothly",
+        "ja": "順調に進む",
+        "image": "問題なく進行する。",
+        "pattern": "run smoothly",
+        "examples": [
+          {
+            "en": "The installation ran smoothly.",
+            "ja": "設置作業は順調に進みました。",
+            "focus": "ran smoothly",
+            "jaFocus": "順調に進みました"
+          },
+          {
+            "en": "We need a clear plan so the project runs smoothly.",
+            "ja": "案件が順調に進むよう、明確な計画が必要です。",
+            "focus": "runs smoothly",
+            "jaFocus": "順調に進む"
+          },
+          {
+            "en": "The event ran smoothly thanks to the staff.",
+            "ja": "スタッフのおかげでイベントは順調に進みました。",
+            "focus": "ran smoothly",
+            "jaFocus": "順調に進みました"
           }
         ]
       }
@@ -18738,67 +19401,131 @@ export const verbs: Verb[] = [
     "phrasalVerbs": [
       {
         "phrase": "run into",
-        "ja": "問題に遭遇する",
-        "image": "予期せず出会う",
+        "ja": "問題に遭遇する・偶然会う",
+        "image": "予期せず問題や人に出会う。",
         "pattern": "run into",
         "examples": [
           {
             "en": "We ran into a problem during testing.",
             "ja": "私たちはテスト中に問題に遭遇しました。",
             "focus": "ran into a problem",
-            "jaFocus": "問題に遭遇した"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "問題に遭遇しました"
+          },
           {
-            "en": "We ran into a problem during testing.",
-            "ja": "私たちはテスト中に問題に遭遇しました。",
-            "focus": "ran into a problem",
-            "jaFocus": "問題に遭遇した"
+            "en": "The team ran into a delay at the factory.",
+            "ja": "チームは工場で遅延に直面しました。",
+            "focus": "ran into a delay",
+            "jaFocus": "遅延に直面しました"
+          },
+          {
+            "en": "I ran into the client at the trade show.",
+            "ja": "展示会で顧客に偶然会いました。",
+            "focus": "ran into",
+            "jaFocus": "偶然会いました"
           }
         ]
       },
       {
         "phrase": "run out of",
-        "ja": "〜を切らす",
-        "image": "在庫や時間がなくなる",
+        "ja": "〜を切らす・使い果たす",
+        "image": "在庫・時間・予算などがなくなる。",
         "pattern": "run out of",
         "examples": [
           {
             "en": "We ran out of stock last week.",
             "ja": "私たちは先週、在庫を切らしました。",
             "focus": "ran out of stock",
-            "jaFocus": "在庫を切らした"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "在庫を切らしました"
+          },
           {
-            "en": "We ran out of stock last week.",
-            "ja": "私たちは先週、在庫を切らしました。",
-            "focus": "ran out of stock",
-            "jaFocus": "在庫を切らした"
+            "en": "We are running out of time before the deadline.",
+            "ja": "締切までの時間がなくなってきています。",
+            "focus": "running out of time",
+            "jaFocus": "時間がなくなってきています"
+          },
+          {
+            "en": "The project ran out of budget before completion.",
+            "ja": "その案件は完了前に予算を使い切りました。",
+            "focus": "ran out of budget",
+            "jaFocus": "予算を使い切りました"
           }
         ]
       },
       {
         "phrase": "run by",
-        "ja": "確認のために見せる",
-        "image": "相手に確認する",
+        "ja": "確認のために見せる・相談する",
+        "image": "案や内容を相手に一度確認してもらう。",
         "pattern": "run by",
         "examples": [
           {
             "en": "I will run this idea by my manager.",
-            "ja": "私はこの案を上司に確認します。",
+            "ja": "この案を上司に確認します。",
             "focus": "run this idea by",
-            "jaFocus": "案を確認する"
-          }
-        ],
-        "dailyExamples": [
+            "jaFocus": "案を確認します"
+          },
           {
-            "en": "I will run this idea by my manager.",
-            "ja": "私はこの案を上司に確認します。",
-            "focus": "run this idea by",
-            "jaFocus": "案を確認する"
+            "en": "Can I run the schedule by you before I send it?",
+            "ja": "送る前にスケジュールを確認してもらえますか？",
+            "focus": "run the schedule by you",
+            "jaFocus": "確認してもらえますか"
+          },
+          {
+            "en": "Please run the final design by the client.",
+            "ja": "最終デザインを顧客に確認してください。",
+            "focus": "run the final design by",
+            "jaFocus": "確認してください"
+          }
+        ]
+      },
+      {
+        "phrase": "run through",
+        "ja": "一通り確認する・通しで説明する",
+        "image": "内容や手順を最初から最後まで確認する。",
+        "pattern": "run through",
+        "examples": [
+          {
+            "en": "Let's run through the agenda before the meeting.",
+            "ja": "会議前に議題を一通り確認しましょう。",
+            "focus": "run through",
+            "jaFocus": "一通り確認しましょう"
+          },
+          {
+            "en": "The engineer ran through the installation steps.",
+            "ja": "エンジニアは設置手順を一通り説明しました。",
+            "focus": "ran through",
+            "jaFocus": "一通り説明しました"
+          },
+          {
+            "en": "Can we run through the quotation one more time?",
+            "ja": "見積書をもう一度一通り確認できますか？",
+            "focus": "run through",
+            "jaFocus": "一通り確認"
+          }
+        ]
+      },
+      {
+        "phrase": "run across",
+        "ja": "偶然見つける・偶然出会う",
+        "image": "予期せず情報や人を見つける。",
+        "pattern": "run across",
+        "examples": [
+          {
+            "en": "I ran across an old quotation in the folder.",
+            "ja": "フォルダ内で古い見積書を偶然見つけました。",
+            "focus": "ran across",
+            "jaFocus": "偶然見つけました"
+          },
+          {
+            "en": "She ran across useful data during the review.",
+            "ja": "彼女は確認中に役立つデータを偶然見つけました。",
+            "focus": "ran across",
+            "jaFocus": "偶然見つけました"
+          },
+          {
+            "en": "We ran across a similar case last year.",
+            "ja": "昨年、似た事例に偶然出会いました。",
+            "focus": "ran across",
+            "jaFocus": "偶然出会いました"
           }
         ]
       }

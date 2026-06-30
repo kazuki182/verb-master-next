@@ -23276,612 +23276,802 @@ export const verbs: Verb[] = [
     "core": "閉じているものを使える状態にする",
     "coreDetail": "OPENは物理的に開く以外に、会議・ファイル・可能性・議論を使える状態にする感覚です。",
     "coreVisual": {
-      "from": [
-        "🔓 開く",
-        "📄 ファイル",
-        "💬 議論",
-        "🚪 機会",
-        "📅 会議"
-      ],
-      "to": "仕事の流れ",
-      "label": "コアイメージ"
+        "from": [
+            "🔓 開く",
+            "📄 ファイル",
+            "💬 議論",
+            "🚪 機会",
+            "📅 会議"
+        ],
+        "to": "仕事の流れ",
+        "label": "コアイメージ"
     },
     "meanings": [
-      {
-        "id": "open-file",
-        "title": "1 開く",
-        "pattern": "OPEN + 名詞",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "ファイルや資料を開く。",
-        "point": "open the file は仕事で最頻出。",
-        "examples": [
-          {
-            "en": "Please open the file I sent you.",
-            "ja": "私が送ったファイルを開いてください。",
-            "focus": "open the file",
-            "jaFocus": "ファイルを開く",
-            "object": "the file",
-            "sentencePattern": "V + O",
-            "grammarParts": [
-              {
-                "label": "V",
-                "text": "open"
-              },
-              {
-                "label": "O",
-                "text": "the file"
-              }
+        {
+            "id": "open-file",
+            "title": "1 開く",
+            "pattern": "OPEN + 名詞",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "ファイルや資料を開く。",
+            "point": "open the file は仕事で最頻出。",
+            "examples": [
+                {
+                    "en": "Please open the file I sent you.",
+                    "ja": "私が送ったファイルを開いてください。",
+                    "focus": "open the file",
+                    "jaFocus": "ファイルを開く",
+                    "object": "the file",
+                    "sentencePattern": "V + O",
+                    "grammarParts": [
+                        {
+                            "label": "V",
+                            "text": "open"
+                        },
+                        {
+                            "label": "O",
+                            "text": "the file"
+                        }
+                    ]
+                },
+                {
+                    "en": "I opened the latest report.",
+                    "ja": "最新レポートを開きました。",
+                    "focus": "opened",
+                    "object": "the latest report",
+                    "jaFocus": "開きました"
+                },
+                {
+                    "en": "Can you open the attachment?",
+                    "ja": "添付ファイルを開けますか？",
+                    "focus": "open",
+                    "object": "the attachment",
+                    "jaFocus": "開けますか"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I opened the latest report.",
+                    "ja": "最新レポートを開きました。",
+                    "focus": "opened",
+                    "object": "the latest report",
+                    "jaFocus": "開きました"
+                },
+                {
+                    "en": "Can you open the attachment?",
+                    "ja": "添付ファイルを開けますか？",
+                    "focus": "open",
+                    "object": "the attachment",
+                    "jaFocus": "開けますか"
+                }
             ]
-          },
-          {
-            "en": "I opened the latest report.",
-            "ja": "最新レポートを開きました。",
-            "focus": "opened",
-            "object": "the latest report",
-            "jaFocus": "開きました"
-          },
-          {
-            "en": "Can you open the attachment?",
-            "ja": "添付ファイルを開けますか？",
-            "focus": "open",
-            "object": "the attachment",
-            "jaFocus": "開けますか"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I opened the latest report.",
-            "ja": "最新レポートを開きました。",
-            "focus": "opened",
-            "object": "the latest report",
-            "jaFocus": "開きました"
-          },
-          {
-            "en": "Can you open the attachment?",
-            "ja": "添付ファイルを開けますか？",
-            "focus": "open",
-            "object": "the attachment",
-            "jaFocus": "開けますか"
-          }
-        ]
-      },
-      {
-        "id": "start-meeting",
-        "title": "2 会議を始める",
-        "pattern": "OPEN + 会議",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "会議を開始する。",
-        "point": "open a meeting はややフォーマル。",
-        "examples": [
-          {
-            "en": "The manager opened the meeting with a short update.",
-            "ja": "マネージャーは短い報告で会議を始めました。",
-            "focus": "opened",
-            "object": "the meeting",
-            "jaFocus": "始めました"
-          },
-          {
-            "en": "Let me open today's meeting.",
-            "ja": "本日の会議を始めさせてください。",
-            "focus": "open",
-            "object": "today's meeting",
-            "jaFocus": "始め"
-          },
-          {
-            "en": "She opened the session with a greeting.",
-            "ja": "彼女は挨拶でセッションを始めました。",
-            "focus": "opened",
-            "object": "the session",
-            "jaFocus": "始めました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The event opened with music.",
-            "ja": "イベントは音楽で始まりました。",
-            "focus": "opened",
-            "jaFocus": "始まりました"
-          },
-          {
-            "en": "The ceremony opened at ten.",
-            "ja": "式典は10時に始まりました。",
-            "focus": "opened",
-            "jaFocus": "始まりました"
-          }
-        ]
-      },
-      {
-        "id": "make-available",
-        "title": "3 利用可能にする",
-        "pattern": "OPEN + 機会 / アクセス",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "アクセスや機会を開く。",
-        "point": "open access / open opportunities のように使う。",
-        "examples": [
-          {
-            "en": "This update opens new opportunities.",
-            "ja": "この更新は新しい機会を生みます。",
-            "focus": "opens",
-            "object": "new opportunities",
-            "jaFocus": "生みます"
-          },
-          {
-            "en": "The new system opens access to shared data.",
-            "ja": "新システムで共有データにアクセスできるようになります。",
-            "focus": "opens",
-            "object": "access",
-            "jaFocus": "アクセスできるように"
-          },
-          {
-            "en": "The partnership opened a new market.",
-            "ja": "提携により新しい市場が開けました。",
-            "focus": "opened",
-            "object": "a new market",
-            "jaFocus": "開けました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Studying English opens many doors.",
-            "ja": "英語学習は多くの可能性を広げます。",
-            "focus": "opens",
-            "object": "many doors",
-            "jaFocus": "広げます"
-          },
-          {
-            "en": "The ticket opened the gate.",
-            "ja": "チケットでゲートが開きました。",
-            "focus": "opened",
-            "object": "the gate",
-            "jaFocus": "開きました"
-          }
-        ]
-      },
-      {
-        "id": "discuss",
-        "title": "4 話を切り出す",
-        "pattern": "OPEN + discussion",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "議論を始める。",
-        "point": "open a discussion は会議で自然。",
-        "examples": [
-          {
-            "en": "I would like to open the discussion.",
-            "ja": "議論を始めたいと思います。",
-            "focus": "open",
-            "object": "the discussion",
-            "jaFocus": "始め"
-          },
-          {
-            "en": "This issue opens an important discussion.",
-            "ja": "この問題は重要な議論につながります。",
-            "focus": "opens",
-            "object": "an important discussion",
-            "jaFocus": "つながります"
-          },
-          {
-            "en": "Can we open the topic of pricing?",
-            "ja": "価格の話題を始めてもいいですか？",
-            "focus": "open",
-            "object": "the topic",
-            "jaFocus": "始め"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I opened a conversation with my neighbor.",
-            "ja": "近所の人と会話を始めました。",
-            "focus": "opened",
-            "object": "a conversation",
-            "jaFocus": "始めました"
-          },
-          {
-            "en": "She opened the topic carefully.",
-            "ja": "彼女はその話題を慎重に切り出しました。",
-            "focus": "opened",
-            "object": "the topic",
-            "jaFocus": "切り出しました"
-          }
-        ]
-      },
-      {
-        "id": "become-open",
-        "title": "5 開く・営業する",
-        "pattern": "open",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V",
-        "image": "店やサービスが開く。",
-        "point": "自動詞で使う。",
-        "examples": [
-          {
-            "en": "The office opens at nine.",
-            "ja": "オフィスは9時に開きます。",
-            "focus": "opens",
-            "jaFocus": "開きます"
-          },
-          {
-            "en": "The registration opens next Monday.",
-            "ja": "登録は来週月曜に始まります。",
-            "focus": "opens",
-            "jaFocus": "始まります"
-          },
-          {
-            "en": "The support desk opens at ten.",
-            "ja": "サポート窓口は10時に開きます。",
-            "focus": "opens",
-            "jaFocus": "開きます"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The shop opens early.",
-            "ja": "その店は早く開きます。",
-            "focus": "opens",
-            "jaFocus": "開きます"
-          },
-          {
-            "en": "The park opens in spring.",
-            "ja": "公園は春に開園します。",
-            "focus": "opens",
-            "jaFocus": "開園します"
-          }
-        ]
-      },
-      {
-        "id": "open-account",
-        "title": "6 口座・アカウントを開設する",
-        "pattern": "OPEN + account",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "アカウントや口座を作る。",
-        "point": "open an account は定型。",
-        "examples": [
-          {
-            "en": "We opened a new account for the client.",
-            "ja": "顧客用に新しいアカウントを開設しました。",
-            "focus": "opened",
-            "object": "a new account",
-            "jaFocus": "開設しました"
-          },
-          {
-            "en": "Please open a user account for him.",
-            "ja": "彼用のユーザーアカウントを作成してください。",
-            "focus": "open",
-            "object": "a user account",
-            "jaFocus": "作成して"
-          },
-          {
-            "en": "The company opened a bank account overseas.",
-            "ja": "会社は海外で銀行口座を開設しました。",
-            "focus": "opened",
-            "object": "a bank account",
-            "jaFocus": "開設しました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I opened a savings account.",
-            "ja": "貯蓄口座を開設しました。",
-            "focus": "opened",
-            "object": "a savings account",
-            "jaFocus": "開設しました"
-          },
-          {
-            "en": "She opened a new email account.",
-            "ja": "彼女は新しいメールアカウントを作りました。",
-            "focus": "opened",
-            "object": "a new email account",
-            "jaFocus": "作りました"
-          }
-        ]
-      },
-      {
-        "id": "open-position",
-        "title": "7 募集を出す",
-        "pattern": "OPEN + position",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "求人や枠を開く。",
-        "point": "open a position は採用文脈で使う。",
-        "examples": [
-          {
-            "en": "We opened a new sales position.",
-            "ja": "新しい営業職の募集を開始しました。",
-            "focus": "opened",
-            "object": "a new sales position",
-            "jaFocus": "募集を開始しました"
-          },
-          {
-            "en": "The HR team opened three roles.",
-            "ja": "人事チームは3つの職種を募集開始しました。",
-            "focus": "opened",
-            "object": "three roles",
-            "jaFocus": "募集開始しました"
-          },
-          {
-            "en": "This role will open next quarter.",
-            "ja": "この役職は来四半期に募集開始されます。",
-            "focus": "open",
-            "jaFocus": "募集開始されます"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "A seat opened near the window.",
-            "ja": "窓際の席が空きました。",
-            "focus": "opened",
-            "jaFocus": "空きました"
-          },
-          {
-            "en": "A spot opened in the class.",
-            "ja": "クラスに空きが出ました。",
-            "focus": "opened",
-            "jaFocus": "空きが出ました"
-          }
-        ]
-      },
-      {
-        "id": "open-up",
-        "title": "8 打ち明ける・広げる",
-        "pattern": "open up",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V",
-        "image": "心や可能性が開く。",
-        "point": "ビジネスでは市場や機会にも使える。",
-        "examples": [
-          {
-            "en": "The new channel opened up more sales opportunities.",
-            "ja": "新しい販路で販売機会が広がりました。",
-            "focus": "opened up",
-            "object": "more sales opportunities",
-            "jaFocus": "広がりました"
-          },
-          {
-            "en": "The manager opened up about the challenge.",
-            "ja": "マネージャーは課題について率直に話しました。",
-            "focus": "opened up",
-            "jaFocus": "率直に話しました"
-          },
-          {
-            "en": "AI opened up new ways to work.",
-            "ja": "AIにより新しい働き方が広がりました。",
-            "focus": "opened up",
-            "object": "new ways to work",
-            "jaFocus": "広がりました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "He opened up to his friend.",
-            "ja": "彼は友人に心を開きました。",
-            "focus": "opened up",
-            "jaFocus": "心を開きました"
-          },
-          {
-            "en": "Travel opened up my mind.",
-            "ja": "旅行で視野が広がりました。",
-            "focus": "opened up",
-            "object": "my mind",
-            "jaFocus": "広がりました"
-          }
-        ]
-      },
-      {
-        "id": "open-door",
-        "title": "9 扉を開く",
-        "pattern": "OPEN + door",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "物理・比喩の扉を開く。",
-        "point": "open the door to は可能性を開く。",
-        "examples": [
-          {
-            "en": "This contract opens the door to future business.",
-            "ja": "この契約は将来の取引につながります。",
-            "focus": "opens",
-            "object": "the door",
-            "jaFocus": "つながります"
-          },
-          {
-            "en": "The meeting opened the door to cooperation.",
-            "ja": "その会議で協力の可能性が開けました。",
-            "focus": "opened",
-            "object": "the door",
-            "jaFocus": "可能性が開けました"
-          },
-          {
-            "en": "Good communication opens the door to trust.",
-            "ja": "良いコミュニケーションは信頼につながります。",
-            "focus": "opens",
-            "object": "the door",
-            "jaFocus": "つながります"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Can you open the door?",
-            "ja": "ドアを開けてくれますか？",
-            "focus": "open",
-            "object": "the door",
-            "jaFocus": "開けて"
-          },
-          {
-            "en": "Music opened the door to English for me.",
-            "ja": "音楽が私に英語への扉を開いてくれました。",
-            "focus": "opened",
-            "object": "the door",
-            "jaFocus": "扉を開いて"
-          }
-        ]
-      },
-      {
-        "id": "open-mind",
-        "title": "10 心を開く",
-        "pattern": "OPEN + mind",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "考え方を柔軟にする。",
-        "point": "open your mind は自己啓発寄り。",
-        "examples": [
-          {
-            "en": "The training opened my mind to new ideas.",
-            "ja": "研修で新しい考え方に目が開かれました。",
-            "focus": "opened",
-            "object": "my mind",
-            "jaFocus": "目が開かれました"
-          },
-          {
-            "en": "Working abroad opened my mind.",
-            "ja": "海外勤務で視野が広がりました。",
-            "focus": "opened",
-            "object": "my mind",
-            "jaFocus": "視野が広がりました"
-          },
-          {
-            "en": "The feedback opened our minds to customer needs.",
-            "ja": "フィードバックで顧客ニーズに目が向きました。",
-            "focus": "opened",
-            "object": "our minds",
-            "jaFocus": "目が向きました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Reading opens your mind.",
-            "ja": "読書は視野を広げます。",
-            "focus": "opens",
-            "object": "your mind",
-            "jaFocus": "広げます"
-          },
-          {
-            "en": "Meeting new people opened my mind.",
-            "ja": "新しい人との出会いで視野が広がりました。",
-            "focus": "opened",
-            "object": "my mind",
-            "jaFocus": "広がりました"
-          }
-        ]
-      }
+        },
+        {
+            "id": "start-meeting",
+            "title": "2 会議を始める",
+            "pattern": "OPEN + 会議",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "会議を開始する。",
+            "point": "open a meeting はややフォーマル。",
+            "examples": [
+                {
+                    "en": "The manager opened the meeting with a short update.",
+                    "ja": "マネージャーは短い報告で会議を始めました。",
+                    "focus": "opened",
+                    "object": "the meeting",
+                    "jaFocus": "始めました"
+                },
+                {
+                    "en": "Let me open today's meeting.",
+                    "ja": "本日の会議を始めさせてください。",
+                    "focus": "open",
+                    "object": "today's meeting",
+                    "jaFocus": "始め"
+                },
+                {
+                    "en": "She opened the session with a greeting.",
+                    "ja": "彼女は挨拶でセッションを始めました。",
+                    "focus": "opened",
+                    "object": "the session",
+                    "jaFocus": "始めました"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "The event opened with music.",
+                    "ja": "イベントは音楽で始まりました。",
+                    "focus": "opened",
+                    "jaFocus": "始まりました"
+                },
+                {
+                    "en": "The ceremony opened at ten.",
+                    "ja": "式典は10時に始まりました。",
+                    "focus": "opened",
+                    "jaFocus": "始まりました"
+                }
+            ]
+        },
+        {
+            "id": "make-available",
+            "title": "3 利用可能にする",
+            "pattern": "OPEN + 機会 / アクセス",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "アクセスや機会を開く。",
+            "point": "open access / open opportunities のように使う。",
+            "examples": [
+                {
+                    "en": "This update opens new opportunities.",
+                    "ja": "この更新は新しい機会を生みます。",
+                    "focus": "opens",
+                    "object": "new opportunities",
+                    "jaFocus": "生みます"
+                },
+                {
+                    "en": "The new system opens access to shared data.",
+                    "ja": "新システムで共有データにアクセスできるようになります。",
+                    "focus": "opens",
+                    "object": "access",
+                    "jaFocus": "アクセスできるように"
+                },
+                {
+                    "en": "The partnership opened a new market.",
+                    "ja": "提携により新しい市場が開けました。",
+                    "focus": "opened",
+                    "object": "a new market",
+                    "jaFocus": "開けました"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Studying English opens many doors.",
+                    "ja": "英語学習は多くの可能性を広げます。",
+                    "focus": "opens",
+                    "object": "many doors",
+                    "jaFocus": "広げます"
+                },
+                {
+                    "en": "The ticket opened the gate.",
+                    "ja": "チケットでゲートが開きました。",
+                    "focus": "opened",
+                    "object": "the gate",
+                    "jaFocus": "開きました"
+                }
+            ]
+        },
+        {
+            "id": "discuss",
+            "title": "4 話を切り出す",
+            "pattern": "OPEN + discussion",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "議論を始める。",
+            "point": "open a discussion は会議で自然。",
+            "examples": [
+                {
+                    "en": "I would like to open the discussion.",
+                    "ja": "議論を始めたいと思います。",
+                    "focus": "open",
+                    "object": "the discussion",
+                    "jaFocus": "始め"
+                },
+                {
+                    "en": "This issue opens an important discussion.",
+                    "ja": "この問題は重要な議論につながります。",
+                    "focus": "opens",
+                    "object": "an important discussion",
+                    "jaFocus": "つながります"
+                },
+                {
+                    "en": "Can we open the topic of pricing?",
+                    "ja": "価格の話題を始めてもいいですか？",
+                    "focus": "open",
+                    "object": "the topic",
+                    "jaFocus": "始め"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I opened a conversation with my neighbor.",
+                    "ja": "近所の人と会話を始めました。",
+                    "focus": "opened",
+                    "object": "a conversation",
+                    "jaFocus": "始めました"
+                },
+                {
+                    "en": "She opened the topic carefully.",
+                    "ja": "彼女はその話題を慎重に切り出しました。",
+                    "focus": "opened",
+                    "object": "the topic",
+                    "jaFocus": "切り出しました"
+                }
+            ]
+        },
+        {
+            "id": "become-open",
+            "title": "5 開く・営業する",
+            "pattern": "open",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V",
+            "image": "店やサービスが開く。",
+            "point": "自動詞で使う。",
+            "examples": [
+                {
+                    "en": "The office opens at nine.",
+                    "ja": "オフィスは9時に開きます。",
+                    "focus": "opens",
+                    "jaFocus": "開きます"
+                },
+                {
+                    "en": "The registration opens next Monday.",
+                    "ja": "登録は来週月曜に始まります。",
+                    "focus": "opens",
+                    "jaFocus": "始まります"
+                },
+                {
+                    "en": "The support desk opens at ten.",
+                    "ja": "サポート窓口は10時に開きます。",
+                    "focus": "opens",
+                    "jaFocus": "開きます"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "The shop opens early.",
+                    "ja": "その店は早く開きます。",
+                    "focus": "opens",
+                    "jaFocus": "開きます"
+                },
+                {
+                    "en": "The park opens in spring.",
+                    "ja": "公園は春に開園します。",
+                    "focus": "opens",
+                    "jaFocus": "開園します"
+                }
+            ]
+        },
+        {
+            "id": "open-account",
+            "title": "6 口座・アカウントを開設する",
+            "pattern": "OPEN + account",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "アカウントや口座を作る。",
+            "point": "open an account は定型。",
+            "examples": [
+                {
+                    "en": "We opened a new account for the client.",
+                    "ja": "顧客用に新しいアカウントを開設しました。",
+                    "focus": "opened",
+                    "object": "a new account",
+                    "jaFocus": "開設しました"
+                },
+                {
+                    "en": "Please open a user account for him.",
+                    "ja": "彼用のユーザーアカウントを作成してください。",
+                    "focus": "open",
+                    "object": "a user account",
+                    "jaFocus": "作成して"
+                },
+                {
+                    "en": "The company opened a bank account overseas.",
+                    "ja": "会社は海外で銀行口座を開設しました。",
+                    "focus": "opened",
+                    "object": "a bank account",
+                    "jaFocus": "開設しました"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I opened a savings account.",
+                    "ja": "貯蓄口座を開設しました。",
+                    "focus": "opened",
+                    "object": "a savings account",
+                    "jaFocus": "開設しました"
+                },
+                {
+                    "en": "She opened a new email account.",
+                    "ja": "彼女は新しいメールアカウントを作りました。",
+                    "focus": "opened",
+                    "object": "a new email account",
+                    "jaFocus": "作りました"
+                }
+            ]
+        },
+        {
+            "id": "open-position",
+            "title": "7 募集を出す",
+            "pattern": "OPEN + position",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "求人や枠を開く。",
+            "point": "open a position は採用文脈で使う。",
+            "examples": [
+                {
+                    "en": "We opened a new sales position.",
+                    "ja": "新しい営業職の募集を開始しました。",
+                    "focus": "opened",
+                    "object": "a new sales position",
+                    "jaFocus": "募集を開始しました"
+                },
+                {
+                    "en": "The HR team opened three roles.",
+                    "ja": "人事チームは3つの職種を募集開始しました。",
+                    "focus": "opened",
+                    "object": "three roles",
+                    "jaFocus": "募集開始しました"
+                },
+                {
+                    "en": "This role will open next quarter.",
+                    "ja": "この役職は来四半期に募集開始されます。",
+                    "focus": "open",
+                    "jaFocus": "募集開始されます"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "A seat opened near the window.",
+                    "ja": "窓際の席が空きました。",
+                    "focus": "opened",
+                    "jaFocus": "空きました"
+                },
+                {
+                    "en": "A spot opened in the class.",
+                    "ja": "クラスに空きが出ました。",
+                    "focus": "opened",
+                    "jaFocus": "空きが出ました"
+                }
+            ]
+        },
+        {
+            "id": "open-up",
+            "title": "8 打ち明ける・広げる",
+            "pattern": "open up",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V",
+            "image": "心や可能性が開く。",
+            "point": "ビジネスでは市場や機会にも使える。",
+            "examples": [
+                {
+                    "en": "The new channel opened up more sales opportunities.",
+                    "ja": "新しい販路で販売機会が広がりました。",
+                    "focus": "opened up",
+                    "object": "more sales opportunities",
+                    "jaFocus": "広がりました"
+                },
+                {
+                    "en": "The manager opened up about the challenge.",
+                    "ja": "マネージャーは課題について率直に話しました。",
+                    "focus": "opened up",
+                    "jaFocus": "率直に話しました"
+                },
+                {
+                    "en": "AI opened up new ways to work.",
+                    "ja": "AIにより新しい働き方が広がりました。",
+                    "focus": "opened up",
+                    "object": "new ways to work",
+                    "jaFocus": "広がりました"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "He opened up to his friend.",
+                    "ja": "彼は友人に心を開きました。",
+                    "focus": "opened up",
+                    "jaFocus": "心を開きました"
+                },
+                {
+                    "en": "Travel opened up my mind.",
+                    "ja": "旅行で視野が広がりました。",
+                    "focus": "opened up",
+                    "object": "my mind",
+                    "jaFocus": "広がりました"
+                }
+            ]
+        },
+        {
+            "id": "open-door",
+            "title": "9 扉を開く",
+            "pattern": "OPEN + door",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "物理・比喩の扉を開く。",
+            "point": "open the door to は可能性を開く。",
+            "examples": [
+                {
+                    "en": "This contract opens the door to future business.",
+                    "ja": "この契約は将来の取引につながります。",
+                    "focus": "opens",
+                    "object": "the door",
+                    "jaFocus": "つながります"
+                },
+                {
+                    "en": "The meeting opened the door to cooperation.",
+                    "ja": "その会議で協力の可能性が開けました。",
+                    "focus": "opened",
+                    "object": "the door",
+                    "jaFocus": "可能性が開けました"
+                },
+                {
+                    "en": "Good communication opens the door to trust.",
+                    "ja": "良いコミュニケーションは信頼につながります。",
+                    "focus": "opens",
+                    "object": "the door",
+                    "jaFocus": "つながります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Can you open the door?",
+                    "ja": "ドアを開けてくれますか？",
+                    "focus": "open",
+                    "object": "the door",
+                    "jaFocus": "開けて"
+                },
+                {
+                    "en": "Music opened the door to English for me.",
+                    "ja": "音楽が私に英語への扉を開いてくれました。",
+                    "focus": "opened",
+                    "object": "the door",
+                    "jaFocus": "扉を開いて"
+                }
+            ]
+        },
+        {
+            "id": "open-mind",
+            "title": "10 心を開く",
+            "pattern": "OPEN + mind",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "考え方を柔軟にする。",
+            "point": "open your mind は自己啓発寄り。",
+            "examples": [
+                {
+                    "en": "The training opened my mind to new ideas.",
+                    "ja": "研修で新しい考え方に目が開かれました。",
+                    "focus": "opened",
+                    "object": "my mind",
+                    "jaFocus": "目が開かれました"
+                },
+                {
+                    "en": "Working abroad opened my mind.",
+                    "ja": "海外勤務で視野が広がりました。",
+                    "focus": "opened",
+                    "object": "my mind",
+                    "jaFocus": "視野が広がりました"
+                },
+                {
+                    "en": "The feedback opened our minds to customer needs.",
+                    "ja": "フィードバックで顧客ニーズに目が向きました。",
+                    "focus": "opened",
+                    "object": "our minds",
+                    "jaFocus": "目が向きました"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Reading opens your mind.",
+                    "ja": "読書は視野を広げます。",
+                    "focus": "opens",
+                    "object": "your mind",
+                    "jaFocus": "広げます"
+                },
+                {
+                    "en": "Meeting new people opened my mind.",
+                    "ja": "新しい人との出会いで視野が広がりました。",
+                    "focus": "opened",
+                    "object": "my mind",
+                    "jaFocus": "広がりました"
+                }
+            ]
+        }
     ],
     "collocations": [
-      {
-        "phrase": "open a file",
-        "ja": "ファイルを開く",
-        "image": "ファイルを表示する",
-        "pattern": "open a file",
-        "examples": [
-          {
-            "en": "Please open the file I sent you.",
-            "ja": "私が送ったファイルを開いてください。",
-            "focus": "open the file",
-            "jaFocus": "ファイルを開く"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please open the file I sent you.",
-            "ja": "私が送ったファイルを開いてください。",
-            "focus": "open the file",
-            "jaFocus": "ファイルを開く"
-          }
-        ]
-      },
-      {
-        "phrase": "open an account",
-        "ja": "アカウントを開設する",
-        "image": "新しいアカウントを作る",
-        "pattern": "open an account",
-        "examples": [
-          {
-            "en": "We opened a new account for testing.",
-            "ja": "私たちはテスト用に新しいアカウントを開設しました。",
-            "focus": "opened an account",
-            "jaFocus": "アカウントを開設した"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "We opened a new account for testing.",
-            "ja": "私たちはテスト用に新しいアカウントを開設しました。",
-            "focus": "opened an account",
-            "jaFocus": "アカウントを開設した"
-          }
-        ]
-      },
-      {
-        "phrase": "open a discussion",
-        "ja": "議論を始める",
-        "image": "話し合いを始める",
-        "pattern": "open a discussion",
-        "examples": [
-          {
-            "en": "The manager opened a discussion about the new process.",
-            "ja": "マネージャーは新しい手順について議論を始めました。",
-            "focus": "opened a discussion",
-            "jaFocus": "議論を始めた"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The manager opened a discussion about the new process.",
-            "ja": "マネージャーは新しい手順について議論を始めました。",
-            "focus": "opened a discussion",
-            "jaFocus": "議論を始めた"
-          }
-        ]
-      }
+        {
+            "phrase": "open a file",
+            "ja": "ファイルを開く",
+            "image": "閉じているデータを確認できる状態にする",
+            "pattern": "open a file",
+            "examples": [
+                {
+                    "en": "Please open the file I sent you.",
+                    "ja": "私が送ったファイルを開いてください。",
+                    "focus": "open the file",
+                    "jaFocus": "ファイルを開いて",
+                    "object": "the file"
+                },
+                {
+                    "en": "I opened the latest quote before the meeting.",
+                    "ja": "会議前に最新の見積書を開きました。",
+                    "focus": "opened",
+                    "jaFocus": "開きました",
+                    "object": "the latest quote"
+                },
+                {
+                    "en": "Can you open the attachment on your phone?",
+                    "ja": "スマホで添付ファイルを開けますか？",
+                    "focus": "open the attachment",
+                    "jaFocus": "添付ファイルを開けますか",
+                    "object": "the attachment"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "open an account",
+            "ja": "アカウント・口座を開設する",
+            "image": "新しく使える窓口を作る",
+            "pattern": "open an account",
+            "examples": [
+                {
+                    "en": "We opened a new account for the client.",
+                    "ja": "私たちは顧客用に新しいアカウントを開設しました。",
+                    "focus": "opened a new account",
+                    "jaFocus": "アカウントを開設しました",
+                    "object": "a new account"
+                },
+                {
+                    "en": "Please open a user account for the new staff member.",
+                    "ja": "新しい社員用のユーザーアカウントを作成してください。",
+                    "focus": "open a user account",
+                    "jaFocus": "ユーザーアカウントを作成して",
+                    "object": "a user account"
+                },
+                {
+                    "en": "The company opened a bank account for overseas payments.",
+                    "ja": "会社は海外送金用に銀行口座を開設しました。",
+                    "focus": "opened a bank account",
+                    "jaFocus": "銀行口座を開設しました",
+                    "object": "a bank account"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "open a discussion",
+            "ja": "議論を始める",
+            "image": "話し合いの入口を作る",
+            "pattern": "open a discussion",
+            "examples": [
+                {
+                    "en": "I would like to open a discussion about the schedule.",
+                    "ja": "スケジュールについて議論を始めたいです。",
+                    "focus": "open a discussion",
+                    "jaFocus": "議論を始めたい",
+                    "object": "a discussion"
+                },
+                {
+                    "en": "This issue opened an important discussion with the client.",
+                    "ja": "この問題をきっかけに、顧客との重要な議論が始まりました。",
+                    "focus": "opened an important discussion",
+                    "jaFocus": "重要な議論が始まりました",
+                    "object": "an important discussion"
+                },
+                {
+                    "en": "Can we open a discussion before making a decision?",
+                    "ja": "決定する前に議論を始めてもいいですか？",
+                    "focus": "open a discussion",
+                    "jaFocus": "議論を始めてもいいですか",
+                    "object": "a discussion"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "open a position",
+            "ja": "募集枠を出す",
+            "image": "採用や担当の枠を使える状態にする",
+            "pattern": "open a position",
+            "examples": [
+                {
+                    "en": "We opened a new sales position this month.",
+                    "ja": "今月、新しい営業職の募集枠を出しました。",
+                    "focus": "opened a new sales position",
+                    "jaFocus": "募集枠を出しました",
+                    "object": "a new sales position"
+                },
+                {
+                    "en": "The company will open a position for a project coordinator.",
+                    "ja": "会社はプロジェクト調整担当の募集枠を出す予定です。",
+                    "focus": "open a position",
+                    "jaFocus": "募集枠を出す",
+                    "object": "a position"
+                },
+                {
+                    "en": "Please confirm whether we can open another position.",
+                    "ja": "もう1つ募集枠を出せるか確認してください。",
+                    "focus": "open another position",
+                    "jaFocus": "募集枠を出せるか",
+                    "object": "another position"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "open access",
+            "ja": "アクセスを開放する",
+            "image": "使えなかった情報や機能を使えるようにする",
+            "pattern": "open access",
+            "examples": [
+                {
+                    "en": "The admin opened access to the shared folder.",
+                    "ja": "管理者が共有フォルダへのアクセスを開放しました。",
+                    "focus": "opened access",
+                    "jaFocus": "アクセスを開放しました",
+                    "object": "access"
+                },
+                {
+                    "en": "This update opens access to more detailed reports.",
+                    "ja": "この更新で、より詳細なレポートにアクセスできるようになります。",
+                    "focus": "opens access",
+                    "jaFocus": "アクセスできるようになります",
+                    "object": "access"
+                },
+                {
+                    "en": "We need to open access for the support team.",
+                    "ja": "サポートチームにアクセス権を開放する必要があります。",
+                    "focus": "open access",
+                    "jaFocus": "アクセス権を開放する",
+                    "object": "access"
+                }
+            ],
+            "dailyExamples": []
+        }
     ],
     "phrasalVerbs": [
-      {
-        "phrase": "open up",
-        "ja": "心を開く・詳しく話す",
-        "image": "情報や気持ちを出す",
-        "pattern": "open up",
-        "examples": [
-          {
-            "en": "The client opened up about the real issue.",
-            "ja": "その顧客は本当の問題について詳しく話してくれました。",
-            "focus": "opened up",
-            "jaFocus": "詳しく話した"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The client opened up about the real issue.",
-            "ja": "その顧客は本当の問題について詳しく話してくれました。",
-            "focus": "opened up",
-            "jaFocus": "詳しく話した"
-          }
-        ]
-      },
-      {
-        "phrase": "be open to",
-        "ja": "〜に前向きである",
-        "image": "提案などを受け入れる姿勢がある",
-        "pattern": "be open to",
-        "examples": [
-          {
-            "en": "We are open to your suggestions.",
-            "ja": "私たちはあなたの提案に前向きです。",
-            "focus": "open to",
-            "jaFocus": "前向きです"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "We are open to your suggestions.",
-            "ja": "私たちはあなたの提案に前向きです。",
-            "focus": "open to",
-            "jaFocus": "前向きです"
-          }
-        ]
-      }
+        {
+            "phrase": "open up",
+            "ja": "広げる・開く",
+            "image": "閉じた範囲を広げて可能性を作る",
+            "pattern": "open up + 名詞",
+            "examples": [
+                {
+                    "en": "The new partnership opened up a larger market.",
+                    "ja": "新しい提携により、より大きな市場が開けました。",
+                    "focus": "opened up",
+                    "jaFocus": "市場が開けました",
+                    "object": "a larger market"
+                },
+                {
+                    "en": "This feature opens up new ways to support customers.",
+                    "ja": "この機能により、顧客を支援する新しい方法が広がります。",
+                    "focus": "opens up",
+                    "jaFocus": "新しい方法が広がります",
+                    "object": "new ways"
+                },
+                {
+                    "en": "The training opened up more career options for the team.",
+                    "ja": "その研修により、チームのキャリアの選択肢が広がりました。",
+                    "focus": "opened up",
+                    "jaFocus": "選択肢が広がりました",
+                    "object": "more career options"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "open up about",
+            "ja": "〜について打ち明ける",
+            "image": "隠していた考えや不安を話せる状態にする",
+            "pattern": "open up about + 名詞",
+            "examples": [
+                {
+                    "en": "The client opened up about their concerns.",
+                    "ja": "顧客は懸念点を打ち明けてくれました。",
+                    "focus": "opened up about",
+                    "jaFocus": "懸念点を打ち明けて",
+                    "object": "their concerns"
+                },
+                {
+                    "en": "She opened up about the problems in the workflow.",
+                    "ja": "彼女は業務フローの問題について率直に話しました。",
+                    "focus": "opened up about",
+                    "jaFocus": "率直に話しました",
+                    "object": "the problems"
+                },
+                {
+                    "en": "The team opened up about the delay during the meeting.",
+                    "ja": "チームは会議で遅延について正直に話しました。",
+                    "focus": "opened up about",
+                    "jaFocus": "正直に話しました",
+                    "object": "the delay"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "open up to",
+            "ja": "〜を受け入れるようになる",
+            "image": "外からの意見や機会を受け入れる",
+            "pattern": "open up to + 名詞",
+            "examples": [
+                {
+                    "en": "The manager opened up to new ideas from younger staff.",
+                    "ja": "マネージャーは若手社員からの新しい意見を受け入れるようになりました。",
+                    "focus": "opened up to",
+                    "jaFocus": "受け入れるようになりました",
+                    "object": "new ideas"
+                },
+                {
+                    "en": "We should open up to feedback from customers.",
+                    "ja": "私たちは顧客からの意見を受け入れるべきです。",
+                    "focus": "open up to",
+                    "jaFocus": "受け入れる",
+                    "object": "feedback"
+                },
+                {
+                    "en": "The company opened up to remote work after the trial.",
+                    "ja": "会社は試験導入後、リモート勤務を受け入れるようになりました。",
+                    "focus": "opened up to",
+                    "jaFocus": "受け入れるようになりました",
+                    "object": "remote work"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "open up access to",
+            "ja": "〜へのアクセスを広げる",
+            "image": "使える人や範囲を広げる",
+            "pattern": "open up access to + 名詞",
+            "examples": [
+                {
+                    "en": "We opened up access to the dashboard for all managers.",
+                    "ja": "私たちは全マネージャーにダッシュボードへのアクセスを開放しました。",
+                    "focus": "opened up access to",
+                    "jaFocus": "アクセスを開放しました",
+                    "object": "the dashboard"
+                },
+                {
+                    "en": "The update opens up access to historical data.",
+                    "ja": "この更新で過去データにアクセスできるようになります。",
+                    "focus": "opens up access to",
+                    "jaFocus": "アクセスできるようになります",
+                    "object": "historical data"
+                },
+                {
+                    "en": "Please open up access to the training materials.",
+                    "ja": "研修資料へのアクセスを開放してください。",
+                    "focus": "open up access to",
+                    "jaFocus": "アクセスを開放して",
+                    "object": "the training materials"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "open up a market",
+            "ja": "市場を切り開く",
+            "image": "新しい販売先や機会を開く",
+            "pattern": "open up a market",
+            "examples": [
+                {
+                    "en": "This product could open up a new market in Asia.",
+                    "ja": "この製品はアジアで新しい市場を切り開く可能性があります。",
+                    "focus": "open up a new market",
+                    "jaFocus": "新しい市場を切り開く",
+                    "object": "a new market"
+                },
+                {
+                    "en": "The local partner helped us open up the market.",
+                    "ja": "現地パートナーのおかげで、その市場を開拓できました。",
+                    "focus": "open up the market",
+                    "jaFocus": "市場を開拓できました",
+                    "object": "the market"
+                },
+                {
+                    "en": "Lower prices may open up a wider market.",
+                    "ja": "価格を下げることで、より広い市場が開ける可能性があります。",
+                    "focus": "open up a wider market",
+                    "jaFocus": "より広い市場が開ける",
+                    "object": "a wider market"
+                }
+            ],
+            "dailyExamples": []
+        }
     ]
-  },
+},
   {
     "id": "close",
     "rank": 38,
@@ -23894,603 +24084,792 @@ export const verbs: Verb[] = [
     "core": "開いているものを終わらせる・締める",
     "coreDetail": "CLOSEは扉を閉じるだけでなく、会議・案件・取引・期間を終える感覚です。仕事では締切、終了、成約でよく使います。",
     "coreVisual": {
-      "from": [
-        "🔒 閉じる",
-        "✅ 完了",
-        "📄 案件",
-        "🤝 成約",
-        "⏱️ 締切"
-      ],
-      "to": "仕事の流れ",
-      "label": "コアイメージ"
+        "from": [
+            "🔒 閉じる",
+            "✅ 完了",
+            "📄 案件",
+            "🤝 成約",
+            "⏱️ 締切"
+        ],
+        "to": "仕事の流れ",
+        "label": "コアイメージ"
     },
     "meanings": [
-      {
-        "id": "shut",
-        "title": "1 閉じる",
-        "pattern": "CLOSE + 名詞",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "扉やファイルを閉じる。",
-        "point": "基本の「閉じる」。",
-        "examples": [
-          {
-            "en": "Please close the file after checking it.",
-            "ja": "確認後にファイルを閉じてください。",
-            "focus": "close the file",
-            "jaFocus": "ファイルを閉じる",
-            "object": "the file",
-            "sentencePattern": "V + O",
-            "grammarParts": [
-              {
-                "label": "V",
-                "text": "close"
-              },
-              {
-                "label": "O",
-                "text": "the file"
-              }
+        {
+            "id": "shut",
+            "title": "1 閉じる",
+            "pattern": "CLOSE + 名詞",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "扉やファイルを閉じる。",
+            "point": "基本の「閉じる」。",
+            "examples": [
+                {
+                    "en": "Please close the file after checking it.",
+                    "ja": "確認後にファイルを閉じてください。",
+                    "focus": "close the file",
+                    "jaFocus": "ファイルを閉じる",
+                    "object": "the file",
+                    "sentencePattern": "V + O",
+                    "grammarParts": [
+                        {
+                            "label": "V",
+                            "text": "close"
+                        },
+                        {
+                            "label": "O",
+                            "text": "the file"
+                        }
+                    ]
+                },
+                {
+                    "en": "I closed the document by mistake.",
+                    "ja": "誤って資料を閉じました。",
+                    "focus": "closed",
+                    "object": "the document",
+                    "jaFocus": "閉じました"
+                },
+                {
+                    "en": "Close the browser before the update.",
+                    "ja": "更新前にブラウザを閉じてください。",
+                    "focus": "Close",
+                    "object": "the browser",
+                    "jaFocus": "閉じて"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I closed the document by mistake.",
+                    "ja": "誤って資料を閉じました。",
+                    "focus": "closed",
+                    "object": "the document",
+                    "jaFocus": "閉じました"
+                },
+                {
+                    "en": "Close the browser before the update.",
+                    "ja": "更新前にブラウザを閉じてください。",
+                    "focus": "Close",
+                    "object": "the browser",
+                    "jaFocus": "閉じて"
+                }
             ]
-          },
-          {
-            "en": "I closed the document by mistake.",
-            "ja": "誤って資料を閉じました。",
-            "focus": "closed",
-            "object": "the document",
-            "jaFocus": "閉じました"
-          },
-          {
-            "en": "Close the browser before the update.",
-            "ja": "更新前にブラウザを閉じてください。",
-            "focus": "Close",
-            "object": "the browser",
-            "jaFocus": "閉じて"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I closed the document by mistake.",
-            "ja": "誤って資料を閉じました。",
-            "focus": "closed",
-            "object": "the document",
-            "jaFocus": "閉じました"
-          },
-          {
-            "en": "Close the browser before the update.",
-            "ja": "更新前にブラウザを閉じてください。",
-            "focus": "Close",
-            "object": "the browser",
-            "jaFocus": "閉じて"
-          }
-        ]
-      },
-      {
-        "id": "finish",
-        "title": "2 終える",
-        "pattern": "CLOSE + 会議 / セッション",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "会議や話を締める。",
-        "point": "close a meeting はフォーマルに使える。",
-        "examples": [
-          {
-            "en": "Let us close the meeting here.",
-            "ja": "ここで会議を終えましょう。",
-            "focus": "close",
-            "object": "the meeting",
-            "jaFocus": "終え"
-          },
-          {
-            "en": "The chair closed the session at five.",
-            "ja": "議長は5時にセッションを終了しました。",
-            "focus": "closed",
-            "object": "the session",
-            "jaFocus": "終了しました"
-          },
-          {
-            "en": "I will close this discussion with one point.",
-            "ja": "最後に1点述べてこの議論を締めます。",
-            "focus": "close",
-            "object": "this discussion",
-            "jaFocus": "締めます"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The event closed with a speech.",
-            "ja": "イベントはスピーチで終わりました。",
-            "focus": "closed",
-            "jaFocus": "終わりました"
-          },
-          {
-            "en": "The ceremony closed peacefully.",
-            "ja": "式典は無事に終わりました。",
-            "focus": "closed",
-            "jaFocus": "終わりました"
-          }
-        ]
-      },
-      {
-        "id": "deal",
-        "title": "3 成約する",
-        "pattern": "CLOSE + deal / sale",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "商談や契約をまとめる。",
-        "point": "営業で非常に重要。",
-        "examples": [
-          {
-            "en": "We closed the deal yesterday.",
-            "ja": "昨日その取引を成約しました。",
-            "focus": "closed",
-            "object": "the deal",
-            "jaFocus": "成約しました"
-          },
-          {
-            "en": "The sales team closed a major contract.",
-            "ja": "営業チームは大きな契約をまとめました。",
-            "focus": "closed",
-            "object": "a major contract",
-            "jaFocus": "まとめました"
-          },
-          {
-            "en": "She closed the sale after the presentation.",
-            "ja": "彼女はプレゼン後に販売を成立させました。",
-            "focus": "closed",
-            "object": "the sale",
-            "jaFocus": "成立させました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "He finally closed the deal for his car.",
-            "ja": "彼はついに車の取引をまとめました。",
-            "focus": "closed",
-            "object": "the deal",
-            "jaFocus": "まとめました"
-          },
-          {
-            "en": "They closed the agreement last night.",
-            "ja": "彼らは昨夜合意をまとめました。",
-            "focus": "closed",
-            "object": "the agreement",
-            "jaFocus": "まとめました"
-          }
-        ]
-      },
-      {
-        "id": "end-period",
-        "title": "4 終了する",
-        "pattern": "close",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V",
-        "image": "期間や受付が終わる。",
-        "point": "registration closes など。",
-        "examples": [
-          {
-            "en": "Registration closes this Friday.",
-            "ja": "登録は今週金曜日に締め切られます。",
-            "focus": "closes",
-            "jaFocus": "締め切られます"
-          },
-          {
-            "en": "The application period closes tomorrow.",
-            "ja": "申込期間は明日終了します。",
-            "focus": "closes",
-            "jaFocus": "終了します"
-          },
-          {
-            "en": "The office closes at six.",
-            "ja": "オフィスは6時に閉まります。",
-            "focus": "closes",
-            "jaFocus": "閉まります"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The shop closes at nine.",
-            "ja": "その店は9時に閉まります。",
-            "focus": "closes",
-            "jaFocus": "閉まります"
-          },
-          {
-            "en": "The park closes in winter.",
-            "ja": "その公園は冬に閉園します。",
-            "focus": "closes",
-            "jaFocus": "閉園します"
-          }
-        ]
-      },
-      {
-        "id": "close-gap",
-        "title": "5 差を縮める",
-        "pattern": "CLOSE + gap",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "差や距離を小さくする。",
-        "point": "close the gap はビジネス・学習で便利。",
-        "examples": [
-          {
-            "en": "We need to close the gap between plan and result.",
-            "ja": "計画と実績の差を縮める必要があります。",
-            "focus": "close",
-            "object": "the gap",
-            "jaFocus": "縮める"
-          },
-          {
-            "en": "The team closed the performance gap.",
-            "ja": "チームは成果の差を縮めました。",
-            "focus": "closed",
-            "object": "the performance gap",
-            "jaFocus": "縮めました"
-          },
-          {
-            "en": "Training helps close the skill gap.",
-            "ja": "研修はスキル差を埋めるのに役立ちます。",
-            "focus": "close",
-            "object": "the skill gap",
-            "jaFocus": "埋める"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Practice closes the gap little by little.",
-            "ja": "練習で少しずつ差が縮まります。",
-            "focus": "closes",
-            "object": "the gap",
-            "jaFocus": "縮まります"
-          },
-          {
-            "en": "They closed the distance between them.",
-            "ja": "彼らは距離を縮めました。",
-            "focus": "closed",
-            "object": "the distance",
-            "jaFocus": "縮めました"
-          }
-        ]
-      },
-      {
-        "id": "close-case",
-        "title": "6 完了処理する",
-        "pattern": "CLOSE + case / ticket",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "対応を完了にする。",
-        "point": "サポートや管理で使う。",
-        "examples": [
-          {
-            "en": "Please close the support ticket.",
-            "ja": "サポートチケットを完了にしてください。",
-            "focus": "close",
-            "object": "the support ticket",
-            "jaFocus": "完了に"
-          },
-          {
-            "en": "We closed the issue after testing.",
-            "ja": "テスト後に問題をクローズしました。",
-            "focus": "closed",
-            "object": "the issue",
-            "jaFocus": "クローズしました"
-          },
-          {
-            "en": "Can I close this case now?",
-            "ja": "この件を完了にしてもよいですか？",
-            "focus": "close",
-            "object": "this case",
-            "jaFocus": "完了に"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I closed the task on my list.",
-            "ja": "リスト上のタスクを完了にしました。",
-            "focus": "closed",
-            "object": "the task",
-            "jaFocus": "完了にしました"
-          },
-          {
-            "en": "She closed the app after use.",
-            "ja": "使用後にアプリを閉じました。",
-            "focus": "closed",
-            "object": "the app",
-            "jaFocus": "閉じました"
-          }
-        ]
-      },
-      {
-        "id": "be-near",
-        "title": "7 近い",
-        "pattern": "CLOSE to + 名詞",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + C",
-        "image": "距離や関係が近い。",
-        "point": "形容詞 close として重要。",
-        "examples": [
-          {
-            "en": "Our office is close to the station.",
-            "ja": "弊社オフィスは駅に近いです。",
-            "focus": "is close",
-            "jaFocus": "近い"
-          },
-          {
-            "en": "The deadline is close.",
-            "ja": "締切が近いです。",
-            "focus": "is close",
-            "jaFocus": "近い"
-          },
-          {
-            "en": "We are close to an agreement.",
-            "ja": "合意に近づいています。",
-            "focus": "are close",
-            "jaFocus": "近づいて"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "My house is close to the park.",
-            "ja": "家は公園に近いです。",
-            "focus": "is close",
-            "jaFocus": "近い"
-          },
-          {
-            "en": "We are close friends.",
-            "ja": "私たちは親しい友人です。",
-            "focus": "are close",
-            "jaFocus": "親しい"
-          }
-        ]
-      },
-      {
-        "id": "close-to",
-        "title": "8 〜しそうになる",
-        "pattern": "CLOSE to + 動詞ing",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + C",
-        "image": "ほぼその状態に近い。",
-        "point": "close to finishing など。",
-        "examples": [
-          {
-            "en": "We are close to finishing the report.",
-            "ja": "報告書の完成に近づいています。",
-            "focus": "are close",
-            "jaFocus": "近づいて"
-          },
-          {
-            "en": "The team is close to solving the issue.",
-            "ja": "チームは問題解決に近づいています。",
-            "focus": "is close",
-            "jaFocus": "近づいて"
-          },
-          {
-            "en": "We are close to reaching the target.",
-            "ja": "目標達成に近づいています。",
-            "focus": "are close",
-            "jaFocus": "近づいて"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I was close to giving up.",
-            "ja": "諦めそうになりました。",
-            "focus": "was close",
-            "jaFocus": "諦めそう"
-          },
-          {
-            "en": "She is close to finishing the book.",
-            "ja": "彼女は本を読み終えそうです。",
-            "focus": "is close",
-            "jaFocus": "読み終えそう"
-          }
-        ]
-      },
-      {
-        "id": "close-down",
-        "title": "9 閉鎖する",
-        "pattern": "close down",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V",
-        "image": "事業や店を閉じる。",
-        "point": "close down は完全閉鎖。",
-        "examples": [
-          {
-            "en": "The old branch closed down last year.",
-            "ja": "旧支店は昨年閉鎖されました。",
-            "focus": "closed down",
-            "jaFocus": "閉鎖されました"
-          },
-          {
-            "en": "They closed down the service after the merger.",
-            "ja": "合併後にそのサービスを終了しました。",
-            "focus": "closed down",
-            "object": "the service",
-            "jaFocus": "終了しました"
-          },
-          {
-            "en": "The factory may close down next month.",
-            "ja": "工場は来月閉鎖される可能性があります。",
-            "focus": "close down",
-            "jaFocus": "閉鎖される"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The restaurant closed down suddenly.",
-            "ja": "そのレストランは突然閉店しました。",
-            "focus": "closed down",
-            "jaFocus": "閉店しました"
-          },
-          {
-            "en": "The website closed down.",
-            "ja": "そのウェブサイトは閉鎖されました。",
-            "focus": "closed down",
-            "jaFocus": "閉鎖されました"
-          }
-        ]
-      },
-      {
-        "id": "close-out",
-        "title": "10 締める・終える",
-        "pattern": "CLOSE OUT + 名詞",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "会計や案件を締める。",
-        "point": "close out は終了処理に便利。",
-        "examples": [
-          {
-            "en": "We need to close out this project.",
-            "ja": "この案件を完了処理する必要があります。",
-            "focus": "close out",
-            "object": "this project",
-            "jaFocus": "完了処理する"
-          },
-          {
-            "en": "Please close out the monthly report.",
-            "ja": "月次レポートを締めてください。",
-            "focus": "close out",
-            "object": "the monthly report",
-            "jaFocus": "締めて"
-          },
-          {
-            "en": "The team closed out the quarter successfully.",
-            "ja": "チームは四半期を無事に締めました。",
-            "focus": "closed out",
-            "object": "the quarter",
-            "jaFocus": "締めました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I closed out my old account.",
-            "ja": "古いアカウントを解約しました。",
-            "focus": "closed out",
-            "object": "my old account",
-            "jaFocus": "解約しました"
-          },
-          {
-            "en": "The store closed out the sale.",
-            "ja": "店はセールを終了しました。",
-            "focus": "closed out",
-            "object": "the sale",
-            "jaFocus": "終了しました"
-          }
-        ]
-      }
+        },
+        {
+            "id": "finish",
+            "title": "2 終える",
+            "pattern": "CLOSE + 会議 / セッション",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "会議や話を締める。",
+            "point": "close a meeting はフォーマルに使える。",
+            "examples": [
+                {
+                    "en": "Let us close the meeting here.",
+                    "ja": "ここで会議を終えましょう。",
+                    "focus": "close",
+                    "object": "the meeting",
+                    "jaFocus": "終え"
+                },
+                {
+                    "en": "The chair closed the session at five.",
+                    "ja": "議長は5時にセッションを終了しました。",
+                    "focus": "closed",
+                    "object": "the session",
+                    "jaFocus": "終了しました"
+                },
+                {
+                    "en": "I will close this discussion with one point.",
+                    "ja": "最後に1点述べてこの議論を締めます。",
+                    "focus": "close",
+                    "object": "this discussion",
+                    "jaFocus": "締めます"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "The event closed with a speech.",
+                    "ja": "イベントはスピーチで終わりました。",
+                    "focus": "closed",
+                    "jaFocus": "終わりました"
+                },
+                {
+                    "en": "The ceremony closed peacefully.",
+                    "ja": "式典は無事に終わりました。",
+                    "focus": "closed",
+                    "jaFocus": "終わりました"
+                }
+            ]
+        },
+        {
+            "id": "deal",
+            "title": "3 成約する",
+            "pattern": "CLOSE + deal / sale",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "商談や契約をまとめる。",
+            "point": "営業で非常に重要。",
+            "examples": [
+                {
+                    "en": "We closed the deal yesterday.",
+                    "ja": "昨日その取引を成約しました。",
+                    "focus": "closed",
+                    "object": "the deal",
+                    "jaFocus": "成約しました"
+                },
+                {
+                    "en": "The sales team closed a major contract.",
+                    "ja": "営業チームは大きな契約をまとめました。",
+                    "focus": "closed",
+                    "object": "a major contract",
+                    "jaFocus": "まとめました"
+                },
+                {
+                    "en": "She closed the sale after the presentation.",
+                    "ja": "彼女はプレゼン後に販売を成立させました。",
+                    "focus": "closed",
+                    "object": "the sale",
+                    "jaFocus": "成立させました"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "He finally closed the deal for his car.",
+                    "ja": "彼はついに車の取引をまとめました。",
+                    "focus": "closed",
+                    "object": "the deal",
+                    "jaFocus": "まとめました"
+                },
+                {
+                    "en": "They closed the agreement last night.",
+                    "ja": "彼らは昨夜合意をまとめました。",
+                    "focus": "closed",
+                    "object": "the agreement",
+                    "jaFocus": "まとめました"
+                }
+            ]
+        },
+        {
+            "id": "end-period",
+            "title": "4 終了する",
+            "pattern": "close",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V",
+            "image": "期間や受付が終わる。",
+            "point": "registration closes など。",
+            "examples": [
+                {
+                    "en": "Registration closes this Friday.",
+                    "ja": "登録は今週金曜日に締め切られます。",
+                    "focus": "closes",
+                    "jaFocus": "締め切られます"
+                },
+                {
+                    "en": "The application period closes tomorrow.",
+                    "ja": "申込期間は明日終了します。",
+                    "focus": "closes",
+                    "jaFocus": "終了します"
+                },
+                {
+                    "en": "The office closes at six.",
+                    "ja": "オフィスは6時に閉まります。",
+                    "focus": "closes",
+                    "jaFocus": "閉まります"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "The shop closes at nine.",
+                    "ja": "その店は9時に閉まります。",
+                    "focus": "closes",
+                    "jaFocus": "閉まります"
+                },
+                {
+                    "en": "The park closes in winter.",
+                    "ja": "その公園は冬に閉園します。",
+                    "focus": "closes",
+                    "jaFocus": "閉園します"
+                }
+            ]
+        },
+        {
+            "id": "close-gap",
+            "title": "5 差を縮める",
+            "pattern": "CLOSE + gap",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "差や距離を小さくする。",
+            "point": "close the gap はビジネス・学習で便利。",
+            "examples": [
+                {
+                    "en": "We need to close the gap between plan and result.",
+                    "ja": "計画と実績の差を縮める必要があります。",
+                    "focus": "close",
+                    "object": "the gap",
+                    "jaFocus": "縮める"
+                },
+                {
+                    "en": "The team closed the performance gap.",
+                    "ja": "チームは成果の差を縮めました。",
+                    "focus": "closed",
+                    "object": "the performance gap",
+                    "jaFocus": "縮めました"
+                },
+                {
+                    "en": "Training helps close the skill gap.",
+                    "ja": "研修はスキル差を埋めるのに役立ちます。",
+                    "focus": "close",
+                    "object": "the skill gap",
+                    "jaFocus": "埋める"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Practice closes the gap little by little.",
+                    "ja": "練習で少しずつ差が縮まります。",
+                    "focus": "closes",
+                    "object": "the gap",
+                    "jaFocus": "縮まります"
+                },
+                {
+                    "en": "They closed the distance between them.",
+                    "ja": "彼らは距離を縮めました。",
+                    "focus": "closed",
+                    "object": "the distance",
+                    "jaFocus": "縮めました"
+                }
+            ]
+        },
+        {
+            "id": "close-case",
+            "title": "6 完了処理する",
+            "pattern": "CLOSE + case / ticket",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "対応を完了にする。",
+            "point": "サポートや管理で使う。",
+            "examples": [
+                {
+                    "en": "Please close the support ticket.",
+                    "ja": "サポートチケットを完了にしてください。",
+                    "focus": "close",
+                    "object": "the support ticket",
+                    "jaFocus": "完了に"
+                },
+                {
+                    "en": "We closed the issue after testing.",
+                    "ja": "テスト後に問題をクローズしました。",
+                    "focus": "closed",
+                    "object": "the issue",
+                    "jaFocus": "クローズしました"
+                },
+                {
+                    "en": "Can I close this case now?",
+                    "ja": "この件を完了にしてもよいですか？",
+                    "focus": "close",
+                    "object": "this case",
+                    "jaFocus": "完了に"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I closed the task on my list.",
+                    "ja": "リスト上のタスクを完了にしました。",
+                    "focus": "closed",
+                    "object": "the task",
+                    "jaFocus": "完了にしました"
+                },
+                {
+                    "en": "She closed the app after use.",
+                    "ja": "使用後にアプリを閉じました。",
+                    "focus": "closed",
+                    "object": "the app",
+                    "jaFocus": "閉じました"
+                }
+            ]
+        },
+        {
+            "id": "be-near",
+            "title": "7 近い",
+            "pattern": "CLOSE to + 名詞",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + C",
+            "image": "距離や関係が近い。",
+            "point": "形容詞 close として重要。",
+            "examples": [
+                {
+                    "en": "Our office is close to the station.",
+                    "ja": "弊社オフィスは駅に近いです。",
+                    "focus": "is close",
+                    "jaFocus": "近い"
+                },
+                {
+                    "en": "The deadline is close.",
+                    "ja": "締切が近いです。",
+                    "focus": "is close",
+                    "jaFocus": "近い"
+                },
+                {
+                    "en": "We are close to an agreement.",
+                    "ja": "合意に近づいています。",
+                    "focus": "are close",
+                    "jaFocus": "近づいて"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "My house is close to the park.",
+                    "ja": "家は公園に近いです。",
+                    "focus": "is close",
+                    "jaFocus": "近い"
+                },
+                {
+                    "en": "We are close friends.",
+                    "ja": "私たちは親しい友人です。",
+                    "focus": "are close",
+                    "jaFocus": "親しい"
+                }
+            ]
+        },
+        {
+            "id": "close-to",
+            "title": "8 〜しそうになる",
+            "pattern": "CLOSE to + 動詞ing",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + C",
+            "image": "ほぼその状態に近い。",
+            "point": "close to finishing など。",
+            "examples": [
+                {
+                    "en": "We are close to finishing the report.",
+                    "ja": "報告書の完成に近づいています。",
+                    "focus": "are close",
+                    "jaFocus": "近づいて"
+                },
+                {
+                    "en": "The team is close to solving the issue.",
+                    "ja": "チームは問題解決に近づいています。",
+                    "focus": "is close",
+                    "jaFocus": "近づいて"
+                },
+                {
+                    "en": "We are close to reaching the target.",
+                    "ja": "目標達成に近づいています。",
+                    "focus": "are close",
+                    "jaFocus": "近づいて"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I was close to giving up.",
+                    "ja": "諦めそうになりました。",
+                    "focus": "was close",
+                    "jaFocus": "諦めそう"
+                },
+                {
+                    "en": "She is close to finishing the book.",
+                    "ja": "彼女は本を読み終えそうです。",
+                    "focus": "is close",
+                    "jaFocus": "読み終えそう"
+                }
+            ]
+        },
+        {
+            "id": "close-down",
+            "title": "9 閉鎖する",
+            "pattern": "close down",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V",
+            "image": "事業や店を閉じる。",
+            "point": "close down は完全閉鎖。",
+            "examples": [
+                {
+                    "en": "The old branch closed down last year.",
+                    "ja": "旧支店は昨年閉鎖されました。",
+                    "focus": "closed down",
+                    "jaFocus": "閉鎖されました"
+                },
+                {
+                    "en": "They closed down the service after the merger.",
+                    "ja": "合併後にそのサービスを終了しました。",
+                    "focus": "closed down",
+                    "object": "the service",
+                    "jaFocus": "終了しました"
+                },
+                {
+                    "en": "The factory may close down next month.",
+                    "ja": "工場は来月閉鎖される可能性があります。",
+                    "focus": "close down",
+                    "jaFocus": "閉鎖される"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "The restaurant closed down suddenly.",
+                    "ja": "そのレストランは突然閉店しました。",
+                    "focus": "closed down",
+                    "jaFocus": "閉店しました"
+                },
+                {
+                    "en": "The website closed down.",
+                    "ja": "そのウェブサイトは閉鎖されました。",
+                    "focus": "closed down",
+                    "jaFocus": "閉鎖されました"
+                }
+            ]
+        },
+        {
+            "id": "close-out",
+            "title": "10 締める・終える",
+            "pattern": "CLOSE OUT + 名詞",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O",
+            "image": "会計や案件を締める。",
+            "point": "close out は終了処理に便利。",
+            "examples": [
+                {
+                    "en": "We need to close out this project.",
+                    "ja": "この案件を完了処理する必要があります。",
+                    "focus": "close out",
+                    "object": "this project",
+                    "jaFocus": "完了処理する"
+                },
+                {
+                    "en": "Please close out the monthly report.",
+                    "ja": "月次レポートを締めてください。",
+                    "focus": "close out",
+                    "object": "the monthly report",
+                    "jaFocus": "締めて"
+                },
+                {
+                    "en": "The team closed out the quarter successfully.",
+                    "ja": "チームは四半期を無事に締めました。",
+                    "focus": "closed out",
+                    "object": "the quarter",
+                    "jaFocus": "締めました"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I closed out my old account.",
+                    "ja": "古いアカウントを解約しました。",
+                    "focus": "closed out",
+                    "object": "my old account",
+                    "jaFocus": "解約しました"
+                },
+                {
+                    "en": "The store closed out the sale.",
+                    "ja": "店はセールを終了しました。",
+                    "focus": "closed out",
+                    "object": "the sale",
+                    "jaFocus": "終了しました"
+                }
+            ]
+        }
     ],
     "collocations": [
-      {
-        "phrase": "close a deal",
-        "ja": "契約をまとめる",
-        "image": "商談を成立させる",
-        "pattern": "close a deal",
-        "examples": [
-          {
-            "en": "We closed the deal after the final meeting.",
-            "ja": "私たちは最終打ち合わせの後、その契約をまとめました。",
-            "focus": "closed the deal",
-            "jaFocus": "契約をまとめた"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "We closed the deal after the final meeting.",
-            "ja": "私たちは最終打ち合わせの後、その契約をまとめました。",
-            "focus": "closed the deal",
-            "jaFocus": "契約をまとめた"
-          }
-        ]
-      },
-      {
-        "phrase": "close a file",
-        "ja": "ファイルを閉じる",
-        "image": "画面上のファイルを閉じる",
-        "pattern": "close a file",
-        "examples": [
-          {
-            "en": "Please close the file after checking it.",
-            "ja": "確認後にファイルを閉じてください。",
-            "focus": "close the file",
-            "jaFocus": "ファイルを閉じる"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please close the file after checking it.",
-            "ja": "確認後にファイルを閉じてください。",
-            "focus": "close the file",
-            "jaFocus": "ファイルを閉じる"
-          }
-        ]
-      },
-      {
-        "phrase": "close the issue",
-        "ja": "問題を完了扱いにする",
-        "image": "対応を終える",
-        "pattern": "close the issue",
-        "examples": [
-          {
-            "en": "We closed the issue after testing.",
-            "ja": "私たちはテスト後、その問題を完了扱いにしました。",
-            "focus": "closed the issue",
-            "jaFocus": "問題を完了した"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "We closed the issue after testing.",
-            "ja": "私たちはテスト後、その問題を完了扱いにしました。",
-            "focus": "closed the issue",
-            "jaFocus": "問題を完了した"
-          }
-        ]
-      }
+        {
+            "phrase": "close a deal",
+            "ja": "契約をまとめる",
+            "image": "商談を最後まで進めて成立させる",
+            "pattern": "close a deal",
+            "examples": [
+                {
+                    "en": "We closed the deal after the final meeting.",
+                    "ja": "私たちは最終打ち合わせの後、その契約をまとめました。",
+                    "focus": "closed the deal",
+                    "jaFocus": "契約をまとめました",
+                    "object": "the deal"
+                },
+                {
+                    "en": "She is trying to close a deal with a new client.",
+                    "ja": "彼女は新規顧客との契約をまとめようとしています。",
+                    "focus": "close a deal",
+                    "jaFocus": "契約をまとめようと",
+                    "object": "a deal"
+                },
+                {
+                    "en": "The discount helped us close the deal.",
+                    "ja": "その値引きが契約成立の助けになりました。",
+                    "focus": "close the deal",
+                    "jaFocus": "契約成立",
+                    "object": "the deal"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "close a file",
+            "ja": "ファイルを閉じる",
+            "image": "開いていた資料やデータを閉じる",
+            "pattern": "close a file",
+            "examples": [
+                {
+                    "en": "Please close the file after checking it.",
+                    "ja": "確認後にファイルを閉じてください。",
+                    "focus": "close the file",
+                    "jaFocus": "ファイルを閉じて",
+                    "object": "the file"
+                },
+                {
+                    "en": "I closed the file by mistake.",
+                    "ja": "私は誤ってそのファイルを閉じてしまいました。",
+                    "focus": "closed the file",
+                    "jaFocus": "ファイルを閉じてしまいました",
+                    "object": "the file"
+                },
+                {
+                    "en": "Close the file before restarting the system.",
+                    "ja": "システムを再起動する前にファイルを閉じてください。",
+                    "focus": "Close the file",
+                    "jaFocus": "ファイルを閉じて",
+                    "object": "the file"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "close the issue",
+            "ja": "問題を完了扱いにする",
+            "image": "対応が終わった問題を終了状態にする",
+            "pattern": "close the issue",
+            "examples": [
+                {
+                    "en": "We closed the issue after testing the fix.",
+                    "ja": "修正をテストした後、その問題を完了扱いにしました。",
+                    "focus": "closed the issue",
+                    "jaFocus": "問題を完了扱いにしました",
+                    "object": "the issue"
+                },
+                {
+                    "en": "Please do not close the issue until the client confirms it.",
+                    "ja": "顧客が確認するまで、その問題を完了扱いにしないでください。",
+                    "focus": "close the issue",
+                    "jaFocus": "問題を完了扱いにしないで",
+                    "object": "the issue"
+                },
+                {
+                    "en": "The support team closed the issue this morning.",
+                    "ja": "サポートチームは今朝その問題を完了扱いにしました。",
+                    "focus": "closed the issue",
+                    "jaFocus": "問題を完了扱いにしました",
+                    "object": "the issue"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "close the gap",
+            "ja": "差を縮める",
+            "image": "不足や差分を小さくする",
+            "pattern": "close the gap",
+            "examples": [
+                {
+                    "en": "We need to close the gap between sales and targets.",
+                    "ja": "売上と目標の差を縮める必要があります。",
+                    "focus": "close the gap",
+                    "jaFocus": "差を縮める",
+                    "object": "the gap"
+                },
+                {
+                    "en": "Training can close the skill gap in the team.",
+                    "ja": "研修によってチーム内のスキル差を縮められます。",
+                    "focus": "close the skill gap",
+                    "jaFocus": "スキル差を縮められます",
+                    "object": "the skill gap"
+                },
+                {
+                    "en": "This plan helps close the gap in delivery times.",
+                    "ja": "この計画は納期の差を縮める助けになります。",
+                    "focus": "close the gap",
+                    "jaFocus": "差を縮める",
+                    "object": "the gap"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "close the meeting",
+            "ja": "会議を締める",
+            "image": "会議を終わりの状態にする",
+            "pattern": "close the meeting",
+            "examples": [
+                {
+                    "en": "Let me close the meeting with a quick summary.",
+                    "ja": "簡単な要約で会議を締めさせてください。",
+                    "focus": "close the meeting",
+                    "jaFocus": "会議を締め",
+                    "object": "the meeting"
+                },
+                {
+                    "en": "The chair closed the meeting at five.",
+                    "ja": "議長は5時に会議を終了しました。",
+                    "focus": "closed the meeting",
+                    "jaFocus": "会議を終了しました",
+                    "object": "the meeting"
+                },
+                {
+                    "en": "Before we close the meeting, please confirm the next steps.",
+                    "ja": "会議を終える前に、次の対応を確認してください。",
+                    "focus": "close the meeting",
+                    "jaFocus": "会議を終える",
+                    "object": "the meeting"
+                }
+            ],
+            "dailyExamples": []
+        }
     ],
     "phrasalVerbs": [
-      {
-        "phrase": "close down",
-        "ja": "閉鎖する",
-        "image": "事業や店舗を閉じる",
-        "pattern": "close down",
-        "examples": [
-          {
-            "en": "The company closed down the old office.",
-            "ja": "その会社は古い事務所を閉鎖しました。",
-            "focus": "closed down",
-            "jaFocus": "閉鎖した"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The company closed down the old office.",
-            "ja": "その会社は古い事務所を閉鎖しました。",
-            "focus": "closed down",
-            "jaFocus": "閉鎖した"
-          }
-        ]
-      },
-      {
-        "phrase": "close out",
-        "ja": "完了させる",
-        "image": "案件や作業を締める",
-        "pattern": "close out",
-        "examples": [
-          {
-            "en": "We closed out the project last week.",
-            "ja": "私たちは先週、その案件を完了させました。",
-            "focus": "closed out",
-            "jaFocus": "完了させた"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "We closed out the project last week.",
-            "ja": "私たちは先週、その案件を完了させました。",
-            "focus": "closed out",
-            "jaFocus": "完了させた"
-          }
-        ]
-      }
+        {
+            "phrase": "close down",
+            "ja": "閉鎖する・営業を終了する",
+            "image": "事業や場所を閉じて使えない状態にする",
+            "pattern": "close down + 名詞",
+            "examples": [
+                {
+                    "en": "The company closed down the old office.",
+                    "ja": "その会社は古い事務所を閉鎖しました。",
+                    "focus": "closed down",
+                    "jaFocus": "閉鎖しました",
+                    "object": "the old office"
+                },
+                {
+                    "en": "We may close down the temporary site next month.",
+                    "ja": "来月、一時サイトを閉鎖する可能性があります。",
+                    "focus": "close down",
+                    "jaFocus": "閉鎖する",
+                    "object": "the temporary site"
+                },
+                {
+                    "en": "The system will close down automatically at midnight.",
+                    "ja": "システムは深夜に自動で終了します。",
+                    "focus": "close down",
+                    "jaFocus": "自動で終了します"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "close out",
+            "ja": "締める・完了させる",
+            "image": "案件や会計を終了処理する",
+            "pattern": "close out + 名詞",
+            "examples": [
+                {
+                    "en": "We closed out the project last week.",
+                    "ja": "私たちは先週、その案件を完了させました。",
+                    "focus": "closed out",
+                    "jaFocus": "完了させました",
+                    "object": "the project"
+                },
+                {
+                    "en": "Please close out the monthly report by Friday.",
+                    "ja": "金曜日までに月次レポートを締めてください。",
+                    "focus": "close out",
+                    "jaFocus": "締めて",
+                    "object": "the monthly report"
+                },
+                {
+                    "en": "The team closed out the quarter successfully.",
+                    "ja": "チームは四半期を無事に締めました。",
+                    "focus": "closed out",
+                    "jaFocus": "締めました",
+                    "object": "the quarter"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "close off",
+            "ja": "封鎖する・使えなくする",
+            "image": "入口や選択肢を閉じる",
+            "pattern": "close off + 名詞",
+            "examples": [
+                {
+                    "en": "The staff closed off the area during construction.",
+                    "ja": "工事中、スタッフはそのエリアを封鎖しました。",
+                    "focus": "closed off",
+                    "jaFocus": "封鎖しました",
+                    "object": "the area"
+                },
+                {
+                    "en": "This decision may close off future options.",
+                    "ja": "この決定は将来の選択肢を閉ざす可能性があります。",
+                    "focus": "close off",
+                    "jaFocus": "選択肢を閉ざす",
+                    "object": "future options"
+                },
+                {
+                    "en": "Please close off access to the old system.",
+                    "ja": "旧システムへのアクセスを停止してください。",
+                    "focus": "close off access",
+                    "jaFocus": "アクセスを停止して",
+                    "object": "access"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "close up",
+            "ja": "閉める・店じまいする",
+            "image": "開いていた場所や作業を終える",
+            "pattern": "close up",
+            "examples": [
+                {
+                    "en": "We closed up the booth after the event.",
+                    "ja": "イベント後にブースを片付けて閉めました。",
+                    "focus": "closed up",
+                    "jaFocus": "閉めました",
+                    "object": "the booth"
+                },
+                {
+                    "en": "Please close up the office before you leave.",
+                    "ja": "退社前にオフィスを閉めてください。",
+                    "focus": "close up",
+                    "jaFocus": "オフィスを閉めて",
+                    "object": "the office"
+                },
+                {
+                    "en": "The team closed up the display area at six.",
+                    "ja": "チームは6時に展示エリアを閉めました。",
+                    "focus": "closed up",
+                    "jaFocus": "展示エリアを閉めました",
+                    "object": "the display area"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "close in on",
+            "ja": "〜に迫る",
+            "image": "締切や目標に近づく",
+            "pattern": "close in on + 名詞",
+            "examples": [
+                {
+                    "en": "The deadline is closing in on us.",
+                    "ja": "締切が私たちに迫っています。",
+                    "focus": "closing in on",
+                    "jaFocus": "迫っています",
+                    "object": "us"
+                },
+                {
+                    "en": "We are closing in on our monthly target.",
+                    "ja": "私たちは月間目標に近づいています。",
+                    "focus": "closing in on",
+                    "jaFocus": "近づいています",
+                    "object": "our monthly target"
+                },
+                {
+                    "en": "The team is closing in on a final decision.",
+                    "ja": "チームは最終決定に近づいています。",
+                    "focus": "closing in on",
+                    "jaFocus": "近づいています",
+                    "object": "a final decision"
+                }
+            ],
+            "dailyExamples": []
+        }
     ]
-  },
+},
   {
     "id": "let",
     "rank": 39,
@@ -24503,624 +24882,805 @@ export const verbs: Verb[] = [
     "core": "相手や物事をそのまま通す・許す",
     "coreDetail": "LETは自分が止めずに相手の行動や状態を許す感覚です。仕事では「〜させる」「任せる」「知らせる」で非常によく使います。",
     "coreVisual": {
-      "from": [
-        "✅ 許可",
-        "👤 相手",
-        "💬 連絡",
-        "➡️ 通す",
-        "🤝 任せる"
-      ],
-      "to": "仕事の流れ",
-      "label": "コアイメージ"
+        "from": [
+            "✅ 許可",
+            "👤 相手",
+            "💬 連絡",
+            "➡️ 通す",
+            "🤝 任せる"
+        ],
+        "to": "仕事の流れ",
+        "label": "コアイメージ"
     },
     "meanings": [
-      {
-        "id": "allow",
-        "title": "1 許可する・〜させる",
-        "pattern": "LET + 人 + 動詞原形",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O + C",
-        "image": "相手が行動できるようにする。",
-        "point": "let me know / let us start など、日常・仕事で非常に多い。",
-        "examples": [
-          {
-            "en": "Please let me know your schedule.",
-            "ja": "あなたの予定を私に知らせてください。",
-            "focus": "let me know",
-            "jaFocus": "知らせてください",
-            "object": "me / your schedule",
-            "sentencePattern": "V + O + C",
-            "grammarParts": [
-              {
-                "label": "V",
-                "text": "let"
-              },
-              {
-                "label": "O",
-                "text": "me"
-              },
-              {
-                "label": "C",
-                "text": "know your schedule"
-              }
+        {
+            "id": "allow",
+            "title": "1 許可する・〜させる",
+            "pattern": "LET + 人 + 動詞原形",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O + C",
+            "image": "相手が行動できるようにする。",
+            "point": "let me know / let us start など、日常・仕事で非常に多い。",
+            "examples": [
+                {
+                    "en": "Please let me know your schedule.",
+                    "ja": "あなたの予定を私に知らせてください。",
+                    "focus": "let me know",
+                    "jaFocus": "知らせてください",
+                    "object": "me / your schedule",
+                    "sentencePattern": "V + O + C",
+                    "grammarParts": [
+                        {
+                            "label": "V",
+                            "text": "let"
+                        },
+                        {
+                            "label": "O",
+                            "text": "me"
+                        },
+                        {
+                            "label": "C",
+                            "text": "know your schedule"
+                        }
+                    ],
+                    "grammarNote": "let は「人が〜するのを許す・させる」形です。me がO、know your schedule が続く動作です。"
+                },
+                {
+                    "en": "Let me check the details.",
+                    "ja": "詳細を確認させてください。",
+                    "focus": "Let",
+                    "object": "me",
+                    "jaFocus": "確認させて"
+                },
+                {
+                    "en": "We will let the client review the draft.",
+                    "ja": "クライアントに草案を確認してもらいます。",
+                    "focus": "let",
+                    "object": "the client",
+                    "jaFocus": "確認してもらいます"
+                }
             ],
-            "grammarNote": "let は「人が〜するのを許す・させる」形です。me がO、know your schedule が続く動作です。"
-          },
-          {
-            "en": "Let me check the details.",
-            "ja": "詳細を確認させてください。",
-            "focus": "Let",
-            "object": "me",
-            "jaFocus": "確認させて"
-          },
-          {
-            "en": "We will let the client review the draft.",
-            "ja": "クライアントに草案を確認してもらいます。",
-            "focus": "let",
-            "object": "the client",
-            "jaFocus": "確認してもらいます"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Let me check the details.",
-            "ja": "詳細を確認させてください。",
-            "focus": "Let",
-            "object": "me",
-            "jaFocus": "確認させて"
-          },
-          {
-            "en": "We will let the client review the draft.",
-            "ja": "クライアントに草案を確認してもらいます。",
-            "focus": "let",
-            "object": "the client",
-            "jaFocus": "確認してもらいます"
-          }
-        ]
-      },
-      {
-        "id": "inform",
-        "title": "2 知らせる",
-        "pattern": "LET + 人 + know",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O + C",
-        "image": "相手に情報を入れる。",
-        "point": "let me know はビジネス最重要フレーズ。",
-        "examples": [
-          {
-            "en": "Please let me know if you have any questions.",
-            "ja": "ご質問があればお知らせください。",
-            "focus": "let",
-            "object": "me",
-            "jaFocus": "お知らせ"
-          },
-          {
-            "en": "I will let you know once it is ready.",
-            "ja": "準備ができたらお知らせします。",
-            "focus": "let",
-            "object": "you",
-            "jaFocus": "お知らせ"
-          },
-          {
-            "en": "Could you let us know the delivery date?",
-            "ja": "納品日をお知らせいただけますか？",
-            "focus": "let",
-            "object": "us",
-            "jaFocus": "お知らせ"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Let me know when you arrive.",
-            "ja": "着いたら知らせてください。",
-            "focus": "Let",
-            "object": "me",
-            "jaFocus": "知らせて"
-          },
-          {
-            "en": "I will let you know later.",
-            "ja": "後で知らせます。",
-            "focus": "let",
-            "object": "you",
-            "jaFocus": "知らせます"
-          }
-        ]
-      },
-      {
-        "id": "suggest",
-        "title": "3 〜しましょう",
-        "pattern": "LET us + 動詞",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O + C",
-        "image": "一緒に行動を始める提案。",
-        "point": "let us は丁寧、let's は自然。",
-        "examples": [
-          {
-            "en": "Let's start with the main issue.",
-            "ja": "主要な問題から始めましょう。",
-            "focus": "Let's",
-            "jaFocus": "始めましょう"
-          },
-          {
-            "en": "Let's review the numbers first.",
-            "ja": "まず数字を確認しましょう。",
-            "focus": "Let's",
-            "jaFocus": "確認しましょう"
-          },
-          {
-            "en": "Let's move to the next topic.",
-            "ja": "次の議題に移りましょう。",
-            "focus": "Let's",
-            "jaFocus": "移りましょう"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Let's go home.",
-            "ja": "帰りましょう。",
-            "focus": "Let's",
-            "jaFocus": "帰りましょう"
-          },
-          {
-            "en": "Let's have lunch together.",
-            "ja": "一緒に昼食を食べましょう。",
-            "focus": "Let's",
-            "jaFocus": "食べましょう"
-          }
-        ]
-      },
-      {
-        "id": "release",
-        "title": "4 離す・解放する",
-        "pattern": "LET + O + go",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O + C",
-        "image": "保持していたものを手放す。",
-        "point": "let go は感情や人にも使う。",
-        "examples": [
-          {
-            "en": "We had to let the old process go.",
-            "ja": "古いやり方を手放す必要がありました。",
-            "focus": "let",
-            "object": "the old process",
-            "jaFocus": "手放す"
-          },
-          {
-            "en": "The company let several temporary workers go.",
-            "ja": "会社は複数の臨時社員を契約終了にしました。",
-            "focus": "let",
-            "object": "several temporary workers",
-            "jaFocus": "契約終了に"
-          },
-          {
-            "en": "It is hard to let this idea go.",
-            "ja": "このアイデアを手放すのは難しいです。",
-            "focus": "let",
-            "object": "this idea",
-            "jaFocus": "手放す"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Let it go.",
-            "ja": "気にしないで。",
-            "focus": "Let",
-            "object": "it",
-            "jaFocus": "気にしない"
-          },
-          {
-            "en": "She let the bird go.",
-            "ja": "彼女は鳥を逃がしました。",
-            "focus": "let",
-            "object": "the bird",
-            "jaFocus": "逃がしました"
-          }
-        ]
-      },
-      {
-        "id": "let-in",
-        "title": "5 入れる",
-        "pattern": "LET + 人 + in",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O + C",
-        "image": "人を中へ入れる。",
-        "point": "来客や会議参加に使える。",
-        "examples": [
-          {
-            "en": "Please let the visitor in.",
-            "ja": "来客を中へ入れてください。",
-            "focus": "let",
-            "object": "the visitor",
-            "jaFocus": "入れて"
-          },
-          {
-            "en": "Can you let me into the online meeting?",
-            "ja": "オンライン会議に入れてもらえますか？",
-            "focus": "let",
-            "object": "me",
-            "jaFocus": "入れて"
-          },
-          {
-            "en": "The admin let us into the system.",
-            "ja": "管理者が私たちをシステムに入れてくれました。",
-            "focus": "let",
-            "object": "us",
-            "jaFocus": "入れて"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please let me in.",
-            "ja": "中に入れてください。",
-            "focus": "let",
-            "object": "me",
-            "jaFocus": "入れて"
-          },
-          {
-            "en": "He let the dog in.",
-            "ja": "彼は犬を中に入れました。",
-            "focus": "let",
-            "object": "the dog",
-            "jaFocus": "入れました"
-          }
-        ]
-      },
-      {
-        "id": "let-out",
-        "title": "6 外へ出す・漏らす",
-        "pattern": "LET + O + out",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O + C",
-        "image": "中にあるものを外へ出す。",
-        "point": "情報漏れにも注意。",
-        "examples": [
-          {
-            "en": "Do not let confidential information out.",
-            "ja": "機密情報を外に漏らさないでください。",
-            "focus": "let",
-            "object": "confidential information",
-            "jaFocus": "漏らさない"
-          },
-          {
-            "en": "The report let out some important details.",
-            "ja": "その報告書で重要な詳細が外に出ました。",
-            "focus": "let out",
-            "object": "some important details",
-            "jaFocus": "外に出ました"
-          },
-          {
-            "en": "Please let the team out after the session.",
-            "ja": "セッション後にチームを退出させてください。",
-            "focus": "let",
-            "object": "the team",
-            "jaFocus": "退出させて"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "She let out a sigh.",
-            "ja": "彼女はため息をつきました。",
-            "focus": "let out",
-            "object": "a sigh",
-            "jaFocus": "つきました"
-          },
-          {
-            "en": "Let the cat out.",
-            "ja": "猫を外へ出して。",
-            "focus": "Let",
-            "object": "the cat",
-            "jaFocus": "出して"
-          }
-        ]
-      },
-      {
-        "id": "let-down",
-        "title": "7 失望させる",
-        "pattern": "LET + 人 + down",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O + C",
-        "image": "期待を下げてしまう。",
-        "point": "let someone down は謝罪表現にも使える。",
-        "examples": [
-          {
-            "en": "I am sorry to let you down.",
-            "ja": "期待に応えられず申し訳ありません。",
-            "focus": "let",
-            "object": "you",
-            "jaFocus": "応えられず"
-          },
-          {
-            "en": "We cannot let the client down.",
-            "ja": "顧客を失望させるわけにはいきません。",
-            "focus": "let",
-            "object": "the client",
-            "jaFocus": "失望させる"
-          },
-          {
-            "en": "The delay let the team down.",
-            "ja": "遅延はチームを落胆させました。",
-            "focus": "let",
-            "object": "the team",
-            "jaFocus": "落胆させました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please do not let me down.",
-            "ja": "がっかりさせないでください。",
-            "focus": "let",
-            "object": "me",
-            "jaFocus": "がっかりさせない"
-          },
-          {
-            "en": "I felt I let my family down.",
-            "ja": "家族をがっかりさせた気がしました。",
-            "focus": "let",
-            "object": "my family",
-            "jaFocus": "がっかりさせた"
-          }
-        ]
-      },
-      {
-        "id": "let-through",
-        "title": "8 通す",
-        "pattern": "LET + O + through",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O + C",
-        "image": "人や物を通過させる。",
-        "point": "承認フローや入口で使える。",
-        "examples": [
-          {
-            "en": "Security let us through after checking our IDs.",
-            "ja": "警備員は身分証確認後、私たちを通してくれました。",
-            "focus": "let",
-            "object": "us",
-            "jaFocus": "通して"
-          },
-          {
-            "en": "The system will not let this request through.",
-            "ja": "システムはこの依頼を通しません。",
-            "focus": "let",
-            "object": "this request",
-            "jaFocus": "通しません"
-          },
-          {
-            "en": "Please let the urgent order through first.",
-            "ja": "急ぎの注文を先に通してください。",
-            "focus": "let",
-            "object": "the urgent order",
-            "jaFocus": "通して"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The gate let us through.",
-            "ja": "ゲートを通過できました。",
-            "focus": "let",
-            "object": "us",
-            "jaFocus": "通過できました"
-          },
-          {
-            "en": "They let the car through.",
-            "ja": "彼らは車を通しました。",
-            "focus": "let",
-            "object": "the car",
-            "jaFocus": "通しました"
-          }
-        ]
-      },
-      {
-        "id": "let-use",
-        "title": "9 使わせる",
-        "pattern": "LET + 人 + use",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O + C",
-        "image": "相手が使えるように許す。",
-        "point": "会議室・資料・システム使用に便利。",
-        "examples": [
-          {
-            "en": "Can you let me use this room?",
-            "ja": "この部屋を使わせてもらえますか？",
-            "focus": "let",
-            "object": "me",
-            "jaFocus": "使わせて"
-          },
-          {
-            "en": "The manager let us use the sample data.",
-            "ja": "マネージャーはサンプルデータの使用を許可してくれました。",
-            "focus": "let",
-            "object": "us",
-            "jaFocus": "使用を許可して"
-          },
-          {
-            "en": "Please let the new staff use the shared account.",
-            "ja": "新しいスタッフに共有アカウントを使わせてください。",
-            "focus": "let",
-            "object": "the new staff",
-            "jaFocus": "使わせて"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "My friend let me use his bike.",
-            "ja": "友人が自転車を使わせてくれました。",
-            "focus": "let",
-            "object": "me",
-            "jaFocus": "使わせて"
-          },
-          {
-            "en": "She let me borrow her book.",
-            "ja": "彼女は本を貸してくれました。",
-            "focus": "let",
-            "object": "me",
-            "jaFocus": "貸して"
-          }
-        ]
-      },
-      {
-        "id": "let-happen",
-        "title": "10 そのままにする",
-        "pattern": "LET + O + happen / be",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O + C",
-        "image": "止めずに起こらせる。",
-        "point": "let it be / let it happen の感覚。",
-        "examples": [
-          {
-            "en": "We should not let this issue happen again.",
-            "ja": "この問題を再発させてはいけません。",
-            "focus": "let",
-            "object": "this issue",
-            "jaFocus": "再発させて"
-          },
-          {
-            "en": "Do not let small mistakes grow.",
-            "ja": "小さなミスを大きくしないでください。",
-            "focus": "let",
-            "object": "small mistakes",
-            "jaFocus": "大きくしない"
-          },
-          {
-            "en": "Let the process continue for now.",
-            "ja": "ひとまず手続きを続けましょう。",
-            "focus": "Let",
-            "object": "the process",
-            "jaFocus": "続けましょう"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Let it be for now.",
-            "ja": "今はそのままにしておきましょう。",
-            "focus": "Let",
-            "object": "it",
-            "jaFocus": "そのまま"
-          },
-          {
-            "en": "Sometimes you need to let things happen.",
-            "ja": "時には物事を自然に任せる必要があります。",
-            "focus": "let",
-            "object": "things",
-            "jaFocus": "任せる"
-          }
-        ]
-      }
+            "dailyExamples": [
+                {
+                    "en": "Let me check the details.",
+                    "ja": "詳細を確認させてください。",
+                    "focus": "Let",
+                    "object": "me",
+                    "jaFocus": "確認させて"
+                },
+                {
+                    "en": "We will let the client review the draft.",
+                    "ja": "クライアントに草案を確認してもらいます。",
+                    "focus": "let",
+                    "object": "the client",
+                    "jaFocus": "確認してもらいます"
+                }
+            ]
+        },
+        {
+            "id": "inform",
+            "title": "2 知らせる",
+            "pattern": "LET + 人 + know",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O + C",
+            "image": "相手に情報を入れる。",
+            "point": "let me know はビジネス最重要フレーズ。",
+            "examples": [
+                {
+                    "en": "Please let me know if you have any questions.",
+                    "ja": "ご質問があればお知らせください。",
+                    "focus": "let",
+                    "object": "me",
+                    "jaFocus": "お知らせ"
+                },
+                {
+                    "en": "I will let you know once it is ready.",
+                    "ja": "準備ができたらお知らせします。",
+                    "focus": "let",
+                    "object": "you",
+                    "jaFocus": "お知らせ"
+                },
+                {
+                    "en": "Could you let us know the delivery date?",
+                    "ja": "納品日をお知らせいただけますか？",
+                    "focus": "let",
+                    "object": "us",
+                    "jaFocus": "お知らせ"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Let me know when you arrive.",
+                    "ja": "着いたら知らせてください。",
+                    "focus": "Let",
+                    "object": "me",
+                    "jaFocus": "知らせて"
+                },
+                {
+                    "en": "I will let you know later.",
+                    "ja": "後で知らせます。",
+                    "focus": "let",
+                    "object": "you",
+                    "jaFocus": "知らせます"
+                }
+            ]
+        },
+        {
+            "id": "suggest",
+            "title": "3 〜しましょう",
+            "pattern": "LET us + 動詞",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O + C",
+            "image": "一緒に行動を始める提案。",
+            "point": "let us は丁寧、let's は自然。",
+            "examples": [
+                {
+                    "en": "Let's start with the main issue.",
+                    "ja": "主要な問題から始めましょう。",
+                    "focus": "Let's",
+                    "jaFocus": "始めましょう"
+                },
+                {
+                    "en": "Let's review the numbers first.",
+                    "ja": "まず数字を確認しましょう。",
+                    "focus": "Let's",
+                    "jaFocus": "確認しましょう"
+                },
+                {
+                    "en": "Let's move to the next topic.",
+                    "ja": "次の議題に移りましょう。",
+                    "focus": "Let's",
+                    "jaFocus": "移りましょう"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Let's go home.",
+                    "ja": "帰りましょう。",
+                    "focus": "Let's",
+                    "jaFocus": "帰りましょう"
+                },
+                {
+                    "en": "Let's have lunch together.",
+                    "ja": "一緒に昼食を食べましょう。",
+                    "focus": "Let's",
+                    "jaFocus": "食べましょう"
+                }
+            ]
+        },
+        {
+            "id": "release",
+            "title": "4 離す・解放する",
+            "pattern": "LET + O + go",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O + C",
+            "image": "保持していたものを手放す。",
+            "point": "let go は感情や人にも使う。",
+            "examples": [
+                {
+                    "en": "We had to let the old process go.",
+                    "ja": "古いやり方を手放す必要がありました。",
+                    "focus": "let",
+                    "object": "the old process",
+                    "jaFocus": "手放す"
+                },
+                {
+                    "en": "The company let several temporary workers go.",
+                    "ja": "会社は複数の臨時社員を契約終了にしました。",
+                    "focus": "let",
+                    "object": "several temporary workers",
+                    "jaFocus": "契約終了に"
+                },
+                {
+                    "en": "It is hard to let this idea go.",
+                    "ja": "このアイデアを手放すのは難しいです。",
+                    "focus": "let",
+                    "object": "this idea",
+                    "jaFocus": "手放す"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Let it go.",
+                    "ja": "気にしないで。",
+                    "focus": "Let",
+                    "object": "it",
+                    "jaFocus": "気にしない"
+                },
+                {
+                    "en": "She let the bird go.",
+                    "ja": "彼女は鳥を逃がしました。",
+                    "focus": "let",
+                    "object": "the bird",
+                    "jaFocus": "逃がしました"
+                }
+            ]
+        },
+        {
+            "id": "let-in",
+            "title": "5 入れる",
+            "pattern": "LET + 人 + in",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O + C",
+            "image": "人を中へ入れる。",
+            "point": "来客や会議参加に使える。",
+            "examples": [
+                {
+                    "en": "Please let the visitor in.",
+                    "ja": "来客を中へ入れてください。",
+                    "focus": "let",
+                    "object": "the visitor",
+                    "jaFocus": "入れて"
+                },
+                {
+                    "en": "Can you let me into the online meeting?",
+                    "ja": "オンライン会議に入れてもらえますか？",
+                    "focus": "let",
+                    "object": "me",
+                    "jaFocus": "入れて"
+                },
+                {
+                    "en": "The admin let us into the system.",
+                    "ja": "管理者が私たちをシステムに入れてくれました。",
+                    "focus": "let",
+                    "object": "us",
+                    "jaFocus": "入れて"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Please let me in.",
+                    "ja": "中に入れてください。",
+                    "focus": "let",
+                    "object": "me",
+                    "jaFocus": "入れて"
+                },
+                {
+                    "en": "He let the dog in.",
+                    "ja": "彼は犬を中に入れました。",
+                    "focus": "let",
+                    "object": "the dog",
+                    "jaFocus": "入れました"
+                }
+            ]
+        },
+        {
+            "id": "let-out",
+            "title": "6 外へ出す・漏らす",
+            "pattern": "LET + O + out",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O + C",
+            "image": "中にあるものを外へ出す。",
+            "point": "情報漏れにも注意。",
+            "examples": [
+                {
+                    "en": "Do not let confidential information out.",
+                    "ja": "機密情報を外に漏らさないでください。",
+                    "focus": "let",
+                    "object": "confidential information",
+                    "jaFocus": "漏らさない"
+                },
+                {
+                    "en": "The report let out some important details.",
+                    "ja": "その報告書で重要な詳細が外に出ました。",
+                    "focus": "let out",
+                    "object": "some important details",
+                    "jaFocus": "外に出ました"
+                },
+                {
+                    "en": "Please let the team out after the session.",
+                    "ja": "セッション後にチームを退出させてください。",
+                    "focus": "let",
+                    "object": "the team",
+                    "jaFocus": "退出させて"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "She let out a sigh.",
+                    "ja": "彼女はため息をつきました。",
+                    "focus": "let out",
+                    "object": "a sigh",
+                    "jaFocus": "つきました"
+                },
+                {
+                    "en": "Let the cat out.",
+                    "ja": "猫を外へ出して。",
+                    "focus": "Let",
+                    "object": "the cat",
+                    "jaFocus": "出して"
+                }
+            ]
+        },
+        {
+            "id": "let-down",
+            "title": "7 失望させる",
+            "pattern": "LET + 人 + down",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O + C",
+            "image": "期待を下げてしまう。",
+            "point": "let someone down は謝罪表現にも使える。",
+            "examples": [
+                {
+                    "en": "I am sorry to let you down.",
+                    "ja": "期待に応えられず申し訳ありません。",
+                    "focus": "let",
+                    "object": "you",
+                    "jaFocus": "応えられず"
+                },
+                {
+                    "en": "We cannot let the client down.",
+                    "ja": "顧客を失望させるわけにはいきません。",
+                    "focus": "let",
+                    "object": "the client",
+                    "jaFocus": "失望させる"
+                },
+                {
+                    "en": "The delay let the team down.",
+                    "ja": "遅延はチームを落胆させました。",
+                    "focus": "let",
+                    "object": "the team",
+                    "jaFocus": "落胆させました"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Please do not let me down.",
+                    "ja": "がっかりさせないでください。",
+                    "focus": "let",
+                    "object": "me",
+                    "jaFocus": "がっかりさせない"
+                },
+                {
+                    "en": "I felt I let my family down.",
+                    "ja": "家族をがっかりさせた気がしました。",
+                    "focus": "let",
+                    "object": "my family",
+                    "jaFocus": "がっかりさせた"
+                }
+            ]
+        },
+        {
+            "id": "let-through",
+            "title": "8 通す",
+            "pattern": "LET + O + through",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O + C",
+            "image": "人や物を通過させる。",
+            "point": "承認フローや入口で使える。",
+            "examples": [
+                {
+                    "en": "Security let us through after checking our IDs.",
+                    "ja": "警備員は身分証確認後、私たちを通してくれました。",
+                    "focus": "let",
+                    "object": "us",
+                    "jaFocus": "通して"
+                },
+                {
+                    "en": "The system will not let this request through.",
+                    "ja": "システムはこの依頼を通しません。",
+                    "focus": "let",
+                    "object": "this request",
+                    "jaFocus": "通しません"
+                },
+                {
+                    "en": "Please let the urgent order through first.",
+                    "ja": "急ぎの注文を先に通してください。",
+                    "focus": "let",
+                    "object": "the urgent order",
+                    "jaFocus": "通して"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "The gate let us through.",
+                    "ja": "ゲートを通過できました。",
+                    "focus": "let",
+                    "object": "us",
+                    "jaFocus": "通過できました"
+                },
+                {
+                    "en": "They let the car through.",
+                    "ja": "彼らは車を通しました。",
+                    "focus": "let",
+                    "object": "the car",
+                    "jaFocus": "通しました"
+                }
+            ]
+        },
+        {
+            "id": "let-use",
+            "title": "9 使わせる",
+            "pattern": "LET + 人 + use",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O + C",
+            "image": "相手が使えるように許す。",
+            "point": "会議室・資料・システム使用に便利。",
+            "examples": [
+                {
+                    "en": "Can you let me use this room?",
+                    "ja": "この部屋を使わせてもらえますか？",
+                    "focus": "let",
+                    "object": "me",
+                    "jaFocus": "使わせて"
+                },
+                {
+                    "en": "The manager let us use the sample data.",
+                    "ja": "マネージャーはサンプルデータの使用を許可してくれました。",
+                    "focus": "let",
+                    "object": "us",
+                    "jaFocus": "使用を許可して"
+                },
+                {
+                    "en": "Please let the new staff use the shared account.",
+                    "ja": "新しいスタッフに共有アカウントを使わせてください。",
+                    "focus": "let",
+                    "object": "the new staff",
+                    "jaFocus": "使わせて"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "My friend let me use his bike.",
+                    "ja": "友人が自転車を使わせてくれました。",
+                    "focus": "let",
+                    "object": "me",
+                    "jaFocus": "使わせて"
+                },
+                {
+                    "en": "She let me borrow her book.",
+                    "ja": "彼女は本を貸してくれました。",
+                    "focus": "let",
+                    "object": "me",
+                    "jaFocus": "貸して"
+                }
+            ]
+        },
+        {
+            "id": "let-happen",
+            "title": "10 そのままにする",
+            "pattern": "LET + O + happen / be",
+            "transitivity": "他動詞・自動詞",
+            "structure": "S + V + O + C",
+            "image": "止めずに起こらせる。",
+            "point": "let it be / let it happen の感覚。",
+            "examples": [
+                {
+                    "en": "We should not let this issue happen again.",
+                    "ja": "この問題を再発させてはいけません。",
+                    "focus": "let",
+                    "object": "this issue",
+                    "jaFocus": "再発させて"
+                },
+                {
+                    "en": "Do not let small mistakes grow.",
+                    "ja": "小さなミスを大きくしないでください。",
+                    "focus": "let",
+                    "object": "small mistakes",
+                    "jaFocus": "大きくしない"
+                },
+                {
+                    "en": "Let the process continue for now.",
+                    "ja": "ひとまず手続きを続けましょう。",
+                    "focus": "Let",
+                    "object": "the process",
+                    "jaFocus": "続けましょう"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Let it be for now.",
+                    "ja": "今はそのままにしておきましょう。",
+                    "focus": "Let",
+                    "object": "it",
+                    "jaFocus": "そのまま"
+                },
+                {
+                    "en": "Sometimes you need to let things happen.",
+                    "ja": "時には物事を自然に任せる必要があります。",
+                    "focus": "let",
+                    "object": "things",
+                    "jaFocus": "任せる"
+                }
+            ]
+        }
     ],
     "collocations": [
-      {
-        "phrase": "let me know",
-        "ja": "私に知らせる",
-        "image": "連絡してもらう",
-        "pattern": "let me know",
-        "examples": [
-          {
-            "en": "Please let me know your schedule.",
-            "ja": "あなたの予定を私に知らせてください。",
-            "focus": "let me know",
-            "jaFocus": "知らせてください"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please let me know your schedule.",
-            "ja": "あなたの予定を私に知らせてください。",
-            "focus": "let me know",
-            "jaFocus": "知らせてください"
-          }
-        ]
-      },
-      {
-        "phrase": "let me check",
-        "ja": "私に確認させる",
-        "image": "確認する時間をもらう",
-        "pattern": "let me check",
-        "examples": [
-          {
-            "en": "Let me check the details first.",
-            "ja": "まず私に詳細を確認させてください。",
-            "focus": "Let me check",
-            "jaFocus": "確認させてください"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Let me check the details first.",
-            "ja": "まず私に詳細を確認させてください。",
-            "focus": "Let me check",
-            "jaFocus": "確認させてください"
-          }
-        ]
-      },
-      {
-        "phrase": "let the client review",
-        "ja": "顧客に確認してもらう",
-        "image": "相手に見る機会を与える",
-        "pattern": "let the client review",
-        "examples": [
-          {
-            "en": "Please let the client review the final design.",
-            "ja": "顧客に最終デザインを確認してもらってください。",
-            "focus": "let the client review",
-            "jaFocus": "確認してもらう"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please let the client review the final design.",
-            "ja": "顧客に最終デザインを確認してもらってください。",
-            "focus": "let the client review",
-            "jaFocus": "確認してもらう"
-          }
-        ]
-      }
+        {
+            "phrase": "let me know",
+            "ja": "私に知らせる",
+            "image": "相手の情報を自分に通してもらう",
+            "pattern": "let me know",
+            "examples": [
+                {
+                    "en": "Please let me know your schedule.",
+                    "ja": "あなたの予定を私に知らせてください。",
+                    "focus": "let me know",
+                    "jaFocus": "知らせてください"
+                },
+                {
+                    "en": "Let me know if you have any questions.",
+                    "ja": "質問があれば知らせてください。",
+                    "focus": "Let me know",
+                    "jaFocus": "知らせてください"
+                },
+                {
+                    "en": "Could you let me know the delivery date?",
+                    "ja": "納品日を私に知らせていただけますか？",
+                    "focus": "let me know",
+                    "jaFocus": "知らせていただけますか"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "let me check",
+            "ja": "確認させてください",
+            "image": "自分が確認する行動を許してもらう",
+            "pattern": "let me check",
+            "examples": [
+                {
+                    "en": "Let me check the details first.",
+                    "ja": "まず詳細を確認させてください。",
+                    "focus": "Let me check",
+                    "jaFocus": "確認させてください"
+                },
+                {
+                    "en": "Let me check with the warehouse.",
+                    "ja": "倉庫に確認させてください。",
+                    "focus": "Let me check",
+                    "jaFocus": "確認させてください"
+                },
+                {
+                    "en": "Please let me check the latest version.",
+                    "ja": "最新版を確認させてください。",
+                    "focus": "let me check",
+                    "jaFocus": "確認させてください"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "let me confirm",
+            "ja": "確認させてください",
+            "image": "確実にするために確認する許可を求める",
+            "pattern": "let me confirm",
+            "examples": [
+                {
+                    "en": "Let me confirm the price before I reply.",
+                    "ja": "返信する前に価格を確認させてください。",
+                    "focus": "Let me confirm",
+                    "jaFocus": "確認させてください",
+                    "object": "the price"
+                },
+                {
+                    "en": "Let me confirm the schedule with the client.",
+                    "ja": "顧客とスケジュールを確認させてください。",
+                    "focus": "Let me confirm",
+                    "jaFocus": "確認させてください",
+                    "object": "the schedule"
+                },
+                {
+                    "en": "Please let me confirm the order quantity.",
+                    "ja": "発注数量を確認させてください。",
+                    "focus": "let me confirm",
+                    "jaFocus": "確認させてください",
+                    "object": "the order quantity"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "let the client review",
+            "ja": "顧客に確認してもらう",
+            "image": "顧客が確認する流れを止めずに通す",
+            "pattern": "let the client review",
+            "examples": [
+                {
+                    "en": "We will let the client review the draft.",
+                    "ja": "顧客に草案を確認してもらいます。",
+                    "focus": "let the client review",
+                    "jaFocus": "確認してもらいます",
+                    "object": "the draft"
+                },
+                {
+                    "en": "Please let the client review the sample first.",
+                    "ja": "まず顧客にサンプルを確認してもらってください。",
+                    "focus": "let the client review",
+                    "jaFocus": "確認してもらって",
+                    "object": "the sample"
+                },
+                {
+                    "en": "We should let the client review the final design.",
+                    "ja": "顧客に最終デザインを確認してもらうべきです。",
+                    "focus": "let the client review",
+                    "jaFocus": "確認してもらう",
+                    "object": "the final design"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "let's proceed",
+            "ja": "進めましょう",
+            "image": "一緒に次の行動へ進む提案",
+            "pattern": "let us / let's + 動詞",
+            "examples": [
+                {
+                    "en": "Let's proceed with the current plan.",
+                    "ja": "現在の計画で進めましょう。",
+                    "focus": "Let's proceed",
+                    "jaFocus": "進めましょう"
+                },
+                {
+                    "en": "Let's proceed after we confirm the cost.",
+                    "ja": "費用を確認してから進めましょう。",
+                    "focus": "Let's proceed",
+                    "jaFocus": "進めましょう"
+                },
+                {
+                    "en": "Let's proceed to the next step.",
+                    "ja": "次のステップに進みましょう。",
+                    "focus": "Let's proceed",
+                    "jaFocus": "進みましょう"
+                }
+            ],
+            "dailyExamples": []
+        }
     ],
     "phrasalVerbs": [
-      {
-        "phrase": "let in",
-        "ja": "中に入れる",
-        "image": "人を入れる",
-        "pattern": "let in",
-        "examples": [
-          {
-            "en": "Please let the visitor in when they arrive.",
-            "ja": "来客が到着したら中に入れてください。",
-            "focus": "let in",
-            "jaFocus": "中に入れる"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please let the visitor in when they arrive.",
-            "ja": "来客が到着したら中に入れてください。",
-            "focus": "let in",
-            "jaFocus": "中に入れる"
-          }
-        ]
-      },
-      {
-        "phrase": "let down",
-        "ja": "がっかりさせる",
-        "image": "期待を裏切る",
-        "pattern": "let down",
-        "examples": [
-          {
-            "en": "We should not let the client down.",
-            "ja": "私たちは顧客をがっかりさせるべきではありません。",
-            "focus": "let down",
-            "jaFocus": "がっかりさせる"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "We should not let the client down.",
-            "ja": "私たちは顧客をがっかりさせるべきではありません。",
-            "focus": "let down",
-            "jaFocus": "がっかりさせる"
-          }
-        ]
-      }
+        {
+            "phrase": "let in",
+            "ja": "中に入れる・参加させる",
+            "image": "外にいる人や情報を中へ通す",
+            "pattern": "let in + 名詞",
+            "examples": [
+                {
+                    "en": "The system will let in only approved users.",
+                    "ja": "そのシステムは承認済みユーザーだけを入れます。",
+                    "focus": "let in",
+                    "jaFocus": "入れます",
+                    "object": "approved users"
+                },
+                {
+                    "en": "Please let the visitor in after confirming their name.",
+                    "ja": "名前を確認してから来客を中に入れてください。",
+                    "focus": "let the visitor in",
+                    "jaFocus": "来客を中に入れて",
+                    "object": "the visitor"
+                },
+                {
+                    "en": "The new policy lets in more external partners.",
+                    "ja": "新しい方針により、より多くの外部パートナーを受け入れられます。",
+                    "focus": "lets in",
+                    "jaFocus": "受け入れられます",
+                    "object": "more external partners"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "let down",
+            "ja": "がっかりさせる・期待を裏切る",
+            "image": "相手の期待を支えず下げてしまう",
+            "pattern": "let down + 人",
+            "examples": [
+                {
+                    "en": "We must not let the client down.",
+                    "ja": "私たちは顧客をがっかりさせてはいけません。",
+                    "focus": "let the client down",
+                    "jaFocus": "顧客をがっかりさせて",
+                    "object": "the client"
+                },
+                {
+                    "en": "The delay let the whole team down.",
+                    "ja": "その遅延はチーム全体を失望させました。",
+                    "focus": "let the whole team down",
+                    "jaFocus": "チーム全体を失望させました",
+                    "object": "the whole team"
+                },
+                {
+                    "en": "Please double-check the order so we do not let them down.",
+                    "ja": "相手を失望させないように、発注内容を再確認してください。",
+                    "focus": "let them down",
+                    "jaFocus": "失望させないように",
+                    "object": "them"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "let out",
+            "ja": "外に出す・公開する",
+            "image": "中にあったものを外へ出す",
+            "pattern": "let out + 名詞",
+            "examples": [
+                {
+                    "en": "Do not let out confidential information.",
+                    "ja": "機密情報を外に出さないでください。",
+                    "focus": "let out",
+                    "jaFocus": "外に出さないで",
+                    "object": "confidential information"
+                },
+                {
+                    "en": "The company let out a short statement after the meeting.",
+                    "ja": "会社は会議後に短い声明を出しました。",
+                    "focus": "let out",
+                    "jaFocus": "声明を出しました",
+                    "object": "a short statement"
+                },
+                {
+                    "en": "Please do not let this information out before approval.",
+                    "ja": "承認前にこの情報を外部に出さないでください。",
+                    "focus": "let this information out",
+                    "jaFocus": "情報を外部に出さないで",
+                    "object": "this information"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "let through",
+            "ja": "通す・通過させる",
+            "image": "止めずに先へ進ませる",
+            "pattern": "let through + 名詞",
+            "examples": [
+                {
+                    "en": "Security let the delivery staff through.",
+                    "ja": "警備員は配送スタッフを通しました。",
+                    "focus": "let the delivery staff through",
+                    "jaFocus": "配送スタッフを通しました",
+                    "object": "the delivery staff"
+                },
+                {
+                    "en": "The filter lets through only approved requests.",
+                    "ja": "そのフィルターは承認済みの依頼だけを通します。",
+                    "focus": "lets through",
+                    "jaFocus": "通します",
+                    "object": "approved requests"
+                },
+                {
+                    "en": "Please let this urgent request through first.",
+                    "ja": "この緊急依頼を先に通してください。",
+                    "focus": "let this urgent request through",
+                    "jaFocus": "緊急依頼を通してください",
+                    "object": "this urgent request"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "let go of",
+            "ja": "手放す・諦める",
+            "image": "握っていたものや考えを離す",
+            "pattern": "let go of + 名詞",
+            "examples": [
+                {
+                    "en": "We need to let go of the old process.",
+                    "ja": "私たちは古い手順を手放す必要があります。",
+                    "focus": "let go of",
+                    "jaFocus": "手放す",
+                    "object": "the old process"
+                },
+                {
+                    "en": "He found it hard to let go of the original idea.",
+                    "ja": "彼は最初の案を手放すのが難しいと感じました。",
+                    "focus": "let go of",
+                    "jaFocus": "手放す",
+                    "object": "the original idea"
+                },
+                {
+                    "en": "The team decided to let go of unnecessary steps.",
+                    "ja": "チームは不要な手順をなくすことにしました。",
+                    "focus": "let go of",
+                    "jaFocus": "不要な手順をなくす",
+                    "object": "unnecessary steps"
+                }
+            ],
+            "dailyExamples": []
+        }
     ]
-  },
+},
   {
     "id": "build",
     "rank": 40,

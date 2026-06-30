@@ -1,2 +1,7 @@
-Ver.102
-My Page profile compact UI and bottom navigation spacing fix.
+Ver.103 - Verb quality batch 11
+
+- Improved PLAN / OFFER / SUPPORT.
+- Added richer business-focused basic usages, collocations, phrasal/prepositional patterns.
+- Added core images and 3 business examples per added usage.
+- Daily examples remain untouched for the later quality phase.
+- Clean ZIP format continued.

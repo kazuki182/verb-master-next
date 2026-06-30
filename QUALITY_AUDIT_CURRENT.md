@@ -1,12 +1,25 @@
-# QUALITY_AUDIT_CURRENT - Ver.102
+# QUALITY AUDIT CURRENT - Ver.103
 
 ## Scope
-- My Page profile card UI balance fix.
-- Bigger profile image with rounded-square design.
-- Slightly larger profile text and tighter profile card spacing.
-- Reduced empty space in profile card.
-- Bottom navigation spacing tightened while keeping icon size.
+Verb quality improvement batch 11.
 
-## Not changed
-- Verb data was not changed in this version.
-- Learning/save logic was not changed in this version.
+## Updated verbs
+- plan
+- offer
+- support
+
+## Quality policy applied
+- Check basic verb usages first.
+- Then check idioms/common expressions.
+- Then check phrasal/prepositional expressions.
+- Daily examples are not changed yet.
+- Added business-focused examples.
+- Added core-image descriptions.
+- Avoided all-caps example text.
+- English focus highlighting remains on English expressions only.
+
+## Build check
+- Next.js compile: OK
+- TypeScript: OK
+- Static generation: OK
+- ZIP integrity: OK

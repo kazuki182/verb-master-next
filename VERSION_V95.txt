@@ -1,0 +1,17 @@
+Ver.95 - Verb Quality Batch 4
+
+Scope:
+- Improved verb quality for exactly 3 verbs: open / close / let.
+- Focused on the agreed order: basic verb usages already sufficient, then collocations/common expressions, then phrasal verbs.
+- Premium daily examples were not rewritten in this version.
+
+Main changes:
+- open: collocations 3 -> 5, phrasal verbs 2 -> 5, each with 3 business examples.
+- close: collocations 3 -> 5, phrasal verbs 2 -> 5, each with 3 business examples.
+- let: collocations 3 -> 5, phrasal verbs 2 -> 5, each with 3 business examples.
+
+Quality rules applied:
+- No all-caps generated example sentences.
+- Business-adult examples only for this batch.
+- No meta examples like "I want to learn this phrase".
+- Core image direction considered for each verb.

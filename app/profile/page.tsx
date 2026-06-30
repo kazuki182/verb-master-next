@@ -281,10 +281,10 @@ export default function ProfilePage() {
         <h1 className="text-3xl font-bold">マイページ</h1>
       </header>
 
-      <section className="digital-card p-5">
+      <section className="digital-card profile-card-compact p-4">
         <div className="profile-hero flex items-start gap-4">
           <button
-            className="profile-avatar relative h-20 w-20 shrink-0 overflow-hidden rounded-3xl border border-cyan-300/30 bg-slate-900 text-4xl"
+            className="profile-avatar profile-avatar-large relative h-24 w-24 shrink-0 overflow-hidden rounded-[24px] border border-cyan-300/30 bg-slate-900 text-4xl"
             onClick={() => fileRef.current?.click()}
             type="button"
             aria-label="プロフィール画像を変更"
@@ -314,9 +314,9 @@ export default function ProfilePage() {
           <div className="min-w-0 flex-1">
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0">
-                <p className="text-xs font-bold tracking-[0.22em] text-cyan-200">PROFILE</p>
-                <p className="profile-name mt-1 truncate text-2xl font-extrabold text-white">{displayName}</p>
-                <p className="profile-login mt-1 text-sm text-slate-300">ログインID：{username}</p>
+                <p className="text-[11px] font-bold tracking-[0.22em] text-cyan-200">PROFILE</p>
+                <p className="profile-name mt-0.5 truncate text-[26px] font-extrabold leading-tight text-white">{displayName}</p>
+                <p className="profile-login mt-1 text-[13px] font-bold text-slate-300">ログインID：{username}</p>
               </div>
               {!isEditingName && (
                 <button
@@ -378,7 +378,7 @@ export default function ProfilePage() {
               </p>
             </div>
 
-            <p className="mt-4 text-sm text-slate-300">最終ログイン：{formatDateTime(progress.lastLoginAt)}</p>
+            <p className="profile-last-login mt-3 text-[13px] font-bold text-slate-300">最終ログイン：{formatDateTime(progress.lastLoginAt)}</p>
           </div>
         </div>
       </section>

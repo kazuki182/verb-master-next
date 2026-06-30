@@ -28499,226 +28499,223 @@ export const verbs: Verb[] = [
     "id": "sell",
     "rank": 46,
     "word": "SELL",
-    "ipa": "",
+    "ipa": "/sel/",
     "kana": "セル",
     "syllable": "sell",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 基本",
-    "core": "売る・販売する",
-    "coreDetail": "SELLは、商品やサービスを販売する動詞です。提案を相手に納得してもらう意味でも使えます。",
+    "core": "価値を相手に渡し、代金や納得を得る",
+    "coreDetail": "SELLは、商品やサービスを販売するだけでなく、案や価値を相手に納得してもらう時にも使います。仕事では製品販売、販売条件、売れ行き、提案の説得で重要です。",
+    "coreVisual": {"from": ["📦 商品", "💡 提案", "🧩 サービス", "📊 価値"], "to": "顧客・市場", "label": "価値を伝える → 買ってもらう"},
     "meanings": [
-      {
-        "id": "main",
-        "title": "① 売る・販売する",
-        "pattern": "sell + 名詞 / sell to + 相手",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + sell + O",
-        "image": "商品や考えを相手に届けて買ってもらう",
-        "point": "sell の後ろには売る商品を置きます。相手を言う時は sell to ... が自然です。",
-        "examples": [
-          {
-            "en": "We sell LED modules to sign companies.",
-            "ja": "私たちは看板会社にLEDモジュールを販売しています。",
-            "focus": "sell LED modules",
-            "jaFocus": "LEDモジュールを販売する",
-            "object": "LED modules",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "sell"
-              },
-              {
-                "label": "O",
-                "text": "LED modules"
-              },
-              {
-                "label": "M",
-                "text": "to sign companies"
-              }
-            ]
-          },
-          {
-            "en": "This product sells well in summer.",
-            "ja": "この商品は夏によく売れます。",
-            "focus": "sells well",
-            "jaFocus": "よく売れる"
-          },
-          {
-            "en": "She sold the idea to the team.",
-            "ja": "彼女はその案をチームに納得してもらいました。",
-            "focus": "sold the idea",
-            "jaFocus": "案を売り込んだ"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "This product sells well in summer.",
-            "ja": "この商品は夏によく売れます。",
-            "focus": "sells well",
-            "jaFocus": "よく売れる"
-          },
-          {
-            "en": "She sold the idea to the team.",
-            "ja": "彼女はその案をチームに納得してもらいました。",
-            "focus": "sold the idea",
-            "jaFocus": "案を売り込んだ"
-          }
-        ]
-      }
+      {"id": "sell-product", "title": "① 商品・サービスを売る", "pattern": "sell + 商品・サービス", "transitivity": "他動詞", "structure": "sell + O", "image": "商品やサービスを相手に渡し、代金を得る。", "point": "何を売るかを sell の後ろに置きます。", "examples": [
+        {"en": "We sell LED modules to sign companies.", "ja": "私たちは看板会社にLEDモジュールを販売しています。", "focus": "sell", "object": "LED modules"},
+        {"en": "Our company sells lighting systems for commercial facilities.", "ja": "私たちの会社は商業施設向けの照明システムを販売しています。", "focus": "sells", "object": "lighting systems"},
+        {"en": "They sell maintenance services with the equipment.", "ja": "彼らはその機器と一緒にメンテナンスサービスを販売しています。", "focus": "sell", "object": "maintenance services"}
+      ], "dailyExamples": []},
+      {"id": "sell-to-customer", "title": "② 相手に売る", "pattern": "sell + 商品 + to + 相手", "transitivity": "他動詞", "structure": "sell + O + to + 人・会社", "image": "商品を特定の相手へ届けて販売する。", "point": "売る相手を言う時は to を使います。", "examples": [
+        {"en": "We sell custom signs to retail stores.", "ja": "私たちは小売店に特注サインを販売しています。", "focus": "sell", "object": "custom signs"},
+        {"en": "The distributor sells our products to local contractors.", "ja": "その販売代理店は地元の施工会社に私たちの商品を販売しています。", "focus": "sells", "object": "our products"},
+        {"en": "Can we sell this model to overseas clients?", "ja": "私たちはこのモデルを海外顧客に販売できますか？", "focus": "sell", "object": "this model"}
+      ], "dailyExamples": []},
+      {"id": "sell-for-price", "title": "③ ある価格で売る", "pattern": "sell + 商品 + for + 金額", "transitivity": "他動詞", "structure": "sell + O + for + price", "image": "商品をある価格条件で販売する。", "point": "価格を表す時は for を使います。", "examples": [
+        {"en": "We sell this controller for 80,000 yen.", "ja": "私たちはこのコントローラーを8万円で販売しています。", "focus": "sell", "object": "this controller"},
+        {"en": "The supplier sells the kit for a lower price in bulk.", "ja": "その仕入先はまとめ買いの場合、そのキットをより安い価格で販売しています。", "focus": "sells", "object": "the kit"},
+        {"en": "Can we sell the sample for the same price as last time?", "ja": "私たちはそのサンプルを前回と同じ価格で販売できますか？", "focus": "sell", "object": "the sample"}
+      ], "dailyExamples": []},
+      {"id": "sell-well", "title": "④ よく売れる", "pattern": "商品 + sells well", "transitivity": "自動詞", "structure": "S + sell + adverb", "image": "商品が市場で買われやすい状態になる。", "point": "商品を主語にして This product sells well. と言います。", "examples": [
+        {"en": "This product sells well in summer.", "ja": "この商品は夏によく売れます。", "focus": "sells", "object": "well"},
+        {"en": "The compact model sold well after the exhibition.", "ja": "その小型モデルは展示会後によく売れました。", "focus": "sold", "object": "well"},
+        {"en": "Products with simple installation tend to sell well.", "ja": "設置が簡単な商品はよく売れる傾向があります。", "focus": "sell", "object": "well"}
+      ], "dailyExamples": []},
+      {"id": "sell-idea", "title": "⑤ 案・価値を納得してもらう", "pattern": "sell + idea / value", "transitivity": "他動詞", "structure": "sell + O", "image": "案や価値を相手に受け入れてもらう。", "point": "sell an idea は『案を納得してもらう・売り込む』。", "examples": [
+        {"en": "She sold the idea to the management team.", "ja": "彼女はその案を経営チームに納得してもらいました。", "focus": "sold", "object": "the idea"},
+        {"en": "We need to sell the value of this service to the client.", "ja": "私たちはこのサービスの価値を顧客に納得してもらう必要があります。", "focus": "sell", "object": "the value"},
+        {"en": "The proposal must sell the benefit clearly.", "ja": "その提案書はメリットを明確に伝えて納得してもらう必要があります。", "focus": "sell", "object": "the benefit"}
+      ], "dailyExamples": []}
     ],
-    "collocations": [],
-    "phrasalVerbs": []
+    "collocations": [
+      {"phrase": "sell well", "ja": "よく売れる", "image": "市場で自然に買われる流れがある。", "pattern": "product + sell well", "examples": [
+        {"en": "This model sells well with restaurants.", "ja": "このモデルは飲食店向けによく売れます。", "focus": "sells well"},
+        {"en": "Compact products usually sell well online.", "ja": "小型の商品は通常オンラインでよく売れます。", "focus": "sell well"},
+        {"en": "The sales team said the new color sells well.", "ja": "営業チームは新色がよく売れると言いました。", "focus": "sells well"}
+      ], "dailyExamples": []},
+      {"phrase": "sell the idea", "ja": "案を納得してもらう", "image": "案の価値を相手に伝えて受け入れてもらう。", "pattern": "sell the idea to + 相手", "examples": [
+        {"en": "We need to sell the idea to the client first.", "ja": "まずその案を顧客に納得してもらう必要があります。", "focus": "sell the idea"},
+        {"en": "The presentation helped sell the idea internally.", "ja": "そのプレゼンは社内で案を通す助けになりました。", "focus": "sell the idea"},
+        {"en": "He sold the idea by showing clear cost benefits.", "ja": "彼は明確なコストメリットを示して、その案を納得してもらいました。", "focus": "sold the idea"}
+      ], "dailyExamples": []},
+      {"phrase": "sell directly", "ja": "直接販売する", "image": "代理店を通さず顧客へ販売する。", "pattern": "sell directly to + 相手", "examples": [
+        {"en": "We sell directly to some key accounts.", "ja": "私たちは一部の重要顧客に直接販売しています。", "focus": "sell directly"},
+        {"en": "The manufacturer does not sell directly to end users.", "ja": "そのメーカーはエンドユーザーには直接販売していません。", "focus": "sell directly"},
+        {"en": "Can we sell directly to this client?", "ja": "私たちはこの顧客に直接販売できますか？", "focus": "sell directly"}
+      ], "dailyExamples": []}
+    ],
+    "phrasalVerbs": [
+      {"phrase": "sell out", "ja": "売り切れる・完売する", "image": "在庫がすべて外へ出てなくなる。", "pattern": "sell out / be sold out", "examples": [
+        {"en": "The first shipment sold out quickly.", "ja": "初回出荷分はすぐに売り切れました。", "focus": "sold out"},
+        {"en": "The item is sold out until next month.", "ja": "その商品は来月まで売り切れです。", "focus": "sold out"},
+        {"en": "We need more stock before the product sells out.", "ja": "その商品が売り切れる前に、さらに在庫が必要です。", "focus": "sells out"}
+      ], "dailyExamples": []},
+      {"phrase": "sell off", "ja": "在庫などを売り払う", "image": "残っているものをまとめて市場に出す。", "pattern": "sell off + stock / assets", "examples": [
+        {"en": "We sold off old stock before the new model arrived.", "ja": "新モデルが届く前に古い在庫を売り払いました。", "focus": "sold off"},
+        {"en": "The company plans to sell off unused equipment.", "ja": "その会社は未使用の機器を売却する予定です。", "focus": "sell off"},
+        {"en": "They sold off the remaining inventory at a discount.", "ja": "彼らは残りの在庫を割引価格で売り払いました。", "focus": "sold off"}
+      ], "dailyExamples": []},
+      {"phrase": "sell through", "ja": "流通を通じて売る", "image": "商品が販売経路を通って顧客まで進む。", "pattern": "sell through + channel", "examples": [
+        {"en": "The product sells through local distributors.", "ja": "その商品は地元の販売代理店を通じて販売されています。", "focus": "sells through"},
+        {"en": "We sell through partner companies in this region.", "ja": "この地域ではパートナー会社を通じて販売しています。", "focus": "sell through"},
+        {"en": "The brand sells through several online channels.", "ja": "そのブランドは複数のオンラインチャネルを通じて販売されています。", "focus": "sells through"}
+      ], "dailyExamples": []}
+    ]
   },
   {
     "id": "choose",
     "rank": 47,
     "word": "CHOOSE",
-    "ipa": "",
+    "ipa": "/tʃuːz/",
     "kana": "チューズ",
     "syllable": "choose",
-    "transitivity": "他動詞",
+    "transitivity": "他動詞・自動詞",
     "importance": "★★★★★ 基本",
-    "core": "選ぶ",
-    "coreDetail": "CHOOSEは、複数の選択肢から1つを選ぶ動詞です。仕事では supplier, option, date とよく使います。",
+    "core": "複数の選択肢から、自分の判断で一つを選ぶ",
+    "coreDetail": "CHOOSEは、候補の中から自分で判断して選ぶ動詞です。仕事では日程、仕入先、方法、選択肢、担当者などを決める場面でよく使います。select より会話寄りで幅広く使えます。",
+    "coreVisual": {"from": ["A案", "B案", "C案", "条件"], "to": "選んだ答え", "label": "候補を見る → 判断する → 選ぶ"},
     "meanings": [
-      {
-        "id": "main",
-        "title": "① 選ぶ",
-        "pattern": "choose + 名詞",
-        "transitivity": "他動詞",
-        "structure": "S + choose + O",
-        "image": "複数の中から選ぶ",
-        "point": "choose は select より会話で使いやすい基本動詞です。",
-        "examples": [
-          {
-            "en": "We chose the best option for the client.",
-            "ja": "私たちはその顧客にとって最適な選択肢を選びました。",
-            "focus": "chose the best option",
-            "jaFocus": "最適な選択肢を選んだ",
-            "object": "the best option",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "chose"
-              },
-              {
-                "label": "O",
-                "text": "the best option"
-              }
-            ]
-          },
-          {
-            "en": "Please choose a date for the meeting.",
-            "ja": "会議の日程を選んでください。",
-            "focus": "choose a date",
-            "jaFocus": "日程を選ぶ"
-          },
-          {
-            "en": "The team chose a new supplier.",
-            "ja": "そのチームは新しい仕入先を選びました。",
-            "focus": "chose a supplier",
-            "jaFocus": "仕入先を選んだ"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please choose a date for the meeting.",
-            "ja": "会議の日程を選んでください。",
-            "focus": "choose a date",
-            "jaFocus": "日程を選ぶ"
-          },
-          {
-            "en": "The team chose a new supplier.",
-            "ja": "そのチームは新しい仕入先を選びました。",
-            "focus": "chose a supplier",
-            "jaFocus": "仕入先を選んだ"
-          }
-        ]
-      }
+      {"id": "choose-option", "title": "① 選択肢を選ぶ", "pattern": "choose + 選択肢", "transitivity": "他動詞", "structure": "choose + O", "image": "いくつかの候補から一つを選ぶ。", "point": "選ぶ対象を choose の後ろに置きます。", "examples": [
+        {"en": "We chose the best option for the client.", "ja": "私たちはその顧客にとって最適な選択肢を選びました。", "focus": "chose", "object": "the best option"},
+        {"en": "Please choose a date for the meeting.", "ja": "会議の日程を選んでください。", "focus": "choose", "object": "a date"},
+        {"en": "The team chose a new supplier.", "ja": "そのチームは新しい仕入先を選びました。", "focus": "chose", "object": "a new supplier"}
+      ], "dailyExamples": []},
+      {"id": "choose-between", "title": "② 2つの中から選ぶ", "pattern": "choose between A and B", "transitivity": "自動詞に近い使い方", "structure": "choose between A and B", "image": "2つの候補を比べて一方を選ぶ。", "point": "2つの候補を比較する時は between を使います。", "examples": [
+        {"en": "We need to choose between these two designs.", "ja": "私たちはこの2つのデザインのどちらかを選ぶ必要があります。", "focus": "choose", "object": "between these two designs"},
+        {"en": "The client will choose between the standard plan and the premium plan.", "ja": "顧客は標準プランとプレミアムプランのどちらかを選びます。", "focus": "choose", "object": "between the standard plan and the premium plan"},
+        {"en": "Can you choose between speed and cost?", "ja": "スピードとコストのどちらを優先するか選べますか？", "focus": "choose", "object": "between speed and cost"}
+      ], "dailyExamples": []},
+      {"id": "choose-from", "title": "③ 一覧・候補の中から選ぶ", "pattern": "choose + O + from + 候補", "transitivity": "他動詞", "structure": "choose + O + from + group", "image": "候補のまとまりから一つを取り出す。", "point": "候補の範囲を示す時は from を使います。", "examples": [
+        {"en": "Please choose one item from the list.", "ja": "リストの中から1つの商品を選んでください。", "focus": "choose", "object": "one item"},
+        {"en": "We chose three candidates from the applications.", "ja": "私たちは応募の中から3人の候補者を選びました。", "focus": "chose", "object": "three candidates"},
+        {"en": "The client chose a color from our sample book.", "ja": "顧客は私たちのサンプル帳から色を選びました。", "focus": "chose", "object": "a color"}
+      ], "dailyExamples": []},
+      {"id": "choose-for-purpose", "title": "④ 目的・相手のために選ぶ", "pattern": "choose + O + for + 目的・相手", "transitivity": "他動詞", "structure": "choose + O + for + purpose/person", "image": "目的や相手に合うものを選ぶ。", "point": "何のために選ぶかを言う時は for を使います。", "examples": [
+        {"en": "We chose this product for the new store.", "ja": "私たちは新店舗用にこの商品を選びました。", "focus": "chose", "object": "this product"},
+        {"en": "She chose a simple layout for the presentation.", "ja": "彼女はプレゼン用にシンプルなレイアウトを選びました。", "focus": "chose", "object": "a simple layout"},
+        {"en": "Please choose the best option for the customer.", "ja": "顧客に最適な選択肢を選んでください。", "focus": "choose", "object": "the best option"}
+      ], "dailyExamples": []},
+      {"id": "choose-to-do", "title": "⑤ 〜することを選ぶ", "pattern": "choose to do", "transitivity": "他動詞的", "structure": "choose + to do", "image": "行動の選択肢から一つを選ぶ。", "point": "choose to do は『自分の判断で〜することを選ぶ』。", "examples": [
+        {"en": "We chose to delay the launch by one week.", "ja": "私たちは発売を1週間遅らせることを選びました。", "focus": "chose", "object": "to delay the launch"},
+        {"en": "The client chose to review the proposal again.", "ja": "顧客は提案をもう一度確認することを選びました。", "focus": "chose", "object": "to review the proposal again"},
+        {"en": "They chose to use a local supplier.", "ja": "彼らは地元の仕入先を使うことを選びました。", "focus": "chose", "object": "to use a local supplier"}
+      ], "dailyExamples": []}
     ],
-    "collocations": [],
-    "phrasalVerbs": []
+    "collocations": [
+      {"phrase": "choose the best option", "ja": "最適な選択肢を選ぶ", "image": "複数の候補から最も合うものを選ぶ。", "pattern": "choose the best option", "examples": [
+        {"en": "We need to choose the best option for the client.", "ja": "私たちは顧客に最適な選択肢を選ぶ必要があります。", "focus": "choose the best option"},
+        {"en": "The team chose the best option after comparing costs.", "ja": "チームはコストを比較した後、最適な選択肢を選びました。", "focus": "chose the best option"},
+        {"en": "Can you help me choose the best option?", "ja": "最適な選択肢を選ぶのを手伝ってもらえますか？", "focus": "choose the best option"}
+      ], "dailyExamples": []},
+      {"phrase": "choose a supplier", "ja": "仕入先を選ぶ", "image": "条件に合う取引先を選ぶ。", "pattern": "choose a supplier", "examples": [
+        {"en": "We must choose a supplier by next week.", "ja": "私たちは来週までに仕入先を選ばなければなりません。", "focus": "choose a supplier"},
+        {"en": "The purchasing team chose a supplier with stable delivery.", "ja": "購買チームは納品が安定している仕入先を選びました。", "focus": "chose a supplier"},
+        {"en": "It is risky to choose a supplier only by price.", "ja": "価格だけで仕入先を選ぶのは危険です。", "focus": "choose a supplier"}
+      ], "dailyExamples": []},
+      {"phrase": "choose based on", "ja": "〜に基づいて選ぶ", "image": "判断材料を基準にして選ぶ。", "pattern": "choose based on + 基準", "examples": [
+        {"en": "We chose the product based on durability.", "ja": "私たちは耐久性に基づいてその商品を選びました。", "focus": "chose"},
+        {"en": "Please choose based on the client's requirements.", "ja": "顧客の要件に基づいて選んでください。", "focus": "choose"},
+        {"en": "The team chose based on delivery time and cost.", "ja": "チームは納期とコストに基づいて選びました。", "focus": "chose"}
+      ], "dailyExamples": []}
+    ],
+    "phrasalVerbs": [
+      {"phrase": "choose from", "ja": "〜の中から選ぶ", "image": "候補のまとまりから一つを取り出す。", "pattern": "choose from + 候補", "examples": [
+        {"en": "You can choose from three delivery options.", "ja": "3つの配送オプションから選べます。", "focus": "choose from"},
+        {"en": "The client chose from several sample colors.", "ja": "顧客はいくつかのサンプル色から選びました。", "focus": "chose from"},
+        {"en": "Please choose from the approved supplier list.", "ja": "承認済み仕入先リストから選んでください。", "focus": "choose from"}
+      ], "dailyExamples": []},
+      {"phrase": "choose between", "ja": "2つの中から選ぶ", "image": "2つの候補の間で判断する。", "pattern": "choose between A and B", "examples": [
+        {"en": "We need to choose between these two vendors.", "ja": "私たちはこの2社のどちらかを選ぶ必要があります。", "focus": "choose between"},
+        {"en": "The customer chose between two colors.", "ja": "顧客は2色のどちらかを選びました。", "focus": "chose between"},
+        {"en": "Can you choose between the two schedules?", "ja": "2つのスケジュールのどちらかを選べますか？", "focus": "choose between"}
+      ], "dailyExamples": []},
+      {"phrase": "choose to", "ja": "〜することを選ぶ", "image": "行動の選択肢を自分で決める。", "pattern": "choose to do", "examples": [
+        {"en": "We chose to postpone the meeting.", "ja": "私たちは会議を延期することを選びました。", "focus": "chose to"},
+        {"en": "The client chose to change the specification.", "ja": "顧客は仕様を変更することを選びました。", "focus": "chose to"},
+        {"en": "They chose to work with a local partner.", "ja": "彼らは地元のパートナーと仕事をすることを選びました。", "focus": "chose to"}
+      ], "dailyExamples": []}
+    ]
   },
   {
     "id": "follow",
     "rank": 48,
     "word": "FOLLOW",
-    "ipa": "",
+    "ipa": "/ˈfɑːloʊ/",
     "kana": "フォロー",
-    "syllable": "follow",
-    "transitivity": "他動詞",
+    "syllable": "fol-low",
+    "transitivity": "他動詞・自動詞",
     "importance": "★★★★★ 基本",
-    "core": "従う・追う",
-    "coreDetail": "FOLLOWは、手順や指示に従う、または進捗を追う時に使います。",
+    "core": "流れ・指示・相手の後についていく",
+    "coreDetail": "FOLLOWは、指示や手順に従う、進捗を追う、相手の説明を理解してついていく、後で連絡するという感覚で使います。仕事では手順・ルール・スケジュール・顧客対応と相性が良い動詞です。",
+    "coreVisual": {"from": ["📋 手順", "🧭 指示", "📅 予定", "👤 相手"], "to": "同じ流れで進む", "label": "前にある流れ → その後についていく"},
     "meanings": [
-      {
-        "id": "main",
-        "title": "① 従う・追う",
-        "pattern": "follow + 指示・手順",
-        "transitivity": "他動詞",
-        "structure": "S + follow + O",
-        "image": "流れや指示の後についていく",
-        "point": "follow the instructions は「指示に従う」。follow up with は「後追いで連絡する」です。",
-        "examples": [
-          {
-            "en": "Please follow the installation instructions carefully.",
-            "ja": "設置手順に注意して従ってください。",
-            "focus": "follow the instructions",
-            "jaFocus": "手順に従う",
-            "object": "the instructions",
-            "sentencePattern": "V + O",
-            "grammarParts": [
-              {
-                "label": "V",
-                "text": "follow"
-              },
-              {
-                "label": "O",
-                "text": "the instructions"
-              }
-            ]
-          },
-          {
-            "en": "I followed up with the client this morning.",
-            "ja": "私は今朝、その顧客にフォロー連絡をしました。",
-            "focus": "followed up with",
-            "jaFocus": "フォロー連絡をした"
-          },
-          {
-            "en": "We need to follow the schedule closely.",
-            "ja": "私たちはスケジュールをしっかり追う必要があります。",
-            "focus": "follow the schedule",
-            "jaFocus": "スケジュールを追う"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I followed up with the client this morning.",
-            "ja": "私は今朝、その顧客にフォロー連絡をしました。",
-            "focus": "followed up with",
-            "jaFocus": "フォロー連絡をした"
-          },
-          {
-            "en": "We need to follow the schedule closely.",
-            "ja": "私たちはスケジュールをしっかり追う必要があります。",
-            "focus": "follow the schedule",
-            "jaFocus": "スケジュールを追う"
-          }
-        ]
-      }
+      {"id": "follow-instructions", "title": "① 指示・手順に従う", "pattern": "follow + instructions / procedure / rules", "transitivity": "他動詞", "structure": "follow + O", "image": "決められた流れの後について進む。", "point": "follow the instructions は『指示に従う』。", "examples": [
+        {"en": "Please follow the installation instructions carefully.", "ja": "設置手順に注意して従ってください。", "focus": "follow", "object": "the installation instructions"},
+        {"en": "We must follow the safety rules on site.", "ja": "私たちは現場で安全ルールに従わなければなりません。", "focus": "follow", "object": "the safety rules"},
+        {"en": "The team followed the approval procedure.", "ja": "チームは承認手順に従いました。", "focus": "followed", "object": "the approval procedure"}
+      ], "dailyExamples": []},
+      {"id": "follow-schedule", "title": "② スケジュール・計画に沿う", "pattern": "follow + schedule / plan", "transitivity": "他動詞", "structure": "follow + O", "image": "予定された流れに沿って進める。", "point": "follow the schedule は『スケジュールに沿う・追う』。", "examples": [
+        {"en": "We need to follow the schedule closely.", "ja": "私たちはスケジュールにしっかり沿って進める必要があります。", "focus": "follow", "object": "the schedule"},
+        {"en": "The project followed the original plan until May.", "ja": "その案件は5月までは当初の計画通りに進みました。", "focus": "followed", "object": "the original plan"},
+        {"en": "Please follow the delivery plan we shared yesterday.", "ja": "昨日共有した納品計画に沿って進めてください。", "focus": "follow", "object": "the delivery plan"}
+      ], "dailyExamples": []},
+      {"id": "follow-progress", "title": "③ 進捗・状況を追う", "pattern": "follow + progress / status / trend", "transitivity": "他動詞", "structure": "follow + O", "image": "物事の変化や進み具合を追いかける。", "point": "follow progress は『進捗を追う』。", "examples": [
+        {"en": "I follow the project progress every morning.", "ja": "私は毎朝その案件の進捗を追っています。", "focus": "follow", "object": "the project progress"},
+        {"en": "We should follow the market trend before setting the price.", "ja": "価格を設定する前に市場動向を追うべきです。", "focus": "follow", "object": "the market trend"},
+        {"en": "The manager followed the issue until it was resolved.", "ja": "マネージャーはその問題が解決するまで状況を追いました。", "focus": "followed", "object": "the issue"}
+      ], "dailyExamples": []},
+      {"id": "follow-explanation", "title": "④ 説明を理解してついていく", "pattern": "follow + explanation / discussion", "transitivity": "他動詞", "structure": "follow + O", "image": "相手の話の流れについていく。", "point": "I follow you. は『あなたの話を理解しています』。", "examples": [
+        {"en": "I could follow the explanation clearly.", "ja": "私はその説明をはっきり理解してついていけました。", "focus": "follow", "object": "the explanation"},
+        {"en": "Some members could not follow the technical discussion.", "ja": "一部のメンバーは技術的な議論についていけませんでした。", "focus": "follow", "object": "the technical discussion"},
+        {"en": "Please speak slowly so everyone can follow you.", "ja": "全員が理解してついていけるように、ゆっくり話してください。", "focus": "follow", "object": "you"}
+      ], "dailyExamples": []},
+      {"id": "follow-up-contact", "title": "⑤ 後で確認・連絡する", "pattern": "follow up with + 相手 / follow up on + 内容", "transitivity": "句動詞的", "structure": "follow up with / on", "image": "一度終わった話を後から追いかけて確認する。", "point": "follow up with は『人に追加連絡する』。follow up on は『内容について確認する』。", "examples": [
+        {"en": "I followed up with the client this morning.", "ja": "私は今朝、その顧客に追加確認の連絡をしました。", "focus": "followed up with"},
+        {"en": "Please follow up on the quotation tomorrow.", "ja": "明日、その見積について追加確認してください。", "focus": "follow up on"},
+        {"en": "We need to follow up with the supplier about the delivery date.", "ja": "納期について仕入先に追加確認する必要があります。", "focus": "follow up with"}
+      ], "dailyExamples": []}
     ],
-    "collocations": [],
-    "phrasalVerbs": []
+    "collocations": [
+      {"phrase": "follow the instructions", "ja": "指示に従う", "image": "指示された流れに沿って動く。", "pattern": "follow the instructions", "examples": [
+        {"en": "Please follow the instructions in the manual.", "ja": "マニュアルの指示に従ってください。", "focus": "follow the instructions"},
+        {"en": "The installer followed the instructions step by step.", "ja": "設置担当者は手順ごとに指示に従いました。", "focus": "followed the instructions"},
+        {"en": "If we follow the instructions, we can avoid mistakes.", "ja": "指示に従えば、ミスを避けられます。", "focus": "follow the instructions"}
+      ], "dailyExamples": []},
+      {"phrase": "follow the rules", "ja": "ルールに従う", "image": "決められたルールの範囲内で動く。", "pattern": "follow the rules", "examples": [
+        {"en": "All staff must follow the safety rules.", "ja": "全スタッフは安全ルールに従わなければなりません。", "focus": "follow the safety rules"},
+        {"en": "We follow the company rules for approvals.", "ja": "私たちは承認について会社のルールに従っています。", "focus": "follow the company rules"},
+        {"en": "The contractor did not follow the site rules.", "ja": "その施工業者は現場ルールに従いませんでした。", "focus": "follow the site rules"}
+      ], "dailyExamples": []},
+      {"phrase": "follow the schedule", "ja": "スケジュールに沿う", "image": "予定された時間の流れに沿って進む。", "pattern": "follow the schedule", "examples": [
+        {"en": "We need to follow the schedule until delivery.", "ja": "納品までスケジュールに沿って進める必要があります。", "focus": "follow the schedule"},
+        {"en": "The project followed the schedule without major delays.", "ja": "その案件は大きな遅れなくスケジュール通りに進みました。", "focus": "followed the schedule"},
+        {"en": "Please follow the schedule shared by the project manager.", "ja": "プロジェクトマネージャーが共有したスケジュールに沿ってください。", "focus": "follow the schedule"}
+      ], "dailyExamples": []}
+    ],
+    "phrasalVerbs": [
+      {"phrase": "follow up", "ja": "追加確認する・後で連絡する", "image": "一度出た話を後から追いかける。", "pattern": "follow up", "examples": [
+        {"en": "I will follow up tomorrow.", "ja": "明日、追加確認します。", "focus": "follow up"},
+        {"en": "Please follow up after the meeting.", "ja": "会議後に追加で確認してください。", "focus": "follow up"},
+        {"en": "The sales team followed up quickly.", "ja": "営業チームはすぐに追加連絡しました。", "focus": "followed up"}
+      ], "dailyExamples": []},
+      {"phrase": "follow up with", "ja": "〜に追加連絡する", "image": "相手に向かって後追いで連絡する。", "pattern": "follow up with + 人・会社", "examples": [
+        {"en": "Please follow up with the client today.", "ja": "今日、その顧客に追加連絡してください。", "focus": "follow up with"},
+        {"en": "I followed up with the supplier about the delay.", "ja": "私は遅延について仕入先に追加確認しました。", "focus": "followed up with"},
+        {"en": "We should follow up with the design team this afternoon.", "ja": "今日の午後、デザインチームに追加確認するべきです。", "focus": "follow up with"}
+      ], "dailyExamples": []},
+      {"phrase": "follow up on", "ja": "〜について追加確認する", "image": "特定の内容に意識を戻して確認する。", "pattern": "follow up on + 内容", "examples": [
+        {"en": "Can you follow up on the quotation?", "ja": "その見積について追加確認してもらえますか？", "focus": "follow up on"},
+        {"en": "We need to follow up on the unpaid invoice.", "ja": "未払いの請求書について追加確認する必要があります。", "focus": "follow up on"},
+        {"en": "She followed up on the customer's request.", "ja": "彼女は顧客の依頼について追加確認しました。", "focus": "followed up on"}
+      ], "dailyExamples": []}
+    ]
   },
   {
     "id": "create",

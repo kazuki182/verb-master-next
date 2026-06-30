@@ -281,9 +281,16 @@ input, select, textarea { color:#f8fafc; background:#0b1525; border-color:rgba(1
 .home-level-avatar img { display: block; }
 @media (max-width: 430px) {
   .home-level-card { border-radius: 20px; padding: 16px !important; }
-  .home-level-avatar { height: 56px !important; width: 56px !important; border-radius: 20px !important; }
+  .home-level-avatar { height: 68px !important; width: 68px !important; border-radius: 22px !important; }
   .home-level-main { font-size: 38px; }
 }
 @media (max-width: 360px) {
   .home-level-main { font-size: 34px; }
+}
+
+
+/* Ver.88: badge detail bottom sheet and more visible HOME profile status */
+.badge-bottom-sheet {
+  max-height: min(70vh, 560px);
+  overflow-y: auto;
 }

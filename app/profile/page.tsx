@@ -20,7 +20,6 @@ import {
 import { verbs } from "@/lib/data";
 import VoiceSettingsPanel from "@/components/VoiceSettingsPanel";
 import DataBackupPanel from "@/components/DataBackupPanel";
-import BadgeList from "@/components/BadgeList";
 import {
   CLOUD_SYNC_EVENT,
   getCloudBackupComparison,
@@ -33,7 +32,7 @@ import {
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 87";
+const VERSION = "Version 88";
 
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
@@ -344,6 +343,17 @@ export default function ProfilePage() {
                 <p className="font-extrabold text-cyan-100">{progress.currentStreak}日</p>
               </div>
             </div>
+            <div className="mt-3 rounded-2xl border border-cyan-300/15 bg-slate-950/55 p-3 text-sm">
+              <div className="flex items-center justify-between gap-3">
+                <span className="font-bold text-slate-300">利用状態</span>
+                <span className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-xs font-extrabold text-cyan-100">
+                  {plan.hasPremium ? "Premium" : "無料プラン"}
+                </span>
+              </div>
+              <p className="mt-2 text-xs font-bold text-slate-300">
+                解放範囲：<span className="text-white">{plan.unlocked}語</span> / {plan.totalTarget}語
+              </p>
+            </div>
           </div>
         </div>
 
@@ -477,9 +487,14 @@ export default function ProfilePage() {
           <p className="mt-1 text-xs leading-5 text-slate-300">
             {cloudStatus?.updatedAt ? `最終保存：${formatDateTime(cloudStatus.updatedAt)}` : "最終保存：確認中"}
           </p>
-          {cloudEvent?.phase === "error" && (
+          {cloudEvent?.phase === "error" && cloudStatus?.stats === "error" && (
             <p className="mt-2 rounded-xl border border-rose-300/25 bg-rose-300/10 p-2 text-xs font-bold text-rose-100">
-              保存に失敗しました。通信環境を確認して、詳細から手動保存を試してください。
+              学習記録の保存に失敗しました。通信環境とSupabase設定を確認してください。
+            </p>
+          )}
+          {cloudStatus?.stats === "saved" && [cloudStatus.profile, cloudStatus.avatar, cloudStatus.premium].includes("error") && (
+            <p className="mt-2 rounded-xl border border-amber-300/25 bg-amber-300/10 p-2 text-xs font-bold text-amber-100">
+              学習記録は保存済みです。一部の補助データは詳細で確認してください。
             </p>
           )}
         </div>
@@ -589,21 +604,14 @@ export default function ProfilePage() {
 
       <VoiceSettingsPanel />
 
-      <section className="card p-5">
-        <div className="flex items-center justify-between gap-3">
-          <div>
-            <h2 className="text-xl font-bold">獲得バッジ</h2>
-            <p className="mt-1 text-sm text-muted">継続・テスト・動詞MASTERで自動獲得します。</p>
-          </div>
-          <p className="shrink-0 text-2xl font-extrabold text-cyan-100">{badges.length}</p>
-        </div>
-        <div className="mt-4"><BadgeList badges={badges} /></div>
-      </section>
+      {/* Ver.88: 獲得バッジの詳細はHOMEレベルカードの下から出るシートへ統合。 */}
 
 {isAdmin && (
       <section className="card p-5">
         <h2 className="text-xl font-bold">アップデート履歴</h2>
         <div className="mt-4 space-y-3 text-sm">
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.88</p><p className="mt-1 text-muted">保存失敗表示を学習記録本体と補助データで分離。HOMEのプロフィールアイコンとXP表示を改善し、次のレベルまでのXPを追加。獲得バッジはHOMEレベルカードに統合し、タップで下から詳細シートを開く形にしました。マイページのプロフィールにPremium状態と解放範囲も追加。</p></div>
+<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.87</p><p className="mt-1 text-muted">HOME上部をプロフィール＋レベルカードに統合。マイページのニックネーム、アイコン、レベル、リーグ、XP、連続学習、バッジをHOMEで見やすく整理し、主要機能は下部ナビに集約しました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.86</p><p className="mt-1 text-muted">管理者専用の動詞品質チェックページを追加。使い方数、例文数、Premium日常例文、大文字表記、仮文、テスト日本語、文型データの確認状態を一覧で見られるようにしました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.85</p><p className="mt-1 text-muted">PCとスマホ間の目標日同期を改善。HOMEの使い方ガイドカードを削除し、レベル欄へバッジを移動。Streakを連続学習に日本語化し、保存状態の表示も学習記録中心に整理しました。</p></div>
 <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.84</p><p className="mt-1 text-muted">テスト途中保存を見える化。単語別テスト画面に途中保存カードを追加し、テスト完了後も何回でもランダム10問を受け直せるようにしました。完了ボーナスも毎回加算されます。</p></div>

@@ -58,6 +58,7 @@ export default function Home() {
   const [paceSaving, setPaceSaving] = useState(false);
   const [isPaceEditing, setIsPaceEditing] = useState(false);
   const [isTargetEditing, setIsTargetEditing] = useState(false);
+  const [showBadgeSheet, setShowBadgeSheet] = useState(false);
 
   useEffect(() => {
     initAdminAccount();
@@ -228,6 +229,8 @@ export default function Home() {
       ? "今の設定のまま進めれば大丈夫です。"
       : `${plan.recommendedPaceLabel}に近づけると、目標に間に合いやすくなります。`;
   const badges = getComputedBadges(progress);
+  const nextLevelXp = progress.level * 100;
+  const xpToNextLevel = Math.max(0, nextLevelXp - (progress.xp || 0));
   const displayName = progress.displayName || username;
   const seasonSummary = getSeasonRankSummary(username);
   const leagueLine = seasonSummary?.total
@@ -266,7 +269,7 @@ export default function Home() {
       <section className="home-level-card p-5">
         <div className="flex items-center gap-4">
           <Link
-            className="home-level-avatar flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-3xl border border-cyan-300/30 bg-slate-900 text-3xl shadow-lg"
+            className="home-level-avatar flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-3xl border border-cyan-300/30 bg-slate-900 text-4xl shadow-lg"
             href="/profile"
             aria-label="マイページを開く"
           >
@@ -284,19 +287,67 @@ export default function Home() {
                 <p className="home-level-main">Lv.{progress.level}</p>
                 <p className="mt-1 text-sm font-bold text-cyan-100">{leagueLine}</p>
               </div>
-              <div className="shrink-0 rounded-2xl border border-cyan-300/20 bg-slate-950/55 px-3 py-2 text-center">
+              <button
+                className="shrink-0 rounded-2xl border border-cyan-300/20 bg-slate-950/55 px-3 py-2 text-center transition hover:bg-cyan-300/10"
+                type="button"
+                onClick={() => setShowBadgeSheet(true)}
+                aria-label="獲得バッジの詳細を開く"
+              >
                 <p className="text-xs font-bold text-cyan-200">バッジ</p>
                 <p className="text-lg font-extrabold text-white">🏅 {badges.length}</p>
-              </div>
+              </button>
             </div>
-            <p className="mt-2 text-sm font-bold text-slate-300">
-              XP <span className="text-white">{progress.xp}</span>
-              <span className="mx-2 text-slate-500">・</span>
-              連続学習 <span className="text-white">{progress.currentStreak}日</span>
-            </p>
+            <div className="mt-3 rounded-2xl border border-cyan-300/15 bg-slate-950/40 px-3 py-2">
+              <p className="text-lg font-extrabold leading-tight text-white">
+                XP {progress.xp}
+              </p>
+              <p className="mt-1 text-xs font-bold text-cyan-100">
+                次のレベルまで {xpToNextLevel} XP
+              </p>
+              <p className="mt-1 text-xs font-bold text-slate-300">
+                連続学習 <span className="text-white">{progress.currentStreak}日</span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
+
+      {showBadgeSheet && (
+        <div className="fixed inset-0 z-[80] flex items-end bg-black/55 px-4 pb-4" onClick={() => setShowBadgeSheet(false)}>
+          <div
+            className="mx-auto w-full max-w-xl rounded-t-3xl border border-cyan-300/20 bg-slate-950 p-5 shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="mx-auto mb-4 h-1.5 w-12 rounded-full bg-slate-600" />
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-xs font-bold tracking-[0.18em] text-cyan-200">BADGES</p>
+                <h2 className="mt-1 text-2xl font-extrabold text-white">獲得バッジ</h2>
+                <p className="mt-1 text-sm text-slate-300">レベルカード内のバッジ詳細です。</p>
+              </div>
+              <button
+                className="rounded-full border border-cyan-300/20 px-3 py-1.5 text-sm font-bold text-cyan-100"
+                type="button"
+                onClick={() => setShowBadgeSheet(false)}
+              >
+                閉じる
+              </button>
+            </div>
+            <div className="mt-4 grid gap-2">
+              {badges.length ? badges.map((badge) => (
+                <div key={badge} className="rounded-2xl border border-cyan-300/15 bg-slate-900/80 px-4 py-3 text-sm font-bold text-cyan-50">
+                  {badge}
+                </div>
+              )) : (
+                <p className="rounded-2xl border border-cyan-300/15 bg-slate-900/80 px-4 py-3 text-sm text-slate-300">
+                  まだ獲得バッジはありません。
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       <section className="digital-card p-5">
         <div className="flex items-start justify-between gap-3">

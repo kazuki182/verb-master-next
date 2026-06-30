@@ -175,7 +175,7 @@ async function upsertFullProgressBackup(progress: UserProgress) {
       username: progress.username,
       progress_json: progress,
       settings_json: settings,
-      app_version: "v85",
+      app_version: "v88",
       updated_at: nowText(),
     },
     { onConflict: "username" },

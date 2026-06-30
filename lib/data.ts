@@ -32541,45 +32541,427 @@ export const verbs: Verb[] = [
     "syllable": "de-liv-er",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★☆☆ 基本",
-    "core": "相手のところまで届ける・結果を出す",
-    "coreDetail": "DELIVERは、商品・資料・結果を相手に届ける時に使います。仕事では納品する、成果を出すという意味でも重要です。",
+    "core": "相手に届くところまで確実に運ぶ・約束した結果を出す",
+    "coreDetail": "DELIVERは、商品・資料・メール・サービス・成果を、相手が受け取れる状態まで届ける動詞です。仕事では「納品する」「提出する」「実行して結果を出す」という意味でよく使います。",
+    "coreVisual": {
+        "from": [
+            "商品",
+            "資料",
+            "約束",
+            "サービス",
+            "成果"
+        ],
+        "to": "顧客・担当者・現場・結果",
+        "label": "こちら側から相手へ確実に届く"
+    },
     "meanings": [
-      {
-        "id": "send-result",
-        "title": "① 届ける・納品する・成果を出す",
-        "pattern": "DELIVER + 名詞",
-        "transitivity": "他動詞",
-        "structure": "S + deliver + O",
-        "image": "相手が受け取れる場所まで持っていく。",
-        "point": "deliver products は商品を納品する。deliver results は成果を出す。",
-        "examples": [
-          {
-            "en": "We delivered the samples yesterday.",
-            "ja": "私たちは昨日サンプルを納品しました。",
-            "focus": "delivered",
-            "object": "the samples",
-            "jaFocus": "納品しました"
-          },
-          {
-            "en": "Can you deliver the data by Friday?",
-            "ja": "あなたは金曜日までにデータを届けられますか？",
-            "focus": "deliver",
-            "object": "the data",
-            "jaFocus": "届けられますか"
-          },
-          {
-            "en": "The team delivered good results.",
-            "ja": "チームは良い成果を出しました。",
-            "focus": "delivered",
-            "object": "good results",
-            "jaFocus": "成果を出しました"
-          }
-        ]
-      }
+        {
+            "id": "deliver-products",
+            "title": "① 商品・資料を届ける・納品する",
+            "pattern": "deliver + 商品/資料",
+            "transitivity": "他動詞",
+            "structure": "S + deliver + O",
+            "image": "物や資料を相手の手元に届く状態にする。",
+            "point": "deliver products / deliver documents は、商品や書類を届ける時の基本表現です。",
+            "examples": [
+                {
+                    "en": "We delivered the samples to the client yesterday.",
+                    "ja": "私たちは昨日、顧客にサンプルを納品しました。",
+                    "focus": "delivered",
+                    "object": "the samples"
+                },
+                {
+                    "en": "Please deliver the documents to the site by Friday.",
+                    "ja": "金曜日までに資料を現場へ届けてください。",
+                    "focus": "deliver",
+                    "object": "the documents"
+                },
+                {
+                    "en": "The supplier delivered the parts earlier than expected.",
+                    "ja": "仕入先は予定より早く部品を納品しました。",
+                    "focus": "delivered",
+                    "object": "the parts"
+                }
+            ]
+        },
+        {
+            "id": "deliver-results",
+            "title": "② 成果・結果を出す",
+            "pattern": "deliver + results/value/performance",
+            "transitivity": "他動詞",
+            "structure": "S + deliver + O",
+            "image": "約束した成果を形にして相手に示す。",
+            "point": "deliver results は、仕事で成果を出すという意味でよく使います。",
+            "examples": [
+                {
+                    "en": "The team delivered strong results this quarter.",
+                    "ja": "チームは今四半期に良い成果を出しました。",
+                    "focus": "delivered",
+                    "object": "strong results"
+                },
+                {
+                    "en": "This campaign delivered better sales than expected.",
+                    "ja": "このキャンペーンは予想以上の売上を出しました。",
+                    "focus": "delivered",
+                    "object": "better sales"
+                },
+                {
+                    "en": "We need to deliver value to our customers.",
+                    "ja": "私たちは顧客に価値を提供する必要があります。",
+                    "focus": "deliver",
+                    "object": "value"
+                }
+            ]
+        },
+        {
+            "id": "deliver-service",
+            "title": "③ サービス・対応を提供する",
+            "pattern": "deliver + service/support/solution",
+            "transitivity": "他動詞",
+            "structure": "S + deliver + O",
+            "image": "相手が必要としているサービスや対応を実際に提供する。",
+            "point": "deliver service は、サービス品質や顧客対応で使いやすい表現です。",
+            "examples": [
+                {
+                    "en": "We deliver technical support after installation.",
+                    "ja": "私たちは設置後に技術サポートを提供します。",
+                    "focus": "deliver",
+                    "object": "technical support"
+                },
+                {
+                    "en": "Our team delivers a complete solution for signage projects.",
+                    "ja": "私たちのチームはサイン案件向けに総合的な解決策を提供します。",
+                    "focus": "delivers",
+                    "object": "a complete solution"
+                },
+                {
+                    "en": "The company delivers reliable service to repeat customers.",
+                    "ja": "その会社はリピート顧客に信頼できるサービスを提供しています。",
+                    "focus": "delivers",
+                    "object": "reliable service"
+                }
+            ]
+        },
+        {
+            "id": "deliver-on-time",
+            "title": "④ 期限通りに納める",
+            "pattern": "deliver on time / deliver by + 日時",
+            "transitivity": "自動詞・他動詞",
+            "structure": "S + deliver + M",
+            "image": "約束した期限までに届ける・終える。",
+            "point": "納期や締切の話では deliver on time / deliver by Friday が便利です。",
+            "examples": [
+                {
+                    "en": "We must deliver on time for this project.",
+                    "ja": "私たちはこの案件を期限通りに納めなければなりません。",
+                    "focus": "deliver on time"
+                },
+                {
+                    "en": "Can the factory deliver by the end of the month?",
+                    "ja": "工場は月末までに納品できますか？",
+                    "focus": "deliver by"
+                },
+                {
+                    "en": "The vendor failed to deliver on schedule.",
+                    "ja": "その業者は予定通りに納品できませんでした。",
+                    "focus": "deliver on schedule"
+                }
+            ]
+        },
+        {
+            "id": "deliver-message",
+            "title": "⑤ メッセージ・情報を伝える",
+            "pattern": "deliver + message/presentation/report",
+            "transitivity": "他動詞",
+            "structure": "S + deliver + O",
+            "image": "内容を相手に分かる形で伝える。",
+            "point": "deliver a presentation は、発表を行うという意味です。",
+            "examples": [
+                {
+                    "en": "She delivered the presentation to the client.",
+                    "ja": "彼女は顧客にプレゼンを行いました。",
+                    "focus": "delivered",
+                    "object": "the presentation"
+                },
+                {
+                    "en": "Please deliver this message to the sales team.",
+                    "ja": "このメッセージを営業チームに伝えてください。",
+                    "focus": "deliver",
+                    "object": "this message"
+                },
+                {
+                    "en": "He delivered a clear report during the meeting.",
+                    "ja": "彼は会議中に分かりやすい報告をしました。",
+                    "focus": "delivered",
+                    "object": "a clear report"
+                }
+            ]
+        },
+        {
+            "id": "deliver-promise",
+            "title": "⑥ 約束・期待に応える",
+            "pattern": "deliver on + promise/expectation",
+            "transitivity": "自動詞",
+            "structure": "S + deliver on + O",
+            "image": "言ったことや期待されたことを実際に実現する。",
+            "point": "deliver on a promise は、約束を果たすという意味です。",
+            "examples": [
+                {
+                    "en": "We need to deliver on our promise to the customer.",
+                    "ja": "私たちは顧客との約束を果たす必要があります。",
+                    "focus": "deliver on",
+                    "object": "our promise"
+                },
+                {
+                    "en": "The new product delivered on expectations.",
+                    "ja": "新商品は期待に応えました。",
+                    "focus": "delivered on",
+                    "object": "expectations"
+                },
+                {
+                    "en": "The supplier did not deliver on the agreed conditions.",
+                    "ja": "仕入先は合意した条件を果たしませんでした。",
+                    "focus": "deliver on",
+                    "object": "the agreed conditions"
+                }
+            ]
+        }
     ],
-    "collocations": [],
-    "phrasalVerbs": []
-  },
+    "collocations": [
+        {
+            "phrase": "deliver results",
+            "ja": "成果を出す",
+            "image": "努力や計画を実際の成果として出す。",
+            "pattern": "deliver results",
+            "examples": [
+                {
+                    "en": "The new sales approach delivered results quickly.",
+                    "ja": "新しい営業方法はすぐに成果を出しました。",
+                    "focus": "delivered results"
+                },
+                {
+                    "en": "Management expects this project to deliver results.",
+                    "ja": "経営陣はこの案件が成果を出すことを期待しています。",
+                    "focus": "deliver results"
+                },
+                {
+                    "en": "We need a plan that can deliver results within three months.",
+                    "ja": "私たちは3か月以内に成果を出せる計画が必要です。",
+                    "focus": "deliver results"
+                }
+            ]
+        },
+        {
+            "phrase": "deliver value",
+            "ja": "価値を提供する",
+            "image": "顧客にとって意味のある価値を届ける。",
+            "pattern": "deliver value",
+            "examples": [
+                {
+                    "en": "Our proposal must deliver value to the client.",
+                    "ja": "私たちの提案は顧客に価値を提供しなければなりません。",
+                    "focus": "deliver value"
+                },
+                {
+                    "en": "This service delivers value after installation.",
+                    "ja": "このサービスは設置後に価値を提供します。",
+                    "focus": "delivers value"
+                },
+                {
+                    "en": "We should focus on delivering value, not only lowering prices.",
+                    "ja": "私たちは価格を下げるだけでなく、価値を提供することに集中すべきです。",
+                    "focus": "delivering value"
+                }
+            ]
+        },
+        {
+            "phrase": "deliver a presentation",
+            "ja": "プレゼンを行う",
+            "image": "聞き手に向けて内容を発表する。",
+            "pattern": "deliver a presentation",
+            "examples": [
+                {
+                    "en": "I will deliver a presentation at the customer meeting.",
+                    "ja": "私は顧客との会議でプレゼンを行います。",
+                    "focus": "deliver a presentation"
+                },
+                {
+                    "en": "She delivered a presentation about the new product.",
+                    "ja": "彼女は新商品についてプレゼンを行いました。",
+                    "focus": "delivered a presentation"
+                },
+                {
+                    "en": "We need to prepare before delivering the presentation.",
+                    "ja": "プレゼンを行う前に準備する必要があります。",
+                    "focus": "delivering the presentation"
+                }
+            ]
+        },
+        {
+            "phrase": "deliver on time",
+            "ja": "期限通りに納める",
+            "image": "約束した時間・日程に間に合わせる。",
+            "pattern": "deliver on time",
+            "examples": [
+                {
+                    "en": "The client expects us to deliver on time.",
+                    "ja": "顧客は私たちが期限通りに納めることを期待しています。",
+                    "focus": "deliver on time"
+                },
+                {
+                    "en": "We delivered on time despite the short schedule.",
+                    "ja": "短いスケジュールにもかかわらず、期限通りに納めました。",
+                    "focus": "delivered on time"
+                },
+                {
+                    "en": "Please check whether the supplier can deliver on time.",
+                    "ja": "仕入先が期限通りに納品できるか確認してください。",
+                    "focus": "deliver on time"
+                }
+            ]
+        },
+        {
+            "phrase": "deliver a solution",
+            "ja": "解決策を提供する",
+            "image": "問題に対して使える解決策を出す。",
+            "pattern": "deliver a solution",
+            "examples": [
+                {
+                    "en": "We delivered a solution for the customer's installation problem.",
+                    "ja": "私たちは顧客の設置問題に対する解決策を提供しました。",
+                    "focus": "delivered a solution"
+                },
+                {
+                    "en": "The engineering team can deliver a solution by next week.",
+                    "ja": "技術チームは来週までに解決策を提供できます。",
+                    "focus": "deliver a solution"
+                },
+                {
+                    "en": "This product delivers a simple solution for small signs.",
+                    "ja": "この商品は小型看板向けに簡単な解決策を提供します。",
+                    "focus": "delivers a simple solution"
+                }
+            ]
+        }
+    ],
+    "phrasalVerbs": [
+        {
+            "phrase": "deliver to",
+            "ja": "〜へ届ける",
+            "image": "届け先を示す。",
+            "pattern": "deliver + O + to + 場所/人",
+            "examples": [
+                {
+                    "en": "Please deliver the package to our office.",
+                    "ja": "荷物を弊社オフィスへ届けてください。",
+                    "focus": "deliver the package to"
+                },
+                {
+                    "en": "The supplier delivered the materials to the factory.",
+                    "ja": "仕入先は材料を工場へ納品しました。",
+                    "focus": "delivered the materials to"
+                },
+                {
+                    "en": "We will deliver the documents to the client tomorrow.",
+                    "ja": "明日、顧客へ資料を届けます。",
+                    "focus": "deliver the documents to"
+                }
+            ]
+        },
+        {
+            "phrase": "deliver by",
+            "ja": "〜までに納品する",
+            "image": "締切や納期を示す。",
+            "pattern": "deliver by + 日時",
+            "examples": [
+                {
+                    "en": "Can you deliver by Friday morning?",
+                    "ja": "金曜の午前中までに納品できますか？",
+                    "focus": "deliver by"
+                },
+                {
+                    "en": "The vendor promised to deliver by the end of the week.",
+                    "ja": "業者は週末までに納品すると約束しました。",
+                    "focus": "deliver by"
+                },
+                {
+                    "en": "We need to deliver by the customer's deadline.",
+                    "ja": "私たちは顧客の締切までに納める必要があります。",
+                    "focus": "deliver by"
+                }
+            ]
+        },
+        {
+            "phrase": "deliver on",
+            "ja": "約束・期待に応える",
+            "image": "約束や期待を実現する。",
+            "pattern": "deliver on + promise/expectation",
+            "examples": [
+                {
+                    "en": "We must deliver on the agreed schedule.",
+                    "ja": "私たちは合意したスケジュールを守らなければなりません。",
+                    "focus": "deliver on"
+                },
+                {
+                    "en": "The new model delivered on performance expectations.",
+                    "ja": "新モデルは性能面の期待に応えました。",
+                    "focus": "delivered on"
+                },
+                {
+                    "en": "The project team delivered on its promise.",
+                    "ja": "プロジェクトチームは約束を果たしました。",
+                    "focus": "delivered on"
+                }
+            ]
+        },
+        {
+            "phrase": "deliver for",
+            "ja": "〜のために成果を出す",
+            "image": "相手や組織のために結果を出す。",
+            "pattern": "deliver for + 人/組織",
+            "examples": [
+                {
+                    "en": "We need to deliver for our key customer.",
+                    "ja": "私たちは主要顧客のために成果を出す必要があります。",
+                    "focus": "deliver for"
+                },
+                {
+                    "en": "This team consistently delivers for the sales department.",
+                    "ja": "このチームは営業部門のために継続的に成果を出しています。",
+                    "focus": "delivers for"
+                },
+                {
+                    "en": "The supplier failed to deliver for us this time.",
+                    "ja": "その仕入先は今回、私たちの期待に応えられませんでした。",
+                    "focus": "deliver for"
+                }
+            ]
+        },
+        {
+            "phrase": "deliver against",
+            "ja": "目標・基準に対して成果を出す",
+            "image": "目標や基準と比較して結果を出す。",
+            "pattern": "deliver against + target/plan",
+            "examples": [
+                {
+                    "en": "We need to deliver against this year's sales target.",
+                    "ja": "私たちは今年の売上目標に対して成果を出す必要があります。",
+                    "focus": "deliver against"
+                },
+                {
+                    "en": "The project delivered against the original plan.",
+                    "ja": "その案件は当初計画に対して成果を出しました。",
+                    "focus": "delivered against"
+                },
+                {
+                    "en": "Please check whether we are delivering against the agreed KPI.",
+                    "ja": "合意したKPIに対して成果を出せているか確認してください。",
+                    "focus": "delivering against"
+                }
+            ]
+        }
+    ]
+},
   {
     "id": "solve",
     "rank": 65,
@@ -32589,45 +32971,429 @@ export const verbs: Verb[] = [
     "syllable": "solve",
     "transitivity": "他動詞",
     "importance": "★★★☆☆ 基本",
-    "core": "問題を解いて解決状態にする",
-    "coreDetail": "SOLVEは、問題・課題・トラブルに答えを出して解決する時に使います。",
+    "core": "問題の原因を見つけて解決済みの状態にする",
+    "coreDetail": "SOLVEは、問題・課題・トラブル・疑問に答えを出し、解決した状態にする動詞です。仕事では solve a problem / solve an issue / solve a customer's problem の形がよく使われます。",
+    "coreVisual": {
+        "from": [
+            "問題",
+            "原因",
+            "選択肢",
+            "対応策"
+        ],
+        "to": "解決済みの状態",
+        "label": "原因を見つける → 解決する"
+    },
     "meanings": [
-      {
-        "id": "fix-problem",
-        "title": "① 解決する",
-        "pattern": "SOLVE + 問題",
-        "transitivity": "他動詞",
-        "structure": "S + solve + O",
-        "image": "問題の原因や答えを見つけて解決する。",
-        "point": "solve the problem / solve the issue が基本。",
-        "examples": [
-          {
-            "en": "We need to solve this issue today.",
-            "ja": "私たちは今日この問題を解決する必要があります。",
-            "focus": "solve",
-            "object": "this issue",
-            "jaFocus": "解決する"
-          },
-          {
-            "en": "She solved the problem quickly.",
-            "ja": "彼女はその問題をすぐに解決しました。",
-            "focus": "solved",
-            "object": "the problem",
-            "jaFocus": "解決しました"
-          },
-          {
-            "en": "Can this update solve the error?",
-            "ja": "この更新でそのエラーを解決できますか？",
-            "focus": "solve",
-            "object": "the error",
-            "jaFocus": "解決できますか"
-          }
-        ]
-      }
+        {
+            "id": "solve-problem",
+            "title": "① 問題を解決する",
+            "pattern": "solve + problem/issue",
+            "transitivity": "他動詞",
+            "structure": "S + solve + O",
+            "image": "問題の原因を見つけ、解決状態にする。",
+            "point": "solve the problem / solve the issue が最も基本です。",
+            "examples": [
+                {
+                    "en": "We need to solve this issue today.",
+                    "ja": "私たちは今日この問題を解決する必要があります。",
+                    "focus": "solve",
+                    "object": "this issue"
+                },
+                {
+                    "en": "The team solved the problem after checking the wiring.",
+                    "ja": "チームは配線を確認した後、その問題を解決しました。",
+                    "focus": "solved",
+                    "object": "the problem"
+                },
+                {
+                    "en": "Can this update solve the error?",
+                    "ja": "この更新でそのエラーを解決できますか？",
+                    "focus": "solve",
+                    "object": "the error"
+                }
+            ]
+        },
+        {
+            "id": "solve-customer-problem",
+            "title": "② 顧客の困りごとを解決する",
+            "pattern": "solve + customer's problem",
+            "transitivity": "他動詞",
+            "structure": "S + solve + O",
+            "image": "顧客が困っている状況に対して解決策を出す。",
+            "point": "営業・サポートでは solve the customer's problem が重要です。",
+            "examples": [
+                {
+                    "en": "We solved the customer's problem with a different product.",
+                    "ja": "私たちは別の商品で顧客の問題を解決しました。",
+                    "focus": "solved",
+                    "object": "the customer's problem"
+                },
+                {
+                    "en": "This service helps solve small installation problems.",
+                    "ja": "このサービスは小さな設置問題の解決に役立ちます。",
+                    "focus": "solve",
+                    "object": "small installation problems"
+                },
+                {
+                    "en": "Please ask what problem the customer wants to solve.",
+                    "ja": "顧客がどの問題を解決したいのか確認してください。",
+                    "focus": "solve",
+                    "object": "what problem"
+                }
+            ]
+        },
+        {
+            "id": "solve-by",
+            "title": "③ 〜によって解決する",
+            "pattern": "solve + O + by + 方法",
+            "transitivity": "他動詞",
+            "structure": "S + solve + O + M",
+            "image": "どの方法で解決するかを示す。",
+            "point": "by checking / by changing のように、解決方法を続けられます。",
+            "examples": [
+                {
+                    "en": "We solved the issue by changing the power supply.",
+                    "ja": "私たちは電源を変更することで問題を解決しました。",
+                    "focus": "solved",
+                    "object": "the issue"
+                },
+                {
+                    "en": "They solved the delay by using another shipping route.",
+                    "ja": "彼らは別の配送ルートを使って遅延を解決しました。",
+                    "focus": "solved",
+                    "object": "the delay"
+                },
+                {
+                    "en": "You can solve this error by updating the settings.",
+                    "ja": "設定を更新すればこのエラーを解決できます。",
+                    "focus": "solve",
+                    "object": "this error"
+                }
+            ]
+        },
+        {
+            "id": "solve-before",
+            "title": "④ 〜前に解決する",
+            "pattern": "solve + O + before + 時点",
+            "transitivity": "他動詞",
+            "structure": "S + solve + O + M",
+            "image": "期限や次工程の前に問題を解決する。",
+            "point": "solve before installation のように、事前対応で使えます。",
+            "examples": [
+                {
+                    "en": "We must solve this issue before installation.",
+                    "ja": "設置前にこの問題を解決しなければなりません。",
+                    "focus": "solve",
+                    "object": "this issue"
+                },
+                {
+                    "en": "Please solve the payment problem before shipping.",
+                    "ja": "出荷前に支払いの問題を解決してください。",
+                    "focus": "solve",
+                    "object": "the payment problem"
+                },
+                {
+                    "en": "The team solved the design issue before the client meeting.",
+                    "ja": "チームは顧客との会議前に設計上の問題を解決しました。",
+                    "focus": "solved",
+                    "object": "the design issue"
+                }
+            ]
+        },
+        {
+            "id": "solve-with",
+            "title": "⑤ 〜を使って解決する",
+            "pattern": "solve + O + with + 手段",
+            "transitivity": "他動詞",
+            "structure": "S + solve + O + M",
+            "image": "道具・商品・仕組みを使って問題を解決する。",
+            "point": "with a new system / with technical support のように使います。",
+            "examples": [
+                {
+                    "en": "We solved the problem with a new control system.",
+                    "ja": "私たちは新しい制御システムで問題を解決しました。",
+                    "focus": "solved",
+                    "object": "the problem"
+                },
+                {
+                    "en": "The engineer solved the issue with a simple adjustment.",
+                    "ja": "技術者は簡単な調整で問題を解決しました。",
+                    "focus": "solved",
+                    "object": "the issue"
+                },
+                {
+                    "en": "This product can solve the problem with less wiring.",
+                    "ja": "この商品は少ない配線でその問題を解決できます。",
+                    "focus": "solve",
+                    "object": "the problem"
+                }
+            ]
+        },
+        {
+            "id": "solve-question",
+            "title": "⑥ 疑問・課題に答えを出す",
+            "pattern": "solve + question/challenge",
+            "transitivity": "他動詞",
+            "structure": "S + solve + O",
+            "image": "はっきりしない課題や疑問に答えを出す。",
+            "point": "solve a challenge は、課題を解決するという意味です。",
+            "examples": [
+                {
+                    "en": "We need to solve the main challenge before launch.",
+                    "ja": "発売前に主要な課題を解決する必要があります。",
+                    "focus": "solve",
+                    "object": "the main challenge"
+                },
+                {
+                    "en": "The test results solved our question about brightness.",
+                    "ja": "試験結果によって明るさに関する疑問が解決しました。",
+                    "focus": "solved",
+                    "object": "our question"
+                },
+                {
+                    "en": "This meeting should solve the remaining concerns.",
+                    "ja": "この会議で残っている懸念を解決するべきです。",
+                    "focus": "solve",
+                    "object": "the remaining concerns"
+                }
+            ]
+        }
     ],
-    "collocations": [],
-    "phrasalVerbs": []
-  },
+    "collocations": [
+        {
+            "phrase": "solve a problem",
+            "ja": "問題を解決する",
+            "image": "一番基本の表現。",
+            "pattern": "solve a problem",
+            "examples": [
+                {
+                    "en": "We need a practical way to solve this problem.",
+                    "ja": "この問題を解決する実用的な方法が必要です。",
+                    "focus": "solve this problem"
+                },
+                {
+                    "en": "The new process solved a long-term problem.",
+                    "ja": "新しい工程は長期的な問題を解決しました。",
+                    "focus": "solved a long-term problem"
+                },
+                {
+                    "en": "Please tell me how you solved the problem.",
+                    "ja": "どのようにその問題を解決したか教えてください。",
+                    "focus": "solved the problem"
+                }
+            ]
+        },
+        {
+            "phrase": "solve an issue",
+            "ja": "課題・不具合を解決する",
+            "image": "仕事で issue と一緒によく使う。",
+            "pattern": "solve an issue",
+            "examples": [
+                {
+                    "en": "We solved an issue with the login page.",
+                    "ja": "ログイン画面の不具合を解決しました。",
+                    "focus": "solved an issue"
+                },
+                {
+                    "en": "Can you help me solve this issue?",
+                    "ja": "この問題を解決するのを手伝ってもらえますか？",
+                    "focus": "solve this issue"
+                },
+                {
+                    "en": "The support team solved the issue within one hour.",
+                    "ja": "サポートチームは1時間以内に問題を解決しました。",
+                    "focus": "solved the issue"
+                }
+            ]
+        },
+        {
+            "phrase": "solve a customer's problem",
+            "ja": "顧客の問題を解決する",
+            "image": "顧客価値に直結する表現。",
+            "pattern": "solve a customer's problem",
+            "examples": [
+                {
+                    "en": "Good salespeople solve customers' problems.",
+                    "ja": "良い営業担当者は顧客の問題を解決します。",
+                    "focus": "solve customers' problems"
+                },
+                {
+                    "en": "This option may solve the customer's problem.",
+                    "ja": "この選択肢なら顧客の問題を解決できるかもしれません。",
+                    "focus": "solve the customer's problem"
+                },
+                {
+                    "en": "We should understand the customer's problem before solving it.",
+                    "ja": "解決する前に顧客の問題を理解すべきです。",
+                    "focus": "solving it"
+                }
+            ]
+        },
+        {
+            "phrase": "solve a technical problem",
+            "ja": "技術的な問題を解決する",
+            "image": "技術・現場対応で使う。",
+            "pattern": "solve a technical problem",
+            "examples": [
+                {
+                    "en": "The engineer solved a technical problem at the site.",
+                    "ja": "技術者は現場で技術的な問題を解決しました。",
+                    "focus": "solved a technical problem"
+                },
+                {
+                    "en": "We need more information to solve the technical problem.",
+                    "ja": "技術的な問題を解決するには、さらに情報が必要です。",
+                    "focus": "solve the technical problem"
+                },
+                {
+                    "en": "This manual helps solve technical problems quickly.",
+                    "ja": "このマニュアルは技術的な問題をすばやく解決するのに役立ちます。",
+                    "focus": "solve technical problems"
+                }
+            ]
+        },
+        {
+            "phrase": "solve the root cause",
+            "ja": "根本原因を解決する",
+            "image": "表面対応ではなく原因に対応する。",
+            "pattern": "solve the root cause",
+            "examples": [
+                {
+                    "en": "We should solve the root cause, not only the symptom.",
+                    "ja": "症状だけでなく、根本原因を解決すべきです。",
+                    "focus": "solve the root cause"
+                },
+                {
+                    "en": "The team found and solved the root cause.",
+                    "ja": "チームは根本原因を見つけて解決しました。",
+                    "focus": "solved the root cause"
+                },
+                {
+                    "en": "This change does not solve the root cause.",
+                    "ja": "この変更では根本原因は解決しません。",
+                    "focus": "solve the root cause"
+                }
+            ]
+        }
+    ],
+    "phrasalVerbs": [
+        {
+            "phrase": "solve by",
+            "ja": "〜によって解決する",
+            "image": "解決方法を示す。",
+            "pattern": "solve + O + by + 方法",
+            "examples": [
+                {
+                    "en": "We solved the problem by checking the settings.",
+                    "ja": "設定を確認することで問題を解決しました。",
+                    "focus": "solved the problem by"
+                },
+                {
+                    "en": "They solved the issue by adding one more staff member.",
+                    "ja": "人員を1名追加することで問題を解決しました。",
+                    "focus": "solved the issue by"
+                },
+                {
+                    "en": "Can we solve this by changing the schedule?",
+                    "ja": "スケジュールを変更することでこれを解決できますか？",
+                    "focus": "solve this by"
+                }
+            ]
+        },
+        {
+            "phrase": "solve with",
+            "ja": "〜で解決する",
+            "image": "使う手段や道具を示す。",
+            "pattern": "solve + O + with + 手段",
+            "examples": [
+                {
+                    "en": "We solved the issue with a backup unit.",
+                    "ja": "予備機で問題を解決しました。",
+                    "focus": "solved the issue with"
+                },
+                {
+                    "en": "This software solves the problem with automatic checks.",
+                    "ja": "このソフトは自動チェックで問題を解決します。",
+                    "focus": "solves the problem with"
+                },
+                {
+                    "en": "The team solved the risk with a revised plan.",
+                    "ja": "チームは修正計画でリスクを解決しました。",
+                    "focus": "solved the risk with"
+                }
+            ]
+        },
+        {
+            "phrase": "solve before",
+            "ja": "〜前に解決する",
+            "image": "期限や工程の前に解決する。",
+            "pattern": "solve + O + before + 時点",
+            "examples": [
+                {
+                    "en": "Please solve this before the customer visit.",
+                    "ja": "顧客訪問前にこれを解決してください。",
+                    "focus": "solve this before"
+                },
+                {
+                    "en": "We solved the issue before the shipment.",
+                    "ja": "出荷前に問題を解決しました。",
+                    "focus": "solved the issue before"
+                },
+                {
+                    "en": "The team must solve the problem before production starts.",
+                    "ja": "チームは生産開始前に問題を解決しなければなりません。",
+                    "focus": "solve the problem before"
+                }
+            ]
+        },
+        {
+            "phrase": "solve for",
+            "ja": "〜を目指して解決する / 〜を考慮して解く",
+            "image": "目的や制約を考慮して解決する。",
+            "pattern": "solve for + 目的/条件",
+            "examples": [
+                {
+                    "en": "We need to solve for both cost and quality.",
+                    "ja": "コストと品質の両方を考慮して解決する必要があります。",
+                    "focus": "solve for"
+                },
+                {
+                    "en": "This design solves for limited installation space.",
+                    "ja": "この設計は限られた設置スペースを考慮して解決しています。",
+                    "focus": "solves for"
+                },
+                {
+                    "en": "The proposal solves for the customer's budget limit.",
+                    "ja": "その提案は顧客の予算制限を考慮して解決しています。",
+                    "focus": "solves for"
+                }
+            ]
+        },
+        {
+            "phrase": "solve through",
+            "ja": "〜を通じて解決する",
+            "image": "プロセスや協力を通じて解決する。",
+            "pattern": "solve + O + through + 手段",
+            "examples": [
+                {
+                    "en": "We solved the issue through better communication.",
+                    "ja": "より良いコミュニケーションを通じて問題を解決しました。",
+                    "focus": "solved the issue through"
+                },
+                {
+                    "en": "The team solved the delay through close coordination.",
+                    "ja": "チームは緊密な調整を通じて遅延を解決しました。",
+                    "focus": "solved the delay through"
+                },
+                {
+                    "en": "We can solve this through a short technical meeting.",
+                    "ja": "短い技術打合せを通じてこれを解決できます。",
+                    "focus": "solve this through"
+                }
+            ]
+        }
+    ]
+},
   {
     "id": "report",
     "rank": 66,
@@ -32637,99 +33403,422 @@ export const verbs: Verb[] = [
     "syllable": "re-port",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★☆☆ 基本",
-    "core": "情報を整理して相手に伝える",
-    "coreDetail": "REPORTは、結果・状況・問題点などを整理して報告する時に使います。仕事では上司・チーム・顧客への共有でよく使います。",
+    "core": "確認した情報を整理して必要な相手に伝える",
+    "coreDetail": "REPORTは、状況・結果・問題・数字などを整理して、上司・チーム・顧客に報告する動詞です。仕事では report the result / report to my manager / report on progress の形が重要です。",
+    "coreVisual": {
+        "from": [
+            "状況",
+            "結果",
+            "問題",
+            "数字",
+            "現場情報"
+        ],
+        "to": "上司・チーム・顧客",
+        "label": "情報を整理する → 必要な相手に報告する"
+    },
     "meanings": [
-      {
-        "id": "tell-status",
-        "title": "① 報告する",
-        "pattern": "REPORT + 内容 / REPORT TO + 人",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + report + O / S + report + to 人",
-        "image": "分かったことを整理して相手へ伝える。",
-        "point": "report the result は結果を報告する。report to my manager は上司に報告する。",
-        "examples": [
-          {
-            "en": "I reported the issue to my manager.",
-            "ja": "私はその問題を上司に報告しました。",
-            "focus": "reported",
-            "object": "the issue",
-            "jaFocus": "報告しました",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "reported"
-              },
-              {
-                "label": "O",
-                "text": "the issue"
-              },
-              {
-                "label": "M",
-                "text": "to my manager"
-              }
-            ],
-            "grammarNote": "to my manager は「誰に報告したか」を表す補足です。"
-          },
-          {
-            "en": "We need to report the result by Friday.",
-            "ja": "私たちは金曜日までに結果を報告する必要があります。",
-            "focus": "report",
-            "object": "the result",
-            "jaFocus": "報告する",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "report"
-              },
-              {
-                "label": "O",
-                "text": "the result"
-              },
-              {
-                "label": "M",
-                "text": "by Friday"
-              }
+        {
+            "id": "report-result",
+            "title": "① 結果・状況を報告する",
+            "pattern": "report + result/status/issue",
+            "transitivity": "他動詞",
+            "structure": "S + report + O",
+            "image": "確認した内容を整理して報告する。",
+            "point": "report the result / report the status が基本です。",
+            "examples": [
+                {
+                    "en": "We need to report the result by Friday.",
+                    "ja": "私たちは金曜日までに結果を報告する必要があります。",
+                    "focus": "report",
+                    "object": "the result"
+                },
+                {
+                    "en": "She reported a delay in the schedule.",
+                    "ja": "彼女はスケジュールの遅れを報告しました。",
+                    "focus": "reported",
+                    "object": "a delay in the schedule"
+                },
+                {
+                    "en": "Please report the current status after the meeting.",
+                    "ja": "会議後に現在の状況を報告してください。",
+                    "focus": "report",
+                    "object": "the current status"
+                }
             ]
-          },
-          {
-            "en": "She reported a delay in the schedule.",
-            "ja": "彼女はスケジュールの遅れを報告しました。",
-            "focus": "reported",
-            "object": "a delay in the schedule",
-            "jaFocus": "報告しました",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "She"
-              },
-              {
-                "label": "V",
-                "text": "reported"
-              },
-              {
-                "label": "O",
-                "text": "a delay in the schedule"
-              }
+        },
+        {
+            "id": "report-to",
+            "title": "② 人・部署に報告する",
+            "pattern": "report to + 人/部署",
+            "transitivity": "自動詞",
+            "structure": "S + report + to + 人",
+            "image": "報告先を示す。",
+            "point": "report to my manager は、上司に報告するという意味です。",
+            "examples": [
+                {
+                    "en": "I reported the issue to my manager.",
+                    "ja": "私はその問題を上司に報告しました。",
+                    "focus": "reported the issue to",
+                    "object": "my manager"
+                },
+                {
+                    "en": "Please report to the sales manager after the visit.",
+                    "ja": "訪問後に営業マネージャーへ報告してください。",
+                    "focus": "report to"
+                },
+                {
+                    "en": "The site team reported to the project leader every day.",
+                    "ja": "現場チームは毎日プロジェクトリーダーに報告しました。",
+                    "focus": "reported to"
+                }
             ]
-          }
-        ]
-      }
+        },
+        {
+            "id": "report-on",
+            "title": "③ 〜について報告する",
+            "pattern": "report on + topic/progress",
+            "transitivity": "自動詞",
+            "structure": "S + report + on + 内容",
+            "image": "報告するテーマを示す。",
+            "point": "report on progress は、進捗について報告するという意味です。",
+            "examples": [
+                {
+                    "en": "Can you report on the progress tomorrow?",
+                    "ja": "明日、進捗について報告できますか？",
+                    "focus": "report on"
+                },
+                {
+                    "en": "The team reported on the test results.",
+                    "ja": "チームは試験結果について報告しました。",
+                    "focus": "reported on"
+                },
+                {
+                    "en": "We will report on the customer's feedback next week.",
+                    "ja": "来週、顧客のフィードバックについて報告します。",
+                    "focus": "report on"
+                }
+            ]
+        },
+        {
+            "id": "report-that",
+            "title": "④ 〜だと報告する",
+            "pattern": "report that + 文",
+            "transitivity": "他動詞",
+            "structure": "S + report + that節",
+            "image": "報告内容を文で伝える。",
+            "point": "report that the delivery is delayed のように、内容を文で続けます。",
+            "examples": [
+                {
+                    "en": "The supplier reported that the shipment was delayed.",
+                    "ja": "仕入先は出荷が遅れていると報告しました。",
+                    "focus": "reported",
+                    "object": "that the shipment was delayed"
+                },
+                {
+                    "en": "We reported that the sample passed the test.",
+                    "ja": "私たちはサンプルが試験に合格したと報告しました。",
+                    "focus": "reported",
+                    "object": "that the sample passed the test"
+                },
+                {
+                    "en": "The engineer reported that the system was working correctly.",
+                    "ja": "技術者はシステムが正常に動作していると報告しました。",
+                    "focus": "reported",
+                    "object": "that the system was working correctly"
+                }
+            ]
+        },
+        {
+            "id": "report-problem",
+            "title": "⑤ 問題・不具合を報告する",
+            "pattern": "report + problem/error/accident",
+            "transitivity": "他動詞",
+            "structure": "S + report + O",
+            "image": "問題や不具合を正式に知らせる。",
+            "point": "report an error / report a problem は、トラブル報告で使います。",
+            "examples": [
+                {
+                    "en": "Please report any errors to the support team.",
+                    "ja": "エラーがあればサポートチームに報告してください。",
+                    "focus": "report",
+                    "object": "any errors"
+                },
+                {
+                    "en": "The customer reported a problem with the product.",
+                    "ja": "顧客は商品に関する問題を報告しました。",
+                    "focus": "reported",
+                    "object": "a problem"
+                },
+                {
+                    "en": "We must report the accident immediately.",
+                    "ja": "私たちはその事故をすぐに報告しなければなりません。",
+                    "focus": "report",
+                    "object": "the accident"
+                }
+            ]
+        },
+        {
+            "id": "report-regularly",
+            "title": "⑥ 定期的に報告する",
+            "pattern": "report + regularly/weekly/monthly",
+            "transitivity": "自動詞",
+            "structure": "S + report + M",
+            "image": "決まった頻度で報告する。",
+            "point": "weekly / monthly と一緒に、定期報告を表せます。",
+            "examples": [
+                {
+                    "en": "We report weekly on sales progress.",
+                    "ja": "私たちは営業進捗について毎週報告します。",
+                    "focus": "report weekly"
+                },
+                {
+                    "en": "The project team reports monthly to management.",
+                    "ja": "プロジェクトチームは毎月経営陣に報告します。",
+                    "focus": "reports monthly"
+                },
+                {
+                    "en": "Please report regularly until the issue is closed.",
+                    "ja": "問題が完了するまで定期的に報告してください。",
+                    "focus": "report regularly"
+                }
+            ]
+        }
     ],
-    "collocations": [],
-    "phrasalVerbs": []
-  },
+    "collocations": [
+        {
+            "phrase": "report the result",
+            "ja": "結果を報告する",
+            "image": "結果を相手に共有する基本表現。",
+            "pattern": "report the result",
+            "examples": [
+                {
+                    "en": "Please report the result after the inspection.",
+                    "ja": "検査後に結果を報告してください。",
+                    "focus": "report the result"
+                },
+                {
+                    "en": "We reported the result to the customer yesterday.",
+                    "ja": "昨日、顧客に結果を報告しました。",
+                    "focus": "reported the result"
+                },
+                {
+                    "en": "The team will report the result in tomorrow's meeting.",
+                    "ja": "チームは明日の会議で結果を報告します。",
+                    "focus": "report the result"
+                }
+            ]
+        },
+        {
+            "phrase": "report progress",
+            "ja": "進捗を報告する",
+            "image": "途中経過を共有する。",
+            "pattern": "report progress",
+            "examples": [
+                {
+                    "en": "Please report progress every Friday.",
+                    "ja": "毎週金曜日に進捗を報告してください。",
+                    "focus": "report progress"
+                },
+                {
+                    "en": "We reported progress to the client this morning.",
+                    "ja": "今朝、顧客に進捗を報告しました。",
+                    "focus": "reported progress"
+                },
+                {
+                    "en": "The manager asked us to report progress more clearly.",
+                    "ja": "マネージャーは私たちに進捗をもっと明確に報告するよう求めました。",
+                    "focus": "report progress"
+                }
+            ]
+        },
+        {
+            "phrase": "report an issue",
+            "ja": "問題を報告する",
+            "image": "不具合や懸念を知らせる。",
+            "pattern": "report an issue",
+            "examples": [
+                {
+                    "en": "The user reported an issue with the login page.",
+                    "ja": "ユーザーはログイン画面の問題を報告しました。",
+                    "focus": "reported an issue"
+                },
+                {
+                    "en": "Please report any issue as soon as you find it.",
+                    "ja": "問題を見つけたらすぐに報告してください。",
+                    "focus": "report any issue"
+                },
+                {
+                    "en": "We reported an issue with the shipment label.",
+                    "ja": "出荷ラベルに関する問題を報告しました。",
+                    "focus": "reported an issue"
+                }
+            ]
+        },
+        {
+            "phrase": "report to management",
+            "ja": "経営陣に報告する",
+            "image": "上位者・管理層への報告。",
+            "pattern": "report to management",
+            "examples": [
+                {
+                    "en": "We need to report to management before making the change.",
+                    "ja": "変更する前に経営陣へ報告する必要があります。",
+                    "focus": "report to management"
+                },
+                {
+                    "en": "The project leader reported to management every month.",
+                    "ja": "プロジェクトリーダーは毎月経営陣に報告しました。",
+                    "focus": "reported to management"
+                },
+                {
+                    "en": "Please prepare the numbers before reporting to management.",
+                    "ja": "経営陣に報告する前に数字を準備してください。",
+                    "focus": "reporting to management"
+                }
+            ]
+        },
+        {
+            "phrase": "report in writing",
+            "ja": "書面で報告する",
+            "image": "メールや文書で記録を残して報告する。",
+            "pattern": "report in writing",
+            "examples": [
+                {
+                    "en": "Please report the issue in writing.",
+                    "ja": "その問題を書面で報告してください。",
+                    "focus": "report the issue in writing"
+                },
+                {
+                    "en": "We reported the change in writing to avoid confusion.",
+                    "ja": "混乱を避けるため、その変更を書面で報告しました。",
+                    "focus": "reported the change in writing"
+                },
+                {
+                    "en": "The client asked us to report all changes in writing.",
+                    "ja": "顧客はすべての変更を書面で報告するよう求めました。",
+                    "focus": "report all changes in writing"
+                }
+            ]
+        }
+    ],
+    "phrasalVerbs": [
+        {
+            "phrase": "report to",
+            "ja": "〜に報告する / 直属である",
+            "image": "報告先や直属先を示す。",
+            "pattern": "report to + 人/部署",
+            "examples": [
+                {
+                    "en": "I report to the sales director.",
+                    "ja": "私は営業部長に直属しています。",
+                    "focus": "report to"
+                },
+                {
+                    "en": "Please report the issue to your manager.",
+                    "ja": "その問題を上司に報告してください。",
+                    "focus": "report the issue to"
+                },
+                {
+                    "en": "The support team reports to the operations manager.",
+                    "ja": "サポートチームは運用マネージャーに直属しています。",
+                    "focus": "reports to"
+                }
+            ]
+        },
+        {
+            "phrase": "report on",
+            "ja": "〜について報告する",
+            "image": "報告テーマを示す。",
+            "pattern": "report on + 内容",
+            "examples": [
+                {
+                    "en": "Please report on the installation progress.",
+                    "ja": "設置進捗について報告してください。",
+                    "focus": "report on"
+                },
+                {
+                    "en": "The team reported on the customer survey.",
+                    "ja": "チームは顧客アンケートについて報告しました。",
+                    "focus": "reported on"
+                },
+                {
+                    "en": "We will report on cost changes next week.",
+                    "ja": "来週、コスト変更について報告します。",
+                    "focus": "report on"
+                }
+            ]
+        },
+        {
+            "phrase": "report back",
+            "ja": "戻って報告する / 後で報告する",
+            "image": "確認後に結果を伝える。",
+            "pattern": "report back",
+            "examples": [
+                {
+                    "en": "Please check the site and report back by noon.",
+                    "ja": "現場を確認して正午までに報告してください。",
+                    "focus": "report back"
+                },
+                {
+                    "en": "I will report back after speaking with the supplier.",
+                    "ja": "仕入先と話した後で報告します。",
+                    "focus": "report back"
+                },
+                {
+                    "en": "The team reported back with several concerns.",
+                    "ja": "チームはいくつかの懸念を持ち帰って報告しました。",
+                    "focus": "reported back"
+                }
+            ]
+        },
+        {
+            "phrase": "report back to",
+            "ja": "〜に後で報告する",
+            "image": "報告相手を示す。",
+            "pattern": "report back to + 人",
+            "examples": [
+                {
+                    "en": "Please report back to me after the meeting.",
+                    "ja": "会議後に私へ報告してください。",
+                    "focus": "report back to"
+                },
+                {
+                    "en": "She reported back to the client with the test result.",
+                    "ja": "彼女は試験結果を顧客に後で報告しました。",
+                    "focus": "reported back to"
+                },
+                {
+                    "en": "We need to report back to management tomorrow.",
+                    "ja": "明日、経営陣に報告する必要があります。",
+                    "focus": "report back to"
+                }
+            ]
+        },
+        {
+            "phrase": "report into",
+            "ja": "〜の管轄・指揮下に入る",
+            "image": "組織上の所属や報告ラインを示す。",
+            "pattern": "report into + 部署/役職",
+            "examples": [
+                {
+                    "en": "This team reports into the sales department.",
+                    "ja": "このチームは営業部門の管轄に入っています。",
+                    "focus": "reports into"
+                },
+                {
+                    "en": "The new role will report into the operations manager.",
+                    "ja": "新しい役職は運用マネージャーの指揮下に入ります。",
+                    "focus": "report into"
+                },
+                {
+                    "en": "Our support function reports into the service division.",
+                    "ja": "私たちのサポート機能はサービス部門の管轄です。",
+                    "focus": "reports into"
+                }
+            ]
+        }
+    ]
+},
   {
     "id": "update",
     "rank": 67,

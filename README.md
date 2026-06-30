@@ -1,20 +1,15 @@
-# Verb Master Ver.56
+# Verb Master Next
 
-機能別使い方ガイド版です。
+Current build: Ver.104
 
-## 追加内容
+## Ver.104 updates
 
-- `/guide` 使い方ガイドページを追加
-- ダッシュボードに「使い方ガイド」カードを追加
-- 今日の動詞、動詞一覧、テスト、復習、フレーズ保存、学習ペース、マイページ、Premiumの使い方を説明
-- 各説明から該当ページへ移動できるリンクを追加
-- スマホで読みやすいカードUIを追加
+Verb quality improvement batch 12:
 
-## 確認ポイント
+- discuss
+- confirm
+- receive
 
-- ホームから使い方ガイドへ移動できるか
-- `/guide` が開けるか
-- 各機能の説明が分かりやすいか
-- 各「開く」ボタンで該当ページに移動できるか
+This version continues the paid-product quality improvement process by expanding business-focused usage patterns, collocations, phrasal/preposition expressions, core images, and three business examples per item.
 
-既存データは変更していません。
+Daily examples are not updated in this phase.

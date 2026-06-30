@@ -148,7 +148,7 @@ export default function ExampleCard({
         <SpeakButton text={example.en} label="通常" />
       </div>
       <p className="leading-relaxed text-muted">
-        {highlightText(example.ja, example.jaFocus, "ja-focus")}
+        {example.ja}
       </p>
 
       <GrammarInline example={example} verbPattern={verbPattern} sentenceStructure={sentenceStructure} />

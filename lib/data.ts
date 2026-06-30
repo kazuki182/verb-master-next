@@ -27169,7 +27169,7 @@ export const verbs: Verb[] = [
     }
   ]
 },
-  {
+{
     "id": "send",
     "rank": 43,
     "word": "SEND",
@@ -27178,46 +27178,440 @@ export const verbs: Verb[] = [
     "syllable": "send",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 重要",
-    "core": "送る",
-    "coreDetail": "メールや資料を送る",
+    "core": "自分の場所から相手・場所へ情報や物を送り出す",
+    "coreDetail": "SENDは、メール・資料・商品・依頼などを相手の方向へ送り出す感覚です。仕事では send an email, send A to B, send someone something, send out, send back が特に重要です。",
+    "coreVisual": {
+        "from": [
+            "📧 メール",
+            "📄 資料",
+            "📦 サンプル",
+            "📢 案内"
+        ],
+        "to": "相手・送付先",
+        "label": "こちら側 → 相手へ送り出す"
+    },
     "meanings": [
-      {
-        "id": "business-basic",
-        "title": "① ビジネスで使う基本形",
-        "pattern": "SEND + 名詞 / 文",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "メールや資料を送る",
-        "point": "まずは社会人の会話・メールで使いやすい基本形を覚える。",
-        "examples": [
-          {
-            "en": "I'll send the file today.",
-            "ja": "今日ファイルを送ります。",
-            "focus": "send",
-            "object": "the file",
-            "jaFocus": "送ります"
-          },
-          {
-            "en": "Please send me the quotation.",
-            "ja": "見積書を送ってください。",
-            "focus": "send me",
-            "object": "the quotation",
-            "jaFocus": "送って"
-          },
-          {
-            "en": "Did you send the email?",
-            "ja": "メールを送りましたか？",
-            "focus": "send",
-            "object": "the email",
-            "jaFocus": "送り"
-          }
-        ]
-      }
+        {
+            "id": "send-object",
+            "title": "① メール・資料などを送る",
+            "pattern": "send + 名詞",
+            "transitivity": "他動詞",
+            "structure": "send + 送るもの",
+            "image": "メールや資料を相手に向けて送り出す。",
+            "point": "send an email / send the file / send the document は仕事で最もよく使う基本形です。",
+            "examples": [
+                {
+                    "en": "I will send the file today.",
+                    "ja": "私は今日ファイルを送ります。",
+                    "focus": "send",
+                    "object": "the file"
+                },
+                {
+                    "en": "Please send the quotation by noon.",
+                    "ja": "正午までに見積書を送ってください。",
+                    "focus": "send",
+                    "object": "the quotation"
+                },
+                {
+                    "en": "Did you send the email to the client?",
+                    "ja": "あなたは顧客にメールを送りましたか？",
+                    "focus": "send",
+                    "object": "the email"
+                }
+            ]
+        },
+        {
+            "id": "send-a-to-b",
+            "title": "② AをBへ送る",
+            "pattern": "send A to B",
+            "transitivity": "他動詞",
+            "structure": "send + 送るもの + to + 送付先",
+            "image": "物や情報の行き先を to で示す。",
+            "point": "送付先をはっきり言う時は send A to B が自然です。",
+            "examples": [
+                {
+                    "en": "We sent the sample to the customer.",
+                    "ja": "私たちは顧客にサンプルを送りました。",
+                    "focus": "sent",
+                    "object": "the sample"
+                },
+                {
+                    "en": "Please send the invoice to the accounting team.",
+                    "ja": "請求書を経理チームに送ってください。",
+                    "focus": "send",
+                    "object": "the invoice"
+                },
+                {
+                    "en": "I sent the revised data to the supplier.",
+                    "ja": "私は修正済みのデータを仕入先に送りました。",
+                    "focus": "sent",
+                    "object": "the revised data"
+                }
+            ]
+        },
+        {
+            "id": "send-someone-something",
+            "title": "③ 人に物・情報を送る",
+            "pattern": "send 人 + 物",
+            "transitivity": "他動詞",
+            "structure": "send + 人 + 送るもの",
+            "image": "相手に直接何かを送る。",
+            "point": "send me the details のように、人を先に置く形もよく使います。",
+            "examples": [
+                {
+                    "en": "Please send me the details.",
+                    "ja": "詳細を私に送ってください。",
+                    "focus": "send",
+                    "object": "me the details"
+                },
+                {
+                    "en": "Can you send the client the updated schedule?",
+                    "ja": "あなたは顧客に更新後のスケジュールを送れますか？",
+                    "focus": "send",
+                    "object": "the client the updated schedule"
+                },
+                {
+                    "en": "I sent him the latest price list.",
+                    "ja": "私は彼に最新の価格表を送りました。",
+                    "focus": "sent",
+                    "object": "him the latest price list"
+                }
+            ]
+        },
+        {
+            "id": "send-for-purpose",
+            "title": "④ 確認・承認のために送る",
+            "pattern": "send + 名詞 + for 確認・承認",
+            "transitivity": "他動詞",
+            "structure": "send + 送るもの + for + 目的",
+            "image": "相手に確認や承認をしてもらうために送る。",
+            "point": "send it for approval / send it for review は社内連絡で便利です。",
+            "examples": [
+                {
+                    "en": "We sent the drawing for approval.",
+                    "ja": "私たちは承認のために図面を送りました。",
+                    "focus": "sent",
+                    "object": "the drawing"
+                },
+                {
+                    "en": "Please send the document for review.",
+                    "ja": "確認のために資料を送ってください。",
+                    "focus": "send",
+                    "object": "the document"
+                },
+                {
+                    "en": "I will send the proposal for internal confirmation.",
+                    "ja": "私は社内確認のために提案書を送ります。",
+                    "focus": "send",
+                    "object": "the proposal"
+                }
+            ]
+        },
+        {
+            "id": "send-person",
+            "title": "⑤ 人を場所・担当へ行かせる",
+            "pattern": "send 人 to 場所",
+            "transitivity": "他動詞",
+            "structure": "send + 人 + to + 場所",
+            "image": "人を必要な場所や担当先へ向かわせる。",
+            "point": "物だけでなく、人を派遣する意味でも send を使います。",
+            "examples": [
+                {
+                    "en": "We sent a technician to the site.",
+                    "ja": "私たちは技術者を現場に送りました。",
+                    "focus": "sent",
+                    "object": "a technician"
+                },
+                {
+                    "en": "The manager sent me to the client meeting.",
+                    "ja": "上司は私を顧客との会議に行かせました。",
+                    "focus": "sent",
+                    "object": "me"
+                },
+                {
+                    "en": "Can we send someone to check the installation?",
+                    "ja": "設置状況を確認するために誰かを送れますか？",
+                    "focus": "send",
+                    "object": "someone"
+                }
+            ]
+        },
+        {
+            "id": "send-message",
+            "title": "⑥ メッセージ・合図を伝える",
+            "pattern": "send + message / signal",
+            "transitivity": "他動詞",
+            "structure": "send + 伝わる内容",
+            "image": "言葉や行動を通じて相手に意味を伝える。",
+            "point": "send a message は実際のメッセージだけでなく、印象や方針を伝える意味にも使います。",
+            "examples": [
+                {
+                    "en": "This delay sends a bad message to the client.",
+                    "ja": "この遅れは顧客に悪い印象を与えます。",
+                    "focus": "sends",
+                    "object": "a bad message"
+                },
+                {
+                    "en": "A quick reply sends a positive signal.",
+                    "ja": "素早い返信は良い印象を与えます。",
+                    "focus": "sends",
+                    "object": "a positive signal"
+                },
+                {
+                    "en": "The announcement sent a clear message to the team.",
+                    "ja": "その発表はチームに明確なメッセージを伝えました。",
+                    "focus": "sent",
+                    "object": "a clear message"
+                }
+            ]
+        }
     ],
-    "collocations": [],
-    "phrasalVerbs": []
-  },
-  {
+    "collocations": [
+        {
+            "phrase": "send an email",
+            "ja": "メールを送る",
+            "image": "仕事の連絡をメールで送る。",
+            "pattern": "send an email to + 相手",
+            "examples": [
+                {
+                    "en": "I will send an email to the client this afternoon.",
+                    "ja": "私は今日の午後、顧客にメールを送ります。",
+                    "focus": "send an email"
+                },
+                {
+                    "en": "Please send an email after the meeting.",
+                    "ja": "会議後にメールを送ってください。",
+                    "focus": "send an email"
+                },
+                {
+                    "en": "We sent an email about the delivery schedule.",
+                    "ja": "私たちは納期予定についてメールを送りました。",
+                    "focus": "sent an email"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "send a file",
+            "ja": "ファイルを送る",
+            "image": "資料やデータを共有する。",
+            "pattern": "send a file / send the file",
+            "examples": [
+                {
+                    "en": "Can you send the file again?",
+                    "ja": "もう一度ファイルを送ってもらえますか？",
+                    "focus": "send the file"
+                },
+                {
+                    "en": "I sent the file with the latest changes.",
+                    "ja": "私は最新の変更を反映したファイルを送りました。",
+                    "focus": "sent the file"
+                },
+                {
+                    "en": "Please send a file that we can edit.",
+                    "ja": "編集できるファイルを送ってください。",
+                    "focus": "send a file"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "send a quotation",
+            "ja": "見積書を送る",
+            "image": "価格や条件をまとめて顧客へ送る。",
+            "pattern": "send a quotation to + 相手",
+            "examples": [
+                {
+                    "en": "We will send a quotation by tomorrow morning.",
+                    "ja": "私たちは明日の午前中までに見積書を送ります。",
+                    "focus": "send a quotation"
+                },
+                {
+                    "en": "Please send the quotation to the purchasing team.",
+                    "ja": "購買チームに見積書を送ってください。",
+                    "focus": "send the quotation"
+                },
+                {
+                    "en": "I sent the quotation after confirming the quantity.",
+                    "ja": "私は数量を確認した後、見積書を送りました。",
+                    "focus": "sent the quotation"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "send a reminder",
+            "ja": "リマインドを送る",
+            "image": "相手が忘れないように通知する。",
+            "pattern": "send a reminder to + 相手",
+            "examples": [
+                {
+                    "en": "Please send a reminder before the deadline.",
+                    "ja": "締切前にリマインドを送ってください。",
+                    "focus": "send a reminder"
+                },
+                {
+                    "en": "I sent a reminder to the client yesterday.",
+                    "ja": "私は昨日、顧客にリマインドを送りました。",
+                    "focus": "sent a reminder"
+                },
+                {
+                    "en": "We should send a reminder about the meeting.",
+                    "ja": "私たちは会議についてリマインドを送るべきです。",
+                    "focus": "send a reminder"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "send for approval",
+            "ja": "承認のために送る",
+            "image": "上司や顧客に承認してもらうために送る。",
+            "pattern": "send + 名詞 + for approval",
+            "examples": [
+                {
+                    "en": "I will send the plan for approval.",
+                    "ja": "私は承認のために計画を送ります。",
+                    "focus": "send the plan for approval"
+                },
+                {
+                    "en": "We sent the design for approval last week.",
+                    "ja": "私たちは先週、承認のためにデザインを送りました。",
+                    "focus": "sent the design for approval"
+                },
+                {
+                    "en": "Please send the final version for approval.",
+                    "ja": "最終版を承認のために送ってください。",
+                    "focus": "send the final version for approval"
+                }
+            ],
+            "dailyExamples": []
+        }
+    ],
+    "phrasalVerbs": [
+        {
+            "phrase": "send out",
+            "ja": "一斉に送る・配信する",
+            "image": "複数の相手に情報を広く送り出す。",
+            "pattern": "send out + 案内・メール・資料",
+            "examples": [
+                {
+                    "en": "We sent out the meeting invitation this morning.",
+                    "ja": "私たちは今朝、会議の招待を一斉に送りました。",
+                    "focus": "sent out"
+                },
+                {
+                    "en": "Please send out the updated price list.",
+                    "ja": "更新後の価格表を配信してください。",
+                    "focus": "send out"
+                },
+                {
+                    "en": "The team will send out the announcement today.",
+                    "ja": "チームは今日、その案内を配信します。",
+                    "focus": "send out"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "send back",
+            "ja": "送り返す・返送する",
+            "image": "届いたものを元の相手へ戻す。",
+            "pattern": "send back + 名詞",
+            "examples": [
+                {
+                    "en": "Please send back the signed document.",
+                    "ja": "署名済みの書類を返送してください。",
+                    "focus": "send back"
+                },
+                {
+                    "en": "We sent back the sample because it was damaged.",
+                    "ja": "破損していたため、私たちはサンプルを返送しました。",
+                    "focus": "sent back"
+                },
+                {
+                    "en": "Can you send the draft back with your comments?",
+                    "ja": "コメントを付けて草案を返送してもらえますか？",
+                    "focus": "send the draft back"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "send over",
+            "ja": "送って渡す・送付する",
+            "image": "相手側へ資料や情報を送って渡す。",
+            "pattern": "send over + 名詞",
+            "examples": [
+                {
+                    "en": "I will send over the latest data.",
+                    "ja": "私は最新のデータを送ります。",
+                    "focus": "send over"
+                },
+                {
+                    "en": "Please send over the agenda before the meeting.",
+                    "ja": "会議前に議題を送ってください。",
+                    "focus": "send over"
+                },
+                {
+                    "en": "She sent over the revised estimate yesterday.",
+                    "ja": "彼女は昨日、修正済みの見積を送ってくれました。",
+                    "focus": "sent over"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "send in",
+            "ja": "提出する・送り込む",
+            "image": "必要な場所や担当へ正式に送る。",
+            "pattern": "send in + 申請・書類・人",
+            "examples": [
+                {
+                    "en": "Please send in the application by Friday.",
+                    "ja": "金曜日までに申請書を提出してください。",
+                    "focus": "send in"
+                },
+                {
+                    "en": "We sent in the report before the deadline.",
+                    "ja": "私たちは締切前に報告書を提出しました。",
+                    "focus": "sent in"
+                },
+                {
+                    "en": "The company sent in a technician to check the system.",
+                    "ja": "会社はシステム確認のために技術者を送り込みました。",
+                    "focus": "sent in"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "send off",
+            "ja": "発送する・送り出す",
+            "image": "準備したものや人を出発させる。",
+            "pattern": "send off + 名詞",
+            "examples": [
+                {
+                    "en": "We sent off the samples this morning.",
+                    "ja": "私たちは今朝サンプルを発送しました。",
+                    "focus": "sent off"
+                },
+                {
+                    "en": "Please send off the package today.",
+                    "ja": "今日その荷物を発送してください。",
+                    "focus": "send off"
+                },
+                {
+                    "en": "The team sent off the final documents to the client.",
+                    "ja": "チームは最終書類を顧客へ発送しました。",
+                    "focus": "sent off"
+                }
+            ],
+            "dailyExamples": []
+        }
+    ]
+},
+{
     "id": "pay",
     "rank": 44,
     "word": "PAY",
@@ -27226,73 +27620,440 @@ export const verbs: Verb[] = [
     "syllable": "pay",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 基本",
-    "core": "支払う・注意を向ける",
-    "coreDetail": "PAYは、お金を支払う時だけでなく pay attention to ... で「注意を払う」にも使います。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 支払う",
-        "pattern": "pay + 金額・請求書 / pay + 人",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + pay + O",
-        "image": "お金や注意を相手・対象に向ける",
-        "point": "pay the invoice は「請求書を支払う」。pay attention to は「注意を払う」です。",
-        "examples": [
-          {
-            "en": "We paid the invoice yesterday.",
-            "ja": "私たちは昨日、その請求書を支払いました。",
-            "focus": "paid the invoice",
-            "jaFocus": "請求書を支払った",
-            "object": "the invoice",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "paid"
-              },
-              {
-                "label": "O",
-                "text": "the invoice"
-              }
-            ]
-          },
-          {
-            "en": "Please pay attention to the delivery date.",
-            "ja": "納期に注意してください。",
-            "focus": "pay attention to",
-            "jaFocus": "注意する"
-          },
-          {
-            "en": "The customer paid by bank transfer.",
-            "ja": "その顧客は銀行振込で支払いました。",
-            "focus": "paid",
-            "jaFocus": "支払った"
-          }
+    "core": "お金・注意・努力などを相手や対象に向ける",
+    "coreDetail": "PAYは、お金を支払うだけでなく、注意や敬意を対象に向ける時にも使います。仕事では請求書・支払方法・注意・返済・努力の表現でよく使います。",
+    "coreVisual": {
+        "from": [
+            "💴 お金",
+            "👀 注意",
+            "⏱️ 努力",
+            "🙏 敬意"
         ],
-        "dailyExamples": [
-          {
-            "en": "Please pay attention to the delivery date.",
-            "ja": "納期に注意してください。",
-            "focus": "pay attention to",
-            "jaFocus": "注意する"
-          },
-          {
-            "en": "The customer paid by bank transfer.",
-            "ja": "その顧客は銀行振込で支払いました。",
-            "focus": "paid",
-            "jaFocus": "支払った"
-          }
-        ]
-      }
+        "to": "相手・対象",
+        "label": "価値や意識を対象へ向ける"
+    },
+    "meanings": [
+        {
+            "id": "pay-invoice",
+            "title": "① 請求書・費用を支払う",
+            "pattern": "pay + 請求書・費用",
+            "transitivity": "他動詞",
+            "structure": "pay + 支払う対象",
+            "image": "請求された金額を支払う。",
+            "point": "pay the invoice / pay the fee は仕事でよく使います。",
+            "examples": [
+                {
+                    "en": "We paid the invoice yesterday.",
+                    "ja": "私たちは昨日、その請求書を支払いました。",
+                    "focus": "paid",
+                    "object": "the invoice"
+                },
+                {
+                    "en": "Please pay the fee by the end of the month.",
+                    "ja": "月末までにその費用を支払ってください。",
+                    "focus": "pay",
+                    "object": "the fee"
+                },
+                {
+                    "en": "The client has not paid the invoice yet.",
+                    "ja": "その顧客はまだ請求書を支払っていません。",
+                    "focus": "paid",
+                    "object": "the invoice"
+                }
+            ]
+        },
+        {
+            "id": "pay-for",
+            "title": "② 〜の代金を支払う",
+            "pattern": "pay for + 名詞",
+            "transitivity": "自動詞句",
+            "structure": "pay for + 支払う対象",
+            "image": "商品・サービス・作業に対してお金を払う。",
+            "point": "pay for は「〜の代金を払う」。pay the product ではなく pay for the product が自然です。",
+            "examples": [
+                {
+                    "en": "We need to pay for the samples in advance.",
+                    "ja": "私たちはサンプル代を前払いする必要があります。",
+                    "focus": "pay",
+                    "object": "for the samples"
+                },
+                {
+                    "en": "The customer paid for the repair work.",
+                    "ja": "顧客は修理作業の代金を支払いました。",
+                    "focus": "paid",
+                    "object": "for the repair work"
+                },
+                {
+                    "en": "Who will pay for the additional shipping cost?",
+                    "ja": "追加送料は誰が支払いますか？",
+                    "focus": "pay",
+                    "object": "for the additional shipping cost"
+                }
+            ]
+        },
+        {
+            "id": "pay-person",
+            "title": "③ 人・会社に支払う",
+            "pattern": "pay + 人・会社",
+            "transitivity": "他動詞",
+            "structure": "pay + 支払う相手",
+            "image": "相手にお金を渡す。",
+            "point": "pay the supplier / pay the contractor のように支払う相手を目的語にできます。",
+            "examples": [
+                {
+                    "en": "We paid the supplier last week.",
+                    "ja": "私たちは先週、仕入先に支払いました。",
+                    "focus": "paid",
+                    "object": "the supplier"
+                },
+                {
+                    "en": "Please pay the contractor after the work is complete.",
+                    "ja": "作業完了後に業者へ支払ってください。",
+                    "focus": "pay",
+                    "object": "the contractor"
+                },
+                {
+                    "en": "The company pays employees on the 25th.",
+                    "ja": "その会社は25日に従業員へ給与を支払います。",
+                    "focus": "pays",
+                    "object": "employees"
+                }
+            ]
+        },
+        {
+            "id": "pay-by",
+            "title": "④ 支払方法を言う",
+            "pattern": "pay by + 支払方法",
+            "transitivity": "自動詞句",
+            "structure": "pay by + card / bank transfer",
+            "image": "どの方法で支払うかを示す。",
+            "point": "pay by credit card / pay by bank transfer は実務でよく使います。",
+            "examples": [
+                {
+                    "en": "The customer paid by bank transfer.",
+                    "ja": "その顧客は銀行振込で支払いました。",
+                    "focus": "paid",
+                    "object": "by bank transfer"
+                },
+                {
+                    "en": "Can we pay by credit card?",
+                    "ja": "私たちはクレジットカードで支払えますか？",
+                    "focus": "pay",
+                    "object": "by credit card"
+                },
+                {
+                    "en": "They prefer to pay by invoice.",
+                    "ja": "彼らは請求書払いを希望しています。",
+                    "focus": "pay",
+                    "object": "by invoice"
+                }
+            ]
+        },
+        {
+            "id": "pay-attention",
+            "title": "⑤ 注意を払う",
+            "pattern": "pay attention to + 名詞",
+            "transitivity": "熟語",
+            "structure": "pay attention to + 注意する対象",
+            "image": "意識を対象に向ける。",
+            "point": "pay はお金だけでなく、注意を向ける意味でも使います。",
+            "examples": [
+                {
+                    "en": "Please pay attention to the delivery date.",
+                    "ja": "納期に注意してください。",
+                    "focus": "pay",
+                    "object": "attention to the delivery date"
+                },
+                {
+                    "en": "We need to pay attention to small details.",
+                    "ja": "私たちは細かい点に注意する必要があります。",
+                    "focus": "pay",
+                    "object": "attention to small details"
+                },
+                {
+                    "en": "The team paid attention to the client's request.",
+                    "ja": "チームは顧客の要望に注意を払いました。",
+                    "focus": "paid",
+                    "object": "attention to the client's request"
+                }
+            ]
+        },
+        {
+            "id": "pay-result",
+            "title": "⑥ 努力などが報われる",
+            "pattern": "effort / work + pays",
+            "transitivity": "自動詞",
+            "structure": "主語 + pays / paid",
+            "image": "努力した分の価値が結果として返ってくる。",
+            "point": "Hard work pays. は「努力は報われる」という定番表現です。",
+            "examples": [
+                {
+                    "en": "Our hard work paid off in the final presentation.",
+                    "ja": "私たちの努力は最終プレゼンで報われました。",
+                    "focus": "paid",
+                    "object": "off in the final presentation"
+                },
+                {
+                    "en": "Careful preparation pays in client meetings.",
+                    "ja": "丁寧な準備は顧客との会議で報われます。",
+                    "focus": "pays",
+                    "object": "in client meetings"
+                },
+                {
+                    "en": "The extra training paid off during the installation.",
+                    "ja": "追加研修は設置作業中に役立ちました。",
+                    "focus": "paid",
+                    "object": "off during the installation"
+                }
+            ]
+        }
     ],
-    "collocations": [],
-    "phrasalVerbs": []
-  },
-  {
+    "collocations": [
+        {
+            "phrase": "pay the invoice",
+            "ja": "請求書を支払う",
+            "image": "請求書の金額を支払う。",
+            "pattern": "pay the invoice",
+            "examples": [
+                {
+                    "en": "We need to pay the invoice by Friday.",
+                    "ja": "私たちは金曜日までに請求書を支払う必要があります。",
+                    "focus": "pay the invoice"
+                },
+                {
+                    "en": "The client paid the invoice this morning.",
+                    "ja": "顧客は今朝、請求書を支払いました。",
+                    "focus": "paid the invoice"
+                },
+                {
+                    "en": "Please check whether they paid the invoice.",
+                    "ja": "彼らが請求書を支払ったか確認してください。",
+                    "focus": "paid the invoice"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "pay attention to",
+            "ja": "〜に注意を払う",
+            "image": "注意を対象に向ける。",
+            "pattern": "pay attention to + 名詞",
+            "examples": [
+                {
+                    "en": "Please pay attention to the quantity.",
+                    "ja": "数量に注意してください。",
+                    "focus": "pay attention to"
+                },
+                {
+                    "en": "We should pay attention to the installation conditions.",
+                    "ja": "私たちは設置条件に注意するべきです。",
+                    "focus": "pay attention to"
+                },
+                {
+                    "en": "The team paid attention to every detail.",
+                    "ja": "チームはすべての細部に注意を払いました。",
+                    "focus": "paid attention to"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "pay by bank transfer",
+            "ja": "銀行振込で支払う",
+            "image": "支払方法として銀行振込を使う。",
+            "pattern": "pay by bank transfer",
+            "examples": [
+                {
+                    "en": "The customer will pay by bank transfer.",
+                    "ja": "顧客は銀行振込で支払います。",
+                    "focus": "pay by bank transfer"
+                },
+                {
+                    "en": "Can we pay by bank transfer this time?",
+                    "ja": "今回は銀行振込で支払えますか？",
+                    "focus": "pay by bank transfer"
+                },
+                {
+                    "en": "They paid by bank transfer after receiving the invoice.",
+                    "ja": "彼らは請求書を受け取った後、銀行振込で支払いました。",
+                    "focus": "paid by bank transfer"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "pay in advance",
+            "ja": "前払いする",
+            "image": "商品やサービスを受ける前に支払う。",
+            "pattern": "pay in advance",
+            "examples": [
+                {
+                    "en": "We need to pay in advance for this order.",
+                    "ja": "私たちはこの注文について前払いする必要があります。",
+                    "focus": "pay in advance"
+                },
+                {
+                    "en": "The supplier asked us to pay in advance.",
+                    "ja": "仕入先は私たちに前払いを求めました。",
+                    "focus": "pay in advance"
+                },
+                {
+                    "en": "Can the client pay in advance?",
+                    "ja": "顧客は前払いできますか？",
+                    "focus": "pay in advance"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "pay respect to",
+            "ja": "敬意を払う",
+            "image": "相手や考え方に敬意を向ける。",
+            "pattern": "pay respect to + 人・考え",
+            "examples": [
+                {
+                    "en": "We should pay respect to the client's culture.",
+                    "ja": "私たちは顧客の文化に敬意を払うべきです。",
+                    "focus": "pay respect to"
+                },
+                {
+                    "en": "The company pays respect to local business customs.",
+                    "ja": "その会社は地域の商習慣に敬意を払っています。",
+                    "focus": "pays respect to"
+                },
+                {
+                    "en": "Please pay respect to the opinions of the team.",
+                    "ja": "チームの意見に敬意を払ってください。",
+                    "focus": "pay respect to"
+                }
+            ],
+            "dailyExamples": []
+        }
+    ],
+    "phrasalVerbs": [
+        {
+            "phrase": "pay off",
+            "ja": "報われる・完済する",
+            "image": "努力や支払いが最後に良い結果になる。",
+            "pattern": "pay off / pay off + 借金",
+            "examples": [
+                {
+                    "en": "Our preparation paid off during the presentation.",
+                    "ja": "私たちの準備はプレゼン中に報われました。",
+                    "focus": "paid off"
+                },
+                {
+                    "en": "The extra checks paid off because we found an error.",
+                    "ja": "エラーを見つけたので、追加確認は報われました。",
+                    "focus": "paid off"
+                },
+                {
+                    "en": "The company paid off the remaining debt.",
+                    "ja": "会社は残りの借入金を完済しました。",
+                    "focus": "paid off"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "pay back",
+            "ja": "返済する・返す",
+            "image": "借りたお金や恩を相手に返す。",
+            "pattern": "pay back + 人 / 金額",
+            "examples": [
+                {
+                    "en": "We need to pay back the advance payment.",
+                    "ja": "私たちは前受金を返済する必要があります。",
+                    "focus": "pay back"
+                },
+                {
+                    "en": "The company paid back the loan early.",
+                    "ja": "会社は借入金を早めに返済しました。",
+                    "focus": "paid back"
+                },
+                {
+                    "en": "I will pay you back for the taxi cost.",
+                    "ja": "私はタクシー代をあなたに返します。",
+                    "focus": "pay you back"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "pay for",
+            "ja": "〜の代金を支払う",
+            "image": "対象に対して代金を支払う。",
+            "pattern": "pay for + 名詞",
+            "examples": [
+                {
+                    "en": "The client will pay for the additional work.",
+                    "ja": "顧客は追加作業の代金を支払います。",
+                    "focus": "pay for"
+                },
+                {
+                    "en": "We paid for the samples in advance.",
+                    "ja": "私たちはサンプル代を前払いしました。",
+                    "focus": "paid for"
+                },
+                {
+                    "en": "Who will pay for the shipping cost?",
+                    "ja": "送料は誰が支払いますか？",
+                    "focus": "pay for"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "pay up",
+            "ja": "支払うべきお金を払う",
+            "image": "未払いの金額を支払う。",
+            "pattern": "pay up",
+            "examples": [
+                {
+                    "en": "The client finally paid up after several reminders.",
+                    "ja": "顧客は何度かリマインドした後、ようやく支払いました。",
+                    "focus": "paid up"
+                },
+                {
+                    "en": "We cannot close the account until they pay up.",
+                    "ja": "彼らが支払うまで、私たちはその取引を完了できません。",
+                    "focus": "pay up"
+                },
+                {
+                    "en": "The supplier asked the customer to pay up before shipment.",
+                    "ja": "仕入先は出荷前に顧客へ支払いを求めました。",
+                    "focus": "pay up"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "pay out",
+            "ja": "支払う・払い出す",
+            "image": "会社や制度からお金を支払う。",
+            "pattern": "pay out + 金額・手当",
+            "examples": [
+                {
+                    "en": "The company paid out the bonus in June.",
+                    "ja": "会社は6月に賞与を支払いました。",
+                    "focus": "paid out"
+                },
+                {
+                    "en": "The insurance company will pay out the claim.",
+                    "ja": "保険会社はその請求に対して保険金を支払います。",
+                    "focus": "pay out"
+                },
+                {
+                    "en": "We need to confirm when the refund will be paid out.",
+                    "ja": "返金がいつ支払われるか確認する必要があります。",
+                    "focus": "paid out"
+                }
+            ],
+            "dailyExamples": []
+        }
+    ]
+},
+{
     "id": "buy",
     "rank": 45,
     "word": "BUY",
@@ -27301,72 +28062,439 @@ export const verbs: Verb[] = [
     "syllable": "buy",
     "transitivity": "他動詞",
     "importance": "★★★★★ 基本",
-    "core": "買う・購入する",
-    "coreDetail": "BUYは、必要な物や材料を購入する時に使う基本動詞です。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 買う・購入する",
-        "pattern": "buy + 名詞",
-        "transitivity": "他動詞",
-        "structure": "S + buy + O",
-        "image": "お金を払って手に入れる",
-        "point": "buy は purchase より日常的です。仕事では buy samples / buy parts などが使えます。",
-        "examples": [
-          {
-            "en": "We bought sample parts for the project.",
-            "ja": "私たちはその案件用にサンプル部品を購入しました。",
-            "focus": "bought sample parts",
-            "jaFocus": "サンプル部品を購入した",
-            "object": "sample parts",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "bought"
-              },
-              {
-                "label": "O",
-                "text": "sample parts"
-              }
-            ]
-          },
-          {
-            "en": "I need to buy a new charger today.",
-            "ja": "私は今日、新しい充電器を買う必要があります。",
-            "focus": "buy a charger",
-            "jaFocus": "充電器を買う"
-          },
-          {
-            "en": "The company bought new equipment last month.",
-            "ja": "その会社は先月、新しい設備を購入しました。",
-            "focus": "bought equipment",
-            "jaFocus": "設備を購入した"
-          }
+    "core": "お金を払って必要なものを手に入れる",
+    "coreDetail": "BUYは、商品・部品・サービス・考え方などを手に入れる動詞です。仕事では buy from a supplier, buy in bulk, buy into an idea なども重要です。",
+    "coreVisual": {
+        "from": [
+            "💴 支払い",
+            "🧾 条件",
+            "📦 商品",
+            "💡 考え"
         ],
-        "dailyExamples": [
-          {
-            "en": "I need to buy a new charger today.",
-            "ja": "私は今日、新しい充電器を買う必要があります。",
-            "focus": "buy a charger",
-            "jaFocus": "充電器を買う"
-          },
-          {
-            "en": "The company bought new equipment last month.",
-            "ja": "その会社は先月、新しい設備を購入しました。",
-            "focus": "bought equipment",
-            "jaFocus": "設備を購入した"
-          }
-        ]
-      }
+        "to": "自分・会社のものにする",
+        "label": "支払う → 手に入れる"
+    },
+    "meanings": [
+        {
+            "id": "buy-object",
+            "title": "① 商品・部品を買う",
+            "pattern": "buy + 名詞",
+            "transitivity": "他動詞",
+            "structure": "buy + 買うもの",
+            "image": "必要なものを購入して手に入れる。",
+            "point": "buy は purchase より会話で自然です。仕事では buy parts / buy samples / buy equipment がよく使えます。",
+            "examples": [
+                {
+                    "en": "We bought sample parts for the project.",
+                    "ja": "私たちはその案件用にサンプル部品を購入しました。",
+                    "focus": "bought",
+                    "object": "sample parts"
+                },
+                {
+                    "en": "I need to buy a new charger today.",
+                    "ja": "私は今日、新しい充電器を買う必要があります。",
+                    "focus": "buy",
+                    "object": "a new charger"
+                },
+                {
+                    "en": "The company bought new equipment last month.",
+                    "ja": "その会社は先月、新しい設備を購入しました。",
+                    "focus": "bought",
+                    "object": "new equipment"
+                }
+            ]
+        },
+        {
+            "id": "buy-from",
+            "title": "② 〜から買う",
+            "pattern": "buy from + 仕入先・店",
+            "transitivity": "他動詞句",
+            "structure": "buy + 買うもの + from + 相手",
+            "image": "購入元を from で示す。",
+            "point": "仕入先や販売元を言う時は buy from を使います。",
+            "examples": [
+                {
+                    "en": "We buy LED parts from this supplier.",
+                    "ja": "私たちはこの仕入先からLED部品を購入しています。",
+                    "focus": "buy",
+                    "object": "LED parts"
+                },
+                {
+                    "en": "The client wants to buy directly from the manufacturer.",
+                    "ja": "顧客はメーカーから直接購入したいと考えています。",
+                    "focus": "buy",
+                    "object": "directly from the manufacturer"
+                },
+                {
+                    "en": "Did you buy the materials from the usual vendor?",
+                    "ja": "あなたはいつもの業者から材料を購入しましたか？",
+                    "focus": "buy",
+                    "object": "the materials"
+                }
+            ]
+        },
+        {
+            "id": "buy-for",
+            "title": "③ 〜のために買う",
+            "pattern": "buy + 名詞 + for + 目的・人",
+            "transitivity": "他動詞",
+            "structure": "buy + 買うもの + for + 目的",
+            "image": "目的や相手のために購入する。",
+            "point": "案件・部署・顧客などの目的を for で足します。",
+            "examples": [
+                {
+                    "en": "We bought extra materials for the installation.",
+                    "ja": "私たちは設置作業のために追加材料を購入しました。",
+                    "focus": "bought",
+                    "object": "extra materials"
+                },
+                {
+                    "en": "Please buy a sample for the client meeting.",
+                    "ja": "顧客との会議用にサンプルを購入してください。",
+                    "focus": "buy",
+                    "object": "a sample"
+                },
+                {
+                    "en": "The team bought software for the new project.",
+                    "ja": "チームは新しい案件のためにソフトウェアを購入しました。",
+                    "focus": "bought",
+                    "object": "software"
+                }
+            ]
+        },
+        {
+            "id": "buy-at-price",
+            "title": "④ 価格・条件で買う",
+            "pattern": "buy at / for + 価格",
+            "transitivity": "他動詞句",
+            "structure": "buy + 対象 + at / for + 価格",
+            "image": "価格条件に合う形で購入する。",
+            "point": "具体的な価格や条件を言う時に便利です。",
+            "examples": [
+                {
+                    "en": "We bought the parts at a lower price.",
+                    "ja": "私たちはその部品をより安い価格で購入しました。",
+                    "focus": "bought",
+                    "object": "the parts"
+                },
+                {
+                    "en": "Can we buy this product for under 10,000 yen?",
+                    "ja": "この商品を1万円未満で購入できますか？",
+                    "focus": "buy",
+                    "object": "this product"
+                },
+                {
+                    "en": "The customer bought the package at a discount.",
+                    "ja": "顧客はそのセットを割引価格で購入しました。",
+                    "focus": "bought",
+                    "object": "the package"
+                }
+            ]
+        },
+        {
+            "id": "buy-in-bulk",
+            "title": "⑤ まとめて買う",
+            "pattern": "buy in bulk / buy large quantities",
+            "transitivity": "他動詞句",
+            "structure": "buy + 大量・まとめて",
+            "image": "数量をまとめて購入する。",
+            "point": "仕事では単価を下げるために buy in bulk をよく使います。",
+            "examples": [
+                {
+                    "en": "We buy these parts in bulk to reduce cost.",
+                    "ja": "私たちはコスト削減のためにこれらの部品をまとめて購入しています。",
+                    "focus": "buy",
+                    "object": "these parts"
+                },
+                {
+                    "en": "The supplier gives a discount when we buy in bulk.",
+                    "ja": "まとめて購入すると、その仕入先は割引してくれます。",
+                    "focus": "buy",
+                    "object": "in bulk"
+                },
+                {
+                    "en": "Should we buy larger quantities this month?",
+                    "ja": "今月はより多い数量を購入するべきですか？",
+                    "focus": "buy",
+                    "object": "larger quantities"
+                }
+            ]
+        },
+        {
+            "id": "buy-idea",
+            "title": "⑥ 考えや提案を受け入れる",
+            "pattern": "buy + idea / argument",
+            "transitivity": "他動詞",
+            "structure": "buy + 考え・説明",
+            "image": "説明や考えを納得して受け入れる。",
+            "point": "口語では I don't buy it. で「それは納得できない」という意味になります。",
+            "examples": [
+                {
+                    "en": "The client did not buy our explanation.",
+                    "ja": "顧客は私たちの説明に納得しませんでした。",
+                    "focus": "buy",
+                    "object": "our explanation"
+                },
+                {
+                    "en": "I don't buy that argument without data.",
+                    "ja": "データがなければ、その主張には納得できません。",
+                    "focus": "buy",
+                    "object": "that argument"
+                },
+                {
+                    "en": "The team bought the idea after seeing the results.",
+                    "ja": "結果を見た後、チームはその案を受け入れました。",
+                    "focus": "bought",
+                    "object": "the idea"
+                }
+            ]
+        }
     ],
-    "collocations": [],
-    "phrasalVerbs": []
-  },
+    "collocations": [
+        {
+            "phrase": "buy parts",
+            "ja": "部品を買う",
+            "image": "案件や製作に必要な部品を購入する。",
+            "pattern": "buy parts for + 案件",
+            "examples": [
+                {
+                    "en": "We need to buy parts for the repair.",
+                    "ja": "私たちは修理用の部品を買う必要があります。",
+                    "focus": "buy parts"
+                },
+                {
+                    "en": "The team bought parts from a local supplier.",
+                    "ja": "チームは地元の仕入先から部品を購入しました。",
+                    "focus": "bought parts"
+                },
+                {
+                    "en": "Please buy parts that match the specification.",
+                    "ja": "仕様に合う部品を購入してください。",
+                    "focus": "buy parts"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "buy a sample",
+            "ja": "サンプルを買う",
+            "image": "確認や検証のためにサンプルを購入する。",
+            "pattern": "buy a sample / buy samples",
+            "examples": [
+                {
+                    "en": "Let's buy a sample before placing a large order.",
+                    "ja": "大量発注の前にサンプルを購入しましょう。",
+                    "focus": "buy a sample"
+                },
+                {
+                    "en": "We bought samples to check the color.",
+                    "ja": "私たちは色を確認するためにサンプルを購入しました。",
+                    "focus": "bought samples"
+                },
+                {
+                    "en": "Can you buy a sample for the client?",
+                    "ja": "顧客用にサンプルを購入できますか？",
+                    "focus": "buy a sample"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "buy in bulk",
+            "ja": "まとめ買いする",
+            "image": "数量をまとめて購入する。",
+            "pattern": "buy in bulk",
+            "examples": [
+                {
+                    "en": "We buy in bulk to get a better price.",
+                    "ja": "私たちはより良い価格にするためにまとめ買いします。",
+                    "focus": "buy in bulk"
+                },
+                {
+                    "en": "The company bought in bulk before the price increase.",
+                    "ja": "会社は値上げ前にまとめ買いしました。",
+                    "focus": "bought in bulk"
+                },
+                {
+                    "en": "Should we buy in bulk for this project?",
+                    "ja": "この案件ではまとめ買いするべきですか？",
+                    "focus": "buy in bulk"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "buy from a supplier",
+            "ja": "仕入先から買う",
+            "image": "購入元を明確にして買う。",
+            "pattern": "buy from a supplier",
+            "examples": [
+                {
+                    "en": "We usually buy from this supplier.",
+                    "ja": "私たちは普段この仕入先から購入しています。",
+                    "focus": "buy from"
+                },
+                {
+                    "en": "The client wants to buy from a domestic supplier.",
+                    "ja": "顧客は国内仕入先から購入したいと考えています。",
+                    "focus": "buy from"
+                },
+                {
+                    "en": "Can we buy from another supplier this time?",
+                    "ja": "今回は別の仕入先から購入できますか？",
+                    "focus": "buy from"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "buy at a discount",
+            "ja": "割引価格で買う",
+            "image": "通常価格より安く購入する。",
+            "pattern": "buy at a discount",
+            "examples": [
+                {
+                    "en": "We bought the equipment at a discount.",
+                    "ja": "私たちはその設備を割引価格で購入しました。",
+                    "focus": "bought the equipment at a discount"
+                },
+                {
+                    "en": "Can we buy this material at a discount?",
+                    "ja": "この材料を割引価格で購入できますか？",
+                    "focus": "buy this material at a discount"
+                },
+                {
+                    "en": "The company bought extra stock at a discount.",
+                    "ja": "会社は追加在庫を割引価格で購入しました。",
+                    "focus": "bought extra stock at a discount"
+                }
+            ],
+            "dailyExamples": []
+        }
+    ],
+    "phrasalVerbs": [
+        {
+            "phrase": "buy into",
+            "ja": "考えを受け入れる・賛同する",
+            "image": "提案や考えに納得して乗る。",
+            "pattern": "buy into + idea / plan",
+            "examples": [
+                {
+                    "en": "The team bought into the new plan.",
+                    "ja": "チームは新しい計画に賛同しました。",
+                    "focus": "bought into"
+                },
+                {
+                    "en": "We need the client to buy into this proposal.",
+                    "ja": "私たちは顧客にこの提案へ納得してもらう必要があります。",
+                    "focus": "buy into"
+                },
+                {
+                    "en": "Management did not buy into the idea at first.",
+                    "ja": "経営陣は最初、その案に賛同しませんでした。",
+                    "focus": "buy into"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "buy out",
+            "ja": "買収する・買い取る",
+            "image": "会社や権利をまとめて買い取る。",
+            "pattern": "buy out + company / partner",
+            "examples": [
+                {
+                    "en": "A larger company bought out the supplier.",
+                    "ja": "より大きな会社がその仕入先を買収しました。",
+                    "focus": "bought out"
+                },
+                {
+                    "en": "They plan to buy out the local distributor.",
+                    "ja": "彼らは地元の販売代理店を買収する予定です。",
+                    "focus": "buy out"
+                },
+                {
+                    "en": "The owner bought out his business partner.",
+                    "ja": "オーナーは共同経営者の持ち分を買い取りました。",
+                    "focus": "bought out"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "buy up",
+            "ja": "買い占める・大量に買う",
+            "image": "在庫や商品を多く買い集める。",
+            "pattern": "buy up + stock / supply",
+            "examples": [
+                {
+                    "en": "Companies bought up the remaining stock before the price increase.",
+                    "ja": "企業は値上げ前に残りの在庫を買い占めました。",
+                    "focus": "bought up"
+                },
+                {
+                    "en": "The distributor bought up all available units.",
+                    "ja": "販売代理店は入手可能な全数を買い占めました。",
+                    "focus": "bought up"
+                },
+                {
+                    "en": "We should not buy up more inventory than we need.",
+                    "ja": "必要以上に在庫を買い占めるべきではありません。",
+                    "focus": "buy up"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "buy back",
+            "ja": "買い戻す",
+            "image": "一度売ったものを再び買う。",
+            "pattern": "buy back + 商品・株式",
+            "examples": [
+                {
+                    "en": "The company bought back its own shares.",
+                    "ja": "会社は自社株を買い戻しました。",
+                    "focus": "bought back"
+                },
+                {
+                    "en": "Can we buy back the unused materials?",
+                    "ja": "未使用の材料を買い戻すことはできますか？",
+                    "focus": "buy back"
+                },
+                {
+                    "en": "The supplier offered to buy back the defective products.",
+                    "ja": "仕入先は不良品を買い戻すと申し出ました。",
+                    "focus": "buy back"
+                }
+            ],
+            "dailyExamples": []
+        },
+        {
+            "phrase": "buy off",
+            "ja": "買収する・お金で黙らせる",
+            "image": "不正にお金を払って相手の行動を変えさせる。",
+            "pattern": "buy off + 人",
+            "examples": [
+                {
+                    "en": "The company denied trying to buy off the inspector.",
+                    "ja": "その会社は検査官を買収しようとしたことを否定しました。",
+                    "focus": "buy off"
+                },
+                {
+                    "en": "We must never buy off a decision-maker.",
+                    "ja": "私たちは意思決定者を買収してはいけません。",
+                    "focus": "buy off"
+                },
+                {
+                    "en": "The report said the contractor bought off local officials.",
+                    "ja": "報告書によると、その業者は地元職員を買収しました。",
+                    "focus": "bought off"
+                }
+            ],
+            "dailyExamples": []
+        }
+    ]
+},
   {
     "id": "sell",
     "rank": 46,

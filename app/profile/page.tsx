@@ -282,7 +282,7 @@ export default function ProfilePage() {
       </header>
 
       <section className="digital-card p-5">
-        <div className="profile-hero flex items-center gap-4">
+        <div className="profile-hero flex items-start gap-4">
           <button
             className="profile-avatar relative h-20 w-20 shrink-0 overflow-hidden rounded-3xl border border-cyan-300/30 bg-slate-900 text-4xl"
             onClick={() => fileRef.current?.click()}
@@ -312,9 +312,12 @@ export default function ProfilePage() {
           />
 
           <div className="min-w-0 flex-1">
-            <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">PROFILE</p>
-            <div className="mt-1 flex items-center gap-2">
-              <p className="profile-name min-w-0 flex-1 truncate text-2xl font-extrabold text-white">{displayName}</p>
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0">
+                <p className="text-xs font-bold tracking-[0.22em] text-cyan-200">PROFILE</p>
+                <p className="profile-name mt-1 truncate text-2xl font-extrabold text-white">{displayName}</p>
+                <p className="profile-login mt-1 text-sm text-slate-300">ログインID：{username}</p>
+              </div>
               {!isEditingName && (
                 <button
                   className="shrink-0 rounded-full border border-cyan-300/25 px-3 py-1.5 text-xs font-bold text-cyan-100"
@@ -328,23 +331,43 @@ export default function ProfilePage() {
                 </button>
               )}
             </div>
-            <p className="profile-login mt-1 text-sm text-slate-300">ログインID：{username}</p>
-            <div className="profile-mini-stats mt-3 grid grid-cols-3 gap-2 text-center text-xs">
-              <div className="digital-panel py-2">
-                <p className="digital-label">Lv</p>
-                <p className="font-extrabold text-cyan-100">{progress.level}</p>
+
+            {isEditingName && (
+              <div className="mt-3 space-y-3 rounded-2xl border border-cyan-300/15 bg-slate-950/45 p-3">
+                <p className="text-xs font-bold tracking-[0.16em] text-cyan-200">ニックネーム変更</p>
+                <input
+                  className="w-full rounded-xl border border-cyan-300/20 bg-slate-950 px-4 py-3 text-white outline-none"
+                  value={displayNameDraft}
+                  onChange={(event) => setDisplayNameDraft(event.target.value)}
+                  placeholder="ニックネーム"
+                />
+                <div className="grid grid-cols-2 gap-2">
+                  <button className="btn btn-primary" onClick={onSaveProfile} type="button">
+                    保存
+                  </button>
+                  <button
+                    className="btn btn-soft"
+                    onClick={() => {
+                      setDisplayNameDraft(displayName);
+                      setIsEditingName(false);
+                    }}
+                    type="button"
+                  >
+                    キャンセル
+                  </button>
+                </div>
               </div>
-              <div className="digital-panel py-2">
-                <p className="digital-label">XP</p>
-                <p className="font-extrabold text-cyan-100">{progress.xp}</p>
-              </div>
-              <div className="digital-panel py-2">
-                <p className="digital-label">継続</p>
-                <p className="font-extrabold text-cyan-100">{progress.currentStreak}日</p>
-              </div>
+            )}
+            {profileMessage && <p className="mt-2 text-sm font-bold text-cyan-100">✅ {profileMessage}</p>}
+
+            <div className="profile-summary-row">
+              <span className="profile-summary-chip">Lv <strong>{progress.level}</strong></span>
+              <span className="profile-summary-chip">XP <strong>{progress.xp}</strong></span>
+              <span className="profile-summary-chip">継続 <strong>{progress.currentStreak}日</strong></span>
             </div>
-            <div className="mt-3 rounded-2xl border border-cyan-300/15 bg-slate-950/55 p-3 text-sm">
-              <div className="flex items-center justify-between gap-3">
+
+            <div className="profile-plan-line text-sm">
+              <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="font-bold text-slate-300">利用状態</span>
                 <span className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-xs font-extrabold text-cyan-100">
                   {plan.hasPremium ? "Premium" : "無料プラン"}
@@ -354,57 +377,10 @@ export default function ProfilePage() {
                 解放範囲：<span className="text-white">{plan.unlocked}語</span> / {plan.totalTarget}語
               </p>
             </div>
+
+            <p className="mt-4 text-sm text-slate-300">最終ログイン：{formatDateTime(progress.lastLoginAt)}</p>
           </div>
         </div>
-
-        <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-slate-950/55 p-4">
-          <div className="flex items-center justify-between gap-3">
-            <div className="min-w-0">
-              <p className="text-xs font-bold tracking-[0.16em] text-cyan-200">ニックネーム</p>
-              <p className="mt-1 truncate text-lg font-extrabold text-white">{displayName}</p>
-            </div>
-            {!isEditingName && (
-              <button
-                className="rounded-full border border-cyan-300/25 px-4 py-2 text-sm font-bold text-cyan-100"
-                onClick={() => {
-                  setDisplayNameDraft(displayName);
-                  setIsEditingName(true);
-                }}
-                type="button"
-              >
-                編集
-              </button>
-            )}
-          </div>
-          {isEditingName && (
-            <div className="mt-3 space-y-3">
-              <input
-                className="w-full rounded-xl border border-cyan-300/20 bg-slate-950 px-4 py-3 text-white outline-none"
-                value={displayNameDraft}
-                onChange={(event) => setDisplayNameDraft(event.target.value)}
-                placeholder="ニックネーム"
-              />
-              <div className="grid grid-cols-2 gap-2">
-                <button className="btn btn-primary" onClick={onSaveProfile} type="button">
-                  保存
-                </button>
-                <button
-                  className="btn btn-soft"
-                  onClick={() => {
-                    setDisplayNameDraft(displayName);
-                    setIsEditingName(false);
-                  }}
-                  type="button"
-                >
-                  キャンセル
-                </button>
-              </div>
-            </div>
-          )}
-          {profileMessage && <p className="mt-2 text-sm font-bold text-cyan-100">✅ {profileMessage}</p>}
-        </div>
-
-        <p className="mt-4 text-sm text-slate-300">最終ログイン：{formatDateTime(progress.lastLoginAt)}</p>
       </section>
 
       <section className="card p-5">

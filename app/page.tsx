@@ -269,7 +269,7 @@ export default function Home() {
       <section className="home-level-card p-4">
         <div className="flex items-center gap-4">
           <Link
-            className="home-level-avatar flex h-[88px] w-[88px] shrink-0 items-center justify-center overflow-hidden rounded-3xl border border-cyan-300/30 bg-slate-900 text-4xl shadow-lg"
+            className="home-level-avatar flex h-[106px] w-[106px] shrink-0 items-center justify-center overflow-hidden rounded-[26px] border border-cyan-300/30 bg-slate-900 text-4xl shadow-lg"
             href="/profile"
             aria-label="マイページを開く"
           >
@@ -281,7 +281,7 @@ export default function Home() {
             )}
           </Link>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-base font-extrabold text-white">{displayName}</p>
+            <p className="truncate text-sm font-bold text-white/95">{displayName}</p>
             <div className="mt-1 flex items-center gap-2">
               <p className="home-level-main">Lv.{progress.level}</p>
               <button
@@ -293,9 +293,9 @@ export default function Home() {
                 🏅 {badges.length}
               </button>
             </div>
-            <p className="mt-1 text-sm font-bold text-cyan-100">{leagueLine}</p>
-            <div className="mt-2 space-y-0.5">
-              <p className="text-lg font-extrabold leading-tight text-white">XP {progress.xp}</p>
+            <p className="mt-1 text-xs font-bold text-cyan-100">{leagueLine}</p>
+            <div className="mt-2 space-y-0.5 leading-tight">
+              <p className="text-base font-extrabold leading-tight text-white">XP {progress.xp}</p>
               <p className="text-xs font-bold text-cyan-100">次のレベルまで {xpToNextLevel} XP</p>
               <p className="text-xs font-bold text-slate-300">連続学習 <span className="text-white">{progress.currentStreak}日</span></p>
             </div>

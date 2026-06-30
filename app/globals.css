@@ -204,6 +204,37 @@ input, select, textarea { color:#f8fafc; background:#0b1525; border-color:rgba(1
   .mobile-card-grid { grid-template-columns: 1fr; }
 }
 
+
+/* Ver.94 profile balance: flatter profile header with fewer nested heavy cards */
+.profile-summary-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.profile-summary-chip {
+  border-radius: 999px;
+  border: 1px solid rgba(103,232,249,.18);
+  background: rgba(2,6,23,.45);
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #cbd5e1;
+}
+.profile-summary-chip strong { color: #f8fafc; margin-left: 4px; }
+.profile-plan-line {
+  margin-top: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(103,232,249,.14);
+  background: rgba(2,6,23,.42);
+  padding: 11px 12px;
+}
+@media (max-width: 430px) {
+  .profile-summary-row { gap: 6px; }
+  .profile-summary-chip { font-size: 11px; padding: 6px 8px; }
+  .profile-plan-line { padding: 10px 11px; }
+}
+
 /* Ver.53 smart profile/header fixes */
 .home-avatar img { display: block; }
 .home-profile-actions { max-width: 92px; }
@@ -287,24 +318,26 @@ input, select, textarea { color:#f8fafc; background:#0b1525; border-color:rgba(1
 }
 .home-level-main {
   color: #f8fafc;
-  font-size: 44px;
+  font-size: 30px;
   line-height: 1;
-  font-weight: 950;
-  letter-spacing: -0.045em;
+  font-weight: 760;
+  letter-spacing: -0.035em;
   font-variant-numeric: tabular-nums;
 }
 .home-level-avatar img { display: block; }
 @media (max-width: 430px) {
   .home-level-card { border-radius: 20px; padding: 14px !important; }
-  .home-level-avatar { height: 82px !important; width: 82px !important; border-radius: 22px !important; }
-  .home-level-main { font-size: 38px; }
+  .home-level-avatar { height: 104px !important; width: 104px !important; border-radius: 24px !important; }
+  .home-level-main { font-size: 29px; font-weight: 760; }
   .home-badge-pill { padding: 5px 9px; font-size: 13px; }
 }
 @media (max-width: 360px) {
-  .home-level-main { font-size: 34px; }
+  .home-level-avatar { height: 92px !important; width: 92px !important; border-radius: 22px !important; }
+  .home-level-main { font-size: 27px; }
 }
 
 
+/* Ver.93: slim down HOME level size while keeping avatar prominent */
 /* Ver.88: badge detail bottom sheet and more visible HOME profile status */
 .badge-bottom-sheet {
   max-height: min(70vh, 560px);

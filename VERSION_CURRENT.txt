@@ -1,4 +1,7 @@
-Ver.98 - Verb quality batch 7 and upload ZIP cleanup
-- Improved sell / choose / follow content quality.
-- Added richer core images, business usage patterns, collocations, phrasal verbs, and 3 work examples per block.
-- Cleaned old patch scripts, old audit files, and old version files from the user upload ZIP.
+Ver.99 - Verb quality batch 8
+
+Scope:
+- Improved verb quality for create / reach / return.
+- Continued 3-verb cautious batch process.
+- Daily examples are intentionally not updated yet.
+- ZIP remains lightweight for GitHub upload.

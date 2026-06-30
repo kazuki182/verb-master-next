@@ -28721,230 +28721,298 @@ export const verbs: Verb[] = [
     "id": "create",
     "rank": 49,
     "word": "CREATE",
-    "ipa": "",
+    "ipa": "/kriˈeɪt/",
     "kana": "クリエイト",
-    "syllable": "create",
+    "syllable": "cre-ate",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 基本",
-    "core": "作り出す・作成する",
-    "coreDetail": "CREATEは、資料・デザイン・仕組みなど新しいものを作る時に使う動詞です。",
+    "core": "まだないものを、新しく形にする",
+    "coreDetail": "CREATEは、資料・デザイン・仕組み・機会・価値など、今までなかったものを新しく作り出す動詞です。仕事では、資料作成、仕組み作り、チャンス作り、問題を生む場面まで幅広く使います。",
+    "coreVisual": {"from": ["アイデア", "情報", "条件", "素材"], "to": "新しい形", "label": "ない状態 → 形にする"},
     "meanings": [
-      {
-        "id": "main",
-        "title": "① 作成する・作り出す",
-        "pattern": "create + 名詞",
-        "transitivity": "他動詞",
-        "structure": "S + create + O",
-        "image": "新しいものを作る",
-        "point": "create は make より少しフォーマルで、資料・データ・仕組みなどに使いやすいです。",
-        "examples": [
-          {
-            "en": "I created a product sheet for the client yesterday.",
-            "ja": "私は昨日、その顧客向けの商品資料を作成しました。",
-            "focus": "created a product sheet",
-            "jaFocus": "商品資料を作成した",
-            "object": "a product sheet",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "created"
-              },
-              {
-                "label": "O",
-                "text": "a product sheet"
-              }
-            ]
-          },
-          {
-            "en": "We created a checklist to prevent mistakes.",
-            "ja": "私たちはミスを防ぐためにチェックリストを作成しました。",
-            "focus": "created a checklist",
-            "jaFocus": "チェックリストを作成した"
-          },
-          {
-            "en": "The designer created a new layout.",
-            "ja": "そのデザイナーは新しいレイアウトを作成しました。",
-            "focus": "created a layout",
-            "jaFocus": "レイアウトを作成した"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "We created a checklist to prevent mistakes.",
-            "ja": "私たちはミスを防ぐためにチェックリストを作成しました。",
-            "focus": "created a checklist",
-            "jaFocus": "チェックリストを作成した"
-          },
-          {
-            "en": "The designer created a new layout.",
-            "ja": "そのデザイナーは新しいレイアウトを作成しました。",
-            "focus": "created a layout",
-            "jaFocus": "レイアウトを作成した"
-          }
-        ]
-      }
+      {"id": "create-materials", "title": "① 資料・データを作成する", "pattern": "create + 資料・データ", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "情報を整理して、使える資料にする。", "point": "create a report / create a file / create a checklist のように、仕事で使う成果物を作る時に使います。", "examples": [
+        {"en": "I created a product sheet for the client.", "ja": "私は顧客向けの商品資料を作成しました。", "focus": "created"},
+        {"en": "We created a checklist to prevent mistakes.", "ja": "私たちはミスを防ぐためにチェックリストを作成しました。", "focus": "created"},
+        {"en": "Please create a short report by Friday.", "ja": "金曜日までに短い報告書を作成してください。", "focus": "create"}
+      ], "dailyExamples": []},
+      {"id": "create-design", "title": "② デザイン・レイアウトを作る", "pattern": "create + design / layout / image", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "見た目や形を新しく作る。", "point": "デザイン、画像、レイアウトなど、見える形のものを作る時にも使います。", "examples": [
+        {"en": "The designer created a new layout for the sign.", "ja": "デザイナーはその看板用に新しいレイアウトを作成しました。", "focus": "created"},
+        {"en": "We created three design options for the client.", "ja": "私たちは顧客向けに3つのデザイン案を作成しました。", "focus": "created"},
+        {"en": "Can you create an image for the proposal?", "ja": "提案書用の画像を作成できますか？", "focus": "create"}
+      ], "dailyExamples": []},
+      {"id": "create-system", "title": "③ 仕組み・環境を作る", "pattern": "create + system / process / environment", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "人や物事が動きやすい仕組みを作る。", "point": "create a system は「仕組みを作る」、create an environment は「環境を作る」です。", "examples": [
+        {"en": "We need to create a better approval process.", "ja": "私たちはより良い承認フローを作る必要があります。", "focus": "create"},
+        {"en": "The manager created a system to track orders.", "ja": "マネージャーは注文を管理する仕組みを作りました。", "focus": "created"},
+        {"en": "This tool creates a safer work environment.", "ja": "このツールはより安全な作業環境を作ります。", "focus": "creates"}
+      ], "dailyExamples": []},
+      {"id": "create-opportunity", "title": "④ 機会・価値を生み出す", "pattern": "create + opportunity / value / demand", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "新しいチャンスや価値を生み出す。", "point": "形のある物だけでなく、機会・価値・需要など目に見えないものにも使えます。", "examples": [
+        {"en": "This campaign created new sales opportunities.", "ja": "このキャンペーンは新しい販売機会を生み出しました。", "focus": "created"},
+        {"en": "Good service creates long-term value for customers.", "ja": "良いサービスは顧客に長期的な価値を生み出します。", "focus": "creates"},
+        {"en": "The new product created strong demand in the market.", "ja": "その新製品は市場で強い需要を生み出しました。", "focus": "created"}
+      ], "dailyExamples": []},
+      {"id": "create-problem", "title": "⑤ 問題・負担を生む", "pattern": "create + problem / risk / extra work", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "望まない状況を新しく発生させる。", "point": "create は良いものだけでなく、問題・リスク・追加作業を生む時にも使います。", "examples": [
+        {"en": "A late change may create extra work for the factory.", "ja": "遅い変更は工場に追加作業を生む可能性があります。", "focus": "create"},
+        {"en": "This delay created a problem with the delivery schedule.", "ja": "この遅延は納期スケジュールに問題を生みました。", "focus": "created"},
+        {"en": "Using the wrong file can create serious mistakes.", "ja": "間違ったファイルを使うと重大なミスを生む可能性があります。", "focus": "create"}
+      ], "dailyExamples": []},
+      {"id": "create-account", "title": "⑥ アカウント・記録を作る", "pattern": "create + account / record / entry", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "システム上に新しい登録情報を作る。", "point": "ITや業務管理では、アカウント・記録・入力欄を作る意味でもよく使います。", "examples": [
+        {"en": "Please create an account for the new user.", "ja": "新しいユーザー用のアカウントを作成してください。", "focus": "create"},
+        {"en": "The system created a new record automatically.", "ja": "システムが自動で新しい記録を作成しました。", "focus": "created"},
+        {"en": "We created a new project entry in the database.", "ja": "私たちはデータベースに新しい案件登録を作成しました。", "focus": "created"}
+      ], "dailyExamples": []}
     ],
-    "collocations": [],
-    "phrasalVerbs": []
+    "collocations": [
+      {"phrase": "create a report", "ja": "報告書を作成する", "image": "情報を報告書の形にまとめる。", "pattern": "create a report", "examples": [
+        {"en": "Please create a report after the site visit.", "ja": "現場訪問後に報告書を作成してください。", "focus": "create a report"},
+        {"en": "I created a report for the weekly meeting.", "ja": "私は週次会議用の報告書を作成しました。", "focus": "created a report"},
+        {"en": "We need to create a report with photos and notes.", "ja": "写真とメモを入れた報告書を作成する必要があります。", "focus": "create a report"}
+      ], "dailyExamples": []},
+      {"phrase": "create a plan", "ja": "計画を作成する", "image": "目的に向けた流れを形にする。", "pattern": "create a plan", "examples": [
+        {"en": "We created a plan for the installation work.", "ja": "私たちは設置作業の計画を作成しました。", "focus": "created a plan"},
+        {"en": "Please create a plan before ordering materials.", "ja": "材料を発注する前に計画を作成してください。", "focus": "create a plan"},
+        {"en": "The team created a backup plan for the delay.", "ja": "チームは遅延に備えた代替計画を作成しました。", "focus": "created a backup plan"}
+      ], "dailyExamples": []},
+      {"phrase": "create value", "ja": "価値を生み出す", "image": "相手にとって意味のある価値を作る。", "pattern": "create value", "examples": [
+        {"en": "Our proposal must create value for the client.", "ja": "私たちの提案は顧客に価値を生み出す必要があります。", "focus": "create value"},
+        {"en": "Better maintenance creates value after delivery.", "ja": "より良いメンテナンスは納品後に価値を生み出します。", "focus": "creates value"},
+        {"en": "This service creates value by saving time.", "ja": "このサービスは時間を節約することで価値を生み出します。", "focus": "creates value"}
+      ], "dailyExamples": []},
+      {"phrase": "create an opportunity", "ja": "機会を生み出す", "image": "新しい可能性を開く。", "pattern": "create an opportunity", "examples": [
+        {"en": "The meeting created an opportunity to discuss future projects.", "ja": "その会議は今後の案件を話し合う機会を生み出しました。", "focus": "created an opportunity"},
+        {"en": "A quick reply can create an opportunity for another order.", "ja": "素早い返信は追加注文の機会を生むことがあります。", "focus": "create an opportunity"},
+        {"en": "This event created new opportunities with local companies.", "ja": "このイベントは地元企業との新しい機会を生み出しました。", "focus": "created new opportunities"}
+      ], "dailyExamples": []},
+      {"phrase": "create a problem", "ja": "問題を生む", "image": "新しい問題を発生させる。", "pattern": "create a problem", "examples": [
+        {"en": "Changing the size now may create a problem.", "ja": "今サイズを変更すると問題が生じる可能性があります。", "focus": "create a problem"},
+        {"en": "The missing information created a problem for the estimate.", "ja": "不足情報が見積に問題を生みました。", "focus": "created a problem"},
+        {"en": "A wrong delivery address can create a serious problem.", "ja": "間違った納品先住所は重大な問題を生む可能性があります。", "focus": "create a serious problem"}
+      ], "dailyExamples": []}
+    ],
+    "phrasalVerbs": [
+      {"phrase": "create from", "ja": "〜から作る", "image": "材料や情報を元にして作る。", "pattern": "create A from B", "examples": [
+        {"en": "We created the proposal from the client's notes.", "ja": "私たちは顧客のメモを元に提案書を作成しました。", "focus": "created the proposal from"},
+        {"en": "The designer created a layout from the rough sketch.", "ja": "デザイナーはラフ案を元にレイアウトを作成しました。", "focus": "created a layout from"},
+        {"en": "Can you create a list from these emails?", "ja": "これらのメールを元にリストを作成できますか？", "focus": "create a list from"}
+      ], "dailyExamples": []},
+      {"phrase": "create for", "ja": "〜のために作る", "image": "目的や相手に合わせて作る。", "pattern": "create A for B", "examples": [
+        {"en": "We created a sample board for the client.", "ja": "私たちは顧客のためにサンプルボードを作成しました。", "focus": "created a sample board for"},
+        {"en": "Please create a simple chart for the meeting.", "ja": "会議のために簡単な表を作成してください。", "focus": "create a simple chart for"},
+        {"en": "The team created a new guide for beginners.", "ja": "チームは初心者向けに新しいガイドを作成しました。", "focus": "created a new guide for"}
+      ], "dailyExamples": []},
+      {"phrase": "create with", "ja": "〜を使って作る", "image": "道具や素材を使って作る。", "pattern": "create A with B", "examples": [
+        {"en": "We created the drawing with the latest software.", "ja": "私たちは最新ソフトで図面を作成しました。", "focus": "created the drawing with"},
+        {"en": "She created a report with data from Salesforce.", "ja": "彼女はSalesforceのデータを使って報告書を作成しました。", "focus": "created a report with"},
+        {"en": "Can we create the estimate with the current price list?", "ja": "現在の価格表を使って見積を作成できますか？", "focus": "create the estimate with"}
+      ], "dailyExamples": []},
+      {"phrase": "create by", "ja": "〜することで作る", "image": "行動を通して結果を作る。", "pattern": "create A by doing", "examples": [
+        {"en": "We created trust by responding quickly.", "ja": "私たちは素早く対応することで信頼を築きました。", "focus": "created trust by"},
+        {"en": "The team created value by reducing waste.", "ja": "チームは無駄を減らすことで価値を生み出しました。", "focus": "created value by"},
+        {"en": "They created demand by showing real examples.", "ja": "彼らは実例を見せることで需要を生み出しました。", "focus": "created demand by"}
+      ], "dailyExamples": []},
+      {"phrase": "create in", "ja": "〜内に作る", "image": "場所やシステムの中に新しく作る。", "pattern": "create A in B", "examples": [
+        {"en": "Please create a new folder in the shared drive.", "ja": "共有ドライブ内に新しいフォルダを作成してください。", "focus": "create a new folder in"},
+        {"en": "We created a task in the project system.", "ja": "私たちは案件管理システム内にタスクを作成しました。", "focus": "created a task in"},
+        {"en": "The admin created a new user in the system.", "ja": "管理者はシステム内に新しいユーザーを作成しました。", "focus": "created a new user in"}
+      ], "dailyExamples": []}
+    ]
   },
   {
     "id": "reach",
     "rank": 50,
     "word": "REACH",
-    "ipa": "",
+    "ipa": "/riːtʃ/",
     "kana": "リーチ",
     "syllable": "reach",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 基本",
-    "core": "到達する・連絡がつく",
-    "coreDetail": "REACHは、目標や場所に到達する、または相手に連絡がつく時に使います。",
+    "core": "目的地・相手・目標まで届く",
+    "coreDetail": "REACHは、物理的な場所、連絡したい相手、数値目標、合意点などに『届く・到達する』動詞です。仕事では、顧客に連絡がつく、目標に達する、合意に至る、一定の範囲まで影響が届く場面でよく使います。",
+    "coreVisual": {"from": ["現在地", "連絡", "努力", "数字"], "to": "目的地・相手・目標", "label": "届いて到達する"},
     "meanings": [
-      {
-        "id": "main",
-        "title": "① 到達する・連絡がつく",
-        "pattern": "reach + 人・場所・目標",
-        "transitivity": "他動詞",
-        "structure": "S + reach + O",
-        "image": "目的地や相手に届く",
-        "point": "reach the client は「顧客に連絡がつく」、reach the target は「目標に到達する」です。",
-        "examples": [
-          {
-            "en": "We reached the client by phone this morning.",
-            "ja": "私たちは今朝、電話でその顧客に連絡がつきました。",
-            "focus": "reached the client",
-            "jaFocus": "顧客に連絡がついた",
-            "object": "the client",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "reached"
-              },
-              {
-                "label": "O",
-                "text": "the client"
-              }
-            ]
-          },
-          {
-            "en": "The package reached the office yesterday.",
-            "ja": "その荷物は昨日、事務所に届きました。",
-            "focus": "reached the office",
-            "jaFocus": "事務所に届いた"
-          },
-          {
-            "en": "We reached our sales target this month.",
-            "ja": "私たちは今月、売上目標に到達しました。",
-            "focus": "reached our sales target",
-            "jaFocus": "目標に到達した"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The package reached the office yesterday.",
-            "ja": "その荷物は昨日、事務所に届きました。",
-            "focus": "reached the office",
-            "jaFocus": "事務所に届いた"
-          },
-          {
-            "en": "We reached our sales target this month.",
-            "ja": "私たちは今月、売上目標に到達しました。",
-            "focus": "reached our sales target",
-            "jaFocus": "目標に到達した"
-          }
-        ]
-      }
+      {"id": "reach-person", "title": "① 人・会社に連絡がつく", "pattern": "reach + 人・会社", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "連絡が相手まで届く。", "point": "reach the client は『顧客に連絡がつく』という意味で、電話やメールの場面で使えます。", "examples": [
+        {"en": "We reached the client by phone this morning.", "ja": "私たちは今朝、電話でその顧客に連絡がつきました。", "focus": "reached"},
+        {"en": "I could not reach the supplier yesterday.", "ja": "私は昨日、その仕入先に連絡がつきませんでした。", "focus": "reach"},
+        {"en": "Please try to reach the manager before noon.", "ja": "正午までにマネージャーに連絡を取ってみてください。", "focus": "reach"}
+      ], "dailyExamples": []},
+      {"id": "reach-place", "title": "② 場所に到着する", "pattern": "reach + 場所", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "目的地まで届く。", "point": "arrive at より少し直接的に、目的地に到達することを表します。", "examples": [
+        {"en": "The package reached the office yesterday.", "ja": "その荷物は昨日、事務所に届きました。", "focus": "reached"},
+        {"en": "Our staff reached the site before 9 a.m.", "ja": "スタッフは午前9時前に現場へ到着しました。", "focus": "reached"},
+        {"en": "The truck should reach the warehouse by evening.", "ja": "そのトラックは夕方までに倉庫へ到着するはずです。", "focus": "reach"}
+      ], "dailyExamples": []},
+      {"id": "reach-target", "title": "③ 目標・数字に到達する", "pattern": "reach + target / goal / number", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "設定した数字や目標まで届く。", "point": "reach our target / reach 100 units のように、数値や目標達成でよく使います。", "examples": [
+        {"en": "We reached our sales target this month.", "ja": "私たちは今月、売上目標に到達しました。", "focus": "reached"},
+        {"en": "Production reached 500 units last week.", "ja": "生産数は先週500台に達しました。", "focus": "reached"},
+        {"en": "The project reached the final stage.", "ja": "その案件は最終段階に到達しました。", "focus": "reached"}
+      ], "dailyExamples": []},
+      {"id": "reach-agreement", "title": "④ 合意・結論に達する", "pattern": "reach + agreement / decision / conclusion", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "話し合いの到達点に着く。", "point": "reach an agreement は『合意に達する』という定番表現です。", "examples": [
+        {"en": "We reached an agreement with the client.", "ja": "私たちは顧客と合意に達しました。", "focus": "reached"},
+        {"en": "The team reached a decision after the meeting.", "ja": "チームは会議後に決定に至りました。", "focus": "reached"},
+        {"en": "They reached a conclusion about the design change.", "ja": "彼らはデザイン変更について結論に達しました。", "focus": "reached"}
+      ], "dailyExamples": []},
+      {"id": "reach-level", "title": "⑤ 水準・限界に達する", "pattern": "reach + level / limit / point", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "ある基準や限界の位置まで届く。", "point": "reach a level / reach the limit のように、状態が一定の水準に達する時に使います。", "examples": [
+        {"en": "The cost reached an unacceptable level.", "ja": "コストは受け入れられない水準に達しました。", "focus": "reached"},
+        {"en": "Inventory reached the minimum level yesterday.", "ja": "在庫は昨日、最低水準に達しました。", "focus": "reached"},
+        {"en": "The schedule has reached a critical point.", "ja": "スケジュールは重要な局面に達しています。", "focus": "reached"}
+      ], "dailyExamples": []},
+      {"id": "reach-audience", "title": "⑥ 情報・広告が相手に届く", "pattern": "reach + audience / customers / market", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "情報や提案が相手のところまで届く。", "point": "マーケティングでは、情報がどれだけ多くの人に届くかを表します。", "examples": [
+        {"en": "This campaign reached many new customers.", "ja": "このキャンペーンは多くの新規顧客に届きました。", "focus": "reached"},
+        {"en": "Our message did not reach the right audience.", "ja": "私たちのメッセージは適切な層に届きませんでした。", "focus": "reach"},
+        {"en": "The announcement reached all branches by email.", "ja": "その通知はメールで全支店に届きました。", "focus": "reached"}
+      ], "dailyExamples": []}
     ],
-    "collocations": [],
-    "phrasalVerbs": []
+    "collocations": [
+      {"phrase": "reach a target", "ja": "目標に到達する", "image": "設定した目標値まで届く。", "pattern": "reach a target", "examples": [
+        {"en": "We reached the monthly sales target.", "ja": "私たちは月間売上目標に到達しました。", "focus": "reached the monthly sales target"},
+        {"en": "The team worked hard to reach the target.", "ja": "チームは目標に到達するために懸命に取り組みました。", "focus": "reach the target"},
+        {"en": "If we reach the target, we can expand the project.", "ja": "目標に到達すれば、その案件を拡大できます。", "focus": "reach the target"}
+      ], "dailyExamples": []},
+      {"phrase": "reach an agreement", "ja": "合意に達する", "image": "交渉の到達点に着く。", "pattern": "reach an agreement", "examples": [
+        {"en": "We reached an agreement on the price.", "ja": "私たちは価格について合意に達しました。", "focus": "reached an agreement"},
+        {"en": "The two companies reached an agreement after several meetings.", "ja": "両社は数回の会議の後、合意に達しました。", "focus": "reached an agreement"},
+        {"en": "It may take time to reach an agreement.", "ja": "合意に達するまで時間がかかるかもしれません。", "focus": "reach an agreement"}
+      ], "dailyExamples": []},
+      {"phrase": "reach a decision", "ja": "決定に至る", "image": "話し合いの終点として決定に着く。", "pattern": "reach a decision", "examples": [
+        {"en": "We reached a decision about the supplier.", "ja": "私たちは仕入先について決定に至りました。", "focus": "reached a decision"},
+        {"en": "The committee reached a decision this morning.", "ja": "委員会は今朝、決定に至りました。", "focus": "reached a decision"},
+        {"en": "Please share the details once you reach a decision.", "ja": "決定に至ったら詳細を共有してください。", "focus": "reach a decision"}
+      ], "dailyExamples": []},
+      {"phrase": "reach out", "ja": "連絡する・声をかける", "image": "こちらから手を伸ばして連絡する。", "pattern": "reach out", "examples": [
+        {"en": "I will reach out to the client today.", "ja": "私は今日、その顧客に連絡します。", "focus": "reach out"},
+        {"en": "Please reach out if you need any support.", "ja": "サポートが必要な場合は連絡してください。", "focus": "reach out"},
+        {"en": "We reached out to several suppliers for pricing.", "ja": "私たちは価格確認のために複数の仕入先へ連絡しました。", "focus": "reached out"}
+      ], "dailyExamples": []},
+      {"phrase": "within reach", "ja": "手が届く範囲にある", "image": "少し進めば届く場所にある。", "pattern": "within reach", "examples": [
+        {"en": "The delivery target is within reach.", "ja": "納期目標は達成できる範囲にあります。", "focus": "within reach"},
+        {"en": "The new sales goal is within reach if we get one more order.", "ja": "あと1件受注できれば新しい売上目標は手の届く範囲です。", "focus": "within reach"},
+        {"en": "Keep the documents within reach during the meeting.", "ja": "会議中は書類を手の届くところに置いてください。", "focus": "within reach"}
+      ], "dailyExamples": []}
+    ],
+    "phrasalVerbs": [
+      {"phrase": "reach out", "ja": "連絡する", "image": "こちらから相手へ手を伸ばすように連絡する。", "pattern": "reach out to + 人・会社", "examples": [
+        {"en": "I will reach out to the supplier about the delay.", "ja": "私は遅延について仕入先に連絡します。", "focus": "reach out to"},
+        {"en": "Please reach out to the client before sending the quote.", "ja": "見積を送る前に顧客へ連絡してください。", "focus": "reach out to"},
+        {"en": "We reached out to the design team for advice.", "ja": "私たちは助言を求めてデザインチームへ連絡しました。", "focus": "reached out to"}
+      ], "dailyExamples": []},
+      {"phrase": "reach back", "ja": "折り返し連絡する", "image": "一度受けた連絡に戻って返す。", "pattern": "reach back out / reach back", "examples": [
+        {"en": "I will reach back out after checking the schedule.", "ja": "スケジュールを確認した後、折り返し連絡します。", "focus": "reach back out"},
+        {"en": "Please reach back out when the client replies.", "ja": "顧客から返信が来たら折り返し連絡してください。", "focus": "reach back out"},
+        {"en": "She reached back out with the updated price.", "ja": "彼女は更新後の価格を持って折り返し連絡しました。", "focus": "reached back out"}
+      ], "dailyExamples": []},
+      {"phrase": "reach into", "ja": "〜にまで届く・影響する", "image": "範囲が別の領域の中まで伸びる。", "pattern": "reach into + 範囲", "examples": [
+        {"en": "The delay may reach into next week.", "ja": "その遅延は来週にまで及ぶ可能性があります。", "focus": "reach into"},
+        {"en": "The cost increase reached into several product lines.", "ja": "コスト増は複数の商品ラインにまで及びました。", "focus": "reached into"},
+        {"en": "This issue could reach into the next phase of the project.", "ja": "この問題は案件の次の段階にまで影響する可能性があります。", "focus": "reach into"}
+      ], "dailyExamples": []},
+      {"phrase": "reach across", "ja": "〜を越えて届く", "image": "部署や地域などの境界を越えて届く。", "pattern": "reach across + 範囲", "examples": [
+        {"en": "The campaign reached across several regions.", "ja": "そのキャンペーンは複数地域に広がりました。", "focus": "reached across"},
+        {"en": "This project reaches across sales and engineering.", "ja": "この案件は営業と技術の両方に関わります。", "focus": "reaches across"},
+        {"en": "The announcement reached across all departments.", "ja": "その通知は全部署に届きました。", "focus": "reached across"}
+      ], "dailyExamples": []},
+      {"phrase": "reach for", "ja": "〜を目指す・手を伸ばす", "image": "少し先の目標に向かって手を伸ばす。", "pattern": "reach for + 目標", "examples": [
+        {"en": "We should reach for a higher quality standard.", "ja": "私たちはより高い品質基準を目指すべきです。", "focus": "reach for"},
+        {"en": "The team is reaching for a new sales record.", "ja": "チームは新しい売上記録を目指しています。", "focus": "reaching for"},
+        {"en": "This brand reaches for customers who want premium quality.", "ja": "このブランドは高品質を求める顧客層を目指しています。", "focus": "reaches for"}
+      ], "dailyExamples": []}
+    ]
   },
   {
     "id": "return",
     "rank": 51,
     "word": "RETURN",
-    "ipa": "",
+    "ipa": "/rɪˈtɜːrn/",
     "kana": "リターン",
-    "syllable": "return",
+    "syllable": "re-turn",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 基本",
-    "core": "返す・戻る",
-    "coreDetail": "RETURNは、物を返す、人が戻る、メールや電話に返答する場面で使います。",
+    "core": "元の場所・相手・状態へ戻す／戻る",
+    "coreDetail": "RETURNは、物を返す、人が戻る、メールや電話に返答する、結果として利益が戻る、状態を元に戻すなど、何かが元の方向へ戻る感覚で整理できます。",
+    "coreVisual": {"from": ["商品", "人", "連絡", "お金", "状態"], "to": "元の場所・相手・状態", "label": "戻る・戻す"},
     "meanings": [
-      {
-        "id": "main",
-        "title": "① 返す・戻る",
-        "pattern": "return + 名詞 / return to + 場所",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + return + O / S + return to + 場所",
-        "image": "元の場所や相手に戻す・戻る",
-        "point": "return the sample は「サンプルを返す」。return to the office は「会社に戻る」です。",
-        "examples": [
-          {
-            "en": "I returned the sample to the supplier yesterday.",
-            "ja": "私は昨日、そのサンプルを仕入先に返しました。",
-            "focus": "returned the sample",
-            "jaFocus": "サンプルを返した",
-            "object": "the sample",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "returned"
-              },
-              {
-                "label": "O",
-                "text": "the sample"
-              },
-              {
-                "label": "M",
-                "text": "to the supplier"
-              }
-            ]
-          },
-          {
-            "en": "She returned to the office after lunch.",
-            "ja": "彼女は昼食後に会社へ戻りました。",
-            "focus": "returned to the office",
-            "jaFocus": "会社へ戻った"
-          },
-          {
-            "en": "Please return the signed document by Friday.",
-            "ja": "金曜日までに署名済みの書類を返送してください。",
-            "focus": "return the document",
-            "jaFocus": "書類を返送する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "She returned to the office after lunch.",
-            "ja": "彼女は昼食後に会社へ戻りました。",
-            "focus": "returned to the office",
-            "jaFocus": "会社へ戻った"
-          },
-          {
-            "en": "Please return the signed document by Friday.",
-            "ja": "金曜日までに署名済みの書類を返送してください。",
-            "focus": "return the document",
-            "jaFocus": "書類を返送する"
-          }
-        ]
-      }
+      {"id": "return-item", "title": "① 物・書類を返す", "pattern": "return + 物 + to + 相手", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "預かった物を元の相手へ戻す。", "point": "return the sample to the supplier のように、物や書類を返す場面で使います。", "examples": [
+        {"en": "I returned the sample to the supplier yesterday.", "ja": "私は昨日、そのサンプルを仕入先に返しました。", "focus": "returned"},
+        {"en": "Please return the signed document by Friday.", "ja": "金曜日までに署名済みの書類を返送してください。", "focus": "return"},
+        {"en": "We returned the defective product to the manufacturer.", "ja": "私たちは不良品をメーカーへ返却しました。", "focus": "returned"}
+      ], "dailyExamples": []},
+      {"id": "return-place", "title": "② 場所に戻る", "pattern": "return to + 場所", "transitivity": "自動詞", "structure": "仕事でよく使う基本パターン", "image": "元いた場所へ戻る。", "point": "return to the office は『会社に戻る』です。go back より少しフォーマルです。", "examples": [
+        {"en": "She returned to the office after lunch.", "ja": "彼女は昼食後に会社へ戻りました。", "focus": "returned"},
+        {"en": "Our team will return to the site next week.", "ja": "私たちのチームは来週、現場へ戻ります。", "focus": "return"},
+        {"en": "The manager returned to Japan after the business trip.", "ja": "マネージャーは出張後に日本へ戻りました。", "focus": "returned"}
+      ], "dailyExamples": []},
+      {"id": "return-call-email", "title": "③ 電話・メールに返答する", "pattern": "return + call / email / message", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "受けた連絡に戻って返す。", "point": "return a call は『折り返し電話する』、return an email は『メールに返信する』です。", "examples": [
+        {"en": "I will return your call this afternoon.", "ja": "今日の午後、折り返しお電話します。", "focus": "return"},
+        {"en": "Please return the client's email by the end of the day.", "ja": "本日中に顧客のメールに返信してください。", "focus": "return"},
+        {"en": "She returned my message after the meeting.", "ja": "彼女は会議後に私のメッセージへ返信しました。", "focus": "returned"}
+      ], "dailyExamples": []},
+      {"id": "return-result", "title": "④ 利益・結果をもたらす", "pattern": "return + profit / result / value", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "投資や行動の結果が戻ってくる。", "point": "return a profit は『利益を生む』、return good results は『良い結果をもたらす』です。", "examples": [
+        {"en": "The campaign returned strong results.", "ja": "そのキャンペーンは大きな成果をもたらしました。", "focus": "returned"},
+        {"en": "This investment should return a profit next year.", "ja": "この投資は来年利益を生むはずです。", "focus": "return"},
+        {"en": "Better service returns value to customers.", "ja": "より良いサービスは顧客に価値を還元します。", "focus": "returns"}
+      ], "dailyExamples": []},
+      {"id": "return-status", "title": "⑤ 元の状態に戻す・戻る", "pattern": "return to + 状態", "transitivity": "自動詞・他動詞", "structure": "仕事でよく使う基本パターン", "image": "状態が元の形に戻る。", "point": "return to normal は『通常状態に戻る』という定番表現です。", "examples": [
+        {"en": "Production returned to normal after the repair.", "ja": "修理後、生産は通常状態に戻りました。", "focus": "returned"},
+        {"en": "We need to return the settings to the original condition.", "ja": "設定を元の状態に戻す必要があります。", "focus": "return"},
+        {"en": "The schedule returned to normal this week.", "ja": "今週、スケジュールは通常通りに戻りました。", "focus": "returned"}
+      ], "dailyExamples": []},
+      {"id": "return-product", "title": "⑥ 商品を返品する", "pattern": "return + product / item", "transitivity": "他動詞", "structure": "仕事でよく使う基本パターン", "image": "購入した物を販売元へ戻す。", "point": "buy の反対の場面として、購入品を返品する時に使います。", "examples": [
+        {"en": "The customer returned the product because it was damaged.", "ja": "顧客は破損していたため、その商品を返品しました。", "focus": "returned"},
+        {"en": "Can we return this item to the supplier?", "ja": "この商品を仕入先に返品できますか？", "focus": "return"},
+        {"en": "Please check the return policy before shipping it back.", "ja": "返送する前に返品規定を確認してください。", "focus": "return"}
+      ], "dailyExamples": []}
     ],
-    "collocations": [],
-    "phrasalVerbs": []
+    "collocations": [
+      {"phrase": "return a call", "ja": "折り返し電話する", "image": "受けた電話に戻って返す。", "pattern": "return a call", "examples": [
+        {"en": "I will return your call after the meeting.", "ja": "会議後に折り返しお電話します。", "focus": "return your call"},
+        {"en": "Please return the client's call as soon as possible.", "ja": "できるだけ早く顧客に折り返し電話してください。", "focus": "return the client's call"},
+        {"en": "She returned my call this morning.", "ja": "彼女は今朝、私に折り返し電話しました。", "focus": "returned my call"}
+      ], "dailyExamples": []},
+      {"phrase": "return an email", "ja": "メールに返信する", "image": "受けたメールへ返す。", "pattern": "return an email", "examples": [
+        {"en": "Please return the email by noon.", "ja": "正午までにそのメールへ返信してください。", "focus": "return the email"},
+        {"en": "I returned the customer's email yesterday.", "ja": "私は昨日、顧客のメールに返信しました。", "focus": "returned the customer's email"},
+        {"en": "We should return all urgent emails today.", "ja": "今日中にすべての緊急メールへ返信するべきです。", "focus": "return all urgent emails"}
+      ], "dailyExamples": []},
+      {"phrase": "return to normal", "ja": "通常状態に戻る", "image": "乱れた状態が元の状態へ戻る。", "pattern": "return to normal", "examples": [
+        {"en": "Delivery returned to normal after the holiday.", "ja": "連休後、配送は通常状態に戻りました。", "focus": "returned to normal"},
+        {"en": "Production should return to normal next week.", "ja": "生産は来週通常状態に戻るはずです。", "focus": "return to normal"},
+        {"en": "The system returned to normal after the update.", "ja": "システムは更新後に通常状態へ戻りました。", "focus": "returned to normal"}
+      ], "dailyExamples": []},
+      {"phrase": "return policy", "ja": "返品規定", "image": "返品に関するルール。", "pattern": "return policy", "examples": [
+        {"en": "Please check the return policy before ordering.", "ja": "注文前に返品規定を確認してください。", "focus": "return policy"},
+        {"en": "The return policy allows refunds within seven days.", "ja": "その返品規定では7日以内の返金が可能です。", "focus": "return policy"},
+        {"en": "We explained the return policy to the customer.", "ja": "私たちは顧客に返品規定を説明しました。", "focus": "return policy"}
+      ], "dailyExamples": []},
+      {"phrase": "return on investment", "ja": "投資収益率・投資に対するリターン", "image": "投資したものに対して戻ってくる成果。", "pattern": "return on investment", "examples": [
+        {"en": "We need to consider the return on investment.", "ja": "私たちは投資に対するリターンを考慮する必要があります。", "focus": "return on investment"},
+        {"en": "This project has a high return on investment.", "ja": "この案件は投資収益率が高いです。", "focus": "return on investment"},
+        {"en": "The client asked about the return on investment.", "ja": "顧客は投資に対するリターンについて質問しました。", "focus": "return on investment"}
+      ], "dailyExamples": []}
+    ],
+    "phrasalVerbs": [
+      {"phrase": "return to", "ja": "〜に戻る", "image": "元の場所・状態へ戻る。", "pattern": "return to + 場所・状態", "examples": [
+        {"en": "We returned to the office after the site visit.", "ja": "私たちは現場訪問後に会社へ戻りました。", "focus": "returned to"},
+        {"en": "The project returned to the original schedule.", "ja": "その案件は元のスケジュールに戻りました。", "focus": "returned to"},
+        {"en": "Please return to the main topic.", "ja": "本題に戻ってください。", "focus": "return to"}
+      ], "dailyExamples": []},
+      {"phrase": "return from", "ja": "〜から戻る", "image": "出ていた場所から戻る。", "pattern": "return from + 場所・活動", "examples": [
+        {"en": "She returned from the business trip yesterday.", "ja": "彼女は昨日、出張から戻りました。", "focus": "returned from"},
+        {"en": "The team returned from the site with new information.", "ja": "チームは新しい情報を持って現場から戻りました。", "focus": "returned from"},
+        {"en": "When you return from lunch, please call the client.", "ja": "昼食から戻ったら顧客に電話してください。", "focus": "return from"}
+      ], "dailyExamples": []},
+      {"phrase": "return with", "ja": "〜を持って戻る", "image": "戻る時に情報や物を一緒に持ってくる。", "pattern": "return with + 情報・物", "examples": [
+        {"en": "The sales team returned with useful feedback.", "ja": "営業チームは有益なフィードバックを持ち帰りました。", "focus": "returned with"},
+        {"en": "Please return with the signed documents.", "ja": "署名済み書類を持って戻ってください。", "focus": "return with"},
+        {"en": "He returned with several improvement ideas.", "ja": "彼はいくつかの改善案を持って戻りました。", "focus": "returned with"}
+      ], "dailyExamples": []},
+      {"phrase": "return by", "ja": "〜までに返す・戻る", "image": "期限までに戻す。", "pattern": "return by + 時間・日付", "examples": [
+        {"en": "Please return the document by Friday.", "ja": "金曜日までにその書類を返送してください。", "focus": "return the document by"},
+        {"en": "I will return to the office by 3 p.m.", "ja": "私は午後3時までに会社へ戻ります。", "focus": "return to the office by"},
+        {"en": "The sample must be returned by the end of the month.", "ja": "そのサンプルは月末までに返却されなければなりません。", "focus": "returned by"}
+      ], "dailyExamples": []},
+      {"phrase": "return back", "ja": "戻す・戻る（重複気味で注意）", "image": "back と return が重なり、日常的には使われるが仕事では return を優先。", "pattern": "return back", "examples": [
+        {"en": "Please return the item to the supplier.", "ja": "その商品を仕入先に返却してください。", "focus": "return"},
+        {"en": "Use return, not return back, in formal emails.", "ja": "正式なメールでは return back ではなく return を使いましょう。", "focus": "return"},
+        {"en": "We returned the sample after the inspection.", "ja": "私たちは検査後にサンプルを返却しました。", "focus": "returned"}
+      ], "dailyExamples": []}
+    ]
   },
   {
     "id": "check",

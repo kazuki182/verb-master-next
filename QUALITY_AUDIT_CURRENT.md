@@ -1,14 +1,36 @@
-# Ver.98 Quality Audit
+# QUALITY_AUDIT_CURRENT - Ver.99
 
-## Scope
-- Verb quality improvement batch 7: sell / choose / follow.
-- Upload ZIP cleanup: remove old patch files, previous version files, and previous audit logs from the distributable ZIP.
+## Theme
+Verb quality improvement batch 8.
 
-## Quality Rules Applied
-- Check basic verb usages first.
-- Then check collocations / common expressions.
-- Then check phrasal verbs.
-- Daily examples are not the main target in this phase.
-- Each updated usage block includes 3 business examples.
-- Core image is included for the target verbs.
-- English focus highlighting is set on the verb, collocation, or phrasal verb expression; Japanese translation highlighting is not expanded.
+## Target verbs
+- create
+- reach
+- return
+
+## Checked order
+1. Basic verb usages
+2. Idioms / common expressions
+3. Phrasal / prepositional expressions
+4. Daily examples are still postponed
+
+## Improvements
+
+### create
+- Added broader core image: making something new from ideas, information, conditions, or materials.
+- Expanded basic usages around materials/data, design, systems, opportunities/value, problems, and accounts/records.
+- Added business collocations and prepositional patterns with 3 business examples each.
+
+### reach
+- Added broader core image: contact, movement, numbers, or effort reaching a person/place/target.
+- Expanded basic usages around contacting people, reaching places, targets, agreements, levels, and audiences.
+- Added business collocations and phrasal/prepositional expressions with 3 business examples each.
+
+### return
+- Added broader core image: returning items, people, messages, value, or status to the original direction/state.
+- Expanded basic usages around returning items/documents, returning to places, replying to calls/emails, producing returns, returning to normal, and returns/refunds.
+- Added business collocations and prepositional expressions with 3 business examples each.
+
+## Not included
+- Premium daily examples were not rewritten in this version.
+- UI was not changed in this version.

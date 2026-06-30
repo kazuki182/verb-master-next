@@ -266,10 +266,10 @@ export default function Home() {
         )
       )}
 
-      <section className="home-level-card p-5">
+      <section className="home-level-card p-4">
         <div className="flex items-center gap-4">
           <Link
-            className="home-level-avatar flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-3xl border border-cyan-300/30 bg-slate-900 text-4xl shadow-lg"
+            className="home-level-avatar flex h-[88px] w-[88px] shrink-0 items-center justify-center overflow-hidden rounded-3xl border border-cyan-300/30 bg-slate-900 text-4xl shadow-lg"
             href="/profile"
             aria-label="マイページを開く"
           >
@@ -281,32 +281,23 @@ export default function Home() {
             )}
           </Link>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-lg font-extrabold text-white">{displayName}</p>
-            <div className="mt-1 flex items-end justify-between gap-3">
-              <div>
-                <p className="home-level-main">Lv.{progress.level}</p>
-                <p className="mt-1 text-sm font-bold text-cyan-100">{leagueLine}</p>
-              </div>
+            <p className="truncate text-base font-extrabold text-white">{displayName}</p>
+            <div className="mt-1 flex items-center gap-2">
+              <p className="home-level-main">Lv.{progress.level}</p>
               <button
-                className="shrink-0 rounded-2xl border border-cyan-300/20 bg-slate-950/55 px-3 py-2 text-center transition hover:bg-cyan-300/10"
+                className="home-badge-pill"
                 type="button"
                 onClick={() => setShowBadgeSheet(true)}
                 aria-label="獲得バッジの詳細を開く"
               >
-                <p className="text-xs font-bold text-cyan-200">バッジ</p>
-                <p className="text-lg font-extrabold text-white">🏅 {badges.length}</p>
+                🏅 {badges.length}
               </button>
             </div>
-            <div className="mt-3 rounded-2xl border border-cyan-300/15 bg-slate-950/40 px-3 py-2">
-              <p className="text-lg font-extrabold leading-tight text-white">
-                XP {progress.xp}
-              </p>
-              <p className="mt-1 text-xs font-bold text-cyan-100">
-                次のレベルまで {xpToNextLevel} XP
-              </p>
-              <p className="mt-1 text-xs font-bold text-slate-300">
-                連続学習 <span className="text-white">{progress.currentStreak}日</span>
-              </p>
+            <p className="mt-1 text-sm font-bold text-cyan-100">{leagueLine}</p>
+            <div className="mt-2 space-y-0.5">
+              <p className="text-lg font-extrabold leading-tight text-white">XP {progress.xp}</p>
+              <p className="text-xs font-bold text-cyan-100">次のレベルまで {xpToNextLevel} XP</p>
+              <p className="text-xs font-bold text-slate-300">連続学習 <span className="text-white">{progress.currentStreak}日</span></p>
             </div>
           </div>
         </div>

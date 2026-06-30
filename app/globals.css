@@ -268,7 +268,22 @@ input, select, textarea { color:#f8fafc; background:#0b1525; border-color:rgba(1
   border: 1px solid rgba(103,232,249,.26);
   background: radial-gradient(circle at top left, rgba(34,211,238,.22), rgba(15,23,42,.96) 48%, rgba(2,6,23,.98));
   color: #f8fafc;
-  box-shadow: 0 18px 42px rgba(0,0,0,.32);
+  box-shadow: 0 14px 32px rgba(0,0,0,.28);
+}
+.home-badge-pill {
+  border-radius: 999px;
+  border: 1px solid rgba(103,232,249,.22);
+  background: rgba(2,6,23,.42);
+  padding: 6px 10px;
+  color: #e0f2fe;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1;
+  transition: background .18s ease, border-color .18s ease;
+}
+.home-badge-pill:hover {
+  background: rgba(34,211,238,.1);
+  border-color: rgba(103,232,249,.4);
 }
 .home-level-main {
   color: #f8fafc;
@@ -280,9 +295,10 @@ input, select, textarea { color:#f8fafc; background:#0b1525; border-color:rgba(1
 }
 .home-level-avatar img { display: block; }
 @media (max-width: 430px) {
-  .home-level-card { border-radius: 20px; padding: 16px !important; }
-  .home-level-avatar { height: 68px !important; width: 68px !important; border-radius: 22px !important; }
+  .home-level-card { border-radius: 20px; padding: 14px !important; }
+  .home-level-avatar { height: 82px !important; width: 82px !important; border-radius: 22px !important; }
   .home-level-main { font-size: 38px; }
+  .home-badge-pill { padding: 5px 9px; font-size: 13px; }
 }
 @media (max-width: 360px) {
   .home-level-main { font-size: 34px; }

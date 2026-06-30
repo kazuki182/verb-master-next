@@ -1,15 +1,1 @@
-Ver.104 - Verb Quality Batch 12
-
-Updated verbs:
-- discuss
-- confirm
-- receive
-
-Focus:
-- Basic verb usages
-- Business collocations
-- Phrasal/preposition expressions
-- Core image explanations
-- Three business examples per item
-
-Daily examples are intentionally not updated in this batch.
+Ver.105 - verb quality batch 13: deliver / solve / report

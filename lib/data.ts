@@ -58,1073 +58,453 @@ export type Verb = {
 
 export const verbs: Verb[] = [
   {
-    "id": "get",
-    "rank": 1,
-    "word": "GET",
-    "ipa": "/ɡet/",
-    "kana": "ゲット",
-    "syllable": "get",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★★★ 超重要",
-    "core": "外にあるもの・状態・情報が、自分のところへ入ってくる",
-    "coreDetail": "GETは、受け取る・得る・買う・到着する・理解するまで、外側にあったものが自分の領域に入る感覚で整理できます。仕事ではメール・承認・情報・機会・状態変化に使います。",
-    "coreVisual": {
-      "from": [
-        "📧 メール",
-        "✅ 承認",
-        "💡 情報",
-        "🎯 機会",
-        "📍 場所"
+      "id": "receive",
+      "rank": 63,
+      "word": "RECEIVE",
+      "ipa": "/rɪˈsiːv/",
+      "kana": "リシーヴ",
+      "syllable": "re-ceive",
+      "transitivity": "他動詞",
+      "importance": "★★★☆☆ 基本",
+      "core": "相手や外側から来たものを正式に受け取る",
+      "coreDetail": "RECEIVEは、メール・資料・注文・支払い・承認などを正式に受け取る時に使います。getより丁寧で、ビジネスメールや報告文に向いています。",
+      "coreVisual": {
+          "from": [
+              "メール",
+              "資料",
+              "注文",
+              "支払い",
+              "承認"
+          ],
+          "to": "自分・会社・担当部署",
+          "label": "外側から届く → 受け取る"
+      },
+      "meanings": [
+          {
+              "id": "receive-item",
+              "title": "① 物・資料・メールを受け取る",
+              "pattern": "receive + 名詞",
+              "transitivity": "他動詞",
+              "structure": "S + receive + O",
+              "image": "相手から届いたものを正式に受け取る。",
+              "point": "getより丁寧でビジネス文に合います。",
+              "examples": [
+                  {
+                      "en": "I received your email this morning.",
+                      "ja": "私は今朝あなたのメールを受け取りました。",
+                      "focus": "received",
+                      "object": "your email"
+                  },
+                  {
+                      "en": "We received the documents from the supplier.",
+                      "ja": "私たちは仕入先から資料を受け取りました。",
+                      "focus": "received",
+                      "object": "the documents"
+                  },
+                  {
+                      "en": "Did you receive the sample package?",
+                      "ja": "あなたはサンプルの荷物を受け取りましたか？",
+                      "focus": "receive",
+                      "object": "the sample package"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "id": "receive-from",
+              "title": "② 相手から受け取る",
+              "pattern": "receive + 名詞 + from + 相手",
+              "transitivity": "他動詞",
+              "structure": "S + receive + O + from + 人・会社",
+              "image": "誰から受け取ったかを明確にする。",
+              "point": "from を使うと受け取り元を自然に表せます。",
+              "examples": [
+                  {
+                      "en": "We received the quotation from the vendor.",
+                      "ja": "私たちは販売業者から見積を受け取りました。",
+                      "focus": "received",
+                      "object": "the quotation"
+                  },
+                  {
+                      "en": "I received a request from the client yesterday.",
+                      "ja": "私は昨日、顧客から依頼を受け取りました。",
+                      "focus": "received",
+                      "object": "a request"
+                  },
+                  {
+                      "en": "The team received feedback from the manager.",
+                      "ja": "チームは上司からフィードバックを受け取りました。",
+                      "focus": "received",
+                      "object": "feedback"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "id": "receive-information",
+              "title": "③ 情報・連絡を受け取る",
+              "pattern": "receive + information / notice / update",
+              "transitivity": "他動詞",
+              "structure": "S + receive + O",
+              "image": "連絡や更新情報を受け取る。",
+              "point": "information, notice, update と相性が良いです。",
+              "examples": [
+                  {
+                      "en": "We received updated information about the delivery.",
+                      "ja": "私たちは納品に関する更新情報を受け取りました。",
+                      "focus": "received",
+                      "object": "updated information"
+                  },
+                  {
+                      "en": "Please let me know when you receive the notice.",
+                      "ja": "通知を受け取ったら知らせてください。",
+                      "focus": "receive",
+                      "object": "the notice"
+                  },
+                  {
+                      "en": "The sales team received an update from the factory.",
+                      "ja": "営業チームは工場から更新情報を受け取りました。",
+                      "focus": "received",
+                      "object": "an update"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "id": "receive-payment-order",
+              "title": "④ 支払い・注文を受け取る",
+              "pattern": "receive + payment / order",
+              "transitivity": "他動詞",
+              "structure": "S + receive + O",
+              "image": "会社として支払いや注文を受け取る。",
+              "point": "経理・受注・営業報告でよく使います。",
+              "examples": [
+                  {
+                      "en": "We received the payment yesterday.",
+                      "ja": "私たちは昨日、支払いを受け取りました。",
+                      "focus": "received",
+                      "object": "the payment"
+                  },
+                  {
+                      "en": "The company received a large order from a new customer.",
+                      "ja": "会社は新規顧客から大きな注文を受け取りました。",
+                      "focus": "received",
+                      "object": "a large order"
+                  },
+                  {
+                      "en": "Please confirm when you receive the deposit.",
+                      "ja": "入金を受け取ったら確認してください。",
+                      "focus": "receive",
+                      "object": "the deposit"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "id": "receive-approval",
+              "title": "⑤ 承認・許可を受ける",
+              "pattern": "receive + approval / permission",
+              "transitivity": "他動詞",
+              "structure": "S + receive + O",
+              "image": "上司や顧客から正式な承認を受ける。",
+              "point": "approval は仕事で非常に重要な組み合わせです。",
+              "examples": [
+                  {
+                      "en": "We received approval from the manager.",
+                      "ja": "私たちは上司から承認を受けました。",
+                      "focus": "received",
+                      "object": "approval"
+                  },
+                  {
+                      "en": "The project received permission to proceed.",
+                      "ja": "そのプロジェクトは進行する許可を受けました。",
+                      "focus": "received",
+                      "object": "permission"
+                  },
+                  {
+                      "en": "Please start production after we receive approval.",
+                      "ja": "承認を受けた後で製作を始めてください。",
+                      "focus": "receive",
+                      "object": "approval"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "id": "be-received",
+              "title": "⑥ 受け取られる・受領される",
+              "pattern": "be received",
+              "transitivity": "受け身",
+              "structure": "S + be received",
+              "image": "送ったものが相手側で受け取られる。",
+              "point": "メールや資料の受領確認で使いやすい受け身です。",
+              "examples": [
+                  {
+                      "en": "The documents were received by the customer.",
+                      "ja": "資料は顧客に受け取られました。",
+                      "focus": "received",
+                      "object": "the documents"
+                  },
+                  {
+                      "en": "Your order has been received.",
+                      "ja": "あなたの注文は受け付けられました。",
+                      "focus": "received",
+                      "object": "your order"
+                  },
+                  {
+                      "en": "The email was received without any issue.",
+                      "ja": "そのメールは問題なく受信されました。",
+                      "focus": "received",
+                      "object": "the email"
+                  }
+              ],
+              "dailyExamples": []
+          }
       ],
-      "to": "自分",
-      "label": "外側 → 自分の領域"
-    },
-    "meanings": [
-      {
-        "id": "obtain",
-        "title": "① 手に入れる・獲得する",
-        "pattern": "GET + 名詞",
-        "transitivity": "他動詞",
-        "structure": "S + get + O（目的語）",
-        "image": "外にある物・案件・承認などを自分の側に取り込む。",
-        "point": "get の後ろに「何を手に入れたか」を置く。仕事では client, project, approval, information などと相性が良い。",
-        "examples": [
+      "collocations": [
           {
-            "en": "I got a new client this month.",
-            "ja": "今月、新規顧客を獲得した。",
-            "focus": "got",
-            "object": "a new client",
-            "jaFocus": "獲得した"
+              "phrase": "receive an email",
+              "ja": "メールを受け取る",
+              "image": "メールが自分に届く。",
+              "pattern": "receive an email",
+              "examples": [
+                  {
+                      "en": "I received an email from the client this morning.",
+                      "ja": "私は今朝、顧客からメールを受け取りました。",
+                      "focus": "received an email"
+                  },
+                  {
+                      "en": "Please reply after you receive an email from them.",
+                      "ja": "彼らからメールを受け取った後で返信してください。",
+                      "focus": "receive an email"
+                  },
+                  {
+                      "en": "We received an email about the schedule change.",
+                      "ja": "私たちは予定変更についてのメールを受け取りました。",
+                      "focus": "received an email"
+                  }
+              ],
+              "dailyExamples": []
           },
           {
-            "en": "We got a new project from the Singapore office.",
-            "ja": "シンガポール本社から新しい案件を獲得した。",
-            "focus": "got",
-            "object": "a new project",
-            "jaFocus": "獲得した"
+              "phrase": "receive a request",
+              "ja": "依頼を受ける",
+              "image": "相手からお願いや要望を受け取る。",
+              "pattern": "receive a request",
+              "examples": [
+                  {
+                      "en": "We received a request for additional samples.",
+                      "ja": "私たちは追加サンプルの依頼を受けました。",
+                      "focus": "received a request"
+                  },
+                  {
+                      "en": "I received a request to update the quotation.",
+                      "ja": "私は見積を更新する依頼を受けました。",
+                      "focus": "received a request"
+                  },
+                  {
+                      "en": "The support team received a request from the customer.",
+                      "ja": "サポートチームは顧客から依頼を受けました。",
+                      "focus": "received a request"
+                  }
+              ],
+              "dailyExamples": []
           },
           {
-            "en": "I got approval from my manager.",
-            "ja": "上司の承認を得た。",
-            "focus": "got",
-            "object": "approval",
-            "jaFocus": "得た"
+              "phrase": "receive payment",
+              "ja": "支払いを受け取る",
+              "image": "入金や支払いが届く。",
+              "pattern": "receive payment",
+              "examples": [
+                  {
+                      "en": "We received payment for the first invoice.",
+                      "ja": "私たちは最初の請求書の支払いを受け取りました。",
+                      "focus": "received payment"
+                  },
+                  {
+                      "en": "Please ship the product after we receive payment.",
+                      "ja": "支払いを受け取った後で商品を出荷してください。",
+                      "focus": "receive payment"
+                  },
+                  {
+                      "en": "The finance team confirmed that we received payment.",
+                      "ja": "経理チームは私たちが支払いを受け取ったことを確認しました。",
+                      "focus": "received payment"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "receive feedback",
+              "ja": "フィードバックを受け取る",
+              "image": "意見や評価を受け取る。",
+              "pattern": "receive feedback",
+              "examples": [
+                  {
+                      "en": "We received feedback from the customer after the demo.",
+                      "ja": "私たちはデモ後に顧客からフィードバックを受け取りました。",
+                      "focus": "received feedback"
+                  },
+                  {
+                      "en": "The design team received feedback on the new layout.",
+                      "ja": "デザインチームは新しいレイアウトについてフィードバックを受け取りました。",
+                      "focus": "received feedback"
+                  },
+                  {
+                      "en": "Please share the report after you receive feedback.",
+                      "ja": "フィードバックを受け取った後で報告書を共有してください。",
+                      "focus": "receive feedback"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "receive approval",
+              "ja": "承認を受ける",
+              "image": "正式に承認を得る。",
+              "pattern": "receive approval",
+              "examples": [
+                  {
+                      "en": "We received approval to proceed with the order.",
+                      "ja": "私たちは注文を進める承認を受けました。",
+                      "focus": "received approval"
+                  },
+                  {
+                      "en": "Please wait until we receive approval from the client.",
+                      "ja": "顧客から承認を受けるまで待ってください。",
+                      "focus": "receive approval"
+                  },
+                  {
+                      "en": "The proposal received approval from management.",
+                      "ja": "その提案は経営陣から承認を受けました。",
+                      "focus": "received approval"
+                  }
+              ],
+              "dailyExamples": []
           }
-        ]
-      },
-      {
-        "id": "become",
-        "title": "② 〜になる",
-        "pattern": "GET + 形容詞",
-        "transitivity": "自動詞に近い使い方",
-        "structure": "S + get + C（補語）",
-        "image": "ある状態が自分や状況に入ってくる。",
-        "point": "get の後ろに状態を表す形容詞を置く。busy, better, difficult, ready など社会人会話でよく使う。",
-        "examples": [
+      ],
+      "phrasalVerbs": [
           {
-            "en": "I'm getting busy this week.",
-            "ja": "私は今週忙しくなってきています。",
-            "focus": "getting",
-            "jaFocus": "忙しくなってきています"
+              "phrase": "receive from",
+              "ja": "〜から受け取る",
+              "image": "受け取り元を示す。",
+              "pattern": "receive + 名詞 + from + 相手",
+              "examples": [
+                  {
+                      "en": "We received the files from the designer.",
+                      "ja": "私たちはデザイナーからファイルを受け取りました。",
+                      "focus": "received the files from"
+                  },
+                  {
+                      "en": "I received the final price from the supplier.",
+                      "ja": "私は仕入先から最終価格を受け取りました。",
+                      "focus": "received the final price from"
+                  },
+                  {
+                      "en": "The team received instructions from the manager.",
+                      "ja": "チームは上司から指示を受けました。",
+                      "focus": "received instructions from"
+                  }
+              ],
+              "dailyExamples": []
           },
           {
-            "en": "The schedule is getting tight.",
-            "ja": "スケジュールが厳しくなってきている。",
-            "focus": "getting",
-            "jaFocus": "厳しくなって"
+              "phrase": "receive by",
+              "ja": "〜までに受け取る",
+              "image": "受け取り期限を表す。",
+              "pattern": "receive + 名詞 + by + 時間・日付",
+              "examples": [
+                  {
+                      "en": "We need to receive the samples by Friday.",
+                      "ja": "私たちは金曜日までにサンプルを受け取る必要があります。",
+                      "focus": "receive the samples by"
+                  },
+                  {
+                      "en": "Please make sure we receive the drawings by noon.",
+                      "ja": "正午までに図面を受け取れるようにしてください。",
+                      "focus": "receive the drawings by"
+                  },
+                  {
+                      "en": "The client wants to receive the quotation by tomorrow.",
+                      "ja": "顧客は明日までに見積を受け取りたいと思っています。",
+                      "focus": "receive the quotation by"
+                  }
+              ],
+              "dailyExamples": []
           },
           {
-            "en": "Our communication is getting better.",
-            "ja": "私たちのコミュニケーションは良くなっている。",
-            "focus": "getting",
-            "jaFocus": "良くなって"
+              "phrase": "receive in",
+              "ja": "〜の形で受け取る",
+              "image": "受け取り形式や状態を表す。",
+              "pattern": "receive + 名詞 + in + 形式",
+              "examples": [
+                  {
+                      "en": "We received the data in Excel format.",
+                      "ja": "私たちはExcel形式でデータを受け取りました。",
+                      "focus": "received the data in"
+                  },
+                  {
+                      "en": "Please send the file so we can receive it in PDF format.",
+                      "ja": "PDF形式で受け取れるようにファイルを送ってください。",
+                      "focus": "receive it in"
+                  },
+                  {
+                      "en": "The customer received the product in good condition.",
+                      "ja": "顧客は製品を良い状態で受け取りました。",
+                      "focus": "received the product in"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "receive as",
+              "ja": "〜として受け取る",
+              "image": "役割や扱い方を表す。",
+              "pattern": "receive + 名詞 + as + 名詞",
+              "examples": [
+                  {
+                      "en": "We received the email as official confirmation.",
+                      "ja": "私たちはそのメールを正式な確認として受け取りました。",
+                      "focus": "received the email as"
+                  },
+                  {
+                      "en": "The team received the document as a final version.",
+                      "ja": "チームはその資料を最終版として受け取りました。",
+                      "focus": "received the document as"
+                  },
+                  {
+                      "en": "Please treat the message as received confirmation.",
+                      "ja": "そのメッセージを受領確認として扱ってください。",
+                      "focus": "as received confirmation"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "receive via",
+              "ja": "〜経由で受け取る",
+              "image": "受け取り手段を表す。",
+              "pattern": "receive + 名詞 + via + 手段",
+              "examples": [
+                  {
+                      "en": "We received the order via email.",
+                      "ja": "私たちはメール経由で注文を受け取りました。",
+                      "focus": "received the order via"
+                  },
+                  {
+                      "en": "The customer received the update via the online system.",
+                      "ja": "顧客はオンラインシステム経由で更新情報を受け取りました。",
+                      "focus": "received the update via"
+                  },
+                  {
+                      "en": "Please confirm whether you received the file via the shared folder.",
+                      "ja": "共有フォルダ経由でファイルを受け取ったか確認してください。",
+                      "focus": "received the file via"
+                  }
+              ],
+              "dailyExamples": []
           }
-        ]
-      },
-      {
-        "id": "arrive",
-        "title": "③ 到着する",
-        "pattern": "GET TO + 場所 / GET HOME",
-        "transitivity": "自動詞",
-        "structure": "S + get + to 場所",
-        "image": "目的地が自分の到達範囲に入る。",
-        "point": "場所には get to を使う。ただし home は副詞なので get home。",
-        "examples": [
-          {
-            "en": "I got to the office at nine.",
-            "ja": "9時にオフィスに着いた。",
-            "focus": "got",
-            "jaFocus": "着いた"
-          },
-          {
-            "en": "What time did you get to the meeting room?",
-            "ja": "何時に会議室へ着きましたか？",
-            "focus": "get",
-            "jaFocus": "着きました"
-          },
-          {
-            "en": "I got home late after the client meeting.",
-            "ja": "クライアントとの会議後、遅く帰宅した。",
-            "focus": "got",
-            "jaFocus": "帰宅した"
-          }
-        ]
-      },
-      {
-        "id": "understand",
-        "title": "④ 理解する",
-        "pattern": "GET + 内容",
-        "transitivity": "他動詞",
-        "structure": "S + get + O（内容）",
-        "image": "意味や意図が自分の中に入ってくる。",
-        "point": "I get it. は「分かりました」。ビジネスの短い返答で非常によく使える。",
-        "examples": [
-          {
-            "en": "I get it.",
-            "ja": "分かりました。",
-            "focus": "get",
-            "object": "it",
-            "jaFocus": "分かりました"
-          },
-          {
-            "en": "I don't get the point.",
-            "ja": "要点が分かりません。",
-            "focus": "get",
-            "object": "the point",
-            "jaFocus": "分かりません"
-          },
-          {
-            "en": "Do you get what I mean?",
-            "ja": "あなたは私の言いたいことが分かりますか？",
-            "focus": "get",
-            "object": "what I mean",
-            "jaFocus": "分かりますか",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "you"
-              },
-              {
-                "label": "V",
-                "text": "get"
-              },
-              {
-                "label": "O",
-                "text": "what I mean"
-              }
-            ],
-            "grammarNote": "Do は疑問文を作る助動詞です。what I mean が get の目的語です。"
-          }
-        ]
-      },
-      {
-        "id": "receive",
-        "title": "⑤ 受け取る・確認する",
-        "pattern": "GET + メール・資料・連絡",
-        "transitivity": "他動詞",
-        "structure": "S + get + O（受け取るもの）",
-        "image": "相手から来たものが自分のところに入る。",
-        "point": "メール・資料・見積・連絡を受け取った時に使う。社会人には最重要。",
-        "examples": [
-          {
-            "en": "I got your email.",
-            "ja": "メールを確認しました。",
-            "focus": "got",
-            "object": "your email",
-            "jaFocus": "確認しました"
-          },
-          {
-            "en": "I got the report this morning.",
-            "ja": "今朝、報告書を受け取りました。",
-            "focus": "got",
-            "object": "the report",
-            "jaFocus": "受け取りました"
-          },
-          {
-            "en": "I got the quotation from the supplier.",
-            "ja": "仕入先から見積書を受け取りました。",
-            "focus": "got",
-            "object": "the quotation",
-            "jaFocus": "受け取りました"
-          }
-        ]
-      },
-      {
-        "id": "permission",
-        "title": "⑥ 許可を得る",
-        "pattern": "GET + permission / approval",
-        "transitivity": "他動詞",
-        "structure": "S + get + O（許可・承認）",
-        "image": "許可や承認が自分の側に来る。",
-        "point": "permission は許可、approval は承認。社内確認や稟議の文脈で使いやすい。",
-        "examples": [
-          {
-            "en": "I got permission to share the file.",
-            "ja": "そのファイルを共有する許可を得ました。",
-            "focus": "got",
-            "object": "permission",
-            "jaFocus": "許可を得ました"
-          },
-          {
-            "en": "We need to get approval before ordering.",
-            "ja": "私たちは発注前に承認を得る必要があります。",
-            "focus": "get",
-            "object": "approval",
-            "jaFocus": "承認を得る"
-          },
-          {
-            "en": "Did you get permission from your manager?",
-            "ja": "上司から許可を得ましたか？",
-            "focus": "get",
-            "object": "permission",
-            "jaFocus": "許可を得ましたか"
-          }
-        ]
-      },
-      {
-        "id": "chance",
-        "title": "⑦ 機会を得る",
-        "pattern": "GET + chance / opportunity",
-        "transitivity": "他動詞",
-        "structure": "S + get + O（機会）",
-        "image": "チャンスや機会が自分のところに来る。",
-        "point": "chance は会話寄り、opportunity は少し丁寧。",
-        "examples": [
-          {
-            "en": "I got a chance to join the meeting.",
-            "ja": "会議に参加する機会を得ました。",
-            "focus": "got",
-            "object": "a chance",
-            "jaFocus": "機会を得ました"
-          },
-          {
-            "en": "We got an opportunity to work with a new client.",
-            "ja": "私たちは新しい顧客と仕事をする機会を得ました。",
-            "focus": "got",
-            "object": "an opportunity",
-            "jaFocus": "機会を得ました"
-          },
-          {
-            "en": "I finally got a chance to speak with him.",
-            "ja": "ようやく彼と話す機会を得ました。",
-            "focus": "got",
-            "object": "a chance",
-            "jaFocus": "機会を得ました"
-          }
-        ]
-      },
-      {
-        "id": "sick",
-        "title": "⑧ 体調が悪くなる",
-        "pattern": "GET + sick / tired / stressed",
-        "transitivity": "自動詞に近い使い方",
-        "structure": "S + get + C（状態）",
-        "image": "体調や感情の状態が自分に入る。",
-        "point": "社会人会話では体調・疲労・ストレスの変化を自然に言える。",
-        "examples": [
-          {
-            "en": "I got sick last week.",
-            "ja": "先週、体調を崩しました。",
-            "focus": "got",
-            "jaFocus": "体調を崩しました"
-          },
-          {
-            "en": "I got tired after the long meeting.",
-            "ja": "長い会議の後で疲れました。",
-            "focus": "got",
-            "jaFocus": "疲れました"
-          },
-          {
-            "en": "I get stressed when deadlines are tight.",
-            "ja": "締切が厳しいとストレスを感じます。",
-            "focus": "get",
-            "jaFocus": "ストレスを感じます"
-          }
-        ]
-      },
-      {
-        "id": "buy",
-        "title": "⑨ 買う・入手する",
-        "pattern": "GET + 物",
-        "transitivity": "他動詞",
-        "structure": "S + get + O（買った物・入手した物）",
-        "image": "買ったもの・入手したものを自分のものにする。",
-        "point": "buy よりカジュアルに「買う・入手する」を表せる。",
-        "examples": [
-          {
-            "en": "Where did you get that laptop?",
-            "ja": "そのノートPCはどこで買いましたか？",
-            "focus": "get",
-            "object": "that laptop",
-            "jaFocus": "買いました"
-          },
-          {
-            "en": "I got this monitor online.",
-            "ja": "このモニターはオンラインで買いました。",
-            "focus": "got",
-            "object": "this monitor",
-            "jaFocus": "買いました"
-          },
-          {
-            "en": "Can we get new samples by Friday?",
-            "ja": "私たちは金曜日までに新しいサンプルを入手できますか？",
-            "focus": "get",
-            "object": "new samples",
-            "jaFocus": "入手できますか"
-          }
-        ]
-      },
-      {
-        "id": "make_happen",
-        "title": "⑩ 〜してもらう・動かす",
-        "pattern": "GET + 人 + to 動詞",
-        "transitivity": "他動詞",
-        "structure": "S + get + 人 + to do",
-        "image": "人が動いてくれる状態を作る。",
-        "point": "少し上級だが、仕事では「誰かに〜してもらう」でよく使える。",
-        "examples": [
-          {
-            "en": "I'll get Tanaka to check the document.",
-            "ja": "私は田中さんに資料を確認してもらいます。",
-            "focus": "get",
-            "object": "Tanaka",
-            "jaFocus": "確認してもらいます",
-            "sentencePattern": "S + V + O + C",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "get"
-              },
-              {
-                "label": "O",
-                "text": "Tanaka"
-              },
-              {
-                "label": "C",
-                "text": "to check the document"
-              }
-            ],
-            "grammarNote": "get + 人 + to do は「人に〜してもらう」という型です。"
-          },
-          {
-            "en": "Can you get the supplier to send the samples?",
-            "ja": "あなたは仕入先にサンプルを送ってもらえますか？",
-            "focus": "get",
-            "object": "the supplier",
-            "jaFocus": "送ってもらえますか",
-            "sentencePattern": "S + V + O + C",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "you"
-              },
-              {
-                "label": "V",
-                "text": "get"
-              },
-              {
-                "label": "O",
-                "text": "the supplier"
-              },
-              {
-                "label": "C",
-                "text": "to send the samples"
-              }
-            ],
-            "grammarNote": "Can は疑問文を作る助動詞です。the supplier が O、to send the samples が O の動きを説明します。"
-          },
-          {
-            "en": "We need to get the team to agree on this.",
-            "ja": "私たちはチームにこの件で合意してもらう必要があります。",
-            "focus": "get",
-            "object": "the team",
-            "jaFocus": "合意してもらう",
-            "sentencePattern": "S + V + O + C",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "get"
-              },
-              {
-                "label": "O",
-                "text": "the team"
-              },
-              {
-                "label": "C",
-                "text": "to agree on this"
-              }
-            ],
-            "grammarNote": "to agree on this は the team がする動きを表します。この文では get + 人 + to do の型です。"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "get ready",
-        "ja": "準備する",
-        "image": "ready（準備できた状態）になる。会議・出張・商談前によく使う。",
-        "pattern": "get + 形容詞",
-        "examples": [
-          {
-            "en": "Let's get ready for the client meeting.",
-            "ja": "クライアントとの会議の準備をしましょう。",
-            "focus": "get ready",
-            "jaFocus": "準備",
-            "sentencePattern": "S + V + C + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "we"
-              },
-              {
-                "label": "V",
-                "text": "get"
-              },
-              {
-                "label": "C",
-                "text": "ready"
-              },
-              {
-                "label": "M",
-                "text": "for the client meeting"
-              }
-            ],
-            "grammarNote": "Let's は Let us の短縮で「〜しましょう」。for だけでなく for the client meeting をまとまりで見ます。"
-          },
-          {
-            "en": "I'm getting ready for the presentation.",
-            "ja": "私はプレゼンの準備をしています。",
-            "focus": "getting ready",
-            "jaFocus": "準備",
-            "sentencePattern": "S + V + C + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "am getting"
-              },
-              {
-                "label": "C",
-                "text": "ready"
-              },
-              {
-                "label": "M",
-                "text": "for the presentation"
-              }
-            ]
-          },
-          {
-            "en": "Please get ready by three.",
-            "ja": "3時までに準備してください。",
-            "focus": "get ready",
-            "jaFocus": "準備"
-          }
-        ]
-      },
-      {
-        "phrase": "get better",
-        "ja": "良くなる・改善する",
-        "image": "better（より良い状態）になる。能力・状況・体調に使える。",
-        "pattern": "get + 形容詞",
-        "examples": [
-          {
-            "en": "Our process is getting better.",
-            "ja": "私たちのプロセスは改善しています。",
-            "focus": "getting better",
-            "jaFocus": "改善"
-          },
-          {
-            "en": "Your presentation is getting better.",
-            "ja": "あなたのプレゼンは良くなっています。",
-            "focus": "getting better",
-            "jaFocus": "良くなって"
-          },
-          {
-            "en": "The situation will get better soon.",
-            "ja": "状況はすぐに良くなるでしょう。",
-            "focus": "get better",
-            "jaFocus": "良くなる"
-          }
-        ]
-      },
-      {
-        "phrase": "get worse",
-        "ja": "悪化する",
-        "image": "worse（より悪い状態）になる。問題・状況・体調に使う。",
-        "pattern": "get + 形容詞",
-        "examples": [
-          {
-            "en": "The issue is getting worse.",
-            "ja": "その問題は悪化しています。",
-            "focus": "getting worse",
-            "jaFocus": "悪化"
-          },
-          {
-            "en": "The delay got worse last week.",
-            "ja": "先週、遅延がさらに悪化しました。",
-            "focus": "got worse",
-            "jaFocus": "悪化"
-          },
-          {
-            "en": "We should act before things get worse.",
-            "ja": "状況が悪化する前に対応すべきです。",
-            "focus": "get worse",
-            "jaFocus": "悪化"
-          }
-        ]
-      },
-      {
-        "phrase": "get started",
-        "ja": "始める",
-        "image": "started（始まった状態）になる。会議や作業開始に便利。",
-        "pattern": "get + 過去分詞",
-        "examples": [
-          {
-            "en": "Let's get started.",
-            "ja": "始めましょう。",
-            "focus": "get started",
-            "jaFocus": "始め",
-            "sentencePattern": "S + V + C",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "we"
-              },
-              {
-                "label": "V",
-                "text": "get"
-              },
-              {
-                "label": "C",
-                "text": "started"
-              }
-            ],
-            "grammarNote": "get started は「始まった状態になる」。Let's は Let us の短縮です。"
-          },
-          {
-            "en": "We should get started with the agenda.",
-            "ja": "私たちは議題から始めましょう。",
-            "focus": "get started",
-            "jaFocus": "始め",
-            "sentencePattern": "S + V + C + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "get"
-              },
-              {
-                "label": "C",
-                "text": "started"
-              },
-              {
-                "label": "M",
-                "text": "with the agenda"
-              }
-            ]
-          },
-          {
-            "en": "Can we get started now?",
-            "ja": "私たちは今始めてもいいですか？",
-            "focus": "get started",
-            "jaFocus": "始め",
-            "sentencePattern": "S + V + C + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "we"
-              },
-              {
-                "label": "V",
-                "text": "get"
-              },
-              {
-                "label": "C",
-                "text": "started"
-              },
-              {
-                "label": "M",
-                "text": "now"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "phrase": "get involved",
-        "ja": "関わる",
-        "image": "involved（関わっている状態）になる。案件やプロジェクト参加に使う。",
-        "pattern": "get + 過去分詞",
-        "examples": [
-          {
-            "en": "I got involved in this project last month.",
-            "ja": "私は先月このプロジェクトに関わるようになりました。",
-            "focus": "got involved",
-            "jaFocus": "関わる",
-            "sentencePattern": "S + V + C + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "got"
-              },
-              {
-                "label": "C",
-                "text": "involved"
-              },
-              {
-                "label": "M",
-                "text": "in this project"
-              }
-            ],
-            "grammarNote": "get involved in ... は「〜に関わるようになる」という自然なまとまりです。"
-          },
-          {
-            "en": "We need to get the sales team involved.",
-            "ja": "私たちは営業チームにも関わってもらう必要があります。",
-            "focus": "get",
-            "object": "the sales team",
-            "jaFocus": "関わって",
-            "sentencePattern": "S + V + O + C",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "get"
-              },
-              {
-                "label": "O",
-                "text": "the sales team"
-              },
-              {
-                "label": "C",
-                "text": "involved"
-              }
-            ]
-          },
-          {
-            "en": "He got involved in the discussion.",
-            "ja": "彼はその議論に参加しました。",
-            "focus": "got involved",
-            "jaFocus": "参加"
-          }
-        ]
-      },
-      {
-        "phrase": "get used to",
-        "ja": "慣れる",
-        "image": "used to（慣れている状態）になる。新しい仕事・環境に使う。",
-        "pattern": "get used to + 名詞 / 動名詞",
-        "examples": [
-          {
-            "en": "I'm getting used to the new system.",
-            "ja": "新しいシステムに慣れてきました。",
-            "focus": "getting used to",
-            "jaFocus": "慣れて"
-          },
-          {
-            "en": "It takes time to get used to remote work.",
-            "ja": "リモートワークに慣れるには時間がかかります。",
-            "focus": "get used to",
-            "jaFocus": "慣れる"
-          },
-          {
-            "en": "Have you got used to the new process?",
-            "ja": "新しい手順には慣れましたか？",
-            "focus": "got used to",
-            "jaFocus": "慣れました"
-          }
-        ]
-      },
-      {
-        "phrase": "get tired",
-        "ja": "疲れる",
-        "image": "tired（疲れた状態）になる。体力・集中力の低下を表す。",
-        "pattern": "get + 形容詞",
-        "examples": [
-          {
-            "en": "I get tired after back-to-back meetings.",
-            "ja": "連続会議の後は疲れます。",
-            "focus": "get tired",
-            "jaFocus": "疲れ"
-          },
-          {
-            "en": "She got tired during the long call.",
-            "ja": "彼女は長い電話中に疲れました。",
-            "focus": "got tired",
-            "jaFocus": "疲れ"
-          },
-          {
-            "en": "Don't get too tired before the presentation.",
-            "ja": "プレゼン前に疲れすぎないでください。",
-            "focus": "get too tired",
-            "jaFocus": "疲れすぎ"
-          }
-        ]
-      },
-      {
-        "phrase": "get angry",
-        "ja": "怒る",
-        "image": "angry（怒った状態）になる。感情変化に使う。",
-        "pattern": "get + 形容詞",
-        "examples": [
-          {
-            "en": "The client got angry about the delay.",
-            "ja": "クライアントは遅延について怒りました。",
-            "focus": "got angry",
-            "jaFocus": "怒りました"
-          },
-          {
-            "en": "Don't get angry during the meeting.",
-            "ja": "会議中に怒らないでください。",
-            "focus": "get angry",
-            "jaFocus": "怒らない"
-          },
-          {
-            "en": "He gets angry when reports are late.",
-            "ja": "報告書が遅れると彼は怒ります。",
-            "focus": "gets angry",
-            "jaFocus": "怒ります"
-          }
-        ]
-      },
-      {
-        "phrase": "get close",
-        "ja": "近づく",
-        "image": "close（近い状態）になる。期限・目標・関係性に使える。",
-        "pattern": "get + 形容詞",
-        "examples": [
-          {
-            "en": "We are getting close to the deadline.",
-            "ja": "締切が近づいています。",
-            "focus": "getting close",
-            "jaFocus": "近づいて"
-          },
-          {
-            "en": "The team got close to the target.",
-            "ja": "チームは目標に近づきました。",
-            "focus": "got close",
-            "jaFocus": "近づき"
-          },
-          {
-            "en": "Let's get close to the final design.",
-            "ja": "最終デザインに近づけましょう。",
-            "focus": "get close",
-            "jaFocus": "近づけ"
-          }
-        ]
-      },
-      {
-        "phrase": "get serious",
-        "ja": "本気になる・深刻になる",
-        "image": "serious（本気・深刻な状態）になる。仕事の温度感に使える。",
-        "pattern": "get + 形容詞",
-        "examples": [
-          {
-            "en": "We need to get serious about quality.",
-            "ja": "品質について本気で取り組む必要があります。",
-            "focus": "get serious",
-            "jaFocus": "本気で"
-          },
-          {
-            "en": "The problem is getting serious.",
-            "ja": "その問題は深刻になっています。",
-            "focus": "getting serious",
-            "jaFocus": "深刻"
-          },
-          {
-            "en": "Management got serious about the issue.",
-            "ja": "経営陣はその問題に本腰を入れました。",
-            "focus": "got serious",
-            "jaFocus": "本腰"
-          }
-        ]
-      }
-    ],
-    "phrasalVerbs": [
-      {
-        "phrase": "get up",
-        "ja": "起きる・立ち上がる",
-        "image": "up は上方向。体や状態が上に起きるイメージ。",
-        "pattern": "get + up",
-        "examples": [
-          {
-            "en": "I get up at six on weekdays.",
-            "ja": "平日は6時に起きます。",
-            "focus": "get up",
-            "jaFocus": "起き"
-          },
-          {
-            "en": "He got up and explained the issue.",
-            "ja": "彼は立ち上がって問題を説明しました。",
-            "focus": "got up",
-            "jaFocus": "立ち上がって"
-          },
-          {
-            "en": "What time do you get up for work?",
-            "ja": "仕事の日は何時に起きますか？",
-            "focus": "get up",
-            "jaFocus": "起きます"
-          }
-        ]
-      },
-      {
-        "phrase": "get out",
-        "ja": "出る・抜け出す",
-        "image": "out は外へ。場所・状況から外に出る。",
-        "pattern": "get + out",
-        "examples": [
-          {
-            "en": "Let's get out of the meeting room.",
-            "ja": "会議室を出ましょう。",
-            "focus": "get out",
-            "jaFocus": "出ましょう"
-          },
-          {
-            "en": "We need to get out of this situation.",
-            "ja": "この状況から抜け出す必要があります。",
-            "focus": "get out",
-            "jaFocus": "抜け出す"
-          },
-          {
-            "en": "He got out of the contract.",
-            "ja": "彼はその契約から抜けました。",
-            "focus": "got out",
-            "jaFocus": "抜けました"
-          }
-        ]
-      },
-      {
-        "phrase": "get in",
-        "ja": "入る・到着する",
-        "image": "in は中へ。建物・車・状況に入る。",
-        "pattern": "get + in",
-        "examples": [
-          {
-            "en": "What time did you get in today?",
-            "ja": "今日は何時に出社しましたか？",
-            "focus": "get in",
-            "jaFocus": "出社"
-          },
-          {
-            "en": "Please get in the car.",
-            "ja": "車に乗ってください。",
-            "focus": "get in",
-            "jaFocus": "乗って"
-          },
-          {
-            "en": "The order got in yesterday.",
-            "ja": "注文は昨日入りました。",
-            "focus": "got in",
-            "jaFocus": "入りました"
-          }
-        ]
-      },
-      {
-        "phrase": "get on",
-        "ja": "乗る・進める",
-        "image": "on は接触・継続。乗り物に乗る、仕事を進める。",
-        "pattern": "get + on",
-        "examples": [
-          {
-            "en": "I got on the train at Shinjuku.",
-            "ja": "新宿で電車に乗りました。",
-            "focus": "got on",
-            "jaFocus": "乗りました"
-          },
-          {
-            "en": "Let's get on with the task.",
-            "ja": "その作業を進めましょう。",
-            "focus": "get on",
-            "jaFocus": "進め"
-          },
-          {
-            "en": "How are you getting on with the project?",
-            "ja": "その案件は順調に進んでいますか？",
-            "focus": "getting on",
-            "jaFocus": "進んで"
-          }
-        ]
-      },
-      {
-        "phrase": "get off",
-        "ja": "降りる・離れる",
-        "image": "off は離れる。乗り物・仕事・電話から離れる。",
-        "pattern": "get + off",
-        "examples": [
-          {
-            "en": "I got off the train at Tokyo Station.",
-            "ja": "東京駅で電車を降りました。",
-            "focus": "got off",
-            "jaFocus": "降りました"
-          },
-          {
-            "en": "I just got off a call with the client.",
-            "ja": "クライアントとの電話が今終わりました。",
-            "focus": "got off",
-            "jaFocus": "終わりました"
-          },
-          {
-            "en": "What time do you get off work?",
-            "ja": "何時に仕事が終わりますか？",
-            "focus": "get off",
-            "jaFocus": "終わります"
-          }
-        ]
-      },
-      {
-        "phrase": "get back",
-        "ja": "戻る・折り返す",
-        "image": "back は戻る。場所・連絡・状態が戻る。",
-        "pattern": "get + back",
-        "examples": [
-          {
-            "en": "I'll get back to you by tomorrow.",
-            "ja": "明日までに折り返します。",
-            "focus": "get back",
-            "jaFocus": "折り返し"
-          },
-          {
-            "en": "I got back to the office after lunch.",
-            "ja": "昼食後にオフィスへ戻りました。",
-            "focus": "got back",
-            "jaFocus": "戻りました"
-          },
-          {
-            "en": "Can we get back to the main topic?",
-            "ja": "本題に戻れますか？",
-            "focus": "get back",
-            "jaFocus": "戻れます"
-          }
-        ]
-      },
-      {
-        "phrase": "get over",
-        "ja": "乗り越える",
-        "image": "over は越える。問題や困難を越えて向こう側へ行く。",
-        "pattern": "get + over + 名詞",
-        "examples": [
-          {
-            "en": "We got over the first problem.",
-            "ja": "最初の問題を乗り越えました。",
-            "focus": "got over",
-            "jaFocus": "乗り越え"
-          },
-          {
-            "en": "It took time to get over the mistake.",
-            "ja": "そのミスを乗り越えるのに時間がかかりました。",
-            "focus": "get over",
-            "jaFocus": "乗り越える"
-          },
-          {
-            "en": "She got over the pressure quickly.",
-            "ja": "彼女はプレッシャーをすぐに乗り越えました。",
-            "focus": "got over",
-            "jaFocus": "乗り越え"
-          }
-        ]
-      },
-      {
-        "phrase": "get through",
-        "ja": "やり切る・通じる",
-        "image": "through は通り抜ける。仕事・困難・電話を通過する。",
-        "pattern": "get + through",
-        "examples": [
-          {
-            "en": "We got through the busy season.",
-            "ja": "繁忙期を乗り切りました。",
-            "focus": "got through",
-            "jaFocus": "乗り切り"
-          },
-          {
-            "en": "I couldn't get through to him.",
-            "ja": "彼に電話がつながりませんでした。",
-            "focus": "get through",
-            "jaFocus": "つながり"
-          },
-          {
-            "en": "Let's get through these tasks today.",
-            "ja": "今日これらの作業をやり切りましょう。",
-            "focus": "get through",
-            "jaFocus": "やり切り"
-          }
-        ]
-      },
-      {
-        "phrase": "get along",
-        "ja": "うまくやる",
-        "image": "along は一緒に進む。人間関係がうまく進む。",
-        "pattern": "get + along",
-        "examples": [
-          {
-            "en": "I get along with my team.",
-            "ja": "チームとうまくやっています。",
-            "focus": "get along",
-            "jaFocus": "うまく"
-          },
-          {
-            "en": "Do you get along with the new manager?",
-            "ja": "新しい上司とうまくやっていますか？",
-            "focus": "get along",
-            "jaFocus": "うまく"
-          },
-          {
-            "en": "They got along well during the project.",
-            "ja": "彼らはその案件中うまくやっていました。",
-            "focus": "got along",
-            "jaFocus": "うまく"
-          }
-        ]
-      },
-      {
-        "phrase": "get away",
-        "ja": "離れる・抜け出す",
-        "image": "away は離れていく。場所・仕事・問題から離れる。",
-        "pattern": "get + away",
-        "examples": [
-          {
-            "en": "I need to get away from work for a while.",
-            "ja": "少し仕事から離れる必要があります。",
-            "focus": "get away",
-            "jaFocus": "離れる"
-          },
-          {
-            "en": "We can't get away from this issue.",
-            "ja": "この問題から逃れることはできません。",
-            "focus": "get away",
-            "jaFocus": "逃れる"
-          },
-          {
-            "en": "He got away early today.",
-            "ja": "彼は今日早めに退社しました。",
-            "focus": "got away",
-            "jaFocus": "退社"
-          }
-        ]
-      }
-    ]
+      ]
   },
   {
     "id": "take",
@@ -23265,813 +22645,453 @@ export const verbs: Verb[] = [
   ]
 },
   {
-    "id": "open",
-    "rank": 37,
-    "word": "OPEN",
-    "ipa": "/ˈoʊpən/",
-    "kana": "オープン",
-    "syllable": "open",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "閉じているものを使える状態にする",
-    "coreDetail": "OPENは物理的に開く以外に、会議・ファイル・可能性・議論を使える状態にする感覚です。",
-    "coreVisual": {
-        "from": [
-            "🔓 開く",
-            "📄 ファイル",
-            "💬 議論",
-            "🚪 機会",
-            "📅 会議"
-        ],
-        "to": "仕事の流れ",
-        "label": "コアイメージ"
-    },
-    "meanings": [
-        {
-            "id": "open-file",
-            "title": "1 開く",
-            "pattern": "OPEN + 名詞",
-            "transitivity": "他動詞・自動詞",
-            "structure": "S + V + O",
-            "image": "ファイルや資料を開く。",
-            "point": "open the file は仕事で最頻出。",
-            "examples": [
-                {
-                    "en": "Please open the file I sent you.",
-                    "ja": "私が送ったファイルを開いてください。",
-                    "focus": "open the file",
-                    "jaFocus": "ファイルを開く",
-                    "object": "the file",
-                    "sentencePattern": "V + O",
-                    "grammarParts": [
-                        {
-                            "label": "V",
-                            "text": "open"
-                        },
-                        {
-                            "label": "O",
-                            "text": "the file"
-                        }
-                    ]
-                },
-                {
-                    "en": "I opened the latest report.",
-                    "ja": "最新レポートを開きました。",
-                    "focus": "opened",
-                    "object": "the latest report",
-                    "jaFocus": "開きました"
-                },
-                {
-                    "en": "Can you open the attachment?",
-                    "ja": "添付ファイルを開けますか？",
-                    "focus": "open",
-                    "object": "the attachment",
-                    "jaFocus": "開けますか"
-                }
-            ],
-            "dailyExamples": [
-                {
-                    "en": "I opened the latest report.",
-                    "ja": "最新レポートを開きました。",
-                    "focus": "opened",
-                    "object": "the latest report",
-                    "jaFocus": "開きました"
-                },
-                {
-                    "en": "Can you open the attachment?",
-                    "ja": "添付ファイルを開けますか？",
-                    "focus": "open",
-                    "object": "the attachment",
-                    "jaFocus": "開けますか"
-                }
-            ]
-        },
-        {
-            "id": "start-meeting",
-            "title": "2 会議を始める",
-            "pattern": "OPEN + 会議",
-            "transitivity": "他動詞・自動詞",
-            "structure": "S + V + O",
-            "image": "会議を開始する。",
-            "point": "open a meeting はややフォーマル。",
-            "examples": [
-                {
-                    "en": "The manager opened the meeting with a short update.",
-                    "ja": "マネージャーは短い報告で会議を始めました。",
-                    "focus": "opened",
-                    "object": "the meeting",
-                    "jaFocus": "始めました"
-                },
-                {
-                    "en": "Let me open today's meeting.",
-                    "ja": "本日の会議を始めさせてください。",
-                    "focus": "open",
-                    "object": "today's meeting",
-                    "jaFocus": "始め"
-                },
-                {
-                    "en": "She opened the session with a greeting.",
-                    "ja": "彼女は挨拶でセッションを始めました。",
-                    "focus": "opened",
-                    "object": "the session",
-                    "jaFocus": "始めました"
-                }
-            ],
-            "dailyExamples": [
-                {
-                    "en": "The event opened with music.",
-                    "ja": "イベントは音楽で始まりました。",
-                    "focus": "opened",
-                    "jaFocus": "始まりました"
-                },
-                {
-                    "en": "The ceremony opened at ten.",
-                    "ja": "式典は10時に始まりました。",
-                    "focus": "opened",
-                    "jaFocus": "始まりました"
-                }
-            ]
-        },
-        {
-            "id": "make-available",
-            "title": "3 利用可能にする",
-            "pattern": "OPEN + 機会 / アクセス",
-            "transitivity": "他動詞・自動詞",
-            "structure": "S + V + O",
-            "image": "アクセスや機会を開く。",
-            "point": "open access / open opportunities のように使う。",
-            "examples": [
-                {
-                    "en": "This update opens new opportunities.",
-                    "ja": "この更新は新しい機会を生みます。",
-                    "focus": "opens",
-                    "object": "new opportunities",
-                    "jaFocus": "生みます"
-                },
-                {
-                    "en": "The new system opens access to shared data.",
-                    "ja": "新システムで共有データにアクセスできるようになります。",
-                    "focus": "opens",
-                    "object": "access",
-                    "jaFocus": "アクセスできるように"
-                },
-                {
-                    "en": "The partnership opened a new market.",
-                    "ja": "提携により新しい市場が開けました。",
-                    "focus": "opened",
-                    "object": "a new market",
-                    "jaFocus": "開けました"
-                }
-            ],
-            "dailyExamples": [
-                {
-                    "en": "Studying English opens many doors.",
-                    "ja": "英語学習は多くの可能性を広げます。",
-                    "focus": "opens",
-                    "object": "many doors",
-                    "jaFocus": "広げます"
-                },
-                {
-                    "en": "The ticket opened the gate.",
-                    "ja": "チケットでゲートが開きました。",
-                    "focus": "opened",
-                    "object": "the gate",
-                    "jaFocus": "開きました"
-                }
-            ]
-        },
-        {
-            "id": "discuss",
-            "title": "4 話を切り出す",
-            "pattern": "OPEN + discussion",
-            "transitivity": "他動詞・自動詞",
-            "structure": "S + V + O",
-            "image": "議論を始める。",
-            "point": "open a discussion は会議で自然。",
-            "examples": [
-                {
-                    "en": "I would like to open the discussion.",
-                    "ja": "議論を始めたいと思います。",
-                    "focus": "open",
-                    "object": "the discussion",
-                    "jaFocus": "始め"
-                },
-                {
-                    "en": "This issue opens an important discussion.",
-                    "ja": "この問題は重要な議論につながります。",
-                    "focus": "opens",
-                    "object": "an important discussion",
-                    "jaFocus": "つながります"
-                },
-                {
-                    "en": "Can we open the topic of pricing?",
-                    "ja": "価格の話題を始めてもいいですか？",
-                    "focus": "open",
-                    "object": "the topic",
-                    "jaFocus": "始め"
-                }
-            ],
-            "dailyExamples": [
-                {
-                    "en": "I opened a conversation with my neighbor.",
-                    "ja": "近所の人と会話を始めました。",
-                    "focus": "opened",
-                    "object": "a conversation",
-                    "jaFocus": "始めました"
-                },
-                {
-                    "en": "She opened the topic carefully.",
-                    "ja": "彼女はその話題を慎重に切り出しました。",
-                    "focus": "opened",
-                    "object": "the topic",
-                    "jaFocus": "切り出しました"
-                }
-            ]
-        },
-        {
-            "id": "become-open",
-            "title": "5 開く・営業する",
-            "pattern": "open",
-            "transitivity": "他動詞・自動詞",
-            "structure": "S + V",
-            "image": "店やサービスが開く。",
-            "point": "自動詞で使う。",
-            "examples": [
-                {
-                    "en": "The office opens at nine.",
-                    "ja": "オフィスは9時に開きます。",
-                    "focus": "opens",
-                    "jaFocus": "開きます"
-                },
-                {
-                    "en": "The registration opens next Monday.",
-                    "ja": "登録は来週月曜に始まります。",
-                    "focus": "opens",
-                    "jaFocus": "始まります"
-                },
-                {
-                    "en": "The support desk opens at ten.",
-                    "ja": "サポート窓口は10時に開きます。",
-                    "focus": "opens",
-                    "jaFocus": "開きます"
-                }
-            ],
-            "dailyExamples": [
-                {
-                    "en": "The shop opens early.",
-                    "ja": "その店は早く開きます。",
-                    "focus": "opens",
-                    "jaFocus": "開きます"
-                },
-                {
-                    "en": "The park opens in spring.",
-                    "ja": "公園は春に開園します。",
-                    "focus": "opens",
-                    "jaFocus": "開園します"
-                }
-            ]
-        },
-        {
-            "id": "open-account",
-            "title": "6 口座・アカウントを開設する",
-            "pattern": "OPEN + account",
-            "transitivity": "他動詞・自動詞",
-            "structure": "S + V + O",
-            "image": "アカウントや口座を作る。",
-            "point": "open an account は定型。",
-            "examples": [
-                {
-                    "en": "We opened a new account for the client.",
-                    "ja": "顧客用に新しいアカウントを開設しました。",
-                    "focus": "opened",
-                    "object": "a new account",
-                    "jaFocus": "開設しました"
-                },
-                {
-                    "en": "Please open a user account for him.",
-                    "ja": "彼用のユーザーアカウントを作成してください。",
-                    "focus": "open",
-                    "object": "a user account",
-                    "jaFocus": "作成して"
-                },
-                {
-                    "en": "The company opened a bank account overseas.",
-                    "ja": "会社は海外で銀行口座を開設しました。",
-                    "focus": "opened",
-                    "object": "a bank account",
-                    "jaFocus": "開設しました"
-                }
-            ],
-            "dailyExamples": [
-                {
-                    "en": "I opened a savings account.",
-                    "ja": "貯蓄口座を開設しました。",
-                    "focus": "opened",
-                    "object": "a savings account",
-                    "jaFocus": "開設しました"
-                },
-                {
-                    "en": "She opened a new email account.",
-                    "ja": "彼女は新しいメールアカウントを作りました。",
-                    "focus": "opened",
-                    "object": "a new email account",
-                    "jaFocus": "作りました"
-                }
-            ]
-        },
-        {
-            "id": "open-position",
-            "title": "7 募集を出す",
-            "pattern": "OPEN + position",
-            "transitivity": "他動詞・自動詞",
-            "structure": "S + V + O",
-            "image": "求人や枠を開く。",
-            "point": "open a position は採用文脈で使う。",
-            "examples": [
-                {
-                    "en": "We opened a new sales position.",
-                    "ja": "新しい営業職の募集を開始しました。",
-                    "focus": "opened",
-                    "object": "a new sales position",
-                    "jaFocus": "募集を開始しました"
-                },
-                {
-                    "en": "The HR team opened three roles.",
-                    "ja": "人事チームは3つの職種を募集開始しました。",
-                    "focus": "opened",
-                    "object": "three roles",
-                    "jaFocus": "募集開始しました"
-                },
-                {
-                    "en": "This role will open next quarter.",
-                    "ja": "この役職は来四半期に募集開始されます。",
-                    "focus": "open",
-                    "jaFocus": "募集開始されます"
-                }
-            ],
-            "dailyExamples": [
-                {
-                    "en": "A seat opened near the window.",
-                    "ja": "窓際の席が空きました。",
-                    "focus": "opened",
-                    "jaFocus": "空きました"
-                },
-                {
-                    "en": "A spot opened in the class.",
-                    "ja": "クラスに空きが出ました。",
-                    "focus": "opened",
-                    "jaFocus": "空きが出ました"
-                }
-            ]
-        },
-        {
-            "id": "open-up",
-            "title": "8 打ち明ける・広げる",
-            "pattern": "open up",
-            "transitivity": "他動詞・自動詞",
-            "structure": "S + V",
-            "image": "心や可能性が開く。",
-            "point": "ビジネスでは市場や機会にも使える。",
-            "examples": [
-                {
-                    "en": "The new channel opened up more sales opportunities.",
-                    "ja": "新しい販路で販売機会が広がりました。",
-                    "focus": "opened up",
-                    "object": "more sales opportunities",
-                    "jaFocus": "広がりました"
-                },
-                {
-                    "en": "The manager opened up about the challenge.",
-                    "ja": "マネージャーは課題について率直に話しました。",
-                    "focus": "opened up",
-                    "jaFocus": "率直に話しました"
-                },
-                {
-                    "en": "AI opened up new ways to work.",
-                    "ja": "AIにより新しい働き方が広がりました。",
-                    "focus": "opened up",
-                    "object": "new ways to work",
-                    "jaFocus": "広がりました"
-                }
-            ],
-            "dailyExamples": [
-                {
-                    "en": "He opened up to his friend.",
-                    "ja": "彼は友人に心を開きました。",
-                    "focus": "opened up",
-                    "jaFocus": "心を開きました"
-                },
-                {
-                    "en": "Travel opened up my mind.",
-                    "ja": "旅行で視野が広がりました。",
-                    "focus": "opened up",
-                    "object": "my mind",
-                    "jaFocus": "広がりました"
-                }
-            ]
-        },
-        {
-            "id": "open-door",
-            "title": "9 扉を開く",
-            "pattern": "OPEN + door",
-            "transitivity": "他動詞・自動詞",
-            "structure": "S + V + O",
-            "image": "物理・比喩の扉を開く。",
-            "point": "open the door to は可能性を開く。",
-            "examples": [
-                {
-                    "en": "This contract opens the door to future business.",
-                    "ja": "この契約は将来の取引につながります。",
-                    "focus": "opens",
-                    "object": "the door",
-                    "jaFocus": "つながります"
-                },
-                {
-                    "en": "The meeting opened the door to cooperation.",
-                    "ja": "その会議で協力の可能性が開けました。",
-                    "focus": "opened",
-                    "object": "the door",
-                    "jaFocus": "可能性が開けました"
-                },
-                {
-                    "en": "Good communication opens the door to trust.",
-                    "ja": "良いコミュニケーションは信頼につながります。",
-                    "focus": "opens",
-                    "object": "the door",
-                    "jaFocus": "つながります"
-                }
-            ],
-            "dailyExamples": [
-                {
-                    "en": "Can you open the door?",
-                    "ja": "ドアを開けてくれますか？",
-                    "focus": "open",
-                    "object": "the door",
-                    "jaFocus": "開けて"
-                },
-                {
-                    "en": "Music opened the door to English for me.",
-                    "ja": "音楽が私に英語への扉を開いてくれました。",
-                    "focus": "opened",
-                    "object": "the door",
-                    "jaFocus": "扉を開いて"
-                }
-            ]
-        },
-        {
-            "id": "open-mind",
-            "title": "10 心を開く",
-            "pattern": "OPEN + mind",
-            "transitivity": "他動詞・自動詞",
-            "structure": "S + V + O",
-            "image": "考え方を柔軟にする。",
-            "point": "open your mind は自己啓発寄り。",
-            "examples": [
-                {
-                    "en": "The training opened my mind to new ideas.",
-                    "ja": "研修で新しい考え方に目が開かれました。",
-                    "focus": "opened",
-                    "object": "my mind",
-                    "jaFocus": "目が開かれました"
-                },
-                {
-                    "en": "Working abroad opened my mind.",
-                    "ja": "海外勤務で視野が広がりました。",
-                    "focus": "opened",
-                    "object": "my mind",
-                    "jaFocus": "視野が広がりました"
-                },
-                {
-                    "en": "The feedback opened our minds to customer needs.",
-                    "ja": "フィードバックで顧客ニーズに目が向きました。",
-                    "focus": "opened",
-                    "object": "our minds",
-                    "jaFocus": "目が向きました"
-                }
-            ],
-            "dailyExamples": [
-                {
-                    "en": "Reading opens your mind.",
-                    "ja": "読書は視野を広げます。",
-                    "focus": "opens",
-                    "object": "your mind",
-                    "jaFocus": "広げます"
-                },
-                {
-                    "en": "Meeting new people opened my mind.",
-                    "ja": "新しい人との出会いで視野が広がりました。",
-                    "focus": "opened",
-                    "object": "my mind",
-                    "jaFocus": "広がりました"
-                }
-            ]
-        }
-    ],
-    "collocations": [
-        {
-            "phrase": "open a file",
-            "ja": "ファイルを開く",
-            "image": "閉じているデータを確認できる状態にする",
-            "pattern": "open a file",
-            "examples": [
-                {
-                    "en": "Please open the file I sent you.",
-                    "ja": "私が送ったファイルを開いてください。",
-                    "focus": "open the file",
-                    "jaFocus": "ファイルを開いて",
-                    "object": "the file"
-                },
-                {
-                    "en": "I opened the latest quote before the meeting.",
-                    "ja": "会議前に最新の見積書を開きました。",
-                    "focus": "opened",
-                    "jaFocus": "開きました",
-                    "object": "the latest quote"
-                },
-                {
-                    "en": "Can you open the attachment on your phone?",
-                    "ja": "スマホで添付ファイルを開けますか？",
-                    "focus": "open the attachment",
-                    "jaFocus": "添付ファイルを開けますか",
-                    "object": "the attachment"
-                }
-            ],
-            "dailyExamples": []
-        },
-        {
-            "phrase": "open an account",
-            "ja": "アカウント・口座を開設する",
-            "image": "新しく使える窓口を作る",
-            "pattern": "open an account",
-            "examples": [
-                {
-                    "en": "We opened a new account for the client.",
-                    "ja": "私たちは顧客用に新しいアカウントを開設しました。",
-                    "focus": "opened a new account",
-                    "jaFocus": "アカウントを開設しました",
-                    "object": "a new account"
-                },
-                {
-                    "en": "Please open a user account for the new staff member.",
-                    "ja": "新しい社員用のユーザーアカウントを作成してください。",
-                    "focus": "open a user account",
-                    "jaFocus": "ユーザーアカウントを作成して",
-                    "object": "a user account"
-                },
-                {
-                    "en": "The company opened a bank account for overseas payments.",
-                    "ja": "会社は海外送金用に銀行口座を開設しました。",
-                    "focus": "opened a bank account",
-                    "jaFocus": "銀行口座を開設しました",
-                    "object": "a bank account"
-                }
-            ],
-            "dailyExamples": []
-        },
-        {
-            "phrase": "open a discussion",
-            "ja": "議論を始める",
-            "image": "話し合いの入口を作る",
-            "pattern": "open a discussion",
-            "examples": [
-                {
-                    "en": "I would like to open a discussion about the schedule.",
-                    "ja": "スケジュールについて議論を始めたいです。",
-                    "focus": "open a discussion",
-                    "jaFocus": "議論を始めたい",
-                    "object": "a discussion"
-                },
-                {
-                    "en": "This issue opened an important discussion with the client.",
-                    "ja": "この問題をきっかけに、顧客との重要な議論が始まりました。",
-                    "focus": "opened an important discussion",
-                    "jaFocus": "重要な議論が始まりました",
-                    "object": "an important discussion"
-                },
-                {
-                    "en": "Can we open a discussion before making a decision?",
-                    "ja": "決定する前に議論を始めてもいいですか？",
-                    "focus": "open a discussion",
-                    "jaFocus": "議論を始めてもいいですか",
-                    "object": "a discussion"
-                }
-            ],
-            "dailyExamples": []
-        },
-        {
-            "phrase": "open a position",
-            "ja": "募集枠を出す",
-            "image": "採用や担当の枠を使える状態にする",
-            "pattern": "open a position",
-            "examples": [
-                {
-                    "en": "We opened a new sales position this month.",
-                    "ja": "今月、新しい営業職の募集枠を出しました。",
-                    "focus": "opened a new sales position",
-                    "jaFocus": "募集枠を出しました",
-                    "object": "a new sales position"
-                },
-                {
-                    "en": "The company will open a position for a project coordinator.",
-                    "ja": "会社はプロジェクト調整担当の募集枠を出す予定です。",
-                    "focus": "open a position",
-                    "jaFocus": "募集枠を出す",
-                    "object": "a position"
-                },
-                {
-                    "en": "Please confirm whether we can open another position.",
-                    "ja": "もう1つ募集枠を出せるか確認してください。",
-                    "focus": "open another position",
-                    "jaFocus": "募集枠を出せるか",
-                    "object": "another position"
-                }
-            ],
-            "dailyExamples": []
-        },
-        {
-            "phrase": "open access",
-            "ja": "アクセスを開放する",
-            "image": "使えなかった情報や機能を使えるようにする",
-            "pattern": "open access",
-            "examples": [
-                {
-                    "en": "The admin opened access to the shared folder.",
-                    "ja": "管理者が共有フォルダへのアクセスを開放しました。",
-                    "focus": "opened access",
-                    "jaFocus": "アクセスを開放しました",
-                    "object": "access"
-                },
-                {
-                    "en": "This update opens access to more detailed reports.",
-                    "ja": "この更新で、より詳細なレポートにアクセスできるようになります。",
-                    "focus": "opens access",
-                    "jaFocus": "アクセスできるようになります",
-                    "object": "access"
-                },
-                {
-                    "en": "We need to open access for the support team.",
-                    "ja": "サポートチームにアクセス権を開放する必要があります。",
-                    "focus": "open access",
-                    "jaFocus": "アクセス権を開放する",
-                    "object": "access"
-                }
-            ],
-            "dailyExamples": []
-        }
-    ],
-    "phrasalVerbs": [
-        {
-            "phrase": "open up",
-            "ja": "広げる・開く",
-            "image": "閉じた範囲を広げて可能性を作る",
-            "pattern": "open up + 名詞",
-            "examples": [
-                {
-                    "en": "The new partnership opened up a larger market.",
-                    "ja": "新しい提携により、より大きな市場が開けました。",
-                    "focus": "opened up",
-                    "jaFocus": "市場が開けました",
-                    "object": "a larger market"
-                },
-                {
-                    "en": "This feature opens up new ways to support customers.",
-                    "ja": "この機能により、顧客を支援する新しい方法が広がります。",
-                    "focus": "opens up",
-                    "jaFocus": "新しい方法が広がります",
-                    "object": "new ways"
-                },
-                {
-                    "en": "The training opened up more career options for the team.",
-                    "ja": "その研修により、チームのキャリアの選択肢が広がりました。",
-                    "focus": "opened up",
-                    "jaFocus": "選択肢が広がりました",
-                    "object": "more career options"
-                }
-            ],
-            "dailyExamples": []
-        },
-        {
-            "phrase": "open up about",
-            "ja": "〜について打ち明ける",
-            "image": "隠していた考えや不安を話せる状態にする",
-            "pattern": "open up about + 名詞",
-            "examples": [
-                {
-                    "en": "The client opened up about their concerns.",
-                    "ja": "顧客は懸念点を打ち明けてくれました。",
-                    "focus": "opened up about",
-                    "jaFocus": "懸念点を打ち明けて",
-                    "object": "their concerns"
-                },
-                {
-                    "en": "She opened up about the problems in the workflow.",
-                    "ja": "彼女は業務フローの問題について率直に話しました。",
-                    "focus": "opened up about",
-                    "jaFocus": "率直に話しました",
-                    "object": "the problems"
-                },
-                {
-                    "en": "The team opened up about the delay during the meeting.",
-                    "ja": "チームは会議で遅延について正直に話しました。",
-                    "focus": "opened up about",
-                    "jaFocus": "正直に話しました",
-                    "object": "the delay"
-                }
-            ],
-            "dailyExamples": []
-        },
-        {
-            "phrase": "open up to",
-            "ja": "〜を受け入れるようになる",
-            "image": "外からの意見や機会を受け入れる",
-            "pattern": "open up to + 名詞",
-            "examples": [
-                {
-                    "en": "The manager opened up to new ideas from younger staff.",
-                    "ja": "マネージャーは若手社員からの新しい意見を受け入れるようになりました。",
-                    "focus": "opened up to",
-                    "jaFocus": "受け入れるようになりました",
-                    "object": "new ideas"
-                },
-                {
-                    "en": "We should open up to feedback from customers.",
-                    "ja": "私たちは顧客からの意見を受け入れるべきです。",
-                    "focus": "open up to",
-                    "jaFocus": "受け入れる",
-                    "object": "feedback"
-                },
-                {
-                    "en": "The company opened up to remote work after the trial.",
-                    "ja": "会社は試験導入後、リモート勤務を受け入れるようになりました。",
-                    "focus": "opened up to",
-                    "jaFocus": "受け入れるようになりました",
-                    "object": "remote work"
-                }
-            ],
-            "dailyExamples": []
-        },
-        {
-            "phrase": "open up access to",
-            "ja": "〜へのアクセスを広げる",
-            "image": "使える人や範囲を広げる",
-            "pattern": "open up access to + 名詞",
-            "examples": [
-                {
-                    "en": "We opened up access to the dashboard for all managers.",
-                    "ja": "私たちは全マネージャーにダッシュボードへのアクセスを開放しました。",
-                    "focus": "opened up access to",
-                    "jaFocus": "アクセスを開放しました",
-                    "object": "the dashboard"
-                },
-                {
-                    "en": "The update opens up access to historical data.",
-                    "ja": "この更新で過去データにアクセスできるようになります。",
-                    "focus": "opens up access to",
-                    "jaFocus": "アクセスできるようになります",
-                    "object": "historical data"
-                },
-                {
-                    "en": "Please open up access to the training materials.",
-                    "ja": "研修資料へのアクセスを開放してください。",
-                    "focus": "open up access to",
-                    "jaFocus": "アクセスを開放して",
-                    "object": "the training materials"
-                }
-            ],
-            "dailyExamples": []
-        },
-        {
-            "phrase": "open up a market",
-            "ja": "市場を切り開く",
-            "image": "新しい販売先や機会を開く",
-            "pattern": "open up a market",
-            "examples": [
-                {
-                    "en": "This product could open up a new market in Asia.",
-                    "ja": "この製品はアジアで新しい市場を切り開く可能性があります。",
-                    "focus": "open up a new market",
-                    "jaFocus": "新しい市場を切り開く",
-                    "object": "a new market"
-                },
-                {
-                    "en": "The local partner helped us open up the market.",
-                    "ja": "現地パートナーのおかげで、その市場を開拓できました。",
-                    "focus": "open up the market",
-                    "jaFocus": "市場を開拓できました",
-                    "object": "the market"
-                },
-                {
-                    "en": "Lower prices may open up a wider market.",
-                    "ja": "価格を下げることで、より広い市場が開ける可能性があります。",
-                    "focus": "open up a wider market",
-                    "jaFocus": "より広い市場が開ける",
-                    "object": "a wider market"
-                }
-            ],
-            "dailyExamples": []
-        }
-    ]
-},
+      "id": "discuss",
+      "rank": 61,
+      "word": "DISCUSS",
+      "ipa": "/dɪˈskʌs/",
+      "kana": "ディスカス",
+      "syllable": "dis-cuss",
+      "transitivity": "他動詞",
+      "importance": "★★★★☆ 重要",
+      "core": "一つのテーマを相手と掘り下げて話し合う",
+      "coreDetail": "DISCUSSは、予定・条件・課題・提案などを、結論や理解に近づけるために話し合う動詞です。基本形は discuss the issue のように目的語を直接置き、discuss about は避けます。",
+      "coreVisual": {
+          "from": [
+              "議題",
+              "条件",
+              "問題",
+              "提案"
+          ],
+          "to": "合意・理解・次の行動",
+          "label": "テーマを中心に話し合う"
+      },
+      "meanings": [
+          {
+              "id": "discuss-topic",
+              "title": "① 議題・問題について話し合う",
+              "pattern": "discuss + 議題 / 問題",
+              "transitivity": "他動詞",
+              "structure": "S + discuss + O",
+              "image": "一つのテーマをテーブルに置いて話し合う。",
+              "point": "discuss about ではなく discuss the issue が基本です。",
+              "examples": [
+                  {
+                      "en": "We discussed the delivery issue with the client.",
+                      "ja": "私たちは顧客と納品の問題について話し合いました。",
+                      "focus": "discussed",
+                      "object": "the delivery issue"
+                  },
+                  {
+                      "en": "Let's discuss the quotation before we send it.",
+                      "ja": "見積を送る前に、その内容について話し合いましょう。",
+                      "focus": "discuss",
+                      "object": "the quotation"
+                  },
+                  {
+                      "en": "The team discussed the problem during the morning meeting.",
+                      "ja": "チームは朝の会議でその問題について話し合いました。",
+                      "focus": "discussed",
+                      "object": "the problem"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "id": "discuss-with-someone",
+              "title": "② 相手と話し合う",
+              "pattern": "discuss + 内容 + with + 相手",
+              "transitivity": "他動詞",
+              "structure": "S + discuss + O + with + 人",
+              "image": "相手と同じテーマを見ながら意見を合わせる。",
+              "point": "with を使うと、誰と話し合うかを自然に表せます。",
+              "examples": [
+                  {
+                      "en": "I discussed the schedule with the supplier.",
+                      "ja": "私は仕入先とスケジュールについて話し合いました。",
+                      "focus": "discussed",
+                      "object": "the schedule"
+                  },
+                  {
+                      "en": "Please discuss the design change with the production team.",
+                      "ja": "設計変更について製造チームと話し合ってください。",
+                      "focus": "discuss",
+                      "object": "the design change"
+                  },
+                  {
+                      "en": "We need to discuss the payment terms with the customer.",
+                      "ja": "私たちは顧客と支払い条件について話し合う必要があります。",
+                      "focus": "discuss",
+                      "object": "the payment terms"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "id": "discuss-details",
+              "title": "③ 詳細・条件を詰める",
+              "pattern": "discuss + details / terms / conditions",
+              "transitivity": "他動詞",
+              "structure": "S + discuss + O",
+              "image": "まだ決まっていない細部を話し合って整理する。",
+              "point": "details, terms, conditions など仕事でよく使う名詞と相性が良いです。",
+              "examples": [
+                  {
+                      "en": "We discussed the details of the new order.",
+                      "ja": "私たちは新しい注文の詳細について話し合いました。",
+                      "focus": "discussed",
+                      "object": "the details"
+                  },
+                  {
+                      "en": "Let's discuss the terms before signing the agreement.",
+                      "ja": "契約書に署名する前に条件について話し合いましょう。",
+                      "focus": "discuss",
+                      "object": "the terms"
+                  },
+                  {
+                      "en": "They discussed the conditions for the next shipment.",
+                      "ja": "彼らは次回出荷の条件について話し合いました。",
+                      "focus": "discussed",
+                      "object": "the conditions"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "id": "discuss-plan-schedule",
+              "title": "④ 計画・予定を話し合う",
+              "pattern": "discuss + plan / schedule / timeline",
+              "transitivity": "他動詞",
+              "structure": "S + discuss + O",
+              "image": "予定や段取りを確認しながら進め方を話す。",
+              "point": "計画やスケジュール調整の場面で非常に使いやすい型です。",
+              "examples": [
+                  {
+                      "en": "We discussed the project plan with the manager.",
+                      "ja": "私たちはマネージャーとプロジェクト計画について話し合いました。",
+                      "focus": "discussed",
+                      "object": "the project plan"
+                  },
+                  {
+                      "en": "Let's discuss the timeline for installation.",
+                      "ja": "設置のスケジュールについて話し合いましょう。",
+                      "focus": "discuss",
+                      "object": "the timeline"
+                  },
+                  {
+                      "en": "The sales team discussed next month's visit schedule.",
+                      "ja": "営業チームは来月の訪問スケジュールについて話し合いました。",
+                      "focus": "discussed",
+                      "object": "next month's visit schedule"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "id": "discuss-question",
+              "title": "⑤ whether / how / what を話し合う",
+              "pattern": "discuss whether / how / what + 文",
+              "transitivity": "他動詞",
+              "structure": "S + discuss + whether/how/what ...",
+              "image": "選択肢や方法を話し合って判断に近づく。",
+              "point": "何をどうするか未定の時に使いやすい型です。",
+              "examples": [
+                  {
+                      "en": "We discussed whether we should change the supplier.",
+                      "ja": "私たちは仕入先を変更すべきか話し合いました。",
+                      "focus": "discussed",
+                      "object": "whether we should change the supplier"
+                  },
+                  {
+                      "en": "Let's discuss how we can reduce the cost.",
+                      "ja": "どのようにコストを削減できるか話し合いましょう。",
+                      "focus": "discuss",
+                      "object": "how we can reduce the cost"
+                  },
+                  {
+                      "en": "They discussed what information to include in the report.",
+                      "ja": "彼らは報告書にどの情報を入れるか話し合いました。",
+                      "focus": "discussed",
+                      "object": "what information to include"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "id": "be-discussed",
+              "title": "⑥ 会議などで話し合われる",
+              "pattern": "be discussed",
+              "transitivity": "受け身",
+              "structure": "S + be discussed",
+              "image": "テーマが会議やメール上で取り上げられる。",
+              "point": "受け身にすると、誰が話したかより議題そのものを強調できます。",
+              "examples": [
+                  {
+                      "en": "The issue will be discussed in tomorrow's meeting.",
+                      "ja": "その問題は明日の会議で話し合われます。",
+                      "focus": "discussed",
+                      "object": "the issue"
+                  },
+                  {
+                      "en": "The new price list was discussed by the sales team.",
+                      "ja": "新しい価格表は営業チームによって話し合われました。",
+                      "focus": "discussed",
+                      "object": "the new price list"
+                  },
+                  {
+                      "en": "Several delivery options were discussed during the call.",
+                      "ja": "電話中にいくつかの納品方法が話し合われました。",
+                      "focus": "discussed",
+                      "object": "several delivery options"
+                  }
+              ],
+              "dailyExamples": []
+          }
+      ],
+      "collocations": [
+          {
+              "phrase": "discuss the details",
+              "ja": "詳細を話し合う",
+              "image": "詳細を一つずつ確認しながら話し合う。",
+              "pattern": "discuss the details",
+              "examples": [
+                  {
+                      "en": "Let's discuss the details before we reply to the client.",
+                      "ja": "顧客に返信する前に詳細を話し合いましょう。",
+                      "focus": "discuss the details"
+                  },
+                  {
+                      "en": "We discussed the details of the installation work.",
+                      "ja": "私たちは設置作業の詳細について話し合いました。",
+                      "focus": "discussed the details"
+                  },
+                  {
+                      "en": "Please discuss the details with the technical team.",
+                      "ja": "技術チームと詳細について話し合ってください。",
+                      "focus": "discuss the details"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "discuss the schedule",
+              "ja": "予定を話し合う",
+              "image": "日程や進行を調整するために話し合う。",
+              "pattern": "discuss the schedule",
+              "examples": [
+                  {
+                      "en": "We discussed the schedule for the site visit.",
+                      "ja": "私たちは現場訪問の予定について話し合いました。",
+                      "focus": "discussed the schedule"
+                  },
+                  {
+                      "en": "Let's discuss the schedule after we receive the drawings.",
+                      "ja": "図面を受け取った後で予定について話し合いましょう。",
+                      "focus": "discuss the schedule"
+                  },
+                  {
+                      "en": "The team discussed the schedule for next week's delivery.",
+                      "ja": "チームは来週の納品予定について話し合いました。",
+                      "focus": "discussed the schedule"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "discuss the issue",
+              "ja": "問題について話し合う",
+              "image": "解決すべき問題を共有して話し合う。",
+              "pattern": "discuss the issue",
+              "examples": [
+                  {
+                      "en": "We need to discuss the issue before it becomes serious.",
+                      "ja": "深刻になる前にその問題について話し合う必要があります。",
+                      "focus": "discuss the issue"
+                  },
+                  {
+                      "en": "The manager discussed the issue with the supplier.",
+                      "ja": "マネージャーは仕入先とその問題について話し合いました。",
+                      "focus": "discussed the issue"
+                  },
+                  {
+                      "en": "Let's discuss the issue and decide the next step.",
+                      "ja": "その問題について話し合い、次の対応を決めましょう。",
+                      "focus": "discuss the issue"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "discuss the proposal",
+              "ja": "提案について話し合う",
+              "image": "提案内容を確認して改善点や可否を話す。",
+              "pattern": "discuss the proposal",
+              "examples": [
+                  {
+                      "en": "We discussed the proposal with the client yesterday.",
+                      "ja": "私たちは昨日、顧客と提案について話し合いました。",
+                      "focus": "discussed the proposal"
+                  },
+                  {
+                      "en": "Let's discuss the proposal before the final presentation.",
+                      "ja": "最終プレゼンの前に提案について話し合いましょう。",
+                      "focus": "discuss the proposal"
+                  },
+                  {
+                      "en": "The sales team discussed the proposal and revised the price.",
+                      "ja": "営業チームは提案について話し合い、価格を修正しました。",
+                      "focus": "discussed the proposal"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "discuss next steps",
+              "ja": "次の対応を話し合う",
+              "image": "何を次にするか決めるために話し合う。",
+              "pattern": "discuss next steps",
+              "examples": [
+                  {
+                      "en": "Let's discuss next steps after we confirm the order.",
+                      "ja": "注文を確認した後で次の対応を話し合いましょう。",
+                      "focus": "discuss next steps"
+                  },
+                  {
+                      "en": "We discussed next steps with the project members.",
+                      "ja": "私たちはプロジェクトメンバーと次の対応を話し合いました。",
+                      "focus": "discussed next steps"
+                  },
+                  {
+                      "en": "Please discuss next steps with the customer by Friday.",
+                      "ja": "金曜日までに顧客と次の対応を話し合ってください。",
+                      "focus": "discuss next steps"
+                  }
+              ],
+              "dailyExamples": []
+          }
+      ],
+      "phrasalVerbs": [
+          {
+              "phrase": "discuss with",
+              "ja": "〜と話し合う",
+              "image": "相手と同じ議題を共有して話す。",
+              "pattern": "discuss + 内容 + with + 相手",
+              "examples": [
+                  {
+                      "en": "I discussed the order with the customer.",
+                      "ja": "私は顧客と注文について話し合いました。",
+                      "focus": "discussed the order with"
+                  },
+                  {
+                      "en": "Please discuss the delivery plan with the warehouse team.",
+                      "ja": "倉庫チームと納品計画について話し合ってください。",
+                      "focus": "discuss the delivery plan with"
+                  },
+                  {
+                      "en": "We discussed the request with our manager.",
+                      "ja": "私たちは上司とその依頼について話し合いました。",
+                      "focus": "discussed the request with"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "discuss among",
+              "ja": "〜の間で話し合う",
+              "image": "複数人の間で共有して話し合う。",
+              "pattern": "discuss among + 人・部署",
+              "examples": [
+                  {
+                      "en": "The issue was discussed among the sales members.",
+                      "ja": "その問題は営業メンバーの間で話し合われました。",
+                      "focus": "discussed among"
+                  },
+                  {
+                      "en": "Please discuss the policy among the project leaders.",
+                      "ja": "プロジェクトリーダーの間でその方針を話し合ってください。",
+                      "focus": "discuss the policy among"
+                  },
+                  {
+                      "en": "The price change was discussed among the managers.",
+                      "ja": "価格変更は管理者の間で話し合われました。",
+                      "focus": "discussed among"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "discuss in a meeting",
+              "ja": "会議で話し合う",
+              "image": "会議の場で議題として扱う。",
+              "pattern": "discuss + 内容 + in a meeting",
+              "examples": [
+                  {
+                      "en": "We discussed the new request in a meeting.",
+                      "ja": "私たちは会議で新しい依頼について話し合いました。",
+                      "focus": "discussed the new request in a meeting"
+                  },
+                  {
+                      "en": "Let's discuss the delivery issue in tomorrow's meeting.",
+                      "ja": "明日の会議で納品問題について話し合いましょう。",
+                      "focus": "discuss the delivery issue in"
+                  },
+                  {
+                      "en": "The budget was discussed in the weekly meeting.",
+                      "ja": "予算は週次会議で話し合われました。",
+                      "focus": "discussed in the weekly meeting"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "discuss over email",
+              "ja": "メールで話し合う",
+              "image": "対面ではなくメール上でやり取りして話し合う。",
+              "pattern": "discuss + 内容 + over email",
+              "examples": [
+                  {
+                      "en": "We discussed the changes over email.",
+                      "ja": "私たちは変更点についてメールで話し合いました。",
+                      "focus": "discussed the changes over email"
+                  },
+                  {
+                      "en": "Can we discuss the details over email first?",
+                      "ja": "まずメールで詳細について話し合えますか？",
+                      "focus": "discuss the details over email"
+                  },
+                  {
+                      "en": "They discussed the quotation over email before the call.",
+                      "ja": "彼らは電話の前にメールで見積について話し合いました。",
+                      "focus": "discussed the quotation over email"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "discuss further",
+              "ja": "さらに話し合う",
+              "image": "一度で終わらせず、追加で詳しく話す。",
+              "pattern": "discuss further",
+              "examples": [
+                  {
+                      "en": "Let's discuss this further after we review the data.",
+                      "ja": "データを確認した後で、これについてさらに話し合いましょう。",
+                      "focus": "discuss this further"
+                  },
+                  {
+                      "en": "We need to discuss the cost issue further.",
+                      "ja": "私たちはコスト問題についてさらに話し合う必要があります。",
+                      "focus": "discuss the cost issue further"
+                  },
+                  {
+                      "en": "The client asked us to discuss the proposal further.",
+                      "ja": "顧客は私たちに提案についてさらに話し合うよう求めました。",
+                      "focus": "discuss the proposal further"
+                  }
+              ],
+              "dailyExamples": []
+          }
+      ]
+  },
   {
     "id": "close",
     "rank": 38,
@@ -31649,43 +30669,429 @@ export const verbs: Verb[] = [
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 重要",
     "core": "先の行動を考えて組み立てる",
-    "coreDetail": "PLANは、予定・作業・出張・戦略などを事前に組み立てる動詞です。",
+    "coreDetail": "PLANは、予定・作業・出張・戦略などを事前に組み立てる動詞です。仕事では、行動する前に流れ・期限・役割・次の手順を決める感覚で使います。",
+    "coreVisual": {
+      "from": [
+        "目的",
+        "期限",
+        "人員",
+        "予算",
+        "リスク"
+      ],
+      "to": "実行できる流れ",
+      "label": "ばらばらの条件 → 実行計画"
+    },
     "meanings": [
       {
-        "id": "schedule-design",
-        "title": "① 計画する",
-        "pattern": "PLAN + 名詞 / plan to do",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + plan + O / S + plan + to do",
-        "image": "先の流れを決めておく。",
-        "point": "plan to do は「〜する予定です」。",
+        "id": "plan-a-schedule",
+        "title": "① 予定・日程を計画する",
+        "pattern": "plan + schedule / meeting / trip",
+        "transitivity": "他動詞",
+        "structure": "S + plan + O",
+        "image": "日時や順番を事前に組み立てる。",
+        "point": "schedule, meeting, trip など予定に関する名詞とよく使う。",
         "examples": [
           {
             "en": "We planned the schedule for next week.",
             "ja": "私たちは来週の予定を立てました。",
             "focus": "planned",
-            "object": "the schedule",
-            "jaFocus": "立てました"
+            "object": "the schedule"
           },
           {
-            "en": "I plan to visit the client tomorrow.",
-            "ja": "私は明日クライアントを訪問する予定です。",
+            "en": "Please plan the client meeting for Friday.",
+            "ja": "金曜日に顧客との会議を計画してください。",
             "focus": "plan",
-            "object": "to visit the client",
-            "jaFocus": "予定です"
+            "object": "the client meeting"
           },
           {
-            "en": "Can we plan the next steps today?",
-            "ja": "私たちは今日、次のステップを計画できますか？",
-            "focus": "plan",
-            "object": "the next steps",
-            "jaFocus": "計画できますか"
+            "en": "The team planned the business trip around the site visit.",
+            "ja": "チームは現場訪問に合わせて出張を計画しました。",
+            "focus": "planned",
+            "object": "the business trip"
           }
-        ]
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "plan-to-do",
+        "title": "② 〜する予定である",
+        "pattern": "plan to do",
+        "transitivity": "自動詞",
+        "structure": "S + plan + to do",
+        "image": "これからする行動を予定として持つ。",
+        "point": "未来の予定を自然に言える形。ビジネスでは訪問・送付・確認などに使いやすい。",
+        "examples": [
+          {
+            "en": "We plan to send the quote tomorrow.",
+            "ja": "私たちは明日見積を送る予定です。",
+            "focus": "plan"
+          },
+          {
+            "en": "I plan to visit the client next week.",
+            "ja": "私は来週顧客を訪問する予定です。",
+            "focus": "plan"
+          },
+          {
+            "en": "They plan to review the design before approval.",
+            "ja": "彼らは承認前にデザインを確認する予定です。",
+            "focus": "plan"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "plan-for",
+        "title": "③ 〜に向けて準備・計画する",
+        "pattern": "plan for + 名詞",
+        "transitivity": "自動詞",
+        "structure": "S + plan + for + O",
+        "image": "目的やイベントに向けて前もって考える。",
+        "point": "for の後ろに、イベント・リスク・将来の状況を置く。",
+        "examples": [
+          {
+            "en": "We need to plan for the product launch.",
+            "ja": "私たちは製品リリースに向けて計画する必要があります。",
+            "focus": "plan for"
+          },
+          {
+            "en": "Please plan for possible delivery delays.",
+            "ja": "納品遅延の可能性に備えて計画してください。",
+            "focus": "plan for"
+          },
+          {
+            "en": "The manager planned for a busy sales season.",
+            "ja": "マネージャーは忙しい販売シーズンに向けて計画しました。",
+            "focus": "planned for"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "plan-how",
+        "title": "④ どう進めるかを計画する",
+        "pattern": "plan how to do",
+        "transitivity": "他動詞",
+        "structure": "S + plan + how to do",
+        "image": "具体的な進め方を考える。",
+        "point": "how to の後ろに作業内容を置くと、手順を考える意味になる。",
+        "examples": [
+          {
+            "en": "We planned how to explain the issue to the client.",
+            "ja": "私たちはその問題を顧客にどう説明するか計画しました。",
+            "focus": "planned"
+          },
+          {
+            "en": "Please plan how to install the lights safely.",
+            "ja": "照明を安全に設置する方法を計画してください。",
+            "focus": "plan"
+          },
+          {
+            "en": "The team planned how to reduce the cost.",
+            "ja": "チームはコストを下げる方法を計画しました。",
+            "focus": "planned"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "plan-ahead",
+        "title": "⑤ 先を見越して計画する",
+        "pattern": "plan ahead",
+        "transitivity": "自動詞",
+        "structure": "S + plan ahead",
+        "image": "直前ではなく、先回りして準備する。",
+        "point": "仕事ではトラブル防止や段取りの良さを表す。",
+        "examples": [
+          {
+            "en": "We should plan ahead before the busy season starts.",
+            "ja": "繁忙期が始まる前に先を見越して計画するべきです。",
+            "focus": "plan ahead"
+          },
+          {
+            "en": "Please plan ahead for the installation work.",
+            "ja": "設置作業に向けて前もって計画してください。",
+            "focus": "plan ahead"
+          },
+          {
+            "en": "Good teams plan ahead and avoid last-minute problems.",
+            "ja": "良いチームは先を見越して計画し、直前の問題を避けます。",
+            "focus": "plan ahead"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "plan-with",
+        "title": "⑥ 〜と一緒に計画する",
+        "pattern": "plan with + 人 / 部署",
+        "transitivity": "自動詞",
+        "structure": "S + plan + with + 人",
+        "image": "相手と一緒に計画を作る。",
+        "point": "with の後ろに顧客・チーム・部署を置く。",
+        "examples": [
+          {
+            "en": "We planned with the client before finalizing the design.",
+            "ja": "私たちはデザインを確定する前に顧客と一緒に計画しました。",
+            "focus": "planned with"
+          },
+          {
+            "en": "Please plan with the production team.",
+            "ja": "製造チームと一緒に計画してください。",
+            "focus": "plan with"
+          },
+          {
+            "en": "She planned with accounting to control the budget.",
+            "ja": "彼女は予算を管理するために経理部と一緒に計画しました。",
+            "focus": "planned with"
+          }
+        ],
+        "dailyExamples": []
       }
     ],
-    "collocations": [],
-    "phrasalVerbs": []
+    "collocations": [
+      {
+        "phrase": "make a plan",
+        "ja": "計画を立てる",
+        "image": "頭の中の案を、実行できる計画にする。",
+        "pattern": "make a plan",
+        "examples": [
+          {
+            "en": "Let's make a plan for the next visit.",
+            "ja": "次回訪問の計画を立てましょう。",
+            "focus": "make a plan"
+          },
+          {
+            "en": "We made a plan to finish the report by Friday.",
+            "ja": "私たちは金曜日までに報告書を終える計画を立てました。",
+            "focus": "made a plan"
+          },
+          {
+            "en": "Please make a plan before ordering the materials.",
+            "ja": "材料を発注する前に計画を立ててください。",
+            "focus": "make a plan"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "business plan",
+        "ja": "事業計画",
+        "image": "事業の目的・売上・費用・進め方をまとめた計画。",
+        "pattern": "business plan",
+        "examples": [
+          {
+            "en": "We updated the business plan for next year.",
+            "ja": "私たちは来年の事業計画を更新しました。",
+            "focus": "business plan"
+          },
+          {
+            "en": "The bank reviewed our business plan.",
+            "ja": "銀行は私たちの事業計画を確認しました。",
+            "focus": "business plan"
+          },
+          {
+            "en": "Please prepare the business plan before the meeting.",
+            "ja": "会議前に事業計画を準備してください。",
+            "focus": "business plan"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "action plan",
+        "ja": "行動計画",
+        "image": "何を・誰が・いつ行うかを具体化した計画。",
+        "pattern": "action plan",
+        "examples": [
+          {
+            "en": "We created an action plan after the customer complaint.",
+            "ja": "私たちは顧客クレームの後、行動計画を作成しました。",
+            "focus": "action plan"
+          },
+          {
+            "en": "Please share the action plan with the team.",
+            "ja": "行動計画をチームに共有してください。",
+            "focus": "action plan"
+          },
+          {
+            "en": "The manager checked the action plan every week.",
+            "ja": "マネージャーは毎週行動計画を確認しました。",
+            "focus": "action plan"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "backup plan",
+        "ja": "代替案・予備計画",
+        "image": "予定通りに進まない場合の別案。",
+        "pattern": "backup plan",
+        "examples": [
+          {
+            "en": "We need a backup plan in case the delivery is delayed.",
+            "ja": "納品が遅れた場合に備えて代替案が必要です。",
+            "focus": "backup plan"
+          },
+          {
+            "en": "Please prepare a backup plan for the event.",
+            "ja": "イベントの代替案を準備してください。",
+            "focus": "backup plan"
+          },
+          {
+            "en": "The backup plan helped us avoid a major problem.",
+            "ja": "代替案のおかげで大きな問題を避けられました。",
+            "focus": "backup plan"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "plan a project",
+        "ja": "プロジェクトを計画する",
+        "image": "案件全体の流れを組み立てる。",
+        "pattern": "plan a project",
+        "examples": [
+          {
+            "en": "We need to plan the project before contacting the supplier.",
+            "ja": "仕入先に連絡する前にプロジェクトを計画する必要があります。",
+            "focus": "plan the project"
+          },
+          {
+            "en": "She planned the project with the sales team.",
+            "ja": "彼女は営業チームと一緒にプロジェクトを計画しました。",
+            "focus": "planned the project"
+          },
+          {
+            "en": "Please plan the project schedule carefully.",
+            "ja": "プロジェクトの予定を慎重に計画してください。",
+            "focus": "plan the project"
+          }
+        ],
+        "dailyExamples": []
+      }
+    ],
+    "phrasalVerbs": [
+      {
+        "phrase": "plan ahead",
+        "ja": "前もって計画する",
+        "image": "先の状況を考えて早めに動く。",
+        "pattern": "plan ahead",
+        "examples": [
+          {
+            "en": "We should plan ahead for the year-end rush.",
+            "ja": "年末の繁忙期に向けて前もって計画するべきです。",
+            "focus": "plan ahead"
+          },
+          {
+            "en": "Please plan ahead so we can avoid overtime.",
+            "ja": "残業を避けられるように前もって計画してください。",
+            "focus": "plan ahead"
+          },
+          {
+            "en": "The team planned ahead and secured enough stock.",
+            "ja": "チームは前もって計画し、十分な在庫を確保しました。",
+            "focus": "planned ahead"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "plan out",
+        "ja": "細かく計画する",
+        "image": "流れや手順を細部まで組み立てる。",
+        "pattern": "plan out + 名詞",
+        "examples": [
+          {
+            "en": "We planned out the installation steps.",
+            "ja": "私たちは設置手順を細かく計画しました。",
+            "focus": "planned out"
+          },
+          {
+            "en": "Please plan out the schedule before the kickoff meeting.",
+            "ja": "キックオフ会議の前にスケジュールを細かく計画してください。",
+            "focus": "plan out"
+          },
+          {
+            "en": "The team planned out each task for the launch.",
+            "ja": "チームはリリースに向けて各作業を細かく計画しました。",
+            "focus": "planned out"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "plan around",
+        "ja": "〜に合わせて計画する",
+        "image": "制約や予定に合わせて計画を組む。",
+        "pattern": "plan around + 名詞",
+        "examples": [
+          {
+            "en": "We planned around the client's available dates.",
+            "ja": "私たちは顧客の都合が良い日に合わせて計画しました。",
+            "focus": "planned around"
+          },
+          {
+            "en": "Please plan around the factory schedule.",
+            "ja": "工場の予定に合わせて計画してください。",
+            "focus": "plan around"
+          },
+          {
+            "en": "They planned around the budget limit.",
+            "ja": "彼らは予算上限に合わせて計画しました。",
+            "focus": "planned around"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "plan for",
+        "ja": "〜に備えて計画する",
+        "image": "イベントやリスクに備えて計画する。",
+        "pattern": "plan for + 名詞",
+        "examples": [
+          {
+            "en": "We planned for a possible price increase.",
+            "ja": "私たちは価格上昇の可能性に備えて計画しました。",
+            "focus": "planned for"
+          },
+          {
+            "en": "Please plan for extra delivery time.",
+            "ja": "追加の配送時間を見込んで計画してください。",
+            "focus": "plan for"
+          },
+          {
+            "en": "The company planned for future growth.",
+            "ja": "会社は将来の成長に備えて計画しました。",
+            "focus": "planned for"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "plan with",
+        "ja": "〜と一緒に計画する",
+        "image": "相手と一緒に計画を作る。",
+        "pattern": "plan with + 人",
+        "examples": [
+          {
+            "en": "We planned with the client from the early stage.",
+            "ja": "私たちは初期段階から顧客と一緒に計画しました。",
+            "focus": "planned with"
+          },
+          {
+            "en": "Please plan with the design team.",
+            "ja": "デザインチームと一緒に計画してください。",
+            "focus": "plan with"
+          },
+          {
+            "en": "He planned with logistics to reduce delivery risk.",
+            "ja": "彼は配送リスクを下げるために物流部門と一緒に計画しました。",
+            "focus": "planned with"
+          }
+        ],
+        "dailyExamples": []
+      }
+    ]
   },
   {
     "id": "offer",
@@ -31696,44 +31102,442 @@ export const verbs: Verb[] = [
     "syllable": "of-fer",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "相手に選べるものとして差し出す",
-    "coreDetail": "OFFERは、提案・支援・条件・価格などを相手に提示する時に使います。",
+    "core": "相手が受け取れるものとして差し出す",
+    "coreDetail": "OFFERは、商品・条件・支援・選択肢などを相手に差し出す動詞です。相手が受けるかどうかを選べる状態で提示する感覚があります。",
+    "coreVisual": {
+      "from": [
+        "提案",
+        "支援",
+        "条件",
+        "選択肢",
+        "価格"
+      ],
+      "to": "相手",
+      "label": "こちらから差し出す → 相手が選べる"
+    },
     "meanings": [
       {
-        "id": "provide-propose",
-        "title": "① 提供する・提案する",
-        "pattern": "OFFER + 名詞 / offer to do",
+        "id": "offer-a-product",
+        "title": "① 商品・サービスを提供する",
+        "pattern": "offer + 商品 / サービス",
         "transitivity": "他動詞",
-        "structure": "S + offer + O / S + offer + to do",
-        "image": "相手が受け取れる形で差し出す。",
-        "point": "offer to do は「〜しましょうかと申し出る」。",
+        "structure": "S + offer + O",
+        "image": "相手に利用できるものとして出す。",
+        "point": "provideより、相手に選択肢として提示する感覚が強い。",
+        "examples": [
+          {
+            "en": "We offer installation support with this product.",
+            "ja": "私たちはこの製品に設置サポートを提供しています。",
+            "focus": "offer",
+            "object": "installation support"
+          },
+          {
+            "en": "The company offers a wide range of lighting solutions.",
+            "ja": "その会社は幅広い照明ソリューションを提供しています。",
+            "focus": "offers",
+            "object": "a wide range of lighting solutions"
+          },
+          {
+            "en": "Can we offer a faster delivery option?",
+            "ja": "私たちはより早い納品オプションを提供できますか？",
+            "focus": "offer",
+            "object": "a faster delivery option"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "offer-a-discount",
+        "title": "② 割引・条件を提示する",
+        "pattern": "offer + discount / price / terms",
+        "transitivity": "他動詞",
+        "structure": "S + offer + O",
+        "image": "価格や条件を相手に提示する。",
+        "point": "営業では discount, price, terms, warranty などとよく使う。",
         "examples": [
           {
             "en": "We offered a discount to the client.",
-            "ja": "私たちはクライアントに割引を提示しました。",
+            "ja": "私たちは顧客に割引を提示しました。",
             "focus": "offered",
-            "object": "a discount",
-            "jaFocus": "提示しました"
+            "object": "a discount"
           },
+          {
+            "en": "The supplier offered better payment terms.",
+            "ja": "仕入先はより良い支払条件を提示しました。",
+            "focus": "offered",
+            "object": "better payment terms"
+          },
+          {
+            "en": "Please offer the same price as last time.",
+            "ja": "前回と同じ価格を提示してください。",
+            "focus": "offer",
+            "object": "the same price"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "offer-to-do",
+        "title": "③ 〜すると申し出る",
+        "pattern": "offer to do",
+        "transitivity": "他動詞",
+        "structure": "S + offer + to do",
+        "image": "相手のために自分から行動を申し出る。",
+        "point": "help, check, send, prepare などと相性が良い。",
+        "examples": [
           {
             "en": "She offered to help with the report.",
             "ja": "彼女は報告書を手伝うと申し出ました。",
-            "focus": "offered",
-            "object": "to help with the report",
-            "jaFocus": "申し出ました"
+            "focus": "offered"
           },
           {
-            "en": "Can we offer another option?",
-            "ja": "私たちは別の選択肢を提案できますか？",
-            "focus": "offer",
-            "object": "another option",
-            "jaFocus": "提案できますか"
+            "en": "We offered to send a sample before the order.",
+            "ja": "私たちは発注前にサンプルを送ると申し出ました。",
+            "focus": "offered"
+          },
+          {
+            "en": "He offered to explain the issue to the customer.",
+            "ja": "彼はその問題を顧客に説明すると申し出ました。",
+            "focus": "offered"
           }
-        ]
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "offer-someone-something",
+        "title": "④ 人に物・機会を提供する",
+        "pattern": "offer + 人 + 物",
+        "transitivity": "他動詞",
+        "structure": "S + offer + 人 + O",
+        "image": "相手に具体的なものを差し出す。",
+        "point": "offer the client a discount のように、人を先に置ける。",
+        "examples": [
+          {
+            "en": "We offered the client a replacement product.",
+            "ja": "私たちは顧客に代替品を提供しました。",
+            "focus": "offered",
+            "object": "the client a replacement product"
+          },
+          {
+            "en": "The manager offered her a new role.",
+            "ja": "マネージャーは彼女に新しい役割を提示しました。",
+            "focus": "offered",
+            "object": "her a new role"
+          },
+          {
+            "en": "Can we offer them another option?",
+            "ja": "私たちは彼らに別の選択肢を提示できますか？",
+            "focus": "offer",
+            "object": "them another option"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "offer-an-opportunity",
+        "title": "⑤ 機会を与える・提供する",
+        "pattern": "offer + opportunity / chance",
+        "transitivity": "他動詞",
+        "structure": "S + offer + O",
+        "image": "相手が何かできる機会を差し出す。",
+        "point": "training, meeting, trial など仕事の機会に使える。",
+        "examples": [
+          {
+            "en": "This project offers a chance to work with a new client.",
+            "ja": "この案件は新しい顧客と仕事をする機会を提供します。",
+            "focus": "offers",
+            "object": "a chance"
+          },
+          {
+            "en": "The training offers employees a way to improve their skills.",
+            "ja": "その研修は社員にスキルを伸ばす方法を提供します。",
+            "focus": "offers",
+            "object": "employees a way"
+          },
+          {
+            "en": "We can offer a trial before the full order.",
+            "ja": "正式発注前に試用の機会を提供できます。",
+            "focus": "offer",
+            "object": "a trial"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "offer-support",
+        "title": "⑥ 支援・協力を申し出る",
+        "pattern": "offer support / assistance",
+        "transitivity": "他動詞",
+        "structure": "S + offer + support",
+        "image": "相手を助ける姿勢を差し出す。",
+        "point": "customer support, technical assistance などとよく使う。",
+        "examples": [
+          {
+            "en": "We offered technical support during the installation.",
+            "ja": "私たちは設置中に技術サポートを提供しました。",
+            "focus": "offered",
+            "object": "technical support"
+          },
+          {
+            "en": "Please offer assistance if the client has questions.",
+            "ja": "顧客に質問があれば支援を申し出てください。",
+            "focus": "offer",
+            "object": "assistance"
+          },
+          {
+            "en": "The supplier offered support after the delivery.",
+            "ja": "仕入先は納品後にサポートを提供しました。",
+            "focus": "offered",
+            "object": "support"
+          }
+        ],
+        "dailyExamples": []
       }
     ],
-    "collocations": [],
-    "phrasalVerbs": []
+    "collocations": [
+      {
+        "phrase": "offer a discount",
+        "ja": "割引を提示する",
+        "image": "価格条件として割引を差し出す。",
+        "pattern": "offer a discount",
+        "examples": [
+          {
+            "en": "We can offer a discount for a large order.",
+            "ja": "大量注文には割引を提示できます。",
+            "focus": "offer a discount"
+          },
+          {
+            "en": "The supplier offered a discount for early payment.",
+            "ja": "仕入先は早期支払いに対して割引を提示しました。",
+            "focus": "offered a discount"
+          },
+          {
+            "en": "Please do not offer a discount without approval.",
+            "ja": "承認なしで割引を提示しないでください。",
+            "focus": "offer a discount"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "offer support",
+        "ja": "支援を提供する",
+        "image": "相手が進められるように助けを差し出す。",
+        "pattern": "offer support",
+        "examples": [
+          {
+            "en": "We offer support from design to installation.",
+            "ja": "私たちは設計から設置までサポートを提供します。",
+            "focus": "offer support"
+          },
+          {
+            "en": "The team offered support during the test.",
+            "ja": "チームはテスト中にサポートを提供しました。",
+            "focus": "offered support"
+          },
+          {
+            "en": "Please offer support when the client needs help.",
+            "ja": "顧客が助けを必要とするときはサポートを提供してください。",
+            "focus": "offer support"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "offer an option",
+        "ja": "選択肢を提示する",
+        "image": "相手が選べる案を出す。",
+        "pattern": "offer an option",
+        "examples": [
+          {
+            "en": "We should offer an option with a shorter lead time.",
+            "ja": "より短い納期の選択肢を提示するべきです。",
+            "focus": "offer an option"
+          },
+          {
+            "en": "Can we offer another option for the design?",
+            "ja": "デザインについて別の選択肢を提示できますか？",
+            "focus": "offer another option"
+          },
+          {
+            "en": "The proposal offered several options for the client.",
+            "ja": "提案書は顧客に複数の選択肢を提示しました。",
+            "focus": "offered several options"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "offer a solution",
+        "ja": "解決策を提示する",
+        "image": "問題に対する具体的な解決策を差し出す。",
+        "pattern": "offer a solution",
+        "examples": [
+          {
+            "en": "We need to offer a solution by tomorrow.",
+            "ja": "明日までに解決策を提示する必要があります。",
+            "focus": "offer a solution"
+          },
+          {
+            "en": "The engineer offered a solution to the wiring issue.",
+            "ja": "技術者は配線の問題に対する解決策を提示しました。",
+            "focus": "offered a solution"
+          },
+          {
+            "en": "Please offer a practical solution for the client.",
+            "ja": "顧客に現実的な解決策を提示してください。",
+            "focus": "offer a practical solution"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "offer terms",
+        "ja": "条件を提示する",
+        "image": "価格・支払い・保証などの条件を提示する。",
+        "pattern": "offer terms",
+        "examples": [
+          {
+            "en": "The supplier offered better terms for repeat orders.",
+            "ja": "仕入先はリピート注文に対してより良い条件を提示しました。",
+            "focus": "offered better terms"
+          },
+          {
+            "en": "We cannot offer those terms without approval.",
+            "ja": "承認なしではその条件を提示できません。",
+            "focus": "offer those terms"
+          },
+          {
+            "en": "Please confirm the terms before we offer them.",
+            "ja": "その条件を提示する前に確認してください。",
+            "focus": "offer them"
+          }
+        ],
+        "dailyExamples": []
+      }
+    ],
+    "phrasalVerbs": [
+      {
+        "phrase": "offer up",
+        "ja": "差し出す・提供する",
+        "image": "意見・案・時間などを差し出す。少し硬い表現。",
+        "pattern": "offer up + 名詞",
+        "examples": [
+          {
+            "en": "The team offered up several ideas during the meeting.",
+            "ja": "チームは会議中にいくつかの案を出しました。",
+            "focus": "offered up"
+          },
+          {
+            "en": "She offered up her time to help the project.",
+            "ja": "彼女はそのプロジェクトを助けるために自分の時間を差し出しました。",
+            "focus": "offered up"
+          },
+          {
+            "en": "The supplier offered up a temporary solution.",
+            "ja": "仕入先は一時的な解決策を差し出しました。",
+            "focus": "offered up"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "offer to",
+        "ja": "〜すると申し出る",
+        "image": "自分から行動を提案する。",
+        "pattern": "offer to do",
+        "examples": [
+          {
+            "en": "We offered to check the product again.",
+            "ja": "私たちは製品を再確認すると申し出ました。",
+            "focus": "offered to"
+          },
+          {
+            "en": "He offered to join the customer meeting.",
+            "ja": "彼は顧客との会議に参加すると申し出ました。",
+            "focus": "offered to"
+          },
+          {
+            "en": "The engineer offered to visit the site.",
+            "ja": "技術者は現場を訪問すると申し出ました。",
+            "focus": "offered to"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "offer for",
+        "ja": "〜向けに提供する",
+        "image": "特定の目的・相手向けに提供する。",
+        "pattern": "offer + 名詞 + for + 名詞",
+        "examples": [
+          {
+            "en": "We offered a new package for small businesses.",
+            "ja": "私たちは小規模企業向けに新しいパッケージを提供しました。",
+            "focus": "offered"
+          },
+          {
+            "en": "The company offers training for new employees.",
+            "ja": "会社は新入社員向けに研修を提供しています。",
+            "focus": "offers"
+          },
+          {
+            "en": "Please offer this option for urgent orders.",
+            "ja": "急ぎの注文向けにこの選択肢を提供してください。",
+            "focus": "offer"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "offer to someone",
+        "ja": "人に提示する",
+        "image": "相手に何かを差し出す。",
+        "pattern": "offer + 名詞 + to + 人",
+        "examples": [
+          {
+            "en": "We offered the proposal to the client last week.",
+            "ja": "私たちは先週その提案を顧客に提示しました。",
+            "focus": "offered"
+          },
+          {
+            "en": "Please offer the warranty details to the customer.",
+            "ja": "保証内容を顧客に提示してください。",
+            "focus": "offer"
+          },
+          {
+            "en": "The sales team offered a solution to the store manager.",
+            "ja": "営業チームは店舗責任者に解決策を提示しました。",
+            "focus": "offered"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "offer against",
+        "ja": "〜と比較して条件を提示する",
+        "image": "競合・条件と比較して提案する。やや限定的な表現。",
+        "pattern": "offer + 名詞 + against + 比較対象",
+        "examples": [
+          {
+            "en": "We offered our price against the competitor's quote.",
+            "ja": "私たちは競合の見積と比較して価格を提示しました。",
+            "focus": "offered"
+          },
+          {
+            "en": "The supplier offered new terms against the old contract.",
+            "ja": "仕入先は旧契約と比較して新しい条件を提示しました。",
+            "focus": "offered"
+          },
+          {
+            "en": "Please offer a realistic option against the current budget.",
+            "ja": "現在の予算に照らして現実的な選択肢を提示してください。",
+            "focus": "offer"
+          }
+        ],
+        "dailyExamples": []
+      }
+    ]
   },
   {
     "id": "support",
@@ -31744,44 +31548,445 @@ export const verbs: Verb[] = [
     "syllable": "sup-port",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "相手や物事を下から支えて助ける",
-    "coreDetail": "SUPPORTは、人・チーム・提案・作業を助けたり支えたりする時に使います。",
+    "core": "相手や物事が倒れないように下から支える",
+    "coreDetail": "SUPPORTは、人・提案・作業・システムを支える動詞です。仕事では、直接助けるだけでなく、方針に賛成する、データで裏付ける、運用を支えるという意味でも使います。",
+    "coreVisual": {
+      "from": [
+        "人",
+        "提案",
+        "作業",
+        "システム",
+        "証拠"
+      ],
+      "to": "安定して進む状態",
+      "label": "下から支える → 続けられる"
+    },
     "meanings": [
       {
-        "id": "help-backup",
-        "title": "① 支援する・支える",
-        "pattern": "SUPPORT + 人 / 名詞",
+        "id": "support-a-person",
+        "title": "① 人・チームを支援する",
+        "pattern": "support + 人 / team",
         "transitivity": "他動詞",
         "structure": "S + support + O",
-        "image": "相手が動けるように後ろから支える。",
-        "point": "helpより少し仕事寄りで、継続的な支援にも使える。",
+        "image": "相手が仕事を進められるように助ける。",
+        "point": "helpより継続的・組織的な支援に使いやすい。",
         "examples": [
           {
-            "en": "I will support the sales team.",
-            "ja": "私は営業チームを支援します。",
+            "en": "I will support the sales team this week.",
+            "ja": "私は今週、営業チームを支援します。",
             "focus": "support",
-            "object": "the sales team",
-            "jaFocus": "支援します"
+            "object": "the sales team"
           },
           {
-            "en": "We support this proposal.",
-            "ja": "私たちはこの提案を支持します。",
-            "focus": "support",
-            "object": "this proposal",
-            "jaFocus": "支持します"
+            "en": "We supported the new employee during training.",
+            "ja": "私たちは研修中に新入社員を支援しました。",
+            "focus": "supported",
+            "object": "the new employee"
           },
           {
-            "en": "Can you support the installation tomorrow?",
-            "ja": "あなたは明日の設置をサポートできますか？",
+            "en": "Please support the client during the installation.",
+            "ja": "設置中は顧客を支援してください。",
             "focus": "support",
-            "object": "the installation",
-            "jaFocus": "サポートできますか"
+            "object": "the client"
           }
-        ]
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "support-a-project",
+        "title": "② 作業・案件を支援する",
+        "pattern": "support + project / task / operation",
+        "transitivity": "他動詞",
+        "structure": "S + support + O",
+        "image": "作業や案件が進むように後押しする。",
+        "point": "project, task, operation, activity などとよく使う。",
+        "examples": [
+          {
+            "en": "The technical team supported the project from the beginning.",
+            "ja": "技術チームは最初からその案件を支援しました。",
+            "focus": "supported",
+            "object": "the project"
+          },
+          {
+            "en": "Can you support the inspection tomorrow?",
+            "ja": "明日の検査を支援できますか？",
+            "focus": "support",
+            "object": "the inspection"
+          },
+          {
+            "en": "We need extra staff to support the operation.",
+            "ja": "運用を支援するために追加スタッフが必要です。",
+            "focus": "support",
+            "object": "the operation"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "support-an-idea",
+        "title": "③ 提案・方針を支持する",
+        "pattern": "support + idea / proposal / decision",
+        "transitivity": "他動詞",
+        "structure": "S + support + O",
+        "image": "考えや決定に賛成して後押しする。",
+        "point": "提案・方針・判断への賛成を表す。",
+        "examples": [
+          {
+            "en": "We support this proposal because it reduces cost.",
+            "ja": "コストを削減できるため、私たちはこの提案を支持します。",
+            "focus": "support",
+            "object": "this proposal"
+          },
+          {
+            "en": "The manager supported the decision to change suppliers.",
+            "ja": "マネージャーは仕入先を変更する決定を支持しました。",
+            "focus": "supported",
+            "object": "the decision"
+          },
+          {
+            "en": "Do you support the new sales strategy?",
+            "ja": "あなたは新しい営業戦略を支持しますか？",
+            "focus": "support",
+            "object": "the new sales strategy"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "support-with",
+        "title": "④ 〜で支援する・支える",
+        "pattern": "support + 人 / 物 + with + 名詞",
+        "transitivity": "他動詞",
+        "structure": "S + support + O + with + 名詞",
+        "image": "資料・情報・人員などを使って支援する。",
+        "point": "with の後ろに支援の手段を置く。",
+        "examples": [
+          {
+            "en": "We supported the client with clear instructions.",
+            "ja": "私たちは分かりやすい説明で顧客を支援しました。",
+            "focus": "supported",
+            "object": "the client"
+          },
+          {
+            "en": "Please support the sales team with updated data.",
+            "ja": "最新データで営業チームを支援してください。",
+            "focus": "support",
+            "object": "the sales team"
+          },
+          {
+            "en": "The engineer supported us with technical advice.",
+            "ja": "技術者は技術的な助言で私たちを支援しました。",
+            "focus": "supported",
+            "object": "us"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "support-by-evidence",
+        "title": "⑤ 証拠・データで裏付ける",
+        "pattern": "support + claim / decision + with + evidence",
+        "transitivity": "他動詞",
+        "structure": "S + support + O + with + evidence",
+        "image": "主張や判断をデータで支える。",
+        "point": "資料・数字・事実で説得力を出す意味。",
+        "examples": [
+          {
+            "en": "Please support your proposal with sales data.",
+            "ja": "提案を売上データで裏付けてください。",
+            "focus": "support",
+            "object": "your proposal"
+          },
+          {
+            "en": "The report supported our decision with clear evidence.",
+            "ja": "その報告書は明確な証拠で私たちの判断を裏付けました。",
+            "focus": "supported",
+            "object": "our decision"
+          },
+          {
+            "en": "We need numbers to support this claim.",
+            "ja": "この主張を裏付ける数字が必要です。",
+            "focus": "support",
+            "object": "this claim"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "support-a-system",
+        "title": "⑥ システム・製品に対応する",
+        "pattern": "support + system / feature / product",
+        "transitivity": "他動詞",
+        "structure": "S + support + O",
+        "image": "システムや製品が機能・形式に対応する。",
+        "point": "ITや製品説明でよく使う意味。",
+        "examples": [
+          {
+            "en": "This system supports multiple users.",
+            "ja": "このシステムは複数ユーザーに対応しています。",
+            "focus": "supports",
+            "object": "multiple users"
+          },
+          {
+            "en": "The new model supports remote control.",
+            "ja": "新しいモデルは遠隔操作に対応しています。",
+            "focus": "supports",
+            "object": "remote control"
+          },
+          {
+            "en": "Does this software support Japanese?",
+            "ja": "このソフトは日本語に対応していますか？",
+            "focus": "support",
+            "object": "Japanese"
+          }
+        ],
+        "dailyExamples": []
       }
     ],
-    "collocations": [],
-    "phrasalVerbs": []
+    "collocations": [
+      {
+        "phrase": "provide support",
+        "ja": "サポートを提供する",
+        "image": "必要な支援を正式に提供する。",
+        "pattern": "provide support",
+        "examples": [
+          {
+            "en": "We provide support after installation.",
+            "ja": "私たちは設置後にサポートを提供します。",
+            "focus": "provide support"
+          },
+          {
+            "en": "The supplier provided support during the test.",
+            "ja": "仕入先はテスト中にサポートを提供しました。",
+            "focus": "provided support"
+          },
+          {
+            "en": "Please provide support if the customer has trouble.",
+            "ja": "顧客に問題があればサポートを提供してください。",
+            "focus": "provide support"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "technical support",
+        "ja": "技術サポート",
+        "image": "製品・施工・システムに関する技術的な支援。",
+        "pattern": "technical support",
+        "examples": [
+          {
+            "en": "We need technical support for the control system.",
+            "ja": "制御システムについて技術サポートが必要です。",
+            "focus": "technical support"
+          },
+          {
+            "en": "The client asked for technical support after delivery.",
+            "ja": "顧客は納品後に技術サポートを求めました。",
+            "focus": "technical support"
+          },
+          {
+            "en": "Please contact technical support before changing the settings.",
+            "ja": "設定を変更する前に技術サポートに連絡してください。",
+            "focus": "technical support"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "customer support",
+        "ja": "顧客サポート",
+        "image": "顧客の問い合わせや問題への支援。",
+        "pattern": "customer support",
+        "examples": [
+          {
+            "en": "Customer support handled the issue quickly.",
+            "ja": "顧客サポートはその問題に素早く対応しました。",
+            "focus": "Customer support"
+          },
+          {
+            "en": "We improved customer support after the complaint.",
+            "ja": "私たちはクレーム後に顧客サポートを改善しました。",
+            "focus": "customer support"
+          },
+          {
+            "en": "Please share this information with customer support.",
+            "ja": "この情報を顧客サポートに共有してください。",
+            "focus": "customer support"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "support a proposal",
+        "ja": "提案を支持する",
+        "image": "提案内容に賛成して後押しする。",
+        "pattern": "support a proposal",
+        "examples": [
+          {
+            "en": "The manager supported the proposal during the meeting.",
+            "ja": "マネージャーは会議中にその提案を支持しました。",
+            "focus": "supported the proposal"
+          },
+          {
+            "en": "We should support a proposal that reduces risk.",
+            "ja": "リスクを下げる提案を支持するべきです。",
+            "focus": "support a proposal"
+          },
+          {
+            "en": "The data helped us support the proposal.",
+            "ja": "そのデータは提案を支持する助けになりました。",
+            "focus": "support the proposal"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "support the team",
+        "ja": "チームを支援する",
+        "image": "チームが動けるように後押しする。",
+        "pattern": "support the team",
+        "examples": [
+          {
+            "en": "I will support the team during the busy season.",
+            "ja": "繁忙期は私がチームを支援します。",
+            "focus": "support the team"
+          },
+          {
+            "en": "The manager supported the team with clear priorities.",
+            "ja": "マネージャーは明確な優先順位でチームを支援しました。",
+            "focus": "supported the team"
+          },
+          {
+            "en": "Please support the team until the project is finished.",
+            "ja": "プロジェクトが終わるまでチームを支援してください。",
+            "focus": "support the team"
+          }
+        ],
+        "dailyExamples": []
+      }
+    ],
+    "phrasalVerbs": [
+      {
+        "phrase": "support with",
+        "ja": "〜で支援する",
+        "image": "手段・資料・人員を使って支援する。",
+        "pattern": "support + 人 / 物 + with + 名詞",
+        "examples": [
+          {
+            "en": "We supported the client with a detailed manual.",
+            "ja": "私たちは詳しいマニュアルで顧客を支援しました。",
+            "focus": "supported"
+          },
+          {
+            "en": "Please support the team with updated documents.",
+            "ja": "更新された資料でチームを支援してください。",
+            "focus": "support"
+          },
+          {
+            "en": "The supplier supported us with replacement parts.",
+            "ja": "仕入先は交換部品で私たちを支援しました。",
+            "focus": "supported"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "support through",
+        "ja": "〜を通じて支援する",
+        "image": "期間・方法・プロセスを通じて支える。",
+        "pattern": "support + 人 / 物 + through + 名詞",
+        "examples": [
+          {
+            "en": "We supported the client through the installation process.",
+            "ja": "私たちは設置プロセスを通じて顧客を支援しました。",
+            "focus": "supported"
+          },
+          {
+            "en": "The manager supported the team through the transition.",
+            "ja": "マネージャーは移行期間を通じてチームを支援しました。",
+            "focus": "supported"
+          },
+          {
+            "en": "Please support new users through the setup.",
+            "ja": "設定作業を通じて新規ユーザーを支援してください。",
+            "focus": "support"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "support in",
+        "ja": "〜において支援する",
+        "image": "特定の作業・場面で支援する。",
+        "pattern": "support + 人 + in + 名詞 / 動名詞",
+        "examples": [
+          {
+            "en": "We supported the client in choosing the right model.",
+            "ja": "私たちは適切なモデルを選ぶ際に顧客を支援しました。",
+            "focus": "supported"
+          },
+          {
+            "en": "Please support the team in preparing the proposal.",
+            "ja": "提案書を準備する際にチームを支援してください。",
+            "focus": "support"
+          },
+          {
+            "en": "The engineer supported us in solving the issue.",
+            "ja": "技術者は問題解決において私たちを支援しました。",
+            "focus": "supported"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "support against",
+        "ja": "〜から守る・対抗できるよう支える",
+        "image": "リスクや反対に対して支える。限定的な表現。",
+        "pattern": "support + 人 / 物 + against + 名詞",
+        "examples": [
+          {
+            "en": "The data supported our argument against the price increase.",
+            "ja": "そのデータは価格上昇への反論を支えました。",
+            "focus": "supported"
+          },
+          {
+            "en": "The policy supports employees against unfair treatment.",
+            "ja": "その方針は不公平な扱いから社員を守る形で支えます。",
+            "focus": "supports"
+          },
+          {
+            "en": "We need evidence to support our position against the claim.",
+            "ja": "その主張に対して私たちの立場を支える証拠が必要です。",
+            "focus": "support"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "support on",
+        "ja": "〜について支援する",
+        "image": "特定のテーマ・案件について支援する。",
+        "pattern": "support + 人 + on + 名詞",
+        "examples": [
+          {
+            "en": "Can you support us on this project?",
+            "ja": "この案件について私たちを支援できますか？",
+            "focus": "support"
+          },
+          {
+            "en": "The supplier supported us on the delivery issue.",
+            "ja": "仕入先は納品問題について私たちを支援しました。",
+            "focus": "supported"
+          },
+          {
+            "en": "Please support the sales team on the new proposal.",
+            "ja": "新しい提案について営業チームを支援してください。",
+            "focus": "support"
+          }
+        ],
+        "dailyExamples": []
+      }
+    ]
   },
   {
     "id": "discuss",
@@ -31832,52 +32037,452 @@ export const verbs: Verb[] = [
     "phrasalVerbs": []
   },
   {
-    "id": "confirm",
-    "rank": 62,
-    "word": "CONFIRM",
-    "ipa": "/kənˈfɜːrm/",
-    "kana": "コンファーム",
-    "syllable": "con-firm",
-    "transitivity": "他動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "正しいかどうかを確認して確定させる",
-    "coreDetail": "CONFIRMは、事実・予定・条件・数量などを確認して確定する時に使います。checkより少し正式でビジネス向きです。",
-    "meanings": [
-      {
-        "id": "verify-fix",
-        "title": "① 確認する・確定する",
-        "pattern": "CONFIRM + 名詞 / that節",
-        "transitivity": "他動詞",
-        "structure": "S + confirm + O",
-        "image": "不確かなものを確かな状態にする。",
-        "point": "confirm the date / confirm that ... の形でよく使う。",
-        "examples": [
+      "id": "confirm",
+      "rank": 62,
+      "word": "CONFIRM",
+      "ipa": "/kənˈfɜːrm/",
+      "kana": "コンファーム",
+      "syllable": "con-firm",
+      "transitivity": "他動詞",
+      "importance": "★★★★☆ 重要",
+      "core": "不確かな情報を確認して、確かな状態にする",
+      "coreDetail": "CONFIRMは、日程・数量・条件・承認などを確認して確定させるビジネス向きの動詞です。checkより正式で、確認した結果を相手に伝える場面でもよく使います。",
+      "coreVisual": {
+          "from": [
+              "未確認",
+              "仮予定",
+              "不明点",
+              "承認待ち"
+          ],
+          "to": "確定・安心して進められる状態",
+          "label": "不確か → 確定"
+      },
+      "meanings": [
           {
-            "en": "Please confirm the delivery date.",
-            "ja": "納品日を確認してください。",
-            "focus": "confirm",
-            "object": "the delivery date",
-            "jaFocus": "確認してください"
+              "id": "confirm-info",
+              "title": "① 情報・詳細を確認する",
+              "pattern": "confirm + information/details",
+              "transitivity": "他動詞",
+              "structure": "S + confirm + O",
+              "image": "不確かな情報を確かな状態にする。",
+              "point": "confirm the details は仕事で非常によく使います。",
+              "examples": [
+                  {
+                      "en": "Please confirm the details before we place the order.",
+                      "ja": "私たちが発注する前に詳細を確認してください。",
+                      "focus": "confirm",
+                      "object": "the details"
+                  },
+                  {
+                      "en": "We confirmed the product information with the supplier.",
+                      "ja": "私たちは仕入先と製品情報を確認しました。",
+                      "focus": "confirmed",
+                      "object": "the product information"
+                  },
+                  {
+                      "en": "Can you confirm the installation requirements?",
+                      "ja": "設置条件を確認できますか？",
+                      "focus": "confirm",
+                      "object": "the installation requirements"
+                  }
+              ],
+              "dailyExamples": []
           },
           {
-            "en": "We confirmed that the order was correct.",
-            "ja": "私たちは注文内容が正しいことを確認しました。",
-            "focus": "confirmed",
-            "object": "that the order was correct",
-            "jaFocus": "確認しました"
+              "id": "confirm-date-schedule",
+              "title": "② 日時・予定を確認する",
+              "pattern": "confirm + date / time / schedule",
+              "transitivity": "他動詞",
+              "structure": "S + confirm + O",
+              "image": "予定を確定して、相手と認識を合わせる。",
+              "point": "会議・納期・訪問予定などでよく使います。",
+              "examples": [
+                  {
+                      "en": "Please confirm the meeting time by this afternoon.",
+                      "ja": "今日の午後までに会議時間を確認してください。",
+                      "focus": "confirm",
+                      "object": "the meeting time"
+                  },
+                  {
+                      "en": "We confirmed the delivery schedule with the warehouse.",
+                      "ja": "私たちは倉庫と納品スケジュールを確認しました。",
+                      "focus": "confirmed",
+                      "object": "the delivery schedule"
+                  },
+                  {
+                      "en": "I will confirm the site visit date with the client.",
+                      "ja": "私は顧客と現場訪問日を確認します。",
+                      "focus": "confirm",
+                      "object": "the site visit date"
+                  }
+              ],
+              "dailyExamples": []
           },
           {
-            "en": "Can you confirm the quantity by noon?",
-            "ja": "あなたは正午までに数量を確認できますか？",
-            "focus": "confirm",
-            "object": "the quantity",
-            "jaFocus": "確認できますか"
+              "id": "confirm-that",
+              "title": "③ that節で事実を確認する",
+              "pattern": "confirm that + 文",
+              "transitivity": "他動詞",
+              "structure": "S + confirm + that節",
+              "image": "確認した事実を文で伝える。",
+              "point": "メール文で Please confirm that ... とよく使います。",
+              "examples": [
+                  {
+                      "en": "Please confirm that the quantity is correct.",
+                      "ja": "数量が正しいことを確認してください。",
+                      "focus": "confirm",
+                      "object": "that the quantity is correct"
+                  },
+                  {
+                      "en": "We confirmed that the payment had been received.",
+                      "ja": "私たちは支払いを受け取ったことを確認しました。",
+                      "focus": "confirmed",
+                      "object": "that the payment had been received"
+                  },
+                  {
+                      "en": "Can you confirm that the documents were sent?",
+                      "ja": "資料が送られたことを確認できますか？",
+                      "focus": "confirm",
+                      "object": "that the documents were sent"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "id": "confirm-whether",
+              "title": "④ whether / if で可否を確認する",
+              "pattern": "confirm whether / if + 文",
+              "transitivity": "他動詞",
+              "structure": "S + confirm + whether/if ...",
+              "image": "できるかどうか、正しいかどうかを確認する。",
+              "point": "まだ分からないことを確認する時に便利です。",
+              "examples": [
+                  {
+                      "en": "Please confirm whether the product is in stock.",
+                      "ja": "その製品の在庫があるか確認してください。",
+                      "focus": "confirm",
+                      "object": "whether the product is in stock"
+                  },
+                  {
+                      "en": "We need to confirm if the client can accept the new date.",
+                      "ja": "私たちは顧客が新しい日程を受け入れられるか確認する必要があります。",
+                      "focus": "confirm",
+                      "object": "if the client can accept the new date"
+                  },
+                  {
+                      "en": "Can you confirm whether the price includes shipping?",
+                      "ja": "その価格に送料が含まれているか確認できますか？",
+                      "focus": "confirm",
+                      "object": "whether the price includes shipping"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "id": "confirm-with",
+              "title": "⑤ 相手に確認する",
+              "pattern": "confirm + 内容 + with + 相手",
+              "transitivity": "他動詞",
+              "structure": "S + confirm + O + with + 人",
+              "image": "相手に確認して認識を合わせる。",
+              "point": "社内外の確認連絡で非常に使いやすい型です。",
+              "examples": [
+                  {
+                      "en": "I will confirm the price with our manager.",
+                      "ja": "私は上司と価格を確認します。",
+                      "focus": "confirm",
+                      "object": "the price"
+                  },
+                  {
+                      "en": "Please confirm the delivery address with the customer.",
+                      "ja": "顧客と納品先住所を確認してください。",
+                      "focus": "confirm",
+                      "object": "the delivery address"
+                  },
+                  {
+                      "en": "We confirmed the specifications with the technical team.",
+                      "ja": "私たちは技術チームと仕様を確認しました。",
+                      "focus": "confirmed",
+                      "object": "the specifications"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "id": "be-confirmed",
+              "title": "⑥ 確定される・確認される",
+              "pattern": "be confirmed",
+              "transitivity": "受け身",
+              "structure": "S + be confirmed",
+              "image": "予定や条件が正式に確定する。",
+              "point": "主語を予定・注文・条件にしたい時に便利です。",
+              "examples": [
+                  {
+                      "en": "The delivery date has been confirmed.",
+                      "ja": "納品日は確定しました。",
+                      "focus": "confirmed",
+                      "object": "the delivery date"
+                  },
+                  {
+                      "en": "The order was confirmed yesterday.",
+                      "ja": "その注文は昨日確認されました。",
+                      "focus": "confirmed",
+                      "object": "the order"
+                  },
+                  {
+                      "en": "The final price will be confirmed after the meeting.",
+                      "ja": "最終価格は会議後に確定されます。",
+                      "focus": "confirmed",
+                      "object": "the final price"
+                  }
+              ],
+              "dailyExamples": []
           }
-        ]
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": []
+      ],
+      "collocations": [
+          {
+              "phrase": "confirm the details",
+              "ja": "詳細を確認する",
+              "image": "細かい条件や内容を確定させる。",
+              "pattern": "confirm the details",
+              "examples": [
+                  {
+                      "en": "Please confirm the details before sending the quotation.",
+                      "ja": "見積を送る前に詳細を確認してください。",
+                      "focus": "confirm the details"
+                  },
+                  {
+                      "en": "We confirmed the details with the customer by email.",
+                      "ja": "私たちはメールで顧客と詳細を確認しました。",
+                      "focus": "confirmed the details"
+                  },
+                  {
+                      "en": "I need to confirm the details of the order.",
+                      "ja": "私は注文の詳細を確認する必要があります。",
+                      "focus": "confirm the details"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "confirm the schedule",
+              "ja": "予定を確認する",
+              "image": "日時や流れを確定させる。",
+              "pattern": "confirm the schedule",
+              "examples": [
+                  {
+                      "en": "Let's confirm the schedule for next week.",
+                      "ja": "来週の予定を確認しましょう。",
+                      "focus": "confirm the schedule"
+                  },
+                  {
+                      "en": "We confirmed the schedule with the installation team.",
+                      "ja": "私たちは設置チームと予定を確認しました。",
+                      "focus": "confirmed the schedule"
+                  },
+                  {
+                      "en": "Please confirm the schedule before booking the flight.",
+                      "ja": "航空券を予約する前に予定を確認してください。",
+                      "focus": "confirm the schedule"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "confirm availability",
+              "ja": "対応可能か・空きがあるか確認する",
+              "image": "人・在庫・日程が利用可能か確認する。",
+              "pattern": "confirm availability",
+              "examples": [
+                  {
+                      "en": "Please confirm availability of the product.",
+                      "ja": "その製品の在庫状況を確認してください。",
+                      "focus": "confirm availability"
+                  },
+                  {
+                      "en": "We confirmed availability of the meeting room.",
+                      "ja": "私たちは会議室の空き状況を確認しました。",
+                      "focus": "confirmed availability"
+                  },
+                  {
+                      "en": "Can you confirm your availability for Friday?",
+                      "ja": "金曜日のご都合を確認できますか？",
+                      "focus": "confirm your availability"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "confirm receipt",
+              "ja": "受領を確認する",
+              "image": "受け取ったことを相手に伝える。",
+              "pattern": "confirm receipt",
+              "examples": [
+                  {
+                      "en": "Please confirm receipt of this email.",
+                      "ja": "このメールの受領を確認してください。",
+                      "focus": "confirm receipt"
+                  },
+                  {
+                      "en": "We confirmed receipt of the documents.",
+                      "ja": "私たちは資料の受領を確認しました。",
+                      "focus": "confirmed receipt"
+                  },
+                  {
+                      "en": "The client confirmed receipt of the quotation.",
+                      "ja": "顧客は見積の受領を確認しました。",
+                      "focus": "confirmed receipt"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "confirm approval",
+              "ja": "承認を確認する",
+              "image": "承認が出ているかを確定する。",
+              "pattern": "confirm approval",
+              "examples": [
+                  {
+                      "en": "Please confirm approval before we proceed.",
+                      "ja": "進める前に承認を確認してください。",
+                      "focus": "confirm approval"
+                  },
+                  {
+                      "en": "We confirmed approval from the manager.",
+                      "ja": "私たちは上司からの承認を確認しました。",
+                      "focus": "confirmed approval"
+                  },
+                  {
+                      "en": "Can you confirm approval for the additional cost?",
+                      "ja": "追加費用の承認を確認できますか？",
+                      "focus": "confirm approval"
+                  }
+              ],
+              "dailyExamples": []
+          }
+      ],
+      "phrasalVerbs": [
+          {
+              "phrase": "confirm with",
+              "ja": "〜に確認する",
+              "image": "相手に確認して情報を確定させる。",
+              "pattern": "confirm + 内容 + with + 相手",
+              "examples": [
+                  {
+                      "en": "Please confirm the quantity with the supplier.",
+                      "ja": "仕入先と数量を確認してください。",
+                      "focus": "confirm the quantity with"
+                  },
+                  {
+                      "en": "I confirmed the deadline with the client.",
+                      "ja": "私は顧客と締切を確認しました。",
+                      "focus": "confirmed the deadline with"
+                  },
+                  {
+                      "en": "We need to confirm the address with the customer.",
+                      "ja": "私たちは顧客と住所を確認する必要があります。",
+                      "focus": "confirm the address with"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "confirm by",
+              "ja": "〜までに確認する",
+              "image": "期限を決めて確認する。",
+              "pattern": "confirm + 内容 + by + 時間・日付",
+              "examples": [
+                  {
+                      "en": "Please confirm the order by noon.",
+                      "ja": "正午までに注文を確認してください。",
+                      "focus": "confirm the order by"
+                  },
+                  {
+                      "en": "We need to confirm the delivery date by Friday.",
+                      "ja": "私たちは金曜日までに納品日を確認する必要があります。",
+                      "focus": "confirm the delivery date by"
+                  },
+                  {
+                      "en": "Can you confirm the final price by tomorrow?",
+                      "ja": "明日までに最終価格を確認できますか？",
+                      "focus": "confirm the final price by"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "confirm before",
+              "ja": "〜する前に確認する",
+              "image": "次の行動に進む前に確認する。",
+              "pattern": "confirm + 内容 + before + 動作",
+              "examples": [
+                  {
+                      "en": "Please confirm the details before ordering the parts.",
+                      "ja": "部品を発注する前に詳細を確認してください。",
+                      "focus": "confirm the details before"
+                  },
+                  {
+                      "en": "We confirmed the drawings before starting production.",
+                      "ja": "私たちは製作を始める前に図面を確認しました。",
+                      "focus": "confirmed the drawings before"
+                  },
+                  {
+                      "en": "I will confirm the price before replying to the client.",
+                      "ja": "顧客に返信する前に価格を確認します。",
+                      "focus": "confirm the price before"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "confirm in writing",
+              "ja": "書面で確認する",
+              "image": "口頭ではなく記録に残る形で確認する。",
+              "pattern": "confirm in writing",
+              "examples": [
+                  {
+                      "en": "Please confirm the agreement in writing.",
+                      "ja": "合意内容を書面で確認してください。",
+                      "focus": "confirm the agreement in writing"
+                  },
+                  {
+                      "en": "We confirmed the new schedule in writing.",
+                      "ja": "私たちは新しい予定を書面で確認しました。",
+                      "focus": "confirmed the new schedule in writing"
+                  },
+                  {
+                      "en": "The customer asked us to confirm the change in writing.",
+                      "ja": "顧客は私たちに変更を書面で確認するよう求めました。",
+                      "focus": "confirm the change in writing"
+                  }
+              ],
+              "dailyExamples": []
+          },
+          {
+              "phrase": "confirm via email",
+              "ja": "メールで確認する",
+              "image": "メールを使って確認する。",
+              "pattern": "confirm + 内容 + via email",
+              "examples": [
+                  {
+                      "en": "Please confirm the delivery date via email.",
+                      "ja": "納品日をメールで確認してください。",
+                      "focus": "confirm the delivery date via email"
+                  },
+                  {
+                      "en": "We confirmed the quotation via email.",
+                      "ja": "私たちは見積をメールで確認しました。",
+                      "focus": "confirmed the quotation via email"
+                  },
+                  {
+                      "en": "Can you confirm the meeting time via email?",
+                      "ja": "会議時間をメールで確認できますか？",
+                      "focus": "confirm the meeting time via email"
+                  }
+              ],
+              "dailyExamples": []
+          }
+      ]
   },
   {
     "id": "receive",

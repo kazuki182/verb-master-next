@@ -1,7 +1,1 @@
-Ver.99 - Verb quality batch 8
-
-Scope:
-- Improved verb quality for create / reach / return.
-- Continued 3-verb cautious batch process.
-- Daily examples are intentionally not updated yet.
-- ZIP remains lightweight for GitHub upload.
+Ver.100 - Verb quality batch 9: check / decide / explain

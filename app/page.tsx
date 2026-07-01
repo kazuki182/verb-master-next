@@ -239,8 +239,8 @@ export default function Home() {
 
   return (
     <div className="space-y-5 pb-28">
-      <header className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
+      <header className="flex items-center justify-between gap-4">
+        <div className="min-w-0 flex-1">
           <p className="text-muted">Know the verb. Use the verb.</p>
           <h1 className="mt-1 text-4xl font-bold tracking-tight">
             Verb Master
@@ -249,6 +249,18 @@ export default function Home() {
             社会人向け・基本動詞トレーニング
           </p>
         </div>
+        <Link
+          className="home-title-icon shrink-0"
+          href="/profile"
+          aria-label="プロフィールを開く"
+        >
+          {progress.avatarDataUrl ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={progress.avatarDataUrl} alt="プロフィール画像" className="h-full w-full object-cover" />
+          ) : (
+            <span>VM</span>
+          )}
+        </Link>
       </header>
 
       {HOME_NEWS.enabled && HOME_NEWS.text && (
@@ -340,56 +352,6 @@ export default function Home() {
         </div>
       )}
 
-      <section className="digital-card p-5">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">
-              DASHBOARD
-            </p>
-            <h2 className="mt-2 text-xl font-extrabold text-white">学習状況</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-300">
-              隙間時間に必要な情報だけを表示します。
-            </p>
-          </div>
-          <span className="rounded-full border border-cyan-300/30 px-3 py-1 text-xs font-bold text-cyan-100">
-            {plan.progressPercent}%
-          </span>
-        </div>
-
-        <div className="mt-5 grid grid-cols-3 gap-3 text-center text-sm">
-          <div className="digital-panel">
-            <p className="digital-label">登録動詞</p>
-            <p className="digital-number">{unlockedVerbTotal}</p>
-            <p className="text-xs text-cyan-200">語</p>
-          </div>
-          <div className="digital-panel">
-            <p className="digital-label">習得済み</p>
-            <p className="digital-number">{completed}</p>
-            <p className="text-xs text-cyan-200">語</p>
-          </div>
-          <div className="digital-panel">
-            <p className="digital-label">残り</p>
-            <p className="digital-number">{plan.remaining}</p>
-            <p className="text-xs text-cyan-200">語</p>
-          </div>
-        </div>
-
-        <div className="mt-4 grid grid-cols-2 gap-3 text-center">
-          <div className="digital-panel">
-            <p className="digital-label">目標日</p>
-            <p className="target-date-line text-2xl">
-              {targetParts.year}/{targetParts.day.replace(".", "/")}
-            </p>
-          </div>
-          <div className="digital-panel">
-            <p className="digital-label">学習日数</p>
-            <p className="digital-number">{plan.studyDaysLeft}</p>
-            <p className="text-xs text-cyan-200">日</p>
-          </div>
-        </div>
-
-      </section>
-
       <section className="resume-card p-5">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
@@ -445,28 +407,60 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 gap-3">
-        {reviewCount > 0 && (
-          <Link
-            className="card block border-cyan-300/40 bg-cyan-300/10 p-5"
-            href="/review"
-          >
-            <p className="text-sm font-bold text-cyan-200">復習あり</p>
-            <p className="mt-1 text-2xl font-extrabold">{reviewCount}問</p>
-            <p className="mt-1 text-sm text-slate-300">間違えた問題だけを短時間で確認できます。</p>
-          </Link>
-        )}
-        <Link
-          className="btn btn-primary block text-center text-base"
-          href="/verbs"
-        >
-          学習を始める
-        </Link>
+      <section className="digital-card p-5">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">
+              DASHBOARD
+            </p>
+            <h2 className="mt-2 text-xl font-extrabold text-white">学習状況</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              隙間時間に必要な情報だけを表示します。
+            </p>
+          </div>
+          <span className="rounded-full border border-cyan-300/30 px-3 py-1 text-xs font-bold text-cyan-100">
+            {plan.progressPercent}%
+          </span>
+        </div>
+
+        <div className="mt-5 grid grid-cols-3 gap-3 text-center text-sm">
+          <div className="digital-panel">
+            <p className="digital-label">登録動詞</p>
+            <p className="digital-number">{unlockedVerbTotal}</p>
+            <p className="text-xs text-cyan-200">語</p>
+          </div>
+          <div className="digital-panel">
+            <p className="digital-label">習得済み</p>
+            <p className="digital-number">{completed}</p>
+            <p className="text-xs text-cyan-200">語</p>
+          </div>
+          <div className="digital-panel">
+            <p className="digital-label">残り</p>
+            <p className="digital-number">{plan.remaining}</p>
+            <p className="text-xs text-cyan-200">語</p>
+          </div>
+        </div>
+
+        <div className="mt-4 grid grid-cols-1 gap-3 text-center">
+          <div className="digital-panel digital-panel-wide">
+            <p className="digital-label">学習日数</p>
+            <p className="digital-number">{plan.studyDaysLeft}</p>
+            <p className="text-xs text-cyan-200">日</p>
+          </div>
+        </div>
+
       </section>
 
       <section className="card p-5">
-        <p className="text-sm font-bold text-muted">設定</p>
-        <details className="mt-3 rounded-2xl border border-cyan-300/15 bg-slate-950/55 p-4 text-sm text-slate-300">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-bold text-cyan-200">目標日設定</p>
+            <h2 className="mt-1 text-2xl font-extrabold text-white">{targetParts.year}/{targetParts.day.replace(".", "/")}</h2>
+            <p className="mt-1 text-sm text-slate-300">目標日と学習ペースをここで調整します。</p>
+          </div>
+          <span className="rounded-full border border-cyan-300/20 px-3 py-1 text-xs font-bold text-cyan-100">残り {plan.remaining}語</span>
+        </div>
+        <details className="mt-4 rounded-2xl border border-cyan-300/15 bg-slate-950/55 p-4 text-sm text-slate-300">
           <summary className="cursor-pointer font-bold text-cyan-100">目標日を変更する</summary>
           <div className="mt-3 rounded-2xl border border-cyan-300/10 bg-slate-950/60 p-3">
             <input
@@ -489,6 +483,30 @@ export default function Home() {
             )}
           </div>
         </details>
+      </section>
+
+      <section className="grid grid-cols-1 gap-3">
+        {reviewCount > 0 && (
+          <Link
+            className="card block border-cyan-300/40 bg-cyan-300/10 p-5"
+            href="/review"
+          >
+            <p className="text-sm font-bold text-cyan-200">復習あり</p>
+            <p className="mt-1 text-2xl font-extrabold">{reviewCount}問</p>
+            <p className="mt-1 text-sm text-slate-300">間違えた問題だけを短時間で確認できます。</p>
+          </Link>
+        )}
+        <Link
+          className="btn btn-primary block text-center text-base"
+          href="/verbs"
+        >
+          学習を始める
+        </Link>
+      </section>
+
+      <section className="card p-5">
+        <p className="text-sm font-bold text-muted">設定</p>
+
         <div className="mt-4 grid grid-cols-2 gap-2 text-sm font-bold">
           <Link className="rounded-xl border border-slate-700 bg-slate-950/60 px-3 py-3 text-center text-slate-200" href="/study-method">
             勉強方法

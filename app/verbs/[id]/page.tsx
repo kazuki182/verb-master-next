@@ -9,6 +9,18 @@ import VerbProgressPanel from "@/components/VerbProgressPanel";
 import VerbAccessGuard from "@/components/VerbAccessGuard";
 import { naturalPatternText } from "@/lib/display";
 
+function coreItemIcon(item: string) {
+  if (/メール|連絡|message|email/i.test(item)) return "✉️";
+  if (/資料|書類|document|file/i.test(item)) return "📄";
+  if (/顧客|相手|client|customer/i.test(item)) return "👤";
+  if (/商品|部品|sample|parts|product/i.test(item)) return "📦";
+  if (/予定|時間|schedule|time/i.test(item)) return "🗓️";
+  if (/承認|許可|approval|permission/i.test(item)) return "✅";
+  if (/支払い|価格|payment|price|money/i.test(item)) return "💰";
+  if (/目標|成果|結果|result|goal/i.test(item)) return "🎯";
+  if (/情報|idea|data/i.test(item)) return "💡";
+  return "●";
+}
 
 export default async function VerbDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -17,21 +29,22 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
   return (
     <VerbAccessGuard rank={verb.rank} verbWord={verb.word}>
     <div className="space-y-5 pb-4">
-      <header className="card p-5 sm:p-6">
-        <p className="text-sm text-muted">No.{String(verb.rank).padStart(2, "0")}　STEP 1 / 3　基本動詞</p>
-        <h1 className="mt-2 text-5xl font-bold tracking-tight verb-red sm:text-6xl">{verb.word}</h1>
-        <div className="mt-3 grid gap-2 text-sm text-muted">
-          <p>音節：{verb.syllable}</p>
-          <p>発音：{verb.ipa}</p>
-          <p>読み方：{verb.kana}</p>
-        </div>
-        <div className="mt-4 flex flex-wrap items-center gap-2">
-          <SpeakButton text={verb.word.toLowerCase()} label="通常" />
-          <BookmarkButton verbId={verb.id} section="basic" label={`${verb.word} 基本動詞`} href={`/verbs/${verb.id}`} compact />
-        </div>
-        <div className="mt-4 flex flex-wrap gap-2 text-sm">
-          <span className="rounded-full bg-paper px-3 py-1 font-semibold">{verb.transitivity}</span>
-          <span className="rounded-full bg-paper px-3 py-1 font-semibold">{verb.importance}</span>
+      <header className="card verb-hero-compact">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <p className="text-xs font-bold tracking-[0.14em] text-cyan-200">No.{String(verb.rank).padStart(2, "0")} / STEP 1 基本動詞</p>
+            <h1 className="mt-1 verb-title-compact verb-red">{verb.word}</h1>
+            <div className="verb-meta-row">
+              <span className="verb-meta-chip">音節 {verb.syllable}</span>
+              <span className="verb-meta-chip">発音 {verb.ipa}</span>
+              <span className="verb-meta-chip">読み {verb.kana}</span>
+              <span className="verb-meta-chip">{verb.transitivity}</span>
+            </div>
+          </div>
+          <div className="flex shrink-0 flex-col gap-2">
+            <SpeakButton text={verb.word.toLowerCase()} label="通常" />
+            <BookmarkButton verbId={verb.id} section="basic" label={`${verb.word} 基本動詞`} href={`/verbs/${verb.id}`} compact />
+          </div>
         </div>
       </header>
 
@@ -42,19 +55,20 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
         <h2 className="text-xl font-bold">コアイメージ</h2>
         <p className="mt-3 text-2xl font-bold leading-snug">「{verb.core}」</p>
         {verb.coreVisual && (
-          <div className="mt-4 rounded-3xl border border-cyan-300/20 bg-slate-950/50 p-4">
+          <div className="core-diagram-card mt-4">
             <p className="text-xs font-bold tracking-[0.2em] text-cyan-200">CORE IMAGE</p>
             <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
               <div className="flex flex-wrap gap-2">
                 {verb.coreVisual.from.map((item) => (
-                  <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-100">
-                    {item}
+                  <span key={item} className="core-icon-chip">
+                    <span aria-hidden="true">{coreItemIcon(item)}</span>
+                    <span>{item}</span>
                   </span>
                 ))}
               </div>
-              <div className="text-center text-2xl font-black text-cyan-200">→</div>
-              <div className="rounded-2xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-center font-bold text-cyan-50">
-                {verb.coreVisual.to}
+              <div className="core-arrow" aria-hidden="true">→</div>
+              <div className="core-target-box">
+                <span className="mr-1" aria-hidden="true">🎯</span>{verb.coreVisual.to}
               </div>
             </div>
             <p className="mt-3 text-sm font-bold text-cyan-100">{verb.coreVisual.label}</p>

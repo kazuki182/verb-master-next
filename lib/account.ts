@@ -1056,24 +1056,53 @@ export type ClientStudySettingsSnapshot = {
   targetStartDate?: string;
   studyDays?: StudyDaysSetting;
   studyPace?: StudyPaceSetting;
+  displayName?: string;
+  nickname?: string;
+  avatarUrl?: string;
+  avatarDataUrl?: string;
+  notificationsEnabled?: boolean;
+  voiceSettings?: VoiceSettings;
+  unlockedVerbCount?: number;
+  purchaseTotalYen?: number;
+  premiumSource?: UserProgress["premiumSource"];
+  premiumUpdatedAt?: string;
 };
 
-export function getClientStudySettingsSnapshot(): ClientStudySettingsSnapshot {
+export function getClientStudySettingsSnapshot(progress?: UserProgress | null): ClientStudySettingsSnapshot {
   if (typeof window === "undefined") return {};
   return {
     targetDate: localStorage.getItem(TARGET_DATE_KEY) || undefined,
     targetStartDate: localStorage.getItem(TARGET_START_DATE_KEY) || undefined,
     studyDays: getStudyDaysSetting(),
     studyPace: getStudyPaceSetting(),
+    displayName: progress?.displayName || progress?.username,
+    nickname: progress?.displayName || progress?.username,
+    avatarUrl: progress?.avatarDataUrl || undefined,
+    avatarDataUrl: progress?.avatarDataUrl || undefined,
+    notificationsEnabled: progress?.notificationsEnabled,
+    voiceSettings: progress?.voiceSettings,
+    unlockedVerbCount: progress?.unlockedVerbCount,
+    purchaseTotalYen: progress?.purchaseTotalYen,
+    premiumSource: progress?.premiumSource,
+    premiumUpdatedAt: progress?.premiumUpdatedAt,
   };
 }
 
-export function applyClientStudySettingsSnapshot(snapshot?: ClientStudySettingsSnapshot | null) {
+export function applyClientStudySettingsSnapshot(snapshot?: ClientStudySettingsSnapshot | null, progress?: UserProgress | null) {
   if (typeof window === "undefined" || !snapshot) return;
   if (snapshot.targetDate) localStorage.setItem(TARGET_DATE_KEY, snapshot.targetDate);
   if (snapshot.targetStartDate) localStorage.setItem(TARGET_START_DATE_KEY, snapshot.targetStartDate);
   if (snapshot.studyDays) setStudyDaysSetting(snapshot.studyDays);
   if (snapshot.studyPace) setStudyPaceSetting(snapshot.studyPace);
+  if (!progress) return;
+  if (snapshot.displayName || snapshot.nickname) progress.displayName = snapshot.displayName || snapshot.nickname || progress.displayName || progress.username;
+  if (snapshot.avatarUrl || snapshot.avatarDataUrl) progress.avatarDataUrl = snapshot.avatarUrl || snapshot.avatarDataUrl || progress.avatarDataUrl || "";
+  if (typeof snapshot.notificationsEnabled === "boolean") progress.notificationsEnabled = snapshot.notificationsEnabled;
+  if (snapshot.voiceSettings) progress.voiceSettings = snapshot.voiceSettings;
+  if (typeof snapshot.unlockedVerbCount === "number") progress.unlockedVerbCount = Math.max(progress.unlockedVerbCount || 0, snapshot.unlockedVerbCount);
+  if (typeof snapshot.purchaseTotalYen === "number") progress.purchaseTotalYen = Math.max(progress.purchaseTotalYen || 0, snapshot.purchaseTotalYen);
+  if (snapshot.premiumSource) progress.premiumSource = snapshot.premiumSource;
+  if (snapshot.premiumUpdatedAt) progress.premiumUpdatedAt = snapshot.premiumUpdatedAt;
 }
 
 export function getLearningPlan(totalVerbs: number, completedVerbs: number) {

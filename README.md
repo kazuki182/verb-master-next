@@ -1,15 +1,26 @@
-# Verb Master Next
+# Verb Master Ver.109
 
-Current build: Ver.104
+## Main change
+Supabase security fix for cloud account and full progress backup.
 
-## Ver.104 updates
+## Required Supabase SQL
+Run this file in Supabase SQL Editor:
 
-Verb quality improvement batch 12:
+`supabase/V109_SECURE_CLOUD_RPC_RLS.sql`
 
-- discuss
-- confirm
-- receive
+This removes direct public table policies from:
 
-This version continues the paid-product quality improvement process by expanding business-focused usage patterns, collocations, phrasal/preposition expressions, core images, and three business examples per item.
+- `cloud_accounts`
+- `user_progress_backups`
 
-Daily examples are not updated in this phase.
+and replaces browser table access with controlled RPC functions.
+
+## After deploying
+1. Run the SQL above in Supabase.
+2. Deploy this ZIP to GitHub/Vercel.
+3. Log in once again in Verb Master.
+4. Check cloud save / restore.
+5. Re-run Supabase Security Advisor.
+
+## Build safety
+`.npmrc` is fixed to `https://registry.npmjs.org/`.

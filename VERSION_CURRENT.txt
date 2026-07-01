@@ -1,1 +1,2 @@
-Ver.108 build fix: package-lock resolved URLs changed to public npm registry and .npmrc added. No app logic changes.
+Verb Master Ver.110
+Build fix: neutralize stale root data.ts from manual GitHub upload. Real data remains in lib/data.ts.

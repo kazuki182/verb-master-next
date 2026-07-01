@@ -1,4 +1,0 @@
-Version 36
-Repository target: verb-master-next
-Feature: Weekly League rankings, Weekly MVP, badges foundation
-Build: npm install OK, TypeScript OK, next build completed static generation log; command timed out during final process exit in this environment

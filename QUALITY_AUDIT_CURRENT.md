@@ -1,25 +1,30 @@
-# Verb Master Ver.111 Quality / Safety Audit
+# QUALITY AUDIT CURRENT - Ver.113
 
-## Theme
-保存・復元安全化。登録者が増えても、プロフィール・学習記録・Premium状態が分散保存で失われたように見えないようにする。
+## Target verbs
+- agree
+- arrange
+- attend
 
-## Main checks
-- `user_progress_backups` を復元の中心にする。
-- `settings_json` に以下を保存対象として含める。
-  - displayName / nickname
-  - avatarUrl / avatarDataUrl
-  - notificationsEnabled
-  - voiceSettings
-  - unlockedVerbCount / purchaseTotalYen / premiumSource / premiumUpdatedAt
-  - targetDate / targetStartDate / studyDays / studyPace
-- `progress_json` にXP、レベル、継続日数、テスト履歴、保存フレーズ等を保存する。
-- 画像アップロード後のURLをバックアップに残す。
-- `profiles` / `user_stats` の補助テーブルが空でも、バックアップ本体があれば復元できる。
-- 空の端末データでクラウドバックアップを上書きしない保護を維持。
-- SQL変更前後の確認用SQLを同梱。
+## Required checklist applied
+- Fixed target verbs once selected.
+- Checked external dictionary/usage sources before editing.
+- Prioritized business-useful patterns.
+- Integrated common non-phrasal patterns into basic usage.
+- Did not force weak idiom/common-expression entries.
+- Added only natural phrasal verbs where useful.
+- Moved non-business ideas out of the business/core sections.
+- Basic usage examples highlight only the English target verb.
+- Phrasal verb examples highlight the phrasal-verb chunk.
+- Japanese translations are not highlighted.
+- Added icon-based core visuals and checked arrow direction.
+- Avoided all-caps generated sentence issues and unsupported grammar labels.
 
-## Build/package hygiene
-- root直下の不要 `data.ts` は同梱しない。
-- `page (数字).tsx` やpatch系作業ファイルは同梱しない。
-- `package-lock.json` に内部OpenAI/caas registry URLがないことを確認。
-- `.npmrc` は `https://registry.npmjs.org/` を使用。
+## External fact-check notes
+- agree: checked agree with / agree to / agree on / agree that usage and not agree with.
+- arrange: checked plan/prepare/organize, arrange for, arrange to do, arrange objects/order.
+- attend: checked attend meetings/events/classes and attend to as a phrasal verb.
+
+## Build / packaging
+- Next.js production build completed through compile, TypeScript, and static page generation.
+- ZIP excludes node_modules, .next, temporary patch scripts, old version files, and cache files.
+- package-lock and npm registry settings checked for internal-only URLs.

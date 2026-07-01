@@ -1,7 +1,11 @@
-Verb Master Ver.111
-- 保存・復元安全化版
-- user_progress_backups を復元の中心にし、プロフィール名・画像URL・通知・音声・Premium情報も settings_json に保存する方針へ修正
-- 画像アップロード後の公開URLをバックアップ本体に残すよう変更
-- profiles/user_stats が空でもバックアップから復元できるよう復元ロジックを強化
-- RLS/SQL変更前後の確認用SQL V111_BACKUP_SAFETY_CHECK.sql を追加
-- ZIP納品前チェックとして root 直下の不要 data.ts / page (数字).tsx / patch 系 / 内部npm URL を排除
+Ver.113 - Verb quality batch 16: agree / arrange / attend
+
+- Fixed verb batch is kept as agreed: agree, arrange, attend.
+- Updated AGREE with 7 business-focused basic usage patterns and 1 natural phrasal/prepositional item.
+- Updated ARRANGE with 7 business-focused basic usage patterns and no forced phrasal verbs.
+- Updated ATTEND with 6 business-focused basic usage patterns and 1 true phrasal verb: attend to.
+- Added/updated coreVisual diagrams with icons and clearer arrow logic.
+- Avoided forced idiom/common-expression sections.
+- Basic usage examples highlight only the target verb.
+- Phrasal verb examples highlight the phrasal verb chunk.
+- Kept ZIP clean for GitHub/Vercel upload.

@@ -37923,308 +37923,678 @@ export const verbs: Verb[] = [
     ]
   },
   {
-    "id": "agree",
-    "rank": 73,
-    "word": "AGREE",
-    "ipa": "/əˈɡriː/",
-    "kana": "アグリー",
-    "syllable": "a-gree",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "相手の考え・条件・方針と同じ方向になる",
-    "coreDetail": "AGREEは、意見に同意する、条件に合意する時に使います。agree with 人/意見、agree on 条件・方針の形が重要です。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 同意する・合意する",
-        "pattern": "AGREE WITH + 人/意見 / AGREE ON + 内容",
-        "transitivity": "基本動詞",
-        "structure": "S + agree + M",
-        "image": "相手の考え・条件・方針と同じ方向になる",
-        "point": "AGREEは、意見に同意する、条件に合意する時に使います。agree with 人/意見、agree on 条件・方針の形が重要です。",
-        "examples": [
+      "id": "agree",
+      "rank": 73,
+      "word": "AGREE",
+      "ipa": "/əˈɡriː/",
+      "kana": "アグリー",
+      "syllable": "a-gree",
+      "transitivity": "自動詞",
+      "importance": "★★★☆☆ 基本",
+      "core": "相手の意見・条件・方針と同じ方向にそろう",
+      "coreDetail": "AGREEは、自分の考えや判断が相手・提案・条件と同じ方向にそろうイメージです。仕事では agree with 人/意見、agree to 提案/条件、agree on 日程/価格/条件、agree that + 文 を区別して使います。",
+      "coreVisual": {
+          "from": [
+              "👤 自分の意見",
+              "💬 相手の意見",
+              "📄 条件",
+              "📅 日程"
+          ],
+          "to": "✅ 同じ方向にそろう",
+          "label": "意見・条件 → 合意"
+      },
+      "meanings": [
           {
-            "en": "I agree with your idea.",
-            "ja": "私はあなたの考えに同意します。",
-            "focus": "agree",
-            "jaFocus": "たの考えに同意します",
-            "sentencePattern": "S + V + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "agree"
-              },
-              {
-                "label": "M",
-                "text": "with your idea"
-              }
-            ],
-            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+              "id": "agree-with",
+              "title": "① 人・意見に同意する",
+              "pattern": "AGREE WITH + 人/意見",
+              "transitivity": "自動詞",
+              "structure": "S + agree with + 人/意見",
+              "image": "相手や意見と同じ立場に立つ。",
+              "point": "人や考えに賛成するときは agree with を使う。agree with him / agree with your idea のように、人・意見が後ろに来る。",
+              "examples": [
+                  {
+                      "en": "I agree with your idea.",
+                      "ja": "私はあなたの考えに同意します。",
+                      "focus": "agree"
+                  },
+                  {
+                      "en": "We agree with the client's concern.",
+                      "ja": "私たちは顧客の懸念に同意しています。",
+                      "focus": "agree"
+                  },
+                  {
+                      "en": "Our team agreed with the new policy.",
+                      "ja": "私たちのチームは新しい方針に同意しました。",
+                      "focus": "agreed"
+                  }
+              ]
           },
           {
-            "en": "We agreed on the delivery date.",
-            "ja": "私たちは納品日に合意しました。",
-            "focus": "agreed",
-            "jaFocus": "納品日に合意しました",
-            "sentencePattern": "S + V + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "agreed"
-              },
-              {
-                "label": "M",
-                "text": "on the delivery date"
-              }
-            ],
-            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+              "id": "agree-to",
+              "title": "② 提案・条件を受け入れる",
+              "pattern": "AGREE TO + 提案/条件",
+              "transitivity": "自動詞",
+              "structure": "S + agree to + 提案/条件",
+              "image": "提示された提案・条件を受け入れる。",
+              "point": "契約条件、提案、変更案などを受け入れるときは agree to を使う。",
+              "examples": [
+                  {
+                      "en": "The client agreed to the revised estimate.",
+                      "ja": "顧客は修正見積に同意しました。",
+                      "focus": "agreed"
+                  },
+                  {
+                      "en": "We agreed to the payment terms.",
+                      "ja": "私たちは支払条件に同意しました。",
+                      "focus": "agreed"
+                  },
+                  {
+                      "en": "Management agreed to the new proposal.",
+                      "ja": "経営陣は新しい提案に同意しました。",
+                      "focus": "agreed"
+                  }
+              ]
           },
           {
-            "en": "The team agreed to change the plan.",
-            "ja": "そのチームは計画を変更することに同意しました。",
-            "focus": "agreed",
-            "jaFocus": "ることに同意しました",
-            "sentencePattern": "S + V + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "The team"
-              },
-              {
-                "label": "V",
-                "text": "agreed"
-              },
-              {
-                "label": "M",
-                "text": "to change the plan"
-              }
-            ],
-            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+              "id": "agree-on",
+              "title": "③ 日程・価格・条件について合意する",
+              "pattern": "AGREE ON + 内容",
+              "transitivity": "自動詞",
+              "structure": "S + agree on + 内容",
+              "image": "話し合いの結果、1つの内容にまとまる。",
+              "point": "会議で日程・価格・範囲・条件などを決めて合意するときは agree on を使う。",
+              "examples": [
+                  {
+                      "en": "We agreed on the delivery date.",
+                      "ja": "私たちは納品日に合意しました。",
+                      "focus": "agreed"
+                  },
+                  {
+                      "en": "Both companies agreed on the final price.",
+                      "ja": "両社は最終価格に合意しました。",
+                      "focus": "agreed"
+                  },
+                  {
+                      "en": "The team agreed on the project scope.",
+                      "ja": "チームはプロジェクト範囲について合意しました。",
+                      "focus": "agreed"
+                  }
+              ]
+          },
+          {
+              "id": "agree-that",
+              "title": "④ 〜だという点で意見が一致する",
+              "pattern": "AGREE THAT + 文",
+              "transitivity": "自動詞",
+              "structure": "S + agree that + 文",
+              "image": "判断や認識が同じになる。",
+              "point": "後ろに文を置いて、会議や報告で共通認識を示すときに使う。",
+              "examples": [
+                  {
+                      "en": "We agreed that the schedule was too tight.",
+                      "ja": "私たちはスケジュールが厳しすぎるという点で意見が一致しました。",
+                      "focus": "agreed"
+                  },
+                  {
+                      "en": "Everyone agreed that we needed more information.",
+                      "ja": "全員が、さらに情報が必要だという点で同意しました。",
+                      "focus": "agreed"
+                  },
+                  {
+                      "en": "The managers agreed that the issue was urgent.",
+                      "ja": "管理者たちは、その問題が緊急だという点で意見が一致しました。",
+                      "focus": "agreed"
+                  }
+              ]
+          },
+          {
+              "id": "agree-to-do",
+              "title": "⑤ 〜することを承諾する",
+              "pattern": "AGREE TO DO",
+              "transitivity": "自動詞",
+              "structure": "S + agree to do",
+              "image": "依頼・提案を受け入れて行動する。",
+              "point": "誰かの依頼や提案を受けて、実際に何かをすることを承諾するときに使う。",
+              "examples": [
+                  {
+                      "en": "The supplier agreed to send the samples today.",
+                      "ja": "仕入先は本日サンプルを送ることを承諾しました。",
+                      "focus": "agreed"
+                  },
+                  {
+                      "en": "We agreed to review the contract again.",
+                      "ja": "私たちは契約書を再確認することに同意しました。",
+                      "focus": "agreed"
+                  },
+                  {
+                      "en": "The client agreed to wait until Friday.",
+                      "ja": "顧客は金曜日まで待つことに同意しました。",
+                      "focus": "agreed"
+                  }
+              ]
+          },
+          {
+              "id": "agree-about",
+              "title": "⑥ 話題について意見が一致する",
+              "pattern": "AGREE ABOUT + 話題",
+              "transitivity": "自動詞",
+              "structure": "S + agree about + 話題",
+              "image": "ある話題について同じ考えになる。",
+              "point": "about は話題を示す。on より少し広く、スケジュールや方針などについて意見が一致する場面で使える。",
+              "examples": [
+                  {
+                      "en": "We agreed about the basic direction.",
+                      "ja": "私たちは基本方針について意見が一致しました。",
+                      "focus": "agreed"
+                  },
+                  {
+                      "en": "The team agreed about the main problem.",
+                      "ja": "チームは主な問題点について意見が一致しました。",
+                      "focus": "agreed"
+                  },
+                  {
+                      "en": "Both sides agreed about the need for improvement.",
+                      "ja": "双方は改善の必要性について意見が一致しました。",
+                      "focus": "agreed"
+                  }
+              ]
+          },
+          {
+              "id": "agree-in-principle",
+              "title": "⑦ 基本的に合意する",
+              "pattern": "AGREE IN PRINCIPLE",
+              "transitivity": "自動詞",
+              "structure": "S + agree in principle",
+              "image": "細部は未確定だが、大枠では同意する。",
+              "point": "ビジネスでよく使う定番表現。詳細条件は残っているが、方向性としては合意したいときに使う。",
+              "examples": [
+                  {
+                      "en": "We agreed in principle to move forward with the project.",
+                      "ja": "私たちはその案件を進める方向で基本合意しました。",
+                      "focus": "agreed"
+                  },
+                  {
+                      "en": "The client agreed in principle, but requested a lower price.",
+                      "ja": "顧客は基本的に同意しましたが、値下げを求めました。",
+                      "focus": "agreed"
+                  },
+                  {
+                      "en": "Management agreed in principle to the new plan.",
+                      "ja": "経営陣は新しい計画に基本合意しました。",
+                      "focus": "agreed"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": []
+      ],
+      "collocations": [],
+      "phrasalVerbs": [
+          {
+              "phrase": "not agree with",
+              "ja": "〜に合わない・賛成できない",
+              "image": "人・体質・方針に合わない、または意見として受け入れられない。",
+              "pattern": "not agree with + 人/体/方針",
+              "examples": [
+                  {
+                      "en": "This approach does not agree with our company policy.",
+                      "ja": "この方法は当社の方針に合いません。",
+                      "focus": "does not agree with"
+                  },
+                  {
+                      "en": "The proposed terms did not agree with our budget.",
+                      "ja": "提示された条件は私たちの予算に合いませんでした。",
+                      "focus": "did not agree with"
+                  },
+                  {
+                      "en": "That explanation does not agree with the data.",
+                      "ja": "その説明はデータと一致しません。",
+                      "focus": "does not agree with"
+                  }
+              ]
+          }
+      ]
   },
   {
-    "id": "arrange",
-    "rank": 74,
-    "word": "ARRANGE",
-    "ipa": "/əˈreɪndʒ/",
-    "kana": "アレンジ",
-    "syllable": "ar-range",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "予定・物・人を目的に合うように整える",
-    "coreDetail": "ARRANGEは、打ち合わせ・移動・資料・席などを手配する時に使います。日本語のアレンジより仕事では「手配する」の意味が強いです。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 手配する・調整する",
-        "pattern": "ARRANGE + 名詞 / ARRANGE TO DO",
-        "transitivity": "基本動詞",
-        "structure": "S + arrange + O / S + arrange + to do",
-        "image": "予定・物・人を目的に合うように整える",
-        "point": "ARRANGEは、打ち合わせ・移動・資料・席などを手配する時に使います。日本語のアレンジより仕事では「手配する」の意味が強いです。",
-        "examples": [
+      "id": "arrange",
+      "rank": 74,
+      "word": "ARRANGE",
+      "ipa": "/əˈreɪndʒ/",
+      "kana": "アレンジ",
+      "syllable": "ar-range",
+      "transitivity": "他動詞・自動詞",
+      "importance": "★★★☆☆ 基本",
+      "core": "人・物・予定を目的に合う形へ整える",
+      "coreDetail": "ARRANGEは、会議・配送・移動・資料・人員などを目的に合うように手配・調整・配置するイメージです。日本語の『アレンジ』より、仕事では『段取りを整える』意味が中心です。",
+      "coreVisual": {
+          "from": [
+              "📅 予定",
+              "🚚 配送",
+              "👥 人員",
+              "📄 資料",
+              "🪑 配置"
+          ],
+          "to": "🗂️ 整った段取り",
+          "label": "バラバラ → 目的に合う形へ"
+      },
+      "meanings": [
           {
-            "en": "I arranged a meeting with the client.",
-            "ja": "私は顧客との打ち合わせを手配しました。",
-            "focus": "arranged",
-            "object": "a meeting",
-            "jaFocus": "合わせを手配しました",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "arranged"
-              },
-              {
-                "label": "O",
-                "text": "a meeting"
-              },
-              {
-                "label": "M",
-                "text": "with the client"
-              }
-            ],
-            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+              "id": "arrange-meeting",
+              "title": "① 会議・予定を手配する",
+              "pattern": "ARRANGE + 会議/予定",
+              "transitivity": "他動詞",
+              "structure": "S + arrange + O",
+              "image": "必要な予定を組んで実行できる状態にする。",
+              "point": "meeting, call, appointment, schedule などと相性が良い。",
+              "examples": [
+                  {
+                      "en": "I arranged a meeting with the client.",
+                      "ja": "私は顧客との打ち合わせを手配しました。",
+                      "focus": "arranged",
+                      "object": "a meeting"
+                  },
+                  {
+                      "en": "We arranged a call with the supplier.",
+                      "ja": "私たちは仕入先との電話会議を手配しました。",
+                      "focus": "arranged",
+                      "object": "a call"
+                  },
+                  {
+                      "en": "She arranged an appointment with the manager.",
+                      "ja": "彼女は管理者との面談を手配しました。",
+                      "focus": "arranged",
+                      "object": "an appointment"
+                  }
+              ]
           },
           {
-            "en": "We arranged the delivery for next Monday.",
-            "ja": "私たちは来週月曜日の配送を手配しました。",
-            "focus": "arranged",
-            "object": "the delivery",
-            "jaFocus": "の配送を手配しました",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "arranged"
-              },
-              {
-                "label": "O",
-                "text": "the delivery"
-              },
-              {
-                "label": "M",
-                "text": "for next Monday"
-              }
-            ],
-            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+              "id": "arrange-delivery",
+              "title": "② 配送・移動を手配する",
+              "pattern": "ARRANGE + 配送/移動",
+              "transitivity": "他動詞",
+              "structure": "S + arrange + O",
+              "image": "物や人が必要な場所へ動けるように段取りする。",
+              "point": "delivery, shipment, transportation, travel など仕事でよく使う。",
+              "examples": [
+                  {
+                      "en": "We arranged the delivery for next Monday.",
+                      "ja": "私たちは来週月曜日の配送を手配しました。",
+                      "focus": "arranged",
+                      "object": "the delivery"
+                  },
+                  {
+                      "en": "The office arranged transportation for the guests.",
+                      "ja": "事務所は来客の移動手段を手配しました。",
+                      "focus": "arranged",
+                      "object": "transportation"
+                  },
+                  {
+                      "en": "I arranged the shipment with the warehouse.",
+                      "ja": "私は倉庫と出荷を手配しました。",
+                      "focus": "arranged",
+                      "object": "the shipment"
+                  }
+              ]
           },
           {
-            "en": "She arranged to visit the site tomorrow.",
-            "ja": "彼女は明日現場を訪問する手配をしました。",
-            "focus": "arranged",
-            "object": "to visit the site tomorrow",
-            "jaFocus": "問する手配をしました",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "She"
-              },
-              {
-                "label": "V",
-                "text": "arranged"
-              },
-              {
-                "label": "O",
-                "text": "to visit the site tomorrow"
-              }
-            ]
+              "id": "arrange-for",
+              "title": "③ 人や物が来るように手配する",
+              "pattern": "ARRANGE FOR + 人/物 + TO DO",
+              "transitivity": "他動詞に近い使い方",
+              "structure": "S + arrange for + 人/物 + to do",
+              "image": "誰か・何かが動くように裏側で手配する。",
+              "point": "arrange for someone to do はビジネスで重要。自分が直接するのではなく、誰かが動く段取りを作る。",
+              "examples": [
+                  {
+                      "en": "I arranged for a technician to visit the site.",
+                      "ja": "私は技術者が現場を訪問するよう手配しました。",
+                      "focus": "arranged for"
+                  },
+                  {
+                      "en": "We arranged for the samples to arrive tomorrow.",
+                      "ja": "私たちはサンプルが明日届くよう手配しました。",
+                      "focus": "arranged for"
+                  },
+                  {
+                      "en": "She arranged for a car to pick up the client.",
+                      "ja": "彼女は顧客を迎えに行く車を手配しました。",
+                      "focus": "arranged for"
+                  }
+              ]
+          },
+          {
+              "id": "arrange-to-do",
+              "title": "④ 〜する予定を組む",
+              "pattern": "ARRANGE TO DO",
+              "transitivity": "自動詞に近い使い方",
+              "structure": "S + arrange to do",
+              "image": "自分たちが行う予定を調整して決める。",
+              "point": "訪問・確認・説明など、実際に行う行動を後ろに置く。",
+              "examples": [
+                  {
+                      "en": "We arranged to visit the site tomorrow.",
+                      "ja": "私たちは明日現場を訪問する予定を組みました。",
+                      "focus": "arranged"
+                  },
+                  {
+                      "en": "The team arranged to review the details on Friday.",
+                      "ja": "チームは金曜日に詳細を確認する予定を組みました。",
+                      "focus": "arranged"
+                  },
+                  {
+                      "en": "I arranged to speak with the client after lunch.",
+                      "ja": "私は昼食後に顧客と話す予定を組みました。",
+                      "focus": "arranged"
+                  }
+              ]
+          },
+          {
+              "id": "arrange-with",
+              "title": "⑤ 相手と調整して決める",
+              "pattern": "ARRANGE WITH + 相手",
+              "transitivity": "他動詞に近い使い方",
+              "structure": "S + arrange + O + with + 相手",
+              "image": "相手と連絡を取り、条件や段取りを整える。",
+              "point": "with は調整相手を示す。顧客・仕入先・倉庫・社内担当と段取りを合わせる場面で使う。",
+              "examples": [
+                  {
+                      "en": "We arranged the schedule with the client.",
+                      "ja": "私たちは顧客とスケジュールを調整しました。",
+                      "focus": "arranged",
+                      "object": "the schedule"
+                  },
+                  {
+                      "en": "I arranged the delivery details with the warehouse.",
+                      "ja": "私は倉庫と配送の詳細を調整しました。",
+                      "focus": "arranged",
+                      "object": "the delivery details"
+                  },
+                  {
+                      "en": "She arranged the visit with the site manager.",
+                      "ja": "彼女は現場責任者と訪問を調整しました。",
+                      "focus": "arranged",
+                      "object": "the visit"
+                  }
+              ]
+          },
+          {
+              "id": "arrange-for-date",
+              "title": "⑥ 日時・場所に合わせて設定する",
+              "pattern": "ARRANGE + O + FOR + 日時/目的",
+              "transitivity": "他動詞",
+              "structure": "S + arrange + O + for + 日時/目的",
+              "image": "予定や作業を特定の日・目的に合わせて設定する。",
+              "point": "for は日時・目的を示す。",
+              "examples": [
+                  {
+                      "en": "We arranged the meeting for 10 a.m.",
+                      "ja": "私たちは会議を午前10時に設定しました。",
+                      "focus": "arranged",
+                      "object": "the meeting"
+                  },
+                  {
+                      "en": "I arranged the inspection for next week.",
+                      "ja": "私は検査を来週に設定しました。",
+                      "focus": "arranged",
+                      "object": "the inspection"
+                  },
+                  {
+                      "en": "They arranged extra staff for the event.",
+                      "ja": "彼らはイベント用に追加スタッフを手配しました。",
+                      "focus": "arranged",
+                      "object": "extra staff"
+                  }
+              ]
+          },
+          {
+              "id": "arrange-items",
+              "title": "⑦ 物や資料を整理して並べる",
+              "pattern": "ARRANGE + 物/資料",
+              "transitivity": "他動詞",
+              "structure": "S + arrange + O",
+              "image": "物を分かりやすい順番や位置に整える。",
+              "point": "資料、椅子、商品、ファイルなどを目的に合う形で並べるときに使う。",
+              "examples": [
+                  {
+                      "en": "Please arrange the documents by project name.",
+                      "ja": "資料を案件名ごとに整理してください。",
+                      "focus": "arrange",
+                      "object": "the documents"
+                  },
+                  {
+                      "en": "We arranged the chairs for the seminar.",
+                      "ja": "私たちはセミナー用に椅子を配置しました。",
+                      "focus": "arranged",
+                      "object": "the chairs"
+                  },
+                  {
+                      "en": "She arranged the product samples on the table.",
+                      "ja": "彼女は商品サンプルをテーブルに並べました。",
+                      "focus": "arranged",
+                      "object": "the product samples"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": []
+      ],
+      "collocations": [],
+      "phrasalVerbs": []
   },
   {
-    "id": "attend",
-    "rank": 75,
-    "word": "ATTEND",
-    "ipa": "/əˈtend/",
-    "kana": "アテンド",
-    "syllable": "at-tend",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "会議・イベントなどに参加する",
-    "coreDetail": "ATTENDは、会議・研修・展示会などに参加する時に使います。日本語の「アテンドする」と違い、英語では基本的に「参加する」です。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 出席する・参加する",
-        "pattern": "ATTEND + 会議/イベント",
-        "transitivity": "基本動詞",
-        "structure": "S + attend + O",
-        "image": "会議・イベントなどに参加する",
-        "point": "ATTENDは、会議・研修・展示会などに参加する時に使います。日本語の「アテンドする」と違い、英語では基本的に「参加する」です。",
-        "examples": [
+      "id": "attend",
+      "rank": 75,
+      "word": "ATTEND",
+      "ipa": "/əˈtend/",
+      "kana": "アテンド",
+      "syllable": "at-tend",
+      "transitivity": "他動詞・自動詞",
+      "importance": "★★★☆☆ 基本",
+      "core": "必要な場所・相手・問題に意識と時間を向ける",
+      "coreDetail": "ATTENDは、会議や研修に出席するだけでなく、attend to で問題・顧客・細部に対応する意味もあります。日本語の『アテンドする』とはズレるため、英語では attend the meeting（会議に出席する）と attend to the issue（問題に対応する）を分けて覚えます。",
+      "coreVisual": {
+          "from": [
+              "👤 自分/担当者"
+          ],
+          "to": "🏢 会議・研修・問題へ向かう",
+          "label": "意識と時間を向ける"
+      },
+      "meanings": [
           {
-            "en": "I attended the meeting this morning.",
-            "ja": "私は今朝その会議に出席しました。",
-            "focus": "attended",
-            "object": "the meeting",
-            "jaFocus": "の会議に出席しました",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "attended"
-              },
-              {
-                "label": "O",
-                "text": "the meeting"
-              },
-              {
-                "label": "M",
-                "text": "this morning"
-              }
-            ],
-            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+              "id": "attend-meeting",
+              "title": "① 会議・イベントに出席する",
+              "pattern": "ATTEND + 会議/イベント",
+              "transitivity": "他動詞",
+              "structure": "S + attend + O",
+              "image": "必要な場所に行き、その場に参加する。",
+              "point": "attend の後ろに meeting, seminar, exhibition などを直接置く。attend to the meeting とは言わない。",
+              "examples": [
+                  {
+                      "en": "I attended the meeting this morning.",
+                      "ja": "私は今朝その会議に出席しました。",
+                      "focus": "attended",
+                      "object": "the meeting"
+                  },
+                  {
+                      "en": "We attended the sales conference last week.",
+                      "ja": "私たちは先週、営業会議に出席しました。",
+                      "focus": "attended",
+                      "object": "the sales conference"
+                  },
+                  {
+                      "en": "They will attend the exhibition in Tokyo.",
+                      "ja": "彼らは東京の展示会に参加する予定です。",
+                      "focus": "attend",
+                      "object": "the exhibition"
+                  }
+              ]
           },
           {
-            "en": "We attended a training session last week.",
-            "ja": "私たちは先週研修に参加しました。",
-            "focus": "attended",
-            "object": "a training session",
-            "jaFocus": "週研修に参加しました",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "attended"
-              },
-              {
-                "label": "O",
-                "text": "a training session"
-              },
-              {
-                "label": "M",
-                "text": "last week"
-              }
-            ],
-            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+              "id": "attend-training",
+              "title": "② 研修・授業に参加する",
+              "pattern": "ATTEND + 研修/授業",
+              "transitivity": "他動詞",
+              "structure": "S + attend + O",
+              "image": "学ぶための場に参加する。",
+              "point": "training, class, workshop, course などと相性が良い。",
+              "examples": [
+                  {
+                      "en": "We attended a product training session.",
+                      "ja": "私たちは製品研修に参加しました。",
+                      "focus": "attended",
+                      "object": "a product training session"
+                  },
+                  {
+                      "en": "New staff must attend the safety workshop.",
+                      "ja": "新入社員は安全講習に参加する必要があります。",
+                      "focus": "attend",
+                      "object": "the safety workshop"
+                  },
+                  {
+                      "en": "She attended an online course on project management.",
+                      "ja": "彼女はプロジェクト管理のオンライン講座に参加しました。",
+                      "focus": "attended",
+                      "object": "an online course"
+                  }
+              ]
           },
           {
-            "en": "They will attend the exhibition in Tokyo.",
-            "ja": "彼らは東京の展示会に参加する予定です。",
-            "focus": "attend",
-            "object": "the exhibition",
-            "jaFocus": "会に参加する予定です",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "They"
-              },
-              {
-                "label": "V",
-                "text": "will attend"
-              },
-              {
-                "label": "O",
-                "text": "the exhibition"
-              },
-              {
-                "label": "M",
-                "text": "in Tokyo"
-              }
-            ],
-            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
+              "id": "attend-remotely",
+              "title": "③ オンライン・遠隔で参加する",
+              "pattern": "ATTEND + O + REMOTELY/ONLINE",
+              "transitivity": "他動詞",
+              "structure": "S + attend + O + M",
+              "image": "現地ではなくオンラインで参加する。",
+              "point": "会議や研修にオンライン参加する場面で自然に使える。",
+              "examples": [
+                  {
+                      "en": "I attended the meeting remotely.",
+                      "ja": "私はその会議にリモートで参加しました。",
+                      "focus": "attended",
+                      "object": "the meeting"
+                  },
+                  {
+                      "en": "Several members attended the training online.",
+                      "ja": "数名のメンバーは研修にオンラインで参加しました。",
+                      "focus": "attended",
+                      "object": "the training"
+                  },
+                  {
+                      "en": "The client attended the review session by video call.",
+                      "ja": "顧客はビデオ会議でレビュー会に参加しました。",
+                      "focus": "attended",
+                      "object": "the review session"
+                  }
+              ]
+          },
+          {
+              "id": "required-to-attend",
+              "title": "④ 出席を求められる",
+              "pattern": "BE REQUIRED/EXPECTED TO ATTEND",
+              "transitivity": "他動詞",
+              "structure": "S + be required/expected to attend + O",
+              "image": "業務上、参加が必要とされる。",
+              "point": "自分の意思だけでなく、会社や顧客から参加が求められる場面で使う。",
+              "examples": [
+                  {
+                      "en": "All sales staff are required to attend the briefing.",
+                      "ja": "営業担当者全員が説明会に出席する必要があります。",
+                      "focus": "attend",
+                      "object": "the briefing"
+                  },
+                  {
+                      "en": "The project leader is expected to attend the client meeting.",
+                      "ja": "プロジェクトリーダーは顧客との会議に出席することが期待されています。",
+                      "focus": "attend",
+                      "object": "the client meeting"
+                  },
+                  {
+                      "en": "Participants are required to attend the full session.",
+                      "ja": "参加者は全セッションに出席する必要があります。",
+                      "focus": "attend",
+                      "object": "the full session"
+                  }
+              ]
+          },
+          {
+              "id": "attend-as",
+              "title": "⑤ 〜として参加する",
+              "pattern": "ATTEND AS + 役割",
+              "transitivity": "自動詞に近い使い方",
+              "structure": "S + attend + O + as + 役割",
+              "image": "役割を持って会議やイベントに参加する。",
+              "point": "representative, observer, speaker など役割を示す。",
+              "examples": [
+                  {
+                      "en": "I attended the meeting as a sales representative.",
+                      "ja": "私は営業担当者としてその会議に出席しました。",
+                      "focus": "attended"
+                  },
+                  {
+                      "en": "She attended the seminar as a guest speaker.",
+                      "ja": "彼女はゲスト講師としてセミナーに参加しました。",
+                      "focus": "attended"
+                  },
+                  {
+                      "en": "We attended the inspection as observers.",
+                      "ja": "私たちは立会人として検査に参加しました。",
+                      "focus": "attended"
+                  }
+              ]
+          },
+          {
+              "id": "attend-regularly",
+              "title": "⑥ 定期的に通う・参加する",
+              "pattern": "ATTEND + 場所/活動 + regularly",
+              "transitivity": "他動詞",
+              "structure": "S + attend + O",
+              "image": "学校・講座・定例会などに継続的に参加する。",
+              "point": "定例会、研修、講座など、継続参加を表す。",
+              "examples": [
+                  {
+                      "en": "He attends the weekly project meeting.",
+                      "ja": "彼は毎週のプロジェクト会議に出席しています。",
+                      "focus": "attends",
+                      "object": "the weekly project meeting"
+                  },
+                  {
+                      "en": "Our team attends monthly safety training.",
+                      "ja": "私たちのチームは毎月の安全研修に参加しています。",
+                      "focus": "attends",
+                      "object": "monthly safety training"
+                  },
+                  {
+                      "en": "She attends an English class after work.",
+                      "ja": "彼女は仕事後に英語クラスに通っています。",
+                      "focus": "attends",
+                      "object": "an English class"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": []
+      ],
+      "collocations": [],
+      "phrasalVerbs": [
+          {
+              "phrase": "attend to",
+              "ja": "対応する・注意を向ける",
+              "image": "人・問題・細部に意識を向けて対応する。会議に出席する attend とは意味が違う。",
+              "pattern": "attend to + 人/問題/用件",
+              "examples": [
+                  {
+                      "en": "Please attend to this issue as soon as possible.",
+                      "ja": "できるだけ早くこの問題に対応してください。",
+                      "focus": "attend to"
+                  },
+                  {
+                      "en": "The support team is attending to the client's request.",
+                      "ja": "サポートチームは顧客の依頼に対応しています。",
+                      "focus": "attending to"
+                  },
+                  {
+                      "en": "We need to attend to every detail before launch.",
+                      "ja": "開始前にすべての細部に注意を払う必要があります。",
+                      "focus": "attend to"
+                  }
+              ]
+          }
+      ]
   },
   {
     "id": "contact",

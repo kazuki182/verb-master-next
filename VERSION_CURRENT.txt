@@ -1,1 +1,1 @@
-Ver.107 - Verb quality batch 15: introduce / request / suggest
+Ver.108 build fix: package-lock resolved URLs changed to public npm registry and .npmrc added. No app logic changes.

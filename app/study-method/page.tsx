@@ -50,7 +50,7 @@ export default function StudyMethodPage() {
         <div className="mt-4 grid gap-3 text-sm">
           <div className="rounded-2xl bg-paper p-4">
             <p className="font-bold">動詞を学習したとき</p>
-            <p className="mt-1 text-muted">基本動詞・熟語・句動詞を学習するとXPが入ります。</p>
+            <p className="mt-1 text-muted">基本・句動詞を学習するとXPが入ります。</p>
           </div>
           <div className="rounded-2xl bg-paper p-4">
             <p className="font-bold">テストで「できた」を選んだとき</p>

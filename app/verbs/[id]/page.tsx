@@ -43,12 +43,12 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
           </div>
           <div className="flex shrink-0 flex-col gap-2">
             <SpeakButton text={verb.word.toLowerCase()} label="通常" />
-            <BookmarkButton verbId={verb.id} section="basic" label={`${verb.word} 基本動詞`} href={`/verbs/${verb.id}`} compact />
+            <BookmarkButton verbId={verb.id} section="basic" label={`${verb.word} 基本`} href={`/verbs/${verb.id}`} compact />
           </div>
         </div>
       </header>
 
-      <AutoBookmark verbId={verb.id} section="basic" label={`${verb.word} 基本動詞`} href={`/verbs/${verb.id}`} />
+      <AutoBookmark verbId={verb.id} section="basic" label={`${verb.word} 基本`} href={`/verbs/${verb.id}`} />
 
 
       <section className="card p-5 sm:p-6">
@@ -81,10 +81,9 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
 
       <section className="card p-5 sm:p-6">
         <h2 className="text-xl font-bold">{verb.word}攻略フロー</h2>
-        <div className="mt-4 grid grid-cols-3 gap-2 text-center text-sm">
+        <div className="mt-4 grid grid-cols-2 gap-2 text-center text-sm">
           <div className="rounded-2xl bg-cyan-400/10 p-3 font-bold text-cyan-100">1<br />基本</div>
-          <Link href={`/verbs/${verb.id}/idioms`} className="rounded-2xl bg-white/5 p-3 font-bold text-muted">2<br />熟語</Link>
-          <Link href={`/verbs/${verb.id}/phrasal`} className="rounded-2xl bg-white/5 p-3 font-bold text-muted">3<br />句動詞</Link>
+          <Link href={`/verbs/${verb.id}/phrasal`} className="rounded-2xl bg-white/5 p-3 font-bold text-muted">2<br />句動詞</Link>
         </div>
       </section>
 
@@ -95,7 +94,7 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
             <article key={meaning.id} id={`meaning-${index + 1}`} className="card scroll-mt-24 p-5 sm:p-6">
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-2xl font-bold leading-tight">{meaning.title}</h3>
-                <BookmarkButton verbId={verb.id} section="basic" label={`${verb.word} 基本動詞`} href={`/verbs/${verb.id}#meaning-${index + 1}`} itemTitle={meaning.title} itemIndex={index + 1} compact />
+                <BookmarkButton verbId={verb.id} section="basic" label={`${verb.word} 基本`} href={`/verbs/${verb.id}#meaning-${index + 1}`} itemTitle={meaning.title} itemIndex={index + 1} compact />
               </div>
 
               <div className="type-card mt-4">
@@ -156,9 +155,9 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
 
       <section className="card p-5 text-center sm:p-6">
         <h2 className="text-xl font-bold">STEP 1 完了</h2>
-        <p className="mt-2 text-muted">まず基本動詞だけをテストしてから、熟語へ進みます。</p>
-        <Link href={`/tests/${verb.id}/basic`} className="btn btn-primary mt-5 block">基本動詞テストへ</Link>
-        <Link href={`/verbs/${verb.id}/idioms`} className="btn btn-soft mt-3 block">テストせず熟語へ進む</Link>
+        <p className="mt-2 text-muted">まず基本をテストしてから、句動詞へ進みます。</p>
+        <Link href={`/tests/${verb.id}/basic`} className="btn btn-primary mt-5 block">基本テストへ</Link>
+        <Link href={`/verbs/${verb.id}/phrasal`} className="btn btn-soft mt-3 block">テストせず句動詞へ進む</Link>
       </section>
     </div>
     </VerbAccessGuard>

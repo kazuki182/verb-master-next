@@ -167,7 +167,7 @@ export default function UpgradePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">有料パックで解放される機能</h2>
         <div className="mt-4 grid gap-3 text-sm">
-          {["🐢 0.5倍速音声", "🏠 日常例文", "⭐ フレーズ登録帳", "🔀 シャッフルテスト", "📘 文型 / Pattern表示", "📈 復習強化機能", "☁️ クラウド保存・復元"].map((item) => (
+          {["🐢 0.5倍速音声", "🏠 日常例文", "⭐ フレーズ登録帳", "🔀 シャッフルテスト", "📘 構造 / Pattern表示", "📈 復習強化機能", "☁️ クラウド保存・復元"].map((item) => (
             <div key={item} className="rounded-2xl bg-paper p-3 font-bold">{item}</div>
           ))}
         </div>

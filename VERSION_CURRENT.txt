@@ -1,11 +1,5 @@
-Ver.113 - Verb quality batch 16: agree / arrange / attend
-
-- Fixed verb batch is kept as agreed: agree, arrange, attend.
-- Updated AGREE with 7 business-focused basic usage patterns and 1 natural phrasal/prepositional item.
-- Updated ARRANGE with 7 business-focused basic usage patterns and no forced phrasal verbs.
-- Updated ATTEND with 6 business-focused basic usage patterns and 1 true phrasal verb: attend to.
-- Added/updated coreVisual diagrams with icons and clearer arrow logic.
-- Avoided forced idiom/common-expression sections.
-- Basic usage examples highlight only the target verb.
-- Phrasal verb examples highlight the phrasal verb chunk.
-- Kept ZIP clean for GitHub/Vercel upload.
+Ver.114 REBUILD - GET/TAKE/MAKE quality reset + two-category UI unification
+- Rebuilt verb quality batch from the beginning: GET / TAKE / MAKE.
+- Unified learning flow, progress, tests, and cards into 基本 / 句動詞 only.
+- Removed the Home header top-right icon.
+- Removed separate 熟語 UI; common phrases are included inside 基本.

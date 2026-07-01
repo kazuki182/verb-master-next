@@ -25,8 +25,7 @@ type VerbQuality = {
   meaningsOk: boolean;
   workExamplesOk: boolean;
   dailyExamplesOk: boolean;
-  collocationsOk: boolean;
-  phrasalOk: boolean;
+    phrasalOk: boolean;
   testsOk: boolean;
   score: number;
   missing: string[];
@@ -48,7 +47,7 @@ function checkVerbQuality(verb: Verb): VerbQuality {
   if (!coreOk) missing.push("コアイメージ");
 
   const meaningsOk = verb.meanings.length >= 10;
-  if (!meaningsOk) missing.push(`意味 ${verb.meanings.length}/10`);
+  if (!meaningsOk) missing.push(`基本 ${verb.meanings.length}/10`);
 
   const workExamplesOk = verb.meanings.every((meaning) => meaning.examples.length >= 3);
   if (!workExamplesOk) missing.push("仕事例文3つ");
@@ -56,22 +55,16 @@ function checkVerbQuality(verb: Verb): VerbQuality {
   const dailyExamplesOk = verb.meanings.every((meaning) => (meaning.dailyExamples || []).length >= 2);
   if (!dailyExamplesOk) missing.push("日常例文2つ");
 
-  const collocationsOk =
-    verb.collocations.length >= 10 &&
-    verb.collocations.slice(0, 10).every((item) => item.examples.length >= 3);
-  if (!collocationsOk) missing.push(`熟語 ${verb.collocations.length}/10`);
-
   const phrasalOk =
     verb.phrasalVerbs.length >= 10 &&
     verb.phrasalVerbs.slice(0, 10).every((item) => item.examples.length >= 3);
   if (!phrasalOk) missing.push(`句動詞 ${verb.phrasalVerbs.length}/10`);
 
   const testsOk = testItems.some((item) => item.verbId === verb.id && item.section === "basic") &&
-    testItems.some((item) => item.verbId === verb.id && item.section === "idioms") &&
     testItems.some((item) => item.verbId === verb.id && item.section === "phrasal");
   if (!testsOk) missing.push("テスト");
 
-  const checks = [coreOk, meaningsOk, workExamplesOk, dailyExamplesOk, collocationsOk, phrasalOk, testsOk];
+  const checks = [coreOk, meaningsOk, workExamplesOk, dailyExamplesOk, phrasalOk, testsOk];
   const score = percent(checks.filter(Boolean).length, checks.length);
   const accessLabel = verb.rank <= 3 ? "無料" : verb.rank <= 30 ? "30語" : verb.rank <= 60 ? "60語" : verb.rank <= 90 ? "90語" : "120語";
 
@@ -81,7 +74,6 @@ function checkVerbQuality(verb: Verb): VerbQuality {
     meaningsOk,
     workExamplesOk,
     dailyExamplesOk,
-    collocationsOk,
     phrasalOk,
     testsOk,
     score,
@@ -224,16 +216,14 @@ export default function AdminPage() {
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
                 <QualityPill ok={row.coreOk} label="コアイメージ" />
-                <QualityPill ok={row.meaningsOk} label="意味10個" />
+                <QualityPill ok={row.meaningsOk} label="基本10個" />
                 <QualityPill ok={row.workExamplesOk} label="仕事例文" />
                 <QualityPill ok={row.dailyExamplesOk} label="日常例文" />
-                <QualityPill ok={row.collocationsOk} label="熟語" />
                 <QualityPill ok={row.phrasalOk} label="句動詞" />
                 <QualityPill ok={row.testsOk} label="テスト" />
               </div>
               <div className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
-                <div className="rounded-xl bg-paper p-3"><p className="text-muted">意味</p><p className="text-lg font-black">{row.verb.meanings.length}</p></div>
-                <div className="rounded-xl bg-paper p-3"><p className="text-muted">熟語</p><p className="text-lg font-black">{row.verb.collocations.length}</p></div>
+                <div className="rounded-xl bg-paper p-3"><p className="text-muted">基本</p><p className="text-lg font-black">{row.verb.meanings.length}</p></div>
                 <div className="rounded-xl bg-paper p-3"><p className="text-muted">句動詞</p><p className="text-lg font-black">{row.verb.phrasalVerbs.length}</p></div>
               </div>
               <Link className="btn btn-soft mt-4 inline-block" href={`/verbs/${row.verb.id}`}>学習ページを確認</Link>

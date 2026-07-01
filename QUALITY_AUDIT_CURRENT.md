@@ -1,30 +1,40 @@
-# QUALITY AUDIT CURRENT - Ver.113
+# QUALITY_AUDIT_CURRENT - Ver.114 REBUILD
 
-## Target verbs
-- agree
-- arrange
-- attend
+## Fixed target verbs
+- GET
+- TAKE
+- MAKE
 
-## Required checklist applied
-- Fixed target verbs once selected.
-- Checked external dictionary/usage sources before editing.
-- Prioritized business-useful patterns.
-- Integrated common non-phrasal patterns into basic usage.
-- Did not force weak idiom/common-expression entries.
-- Added only natural phrasal verbs where useful.
-- Moved non-business ideas out of the business/core sections.
-- Basic usage examples highlight only the English target verb.
-- Phrasal verb examples highlight the phrasal-verb chunk.
-- Japanese translations are not highlighted.
-- Added icon-based core visuals and checked arrow direction.
-- Avoided all-caps generated sentence issues and unsupported grammar labels.
+## Structure rule
+- Verb pages use only two user-facing groups: 基本 and 句動詞.
+- Common phrases, idioms, and collocations are included inside 基本.
+- No separate 熟語 / よく使うフレーズ / コロケーション / 文型 category should appear in UI.
 
-## External fact-check notes
-- agree: checked agree with / agree to / agree on / agree that usage and not agree with.
-- arrange: checked plan/prepare/organize, arrange for, arrange to do, arrange objects/order.
-- attend: checked attend meetings/events/classes and attend to as a phrasal verb.
+## Content policy
+- 基本: target up to 10 usages/phrases. Do not force content when unnatural.
+- 句動詞: target up to 10 phrasal verbs. Do not force content when unnatural.
+- Examples prioritize business/social adult situations.
+- Basic examples highlight only the target verb form.
+- Phrasal examples highlight the whole phrasal verb.
 
-## Build / packaging
-- Next.js production build completed through compile, TypeScript, and static page generation.
-- ZIP excludes node_modules, .next, temporary patch scripts, old version files, and cache files.
-- package-lock and npm registry settings checked for internal-only URLs.
+## Ver.114 REBUILD checks
+- GET rebuilt with 10 基本 + 10 句動詞.
+- TAKE rebuilt with 10 基本 + 10 句動詞.
+- MAKE rebuilt with 10 基本 + 7 句動詞. Not forced to 10 because weaker/less common items were excluded.
+- Home top-right title icon removed.
+- 攻略フロー unified into 基本 / 句動詞.
+- 学習進捗 unified into 基本 / 句動詞.
+- Test cards/lists unified into 基本 / 句動詞.
+- Separate idiom route redirects to 基本 for old saved links.
+- Separate idiom test route redirects to 基本 test for old saved links.
+
+## External usage check notes
+- GET: obtain/receive/become/arrive/understand and major phrasal verbs checked against learner dictionary and phrasal-verb references.
+- TAKE: move/carry, time/duration, take phrases, and major phrasal verbs checked against learner dictionary and phrasal-verb references.
+- MAKE: create/result, decision/plan/sure/progress phrases and major phrasal verbs checked against learner dictionary and phrasal-verb references.
+
+## Build / ZIP safety
+- TypeScript check: passed with npx tsc --noEmit.
+- Next.js build: compile and TypeScript stages passed; static page collection did not finish within local execution time.
+- node_modules and .next are excluded from ZIP.
+- package-lock internal URL check required before delivery.

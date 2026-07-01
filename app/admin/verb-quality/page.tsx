@@ -104,7 +104,7 @@ export default function VerbQualityAdminPage() {
         <div className="mt-4 grid gap-2 text-sm text-slate-200 md:grid-cols-2">
           <p className="rounded-2xl bg-paper p-3">基本の使い方は5〜10種類。自然なら10種類に近づける。</p>
           <p className="rounded-2xl bg-paper p-3">各使い方にビジネス例文3つ。Premium用日常例文2つ。</p>
-          <p className="rounded-2xl bg-paper p-3">熟語・句動詞も5〜10種類を目標。無理な水増しはしない。</p>
+          <p className="rounded-2xl bg-paper p-3">句動詞も最大10種類を目標。無理な水増しはしない。</p>
           <p className="rounded-2xl bg-paper p-3">大文字だけの英語、仮文、自動生成っぽい文を残さない。</p>
           <p className="rounded-2xl bg-paper p-3">テスト日本語は主語・時制・目的語が分かる文にする。</p>
           <p className="rounded-2xl bg-paper p-3">SV/SVO/SVC/SVOCは手動確認済み以外、ユーザー画面に出さない。</p>
@@ -128,7 +128,7 @@ export default function VerbQualityAdminPage() {
             ["lowUsage", "使い方不足"],
             ["caps", "大文字"],
             ["placeholder", "仮文"],
-            ["grammar", "文型要確認"]
+            ["grammar", "構造要確認"]
           ].map(([key, label]) => (
             <button
               key={key}
@@ -161,7 +161,6 @@ export default function VerbQualityAdminPage() {
               <CheckRow ok={row.businessExamplesOk} label="仕事例文" value={`${row.businessExampleTotal}`} />
               <CheckRow ok={row.premiumDailyExamplesOk} label="日常例文" value={`${row.premiumDailyExampleTotal}`} />
               <CheckRow ok={row.testsOk} label="テスト" value={`${row.testTotal}`} />
-              <CheckRow ok={row.collocationsOk} label="熟語" value={`${row.collocationCount}/10`} />
               <CheckRow ok={row.phrasalOk} label="句動詞" value={`${row.phrasalCount}/10`} />
               <CheckRow ok={row.casingOk} label="大文字" value={row.casingOk ? "OK" : "要修正"} />
               <CheckRow ok={row.placeholderOk} label="仮文" value={row.placeholderOk ? "OK" : "要修正"} />
@@ -180,9 +179,8 @@ export default function VerbQualityAdminPage() {
             <details className="mt-4 rounded-2xl border border-white/10 bg-slate-950/35 p-3">
               <summary className="cursor-pointer text-sm font-bold text-cyan-100">詳細を見る</summary>
               <div className="mt-3 space-y-3 text-sm">
-                <div className="grid grid-cols-3 gap-2 text-center text-xs">
+                <div className="grid grid-cols-2 gap-2 text-center text-xs">
                   <div className="rounded-xl bg-paper p-3"><p className="text-muted">Basic</p><p className="text-lg font-black">{row.basicTestTotal}</p></div>
-                  <div className="rounded-xl bg-paper p-3"><p className="text-muted">Idioms</p><p className="text-lg font-black">{row.idiomTestTotal}</p></div>
                   <div className="rounded-xl bg-paper p-3"><p className="text-muted">Phrasal</p><p className="text-lg font-black">{row.phrasalTestTotal}</p></div>
                 </div>
                 <ul className="space-y-2">

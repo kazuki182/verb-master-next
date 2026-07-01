@@ -17,7 +17,7 @@ export default function AboutPage() {
         <h2 className="text-xl font-bold">作った理由</h2>
         <p className="leading-relaxed text-muted">頻出フレーズを覚えても、そのシチュエーションにならなければ使う機会がなく、結局忘れてしまうことがありました。</p>
         <p className="leading-relaxed text-muted">単語帳で単語を覚えることは資格勉強には役立ちます。ただ、動詞を実際に使いこなす力とは少し違うと感じています。</p>
-        <p className="leading-relaxed text-muted">そこで、日常会話でよく使う基本動詞を、コアイメージ、文型、例文、発音、瞬発英作文で繰り返し学べるアプリを作ろうと考えました。</p>
+        <p className="leading-relaxed text-muted">そこで、日常会話でよく使う基本動詞を、コアイメージ、構造、例文、発音、瞬発英作文で繰り返し学べるアプリを作ろうと考えました。</p>
       </section>
 
       <section className="card p-6">

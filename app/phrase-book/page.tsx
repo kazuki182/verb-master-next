@@ -6,8 +6,7 @@ import SpeakButton from "@/components/SpeakButton";
 import { getSavedPhrases, hasPremiumFeatureAccess, removeSavedPhrase, type SavedPhrase } from "@/lib/account";
 
 function sectionLabel(section: SavedPhrase["section"]) {
-  if (section === "basic") return "基本動詞";
-  if (section === "idioms") return "熟語";
+  if (section === "basic" || section === "idioms") return "基本";
   if (section === "phrasal") return "句動詞";
   if (section === "test") return "テスト";
   return "復習";
@@ -78,7 +77,6 @@ export default function PhraseBookPage() {
         {[
           ["all", "すべて"],
           ["basic", "基本"],
-          ["idioms", "熟語"],
           ["phrasal", "句動詞"]
         ].map(([value, label]) => (
           <button

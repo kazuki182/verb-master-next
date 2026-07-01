@@ -249,18 +249,6 @@ export default function Home() {
             社会人向け・基本動詞トレーニング
           </p>
         </div>
-        <Link
-          className="home-title-icon shrink-0"
-          href="/profile"
-          aria-label="プロフィールを開く"
-        >
-          {progress.avatarDataUrl ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={progress.avatarDataUrl} alt="プロフィール画像" className="h-full w-full object-cover" />
-          ) : (
-            <span>VM</span>
-          )}
-        </Link>
       </header>
 
       {HOME_NEWS.enabled && HOME_NEWS.text && (
@@ -360,7 +348,7 @@ export default function Home() {
               {activeVerb.word}
             </p>
             <p className="mt-1 text-sm text-slate-300">
-              基本動詞・熟語・句動詞の進捗を合算
+              基本・句動詞の進捗を合算
             </p>
           </div>
           <Link

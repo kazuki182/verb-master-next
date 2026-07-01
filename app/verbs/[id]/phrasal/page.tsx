@@ -18,12 +18,11 @@ export default async function VerbPhrasalPage({ params }: { params: Promise<{ id
     <VerbAccessGuard rank={verb.rank} verbWord={verb.word}>
     <div className="space-y-5 pb-4">
       <header className="card p-5 sm:p-6">
-        <p className="text-sm text-muted">STEP 3 / 3　句動詞</p>
+        <p className="text-sm text-muted">STEP 2 / 2　句動詞</p>
         <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl"><span className="verb-red">{verb.word}</span> 句動詞</h1>
         <p className="mt-3 leading-relaxed text-muted">基本動詞に up / out / over などが加わった時のイメージを学びます。</p>
         <div className="mt-4 flex flex-wrap gap-2">
           <Link href={`/verbs/${verb.id}`} className="rounded-full bg-white/5 px-3 py-2 text-sm font-bold">基本へ戻る</Link>
-          <Link href={`/verbs/${verb.id}/idioms`} className="rounded-full bg-white/5 px-3 py-2 text-sm font-bold">熟語へ戻る</Link>
           <BookmarkButton verbId={verb.id} section="phrasal" label={`${verb.word} 句動詞`} href={`/verbs/${verb.id}/phrasal`} compact />
         </div>
       </header>
@@ -32,7 +31,7 @@ export default async function VerbPhrasalPage({ params }: { params: Promise<{ id
 
       {items.length > 0 ? (
         <section className="space-y-5">
-          <div className="section-label section-label-phrasal">🔵 句動詞 10</div>
+          <div className="section-label section-label-phrasal">🔵 句動詞</div>
           {items.map((p, index) => (
             <article key={p.phrase} className="card border-blue-200 p-5 sm:p-6">
               <div className="flex items-start justify-between gap-3">

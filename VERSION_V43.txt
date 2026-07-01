@@ -1,3 +1,0 @@
-Verb Master Version 43
-Feature: Admin dashboard foundation
-Repository: verb-master-next

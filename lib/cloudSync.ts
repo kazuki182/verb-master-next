@@ -57,6 +57,42 @@ export type CloudBackupComparison = {
 };
 
 const PROFILE_BUCKET = "profile-images";
+const CLOUD_CREDENTIAL_KEY = "verbMaster.cloudCredentials";
+
+type CloudCredentialMap = Record<string, { passwordHash: string; savedAt: string }>;
+
+function credentialMap(): CloudCredentialMap {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(localStorage.getItem(CLOUD_CREDENTIAL_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function saveCloudCredential(username: string, passwordHash: string) {
+  if (typeof window === "undefined") return;
+  const map = credentialMap();
+  map[username] = { passwordHash, savedAt: nowText() };
+  localStorage.setItem(CLOUD_CREDENTIAL_KEY, JSON.stringify(map));
+}
+
+function getCloudPasswordHash(username: string) {
+  return credentialMap()[username]?.passwordHash || "";
+}
+
+function requireCloudPasswordHash(username: string) {
+  const passwordHash = getCloudPasswordHash(username);
+  if (!passwordHash) {
+    throw new Error("安全なクラウド保存には再ログインが必要です。ログインし直してから保存してください。");
+  }
+  return passwordHash;
+}
+
+function asRpcResult(data: unknown): { ok?: boolean; message?: string; username?: string; role?: string } {
+  if (!data || typeof data !== "object") return {};
+  return data as { ok?: boolean; message?: string; username?: string; role?: string };
+}
 
 function nowText() {
   return new Date().toISOString();
@@ -170,28 +206,29 @@ function shouldBlockEmptyOverwrite(local: UserProgress, remote: Partial<UserProg
 async function upsertFullProgressBackup(progress: UserProgress) {
   if (!supabase) return;
   const settings = getClientStudySettingsSnapshot();
-  const { error } = await supabase.from("user_progress_backups").upsert(
-    {
-      username: progress.username,
-      progress_json: progress,
-      settings_json: settings,
-      app_version: "v88",
-      updated_at: nowText(),
-    },
-    { onConflict: "username" },
-  );
+  const passwordHash = requireCloudPasswordHash(progress.username);
+  const { data, error } = await supabase.rpc("vm_upsert_progress_backup", {
+    p_username: progress.username,
+    p_password_hash: passwordHash,
+    p_progress_json: progress,
+    p_settings_json: settings,
+    p_app_version: "v109",
+  });
   if (error) throw error;
+  const result = asRpcResult(data);
+  if (result.ok === false) throw new Error(result.message || "クラウドバックアップ保存に失敗しました。");
 }
 
 async function fetchFullProgressBackup(username: string) {
   if (!supabase) return null;
-  const { data, error } = await supabase
-    .from("user_progress_backups")
-    .select("progress_json, settings_json, updated_at")
-    .eq("username", username)
-    .maybeSingle();
+  const passwordHash = requireCloudPasswordHash(username);
+  const { data, error } = await supabase.rpc("vm_fetch_progress_backup", {
+    p_username: username,
+    p_password_hash: passwordHash,
+  });
   if (error) throw error;
-  return data as null | { progress_json: Partial<UserProgress>; settings_json?: ClientStudySettingsSnapshot; updated_at?: string };
+  const row = Array.isArray(data) ? data[0] : data;
+  return row as null | { progress_json: Partial<UserProgress>; settings_json?: ClientStudySettingsSnapshot; updated_at?: string };
 }
 
 async function hashPassword(password: string) {
@@ -207,26 +244,17 @@ export async function registerCloudAccount(username: string, password: string) {
   if (!name) return { ok: false, message: "ユーザー名を入力してください。" };
   if (password.length < 4) return { ok: false, message: "パスワードは4文字以上にしてください。" };
   try {
-    const { data: existing, error: findError } = await supabase
-      .from("cloud_accounts")
-      .select("username")
-      .eq("username", name)
-      .maybeSingle();
-    if (findError) throw findError;
-    if (existing) return { ok: false, message: "このユーザー名はすでに使われています。" };
-
     const passwordHash = await hashPassword(password);
-    const { error } = await supabase.from("cloud_accounts").insert({
-      username: name,
-      password_hash: passwordHash,
-      role: "user",
-      created_at: nowText(),
-      last_login_at: nowText(),
-      updated_at: nowText(),
+    const { data, error } = await supabase.rpc("vm_register_cloud_account", {
+      p_username: name,
+      p_password_hash: passwordHash,
     });
     if (error) throw error;
+    const result = asRpcResult(data);
+    if (result.ok === false) return { ok: false, message: result.message || "クラウド登録に失敗しました。" };
+    saveCloudCredential(name, passwordHash);
     setCurrentUser(name);
-    return { ok: true, message: "クラウドアカウントを作成しました。" };
+    return { ok: true, message: result.message || "クラウドアカウントを作成しました。" };
   } catch (error) {
     return { ok: false, message: error instanceof Error ? error.message : "クラウド登録に失敗しました。" };
   }
@@ -236,19 +264,21 @@ export async function loginCloudAccount(username: string, password: string) {
   if (!supabase) return { ok: false, message: "Supabase未設定のため端末内ログインのみになります。" };
   const name = username.trim();
   try {
-    const { data, error } = await supabase
-      .from("cloud_accounts")
-      .select("username, password_hash, role")
-      .eq("username", name)
-      .maybeSingle();
-    if (error) throw error;
-    if (!data) return { ok: false, message: "ユーザー名またはパスワードが違います。" };
     const passwordHash = await hashPassword(password);
-    if (data.password_hash !== passwordHash) return { ok: false, message: "ユーザー名またはパスワードが違います。" };
-
-    await supabase.from("cloud_accounts").update({ last_login_at: nowText(), updated_at: nowText() }).eq("username", name);
+    const { data, error } = await supabase.rpc("vm_login_cloud_account", {
+      p_username: name,
+      p_password_hash: passwordHash,
+    });
+    if (error) throw error;
+    const result = asRpcResult(data);
+    if (result.ok === false) return { ok: false, message: result.message || "ユーザー名またはパスワードが違います。" };
+    saveCloudCredential(name, passwordHash);
     setCurrentUser(name);
-    return { ok: true, message: "クラウドログインしました。", account: { username: name, password: "", role: data.role === "admin" ? "admin" : "user", createdAt: nowText() } as Account };
+    return {
+      ok: true,
+      message: result.message || "クラウドログインしました。",
+      account: { username: name, password: "", role: result.role === "admin" ? "admin" : "user", createdAt: nowText() } as Account,
+    };
   } catch (error) {
     return { ok: false, message: error instanceof Error ? error.message : "クラウドログインに失敗しました。" };
   }

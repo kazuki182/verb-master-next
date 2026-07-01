@@ -14,19 +14,16 @@ export type VerbQualityAudit = {
   score: number;
   accessLabel: string;
   usageCount: number;
-  collocationCount: number;
   phrasalCount: number;
   businessExampleTotal: number;
   premiumDailyExampleTotal: number;
   testTotal: number;
   basicTestTotal: number;
-  idiomTestTotal: number;
   phrasalTestTotal: number;
   usageCountOk: boolean;
   usageCountGood: boolean;
   businessExamplesOk: boolean;
   premiumDailyExamplesOk: boolean;
-  collocationsOk: boolean;
   phrasalOk: boolean;
   testsOk: boolean;
   casingOk: boolean;
@@ -152,13 +149,6 @@ export function auditVerbQuality(verb: Verb): VerbQualityAudit {
     addIssue(issues, "medium", "Premium日常例文不足", `${meaningsWithFewDaily.length}個の使い方で日常例文が2つ未満です。`);
   }
 
-  const collocationCount = verb.collocations.length;
-  const collocationsWithFewExamples = verb.collocations.filter((item) => item.examples.length < 3);
-  const collocationsOk = collocationCount >= 5 && collocationsWithFewExamples.length === 0;
-  if (!collocationsOk) {
-    addIssue(issues, collocationCount < 5 ? "medium" : "high", "熟語・よく使う表現", `熟語/表現 ${collocationCount}種類。各表現にビジネス例文3つが必要です。`);
-  }
-
   const phrasalCount = verb.phrasalVerbs.length;
   const phrasalWithFewExamples = verb.phrasalVerbs.filter((item) => item.examples.length < 3);
   const phrasalOk = phrasalCount >= 5 && phrasalWithFewExamples.length === 0;
@@ -168,12 +158,11 @@ export function auditVerbQuality(verb: Verb): VerbQualityAudit {
 
   const verbTests = testItems.filter((item) => item.verbId === verb.id);
   const basicTestTotal = verbTests.filter((item) => item.section === "basic").length;
-  const idiomTestTotal = verbTests.filter((item) => item.section === "idioms").length;
   const phrasalTestTotal = verbTests.filter((item) => item.section === "phrasal").length;
   const expectedBasic = verb.meanings.reduce((sum, meaning) => sum + Math.min(3, meaning.examples.length), 0);
-  const testsOk = basicTestTotal >= expectedBasic && idiomTestTotal > 0 && phrasalTestTotal > 0;
+  const testsOk = basicTestTotal >= expectedBasic && phrasalTestTotal > 0;
   if (!testsOk) {
-    addIssue(issues, "high", "テスト反映不足", `basic:${basicTestTotal} / idioms:${idiomTestTotal} / phrasal:${phrasalTestTotal}`);
+    addIssue(issues, "high", "テスト反映不足", `basic:${basicTestTotal} / phrasal:${phrasalTestTotal}`);
   }
 
   const allTexts = collectVerbTexts(verb);
@@ -200,7 +189,7 @@ export function auditVerbQuality(verb: Verb): VerbQualityAudit {
     (meaning.dailyExamples || []).some((example) => Boolean(example.sentencePattern || example.grammarParts?.length))
   );
   if (grammarNeedsManualReview) {
-    addIssue(issues, "low", "文型データあり", "SV/SVO/SVC等はユーザー画面では非表示。復活前に1文ずつ手動確認が必要です。");
+    addIssue(issues, "low", "構造データあり", "文法・構造ラベルはユーザー画面では非表示。復活前に1文ずつ手動確認が必要です。");
   }
 
   const businessExampleTotal = verb.meanings.reduce((sum, meaning) => sum + meaning.examples.length, 0);
@@ -217,19 +206,16 @@ export function auditVerbQuality(verb: Verb): VerbQualityAudit {
     score,
     accessLabel: getAccessLabel(verb.rank),
     usageCount,
-    collocationCount,
     phrasalCount,
     businessExampleTotal,
     premiumDailyExampleTotal,
     testTotal: verbTests.length,
     basicTestTotal,
-    idiomTestTotal,
     phrasalTestTotal,
     usageCountOk,
     usageCountGood,
     businessExamplesOk,
     premiumDailyExamplesOk,
-    collocationsOk,
     phrasalOk,
     testsOk,
     casingOk,

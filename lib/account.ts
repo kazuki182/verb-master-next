@@ -1246,8 +1246,7 @@ export function clearBookmark() {
 }
 
 export function getBookmarkSectionLabel(section: BookmarkSection) {
-  if (section === "basic") return "基本動詞";
-  if (section === "idioms") return "熟語";
+  if (section === "basic" || section === "idioms") return "基本";
   if (section === "phrasal") return "句動詞";
   if (section === "test") return "テスト";
   return "復習";
@@ -1328,14 +1327,13 @@ export function getLatestTestSession() {
 export function getTestSessionHref(session: TestSession) {
   if (session.key.startsWith("review:")) return "/review";
   if (session.section === "basic") return `/tests/${session.verbId}/basic`;
-  if (session.section === "idioms") return `/tests/${session.verbId}/idioms`;
+  if (session.section === "idioms") return `/tests/${session.verbId}/basic`;
   if (session.section === "phrasal") return `/tests/${session.verbId}/phrasal`;
   return `/tests/${session.verbId}`;
 }
 
 export function getTestSectionLabel(section: string) {
-  if (section === "basic") return "基本動詞テスト";
-  if (section === "idioms") return "熟語テスト";
+  if (section === "basic" || section === "idioms") return "基本テスト";
   if (section === "phrasal") return "句動詞テスト";
   if (section === "all") return "総合テスト";
   return "テスト";

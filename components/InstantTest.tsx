@@ -84,7 +84,7 @@ function balancedTen(items: TestItem[], progress: UserProgress | null) {
 
   const due = items.filter((item) => isDueReview(progress, item) || progress?.weakItems?.includes(item.id));
   const untested = items.filter((item) => !progress?.testItemStats?.[item.id]);
-  const sections: Record<string, TestItem[]> = { basic: [], idioms: [], phrasal: [] };
+  const sections: Record<string, TestItem[]> = { basic: [], phrasal: [] };
   for (const item of items) sections[item.section].push(item);
 
   const used = new Set<string>();
@@ -93,7 +93,7 @@ function balancedTen(items: TestItem[], progress: UserProgress | null) {
   selected.push(...takeRanked(due, 4, used, progress));
   selected.push(...takeRanked(untested, Math.max(0, 7 - selected.length), used, progress));
 
-  for (const section of ["basic", "idioms", "phrasal"] as const) {
+  for (const section of ["basic", "phrasal"] as const) {
     if (selected.length >= limit) break;
     if (!selected.some((item) => item.section === section) && sections[section].length > 0) {
       selected.push(...takeRanked(sections[section], 1, used, progress));
@@ -112,15 +112,14 @@ function testSummary(items: TestItem[], progress: UserProgress | null) {
 }
 
 function sectionName(section: TestSection) {
-  if (section === "basic") return "基本動詞テスト";
-  if (section === "idioms") return "熟語テスト";
+  if (section === "basic" || section === "idioms") return "基本テスト";
   if (section === "phrasal") return "句動詞テスト";
   return "総合テスト";
 }
 
 function sectionReward(section: TestSection) {
   if (section === "basic") return 20;
-  if (section === "idioms") return 30;
+  if (section === "idioms") return 20;
   if (section === "phrasal") return 30;
   return 100;
 }
@@ -262,7 +261,7 @@ export default function InstantTest({
                 ? "間違えた問題は復習リストに入ります。あとで復習テストで確認しましょう。"
                 : activeSummary.untested > 0
                   ? "未出題の問題がまだあります。もう一度テストすると別の問題が出やすくなります。"
-                  : "よくできています。次の動詞または熟語テストへ進みましょう。"}
+                  : "よくできています。次の動詞または句動詞テストへ進みましょう。"}
             </p>
           </div>
           <div className="mt-6 grid gap-3">

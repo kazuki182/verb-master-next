@@ -1,21 +1,25 @@
-# QUALITY_AUDIT_CURRENT - Ver.109
+# Verb Master Ver.111 Quality / Safety Audit
 
-## Scope
-Supabase security fix for cloud account and progress backup tables.
+## Theme
+保存・復元安全化。登録者が増えても、プロフィール・学習記録・Premium状態が分散保存で失われたように見えないようにする。
 
-## Checks
-- Removed browser-side direct select of cloud_accounts.password_hash.
-- Added RPC-based cloud account register/login.
-- Added RPC-based progress backup save/restore.
-- Added Supabase SQL migration: supabase/V109_SECURE_CLOUD_RPC_RLS.sql.
-- RLS cleanup is designed to remove `RLS Policy Always True` and `Multiple Permissive Policies` warnings for cloud_accounts and user_progress_backups.
-- package-lock / .npmrc checked for internal OpenAI/caas registry URLs.
+## Main checks
+- `user_progress_backups` を復元の中心にする。
+- `settings_json` に以下を保存対象として含める。
+  - displayName / nickname
+  - avatarUrl / avatarDataUrl
+  - notificationsEnabled
+  - voiceSettings
+  - unlockedVerbCount / purchaseTotalYen / premiumSource / premiumUpdatedAt
+  - targetDate / targetStartDate / studyDays / studyPace
+- `progress_json` にXP、レベル、継続日数、テスト履歴、保存フレーズ等を保存する。
+- 画像アップロード後のURLをバックアップに残す。
+- `profiles` / `user_stats` の補助テーブルが空でも、バックアップ本体があれば復元できる。
+- 空の端末データでクラウドバックアップを上書きしない保護を維持。
+- SQL変更前後の確認用SQLを同梱。
 
-## Important manual step
-Run `supabase/V109_SECURE_CLOUD_RPC_RLS.sql` in Supabase SQL Editor before relying on Ver.109 cloud sync.
-Existing users may need to log in again once.
-
-
-## Ver.110 Build Fix
-- Added safe root data.ts placeholder to overwrite stale JSX data.ts causing TypeScript error.
-- Real verb data remains in lib/data.ts.
+## Build/package hygiene
+- root直下の不要 `data.ts` は同梱しない。
+- `page (数字).tsx` やpatch系作業ファイルは同梱しない。
+- `package-lock.json` に内部OpenAI/caas registry URLがないことを確認。
+- `.npmrc` は `https://registry.npmjs.org/` を使用。

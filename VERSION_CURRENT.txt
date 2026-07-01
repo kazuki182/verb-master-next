@@ -1,2 +1,7 @@
-Verb Master Ver.110
-Build fix: neutralize stale root data.ts from manual GitHub upload. Real data remains in lib/data.ts.
+Verb Master Ver.111
+- 保存・復元安全化版
+- user_progress_backups を復元の中心にし、プロフィール名・画像URL・通知・音声・Premium情報も settings_json に保存する方針へ修正
+- 画像アップロード後の公開URLをバックアップ本体に残すよう変更
+- profiles/user_stats が空でもバックアップから復元できるよう復元ロジックを強化
+- RLS/SQL変更前後の確認用SQL V111_BACKUP_SAFETY_CHECK.sql を追加
+- ZIP納品前チェックとして root 直下の不要 data.ts / page (数字).tsx / patch 系 / 内部npm URL を排除

@@ -1,3 +1,0 @@
-Version 41
-Feature: Badges system for streaks, mastery, tests and phrase book
-Build: pending

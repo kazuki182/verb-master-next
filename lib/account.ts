@@ -152,6 +152,10 @@ export type UserProgress = {
   purchaseHistory?: PurchaseRecord[];
   premiumUpdatedAt?: string;
   premiumSource?: "admin_test" | "restore" | "checkout_ready" | "stripe_ready" | "stripe_test" | "stripe_webhook" | "stripe_refund" | "stripe_failed";
+  targetDate?: string;
+  targetStartDate?: string;
+  studyDays?: StudyDaysSetting;
+  studyPace?: StudyPaceSetting;
   lastStudyDate?: string;
   lastLoginAt?: string;
 };
@@ -436,6 +440,20 @@ function normalizeProgress(progress: UserProgress) {
   if (!progress.purchaseHistory) progress.purchaseHistory = [];
   if (!progress.premiumUpdatedAt) progress.premiumUpdatedAt = progress.purchaseHistory[0]?.createdAt || progress.lastLoginAt || nowText();
   if (!progress.premiumSource) progress.premiumSource = progress.purchaseHistory[0]?.source || "checkout_ready";
+  if (!progress.targetDate) progress.targetDate = readScopedStorage(TARGET_DATE_KEY) || undefined;
+  if (!progress.targetStartDate) progress.targetStartDate = readScopedStorage(TARGET_START_DATE_KEY) || undefined;
+  if (!progress.studyDays) {
+    const savedStudyDays = readScopedStorage(STUDY_DAYS_KEY);
+    if (savedStudyDays) {
+      try { progress.studyDays = normalizeStudyDays(JSON.parse(savedStudyDays)); } catch {}
+    }
+  }
+  if (!progress.studyPace) {
+    const savedStudyPace = readScopedStorage(STUDY_PACE_KEY);
+    if (savedStudyPace) {
+      try { progress.studyPace = normalizeStudyPace(JSON.parse(savedStudyPace)); } catch {}
+    }
+  }
   normalizeMission(progress);
   return progress;
 }
@@ -474,6 +492,10 @@ export function ensureProgress(username: string): UserProgress {
       purchaseHistory: [],
       premiumUpdatedAt: nowText(),
       premiumSource: "checkout_ready",
+      targetDate: readScopedStorage(TARGET_DATE_KEY) || undefined,
+      targetStartDate: readScopedStorage(TARGET_START_DATE_KEY) || undefined,
+      studyDays: undefined,
+      studyPace: undefined,
     };
     saveProgressMap(map);
   }
@@ -896,6 +918,33 @@ const TARGET_START_DATE_KEY = "verbMaster.targetStartDate";
 const STUDY_DAYS_KEY = "verbMaster.studyDays";
 const STUDY_PACE_KEY = "verbMaster.studyPace";
 
+function userScopedKey(baseKey: string, username = getCurrentUsername()) {
+  return username ? `${baseKey}.${username}` : baseKey;
+}
+
+function readScopedStorage(baseKey: string) {
+  if (typeof window === "undefined") return null;
+  const scoped = localStorage.getItem(userScopedKey(baseKey));
+  if (scoped != null) return scoped;
+  return localStorage.getItem(baseKey);
+}
+
+function writeScopedStorage(baseKey: string, value: string, username = getCurrentUsername()) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(userScopedKey(baseKey, username), value);
+}
+
+function getCurrentProgressWithoutInit() {
+  const username = getCurrentUsername();
+  if (!username || typeof window === "undefined") return null;
+  try {
+    const map = JSON.parse(localStorage.getItem(PROGRESS_KEY) || "{}");
+    return map?.[username] || null;
+  } catch {
+    return null;
+  }
+}
+
 export type StudyDaysSetting = {
   mode: "everyday" | "weekdays" | "custom";
   days: number[];
@@ -938,7 +987,9 @@ function normalizeStudyPace(
 export function getStudyPaceSetting(): StudyPaceSetting {
   if (typeof window === "undefined") return getDefaultStudyPace();
   try {
-    const saved = localStorage.getItem(STUDY_PACE_KEY);
+    const progress = getCurrentProgressWithoutInit();
+    if (progress?.studyPace) return normalizeStudyPace(progress.studyPace);
+    const saved = readScopedStorage(STUDY_PACE_KEY);
     if (!saved) return getDefaultStudyPace();
     return normalizeStudyPace(JSON.parse(saved));
   } catch {
@@ -948,10 +999,13 @@ export function getStudyPaceSetting(): StudyPaceSetting {
 
 export function setStudyPaceSetting(value: StudyPaceSetting) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(
-    STUDY_PACE_KEY,
-    JSON.stringify(normalizeStudyPace(value)),
-  );
+  const normalized = normalizeStudyPace(value);
+  writeScopedStorage(STUDY_PACE_KEY, JSON.stringify(normalized));
+  const progress = getCurrentProgressWithoutInit();
+  if (progress) {
+    progress.studyPace = normalized;
+    saveProgress(progress);
+  }
 }
 
 export function formatStudyPace(value = getStudyPaceSetting()) {
@@ -986,7 +1040,9 @@ function normalizeStudyDays(value: StudyDaysSetting): StudyDaysSetting {
 export function getStudyDaysSetting(): StudyDaysSetting {
   if (typeof window === "undefined") return getDefaultStudyDays();
   try {
-    const saved = localStorage.getItem(STUDY_DAYS_KEY);
+    const progress = getCurrentProgressWithoutInit();
+    if (progress?.studyDays) return normalizeStudyDays(progress.studyDays);
+    const saved = readScopedStorage(STUDY_DAYS_KEY);
     if (!saved) return getDefaultStudyDays();
     return normalizeStudyDays(JSON.parse(saved));
   } catch {
@@ -996,10 +1052,13 @@ export function getStudyDaysSetting(): StudyDaysSetting {
 
 export function setStudyDaysSetting(value: StudyDaysSetting) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(
-    STUDY_DAYS_KEY,
-    JSON.stringify(normalizeStudyDays(value)),
-  );
+  const normalized = normalizeStudyDays(value);
+  writeScopedStorage(STUDY_DAYS_KEY, JSON.stringify(normalized));
+  const progress = getCurrentProgressWithoutInit();
+  if (progress) {
+    progress.studyDays = normalized;
+    saveProgress(progress);
+  }
 }
 
 export function getStudyDaysLabel(setting = getStudyDaysSetting()) {
@@ -1024,30 +1083,51 @@ function countStudyDays(start: Date, end: Date, studyDays: number[]) {
 
 function getTargetStartDate() {
   if (typeof window === "undefined") return isoDate(new Date());
-  const saved = localStorage.getItem(TARGET_START_DATE_KEY);
+  const progress = getCurrentProgressWithoutInit();
+  if (progress?.targetStartDate) return progress.targetStartDate;
+  const saved = readScopedStorage(TARGET_START_DATE_KEY);
   if (saved) return saved;
   const value = isoDate(new Date());
-  localStorage.setItem(TARGET_START_DATE_KEY, value);
+  writeScopedStorage(TARGET_START_DATE_KEY, value);
+  if (progress) {
+    progress.targetStartDate = value;
+    saveProgress(progress);
+  }
   return value;
 }
 
 export function getTargetDate() {
   if (typeof window === "undefined") return "";
-  const saved = localStorage.getItem(TARGET_DATE_KEY);
+  const progress = getCurrentProgressWithoutInit();
+  if (progress?.targetDate) return progress.targetDate;
+  const saved = readScopedStorage(TARGET_DATE_KEY);
   if (saved) return saved;
   const defaultDate = new Date();
   defaultDate.setDate(defaultDate.getDate() + 60);
   const value = isoDate(defaultDate);
-  localStorage.setItem(TARGET_DATE_KEY, value);
-  localStorage.setItem(TARGET_START_DATE_KEY, isoDate(new Date()));
+  const start = isoDate(new Date());
+  writeScopedStorage(TARGET_DATE_KEY, value);
+  writeScopedStorage(TARGET_START_DATE_KEY, start);
+  if (progress) {
+    progress.targetDate = value;
+    progress.targetStartDate = start;
+    saveProgress(progress);
+  }
   return value;
 }
 
 export function setTargetDate(value: string) {
   if (typeof window === "undefined") return;
   if (value) {
-    localStorage.setItem(TARGET_DATE_KEY, value);
-    localStorage.setItem(TARGET_START_DATE_KEY, isoDate(new Date()));
+    const start = isoDate(new Date());
+    writeScopedStorage(TARGET_DATE_KEY, value);
+    writeScopedStorage(TARGET_START_DATE_KEY, start);
+    const progress = getCurrentProgressWithoutInit();
+    if (progress) {
+      progress.targetDate = value;
+      progress.targetStartDate = start;
+      saveProgress(progress);
+    }
   }
 }
 
@@ -1071,10 +1151,10 @@ export type ClientStudySettingsSnapshot = {
 export function getClientStudySettingsSnapshot(progress?: UserProgress | null): ClientStudySettingsSnapshot {
   if (typeof window === "undefined") return {};
   return {
-    targetDate: localStorage.getItem(TARGET_DATE_KEY) || undefined,
-    targetStartDate: localStorage.getItem(TARGET_START_DATE_KEY) || undefined,
-    studyDays: getStudyDaysSetting(),
-    studyPace: getStudyPaceSetting(),
+    targetDate: progress?.targetDate || readScopedStorage(TARGET_DATE_KEY) || undefined,
+    targetStartDate: progress?.targetStartDate || readScopedStorage(TARGET_START_DATE_KEY) || undefined,
+    studyDays: progress?.studyDays || getStudyDaysSetting(),
+    studyPace: progress?.studyPace || getStudyPaceSetting(),
     displayName: progress?.displayName || progress?.username,
     nickname: progress?.displayName || progress?.username,
     avatarUrl: progress?.avatarDataUrl || undefined,
@@ -1090,11 +1170,15 @@ export function getClientStudySettingsSnapshot(progress?: UserProgress | null): 
 
 export function applyClientStudySettingsSnapshot(snapshot?: ClientStudySettingsSnapshot | null, progress?: UserProgress | null) {
   if (typeof window === "undefined" || !snapshot) return;
-  if (snapshot.targetDate) localStorage.setItem(TARGET_DATE_KEY, snapshot.targetDate);
-  if (snapshot.targetStartDate) localStorage.setItem(TARGET_START_DATE_KEY, snapshot.targetStartDate);
-  if (snapshot.studyDays) setStudyDaysSetting(snapshot.studyDays);
-  if (snapshot.studyPace) setStudyPaceSetting(snapshot.studyPace);
+  if (snapshot.targetDate) writeScopedStorage(TARGET_DATE_KEY, snapshot.targetDate, progress?.username);
+  if (snapshot.targetStartDate) writeScopedStorage(TARGET_START_DATE_KEY, snapshot.targetStartDate, progress?.username);
+  if (snapshot.studyDays) writeScopedStorage(STUDY_DAYS_KEY, JSON.stringify(normalizeStudyDays(snapshot.studyDays)), progress?.username);
+  if (snapshot.studyPace) writeScopedStorage(STUDY_PACE_KEY, JSON.stringify(normalizeStudyPace(snapshot.studyPace)), progress?.username);
   if (!progress) return;
+  if (snapshot.targetDate) progress.targetDate = snapshot.targetDate;
+  if (snapshot.targetStartDate) progress.targetStartDate = snapshot.targetStartDate;
+  if (snapshot.studyDays) progress.studyDays = normalizeStudyDays(snapshot.studyDays);
+  if (snapshot.studyPace) progress.studyPace = normalizeStudyPace(snapshot.studyPace);
   if (snapshot.displayName || snapshot.nickname) progress.displayName = snapshot.displayName || snapshot.nickname || progress.displayName || progress.username;
   if (snapshot.avatarUrl || snapshot.avatarDataUrl) progress.avatarDataUrl = snapshot.avatarUrl || snapshot.avatarDataUrl || progress.avatarDataUrl || "";
   if (typeof snapshot.notificationsEnabled === "boolean") progress.notificationsEnabled = snapshot.notificationsEnabled;

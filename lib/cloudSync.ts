@@ -204,14 +204,19 @@ function shouldBlockEmptyOverwrite(local: UserProgress, remote: Partial<UserProg
 }
 
 function mergeProfileIntoBackup(progress: UserProgress, backup?: Partial<UserProgress> | null, avatarUrl?: string): UserProgress {
+  const currentName = progress.displayName && progress.displayName !== progress.username ? progress.displayName : "";
   return {
     ...progress,
-    displayName: progress.displayName || backup?.displayName || progress.username,
+    displayName: currentName || backup?.displayName || progress.username,
     avatarDataUrl: progress.avatarDataUrl || avatarUrl || backup?.avatarDataUrl || "",
     notificationsEnabled: typeof progress.notificationsEnabled === "boolean"
       ? progress.notificationsEnabled
       : backup?.notificationsEnabled ?? true,
     voiceSettings: progress.voiceSettings || backup?.voiceSettings || { gender: "female", lang: "en-US" },
+    targetDate: progress.targetDate || backup?.targetDate,
+    targetStartDate: progress.targetStartDate || backup?.targetStartDate,
+    studyDays: progress.studyDays || backup?.studyDays,
+    studyPace: progress.studyPace || backup?.studyPace,
   };
 }
 
@@ -286,6 +291,7 @@ export async function loginCloudAccount(username: string, password: string) {
     if (result.ok === false) return { ok: false, message: result.message || "ユーザー名またはパスワードが違います。" };
     saveCloudCredential(name, passwordHash);
     setCurrentUser(name);
+    await restoreLearningDataFromSupabase(name).catch(() => undefined);
     return {
       ok: true,
       message: result.message || "クラウドログインしました。",
@@ -486,6 +492,14 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
     if (backup?.settings_json) {
       // Ver.85: 目標日・学習ペースなどの端末設定は、PC→スマホ同期のため常にクラウド値を反映する。
       applyClientStudySettingsSnapshot(backup.settings_json, progress);
+      changed = true;
+    }
+
+    if (backup?.progress_json) {
+      // Ver.114 reset fix: 画像・表示名・目標日・学習ペースはXPなどの学習スコアが0でも復元する。
+      // 以前は「クラウドの学習スコアが端末より高い時だけ」復元していたため、
+      // 画像や目標日だけ保存されているユーザーがログイン時に初期値へ戻ることがあった。
+      applyClientStudySettingsSnapshot(backup.progress_json as ClientStudySettingsSnapshot, progress);
       changed = true;
     }
 

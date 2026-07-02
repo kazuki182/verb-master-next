@@ -1,37 +1,57 @@
 # QUALITY_AUDIT_CURRENT
 
 ## Version
-Ver.114 再作成版 reset-fix-3
+Ver.115 / Ver.114再作成版の続き
 
-## 対象動詞
+## Target verbs
 - GET
 - TAKE
 - MAKE
 - GIVE
 - HAVE
 - GO
+- COME
+- PUT
+- KEEP
 
-## 今回の追加開発
-- GIVE / HAVE / GO を順番どおり追加・再作成。
-- 画面カテゴリは「基本」「句動詞」の2つのみを維持。
-- GIVE / HAVE / GO の基本例文は、会議・顧客・資料・見積・納期・確認・提案など社会人向けを優先。
-- 句動詞は自然に使いやすいものを中心に整理。
-- コアイメージの矢印方向を確認。
-  - GIVE: 自分・自社 → 相手・顧客・チーム
-  - HAVE: 物・予定・問題など → 自分・自社の範囲内
-  - GO: 現在地・現在状態 → 目的地・次の状態
-- 前回のプロフィール画像・目標日リセット対策は維持。
+今回の追加対象は **COME / PUT / KEEP**。
+対象動詞は途中で変更していません。
 
-## ビルド確認
-- npm install 実行済み。
-- npm run build 実行。
-- Compiled successfully / TypeScript完了 / static pages生成完了まで確認。
-- 実行環境の制限により、最後のプロセス終了前にタイムアウト扱いになったが、ログ上はビルド完了表示あり。
-
-## ZIPチェック
-- node_modules 未同梱。
-- .next 未同梱。
-- tsconfig.tsbuildinfo 未同梱。
-- root直下の data.ts / display.ts / paymentConfig.ts なし。
+## Checks
+- カテゴリ表示は「基本」「句動詞」を維持。
+- COME / PUT / KEEP の基本例文はターゲット動詞のみ赤文字になるよう focus を設定。
+- COME / PUT / KEEP の句動詞例文は句動詞全体が赤文字になるよう focus を設定。
+- 日本語訳には赤文字用の focus を付けない方針。
+- 社会人向け例文を多めに調整。
+- テスト日本語は主語が分かる形を優先。
+- コアイメージはアイコン・矢印方向を確認。
+- 画像・目標日リセット対策は前回版から維持。
+- package-lock.json に内部OpenAI/caas URLがないことを確認。
 - .npmrc は npm公式registry。
-- package-lock.json に内部OpenAI/caas URLなし。
+
+## Core image directions
+- COME: 外側・先の予定 → 自分/自社/話題の中心
+- PUT: 対象 → 場所・資料・予定・状態
+- KEEP: 対象 → 同じ状態・管理下に保つ
+
+## Build
+`npm run build` 実行済み。
+
+Result:
+- Compiled successfully
+- TypeScript finished
+- Static pages generated
+- Exit code: 0
+
+## Zip safety
+ZIPから除外:
+- node_modules
+- .next
+- tsconfig.tsbuildinfo
+- patch_*.py / make_*.py / append_*.js
+- 古い QUALITY_AUDIT_Vxx.md / VERSION_Vxx.txt / README_Vxx.md
+
+残すもの:
+- README.md
+- QUALITY_AUDIT_CURRENT.md
+- VERSION_CURRENT.txt

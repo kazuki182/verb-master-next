@@ -1,3 +1,1 @@
-Verb Master Ver.114 再作成版 reset-fix-3
-対象動詞: GET / TAKE / MAKE / GIVE / HAVE / GO
-作成日: 2026-07-02
+Ver.115 - Ver.114 recreated continuation / COME PUT KEEP

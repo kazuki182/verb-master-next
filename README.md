@@ -1,20 +1,13 @@
-# Verb Master Ver.114 再作成版
+# Verb Master Ver.114 recreated reset-fix-2
 
-対象動詞は **GET / TAKE / MAKE** です。
+This package is based on Ver.114 recreated reset-fix.
 
-## 反映内容
-- GET / TAKE / MAKE を新ルールで再作成
-- カテゴリは「基本」「句動詞」の2つに統一
-- HOME右上の追加アイコンを削除した状態を維持
-- 動詞ページ上部をコンパクト化
-- コアイメージをアイコン・矢印図解付きで整理
-- 保存安全対策SQLを supabase/ に追加
+## Main fixes
+- Fixed Vercel TypeScript error caused by old `collocationsOk` / `collocationCount` references.
+- Kept categories unified as `基本` and `句動詞`.
+- Kept reset protection for profile image, display name, target date and learning progress.
+- Target verbs remain GET / TAKE / MAKE.
 
-## GitHubアップロード時の注意
-1. ZIPを解凍する
-2. 中身をGitHubリポジトリにアップロードする
-3. Vercelで再デプロイする
-4. 反映後、GET → TAKE → MAKE の順に画面確認する
-
-## Supabase注意
-SQLを実行する場合は、先にバックアップ確認とロールバック方針を決めてください。
+## Deploy note
+Upload the contents to GitHub, then deploy on Vercel.
+If Vercel still shows a previous TypeScript error, confirm that `app/admin/verb-quality/page.tsx` does not contain `collocationsOk`.

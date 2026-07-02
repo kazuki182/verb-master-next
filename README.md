@@ -1,33 +1,20 @@
-# Verb Master Ver.114 REBUILD
+# Verb Master Ver.114 再作成版
 
-This version rebuilds Ver.114 from the beginning of the verb list.
+対象動詞は **GET / TAKE / MAKE** です。
 
-## Main changes
+## 反映内容
+- GET / TAKE / MAKE を新ルールで再作成
+- カテゴリは「基本」「句動詞」の2つに統一
+- HOME右上の追加アイコンを削除した状態を維持
+- 動詞ページ上部をコンパクト化
+- コアイメージをアイコン・矢印図解付きで整理
+- 保存安全対策SQLを supabase/ に追加
 
-- Rebuilt GET / TAKE / MAKE quality data.
-- Unified user-facing learning categories into only:
-  - 基本
-  - 句動詞
-- Removed separate 熟語 UI. Common expressions are now included under 基本.
-- Updated learning flow, learning progress, tests, phrase-book labels, and admin checks to follow the two-category rule.
-- Removed the Home title top-right icon.
+## GitHubアップロード時の注意
+1. ZIPを解凍する
+2. 中身をGitHubリポジトリにアップロードする
+3. Vercelで再デプロイする
+4. 反映後、GET → TAKE → MAKE の順に画面確認する
 
-## Compatibility
-
-Old `/idioms` routes still exist, but they redirect to the basic page/test so saved old links do not break.
-
-## Safety notes
-
-Before uploading to GitHub, delete stale root-level files from the repository if they still exist:
-- page (number).tsx
-- root data.ts/display.ts/paymentConfig.ts
-- old VERSION_Vxx files
-- old QUALITY_AUDIT_Vxx files
-- old SQL files outside `/supabase`
-- patch/make/append scripts
-- tsconfig.tsbuildinfo
-
-## Confirmed locally
-
-- `npx tsc --noEmit` passed.
-- `next build` compiled successfully and TypeScript passed, but static page collection did not complete within the local execution time limit.
+## Supabase注意
+SQLを実行する場合は、先にバックアップ確認とロールバック方針を決めてください。

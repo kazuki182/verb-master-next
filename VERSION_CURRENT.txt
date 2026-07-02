@@ -1,5 +1,1 @@
-Ver.114 REBUILD - GET/TAKE/MAKE quality reset + two-category UI unification
-- Rebuilt verb quality batch from the beginning: GET / TAKE / MAKE.
-- Unified learning flow, progress, tests, and cards into 基本 / 句動詞 only.
-- Removed the Home header top-right icon.
-- Removed separate 熟語 UI; common phrases are included inside 基本.
+Ver.114 再作成版 - GET / TAKE / MAKE fixed target rebuild

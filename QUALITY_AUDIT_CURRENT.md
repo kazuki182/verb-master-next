@@ -1,40 +1,33 @@
-# QUALITY_AUDIT_CURRENT - Ver.114 REBUILD
+# QUALITY_AUDIT_CURRENT - Ver.114 再作成版
 
-## Fixed target verbs
+## 対象動詞
 - GET
 - TAKE
 - MAKE
 
-## Structure rule
-- Verb pages use only two user-facing groups: 基本 and 句動詞.
-- Common phrases, idioms, and collocations are included inside 基本.
-- No separate 熟語 / よく使うフレーズ / コロケーション / 文型 category should appear in UI.
+## 固定ルール確認
+- 対象動詞は GET / TAKE / MAKE から変更なし。
+- 攻略フローは「基本」「句動詞」の2分類のみ。
+- 学習進捗は「基本」「句動詞」の2分類のみ。
+- テスト分類は「基本」「句動詞」「総合」のみ。
+- 旧カテゴリ名を画面カテゴリとして出さず、「基本」「句動詞」に統一。
+- 基本例文はターゲット動詞のみ focus 指定。
+- 句動詞例文は句動詞全体を focus 指定。
+- 日本語訳に赤文字指定なし。
 
-## Content policy
-- 基本: target up to 10 usages/phrases. Do not force content when unnatural.
-- 句動詞: target up to 10 phrasal verbs. Do not force content when unnatural.
-- Examples prioritize business/social adult situations.
-- Basic examples highlight only the target verb form.
-- Phrasal examples highlight the whole phrasal verb.
+## UI確認
+- HOME右上の追加アイコンなし。
+- HOME構成は、レベル/XPカード、現在攻略中、学習状況、目標日設定の順を維持。
+- 動詞ページ上部は compact hero を使用。
+- コアイメージは coreVisual によるアイコン・矢印図解を使用。
 
-## Ver.114 REBUILD checks
-- GET rebuilt with 10 基本 + 10 句動詞.
-- TAKE rebuilt with 10 基本 + 10 句動詞.
-- MAKE rebuilt with 10 基本 + 7 句動詞. Not forced to 10 because weaker/less common items were excluded.
-- Home top-right title icon removed.
-- 攻略フロー unified into 基本 / 句動詞.
-- 学習進捗 unified into 基本 / 句動詞.
-- Test cards/lists unified into 基本 / 句動詞.
-- Separate idiom route redirects to 基本 for old saved links.
-- Separate idiom test route redirects to 基本 test for old saved links.
+## 保存安全対策
+- supabase/V114_USER_PROGRESS_BACKUPS_SAFETY.sql を追加。
+- user_progress_backups を復元中心にする方針を明記。
+- nickname / displayName / avatarUrl / XP / level / streak / premiumStatus / unlockedCount / settings をバックアップ対象として想定。
 
-## External usage check notes
-- GET: obtain/receive/become/arrive/understand and major phrasal verbs checked against learner dictionary and phrasal-verb references.
-- TAKE: move/carry, time/duration, take phrases, and major phrasal verbs checked against learner dictionary and phrasal-verb references.
-- MAKE: create/result, decision/plan/sure/progress phrases and major phrasal verbs checked against learner dictionary and phrasal-verb references.
-
-## Build / ZIP safety
-- TypeScript check: passed with npx tsc --noEmit.
-- Next.js build: compile and TypeScript stages passed; static page collection did not finish within local execution time.
-- node_modules and .next are excluded from ZIP.
-- package-lock internal URL check required before delivery.
+## ZIP除外
+- node_modules / .next / tsconfig.tsbuildinfo は除外。
+- root直下の data.ts / display.ts / paymentConfig.ts はなし。
+- patch_*.py / make_*.py / append_*.js はなし。
+- 古い QUALITY_AUDIT_Vxx / VERSION_Vxx / README_Vxx はなし。

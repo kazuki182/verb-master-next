@@ -1,1 +1,4 @@
-Ver.115 app-function hotfix 2 - bottom nav, avatar, target date persistence
+Verb Master Ver.116 FIND / SEE / LOOK 追加版
+Base: Ver.115 app-function hotfix 3
+Target verbs added in this version: FIND / SEE / LOOK
+Maintained fixes: profile image persistence, target date persistence, bottom navigation spacing, old quality field compatibility.

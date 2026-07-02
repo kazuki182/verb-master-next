@@ -2222,940 +2222,998 @@ export const verbs: Verb[] = [
     "syllable": "find",
     "transitivity": "他動詞中心",
     "importance": "★★★★★ 超重要",
-    "core": "探す・確認する中で、自分の中に答えが入る",
-    "coreDetail": "FINDは、物や情報を見つけるだけでなく、経験や確認によって「分かる・判断する」まで広がります。仕事では問題発見・解決策・時間確保に使います。",
+    "core": "探す・確認する中で、答えや事実を見つける",
+    "coreDetail": "FINDは『見えていない答え・情報・問題を、探したり確認したりして見つける』感覚です。物を見つけるだけでなく、問題点、解決策、時間、判断結果にも広がります。",
     "coreVisual": {
-      "from": [
-        "🔍 調査",
-        "📊 データ",
-        "❗ 問題",
-        "💡 解決策",
-        "⏰ 時間"
-      ],
-      "to": "発見・理解",
-      "label": "探す → 見つかる"
+        "from": [
+            "🔍 探す",
+            "📄 資料",
+            "❗ 問題",
+            "💡 解決策",
+            "⏰ 時間"
+        ],
+        "to": "答え・発見",
+        "label": "不明なもの → 見つかる"
     },
     "meanings": [
-      {
-        "id": "discover",
-        "title": "① 見つける・発見する",
-        "pattern": "FIND + 名詞",
-        "transitivity": "他動詞",
-        "structure": "S + find + O",
-        "image": "必要な情報や物を見つける。",
-        "point": "find は探して見つけるだけでなく、仕事上の問題や答えにも使う。",
-        "examples": [
-          {
-            "en": "I found the latest file.",
-            "ja": "最新ファイルを見つけました。",
-            "focus": "found",
-            "object": "the latest file",
-            "jaFocus": "見つけました"
-          },
-          {
-            "en": "We found a problem in the data.",
-            "ja": "データに問題を見つけました。",
-            "focus": "found",
-            "object": "a problem",
-            "jaFocus": "見つけました"
-          },
-          {
-            "en": "The team found a better solution.",
-            "ja": "チームはより良い解決策を見つけました。",
-            "focus": "found",
-            "object": "a better solution",
-            "jaFocus": "見つけました"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "realize",
-        "title": "② 気づく",
-        "pattern": "FIND + that節",
-        "transitivity": "他動詞",
-        "structure": "S + find + that S V",
-        "image": "調べたり経験した結果、気づく。",
-        "point": "ビジネスでは「確認したところ〜と分かった」に使える。",
-        "examples": [
-          {
-            "en": "We found that the price was incorrect.",
-            "ja": "価格が間違っていることが分かりました。",
-            "focus": "found",
-            "jaFocus": "分かりました"
-          },
-          {
-            "en": "I found that the schedule was too tight.",
-            "ja": "スケジュールが厳しすぎると分かりました。",
-            "focus": "found",
-            "jaFocus": "分かりました"
-          },
-          {
-            "en": "They found that the system was stable.",
-            "ja": "システムが安定していると分かりました。",
-            "focus": "found",
-            "jaFocus": "分かりました"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "judge",
-        "title": "③ 〜だと思う・感じる",
-        "pattern": "FIND + O + 形容詞",
-        "transitivity": "他動詞",
-        "structure": "S + find + O + C",
-        "image": "経験して判断する。",
-        "point": "find it difficult/easy は仕事で便利。",
-        "examples": [
-          {
-            "en": "I find this process difficult.",
-            "ja": "この手順は難しいと感じます。",
-            "focus": "find",
-            "object": "this process",
-            "jaFocus": "感じます"
-          },
-          {
-            "en": "We found the tool useful.",
-            "ja": "そのツールは役に立つと分かりました。",
-            "focus": "found",
-            "object": "the tool",
-            "jaFocus": "分かりました"
-          },
-          {
-            "en": "The client found our proposal clear.",
-            "ja": "顧客は私たちの提案が分かりやすいと感じました。",
-            "focus": "found",
-            "object": "our proposal",
-            "jaFocus": "感じました"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "time",
-        "title": "④ 時間を作る",
-        "pattern": "FIND + time",
-        "transitivity": "他動詞",
-        "structure": "S + find + O",
-        "image": "忙しい中で時間を見つける。",
-        "point": "find time to は社会人に必須。",
-        "examples": [
-          {
-            "en": "I need to find time to review it.",
-            "ja": "それを確認する時間を作る必要があります。",
-            "focus": "find",
-            "object": "time",
-            "jaFocus": "時間を作る"
-          },
-          {
-            "en": "Can you find time for a quick call?",
-            "ja": "短い電話の時間を取れますか？",
-            "focus": "find",
-            "object": "time",
-            "jaFocus": "時間を取れ"
-          },
-          {
-            "en": "We found time to discuss the issue.",
-            "ja": "その問題を話し合う時間を作りました。",
-            "focus": "found",
-            "object": "time",
-            "jaFocus": "時間を作りました"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "solution",
-        "title": "⑤ 解決策を見つける",
-        "pattern": "FIND + solution/way",
-        "transitivity": "他動詞",
-        "structure": "S + find + O",
-        "image": "問題への答えを見つける。",
-        "point": "solution, way, approach と相性が良い。",
-        "examples": [
-          {
-            "en": "We need to find a solution quickly.",
-            "ja": "早急に解決策を見つける必要があります。",
-            "focus": "find",
-            "object": "a solution",
-            "jaFocus": "見つける"
-          },
-          {
-            "en": "The team found a way to reduce costs.",
-            "ja": "チームはコスト削減の方法を見つけました。",
-            "focus": "found",
-            "object": "a way",
-            "jaFocus": "見つけました"
-          },
-          {
-            "en": "Can we find another approach?",
-            "ja": "別の方法を見つけられますか？",
-            "focus": "find",
-            "object": "another approach",
-            "jaFocus": "見つけ"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "location",
-        "title": "⑥ 場所を特定する",
-        "pattern": "FIND + 場所/物",
-        "transitivity": "他動詞",
-        "structure": "S + find + O",
-        "image": "物や場所の位置を特定する。",
-        "point": "lost file, meeting room などにも使う。",
-        "examples": [
-          {
-            "en": "I found the meeting room.",
-            "ja": "会議室を見つけました。",
-            "focus": "found",
-            "object": "the meeting room",
-            "jaFocus": "見つけました"
-          },
-          {
-            "en": "We found the missing document.",
-            "ja": "紛失した書類を見つけました。",
-            "focus": "found",
-            "object": "the missing document",
-            "jaFocus": "見つけました"
-          },
-          {
-            "en": "Can you find the original file?",
-            "ja": "元ファイルを見つけられますか？",
-            "focus": "find",
-            "object": "the original file",
-            "jaFocus": "見つけ"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "opportunity",
-        "title": "⑦ 機会を見つける",
-        "pattern": "FIND + opportunity",
-        "transitivity": "他動詞",
-        "structure": "S + find + O",
-        "image": "チャンスや余地を見つける。",
-        "point": "営業・改善で使いやすい。",
-        "examples": [
-          {
-            "en": "We found an opportunity in the new market.",
-            "ja": "新市場で機会を見つけました。",
-            "focus": "found",
-            "object": "an opportunity",
-            "jaFocus": "見つけました"
-          },
-          {
-            "en": "I found a chance to speak with the client.",
-            "ja": "顧客と話す機会を見つけました。",
-            "focus": "found",
-            "object": "a chance",
-            "jaFocus": "見つけました"
-          },
-          {
-            "en": "The team found room for improvement.",
-            "ja": "チームは改善の余地を見つけました。",
-            "focus": "found",
-            "object": "room",
-            "jaFocus": "見つけました"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "information",
-        "title": "⑧ 情報を探し当てる",
-        "pattern": "FIND + information",
-        "transitivity": "他動詞",
-        "structure": "S + find + O",
-        "image": "必要な情報にたどり着く。",
-        "point": "資料確認・調査で頻出。",
-        "examples": [
-          {
-            "en": "I found the information in the manual.",
-            "ja": "マニュアルでその情報を見つけました。",
-            "focus": "found",
-            "object": "the information",
-            "jaFocus": "見つけました"
-          },
-          {
-            "en": "We found the answer in the report.",
-            "ja": "報告書で答えを見つけました。",
-            "focus": "found",
-            "object": "the answer",
-            "jaFocus": "見つけました"
-          },
-          {
-            "en": "Can you find the product details?",
-            "ja": "製品詳細を探してもらえますか？",
-            "focus": "find",
-            "object": "the product details",
-            "jaFocus": "探して"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "result",
-        "title": "⑨ 結果が分かる",
-        "pattern": "FIND + result",
-        "transitivity": "他動詞",
-        "structure": "S + find + O",
-        "image": "調査や確認の結果を得る。",
-        "point": "found a difference など数字比較で便利。",
-        "examples": [
-          {
-            "en": "We found a difference in the figures.",
-            "ja": "数字に差異があることが分かりました。",
-            "focus": "found",
-            "object": "a difference",
-            "jaFocus": "分かりました"
-          },
-          {
-            "en": "I found an error in the quotation.",
-            "ja": "見積書に誤りを見つけました。",
-            "focus": "found",
-            "object": "an error",
-            "jaFocus": "見つけました"
-          },
-          {
-            "en": "The test found no major issues.",
-            "ja": "テストでは大きな問題は見つかりませんでした。",
-            "focus": "found",
-            "object": "no major issues",
-            "jaFocus": "見つかりませんでした"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "experience",
-        "title": "⑩ 経験して分かる",
-        "pattern": "FIND + O + 形容詞",
-        "transitivity": "他動詞",
-        "structure": "S + find + O + C",
-        "image": "実際に使って評価する。",
-        "point": "useful, helpful, effective とよく使う。",
-        "examples": [
-          {
-            "en": "I found the training helpful.",
-            "ja": "その研修は役に立つと感じました。",
-            "focus": "found",
-            "object": "the training",
-            "jaFocus": "感じました"
-          },
-          {
-            "en": "We found the new system effective.",
-            "ja": "新システムは効果的だと分かりました。",
-            "focus": "found",
-            "object": "the new system",
-            "jaFocus": "分かりました"
-          },
-          {
-            "en": "The users found the app easy to use.",
-            "ja": "利用者はそのアプリを使いやすいと感じました。",
-            "focus": "found",
-            "object": "the app",
-            "jaFocus": "感じました"
-          }
-        ],
-        "dailyExamples": []
-      }
+        {
+            "id": "find-file",
+            "title": "① ファイル・物を見つける",
+            "pattern": "FIND + file / document",
+            "transitivity": "他動詞",
+            "structure": "S + find + O",
+            "image": "探していた資料や物が見つかるイメージ。",
+            "point": "営業・事務では file, document, drawing, sample とよく使う。",
+            "examples": [
+                {
+                    "en": "I found the latest file in the shared folder.",
+                    "ja": "私は共有フォルダで最新ファイルを見つけました。",
+                    "focus": "found",
+                    "object": "the latest file"
+                },
+                {
+                    "en": "We found the missing document after the meeting.",
+                    "ja": "私たちは会議後に紛失した書類を見つけました。",
+                    "focus": "found",
+                    "object": "the missing document"
+                },
+                {
+                    "en": "Can you find the original drawing for this project?",
+                    "ja": "あなたはこの案件の元図面を見つけられますか？",
+                    "focus": "find",
+                    "object": "the original drawing"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I found my keys on the desk.",
+                    "ja": "私は机の上で鍵を見つけました。",
+                    "focus": "found",
+                    "object": "my keys"
+                },
+                {
+                    "en": "She found her phone in the car.",
+                    "ja": "彼女は車の中で携帯を見つけました。",
+                    "focus": "found",
+                    "object": "her phone"
+                }
+            ]
+        },
+        {
+            "id": "find-problem",
+            "title": "② 問題・ミスを見つける",
+            "pattern": "FIND + problem / mistake",
+            "transitivity": "他動詞",
+            "structure": "S + find + O",
+            "image": "確認作業の中で問題点が見つかるイメージ。",
+            "point": "problem, mistake, error, issue と相性がよい。",
+            "examples": [
+                {
+                    "en": "We found a mistake in the quotation.",
+                    "ja": "私たちは見積書にミスを見つけました。",
+                    "focus": "found",
+                    "object": "a mistake"
+                },
+                {
+                    "en": "The engineer found an issue with the wiring.",
+                    "ja": "技術担当者は配線に問題を見つけました。",
+                    "focus": "found",
+                    "object": "an issue"
+                },
+                {
+                    "en": "I found an error in the order details.",
+                    "ja": "私は注文内容に誤りを見つけました。",
+                    "focus": "found",
+                    "object": "an error"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I found a typo in the message.",
+                    "ja": "私はメッセージに誤字を見つけました。",
+                    "focus": "found",
+                    "object": "a typo"
+                },
+                {
+                    "en": "We found a small problem before the event.",
+                    "ja": "私たちはイベント前に小さな問題を見つけました。",
+                    "focus": "found",
+                    "object": "a small problem"
+                }
+            ]
+        },
+        {
+            "id": "find-solution",
+            "title": "③ 解決策を見つける",
+            "pattern": "FIND + solution / way",
+            "transitivity": "他動詞",
+            "structure": "S + find + O",
+            "image": "問題に対する答えが見つかるイメージ。",
+            "point": "find a solution / find a way は会議や提案でよく使う。",
+            "examples": [
+                {
+                    "en": "We need to find a solution by tomorrow.",
+                    "ja": "私たちは明日までに解決策を見つける必要があります。",
+                    "focus": "find",
+                    "object": "a solution"
+                },
+                {
+                    "en": "The team found a way to reduce the cost.",
+                    "ja": "チームはコストを下げる方法を見つけました。",
+                    "focus": "found",
+                    "object": "a way"
+                },
+                {
+                    "en": "Can we find a better option for the client?",
+                    "ja": "私たちは顧客向けにより良い選択肢を見つけられますか？",
+                    "focus": "find",
+                    "object": "a better option"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I found a way to study on the train.",
+                    "ja": "私は電車で勉強する方法を見つけました。",
+                    "focus": "found",
+                    "object": "a way"
+                },
+                {
+                    "en": "We found a solution to the noise problem.",
+                    "ja": "私たちは騒音問題の解決策を見つけました。",
+                    "focus": "found",
+                    "object": "a solution"
+                }
+            ]
+        },
+        {
+            "id": "find-information",
+            "title": "④ 情報を見つける",
+            "pattern": "FIND + information / details",
+            "transitivity": "他動詞",
+            "structure": "S + find + O",
+            "image": "資料やデータの中から必要な情報にたどり着くイメージ。",
+            "point": "information, details, answer, data と一緒に使いやすい。",
+            "examples": [
+                {
+                    "en": "I found the information in the manual.",
+                    "ja": "私はマニュアルでその情報を見つけました。",
+                    "focus": "found",
+                    "object": "the information"
+                },
+                {
+                    "en": "We found the answer in the inspection report.",
+                    "ja": "私たちは検査報告書で答えを見つけました。",
+                    "focus": "found",
+                    "object": "the answer"
+                },
+                {
+                    "en": "Can you find the product details before the call?",
+                    "ja": "あなたは電話前に製品詳細を見つけられますか？",
+                    "focus": "find",
+                    "object": "the product details"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I found the address on the website.",
+                    "ja": "私はウェブサイトで住所を見つけました。",
+                    "focus": "found",
+                    "object": "the address"
+                },
+                {
+                    "en": "She found the answer in the book.",
+                    "ja": "彼女は本の中で答えを見つけました。",
+                    "focus": "found",
+                    "object": "the answer"
+                }
+            ]
+        },
+        {
+            "id": "find-that",
+            "title": "⑤ 確認して〜だと分かる",
+            "pattern": "FIND + that節",
+            "transitivity": "他動詞",
+            "structure": "S + find + that S V",
+            "image": "確認した結果、事実が分かるイメージ。",
+            "point": "メールや報告で『確認したところ〜でした』に近い。",
+            "examples": [
+                {
+                    "en": "We found that the delivery date was incorrect.",
+                    "ja": "私たちは納期が間違っていることを確認しました。",
+                    "focus": "found"
+                },
+                {
+                    "en": "I found that the client needed a smaller size.",
+                    "ja": "私は顧客がより小さいサイズを必要としていることが分かりました。",
+                    "focus": "found"
+                },
+                {
+                    "en": "They found that the setting was different from the drawing.",
+                    "ja": "彼らは設定が図面と違うことを確認しました。",
+                    "focus": "found"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I found that the shop was closed.",
+                    "ja": "私はその店が閉まっていることが分かりました。",
+                    "focus": "found"
+                },
+                {
+                    "en": "We found that the train was delayed.",
+                    "ja": "私たちは電車が遅れていることが分かりました。",
+                    "focus": "found"
+                }
+            ]
+        },
+        {
+            "id": "find-it-adj",
+            "title": "⑥ 〜だと感じる・判断する",
+            "pattern": "FIND + O + adjective",
+            "transitivity": "他動詞",
+            "structure": "S + find + O + C",
+            "image": "使ってみた結果、自分の評価が出るイメージ。",
+            "point": "find it difficult / find it useful などが便利。",
+            "examples": [
+                {
+                    "en": "I found the new system useful.",
+                    "ja": "私は新しいシステムが役に立つと感じました。",
+                    "focus": "found",
+                    "object": "the new system"
+                },
+                {
+                    "en": "We found this process difficult at first.",
+                    "ja": "私たちは最初、この手順を難しいと感じました。",
+                    "focus": "found",
+                    "object": "this process"
+                },
+                {
+                    "en": "The client found our proposal clear.",
+                    "ja": "顧客は私たちの提案が分かりやすいと感じました。",
+                    "focus": "found",
+                    "object": "our proposal"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I found the movie interesting.",
+                    "ja": "私はその映画を面白いと感じました。",
+                    "focus": "found",
+                    "object": "the movie"
+                },
+                {
+                    "en": "She found English difficult at first.",
+                    "ja": "彼女は最初、英語を難しいと感じました。",
+                    "focus": "found",
+                    "object": "English"
+                }
+            ]
+        },
+        {
+            "id": "find-time",
+            "title": "⑦ 時間を作る",
+            "pattern": "FIND + time",
+            "transitivity": "他動詞",
+            "structure": "S + find + O",
+            "image": "忙しい中で使える時間を見つけ出すイメージ。",
+            "point": "find time to do / find time for が社会人に必須。",
+            "examples": [
+                {
+                    "en": "I need to find time to review the proposal.",
+                    "ja": "私は提案書を確認する時間を作る必要があります。",
+                    "focus": "find",
+                    "object": "time"
+                },
+                {
+                    "en": "Can you find time for a quick meeting today?",
+                    "ja": "あなたは今日、短い会議の時間を取れますか？",
+                    "focus": "find",
+                    "object": "time"
+                },
+                {
+                    "en": "We found time to discuss the issue after lunch.",
+                    "ja": "私たちは昼食後にその問題を話し合う時間を作りました。",
+                    "focus": "found",
+                    "object": "time"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I found time to exercise this morning.",
+                    "ja": "私は今朝、運動する時間を作りました。",
+                    "focus": "found",
+                    "object": "time"
+                },
+                {
+                    "en": "Can you find time to call me tonight?",
+                    "ja": "あなたは今夜、私に電話する時間を取れますか？",
+                    "focus": "find",
+                    "object": "time"
+                }
+            ]
+        },
+        {
+            "id": "find-opportunity",
+            "title": "⑧ 機会・余地を見つける",
+            "pattern": "FIND + opportunity / room",
+            "transitivity": "他動詞",
+            "structure": "S + find + O",
+            "image": "新しいチャンスや改善の余地が見えてくるイメージ。",
+            "point": "営業・改善提案で使いやすい。",
+            "examples": [
+                {
+                    "en": "We found an opportunity in the new market.",
+                    "ja": "私たちは新しい市場に機会を見つけました。",
+                    "focus": "found",
+                    "object": "an opportunity"
+                },
+                {
+                    "en": "The team found room for improvement in the workflow.",
+                    "ja": "チームは作業の流れに改善の余地を見つけました。",
+                    "focus": "found",
+                    "object": "room for improvement"
+                },
+                {
+                    "en": "I found a chance to speak with the purchasing manager.",
+                    "ja": "私は購買担当者と話す機会を見つけました。",
+                    "focus": "found",
+                    "object": "a chance"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I found a chance to visit my friend.",
+                    "ja": "私は友人に会いに行く機会を見つけました。",
+                    "focus": "found",
+                    "object": "a chance"
+                },
+                {
+                    "en": "We found room for a small table.",
+                    "ja": "私たちは小さなテーブルを置く余地を見つけました。",
+                    "focus": "found",
+                    "object": "room"
+                }
+            ]
+        },
+        {
+            "id": "find-person",
+            "title": "⑨ 人・担当者を見つける",
+            "pattern": "FIND + person / contact",
+            "transitivity": "他動詞",
+            "structure": "S + find + O",
+            "image": "必要な人や連絡先を探し当てるイメージ。",
+            "point": "person, contact, person in charge などと使える。",
+            "examples": [
+                {
+                    "en": "I found the person in charge of this order.",
+                    "ja": "私はこの注文の担当者を見つけました。",
+                    "focus": "found",
+                    "object": "the person in charge"
+                },
+                {
+                    "en": "We found a new supplier for the project.",
+                    "ja": "私たちはその案件向けに新しい仕入先を見つけました。",
+                    "focus": "found",
+                    "object": "a new supplier"
+                },
+                {
+                    "en": "Can you find the right contact at the client side?",
+                    "ja": "あなたは顧客側の適切な連絡先を見つけられますか？",
+                    "focus": "find",
+                    "object": "the right contact"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I found my friend near the station.",
+                    "ja": "私は駅の近くで友人を見つけました。",
+                    "focus": "found",
+                    "object": "my friend"
+                },
+                {
+                    "en": "She found a good teacher online.",
+                    "ja": "彼女はオンラインで良い先生を見つけました。",
+                    "focus": "found",
+                    "object": "a good teacher"
+                }
+            ]
+        },
+        {
+            "id": "find-result",
+            "title": "⑩ 結果・差異が分かる",
+            "pattern": "FIND + result / difference",
+            "transitivity": "他動詞",
+            "structure": "S + find + O",
+            "image": "比較や検査の結果が見つかるイメージ。",
+            "point": "数字・検査・品質確認で使いやすい。",
+            "examples": [
+                {
+                    "en": "We found a difference between the two estimates.",
+                    "ja": "私たちは2つの見積に差異があることを確認しました。",
+                    "focus": "found",
+                    "object": "a difference"
+                },
+                {
+                    "en": "The test found no major problems.",
+                    "ja": "テストでは大きな問題は見つかりませんでした。",
+                    "focus": "found",
+                    "object": "no major problems"
+                },
+                {
+                    "en": "I found the same result in last month's report.",
+                    "ja": "私は先月の報告書でも同じ結果を確認しました。",
+                    "focus": "found",
+                    "object": "the same result"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I found a difference in the two photos.",
+                    "ja": "私は2枚の写真に違いを見つけました。",
+                    "focus": "found",
+                    "object": "a difference"
+                },
+                {
+                    "en": "We found the same result again.",
+                    "ja": "私たちはまた同じ結果を確認しました。",
+                    "focus": "found",
+                    "object": "the same result"
+                }
+            ]
+        }
     ],
-    "collocations": [
-      {
-        "phrase": "find a solution",
-        "ja": "解決策を見つける",
-        "image": "find a solution は社会人英語で使いやすい表現。",
-        "pattern": "find a solution",
-        "examples": [
-          {
-            "en": "We find a solution this week.",
-            "ja": "今週、解決策を見つける。",
-            "focus": "find",
-            "jaFocus": "解決策を見つける"
-          },
-          {
-            "en": "I need to find a solution before the meeting.",
-            "ja": "会議前に解決策を見つける必要があります。",
-            "focus": "find",
-            "jaFocus": "解決策を見つける"
-          },
-          {
-            "en": "The team will find a solution for the project.",
-            "ja": "チームは案件で解決策を見つける予定です。",
-            "focus": "find",
-            "jaFocus": "解決策を見つける"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find a way",
-        "ja": "方法を見つける",
-        "image": "find a way は社会人英語で使いやすい表現。",
-        "pattern": "find a way",
-        "examples": [
-          {
-            "en": "We find a way this week.",
-            "ja": "今週、方法を見つける。",
-            "focus": "find",
-            "jaFocus": "方法を見つける"
-          },
-          {
-            "en": "I need to find a way before the meeting.",
-            "ja": "会議前に方法を見つける必要があります。",
-            "focus": "find",
-            "jaFocus": "方法を見つける"
-          },
-          {
-            "en": "The team will find a way for the project.",
-            "ja": "チームは案件で方法を見つける予定です。",
-            "focus": "find",
-            "jaFocus": "方法を見つける"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find time",
-        "ja": "時間を作る",
-        "image": "find time は社会人英語で使いやすい表現。",
-        "pattern": "find time",
-        "examples": [
-          {
-            "en": "We find time this week.",
-            "ja": "今週、時間を作る。",
-            "focus": "find",
-            "jaFocus": "時間を作る"
-          },
-          {
-            "en": "I need to find time before the meeting.",
-            "ja": "会議前に時間を作る必要があります。",
-            "focus": "find",
-            "jaFocus": "時間を作る"
-          },
-          {
-            "en": "The team will find time for the project.",
-            "ja": "チームは案件で時間を作る予定です。",
-            "focus": "find",
-            "jaFocus": "時間を作る"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find out",
-        "ja": "調べて分かる",
-        "image": "find out は社会人英語で使いやすい表現。",
-        "pattern": "find out",
-        "examples": [
-          {
-            "en": "We find out this week.",
-            "ja": "今週、調べて分かる。",
-            "focus": "find",
-            "jaFocus": "調べて分かる"
-          },
-          {
-            "en": "I need to find out before the meeting.",
-            "ja": "会議前に調べて分かる必要があります。",
-            "focus": "find",
-            "jaFocus": "調べて分かる"
-          },
-          {
-            "en": "The team will find out for the project.",
-            "ja": "チームは案件で調べて分かる予定です。",
-            "focus": "find",
-            "jaFocus": "調べて分かる"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find a mistake",
-        "ja": "ミスを見つける",
-        "image": "find a mistake は社会人英語で使いやすい表現。",
-        "pattern": "find a mistake",
-        "examples": [
-          {
-            "en": "We find a mistake this week.",
-            "ja": "今週、ミスを見つける。",
-            "focus": "find",
-            "jaFocus": "ミスを見つける"
-          },
-          {
-            "en": "I need to find a mistake before the meeting.",
-            "ja": "会議前にミスを見つける必要があります。",
-            "focus": "find",
-            "jaFocus": "ミスを見つける"
-          },
-          {
-            "en": "The team will find a mistake for the project.",
-            "ja": "チームは案件でミスを見つける予定です。",
-            "focus": "find",
-            "jaFocus": "ミスを見つける"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find information",
-        "ja": "情報を見つける",
-        "image": "find information は社会人英語で使いやすい表現。",
-        "pattern": "find information",
-        "examples": [
-          {
-            "en": "We find information this week.",
-            "ja": "今週、情報を見つける。",
-            "focus": "find",
-            "jaFocus": "情報を見つける"
-          },
-          {
-            "en": "I need to find information before the meeting.",
-            "ja": "会議前に情報を見つける必要があります。",
-            "focus": "find",
-            "jaFocus": "情報を見つける"
-          },
-          {
-            "en": "The team will find information for the project.",
-            "ja": "チームは案件で情報を見つける予定です。",
-            "focus": "find",
-            "jaFocus": "情報を見つける"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find a chance",
-        "ja": "機会を見つける",
-        "image": "find a chance は社会人英語で使いやすい表現。",
-        "pattern": "find a chance",
-        "examples": [
-          {
-            "en": "We find a chance this week.",
-            "ja": "今週、機会を見つける。",
-            "focus": "find",
-            "jaFocus": "機会を見つける"
-          },
-          {
-            "en": "I need to find a chance before the meeting.",
-            "ja": "会議前に機会を見つける必要があります。",
-            "focus": "find",
-            "jaFocus": "機会を見つける"
-          },
-          {
-            "en": "The team will find a chance for the project.",
-            "ja": "チームは案件で機会を見つける予定です。",
-            "focus": "find",
-            "jaFocus": "機会を見つける"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find it difficult",
-        "ja": "難しいと感じる",
-        "image": "find it difficult は社会人英語で使いやすい表現。",
-        "pattern": "find it difficult",
-        "examples": [
-          {
-            "en": "We find it difficult this week.",
-            "ja": "今週、難しいと感じる。",
-            "focus": "find",
-            "jaFocus": "難しいと感じる"
-          },
-          {
-            "en": "I need to find it difficult before the meeting.",
-            "ja": "会議前に難しいと感じる必要があります。",
-            "focus": "find",
-            "jaFocus": "難しいと感じる"
-          },
-          {
-            "en": "The team will find it difficult for the project.",
-            "ja": "チームは案件で難しいと感じる予定です。",
-            "focus": "find",
-            "jaFocus": "難しいと感じる"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find useful",
-        "ja": "役に立つと感じる",
-        "image": "find useful は社会人英語で使いやすい表現。",
-        "pattern": "find useful",
-        "examples": [
-          {
-            "en": "We find useful this week.",
-            "ja": "今週、役に立つと感じる。",
-            "focus": "find",
-            "jaFocus": "役に立つと感じる"
-          },
-          {
-            "en": "I need to find useful before the meeting.",
-            "ja": "会議前に役に立つと感じる必要があります。",
-            "focus": "find",
-            "jaFocus": "役に立つと感じる"
-          },
-          {
-            "en": "The team will find useful for the project.",
-            "ja": "チームは案件で役に立つと感じる予定です。",
-            "focus": "find",
-            "jaFocus": "役に立つと感じる"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find room for improvement",
-        "ja": "改善の余地を見つける",
-        "image": "find room for improvement は社会人英語で使いやすい表現。",
-        "pattern": "find room for improvement",
-        "examples": [
-          {
-            "en": "We find room for improvement this week.",
-            "ja": "今週、改善の余地を見つける。",
-            "focus": "find",
-            "jaFocus": "改善の余地を見つける"
-          },
-          {
-            "en": "I need to find room for improvement before the meeting.",
-            "ja": "会議前に改善の余地を見つける必要があります。",
-            "focus": "find",
-            "jaFocus": "改善の余地を見つける"
-          },
-          {
-            "en": "The team will find room for improvement for the project.",
-            "ja": "チームは案件で改善の余地を見つける予定です。",
-            "focus": "find",
-            "jaFocus": "改善の余地を見つける"
-          }
-        ],
-        "dailyExamples": []
-      }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
-      {
-        "phrase": "find a solution",
-        "ja": "解決策を見つける",
-        "image": "find a solution は社会人英語で使いやすい表現。",
-        "pattern": "find a solution",
-        "examples": [
-          {
-            "en": "We find a solution this week.",
-            "ja": "今週、解決策を見つける。",
-            "focus": "find",
-            "jaFocus": "解決策を見つける"
-          },
-          {
-            "en": "I need to find a solution before the meeting.",
-            "ja": "会議前に解決策を見つける必要があります。",
-            "focus": "find",
-            "jaFocus": "解決策を見つける"
-          },
-          {
-            "en": "The team will find a solution for the project.",
-            "ja": "チームは案件で解決策を見つける予定です。",
-            "focus": "find",
-            "jaFocus": "解決策を見つける"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find a way",
-        "ja": "方法を見つける",
-        "image": "find a way は社会人英語で使いやすい表現。",
-        "pattern": "find a way",
-        "examples": [
-          {
-            "en": "We find a way this week.",
-            "ja": "今週、方法を見つける。",
-            "focus": "find",
-            "jaFocus": "方法を見つける"
-          },
-          {
-            "en": "I need to find a way before the meeting.",
-            "ja": "会議前に方法を見つける必要があります。",
-            "focus": "find",
-            "jaFocus": "方法を見つける"
-          },
-          {
-            "en": "The team will find a way for the project.",
-            "ja": "チームは案件で方法を見つける予定です。",
-            "focus": "find",
-            "jaFocus": "方法を見つける"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find time",
-        "ja": "時間を作る",
-        "image": "find time は社会人英語で使いやすい表現。",
-        "pattern": "find time",
-        "examples": [
-          {
-            "en": "We find time this week.",
-            "ja": "今週、時間を作る。",
-            "focus": "find",
-            "jaFocus": "時間を作る"
-          },
-          {
-            "en": "I need to find time before the meeting.",
-            "ja": "会議前に時間を作る必要があります。",
-            "focus": "find",
-            "jaFocus": "時間を作る"
-          },
-          {
-            "en": "The team will find time for the project.",
-            "ja": "チームは案件で時間を作る予定です。",
-            "focus": "find",
-            "jaFocus": "時間を作る"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find out",
-        "ja": "調べて分かる",
-        "image": "find out は社会人英語で使いやすい表現。",
-        "pattern": "find out",
-        "examples": [
-          {
-            "en": "We find out this week.",
-            "ja": "今週、調べて分かる。",
-            "focus": "find",
-            "jaFocus": "調べて分かる"
-          },
-          {
-            "en": "I need to find out before the meeting.",
-            "ja": "会議前に調べて分かる必要があります。",
-            "focus": "find",
-            "jaFocus": "調べて分かる"
-          },
-          {
-            "en": "The team will find out for the project.",
-            "ja": "チームは案件で調べて分かる予定です。",
-            "focus": "find",
-            "jaFocus": "調べて分かる"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find a mistake",
-        "ja": "ミスを見つける",
-        "image": "find a mistake は社会人英語で使いやすい表現。",
-        "pattern": "find a mistake",
-        "examples": [
-          {
-            "en": "We find a mistake this week.",
-            "ja": "今週、ミスを見つける。",
-            "focus": "find",
-            "jaFocus": "ミスを見つける"
-          },
-          {
-            "en": "I need to find a mistake before the meeting.",
-            "ja": "会議前にミスを見つける必要があります。",
-            "focus": "find",
-            "jaFocus": "ミスを見つける"
-          },
-          {
-            "en": "The team will find a mistake for the project.",
-            "ja": "チームは案件でミスを見つける予定です。",
-            "focus": "find",
-            "jaFocus": "ミスを見つける"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find information",
-        "ja": "情報を見つける",
-        "image": "find information は社会人英語で使いやすい表現。",
-        "pattern": "find information",
-        "examples": [
-          {
-            "en": "We find information this week.",
-            "ja": "今週、情報を見つける。",
-            "focus": "find",
-            "jaFocus": "情報を見つける"
-          },
-          {
-            "en": "I need to find information before the meeting.",
-            "ja": "会議前に情報を見つける必要があります。",
-            "focus": "find",
-            "jaFocus": "情報を見つける"
-          },
-          {
-            "en": "The team will find information for the project.",
-            "ja": "チームは案件で情報を見つける予定です。",
-            "focus": "find",
-            "jaFocus": "情報を見つける"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find a chance",
-        "ja": "機会を見つける",
-        "image": "find a chance は社会人英語で使いやすい表現。",
-        "pattern": "find a chance",
-        "examples": [
-          {
-            "en": "We find a chance this week.",
-            "ja": "今週、機会を見つける。",
-            "focus": "find",
-            "jaFocus": "機会を見つける"
-          },
-          {
-            "en": "I need to find a chance before the meeting.",
-            "ja": "会議前に機会を見つける必要があります。",
-            "focus": "find",
-            "jaFocus": "機会を見つける"
-          },
-          {
-            "en": "The team will find a chance for the project.",
-            "ja": "チームは案件で機会を見つける予定です。",
-            "focus": "find",
-            "jaFocus": "機会を見つける"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find it difficult",
-        "ja": "難しいと感じる",
-        "image": "find it difficult は社会人英語で使いやすい表現。",
-        "pattern": "find it difficult",
-        "examples": [
-          {
-            "en": "We find it difficult this week.",
-            "ja": "今週、難しいと感じる。",
-            "focus": "find",
-            "jaFocus": "難しいと感じる"
-          },
-          {
-            "en": "I need to find it difficult before the meeting.",
-            "ja": "会議前に難しいと感じる必要があります。",
-            "focus": "find",
-            "jaFocus": "難しいと感じる"
-          },
-          {
-            "en": "The team will find it difficult for the project.",
-            "ja": "チームは案件で難しいと感じる予定です。",
-            "focus": "find",
-            "jaFocus": "難しいと感じる"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find useful",
-        "ja": "役に立つと感じる",
-        "image": "find useful は社会人英語で使いやすい表現。",
-        "pattern": "find useful",
-        "examples": [
-          {
-            "en": "We find useful this week.",
-            "ja": "今週、役に立つと感じる。",
-            "focus": "find",
-            "jaFocus": "役に立つと感じる"
-          },
-          {
-            "en": "I need to find useful before the meeting.",
-            "ja": "会議前に役に立つと感じる必要があります。",
-            "focus": "find",
-            "jaFocus": "役に立つと感じる"
-          },
-          {
-            "en": "The team will find useful for the project.",
-            "ja": "チームは案件で役に立つと感じる予定です。",
-            "focus": "find",
-            "jaFocus": "役に立つと感じる"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "find room for improvement",
-        "ja": "改善の余地を見つける",
-        "image": "find room for improvement は社会人英語で使いやすい表現。",
-        "pattern": "find room for improvement",
-        "examples": [
-          {
-            "en": "We find room for improvement this week.",
-            "ja": "今週、改善の余地を見つける。",
-            "focus": "find",
-            "jaFocus": "改善の余地を見つける"
-          },
-          {
-            "en": "I need to find room for improvement before the meeting.",
-            "ja": "会議前に改善の余地を見つける必要があります。",
-            "focus": "find",
-            "jaFocus": "改善の余地を見つける"
-          },
-          {
-            "en": "The team will find room for improvement for the project.",
-            "ja": "チームは案件で改善の余地を見つける予定です。",
-            "focus": "find",
-            "jaFocus": "改善の余地を見つける"
-          }
-        ],
-        "dailyExamples": []
-      }
+        {
+            "phrase": "find out",
+            "ja": "調べて分かる・確認して分かる",
+            "image": "隠れていた事実が外に出て分かるイメージ。",
+            "pattern": "FIND OUT + information / FIND OUT that S V",
+            "examples": [
+                {
+                    "en": "I will find out the exact delivery date.",
+                    "ja": "私は正確な納期を確認します。",
+                    "focus": "find out",
+                    "object": "the exact delivery date"
+                },
+                {
+                    "en": "We found out that the file was outdated.",
+                    "ja": "私たちはそのファイルが古いことを確認しました。",
+                    "focus": "found out"
+                },
+                {
+                    "en": "Can you find out who approved the order?",
+                    "ja": "あなたは誰が注文を承認したか確認できますか？",
+                    "focus": "find out"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I found out the store was closed.",
+                    "ja": "私はその店が閉まっていることを知りました。",
+                    "focus": "found out"
+                },
+                {
+                    "en": "She found out the answer online.",
+                    "ja": "彼女はオンラインで答えを調べて分かりました。",
+                    "focus": "found out",
+                    "object": "the answer"
+                }
+            ]
+        }
     ]
-  },
+},
   {
     "id": "see",
     "rank": 11,
     "word": "SEE",
-    "ipa": "",
+    "ipa": "/siː/",
     "kana": "シー",
     "syllable": "see",
     "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "見る・理解する",
-    "coreDetail": "状況や意図を確認する",
+    "importance": "★★★★★ 超重要",
+    "core": "目に入る・状況が分かる",
+    "coreDetail": "SEEは『自然に目に入る』から『状況や意味が分かる』へ広がります。仕事では、確認する、理解する、会う、結果を見る、対応するという意味でよく使います。",
+    "coreVisual": {
+        "from": [
+            "👀 視界",
+            "📊 状況",
+            "💬 意図",
+            "📅 予定",
+            "✅ 結果"
+        ],
+        "to": "理解・確認",
+        "label": "目に入る → 分かる"
+    },
     "meanings": [
-      {
-        "id": "business-basic",
-        "title": "① ビジネスで使う基本形",
-        "pattern": "see + 名詞 / see if",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "状況や意図を確認する",
-        "point": "まずは社会人の会話・メールで使いやすい基本形を覚える。",
-        "examples": [
-          {
-            "en": "I see your point.",
-            "ja": "おっしゃる点は分かります。",
-            "focus": "see",
-            "object": "your point",
-            "jaFocus": "分かります"
-          },
-          {
-            "en": "Let me see the document.",
-            "ja": "資料を確認させてください。",
-            "focus": "see",
-            "object": "the document",
-            "jaFocus": "確認"
-          },
-          {
-            "en": "I'll see if we can adjust it.",
-            "ja": "調整できるか確認します。",
-            "focus": "see if",
-            "jaFocus": "確認"
-          }
-        ]
-      }
+        {
+            "id": "see-visual",
+            "title": "① 見える・目に入る",
+            "pattern": "SEE + object",
+            "transitivity": "他動詞",
+            "structure": "S + see + O",
+            "image": "情報や物が自然に目に入るイメージ。",
+            "point": "lookは意識して見る、seeは見える・分かる寄り。",
+            "examples": [
+                {
+                    "en": "I can see the updated file now.",
+                    "ja": "私は今、更新されたファイルを確認できます。",
+                    "focus": "see",
+                    "object": "the updated file"
+                },
+                {
+                    "en": "We saw the sample at the client site.",
+                    "ja": "私たちは顧客の現場でサンプルを見ました。",
+                    "focus": "saw",
+                    "object": "the sample"
+                },
+                {
+                    "en": "Can you see the numbers on this slide?",
+                    "ja": "あなたはこのスライドの数字が見えますか？",
+                    "focus": "see",
+                    "object": "the numbers"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I can see the station from here.",
+                    "ja": "私はここから駅が見えます。",
+                    "focus": "see",
+                    "object": "the station"
+                },
+                {
+                    "en": "She saw a rainbow after the rain.",
+                    "ja": "彼女は雨の後に虹を見ました。",
+                    "focus": "saw",
+                    "object": "a rainbow"
+                }
+            ]
+        },
+        {
+            "id": "see-understand",
+            "title": "② 理解する・分かる",
+            "pattern": "SEE + point / reason",
+            "transitivity": "他動詞",
+            "structure": "S + see + O",
+            "image": "相手の意図や理由が頭に入るイメージ。",
+            "point": "I see. は『分かりました』。メールでは I understand. の方が丁寧。",
+            "examples": [
+                {
+                    "en": "I see your point about the schedule.",
+                    "ja": "私はスケジュールについてのあなたの要点を理解しています。",
+                    "focus": "see",
+                    "object": "your point"
+                },
+                {
+                    "en": "We saw the reason for the delay after checking the report.",
+                    "ja": "私たちは報告書を確認して遅延の理由を理解しました。",
+                    "focus": "saw",
+                    "object": "the reason"
+                },
+                {
+                    "en": "Do you see why the client asked for a revision?",
+                    "ja": "あなたは顧客が修正を依頼した理由が分かりますか？",
+                    "focus": "see"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I see what you mean.",
+                    "ja": "私はあなたの言いたいことが分かります。",
+                    "focus": "see"
+                },
+                {
+                    "en": "Now I see the difference.",
+                    "ja": "今なら私は違いが分かります。",
+                    "focus": "see",
+                    "object": "the difference"
+                }
+            ]
+        },
+        {
+            "id": "see-check",
+            "title": "③ 確認する",
+            "pattern": "SEE if / SEE whether",
+            "transitivity": "他動詞",
+            "structure": "S + see if S V",
+            "image": "確認して状況を把握するイメージ。",
+            "point": "see if は『〜かどうか確認する』で会話・メールに便利。",
+            "examples": [
+                {
+                    "en": "I will see if the item is in stock.",
+                    "ja": "私はその商品に在庫があるか確認します。",
+                    "focus": "see"
+                },
+                {
+                    "en": "Can you see whether the order has been approved?",
+                    "ja": "あなたはその注文が承認済みか確認できますか？",
+                    "focus": "see"
+                },
+                {
+                    "en": "We need to see if the schedule still works.",
+                    "ja": "私たちはそのスケジュールでまだ問題ないか確認する必要があります。",
+                    "focus": "see"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I will see if the shop is open.",
+                    "ja": "私はその店が開いているか確認します。",
+                    "focus": "see"
+                },
+                {
+                    "en": "Can you see if the bus is coming?",
+                    "ja": "あなたはバスが来ているか確認できますか？",
+                    "focus": "see"
+                }
+            ]
+        },
+        {
+            "id": "see-person",
+            "title": "④ 人に会う",
+            "pattern": "SEE + person",
+            "transitivity": "他動詞",
+            "structure": "S + see + O",
+            "image": "人と会って話す・訪問するイメージ。",
+            "point": "meetよりカジュアルに『会う・訪問する』で使う。",
+            "examples": [
+                {
+                    "en": "I saw the client yesterday afternoon.",
+                    "ja": "私は昨日の午後、顧客に会いました。",
+                    "focus": "saw",
+                    "object": "the client"
+                },
+                {
+                    "en": "We will see the supplier after the meeting.",
+                    "ja": "私たちは会議後に仕入先と会います。",
+                    "focus": "see",
+                    "object": "the supplier"
+                },
+                {
+                    "en": "Can you see Mr. Tanaka next week?",
+                    "ja": "あなたは来週、田中様と会えますか？",
+                    "focus": "see",
+                    "object": "Mr. Tanaka"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I saw my friend at the station.",
+                    "ja": "私は駅で友人に会いました。",
+                    "focus": "saw",
+                    "object": "my friend"
+                },
+                {
+                    "en": "She will see her family this weekend.",
+                    "ja": "彼女は今週末、家族に会います。",
+                    "focus": "see",
+                    "object": "her family"
+                }
+            ]
+        },
+        {
+            "id": "see-result",
+            "title": "⑤ 結果を見る・分かる",
+            "pattern": "SEE + result / change",
+            "transitivity": "他動詞",
+            "structure": "S + see + O",
+            "image": "変化や結果が見えてくるイメージ。",
+            "point": "数字・改善・反応の確認で使いやすい。",
+            "examples": [
+                {
+                    "en": "We saw good results after the update.",
+                    "ja": "私たちは更新後に良い結果を確認しました。",
+                    "focus": "saw",
+                    "object": "good results"
+                },
+                {
+                    "en": "I can see a clear improvement in the sales data.",
+                    "ja": "私は売上データに明確な改善が見えます。",
+                    "focus": "see",
+                    "object": "a clear improvement"
+                },
+                {
+                    "en": "The team saw a change in customer response.",
+                    "ja": "チームは顧客の反応に変化を確認しました。",
+                    "focus": "saw",
+                    "object": "a change"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I saw a big change after practice.",
+                    "ja": "私は練習後に大きな変化を感じました。",
+                    "focus": "saw",
+                    "object": "a big change"
+                },
+                {
+                    "en": "We saw good results from the new plan.",
+                    "ja": "私たちは新しい計画で良い結果を見ました。",
+                    "focus": "saw",
+                    "object": "good results"
+                }
+            ]
+        },
+        {
+            "id": "see-possibility",
+            "title": "⑥ 可能性を見る",
+            "pattern": "SEE + possibility / opportunity",
+            "transitivity": "他動詞",
+            "structure": "S + see + O",
+            "image": "状況の中に可能性が見えるイメージ。",
+            "point": "営業や提案で『可能性がある』を柔らかく言える。",
+            "examples": [
+                {
+                    "en": "We see an opportunity with this client.",
+                    "ja": "私たちはこの顧客に機会があると見ています。",
+                    "focus": "see",
+                    "object": "an opportunity"
+                },
+                {
+                    "en": "I see potential in this product line.",
+                    "ja": "私はこの製品ラインに可能性を感じています。",
+                    "focus": "see",
+                    "object": "potential"
+                },
+                {
+                    "en": "The manager saw a chance to expand the project.",
+                    "ja": "上司はその案件を広げる機会を見ました。",
+                    "focus": "saw",
+                    "object": "a chance"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I see a chance to improve my English.",
+                    "ja": "私は英語を伸ばす機会があると感じています。",
+                    "focus": "see",
+                    "object": "a chance"
+                },
+                {
+                    "en": "She sees potential in the new idea.",
+                    "ja": "彼女は新しいアイデアに可能性を感じています。",
+                    "focus": "sees",
+                    "object": "potential"
+                }
+            ]
+        },
+        {
+            "id": "see-happen",
+            "title": "⑦ 何が起きるか様子を見る",
+            "pattern": "SEE what happens",
+            "transitivity": "他動詞",
+            "structure": "S + see + what happens",
+            "image": "結果が出るまで見守るイメージ。",
+            "point": "判断を保留して様子を見る時に自然。",
+            "examples": [
+                {
+                    "en": "Let's see what happens after we send the proposal.",
+                    "ja": "私たちは提案書を送った後、どうなるか様子を見ましょう。",
+                    "focus": "see"
+                },
+                {
+                    "en": "We should see how the client responds first.",
+                    "ja": "私たちはまず顧客がどう反応するか見た方がよいです。",
+                    "focus": "see"
+                },
+                {
+                    "en": "I will see what happens with the delivery schedule.",
+                    "ja": "私は納品スケジュールがどうなるか様子を見ます。",
+                    "focus": "see"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Let's see what happens tomorrow.",
+                    "ja": "明日どうなるか見てみましょう。",
+                    "focus": "see"
+                },
+                {
+                    "en": "I will see how it goes.",
+                    "ja": "私は様子を見ます。",
+                    "focus": "see"
+                }
+            ]
+        },
+        {
+            "id": "see-available",
+            "title": "⑧ 都合・空きを確認する",
+            "pattern": "SEE if someone is available",
+            "transitivity": "他動詞",
+            "structure": "S + see if S is available",
+            "image": "予定表や相手の都合を確認するイメージ。",
+            "point": "会議調整で非常に使いやすい。",
+            "examples": [
+                {
+                    "en": "I will see if the manager is available at three.",
+                    "ja": "私は上司が3時に空いているか確認します。",
+                    "focus": "see"
+                },
+                {
+                    "en": "Can you see if the meeting room is free tomorrow?",
+                    "ja": "あなたは明日、会議室が空いているか確認できますか？",
+                    "focus": "see"
+                },
+                {
+                    "en": "We need to see if the client can join the call.",
+                    "ja": "私たちは顧客が電話会議に参加できるか確認する必要があります。",
+                    "focus": "see"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I will see if my friend is free tonight.",
+                    "ja": "私は友人が今夜空いているか確認します。",
+                    "focus": "see"
+                },
+                {
+                    "en": "Can you see if the table is available?",
+                    "ja": "あなたは席が空いているか確認できますか？",
+                    "focus": "see"
+                }
+            ]
+        }
     ],
     "collocations": [],
-    "phrasalVerbs": []
-  },
+    "phrasalVerbs": [
+        {
+            "phrase": "see to",
+            "ja": "〜に対応する・面倒を見る",
+            "image": "必要なことに目を向けて対応するイメージ。",
+            "pattern": "SEE TO + task / issue",
+            "examples": [
+                {
+                    "en": "I will see to the delivery issue today.",
+                    "ja": "私は今日、納期の問題に対応します。",
+                    "focus": "see to",
+                    "object": "the delivery issue"
+                },
+                {
+                    "en": "Please see to the meeting room setup.",
+                    "ja": "会議室の準備をお願いします。",
+                    "focus": "see to",
+                    "object": "the meeting room setup"
+                },
+                {
+                    "en": "We need someone to see to the customer request.",
+                    "ja": "私たちは顧客の依頼に対応する人が必要です。",
+                    "focus": "see to",
+                    "object": "the customer request"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I will see to dinner tonight.",
+                    "ja": "私は今夜の夕食を準備します。",
+                    "focus": "see to",
+                    "object": "dinner"
+                },
+                {
+                    "en": "She saw to the tickets for the trip.",
+                    "ja": "彼女は旅行のチケットを手配しました。",
+                    "focus": "saw to",
+                    "object": "the tickets"
+                }
+            ]
+        },
+        {
+            "phrase": "see about",
+            "ja": "〜について確認・手配する",
+            "image": "何ができるか確認しに行くイメージ。",
+            "pattern": "SEE ABOUT + noun / doing",
+            "examples": [
+                {
+                    "en": "I will see about changing the schedule.",
+                    "ja": "私はスケジュール変更について確認します。",
+                    "focus": "see about"
+                },
+                {
+                    "en": "Can you see about getting the sample by Friday?",
+                    "ja": "あなたは金曜日までにサンプルを入手できるか確認できますか？",
+                    "focus": "see about"
+                },
+                {
+                    "en": "We need to see about the additional cost.",
+                    "ja": "私たちは追加費用について確認する必要があります。",
+                    "focus": "see about",
+                    "object": "the additional cost"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I will see about booking a table.",
+                    "ja": "私は席の予約について確認します。",
+                    "focus": "see about"
+                },
+                {
+                    "en": "She saw about getting new shoes.",
+                    "ja": "彼女は新しい靴を買うことを検討しました。",
+                    "focus": "saw about"
+                }
+            ]
+        },
+        {
+            "phrase": "see through",
+            "ja": "〜を最後までやり抜く・見抜く",
+            "image": "途中で止めずに最後まで見る、または本質を見抜くイメージ。",
+            "pattern": "SEE THROUGH + task / problem",
+            "examples": [
+                {
+                    "en": "We need to see this project through.",
+                    "ja": "私たちはこの案件を最後までやり抜く必要があります。",
+                    "focus": "see",
+                    "object": "this project through"
+                },
+                {
+                    "en": "The manager saw through the problem quickly.",
+                    "ja": "上司はその問題の本質をすぐに見抜きました。",
+                    "focus": "saw through",
+                    "object": "the problem"
+                },
+                {
+                    "en": "I want to see the improvement plan through.",
+                    "ja": "私は改善計画を最後まで進めたいです。",
+                    "focus": "see",
+                    "object": "the improvement plan through"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I saw through the difficult course.",
+                    "ja": "私は難しい講座を最後までやり抜きました。",
+                    "focus": "saw through",
+                    "object": "the difficult course"
+                },
+                {
+                    "en": "She saw through the excuse.",
+                    "ja": "彼女はその言い訳を見抜きました。",
+                    "focus": "saw through",
+                    "object": "the excuse"
+                }
+            ]
+        },
+        {
+            "phrase": "see off",
+            "ja": "〜を見送る",
+            "image": "出発する相手を最後まで見るイメージ。",
+            "pattern": "SEE OFF + person",
+            "examples": [
+                {
+                    "en": "We saw off the overseas visitors at the station.",
+                    "ja": "私たちは駅で海外からの来訪者を見送りました。",
+                    "focus": "saw off",
+                    "object": "the overseas visitors"
+                },
+                {
+                    "en": "I will see off the client after the meeting.",
+                    "ja": "私は会議後に顧客を見送ります。",
+                    "focus": "see off",
+                    "object": "the client"
+                },
+                {
+                    "en": "The team saw him off after his final presentation.",
+                    "ja": "チームは彼の最後の発表後に彼を見送りました。",
+                    "focus": "saw",
+                    "object": "him off"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I saw off my friend at the airport.",
+                    "ja": "私は空港で友人を見送りました。",
+                    "focus": "saw off",
+                    "object": "my friend"
+                },
+                {
+                    "en": "She saw her family off at the station.",
+                    "ja": "彼女は駅で家族を見送りました。",
+                    "focus": "saw",
+                    "object": "her family off"
+                }
+            ]
+        }
+    ]
+},
   {
     "id": "look",
     "rank": 12,
@@ -3163,1308 +3221,632 @@ export const verbs: Verb[] = [
     "ipa": "/lʊk/",
     "kana": "ルック",
     "syllable": "look",
-    "transitivity": "自動詞・他動詞",
+    "transitivity": "自動詞中心",
     "importance": "★★★★★ 超重要",
-    "core": "視線や注意を向けて、状態をとらえる",
-    "coreDetail": "LOOKは、目や意識を向けて確認する・探す・印象を判断するイメージです。仕事では確認、調査、見直し、期待表現に強い動詞です。",
+    "core": "意識して目を向ける・様子を見る",
+    "coreDetail": "LOOKは『自分から意識して目を向ける』感覚です。見る、確認する、探す、調査する、見直す、期待するなど、前置詞との組み合わせで仕事の表現が大きく広がります。",
     "coreVisual": {
-      "from": [
-        "👀 視線",
-        "📄 資料",
-        "🔍 調査",
-        "印象",
-        "期待"
-      ],
-      "to": "自分・チーム",
-      "label": "コアイメージ"
+        "from": [
+            "自分の視線",
+            "👀 注意",
+            "🔎 確認"
+        ],
+        "to": "対象・方向",
+        "label": "自分 → 対象へ目を向ける"
     },
     "meanings": [
-      {
-        "id": "check",
-        "title": "1 確認する・見る",
-        "pattern": "LOOK AT + 名詞",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + 副詞句",
-        "image": "資料や状況に視線・注意を向ける。",
-        "point": "資料や状況に視線・注意を向ける。",
-        "examples": [
-          {
-            "en": "Please look at the latest quotation.",
-            "ja": "最新の見積書を確認してください。",
-            "focus": "look at",
-            "object": "the latest quotation",
-            "jaFocus": "確認して"
-          },
-          {
-            "en": "I looked at the sales data this morning.",
-            "ja": "今朝、売上データを確認しました。",
-            "focus": "looked at",
-            "object": "the sales data",
-            "jaFocus": "確認しました"
-          },
-          {
-            "en": "We need to look at the issue carefully.",
-            "ja": "その問題を慎重に確認する必要があります。",
-            "focus": "look at",
-            "object": "the issue",
-            "jaFocus": "確認する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I looked at the menu.",
-            "ja": "メニューを見ました。",
-            "focus": "looked at",
-            "object": "the menu",
-            "jaFocus": "見ました"
-          },
-          {
-            "en": "Look at this photo.",
-            "ja": "この写真を見て。",
-            "focus": "Look at",
-            "object": "this photo",
-            "jaFocus": "見て"
-          }
-        ]
-      },
-      {
-        "id": "seem",
-        "title": "2 〜に見える",
-        "pattern": "LOOK + 形容詞",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + C",
-        "image": "見た印象を伝える。",
-        "point": "見た印象を伝える。",
-        "examples": [
-          {
-            "en": "The schedule looks tight.",
-            "ja": "スケジュールは厳しそうです。",
-            "focus": "looks",
-            "object": "tight",
-            "jaFocus": "厳しそう"
-          },
-          {
-            "en": "The proposal looks good to me.",
-            "ja": "その提案は良さそうに見えます。",
-            "focus": "looks",
-            "object": "good",
-            "jaFocus": "良さそう"
-          },
-          {
-            "en": "The data looks reliable.",
-            "ja": "そのデータは信頼できそうです。",
-            "focus": "looks",
-            "object": "reliable",
-            "jaFocus": "信頼できそう"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "You look tired.",
-            "ja": "疲れているように見えるよ。",
-            "focus": "look",
-            "object": "tired",
-            "jaFocus": "見える"
-          },
-          {
-            "en": "This cafe looks nice.",
-            "ja": "このカフェは良さそうです。",
-            "focus": "looks",
-            "object": "nice",
-            "jaFocus": "良さそう"
-          }
-        ]
-      },
-      {
-        "id": "search",
-        "title": "3 探す",
-        "pattern": "LOOK FOR + 名詞",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + O",
-        "image": "必要なものを探す。",
-        "point": "必要なものを探す。",
-        "examples": [
-          {
-            "en": "I am looking for the updated file.",
-            "ja": "更新されたファイルを探しています。",
-            "focus": "looking for",
-            "object": "the updated file",
-            "jaFocus": "探しています"
-          },
-          {
-            "en": "We are looking for a better supplier.",
-            "ja": "より良い仕入先を探しています。",
-            "focus": "looking for",
-            "object": "a better supplier",
-            "jaFocus": "探しています"
-          },
-          {
-            "en": "The client is looking for a cheaper option.",
-            "ja": "顧客はより安い選択肢を探しています。",
-            "focus": "looking for",
-            "object": "a cheaper option",
-            "jaFocus": "探しています"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I am looking for my keys.",
-            "ja": "鍵を探しています。",
-            "focus": "looking for",
-            "object": "my keys",
-            "jaFocus": "探しています"
-          },
-          {
-            "en": "She is looking for a new apartment.",
-            "ja": "彼女は新しい部屋を探しています。",
-            "focus": "looking for",
-            "object": "a new apartment",
-            "jaFocus": "探しています"
-          }
-        ]
-      },
-      {
-        "id": "consider",
-        "title": "4 検討する",
-        "pattern": "LOOK INTO + 名詞",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + O",
-        "image": "詳しく調べる。",
-        "point": "詳しく調べる。",
-        "examples": [
-          {
-            "en": "We will look into the cause of the delay.",
-            "ja": "遅延の原因を調査します。",
-            "focus": "look into",
-            "object": "the cause",
-            "jaFocus": "調査します"
-          },
-          {
-            "en": "Please look into the customer complaint.",
-            "ja": "顧客クレームを調査してください。",
-            "focus": "look into",
-            "object": "the customer complaint",
-            "jaFocus": "調査して"
-          },
-          {
-            "en": "I will look into the pricing issue.",
-            "ja": "価格の問題を確認します。",
-            "focus": "look into",
-            "object": "the pricing issue",
-            "jaFocus": "確認します"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I looked into the restaurant.",
-            "ja": "そのレストランを調べました。",
-            "focus": "looked into",
-            "object": "the restaurant",
-            "jaFocus": "調べました"
-          },
-          {
-            "en": "We looked into travel options.",
-            "ja": "旅行の選択肢を調べました。",
-            "focus": "looked into",
-            "object": "travel options",
-            "jaFocus": "調べました"
-          }
-        ]
-      },
-      {
-        "id": "expect",
-        "title": "5 期待する・待つ",
-        "pattern": "LOOK FORWARD TO + 名詞/動名詞",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + O",
-        "image": "前向きに待つ。",
-        "point": "前向きに待つ。",
-        "examples": [
-          {
-            "en": "I look forward to your reply.",
-            "ja": "ご返信をお待ちしております。",
-            "focus": "look forward to",
-            "object": "your reply",
-            "jaFocus": "お待ちしております"
-          },
-          {
-            "en": "We look forward to working with you.",
-            "ja": "一緒にお仕事できることを楽しみにしています。",
-            "focus": "look forward to",
-            "object": "working with you",
-            "jaFocus": "楽しみにしています"
-          },
-          {
-            "en": "I look forward to the meeting next week.",
-            "ja": "来週の会議を楽しみにしています。",
-            "focus": "look forward to",
-            "object": "the meeting",
-            "jaFocus": "楽しみにしています"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I look forward to the weekend.",
-            "ja": "週末を楽しみにしています。",
-            "focus": "look forward to",
-            "object": "the weekend",
-            "jaFocus": "楽しみにしています"
-          },
-          {
-            "en": "We look forward to the trip.",
-            "ja": "旅行を楽しみにしています。",
-            "focus": "look forward to",
-            "object": "the trip",
-            "jaFocus": "楽しみにしています"
-          }
-        ]
-      },
-      {
-        "id": "watch",
-        "title": "6 注意して見る",
-        "pattern": "LOOK OUT FOR + 名詞",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + O",
-        "image": "注意して探す・気をつける。",
-        "point": "注意して探す・気をつける。",
-        "examples": [
-          {
-            "en": "Please look out for any errors.",
-            "ja": "ミスがないか注意して見てください。",
-            "focus": "look out for",
-            "object": "any errors",
-            "jaFocus": "注意して見て"
-          },
-          {
-            "en": "We should look out for risks.",
-            "ja": "リスクに注意するべきです。",
-            "focus": "look out for",
-            "object": "risks",
-            "jaFocus": "注意する"
-          },
-          {
-            "en": "Look out for changes in the schedule.",
-            "ja": "スケジュール変更に注意してください。",
-            "focus": "Look out for",
-            "object": "changes",
-            "jaFocus": "注意して"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Look out for cars.",
-            "ja": "車に気をつけて。",
-            "focus": "Look out for",
-            "object": "cars",
-            "jaFocus": "気をつけて"
-          },
-          {
-            "en": "I looked out for signs.",
-            "ja": "標識に注意しました。",
-            "focus": "looked out for",
-            "object": "signs",
-            "jaFocus": "注意しました"
-          }
-        ]
-      },
-      {
-        "id": "review",
-        "title": "7 見直す",
-        "pattern": "LOOK OVER + 名詞",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + O",
-        "image": "ざっと確認する。",
-        "point": "ざっと確認する。",
-        "examples": [
-          {
-            "en": "Could you look over this document?",
-            "ja": "この資料を見直してもらえますか？",
-            "focus": "look over",
-            "object": "this document",
-            "jaFocus": "見直して"
-          },
-          {
-            "en": "I looked over the contract.",
-            "ja": "契約書をざっと確認しました。",
-            "focus": "looked over",
-            "object": "the contract",
-            "jaFocus": "確認しました"
-          },
-          {
-            "en": "Please look over the agenda before the meeting.",
-            "ja": "会議前に議題を確認してください。",
-            "focus": "look over",
-            "object": "the agenda",
-            "jaFocus": "確認して"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I looked over the recipe.",
-            "ja": "レシピをざっと見ました。",
-            "focus": "looked over",
-            "object": "the recipe",
-            "jaFocus": "見ました"
-          },
-          {
-            "en": "Can you look over my message?",
-            "ja": "私のメッセージを見てくれる？",
-            "focus": "look over",
-            "object": "my message",
-            "jaFocus": "見て"
-          }
-        ]
-      },
-      {
-        "id": "depend",
-        "title": "8 頼る",
-        "pattern": "LOOK TO + 人 + for 名詞",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + O",
-        "image": "人に期待して頼る。",
-        "point": "人に期待して頼る。",
-        "examples": [
-          {
-            "en": "The team looks to you for direction.",
-            "ja": "チームはあなたの方針を頼りにしています。",
-            "focus": "looks to",
-            "object": "you",
-            "jaFocus": "頼りにしています"
-          },
-          {
-            "en": "Clients look to us for reliable advice.",
-            "ja": "顧客は信頼できる助言を私たちに期待しています。",
-            "focus": "look to",
-            "object": "us",
-            "jaFocus": "期待しています"
-          },
-          {
-            "en": "We look to the data for guidance.",
-            "ja": "私たちは判断材料としてデータを頼ります。",
-            "focus": "look to",
-            "object": "the data",
-            "jaFocus": "頼ります"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Children look to adults for support.",
-            "ja": "子どもは大人の支えを頼ります。",
-            "focus": "look to",
-            "object": "adults",
-            "jaFocus": "頼ります"
-          },
-          {
-            "en": "I look to music for energy.",
-            "ja": "音楽から元気をもらっています。",
-            "focus": "look to",
-            "object": "music",
-            "jaFocus": "もらっています"
-          }
-        ]
-      },
-      {
-        "id": "appear",
-        "title": "9 表情・様子で示す",
-        "pattern": "LOOK + like + 名詞/文",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + C",
-        "image": "見た目から判断する。",
-        "point": "見た目から判断する。",
-        "examples": [
-          {
-            "en": "It looks like we need more time.",
-            "ja": "もう少し時間が必要そうです。",
-            "focus": "looks like",
-            "object": "we need more time",
-            "jaFocus": "必要そう"
-          },
-          {
-            "en": "It looks like the client approved it.",
-            "ja": "顧客が承認したようです。",
-            "focus": "looks like",
-            "object": "the client approved it",
-            "jaFocus": "ようです"
-          },
-          {
-            "en": "It looks like the file is missing.",
-            "ja": "ファイルが見当たらないようです。",
-            "focus": "looks like",
-            "object": "the file is missing",
-            "jaFocus": "ようです"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "It looks like rain.",
-            "ja": "雨が降りそうです。",
-            "focus": "looks like",
-            "object": "rain",
-            "jaFocus": "降りそう"
-          },
-          {
-            "en": "It looks like a nice place.",
-            "ja": "良さそうな場所です。",
-            "focus": "looks like",
-            "object": "a nice place",
-            "jaFocus": "良さそう"
-          }
-        ]
-      },
-      {
-        "id": "face",
-        "title": "10 向いている",
-        "pattern": "LOOK + direction",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + 副詞句",
-        "image": "方向を向く。",
-        "point": "方向を向く。",
-        "examples": [
-          {
-            "en": "The office looks out over the main street.",
-            "ja": "そのオフィスは大通りに面しています。",
-            "focus": "looks out over",
-            "object": "the main street",
-            "jaFocus": "面しています"
-          },
-          {
-            "en": "The screen should look toward the audience.",
-            "ja": "画面は聴衆の方へ向けるべきです。",
-            "focus": "look toward",
-            "object": "the audience",
-            "jaFocus": "向ける"
-          },
-          {
-            "en": "The camera looks directly at the entrance.",
-            "ja": "カメラは入口を直接向いています。",
-            "focus": "looks",
-            "object": "the entrance",
-            "jaFocus": "向いています"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The room looks south.",
-            "ja": "その部屋は南向きです。",
-            "focus": "looks",
-            "object": "south",
-            "jaFocus": "南向き"
-          },
-          {
-            "en": "The balcony looks over the park.",
-            "ja": "バルコニーは公園を見渡せます。",
-            "focus": "looks over",
-            "object": "the park",
-            "jaFocus": "見渡せます"
-          }
-        ]
-      }
+        {
+            "id": "look-see",
+            "title": "① 意識して見る",
+            "pattern": "LOOK + at / toward",
+            "transitivity": "自動詞",
+            "structure": "S + look + at O",
+            "image": "自分から対象へ視線を向けるイメージ。",
+            "point": "seeは自然に見える、lookは意識して見る。",
+            "examples": [
+                {
+                    "en": "Please look at this part of the drawing.",
+                    "ja": "あなたは図面のこの部分を見てください。",
+                    "focus": "look",
+                    "object": "at this part"
+                },
+                {
+                    "en": "I looked at the quotation before the meeting.",
+                    "ja": "私は会議前に見積書を見ました。",
+                    "focus": "looked",
+                    "object": "at the quotation"
+                },
+                {
+                    "en": "We need to look at the actual site first.",
+                    "ja": "私たちはまず実際の現場を見る必要があります。",
+                    "focus": "look",
+                    "object": "at the actual site"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Look at this photo.",
+                    "ja": "この写真を見てください。",
+                    "focus": "Look",
+                    "object": "at this photo"
+                },
+                {
+                    "en": "I looked at the map before leaving.",
+                    "ja": "私は出発前に地図を見ました。",
+                    "focus": "looked",
+                    "object": "at the map"
+                }
+            ]
+        },
+        {
+            "id": "look-appear",
+            "title": "② 〜に見える",
+            "pattern": "LOOK + adjective",
+            "transitivity": "自動詞",
+            "structure": "S + look + C",
+            "image": "見た目や印象から判断するイメージ。",
+            "point": "look good / look difficult / look clear などで使う。",
+            "examples": [
+                {
+                    "en": "The new layout looks clear.",
+                    "ja": "新しいレイアウトは分かりやすく見えます。",
+                    "focus": "looks",
+                    "object": "clear"
+                },
+                {
+                    "en": "This schedule looks difficult.",
+                    "ja": "このスケジュールは難しそうです。",
+                    "focus": "looks",
+                    "object": "difficult"
+                },
+                {
+                    "en": "The sample looked better than expected.",
+                    "ja": "サンプルは予想より良く見えました。",
+                    "focus": "looked",
+                    "object": "better than expected"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "You look tired today.",
+                    "ja": "あなたは今日は疲れて見えます。",
+                    "focus": "look",
+                    "object": "tired"
+                },
+                {
+                    "en": "This cafe looks nice.",
+                    "ja": "このカフェは良さそうです。",
+                    "focus": "looks",
+                    "object": "nice"
+                }
+            ]
+        },
+        {
+            "id": "look-like",
+            "title": "③ 〜のように見える",
+            "pattern": "LOOK LIKE + noun / sentence",
+            "transitivity": "自動詞",
+            "structure": "S + look like + O",
+            "image": "見た目や状況から推測するイメージ。",
+            "point": "It looks like ... は『〜のようです』で報告に便利。",
+            "examples": [
+                {
+                    "en": "It looks like we need more time.",
+                    "ja": "私たちはもう少し時間が必要そうです。",
+                    "focus": "looks",
+                    "object": "like we need more time"
+                },
+                {
+                    "en": "It looks like the client approved the design.",
+                    "ja": "顧客がデザインを承認したようです。",
+                    "focus": "looks",
+                    "object": "like the client approved the design"
+                },
+                {
+                    "en": "The issue looks like a wiring problem.",
+                    "ja": "その問題は配線の問題のように見えます。",
+                    "focus": "looks",
+                    "object": "like a wiring problem"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "It looks like rain.",
+                    "ja": "雨が降りそうです。",
+                    "focus": "looks",
+                    "object": "like rain"
+                },
+                {
+                    "en": "This looks like a good place.",
+                    "ja": "ここは良い場所のように見えます。",
+                    "focus": "looks",
+                    "object": "like a good place"
+                }
+            ]
+        },
+        {
+            "id": "look-direction",
+            "title": "④ 方向を見る・向く",
+            "pattern": "LOOK + direction",
+            "transitivity": "自動詞",
+            "structure": "S + look + direction",
+            "image": "視線や注意を特定方向へ向けるイメージ。",
+            "point": "look left/right/ahead など安全確認にも使う。",
+            "examples": [
+                {
+                    "en": "Please look carefully before entering the work area.",
+                    "ja": "あなたは作業エリアに入る前によく確認してください。",
+                    "focus": "look"
+                },
+                {
+                    "en": "We looked around the site before the installation.",
+                    "ja": "私たちは設置前に現場全体を見て回りました。",
+                    "focus": "looked"
+                },
+                {
+                    "en": "The team looked ahead to the next schedule.",
+                    "ja": "チームは次のスケジュールを見据えました。",
+                    "focus": "looked"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Look left before crossing the road.",
+                    "ja": "道を渡る前に左を見てください。",
+                    "focus": "Look"
+                },
+                {
+                    "en": "I looked around the room.",
+                    "ja": "私は部屋を見回しました。",
+                    "focus": "looked"
+                }
+            ]
+        },
+        {
+            "id": "look-professional",
+            "title": "⑤ 印象として〜に見える",
+            "pattern": "LOOK + professional / reliable",
+            "transitivity": "自動詞",
+            "structure": "S + look + C",
+            "image": "相手からどう見えるかを表すイメージ。",
+            "point": "提案資料やデザインの印象確認で使える。",
+            "examples": [
+                {
+                    "en": "The proposal looks professional now.",
+                    "ja": "提案書は今、きちんとした印象に見えます。",
+                    "focus": "looks",
+                    "object": "professional"
+                },
+                {
+                    "en": "This product photo looks reliable.",
+                    "ja": "この製品写真は信頼できそうに見えます。",
+                    "focus": "looks",
+                    "object": "reliable"
+                },
+                {
+                    "en": "The presentation looked simple and clear.",
+                    "ja": "その発表資料はシンプルで分かりやすく見えました。",
+                    "focus": "looked",
+                    "object": "simple and clear"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Your room looks clean.",
+                    "ja": "あなたの部屋はきれいに見えます。",
+                    "focus": "looks",
+                    "object": "clean"
+                },
+                {
+                    "en": "The design looks modern.",
+                    "ja": "そのデザインは現代的に見えます。",
+                    "focus": "looks",
+                    "object": "modern"
+                }
+            ]
+        }
     ],
-    "collocations": [
-      {
-        "phrase": "look at the data",
-        "ja": "データを見る",
-        "image": "look at the data のまとまりで仕事に使う表現。",
-        "pattern": "look at + 名詞",
-        "examples": [
-          {
-            "en": "We need to look at the data before the meeting.",
-            "ja": "会議前に「データを見る」必要があります。",
-            "focus": "look at the data",
-            "jaFocus": "データを見る"
-          },
-          {
-            "en": "Please look at the data by the end of the day.",
-            "ja": "今日中に「データを見る」してください。",
-            "focus": "look at the data",
-            "jaFocus": "データを見る"
-          },
-          {
-            "en": "I will look at the data and share the update.",
-            "ja": "私が「データを見る」して進捗を共有します。",
-            "focus": "look at the data",
-            "jaFocus": "データを見る"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look at the data on weekends.",
-            "ja": "週末によく「データを見る」します。",
-            "focus": "look at the data",
-            "jaFocus": "データを見る"
-          },
-          {
-            "en": "It is useful to look at the data.",
-            "ja": "「データを見る」できると便利です。",
-            "focus": "look at the data",
-            "jaFocus": "データを見る"
-          }
-        ]
-      },
-      {
-        "phrase": "look for a solution",
-        "ja": "解決策を探す",
-        "image": "look for a solution のまとまりで仕事に使う表現。",
-        "pattern": "look for + 名詞",
-        "examples": [
-          {
-            "en": "We need to look for a solution before the meeting.",
-            "ja": "会議前に「解決策を探す」必要があります。",
-            "focus": "look for a solution",
-            "jaFocus": "解決策を探す"
-          },
-          {
-            "en": "Please look for a solution by the end of the day.",
-            "ja": "今日中に「解決策を探す」してください。",
-            "focus": "look for a solution",
-            "jaFocus": "解決策を探す"
-          },
-          {
-            "en": "I will look for a solution and share the update.",
-            "ja": "私が「解決策を探す」して進捗を共有します。",
-            "focus": "look for a solution",
-            "jaFocus": "解決策を探す"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look for a solution on weekends.",
-            "ja": "週末によく「解決策を探す」します。",
-            "focus": "look for a solution",
-            "jaFocus": "解決策を探す"
-          },
-          {
-            "en": "It is useful to look for a solution.",
-            "ja": "「解決策を探す」できると便利です。",
-            "focus": "look for a solution",
-            "jaFocus": "解決策を探す"
-          }
-        ]
-      },
-      {
-        "phrase": "look into the issue",
-        "ja": "問題を調査する",
-        "image": "look into the issue のまとまりで仕事に使う表現。",
-        "pattern": "look into + 名詞",
-        "examples": [
-          {
-            "en": "We need to look into the issue before the meeting.",
-            "ja": "会議前に「問題を調査する」必要があります。",
-            "focus": "look into the issue",
-            "jaFocus": "問題を調査する"
-          },
-          {
-            "en": "Please look into the issue by the end of the day.",
-            "ja": "今日中に「問題を調査する」してください。",
-            "focus": "look into the issue",
-            "jaFocus": "問題を調査する"
-          },
-          {
-            "en": "I will look into the issue and share the update.",
-            "ja": "私が「問題を調査する」して進捗を共有します。",
-            "focus": "look into the issue",
-            "jaFocus": "問題を調査する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look into the issue on weekends.",
-            "ja": "週末によく「問題を調査する」します。",
-            "focus": "look into the issue",
-            "jaFocus": "問題を調査する"
-          },
-          {
-            "en": "It is useful to look into the issue.",
-            "ja": "「問題を調査する」できると便利です。",
-            "focus": "look into the issue",
-            "jaFocus": "問題を調査する"
-          }
-        ]
-      },
-      {
-        "phrase": "look over the document",
-        "ja": "資料を見直す",
-        "image": "look over the document のまとまりで仕事に使う表現。",
-        "pattern": "look over + 名詞",
-        "examples": [
-          {
-            "en": "We need to look over the document before the meeting.",
-            "ja": "会議前に「資料を見直す」必要があります。",
-            "focus": "look over the document",
-            "jaFocus": "資料を見直す"
-          },
-          {
-            "en": "Please look over the document by the end of the day.",
-            "ja": "今日中に「資料を見直す」してください。",
-            "focus": "look over the document",
-            "jaFocus": "資料を見直す"
-          },
-          {
-            "en": "I will look over the document and share the update.",
-            "ja": "私が「資料を見直す」して進捗を共有します。",
-            "focus": "look over the document",
-            "jaFocus": "資料を見直す"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look over the document on weekends.",
-            "ja": "週末によく「資料を見直す」します。",
-            "focus": "look over the document",
-            "jaFocus": "資料を見直す"
-          },
-          {
-            "en": "It is useful to look over the document.",
-            "ja": "「資料を見直す」できると便利です。",
-            "focus": "look over the document",
-            "jaFocus": "資料を見直す"
-          }
-        ]
-      },
-      {
-        "phrase": "look forward to your reply",
-        "ja": "返信を待つ",
-        "image": "look forward to your reply のまとまりで仕事に使う表現。",
-        "pattern": "look forward to + 名詞",
-        "examples": [
-          {
-            "en": "We need to look forward to your reply before the meeting.",
-            "ja": "会議前に「返信を待つ」必要があります。",
-            "focus": "look forward to your reply",
-            "jaFocus": "返信を待つ"
-          },
-          {
-            "en": "Please look forward to your reply by the end of the day.",
-            "ja": "今日中に「返信を待つ」してください。",
-            "focus": "look forward to your reply",
-            "jaFocus": "返信を待つ"
-          },
-          {
-            "en": "I will look forward to your reply and share the update.",
-            "ja": "私が「返信を待つ」して進捗を共有します。",
-            "focus": "look forward to your reply",
-            "jaFocus": "返信を待つ"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look forward to your reply on weekends.",
-            "ja": "週末によく「返信を待つ」します。",
-            "focus": "look forward to your reply",
-            "jaFocus": "返信を待つ"
-          },
-          {
-            "en": "It is useful to look forward to your reply.",
-            "ja": "「返信を待つ」できると便利です。",
-            "focus": "look forward to your reply",
-            "jaFocus": "返信を待つ"
-          }
-        ]
-      },
-      {
-        "phrase": "look like a problem",
-        "ja": "問題のように見える",
-        "image": "look like a problem のまとまりで仕事に使う表現。",
-        "pattern": "look like + 名詞",
-        "examples": [
-          {
-            "en": "We need to look like a problem before the meeting.",
-            "ja": "会議前に「問題のように見える」必要があります。",
-            "focus": "look like a problem",
-            "jaFocus": "問題のように見える"
-          },
-          {
-            "en": "Please look like a problem by the end of the day.",
-            "ja": "今日中に「問題のように見える」してください。",
-            "focus": "look like a problem",
-            "jaFocus": "問題のように見える"
-          },
-          {
-            "en": "I will look like a problem and share the update.",
-            "ja": "私が「問題のように見える」して進捗を共有します。",
-            "focus": "look like a problem",
-            "jaFocus": "問題のように見える"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look like a problem on weekends.",
-            "ja": "週末によく「問題のように見える」します。",
-            "focus": "look like a problem",
-            "jaFocus": "問題のように見える"
-          },
-          {
-            "en": "It is useful to look like a problem.",
-            "ja": "「問題のように見える」できると便利です。",
-            "focus": "look like a problem",
-            "jaFocus": "問題のように見える"
-          }
-        ]
-      },
-      {
-        "phrase": "look good",
-        "ja": "良さそうに見える",
-        "image": "look good のまとまりで仕事に使う表現。",
-        "pattern": "look + 形容詞",
-        "examples": [
-          {
-            "en": "We need to look good before the meeting.",
-            "ja": "会議前に「良さそうに見える」必要があります。",
-            "focus": "look good",
-            "jaFocus": "良さそうに見える"
-          },
-          {
-            "en": "Please look good by the end of the day.",
-            "ja": "今日中に「良さそうに見える」してください。",
-            "focus": "look good",
-            "jaFocus": "良さそうに見える"
-          },
-          {
-            "en": "I will look good and share the update.",
-            "ja": "私が「良さそうに見える」して進捗を共有します。",
-            "focus": "look good",
-            "jaFocus": "良さそうに見える"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look good on weekends.",
-            "ja": "週末によく「良さそうに見える」します。",
-            "focus": "look good",
-            "jaFocus": "良さそうに見える"
-          },
-          {
-            "en": "It is useful to look good.",
-            "ja": "「良さそうに見える」できると便利です。",
-            "focus": "look good",
-            "jaFocus": "良さそうに見える"
-          }
-        ]
-      },
-      {
-        "phrase": "look busy",
-        "ja": "忙しそうに見える",
-        "image": "look busy のまとまりで仕事に使う表現。",
-        "pattern": "look + 形容詞",
-        "examples": [
-          {
-            "en": "We need to look busy before the meeting.",
-            "ja": "会議前に「忙しそうに見える」必要があります。",
-            "focus": "look busy",
-            "jaFocus": "忙しそうに見える"
-          },
-          {
-            "en": "Please look busy by the end of the day.",
-            "ja": "今日中に「忙しそうに見える」してください。",
-            "focus": "look busy",
-            "jaFocus": "忙しそうに見える"
-          },
-          {
-            "en": "I will look busy and share the update.",
-            "ja": "私が「忙しそうに見える」して進捗を共有します。",
-            "focus": "look busy",
-            "jaFocus": "忙しそうに見える"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look busy on weekends.",
-            "ja": "週末によく「忙しそうに見える」します。",
-            "focus": "look busy",
-            "jaFocus": "忙しそうに見える"
-          },
-          {
-            "en": "It is useful to look busy.",
-            "ja": "「忙しそうに見える」できると便利です。",
-            "focus": "look busy",
-            "jaFocus": "忙しそうに見える"
-          }
-        ]
-      },
-      {
-        "phrase": "look closely",
-        "ja": "詳しく見る",
-        "image": "look closely のまとまりで仕事に使う表現。",
-        "pattern": "look + 副詞",
-        "examples": [
-          {
-            "en": "We need to look closely before the meeting.",
-            "ja": "会議前に「詳しく見る」必要があります。",
-            "focus": "look closely",
-            "jaFocus": "詳しく見る"
-          },
-          {
-            "en": "Please look closely by the end of the day.",
-            "ja": "今日中に「詳しく見る」してください。",
-            "focus": "look closely",
-            "jaFocus": "詳しく見る"
-          },
-          {
-            "en": "I will look closely and share the update.",
-            "ja": "私が「詳しく見る」して進捗を共有します。",
-            "focus": "look closely",
-            "jaFocus": "詳しく見る"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look closely on weekends.",
-            "ja": "週末によく「詳しく見る」します。",
-            "focus": "look closely",
-            "jaFocus": "詳しく見る"
-          },
-          {
-            "en": "It is useful to look closely.",
-            "ja": "「詳しく見る」できると便利です。",
-            "focus": "look closely",
-            "jaFocus": "詳しく見る"
-          }
-        ]
-      },
-      {
-        "phrase": "look professional",
-        "ja": "プロらしく見える",
-        "image": "look professional のまとまりで仕事に使う表現。",
-        "pattern": "look + 形容詞",
-        "examples": [
-          {
-            "en": "We need to look professional before the meeting.",
-            "ja": "会議前に「プロらしく見える」必要があります。",
-            "focus": "look professional",
-            "jaFocus": "プロらしく見える"
-          },
-          {
-            "en": "Please look professional by the end of the day.",
-            "ja": "今日中に「プロらしく見える」してください。",
-            "focus": "look professional",
-            "jaFocus": "プロらしく見える"
-          },
-          {
-            "en": "I will look professional and share the update.",
-            "ja": "私が「プロらしく見える」して進捗を共有します。",
-            "focus": "look professional",
-            "jaFocus": "プロらしく見える"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look professional on weekends.",
-            "ja": "週末によく「プロらしく見える」します。",
-            "focus": "look professional",
-            "jaFocus": "プロらしく見える"
-          },
-          {
-            "en": "It is useful to look professional.",
-            "ja": "「プロらしく見える」できると便利です。",
-            "focus": "look professional",
-            "jaFocus": "プロらしく見える"
-          }
-        ]
-      }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
-      {
-        "phrase": "look into",
-        "ja": "調査する",
-        "image": "look into のまとまりで仕事に使う表現。",
-        "pattern": "look into + 名詞",
-        "examples": [
-          {
-            "en": "We need to look into before the meeting.",
-            "ja": "会議前に「調査する」必要があります。",
-            "focus": "look into",
-            "jaFocus": "調査する"
-          },
-          {
-            "en": "Please look into by the end of the day.",
-            "ja": "今日中に「調査する」してください。",
-            "focus": "look into",
-            "jaFocus": "調査する"
-          },
-          {
-            "en": "I will look into and share the update.",
-            "ja": "私が「調査する」して進捗を共有します。",
-            "focus": "look into",
-            "jaFocus": "調査する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look into on weekends.",
-            "ja": "週末によく「調査する」します。",
-            "focus": "look into",
-            "jaFocus": "調査する"
-          },
-          {
-            "en": "It is useful to look into.",
-            "ja": "「調査する」できると便利です。",
-            "focus": "look into",
-            "jaFocus": "調査する"
-          }
-        ]
-      },
-      {
-        "phrase": "look over",
-        "ja": "ざっと確認する",
-        "image": "look over のまとまりで仕事に使う表現。",
-        "pattern": "look over + 名詞",
-        "examples": [
-          {
-            "en": "We need to look over before the meeting.",
-            "ja": "会議前に「ざっと確認する」必要があります。",
-            "focus": "look over",
-            "jaFocus": "ざっと確認する"
-          },
-          {
-            "en": "Please look over by the end of the day.",
-            "ja": "今日中に「ざっと確認する」してください。",
-            "focus": "look over",
-            "jaFocus": "ざっと確認する"
-          },
-          {
-            "en": "I will look over and share the update.",
-            "ja": "私が「ざっと確認する」して進捗を共有します。",
-            "focus": "look over",
-            "jaFocus": "ざっと確認する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look over on weekends.",
-            "ja": "週末によく「ざっと確認する」します。",
-            "focus": "look over",
-            "jaFocus": "ざっと確認する"
-          },
-          {
-            "en": "It is useful to look over.",
-            "ja": "「ざっと確認する」できると便利です。",
-            "focus": "look over",
-            "jaFocus": "ざっと確認する"
-          }
-        ]
-      },
-      {
-        "phrase": "look for",
-        "ja": "探す",
-        "image": "look for のまとまりで仕事に使う表現。",
-        "pattern": "look for + 名詞",
-        "examples": [
-          {
-            "en": "We need to look for before the meeting.",
-            "ja": "会議前に「探す」必要があります。",
-            "focus": "look for",
-            "jaFocus": "探す"
-          },
-          {
-            "en": "Please look for by the end of the day.",
-            "ja": "今日中に「探す」してください。",
-            "focus": "look for",
-            "jaFocus": "探す"
-          },
-          {
-            "en": "I will look for and share the update.",
-            "ja": "私が「探す」して進捗を共有します。",
-            "focus": "look for",
-            "jaFocus": "探す"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look for on weekends.",
-            "ja": "週末によく「探す」します。",
-            "focus": "look for",
-            "jaFocus": "探す"
-          },
-          {
-            "en": "It is useful to look for.",
-            "ja": "「探す」できると便利です。",
-            "focus": "look for",
-            "jaFocus": "探す"
-          }
-        ]
-      },
-      {
-        "phrase": "look at",
-        "ja": "見る・確認する",
-        "image": "look at のまとまりで仕事に使う表現。",
-        "pattern": "look at + 名詞",
-        "examples": [
-          {
-            "en": "We need to look at before the meeting.",
-            "ja": "会議前に「見る・確認する」必要があります。",
-            "focus": "look at",
-            "jaFocus": "見る・確認する"
-          },
-          {
-            "en": "Please look at by the end of the day.",
-            "ja": "今日中に「見る・確認する」してください。",
-            "focus": "look at",
-            "jaFocus": "見る・確認する"
-          },
-          {
-            "en": "I will look at and share the update.",
-            "ja": "私が「見る・確認する」して進捗を共有します。",
-            "focus": "look at",
-            "jaFocus": "見る・確認する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look at on weekends.",
-            "ja": "週末によく「見る・確認する」します。",
-            "focus": "look at",
-            "jaFocus": "見る・確認する"
-          },
-          {
-            "en": "It is useful to look at.",
-            "ja": "「見る・確認する」できると便利です。",
-            "focus": "look at",
-            "jaFocus": "見る・確認する"
-          }
-        ]
-      },
-      {
-        "phrase": "look up",
-        "ja": "調べる",
-        "image": "look up のまとまりで仕事に使う表現。",
-        "pattern": "look up + 名詞",
-        "examples": [
-          {
-            "en": "We need to look up before the meeting.",
-            "ja": "会議前に「調べる」必要があります。",
-            "focus": "look up",
-            "jaFocus": "調べる"
-          },
-          {
-            "en": "Please look up by the end of the day.",
-            "ja": "今日中に「調べる」してください。",
-            "focus": "look up",
-            "jaFocus": "調べる"
-          },
-          {
-            "en": "I will look up and share the update.",
-            "ja": "私が「調べる」して進捗を共有します。",
-            "focus": "look up",
-            "jaFocus": "調べる"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look up on weekends.",
-            "ja": "週末によく「調べる」します。",
-            "focus": "look up",
-            "jaFocus": "調べる"
-          },
-          {
-            "en": "It is useful to look up.",
-            "ja": "「調べる」できると便利です。",
-            "focus": "look up",
-            "jaFocus": "調べる"
-          }
-        ]
-      },
-      {
-        "phrase": "look after",
-        "ja": "世話する・担当する",
-        "image": "look after のまとまりで仕事に使う表現。",
-        "pattern": "look after + 名詞",
-        "examples": [
-          {
-            "en": "We need to look after before the meeting.",
-            "ja": "会議前に「世話する・担当する」必要があります。",
-            "focus": "look after",
-            "jaFocus": "世話する・担当する"
-          },
-          {
-            "en": "Please look after by the end of the day.",
-            "ja": "今日中に「世話する・担当する」してください。",
-            "focus": "look after",
-            "jaFocus": "世話する・担当する"
-          },
-          {
-            "en": "I will look after and share the update.",
-            "ja": "私が「世話する・担当する」して進捗を共有します。",
-            "focus": "look after",
-            "jaFocus": "世話する・担当する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look after on weekends.",
-            "ja": "週末によく「世話する・担当する」します。",
-            "focus": "look after",
-            "jaFocus": "世話する・担当する"
-          },
-          {
-            "en": "It is useful to look after.",
-            "ja": "「世話する・担当する」できると便利です。",
-            "focus": "look after",
-            "jaFocus": "世話する・担当する"
-          }
-        ]
-      },
-      {
-        "phrase": "look out",
-        "ja": "気をつける",
-        "image": "look out のまとまりで仕事に使う表現。",
-        "pattern": "look out",
-        "examples": [
-          {
-            "en": "We need to look out before the meeting.",
-            "ja": "会議前に「気をつける」必要があります。",
-            "focus": "look out",
-            "jaFocus": "気をつける"
-          },
-          {
-            "en": "Please look out by the end of the day.",
-            "ja": "今日中に「気をつける」してください。",
-            "focus": "look out",
-            "jaFocus": "気をつける"
-          },
-          {
-            "en": "I will look out and share the update.",
-            "ja": "私が「気をつける」して進捗を共有します。",
-            "focus": "look out",
-            "jaFocus": "気をつける"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look out on weekends.",
-            "ja": "週末によく「気をつける」します。",
-            "focus": "look out",
-            "jaFocus": "気をつける"
-          },
-          {
-            "en": "It is useful to look out.",
-            "ja": "「気をつける」できると便利です。",
-            "focus": "look out",
-            "jaFocus": "気をつける"
-          }
-        ]
-      },
-      {
-        "phrase": "look back",
-        "ja": "振り返る",
-        "image": "look back のまとまりで仕事に使う表現。",
-        "pattern": "look back",
-        "examples": [
-          {
-            "en": "We need to look back before the meeting.",
-            "ja": "会議前に「振り返る」必要があります。",
-            "focus": "look back",
-            "jaFocus": "振り返る"
-          },
-          {
-            "en": "Please look back by the end of the day.",
-            "ja": "今日中に「振り返る」してください。",
-            "focus": "look back",
-            "jaFocus": "振り返る"
-          },
-          {
-            "en": "I will look back and share the update.",
-            "ja": "私が「振り返る」して進捗を共有します。",
-            "focus": "look back",
-            "jaFocus": "振り返る"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look back on weekends.",
-            "ja": "週末によく「振り返る」します。",
-            "focus": "look back",
-            "jaFocus": "振り返る"
-          },
-          {
-            "en": "It is useful to look back.",
-            "ja": "「振り返る」できると便利です。",
-            "focus": "look back",
-            "jaFocus": "振り返る"
-          }
-        ]
-      },
-      {
-        "phrase": "look ahead",
-        "ja": "先を見据える",
-        "image": "look ahead のまとまりで仕事に使う表現。",
-        "pattern": "look ahead",
-        "examples": [
-          {
-            "en": "We need to look ahead before the meeting.",
-            "ja": "会議前に「先を見据える」必要があります。",
-            "focus": "look ahead",
-            "jaFocus": "先を見据える"
-          },
-          {
-            "en": "Please look ahead by the end of the day.",
-            "ja": "今日中に「先を見据える」してください。",
-            "focus": "look ahead",
-            "jaFocus": "先を見据える"
-          },
-          {
-            "en": "I will look ahead and share the update.",
-            "ja": "私が「先を見据える」して進捗を共有します。",
-            "focus": "look ahead",
-            "jaFocus": "先を見据える"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look ahead on weekends.",
-            "ja": "週末によく「先を見据える」します。",
-            "focus": "look ahead",
-            "jaFocus": "先を見据える"
-          },
-          {
-            "en": "It is useful to look ahead.",
-            "ja": "「先を見据える」できると便利です。",
-            "focus": "look ahead",
-            "jaFocus": "先を見据える"
-          }
-        ]
-      },
-      {
-        "phrase": "look around",
-        "ja": "見て回る",
-        "image": "look around のまとまりで仕事に使う表現。",
-        "pattern": "look around",
-        "examples": [
-          {
-            "en": "We need to look around before the meeting.",
-            "ja": "会議前に「見て回る」必要があります。",
-            "focus": "look around",
-            "jaFocus": "見て回る"
-          },
-          {
-            "en": "Please look around by the end of the day.",
-            "ja": "今日中に「見て回る」してください。",
-            "focus": "look around",
-            "jaFocus": "見て回る"
-          },
-          {
-            "en": "I will look around and share the update.",
-            "ja": "私が「見て回る」して進捗を共有します。",
-            "focus": "look around",
-            "jaFocus": "見て回る"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often look around on weekends.",
-            "ja": "週末によく「見て回る」します。",
-            "focus": "look around",
-            "jaFocus": "見て回る"
-          },
-          {
-            "en": "It is useful to look around.",
-            "ja": "「見て回る」できると便利です。",
-            "focus": "look around",
-            "jaFocus": "見て回る"
-          }
-        ]
-      }
+        {
+            "phrase": "look for",
+            "ja": "〜を探す",
+            "image": "必要なものへ視線と意識を向け続けるイメージ。",
+            "pattern": "LOOK FOR + object",
+            "examples": [
+                {
+                    "en": "I am looking for the updated file.",
+                    "ja": "私は更新されたファイルを探しています。",
+                    "focus": "looking for",
+                    "object": "the updated file"
+                },
+                {
+                    "en": "We are looking for a better supplier.",
+                    "ja": "私たちはより良い仕入先を探しています。",
+                    "focus": "looking for",
+                    "object": "a better supplier"
+                },
+                {
+                    "en": "The client is looking for a cheaper option.",
+                    "ja": "顧客はより安い選択肢を探しています。",
+                    "focus": "looking for",
+                    "object": "a cheaper option"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I am looking for my keys.",
+                    "ja": "私は鍵を探しています。",
+                    "focus": "looking for",
+                    "object": "my keys"
+                },
+                {
+                    "en": "She is looking for a new apartment.",
+                    "ja": "彼女は新しい部屋を探しています。",
+                    "focus": "looking for",
+                    "object": "a new apartment"
+                }
+            ]
+        },
+        {
+            "phrase": "look into",
+            "ja": "〜を調査する",
+            "image": "問題の中へ目を向けて詳しく調べるイメージ。",
+            "pattern": "LOOK INTO + issue",
+            "examples": [
+                {
+                    "en": "We will look into the cause of the delay.",
+                    "ja": "私たちは遅延の原因を調査します。",
+                    "focus": "look into",
+                    "object": "the cause"
+                },
+                {
+                    "en": "Please look into the customer complaint.",
+                    "ja": "顧客クレームを調査してください。",
+                    "focus": "look into",
+                    "object": "the customer complaint"
+                },
+                {
+                    "en": "I will look into the pricing issue.",
+                    "ja": "私は価格の問題を確認します。",
+                    "focus": "look into",
+                    "object": "the pricing issue"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I looked into the restaurant.",
+                    "ja": "私はそのレストランを調べました。",
+                    "focus": "looked into",
+                    "object": "the restaurant"
+                },
+                {
+                    "en": "We looked into travel options.",
+                    "ja": "私たちは旅行の選択肢を調べました。",
+                    "focus": "looked into",
+                    "object": "travel options"
+                }
+            ]
+        },
+        {
+            "phrase": "look over",
+            "ja": "〜をざっと確認する",
+            "image": "上から全体に目を通すイメージ。",
+            "pattern": "LOOK OVER + document",
+            "examples": [
+                {
+                    "en": "Could you look over this document?",
+                    "ja": "あなたはこの資料を確認してもらえますか？",
+                    "focus": "look over",
+                    "object": "this document"
+                },
+                {
+                    "en": "I looked over the contract before sending it.",
+                    "ja": "私は送付前に契約書をざっと確認しました。",
+                    "focus": "looked over",
+                    "object": "the contract"
+                },
+                {
+                    "en": "Please look over the agenda before the meeting.",
+                    "ja": "会議前に議題を確認してください。",
+                    "focus": "look over",
+                    "object": "the agenda"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I looked over the recipe.",
+                    "ja": "私はレシピをざっと見ました。",
+                    "focus": "looked over",
+                    "object": "the recipe"
+                },
+                {
+                    "en": "Can you look over my message?",
+                    "ja": "あなたは私のメッセージを見てくれますか？",
+                    "focus": "look over",
+                    "object": "my message"
+                }
+            ]
+        },
+        {
+            "phrase": "look up",
+            "ja": "〜を調べる",
+            "image": "情報を上へ引き出して確認するイメージ。",
+            "pattern": "LOOK UP + information",
+            "examples": [
+                {
+                    "en": "I will look up the product code.",
+                    "ja": "私は製品コードを調べます。",
+                    "focus": "look up",
+                    "object": "the product code"
+                },
+                {
+                    "en": "Can you look up the client's phone number?",
+                    "ja": "あなたは顧客の電話番号を調べられますか？",
+                    "focus": "look up",
+                    "object": "the client's phone number"
+                },
+                {
+                    "en": "We looked up the specification in the catalog.",
+                    "ja": "私たちはカタログで仕様を調べました。",
+                    "focus": "looked up",
+                    "object": "the specification"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I looked up the word in a dictionary.",
+                    "ja": "私は辞書でその単語を調べました。",
+                    "focus": "looked up",
+                    "object": "the word"
+                },
+                {
+                    "en": "She looked up the train time.",
+                    "ja": "彼女は電車の時刻を調べました。",
+                    "focus": "looked up",
+                    "object": "the train time"
+                }
+            ]
+        },
+        {
+            "phrase": "look after",
+            "ja": "〜の面倒を見る・管理する",
+            "image": "対象に注意を向け続けて守るイメージ。",
+            "pattern": "LOOK AFTER + person / item",
+            "examples": [
+                {
+                    "en": "Our team looks after this account.",
+                    "ja": "私たちのチームはこの顧客を担当しています。",
+                    "focus": "looks after",
+                    "object": "this account"
+                },
+                {
+                    "en": "Please look after the samples until Friday.",
+                    "ja": "金曜日までサンプルの管理をお願いします。",
+                    "focus": "look after",
+                    "object": "the samples"
+                },
+                {
+                    "en": "She looked after the visitor during the factory tour.",
+                    "ja": "彼女は工場見学中に来訪者の対応をしました。",
+                    "focus": "looked after",
+                    "object": "the visitor"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I looked after my sister's dog.",
+                    "ja": "私は姉の犬の世話をしました。",
+                    "focus": "looked after",
+                    "object": "my sister's dog"
+                },
+                {
+                    "en": "He looks after his plants every morning.",
+                    "ja": "彼は毎朝植物の世話をしています。",
+                    "focus": "looks after",
+                    "object": "his plants"
+                }
+            ]
+        },
+        {
+            "phrase": "look forward to",
+            "ja": "〜を楽しみに待つ",
+            "image": "前の予定へ気持ちを向けて待つイメージ。",
+            "pattern": "LOOK FORWARD TO + noun / -ing",
+            "examples": [
+                {
+                    "en": "I look forward to your reply.",
+                    "ja": "私はあなたからの返信をお待ちしております。",
+                    "focus": "look forward to",
+                    "object": "your reply"
+                },
+                {
+                    "en": "We look forward to working with you.",
+                    "ja": "私たちはあなたと一緒に仕事ができることを楽しみにしています。",
+                    "focus": "look forward to",
+                    "object": "working with you"
+                },
+                {
+                    "en": "I look forward to the meeting next week.",
+                    "ja": "私は来週の会議を楽しみにしています。",
+                    "focus": "look forward to",
+                    "object": "the meeting"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I look forward to the weekend.",
+                    "ja": "私は週末を楽しみにしています。",
+                    "focus": "look forward to",
+                    "object": "the weekend"
+                },
+                {
+                    "en": "We look forward to the trip.",
+                    "ja": "私たちは旅行を楽しみにしています。",
+                    "focus": "look forward to",
+                    "object": "the trip"
+                }
+            ]
+        },
+        {
+            "phrase": "look out for",
+            "ja": "〜に注意する",
+            "image": "危険や変化を見逃さないように外へ注意を向けるイメージ。",
+            "pattern": "LOOK OUT FOR + risk / change",
+            "examples": [
+                {
+                    "en": "Please look out for any errors in the data.",
+                    "ja": "データにミスがないか注意して見てください。",
+                    "focus": "look out for",
+                    "object": "any errors"
+                },
+                {
+                    "en": "We should look out for risks in this project.",
+                    "ja": "私たちはこの案件のリスクに注意するべきです。",
+                    "focus": "look out for",
+                    "object": "risks"
+                },
+                {
+                    "en": "Look out for changes in the delivery schedule.",
+                    "ja": "納品スケジュールの変更に注意してください。",
+                    "focus": "Look out for",
+                    "object": "changes"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "Look out for cars.",
+                    "ja": "車に気をつけてください。",
+                    "focus": "Look out for",
+                    "object": "cars"
+                },
+                {
+                    "en": "I looked out for signs at the station.",
+                    "ja": "私は駅で標識に注意しました。",
+                    "focus": "looked out for",
+                    "object": "signs"
+                }
+            ]
+        },
+        {
+            "phrase": "look through",
+            "ja": "〜に目を通す",
+            "image": "資料の中を通り抜けるように確認するイメージ。",
+            "pattern": "LOOK THROUGH + document",
+            "examples": [
+                {
+                    "en": "I looked through the proposal before sending it.",
+                    "ja": "私は送付前に提案書に目を通しました。",
+                    "focus": "looked through",
+                    "object": "the proposal"
+                },
+                {
+                    "en": "Can you look through these photos from the site?",
+                    "ja": "あなたは現場写真に目を通せますか？",
+                    "focus": "look through",
+                    "object": "these photos"
+                },
+                {
+                    "en": "We need to look through the contract again.",
+                    "ja": "私たちは契約書にもう一度目を通す必要があります。",
+                    "focus": "look through",
+                    "object": "the contract"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I looked through the magazine.",
+                    "ja": "私は雑誌に目を通しました。",
+                    "focus": "looked through",
+                    "object": "the magazine"
+                },
+                {
+                    "en": "She looked through the old photos.",
+                    "ja": "彼女は昔の写真に目を通しました。",
+                    "focus": "looked through",
+                    "object": "the old photos"
+                }
+            ]
+        },
+        {
+            "phrase": "look back on",
+            "ja": "〜を振り返る",
+            "image": "過去へ視線を戻すイメージ。",
+            "pattern": "LOOK BACK ON + period / experience",
+            "examples": [
+                {
+                    "en": "We looked back on the project after delivery.",
+                    "ja": "私たちは納品後にその案件を振り返りました。",
+                    "focus": "looked back on",
+                    "object": "the project"
+                },
+                {
+                    "en": "I want to look back on last month's sales results.",
+                    "ja": "私は先月の売上結果を振り返りたいです。",
+                    "focus": "look back on",
+                    "object": "last month's sales results"
+                },
+                {
+                    "en": "The team looked back on the meeting and improved the proposal.",
+                    "ja": "チームは会議を振り返り、提案書を改善しました。",
+                    "focus": "looked back on",
+                    "object": "the meeting"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I looked back on my school days.",
+                    "ja": "私は学生時代を振り返りました。",
+                    "focus": "looked back on",
+                    "object": "my school days"
+                },
+                {
+                    "en": "She looked back on her trip.",
+                    "ja": "彼女は旅行を振り返りました。",
+                    "focus": "looked back on",
+                    "object": "her trip"
+                }
+            ]
+        },
+        {
+            "phrase": "look ahead",
+            "ja": "先を見据える",
+            "image": "これから来る予定や状況へ視線を向けるイメージ。",
+            "pattern": "LOOK AHEAD",
+            "examples": [
+                {
+                    "en": "We need to look ahead to next quarter.",
+                    "ja": "私たちは次の四半期を見据える必要があります。",
+                    "focus": "look ahead",
+                    "object": "to next quarter"
+                },
+                {
+                    "en": "The manager looked ahead and adjusted the schedule.",
+                    "ja": "上司は先を見据えてスケジュールを調整しました。",
+                    "focus": "looked ahead"
+                },
+                {
+                    "en": "Let's look ahead before we decide the inventory plan.",
+                    "ja": "私たちは在庫計画を決める前に先を見据えましょう。",
+                    "focus": "look ahead"
+                }
+            ],
+            "dailyExamples": [
+                {
+                    "en": "I looked ahead to next year.",
+                    "ja": "私は来年を見据えました。",
+                    "focus": "looked ahead",
+                    "object": "to next year"
+                },
+                {
+                    "en": "We should look ahead and prepare early.",
+                    "ja": "私たちは先を見据えて早めに準備するべきです。",
+                    "focus": "look ahead"
+                }
+            ]
+        }
     ]
-  },
+},
   {
     "id": "watch",
     "rank": 13,
@@ -34407,7 +33789,7 @@ function fallbackDailyExamples(verb: Verb, title: string, focusText?: string): E
 }
 
 function attachPremiumDailyExamples() {
-  const premiumVerbs = new Set(["get", "take", "make", "give", "have"]);
+  const premiumVerbs = new Set(["get", "take", "make", "give", "have", "go", "come", "put", "keep", "find", "see", "look"]);
   for (const verb of verbs) {
     if (!premiumVerbs.has(verb.id)) continue;
     for (const meaning of verb.meanings) {

@@ -1,27 +1,33 @@
 # QUALITY_AUDIT_CURRENT
 
 ## Version
-Ver.116 FIND / SEE / LOOK 追加版
+Ver.117 WATCH / HEAR / LISTEN 追加版
 
 ## Target verbs
-- Existing rebuilt verbs maintained: GET / TAKE / MAKE / GIVE / HAVE / GO / COME / PUT / KEEP
-- Newly rebuilt in this version: FIND / SEE / LOOK
+- Existing rebuilt verbs maintained: GET / TAKE / MAKE / GIVE / HAVE / GO / COME / PUT / KEEP / FIND / SEE / LOOK
+- Newly rebuilt in this version: WATCH / HEAR / LISTEN
 
 ## Scope
-- Added/rebuilt FIND / SEE / LOOK using the two-section rule.
+- Added/rebuilt WATCH / HEAR / LISTEN using the two-section rule.
 - UI category remains only: 基本 / 句動詞.
 - No separate visible categories for 熟語 / コロケーション / 文型 / 表現 / よく使うフレーズ.
 - Profile image persistence fix maintained.
 - Target date persistence fix maintained.
 - Bottom navigation spacing fix maintained.
 
+## Verb quality notes
+- WATCH: focused on observing moving/changing things such as progress, numbers, schedules, videos, risks, and work steps.
+- HEAR: focused on information/sound entering the ear, including hear about, hear from, hear that, feedback, and知覚動詞 usage.
+- LISTEN: focused on active attention, especially listen to customers, explanations, advice, and listen for specific sounds/issues.
+- Phrasal verbs were not padded unnaturally to 10 when they were weak for business/daily use.
+
 ## Quality checks
 - TypeScript: `npx tsc --noEmit` completed with exit code 0.
-- Next.js build: reached `Compiled successfully`, `Finished TypeScript`, static pages generation complete, and route list output.
-- Build process did not return an exit code before this environment timeout, but no TypeScript or compilation error appeared in the build log.
+- Next.js build: `npm run build` completed with exit code 0.
+- Build log included `Compiled successfully`, `Finished TypeScript`, static pages generation complete, and route list output.
 
 ## Old field reference checks
-Checked for old Vercel-blocking references:
+Checked for old Vercel-blocking references in app/components/lib source files:
 - `row.collocationsOk`: not found
 - `row.collocationCount`: not found
 - `row.idiomTestTotal`: not found
@@ -40,6 +46,4 @@ Excluded from ZIP:
 
 ## Notes
 - `idioms` remains only as a backward-compatible saved-data key in code comments/types. It is mapped into 基本 and must not appear as a separate UI category.
-- FIND has one natural phrasal verb: find out. It was not padded unnaturally to 10.
-- SEE has four practical phrasal/prepositional expressions. It was not padded unnaturally to 10.
-- LOOK has ten practical phrasal expressions.
+- The target verbs were not changed during this work: WATCH / HEAR / LISTEN only.

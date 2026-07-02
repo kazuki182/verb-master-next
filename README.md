@@ -1,14 +1,14 @@
 # Verb Master
 
-Ver.116 FIND / SEE / LOOK 追加版です。
+Ver.117 WATCH / HEAR / LISTEN 追加版です。
 
 ## 今回の対象動詞
-- FIND
-- SEE
-- LOOK
+- WATCH
+- HEAR
+- LISTEN
 
 ## 現在の作り直し済み動詞
-GET / TAKE / MAKE / GIVE / HAVE / GO / COME / PUT / KEEP / FIND / SEE / LOOK
+GET / TAKE / MAKE / GIVE / HAVE / GO / COME / PUT / KEEP / FIND / SEE / LOOK / WATCH / HEAR / LISTEN
 
 ## 重要ルール
 - 画面上のカテゴリは「基本」と「句動詞」のみです。
@@ -24,4 +24,8 @@ GET / TAKE / MAKE / GIVE / HAVE / GO / COME / PUT / KEEP / FIND / SEE / LOOK
 
 ## 確認済み
 - `npx tsc --noEmit` exit code 0
-- `npm run build` は Compiled successfully / Finished TypeScript / static pages生成 / route一覧表示まで確認
+- `npm run build` exit code 0
+- `Compiled successfully`
+- `Finished TypeScript`
+- static pages生成完了
+- route一覧表示まで確認

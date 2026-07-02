@@ -33,3 +33,9 @@ Ver.114再作成版の続きです。
 
 ## Build
 `npm run build` 成功確認済み。
+
+
+## V115 hotfix: collocationsOk compatibility
+- Vercel/GitHub側に古い品質チェック表示が残っていてもTypeScriptで止まらないよう、VerbQualityAuditに互換用の collocationsOk / collocationCount を戻しました。
+- 画面表示ルールは変更なし。カテゴリ表示は「基本」「句動詞」のみです。
+- app/admin/verb-quality/page.tsx では熟語・コロケーションの別カテゴリ表示はしていません。

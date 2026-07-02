@@ -15,6 +15,9 @@ export type VerbQualityAudit = {
   accessLabel: string;
   usageCount: number;
   phrasalCount: number;
+  /** Backward compatibility only: old admin components may still reference these. UI must not show a separate collocation category. */
+  collocationCount: number;
+  collocationsOk: boolean;
   businessExampleTotal: number;
   premiumDailyExampleTotal: number;
   testTotal: number;
@@ -149,6 +152,9 @@ export function auditVerbQuality(verb: Verb): VerbQualityAudit {
     addIssue(issues, "medium", "Premium日常例文不足", `${meaningsWithFewDaily.length}個の使い方で日常例文が2つ未満です。`);
   }
 
+  const collocationCount = verb.collocations.length;
+  const collocationsOk = true;
+
   const phrasalCount = verb.phrasalVerbs.length;
   const phrasalWithFewExamples = verb.phrasalVerbs.filter((item) => item.examples.length < 3);
   const phrasalOk = phrasalCount >= 5 && phrasalWithFewExamples.length === 0;
@@ -207,6 +213,8 @@ export function auditVerbQuality(verb: Verb): VerbQualityAudit {
     accessLabel: getAccessLabel(verb.rank),
     usageCount,
     phrasalCount,
+    collocationCount,
+    collocationsOk,
     businessExampleTotal,
     premiumDailyExampleTotal,
     testTotal: verbTests.length,

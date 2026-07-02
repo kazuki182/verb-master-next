@@ -718,1254 +718,492 @@ export const verbs: Verb[] = [
     "syllable": "come",
     "transitivity": "自動詞中心",
     "importance": "★★★★★ 超重要",
-    "core": "こちら側・話題の中心へ近づく",
-    "coreDetail": "COMEは、相手・話し手・予定・結果などがこちら側に近づく動詞です。仕事では来社、連絡、結果、期限が近づく場面でよく使います。",
+    "core": "人・物・情報・予定が、話し手側や話題の中心へ近づく",
+    "coreDetail": "COMEは『こちら側へ近づく』が中心です。人が来るだけでなく、依頼が来る、締切が近づく、結果に至る、商品に付属する、という使い方も同じ流れで理解できます。",
     "coreVisual": {
       "from": [
-        "相手",
-        "予定",
-        "結果",
-        "連絡"
+        "👤 顧客",
+        "📩 依頼",
+        "⏰ 締切",
+        "📦 商品",
+        "💡 結論"
       ],
-      "to": "こちら側",
-      "label": "こちらへ近づく"
+      "to": "自分・自社・話題の中心",
+      "label": "外側・先の予定 → こちら側へ近づく"
     },
     "meanings": [
       {
-        "id": "arrive",
-        "title": "① 来る・到着する",
-        "pattern": "COME + to 場所",
-        "transitivity": "自動詞中心",
-        "structure": "S + come + 副詞句",
-        "image": "こちら側・話題の中心へ近づく",
-        "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+        "id": "come-to-office",
+        "title": "① come to the office / 会社に来る",
+        "pattern": "COME + to + 場所",
+        "transitivity": "自動詞",
+        "structure": "S + come + to + 場所",
+        "image": "人がこちら側・話題の場所へ近づくイメージ。",
+        "point": "goは離れて行く方向、comeは話し手や予定の中心へ来る方向。",
         "examples": [
           {
-            "en": "The client came to our office today.",
-            "ja": "今日、顧客が弊社に来ました。",
+            "en": "The client came to our office this morning.",
+            "ja": "顧客は今朝、弊社に来ました。",
             "focus": "came",
-            "jaFocus": "来ました"
+            "object": "to our office"
           },
           {
-            "en": "We come this in the project.",
-            "ja": "案件でこの表現を使います。",
-            "focus": "came",
-            "jaFocus": "来ました"
-          },
-          {
-            "en": "Please come to the meeting on time.",
-            "ja": "時間通りに会議へ来てください。",
+            "en": "Can you come to the meeting at three?",
+            "ja": "あなたは3時の会議に来られますか？",
             "focus": "come",
-            "jaFocus": "ください"
+            "object": "to the meeting"
+          },
+          {
+            "en": "The engineer will come to the site tomorrow.",
+            "ja": "技術担当者は明日、現場に来ます。",
+            "focus": "come",
+            "object": "to the site"
           }
         ],
         "dailyExamples": [
           {
-            "en": "I came home late.",
-            "ja": "帰宅が遅くなった。",
-            "focus": "came",
-            "jaFocus": "遅くなった"
+            "en": "Please come here for a minute.",
+            "ja": "少しこちらに来てください。",
+            "focus": "come",
+            "object": "here"
           },
           {
-            "en": "This expression is useful in daily conversation.",
-            "ja": "この表現は日常会話でも役立つ。",
-            "focus": "is",
-            "jaFocus": "役立つ"
+            "en": "My friend came to my house last weekend.",
+            "ja": "友人が先週末、私の家に来ました。",
+            "focus": "came",
+            "object": "to my house"
           }
         ]
       },
       {
-        "id": "be received",
-        "title": "② 届く",
-        "pattern": "COME + from 人/場所",
-        "transitivity": "自動詞中心",
-        "structure": "S + come + 副詞句",
-        "image": "こちら側・話題の中心へ近づく",
-        "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+        "id": "come-from",
+        "title": "② come from / 〜から来る・届く",
+        "pattern": "COME + from + 人/場所",
+        "transitivity": "自動詞",
+        "structure": "S + come + from + 人/場所",
+        "image": "依頼・情報・物が外部からこちらへ届くイメージ。",
+        "point": "仕事では request, question, message, instruction などとよく使う。",
         "examples": [
           {
             "en": "The request came from the Singapore office.",
             "ja": "その依頼はシンガポール本社から来ました。",
             "focus": "came",
-            "jaFocus": "来ました"
+            "object": "from the Singapore office"
           },
           {
-            "en": "We come this in the project.",
-            "ja": "案件でこの表現を使います。",
+            "en": "This question came from the customer.",
+            "ja": "この質問は顧客から来ました。",
             "focus": "came",
-            "jaFocus": "来ました"
+            "object": "from the customer"
           },
           {
-            "en": "Please come to the meeting on time.",
-            "ja": "時間通りに会議へ来てください。",
-            "focus": "come",
-            "jaFocus": "ください"
+            "en": "The instruction came from our manager.",
+            "ja": "その指示は私たちの上司から来ました。",
+            "focus": "came",
+            "object": "from our manager"
           }
         ],
         "dailyExamples": [
           {
-            "en": "I came home late.",
-            "ja": "帰宅が遅くなった。",
+            "en": "This gift came from my friend.",
+            "ja": "この贈り物は友人から届きました。",
             "focus": "came",
-            "jaFocus": "遅くなった"
+            "object": "from my friend"
           },
           {
-            "en": "This expression is useful in daily conversation.",
-            "ja": "この表現は日常会話でも役立つ。",
-            "focus": "is",
-            "jaFocus": "役立つ"
+            "en": "The smell comes from the kitchen.",
+            "ja": "そのにおいは台所から来ています。",
+            "focus": "comes",
+            "object": "from the kitchen"
           }
         ]
       },
       {
-        "id": "happen",
-        "title": "③ 発生する",
-        "pattern": "COME up",
-        "transitivity": "自動詞中心",
-        "structure": "S + come up",
-        "image": "こちら側・話題の中心へ近づく",
-        "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+        "id": "come-soon",
+        "title": "③ come soon / 近づく",
+        "pattern": "COME + soon / next / in 日数",
+        "transitivity": "自動詞",
+        "structure": "S + come + 副詞",
+        "image": "予定や締切が今の地点へ近づいてくるイメージ。",
+        "point": "deadline, meeting, event, delivery date などと相性が良い。",
+        "examples": [
+          {
+            "en": "The deadline is coming soon.",
+            "ja": "締切がもうすぐ近づいています。",
+            "focus": "coming",
+            "object": "soon"
+          },
+          {
+            "en": "The delivery date is coming next week.",
+            "ja": "納品日は来週に迫っています。",
+            "focus": "coming",
+            "object": "next week"
+          },
+          {
+            "en": "Our next meeting comes after the site visit.",
+            "ja": "次の会議は現場訪問の後にあります。",
+            "focus": "comes",
+            "object": "after the site visit"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Summer is coming soon.",
+            "ja": "夏がもうすぐ来ます。",
+            "focus": "coming",
+            "object": "soon"
+          },
+          {
+            "en": "My birthday comes in July.",
+            "ja": "私の誕生日は7月に来ます。",
+            "focus": "comes",
+            "object": "in July"
+          }
+        ]
+      },
+      {
+        "id": "come-to-conclusion",
+        "title": "④ come to a conclusion / 結論に至る",
+        "pattern": "COME + to + conclusion/decision",
+        "transitivity": "自動詞句",
+        "structure": "S + come + to + O",
+        "image": "話し合いが進み、結論という地点に到達するイメージ。",
+        "point": "decideより少し『話し合いの結果そこにたどり着いた』感じが出る。",
+        "examples": [
+          {
+            "en": "We came to the same conclusion after the meeting.",
+            "ja": "私たちは会議後、同じ結論に至りました。",
+            "focus": "came",
+            "object": "to the same conclusion"
+          },
+          {
+            "en": "The team came to a decision this morning.",
+            "ja": "チームは今朝、決定に至りました。",
+            "focus": "came",
+            "object": "to a decision"
+          },
+          {
+            "en": "Did you come to any conclusion about the price?",
+            "ja": "あなたは価格について何か結論に至りましたか？",
+            "focus": "come",
+            "object": "to any conclusion"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We came to a simple answer.",
+            "ja": "私たちはシンプルな答えにたどり着きました。",
+            "focus": "came",
+            "object": "to a simple answer"
+          },
+          {
+            "en": "I finally came to a decision.",
+            "ja": "私はようやく決めました。",
+            "focus": "came",
+            "object": "to a decision"
+          }
+        ]
+      },
+      {
+        "id": "come-with",
+        "title": "⑤ come with / 付いている",
+        "pattern": "COME + with + 付属物",
+        "transitivity": "自動詞句",
+        "structure": "S + come + with + O",
+        "image": "商品やサービスが、付属物を一緒に連れてくるイメージ。",
+        "point": "warranty, manual, cable, remote など商品説明で便利。",
+        "examples": [
+          {
+            "en": "The product comes with a two-year warranty.",
+            "ja": "その製品には2年保証が付いています。",
+            "focus": "comes",
+            "object": "with a two-year warranty"
+          },
+          {
+            "en": "This sample comes with a simple manual.",
+            "ja": "このサンプルには簡単な説明書が付いています。",
+            "focus": "comes",
+            "object": "with a simple manual"
+          },
+          {
+            "en": "Does the controller come with a cable?",
+            "ja": "そのコントローラーにはケーブルが付いていますか？",
+            "focus": "come",
+            "object": "with a cable"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The toy comes with batteries.",
+            "ja": "そのおもちゃには電池が付いています。",
+            "focus": "comes",
+            "object": "with batteries"
+          },
+          {
+            "en": "This room comes with free Wi-Fi.",
+            "ja": "この部屋には無料Wi-Fiが付いています。",
+            "focus": "comes",
+            "object": "with free Wi-Fi"
+          }
+        ]
+      },
+      {
+        "id": "come-in",
+        "title": "⑥ come in / 入る・届く",
+        "pattern": "COME + in",
+        "transitivity": "自動詞",
+        "structure": "S + come + in",
+        "image": "外から中へ入ってくるイメージ。",
+        "point": "注文・問い合わせ・情報が入る場面で自然に使える。",
+        "examples": [
+          {
+            "en": "A new order came in this afternoon.",
+            "ja": "今日の午後、新しい注文が入りました。",
+            "focus": "came",
+            "object": "in"
+          },
+          {
+            "en": "Several questions came in after the presentation.",
+            "ja": "プレゼン後にいくつか質問が入りました。",
+            "focus": "came",
+            "object": "in"
+          },
+          {
+            "en": "Please let me know when the payment comes in.",
+            "ja": "入金が入ったら私に知らせてください。",
+            "focus": "comes",
+            "object": "in"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Please come in.",
+            "ja": "中に入ってください。",
+            "focus": "come",
+            "object": "in"
+          },
+          {
+            "en": "A message came in while I was out.",
+            "ja": "外出中にメッセージが入りました。",
+            "focus": "came",
+            "object": "in"
+          }
+        ]
+      },
+      {
+        "id": "come-first",
+        "title": "⑦ come first / 最優先になる",
+        "pattern": "COME + first",
+        "transitivity": "自動詞",
+        "structure": "S + come + first",
+        "image": "順位や大切さが一番前に来るイメージ。",
+        "point": "Quality comes first. は仕事でも日常でもよく使う。",
+        "examples": [
+          {
+            "en": "Quality comes first in this project.",
+            "ja": "この案件では品質が最優先です。",
+            "focus": "comes",
+            "object": "first"
+          },
+          {
+            "en": "Safety comes first during installation.",
+            "ja": "設置作業では安全が最優先です。",
+            "focus": "comes",
+            "object": "first"
+          },
+          {
+            "en": "The customer request comes first this week.",
+            "ja": "今週は顧客の依頼が最優先です。",
+            "focus": "comes",
+            "object": "first"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Family comes first for me.",
+            "ja": "私にとって家族が最優先です。",
+            "focus": "comes",
+            "object": "first"
+          },
+          {
+            "en": "Health should come first.",
+            "ja": "健康を最優先にすべきです。",
+            "focus": "come",
+            "object": "first"
+          }
+        ]
+      },
+      {
+        "id": "come-as",
+        "title": "⑧ come as / 〜として受け取られる",
+        "pattern": "COME + as + 名詞/形容詞",
+        "transitivity": "自動詞句",
+        "structure": "S + come + as + C",
+        "image": "情報や発言が、相手にある印象として届くイメージ。",
+        "point": "come as a surprise は『驚きとして来る＝驚きになる』。",
+        "examples": [
+          {
+            "en": "The sudden change came as a surprise to the team.",
+            "ja": "突然の変更はチームにとって驚きでした。",
+            "focus": "came",
+            "object": "as a surprise"
+          },
+          {
+            "en": "His comment came as a warning to us.",
+            "ja": "彼のコメントは私たちへの警告のように受け取られました。",
+            "focus": "came",
+            "object": "as a warning"
+          },
+          {
+            "en": "The price increase came as bad news to the customer.",
+            "ja": "値上げは顧客にとって悪い知らせでした。",
+            "focus": "came",
+            "object": "as bad news"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The result came as a shock.",
+            "ja": "その結果はショックでした。",
+            "focus": "came",
+            "object": "as a shock"
+          },
+          {
+            "en": "Her message came as good news.",
+            "ja": "彼女のメッセージは良い知らせでした。",
+            "focus": "came",
+            "object": "as good news"
+          }
+        ]
+      }
+    ],
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "come up",
+        "ja": "出てくる・発生する",
+        "image": "課題や話題が下から表面に上がってくるイメージ。",
+        "pattern": "COME UP",
         "examples": [
           {
             "en": "A new issue came up during the meeting.",
             "ja": "会議中に新しい課題が出ました。",
             "focus": "came up",
-            "jaFocus": "出ました"
+            "object": "during the meeting"
           },
           {
-            "en": "We come this in the project.",
-            "ja": "案件でこの表現を使います。",
+            "en": "If any questions come up, please contact me.",
+            "ja": "何か質問が出たら、私に連絡してください。",
+            "focus": "come up"
+          },
+          {
+            "en": "This topic came up in the customer call.",
+            "ja": "この話題は顧客との電話で出ました。",
             "focus": "came up",
-            "jaFocus": "出ました"
-          },
-          {
-            "en": "Please come to the meeting on time.",
-            "ja": "時間通りに会議へ来てください。",
-            "focus": "come",
-            "jaFocus": "ください"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I came home late.",
-            "ja": "帰宅が遅くなった。",
-            "focus": "came",
-            "jaFocus": "遅くなった"
-          },
-          {
-            "en": "This expression is useful in daily conversation.",
-            "ja": "この表現は日常会話でも役立つ。",
-            "focus": "is",
-            "jaFocus": "役立つ"
+            "object": "in the customer call"
           }
         ]
       },
       {
-        "id": "approach",
-        "title": "④ 近づく",
-        "pattern": "COME soon/next",
-        "transitivity": "自動詞中心",
-        "structure": "S + come + 副詞",
-        "image": "こちら側・話題の中心へ近づく",
-        "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+        "phrase": "come back",
+        "ja": "戻る・復旧する",
+        "image": "一度離れたものが、元の場所や状態へ戻ってくるイメージ。",
+        "pattern": "COME BACK",
         "examples": [
           {
-            "en": "The deadline is coming soon.",
-            "ja": "締切が近づいています。",
-            "focus": "coming",
-            "jaFocus": "近づいています"
+            "en": "I will come back to you after checking the stock.",
+            "ja": "在庫確認後、あなたに折り返します。",
+            "focus": "come back",
+            "object": "to you"
           },
           {
-            "en": "We come this in the project.",
-            "ja": "案件でこの表現を使います。",
-            "focus": "coming",
-            "jaFocus": "近づいています"
-          },
-          {
-            "en": "Please come to the meeting on time.",
-            "ja": "時間通りに会議へ来てください。",
-            "focus": "come",
-            "jaFocus": "ください"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I came home late.",
-            "ja": "帰宅が遅くなった。",
-            "focus": "came",
-            "jaFocus": "遅くなった"
-          },
-          {
-            "en": "This expression is useful in daily conversation.",
-            "ja": "この表現は日常会話でも役立つ。",
-            "focus": "is",
-            "jaFocus": "役立つ"
-          }
-        ]
-      },
-      {
-        "id": "result",
-        "title": "⑤ 結果になる",
-        "pattern": "COME to + 結論",
-        "transitivity": "自動詞中心",
-        "structure": "S + come to + O",
-        "image": "こちら側・話題の中心へ近づく",
-        "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
-        "examples": [
-          {
-            "en": "We came to the same conclusion.",
-            "ja": "同じ結論に至りました。",
-            "focus": "came",
-            "object": "to the same conclusion",
-            "jaFocus": "至りました"
-          },
-          {
-            "en": "We come this in the project.",
-            "ja": "案件でこの表現を使います。",
-            "focus": "came",
-            "object": "to the same conclusion",
-            "jaFocus": "至りました"
-          },
-          {
-            "en": "Please come to the meeting on time.",
-            "ja": "時間通りに会議へ来てください。",
-            "focus": "come",
-            "jaFocus": "ください"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I came home late.",
-            "ja": "帰宅が遅くなった。",
-            "focus": "came",
-            "jaFocus": "遅くなった"
-          },
-          {
-            "en": "This expression is useful in daily conversation.",
-            "ja": "この表現は日常会話でも役立つ。",
-            "focus": "is",
-            "jaFocus": "役立つ"
-          }
-        ]
-      },
-      {
-        "id": "be included",
-        "title": "⑥ 付属する",
-        "pattern": "COME with + 名詞",
-        "transitivity": "自動詞中心",
-        "structure": "S + come with + O",
-        "image": "こちら側・話題の中心へ近づく",
-        "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
-        "examples": [
-          {
-            "en": "The product comes with a warranty.",
-            "ja": "その製品には保証が付いています。",
-            "focus": "comes",
-            "object": "with a warranty",
-            "jaFocus": "付いています"
-          },
-          {
-            "en": "We come this in the project.",
-            "ja": "案件でこの表現を使います。",
-            "focus": "comes",
-            "object": "with a warranty",
-            "jaFocus": "付いています"
-          },
-          {
-            "en": "Please come to the meeting on time.",
-            "ja": "時間通りに会議へ来てください。",
-            "focus": "come",
-            "jaFocus": "ください"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I came home late.",
-            "ja": "帰宅が遅くなった。",
-            "focus": "came",
-            "jaFocus": "遅くなった"
-          },
-          {
-            "en": "This expression is useful in daily conversation.",
-            "ja": "この表現は日常会話でも役立つ。",
-            "focus": "is",
-            "jaFocus": "役立つ"
-          }
-        ]
-      },
-      {
-        "id": "rank",
-        "title": "⑦ 順番になる",
-        "pattern": "COME first/second",
-        "transitivity": "自動詞中心",
-        "structure": "S + come + C",
-        "image": "こちら側・話題の中心へ近づく",
-        "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
-        "examples": [
-          {
-            "en": "Quality comes first.",
-            "ja": "品質が最優先です。",
-            "focus": "comes",
-            "jaFocus": "最優先です"
-          },
-          {
-            "en": "We come this in the project.",
-            "ja": "案件でこの表現を使います。",
-            "focus": "comes",
-            "jaFocus": "最優先です"
-          },
-          {
-            "en": "Please come to the meeting on time.",
-            "ja": "時間通りに会議へ来てください。",
-            "focus": "come",
-            "jaFocus": "ください"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I came home late.",
-            "ja": "帰宅が遅くなった。",
-            "focus": "came",
-            "jaFocus": "遅くなった"
-          },
-          {
-            "en": "This expression is useful in daily conversation.",
-            "ja": "この表現は日常会話でも役立つ。",
-            "focus": "is",
-            "jaFocus": "役立つ"
-          }
-        ]
-      },
-      {
-        "id": "recover",
-        "title": "⑧ 戻る",
-        "pattern": "COME back",
-        "transitivity": "自動詞中心",
-        "structure": "S + come back",
-        "image": "こちら側・話題の中心へ近づく",
-        "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
-        "examples": [
-          {
-            "en": "The system came back online.",
-            "ja": "システムが復旧しました。",
+            "en": "The system came back online after the update.",
+            "ja": "更新後、システムはオンラインに復旧しました。",
             "focus": "came back",
-            "jaFocus": "復旧しました"
+            "object": "online"
           },
           {
-            "en": "We come this in the project.",
-            "ja": "案件でこの表現を使います。",
+            "en": "The client came back with a few questions.",
+            "ja": "顧客はいくつか質問を持って戻ってきました。",
             "focus": "came back",
-            "jaFocus": "復旧しました"
-          },
-          {
-            "en": "Please come to the meeting on time.",
-            "ja": "時間通りに会議へ来てください。",
-            "focus": "come",
-            "jaFocus": "ください"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I came home late.",
-            "ja": "帰宅が遅くなった。",
-            "focus": "came",
-            "jaFocus": "遅くなった"
-          },
-          {
-            "en": "This expression is useful in daily conversation.",
-            "ja": "この表現は日常会話でも役立つ。",
-            "focus": "is",
-            "jaFocus": "役立つ"
+            "object": "with a few questions"
           }
         ]
       },
       {
-        "id": "visit",
-        "title": "⑨ 訪問する",
-        "pattern": "COME by",
-        "transitivity": "自動詞中心",
-        "structure": "S + come by",
-        "image": "こちら側・話題の中心へ近づく",
-        "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+        "phrase": "come across",
+        "ja": "偶然見つける・印象を与える",
+        "image": "進んでいる途中で何かに出会うイメージ。",
+        "pattern": "COME ACROSS + object / COME ACROSS AS",
         "examples": [
           {
-            "en": "I will come by your office tomorrow.",
-            "ja": "明日そちらのオフィスに伺います。",
-            "focus": "come by",
-            "jaFocus": "伺います"
+            "en": "I came across an old quotation in the folder.",
+            "ja": "私はフォルダの中で古い見積書を偶然見つけました。",
+            "focus": "came across",
+            "object": "an old quotation"
           },
           {
-            "en": "We will come by your office tomorrow.",
-            "ja": "案件でこの表現を使います。",
-            "focus": "come by",
-            "jaFocus": "伺います"
+            "en": "Her explanation came across as very clear.",
+            "ja": "彼女の説明はとても分かりやすく伝わりました。",
+            "focus": "came across",
+            "object": "as very clear"
           },
           {
-            "en": "Please come to the meeting on time.",
-            "ja": "時間通りに会議へ来てください。",
-            "focus": "come",
-            "jaFocus": "ください"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I came home late.",
-            "ja": "帰宅が遅くなった。",
-            "focus": "came",
-            "jaFocus": "遅くなった"
-          },
-          {
-            "en": "This expression is useful in daily conversation.",
-            "ja": "この表現は日常会話でも役立つ。",
-            "focus": "is",
-            "jaFocus": "役立つ"
+            "en": "Did you come across any problems during the test?",
+            "ja": "あなたはテスト中に何か問題に気づきましたか？",
+            "focus": "come across",
+            "object": "any problems"
           }
         ]
       },
       {
-        "id": "be available",
-        "title": "⑩ 出る・発売される",
-        "pattern": "COME out",
-        "transitivity": "自動詞中心",
-        "structure": "S + come out",
-        "image": "こちら側・話題の中心へ近づく",
-        "point": "COMEの中心イメージ「こちら側・話題の中心へ近づく」から考える。仕事でよく使う型として覚える。",
+        "phrase": "come out",
+        "ja": "出る・発売される・判明する",
+        "image": "中にあったものが外へ出てくるイメージ。",
+        "pattern": "COME OUT",
         "examples": [
           {
             "en": "The new catalog comes out next month.",
             "ja": "新しいカタログは来月出ます。",
             "focus": "comes out",
-            "jaFocus": "出ます"
+            "object": "next month"
           },
           {
-            "en": "We come this in the project.",
-            "ja": "案件でこの表現を使います。",
-            "focus": "comes out",
-            "jaFocus": "出ます"
+            "en": "The test result came out better than expected.",
+            "ja": "試験結果は予想より良く出ました。",
+            "focus": "came out",
+            "object": "better than expected"
           },
           {
-            "en": "Please come to the meeting on time.",
-            "ja": "時間通りに会議へ来てください。",
-            "focus": "come",
-            "jaFocus": "ください"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I came home late.",
-            "ja": "帰宅が遅くなった。",
-            "focus": "came",
-            "jaFocus": "遅くなった"
-          },
-          {
-            "en": "This expression is useful in daily conversation.",
-            "ja": "この表現は日常会話でも役立つ。",
-            "focus": "is",
-            "jaFocus": "役立つ"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "come up",
-        "ja": "仕事で仕事で使う表現",
-        "image": "COMEのコアイメージから広がる重要表現。",
-        "pattern": "come up",
-        "examples": [
-          {
-            "en": "Please come up in the meeting.",
-            "ja": "会議でこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "I often come up with clients.",
-            "ja": "顧客対応でよく使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "This phrase helps us come up clearly.",
-            "ja": "この表現は明確に伝える助けになります。",
-            "focus": "come",
-            "jaFocus": "助けになります"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come up at home sometimes.",
-            "ja": "日常でも時々この表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "Let’s come up today.",
-            "ja": "今日はこの表現を使ってみましょう。",
-            "focus": "come",
-            "jaFocus": "使って"
+            "en": "When will the official announcement come out?",
+            "ja": "正式発表はいつ出ますか？",
+            "focus": "come out"
           }
         ]
       },
       {
-        "phrase": "come in",
-        "ja": "仕事で仕事で使う表現",
-        "image": "COMEのコアイメージから広がる重要表現。",
-        "pattern": "come in",
+        "phrase": "come along",
+        "ja": "一緒に来る・進む",
+        "image": "人や物事が一緒に前へ進んでくるイメージ。",
+        "pattern": "COME ALONG",
         "examples": [
           {
-            "en": "We need to come in this week.",
-            "ja": "今週この表現を使う必要があります。",
-            "focus": "come",
-            "jaFocus": "使います"
+            "en": "The project is coming along well.",
+            "ja": "その案件は順調に進んでいます。",
+            "focus": "coming along",
+            "object": "well"
           },
           {
-            "en": "I often come in with clients.",
-            "ja": "顧客対応でよく使います。",
-            "focus": "come",
-            "jaFocus": "使います"
+            "en": "Can you come along to the client visit?",
+            "ja": "あなたは顧客訪問に同行できますか？",
+            "focus": "come along",
+            "object": "to the client visit"
           },
           {
-            "en": "This phrase helps us come in clearly.",
-            "ja": "この表現は明確に伝える助けになります。",
-            "focus": "come",
-            "jaFocus": "助けになります"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come in at home sometimes.",
-            "ja": "日常でも時々この表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "Let’s come in today.",
-            "ja": "今日はこの表現を使ってみましょう。",
-            "focus": "come",
-            "jaFocus": "使って"
-          }
-        ]
-      },
-      {
-        "phrase": "come back",
-        "ja": "仕事で仕事で使う表現",
-        "image": "COMEのコアイメージから広がる重要表現。",
-        "pattern": "come back",
-        "examples": [
-          {
-            "en": "Please come back in the meeting.",
-            "ja": "会議でこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "I often come back with clients.",
-            "ja": "顧客対応でよく使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "This phrase helps us come back clearly.",
-            "ja": "この表現は明確に伝える助けになります。",
-            "focus": "come",
-            "jaFocus": "助けになります"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come back at home sometimes.",
-            "ja": "日常でも時々この表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "Let’s come back today.",
-            "ja": "今日はこの表現を使ってみましょう。",
-            "focus": "come",
-            "jaFocus": "使って"
-          }
-        ]
-      },
-      {
-        "phrase": "come across",
-        "ja": "仕事で仕事で使う表現",
-        "image": "COMEのコアイメージから広がる重要表現。",
-        "pattern": "come across",
-        "examples": [
-          {
-            "en": "We need to come across this week.",
-            "ja": "今週この表現を使う必要があります。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "I often come across with clients.",
-            "ja": "顧客対応でよく使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "This phrase helps us come across clearly.",
-            "ja": "この表現は明確に伝える助けになります。",
-            "focus": "come",
-            "jaFocus": "助けになります"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come across at home sometimes.",
-            "ja": "日常でも時々この表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "Let’s come across today.",
-            "ja": "今日はこの表現を使ってみましょう。",
-            "focus": "come",
-            "jaFocus": "使って"
-          }
-        ]
-      },
-      {
-        "phrase": "come with",
-        "ja": "仕事で仕事で使う表現",
-        "image": "COMEのコアイメージから広がる重要表現。",
-        "pattern": "come with",
-        "examples": [
-          {
-            "en": "Please come with in the meeting.",
-            "ja": "会議でこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "I often come with with clients.",
-            "ja": "顧客対応でよく使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "This phrase helps us come with clearly.",
-            "ja": "この表現は明確に伝える助けになります。",
-            "focus": "come",
-            "jaFocus": "助けになります"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come with at home sometimes.",
-            "ja": "日常でも時々この表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "Let’s come with today.",
-            "ja": "今日はこの表現を使ってみましょう。",
-            "focus": "come",
-            "jaFocus": "使って"
-          }
-        ]
-      },
-      {
-        "phrase": "come to",
-        "ja": "仕事で仕事で使う表現",
-        "image": "COMEのコアイメージから広がる重要表現。",
-        "pattern": "come to",
-        "examples": [
-          {
-            "en": "We need to come to this week.",
-            "ja": "今週この表現を使う必要があります。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "I often come to with clients.",
-            "ja": "顧客対応でよく使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "This phrase helps us come to clearly.",
-            "ja": "この表現は明確に伝える助けになります。",
-            "focus": "come",
-            "jaFocus": "助けになります"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come to at home sometimes.",
-            "ja": "日常でも時々この表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "Let’s come to today.",
-            "ja": "今日はこの表現を使ってみましょう。",
-            "focus": "come",
-            "jaFocus": "使って"
-          }
-        ]
-      },
-      {
-        "phrase": "come by",
-        "ja": "仕事で仕事で使う表現",
-        "image": "COMEのコアイメージから広がる重要表現。",
-        "pattern": "come by",
-        "examples": [
-          {
-            "en": "Please come by in the meeting.",
-            "ja": "会議でこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "I often come by with clients.",
-            "ja": "顧客対応でよく使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "This phrase helps us come by clearly.",
-            "ja": "この表現は明確に伝える助けになります。",
-            "focus": "come",
-            "jaFocus": "助けになります"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come by at home sometimes.",
-            "ja": "日常でも時々この表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "Let’s come by today.",
-            "ja": "今日はこの表現を使ってみましょう。",
-            "focus": "come",
-            "jaFocus": "使って"
-          }
-        ]
-      },
-      {
-        "phrase": "come out",
-        "ja": "仕事で仕事で使う表現",
-        "image": "COMEのコアイメージから広がる重要表現。",
-        "pattern": "come out",
-        "examples": [
-          {
-            "en": "We need to come out this week.",
-            "ja": "今週この表現を使う必要があります。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "I often come out with clients.",
-            "ja": "顧客対応でよく使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "This phrase helps us come out clearly.",
-            "ja": "この表現は明確に伝える助けになります。",
-            "focus": "come",
-            "jaFocus": "助けになります"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come out at home sometimes.",
-            "ja": "日常でも時々この表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "Let’s come out today.",
-            "ja": "今日はこの表現を使ってみましょう。",
-            "focus": "come",
-            "jaFocus": "使って"
-          }
-        ]
-      },
-      {
-        "phrase": "come from",
-        "ja": "仕事で仕事で使う表現",
-        "image": "COMEのコアイメージから広がる重要表現。",
-        "pattern": "come from",
-        "examples": [
-          {
-            "en": "Please come from in the meeting.",
-            "ja": "会議でこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "I often come from with clients.",
-            "ja": "顧客対応でよく使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "This phrase helps us come from clearly.",
-            "ja": "この表現は明確に伝える助けになります。",
-            "focus": "come",
-            "jaFocus": "助けになります"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come from at home sometimes.",
-            "ja": "日常でも時々この表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "Let’s come from today.",
-            "ja": "今日はこの表現を使ってみましょう。",
-            "focus": "come",
-            "jaFocus": "使って"
-          }
-        ]
-      },
-      {
-        "phrase": "come first",
-        "ja": "仕事で仕事で使う表現",
-        "image": "COMEのコアイメージから広がる重要表現。",
-        "pattern": "come first",
-        "examples": [
-          {
-            "en": "We need to come first this week.",
-            "ja": "今週この表現を使う必要があります。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "I often come first with clients.",
-            "ja": "顧客対応でよく使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "This phrase helps us come first clearly.",
-            "ja": "この表現は明確に伝える助けになります。",
-            "focus": "come",
-            "jaFocus": "助けになります"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come first at home sometimes.",
-            "ja": "日常でも時々この表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          },
-          {
-            "en": "Let’s come first today.",
-            "ja": "今日はこの表現を使ってみましょう。",
-            "focus": "come",
-            "jaFocus": "使って"
-          }
-        ]
-      }
-    ],
-    "phrasalVerbs": [
-      {
-        "phrase": "come up",
-        "ja": "句動詞",
-        "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
-        "pattern": "come up",
-        "examples": [
-          {
-            "en": "This issue may come up during the project.",
-            "ja": "案件中にこの表現が使われます。",
-            "focus": "come",
-            "jaFocus": "使われます"
-          },
-          {
-            "en": "Can we come up in the next meeting?",
-            "ja": "次の会議でこの表現を使えますか。",
-            "focus": "come",
-            "jaFocus": "使えますか"
-          },
-          {
-            "en": "I will come up with the team.",
-            "ja": "チームとこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come up on weekends.",
-            "ja": "週末にこの表現を使うことがあります。",
-            "focus": "come",
-            "jaFocus": "使う"
-          },
-          {
-            "en": "This can come up in daily life.",
-            "ja": "これは日常生活でも使えます。",
-            "focus": "come",
-            "jaFocus": "使えます"
-          }
-        ]
-      },
-      {
-        "phrase": "come in",
-        "ja": "句動詞",
-        "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
-        "pattern": "come in",
-        "examples": [
-          {
-            "en": "This issue may come in during the project.",
-            "ja": "案件中にこの表現が使われます。",
-            "focus": "come",
-            "jaFocus": "使われます"
-          },
-          {
-            "en": "Can we come in in the next meeting?",
-            "ja": "次の会議でこの表現を使えますか。",
-            "focus": "come",
-            "jaFocus": "使えますか"
-          },
-          {
-            "en": "I will come in with the team.",
-            "ja": "チームとこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come in on weekends.",
-            "ja": "週末にこの表現を使うことがあります。",
-            "focus": "come",
-            "jaFocus": "使う"
-          },
-          {
-            "en": "This can come in in daily life.",
-            "ja": "これは日常生活でも使えます。",
-            "focus": "come",
-            "jaFocus": "使えます"
-          }
-        ]
-      },
-      {
-        "phrase": "come back",
-        "ja": "句動詞",
-        "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
-        "pattern": "come back",
-        "examples": [
-          {
-            "en": "This issue may come back during the project.",
-            "ja": "案件中にこの表現が使われます。",
-            "focus": "come",
-            "jaFocus": "使われます"
-          },
-          {
-            "en": "Can we come back in the next meeting?",
-            "ja": "次の会議でこの表現を使えますか。",
-            "focus": "come",
-            "jaFocus": "使えますか"
-          },
-          {
-            "en": "I will come back with the team.",
-            "ja": "チームとこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come back on weekends.",
-            "ja": "週末にこの表現を使うことがあります。",
-            "focus": "come",
-            "jaFocus": "使う"
-          },
-          {
-            "en": "This can come back in daily life.",
-            "ja": "これは日常生活でも使えます。",
-            "focus": "come",
-            "jaFocus": "使えます"
-          }
-        ]
-      },
-      {
-        "phrase": "come across",
-        "ja": "句動詞",
-        "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
-        "pattern": "come across",
-        "examples": [
-          {
-            "en": "This issue may come across during the project.",
-            "ja": "案件中にこの表現が使われます。",
-            "focus": "come",
-            "jaFocus": "使われます"
-          },
-          {
-            "en": "Can we come across in the next meeting?",
-            "ja": "次の会議でこの表現を使えますか。",
-            "focus": "come",
-            "jaFocus": "使えますか"
-          },
-          {
-            "en": "I will come across with the team.",
-            "ja": "チームとこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come across on weekends.",
-            "ja": "週末にこの表現を使うことがあります。",
-            "focus": "come",
-            "jaFocus": "使う"
-          },
-          {
-            "en": "This can come across in daily life.",
-            "ja": "これは日常生活でも使えます。",
-            "focus": "come",
-            "jaFocus": "使えます"
-          }
-        ]
-      },
-      {
-        "phrase": "come with",
-        "ja": "句動詞",
-        "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
-        "pattern": "come with",
-        "examples": [
-          {
-            "en": "This issue may come with during the project.",
-            "ja": "案件中にこの表現が使われます。",
-            "focus": "come",
-            "jaFocus": "使われます"
-          },
-          {
-            "en": "Can we come with in the next meeting?",
-            "ja": "次の会議でこの表現を使えますか。",
-            "focus": "come",
-            "jaFocus": "使えますか"
-          },
-          {
-            "en": "I will come with with the team.",
-            "ja": "チームとこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come with on weekends.",
-            "ja": "週末にこの表現を使うことがあります。",
-            "focus": "come",
-            "jaFocus": "使う"
-          },
-          {
-            "en": "This can come with in daily life.",
-            "ja": "これは日常生活でも使えます。",
-            "focus": "come",
-            "jaFocus": "使えます"
-          }
-        ]
-      },
-      {
-        "phrase": "come to",
-        "ja": "句動詞",
-        "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
-        "pattern": "come to",
-        "examples": [
-          {
-            "en": "This issue may come to during the project.",
-            "ja": "案件中にこの表現が使われます。",
-            "focus": "come",
-            "jaFocus": "使われます"
-          },
-          {
-            "en": "Can we come to in the next meeting?",
-            "ja": "次の会議でこの表現を使えますか。",
-            "focus": "come",
-            "jaFocus": "使えますか"
-          },
-          {
-            "en": "I will come to with the team.",
-            "ja": "チームとこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come to on weekends.",
-            "ja": "週末にこの表現を使うことがあります。",
-            "focus": "come",
-            "jaFocus": "使う"
-          },
-          {
-            "en": "This can come to in daily life.",
-            "ja": "これは日常生活でも使えます。",
-            "focus": "come",
-            "jaFocus": "使えます"
-          }
-        ]
-      },
-      {
-        "phrase": "come by",
-        "ja": "句動詞",
-        "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
-        "pattern": "come by",
-        "examples": [
-          {
-            "en": "This issue may come by during the project.",
-            "ja": "案件中にこの表現が使われます。",
-            "focus": "come",
-            "jaFocus": "使われます"
-          },
-          {
-            "en": "Can we come by in the next meeting?",
-            "ja": "次の会議でこの表現を使えますか。",
-            "focus": "come",
-            "jaFocus": "使えますか"
-          },
-          {
-            "en": "I will come by with the team.",
-            "ja": "チームとこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come by on weekends.",
-            "ja": "週末にこの表現を使うことがあります。",
-            "focus": "come",
-            "jaFocus": "使う"
-          },
-          {
-            "en": "This can come by in daily life.",
-            "ja": "これは日常生活でも使えます。",
-            "focus": "come",
-            "jaFocus": "使えます"
-          }
-        ]
-      },
-      {
-        "phrase": "come out",
-        "ja": "句動詞",
-        "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
-        "pattern": "come out",
-        "examples": [
-          {
-            "en": "This issue may come out during the project.",
-            "ja": "案件中にこの表現が使われます。",
-            "focus": "come",
-            "jaFocus": "使われます"
-          },
-          {
-            "en": "Can we come out in the next meeting?",
-            "ja": "次の会議でこの表現を使えますか。",
-            "focus": "come",
-            "jaFocus": "使えますか"
-          },
-          {
-            "en": "I will come out with the team.",
-            "ja": "チームとこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come out on weekends.",
-            "ja": "週末にこの表現を使うことがあります。",
-            "focus": "come",
-            "jaFocus": "使う"
-          },
-          {
-            "en": "This can come out in daily life.",
-            "ja": "これは日常生活でも使えます。",
-            "focus": "come",
-            "jaFocus": "使えます"
-          }
-        ]
-      },
-      {
-        "phrase": "come from",
-        "ja": "句動詞",
-        "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
-        "pattern": "come from",
-        "examples": [
-          {
-            "en": "This issue may come from during the project.",
-            "ja": "案件中にこの表現が使われます。",
-            "focus": "come",
-            "jaFocus": "使われます"
-          },
-          {
-            "en": "Can we come from in the next meeting?",
-            "ja": "次の会議でこの表現を使えますか。",
-            "focus": "come",
-            "jaFocus": "使えますか"
-          },
-          {
-            "en": "I will come from with the team.",
-            "ja": "チームとこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come from on weekends.",
-            "ja": "週末にこの表現を使うことがあります。",
-            "focus": "come",
-            "jaFocus": "使う"
-          },
-          {
-            "en": "This can come from in daily life.",
-            "ja": "これは日常生活でも使えます。",
-            "focus": "come",
-            "jaFocus": "使えます"
-          }
-        ]
-      },
-      {
-        "phrase": "come first",
-        "ja": "句動詞",
-        "image": "COMEと前置詞・副詞の組み合わせで意味が広がる。",
-        "pattern": "come first",
-        "examples": [
-          {
-            "en": "This issue may come first during the project.",
-            "ja": "案件中にこの表現が使われます。",
-            "focus": "come",
-            "jaFocus": "使われます"
-          },
-          {
-            "en": "Can we come first in the next meeting?",
-            "ja": "次の会議でこの表現を使えますか。",
-            "focus": "come",
-            "jaFocus": "使えますか"
-          },
-          {
-            "en": "I will come first with the team.",
-            "ja": "チームとこの表現を使います。",
-            "focus": "come",
-            "jaFocus": "使います"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I come first on weekends.",
-            "ja": "週末にこの表現を使うことがあります。",
-            "focus": "come",
-            "jaFocus": "使う"
-          },
-          {
-            "en": "This can come first in daily life.",
-            "ja": "これは日常生活でも使えます。",
-            "focus": "come",
-            "jaFocus": "使えます"
+            "en": "The preparation came along faster than expected.",
+            "ja": "準備は予想より早く進みました。",
+            "focus": "came along",
+            "object": "faster than expected"
           }
         ]
       }
@@ -1980,1103 +1218,496 @@ export const verbs: Verb[] = [
     "syllable": "put",
     "transitivity": "他動詞中心",
     "importance": "★★★★★ 超重要",
-    "core": "あるものを、必要な場所・状態に置く",
-    "coreDetail": "PUTは、物・情報・人・優先順位・負担などを、特定の場所や状態へ移す感覚で整理できます。仕事では配置・入力・優先・担当・議題化に強い動詞です。",
+    "core": "物・情報・人・考えを、ある場所や状態に置く",
+    "coreDetail": "PUTは『置く』が中心です。物を置く、情報を資料に入れる、予定をカレンダーに入れる、考えを言葉にする、計画を実行状態に置く、という感覚で広く使えます。",
     "coreVisual": {
       "from": [
         "📄 資料",
-        "💡 情報",
-        "👤 担当",
-        "⚠️ 負担",
-        "📌 議題"
+        "📅 予定",
+        "💡 考え",
+        "👤 担当者",
+        "📦 商品"
       ],
-      "to": "場所・状態",
-      "label": "対象 → 置く場所"
+      "to": "場所・資料・予定・状態",
+      "label": "対象 → ある場所・状態に置く"
     },
     "meanings": [
       {
-        "id": "place",
-        "title": "① 置く・配置する",
-        "pattern": "PUT + 名詞 + 場所",
+        "id": "put-on-desk",
+        "title": "① put the file on the desk / 置く",
+        "pattern": "PUT + object + on/in 場所",
         "transitivity": "他動詞",
         "structure": "S + put + O + 場所",
-        "image": "物や情報を、必要な場所へ移す。",
-        "point": "put は「どこに置くか」まで一緒に言うと使いやすい。",
+        "image": "物をある場所に置くイメージ。",
+        "point": "基本のput。場所を表す on, in, under などと一緒に使う。",
         "examples": [
           {
-            "en": "Please put the documents on my desk.",
-            "ja": "資料を私の机に置いてください。",
+            "en": "Please put the sample on my desk.",
+            "ja": "あなたはサンプルを私の机に置いてください。",
             "focus": "put",
-            "object": "the documents",
-            "jaFocus": "置いて"
+            "object": "the sample"
           },
           {
-            "en": "I put the sample in the meeting room.",
-            "ja": "サンプルを会議室に置きました。",
+            "en": "I put the file in the shared folder.",
+            "ja": "私はそのファイルを共有フォルダに入れました。",
             "focus": "put",
-            "object": "the sample",
-            "jaFocus": "置きました"
+            "object": "the file"
           },
           {
-            "en": "We put the price list in the shared folder.",
-            "ja": "価格表を共有フォルダに入れました。",
+            "en": "Where did you put the catalog?",
+            "ja": "あなたはカタログをどこに置きましたか？",
             "focus": "put",
-            "object": "the price list",
-            "jaFocus": "入れました"
+            "object": "the catalog"
           }
         ],
         "dailyExamples": [
           {
-            "en": "I put my bag by the door.",
-            "ja": "バッグをドアのそばに置きました。",
+            "en": "Please put your bag here.",
+            "ja": "あなたのバッグをここに置いてください。",
             "focus": "put",
-            "object": "my bag",
-            "jaFocus": "置きました"
+            "object": "your bag"
           },
           {
-            "en": "She put the keys on the table.",
-            "ja": "彼女は鍵をテーブルに置きました。",
+            "en": "I put my keys on the table.",
+            "ja": "私は鍵をテーブルに置きました。",
             "focus": "put",
-            "object": "the keys",
-            "jaFocus": "置きました"
+            "object": "my keys"
           }
         ]
       },
       {
-        "id": "enter",
-        "title": "② 入力する・記入する",
-        "pattern": "PUT + 情報 + in/into",
+        "id": "put-info",
+        "title": "② put information in a document / 情報を入れる",
+        "pattern": "PUT + information + in/into 資料",
         "transitivity": "他動詞",
-        "structure": "S + put + O + 場所",
-        "image": "数字や情報をフォームや資料の中に入れる。",
-        "point": "名前・価格・数字などを入力する時にも put を使える。",
+        "structure": "S + put + O + in/into + 場所",
+        "image": "情報を資料やメールの中に置くイメージ。",
+        "point": "資料作成・メール・見積書の説明で便利。",
         "examples": [
           {
-            "en": "Please put your name here.",
-            "ja": "ここに名前を記入してください。",
+            "en": "Please put the delivery date in the quotation.",
+            "ja": "あなたは見積書に納期を入れてください。",
             "focus": "put",
-            "object": "your name",
-            "jaFocus": "記入して"
+            "object": "the delivery date"
           },
           {
-            "en": "I put the latest figures into the report.",
-            "ja": "最新の数字を報告書に入れました。",
+            "en": "I put the client's request into the proposal.",
+            "ja": "私は顧客の要望を提案書に入れました。",
             "focus": "put",
-            "object": "the latest figures",
-            "jaFocus": "入れました"
+            "object": "the client's request"
           },
           {
-            "en": "Can you put the deadline in the schedule?",
-            "ja": "納期をスケジュールに入れてもらえますか？",
+            "en": "Can you put the details in the email?",
+            "ja": "あなたは詳細をメールに入れられますか？",
             "focus": "put",
-            "object": "the deadline",
-            "jaFocus": "入れて"
+            "object": "the details"
           }
         ],
         "dailyExamples": [
           {
-            "en": "I put my address in the form.",
-            "ja": "フォームに住所を入力しました。",
+            "en": "Please put your name on this form.",
+            "ja": "この用紙に名前を書いてください。",
             "focus": "put",
-            "object": "my address",
-            "jaFocus": "入力しました"
+            "object": "your name"
           },
           {
-            "en": "Put your phone number here.",
-            "ja": "ここに電話番号を入力してください。",
-            "focus": "Put",
-            "object": "your phone number",
-            "jaFocus": "入力して"
+            "en": "I put the recipe in my notebook.",
+            "ja": "私はレシピをノートに書きました。",
+            "focus": "put",
+            "object": "the recipe"
           }
         ]
       },
       {
-        "id": "assign",
-        "title": "③ 担当にする・任せる",
-        "pattern": "PUT + 人 + in charge",
+        "id": "put-schedule",
+        "title": "③ put it on the schedule / 予定に入れる",
+        "pattern": "PUT + event + on/in schedule",
         "transitivity": "他動詞",
-        "structure": "S + put + O + C",
-        "image": "人をある役割や立場に置く。",
-        "point": "人を担当にする時は put someone in charge が便利。",
+        "structure": "S + put + O + on/in + schedule",
+        "image": "予定をカレンダーやスケジュール上に置くイメージ。",
+        "point": "meeting, call, visit, delivery などと使いやすい。",
         "examples": [
           {
-            "en": "We put Tanaka in charge of this project.",
-            "ja": "田中さんをこの案件の担当にしました。",
+            "en": "Can you put the meeting on my schedule?",
+            "ja": "あなたはその会議を私の予定に入れられますか？",
             "focus": "put",
-            "object": "Tanaka",
-            "jaFocus": "担当にしました"
+            "object": "the meeting"
           },
           {
-            "en": "The manager put me on the new account.",
-            "ja": "上司は私を新しい顧客担当にしました。",
+            "en": "I put the client visit in the calendar.",
+            "ja": "私は顧客訪問をカレンダーに入れました。",
             "focus": "put",
-            "object": "me",
-            "jaFocus": "担当にしました"
+            "object": "the client visit"
           },
           {
-            "en": "They put the sales team in charge of follow-up.",
-            "ja": "営業チームをフォロー担当にしました。",
+            "en": "We should put the installation date on the schedule.",
+            "ja": "私たちは設置日をスケジュールに入れるべきです。",
             "focus": "put",
-            "object": "the sales team",
-            "jaFocus": "担当にしました"
+            "object": "the installation date"
           }
         ],
         "dailyExamples": [
           {
-            "en": "My parents put me in charge of dinner.",
-            "ja": "両親は私を夕食担当にしました。",
+            "en": "I put my dentist appointment on the calendar.",
+            "ja": "私は歯医者の予定をカレンダーに入れました。",
             "focus": "put",
-            "object": "me",
-            "jaFocus": "担当にしました"
+            "object": "my dentist appointment"
           },
           {
-            "en": "We put him in charge of the music.",
-            "ja": "彼を音楽担当にしました。",
+            "en": "Please put it on your list.",
+            "ja": "それをあなたのリストに入れてください。",
             "focus": "put",
-            "object": "him",
-            "jaFocus": "担当にしました"
+            "object": "it"
           }
         ]
       },
       {
-        "id": "express",
-        "title": "④ 言葉にする",
-        "pattern": "PUT + 内容 + into words",
+        "id": "put-person",
+        "title": "④ put someone in charge / 担当にする",
+        "pattern": "PUT + person + in charge/on task",
         "transitivity": "他動詞",
-        "structure": "S + put + O + into words",
-        "image": "考えや気持ちを言葉という形に置き換える。",
-        "point": "put it simply は「簡単に言うと」。会議や説明でよく使う。",
+        "structure": "S + put + 人 + in/on + 役割",
+        "image": "人をある役割や担当の位置に置くイメージ。",
+        "point": "担当者・責任者を決める時に使える。",
         "examples": [
           {
-            "en": "Let me put it simply.",
-            "ja": "簡単に言わせてください。",
+            "en": "We put Tanaka in charge of the new project.",
+            "ja": "私たちは田中さんを新しい案件の担当にしました。",
             "focus": "put",
-            "object": "it",
-            "jaFocus": "言わせて"
+            "object": "Tanaka"
           },
           {
-            "en": "It is hard to put the issue into words.",
-            "ja": "その問題を言葉にするのは難しいです。",
+            "en": "The manager put me on the customer support task.",
+            "ja": "上司は私を顧客対応の担当にしました。",
             "focus": "put",
-            "object": "the issue",
-            "jaFocus": "言葉にする"
+            "object": "me"
           },
           {
-            "en": "Can you put your idea into one sentence?",
-            "ja": "あなたの案を一文で表せますか？",
+            "en": "Can we put one engineer on this issue?",
+            "ja": "私たちはこの問題に技術担当者を1人つけられますか？",
             "focus": "put",
-            "object": "your idea",
-            "jaFocus": "表せますか"
+            "object": "one engineer"
           }
         ],
         "dailyExamples": [
           {
-            "en": "I cannot put my feelings into words.",
-            "ja": "自分の気持ちを言葉にできません。",
+            "en": "They put me in the front row.",
+            "ja": "彼らは私を最前列にしました。",
             "focus": "put",
-            "object": "my feelings",
-            "jaFocus": "言葉にできません"
+            "object": "me"
           },
           {
-            "en": "To put it simply, I am tired.",
-            "ja": "簡単に言うと、疲れています。",
+            "en": "Please put him on the team.",
+            "ja": "彼をチームに入れてください。",
             "focus": "put",
-            "object": "it",
-            "jaFocus": "言う"
+            "object": "him"
           }
         ]
       },
       {
-        "id": "priority",
-        "title": "⑤ 優先する",
-        "pattern": "PUT + priority/focus + on",
+        "id": "put-plan-action",
+        "title": "⑤ put a plan into action / 実行に移す",
+        "pattern": "PUT + plan/idea + into action",
         "transitivity": "他動詞",
-        "structure": "S + put + O + on 名詞",
-        "image": "注意や優先順位を特定の対象へ置く。",
-        "point": "focus, priority, emphasis と相性が良い。",
+        "structure": "S + put + O + into + 状態",
+        "image": "計画を『実行中』という状態に置くイメージ。",
+        "point": "営業施策や改善案を実行する時に自然。",
         "examples": [
           {
-            "en": "We should put more focus on customer support.",
-            "ja": "顧客サポートにもっと重点を置くべきです。",
+            "en": "We need to put this plan into action next week.",
+            "ja": "私たちは来週、この計画を実行に移す必要があります。",
             "focus": "put",
-            "object": "more focus",
-            "jaFocus": "重点を置く"
+            "object": "this plan"
           },
           {
-            "en": "The company puts priority on quality.",
-            "ja": "会社は品質を優先しています。",
+            "en": "The team put the new process into practice.",
+            "ja": "チームは新しい手順を実践に移しました。",
+            "focus": "put",
+            "object": "the new process"
+          },
+          {
+            "en": "Can we put your idea into the proposal?",
+            "ja": "私たちはあなたのアイデアを提案書に反映できますか？",
+            "focus": "put",
+            "object": "your idea"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I put my idea into action.",
+            "ja": "私は自分のアイデアを実行に移しました。",
+            "focus": "put",
+            "object": "my idea"
+          },
+          {
+            "en": "Let's put this rule into practice.",
+            "ja": "このルールを実践しましょう。",
+            "focus": "put",
+            "object": "this rule"
+          }
+        ]
+      },
+      {
+        "id": "put-pressure",
+        "title": "⑥ put pressure on / 負担・圧力をかける",
+        "pattern": "PUT + pressure/stress + on 人/物",
+        "transitivity": "他動詞",
+        "structure": "S + put + O + on + 対象",
+        "image": "負担や圧力を相手側に置くイメージ。",
+        "point": "納期・価格・人員などの話で使う。",
+        "examples": [
+          {
+            "en": "The short deadline puts pressure on the production team.",
+            "ja": "短い納期は製造チームに負担をかけます。",
             "focus": "puts",
-            "object": "priority",
-            "jaFocus": "優先して"
+            "object": "pressure"
           },
           {
-            "en": "Let us put emphasis on delivery speed.",
-            "ja": "納期の速さを重視しましょう。",
+            "en": "This price increase may put pressure on the customer.",
+            "ja": "この値上げは顧客に負担をかける可能性があります。",
             "focus": "put",
-            "object": "emphasis",
-            "jaFocus": "重視しましょう"
+            "object": "pressure"
+          },
+          {
+            "en": "We should not put too much stress on one person.",
+            "ja": "私たちは1人に負担をかけすぎるべきではありません。",
+            "focus": "put",
+            "object": "too much stress"
           }
         ],
         "dailyExamples": [
           {
-            "en": "I put more focus on my health.",
-            "ja": "健康にもっと重点を置いています。",
+            "en": "The exam put pressure on him.",
+            "ja": "試験は彼にプレッシャーを与えました。",
             "focus": "put",
-            "object": "more focus",
-            "jaFocus": "重点を置いて"
+            "object": "pressure"
           },
           {
-            "en": "She puts family first.",
-            "ja": "彼女は家族を最優先にしています。",
-            "focus": "puts",
-            "object": "family",
-            "jaFocus": "最優先にして"
+            "en": "Do not put too much pressure on yourself.",
+            "ja": "自分にプレッシャーをかけすぎないでください。",
+            "focus": "put",
+            "object": "too much pressure"
           }
         ]
       },
       {
-        "id": "pressure",
-        "title": "⑥ 負担・圧力をかける",
-        "pattern": "PUT + pressure/stress + on",
+        "id": "put-price",
+        "title": "⑦ put a price on / 値段を付ける",
+        "pattern": "PUT + price/value + on 物",
         "transitivity": "他動詞",
-        "structure": "S + put + O + on 名詞",
-        "image": "負担や圧力を相手や状況に置く。",
-        "point": "ビジネスでは pressure on the team の形がよく使われる。",
+        "structure": "S + put + O + on + 対象",
+        "image": "価値や金額を対象の上に置くイメージ。",
+        "point": "見積・価格交渉で使えるが、price something の方が直接的な場合もある。",
         "examples": [
           {
-            "en": "The short deadline puts pressure on the team.",
-            "ja": "短い納期がチームに負担をかけています。",
-            "focus": "puts",
-            "object": "pressure",
-            "jaFocus": "負担をかけています"
-          },
-          {
-            "en": "This delay put stress on the client relationship.",
-            "ja": "この遅延は顧客との関係に負担をかけました。",
+            "en": "It is difficult to put a price on this custom design.",
+            "ja": "この特注デザインに価格を付けるのは難しいです。",
             "focus": "put",
-            "object": "stress",
-            "jaFocus": "負担をかけました"
+            "object": "a price"
           },
           {
-            "en": "The price increase puts pressure on our budget.",
-            "ja": "値上げが予算を圧迫しています。",
-            "focus": "puts",
-            "object": "pressure",
-            "jaFocus": "圧迫しています"
+            "en": "We need to put a value on the extra work.",
+            "ja": "私たちは追加作業に価値を見積もる必要があります。",
+            "focus": "put",
+            "object": "a value"
+          },
+          {
+            "en": "Can you put an estimated price on this option?",
+            "ja": "あなたはこのオプションに概算価格を付けられますか？",
+            "focus": "put",
+            "object": "an estimated price"
           }
         ],
         "dailyExamples": [
           {
-            "en": "Too much work puts pressure on me.",
-            "ja": "仕事が多すぎると私に負担がかかります。",
-            "focus": "puts",
-            "object": "pressure",
-            "jaFocus": "負担がかかります"
+            "en": "You cannot put a price on time with family.",
+            "ja": "家族との時間には値段を付けられません。",
+            "focus": "put",
+            "object": "a price"
           },
           {
-            "en": "That news put stress on my family.",
-            "ja": "その知らせは家族に負担をかけました。",
+            "en": "They put a high value on education.",
+            "ja": "彼らは教育を高く評価しています。",
             "focus": "put",
-            "object": "stress",
-            "jaFocus": "負担をかけました"
+            "object": "a high value"
           }
         ]
       },
       {
-        "id": "time",
-        "title": "⑦ 時間・労力を注ぐ",
-        "pattern": "PUT + time/effort + into",
+        "id": "put-clearly",
+        "title": "⑧ put it clearly / 言葉で表す",
+        "pattern": "PUT + idea + clearly/simply",
         "transitivity": "他動詞",
-        "structure": "S + put + O + into 名詞",
-        "image": "時間や労力を目的の中へ入れる。",
-        "point": "努力や時間を注ぐ時は put effort/time into が自然。",
+        "structure": "S + put + O + 副詞",
+        "image": "考えを言葉という形に置くイメージ。",
+        "point": "put it simply, put it another way は説明で便利。",
         "examples": [
           {
-            "en": "We put a lot of effort into this proposal.",
-            "ja": "この提案書にかなり力を入れました。",
+            "en": "Let me put it simply for the customer.",
+            "ja": "顧客向けに簡単に言います。",
             "focus": "put",
-            "object": "a lot of effort",
-            "jaFocus": "力を入れました"
+            "object": "it"
           },
           {
-            "en": "I put extra time into the presentation.",
-            "ja": "プレゼンに追加で時間をかけました。",
+            "en": "Can you put the reason more clearly in the report?",
+            "ja": "あなたは報告書で理由をもっと明確に書けますか？",
             "focus": "put",
-            "object": "extra time",
-            "jaFocus": "時間をかけました"
+            "object": "the reason"
           },
           {
-            "en": "The team put resources into product training.",
-            "ja": "チームは製品研修にリソースを投入しました。",
+            "en": "To put it another way, the schedule is too tight.",
+            "ja": "別の言い方をすると、スケジュールが厳しすぎます。",
             "focus": "put",
-            "object": "resources",
-            "jaFocus": "投入しました"
+            "object": "it"
           }
         ],
         "dailyExamples": [
           {
-            "en": "I put time into learning English.",
-            "ja": "英語学習に時間をかけています。",
+            "en": "I cannot put my feeling into words.",
+            "ja": "私は自分の気持ちを言葉にできません。",
             "focus": "put",
-            "object": "time",
-            "jaFocus": "時間をかけています"
+            "object": "my feeling"
           },
           {
-            "en": "She puts effort into cooking.",
-            "ja": "彼女は料理に力を入れています。",
-            "focus": "puts",
-            "object": "effort",
-            "jaFocus": "力を入れています"
-          }
-        ]
-      },
-      {
-        "id": "money",
-        "title": "⑧ お金・資源を投入する",
-        "pattern": "PUT + money/resources + into",
-        "transitivity": "他動詞",
-        "structure": "S + put + O + into 名詞",
-        "image": "資金や資源を事業・施策に入れる。",
-        "point": "投資の意味でも put money into が使える。",
-        "examples": [
-          {
-            "en": "We put more budget into online marketing.",
-            "ja": "オンラインマーケティングに予算を増やしました。",
+            "en": "Please put it in simple English.",
+            "ja": "それを簡単な英語で言ってください。",
             "focus": "put",
-            "object": "more budget",
-            "jaFocus": "予算を増やしました"
-          },
-          {
-            "en": "The company put money into a new system.",
-            "ja": "会社は新しいシステムに資金を投入しました。",
-            "focus": "put",
-            "object": "money",
-            "jaFocus": "投入しました"
-          },
-          {
-            "en": "They put resources into customer success.",
-            "ja": "彼らはカスタマーサクセスにリソースを投入しました。",
-            "focus": "put",
-            "object": "resources",
-            "jaFocus": "投入しました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I put money into my savings account.",
-            "ja": "貯金口座にお金を入れました。",
-            "focus": "put",
-            "object": "money",
-            "jaFocus": "入れました"
-          },
-          {
-            "en": "He put money into his hobby.",
-            "ja": "彼は趣味にお金を使いました。",
-            "focus": "put",
-            "object": "money",
-            "jaFocus": "使いました"
-          }
-        ]
-      },
-      {
-        "id": "state",
-        "title": "⑨ 状態にする",
-        "pattern": "PUT + 人/物 + in 状態",
-        "transitivity": "他動詞",
-        "structure": "S + put + O + in 状態",
-        "image": "人や物をある状態に置く。",
-        "point": "put someone in a difficult position のように抽象的な状態にも使える。",
-        "examples": [
-          {
-            "en": "The change put us in a difficult position.",
-            "ja": "その変更で私たちは難しい立場に置かれました。",
-            "focus": "put",
-            "object": "us",
-            "jaFocus": "置かれました"
-          },
-          {
-            "en": "The update put the project on track.",
-            "ja": "その更新でプロジェクトは軌道に乗りました。",
-            "focus": "put",
-            "object": "the project",
-            "jaFocus": "軌道に乗りました"
-          },
-          {
-            "en": "This result puts us ahead of schedule.",
-            "ja": "この結果で予定より進んでいます。",
-            "focus": "puts",
-            "object": "us",
-            "jaFocus": "進んでいます"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The movie put me in a good mood.",
-            "ja": "その映画で良い気分になりました。",
-            "focus": "put",
-            "object": "me",
-            "jaFocus": "良い気分に"
-          },
-          {
-            "en": "Rain put us in trouble.",
-            "ja": "雨で困った状況になりました。",
-            "focus": "put",
-            "object": "us",
-            "jaFocus": "困った状況に"
-          }
-        ]
-      },
-      {
-        "id": "agenda",
-        "title": "⑩ 議題に入れる",
-        "pattern": "PUT + item + on the agenda",
-        "transitivity": "他動詞",
-        "structure": "S + put + O + on the agenda",
-        "image": "話すべき内容を会議の場に置く。",
-        "point": "会議前後に非常に使いやすいビジネス表現。",
-        "examples": [
-          {
-            "en": "Can we put this issue on the agenda?",
-            "ja": "この件を議題に入れられますか？",
-            "focus": "put",
-            "object": "this issue",
-            "jaFocus": "議題に入れ"
-          },
-          {
-            "en": "I put the pricing topic on the agenda.",
-            "ja": "価格の件を議題に入れました。",
-            "focus": "put",
-            "object": "the pricing topic",
-            "jaFocus": "議題に入れました"
-          },
-          {
-            "en": "Please put the client request on the agenda.",
-            "ja": "顧客要望を議題に入れてください。",
-            "focus": "put",
-            "object": "the client request",
-            "jaFocus": "議題に入れて"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Let us put the trip plan on the agenda.",
-            "ja": "旅行計画を話題に入れましょう。",
-            "focus": "put",
-            "object": "the trip plan",
-            "jaFocus": "話題に入れ"
-          },
-          {
-            "en": "I put dinner plans on the agenda.",
-            "ja": "夕食の予定を話題に入れました。",
-            "focus": "put",
-            "object": "dinner plans",
-            "jaFocus": "話題に入れました"
+            "object": "it"
           }
         ]
       }
     ],
-    "collocations": [
-      {
-        "phrase": "put pressure on",
-        "ja": "〜に圧力をかける",
-        "image": "pressure を相手や状況の上に置く。",
-        "pattern": "put pressure on + 名詞",
-        "examples": [
-          {
-            "en": "The deadline puts pressure on everyone.",
-            "ja": "納期が全員にプレッシャーをかけています。",
-            "focus": "puts",
-            "object": "pressure",
-            "jaFocus": "プレッシャーをかけています"
-          },
-          {
-            "en": "We should not put pressure on the client.",
-            "ja": "顧客に圧力をかけるべきではありません。",
-            "focus": "put",
-            "object": "pressure",
-            "jaFocus": "圧力をかける"
-          },
-          {
-            "en": "This target puts pressure on sales.",
-            "ja": "この目標は営業に負担をかけます。",
-            "focus": "puts",
-            "object": "pressure",
-            "jaFocus": "負担をかけます"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put effort into",
-        "ja": "〜に力を入れる",
-        "image": "effort を活動に注ぐ。",
-        "pattern": "put effort into + 名詞",
-        "examples": [
-          {
-            "en": "We put effort into quality control.",
-            "ja": "品質管理に力を入れています。",
-            "focus": "put",
-            "object": "effort",
-            "jaFocus": "力を入れて"
-          },
-          {
-            "en": "I put effort into the proposal.",
-            "ja": "提案書に力を入れました。",
-            "focus": "put",
-            "object": "effort",
-            "jaFocus": "力を入れました"
-          },
-          {
-            "en": "They put effort into training.",
-            "ja": "彼らは研修に力を入れています。",
-            "focus": "put",
-            "object": "effort",
-            "jaFocus": "力を入れて"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put priority on",
-        "ja": "〜を優先する",
-        "image": "priority を対象の上に置く。",
-        "pattern": "put priority on + 名詞",
-        "examples": [
-          {
-            "en": "We put priority on safety.",
-            "ja": "安全を優先しています。",
-            "focus": "put",
-            "object": "priority",
-            "jaFocus": "優先して"
-          },
-          {
-            "en": "The team puts priority on speed.",
-            "ja": "チームはスピードを優先しています。",
-            "focus": "puts",
-            "object": "priority",
-            "jaFocus": "優先して"
-          },
-          {
-            "en": "Please put priority on this order.",
-            "ja": "この注文を優先してください。",
-            "focus": "put",
-            "object": "priority",
-            "jaFocus": "優先して"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put focus on",
-        "ja": "〜に焦点を置く",
-        "image": "focus を特定対象へ置く。",
-        "pattern": "put focus on + 名詞",
-        "examples": [
-          {
-            "en": "Let us put focus on customer needs.",
-            "ja": "顧客ニーズに焦点を置きましょう。",
-            "focus": "put",
-            "object": "focus",
-            "jaFocus": "焦点を置き"
-          },
-          {
-            "en": "We put focus on cost reduction.",
-            "ja": "コスト削減に焦点を置いています。",
-            "focus": "put",
-            "object": "focus",
-            "jaFocus": "焦点を置いて"
-          },
-          {
-            "en": "The report puts focus on sales growth.",
-            "ja": "その報告書は売上成長に焦点を置いています。",
-            "focus": "puts",
-            "object": "focus",
-            "jaFocus": "焦点を置いて"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put in place",
-        "ja": "導入する・整備する",
-        "image": "仕組みを所定の位置に置く。",
-        "pattern": "put + 名詞 + in place",
-        "examples": [
-          {
-            "en": "We put a new process in place.",
-            "ja": "新しい手順を導入しました。",
-            "focus": "put",
-            "object": "a new process",
-            "jaFocus": "導入しました"
-          },
-          {
-            "en": "The company put controls in place.",
-            "ja": "会社は管理体制を整備しました。",
-            "focus": "put",
-            "object": "controls",
-            "jaFocus": "整備しました"
-          },
-          {
-            "en": "We need to put a backup plan in place.",
-            "ja": "代替案を用意する必要があります。",
-            "focus": "put",
-            "object": "a backup plan",
-            "jaFocus": "用意する"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put into practice",
-        "ja": "実践する",
-        "image": "考えを実際の行動に入れる。",
-        "pattern": "put + 名詞 + into practice",
-        "examples": [
-          {
-            "en": "We put the new policy into practice.",
-            "ja": "新しい方針を実行しました。",
-            "focus": "put",
-            "object": "the new policy",
-            "jaFocus": "実行しました"
-          },
-          {
-            "en": "Let us put this idea into practice.",
-            "ja": "この案を実践しましょう。",
-            "focus": "put",
-            "object": "this idea",
-            "jaFocus": "実践しましょう"
-          },
-          {
-            "en": "The team put the plan into practice.",
-            "ja": "チームは計画を実行しました。",
-            "focus": "put",
-            "object": "the plan",
-            "jaFocus": "実行しました"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put on hold",
-        "ja": "保留にする",
-        "image": "物事を hold の状態に置く。",
-        "pattern": "put + 名詞 + on hold",
-        "examples": [
-          {
-            "en": "We put the project on hold.",
-            "ja": "その案件を保留にしました。",
-            "focus": "put",
-            "object": "the project",
-            "jaFocus": "保留にしました"
-          },
-          {
-            "en": "The client put the order on hold.",
-            "ja": "顧客は注文を保留にしました。",
-            "focus": "put",
-            "object": "the order",
-            "jaFocus": "保留にしました"
-          },
-          {
-            "en": "Can we put this topic on hold?",
-            "ja": "この話題をいったん保留にできますか？",
-            "focus": "put",
-            "object": "this topic",
-            "jaFocus": "保留に"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put at risk",
-        "ja": "危険にさらす",
-        "image": "risk の状態に置く。",
-        "pattern": "put + 名詞 + at risk",
-        "examples": [
-          {
-            "en": "The delay put the delivery at risk.",
-            "ja": "遅延により納品が危うくなりました。",
-            "focus": "put",
-            "object": "the delivery",
-            "jaFocus": "危うく"
-          },
-          {
-            "en": "Poor communication puts trust at risk.",
-            "ja": "不十分な連絡は信頼を危うくします。",
-            "focus": "puts",
-            "object": "trust",
-            "jaFocus": "危うく"
-          },
-          {
-            "en": "This issue could put the contract at risk.",
-            "ja": "この問題で契約が危うくなる可能性があります。",
-            "focus": "put",
-            "object": "the contract",
-            "jaFocus": "危うく"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put in writing",
-        "ja": "書面にする",
-        "image": "内容を文字として置く。",
-        "pattern": "put + 名詞 + in writing",
-        "examples": [
-          {
-            "en": "Please put the agreement in writing.",
-            "ja": "合意内容を書面にしてください。",
-            "focus": "put",
-            "object": "the agreement",
-            "jaFocus": "書面に"
-          },
-          {
-            "en": "We put the request in writing.",
-            "ja": "依頼内容を書面にしました。",
-            "focus": "put",
-            "object": "the request",
-            "jaFocus": "書面にしました"
-          },
-          {
-            "en": "Can you put that in writing?",
-            "ja": "それを書面にしてもらえますか？",
-            "focus": "put",
-            "object": "that",
-            "jaFocus": "書面に"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put simply",
-        "ja": "簡単に言うと",
-        "image": "考えを簡単な形に置く。",
-        "pattern": "put simply",
-        "examples": [
-          {
-            "en": "Put simply, we need more time.",
-            "ja": "簡単に言うと、もっと時間が必要です。",
-            "focus": "Put",
-            "object": "simply",
-            "jaFocus": "簡単に言うと"
-          },
-          {
-            "en": "To put it simply, the price is too high.",
-            "ja": "簡単に言うと、価格が高すぎます。",
-            "focus": "put",
-            "object": "it",
-            "jaFocus": "簡単に言うと"
-          },
-          {
-            "en": "Put simply, the plan is not ready.",
-            "ja": "簡単に言うと、計画はまだ準備できていません。",
-            "focus": "Put",
-            "object": "simply",
-            "jaFocus": "簡単に言うと"
-          }
-        ],
-        "dailyExamples": []
-      }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
       {
         "phrase": "put off",
         "ja": "延期する",
-        "image": "予定を先へ置く。",
-        "pattern": "put off + 名詞",
+        "image": "予定を今の位置から後ろへ置き直すイメージ。",
+        "pattern": "PUT OFF + object",
         "examples": [
           {
-            "en": "We put off the meeting until Friday.",
-            "ja": "会議を金曜日まで延期しました。",
-            "focus": "put",
-            "object": "the meeting",
-            "jaFocus": "延期しました"
+            "en": "We need to put off the meeting until Friday.",
+            "ja": "私たちは会議を金曜日まで延期する必要があります。",
+            "focus": "put off",
+            "object": "the meeting"
           },
           {
-            "en": "The client put off the decision.",
-            "ja": "顧客は決定を延期しました。",
-            "focus": "put",
-            "object": "the decision",
-            "jaFocus": "延期しました"
+            "en": "The client put off the site visit.",
+            "ja": "顧客は現場訪問を延期しました。",
+            "focus": "put off",
+            "object": "the site visit"
           },
           {
-            "en": "Let us not put off the issue.",
-            "ja": "この問題を先延ばしにしないようにしましょう。",
-            "focus": "put",
-            "object": "the issue",
-            "jaFocus": "先延ばしに"
+            "en": "Please do not put off the confirmation.",
+            "ja": "確認を先延ばしにしないでください。",
+            "focus": "put off",
+            "object": "the confirmation"
           }
-        ],
-        "dailyExamples": []
+        ]
       },
       {
         "phrase": "put together",
-        "ja": "まとめる・作成する",
-        "image": "部品や情報を一つにまとめる。",
-        "pattern": "put together + 名詞",
+        "ja": "まとめる・組み立てる",
+        "image": "複数の情報や部品を一か所に置き集めるイメージ。",
+        "pattern": "PUT TOGETHER + object",
         "examples": [
           {
-            "en": "I put together the proposal.",
-            "ja": "提案書をまとめました。",
-            "focus": "put",
-            "object": "the proposal",
-            "jaFocus": "まとめました"
+            "en": "I will put together the proposal by tomorrow.",
+            "ja": "私は明日までに提案書をまとめます。",
+            "focus": "put together",
+            "object": "the proposal"
           },
           {
-            "en": "We put together a training plan.",
-            "ja": "研修計画を作成しました。",
-            "focus": "put",
-            "object": "a training plan",
-            "jaFocus": "作成しました"
+            "en": "Can you put together the sales data?",
+            "ja": "あなたは売上データをまとめられますか？",
+            "focus": "put together",
+            "object": "the sales data"
           },
           {
-            "en": "Can you put together the data?",
-            "ja": "データをまとめてもらえますか？",
-            "focus": "put",
-            "object": "the data",
-            "jaFocus": "まとめて"
+            "en": "We put together a simple checklist for the team.",
+            "ja": "私たちはチーム向けに簡単なチェックリストをまとめました。",
+            "focus": "put together",
+            "object": "a simple checklist"
           }
-        ],
-        "dailyExamples": []
+        ]
       },
       {
-        "phrase": "put forward",
-        "ja": "提案する",
-        "image": "案を前に出す。",
-        "pattern": "put forward + 名詞",
+        "phrase": "put in",
+        "ja": "入れる・提出する",
+        "image": "外側から中へ入れるイメージ。",
+        "pattern": "PUT IN + object",
         "examples": [
           {
-            "en": "She put forward a new idea.",
-            "ja": "彼女は新しい案を提案しました。",
-            "focus": "put",
-            "object": "a new idea",
-            "jaFocus": "提案しました"
+            "en": "We put in the order this morning.",
+            "ja": "私たちは今朝、注文を入れました。",
+            "focus": "put in",
+            "object": "the order"
           },
           {
-            "en": "We put forward a solution.",
-            "ja": "解決策を提案しました。",
-            "focus": "put",
-            "object": "a solution",
-            "jaFocus": "提案しました"
+            "en": "Can you put in a request to the supplier?",
+            "ja": "あなたは仕入先に依頼を入れられますか？",
+            "focus": "put in",
+            "object": "a request"
           },
           {
-            "en": "The team put forward several options.",
-            "ja": "チームはいくつかの選択肢を提示しました。",
-            "focus": "put",
-            "object": "several options",
-            "jaFocus": "提示しました"
+            "en": "She put in a lot of effort on this project.",
+            "ja": "彼女はこの案件に多くの努力を注ぎました。",
+            "focus": "put in",
+            "object": "a lot of effort"
           }
-        ],
-        "dailyExamples": []
+        ]
+      },
+      {
+        "phrase": "put on",
+        "ja": "身につける・載せる・開催する",
+        "image": "表面や予定の上に置くイメージ。",
+        "pattern": "PUT ON + object",
+        "examples": [
+          {
+            "en": "Please put on your safety helmet at the site.",
+            "ja": "現場では安全ヘルメットを着用してください。",
+            "focus": "put on",
+            "object": "your safety helmet"
+          },
+          {
+            "en": "We will put on a short training session next month.",
+            "ja": "私たちは来月、短い研修を開催します。",
+            "focus": "put on",
+            "object": "a short training session"
+          },
+          {
+            "en": "Can you put the client on hold for a minute?",
+            "ja": "あなたは顧客を少し保留にできますか？",
+            "focus": "put",
+            "object": "the client"
+          }
+        ]
       },
       {
         "phrase": "put out",
-        "ja": "発表する・出す",
-        "image": "情報や製品を外へ出す。",
-        "pattern": "put out + 名詞",
+        "ja": "出す・発表する・火を消す",
+        "image": "内側のものを外へ出す、または火を外へ消すイメージ。",
+        "pattern": "PUT OUT + object",
         "examples": [
           {
-            "en": "We put out a notice this morning.",
-            "ja": "今朝お知らせを出しました。",
-            "focus": "put",
-            "object": "a notice",
-            "jaFocus": "出しました"
+            "en": "The company put out a notice about the price change.",
+            "ja": "会社は価格変更について通知を出しました。",
+            "focus": "put out",
+            "object": "a notice"
           },
           {
-            "en": "The company put out a statement.",
-            "ja": "会社は声明を発表しました。",
-            "focus": "put",
-            "object": "a statement",
-            "jaFocus": "発表しました"
+            "en": "We need to put out the updated catalog soon.",
+            "ja": "私たちは更新版カタログをすぐ出す必要があります。",
+            "focus": "put out",
+            "object": "the updated catalog"
           },
           {
-            "en": "They put out the new catalog.",
-            "ja": "新しいカタログを出しました。",
-            "focus": "put",
-            "object": "the new catalog",
-            "jaFocus": "出しました"
+            "en": "Please put out the light before you leave.",
+            "ja": "退室前に照明を消してください。",
+            "focus": "put out",
+            "object": "the light"
           }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put up with",
-        "ja": "我慢する",
-        "image": "嫌なものを持ちこたえる。",
-        "pattern": "put up with + 名詞",
-        "examples": [
-          {
-            "en": "We cannot put up with repeated delays.",
-            "ja": "度重なる遅延は我慢できません。",
-            "focus": "put",
-            "object": "repeated delays",
-            "jaFocus": "我慢できません"
-          },
-          {
-            "en": "The team put up with a lot of pressure.",
-            "ja": "チームは大きなプレッシャーに耐えました。",
-            "focus": "put",
-            "object": "a lot of pressure",
-            "jaFocus": "耐えました"
-          },
-          {
-            "en": "I cannot put up with unclear instructions.",
-            "ja": "不明確な指示には我慢できません。",
-            "focus": "put",
-            "object": "unclear instructions",
-            "jaFocus": "我慢できません"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put down",
-        "ja": "書き留める",
-        "image": "情報を紙や画面に下ろす。",
-        "pattern": "put down + 名詞",
-        "examples": [
-          {
-            "en": "Please put down your questions.",
-            "ja": "質問を書き留めてください。",
-            "focus": "put",
-            "object": "your questions",
-            "jaFocus": "書き留めて"
-          },
-          {
-            "en": "I put down the client requirements.",
-            "ja": "顧客要件を書き留めました。",
-            "focus": "put",
-            "object": "the client requirements",
-            "jaFocus": "書き留めました"
-          },
-          {
-            "en": "Can you put down the key points?",
-            "ja": "要点を書いてもらえますか？",
-            "focus": "put",
-            "object": "the key points",
-            "jaFocus": "書いて"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put back",
-        "ja": "戻す",
-        "image": "元の場所へ戻す。",
-        "pattern": "put back + 名詞",
-        "examples": [
-          {
-            "en": "Please put the file back after use.",
-            "ja": "使用後はファイルを元に戻してください。",
-            "focus": "put",
-            "object": "the file",
-            "jaFocus": "戻して"
-          },
-          {
-            "en": "I put the sample back in storage.",
-            "ja": "サンプルを保管場所に戻しました。",
-            "focus": "put",
-            "object": "the sample",
-            "jaFocus": "戻しました"
-          },
-          {
-            "en": "Can you put the meeting back on the calendar?",
-            "ja": "会議をカレンダーに戻してもらえますか？",
-            "focus": "put",
-            "object": "the meeting",
-            "jaFocus": "戻して"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put away",
-        "ja": "片付ける",
-        "image": "使い終えたものを所定の場所へ置く。",
-        "pattern": "put away + 名詞",
-        "examples": [
-          {
-            "en": "Please put away the equipment.",
-            "ja": "機材を片付けてください。",
-            "focus": "put",
-            "object": "the equipment",
-            "jaFocus": "片付けて"
-          },
-          {
-            "en": "We put away the samples after the meeting.",
-            "ja": "会議後にサンプルを片付けました。",
-            "focus": "put",
-            "object": "the samples",
-            "jaFocus": "片付けました"
-          },
-          {
-            "en": "I put away the documents.",
-            "ja": "書類を片付けました。",
-            "focus": "put",
-            "object": "the documents",
-            "jaFocus": "片付けました"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put through",
-        "ja": "電話をつなぐ・処理する",
-        "image": "相手や手続きを通す。",
-        "pattern": "put through + 名詞",
-        "examples": [
-          {
-            "en": "Could you put me through to sales?",
-            "ja": "営業部につないでいただけますか？",
-            "focus": "put",
-            "object": "me",
-            "jaFocus": "つないで"
-          },
-          {
-            "en": "The system put the order through.",
-            "ja": "システムが注文を処理しました。",
-            "focus": "put",
-            "object": "the order",
-            "jaFocus": "処理しました"
-          },
-          {
-            "en": "Please put this request through today.",
-            "ja": "この依頼を今日処理してください。",
-            "focus": "put",
-            "object": "this request",
-            "jaFocus": "処理して"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "put aside",
-        "ja": "取っておく・脇に置く",
-        "image": "今は横に置く。",
-        "pattern": "put aside + 名詞",
-        "examples": [
-          {
-            "en": "Let us put aside the budget issue for now.",
-            "ja": "予算の件はいったん脇に置きましょう。",
-            "focus": "put",
-            "object": "the budget issue",
-            "jaFocus": "脇に置き"
-          },
-          {
-            "en": "We put aside time for training.",
-            "ja": "研修の時間を確保しました。",
-            "focus": "put",
-            "object": "time",
-            "jaFocus": "確保しました"
-          },
-          {
-            "en": "I put aside the documents for review.",
-            "ja": "確認用に書類を取っておきました。",
-            "focus": "put",
-            "object": "the documents",
-            "jaFocus": "取っておきました"
-          }
-        ],
-        "dailyExamples": []
+        ]
       }
     ]
   },
@@ -3089,924 +1720,496 @@ export const verbs: Verb[] = [
     "syllable": "keep",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★★ 超重要",
-    "core": "状態や関係を、そのまま保ち続ける",
-    "coreDetail": "KEEPは、物・状態・関係・約束・情報を失わずに保つ感覚で整理できます。仕事では進捗管理・情報共有・品質維持・約束に使います。",
+    "core": "状態・物・関係をそのまま保つ",
+    "coreDetail": "KEEPは『保つ』が中心です。資料を保管する、状態を維持する、相手に知らせ続ける、約束を守る、記録を残すなど、仕事でかなり使う動詞です。",
     "coreVisual": {
       "from": [
-        "📅 予定",
         "📄 記録",
-        "🤝 関係",
-        "🔒 情報",
-        "✅ 約束"
+        "🤝 約束",
+        "📈 状態",
+        "📩 情報共有",
+        "🔒 安全"
       ],
-      "to": "保つ",
-      "label": "失わずに維持"
+      "to": "同じ状態・管理下",
+      "label": "対象をそのまま保つ・離さない"
     },
     "meanings": [
       {
-        "id": "continue",
-        "title": "① 続ける",
-        "pattern": "KEEP + 動名詞",
-        "transitivity": "他動詞",
-        "structure": "S + keep + V-ing",
-        "image": "動作を止めずに保つ。",
-        "point": "keep checking, keep working のように継続を表す。",
-        "examples": [
-          {
-            "en": "Please keep checking the status.",
-            "ja": "状況確認を続けてください。",
-            "focus": "keep checking",
-            "jaFocus": "続けて"
-          },
-          {
-            "en": "We need to keep working on this issue.",
-            "ja": "この問題に取り組み続ける必要があります。",
-            "focus": "keep working",
-            "jaFocus": "続ける"
-          },
-          {
-            "en": "The team kept discussing the proposal.",
-            "ja": "チームは提案について議論を続けました。",
-            "focus": "kept discussing",
-            "jaFocus": "続けました"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "maintain",
-        "title": "② 保つ",
-        "pattern": "KEEP + 名詞/状態",
+        "id": "keep-file",
+        "title": "① keep a file / 保管する",
+        "pattern": "KEEP + object",
         "transitivity": "他動詞",
         "structure": "S + keep + O",
-        "image": "状態や関係をそのまま保つ。",
-        "point": "schedule, quality, records などとよく使う。",
+        "image": "物や情報を自分の管理下に保つイメージ。",
+        "point": "資料・記録・サンプルなどを保管する時に使う。",
         "examples": [
           {
-            "en": "We need to keep the schedule.",
-            "ja": "スケジュールを守る必要があります。",
+            "en": "Please keep this file for your records.",
+            "ja": "あなたは記録用にこのファイルを保管してください。",
             "focus": "keep",
-            "object": "the schedule",
-            "jaFocus": "守る"
+            "object": "this file"
           },
           {
-            "en": "Please keep the quality high.",
-            "ja": "品質を高く保ってください。",
+            "en": "We keep the samples in the storage room.",
+            "ja": "私たちはサンプルを保管室に置いています。",
             "focus": "keep",
-            "object": "the quality",
-            "jaFocus": "保って"
+            "object": "the samples"
           },
           {
-            "en": "The team kept a good relationship with the client.",
-            "ja": "チームは顧客と良い関係を保ちました。",
-            "focus": "kept",
-            "object": "a good relationship",
-            "jaFocus": "保ちました"
+            "en": "Do you keep old quotations in the system?",
+            "ja": "あなたは古い見積書をシステムに保管していますか？",
+            "focus": "keep",
+            "object": "old quotations"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "id": "retain",
-        "title": "③ 保管する・残す",
-        "pattern": "KEEP + 名詞",
-        "transitivity": "他動詞",
-        "structure": "S + keep + O",
-        "image": "必要なものを捨てずに持ち続ける。",
-        "point": "copy, record, receipt などと相性が良い。",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "Please keep a copy of the contract.",
-            "ja": "契約書のコピーを保管してください。",
+            "en": "I keep my passport in a safe place.",
+            "ja": "私はパスポートを安全な場所に保管しています。",
             "focus": "keep",
-            "object": "a copy",
-            "jaFocus": "保管して"
+            "object": "my passport"
           },
           {
-            "en": "We keep records of all orders.",
-            "ja": "すべての注文記録を保管しています。",
+            "en": "Please keep the receipt.",
+            "ja": "レシートを保管してください。",
             "focus": "keep",
-            "object": "records",
-            "jaFocus": "保管して"
-          },
-          {
-            "en": "I kept the receipt for accounting.",
-            "ja": "経理用に領収書を保管しました。",
-            "focus": "kept",
-            "object": "the receipt",
-            "jaFocus": "保管しました"
+            "object": "the receipt"
           }
-        ],
-        "dailyExamples": []
+        ]
       },
       {
-        "id": "inform",
-        "title": "④ 知らせ続ける",
-        "pattern": "KEEP + 人 + informed",
+        "id": "keep-state",
+        "title": "② keep it simple / 状態を保つ",
+        "pattern": "KEEP + object + adjective",
         "transitivity": "他動詞",
         "structure": "S + keep + O + C",
-        "image": "相手を情報がある状態に保つ。",
-        "point": "keep me informed は仕事で非常によく使う。",
+        "image": "対象をある状態のまま保つイメージ。",
+        "point": "説明・資料・現場管理でよく使う。",
         "examples": [
           {
-            "en": "Please keep me informed.",
-            "ja": "引き続き共有してください。",
+            "en": "Please keep the explanation simple for the customer.",
+            "ja": "顧客向けには説明を簡単にしてください。",
             "focus": "keep",
-            "object": "me",
-            "jaFocus": "共有して"
+            "object": "the explanation"
           },
           {
-            "en": "I will keep the client updated.",
-            "ja": "顧客に随時共有します。",
+            "en": "We need to keep the area clean during installation.",
+            "ja": "私たちは設置中、その場所をきれいに保つ必要があります。",
             "focus": "keep",
-            "object": "the client",
-            "jaFocus": "共有します"
+            "object": "the area"
           },
           {
-            "en": "Keep us posted on the progress.",
-            "ja": "進捗を随時知らせてください。",
-            "focus": "Keep",
-            "object": "us",
-            "jaFocus": "知らせて"
+            "en": "Can you keep the price reasonable?",
+            "ja": "あなたは価格を妥当な範囲にできますか？",
+            "focus": "keep",
+            "object": "the price"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Keep the door open, please.",
+            "ja": "ドアを開けたままにしてください。",
+            "focus": "keep",
+            "object": "the door"
+          },
+          {
+            "en": "I try to keep my room clean.",
+            "ja": "私は部屋をきれいに保つようにしています。",
+            "focus": "keep",
+            "object": "my room"
+          }
+        ]
       },
       {
-        "id": "prevent",
-        "title": "⑤ 〜させない",
-        "pattern": "KEEP + 人/物 + from V-ing",
+        "id": "keep-schedule",
+        "title": "③ keep the schedule / 守る・維持する",
+        "pattern": "KEEP + schedule/deadline/promise",
         "transitivity": "他動詞",
-        "structure": "S + keep + O + from V-ing",
-        "image": "何かを起こらないように止めておく。",
-        "point": "問題防止の説明で便利。",
+        "structure": "S + keep + O",
+        "image": "約束や予定を崩さず保つイメージ。",
+        "point": "納期・約束・ルールを守る時に使える。",
         "examples": [
           {
-            "en": "Clear rules keep mistakes from happening.",
-            "ja": "明確なルールはミスの発生を防ぎます。",
+            "en": "We must keep the delivery schedule.",
+            "ja": "私たちは納期スケジュールを守らなければなりません。",
             "focus": "keep",
-            "object": "mistakes",
-            "jaFocus": "防ぎます"
+            "object": "the delivery schedule"
           },
           {
-            "en": "The backup kept us from losing data.",
-            "ja": "バックアップのおかげでデータ消失を防げました。",
-            "focus": "kept",
-            "object": "us",
-            "jaFocus": "防げました"
+            "en": "Can the factory keep the original deadline?",
+            "ja": "工場は当初の締切を守れますか？",
+            "focus": "keep",
+            "object": "the original deadline"
           },
           {
-            "en": "Good communication keeps issues from growing.",
-            "ja": "良い連絡は問題の拡大を防ぎます。",
+            "en": "He always keeps his promises to customers.",
+            "ja": "彼はいつも顧客との約束を守ります。",
             "focus": "keeps",
-            "object": "issues",
-            "jaFocus": "防ぎます"
+            "object": "his promises"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Please keep your promise.",
+            "ja": "約束を守ってください。",
+            "focus": "keep",
+            "object": "your promise"
+          },
+          {
+            "en": "I try to keep my routine.",
+            "ja": "私は自分の習慣を保つようにしています。",
+            "focus": "keep",
+            "object": "my routine"
+          }
+        ]
       },
       {
-        "id": "promise",
-        "title": "⑥ 約束を守る",
-        "pattern": "KEEP + promise/word",
+        "id": "keep-record",
+        "title": "④ keep a record / 記録を残す",
+        "pattern": "KEEP + record/list/note",
         "transitivity": "他動詞",
         "structure": "S + keep + O",
-        "image": "約束をそのまま保つ。",
-        "point": "keep a promise, keep your word は信頼に関わる表現。",
+        "image": "後で見られるように記録を保管しておくイメージ。",
+        "point": "営業履歴・確認事項・在庫管理で便利。",
         "examples": [
           {
-            "en": "We must keep our promise to the client.",
-            "ja": "顧客との約束を守らなければなりません。",
+            "en": "Please keep a record of the customer's request.",
+            "ja": "あなたは顧客の要望を記録しておいてください。",
             "focus": "keep",
-            "object": "our promise",
-            "jaFocus": "守ら"
+            "object": "a record"
           },
           {
-            "en": "He kept his word on the delivery date.",
-            "ja": "彼は納期について約束を守りました。",
-            "focus": "kept",
-            "object": "his word",
-            "jaFocus": "守りました"
+            "en": "We keep a list of open issues for each project.",
+            "ja": "私たちは案件ごとに未解決事項のリストを残しています。",
+            "focus": "keep",
+            "object": "a list"
           },
           {
-            "en": "The company kept its commitment.",
-            "ja": "会社は約束を守りました。",
+            "en": "I kept notes during the meeting.",
+            "ja": "私は会議中にメモを取りました。",
             "focus": "kept",
-            "object": "its commitment",
-            "jaFocus": "守りました"
+            "object": "notes"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I keep a diary every day.",
+            "ja": "私は毎日日記をつけています。",
+            "focus": "keep",
+            "object": "a diary"
+          },
+          {
+            "en": "Please keep a note of this number.",
+            "ja": "この番号をメモしておいてください。",
+            "focus": "keep",
+            "object": "a note"
+          }
+        ]
       },
       {
-        "id": "track",
-        "title": "⑦ 把握する",
-        "pattern": "KEEP TRACK OF + 名詞",
+        "id": "keep-updated",
+        "title": "⑤ keep someone updated / 最新情報を伝え続ける",
+        "pattern": "KEEP + someone + updated/informed",
         "transitivity": "他動詞",
-        "structure": "S + keep track of + O",
-        "image": "数字や進捗を追い続ける。",
-        "point": "進捗管理・在庫管理で重要。",
+        "structure": "S + keep + 人 + C",
+        "image": "相手を最新情報が入った状態に保つイメージ。",
+        "point": "メール返信・進捗報告で非常によく使う。",
         "examples": [
           {
-            "en": "We need to keep track of inventory.",
-            "ja": "在庫を把握する必要があります。",
+            "en": "I will keep you updated on the delivery status.",
+            "ja": "私は納品状況についてあなたに随時共有します。",
             "focus": "keep",
-            "object": "inventory",
-            "jaFocus": "把握する"
+            "object": "you"
           },
           {
-            "en": "Please keep track of your tasks.",
-            "ja": "自分のタスクを管理してください。",
+            "en": "Please keep the customer informed about the schedule.",
+            "ja": "あなたはスケジュールについて顧客に情報共有し続けてください。",
             "focus": "keep",
-            "object": "your tasks",
-            "jaFocus": "管理して"
+            "object": "the customer"
           },
           {
-            "en": "I keep track of monthly sales.",
-            "ja": "月次売上を把握しています。",
-            "focus": "keep",
-            "object": "monthly sales",
-            "jaFocus": "把握して"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "hold",
-        "title": "⑧ そのまま持っておく",
-        "pattern": "KEEP + 名詞",
-        "transitivity": "他動詞",
-        "structure": "S + keep + O",
-        "image": "今すぐ使わず、手元に残す。",
-        "point": "資料・サンプル・在庫などに使う。",
-        "examples": [
-          {
-            "en": "Can we keep these samples for next week?",
-            "ja": "これらのサンプルを来週まで保管できますか？",
-            "focus": "keep",
-            "object": "these samples",
-            "jaFocus": "保管できますか"
-          },
-          {
-            "en": "Please keep the original document.",
-            "ja": "原本を保管してください。",
-            "focus": "keep",
-            "object": "the original document",
-            "jaFocus": "保管して"
-          },
-          {
-            "en": "We kept some stock for urgent orders.",
-            "ja": "緊急注文用に在庫を少し残しました。",
+            "en": "We kept our manager updated during the issue.",
+            "ja": "私たちは問題対応中、上司に状況を共有し続けました。",
             "focus": "kept",
-            "object": "some stock",
-            "jaFocus": "残しました"
+            "object": "our manager"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Please keep me updated.",
+            "ja": "随時教えてください。",
+            "focus": "keep",
+            "object": "me"
+          },
+          {
+            "en": "I will keep you informed.",
+            "ja": "私はあなたに知らせ続けます。",
+            "focus": "keep",
+            "object": "you"
+          }
+        ]
       },
       {
-        "id": "secret",
-        "title": "⑨ 秘密にする",
-        "pattern": "KEEP + 名詞 + confidential",
+        "id": "keep-in-mind",
+        "title": "⑥ keep in mind / 覚えておく",
+        "pattern": "KEEP + object + in mind",
+        "transitivity": "他動詞",
+        "structure": "S + keep + O + in mind",
+        "image": "重要な点を頭の中に保つイメージ。",
+        "point": "注意点・条件・制約を伝える時に便利。",
+        "examples": [
+          {
+            "en": "Please keep the budget in mind when you make the proposal.",
+            "ja": "提案書を作る時は予算を念頭に置いてください。",
+            "focus": "keep",
+            "object": "the budget"
+          },
+          {
+            "en": "We should keep the delivery risk in mind.",
+            "ja": "私たちは納期リスクを念頭に置くべきです。",
+            "focus": "keep",
+            "object": "the delivery risk"
+          },
+          {
+            "en": "Keep in mind that the client needs approval first.",
+            "ja": "顧客はまず承認が必要だと覚えておいてください。",
+            "focus": "Keep",
+            "object": "in mind"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Please keep this in mind.",
+            "ja": "これを覚えておいてください。",
+            "focus": "keep",
+            "object": "this"
+          },
+          {
+            "en": "I keep your advice in mind.",
+            "ja": "私はあなたの助言を心に留めています。",
+            "focus": "keep",
+            "object": "your advice"
+          }
+        ]
+      },
+      {
+        "id": "keep-going",
+        "title": "⑦ keep going / 続ける",
+        "pattern": "KEEP + -ing",
+        "transitivity": "自動詞/他動詞的",
+        "structure": "S + keep + -ing",
+        "image": "動作を止めずに同じ流れで保つイメージ。",
+        "point": "work, check, improve, communicate などと使いやすい。",
+        "examples": [
+          {
+            "en": "Please keep checking the stock until Friday.",
+            "ja": "金曜日まで在庫確認を続けてください。",
+            "focus": "keep",
+            "object": "checking"
+          },
+          {
+            "en": "We need to keep improving the process.",
+            "ja": "私たちはその手順を改善し続ける必要があります。",
+            "focus": "keep",
+            "object": "improving"
+          },
+          {
+            "en": "The team kept working until the issue was solved.",
+            "ja": "チームは問題が解決するまで作業を続けました。",
+            "focus": "kept",
+            "object": "working"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Keep going. You are doing well.",
+            "ja": "続けてください。うまくできています。",
+            "focus": "Keep",
+            "object": "going"
+          },
+          {
+            "en": "I kept walking for thirty minutes.",
+            "ja": "私は30分歩き続けました。",
+            "focus": "kept",
+            "object": "walking"
+          }
+        ]
+      },
+      {
+        "id": "keep-safe",
+        "title": "⑧ keep someone safe / 守る",
+        "pattern": "KEEP + person/object + safe",
         "transitivity": "他動詞",
         "structure": "S + keep + O + C",
-        "image": "情報を外に出さない状態に保つ。",
-        "point": "confidential と一緒に使うと仕事で自然。",
+        "image": "人や物を安全な状態に保つイメージ。",
+        "point": "安全管理・品質管理で使える。",
         "examples": [
           {
-            "en": "Please keep this information confidential.",
-            "ja": "この情報は機密扱いにしてください。",
+            "en": "These rules keep workers safe at the site.",
+            "ja": "これらのルールは現場で作業者を安全に保ちます。",
             "focus": "keep",
-            "object": "this information",
-            "jaFocus": "機密扱いに"
+            "object": "workers"
           },
           {
-            "en": "We keep customer data secure.",
-            "ja": "顧客データを安全に保っています。",
+            "en": "We need to keep the products safe during delivery.",
+            "ja": "私たちは配送中、製品を安全に保つ必要があります。",
             "focus": "keep",
-            "object": "customer data",
-            "jaFocus": "安全に保って"
+            "object": "the products"
           },
           {
-            "en": "Keep the details internal for now.",
-            "ja": "詳細はいったん社内限りにしてください。",
-            "focus": "Keep",
-            "object": "the details",
-            "jaFocus": "社内限りに"
+            "en": "The cover keeps the LED modules clean.",
+            "ja": "そのカバーはLEDモジュールをきれいに保ちます。",
+            "focus": "keeps",
+            "object": "the LED modules"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "id": "stay",
-        "title": "⑩ 〜のままでいる",
-        "pattern": "KEEP + 形容詞",
-        "transitivity": "他動詞",
-        "structure": "S + keep + C",
-        "image": "ある状態でい続ける。",
-        "point": "keep calm, keep ready のように状態維持を表す。",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "Please keep calm during the meeting.",
-            "ja": "会議中は落ち着いてください。",
-            "focus": "keep",
-            "object": "calm",
-            "jaFocus": "落ち着いて"
+            "en": "This case keeps my phone safe.",
+            "ja": "このケースは私の携帯を守ります。",
+            "focus": "keeps",
+            "object": "my phone"
           },
           {
-            "en": "We should keep ready for changes.",
-            "ja": "変更に備えておくべきです。",
+            "en": "Please keep your password safe.",
+            "ja": "パスワードを安全に管理してください。",
             "focus": "keep",
-            "object": "ready",
-            "jaFocus": "備えて"
-          },
-          {
-            "en": "The system kept stable after the update.",
-            "ja": "更新後もシステムは安定していました。",
-            "focus": "kept",
-            "object": "stable",
-            "jaFocus": "安定して"
+            "object": "your password"
           }
-        ],
-        "dailyExamples": []
+        ]
       }
     ],
-    "collocations": [
-      {
-        "phrase": "keep in touch",
-        "ja": "連絡を取り続ける",
-        "image": "keep in touch は仕事でよく使うまとまり表現。",
-        "pattern": "keep in touch with + 人",
-        "examples": [
-          {
-            "en": "Let us keep in touch after the meeting.",
-            "ja": "会議後も連絡を取り合いましょう。",
-            "focus": "keep in touch",
-            "jaFocus": "連絡を取り合い"
-          },
-          {
-            "en": "I keep in touch with the client.",
-            "ja": "顧客と連絡を取り続けています。",
-            "focus": "keep in touch",
-            "jaFocus": "連絡を取り続け"
-          },
-          {
-            "en": "Please keep in touch with the supplier.",
-            "ja": "仕入先と連絡を取り続けてください。",
-            "focus": "keep in touch",
-            "jaFocus": "連絡を取り続け"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep track of",
-        "ja": "〜を把握する",
-        "image": "keep track of は仕事でよく使うまとまり表現。",
-        "pattern": "keep track of + 名詞",
-        "examples": [
-          {
-            "en": "Keep track of all tasks.",
-            "ja": "すべてのタスクを把握してください。",
-            "focus": "Keep track of",
-            "jaFocus": "把握して"
-          },
-          {
-            "en": "We keep track of expenses.",
-            "ja": "経費を把握しています。",
-            "focus": "keep track of",
-            "jaFocus": "把握して"
-          },
-          {
-            "en": "I keep track of deadlines.",
-            "ja": "締切を管理しています。",
-            "focus": "keep track of",
-            "jaFocus": "管理して"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep a record",
-        "ja": "記録を残す",
-        "image": "keep a record は仕事でよく使うまとまり表現。",
-        "pattern": "keep a record of + 名詞",
-        "examples": [
-          {
-            "en": "Please keep a record of calls.",
-            "ja": "通話記録を残してください。",
-            "focus": "keep",
-            "object": "a record",
-            "jaFocus": "記録を残して"
-          },
-          {
-            "en": "We keep a record of complaints.",
-            "ja": "クレーム記録を残しています。",
-            "focus": "keep",
-            "object": "a record",
-            "jaFocus": "記録を残して"
-          },
-          {
-            "en": "I kept a record of changes.",
-            "ja": "変更記録を残しました。",
-            "focus": "kept",
-            "object": "a record",
-            "jaFocus": "記録を残しました"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep your word",
-        "ja": "約束を守る",
-        "image": "keep your word は仕事でよく使うまとまり表現。",
-        "pattern": "keep + word",
-        "examples": [
-          {
-            "en": "We must keep our word.",
-            "ja": "約束を守らなければなりません。",
-            "focus": "keep",
-            "object": "our word",
-            "jaFocus": "守ら"
-          },
-          {
-            "en": "He kept his word.",
-            "ja": "彼は約束を守りました。",
-            "focus": "kept",
-            "object": "his word",
-            "jaFocus": "守りました"
-          },
-          {
-            "en": "Please keep your word on the deadline.",
-            "ja": "納期の約束を守ってください。",
-            "focus": "keep",
-            "object": "your word",
-            "jaFocus": "守って"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep an eye on",
-        "ja": "〜に注意を払う",
-        "image": "keep an eye on は仕事でよく使うまとまり表現。",
-        "pattern": "keep an eye on + 名詞",
-        "examples": [
-          {
-            "en": "Please keep an eye on the budget.",
-            "ja": "予算に注意してください。",
-            "focus": "keep",
-            "object": "an eye",
-            "jaFocus": "注意して"
-          },
-          {
-            "en": "We keep an eye on quality.",
-            "ja": "品質に注意しています。",
-            "focus": "keep",
-            "object": "an eye",
-            "jaFocus": "注意して"
-          },
-          {
-            "en": "I will keep an eye on the schedule.",
-            "ja": "スケジュールを見ておきます。",
-            "focus": "keep",
-            "object": "an eye",
-            "jaFocus": "見て"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep up the good work",
-        "ja": "その調子で頑張る",
-        "image": "keep up the good work は仕事でよく使うまとまり表現。",
-        "pattern": "keep up + 名詞",
-        "examples": [
-          {
-            "en": "Keep up the good work.",
-            "ja": "その調子で頑張ってください。",
-            "focus": "Keep up",
-            "object": "the good work",
-            "jaFocus": "頑張って"
-          },
-          {
-            "en": "The team kept up the good work.",
-            "ja": "チームは良い仕事を続けました。",
-            "focus": "kept up",
-            "object": "the good work",
-            "jaFocus": "続けました"
-          },
-          {
-            "en": "Please keep up this level of quality.",
-            "ja": "この品質レベルを維持してください。",
-            "focus": "keep up",
-            "object": "this level",
-            "jaFocus": "維持して"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep costs down",
-        "ja": "コストを抑える",
-        "image": "keep costs down は仕事でよく使うまとまり表現。",
-        "pattern": "keep + O + down",
-        "examples": [
-          {
-            "en": "We need to keep costs down.",
-            "ja": "コストを抑える必要があります。",
-            "focus": "keep",
-            "object": "costs",
-            "jaFocus": "抑える"
-          },
-          {
-            "en": "This plan keeps costs down.",
-            "ja": "この計画はコストを抑えます。",
-            "focus": "keeps",
-            "object": "costs",
-            "jaFocus": "抑えます"
-          },
-          {
-            "en": "How can we keep costs down?",
-            "ja": "どうすればコストを抑えられますか？",
-            "focus": "keep",
-            "object": "costs",
-            "jaFocus": "抑え"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep data secure",
-        "ja": "データを安全に保つ",
-        "image": "keep data secure は仕事でよく使うまとまり表現。",
-        "pattern": "keep + O + C",
-        "examples": [
-          {
-            "en": "We keep customer data secure.",
-            "ja": "顧客データを安全に保っています。",
-            "focus": "keep",
-            "object": "customer data",
-            "jaFocus": "安全に保って"
-          },
-          {
-            "en": "Please keep this file secure.",
-            "ja": "このファイルを安全に保管してください。",
-            "focus": "keep",
-            "object": "this file",
-            "jaFocus": "安全に"
-          },
-          {
-            "en": "The system keeps information secure.",
-            "ja": "システムは情報を安全に保ちます。",
-            "focus": "keeps",
-            "object": "information",
-            "jaFocus": "安全に保ちます"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep the schedule",
-        "ja": "予定を守る",
-        "image": "keep the schedule は仕事でよく使うまとまり表現。",
-        "pattern": "keep + 名詞",
-        "examples": [
-          {
-            "en": "We need to keep the schedule.",
-            "ja": "予定を守る必要があります。",
-            "focus": "keep",
-            "object": "the schedule",
-            "jaFocus": "守る"
-          },
-          {
-            "en": "Can we keep the original schedule?",
-            "ja": "元の予定を維持できますか？",
-            "focus": "keep",
-            "object": "the original schedule",
-            "jaFocus": "維持"
-          },
-          {
-            "en": "The team kept the schedule.",
-            "ja": "チームは予定を守りました。",
-            "focus": "kept",
-            "object": "the schedule",
-            "jaFocus": "守りました"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep going",
-        "ja": "続ける",
-        "image": "keep going は仕事でよく使うまとまり表現。",
-        "pattern": "keep going",
-        "examples": [
-          {
-            "en": "We need to keep going.",
-            "ja": "続ける必要があります。",
-            "focus": "keep going",
-            "jaFocus": "続ける"
-          },
-          {
-            "en": "The project kept going despite issues.",
-            "ja": "問題があっても案件は続きました。",
-            "focus": "kept going",
-            "jaFocus": "続きました"
-          },
-          {
-            "en": "Please keep going with the analysis.",
-            "ja": "分析を続けてください。",
-            "focus": "keep going",
-            "jaFocus": "続けて"
-          }
-        ],
-        "dailyExamples": []
-      }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
+      {
+        "phrase": "keep up",
+        "ja": "続ける・維持する",
+        "image": "ペースや状態を下げずに保つイメージ。",
+        "pattern": "KEEP UP + object / KEEP UP",
+        "examples": [
+          {
+            "en": "We need to keep up the quality during mass production.",
+            "ja": "量産中も品質を維持する必要があります。",
+            "focus": "keep up",
+            "object": "the quality"
+          },
+          {
+            "en": "Please keep up the good work.",
+            "ja": "その調子で良い仕事を続けてください。",
+            "focus": "keep up",
+            "object": "the good work"
+          },
+          {
+            "en": "It is hard to keep up during the busy season.",
+            "ja": "繁忙期にペースを保つのは大変です。",
+            "focus": "keep up",
+            "object": "during the busy season"
+          }
+        ]
+      },
       {
         "phrase": "keep up with",
         "ja": "〜についていく",
-        "image": "keep up with は仕事でよく使うまとまり表現。",
-        "pattern": "keep up with + 名詞",
+        "image": "相手や変化のペースに遅れず保つイメージ。",
+        "pattern": "KEEP UP WITH + object",
         "examples": [
           {
-            "en": "We need to keep up with market changes.",
-            "ja": "市場変化についていく必要があります。",
+            "en": "We must keep up with changes in customer demand.",
+            "ja": "私たちは顧客ニーズの変化についていかなければなりません。",
             "focus": "keep up with",
-            "jaFocus": "ついていく"
+            "object": "changes in customer demand"
           },
           {
-            "en": "Can you keep up with the schedule?",
-            "ja": "スケジュールについていけますか？",
+            "en": "Can you keep up with the project schedule?",
+            "ja": "あなたは案件スケジュールについていけますか？",
             "focus": "keep up with",
-            "jaFocus": "ついていけ"
+            "object": "the project schedule"
           },
           {
-            "en": "The team kept up with demand.",
-            "ja": "チームは需要に対応し続けました。",
-            "focus": "kept up with",
-            "jaFocus": "対応し続け"
+            "en": "It is difficult to keep up with all the emails.",
+            "ja": "すべてのメールに対応し続けるのは難しいです。",
+            "focus": "keep up with",
+            "object": "all the emails"
           }
-        ],
-        "dailyExamples": []
+        ]
       },
       {
         "phrase": "keep on",
         "ja": "続ける",
-        "image": "keep on は仕事でよく使うまとまり表現。",
-        "pattern": "keep on + V-ing",
+        "image": "同じ行動をそのまま続けるイメージ。",
+        "pattern": "KEEP ON + -ing",
         "examples": [
           {
-            "en": "Please keep on checking the data.",
-            "ja": "データ確認を続けてください。",
-            "focus": "keep on checking",
-            "jaFocus": "続けて"
+            "en": "Please keep on checking the delivery status.",
+            "ja": "納品状況の確認を続けてください。",
+            "focus": "keep on",
+            "object": "checking the delivery status"
           },
           {
-            "en": "We kept on improving the process.",
-            "ja": "手順改善を続けました。",
-            "focus": "kept on improving",
-            "jaFocus": "続けました"
+            "en": "The customer kept on asking about the price.",
+            "ja": "顧客は価格について質問し続けました。",
+            "focus": "kept on",
+            "object": "asking about the price"
           },
           {
-            "en": "They keep on asking for updates.",
-            "ja": "彼らは更新確認を続けています。",
-            "focus": "keep on asking",
-            "jaFocus": "続けて"
+            "en": "We kept on improving the proposal until the deadline.",
+            "ja": "私たちは締切まで提案書の改善を続けました。",
+            "focus": "kept on",
+            "object": "improving the proposal"
           }
-        ],
-        "dailyExamples": []
+        ]
       },
       {
-        "phrase": "keep away from",
-        "ja": "〜から離れる",
-        "image": "keep away from は仕事でよく使うまとまり表現。",
-        "pattern": "keep away from + 名詞",
+        "phrase": "keep away",
+        "ja": "近づけない・離しておく",
+        "image": "対象を一定の距離に保つイメージ。",
+        "pattern": "KEEP AWAY + object / KEEP object AWAY",
         "examples": [
           {
-            "en": "Keep away from risky deals.",
-            "ja": "リスクの高い取引から離れてください。",
-            "focus": "Keep away from",
-            "jaFocus": "離れて"
+            "en": "Please keep water away from the controller.",
+            "ja": "コントローラーに水を近づけないでください。",
+            "focus": "keep",
+            "object": "water"
           },
           {
-            "en": "We should keep away from unclear terms.",
-            "ja": "不明確な条件は避けるべきです。",
-            "focus": "keep away from",
-            "jaFocus": "避ける"
+            "en": "We should keep unauthorized people away from the site.",
+            "ja": "私たちは関係者以外を現場に近づけないようにすべきです。",
+            "focus": "keep",
+            "object": "unauthorized people"
           },
           {
-            "en": "Keep visitors away from the equipment.",
-            "ja": "来客を機材から離してください。",
+            "en": "Keep the samples away from direct sunlight.",
+            "ja": "サンプルを直射日光から離して保管してください。",
             "focus": "Keep",
-            "object": "visitors",
-            "jaFocus": "離して"
+            "object": "the samples"
           }
-        ],
-        "dailyExamples": []
+        ]
       },
       {
         "phrase": "keep out",
-        "ja": "入れない",
-        "image": "keep out は仕事でよく使うまとまり表現。",
-        "pattern": "keep + O + out",
+        "ja": "入れない・締め出す",
+        "image": "外側に保ち、中へ入れないイメージ。",
+        "pattern": "KEEP OUT + object / KEEP object OUT",
         "examples": [
           {
-            "en": "Keep confidential files out of public folders.",
-            "ja": "機密ファイルを共有フォルダに入れないでください。",
-            "focus": "Keep",
-            "object": "confidential files",
-            "jaFocus": "入れないで"
-          },
-          {
-            "en": "The rule keeps errors out of reports.",
-            "ja": "そのルールは報告書のミスを防ぎます。",
+            "en": "This cover keeps dust out of the unit.",
+            "ja": "このカバーはユニット内にほこりが入らないようにします。",
             "focus": "keeps",
-            "object": "errors",
-            "jaFocus": "防ぎます"
+            "object": "dust"
           },
           {
-            "en": "Keep unnecessary items out.",
-            "ja": "不要な項目は入れないでください。",
-            "focus": "Keep",
-            "object": "unnecessary items",
-            "jaFocus": "入れないで"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep back",
-        "ja": "残しておく",
-        "image": "keep back は仕事でよく使うまとまり表現。",
-        "pattern": "keep back + 名詞",
-        "examples": [
-          {
-            "en": "We kept back some stock.",
-            "ja": "在庫を少し残しました。",
-            "focus": "kept back",
-            "object": "some stock",
-            "jaFocus": "残しました"
+            "en": "Please keep this information out of the public document.",
+            "ja": "この情報は公開資料には入れないでください。",
+            "focus": "keep",
+            "object": "this information"
           },
           {
-            "en": "Please keep back one sample.",
-            "ja": "サンプルを一つ残してください。",
-            "focus": "keep back",
-            "object": "one sample",
-            "jaFocus": "残して"
-          },
-          {
-            "en": "The team kept back budget for support.",
-            "ja": "チームはサポート用に予算を残しました。",
-            "focus": "kept back",
-            "object": "budget",
-            "jaFocus": "残しました"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep from",
-        "ja": "〜を防ぐ",
-        "image": "keep from は仕事でよく使うまとまり表現。",
-        "pattern": "keep + O + from V-ing",
-        "examples": [
-          {
-            "en": "This check keeps us from making mistakes.",
-            "ja": "この確認でミスを防げます。",
+            "en": "The fence keeps visitors out of the work area.",
+            "ja": "そのフェンスは訪問者を作業エリアに入れないようにしています。",
             "focus": "keeps",
-            "object": "us",
-            "jaFocus": "防げます"
-          },
-          {
-            "en": "Backups keep us from losing data.",
-            "ja": "バックアップはデータ消失を防ぎます。",
-            "focus": "keep",
-            "object": "us",
-            "jaFocus": "防ぎます"
-          },
-          {
-            "en": "Clear notes keep confusion from happening.",
-            "ja": "明確なメモは混乱を防ぎます。",
-            "focus": "keep",
-            "object": "confusion",
-            "jaFocus": "防ぎます"
+            "object": "visitors"
           }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep together",
-        "ja": "まとめておく",
-        "image": "keep together は仕事でよく使うまとまり表現。",
-        "pattern": "keep + O + together",
-        "examples": [
-          {
-            "en": "Please keep the documents together.",
-            "ja": "書類をまとめておいてください。",
-            "focus": "keep",
-            "object": "the documents",
-            "jaFocus": "まとめて"
-          },
-          {
-            "en": "We kept the project files together.",
-            "ja": "案件ファイルをまとめて保管しました。",
-            "focus": "kept",
-            "object": "the project files",
-            "jaFocus": "まとめて"
-          },
-          {
-            "en": "Keep all receipts together.",
-            "ja": "領収書をすべてまとめてください。",
-            "focus": "Keep",
-            "object": "all receipts",
-            "jaFocus": "まとめて"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep to",
-        "ja": "〜を守る",
-        "image": "keep to は仕事でよく使うまとまり表現。",
-        "pattern": "keep to + 名詞",
-        "examples": [
-          {
-            "en": "Please keep to the agenda.",
-            "ja": "議題に沿って進めてください。",
-            "focus": "keep to",
-            "jaFocus": "沿って"
-          },
-          {
-            "en": "We kept to the budget.",
-            "ja": "予算内に収めました。",
-            "focus": "kept to",
-            "jaFocus": "収めました"
-          },
-          {
-            "en": "Can we keep to the original plan?",
-            "ja": "元の計画通りにできますか？",
-            "focus": "keep to",
-            "jaFocus": "計画通りに"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep at",
-        "ja": "粘り強く続ける",
-        "image": "keep at は仕事でよく使うまとまり表現。",
-        "pattern": "keep at + 名詞",
-        "examples": [
-          {
-            "en": "Keep at the negotiation.",
-            "ja": "交渉を粘り強く続けてください。",
-            "focus": "Keep at",
-            "jaFocus": "続けて"
-          },
-          {
-            "en": "We kept at the issue until it was solved.",
-            "ja": "解決するまで問題に取り組み続けました。",
-            "focus": "kept at",
-            "jaFocus": "取り組み続け"
-          },
-          {
-            "en": "Please keep at the follow-up.",
-            "ja": "フォローを継続してください。",
-            "focus": "keep at",
-            "jaFocus": "継続して"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "keep off",
-        "ja": "〜を避ける",
-        "image": "keep off は仕事でよく使うまとまり表現。",
-        "pattern": "keep off + 名詞",
-        "examples": [
-          {
-            "en": "Keep off sensitive topics in the meeting.",
-            "ja": "会議ではデリケートな話題を避けてください。",
-            "focus": "Keep off",
-            "jaFocus": "避けて"
-          },
-          {
-            "en": "We should keep off price discussions for now.",
-            "ja": "今は価格の議論を避けるべきです。",
-            "focus": "keep off",
-            "jaFocus": "避ける"
-          },
-          {
-            "en": "Keep off the restricted area.",
-            "ja": "立入禁止エリアに入らないでください。",
-            "focus": "Keep off",
-            "jaFocus": "入らないで"
-          }
-        ],
-        "dailyExamples": []
+        ]
       }
     ]
   },

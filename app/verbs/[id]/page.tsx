@@ -89,7 +89,7 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
 
       {verb.meanings.length > 0 ? (
         <section className="space-y-5">
-          <h2 className="px-1 text-xl font-bold">動詞単体の使い方</h2>
+          <h2 className="px-1 text-xl font-bold">基本</h2>
           {verb.meanings.map((meaning, index) => (
             <article key={meaning.id} id={`meaning-${index + 1}`} className="card scroll-mt-24 p-5 sm:p-6">
               <div className="flex items-start justify-between gap-3">

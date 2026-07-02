@@ -41,7 +41,7 @@ function guessPatternLabel(pattern?: string, structure?: string) {
   if (text.includes("形容詞") || text.includes(" C") || text.includes("+ C")) return "S + V + C";
   if (text.includes("to 場所") || text.includes("場所")) return "S + V + 副詞句";
   if (text.toLowerCase().includes("take")) {
-    if (text.includes("care of") || text.includes("part in")) return "S + V + 句動詞/基本表現 + O";
+    if (text.includes("care of") || text.includes("part in")) return "S + V + 基本 + O";
     return "S + V + O";
   }
   if (text.includes("名詞") || text.includes("O")) return "S + V + O";

@@ -87,7 +87,7 @@ export default async function VerbPhrasalPage({ params }: { params: Promise<{ id
       )}
 
       <section className="card p-5 text-center sm:p-6">
-        <h2 className="text-xl font-bold">STEP 3 完了</h2>
+        <h2 className="text-xl font-bold">STEP 2 完了</h2>
         <p className="mt-2 text-muted">句動詞だけをテストしてから、総合テストへ進みます。</p>
         <Link href={`/tests/${verb.id}/phrasal`} className="btn btn-primary mt-5 block">句動詞テストへ</Link>
         <Link href={`/tests/${verb.id}`} className="btn btn-soft mt-3 block">総合テストへ進む</Link>

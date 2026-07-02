@@ -15,9 +15,13 @@ export type VerbQualityAudit = {
   accessLabel: string;
   usageCount: number;
   phrasalCount: number;
-  /** Backward compatibility only: old admin components may still reference these. UI must not show a separate collocation category. */
+  /** Backward compatibility only: old admin components may still reference these. UI must not show a separate collocation/idiom category. */
   collocationCount: number;
   collocationsOk: boolean;
+  /** Backward compatibility only: old admin components may still reference the previous idiom test fields. UI must not show a separate idiom category. */
+  idiomTestTotal: number;
+  idiomsOk: boolean;
+  idiomCount: number;
   businessExampleTotal: number;
   premiumDailyExampleTotal: number;
   testTotal: number;
@@ -154,6 +158,8 @@ export function auditVerbQuality(verb: Verb): VerbQualityAudit {
 
   const collocationCount = verb.collocations.length;
   const collocationsOk = true;
+  const idiomCount = collocationCount;
+  const idiomsOk = true;
 
   const phrasalCount = verb.phrasalVerbs.length;
   const phrasalWithFewExamples = verb.phrasalVerbs.filter((item) => item.examples.length < 3);
@@ -163,7 +169,8 @@ export function auditVerbQuality(verb: Verb): VerbQualityAudit {
   }
 
   const verbTests = testItems.filter((item) => item.verbId === verb.id);
-  const basicTestTotal = verbTests.filter((item) => item.section === "basic").length;
+  const basicTestTotal = verbTests.filter((item) => item.section === "basic" || item.section === "idioms").length;
+  const idiomTestTotal = 0;
   const phrasalTestTotal = verbTests.filter((item) => item.section === "phrasal").length;
   const expectedBasic = verb.meanings.reduce((sum, meaning) => sum + Math.min(3, meaning.examples.length), 0);
   const testsOk = basicTestTotal >= expectedBasic && phrasalTestTotal > 0;
@@ -215,6 +222,9 @@ export function auditVerbQuality(verb: Verb): VerbQualityAudit {
     phrasalCount,
     collocationCount,
     collocationsOk,
+    idiomTestTotal,
+    idiomsOk,
+    idiomCount,
     businessExampleTotal,
     premiumDailyExampleTotal,
     testTotal: verbTests.length,

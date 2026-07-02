@@ -203,6 +203,44 @@ function shouldBlockEmptyOverwrite(local: UserProgress, remote: Partial<UserProg
   return remoteScore > 0 && localScore <= 0;
 }
 
+function mergeRemoteLearningWithLocalProfile(local: UserProgress, remote?: Partial<UserProgress> | null): UserProgress {
+  if (!remote) return local;
+  const remoteProgress = remote as UserProgress;
+  const localHasCustomName = Boolean(local.displayName && local.displayName !== local.username);
+  return {
+    ...local,
+    ...remoteProgress,
+    username: local.username,
+    xp: Math.max(Number(local.xp || 0), Number(remoteProgress.xp || 0)),
+    level: Math.max(Number(local.level || 1), Number(remoteProgress.level || 1)),
+    currentStreak: Math.max(Number(local.currentStreak || 0), Number(remoteProgress.currentStreak || 0)),
+    longestStreak: Math.max(Number(local.longestStreak || 0), Number(remoteProgress.longestStreak || 0)),
+    totalStudied: Math.max(Number(local.totalStudied || 0), Number(remoteProgress.totalStudied || 0)),
+    currentRound: Math.max(Number(local.currentRound || 1), Number(remoteProgress.currentRound || 1)),
+    studiedVerbIds: Array.from(new Set([...(remoteProgress.studiedVerbIds || []), ...(local.studiedVerbIds || [])])),
+    weakItems: Array.from(new Set([...(remoteProgress.weakItems || []), ...(local.weakItems || [])])),
+    reviewItems: { ...(remoteProgress.reviewItems || {}), ...(local.reviewItems || {}) },
+    savedPhrases: (local.savedPhrases?.length ? local.savedPhrases : remoteProgress.savedPhrases) || [],
+    testSessions: { ...(remoteProgress.testSessions || {}), ...(local.testSessions || {}) },
+    testItemStats: { ...(remoteProgress.testItemStats || {}), ...(local.testItemStats || {}) },
+    weeklyStats: { ...(remoteProgress.weeklyStats || {}), ...(local.weeklyStats || {}) },
+    displayName: localHasCustomName ? local.displayName : (remoteProgress.displayName || local.displayName || local.username),
+    avatarDataUrl: local.avatarDataUrl || remoteProgress.avatarDataUrl || "",
+    notificationsEnabled: typeof local.notificationsEnabled === "boolean"
+      ? local.notificationsEnabled
+      : remoteProgress.notificationsEnabled,
+    voiceSettings: local.voiceSettings || remoteProgress.voiceSettings,
+    targetDate: local.targetDate || remoteProgress.targetDate,
+    targetStartDate: local.targetStartDate || remoteProgress.targetStartDate,
+    studyDays: local.studyDays || remoteProgress.studyDays,
+    studyPace: local.studyPace || remoteProgress.studyPace,
+    unlockedVerbCount: Math.max(Number(local.unlockedVerbCount || 0), Number(remoteProgress.unlockedVerbCount || 0)),
+    purchaseTotalYen: Math.max(Number(local.purchaseTotalYen || 0), Number(remoteProgress.purchaseTotalYen || 0)),
+    premiumSource: local.premiumSource || remoteProgress.premiumSource,
+    premiumUpdatedAt: local.premiumUpdatedAt || remoteProgress.premiumUpdatedAt,
+  };
+}
+
 function mergeProfileIntoBackup(progress: UserProgress, backup?: Partial<UserProgress> | null, avatarUrl?: string): UserProgress {
   const currentName = progress.displayName && progress.displayName !== progress.username ? progress.displayName : "";
   return {
@@ -332,10 +370,11 @@ export async function syncCurrentUserToSupabase(progress: UserProgress, options:
       // profiles テーブル未作成でも学習データ保存は止めない。
     }
     if (!options.allowEmptyOverwrite && shouldBlockEmptyOverwrite(progress, existingBackup?.progress_json)) {
-      status.stats = "saved";
-      status.message = "クラウドに学習データがあります。空の端末データで上書きしないため、保存を停止しました。先にクラウドから復元してください。";
-      status.updatedAt = existingBackup?.updated_at || nowText();
-      return status;
+      // 学習データはクラウド側を守りつつ、端末で変更した画像・目標日・表示名は保存する。
+      // ここでreturnすると、XPが0のユーザーほど画像/目標日がクラウド保存されないため、必ず安全マージして続行する。
+      progress = mergeRemoteLearningWithLocalProfile(progress, existingBackup?.progress_json);
+      saveProgress(progress);
+      status.message = "クラウドの学習データを守りながら、画像・目標日などの設定を保存しています...";
     }
     // Ver.111: 画像URL・ニックネームもバックアップ本体へ必ず含める。
     // 画像アップロードを先に行い、得られた公開URLを settings_json / progress_json の両方に残す。

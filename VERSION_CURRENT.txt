@@ -1,4 +1,3 @@
-Ver.114 recreated reset-fix-2
-- Fixed TypeScript build error in app/admin/verb-quality/page.tsx: removed references to row.collocationsOk / row.collocationCount.
-- Admin quality screen now uses only 基本 and 句動詞 checks.
-- Target verbs remain GET / TAKE / MAKE.
+Verb Master Ver.114 再作成版 reset-fix-3
+対象動詞: GET / TAKE / MAKE / GIVE / HAVE / GO
+作成日: 2026-07-02

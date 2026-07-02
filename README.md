@@ -1,13 +1,21 @@
-# Verb Master Ver.114 recreated reset-fix-2
+# Verb Master
 
-This package is based on Ver.114 recreated reset-fix.
+Ver.114 再作成版 reset-fix-3 です。
 
-## Main fixes
-- Fixed Vercel TypeScript error caused by old `collocationsOk` / `collocationCount` references.
-- Kept categories unified as `基本` and `句動詞`.
-- Kept reset protection for profile image, display name, target date and learning progress.
-- Target verbs remain GET / TAKE / MAKE.
+## 対象動詞
+GET / TAKE / MAKE / GIVE / HAVE / GO
 
-## Deploy note
-Upload the contents to GitHub, then deploy on Vercel.
-If Vercel still shows a previous TypeScript error, confirm that `app/admin/verb-quality/page.tsx` does not contain `collocationsOk`.
+## 重要ルール
+- 動詞はGETから順番に再作成。
+- 攻略フローは「基本」と「句動詞」の2つのみ。
+- 学習進捗・テストカードも「基本」と「句動詞」に統一。
+- 「熟語」「よく使うフレーズ」「コロケーション」「文型」「表現」は別カテゴリ表示にしない。
+- 必要な表現は「基本」に含める。
+- 句動詞は句動詞カテゴリに入れる。
+- 赤文字は、基本ではターゲット動詞のみ、句動詞では句動詞全体。
+
+## 今回の更新
+- GIVE / HAVE / GO を追加・品質再作成。
+- 前回のログイン時リセット対策は維持。
+- HOME右上の追加アイコン削除状態を維持。
+- npm公式registry設定。

@@ -156,21 +156,15 @@ export default function ProfilePage() {
   }, []);
 
   const syncToSupabase = async (target = progress) => {
-    if (!target) return;
+    if (!target) return null;
     setCloudSyncing(true);
     const comparison = await getCloudBackupComparison(target.username);
     setBackupComparison(comparison);
-    const shouldConfirmOverwrite = comparison.recommendation === "restore_remote" && comparison.remote && comparison.local.score <= 0;
-    if (shouldConfirmOverwrite) {
-      setCloudSyncing(false);
-      setProfileMessage("クラウド側に学習データがあります。空データ上書きを防ぐため、先に復元してください。");
-      setTimeout(() => setProfileMessage(""), 3600);
-      return;
-    }
     const result = await syncCurrentUserToSupabase(target);
     setCloudStatus(result);
     setCloudSyncing(false);
     await refreshBackupComparison(target.username);
+    return result;
   };
 
   const restoreFromSupabase = async () => {
@@ -215,23 +209,53 @@ export default function ProfilePage() {
     if (updated) await syncToSupabase(updated);
   };
 
-  const onAvatarChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const resizeAvatarImage = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = () => reject(new Error("画像の読み込みに失敗しました"));
+      reader.onload = () => {
+        const img = new Image();
+        img.onerror = () => reject(new Error("画像の変換に失敗しました"));
+        img.onload = () => {
+          const maxSize = 512;
+          const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
+          const width = Math.max(1, Math.round(img.width * scale));
+          const height = Math.max(1, Math.round(img.height * scale));
+          const canvas = document.createElement("canvas");
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext("2d");
+          if (!ctx) return reject(new Error("画像の変換に失敗しました"));
+          ctx.drawImage(img, 0, 0, width, height);
+          resolve(canvas.toDataURL("image/jpeg", 0.82));
+        };
+        img.src = typeof reader.result === "string" ? reader.result : "";
+      };
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const onAvatarChange = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
     if (!file.type.startsWith("image/")) {
       setProfileMessage("画像ファイルを選択してください");
       return;
     }
-    const reader = new FileReader();
-    reader.onload = () => {
-      const result = typeof reader.result === "string" ? reader.result : "";
+    try {
+      setProfileMessage("画像を保存中です...");
+      const result = await resizeAvatarImage(file);
       const updated = updateUserProfile({ avatarDataUrl: result });
       setProgress(updated);
-      setProfileMessage("画像を保存しました");
-      setTimeout(() => setProfileMessage(""), 1800);
-      if (updated) void syncToSupabase(updated);
-    };
-    reader.readAsDataURL(file);
+      setProfileMessage("画像を保存しました。クラウドへ反映中...");
+      if (updated) {
+        const syncResult = await syncToSupabase(updated);
+        setProfileMessage(syncResult.stats === "saved" ? "画像を保存しました" : "画像を端末に保存しました。クラウド保存は要確認です");
+      }
+      setTimeout(() => setProfileMessage(""), 2400);
+    } catch (error) {
+      setProfileMessage(error instanceof Error ? error.message : "画像の保存に失敗しました");
+    }
   };
 
   const toggleNotification = () => {

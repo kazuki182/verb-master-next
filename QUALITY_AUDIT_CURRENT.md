@@ -61,3 +61,15 @@ ZIPから除外:
 - Vercel/GitHub側に古い品質チェック表示が残っていてもTypeScriptで止まらないよう、VerbQualityAuditに互換用の collocationsOk / collocationCount を戻しました。
 - 画面表示ルールは変更なし。カテゴリ表示は「基本」「句動詞」のみです。
 - app/admin/verb-quality/page.tsx では熟語・コロケーションの別カテゴリ表示はしていません。
+
+
+## Ver.115 app-function hotfix 2
+- Fixed bottom navigation excess pale safe-area spacing.
+- Fixed avatar save reliability by resizing image before local/cloud save.
+- Fixed target/profile cloud save blocker when local learning score is zero but remote learning data exists.
+- No verb scope changes.
+
+## V115 app-function hotfix 3
+- PremiumExamples.tsx など古い表示ファイルが残っている場合でも TypeScript で止まらないよう、VerbQualityAudit に idiomTestTotal / idiomsOk / idiomCount の互換フィールドを追加。
+- 画面表示方針は変更なし。カテゴリは「基本」「句動詞」のみ。
+- npm run build: exit code 0 確認済み。

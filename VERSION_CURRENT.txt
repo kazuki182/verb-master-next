@@ -1,1 +1,1 @@
-Ver.115 hotfix 1 - COME / PUT / KEEP with collocationsOk compatibility
+Ver.115 app-function hotfix 2 - bottom nav, avatar, target date persistence

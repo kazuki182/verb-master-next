@@ -6116,435 +6116,155 @@ export const verbs: Verb[] = [
     "syllable": "show",
     "transitivity": "他動詞中心",
     "importance": "★★★★★ 基本",
-    "core": "見えない情報・状態・物を、相手が分かる形で見せる",
-    "coreDetail": "show は、物を見せるだけでなく、データが結果を示す、資料が進捗を示す、相手に方法を説明して見せるなど、仕事で幅広く使います。",
+    "core": "見えない情報・物・手順を、相手が分かる形で見せる",
+    "coreDetail": "SHOWは『相手の目や理解に入る形にする』感覚です。物を見せるだけでなく、資料が数字を示す、画面で手順を見せる、結果が傾向を示す、場所へ案内する使い方まで広がります。",
     "coreVisual": {
-      "from": [
-        "資料",
-        "データ",
-        "進捗",
-        "方法",
-        "場所"
-      ],
-      "to": "相手が見て分かる状態",
-      "label": "見えない情報 → 見える形にする"
+      "from": ["📄 資料", "📊 データ", "🖥️ 画面", "🧭 手順", "📍 場所"],
+      "to": "相手が見て理解できる状態",
+      "label": "情報・物 → 見える形へ"
     },
     "meanings": [
       {
-        "id": "display",
-        "title": "① 見せる・提示する",
-        "pattern": "show + 人 + 物 / show + 物 to 人",
+        "id": "show-sample",
+        "title": "① show a sample / サンプルを見せる",
+        "pattern": "SHOW + person + thing",
         "transitivity": "他動詞",
-        "structure": "show + 相手 + 見せるもの",
-        "image": "相手に資料・製品・画面などを見える形で出す。",
-        "point": "show 人 物 は仕事でよく使う形です。show the client the sample のように使えます。",
+        "structure": "S + show + O + O",
+        "image": "相手の前に実物や資料を出して確認できるようにするイメージ。",
+        "point": "show the client the sample / show the sample to the client の両方が使える。",
         "examples": [
-          {
-            "en": "I showed the client the sample.",
-            "ja": "私は顧客にサンプルを見せました。",
-            "focus": "showed",
-            "jaFocus": "見せました",
-            "object": "the client / the sample"
-          },
-          {
-            "en": "Please show me the latest drawing.",
-            "ja": "最新の図面を私に見せてください。",
-            "focus": "show me",
-            "jaFocus": "見せてください",
-            "object": "me / the latest drawing"
-          },
-          {
-            "en": "We showed the new product to the distributor.",
-            "ja": "私たちは代理店に新製品を見せました。",
-            "focus": "showed",
-            "jaFocus": "見せました",
-            "object": "the new product"
-          }
+          {"en":"I showed the client the new sample yesterday.","ja":"私は昨日、顧客に新しいサンプルを見せました。","focus":"showed","object":"the client the new sample"},
+          {"en":"Can you show me the latest drawing?","ja":"あなたは私に最新の図面を見せてもらえますか？","focus":"show","object":"me the latest drawing"},
+          {"en":"We will show the color options during the meeting.","ja":"私たちは会議中に色の選択肢を見せます。","focus":"show","object":"the color options"}
+        ],
+        "dailyExamples": [
+          {"en":"She showed me her new phone.","ja":"彼女は私に新しいスマホを見せました。","focus":"showed","object":"me her new phone"},
+          {"en":"Can you show me the photo?","ja":"その写真を見せてくれますか？","focus":"show","object":"me the photo"}
         ]
       },
       {
-        "id": "indicate",
-        "title": "② 示す・表す",
-        "pattern": "show + 結果・傾向・数値",
+        "id": "show-data",
+        "title": "② show data / データが示す",
+        "pattern": "SHOW + result / trend",
         "transitivity": "他動詞",
-        "structure": "data/report + show + 内容",
-        "image": "データや資料が事実・結果・傾向を示す。",
-        "point": "人が見せるだけでなく、資料やデータを主語にできます。",
+        "structure": "S + show + O",
+        "image": "数字や表が、結果や傾向を見える形で伝えるイメージ。",
+        "point": "data, chart, report, result などが主語になることが多い。",
         "examples": [
-          {
-            "en": "The data shows a clear increase in sales.",
-            "ja": "そのデータは売上の明確な増加を示しています。",
-            "focus": "shows",
-            "jaFocus": "示しています",
-            "object": "a clear increase"
-          },
-          {
-            "en": "The report shows the reason for the delay.",
-            "ja": "その報告書は遅延の理由を示しています。",
-            "focus": "shows",
-            "jaFocus": "示しています",
-            "object": "the reason"
-          },
-          {
-            "en": "These numbers show that demand is growing.",
-            "ja": "これらの数値は需要が伸びていることを示しています。",
-            "focus": "show",
-            "jaFocus": "示しています"
-          }
+          {"en":"The data shows a clear increase in orders.","ja":"そのデータは受注の明確な増加を示しています。","focus":"shows","object":"a clear increase"},
+          {"en":"This chart shows the sales trend by area.","ja":"このグラフはエリア別の売上傾向を示しています。","focus":"shows","object":"the sales trend"},
+          {"en":"The report showed several issues in the process.","ja":"その報告書はいくつかの工程上の課題を示していました。","focus":"showed","object":"several issues"}
+        ],
+        "dailyExamples": [
+          {"en":"The map shows the nearest station.","ja":"その地図は最寄り駅を示しています。","focus":"shows","object":"the nearest station"},
+          {"en":"The photo shows a beautiful sunset.","ja":"その写真は美しい夕日を写しています。","focus":"shows","object":"a beautiful sunset"}
         ]
       },
       {
-        "id": "explain-how",
-        "title": "③ やり方を教える・実演する",
-        "pattern": "show + 人 + how to do",
+        "id": "show-how",
+        "title": "③ show how to / やり方を見せる",
+        "pattern": "SHOW + person + how to do",
         "transitivity": "他動詞",
-        "structure": "show + 人 + how to + 動詞",
-        "image": "相手に手順や使い方を見せながら教える。",
-        "point": "操作説明や引き継ぎで非常に便利です。",
+        "structure": "S + show + O + how to V",
+        "image": "手順を相手がまねできる形で見せるイメージ。",
+        "point": "新人説明、アプリ操作、設定説明で便利。",
         "examples": [
-          {
-            "en": "Can you show me how to use this system?",
-            "ja": "このシステムの使い方を教えてもらえますか？",
-            "focus": "show me",
-            "jaFocus": "教えてもらえますか"
-          },
-          {
-            "en": "I will show the new staff how to enter the order.",
-            "ja": "新入社員に受注入力の方法を教えます。",
-            "focus": "show",
-            "jaFocus": "教えます",
-            "object": "the new staff"
-          },
-          {
-            "en": "The engineer showed us how to reset the device.",
-            "ja": "エンジニアは私たちに機器のリセット方法を教えてくれました。",
-            "focus": "showed us",
-            "jaFocus": "教えてくれました"
-          }
+          {"en":"Can you show me how to update the file?","ja":"あなたは私にそのファイルの更新方法を見せてもらえますか？","focus":"show","object":"me how to update the file"},
+          {"en":"I showed him how to check the stock list.","ja":"私は彼に在庫表の確認方法を見せました。","focus":"showed","object":"him how to check the stock list"},
+          {"en":"The engineer showed us how to change the setting.","ja":"技術担当者は私たちに設定変更の方法を見せてくれました。","focus":"showed","object":"us how to change the setting"}
+        ],
+        "dailyExamples": [
+          {"en":"Please show me how to use this app.","ja":"このアプリの使い方を見せてください。","focus":"show","object":"me how to use this app"},
+          {"en":"My daughter showed me how to play the game.","ja":"娘がそのゲームのやり方を見せてくれました。","focus":"showed","object":"me how to play the game"}
         ]
       },
       {
-        "id": "prove",
-        "title": "④ 分かる・明らかにする",
-        "pattern": "show that + 文",
+        "id": "show-progress",
+        "title": "④ show progress / 進捗を示す",
+        "pattern": "SHOW + progress / status",
         "transitivity": "他動詞",
-        "structure": "show that + 内容",
-        "image": "事実や結果によって、何かが明らかになる。",
-        "point": "「データを見ると〜だと分かる」という表現に使います。",
+        "structure": "S + show + O",
+        "image": "今どこまで進んでいるかを見える形にするイメージ。",
+        "point": "progress, status, schedule, timeline と相性が良い。",
         "examples": [
-          {
-            "en": "The test results show that the product is stable.",
-            "ja": "テスト結果から、その製品が安定していることが分かります。",
-            "focus": "show that",
-            "jaFocus": "〜ことが分かります"
-          },
-          {
-            "en": "The customer feedback shows that the design needs improvement.",
-            "ja": "顧客の反応から、デザインの改善が必要だと分かります。",
-            "focus": "shows that",
-            "jaFocus": "〜だと分かります"
-          },
-          {
-            "en": "The sales trend shows that this area has potential.",
-            "ja": "売上傾向から、このエリアには可能性があると分かります。",
-            "focus": "shows that",
-            "jaFocus": "〜と分かります"
-          }
+          {"en":"The dashboard shows the current progress.","ja":"そのダッシュボードは現在の進捗を示しています。","focus":"shows","object":"the current progress"},
+          {"en":"Please show the project status in the next meeting.","ja":"次の会議で案件の状況を示してください。","focus":"show","object":"the project status"},
+          {"en":"This timeline shows when each task will finish.","ja":"この工程表は各作業がいつ終わるかを示しています。","focus":"shows","object":"when each task will finish"}
+        ],
+        "dailyExamples": [
+          {"en":"The app shows my daily steps.","ja":"そのアプリは私の毎日の歩数を表示します。","focus":"shows","object":"my daily steps"},
+          {"en":"The screen shows the battery level.","ja":"画面はバッテリー残量を表示しています。","focus":"shows","object":"the battery level"}
         ]
       },
       {
-        "id": "guide",
-        "title": "⑤ 案内する",
-        "pattern": "show + 人 + 場所 / show 人 around",
+        "id": "show-proof",
+        "title": "⑤ show that / 〜だと分かる",
+        "pattern": "SHOW THAT + sentence",
         "transitivity": "他動詞",
-        "structure": "show + 人 + 場所",
-        "image": "相手を場所へ案内する。",
-        "point": "来客・現場案内・社内案内で使います。",
+        "structure": "S + show + that節",
+        "image": "証拠や結果が、判断材料を相手に見せるイメージ。",
+        "point": "show that は『〜を示している』という説明に使いやすい。",
         "examples": [
-          {
-            "en": "I showed the visitor the showroom.",
-            "ja": "私は来客をショールームに案内しました。",
-            "focus": "showed",
-            "jaFocus": "案内しました",
-            "object": "the visitor"
-          },
-          {
-            "en": "Please show the client to the meeting room.",
-            "ja": "顧客を会議室まで案内してください。",
-            "focus": "show",
-            "jaFocus": "案内してください",
-            "object": "the client"
-          },
-          {
-            "en": "She showed us around the new office.",
-            "ja": "彼女は私たちに新しいオフィスを案内してくれました。",
-            "focus": "showed us around",
-            "jaFocus": "案内してくれました"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "show data",
-        "ja": "データを示す",
-        "image": "データを根拠として見せる。",
-        "pattern": "show data",
-        "examples": [
-          {
-            "en": "The chart shows the monthly sales data.",
-            "ja": "そのグラフは月別売上データを示しています。",
-            "focus": "shows",
-            "jaFocus": "示しています"
-          },
-          {
-            "en": "Please show the data that supports this proposal.",
-            "ja": "この提案を裏付けるデータを示してください。",
-            "focus": "show the data",
-            "jaFocus": "データを示してください"
-          },
-          {
-            "en": "The dashboard shows real-time data from each store.",
-            "ja": "ダッシュボードは各店舗のリアルタイムデータを示しています。",
-            "focus": "shows",
-            "jaFocus": "示しています"
-          }
+          {"en":"The test results show that the product is stable.","ja":"試験結果はその製品が安定していることを示しています。","focus":"show","object":"that the product is stable"},
+          {"en":"The numbers showed that we needed more stock.","ja":"その数字は私たちに追加在庫が必要だと示していました。","focus":"showed","object":"that we needed more stock"},
+          {"en":"Customer feedback shows that the explanation was clear.","ja":"顧客の意見は説明が分かりやすかったことを示しています。","focus":"shows","object":"that the explanation was clear"}
+        ],
+        "dailyExamples": [
+          {"en":"His face showed that he was tired.","ja":"彼の表情から疲れていることが分かりました。","focus":"showed","object":"that he was tired"},
+          {"en":"The sky shows that it may rain soon.","ja":"空を見ると、もうすぐ雨が降りそうです。","focus":"shows","object":"that it may rain soon"}
         ]
       },
       {
-        "phrase": "show results",
-        "ja": "結果を示す",
-        "image": "結果を相手が分かる形で出す。",
-        "pattern": "show results",
+        "id": "show-place",
+        "title": "⑥ show someone around / 案内する",
+        "pattern": "SHOW + person + around",
+        "transitivity": "他動詞",
+        "structure": "S + show + O + around",
+        "image": "相手に場所を見せながら案内するイメージ。",
+        "point": "工場見学、展示会、オフィス案内で使える。",
         "examples": [
-          {
-            "en": "The report shows the results clearly.",
-            "ja": "その報告書は結果を分かりやすく示しています。",
-            "focus": "shows the results",
-            "jaFocus": "結果を示しています"
-          },
-          {
-            "en": "Please show the results of the test.",
-            "ja": "テスト結果を示してください。",
-            "focus": "show the results",
-            "jaFocus": "結果を示してください"
-          },
-          {
-            "en": "The graph shows better results than last month.",
-            "ja": "そのグラフは先月より良い結果を示しています。",
-            "focus": "shows",
-            "jaFocus": "示しています"
-          }
+          {"en":"I showed the visitors around the showroom.","ja":"私は来訪者にショールームを案内しました。","focus":"showed","object":"the visitors around"},
+          {"en":"Can you show the client around the booth?","ja":"あなたは顧客にブースを案内できますか？","focus":"show","object":"the client around"},
+          {"en":"She will show the new staff around the office.","ja":"彼女が新入社員にオフィスを案内します。","focus":"show","object":"the new staff around"}
+        ],
+        "dailyExamples": [
+          {"en":"I showed my friend around Tokyo.","ja":"私は友人に東京を案内しました。","focus":"showed","object":"my friend around"},
+          {"en":"Can you show me around?","ja":"案内してもらえますか？","focus":"show","object":"me around"}
         ]
-      },
-      {
-        "phrase": "show progress",
-        "ja": "進捗を示す",
-        "image": "進み具合を見える形で伝える。",
-        "pattern": "show progress",
-        "examples": [
-          {
-            "en": "The dashboard shows our progress.",
-            "ja": "そのダッシュボードは私たちの進捗を示しています。",
-            "focus": "shows our progress",
-            "jaFocus": "進捗を示しています"
-          },
-          {
-            "en": "Please show your progress in the weekly report.",
-            "ja": "週報で進捗を示してください。",
-            "focus": "show your progress",
-            "jaFocus": "進捗を示してください"
-          },
-          {
-            "en": "The checklist shows how much progress we have made.",
-            "ja": "チェックリストを見ると、どれくらい進んだか分かります。",
-            "focus": "shows",
-            "jaFocus": "分かります"
-          }
-        ]
-      },
-      {
-        "phrase": "show a sample",
-        "ja": "サンプルを見せる",
-        "image": "実物・見本を相手に提示する。",
-        "pattern": "show a sample",
-        "examples": [
-          {
-            "en": "We showed a sample to the client.",
-            "ja": "私たちは顧客にサンプルを見せました。",
-            "focus": "showed a sample",
-            "jaFocus": "サンプルを見せました"
-          },
-          {
-            "en": "Can you show a sample before production?",
-            "ja": "製作前にサンプルを見せてもらえますか？",
-            "focus": "show a sample",
-            "jaFocus": "サンプルを見せて"
-          },
-          {
-            "en": "The supplier showed us a sample of the new material.",
-            "ja": "仕入先は新素材のサンプルを私たちに見せました。",
-            "focus": "showed us a sample",
-            "jaFocus": "サンプルを見せました"
-          }
-        ]
-      },
-      {
-        "phrase": "show evidence",
-        "ja": "根拠を示す",
-        "image": "主張を支える証拠や資料を示す。",
-        "pattern": "show evidence",
-        "examples": [
-          {
-            "en": "Please show evidence before we change the specification.",
-            "ja": "仕様を変更する前に根拠を示してください。",
-            "focus": "show evidence",
-            "jaFocus": "根拠を示してください"
-          },
-          {
-            "en": "The photos show evidence of damage.",
-            "ja": "写真は破損の証拠を示しています。",
-            "focus": "show evidence",
-            "jaFocus": "証拠を示しています"
-          },
-          {
-            "en": "We need to show evidence to support the claim.",
-            "ja": "その主張を裏付ける根拠を示す必要があります。",
-            "focus": "show evidence",
-            "jaFocus": "根拠を示す必要があります"
-          }
-        ]
-      }
-    ],
+      }    ],
+    "collocations": [],
     "phrasalVerbs": [
       {
         "phrase": "show up",
         "ja": "現れる・出席する",
-        "image": "予定された場所に来る。",
-        "pattern": "show up",
+        "image": "見えていなかった人や問題が表に出てくるイメージ。",
+        "pattern": "SHOW UP",
         "examples": [
-          {
-            "en": "The client showed up on time.",
-            "ja": "その顧客は時間通りに来ました。",
-            "focus": "showed up",
-            "jaFocus": "来ました"
-          },
-          {
-            "en": "Two members did not show up for the meeting.",
-            "ja": "2名のメンバーが会議に来ませんでした。",
-            "focus": "show up",
-            "jaFocus": "来ませんでした"
-          },
-          {
-            "en": "Please show up at the site by nine.",
-            "ja": "9時までに現場に来てください。",
-            "focus": "show up",
-            "jaFocus": "来てください"
-          }
+          {"en":"The supplier did not show up for the meeting.","ja":"仕入先は会議に来ませんでした。","focus":"show up","object":"for the meeting"},
+          {"en":"Several issues showed up after the update.","ja":"更新後にいくつかの問題が出てきました。","focus":"showed up","object":"after the update"},
+          {"en":"Please show up on time tomorrow.","ja":"明日は時間どおりに来てください。","focus":"show up","object":"on time"}
         ]
       },
       {
         "phrase": "show around",
-        "ja": "案内して回る",
-        "image": "施設や場所を案内する。",
-        "pattern": "show around",
+        "ja": "案内する",
+        "image": "場所を見せながら相手を回すイメージ。",
+        "pattern": "SHOW + person + AROUND",
         "examples": [
-          {
-            "en": "I showed the visitor around the office.",
-            "ja": "私は来客をオフィス内で案内しました。",
-            "focus": "showed around",
-            "jaFocus": "案内しました"
-          },
-          {
-            "en": "Can you show the client around the showroom?",
-            "ja": "顧客をショールーム内で案内してもらえますか？",
-            "focus": "show around",
-            "jaFocus": "案内して"
-          },
-          {
-            "en": "She showed the new staff around the warehouse.",
-            "ja": "彼女は新入社員を倉庫内で案内しました。",
-            "focus": "showed around",
-            "jaFocus": "案内しました"
-          }
+          {"en":"I will show the customer around the showroom.","ja":"私は顧客にショールームを案内します。","focus":"show around","object":"the customer"},
+          {"en":"Can you show the new member around?","ja":"あなたは新しいメンバーを案内できますか？","focus":"show around","object":"the new member"},
+          {"en":"She showed us around the factory.","ja":"彼女は私たちに工場を案内してくれました。","focus":"showed around","object":"us"}
         ]
       },
       {
         "phrase": "show off",
         "ja": "見せびらかす・強調して見せる",
-        "image": "能力や特徴を目立つように見せる。",
-        "pattern": "show off",
+        "image": "良いところを前に出して見せるイメージ。",
+        "pattern": "SHOW OFF + feature / skill",
         "examples": [
-          {
-            "en": "The demo shows off the product’s main features.",
-            "ja": "そのデモは製品の主な特徴を分かりやすく見せています。",
-            "focus": "shows off",
-            "jaFocus": "特徴を見せています"
-          },
-          {
-            "en": "The booth design shows off the brand image well.",
-            "ja": "そのブースデザインはブランドイメージをよく引き立てています。",
-            "focus": "shows off",
-            "jaFocus": "引き立てています"
-          },
-          {
-            "en": "We should not show off too much in the proposal.",
-            "ja": "提案書で過度に見せびらかすような表現は避けるべきです。",
-            "focus": "show off",
-            "jaFocus": "見せびらかす"
-          }
-        ]
-      },
-      {
-        "phrase": "show through",
-        "ja": "透けて見える・表に出る",
-        "image": "奥にあるものや考えが見える。",
-        "pattern": "show through",
-        "examples": [
-          {
-            "en": "The old sign color shows through the new film.",
-            "ja": "古い看板の色が新しいフィルム越しに透けて見えます。",
-            "focus": "shows through",
-            "jaFocus": "透けて見えます"
-          },
-          {
-            "en": "His concern showed through during the meeting.",
-            "ja": "会議中、彼の不安が表情に出ていました。",
-            "focus": "showed through",
-            "jaFocus": "表情に出ていました"
-          },
-          {
-            "en": "The background image shows through the text area.",
-            "ja": "背景画像が文字エリアに透けて見えます。",
-            "focus": "shows through",
-            "jaFocus": "透けて見えます"
-          }
-        ]
-      },
-      {
-        "phrase": "show someone in",
-        "ja": "人を中へ案内する",
-        "image": "来客を部屋や建物の中へ案内する。",
-        "pattern": "show someone in",
-        "examples": [
-          {
-            "en": "Please show the client in when they arrive.",
-            "ja": "顧客が到着したら中へ案内してください。",
-            "focus": "show the client in",
-            "jaFocus": "中へ案内してください"
-          },
-          {
-            "en": "The receptionist showed the visitor in.",
-            "ja": "受付担当者が来客を中へ案内しました。",
-            "focus": "showed the visitor in",
-            "jaFocus": "中へ案内しました"
-          },
-          {
-            "en": "Can you show Mr. Tanaka in after the call?",
-            "ja": "電話の後、田中様を中へ案内してもらえますか？",
-            "focus": "show Mr. Tanaka in",
-            "jaFocus": "中へ案内して"
-          }
+          {"en":"The demo showed off the new feature clearly.","ja":"そのデモは新機能を分かりやすく見せました。","focus":"showed off","object":"the new feature"},
+          {"en":"This display helps show off the product design.","ja":"この展示は製品デザインを引き立てる助けになります。","focus":"show off","object":"the product design"},
+          {"en":"He was only showing off in the meeting.","ja":"彼は会議でただ目立とうとしていただけでした。","focus":"showing off","object":"in the meeting"}
         ]
       }
     ]
@@ -6553,128 +6273,315 @@ export const verbs: Verb[] = [
     "id": "tell",
     "rank": 26,
     "word": "TELL",
-    "ipa": "",
+    "ipa": "/tel/",
     "kana": "テル",
     "syllable": "tell",
-    "transitivity": "他動詞",
+    "transitivity": "他動詞中心",
     "importance": "★★★★★ 基本",
-    "core": "情報を言葉で伝える",
-    "coreDetail": "TELLは、相手に情報・予定・理由を伝える動詞です。tell 人 内容 の形が仕事でよく出ます。",
+    "core": "必要な情報を、相手に言葉で渡す",
+    "coreDetail": "TELLは『情報を相手に伝える』感覚です。sayよりも、相手に向けて必要な内容を渡す感じが強く、tell me, tell the client, tell someone that の形で仕事でも日常でもよく使います。",
+    "coreVisual": {
+      "from": ["💬 情報", "📢 連絡", "🗓️ 予定", "⚠️ 注意", "✅ 判断"],
+      "to": "相手の理解",
+      "label": "情報 → 相手に伝える"
+    },
     "meanings": [
       {
-        "id": "main",
-        "title": "① 伝える・知らせる",
-        "pattern": "tell + 人 + 内容",
+        "id": "tell-person",
+        "title": "① tell someone / 人に伝える",
+        "pattern": "TELL + person",
         "transitivity": "他動詞",
-        "structure": "S + tell + 人 + 内容",
-        "image": "情報を相手に渡す",
-        "point": "tell の後ろに「誰に」と「何を」を置く形がよく使われます。",
+        "structure": "S + tell + O",
+        "image": "相手に必要な情報を渡すイメージ。",
+        "point": "tell の直後には基本的に『人』が来る。tell the reason ではなく tell someone the reason が自然。",
         "examples": [
-          {
-            "en": "I told the client the delivery date yesterday.",
-            "ja": "私は昨日、クライアントに納期を伝えました。",
-            "focus": "told the client the delivery date",
-            "jaFocus": "納期を伝えた",
-            "object": "the client / the delivery date",
-            "sentencePattern": "S + V + O + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "told"
-              },
-              {
-                "label": "O",
-                "text": "the client"
-              },
-              {
-                "label": "O",
-                "text": "the delivery date"
-              }
-            ]
-          },
-          {
-            "en": "Please tell me your preferred date.",
-            "ja": "あなたの希望日を私に教えてください。",
-            "focus": "tell me",
-            "jaFocus": "教えてください"
-          },
-          {
-            "en": "She told us the reason for the delay.",
-            "ja": "彼女は私たちに遅延の理由を伝えました。",
-            "focus": "told us the reason",
-            "jaFocus": "理由を伝えた"
-          }
+          {"en":"I told the client about the delivery schedule.","ja":"私は顧客に納品スケジュールについて伝えました。","focus":"told","object":"the client"},
+          {"en":"Please tell me if the price changes.","ja":"価格が変わったら私に教えてください。","focus":"tell","object":"me"},
+          {"en":"Did you tell your manager about the issue?","ja":"あなたは上司にその問題を伝えましたか？","focus":"tell","object":"your manager"}
         ],
         "dailyExamples": [
-          {
-            "en": "Please tell me your preferred date.",
-            "ja": "あなたの希望日を私に教えてください。",
-            "focus": "tell me",
-            "jaFocus": "教えてください"
-          },
-          {
-            "en": "She told us the reason for the delay.",
-            "ja": "彼女は私たちに遅延の理由を伝えました。",
-            "focus": "told us the reason",
-            "jaFocus": "理由を伝えた"
-          }
+          {"en":"I told my friend about the restaurant.","ja":"私は友人にそのレストランのことを話しました。","focus":"told","object":"my friend"},
+          {"en":"Tell me your plan.","ja":"あなたの予定を教えてください。","focus":"Tell","object":"me"}
+        ]
+      },
+      {
+        "id": "tell-that",
+        "title": "② tell someone that / 〜だと伝える",
+        "pattern": "TELL + person + that節",
+        "transitivity": "他動詞",
+        "structure": "S + tell + O + that節",
+        "image": "内容を文章として相手に渡すイメージ。",
+        "point": "ビジネスメールや報告でよく使う形。thatは会話では省略されることもある。",
+        "examples": [
+          {"en":"I told him that the meeting was postponed.","ja":"私は彼に会議が延期になったと伝えました。","focus":"told","object":"him that the meeting was postponed"},
+          {"en":"She told us that the quotation was approved.","ja":"彼女は私たちに見積が承認されたと伝えました。","focus":"told","object":"us that the quotation was approved"},
+          {"en":"Please tell the customer that we will reply tomorrow.","ja":"明日返信すると顧客に伝えてください。","focus":"tell","object":"the customer that we will reply tomorrow"}
+        ],
+        "dailyExamples": [
+          {"en":"He told me that he was busy.","ja":"彼は忙しいと私に言いました。","focus":"told","object":"me that he was busy"},
+          {"en":"She told us that dinner was ready.","ja":"彼女は夕食の準備ができたと私たちに言いました。","focus":"told","object":"us that dinner was ready"}
+        ]
+      },
+      {
+        "id": "tell-difference",
+        "title": "③ tell the difference / 違いが分かる",
+        "pattern": "TELL + the difference",
+        "transitivity": "他動詞",
+        "structure": "S + tell + O",
+        "image": "見分けるための情報を読み取るイメージ。",
+        "point": "can tell で『分かる・見分けられる』。",
+        "examples": [
+          {"en":"Can you tell the difference between these two colors?","ja":"あなたはこの2色の違いが分かりますか？","focus":"tell","object":"the difference"},
+          {"en":"I cannot tell which part is older.","ja":"私はどちらの部品が古いのか分かりません。","focus":"tell","object":"which part is older"},
+          {"en":"The customer could tell the difference immediately.","ja":"顧客はすぐに違いが分かりました。","focus":"tell","object":"the difference"}
+        ],
+        "dailyExamples": [
+          {"en":"I can tell the difference in taste.","ja":"私は味の違いが分かります。","focus":"tell","object":"the difference"},
+          {"en":"Can you tell who is calling?","ja":"誰が電話しているか分かりますか？","focus":"tell","object":"who is calling"}
+        ]
+      },
+      {
+        "id": "tell-to-do",
+        "title": "④ tell someone to do / 人に〜するよう伝える",
+        "pattern": "TELL + person + to do",
+        "transitivity": "他動詞",
+        "structure": "S + tell + O + to V",
+        "image": "相手に具体的な行動を伝えるイメージ。",
+        "point": "指示に近いので、丁寧にしたい時は ask someone to do も使う。",
+        "examples": [
+          {"en":"I told the team to check the stock again.","ja":"私はチームに在庫をもう一度確認するよう伝えました。","focus":"told","object":"the team to check the stock"},
+          {"en":"Please tell him to call the customer today.","ja":"彼に今日顧客へ電話するよう伝えてください。","focus":"tell","object":"him to call the customer"},
+          {"en":"The manager told us to prepare the documents by Friday.","ja":"マネージャーは私たちに金曜日までに資料を準備するよう伝えました。","focus":"told","object":"us to prepare the documents"}
+        ],
+        "dailyExamples": [
+          {"en":"My mother told me to clean my room.","ja":"母は私に部屋を掃除するよう言いました。","focus":"told","object":"me to clean my room"},
+          {"en":"I told him to wait outside.","ja":"私は彼に外で待つよう言いました。","focus":"told","object":"him to wait outside"}
+        ]
+      },
+      {
+        "id": "tell-story",
+        "title": "⑤ tell a story / 話をする",
+        "pattern": "TELL + story / joke / truth",
+        "transitivity": "他動詞",
+        "structure": "S + tell + O",
+        "image": "まとまった内容を相手に話して伝えるイメージ。",
+        "point": "story, truth, lie, joke などは tell と相性が良い。",
+        "examples": [
+          {"en":"He told us the background of the project.","ja":"彼は私たちにその案件の背景を話しました。","focus":"told","object":"us the background"},
+          {"en":"The sales data tells a clear story.","ja":"売上データは明確な流れを物語っています。","focus":"tells","object":"a clear story"},
+          {"en":"Please tell the truth about the delay.","ja":"遅延について本当のことを伝えてください。","focus":"tell","object":"the truth"}
+        ],
+        "dailyExamples": [
+          {"en":"She told me a funny story.","ja":"彼女は私に面白い話をしました。","focus":"told","object":"me a funny story"},
+          {"en":"He told a joke at dinner.","ja":"彼は夕食で冗談を言いました。","focus":"told","object":"a joke"}
+        ]
+      },
+      {
+        "id": "tell-by",
+        "title": "⑥ tell by / 〜で分かる",
+        "pattern": "TELL BY + clue",
+        "transitivity": "自動詞的表現",
+        "structure": "S + can tell + by O",
+        "image": "手がかりから判断するイメージ。",
+        "point": "表情・数字・状況から判断する時に使える。",
+        "examples": [
+          {"en":"You can tell by the numbers that demand is increasing.","ja":"数字を見れば需要が増えていることが分かります。","focus":"tell","object":"by the numbers"},
+          {"en":"I could tell by his voice that he was worried.","ja":"私は彼の声から心配していることが分かりました。","focus":"tell","object":"by his voice"},
+          {"en":"We can tell by the schedule that this project is tight.","ja":"工程表を見ると、この案件が厳しいことが分かります。","focus":"tell","object":"by the schedule"}
+        ],
+        "dailyExamples": [
+          {"en":"I can tell by your face that you are tired.","ja":"あなたの顔を見ると疲れていることが分かります。","focus":"tell","object":"by your face"},
+          {"en":"You can tell by the smell that it is fresh.","ja":"匂いで新鮮だと分かります。","focus":"tell","object":"by the smell"}
         ]
       }
     ],
     "collocations": [],
-    "phrasalVerbs": []
+    "phrasalVerbs": [
+      {
+        "phrase": "tell apart",
+        "ja": "見分ける",
+        "image": "似ているものを分けて判断するイメージ。",
+        "pattern": "TELL + A and B + APART",
+        "examples": [
+          {"en":"It is hard to tell these two products apart.","ja":"この2つの製品を見分けるのは難しいです。","focus":"tell apart","object":"these two products"},
+          {"en":"Can you tell the old model and the new model apart?","ja":"旧モデルと新モデルを見分けられますか？","focus":"tell apart","object":"the old model and the new model"},
+          {"en":"The color codes help us tell the cables apart.","ja":"色分けはケーブルを見分ける助けになります。","focus":"tell apart","object":"the cables"}
+        ]
+      }    ]
   },
   {
     "id": "ask",
     "rank": 27,
     "word": "ASK",
-    "ipa": "",
+    "ipa": "/æsk/",
     "kana": "アスク",
     "syllable": "ask",
     "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "尋ねる・依頼する",
-    "coreDetail": "質問や依頼をする",
+    "importance": "★★★★★ 基本",
+    "core": "必要な情報・許可・対応を、相手に求める",
+    "coreDetail": "ASKは『相手に向けて必要なものを求める』感覚です。質問するだけでなく、依頼する、許可を求める、確認する、価格や条件を尋ねる使い方まで広がります。",
+    "coreVisual": {
+      "from": ["❓ 質問", "🙏 依頼", "✅ 許可", "📄 資料", "💬 確認"],
+      "to": "相手から返答・対応をもらう",
+      "label": "必要なものを相手に求める"
+    },
     "meanings": [
       {
-        "id": "business-basic",
-        "title": "① ビジネスで使う基本形",
-        "pattern": "ASK + 名詞 / 文",
-        "transitivity": "他動詞・自動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "質問や依頼をする",
-        "point": "まずは社会人の会話・メールで使いやすい基本形を覚える。",
+        "id": "ask-question",
+        "title": "① ask a question / 質問する",
+        "pattern": "ASK + question",
+        "transitivity": "他動詞",
+        "structure": "S + ask + O",
+        "image": "分からないことを相手に投げかけるイメージ。",
+        "point": "question, about, why/when/how などと一緒に使う。",
         "examples": [
-          {
-            "en": "I'll ask the supplier.",
-            "ja": "仕入先に確認します。",
-            "focus": "ask",
-            "object": "the supplier",
-            "jaFocus": "確認"
-          },
-          {
-            "en": "Can I ask a quick question?",
-            "ja": "少し質問してもいいですか？",
-            "focus": "ask",
-            "object": "a quick question",
-            "jaFocus": "質問"
-          },
-          {
-            "en": "We should ask for approval.",
-            "ja": "承認を依頼すべきです。",
-            "focus": "ask for",
-            "object": "approval",
-            "jaFocus": "依頼"
-          }
+          {"en":"Can I ask a question about the quotation?","ja":"見積について質問してもよろしいですか？","focus":"ask","object":"a question"},
+          {"en":"The client asked several questions about the delivery date.","ja":"顧客は納期についていくつか質問しました。","focus":"asked","object":"several questions"},
+          {"en":"Please ask if anything is unclear.","ja":"不明点があれば質問してください。","focus":"ask","object":"if anything is unclear"}
+        ],
+        "dailyExamples": [
+          {"en":"I asked a question in class.","ja":"私は授業で質問しました。","focus":"asked","object":"a question"},
+          {"en":"Can I ask your name?","ja":"お名前を聞いてもいいですか？","focus":"ask","object":"your name"}
+        ]
+      },
+      {
+        "id": "ask-someone",
+        "title": "② ask someone / 人に尋ねる",
+        "pattern": "ASK + person",
+        "transitivity": "他動詞",
+        "structure": "S + ask + O",
+        "image": "答えを持っていそうな相手に向けて聞くイメージ。",
+        "point": "ask me, ask the supplier, ask your manager の形で使う。",
+        "examples": [
+          {"en":"I will ask the supplier about the stock.","ja":"私は仕入先に在庫について確認します。","focus":"ask","object":"the supplier"},
+          {"en":"Please ask your manager before sending the email.","ja":"メールを送る前に上司に確認してください。","focus":"ask","object":"your manager"},
+          {"en":"Did you ask the client about the installation date?","ja":"あなたは顧客に施工日について確認しましたか？","focus":"ask","object":"the client"}
+        ],
+        "dailyExamples": [
+          {"en":"I asked my friend about the movie.","ja":"私は友人にその映画について聞きました。","focus":"asked","object":"my friend"},
+          {"en":"Ask your teacher for help.","ja":"先生に助けを求めてください。","focus":"Ask","object":"your teacher"}
+        ]
+      },
+      {
+        "id": "ask-for",
+        "title": "③ ask for / 〜を求める",
+        "pattern": "ASK FOR + thing",
+        "transitivity": "自動詞的表現",
+        "structure": "S + ask + for O",
+        "image": "必要な資料・情報・対応を相手に求めるイメージ。",
+        "point": "ask for approval, ask for details, ask for help などが自然。",
+        "examples": [
+          {"en":"We asked for the latest price list.","ja":"私たちは最新の価格表を依頼しました。","focus":"asked for","object":"the latest price list"},
+          {"en":"I will ask for approval before placing the order.","ja":"私は発注前に承認を求めます。","focus":"ask for","object":"approval"},
+          {"en":"The customer asked for more details about the product.","ja":"顧客は製品についてさらに詳しい情報を求めました。","focus":"asked for","object":"more details"}
+        ],
+        "dailyExamples": [
+          {"en":"I asked for water at the restaurant.","ja":"私はレストランで水を頼みました。","focus":"asked for","object":"water"},
+          {"en":"She asked for help.","ja":"彼女は助けを求めました。","focus":"asked for","object":"help"}
+        ]
+      },
+      {
+        "id": "ask-to-do",
+        "title": "④ ask someone to do / 人に〜をお願いする",
+        "pattern": "ASK + person + to do",
+        "transitivity": "他動詞",
+        "structure": "S + ask + O + to V",
+        "image": "相手に具体的な行動をお願いするイメージ。",
+        "point": "tellより丁寧な依頼になりやすい。仕事では非常に重要。",
+        "examples": [
+          {"en":"I asked him to check the delivery schedule.","ja":"私は彼に納品スケジュールを確認するようお願いしました。","focus":"asked","object":"him to check the delivery schedule"},
+          {"en":"Can you ask the customer to send the drawing?","ja":"あなたは顧客に図面を送るよう依頼できますか？","focus":"ask","object":"the customer to send the drawing"},
+          {"en":"We asked the factory to prepare the sample by Friday.","ja":"私たちは工場に金曜日までにサンプルを準備するよう依頼しました。","focus":"asked","object":"the factory to prepare the sample"}
+        ],
+        "dailyExamples": [
+          {"en":"I asked my son to clean his room.","ja":"私は息子に部屋を掃除するよう頼みました。","focus":"asked","object":"my son to clean his room"},
+          {"en":"She asked me to wait outside.","ja":"彼女は私に外で待つよう頼みました。","focus":"asked","object":"me to wait outside"}
+        ]
+      },
+      {
+        "id": "ask-if",
+        "title": "⑤ ask if / 〜かどうか尋ねる",
+        "pattern": "ASK IF + sentence",
+        "transitivity": "他動詞",
+        "structure": "S + ask + if節",
+        "image": "YES/NOで確認できる内容を相手に確認するイメージ。",
+        "point": "メールや電話で確認する時に使いやすい。",
+        "examples": [
+          {"en":"I asked if the sample was available.","ja":"私はサンプルが入手可能かどうか尋ねました。","focus":"asked","object":"if the sample was available"},
+          {"en":"Please ask if they can deliver it by next week.","ja":"来週までに納品できるかどうか確認してください。","focus":"ask","object":"if they can deliver it by next week"},
+          {"en":"The client asked if we could change the schedule.","ja":"顧客は私たちがスケジュールを変更できるか尋ねました。","focus":"asked","object":"if we could change the schedule"}
+        ],
+        "dailyExamples": [
+          {"en":"I asked if the shop was open.","ja":"私は店が開いているか尋ねました。","focus":"asked","object":"if the shop was open"},
+          {"en":"She asked if I was free tonight.","ja":"彼女は私が今夜空いているか尋ねました。","focus":"asked","object":"if I was free tonight"}
+        ]
+      },
+      {
+        "id": "ask-about",
+        "title": "⑥ ask about / 〜について尋ねる",
+        "pattern": "ASK ABOUT + topic",
+        "transitivity": "自動詞的表現",
+        "structure": "S + ask + about O",
+        "image": "話題を指定して相手に確認するイメージ。",
+        "point": "ask about price, delivery, specifications など営業で多い。",
+        "examples": [
+          {"en":"The customer asked about the warranty period.","ja":"顧客は保証期間について尋ねました。","focus":"asked about","object":"the warranty period"},
+          {"en":"I will ask about the installation conditions.","ja":"私は施工条件について確認します。","focus":"ask about","object":"the installation conditions"},
+          {"en":"Did they ask about the lead time?","ja":"彼らは納期について尋ねましたか？","focus":"ask about","object":"the lead time"}
+        ],
+        "dailyExamples": [
+          {"en":"He asked about my weekend.","ja":"彼は私の週末について聞きました。","focus":"asked about","object":"my weekend"},
+          {"en":"I asked about the train time.","ja":"私は電車の時間について尋ねました。","focus":"asked about","object":"the train time"}
         ]
       }
     ],
     "collocations": [],
-    "phrasalVerbs": []
+    "phrasalVerbs": [
+      {
+        "phrase": "ask for",
+        "ja": "〜を求める・依頼する",
+        "image": "必要なものを相手に求めるイメージ。",
+        "pattern": "ASK FOR + thing",
+        "examples": [
+          {"en":"We asked for a revised quotation.","ja":"私たちは修正版の見積を依頼しました。","focus":"asked for","object":"a revised quotation"},
+          {"en":"Please ask for confirmation before production.","ja":"製作前に確認を求めてください。","focus":"ask for","object":"confirmation"},
+          {"en":"The client asked for a shorter lead time.","ja":"顧客はより短い納期を求めました。","focus":"asked for","object":"a shorter lead time"}
+        ]
+      },
+      {
+        "phrase": "ask about",
+        "ja": "〜について尋ねる",
+        "image": "特定の話題に確認を向けるイメージ。",
+        "pattern": "ASK ABOUT + topic",
+        "examples": [
+          {"en":"I asked about the delivery date.","ja":"私は納品日について確認しました。","focus":"asked about","object":"the delivery date"},
+          {"en":"The customer asked about the new product.","ja":"顧客は新製品について尋ねました。","focus":"asked about","object":"the new product"},
+          {"en":"Can you ask about the payment terms?","ja":"あなたは支払条件について確認できますか？","focus":"ask about","object":"the payment terms"}
+        ]
+      },
+      {
+        "phrase": "ask around",
+        "ja": "周りに聞いて回る",
+        "image": "答えを持っていそうな人を複数あたるイメージ。",
+        "pattern": "ASK AROUND",
+        "examples": [
+          {"en":"I will ask around to find the missing file.","ja":"私はなくなったファイルを見つけるために周りに聞いてみます。","focus":"ask around","object":"to find the missing file"},
+          {"en":"We asked around, but no one knew the answer.","ja":"私たちは周りに聞きましたが、誰も答えを知りませんでした。","focus":"asked around","object":"but no one knew the answer"},
+          {"en":"Please ask around before we buy new parts.","ja":"新しい部品を買う前に周りに確認してください。","focus":"ask around","object":"before we buy new parts"}
+        ]
+      },
+      {
+        "phrase": "ask out",
+        "ja": "誘う",
+        "image": "相手を外の予定へ誘い出すイメージ。",
+        "pattern": "ASK + person + OUT",
+        "examples": [
+          {"en":"He asked his coworker out for lunch after the meeting.","ja":"彼は会議後に同僚を昼食に誘いました。","focus":"asked out","object":"his coworker"},
+          {"en":"She asked the team out for dinner to celebrate.","ja":"彼女はお祝いのためにチームを夕食に誘いました。","focus":"asked out","object":"the team"},
+          {"en":"I asked my friend out for coffee.","ja":"私は友人をコーヒーに誘いました。","focus":"asked out","object":"my friend"}
+        ]
+      }
+    ]
   },
   {
     "id": "call",

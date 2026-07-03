@@ -26,27 +26,21 @@ function highlightText(text: string, target?: string, className = "example-verb"
   // one continuous string. Highlight the verb part and the particle part so the
   // learner can still see the full phrasal-verb frame.
   const targetParts = target.trim().split(/\s+/);
-  if (targetParts.length === 2) {
-    const [verbPart, particlePart] = targetParts;
+  if (targetParts.length >= 2) {
     const tokens = text.split(/(\s+)/);
-    let verbHighlighted = false;
-    let particleHighlighted = false;
+    let targetIndex = 0;
     const rendered = tokens.map((token, index) => {
       if (/^\s+$/.test(token)) return token;
       const clean = token.replace(/[.,!?;:]$/g, "");
       const suffix = token.slice(clean.length);
-      if (!verbHighlighted && clean === verbPart) {
-        verbHighlighted = true;
-        return <span key={index} className={className}>{clean}</span>;
-      }
-      if (verbHighlighted && !particleHighlighted && clean === particlePart) {
-        particleHighlighted = true;
+      if (targetIndex < targetParts.length && clean.toLowerCase() === targetParts[targetIndex].toLowerCase()) {
+        targetIndex += 1;
         return <span key={index} className={className}>{clean}{suffix}</span>;
       }
       return token;
     });
 
-    if (verbHighlighted && particleHighlighted) return <>{rendered}</>;
+    if (targetIndex === targetParts.length) return <>{rendered}</>;
   }
 
   return text;

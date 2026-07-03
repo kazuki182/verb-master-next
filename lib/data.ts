@@ -6592,1381 +6592,99 @@ export const verbs: Verb[] = [
     "syllable": "call",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★★ 超重要",
-    "core": "相手に声・連絡・判断を向ける",
-    "coreDetail": "CALLは、相手へ声をかける・電話する・名前を付ける・判断するイメージです。仕事では連絡、会議、判断、呼び方に広く使います。",
-    "coreVisual": {
-      "from": [
-        "📞 電話",
-        "📣 呼びかけ",
-        "🏷️ 名前",
-        "🧑‍💼 判断",
-        "📅 会議"
-      ],
-      "to": "自分・チーム",
-      "label": "コアイメージ"
-    },
+    "core": "声・連絡・判断を相手へ向ける",
+    "coreDetail": "CALLは、電話する・呼ぶ・名前を付ける・判断するという使い方があります。中心イメージは、自分の声や判断を相手や対象へ向けることです。仕事では顧客への電話、会議設定、呼び方、判断の表現でよく使います。",
+    "coreVisual": { "from": ["自分 / 会社", "声", "電話", "判断"], "to": "相手 / 対象", "label": "call" },
     "meanings": [
-      {
-        "id": "phone",
-        "title": "① 電話する",
-        "pattern": "CALL + 人 / CALL + 番号",
-        "transitivity": "他動詞",
-        "structure": "S + V + O",
-        "image": "相手に電話で連絡する。",
-        "point": "callは電話する時の基本。call you backもセットで覚える。",
-        "examples": [
-          {
-            "en": "I will call the client this afternoon.",
-            "ja": "今日の午後、顧客に電話します。",
-            "focus": "call",
-            "object": "the client",
-            "jaFocus": "電話します"
-          },
-          {
-            "en": "Can you call the supplier now?",
-            "ja": "今、仕入先に電話してもらえますか？",
-            "focus": "call",
-            "object": "the supplier",
-            "jaFocus": "電話して"
-          },
-          {
-            "en": "She called me after the meeting.",
-            "ja": "彼女は会議後に私に電話しました。",
-            "focus": "called",
-            "object": "me",
-            "jaFocus": "電話しました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I called my friend last night.",
-            "ja": "昨夜、友人に電話しました。",
-            "focus": "called",
-            "object": "my friend",
-            "jaFocus": "電話しました"
-          },
-          {
-            "en": "Please call me when you arrive.",
-            "ja": "着いたら電話してね。",
-            "focus": "call",
-            "object": "me",
-            "jaFocus": "電話して"
-          }
-        ]
-      },
-      {
-        "id": "name",
-        "title": "② 〜と呼ぶ・名付ける",
-        "pattern": "CALL + O + C",
-        "transitivity": "他動詞",
-        "structure": "S + V + O + C",
-        "image": "対象に名前や呼び方を付ける。",
-        "point": "call A B は「AをBと呼ぶ」。商品名や呼称に使う。",
-        "examples": [
-          {
-            "en": "We call this product the Pro Series.",
-            "ja": "私たちはこの製品をPro Seriesと呼んでいます。",
-            "focus": "call",
-            "object": "this product",
-            "jaFocus": "呼んでいます"
-          },
-          {
-            "en": "The client calls this issue a priority.",
-            "ja": "顧客はこの問題を優先事項と呼んでいます。",
-            "focus": "calls",
-            "object": "this issue",
-            "jaFocus": "呼んでいます"
-          },
-          {
-            "en": "Everyone calls him the project lead.",
-            "ja": "みんな彼をプロジェクトリーダーと呼んでいます。",
-            "focus": "calls",
-            "object": "him",
-            "jaFocus": "呼んでいます"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "My friends call me Kazu.",
-            "ja": "友人は私をカズと呼びます。",
-            "focus": "call",
-            "object": "me",
-            "jaFocus": "呼びます"
-          },
-          {
-            "en": "We call this cat Mimi.",
-            "ja": "この猫をミミと呼んでいます。",
-            "focus": "call",
-            "object": "this cat",
-            "jaFocus": "呼んでいます"
-          }
-        ]
-      },
-      {
-        "id": "contact",
-        "title": "③ 連絡する",
-        "pattern": "CALL + 人 / CALL about + 名詞",
-        "transitivity": "他動詞",
-        "structure": "S + V + O",
-        "image": "用件について相手に連絡する。",
-        "point": "call about は「〜の件で電話する」。",
-        "examples": [
-          {
-            "en": "I called about the delivery schedule.",
-            "ja": "納期の件で電話しました。",
-            "focus": "called about",
-            "object": "the delivery schedule",
-            "jaFocus": "電話しました"
-          },
-          {
-            "en": "The customer called about the invoice.",
-            "ja": "顧客が請求書の件で電話してきました。",
-            "focus": "called about",
-            "object": "the invoice",
-            "jaFocus": "電話してきました"
-          },
-          {
-            "en": "Please call me about the new order.",
-            "ja": "新規注文の件で電話してください。",
-            "focus": "call",
-            "object": "me",
-            "jaFocus": "電話して"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I called about the reservation.",
-            "ja": "予約の件で電話しました。",
-            "focus": "called about",
-            "object": "the reservation",
-            "jaFocus": "電話しました"
-          },
-          {
-            "en": "She called about the lost bag.",
-            "ja": "彼女は紛失したバッグの件で電話しました。",
-            "focus": "called about",
-            "object": "the lost bag",
-            "jaFocus": "電話しました"
-          }
-        ]
-      },
-      {
-        "id": "schedule",
-        "title": "④ 会議を開く・招集する",
-        "pattern": "CALL + meeting",
-        "transitivity": "他動詞",
-        "structure": "S + V + O",
-        "image": "人を集めて会議を設定する。",
-        "point": "call a meeting は仕事で頻出。緊急性がある場合にも使う。",
-        "examples": [
-          {
-            "en": "The manager called a meeting for tomorrow.",
-            "ja": "上司が明日の会議を招集しました。",
-            "focus": "called",
-            "object": "a meeting",
-            "jaFocus": "招集しました"
-          },
-          {
-            "en": "We need to call a quick meeting.",
-            "ja": "短い会議を開く必要があります。",
-            "focus": "call",
-            "object": "a quick meeting",
-            "jaFocus": "開く"
-          },
-          {
-            "en": "They called an emergency meeting.",
-            "ja": "彼らは緊急会議を開きました。",
-            "focus": "called",
-            "object": "an emergency meeting",
-            "jaFocus": "開きました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The coach called a team meeting.",
-            "ja": "コーチがチームミーティングを開きました。",
-            "focus": "called",
-            "object": "a team meeting",
-            "jaFocus": "開きました"
-          },
-          {
-            "en": "We called a family meeting.",
-            "ja": "家族会議を開きました。",
-            "focus": "called",
-            "object": "a family meeting",
-            "jaFocus": "開きました"
-          }
-        ]
-      },
-      {
-        "id": "decide",
-        "title": "⑤ 判断する・決める",
-        "pattern": "CALL + it + C / CALL + decision",
-        "transitivity": "他動詞",
-        "structure": "S + V + O + C",
-        "image": "状況を判断して決める。",
-        "point": "make a call と同じく「判断する」。仕事で自然。",
-        "examples": [
-          {
-            "en": "We need to call it a priority.",
-            "ja": "それを優先事項と判断する必要があります。",
-            "focus": "call",
-            "object": "it",
-            "jaFocus": "判断する"
-          },
-          {
-            "en": "The director made the final call.",
-            "ja": "部長が最終判断をしました。",
-            "focus": "made the final call",
-            "object": "the final call",
-            "jaFocus": "最終判断をしました"
-          },
-          {
-            "en": "I will call the timing after checking the data.",
-            "ja": "データ確認後にタイミングを判断します。",
-            "focus": "call",
-            "object": "the timing",
-            "jaFocus": "判断します"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "You made the right call.",
-            "ja": "正しい判断をしたね。",
-            "focus": "made the right call",
-            "object": "the right call",
-            "jaFocus": "判断をした"
-          },
-          {
-            "en": "It was a tough call.",
-            "ja": "難しい判断でした。",
-            "focus": "call",
-            "jaFocus": "判断"
-          }
-        ]
-      },
-      {
-        "id": "shout",
-        "title": "⑥ 呼びかける",
-        "pattern": "CALL + 人 / CALL out",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + V + O",
-        "image": "声を出して相手に注意を向ける。",
-        "point": "call out は大きな声で呼ぶ。",
-        "examples": [
-          {
-            "en": "Please call the next visitor.",
-            "ja": "次の来客を呼んでください。",
-            "focus": "call",
-            "object": "the next visitor",
-            "jaFocus": "呼んで"
-          },
-          {
-            "en": "The receptionist called my name.",
-            "ja": "受付の人が私の名前を呼びました。",
-            "focus": "called",
-            "object": "my name",
-            "jaFocus": "呼びました"
-          },
-          {
-            "en": "He called the technician to the site.",
-            "ja": "彼は技術者を現場に呼びました。",
-            "focus": "called",
-            "object": "the technician",
-            "jaFocus": "呼びました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "She called my name from outside.",
-            "ja": "彼女が外から私の名前を呼びました。",
-            "focus": "called",
-            "object": "my name",
-            "jaFocus": "呼びました"
-          },
-          {
-            "en": "I called the dog back.",
-            "ja": "犬を呼び戻しました。",
-            "focus": "called",
-            "object": "the dog",
-            "jaFocus": "呼び戻しました"
-          }
-        ]
-      },
-      {
-        "id": "request",
-        "title": "⑦ 要求する・求める",
-        "pattern": "CALL FOR + 名詞",
-        "transitivity": "句動詞",
-        "structure": "S + V + O",
-        "image": "状況が何かを必要とする。",
-        "point": "call for は「必要とする」。ビジネス文書でも使える。",
-        "examples": [
-          {
-            "en": "This issue calls for immediate action.",
-            "ja": "この問題は即時対応を必要とします。",
-            "focus": "calls for",
-            "object": "immediate action",
-            "jaFocus": "必要とします"
-          },
-          {
-            "en": "The client request calls for a detailed review.",
-            "ja": "顧客要望には詳細確認が必要です。",
-            "focus": "calls for",
-            "object": "a detailed review",
-            "jaFocus": "必要です"
-          },
-          {
-            "en": "The situation calls for a clear explanation.",
-            "ja": "この状況では明確な説明が必要です。",
-            "focus": "calls for",
-            "object": "a clear explanation",
-            "jaFocus": "必要です"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Rain calls for an umbrella.",
-            "ja": "雨なら傘が必要です。",
-            "focus": "calls for",
-            "object": "an umbrella",
-            "jaFocus": "必要です"
-          },
-          {
-            "en": "This recipe calls for fresh tomatoes.",
-            "ja": "このレシピには新鮮なトマトが必要です。",
-            "focus": "calls for",
-            "object": "fresh tomatoes",
-            "jaFocus": "必要です"
-          }
-        ]
-      },
-      {
-        "id": "cancel",
-        "title": "⑧ 中止する",
-        "pattern": "CALL OFF + 名詞",
-        "transitivity": "句動詞",
-        "structure": "S + V + O",
-        "image": "予定を止める。",
-        "point": "call off は会議・イベント・計画の中止に使う。",
-        "examples": [
-          {
-            "en": "We called off the meeting due to the delay.",
-            "ja": "遅れのため会議を中止しました。",
-            "focus": "called off",
-            "object": "the meeting",
-            "jaFocus": "中止しました"
-          },
-          {
-            "en": "The client called off the visit.",
-            "ja": "顧客は訪問を中止しました。",
-            "focus": "called off",
-            "object": "the visit",
-            "jaFocus": "中止しました"
-          },
-          {
-            "en": "They called off the launch event.",
-            "ja": "彼らはローンチイベントを中止しました。",
-            "focus": "called off",
-            "object": "the launch event",
-            "jaFocus": "中止しました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The game was called off because of rain.",
-            "ja": "雨で試合は中止になりました。",
-            "focus": "called off",
-            "jaFocus": "中止"
-          },
-          {
-            "en": "We called off the trip.",
-            "ja": "旅行を中止しました。",
-            "focus": "called off",
-            "object": "the trip",
-            "jaFocus": "中止しました"
-          }
-        ]
-      },
-      {
-        "id": "back",
-        "title": "⑨ 折り返し電話する",
-        "pattern": "call back",
-        "transitivity": "句動詞",
-        "structure": "S + V",
-        "image": "再度電話する。",
-        "point": "call back は社会人必須。I’ll call you back. は非常に使いやすい。",
-        "examples": [
-          {
-            "en": "I will call you back after the meeting.",
-            "ja": "会議後に折り返し電話します。",
-            "focus": "call you back",
-            "object": "you",
-            "jaFocus": "折り返し電話します"
-          },
-          {
-            "en": "Could you ask him to call me back?",
-            "ja": "彼に折り返し電話するよう伝えてもらえますか？",
-            "focus": "call me back",
-            "object": "me",
-            "jaFocus": "折り返し電話する"
-          },
-          {
-            "en": "The supplier called back this morning.",
-            "ja": "仕入先が今朝折り返し電話してきました。",
-            "focus": "called back",
-            "jaFocus": "折り返し電話してきました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I missed your call, so I called back.",
-            "ja": "電話に出られなかったので折り返しました。",
-            "focus": "called back",
-            "jaFocus": "折り返しました"
-          },
-          {
-            "en": "Can I call you back later?",
-            "ja": "後で折り返してもいい？",
-            "focus": "call you back",
-            "object": "you",
-            "jaFocus": "折り返して"
-          }
-        ]
-      },
-      {
-        "id": "consider",
-        "title": "⑩ 〜とみなす",
-        "pattern": "CALL + O + adjective/noun",
-        "transitivity": "他動詞",
-        "structure": "S + V + O + C",
-        "image": "対象をある評価で見る。",
-        "point": "call it good, call it risky のように評価を置く。",
-        "examples": [
-          {
-            "en": "We can call this approach practical.",
-            "ja": "この方法は実用的だと言えます。",
-            "focus": "call",
-            "object": "this approach",
-            "jaFocus": "言えます"
-          },
-          {
-            "en": "I would call the result acceptable.",
-            "ja": "その結果は許容範囲だと思います。",
-            "focus": "call",
-            "object": "the result",
-            "jaFocus": "思います"
-          },
-          {
-            "en": "The team called the proposal realistic.",
-            "ja": "チームはその提案を現実的だと評価しました。",
-            "focus": "called",
-            "object": "the proposal",
-            "jaFocus": "評価しました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I call this a good start.",
-            "ja": "これは良いスタートだと思います。",
-            "focus": "call",
-            "object": "this",
-            "jaFocus": "思います"
-          },
-          {
-            "en": "We can call it a day.",
-            "ja": "今日はここまでにしましょう。",
-            "focus": "call it a day",
-            "object": "it",
-            "jaFocus": "ここまでにしましょう"
-          }
-        ]
-      }
+      { "id": "call-phone", "title": "1 電話する", "pattern": "call + 人 / 会社", "transitivity": "他動詞", "structure": "基本", "image": "相手に電話で連絡する。", "point": "仕事では call the client / call the vendor の形がよく使われます。", "examples": [
+        { "en": "I will call the client this afternoon.", "ja": "私は今日の午後、顧客に電話します。", "focus": "call", "object": "the client", "jaFocus": "電話します" },
+        { "en": "We called the vendor to confirm the stock.", "ja": "私たちは在庫確認のため業者に電話しました。", "focus": "called", "object": "the vendor", "jaFocus": "電話しました" },
+        { "en": "Please call me after the meeting.", "ja": "会議後に私へ電話してください。", "focus": "call", "object": "me", "jaFocus": "電話して" }
+      ] },
+      { "id": "call-meeting", "title": "2 会議を開く・招集する", "pattern": "call + meeting", "transitivity": "他動詞", "structure": "基本", "image": "必要な人を集めるために会議を設定する。", "point": "call a meeting は、必要があって会議を開く時に使います。", "examples": [
+        { "en": "The manager called a meeting to discuss the issue.", "ja": "上司はその問題を話し合うために会議を開きました。", "focus": "called", "object": "a meeting", "jaFocus": "会議を開きました" },
+        { "en": "We should call a quick meeting before sending the quote.", "ja": "見積を送る前に短い会議を開いた方がよいです。", "focus": "call", "object": "a quick meeting", "jaFocus": "会議を開いた方がよい" },
+        { "en": "She called an internal meeting for tomorrow morning.", "ja": "彼女は明日の朝に社内会議を設定しました。", "focus": "called", "object": "an internal meeting", "jaFocus": "会議を設定しました" }
+      ] },
+      { "id": "call-name", "title": "3 〜と呼ぶ", "pattern": "call + 人/物 + 名前", "transitivity": "他動詞", "structure": "基本", "image": "人や物に名前・呼び方を向ける。", "point": "call this product A のように、呼び方を説明できます。", "examples": [
+        { "en": "We call this product Glow Beam Plus.", "ja": "私たちはこの製品をグロービームプラスと呼んでいます。", "focus": "call", "object": "this product", "jaFocus": "呼んでいます" },
+        { "en": "Please call him Watanabe-san in the email.", "ja": "メールでは彼を渡辺さんと呼んでください。", "focus": "call", "object": "him", "jaFocus": "呼んで" },
+        { "en": "The client called the color too warm.", "ja": "顧客はその色味を暖かすぎると言いました。", "focus": "called", "object": "the color", "jaFocus": "言いました" }
+      ] },
+      { "id": "call-judge", "title": "4 判断する・見なす", "pattern": "call + it/this + 形容詞/名詞", "transitivity": "他動詞", "structure": "基本", "image": "状況に判断や評価を付ける。", "point": "call it a priority / call it fair のように使います。", "examples": [
+        { "en": "We can call this project a priority.", "ja": "私たちはこの案件を優先事項と見なせます。", "focus": "call", "object": "this project", "jaFocus": "見なせます" },
+        { "en": "I would call the schedule realistic.", "ja": "私はそのスケジュールは現実的だと思います。", "focus": "call", "object": "the schedule", "jaFocus": "思います" },
+        { "en": "The team called the decision fair.", "ja": "チームはその判断を公平だと見なしました。", "focus": "called", "object": "the decision", "jaFocus": "見なしました" }
+      ] }
     ],
     "collocations": [
-      {
-        "phrase": "call a meeting",
-        "ja": "会議を開く",
-        "image": "meetingを呼び集める。",
-        "pattern": "call + 名詞",
-        "examples": [
-          {
-            "en": "The manager called a meeting at 3 p.m.",
-            "ja": "上司が午後3時に会議を開きました。",
-            "focus": "called",
-            "object": "a meeting",
-            "jaFocus": "開きました"
-          },
-          {
-            "en": "We should call a meeting to align internally.",
-            "ja": "社内で認識を合わせるため会議を開くべきです。",
-            "focus": "call",
-            "object": "a meeting",
-            "jaFocus": "開く"
-          },
-          {
-            "en": "They called a meeting about the delay.",
-            "ja": "遅延について会議を開きました。",
-            "focus": "called",
-            "object": "a meeting",
-            "jaFocus": "開きました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "We called a family meeting.",
-            "ja": "家族会議を開きました。",
-            "focus": "called",
-            "object": "a family meeting",
-            "jaFocus": "開きました"
-          },
-          {
-            "en": "The coach called a meeting.",
-            "ja": "コーチがミーティングを開きました。",
-            "focus": "called",
-            "object": "a meeting",
-            "jaFocus": "開きました"
-          }
-        ]
-      },
-      {
-        "phrase": "call the client",
-        "ja": "顧客に電話する",
-        "image": "顧客へ連絡する。",
-        "pattern": "call + 人",
-        "examples": [
-          {
-            "en": "I will call the client before lunch.",
-            "ja": "昼前に顧客へ電話します。",
-            "focus": "call",
-            "object": "the client",
-            "jaFocus": "電話します"
-          },
-          {
-            "en": "Please call the client about the schedule.",
-            "ja": "日程の件で顧客へ電話してください。",
-            "focus": "call",
-            "object": "the client",
-            "jaFocus": "電話して"
-          },
-          {
-            "en": "She called the client to confirm the details.",
-            "ja": "詳細確認のため顧客へ電話しました。",
-            "focus": "called",
-            "object": "the client",
-            "jaFocus": "電話しました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I called my friend after work.",
-            "ja": "仕事後に友人へ電話しました。",
-            "focus": "called",
-            "object": "my friend",
-            "jaFocus": "電話しました"
-          },
-          {
-            "en": "Can you call me tonight?",
-            "ja": "今夜電話してくれる？",
-            "focus": "call",
-            "object": "me",
-            "jaFocus": "電話して"
-          }
-        ]
-      },
-      {
-        "phrase": "call back",
-        "ja": "折り返す",
-        "image": "再度電話する。",
-        "pattern": "call back",
-        "examples": [
-          {
-            "en": "I will call back after checking the file.",
-            "ja": "資料確認後に折り返します。",
-            "focus": "call back",
-            "jaFocus": "折り返します"
-          },
-          {
-            "en": "The customer asked me to call back tomorrow.",
-            "ja": "顧客から明日折り返すよう依頼されました。",
-            "focus": "call back",
-            "jaFocus": "折り返す"
-          },
-          {
-            "en": "Please call back when you are available.",
-            "ja": "都合がよい時に折り返してください。",
-            "focus": "call back",
-            "jaFocus": "折り返して"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I called back right away.",
-            "ja": "すぐ折り返しました。",
-            "focus": "called back",
-            "jaFocus": "折り返しました"
-          },
-          {
-            "en": "Can I call back later?",
-            "ja": "後で折り返していい？",
-            "focus": "call back",
-            "jaFocus": "折り返して"
-          }
-        ]
-      },
-      {
-        "phrase": "make a call",
-        "ja": "判断する・電話する",
-        "image": "callを名詞で使う。",
-        "pattern": "make a call",
-        "examples": [
-          {
-            "en": "We need to make a call today.",
-            "ja": "今日判断する必要があります。",
-            "focus": "make a call",
-            "object": "a call",
-            "jaFocus": "判断する"
-          },
-          {
-            "en": "The director made the final call.",
-            "ja": "部長が最終判断をしました。",
-            "focus": "made the final call",
-            "object": "the final call",
-            "jaFocus": "判断をしました"
-          },
-          {
-            "en": "I made a quick call to the supplier.",
-            "ja": "仕入先に短く電話しました。",
-            "focus": "made a quick call",
-            "object": "a quick call",
-            "jaFocus": "電話しました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "You made the right call.",
-            "ja": "正しい判断をしたね。",
-            "focus": "made the right call",
-            "object": "the right call",
-            "jaFocus": "判断"
-          },
-          {
-            "en": "I need to make a call.",
-            "ja": "電話しないといけません。",
-            "focus": "make a call",
-            "object": "a call",
-            "jaFocus": "電話"
-          }
-        ]
-      },
-      {
-        "phrase": "conference call",
-        "ja": "電話会議",
-        "image": "複数人での通話会議。",
-        "pattern": "conference call",
-        "examples": [
-          {
-            "en": "We have a conference call at ten.",
-            "ja": "10時に電話会議があります。",
-            "focus": "conference call",
-            "object": "a conference call",
-            "jaFocus": "電話会議"
-          },
-          {
-            "en": "The conference call took thirty minutes.",
-            "ja": "電話会議は30分かかりました。",
-            "focus": "conference call",
-            "object": "The conference call",
-            "jaFocus": "電話会議"
-          },
-          {
-            "en": "Please join the conference call on time.",
-            "ja": "時間通りに電話会議へ参加してください。",
-            "focus": "conference call",
-            "object": "the conference call",
-            "jaFocus": "電話会議"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I had a conference call with my family.",
-            "ja": "家族とグループ通話をしました。",
-            "focus": "conference call",
-            "object": "a conference call",
-            "jaFocus": "グループ通話"
-          },
-          {
-            "en": "The conference call was fun.",
-            "ja": "グループ通話は楽しかったです。",
-            "focus": "conference call",
-            "object": "The conference call",
-            "jaFocus": "グループ通話"
-          }
-        ]
-      },
-      {
-        "phrase": "sales call",
-        "ja": "営業電話",
-        "image": "営業目的の電話。",
-        "pattern": "sales call",
-        "examples": [
-          {
-            "en": "I made three sales calls this morning.",
-            "ja": "今朝営業電話を3件しました。",
-            "focus": "sales calls",
-            "object": "three sales calls",
-            "jaFocus": "営業電話"
-          },
-          {
-            "en": "The sales call went well.",
-            "ja": "営業電話はうまくいきました。",
-            "focus": "sales call",
-            "object": "The sales call",
-            "jaFocus": "営業電話"
-          },
-          {
-            "en": "We prepared before the sales call.",
-            "ja": "営業電話の前に準備しました。",
-            "focus": "sales call",
-            "object": "the sales call",
-            "jaFocus": "営業電話"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I got a sales call yesterday.",
-            "ja": "昨日営業電話を受けました。",
-            "focus": "sales call",
-            "object": "a sales call",
-            "jaFocus": "営業電話"
-          },
-          {
-            "en": "The sales call was short.",
-            "ja": "営業電話は短かったです。",
-            "focus": "sales call",
-            "object": "The sales call",
-            "jaFocus": "営業電話"
-          }
-        ]
-      },
-      {
-        "phrase": "call it a day",
-        "ja": "今日はここまでにする",
-        "image": "一日の作業を終える。",
-        "pattern": "call it a day",
-        "examples": [
-          {
-            "en": "Let’s call it a day after this review.",
-            "ja": "この確認後、今日はここまでにしましょう。",
-            "focus": "call it a day",
-            "object": "it",
-            "jaFocus": "ここまでにしましょう"
-          },
-          {
-            "en": "We called it a day at six.",
-            "ja": "6時に作業を終えました。",
-            "focus": "called it a day",
-            "object": "it",
-            "jaFocus": "作業を終えました"
-          },
-          {
-            "en": "If there are no questions, let’s call it a day.",
-            "ja": "質問がなければ今日はここまでにしましょう。",
-            "focus": "call it a day",
-            "object": "it",
-            "jaFocus": "ここまでにしましょう"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I’m tired, so let’s call it a day.",
-            "ja": "疲れたので今日はここまでにしよう。",
-            "focus": "call it a day",
-            "object": "it",
-            "jaFocus": "ここまでにしよう"
-          },
-          {
-            "en": "We called it a day and went home.",
-            "ja": "今日は切り上げて帰りました。",
-            "focus": "called it a day",
-            "object": "it",
-            "jaFocus": "切り上げて"
-          }
-        ]
-      },
-      {
-        "phrase": "call for action",
-        "ja": "対応を求める",
-        "image": "行動を必要とする。",
-        "pattern": "call for + 名詞",
-        "examples": [
-          {
-            "en": "The issue calls for action today.",
-            "ja": "この問題は今日の対応を必要とします。",
-            "focus": "calls for",
-            "object": "action",
-            "jaFocus": "必要とします"
-          },
-          {
-            "en": "The data calls for a quick decision.",
-            "ja": "そのデータは迅速な判断を求めています。",
-            "focus": "calls for",
-            "object": "a quick decision",
-            "jaFocus": "求めています"
-          },
-          {
-            "en": "The situation calls for better communication.",
-            "ja": "この状況ではより良いコミュニケーションが必要です。",
-            "focus": "calls for",
-            "object": "better communication",
-            "jaFocus": "必要です"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Cold weather calls for a coat.",
-            "ja": "寒い日はコートが必要です。",
-            "focus": "calls for",
-            "object": "a coat",
-            "jaFocus": "必要です"
-          },
-          {
-            "en": "This cake calls for coffee.",
-            "ja": "このケーキにはコーヒーが合います。",
-            "focus": "calls for",
-            "object": "coffee",
-            "jaFocus": "合います"
-          }
-        ]
-      },
-      {
-        "phrase": "call someone by name",
-        "ja": "名前で呼ぶ",
-        "image": "呼び名を指定する。",
-        "pattern": "call + 人 + by name",
-        "examples": [
-          {
-            "en": "Please call customers by name when possible.",
-            "ja": "可能であればお客様を名前で呼んでください。",
-            "focus": "call",
-            "object": "customers",
-            "jaFocus": "呼んで"
-          },
-          {
-            "en": "The manager called each member by name.",
-            "ja": "上司は各メンバーを名前で呼びました。",
-            "focus": "called",
-            "object": "each member",
-            "jaFocus": "呼びました"
-          },
-          {
-            "en": "We call our products by model number.",
-            "ja": "製品は型番で呼んでいます。",
-            "focus": "call",
-            "object": "our products",
-            "jaFocus": "呼んでいます"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please call me by my nickname.",
-            "ja": "ニックネームで呼んでください。",
-            "focus": "call",
-            "object": "me",
-            "jaFocus": "呼んで"
-          },
-          {
-            "en": "She called the dog by name.",
-            "ja": "彼女は犬を名前で呼びました。",
-            "focus": "called",
-            "object": "the dog",
-            "jaFocus": "呼びました"
-          }
-        ]
-      },
-      {
-        "phrase": "client call",
-        "ja": "顧客との電話",
-        "image": "顧客との通話。",
-        "pattern": "client call",
-        "examples": [
-          {
-            "en": "I have a client call at two.",
-            "ja": "2時に顧客との電話があります。",
-            "focus": "client call",
-            "object": "a client call",
-            "jaFocus": "顧客との電話"
-          },
-          {
-            "en": "The client call was productive.",
-            "ja": "顧客との電話は有意義でした。",
-            "focus": "client call",
-            "object": "The client call",
-            "jaFocus": "顧客との電話"
-          },
-          {
-            "en": "Please send notes after the client call.",
-            "ja": "顧客との電話後にメモを送ってください。",
-            "focus": "client call",
-            "object": "the client call",
-            "jaFocus": "顧客との電話"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I had a call with my friend.",
-            "ja": "友人と電話しました。",
-            "focus": "call",
-            "object": "a call",
-            "jaFocus": "電話"
-          },
-          {
-            "en": "The call was short.",
-            "ja": "電話は短かったです。",
-            "focus": "call",
-            "object": "The call",
-            "jaFocus": "電話"
-          }
-        ]
-      }
+      { "phrase": "call the client", "ja": "顧客に電話する", "image": "顧客へ直接連絡する。", "pattern": "call + client", "examples": [
+        { "en": "Please call the client before noon.", "ja": "正午までに顧客へ電話してください。", "focus": "call", "object": "the client", "jaFocus": "電話して" },
+        { "en": "I called the client about the delivery date.", "ja": "私は納期について顧客に電話しました。", "focus": "called", "object": "the client", "jaFocus": "電話しました" },
+        { "en": "We call important customers directly.", "ja": "私たちは重要な顧客には直接電話します。", "focus": "call", "object": "important customers", "jaFocus": "電話します" }
+      ] },
+      { "phrase": "call a meeting", "ja": "会議を開く", "image": "必要な人を集めて話し合いを始める。", "pattern": "call + meeting", "examples": [
+        { "en": "The director called a meeting after the complaint.", "ja": "クレーム後、部長は会議を開きました。", "focus": "called", "object": "a meeting", "jaFocus": "会議を開きました" },
+        { "en": "We may need to call another meeting next week.", "ja": "来週もう一度会議を開く必要があるかもしれません。", "focus": "call", "object": "another meeting", "jaFocus": "会議を開く" },
+        { "en": "She called a short meeting to align the team.", "ja": "彼女はチームの認識を合わせるために短い会議を開きました。", "focus": "called", "object": "a short meeting", "jaFocus": "会議を開きました" }
+      ] },
+      { "phrase": "call it a priority", "ja": "それを優先事項と見なす", "image": "重要度の判断を付ける。", "pattern": "call + it + 名詞", "examples": [
+        { "en": "We should call it a priority this week.", "ja": "私たちは今週それを優先事項と見なすべきです。", "focus": "call", "object": "it", "jaFocus": "見なすべき" },
+        { "en": "The customer called quality a priority.", "ja": "顧客は品質を優先事項と考えました。", "focus": "called", "object": "quality", "jaFocus": "考えました" },
+        { "en": "I would call safety the first priority.", "ja": "私は安全を最優先事項と考えます。", "focus": "call", "object": "safety", "jaFocus": "考えます" }
+      ] }
     ],
     "phrasalVerbs": [
-      {
-        "phrase": "call back",
-        "ja": "折り返す",
-        "image": "戻って電話する。",
-        "pattern": "call back",
-        "examples": [
-          {
-            "en": "I will call back in ten minutes.",
-            "ja": "10分後に折り返します。",
-            "focus": "call back",
-            "jaFocus": "折り返します"
-          },
-          {
-            "en": "The supplier called back quickly.",
-            "ja": "仕入先はすぐ折り返してくれました。",
-            "focus": "called back",
-            "jaFocus": "折り返して"
-          },
-          {
-            "en": "Please call me back after the meeting.",
-            "ja": "会議後に折り返してください。",
-            "focus": "call me back",
-            "object": "me",
-            "jaFocus": "折り返して"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I called back later.",
-            "ja": "後で折り返しました。",
-            "focus": "called back",
-            "jaFocus": "折り返しました"
-          },
-          {
-            "en": "Can you call back tonight?",
-            "ja": "今夜折り返せる？",
-            "focus": "call back",
-            "jaFocus": "折り返せる"
-          }
-        ]
-      },
-      {
-        "phrase": "call off",
-        "ja": "中止する",
-        "image": "予定から外す。",
-        "pattern": "call off + 名詞",
-        "examples": [
-          {
-            "en": "We called off the meeting.",
-            "ja": "会議を中止しました。",
-            "focus": "called off",
-            "object": "the meeting",
-            "jaFocus": "中止しました"
-          },
-          {
-            "en": "The client called off the visit.",
-            "ja": "顧客は訪問を中止しました。",
-            "focus": "called off",
-            "object": "the visit",
-            "jaFocus": "中止しました"
-          },
-          {
-            "en": "They called off the campaign.",
-            "ja": "彼らはキャンペーンを中止しました。",
-            "focus": "called off",
-            "object": "the campaign",
-            "jaFocus": "中止しました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The game was called off.",
-            "ja": "試合は中止になりました。",
-            "focus": "called off",
-            "jaFocus": "中止"
-          },
-          {
-            "en": "We called off the picnic.",
-            "ja": "ピクニックを中止しました。",
-            "focus": "called off",
-            "object": "the picnic",
-            "jaFocus": "中止しました"
-          }
-        ]
-      },
-      {
-        "phrase": "call for",
-        "ja": "必要とする",
-        "image": "外に向けて求める。",
-        "pattern": "call for + 名詞",
-        "examples": [
-          {
-            "en": "This problem calls for action.",
-            "ja": "この問題は対応を必要とします。",
-            "focus": "calls for",
-            "object": "action",
-            "jaFocus": "必要とします"
-          },
-          {
-            "en": "The proposal calls for more data.",
-            "ja": "その提案にはさらなるデータが必要です。",
-            "focus": "calls for",
-            "object": "more data",
-            "jaFocus": "必要です"
-          },
-          {
-            "en": "The situation calls for teamwork.",
-            "ja": "この状況ではチームワークが必要です。",
-            "focus": "calls for",
-            "object": "teamwork",
-            "jaFocus": "必要です"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Rain calls for boots.",
-            "ja": "雨ならブーツが必要です。",
-            "focus": "calls for",
-            "object": "boots",
-            "jaFocus": "必要です"
-          },
-          {
-            "en": "This recipe calls for butter.",
-            "ja": "このレシピにはバターが必要です。",
-            "focus": "calls for",
-            "object": "butter",
-            "jaFocus": "必要です"
-          }
-        ]
-      },
-      {
-        "phrase": "call out",
-        "ja": "呼び出す・指摘する",
-        "image": "声に出して外へ出す。",
-        "pattern": "call out + 名詞",
-        "examples": [
-          {
-            "en": "The manager called out the key issue.",
-            "ja": "上司は重要な問題点を指摘しました。",
-            "focus": "called out",
-            "object": "the key issue",
-            "jaFocus": "指摘しました"
-          },
-          {
-            "en": "Please call out any risks early.",
-            "ja": "リスクがあれば早めに指摘してください。",
-            "focus": "call out",
-            "object": "any risks",
-            "jaFocus": "指摘して"
-          },
-          {
-            "en": "He called out my name at reception.",
-            "ja": "受付で彼が私の名前を呼びました。",
-            "focus": "called out",
-            "object": "my name",
-            "jaFocus": "呼びました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "She called out from the kitchen.",
-            "ja": "彼女はキッチンから声をかけました。",
-            "focus": "called out",
-            "jaFocus": "声をかけました"
-          },
-          {
-            "en": "I called out his name.",
-            "ja": "彼の名前を呼びました。",
-            "focus": "called out",
-            "object": "his name",
-            "jaFocus": "呼びました"
-          }
-        ]
-      },
-      {
-        "phrase": "call in",
-        "ja": "呼び入れる・電話で参加する",
-        "image": "内側へ呼ぶ。",
-        "pattern": "call in + 人",
-        "examples": [
-          {
-            "en": "We called in an expert for the issue.",
-            "ja": "その問題に専門家を呼びました。",
-            "focus": "called in",
-            "object": "an expert",
-            "jaFocus": "呼びました"
-          },
-          {
-            "en": "She called in to the meeting remotely.",
-            "ja": "彼女はリモートで会議に電話参加しました。",
-            "focus": "called in",
-            "jaFocus": "電話参加しました"
-          },
-          {
-            "en": "The team called in support.",
-            "ja": "チームはサポート担当を呼びました。",
-            "focus": "called in",
-            "object": "support",
-            "jaFocus": "呼びました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I called in sick today.",
-            "ja": "今日は病欠の連絡をしました。",
-            "focus": "called in sick",
-            "jaFocus": "病欠の連絡"
-          },
-          {
-            "en": "He called in from home.",
-            "ja": "彼は家から電話参加しました。",
-            "focus": "called in",
-            "jaFocus": "電話参加しました"
-          }
-        ]
-      },
-      {
-        "phrase": "call on",
-        "ja": "頼む・指名する",
-        "image": "相手に向けて求める。",
-        "pattern": "call on + 人",
-        "examples": [
-          {
-            "en": "The manager called on me to explain the data.",
-            "ja": "上司は私にデータ説明を求めました。",
-            "focus": "called on",
-            "object": "me",
-            "jaFocus": "求めました"
-          },
-          {
-            "en": "We called on the team to act quickly.",
-            "ja": "チームに迅速な対応を求めました。",
-            "focus": "called on",
-            "object": "the team",
-            "jaFocus": "求めました"
-          },
-          {
-            "en": "The trainer called on participants for questions.",
-            "ja": "講師は参加者に質問を促しました。",
-            "focus": "called on",
-            "object": "participants",
-            "jaFocus": "促しました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The teacher called on me.",
-            "ja": "先生に指名されました。",
-            "focus": "called on",
-            "object": "me",
-            "jaFocus": "指名されました"
-          },
-          {
-            "en": "She called on her friend for help.",
-            "ja": "彼女は友人に助けを求めました。",
-            "focus": "called on",
-            "object": "her friend",
-            "jaFocus": "求めました"
-          }
-        ]
-      },
-      {
-        "phrase": "call up",
-        "ja": "電話する・思い出させる",
-        "image": "上に呼び出す。",
-        "pattern": "call up + 人/記憶",
-        "examples": [
-          {
-            "en": "I called up the vendor to confirm the price.",
-            "ja": "価格確認のため業者に電話しました。",
-            "focus": "called up",
-            "object": "the vendor",
-            "jaFocus": "電話しました"
-          },
-          {
-            "en": "The issue called up an old concern.",
-            "ja": "その問題は以前の懸念を思い出させました。",
-            "focus": "called up",
-            "object": "an old concern",
-            "jaFocus": "思い出させました"
-          },
-          {
-            "en": "Can you call up the customer record?",
-            "ja": "顧客情報を呼び出せますか？",
-            "focus": "call up",
-            "object": "the customer record",
-            "jaFocus": "呼び出せますか"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I called up my cousin.",
-            "ja": "いとこに電話しました。",
-            "focus": "called up",
-            "object": "my cousin",
-            "jaFocus": "電話しました"
-          },
-          {
-            "en": "This song calls up old memories.",
-            "ja": "この曲は昔の記憶を呼び起こします。",
-            "focus": "calls up",
-            "object": "old memories",
-            "jaFocus": "呼び起こします"
-          }
-        ]
-      },
-      {
-        "phrase": "call around",
-        "ja": "何件か電話する",
-        "image": "周囲へ電話して回る。",
-        "pattern": "call around",
-        "examples": [
-          {
-            "en": "I called around to check stock.",
-            "ja": "在庫確認のため何件か電話しました。",
-            "focus": "called around",
-            "jaFocus": "電話しました"
-          },
-          {
-            "en": "We called around for delivery options.",
-            "ja": "配送方法について何社かに電話しました。",
-            "focus": "called around",
-            "jaFocus": "電話しました"
-          },
-          {
-            "en": "She called around to compare prices.",
-            "ja": "価格比較のため数社に電話しました。",
-            "focus": "called around",
-            "jaFocus": "電話しました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I called around for a hotel.",
-            "ja": "ホテルを探すため何件か電話しました。",
-            "focus": "called around",
-            "jaFocus": "電話しました"
-          },
-          {
-            "en": "We called around before the trip.",
-            "ja": "旅行前に何件か電話しました。",
-            "focus": "called around",
-            "jaFocus": "電話しました"
-          }
-        ]
-      },
-      {
-        "phrase": "call through",
-        "ja": "電話をつなぐ",
-        "image": "通話を通す。",
-        "pattern": "call through",
-        "examples": [
-          {
-            "en": "Reception called the visitor through to sales.",
-            "ja": "受付が来客を営業部につなぎました。",
-            "focus": "called",
-            "object": "the visitor",
-            "jaFocus": "つなぎました"
-          },
-          {
-            "en": "Please call him through to my extension.",
-            "ja": "彼を私の内線につないでください。",
-            "focus": "call",
-            "object": "him",
-            "jaFocus": "つないで"
-          },
-          {
-            "en": "The operator called the client through.",
-            "ja": "オペレーターが顧客をつなぎました。",
-            "focus": "called",
-            "object": "the client",
-            "jaFocus": "つなぎました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The hotel called me through to the room.",
-            "ja": "ホテルが部屋につないでくれました。",
-            "focus": "called",
-            "object": "me",
-            "jaFocus": "つないで"
-          },
-          {
-            "en": "Can you call me through?",
-            "ja": "つないでもらえますか？",
-            "focus": "call",
-            "object": "me",
-            "jaFocus": "つないで"
-          }
-        ]
-      },
-      {
-        "phrase": "call together",
-        "ja": "集める",
-        "image": "一緒に呼び集める。",
-        "pattern": "call together + 人",
-        "examples": [
-          {
-            "en": "The leader called the team together.",
-            "ja": "リーダーがチームを集めました。",
-            "focus": "called",
-            "object": "the team",
-            "jaFocus": "集めました"
-          },
-          {
-            "en": "We called everyone together for an update.",
-            "ja": "状況共有のため全員を集めました。",
-            "focus": "called",
-            "object": "everyone",
-            "jaFocus": "集めました"
-          },
-          {
-            "en": "The manager called the members together quickly.",
-            "ja": "上司はメンバーをすぐに集めました。",
-            "focus": "called",
-            "object": "the members",
-            "jaFocus": "集めました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "We called the family together.",
-            "ja": "家族を集めました。",
-            "focus": "called",
-            "object": "the family",
-            "jaFocus": "集めました"
-          },
-          {
-            "en": "She called her friends together.",
-            "ja": "彼女は友人を集めました。",
-            "focus": "called",
-            "object": "her friends",
-            "jaFocus": "集めました"
-          }
-        ]
-      }
+      { "phrase": "call back", "ja": "折り返し電話する", "image": "電話を相手へ戻す。", "pattern": "call back", "examples": [
+        { "en": "I will call the client back after checking the stock.", "ja": "在庫を確認した後、顧客に折り返し電話します。", "focus": "call back", "object": "the client", "jaFocus": "折り返し電話します" },
+        { "en": "Please call me back when you are available.", "ja": "都合がよい時に折り返し電話してください。", "focus": "call back", "object": "me", "jaFocus": "折り返し電話して" },
+        { "en": "She called back the supplier before lunch.", "ja": "彼女は昼食前に仕入先へ折り返し電話しました。", "focus": "called back", "object": "the supplier", "jaFocus": "折り返し電話しました" }
+      ] },
+      { "phrase": "call off", "ja": "中止する", "image": "予定や作業を止める。", "pattern": "call off", "examples": [
+        { "en": "We called off the meeting because the client was unavailable.", "ja": "顧客の都合がつかなかったため、私たちは会議を中止しました。", "focus": "called off", "object": "the meeting", "jaFocus": "中止しました" },
+        { "en": "They called off the installation due to heavy rain.", "ja": "大雨のため、彼らは設置作業を中止しました。", "focus": "called off", "object": "the installation", "jaFocus": "中止しました" },
+        { "en": "Please do not call off the visit without approval.", "ja": "承認なしに訪問を中止しないでください。", "focus": "call off", "object": "the visit", "jaFocus": "中止しないで" }
+      ] },
+      { "phrase": "call for", "ja": "必要とする・求める", "image": "状況が対応を求める。", "pattern": "call for", "examples": [
+        { "en": "This issue calls for a quick response.", "ja": "この問題には迅速な対応が必要です。", "focus": "calls for", "object": "a quick response", "jaFocus": "必要です" },
+        { "en": "The project calls for careful planning.", "ja": "その案件には慎重な計画が必要です。", "focus": "calls for", "object": "careful planning", "jaFocus": "必要です" },
+        { "en": "The situation called for support from another team.", "ja": "その状況では別チームの支援が必要でした。", "focus": "called for", "object": "support", "jaFocus": "必要でした" }
+      ] },
+      { "phrase": "call out", "ja": "指摘する・声に出す", "image": "問題や名前を外へ出す。", "pattern": "call out", "examples": [
+        { "en": "Please call out any risks during the meeting.", "ja": "会議中にリスクがあれば指摘してください。", "focus": "call out", "object": "any risks", "jaFocus": "指摘して" },
+        { "en": "The manager called out the key issue.", "ja": "上司は重要な問題点を指摘しました。", "focus": "called out", "object": "the key issue", "jaFocus": "指摘しました" },
+        { "en": "He called out my name at reception.", "ja": "彼は受付で私の名前を呼びました。", "focus": "called out", "object": "my name", "jaFocus": "呼びました" }
+      ] },
+      { "phrase": "call in", "ja": "呼び入れる・電話で参加する", "image": "外から内側へ呼ぶ。", "pattern": "call in", "examples": [
+        { "en": "We called in an expert to check the problem.", "ja": "私たちは問題確認のため専門家を呼びました。", "focus": "called in", "object": "an expert", "jaFocus": "呼びました" },
+        { "en": "She called in to the meeting from home.", "ja": "彼女は自宅から会議に電話参加しました。", "focus": "called in", "jaFocus": "電話参加しました" },
+        { "en": "The team called in support after the error.", "ja": "エラー後、チームはサポート担当を呼びました。", "focus": "called in", "object": "support", "jaFocus": "呼びました" }
+      ] },
+      { "phrase": "call on", "ja": "頼む・指名する", "image": "相手に行動や発言を求める。", "pattern": "call on", "examples": [
+        { "en": "The manager called on me to explain the data.", "ja": "上司は私にデータ説明を求めました。", "focus": "called on", "object": "me", "jaFocus": "求めました" },
+        { "en": "We called on the team to act quickly.", "ja": "私たちはチームに迅速な対応を求めました。", "focus": "called on", "object": "the team", "jaFocus": "求めました" },
+        { "en": "The trainer called on participants for questions.", "ja": "講師は参加者に質問を促しました。", "focus": "called on", "object": "participants", "jaFocus": "促しました" }
+      ] },
+      { "phrase": "call up", "ja": "電話する・呼び出す", "image": "相手や情報を画面・記憶・電話口へ呼び出す。", "pattern": "call up", "examples": [
+        { "en": "I called up the vendor to confirm the price.", "ja": "私は価格確認のため業者に電話しました。", "focus": "called up", "object": "the vendor", "jaFocus": "電話しました" },
+        { "en": "Can you call up the customer record?", "ja": "顧客情報を呼び出せますか？", "focus": "call up", "object": "the customer record", "jaFocus": "呼び出せますか" },
+        { "en": "The issue called up an old concern.", "ja": "その問題は以前の懸念を思い出させました。", "focus": "called up", "object": "an old concern", "jaFocus": "思い出させました" }
+      ] },
+      { "phrase": "call around", "ja": "何件か電話する", "image": "複数の相手へ電話して回る。", "pattern": "call around", "examples": [
+        { "en": "I called around to check stock.", "ja": "私は在庫確認のため何件か電話しました。", "focus": "called around", "jaFocus": "電話しました" },
+        { "en": "We called around for delivery options.", "ja": "私たちは配送方法について何社かに電話しました。", "focus": "called around", "jaFocus": "電話しました" },
+        { "en": "Please call around before we change the schedule.", "ja": "予定を変更する前に、何件か電話で確認してください。", "focus": "call around", "jaFocus": "電話で確認して" }
+      ] },
+      { "phrase": "call upon", "ja": "強く求める・要請する", "image": "相手に正式に対応を求める。", "pattern": "call upon", "examples": [
+        { "en": "We called upon the supplier to improve quality.", "ja": "私たちは仕入先に品質改善を求めました。", "focus": "called upon", "object": "the supplier", "jaFocus": "求めました" },
+        { "en": "The customer called upon us to respond quickly.", "ja": "顧客は私たちに迅速な対応を求めました。", "focus": "called upon", "object": "us", "jaFocus": "求めました" },
+        { "en": "Management called upon every team to reduce waste.", "ja": "経営陣は各チームに無駄の削減を求めました。", "focus": "called upon", "object": "every team", "jaFocus": "求めました" }
+      ] },
+      { "phrase": "call ahead", "ja": "事前に電話する", "image": "行く前・送る前に先に連絡する。", "pattern": "call ahead", "examples": [
+        { "en": "Please call ahead before visiting the client.", "ja": "顧客を訪問する前に事前に電話してください。", "focus": "call ahead", "jaFocus": "事前に電話して" },
+        { "en": "We called ahead to confirm the delivery time.", "ja": "私たちは納品時間を確認するため事前に電話しました。", "focus": "called ahead", "jaFocus": "事前に電話しました" },
+        { "en": "I will call ahead and check if the manager is available.", "ja": "私は事前に電話して、担当者がいるか確認します。", "focus": "call ahead", "jaFocus": "事前に電話して" }
+      ] }
     ]
   },
   {
@@ -7977,435 +6695,100 @@ export const verbs: Verb[] = [
     "kana": "ラン",
     "syllable": "run",
     "transitivity": "他動詞・自動詞",
-    "importance": "★★★★★ 基本",
-    "core": "人・仕組み・仕事が止まらずに動き続ける",
-    "coreDetail": "run は「走る」だけでなく、会議を運営する、事業を動かす、テストを実行する、在庫や時間がなくなるなど、仕事で非常に広く使います。中心は「動かす・動いている」です。",
-    "coreVisual": {
-      "from": [
-        "会議",
-        "事業",
-        "システム",
-        "テスト",
-        "在庫"
-      ],
-      "to": "動いている状態",
-      "label": "止まらず動く・動かす"
-    },
+    "importance": "★★★★★ 超重要",
+    "core": "人・物・予定・仕組みが動いて進む",
+    "coreDetail": "RUNは走るだけでなく、会議や事業を運営する、テストやシステムを動かす、予定が続くという意味で使います。仕事では運営・実行・進行・不足の表現で重要です。",
+    "coreVisual": { "from": ["人", "会議", "テスト", "システム", "予定"], "to": "前へ進む / 動き続ける", "label": "run" },
     "meanings": [
-      {
-        "id": "operate",
-        "title": "① 運営する・管理する",
-        "pattern": "run + business / team / meeting",
-        "transitivity": "他動詞",
-        "structure": "run + 運営する対象",
-        "image": "会議・事業・チームなどを動かして進める。",
-        "point": "run a meeting / run a business は社会人英語で重要です。",
-        "examples": [
-          {
-            "en": "She runs the sales meeting every Monday.",
-            "ja": "彼女は毎週月曜日に営業会議を運営しています。",
-            "focus": "runs",
-            "jaFocus": "運営しています",
-            "object": "the sales meeting"
-          },
-          {
-            "en": "He runs a small business with his family.",
-            "ja": "彼は家族と小さな事業を運営しています。",
-            "focus": "runs",
-            "jaFocus": "運営しています",
-            "object": "a small business"
-          },
-          {
-            "en": "We need someone to run the project while she is away.",
-            "ja": "彼女が不在の間、その案件を進める担当者が必要です。",
-            "focus": "run the project",
-            "jaFocus": "案件を進める"
-          }
-        ]
-      },
-      {
-        "id": "execute",
-        "title": "② 実行する・稼働させる",
-        "pattern": "run + test / system / program",
-        "transitivity": "他動詞",
-        "structure": "run + 実行する対象",
-        "image": "テスト・システム・プログラムを動かす。",
-        "point": "IT・設備・検査・確認でよく使います。",
-        "examples": [
-          {
-            "en": "Please run the test before release.",
-            "ja": "リリース前にそのテストを実行してください。",
-            "focus": "run the test",
-            "jaFocus": "テストを実行してください",
-            "object": "the test"
-          },
-          {
-            "en": "We run the system every morning.",
-            "ja": "私たちは毎朝そのシステムを稼働させています。",
-            "focus": "run the system",
-            "jaFocus": "システムを稼働させています",
-            "object": "the system"
-          },
-          {
-            "en": "The engineer ran a check on the device.",
-            "ja": "エンジニアはその機器の確認を実行しました。",
-            "focus": "ran a check",
-            "jaFocus": "確認を実行しました",
-            "object": "a check"
-          }
-        ]
-      },
-      {
-        "id": "be-scheduled",
-        "title": "③ 予定・期間が続く",
-        "pattern": "run from A to B / run until + 時間",
-        "transitivity": "自動詞",
-        "structure": "event/campaign + run",
-        "image": "キャンペーン・イベント・期間が続く。",
-        "point": "期間を伝える時に使える自然な表現です。",
-        "examples": [
-          {
-            "en": "The campaign runs until the end of July.",
-            "ja": "そのキャンペーンは7月末まで続きます。",
-            "focus": "runs until",
-            "jaFocus": "〜まで続きます"
-          },
-          {
-            "en": "The exhibition runs from Monday to Friday.",
-            "ja": "展示会は月曜日から金曜日まで開催されます。",
-            "focus": "runs from",
-            "jaFocus": "〜から開催されます"
-          },
-          {
-            "en": "The contract runs for one year.",
-            "ja": "契約期間は1年間です。",
-            "focus": "runs for",
-            "jaFocus": "期間は〜です"
-          }
-        ]
-      },
-      {
-        "id": "move-flow",
-        "title": "④ 流れる・通る",
-        "pattern": "run through / run along / run across",
-        "transitivity": "自動詞",
-        "structure": "line/cable/road + run",
-        "image": "線・ケーブル・道路などがある方向に通る。",
-        "point": "現場説明や配線説明で使える意味です。",
-        "examples": [
-          {
-            "en": "The cable runs along the wall.",
-            "ja": "ケーブルは壁に沿って通っています。",
-            "focus": "runs along",
-            "jaFocus": "沿って通っています"
-          },
-          {
-            "en": "The pipe runs through the ceiling.",
-            "ja": "配管は天井内を通っています。",
-            "focus": "runs through",
-            "jaFocus": "通っています"
-          },
-          {
-            "en": "The main road runs past the site.",
-            "ja": "幹線道路は現場のそばを通っています。",
-            "focus": "runs past",
-            "jaFocus": "そばを通っています"
-          }
-        ]
-      },
-      {
-        "id": "become-state",
-        "title": "⑤ 〜の状態になる",
-        "pattern": "run late / run short / run smoothly",
-        "transitivity": "自動詞",
-        "structure": "run + 状態",
-        "image": "進行状況がある状態になる。",
-        "point": "run late は「遅れる」、run smoothly は「順調に進む」です。",
-        "examples": [
-          {
-            "en": "The meeting ran late because of the long discussion.",
-            "ja": "長い議論のため、会議は長引きました。",
-            "focus": "ran late",
-            "jaFocus": "長引きました"
-          },
-          {
-            "en": "We are running short of time.",
-            "ja": "私たちは時間が足りなくなってきています。",
-            "focus": "running short",
-            "jaFocus": "足りなくなってきています"
-          },
-          {
-            "en": "The installation ran smoothly.",
-            "ja": "設置作業は順調に進みました。",
-            "focus": "ran smoothly",
-            "jaFocus": "順調に進みました"
-          }
-        ]
-      }
+      { "id": "run-meeting", "title": "1 会議・事業を運営する", "pattern": "run + meeting/business/team", "transitivity": "他動詞", "structure": "基本", "image": "人や仕組みを動かして進める。", "point": "run a meeting / run a business は仕事で頻出です。", "examples": [
+        { "en": "She runs the weekly meeting.", "ja": "彼女は週次会議を進行しています。", "focus": "runs", "object": "the weekly meeting", "jaFocus": "進行しています" },
+        { "en": "He runs a small lighting business.", "ja": "彼は小さな照明事業を経営しています。", "focus": "runs", "object": "a small lighting business", "jaFocus": "経営しています" },
+        { "en": "We need someone to run the project smoothly.", "ja": "私たちはその案件を円滑に進める人が必要です。", "focus": "run", "object": "the project", "jaFocus": "進める" }
+      ] },
+      { "id": "run-test", "title": "2 テスト・処理を実行する", "pattern": "run + test/report/system", "transitivity": "他動詞", "structure": "基本", "image": "確認作業やシステムを動かす。", "point": "run a test / run a report はIT・営業管理でもよく使います。", "examples": [
+        { "en": "We ran a test before shipping the product.", "ja": "私たちは出荷前にテストを実行しました。", "focus": "ran", "object": "a test", "jaFocus": "実行しました" },
+        { "en": "Please run the report before the meeting.", "ja": "会議前にレポートを出してください。", "focus": "run", "object": "the report", "jaFocus": "出して" },
+        { "en": "The system runs the calculation automatically.", "ja": "そのシステムは計算を自動で実行します。", "focus": "runs", "object": "the calculation", "jaFocus": "実行します" }
+      ] },
+      { "id": "run-continue", "title": "3 続く・運行する", "pattern": "run + until/from/to", "transitivity": "自動詞", "structure": "基本", "image": "予定やサービスが一定期間動き続ける。", "point": "run until Friday は『金曜まで続く』です。", "examples": [
+        { "en": "The campaign runs until Friday.", "ja": "そのキャンペーンは金曜日まで続きます。", "focus": "runs", "jaFocus": "続きます" },
+        { "en": "The bus runs every ten minutes.", "ja": "そのバスは10分ごとに運行しています。", "focus": "runs", "jaFocus": "運行しています" },
+        { "en": "The warranty runs for one year.", "ja": "保証は1年間有効です。", "focus": "runs", "jaFocus": "有効です" }
+      ] },
+      { "id": "run-state", "title": "4 遅れる・不足する", "pattern": "run + late/short", "transitivity": "自動詞", "structure": "基本", "image": "予定や残量が望ましい状態から外れて進む。", "point": "run late / run short は仕事でもよく使う基本表現です。", "examples": [
+        { "en": "The previous meeting ran late.", "ja": "前の会議が長引きました。", "focus": "ran", "jaFocus": "長引きました" },
+        { "en": "We are running short of time.", "ja": "私たちは時間が足りなくなってきています。", "focus": "running", "jaFocus": "足りなくなってきています" },
+        { "en": "The team ran short of parts before delivery.", "ja": "チームは納品前に部品が不足しました。", "focus": "ran", "jaFocus": "不足しました" }
+      ] }
     ],
     "collocations": [
-      {
-        "phrase": "run a meeting",
-        "ja": "会議を運営する",
-        "image": "会議を進行し、議題を前に進める。",
-        "pattern": "run a meeting",
-        "examples": [
-          {
-            "en": "She runs the sales meeting every Monday.",
-            "ja": "彼女は毎週月曜日に営業会議を運営しています。",
-            "focus": "runs the meeting",
-            "jaFocus": "会議を運営しています"
-          },
-          {
-            "en": "Can you run the meeting while I am visiting the client?",
-            "ja": "私が顧客訪問中、会議を進行してもらえますか？",
-            "focus": "run the meeting",
-            "jaFocus": "会議を進行して"
-          },
-          {
-            "en": "He ran the meeting efficiently and finished on time.",
-            "ja": "彼は会議を効率よく進行し、時間通りに終えました。",
-            "focus": "ran the meeting",
-            "jaFocus": "会議を進行し"
-          }
-        ]
-      },
-      {
-        "phrase": "run a test",
-        "ja": "テストを実行する",
-        "image": "動作確認や検査を行う。",
-        "pattern": "run a test",
-        "examples": [
-          {
-            "en": "Please run the test before release.",
-            "ja": "リリース前にそのテストを実行してください。",
-            "focus": "run the test",
-            "jaFocus": "テストを実行してください"
-          },
-          {
-            "en": "We ran a test to check the brightness.",
-            "ja": "明るさを確認するためにテストを実行しました。",
-            "focus": "ran a test",
-            "jaFocus": "テストを実行しました"
-          },
-          {
-            "en": "The team will run another test after the update.",
-            "ja": "チームは更新後にもう一度テストを実行します。",
-            "focus": "run another test",
-            "jaFocus": "テストを実行します"
-          }
-        ]
-      },
-      {
-        "phrase": "run a business",
-        "ja": "事業を運営する",
-        "image": "会社や事業を継続的に動かす。",
-        "pattern": "run a business",
-        "examples": [
-          {
-            "en": "He runs a small business with his family.",
-            "ja": "彼は家族と小さな事業を運営しています。",
-            "focus": "runs a business",
-            "jaFocus": "事業を運営しています"
-          },
-          {
-            "en": "It is difficult to run a business without reliable suppliers.",
-            "ja": "信頼できる仕入先なしで事業を運営するのは難しいです。",
-            "focus": "run a business",
-            "jaFocus": "事業を運営する"
-          },
-          {
-            "en": "She learned how to run a business from her father.",
-            "ja": "彼女は父親から事業運営の方法を学びました。",
-            "focus": "run a business",
-            "jaFocus": "事業運営"
-          }
-        ]
-      },
-      {
-        "phrase": "run a campaign",
-        "ja": "キャンペーンを実施する",
-        "image": "販売促進や告知施策を動かす。",
-        "pattern": "run a campaign",
-        "examples": [
-          {
-            "en": "We will run a campaign for the new product.",
-            "ja": "新製品向けのキャンペーンを実施します。",
-            "focus": "run a campaign",
-            "jaFocus": "キャンペーンを実施します"
-          },
-          {
-            "en": "The marketing team ran a campaign in June.",
-            "ja": "マーケティングチームは6月にキャンペーンを実施しました。",
-            "focus": "ran a campaign",
-            "jaFocus": "キャンペーンを実施しました"
-          },
-          {
-            "en": "Before we run the campaign, we need to confirm the budget.",
-            "ja": "キャンペーンを実施する前に、予算を確認する必要があります。",
-            "focus": "run the campaign",
-            "jaFocus": "キャンペーンを実施する"
-          }
-        ]
-      },
-      {
-        "phrase": "run smoothly",
-        "ja": "順調に進む",
-        "image": "問題なく進行する。",
-        "pattern": "run smoothly",
-        "examples": [
-          {
-            "en": "The installation ran smoothly.",
-            "ja": "設置作業は順調に進みました。",
-            "focus": "ran smoothly",
-            "jaFocus": "順調に進みました"
-          },
-          {
-            "en": "We need a clear plan so the project runs smoothly.",
-            "ja": "案件が順調に進むよう、明確な計画が必要です。",
-            "focus": "runs smoothly",
-            "jaFocus": "順調に進む"
-          },
-          {
-            "en": "The event ran smoothly thanks to the staff.",
-            "ja": "スタッフのおかげでイベントは順調に進みました。",
-            "focus": "ran smoothly",
-            "jaFocus": "順調に進みました"
-          }
-        ]
-      }
+      { "phrase": "run a meeting", "ja": "会議を進行する", "image": "会議を前へ進める。", "pattern": "run + meeting", "examples": [
+        { "en": "Can you run the meeting tomorrow?", "ja": "明日の会議を進行してもらえますか？", "focus": "run", "object": "the meeting", "jaFocus": "進行して" },
+        { "en": "She ran the meeting very efficiently.", "ja": "彼女は会議をとても効率よく進行しました。", "focus": "ran", "object": "the meeting", "jaFocus": "進行しました" },
+        { "en": "We need clear agenda points to run the meeting well.", "ja": "会議をうまく進行するには明確な議題が必要です。", "focus": "run", "object": "the meeting", "jaFocus": "進行する" }
+      ] },
+      { "phrase": "run a test", "ja": "テストを実行する", "image": "確認のために試験を動かす。", "pattern": "run + test", "examples": [
+        { "en": "Please run a brightness test before installation.", "ja": "設置前に明るさのテストを実行してください。", "focus": "run", "object": "a brightness test", "jaFocus": "実行して" },
+        { "en": "We ran another test after the repair.", "ja": "修理後、私たちはもう一度テストを実行しました。", "focus": "ran", "object": "another test", "jaFocus": "実行しました" },
+        { "en": "The engineer runs a test every morning.", "ja": "技術者は毎朝テストを実行します。", "focus": "runs", "object": "a test", "jaFocus": "実行します" }
+      ] },
+      { "phrase": "run smoothly", "ja": "順調に進む", "image": "問題なく流れるように進む。", "pattern": "run + smoothly", "examples": [
+        { "en": "The project is running smoothly so far.", "ja": "その案件は今のところ順調に進んでいます。", "focus": "running", "jaFocus": "進んでいます" },
+        { "en": "The event ran smoothly thanks to the team.", "ja": "チームのおかげでイベントは順調に進みました。", "focus": "ran", "jaFocus": "進みました" },
+        { "en": "We need a checklist to run the process smoothly.", "ja": "その手順を円滑に進めるにはチェックリストが必要です。", "focus": "run", "object": "the process", "jaFocus": "進める" }
+      ] }
     ],
     "phrasalVerbs": [
-      {
-        "phrase": "run into",
-        "ja": "問題に遭遇する・偶然会う",
-        "image": "予期せず問題や人に出会う。",
-        "pattern": "run into",
-        "examples": [
-          {
-            "en": "We ran into a problem during testing.",
-            "ja": "私たちはテスト中に問題に遭遇しました。",
-            "focus": "ran into a problem",
-            "jaFocus": "問題に遭遇しました"
-          },
-          {
-            "en": "The team ran into a delay at the factory.",
-            "ja": "チームは工場で遅延に直面しました。",
-            "focus": "ran into a delay",
-            "jaFocus": "遅延に直面しました"
-          },
-          {
-            "en": "I ran into the client at the trade show.",
-            "ja": "展示会で顧客に偶然会いました。",
-            "focus": "ran into",
-            "jaFocus": "偶然会いました"
-          }
-        ]
-      },
-      {
-        "phrase": "run out of",
-        "ja": "〜を切らす・使い果たす",
-        "image": "在庫・時間・予算などがなくなる。",
-        "pattern": "run out of",
-        "examples": [
-          {
-            "en": "We ran out of stock last week.",
-            "ja": "私たちは先週、在庫を切らしました。",
-            "focus": "ran out of stock",
-            "jaFocus": "在庫を切らしました"
-          },
-          {
-            "en": "We are running out of time before the deadline.",
-            "ja": "締切までの時間がなくなってきています。",
-            "focus": "running out of time",
-            "jaFocus": "時間がなくなってきています"
-          },
-          {
-            "en": "The project ran out of budget before completion.",
-            "ja": "その案件は完了前に予算を使い切りました。",
-            "focus": "ran out of budget",
-            "jaFocus": "予算を使い切りました"
-          }
-        ]
-      },
-      {
-        "phrase": "run by",
-        "ja": "確認のために見せる・相談する",
-        "image": "案や内容を相手に一度確認してもらう。",
-        "pattern": "run by",
-        "examples": [
-          {
-            "en": "I will run this idea by my manager.",
-            "ja": "この案を上司に確認します。",
-            "focus": "run this idea by",
-            "jaFocus": "案を確認します"
-          },
-          {
-            "en": "Can I run the schedule by you before I send it?",
-            "ja": "送る前にスケジュールを確認してもらえますか？",
-            "focus": "run the schedule by you",
-            "jaFocus": "確認してもらえますか"
-          },
-          {
-            "en": "Please run the final design by the client.",
-            "ja": "最終デザインを顧客に確認してください。",
-            "focus": "run the final design by",
-            "jaFocus": "確認してください"
-          }
-        ]
-      },
-      {
-        "phrase": "run through",
-        "ja": "一通り確認する・通しで説明する",
-        "image": "内容や手順を最初から最後まで確認する。",
-        "pattern": "run through",
-        "examples": [
-          {
-            "en": "Let's run through the agenda before the meeting.",
-            "ja": "会議前に議題を一通り確認しましょう。",
-            "focus": "run through",
-            "jaFocus": "一通り確認しましょう"
-          },
-          {
-            "en": "The engineer ran through the installation steps.",
-            "ja": "エンジニアは設置手順を一通り説明しました。",
-            "focus": "ran through",
-            "jaFocus": "一通り説明しました"
-          },
-          {
-            "en": "Can we run through the quotation one more time?",
-            "ja": "見積書をもう一度一通り確認できますか？",
-            "focus": "run through",
-            "jaFocus": "一通り確認"
-          }
-        ]
-      },
-      {
-        "phrase": "run across",
-        "ja": "偶然見つける・偶然出会う",
-        "image": "予期せず情報や人を見つける。",
-        "pattern": "run across",
-        "examples": [
-          {
-            "en": "I ran across an old quotation in the folder.",
-            "ja": "フォルダ内で古い見積書を偶然見つけました。",
-            "focus": "ran across",
-            "jaFocus": "偶然見つけました"
-          },
-          {
-            "en": "She ran across useful data during the review.",
-            "ja": "彼女は確認中に役立つデータを偶然見つけました。",
-            "focus": "ran across",
-            "jaFocus": "偶然見つけました"
-          },
-          {
-            "en": "We ran across a similar case last year.",
-            "ja": "昨年、似た事例に偶然出会いました。",
-            "focus": "ran across",
-            "jaFocus": "偶然出会いました"
-          }
-        ]
-      }
+      { "phrase": "run into", "ja": "問題にぶつかる・偶然会う", "image": "進む途中で問題や人にぶつかる。", "pattern": "run into", "examples": [
+        { "en": "We ran into a problem during testing.", "ja": "私たちはテスト中に問題にぶつかりました。", "focus": "ran into", "object": "a problem", "jaFocus": "問題にぶつかりました" },
+        { "en": "I ran into the client at the exhibition.", "ja": "私は展示会で顧客に偶然会いました。", "focus": "ran into", "object": "the client", "jaFocus": "偶然会いました" },
+        { "en": "Please tell me if you run into any issues.", "ja": "何か問題にぶつかったら教えてください。", "focus": "run into", "object": "any issues", "jaFocus": "ぶつかったら" }
+      ] },
+      { "phrase": "run out of", "ja": "〜を使い果たす・不足する", "image": "持っていたものが外へ出てなくなる。", "pattern": "run out of", "examples": [
+        { "en": "We ran out of time before the final check.", "ja": "私たちは最終確認前に時間が足りなくなりました。", "focus": "ran out of", "object": "time", "jaFocus": "足りなくなりました" },
+        { "en": "The warehouse ran out of stock last week.", "ja": "倉庫は先週在庫切れになりました。", "focus": "ran out of", "object": "stock", "jaFocus": "在庫切れになりました" },
+        { "en": "Do not run out of samples before the meeting.", "ja": "会議前にサンプルを切らさないでください。", "focus": "run out of", "object": "samples", "jaFocus": "切らさないで" }
+      ] },
+      { "phrase": "run by", "ja": "確認のため見せる・相談する", "image": "相手の横を通して確認してもらう。", "pattern": "run by", "examples": [
+        { "en": "Can I run this proposal by you?", "ja": "この提案をあなたに確認してもらってもいいですか？", "focus": "run by", "object": "this proposal", "jaFocus": "確認してもらって" },
+        { "en": "Please run the schedule by the manager first.", "ja": "まず上司にスケジュールを確認してください。", "focus": "run by", "object": "the schedule", "jaFocus": "確認して" },
+        { "en": "I ran the price change by the team.", "ja": "私は価格変更をチームに相談しました。", "focus": "ran by", "object": "the price change", "jaFocus": "相談しました" }
+      ] },
+      { "phrase": "run through", "ja": "一通り確認する・説明する", "image": "最初から最後まで通して進む。", "pattern": "run through", "examples": [
+        { "en": "Let’s run through the proposal before the meeting.", "ja": "会議前に提案内容を一通り確認しましょう。", "focus": "run through", "object": "the proposal", "jaFocus": "一通り確認しましょう" },
+        { "en": "She ran through the schedule with the client.", "ja": "彼女は顧客とスケジュールを一通り確認しました。", "focus": "ran through", "object": "the schedule", "jaFocus": "確認しました" },
+        { "en": "Can you run through the main points again?", "ja": "要点をもう一度説明してもらえますか？", "focus": "run through", "object": "the main points", "jaFocus": "説明して" }
+      ] },
+      { "phrase": "run across", "ja": "偶然見つける", "image": "探していないものに途中で出会う。", "pattern": "run across", "examples": [
+        { "en": "I ran across an old estimate in the folder.", "ja": "私はフォルダ内で古い見積を偶然見つけました。", "focus": "ran across", "object": "an old estimate", "jaFocus": "偶然見つけました" },
+        { "en": "We ran across useful data during the review.", "ja": "私たちは確認中に役立つデータを偶然見つけました。", "focus": "ran across", "object": "useful data", "jaFocus": "偶然見つけました" },
+        { "en": "If you run across the file, please share it.", "ja": "そのファイルを偶然見つけたら共有してください。", "focus": "run across", "object": "the file", "jaFocus": "見つけたら" }
+      ] },
+      { "phrase": "run over", "ja": "確認する・時間を超過する", "image": "予定時間や内容の上を通り越す。", "pattern": "run over", "examples": [
+        { "en": "Can we run over the numbers one more time?", "ja": "数字をもう一度確認できますか？", "focus": "run over", "object": "the numbers", "jaFocus": "確認できますか" },
+        { "en": "The meeting ran over by fifteen minutes.", "ja": "会議は15分超過しました。", "focus": "ran over", "jaFocus": "超過しました" },
+        { "en": "Please run over the checklist before delivery.", "ja": "納品前にチェックリストを確認してください。", "focus": "run over", "object": "the checklist", "jaFocus": "確認して" }
+      ] },
+      { "phrase": "run up against", "ja": "問題・壁に直面する", "image": "前に進んで壁に当たる。", "pattern": "run up against", "examples": [
+        { "en": "We ran up against a budget limit.", "ja": "私たちは予算の制限に直面しました。", "focus": "ran up against", "object": "a budget limit", "jaFocus": "直面しました" },
+        { "en": "The team ran up against a technical issue.", "ja": "チームは技術的な問題に直面しました。", "focus": "ran up against", "object": "a technical issue", "jaFocus": "直面しました" },
+        { "en": "Please tell me if you run up against any restrictions.", "ja": "何か制限に直面したら教えてください。", "focus": "run up against", "object": "any restrictions", "jaFocus": "直面したら" }
+      ] },
+      { "phrase": "run after", "ja": "追いかける", "image": "相手や目標の後を追う。", "pattern": "run after", "examples": [
+        { "en": "We should not run after every small order.", "ja": "私たちはすべての小口注文を追いかけるべきではありません。", "focus": "run after", "object": "every small order", "jaFocus": "追いかけるべきではありません" },
+        { "en": "He ran after the client to return the documents.", "ja": "彼は書類を返すため顧客を追いかけました。", "focus": "ran after", "object": "the client", "jaFocus": "追いかけました" },
+        { "en": "The team is running after too many opportunities.", "ja": "チームは多くの案件を追いかけすぎています。", "focus": "running after", "object": "too many opportunities", "jaFocus": "追いかけすぎています" }
+      ] },
+      { "phrase": "run away from", "ja": "避ける・逃げる", "image": "問題や責任から離れていく。", "pattern": "run away from", "examples": [
+        { "en": "We cannot run away from this quality issue.", "ja": "私たちはこの品質問題から逃げることはできません。", "focus": "run away from", "object": "this quality issue", "jaFocus": "逃げることはできません" },
+        { "en": "He ran away from the difficult conversation.", "ja": "彼は難しい話し合いを避けました。", "focus": "ran away from", "object": "the difficult conversation", "jaFocus": "避けました" },
+        { "en": "Do not run away from customer complaints.", "ja": "顧客クレームから逃げないでください。", "focus": "run away from", "object": "customer complaints", "jaFocus": "逃げないで" }
+      ] },
+      { "phrase": "run down", "ja": "要約する・ざっと説明する", "image": "上から下へリストをたどって説明する。", "pattern": "run down", "examples": [
+        { "en": "Can you run down the main changes?", "ja": "主な変更点をざっと説明してもらえますか？", "focus": "run down", "object": "the main changes", "jaFocus": "説明して" },
+        { "en": "She ran down the delivery schedule in the meeting.", "ja": "彼女は会議で納品スケジュールをざっと説明しました。", "focus": "ran down", "object": "the delivery schedule", "jaFocus": "説明しました" },
+        { "en": "Let me run down the risks before we decide.", "ja": "決定前にリスクをざっと説明させてください。", "focus": "run down", "object": "the risks", "jaFocus": "説明させて" }
+      ] }
     ]
   },
   {
@@ -8416,104 +6799,94 @@ export const verbs: Verb[] = [
     "kana": "リーヴ",
     "syllable": "leave",
     "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "その場から離れる・何かを残しておく",
-    "coreDetail": "LEAVEは、場所・状態・役割から離れるだけでなく、物・情報・判断・印象を残す時にも使います。仕事では退社、置いておく、任せる、除外する、影響を残すなどでよく使います。",
-    "coreVisual": { "from": ["人・物", "場所", "判断", "情報", "状態"], "to": "離れる / 残る", "label": "leave" },
+    "importance": "★★★★★ 超重要",
+    "core": "今いる場所・状態・相手の手元から離す / 残す",
+    "coreDetail": "LEAVEは、場所を去るだけでなく、伝言や資料を残す、状態をそのままにする、仕事を人に任せる時にも使います。中心イメージは、何かを離す、またはある状態として残すことです。",
+    "coreVisual": { "from": ["人", "物", "情報", "仕事", "状態"], "to": "離れる / 残る / 相手に預ける", "label": "leave" },
     "meanings": [
-      { "id": "depart-place", "title": "1 場所を離れる・退社する", "pattern": "leave + 場所", "transitivity": "他動詞・自動詞", "structure": "使い方", "image": "人がその場所から離れる。", "point": "leave the office / leave the meeting は仕事でよく使います。", "examples": [
-        { "en": "I will leave the office at six.", "ja": "私は6時に退社します。", "focus": "leave the office", "jaFocus": "退社します" },
-        { "en": "She left the meeting early to visit a client.", "ja": "彼女は顧客訪問のため、会議を早めに退席しました。", "focus": "left the meeting", "jaFocus": "会議を退席しました" },
-        { "en": "Please let me know before you leave the site.", "ja": "現場を離れる前に私に知らせてください。", "focus": "leave the site", "jaFocus": "現場を離れる" }
+      { "id": "leave-place", "title": "1 場所を出る・去る", "pattern": "leave + 場所", "transitivity": "他動詞・自動詞", "structure": "基本", "image": "今いる場所から離れる。", "point": "leave the office は『会社を出る』です。", "examples": [
+        { "en": "I will leave the office at six today.", "ja": "私は今日は6時に会社を出ます。", "focus": "leave", "object": "the office", "jaFocus": "会社を出ます" },
+        { "en": "She left the meeting early.", "ja": "彼女は会議を早めに退出しました。", "focus": "left", "object": "the meeting", "jaFocus": "退出しました" },
+        { "en": "Please let me know before you leave.", "ja": "出る前に私へ知らせてください。", "focus": "leave", "jaFocus": "出る" }
       ] },
-      { "id": "leave-for", "title": "2 〜へ向けて出発する", "pattern": "leave for + 場所", "transitivity": "自動詞", "structure": "使い方", "image": "目的地に向かって今いる場所を離れる。", "point": "leave for Tokyo のように、向かう先を表します。", "examples": [
-        { "en": "We will leave for the client’s office at nine.", "ja": "私たちは9時に顧客のオフィスへ向けて出発します。", "focus": "leave for", "jaFocus": "〜へ向けて出発します" },
-        { "en": "The team left for the installation site this morning.", "ja": "チームは今朝、設置現場へ向けて出発しました。", "focus": "left for", "jaFocus": "〜へ向けて出発しました" },
-        { "en": "Please leave for the station earlier than usual tomorrow.", "ja": "明日はいつもより早めに駅へ向けて出発してください。", "focus": "leave for", "jaFocus": "〜へ向けて出発して" }
+      { "id": "leave-message", "title": "2 伝言・資料を残す", "pattern": "leave + message/document", "transitivity": "他動詞", "structure": "基本", "image": "相手が後で受け取れるように残す。", "point": "leave a message は電話・メールどちらでも使いやすい表現です。", "examples": [
+        { "en": "Please leave a message if I am away.", "ja": "私が不在の場合は伝言を残してください。", "focus": "leave", "object": "a message", "jaFocus": "残して" },
+        { "en": "I left the documents on your desk.", "ja": "私は資料をあなたの机に置いておきました。", "focus": "left", "object": "the documents", "jaFocus": "置いておきました" },
+        { "en": "The customer left feedback after the demo.", "ja": "顧客はデモ後にフィードバックを残しました。", "focus": "left", "object": "feedback", "jaFocus": "残しました" }
       ] },
-      { "id": "leave-message", "title": "3 メッセージ・情報を残す", "pattern": "leave + メッセージ / 情報", "transitivity": "他動詞", "structure": "使い方", "image": "相手が後で確認できるように情報を残す。", "point": "leave a message / leave your contact information は実務で便利です。", "examples": [
-        { "en": "Please leave a message if I am not available.", "ja": "私が出られない場合はメッセージを残してください。", "focus": "leave a message", "jaFocus": "メッセージを残して" },
-        { "en": "Can you leave your contact information at the reception desk?", "ja": "受付に連絡先を残していただけますか？", "focus": "leave your contact information", "jaFocus": "連絡先を残して" },
-        { "en": "I left a note about the delivery schedule.", "ja": "納期スケジュールについてメモを残しました。", "focus": "left a note", "jaFocus": "メモを残しました" }
+      { "id": "leave-state", "title": "3 ある状態のままにする", "pattern": "leave + 目的語 + 形容詞", "transitivity": "他動詞", "structure": "基本", "image": "状態を変えずに残す。", "point": "leave the door open / leave it blank の形で使います。", "examples": [
+        { "en": "Please leave the file open until I finish checking it.", "ja": "私が確認を終えるまで、そのファイルを開いたままにしてください。", "focus": "leave", "object": "the file", "jaFocus": "開いたままにして" },
+        { "en": "We left the price field blank for now.", "ja": "私たちは今のところ価格欄を空欄のままにしました。", "focus": "left", "object": "the price field", "jaFocus": "空欄のままにしました" },
+        { "en": "Do not leave the customer waiting.", "ja": "顧客を待たせたままにしないでください。", "focus": "leave", "object": "the customer", "jaFocus": "待たせたままにしないで" }
       ] },
-      { "id": "leave-object-place", "title": "4 物を置いておく・置き忘れる", "pattern": "leave + 物 + 場所", "transitivity": "他動詞", "structure": "使い方", "image": "物をある場所に残したままにする。", "point": "意図的に置く場合も、忘れて置いてくる場合もあります。", "examples": [
-        { "en": "I left the documents on your desk.", "ja": "資料をあなたの机に置いておきました。", "focus": "left the documents", "jaFocus": "資料を置いておきました" },
-        { "en": "She left her laptop in the meeting room.", "ja": "彼女は会議室にノートPCを置き忘れました。", "focus": "left her laptop", "jaFocus": "ノートPCを置き忘れました" },
-        { "en": "Please do not leave your ID card at the office.", "ja": "社員証を会社に置き忘れないでください。", "focus": "leave your ID card", "jaFocus": "社員証を置き忘れないで" }
+      { "id": "leave-task", "title": "4 任せる・委ねる", "pattern": "leave + 仕事 + to + 人", "transitivity": "他動詞", "structure": "基本", "image": "仕事や判断を相手の手元に残して任せる。", "point": "leave it to me は『私に任せて』です。", "examples": [
+        { "en": "Please leave the final check to me.", "ja": "最終確認は私に任せてください。", "focus": "leave", "object": "the final check", "jaFocus": "任せて" },
+        { "en": "We left the design decision to the client.", "ja": "私たちはデザイン判断を顧客に委ねました。", "focus": "left", "object": "the design decision", "jaFocus": "委ねました" },
+        { "en": "You can leave it to the support team.", "ja": "それはサポートチームに任せて大丈夫です。", "focus": "leave", "object": "it", "jaFocus": "任せて" }
       ] },
-      { "id": "leave-state", "title": "5 〜の状態にしておく", "pattern": "leave + O + 状態", "transitivity": "他動詞", "structure": "使い方", "image": "物事をその状態のままにする。", "point": "leave it open / leave the system unlocked など。", "examples": [
-        { "en": "Please leave the door open during the delivery.", "ja": "搬入中はドアを開けたままにしてください。", "focus": "leave the door open", "jaFocus": "開けたままにして" },
-        { "en": "We should leave this issue open until we confirm the details.", "ja": "詳細を確認するまでは、この件を未解決のままにしておくべきです。", "focus": "leave this issue open", "jaFocus": "未解決のままにしておく" },
-        { "en": "Do not leave the system unlocked after work.", "ja": "業務後にシステムをロック解除のままにしないでください。", "focus": "leave the system unlocked", "jaFocus": "ロック解除のままにしない" }
-      ] },
-      { "id": "leave-to-person", "title": "6 人に任せる", "pattern": "leave + O + to + 人", "transitivity": "他動詞", "structure": "使い方", "image": "判断や作業を相手に渡す。", "point": "leave it to me は「私に任せて」です。", "examples": [
-        { "en": "Please leave this task to me.", "ja": "この作業は私に任せてください。", "focus": "leave this task to me", "jaFocus": "私に任せて" },
-        { "en": "We left the final decision to the client.", "ja": "私たちは最終判断を顧客に任せました。", "focus": "left the final decision to", "jaFocus": "最終判断を任せました" },
-        { "en": "I will leave the technical details to the engineer.", "ja": "技術的な詳細はエンジニアに任せます。", "focus": "leave the technical details to", "jaFocus": "詳細を任せます" }
-      ] },
-      { "id": "leave-out", "title": "7 除外する・省く", "pattern": "leave + O + out", "transitivity": "他動詞", "structure": "使い方", "image": "必要ないものを外しておく。", "point": "資料作成や説明でよく使います。", "examples": [
-        { "en": "Please leave out the old data from the report.", "ja": "報告書から古いデータは除外してください。", "focus": "leave out", "jaFocus": "除外して" },
-        { "en": "We left out the confidential details from the proposal.", "ja": "提案書から機密情報は省きました。", "focus": "left out", "jaFocus": "省きました" },
-        { "en": "Do not leave out this point in the explanation.", "ja": "説明ではこの点を抜かさないでください。", "focus": "leave out", "jaFocus": "抜かさないで" }
-      ] },
-      { "id": "leave-impact", "title": "8 印象・影響を残す", "pattern": "leave + 印象 / 影響", "transitivity": "他動詞", "structure": "使い方", "image": "結果として相手や状況に何かを残す。", "point": "leave an impression / leave an impact は自然です。", "examples": [
-        { "en": "The presentation left a strong impression on the client.", "ja": "そのプレゼンは顧客に強い印象を残しました。", "focus": "left a strong impression", "jaFocus": "強い印象を残しました" },
-        { "en": "The delay left a negative impact on the schedule.", "ja": "遅延はスケジュールに悪い影響を残しました。", "focus": "left a negative impact", "jaFocus": "悪い影響を残しました" },
-        { "en": "His quick response left a positive impression.", "ja": "彼の素早い対応は良い印象を残しました。", "focus": "left a positive impression", "jaFocus": "良い印象を残しました" }
+      { "id": "leave-impression", "title": "5 印象・余地を残す", "pattern": "leave + impression/doubt", "transitivity": "他動詞", "structure": "基本", "image": "相手の中に印象や判断材料を残す。", "point": "leave a good impression / leave no doubt は社会人向けに便利です。", "examples": [
+        { "en": "Her clear explanation left a good impression on the client.", "ja": "彼女の分かりやすい説明は顧客に良い印象を残しました。", "focus": "left", "object": "a good impression", "jaFocus": "良い印象を残しました" },
+        { "en": "The test results leave no doubt about the problem.", "ja": "試験結果から、その問題に疑いの余地はありません。", "focus": "leave", "object": "no doubt", "jaFocus": "疑いの余地はありません" },
+        { "en": "A quick response leaves a positive impression.", "ja": "素早い対応は良い印象を残します。", "focus": "leaves", "object": "a positive impression", "jaFocus": "印象を残します" }
       ] }
     ],
     "collocations": [
-      { "phrase": "leave a message", "ja": "メッセージを残す", "image": "後で確認できる連絡を残す。", "pattern": "leave a message", "examples": [
-        { "en": "Please leave a message after the tone.", "ja": "発信音の後にメッセージを残してください。", "focus": "leave a message", "jaFocus": "メッセージを残して" },
-        { "en": "I left a message for the person in charge.", "ja": "担当者にメッセージを残しました。", "focus": "left a message", "jaFocus": "メッセージを残しました" },
-        { "en": "Can you leave a message with the reception desk?", "ja": "受付にメッセージを残してもらえますか？", "focus": "leave a message", "jaFocus": "メッセージを残して" }
+      { "phrase": "leave a message", "ja": "伝言を残す", "image": "相手が後で確認できるように情報を残す。", "pattern": "leave + message", "examples": [
+        { "en": "Please leave a message after the tone.", "ja": "発信音の後に伝言を残してください。", "focus": "leave", "object": "a message", "jaFocus": "残して" },
+        { "en": "I left a message for the client.", "ja": "私は顧客に伝言を残しました。", "focus": "left", "object": "a message", "jaFocus": "残しました" },
+        { "en": "She leaves clear messages for the team.", "ja": "彼女はチームに分かりやすい伝言を残します。", "focus": "leaves", "object": "clear messages", "jaFocus": "残します" }
       ] },
-      { "phrase": "leave it to me", "ja": "私に任せて", "image": "責任を自分が引き受ける。", "pattern": "leave it to me", "examples": [
-        { "en": "Leave it to me, and I will contact the client.", "ja": "私に任せてください。顧客に連絡します。", "focus": "Leave it to me", "jaFocus": "私に任せて" },
-        { "en": "You can leave the follow-up to me.", "ja": "フォロー対応は私に任せて大丈夫です。", "focus": "leave the follow-up to me", "jaFocus": "私に任せて" },
-        { "en": "Please leave the schedule adjustment to me.", "ja": "日程調整は私に任せてください。", "focus": "leave the schedule adjustment to me", "jaFocus": "私に任せて" }
+      { "phrase": "leave it to me", "ja": "私に任せて", "image": "仕事を自分の手元に残して引き受ける。", "pattern": "leave + it + to + 人", "examples": [
+        { "en": "You can leave it to me.", "ja": "それは私に任せて大丈夫です。", "focus": "leave", "object": "it", "jaFocus": "任せて" },
+        { "en": "Please leave the customer follow-up to me.", "ja": "顧客フォローは私に任せてください。", "focus": "leave", "object": "the customer follow-up", "jaFocus": "任せて" },
+        { "en": "They left the final decision to the manager.", "ja": "彼らは最終判断を上司に委ねました。", "focus": "left", "object": "the final decision", "jaFocus": "委ねました" }
       ] },
-      { "phrase": "leave room for", "ja": "〜の余地を残す", "image": "あとで調整できる余白を残す。", "pattern": "leave room for + 名詞", "examples": [
-        { "en": "We should leave room for additional requests.", "ja": "追加要望の余地を残しておくべきです。", "focus": "leave room for", "jaFocus": "余地を残して" },
-        { "en": "The plan leaves room for future changes.", "ja": "その計画は将来の変更余地を残しています。", "focus": "leaves room for", "jaFocus": "余地を残しています" },
-        { "en": "Please leave room for installation time in the schedule.", "ja": "スケジュールには設置時間の余地を残してください。", "focus": "leave room for", "jaFocus": "余地を残して" }
-      ] },
-      { "phrase": "leave a good impression", "ja": "良い印象を残す", "image": "相手の記憶に良い印象が残る。", "pattern": "leave a good impression", "examples": [
-        { "en": "A quick reply can leave a good impression.", "ja": "素早い返信は良い印象を残せます。", "focus": "leave a good impression", "jaFocus": "良い印象を残せます" },
-        { "en": "Her clear explanation left a good impression on the client.", "ja": "彼女の分かりやすい説明は顧客に良い印象を残しました。", "focus": "left a good impression", "jaFocus": "良い印象を残しました" },
-        { "en": "Professional behavior leaves a good impression.", "ja": "プロらしい対応は良い印象を残します。", "focus": "leaves a good impression", "jaFocus": "良い印象を残します" }
-      ] },
-      { "phrase": "leave no doubt", "ja": "疑いの余地を残さない", "image": "相手が迷わないほど明確にする。", "pattern": "leave no doubt", "examples": [
-        { "en": "The test results leave no doubt about the problem.", "ja": "試験結果から、その問題に疑いの余地はありません。", "focus": "leave no doubt", "jaFocus": "疑いの余地はありません" },
-        { "en": "His explanation left no doubt about the next step.", "ja": "彼の説明で次の手順に疑いの余地はなくなりました。", "focus": "left no doubt", "jaFocus": "疑いの余地はなくなりました" },
-        { "en": "The contract leaves no doubt about the payment terms.", "ja": "契約書では支払条件に疑いの余地がありません。", "focus": "leaves no doubt", "jaFocus": "疑いの余地がありません" }
+      { "phrase": "leave a good impression", "ja": "良い印象を残す", "image": "相手の中に良い印象が残る。", "pattern": "leave + impression", "examples": [
+        { "en": "A polite reply leaves a good impression.", "ja": "丁寧な返信は良い印象を残します。", "focus": "leaves", "object": "a good impression", "jaFocus": "印象を残します" },
+        { "en": "The presentation left a strong impression on the client.", "ja": "その提案は顧客に強い印象を残しました。", "focus": "left", "object": "a strong impression", "jaFocus": "印象を残しました" },
+        { "en": "Clear samples can leave a positive impression.", "ja": "分かりやすいサンプルは良い印象を残せます。", "focus": "leave", "object": "a positive impression", "jaFocus": "印象を残せます" }
       ] }
     ],
     "phrasalVerbs": [
       { "phrase": "leave out", "ja": "省く・除外する", "image": "リストや説明から外す。", "pattern": "leave out", "examples": [
-        { "en": "Please leave out the internal comments.", "ja": "社内コメントは省いてください。", "focus": "leave out", "jaFocus": "省いて" },
-        { "en": "We left out the old product photos.", "ja": "古い製品写真は除外しました。", "focus": "left out", "jaFocus": "除外しました" },
-        { "en": "Do not leave out the delivery condition.", "ja": "納品条件を抜かさないでください。", "focus": "leave out", "jaFocus": "抜かさないで" }
+        { "en": "Please leave out the internal comments.", "ja": "社内コメントは省いてください。", "focus": "leave out", "object": "the internal comments", "jaFocus": "省いて" },
+        { "en": "We left out the old product photos.", "ja": "私たちは古い製品写真を除外しました。", "focus": "left out", "object": "the old product photos", "jaFocus": "除外しました" },
+        { "en": "Do not leave out the delivery condition.", "ja": "納品条件を抜かさないでください。", "focus": "leave out", "object": "the delivery condition", "jaFocus": "抜かさないで" }
       ] },
       { "phrase": "leave behind", "ja": "置いていく・取り残す", "image": "何かを後ろに残す。", "pattern": "leave behind", "examples": [
-        { "en": "Please do not leave any tools behind at the site.", "ja": "現場に工具を置き忘れないでください。", "focus": "leave behind", "jaFocus": "置き忘れないで" },
-        { "en": "The change left some team members behind.", "ja": "その変更により、一部のメンバーが取り残されました。", "focus": "left behind", "jaFocus": "取り残されました" },
-        { "en": "We should not leave important tasks behind.", "ja": "重要な作業を後回しにして残すべきではありません。", "focus": "leave behind", "jaFocus": "残すべきではありません" }
+        { "en": "Please do not leave any tools behind at the site.", "ja": "現場に工具を置き忘れないでください。", "focus": "leave behind", "object": "any tools", "jaFocus": "置き忘れないで" },
+        { "en": "The change left some team members behind.", "ja": "その変更により、一部のメンバーが取り残されました。", "focus": "left behind", "object": "some team members", "jaFocus": "取り残されました" },
+        { "en": "We should not leave important tasks behind.", "ja": "重要な作業を後回しにして残すべきではありません。", "focus": "leave behind", "object": "important tasks", "jaFocus": "残すべきではありません" }
       ] },
       { "phrase": "leave off", "ja": "途中でやめる・中断する", "image": "作業をある地点で止める。", "pattern": "leave off", "examples": [
         { "en": "Let’s continue from where we left off yesterday.", "ja": "昨日中断したところから続けましょう。", "focus": "left off", "jaFocus": "中断したところ" },
-        { "en": "We left off the discussion at the pricing issue.", "ja": "価格の問題で議論を中断しました。", "focus": "left off", "jaFocus": "中断しました" },
+        { "en": "We left off the discussion at the pricing issue.", "ja": "価格の問題で議論を中断しました。", "focus": "left off", "object": "the discussion", "jaFocus": "中断しました" },
         { "en": "Please check where the previous team left off.", "ja": "前のチームがどこで中断したか確認してください。", "focus": "left off", "jaFocus": "中断したか" }
       ] },
-      { "phrase": "leave for", "ja": "〜へ向けて出発する", "image": "目的地に向かって出る。", "pattern": "leave for", "examples": [
-        { "en": "We will leave for the site after the morning meeting.", "ja": "朝会後に現場へ向けて出発します。", "focus": "leave for", "jaFocus": "〜へ向けて出発します" },
-        { "en": "The sales team left for Osaka this afternoon.", "ja": "営業チームは今日の午後、大阪へ向けて出発しました。", "focus": "left for", "jaFocus": "〜へ向けて出発しました" },
-        { "en": "Please leave for the client’s office by ten.", "ja": "10時までに顧客のオフィスへ向けて出発してください。", "focus": "leave for", "jaFocus": "〜へ向けて出発して" }
+      { "phrase": "leave for", "ja": "〜へ向けて出発する", "image": "目的地に向かって今いる場所を離れる。", "pattern": "leave for", "examples": [
+        { "en": "We will leave for the site after the morning meeting.", "ja": "私たちは朝会後に現場へ向けて出発します。", "focus": "leave for", "object": "the site", "jaFocus": "出発します" },
+        { "en": "The sales team left for Osaka this afternoon.", "ja": "営業チームは今日の午後、大阪へ向けて出発しました。", "focus": "left for", "object": "Osaka", "jaFocus": "出発しました" },
+        { "en": "Please leave for the client’s office by ten.", "ja": "10時までに顧客のオフィスへ向けて出発してください。", "focus": "leave for", "object": "the client’s office", "jaFocus": "出発して" }
       ] },
-      { "phrase": "leave over", "ja": "残す・延期する", "image": "今処理せず次に残す。", "pattern": "leave over", "examples": [
-        { "en": "We left the budget discussion over until next week.", "ja": "予算の議論は来週に持ち越しました。", "focus": "left over", "jaFocus": "持ち越しました" },
-        { "en": "Please do not leave urgent tasks over until tomorrow.", "ja": "急ぎの作業を明日に持ち越さないでください。", "focus": "leave over", "jaFocus": "持ち越さないで" },
-        { "en": "Some items were left over after the meeting.", "ja": "会議後にいくつかの項目が残りました。", "focus": "left over", "jaFocus": "残りました" }
+      { "phrase": "leave aside", "ja": "いったん脇に置く", "image": "今は扱わず横に置く。", "pattern": "leave aside", "examples": [
+        { "en": "Let’s leave aside the price issue for now.", "ja": "価格の問題はいったん脇に置きましょう。", "focus": "leave aside", "object": "the price issue", "jaFocus": "脇に置きましょう" },
+        { "en": "We left aside the minor details during the first meeting.", "ja": "私たちは初回会議では細かい点をいったん脇に置きました。", "focus": "left aside", "object": "the minor details", "jaFocus": "脇に置きました" },
+        { "en": "Please leave aside personal opinions and check the data.", "ja": "個人的な意見はいったん置いて、データを確認してください。", "focus": "leave aside", "object": "personal opinions", "jaFocus": "置いて" }
+      ] },
+      { "phrase": "leave alone", "ja": "そのままにする・放っておく", "image": "触らずにその場に残す。", "pattern": "leave alone", "examples": [
+        { "en": "Please leave the setting alone until we finish testing.", "ja": "テストが終わるまで、その設定はそのままにしてください。", "focus": "leave alone", "object": "the setting", "jaFocus": "そのままにして" },
+        { "en": "We left the old layout alone for this release.", "ja": "今回のリリースでは古いレイアウトをそのままにしました。", "focus": "left alone", "object": "the old layout", "jaFocus": "そのままにしました" },
+        { "en": "Do not leave this issue alone for another week.", "ja": "この問題をもう1週間放置しないでください。", "focus": "leave alone", "object": "this issue", "jaFocus": "放置しないで" }
+      ] },
+      { "phrase": "leave up to", "ja": "〜に任せる", "image": "判断や作業を相手側に預ける。", "pattern": "leave up to", "examples": [
+        { "en": "We can leave the final decision up to the manager.", "ja": "最終判断は上司に任せられます。", "focus": "leave up to", "object": "the final decision", "jaFocus": "任せられます" },
+        { "en": "I left the layout up to the designer.", "ja": "私はレイアウトをデザイナーに任せました。", "focus": "left up to", "object": "the layout", "jaFocus": "任せました" },
+        { "en": "Do not leave everything up to one person.", "ja": "すべてを1人に任せきりにしないでください。", "focus": "leave up to", "object": "everything", "jaFocus": "任せきりにしないで" }
+      ] },
+      { "phrase": "leave with", "ja": "〜に預ける・印象を残す", "image": "物や印象を相手のところに残す。", "pattern": "leave with", "examples": [
+        { "en": "Please leave the samples with reception.", "ja": "サンプルは受付に預けてください。", "focus": "leave with", "object": "the samples", "jaFocus": "預けて" },
+        { "en": "We left the documents with the client.", "ja": "私たちは書類を顧客に預けました。", "focus": "left with", "object": "the documents", "jaFocus": "預けました" },
+        { "en": "The demo left us with a good impression.", "ja": "そのデモは私たちに良い印象を残しました。", "focus": "left with", "object": "us", "jaFocus": "印象を残しました" }
       ] }
     ]
   },
@@ -8526,98 +6899,87 @@ export const verbs: Verb[] = [
     "syllable": "move",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 重要",
-    "core": "位置・予定・状況を動かす",
-    "coreDetail": "MOVEは、人や物を移動させるだけでなく、会議や締切を変更する、計画を前に進める、相手の気持ちを動かす時にも使います。仕事では日程調整・データ移行・案件進行で特に重要です。",
-    "coreVisual": { "from": ["予定", "物", "データ", "計画", "人の気持ち"], "to": "別の位置 / 次の段階", "label": "move" },
+    "core": "人・物・予定・状況を別の位置や段階へ動かす",
+    "coreDetail": "MOVEは、物理的に移動するだけでなく、会議や締切を変更する、案件を前に進める、気持ちを動かす時にも使います。仕事では日程調整・データ移行・案件進行で特に重要です。",
+    "coreVisual": { "from": ["📦 物", "📅 予定", "💾 データ", "📈 案件", "😊 気持ち"], "to": "➡️ 別の場所・時間・段階", "label": "動かして移す" },
     "meanings": [
-      { "id": "move-object", "title": "1 物を移動する", "pattern": "move + 物", "transitivity": "他動詞", "structure": "使い方", "image": "物の場所を変える。", "point": "move the files / move the stock のように使います。", "examples": [
-        { "en": "Please move the files to the shared folder.", "ja": "ファイルを共有フォルダに移動してください。", "focus": "move the files", "jaFocus": "ファイルを移動して" },
-        { "en": "We moved the stock to another warehouse.", "ja": "在庫を別の倉庫に移動しました。", "focus": "moved the stock", "jaFocus": "在庫を移動しました" },
-        { "en": "Can you move the sample products to the meeting room?", "ja": "サンプル品を会議室に移動してもらえますか？", "focus": "move the sample products", "jaFocus": "サンプル品を移動して" }
+      { "id": "move-object", "title": "1 物を移動する", "pattern": "move + 物", "transitivity": "他動詞", "structure": "基本", "image": "物を別の場所へ動かす。", "point": "ファイル・在庫・サンプルなどを移動する時に使います。", "examples": [
+        { "en": "Please move the files to the shared folder.", "ja": "ファイルを共有フォルダに移動してください。", "focus": "move", "object": "the files" },
+        { "en": "We moved the stock to another warehouse.", "ja": "私たちは在庫を別の倉庫に移動しました。", "focus": "moved", "object": "the stock" },
+        { "en": "Can you move the samples to the meeting room?", "ja": "サンプルを会議室に移動してもらえますか？", "focus": "move", "object": "the samples" }
       ] },
-      { "id": "move-place", "title": "2 人が移動する・引っ越す", "pattern": "move to + 場所", "transitivity": "自動詞", "structure": "使い方", "image": "人や拠点が別の場所へ移る。", "point": "会社・部署・住居の移動に使えます。", "examples": [
-        { "en": "Our office will move to a new building next month.", "ja": "私たちのオフィスは来月、新しいビルに移転します。", "focus": "move to", "jaFocus": "移転します" },
-        { "en": "He moved to the sales department last year.", "ja": "彼は昨年、営業部へ異動しました。", "focus": "moved to", "jaFocus": "異動しました" },
-        { "en": "The team moved to a larger workspace.", "ja": "チームはより広い作業スペースへ移りました。", "focus": "moved to", "jaFocus": "移りました" }
+      { "id": "move-place", "title": "2 人・拠点が移る", "pattern": "move to + 場所", "transitivity": "自動詞", "structure": "基本", "image": "人や拠点が別の場所へ移る。", "point": "会社・部署・住居の移動に使えます。", "examples": [
+        { "en": "Our office will move to a new building next month.", "ja": "私たちのオフィスは来月、新しいビルに移転します。", "focus": "move" },
+        { "en": "He moved to the sales department last year.", "ja": "彼は昨年、営業部へ異動しました。", "focus": "moved" },
+        { "en": "The team moved to a larger workspace.", "ja": "チームはより広い作業スペースへ移りました。", "focus": "moved" }
       ] },
-      { "id": "move-meeting", "title": "3 予定・会議を変更する", "pattern": "move + 予定 + to + 時間", "transitivity": "他動詞", "structure": "使い方", "image": "予定を別の日程へ動かす。", "point": "move the meeting to Friday は仕事で頻出です。", "examples": [
-        { "en": "Can we move the meeting to Friday?", "ja": "会議を金曜日に変更できますか？", "focus": "move the meeting", "jaFocus": "会議を変更" },
-        { "en": "We moved the deadline to next week.", "ja": "締切を来週に変更しました。", "focus": "moved the deadline", "jaFocus": "締切を変更しました" },
-        { "en": "Please move the call to the afternoon.", "ja": "電話会議を午後に変更してください。", "focus": "move the call", "jaFocus": "電話会議を変更して" }
+      { "id": "move-schedule", "title": "3 予定を変更する", "pattern": "move + 予定 + to + 時間", "transitivity": "他動詞", "structure": "基本", "image": "予定を別の日時へ動かす。", "point": "move the meeting to Friday は仕事で頻出です。", "examples": [
+        { "en": "Can we move the meeting to Friday?", "ja": "会議を金曜日に変更できますか？", "focus": "move", "object": "the meeting" },
+        { "en": "We moved the deadline to next week.", "ja": "私たちは締切を来週に変更しました。", "focus": "moved", "object": "the deadline" },
+        { "en": "Please move the call to the afternoon.", "ja": "電話会議を午後に変更してください。", "focus": "move", "object": "the call" }
       ] },
-      { "id": "move-data", "title": "4 データ・システムを移行する", "pattern": "move + データ + to + 場所", "transitivity": "他動詞", "structure": "使い方", "image": "情報や仕組みを別の場所へ移す。", "point": "システム移行・ファイル移動で使います。", "examples": [
-        { "en": "We need to move the data to the new system.", "ja": "データを新しいシステムへ移行する必要があります。", "focus": "move the data", "jaFocus": "データを移行する" },
-        { "en": "The IT team moved the customer records to a secure server.", "ja": "ITチームは顧客記録を安全なサーバーへ移行しました。", "focus": "moved the customer records", "jaFocus": "顧客記録を移行しました" },
-        { "en": "Please move the latest version to the production folder.", "ja": "最新版を本番用フォルダへ移動してください。", "focus": "move the latest version", "jaFocus": "最新版を移動して" }
+      { "id": "move-data", "title": "4 データ・仕組みを移す", "pattern": "move + データ + to + 場所", "transitivity": "他動詞", "structure": "基本", "image": "情報や仕組みを別の場所へ移す。", "point": "システム移行・ファイル移動で使います。", "examples": [
+        { "en": "We need to move the data to the new system.", "ja": "私たちはデータを新しいシステムへ移行する必要があります。", "focus": "move", "object": "the data" },
+        { "en": "The IT team moved the customer records to a secure server.", "ja": "ITチームは顧客記録を安全なサーバーへ移行しました。", "focus": "moved", "object": "the customer records" },
+        { "en": "Please move the latest version to the production folder.", "ja": "最新版を本番用フォルダへ移動してください。", "focus": "move", "object": "the latest version" }
       ] },
-      { "id": "move-forward", "title": "5 進める・前進する", "pattern": "move forward", "transitivity": "自動詞・他動詞的表現", "structure": "使い方", "image": "案件や議論を次の段階へ進める。", "point": "move forward with + 名詞 もよく使います。", "examples": [
-        { "en": "We need to move this project forward.", "ja": "この案件を前に進める必要があります。", "focus": "move this project forward", "jaFocus": "案件を前に進める" },
-        { "en": "Let’s move forward with the new proposal.", "ja": "新しい提案で進めましょう。", "focus": "move forward with", "jaFocus": "〜で進めましょう" },
-        { "en": "The approval allows us to move forward.", "ja": "承認により、私たちは前に進めます。", "focus": "move forward", "jaFocus": "前に進めます" }
-      ] },
-      { "id": "move-person", "title": "6 人を感動させる・心を動かす", "pattern": "move + 人", "transitivity": "他動詞", "structure": "使い方", "image": "相手の感情を動かす。", "point": "受け身の be moved もよく使います。", "examples": [
-        { "en": "The customer was moved by our quick support.", "ja": "顧客は私たちの素早いサポートに感動しました。", "focus": "was moved by", "jaFocus": "感動しました" },
-        { "en": "Her story moved everyone in the meeting.", "ja": "彼女の話は会議にいた全員の心を動かしました。", "focus": "moved everyone", "jaFocus": "心を動かしました" },
-        { "en": "A sincere apology can move the client.", "ja": "誠実な謝罪は顧客の心を動かすことがあります。", "focus": "move the client", "jaFocus": "顧客の心を動かす" }
-      ] },
-      { "id": "move-action", "title": "7 行動を起こす", "pattern": "move to + 動詞", "transitivity": "自動詞", "structure": "使い方", "image": "次の行動に移る。", "point": "move to approve / move to start のように硬めの表現です。", "examples": [
-        { "en": "The committee moved to approve the budget.", "ja": "委員会は予算を承認する手続きに入りました。", "focus": "moved to approve", "jaFocus": "承認する手続きに入りました" },
-        { "en": "We moved to start the installation after confirmation.", "ja": "確認後、私たちは設置を開始する段階に入りました。", "focus": "moved to start", "jaFocus": "開始する段階に入りました" },
-        { "en": "The manager moved to resolve the issue quickly.", "ja": "マネージャーはその問題を早急に解決する行動に移りました。", "focus": "moved to resolve", "jaFocus": "行動に移りました" }
+      { "id": "move-emotion", "title": "5 心を動かす", "pattern": "move + 人", "transitivity": "他動詞", "structure": "基本", "image": "相手の気持ちを動かす。", "point": "be moved by の形もよく使います。", "examples": [
+        { "en": "The customer was moved by our quick support.", "ja": "顧客は私たちの素早いサポートに感動しました。", "focus": "moved" },
+        { "en": "Her story moved everyone in the meeting.", "ja": "彼女の話は会議にいた全員の心を動かしました。", "focus": "moved", "object": "everyone" },
+        { "en": "A sincere apology can move the client.", "ja": "誠実な謝罪は顧客の心を動かすことがあります。", "focus": "move", "object": "the client" }
       ] }
     ],
-    "collocations": [
-      { "phrase": "move forward", "ja": "前に進める", "image": "案件を次の段階へ進める。", "pattern": "move forward", "examples": [
-        { "en": "Let’s move forward with this plan.", "ja": "この計画で進めましょう。", "focus": "move forward", "jaFocus": "進めましょう" },
-        { "en": "We cannot move forward without approval.", "ja": "承認なしでは前に進めません。", "focus": "move forward", "jaFocus": "前に進めません" },
-        { "en": "The new information helped the project move forward.", "ja": "新しい情報のおかげで案件が前に進みました。", "focus": "move forward", "jaFocus": "前に進みました" }
-      ] },
-      { "phrase": "move the meeting", "ja": "会議を変更する", "image": "会議を別の日時へ動かす。", "pattern": "move the meeting", "examples": [
-        { "en": "Can we move the meeting to Monday?", "ja": "会議を月曜日に変更できますか？", "focus": "move the meeting", "jaFocus": "会議を変更" },
-        { "en": "We moved the meeting because the client was unavailable.", "ja": "顧客の都合が合わなかったため、会議を変更しました。", "focus": "moved the meeting", "jaFocus": "会議を変更しました" },
-        { "en": "Please do not move the meeting without telling the team.", "ja": "チームに伝えずに会議を変更しないでください。", "focus": "move the meeting", "jaFocus": "会議を変更しないで" }
-      ] },
-      { "phrase": "move on", "ja": "次へ進む", "image": "今の話題や段階から次へ進む。", "pattern": "move on", "examples": [
-        { "en": "Let’s move on to the next topic.", "ja": "次の議題に進みましょう。", "focus": "move on", "jaFocus": "次に進みましょう" },
-        { "en": "We should move on after this final check.", "ja": "この最終確認の後、次に進むべきです。", "focus": "move on", "jaFocus": "次に進む" },
-        { "en": "The discussion moved on to pricing.", "ja": "議論は価格の話に進みました。", "focus": "moved on", "jaFocus": "話に進みました" }
-      ] },
-      { "phrase": "move quickly", "ja": "素早く動く", "image": "判断や対応を早く進める。", "pattern": "move quickly", "examples": [
-        { "en": "We need to move quickly on this request.", "ja": "この依頼には素早く対応する必要があります。", "focus": "move quickly", "jaFocus": "素早く対応する" },
-        { "en": "The competitor moved quickly and won the order.", "ja": "競合は素早く動き、受注しました。", "focus": "moved quickly", "jaFocus": "素早く動き" },
-        { "en": "Please move quickly if the client approves the plan.", "ja": "顧客が計画を承認したら、すぐに動いてください。", "focus": "move quickly", "jaFocus": "すぐに動いて" }
-      ] },
-      { "phrase": "move in the right direction", "ja": "良い方向に進む", "image": "状況が望ましい方向へ動く。", "pattern": "move in the right direction", "examples": [
-        { "en": "The project is moving in the right direction.", "ja": "その案件は良い方向に進んでいます。", "focus": "moving in the right direction", "jaFocus": "良い方向に進んでいます" },
-        { "en": "Your proposal moves the discussion in the right direction.", "ja": "あなたの提案は議論を良い方向に進めています。", "focus": "moves the discussion in the right direction", "jaFocus": "良い方向に進めています" },
-        { "en": "The latest feedback helped us move in the right direction.", "ja": "最新のフィードバックのおかげで、私たちは良い方向に進めました。", "focus": "move in the right direction", "jaFocus": "良い方向に進めました" }
-      ] }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
-      { "phrase": "move on", "ja": "次に進む", "image": "話題や段階を切り替える。", "pattern": "move on", "examples": [
-        { "en": "Let’s move on to the budget.", "ja": "予算の話に進みましょう。", "focus": "move on", "jaFocus": "進みましょう" },
-        { "en": "After confirming the schedule, we moved on to pricing.", "ja": "スケジュールを確認した後、価格の話に進みました。", "focus": "moved on", "jaFocus": "進みました" },
-        { "en": "We cannot move on until this issue is solved.", "ja": "この問題が解決するまで次に進めません。", "focus": "move on", "jaFocus": "次に進めません" }
+      { "phrase": "move on", "ja": "次に進む・気持ちを切り替える", "image": "今の場所や話題から次へ進む。", "pattern": "move on", "examples": [
+        { "en": "Let’s move on to the next topic.", "ja": "次の議題に進みましょう。", "focus": "move on" },
+        { "en": "After the issue was resolved, we moved on quickly.", "ja": "問題が解決した後、私たちはすぐ次に進みました。", "focus": "moved on" },
+        { "en": "We cannot move on until the client approves it.", "ja": "顧客が承認するまで、私たちは次に進めません。", "focus": "move on" }
       ] },
-      { "phrase": "move forward", "ja": "前に進む・進める", "image": "止まっていたものを次の段階へ進める。", "pattern": "move forward", "examples": [
-        { "en": "The approval helped us move forward.", "ja": "承認のおかげで前に進めました。", "focus": "move forward", "jaFocus": "前に進めました" },
-        { "en": "We need more information before moving forward.", "ja": "前に進む前に、さらに情報が必要です。", "focus": "moving forward", "jaFocus": "前に進む" },
-        { "en": "Please move the project forward this week.", "ja": "今週中に案件を前に進めてください。", "focus": "move the project forward", "jaFocus": "前に進めて" }
+      { "phrase": "move forward", "ja": "前に進む・進める", "image": "案件や計画が次の段階へ進む。", "pattern": "move forward", "examples": [
+        { "en": "Let’s move forward with this proposal.", "ja": "この提案で進めましょう。", "focus": "move forward" },
+        { "en": "The approval allowed us to move forward.", "ja": "承認により、私たちは前に進めました。", "focus": "move forward" },
+        { "en": "We need to move forward before the deadline.", "ja": "締切前に前へ進める必要があります。", "focus": "move forward" }
       ] },
-      { "phrase": "move up", "ja": "早める・上げる", "image": "予定や順位を上に動かす。", "pattern": "move up", "examples": [
-        { "en": "Can we move up the meeting to ten?", "ja": "会議を10時に早められますか？", "focus": "move up", "jaFocus": "早められますか" },
-        { "en": "The deadline was moved up by two days.", "ja": "締切が2日早まりました。", "focus": "moved up", "jaFocus": "早まりました" },
-        { "en": "The product moved up in the sales ranking.", "ja": "その製品は売上ランキングで順位を上げました。", "focus": "moved up", "jaFocus": "順位を上げました" }
+      { "phrase": "move up", "ja": "予定を早める・上がる", "image": "時間や順位を上・前へ動かす。", "pattern": "move up", "examples": [
+        { "en": "Can we move up the meeting to ten?", "ja": "会議を10時に早められますか？", "focus": "move up" },
+        { "en": "The deadline was moved up by two days.", "ja": "締切が2日早まりました。", "focus": "moved up" },
+        { "en": "The product moved up in the sales ranking.", "ja": "その製品は売上ランキングで順位を上げました。", "focus": "moved up" }
       ] },
-      { "phrase": "move back", "ja": "遅らせる・後ろに下げる", "image": "予定や位置を後ろへ動かす。", "pattern": "move back", "examples": [
-        { "en": "We moved back the delivery date by one week.", "ja": "納品日を1週間遅らせました。", "focus": "moved back", "jaFocus": "遅らせました" },
-        { "en": "Can we move back the review meeting?", "ja": "確認会議を後ろにずらせますか？", "focus": "move back", "jaFocus": "後ろにずらせますか" },
-        { "en": "The launch was moved back because of a parts delay.", "ja": "部品遅延により、発売が延期されました。", "focus": "moved back", "jaFocus": "延期されました" }
+      { "phrase": "move back", "ja": "予定を遅らせる・後ろへ下げる", "image": "時間や位置を後ろへ動かす。", "pattern": "move back", "examples": [
+        { "en": "Can we move back the review meeting?", "ja": "確認会議を後ろにずらせますか？", "focus": "move back" },
+        { "en": "We moved back the delivery date by one week.", "ja": "私たちは納品日を1週間遅らせました。", "focus": "moved back" },
+        { "en": "The launch was moved back because of a parts delay.", "ja": "部品遅延により発売が延期されました。", "focus": "moved back" }
       ] },
       { "phrase": "move into", "ja": "〜に移る・参入する", "image": "新しい場所や分野に入る。", "pattern": "move into", "examples": [
-        { "en": "The company moved into the lighting control market.", "ja": "その会社は照明制御市場に参入しました。", "focus": "moved into", "jaFocus": "参入しました" },
-        { "en": "We moved into the new office last month.", "ja": "私たちは先月、新しいオフィスに移転しました。", "focus": "moved into", "jaFocus": "移転しました" },
-        { "en": "The team moved into the testing phase.", "ja": "チームはテスト段階に入りました。", "focus": "moved into", "jaFocus": "段階に入りました" }
+        { "en": "The company moved into the lighting control market.", "ja": "その会社は照明制御市場に参入しました。", "focus": "moved into" },
+        { "en": "We moved into the new office last month.", "ja": "私たちは先月、新しいオフィスに移転しました。", "focus": "moved into" },
+        { "en": "The team moved into the testing phase.", "ja": "チームはテスト段階に入りました。", "focus": "moved into" }
+      ] },
+      { "phrase": "move out", "ja": "退去する・外へ移す", "image": "内側から外へ出る。", "pattern": "move out", "examples": [
+        { "en": "The team moved out of the temporary office.", "ja": "チームは仮オフィスから退去しました。", "focus": "moved out" },
+        { "en": "We need to move out the old equipment by Friday.", "ja": "金曜日までに古い機器を外へ出す必要があります。", "focus": "move out" },
+        { "en": "The tenant moved out at the end of March.", "ja": "テナントは3月末に退去しました。", "focus": "moved out" }
+      ] },
+      { "phrase": "move away from", "ja": "〜から離れる・脱却する", "image": "古いやり方や場所から距離を取る。", "pattern": "move away from", "examples": [
+        { "en": "We should move away from manual tracking.", "ja": "私たちは手作業の管理から脱却すべきです。", "focus": "move away from" },
+        { "en": "The market is moving away from low-efficiency products.", "ja": "市場は低効率製品から離れつつあります。", "focus": "moving away from" },
+        { "en": "The company moved away from paper-based approval.", "ja": "会社は紙ベースの承認から脱却しました。", "focus": "moved away from" }
+      ] },
+      { "phrase": "move toward", "ja": "〜に向かう", "image": "目標や方向へ進む。", "pattern": "move toward", "examples": [
+        { "en": "We are moving toward a final agreement.", "ja": "私たちは最終合意に向かっています。", "focus": "moving toward" },
+        { "en": "The project moved toward mass production.", "ja": "その案件は量産に向かいました。", "focus": "moved toward" },
+        { "en": "This plan helps us move toward our sales target.", "ja": "この計画は売上目標に近づく助けになります。", "focus": "move toward" }
+      ] },
+      { "phrase": "move around", "ja": "動き回る・配置を変える", "image": "同じ範囲の中であちこち動く。", "pattern": "move around", "examples": [
+        { "en": "We moved around the furniture before the client visit.", "ja": "顧客訪問前に家具の配置を変えました。", "focus": "moved around" },
+        { "en": "The staff moved around the venue during setup.", "ja": "スタッフは設営中、会場内を動き回りました。", "focus": "moved around" },
+        { "en": "Please do not move around the display samples.", "ja": "展示サンプルの配置を変えないでください。", "focus": "move around" }
+      ] },
+      { "phrase": "move ahead", "ja": "先へ進む・実行に移る", "image": "止まらずに計画を先へ進める。", "pattern": "move ahead", "examples": [
+        { "en": "We can move ahead once the estimate is approved.", "ja": "見積が承認されれば、私たちは先へ進めます。", "focus": "move ahead" },
+        { "en": "The client decided to move ahead with the order.", "ja": "顧客は発注を進めることにしました。", "focus": "move ahead" },
+        { "en": "Let’s move ahead and prepare the documents.", "ja": "先へ進めて、資料を準備しましょう。", "focus": "move ahead" }
       ] }
     ]
   },
@@ -8630,1300 +6992,83 @@ export const verbs: Verb[] = [
     "syllable": "turn",
     "transitivity": "自動詞・他動詞",
     "importance": "★★★★★ 超重要",
-    "core": "向き・状態・流れが変わる",
-    "coreDetail": "TURNは、物理的な向きだけでなく、状況・判断・役割・結果が別の方向へ変わるイメージです。",
-    "coreVisual": {
-      "from": [
-        "↩️ 向き",
-        "🔄 変化",
-        "💡 状況",
-        "📄 提出",
-        "🚪 切替"
-      ],
-      "to": "自分・チーム",
-      "label": "コアイメージ"
-    },
+    "core": "向き・状態・判断を別の方向へ変える",
+    "coreDetail": "TURNは、向きを変える、状態が変わる、判断や話題を別方向へ向けるイメージです。仕事では機器のON/OFF、依頼の断り、結果の判明、話題の切り替えでよく使います。",
+    "coreVisual": { "from": ["➡️ 今の向き", "💡 今の状態", "📌 今の話題", "🔌 電源"], "to": "↩️ 別の向き・状態・判断", "label": "向きを変える" },
     "meanings": [
-      {
-        "id": "change",
-        "title": "1 変わる・変える",
-        "pattern": "TURN + 形容詞 / TURN + O + C",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + C",
-        "image": "向きや状態が変わる。",
-        "point": "向きや状態が変わる。",
-        "examples": [
-          {
-            "en": "The situation turned difficult.",
-            "ja": "状況は難しくなりました。",
-            "focus": "turned",
-            "object": "difficult",
-            "jaFocus": "難しくなりました"
-          },
-          {
-            "en": "We turned the idea into a proposal.",
-            "ja": "そのアイデアを提案書にしました。",
-            "focus": "turned",
-            "object": "the idea",
-            "jaFocus": "しました"
-          },
-          {
-            "en": "The discussion turned positive.",
-            "ja": "議論は前向きになりました。",
-            "focus": "turned",
-            "object": "positive",
-            "jaFocus": "前向きになりました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The sky turned dark.",
-            "ja": "空が暗くなりました。",
-            "focus": "turned",
-            "object": "dark",
-            "jaFocus": "暗くなりました"
-          },
-          {
-            "en": "The leaves turned red.",
-            "ja": "葉が赤くなりました。",
-            "focus": "turned",
-            "object": "red",
-            "jaFocus": "赤くなりました"
-          }
-        ]
-      },
-      {
-        "id": "direction",
-        "title": "2 向きを変える",
-        "pattern": "TURN + direction",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V",
-        "image": "向きが変わる。",
-        "point": "向きが変わる。",
-        "examples": [
-          {
-            "en": "Turn left at the reception desk.",
-            "ja": "受付で左に曲がってください。",
-            "focus": "Turn",
-            "jaFocus": "曲がって"
-          },
-          {
-            "en": "The camera turns toward the entrance.",
-            "ja": "カメラは入口の方を向きます。",
-            "focus": "turns",
-            "jaFocus": "向きます"
-          },
-          {
-            "en": "Please turn the screen toward the client.",
-            "ja": "画面を顧客の方へ向けてください。",
-            "focus": "turn",
-            "object": "the screen",
-            "jaFocus": "向けて"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Turn right at the corner.",
-            "ja": "角を右に曲がって。",
-            "focus": "Turn",
-            "jaFocus": "曲がって"
-          },
-          {
-            "en": "The car turned around.",
-            "ja": "車は方向転換しました。",
-            "focus": "turned around",
-            "jaFocus": "方向転換しました"
-          }
-        ]
-      },
-      {
-        "id": "operate",
-        "title": "3 回す・操作する",
-        "pattern": "TURN + O",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + O",
-        "image": "スイッチや機器を操作する。",
-        "point": "スイッチや機器を操作する。",
-        "examples": [
-          {
-            "en": "Please turn on the projector.",
-            "ja": "プロジェクターをつけてください。",
-            "focus": "turn on",
-            "object": "the projector",
-            "jaFocus": "つけて"
-          },
-          {
-            "en": "Turn off the lights after the meeting.",
-            "ja": "会議後に照明を消してください。",
-            "focus": "Turn off",
-            "object": "the lights",
-            "jaFocus": "消して"
-          },
-          {
-            "en": "I turned down the volume during the call.",
-            "ja": "通話中に音量を下げました。",
-            "focus": "turned down",
-            "object": "the volume",
-            "jaFocus": "下げました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Turn on the TV.",
-            "ja": "テレビをつけて。",
-            "focus": "Turn on",
-            "object": "the TV",
-            "jaFocus": "つけて"
-          },
-          {
-            "en": "I turned off my phone.",
-            "ja": "スマホの電源を切りました。",
-            "focus": "turned off",
-            "object": "my phone",
-            "jaFocus": "切りました"
-          }
-        ]
-      },
-      {
-        "id": "become-age",
-        "title": "4 〜歳になる",
-        "pattern": "TURN + 年齢",
-        "transitivity": "自動詞",
-        "structure": "S + V + C",
-        "image": "年齢や時期が変わる。",
-        "point": "年齢や時期が変わる。",
-        "examples": [
-          {
-            "en": "The company turns ten this year.",
-            "ja": "会社は今年10周年を迎えます。",
-            "focus": "turns",
-            "object": "ten",
-            "jaFocus": "迎えます"
-          },
-          {
-            "en": "Our service turns one next month.",
-            "ja": "私たちのサービスは来月1周年を迎えます。",
-            "focus": "turns",
-            "object": "one",
-            "jaFocus": "迎えます"
-          },
-          {
-            "en": "The project turned three years old.",
-            "ja": "そのプロジェクトは3年目を迎えました。",
-            "focus": "turned",
-            "object": "three years old",
-            "jaFocus": "迎えました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "My son turns five next week.",
-            "ja": "息子は来週5歳になります。",
-            "focus": "turns",
-            "object": "five",
-            "jaFocus": "なります"
-          },
-          {
-            "en": "I turned thirty last year.",
-            "ja": "去年30歳になりました。",
-            "focus": "turned",
-            "object": "thirty",
-            "jaFocus": "なりました"
-          }
-        ]
-      },
-      {
-        "id": "attention",
-        "title": "5 注意を向ける",
-        "pattern": "TURN TO + 名詞",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + O",
-        "image": "注意や行動の向きを変える。",
-        "point": "注意や行動の向きを変える。",
-        "examples": [
-          {
-            "en": "Let’s turn to the next topic.",
-            "ja": "次の議題に移りましょう。",
-            "focus": "turn to",
-            "object": "the next topic",
-            "jaFocus": "移りましょう"
-          },
-          {
-            "en": "We turned to the data for answers.",
-            "ja": "答えを求めてデータに目を向けました。",
-            "focus": "turned to",
-            "object": "the data",
-            "jaFocus": "目を向けました"
-          },
-          {
-            "en": "The client turned to us for support.",
-            "ja": "顧客は支援を求めて私たちに頼りました。",
-            "focus": "turned to",
-            "object": "us",
-            "jaFocus": "頼りました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I turned to my friend for advice.",
-            "ja": "友人に助言を求めました。",
-            "focus": "turned to",
-            "object": "my friend",
-            "jaFocus": "求めました"
-          },
-          {
-            "en": "She turned to music when stressed.",
-            "ja": "彼女はストレス時に音楽に頼りました。",
-            "focus": "turned to",
-            "object": "music",
-            "jaFocus": "頼りました"
-          }
-        ]
-      },
-      {
-        "id": "result",
-        "title": "6 結果になる",
-        "pattern": "TURN OUT + C",
-        "transitivity": "自動詞",
-        "structure": "S + V + C",
-        "image": "最終的にそうなる。",
-        "point": "最終的にそうなる。",
-        "examples": [
-          {
-            "en": "The meeting turned out well.",
-            "ja": "会議はうまくいきました。",
-            "focus": "turned out",
-            "object": "well",
-            "jaFocus": "うまくいきました"
-          },
-          {
-            "en": "The issue turned out to be minor.",
-            "ja": "その問題は軽微だと分かりました。",
-            "focus": "turned out",
-            "object": "to be minor",
-            "jaFocus": "分かりました"
-          },
-          {
-            "en": "The new process turned out effective.",
-            "ja": "新しい手順は効果的でした。",
-            "focus": "turned out",
-            "object": "effective",
-            "jaFocus": "効果的でした"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The movie turned out great.",
-            "ja": "映画はとても良かったです。",
-            "focus": "turned out",
-            "object": "great",
-            "jaFocus": "良かった"
-          },
-          {
-            "en": "The cake turned out well.",
-            "ja": "ケーキはうまくできました。",
-            "focus": "turned out",
-            "object": "well",
-            "jaFocus": "うまくできました"
-          }
-        ]
-      },
-      {
-        "id": "submit",
-        "title": "7 提出する",
-        "pattern": "TURN IN + 名詞",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + O",
-        "image": "提出物を出す。",
-        "point": "提出物を出す。",
-        "examples": [
-          {
-            "en": "Please turn in the report by Friday.",
-            "ja": "金曜日までに報告書を提出してください。",
-            "focus": "turn in",
-            "object": "the report",
-            "jaFocus": "提出して"
-          },
-          {
-            "en": "I turned in the expense form.",
-            "ja": "経費申請書を提出しました。",
-            "focus": "turned in",
-            "object": "the expense form",
-            "jaFocus": "提出しました"
-          },
-          {
-            "en": "She turned in the final draft.",
-            "ja": "彼女は最終案を提出しました。",
-            "focus": "turned in",
-            "object": "the final draft",
-            "jaFocus": "提出しました"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I turned in my homework.",
-            "ja": "宿題を提出しました。",
-            "focus": "turned in",
-            "object": "my homework",
-            "jaFocus": "提出しました"
-          },
-          {
-            "en": "He turned in the application.",
-            "ja": "彼は申込書を提出しました。",
-            "focus": "turned in",
-            "object": "the application",
-            "jaFocus": "提出しました"
-          }
-        ]
-      },
-      {
-        "id": "reject",
-        "title": "8 断る",
-        "pattern": "TURN DOWN + 名詞",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + O",
-        "image": "提案や依頼を下げて拒否する。",
-        "point": "提案や依頼を下げて拒否する。",
-        "examples": [
-          {
-            "en": "We turned down the offer.",
-            "ja": "その提案を断りました。",
-            "focus": "turned down",
-            "object": "the offer",
-            "jaFocus": "断りました"
-          },
-          {
-            "en": "The client turned down the first proposal.",
-            "ja": "顧客は最初の提案を断りました。",
-            "focus": "turned down",
-            "object": "the first proposal",
-            "jaFocus": "断りました"
-          },
-          {
-            "en": "I had to turn down the request.",
-            "ja": "その依頼を断らざるを得ませんでした。",
-            "focus": "turn down",
-            "object": "the request",
-            "jaFocus": "断らざるを得ませんでした"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "She turned down the invitation.",
-            "ja": "彼女は招待を断りました。",
-            "focus": "turned down",
-            "object": "the invitation",
-            "jaFocus": "断りました"
-          },
-          {
-            "en": "I turned down the volume.",
-            "ja": "音量を下げました。",
-            "focus": "turned down",
-            "object": "the volume",
-            "jaFocus": "下げました"
-          }
-        ]
-      },
-      {
-        "id": "handover",
-        "title": "9 引き継ぐ・渡す",
-        "pattern": "TURN OVER + 名詞",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + O",
-        "image": "責任や資料を渡す。",
-        "point": "責任や資料を渡す。",
-        "examples": [
-          {
-            "en": "I turned over the documents to accounting.",
-            "ja": "書類を経理に引き渡しました。",
-            "focus": "turned over",
-            "object": "the documents",
-            "jaFocus": "引き渡しました"
-          },
-          {
-            "en": "The team turned over the project to support.",
-            "ja": "チームはプロジェクトをサポート部門に引き継ぎました。",
-            "focus": "turned over",
-            "object": "the project",
-            "jaFocus": "引き継ぎました"
-          },
-          {
-            "en": "Please turn over the files after review.",
-            "ja": "確認後にファイルを引き渡してください。",
-            "focus": "turn over",
-            "object": "the files",
-            "jaFocus": "引き渡して"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "He turned over the key.",
-            "ja": "彼は鍵を渡しました。",
-            "focus": "turned over",
-            "object": "the key",
-            "jaFocus": "渡しました"
-          },
-          {
-            "en": "Turn over the page.",
-            "ja": "ページをめくって。",
-            "focus": "Turn over",
-            "object": "the page",
-            "jaFocus": "めくって"
-          }
-        ]
-      },
-      {
-        "id": "take-turn",
-        "title": "10 順番が来る",
-        "pattern": "TAKE TURNS / TURN",
-        "transitivity": "名詞的表現",
-        "structure": "S + V",
-        "image": "交代で行う。",
-        "point": "交代で行う。",
-        "examples": [
-          {
-            "en": "We take turns presenting updates.",
-            "ja": "私たちは交代で進捗を発表します。",
-            "focus": "take turns",
-            "object": "turns",
-            "jaFocus": "交代で"
-          },
-          {
-            "en": "It is your turn to lead the meeting.",
-            "ja": "次はあなたが会議を進行する番です。",
-            "focus": "turn",
-            "object": "your turn",
-            "jaFocus": "番"
-          },
-          {
-            "en": "Team members take turns checking the inbox.",
-            "ja": "メンバーは交代で受信箱を確認します。",
-            "focus": "take turns",
-            "object": "turns",
-            "jaFocus": "交代で"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "It is my turn.",
-            "ja": "私の番です。",
-            "focus": "turn",
-            "object": "my turn",
-            "jaFocus": "番"
-          },
-          {
-            "en": "We take turns cooking.",
-            "ja": "私たちは交代で料理します。",
-            "focus": "take turns",
-            "object": "turns",
-            "jaFocus": "交代で"
-          }
-        ]
-      }
+      { "id": "turn-direction", "title": "1 向きを変える", "pattern": "turn + 方向", "transitivity": "自動詞・他動詞", "structure": "基本", "image": "物や人の向きが変わる。", "point": "道案内・画面の向き・視線の方向で使います。", "examples": [
+        { "en": "Turn left at the reception desk.", "ja": "受付で左に曲がってください。", "focus": "Turn" },
+        { "en": "Please turn the screen toward the client.", "ja": "画面を顧客の方へ向けてください。", "focus": "turn", "object": "the screen" },
+        { "en": "The camera turns toward the entrance.", "ja": "カメラは入口の方を向きます。", "focus": "turns" }
+      ] },
+      { "id": "turn-change", "title": "2 状態が変わる", "pattern": "turn + 形容詞", "transitivity": "自動詞", "structure": "基本", "image": "状態が別の状態へ変わる。", "point": "色・状況・雰囲気の変化に使います。", "examples": [
+        { "en": "The discussion turned positive after the demo.", "ja": "デモの後、議論は前向きになりました。", "focus": "turned" },
+        { "en": "The situation turned difficult after the delay.", "ja": "遅延後、状況は難しくなりました。", "focus": "turned" },
+        { "en": "The indicator turned red during the test.", "ja": "テスト中に表示ランプが赤に変わりました。", "focus": "turned" }
+      ] },
+      { "id": "turn-age", "title": "3 年齢・節目を迎える", "pattern": "turn + 数字", "transitivity": "自動詞", "structure": "基本", "image": "年齢や節目が次の段階へ変わる。", "point": "会社・サービス・人の年齢に使えます。", "examples": [
+        { "en": "The company turns ten this year.", "ja": "会社は今年10周年を迎えます。", "focus": "turns" },
+        { "en": "Our service turns one next month.", "ja": "私たちのサービスは来月1周年を迎えます。", "focus": "turns" },
+        { "en": "The project turned three years old last week.", "ja": "そのプロジェクトは先週3年目を迎えました。", "focus": "turned" }
+      ] },
+      { "id": "turn-page", "title": "4 ページ・つまみを回す", "pattern": "turn + 物", "transitivity": "他動詞", "structure": "基本", "image": "ページやつまみを回す。", "point": "turn the page / turn the knob のように物理的に回す時に使います。", "examples": [
+        { "en": "Please turn the page and check the next diagram.", "ja": "ページをめくって、次の図を確認してください。", "focus": "turn", "object": "the page" },
+        { "en": "He turned the dial slowly during the test.", "ja": "彼はテスト中につまみをゆっくり回しました。", "focus": "turned", "object": "the dial" },
+        { "en": "Do not turn the valve without approval.", "ja": "承認なしでバルブを回さないでください。", "focus": "turn", "object": "the valve" }
+      ] }
     ],
-    "collocations": [
-      {
-        "phrase": "turn on the projector",
-        "ja": "プロジェクターをつける",
-        "image": "turn on the projector のまとまりで仕事に使う表現。",
-        "pattern": "turn on + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn on the projector before the meeting.",
-            "ja": "会議前に「プロジェクターをつける」必要があります。",
-            "focus": "turn on the projector",
-            "jaFocus": "プロジェクターをつける"
-          },
-          {
-            "en": "Please turn on the projector by the end of the day.",
-            "ja": "今日中に「プロジェクターをつける」してください。",
-            "focus": "turn on the projector",
-            "jaFocus": "プロジェクターをつける"
-          },
-          {
-            "en": "I will turn on the projector and share the update.",
-            "ja": "私が「プロジェクターをつける」して進捗を共有します。",
-            "focus": "turn on the projector",
-            "jaFocus": "プロジェクターをつける"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn on the projector on weekends.",
-            "ja": "週末によく「プロジェクターをつける」します。",
-            "focus": "turn on the projector",
-            "jaFocus": "プロジェクターをつける"
-          },
-          {
-            "en": "It is useful to turn on the projector.",
-            "ja": "「プロジェクターをつける」できると便利です。",
-            "focus": "turn on the projector",
-            "jaFocus": "プロジェクターをつける"
-          }
-        ]
-      },
-      {
-        "phrase": "turn off the lights",
-        "ja": "照明を消す",
-        "image": "turn off the lights のまとまりで仕事に使う表現。",
-        "pattern": "turn off + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn off the lights before the meeting.",
-            "ja": "会議前に「照明を消す」必要があります。",
-            "focus": "turn off the lights",
-            "jaFocus": "照明を消す"
-          },
-          {
-            "en": "Please turn off the lights by the end of the day.",
-            "ja": "今日中に「照明を消す」してください。",
-            "focus": "turn off the lights",
-            "jaFocus": "照明を消す"
-          },
-          {
-            "en": "I will turn off the lights and share the update.",
-            "ja": "私が「照明を消す」して進捗を共有します。",
-            "focus": "turn off the lights",
-            "jaFocus": "照明を消す"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn off the lights on weekends.",
-            "ja": "週末によく「照明を消す」します。",
-            "focus": "turn off the lights",
-            "jaFocus": "照明を消す"
-          },
-          {
-            "en": "It is useful to turn off the lights.",
-            "ja": "「照明を消す」できると便利です。",
-            "focus": "turn off the lights",
-            "jaFocus": "照明を消す"
-          }
-        ]
-      },
-      {
-        "phrase": "turn down the offer",
-        "ja": "提案を断る",
-        "image": "turn down the offer のまとまりで仕事に使う表現。",
-        "pattern": "turn down + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn down the offer before the meeting.",
-            "ja": "会議前に「提案を断る」必要があります。",
-            "focus": "turn down the offer",
-            "jaFocus": "提案を断る"
-          },
-          {
-            "en": "Please turn down the offer by the end of the day.",
-            "ja": "今日中に「提案を断る」してください。",
-            "focus": "turn down the offer",
-            "jaFocus": "提案を断る"
-          },
-          {
-            "en": "I will turn down the offer and share the update.",
-            "ja": "私が「提案を断る」して進捗を共有します。",
-            "focus": "turn down the offer",
-            "jaFocus": "提案を断る"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn down the offer on weekends.",
-            "ja": "週末によく「提案を断る」します。",
-            "focus": "turn down the offer",
-            "jaFocus": "提案を断る"
-          },
-          {
-            "en": "It is useful to turn down the offer.",
-            "ja": "「提案を断る」できると便利です。",
-            "focus": "turn down the offer",
-            "jaFocus": "提案を断る"
-          }
-        ]
-      },
-      {
-        "phrase": "turn in the report",
-        "ja": "報告書を提出する",
-        "image": "turn in the report のまとまりで仕事に使う表現。",
-        "pattern": "turn in + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn in the report before the meeting.",
-            "ja": "会議前に「報告書を提出する」必要があります。",
-            "focus": "turn in the report",
-            "jaFocus": "報告書を提出する"
-          },
-          {
-            "en": "Please turn in the report by the end of the day.",
-            "ja": "今日中に「報告書を提出する」してください。",
-            "focus": "turn in the report",
-            "jaFocus": "報告書を提出する"
-          },
-          {
-            "en": "I will turn in the report and share the update.",
-            "ja": "私が「報告書を提出する」して進捗を共有します。",
-            "focus": "turn in the report",
-            "jaFocus": "報告書を提出する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn in the report on weekends.",
-            "ja": "週末によく「報告書を提出する」します。",
-            "focus": "turn in the report",
-            "jaFocus": "報告書を提出する"
-          },
-          {
-            "en": "It is useful to turn in the report.",
-            "ja": "「報告書を提出する」できると便利です。",
-            "focus": "turn in the report",
-            "jaFocus": "報告書を提出する"
-          }
-        ]
-      },
-      {
-        "phrase": "turn to the next topic",
-        "ja": "次の議題に移る",
-        "image": "turn to the next topic のまとまりで仕事に使う表現。",
-        "pattern": "turn to + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn to the next topic before the meeting.",
-            "ja": "会議前に「次の議題に移る」必要があります。",
-            "focus": "turn to the next topic",
-            "jaFocus": "次の議題に移る"
-          },
-          {
-            "en": "Please turn to the next topic by the end of the day.",
-            "ja": "今日中に「次の議題に移る」してください。",
-            "focus": "turn to the next topic",
-            "jaFocus": "次の議題に移る"
-          },
-          {
-            "en": "I will turn to the next topic and share the update.",
-            "ja": "私が「次の議題に移る」して進捗を共有します。",
-            "focus": "turn to the next topic",
-            "jaFocus": "次の議題に移る"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn to the next topic on weekends.",
-            "ja": "週末によく「次の議題に移る」します。",
-            "focus": "turn to the next topic",
-            "jaFocus": "次の議題に移る"
-          },
-          {
-            "en": "It is useful to turn to the next topic.",
-            "ja": "「次の議題に移る」できると便利です。",
-            "focus": "turn to the next topic",
-            "jaFocus": "次の議題に移る"
-          }
-        ]
-      },
-      {
-        "phrase": "turn out well",
-        "ja": "うまくいく",
-        "image": "turn out well のまとまりで仕事に使う表現。",
-        "pattern": "turn out + 副詞",
-        "examples": [
-          {
-            "en": "We need to turn out well before the meeting.",
-            "ja": "会議前に「うまくいく」必要があります。",
-            "focus": "turn out well",
-            "jaFocus": "うまくいく"
-          },
-          {
-            "en": "Please turn out well by the end of the day.",
-            "ja": "今日中に「うまくいく」してください。",
-            "focus": "turn out well",
-            "jaFocus": "うまくいく"
-          },
-          {
-            "en": "I will turn out well and share the update.",
-            "ja": "私が「うまくいく」して進捗を共有します。",
-            "focus": "turn out well",
-            "jaFocus": "うまくいく"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn out well on weekends.",
-            "ja": "週末によく「うまくいく」します。",
-            "focus": "turn out well",
-            "jaFocus": "うまくいく"
-          },
-          {
-            "en": "It is useful to turn out well.",
-            "ja": "「うまくいく」できると便利です。",
-            "focus": "turn out well",
-            "jaFocus": "うまくいく"
-          }
-        ]
-      },
-      {
-        "phrase": "take turns",
-        "ja": "交代でする",
-        "image": "take turns のまとまりで仕事に使う表現。",
-        "pattern": "take turns",
-        "examples": [
-          {
-            "en": "We need to take turns before the meeting.",
-            "ja": "会議前に「交代でする」必要があります。",
-            "focus": "take turns",
-            "jaFocus": "交代でする"
-          },
-          {
-            "en": "Please take turns by the end of the day.",
-            "ja": "今日中に「交代でする」してください。",
-            "focus": "take turns",
-            "jaFocus": "交代でする"
-          },
-          {
-            "en": "I will take turns and share the update.",
-            "ja": "私が「交代でする」して進捗を共有します。",
-            "focus": "take turns",
-            "jaFocus": "交代でする"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often take turns on weekends.",
-            "ja": "週末によく「交代でする」します。",
-            "focus": "take turns",
-            "jaFocus": "交代でする"
-          },
-          {
-            "en": "It is useful to take turns.",
-            "ja": "「交代でする」できると便利です。",
-            "focus": "take turns",
-            "jaFocus": "交代でする"
-          }
-        ]
-      },
-      {
-        "phrase": "turn into a proposal",
-        "ja": "提案に変える",
-        "image": "turn into a proposal のまとまりで仕事に使う表現。",
-        "pattern": "turn into + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn into a proposal before the meeting.",
-            "ja": "会議前に「提案に変える」必要があります。",
-            "focus": "turn into a proposal",
-            "jaFocus": "提案に変える"
-          },
-          {
-            "en": "Please turn into a proposal by the end of the day.",
-            "ja": "今日中に「提案に変える」してください。",
-            "focus": "turn into a proposal",
-            "jaFocus": "提案に変える"
-          },
-          {
-            "en": "I will turn into a proposal and share the update.",
-            "ja": "私が「提案に変える」して進捗を共有します。",
-            "focus": "turn into a proposal",
-            "jaFocus": "提案に変える"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn into a proposal on weekends.",
-            "ja": "週末によく「提案に変える」します。",
-            "focus": "turn into a proposal",
-            "jaFocus": "提案に変える"
-          },
-          {
-            "en": "It is useful to turn into a proposal.",
-            "ja": "「提案に変える」できると便利です。",
-            "focus": "turn into a proposal",
-            "jaFocus": "提案に変える"
-          }
-        ]
-      },
-      {
-        "phrase": "turn over the files",
-        "ja": "ファイルを引き渡す",
-        "image": "turn over the files のまとまりで仕事に使う表現。",
-        "pattern": "turn over + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn over the files before the meeting.",
-            "ja": "会議前に「ファイルを引き渡す」必要があります。",
-            "focus": "turn over the files",
-            "jaFocus": "ファイルを引き渡す"
-          },
-          {
-            "en": "Please turn over the files by the end of the day.",
-            "ja": "今日中に「ファイルを引き渡す」してください。",
-            "focus": "turn over the files",
-            "jaFocus": "ファイルを引き渡す"
-          },
-          {
-            "en": "I will turn over the files and share the update.",
-            "ja": "私が「ファイルを引き渡す」して進捗を共有します。",
-            "focus": "turn over the files",
-            "jaFocus": "ファイルを引き渡す"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn over the files on weekends.",
-            "ja": "週末によく「ファイルを引き渡す」します。",
-            "focus": "turn over the files",
-            "jaFocus": "ファイルを引き渡す"
-          },
-          {
-            "en": "It is useful to turn over the files.",
-            "ja": "「ファイルを引き渡す」できると便利です。",
-            "focus": "turn over the files",
-            "jaFocus": "ファイルを引き渡す"
-          }
-        ]
-      },
-      {
-        "phrase": "turn around the project",
-        "ja": "プロジェクトを立て直す",
-        "image": "turn around the project のまとまりで仕事に使う表現。",
-        "pattern": "turn around + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn around the project before the meeting.",
-            "ja": "会議前に「プロジェクトを立て直す」必要があります。",
-            "focus": "turn around the project",
-            "jaFocus": "プロジェクトを立て直す"
-          },
-          {
-            "en": "Please turn around the project by the end of the day.",
-            "ja": "今日中に「プロジェクトを立て直す」してください。",
-            "focus": "turn around the project",
-            "jaFocus": "プロジェクトを立て直す"
-          },
-          {
-            "en": "I will turn around the project and share the update.",
-            "ja": "私が「プロジェクトを立て直す」して進捗を共有します。",
-            "focus": "turn around the project",
-            "jaFocus": "プロジェクトを立て直す"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn around the project on weekends.",
-            "ja": "週末によく「プロジェクトを立て直す」します。",
-            "focus": "turn around the project",
-            "jaFocus": "プロジェクトを立て直す"
-          },
-          {
-            "en": "It is useful to turn around the project.",
-            "ja": "「プロジェクトを立て直す」できると便利です。",
-            "focus": "turn around the project",
-            "jaFocus": "プロジェクトを立て直す"
-          }
-        ]
-      }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
-      {
-        "phrase": "turn on",
-        "ja": "つける",
-        "image": "turn on のまとまりで仕事に使う表現。",
-        "pattern": "turn on + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn on before the meeting.",
-            "ja": "会議前に「つける」必要があります。",
-            "focus": "turn on",
-            "jaFocus": "つける"
-          },
-          {
-            "en": "Please turn on by the end of the day.",
-            "ja": "今日中に「つける」してください。",
-            "focus": "turn on",
-            "jaFocus": "つける"
-          },
-          {
-            "en": "I will turn on and share the update.",
-            "ja": "私が「つける」して進捗を共有します。",
-            "focus": "turn on",
-            "jaFocus": "つける"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn on on weekends.",
-            "ja": "週末によく「つける」します。",
-            "focus": "turn on",
-            "jaFocus": "つける"
-          },
-          {
-            "en": "It is useful to turn on.",
-            "ja": "「つける」できると便利です。",
-            "focus": "turn on",
-            "jaFocus": "つける"
-          }
-        ]
-      },
-      {
-        "phrase": "turn off",
-        "ja": "消す",
-        "image": "turn off のまとまりで仕事に使う表現。",
-        "pattern": "turn off + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn off before the meeting.",
-            "ja": "会議前に「消す」必要があります。",
-            "focus": "turn off",
-            "jaFocus": "消す"
-          },
-          {
-            "en": "Please turn off by the end of the day.",
-            "ja": "今日中に「消す」してください。",
-            "focus": "turn off",
-            "jaFocus": "消す"
-          },
-          {
-            "en": "I will turn off and share the update.",
-            "ja": "私が「消す」して進捗を共有します。",
-            "focus": "turn off",
-            "jaFocus": "消す"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn off on weekends.",
-            "ja": "週末によく「消す」します。",
-            "focus": "turn off",
-            "jaFocus": "消す"
-          },
-          {
-            "en": "It is useful to turn off.",
-            "ja": "「消す」できると便利です。",
-            "focus": "turn off",
-            "jaFocus": "消す"
-          }
-        ]
-      },
-      {
-        "phrase": "turn down",
-        "ja": "断る・下げる",
-        "image": "turn down のまとまりで仕事に使う表現。",
-        "pattern": "turn down + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn down before the meeting.",
-            "ja": "会議前に「断る・下げる」必要があります。",
-            "focus": "turn down",
-            "jaFocus": "断る・下げる"
-          },
-          {
-            "en": "Please turn down by the end of the day.",
-            "ja": "今日中に「断る・下げる」してください。",
-            "focus": "turn down",
-            "jaFocus": "断る・下げる"
-          },
-          {
-            "en": "I will turn down and share the update.",
-            "ja": "私が「断る・下げる」して進捗を共有します。",
-            "focus": "turn down",
-            "jaFocus": "断る・下げる"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn down on weekends.",
-            "ja": "週末によく「断る・下げる」します。",
-            "focus": "turn down",
-            "jaFocus": "断る・下げる"
-          },
-          {
-            "en": "It is useful to turn down.",
-            "ja": "「断る・下げる」できると便利です。",
-            "focus": "turn down",
-            "jaFocus": "断る・下げる"
-          }
-        ]
-      },
-      {
-        "phrase": "turn in",
-        "ja": "提出する",
-        "image": "turn in のまとまりで仕事に使う表現。",
-        "pattern": "turn in + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn in before the meeting.",
-            "ja": "会議前に「提出する」必要があります。",
-            "focus": "turn in",
-            "jaFocus": "提出する"
-          },
-          {
-            "en": "Please turn in by the end of the day.",
-            "ja": "今日中に「提出する」してください。",
-            "focus": "turn in",
-            "jaFocus": "提出する"
-          },
-          {
-            "en": "I will turn in and share the update.",
-            "ja": "私が「提出する」して進捗を共有します。",
-            "focus": "turn in",
-            "jaFocus": "提出する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn in on weekends.",
-            "ja": "週末によく「提出する」します。",
-            "focus": "turn in",
-            "jaFocus": "提出する"
-          },
-          {
-            "en": "It is useful to turn in.",
-            "ja": "「提出する」できると便利です。",
-            "focus": "turn in",
-            "jaFocus": "提出する"
-          }
-        ]
-      },
-      {
-        "phrase": "turn out",
-        "ja": "結果になる",
-        "image": "turn out のまとまりで仕事に使う表現。",
-        "pattern": "turn out",
-        "examples": [
-          {
-            "en": "We need to turn out before the meeting.",
-            "ja": "会議前に「結果になる」必要があります。",
-            "focus": "turn out",
-            "jaFocus": "結果になる"
-          },
-          {
-            "en": "Please turn out by the end of the day.",
-            "ja": "今日中に「結果になる」してください。",
-            "focus": "turn out",
-            "jaFocus": "結果になる"
-          },
-          {
-            "en": "I will turn out and share the update.",
-            "ja": "私が「結果になる」して進捗を共有します。",
-            "focus": "turn out",
-            "jaFocus": "結果になる"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn out on weekends.",
-            "ja": "週末によく「結果になる」します。",
-            "focus": "turn out",
-            "jaFocus": "結果になる"
-          },
-          {
-            "en": "It is useful to turn out.",
-            "ja": "「結果になる」できると便利です。",
-            "focus": "turn out",
-            "jaFocus": "結果になる"
-          }
-        ]
-      },
-      {
-        "phrase": "turn to",
-        "ja": "頼る・移る",
-        "image": "turn to のまとまりで仕事に使う表現。",
-        "pattern": "turn to + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn to before the meeting.",
-            "ja": "会議前に「頼る・移る」必要があります。",
-            "focus": "turn to",
-            "jaFocus": "頼る・移る"
-          },
-          {
-            "en": "Please turn to by the end of the day.",
-            "ja": "今日中に「頼る・移る」してください。",
-            "focus": "turn to",
-            "jaFocus": "頼る・移る"
-          },
-          {
-            "en": "I will turn to and share the update.",
-            "ja": "私が「頼る・移る」して進捗を共有します。",
-            "focus": "turn to",
-            "jaFocus": "頼る・移る"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn to on weekends.",
-            "ja": "週末によく「頼る・移る」します。",
-            "focus": "turn to",
-            "jaFocus": "頼る・移る"
-          },
-          {
-            "en": "It is useful to turn to.",
-            "ja": "「頼る・移る」できると便利です。",
-            "focus": "turn to",
-            "jaFocus": "頼る・移る"
-          }
-        ]
-      },
-      {
-        "phrase": "turn into",
-        "ja": "〜に変わる",
-        "image": "turn into のまとまりで仕事に使う表現。",
-        "pattern": "turn into + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn into before the meeting.",
-            "ja": "会議前に「〜に変わる」必要があります。",
-            "focus": "turn into",
-            "jaFocus": "〜に変わる"
-          },
-          {
-            "en": "Please turn into by the end of the day.",
-            "ja": "今日中に「〜に変わる」してください。",
-            "focus": "turn into",
-            "jaFocus": "〜に変わる"
-          },
-          {
-            "en": "I will turn into and share the update.",
-            "ja": "私が「〜に変わる」して進捗を共有します。",
-            "focus": "turn into",
-            "jaFocus": "〜に変わる"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn into on weekends.",
-            "ja": "週末によく「〜に変わる」します。",
-            "focus": "turn into",
-            "jaFocus": "〜に変わる"
-          },
-          {
-            "en": "It is useful to turn into.",
-            "ja": "「〜に変わる」できると便利です。",
-            "focus": "turn into",
-            "jaFocus": "〜に変わる"
-          }
-        ]
-      },
-      {
-        "phrase": "turn over",
-        "ja": "引き渡す・めくる",
-        "image": "turn over のまとまりで仕事に使う表現。",
-        "pattern": "turn over + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn over before the meeting.",
-            "ja": "会議前に「引き渡す・めくる」必要があります。",
-            "focus": "turn over",
-            "jaFocus": "引き渡す・めくる"
-          },
-          {
-            "en": "Please turn over by the end of the day.",
-            "ja": "今日中に「引き渡す・めくる」してください。",
-            "focus": "turn over",
-            "jaFocus": "引き渡す・めくる"
-          },
-          {
-            "en": "I will turn over and share the update.",
-            "ja": "私が「引き渡す・めくる」して進捗を共有します。",
-            "focus": "turn over",
-            "jaFocus": "引き渡す・めくる"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn over on weekends.",
-            "ja": "週末によく「引き渡す・めくる」します。",
-            "focus": "turn over",
-            "jaFocus": "引き渡す・めくる"
-          },
-          {
-            "en": "It is useful to turn over.",
-            "ja": "「引き渡す・めくる」できると便利です。",
-            "focus": "turn over",
-            "jaFocus": "引き渡す・めくる"
-          }
-        ]
-      },
-      {
-        "phrase": "turn around",
-        "ja": "立て直す・方向転換する",
-        "image": "turn around のまとまりで仕事に使う表現。",
-        "pattern": "turn around + 名詞",
-        "examples": [
-          {
-            "en": "We need to turn around before the meeting.",
-            "ja": "会議前に「立て直す・方向転換する」必要があります。",
-            "focus": "turn around",
-            "jaFocus": "立て直す・方向転換する"
-          },
-          {
-            "en": "Please turn around by the end of the day.",
-            "ja": "今日中に「立て直す・方向転換する」してください。",
-            "focus": "turn around",
-            "jaFocus": "立て直す・方向転換する"
-          },
-          {
-            "en": "I will turn around and share the update.",
-            "ja": "私が「立て直す・方向転換する」して進捗を共有します。",
-            "focus": "turn around",
-            "jaFocus": "立て直す・方向転換する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn around on weekends.",
-            "ja": "週末によく「立て直す・方向転換する」します。",
-            "focus": "turn around",
-            "jaFocus": "立て直す・方向転換する"
-          },
-          {
-            "en": "It is useful to turn around.",
-            "ja": "「立て直す・方向転換する」できると便利です。",
-            "focus": "turn around",
-            "jaFocus": "立て直す・方向転換する"
-          }
-        ]
-      },
-      {
-        "phrase": "turn back",
-        "ja": "引き返す",
-        "image": "turn back のまとまりで仕事に使う表現。",
-        "pattern": "turn back",
-        "examples": [
-          {
-            "en": "We need to turn back before the meeting.",
-            "ja": "会議前に「引き返す」必要があります。",
-            "focus": "turn back",
-            "jaFocus": "引き返す"
-          },
-          {
-            "en": "Please turn back by the end of the day.",
-            "ja": "今日中に「引き返す」してください。",
-            "focus": "turn back",
-            "jaFocus": "引き返す"
-          },
-          {
-            "en": "I will turn back and share the update.",
-            "ja": "私が「引き返す」して進捗を共有します。",
-            "focus": "turn back",
-            "jaFocus": "引き返す"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I often turn back on weekends.",
-            "ja": "週末によく「引き返す」します。",
-            "focus": "turn back",
-            "jaFocus": "引き返す"
-          },
-          {
-            "en": "It is useful to turn back.",
-            "ja": "「引き返す」できると便利です。",
-            "focus": "turn back",
-            "jaFocus": "引き返す"
-          }
-        ]
-      }
+      { "phrase": "turn on", "ja": "電源を入れる・つける", "image": "機器や照明をONにする。", "pattern": "turn on", "examples": [
+        { "en": "Please turn on the projector before the meeting.", "ja": "会議前にプロジェクターをつけてください。", "focus": "turn on" },
+        { "en": "We turned on the test unit after checking the wiring.", "ja": "配線確認後、私たちは試験機の電源を入れました。", "focus": "turned on" },
+        { "en": "Can you turn on the lights in the showroom?", "ja": "ショールームの照明をつけてもらえますか？", "focus": "turn on" }
+      ] },
+      { "phrase": "turn off", "ja": "電源を切る・消す", "image": "機器や照明をOFFにする。", "pattern": "turn off", "examples": [
+        { "en": "Please turn off the lights after the meeting.", "ja": "会議後に照明を消してください。", "focus": "turn off" },
+        { "en": "We turned off the controller before replacing the cable.", "ja": "ケーブル交換前にコントローラーの電源を切りました。", "focus": "turned off" },
+        { "en": "Do not turn off the system during the update.", "ja": "更新中にシステムを切らないでください。", "focus": "turn off" }
+      ] },
+      { "phrase": "turn down", "ja": "断る・音量などを下げる", "image": "提案や数値を下方向へ下げる。", "pattern": "turn down", "examples": [
+        { "en": "The client turned down our first proposal.", "ja": "顧客は私たちの最初の提案を断りました。", "focus": "turned down" },
+        { "en": "Please turn down the volume during the call.", "ja": "通話中は音量を下げてください。", "focus": "turn down" },
+        { "en": "We should not turn down this opportunity too quickly.", "ja": "この機会を早く断りすぎるべきではありません。", "focus": "turn down" }
+      ] },
+      { "phrase": "turn in", "ja": "提出する", "image": "書類や課題を相手側へ出す。", "pattern": "turn in", "examples": [
+        { "en": "Please turn in the report by Friday.", "ja": "金曜日までに報告書を提出してください。", "focus": "turn in" },
+        { "en": "We turned in the final documents yesterday.", "ja": "私たちは昨日、最終書類を提出しました。", "focus": "turned in" },
+        { "en": "He forgot to turn in the application form.", "ja": "彼は申請書を提出するのを忘れました。", "focus": "turn in" }
+      ] },
+      { "phrase": "turn out", "ja": "結果的に〜になる・判明する", "image": "最後に結果が見えてくる。", "pattern": "turn out", "examples": [
+        { "en": "The meeting turned out well.", "ja": "会議はうまくいきました。", "focus": "turned out" },
+        { "en": "The issue turned out to be minor.", "ja": "その問題は軽微だと分かりました。", "focus": "turned out" },
+        { "en": "The new process turned out effective.", "ja": "新しい手順は効果的でした。", "focus": "turned out" }
+      ] },
+      { "phrase": "turn to", "ja": "〜に頼る・話題を移す", "image": "注意や助けを別の対象へ向ける。", "pattern": "turn to", "examples": [
+        { "en": "Let’s turn to the next topic.", "ja": "次の議題に移りましょう。", "focus": "turn to" },
+        { "en": "The client turned to us for support.", "ja": "顧客は支援を求めて私たちに頼りました。", "focus": "turned to" },
+        { "en": "We turned to the data for answers.", "ja": "私たちは答えを求めてデータに目を向けました。", "focus": "turned to" }
+      ] },
+      { "phrase": "turn into", "ja": "〜に変わる・変える", "image": "別の形や状態へ変化する。", "pattern": "turn into", "examples": [
+        { "en": "The idea turned into a strong proposal.", "ja": "そのアイデアは良い提案になりました。", "focus": "turned into" },
+        { "en": "We turned the feedback into a clear action plan.", "ja": "私たちはフィードバックを明確な行動計画にしました。", "focus": "turned into" },
+        { "en": "A small delay can turn into a major issue.", "ja": "小さな遅れが大きな問題になることがあります。", "focus": "turn into" }
+      ] },
+      { "phrase": "turn over", "ja": "引き渡す・めくる・ひっくり返す", "image": "反対側へ回す、または相手に渡す。", "pattern": "turn over", "examples": [
+        { "en": "Please turn over the sample and check the label.", "ja": "サンプルを裏返してラベルを確認してください。", "focus": "turn over" },
+        { "en": "We turned over the documents to the legal team.", "ja": "私たちは書類を法務チームに引き渡しました。", "focus": "turned over" },
+        { "en": "The warehouse turns over inventory quickly.", "ja": "その倉庫は在庫の回転が速いです。", "focus": "turns over" }
+      ] },
+      { "phrase": "turn around", "ja": "好転させる・方向転換する", "image": "悪い流れや向きを反対方向へ変える。", "pattern": "turn around", "examples": [
+        { "en": "We need to turn around this project quickly.", "ja": "私たちはこの案件を早く立て直す必要があります。", "focus": "turn around" },
+        { "en": "The new manager turned around the sales team.", "ja": "新しいマネージャーは営業チームを立て直しました。", "focus": "turned around" },
+        { "en": "Please turn around at the next corner.", "ja": "次の角で方向転換してください。", "focus": "turn around" }
+      ] },
+      { "phrase": "turn back", "ja": "引き返す・元に戻る", "image": "進んだ方向から戻る。", "pattern": "turn back", "examples": [
+        { "en": "We had to turn back because the site was closed.", "ja": "現場が閉まっていたため、私たちは引き返す必要がありました。", "focus": "turn back" },
+        { "en": "Once we send the order, we cannot turn back.", "ja": "発注を送ったら、もう後戻りできません。", "focus": "turn back" },
+        { "en": "The driver turned back after receiving the new instruction.", "ja": "運転手は新しい指示を受けて引き返しました。", "focus": "turned back" }
+      ] }
     ]
   },
   {
@@ -9935,98 +7080,82 @@ export const verbs: Verb[] = [
     "syllable": "bring",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "相手・場所・状況に何かを持ってくる",
-    "coreDetail": "BRINGは物を持ってくるだけでなく、人を連れてくる、話題を出す、結果や価値をもたらす時にも使います。仕事では資料・人・課題・価値を相手の場に持ち込むイメージです。",
-    "coreVisual": { "from": ["資料", "人", "話題", "価値", "結果"], "to": "相手・会議・案件", "label": "bring" },
+    "core": "物・人・情報を話し手側や目的地へ持ってくる",
+    "coreDetail": "BRINGは、物や人をこちら側へ持ってくる・連れてくるイメージです。仕事では資料・サンプル・情報・価値・話題を相手や会議の場に持ち込む時によく使います。",
+    "coreVisual": { "from": ["📦 物", "👤 人", "📄 情報", "💡 話題", "⭐ 価値"], "to": "➡️ 話し手側・会議・顧客の場", "label": "こちらへ持ってくる" },
     "meanings": [
-      { "id": "bring-object", "title": "1 物を持ってくる", "pattern": "bring + 物", "transitivity": "他動詞", "structure": "使い方", "image": "必要な物を相手の場所へ持ってくる。", "point": "bring the documents / bring your laptop は仕事で頻出です。", "examples": [
-        { "en": "Please bring the documents to the meeting.", "ja": "会議に資料を持ってきてください。", "focus": "bring the documents", "jaFocus": "資料を持ってきて" },
-        { "en": "Can you bring your laptop tomorrow?", "ja": "明日ノートPCを持ってきてもらえますか？", "focus": "bring your laptop", "jaFocus": "ノートPCを持ってきて" },
-        { "en": "I will bring the latest sample to the client.", "ja": "最新サンプルを顧客のところへ持っていきます。", "focus": "bring the latest sample", "jaFocus": "サンプルを持っていきます" }
+      { "id": "bring-object", "title": "1 物を持ってくる", "pattern": "bring + 物", "transitivity": "他動詞", "structure": "基本", "image": "物をこちら側や目的地へ持ってくる。", "point": "資料・サンプル・機材などを持ってくる時に使います。", "examples": [
+        { "en": "Please bring the documents to the meeting.", "ja": "会議に資料を持ってきてください。", "focus": "bring", "object": "the documents" },
+        { "en": "We brought the samples to the client’s office.", "ja": "私たちはサンプルを顧客のオフィスに持っていきました。", "focus": "brought", "object": "the samples" },
+        { "en": "Can you bring your laptop tomorrow?", "ja": "明日ノートパソコンを持ってきてもらえますか？", "focus": "bring", "object": "your laptop" }
       ] },
-      { "id": "bring-person", "title": "2 人を連れてくる", "pattern": "bring + 人", "transitivity": "他動詞", "structure": "使い方", "image": "必要な人を会議や場所へ連れてくる。", "point": "技術者・上司・担当者を連れてくる時に便利です。", "examples": [
-        { "en": "Can you bring the engineer to the call?", "ja": "電話会議にエンジニアを入れてもらえますか？", "focus": "bring the engineer", "jaFocus": "エンジニアを入れて" },
-        { "en": "Please bring your manager to the next meeting.", "ja": "次回の会議には上司を連れてきてください。", "focus": "bring your manager", "jaFocus": "上司を連れてきて" },
-        { "en": "We should bring someone from production to the discussion.", "ja": "その議論には製造部門の人を連れてくるべきです。", "focus": "bring someone", "jaFocus": "人を連れてくる" }
+      { "id": "bring-person", "title": "2 人を連れてくる", "pattern": "bring + 人", "transitivity": "他動詞", "structure": "基本", "image": "人をこちら側や目的地へ連れてくる。", "point": "同僚・上司・専門家などを連れてくる時に使います。", "examples": [
+        { "en": "I will bring our engineer to the next meeting.", "ja": "次の会議には技術担当を連れていきます。", "focus": "bring", "object": "our engineer" },
+        { "en": "She brought a new team member to the site.", "ja": "彼女は新しいチームメンバーを現場に連れていきました。", "focus": "brought", "object": "a new team member" },
+        { "en": "Please bring someone who understands the system.", "ja": "そのシステムを理解している人を連れてきてください。", "focus": "bring", "object": "someone" }
       ] },
-      { "id": "bring-topic", "title": "3 話題・問題を持ち出す", "pattern": "bring up + 話題", "transitivity": "他動詞", "structure": "使い方", "image": "会話や会議の場に話題を出す。", "point": "bring up this issue は会議でよく使います。", "examples": [
-        { "en": "I will bring up this issue in the meeting.", "ja": "会議でこの問題を取り上げます。", "focus": "bring up", "jaFocus": "取り上げます" },
-        { "en": "Please bring up any concerns before we send the quote.", "ja": "見積を送る前に懸念点があれば挙げてください。", "focus": "bring up", "jaFocus": "挙げて" },
-        { "en": "She brought up an important point about delivery.", "ja": "彼女は納期について重要な点を持ち出しました。", "focus": "brought up", "jaFocus": "持ち出しました" }
+      { "id": "bring-result", "title": "3 結果・価値をもたらす", "pattern": "bring + 結果", "transitivity": "他動詞", "structure": "基本", "image": "行動が良い結果や価値を生む。", "point": "bring value / bring results のように使います。", "examples": [
+        { "en": "This change will bring better results.", "ja": "この変更はより良い結果をもたらします。", "focus": "bring", "object": "better results" },
+        { "en": "Fast support brought value to the client.", "ja": "迅速なサポートは顧客に価値をもたらしました。", "focus": "brought", "object": "value" },
+        { "en": "The new system can bring major benefits.", "ja": "新しいシステムは大きなメリットをもたらす可能性があります。", "focus": "bring", "object": "major benefits" }
       ] },
-      { "id": "bring-result", "title": "4 結果・変化をもたらす", "pattern": "bring + 結果 / 変化", "transitivity": "他動詞", "structure": "使い方", "image": "行動や出来事が結果を生む。", "point": "bring results / bring change は仕事で自然です。", "examples": [
-        { "en": "The new system will bring major changes.", "ja": "新しいシステムは大きな変化をもたらします。", "focus": "bring major changes", "jaFocus": "大きな変化をもたらします" },
-        { "en": "Better communication brings fewer mistakes.", "ja": "より良いコミュニケーションはミスの減少につながります。", "focus": "brings fewer mistakes", "jaFocus": "ミスの減少につながります" },
-        { "en": "This campaign brought good results last quarter.", "ja": "このキャンペーンは前四半期に良い結果をもたらしました。", "focus": "brought good results", "jaFocus": "良い結果をもたらしました" }
-      ] },
-      { "id": "bring-value", "title": "5 価値・経験をもたらす", "pattern": "bring + 価値 / 経験 + to", "transitivity": "他動詞", "structure": "使い方", "image": "相手やチームに良いものを加える。", "point": "bring value to clients はビジネスで便利です。", "examples": [
-        { "en": "This service brings value to our clients.", "ja": "このサービスは顧客に価値をもたらします。", "focus": "brings value", "jaFocus": "価値をもたらします" },
-        { "en": "He brings a lot of experience to the team.", "ja": "彼はチームに多くの経験をもたらしています。", "focus": "brings a lot of experience", "jaFocus": "経験をもたらしています" },
-        { "en": "Your idea can bring new opportunities to the project.", "ja": "あなたのアイデアは案件に新しい機会をもたらす可能性があります。", "focus": "bring new opportunities", "jaFocus": "新しい機会をもたらす" }
-      ] },
-      { "id": "bring-back", "title": "6 戻す・復活させる", "pattern": "bring back + 物 / 状態", "transitivity": "他動詞", "structure": "使い方", "image": "以前あったものをもう一度戻す。", "point": "bring back は復元・再開にも使います。", "examples": [
-        { "en": "We need to bring back the previous design.", "ja": "以前のデザインに戻す必要があります。", "focus": "bring back", "jaFocus": "戻す" },
-        { "en": "The update brought back the missing function.", "ja": "その更新で欠けていた機能が復活しました。", "focus": "brought back", "jaFocus": "復活しました" },
-        { "en": "Can we bring back the old pricing table for comparison?", "ja": "比較用に以前の価格表を戻せますか？", "focus": "bring back", "jaFocus": "戻せますか" }
-      ] },
-      { "id": "bring-together", "title": "7 まとめる・集める", "pattern": "bring together + 人 / 情報", "transitivity": "他動詞", "structure": "使い方", "image": "別々のものを一つの場に集める。", "point": "情報・人・意見をまとめる時に使います。", "examples": [
-        { "en": "The meeting brought together sales and engineering.", "ja": "その会議で営業と技術が一堂に集まりました。", "focus": "brought together", "jaFocus": "集まりました" },
-        { "en": "Please bring together the latest cost data.", "ja": "最新の原価データをまとめてください。", "focus": "bring together", "jaFocus": "まとめて" },
-        { "en": "This report brings together all customer feedback.", "ja": "この報告書はすべての顧客フィードバックをまとめています。", "focus": "brings together", "jaFocus": "まとめています" }
+      { "id": "bring-topic", "title": "4 話題・問題を持ち出す", "pattern": "bring + 話題", "transitivity": "他動詞", "structure": "基本", "image": "話題や問題を会議の場へ出す。", "point": "bring the issue to someone のように使えます。", "examples": [
+        { "en": "Please bring the issue to the manager.", "ja": "その問題を上司に伝えてください。", "focus": "bring", "object": "the issue" },
+        { "en": "We brought the customer’s concern to the team.", "ja": "私たちは顧客の懸念をチームに共有しました。", "focus": "brought", "object": "the customer’s concern" },
+        { "en": "He brought an important point to the discussion.", "ja": "彼は議論に重要な点を持ち込みました。", "focus": "brought", "object": "an important point" }
       ] }
     ],
-    "collocations": [
-      { "phrase": "bring value", "ja": "価値をもたらす", "image": "相手に役立つものを与える。", "pattern": "bring value", "examples": [
-        { "en": "Our proposal must bring value to the client.", "ja": "私たちの提案は顧客に価値をもたらす必要があります。", "focus": "bring value", "jaFocus": "価値をもたらす" },
-        { "en": "This feature brings value to daily operations.", "ja": "この機能は日々の業務に価値をもたらします。", "focus": "brings value", "jaFocus": "価値をもたらします" },
-        { "en": "A fast response can bring value beyond price.", "ja": "素早い対応は価格以上の価値をもたらすことがあります。", "focus": "bring value", "jaFocus": "価値をもたらす" }
-      ] },
-      { "phrase": "bring up an issue", "ja": "問題を取り上げる", "image": "会議や会話で問題を出す。", "pattern": "bring up an issue", "examples": [
-        { "en": "I will bring up the issue with the manager.", "ja": "その問題をマネージャーに取り上げます。", "focus": "bring up", "jaFocus": "取り上げます" },
-        { "en": "Please bring up any issues during the meeting.", "ja": "会議中に問題があれば挙げてください。", "focus": "bring up", "jaFocus": "挙げて" },
-        { "en": "The client brought up an issue with the schedule.", "ja": "顧客はスケジュールに関する問題を持ち出しました。", "focus": "brought up", "jaFocus": "持ち出しました" }
-      ] },
-      { "phrase": "bring results", "ja": "結果を出す・もたらす", "image": "行動が成果につながる。", "pattern": "bring results", "examples": [
-        { "en": "Consistent follow-up brings results.", "ja": "継続的なフォローは結果につながります。", "focus": "brings results", "jaFocus": "結果につながります" },
-        { "en": "This sales approach brought results last month.", "ja": "この営業方法は先月成果を出しました。", "focus": "brought results", "jaFocus": "成果を出しました" },
-        { "en": "We need a plan that can bring results quickly.", "ja": "早く結果を出せる計画が必要です。", "focus": "bring results", "jaFocus": "結果を出せる" }
-      ] },
-      { "phrase": "bring someone into", "ja": "人を参加させる・巻き込む", "image": "人を会議や案件に入れる。", "pattern": "bring someone into + 名詞", "examples": [
-        { "en": "We should bring the engineer into this discussion.", "ja": "この議論にはエンジニアを参加させるべきです。", "focus": "bring the engineer into", "jaFocus": "参加させる" },
-        { "en": "Please bring the finance team into the approval process.", "ja": "承認プロセスに経理チームを入れてください。", "focus": "bring the finance team into", "jaFocus": "入れて" },
-        { "en": "The manager brought a specialist into the project.", "ja": "マネージャーは専門家を案件に加えました。", "focus": "brought a specialist into", "jaFocus": "加えました" }
-      ] },
-      { "phrase": "bring clarity", "ja": "明確にする・分かりやすくする", "image": "曖昧な状況に分かりやすさを加える。", "pattern": "bring clarity", "examples": [
-        { "en": "The chart brings clarity to the sales data.", "ja": "そのグラフは売上データを分かりやすくします。", "focus": "brings clarity", "jaFocus": "分かりやすくします" },
-        { "en": "Your explanation brought clarity to the issue.", "ja": "あなたの説明でその問題が明確になりました。", "focus": "brought clarity", "jaFocus": "明確になりました" },
-        { "en": "We need more details to bring clarity to the proposal.", "ja": "提案を明確にするために、さらに詳細が必要です。", "focus": "bring clarity", "jaFocus": "明確にする" }
-      ] }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
-      { "phrase": "bring up", "ja": "話題に出す・取り上げる", "image": "話題を会議や会話の場に持ち上げる。", "pattern": "bring up", "examples": [
-        { "en": "I will bring up the delivery issue tomorrow.", "ja": "明日、納期の問題を取り上げます。", "focus": "bring up", "jaFocus": "取り上げます" },
-        { "en": "She brought up a risk we had missed.", "ja": "彼女は私たちが見落としていたリスクを持ち出しました。", "focus": "brought up", "jaFocus": "持ち出しました" },
-        { "en": "Please bring up the cost difference during the call.", "ja": "電話会議中にコスト差を取り上げてください。", "focus": "bring up", "jaFocus": "取り上げて" }
+      { "phrase": "bring up", "ja": "話題に出す・育てる", "image": "話題を会議や会話の場に上げる。", "pattern": "bring up", "examples": [
+        { "en": "Please bring up the delivery issue in the meeting.", "ja": "会議で納期の問題を話題に出してください。", "focus": "bring up" },
+        { "en": "The client brought up a concern about the price.", "ja": "顧客は価格に関する懸念を話題に出しました。", "focus": "brought up" },
+        { "en": "I will bring up this point with my manager.", "ja": "この点を上司に相談します。", "focus": "bring up" }
       ] },
-      { "phrase": "bring back", "ja": "戻す・復活させる", "image": "以前の状態や物を戻す。", "pattern": "bring back", "examples": [
-        { "en": "We brought back the previous layout.", "ja": "以前のレイアウトに戻しました。", "focus": "brought back", "jaFocus": "戻しました" },
-        { "en": "The update brought back the missing button.", "ja": "その更新で消えていたボタンが復活しました。", "focus": "brought back", "jaFocus": "復活しました" },
-        { "en": "Can we bring back the old sample for comparison?", "ja": "比較用に以前のサンプルを戻せますか？", "focus": "bring back", "jaFocus": "戻せますか" }
+      { "phrase": "bring back", "ja": "持ち帰る・復活させる", "image": "離れたものを元の場所や状態へ戻す。", "pattern": "bring back", "examples": [
+        { "en": "Please bring back the signed document tomorrow.", "ja": "署名済み書類を明日持ち帰ってください。", "focus": "bring back" },
+        { "en": "The update brought back the old feature.", "ja": "その更新で古い機能が復活しました。", "focus": "brought back" },
+        { "en": "We need to bring back customer trust.", "ja": "私たちは顧客の信頼を取り戻す必要があります。", "focus": "bring back" }
       ] },
-      { "phrase": "bring in", "ja": "導入する・呼び入れる", "image": "外から新しいものや人を入れる。", "pattern": "bring in", "examples": [
-        { "en": "We brought in a specialist for the project.", "ja": "その案件のために専門家を呼び入れました。", "focus": "brought in", "jaFocus": "呼び入れました" },
-        { "en": "The company plans to bring in a new system.", "ja": "会社は新しいシステムを導入する予定です。", "focus": "bring in", "jaFocus": "導入する" },
-        { "en": "This campaign brought in many new customers.", "ja": "このキャンペーンで多くの新規顧客を獲得しました。", "focus": "brought in", "jaFocus": "獲得しました" }
+      { "phrase": "bring in", "ja": "導入する・呼び入れる・獲得する", "image": "外から新しいものや人を入れる。", "pattern": "bring in", "examples": [
+        { "en": "We brought in a specialist for the project.", "ja": "その案件のために専門家を呼び入れました。", "focus": "brought in" },
+        { "en": "The company plans to bring in a new system.", "ja": "会社は新しいシステムを導入する予定です。", "focus": "bring in" },
+        { "en": "This campaign brought in many new customers.", "ja": "このキャンペーンで多くの新規顧客を獲得しました。", "focus": "brought in" }
       ] },
-      { "phrase": "bring together", "ja": "集める・まとめる", "image": "別々のものを一つにする。", "pattern": "bring together", "examples": [
-        { "en": "The workshop brought together different departments.", "ja": "そのワークショップで複数の部署が集まりました。", "focus": "brought together", "jaFocus": "集まりました" },
-        { "en": "Please bring together the latest information.", "ja": "最新情報をまとめてください。", "focus": "bring together", "jaFocus": "まとめて" },
-        { "en": "This document brings together all key points.", "ja": "この資料はすべての重要ポイントをまとめています。", "focus": "brings together", "jaFocus": "まとめています" }
+      { "phrase": "bring together", "ja": "集める・まとめる", "image": "別々の人や情報を一つにする。", "pattern": "bring together", "examples": [
+        { "en": "The workshop brought together different departments.", "ja": "そのワークショップで複数の部署が集まりました。", "focus": "brought together" },
+        { "en": "Please bring together the latest information.", "ja": "最新情報をまとめてください。", "focus": "bring together" },
+        { "en": "This document brings together all key points.", "ja": "この資料はすべての重要ポイントをまとめています。", "focus": "brings together" }
       ] },
       { "phrase": "bring about", "ja": "引き起こす・もたらす", "image": "原因となって変化を生む。", "pattern": "bring about", "examples": [
-        { "en": "The new rule brought about major changes.", "ja": "新しい規則は大きな変化をもたらしました。", "focus": "brought about", "jaFocus": "もたらしました" },
-        { "en": "Better planning can bring about fewer delays.", "ja": "より良い計画により遅延を減らせます。", "focus": "bring about", "jaFocus": "減らせます" },
-        { "en": "The system error brought about several complaints.", "ja": "システムエラーにより、いくつかのクレームが発生しました。", "focus": "brought about", "jaFocus": "発生しました" }
+        { "en": "The new rule brought about major changes.", "ja": "新しい規則は大きな変化をもたらしました。", "focus": "brought about" },
+        { "en": "Better planning can bring about fewer delays.", "ja": "より良い計画により遅延を減らせます。", "focus": "bring about" },
+        { "en": "The system error brought about several complaints.", "ja": "システムエラーにより、いくつかのクレームが発生しました。", "focus": "brought about" }
+      ] },
+      { "phrase": "bring out", "ja": "引き出す・発売する", "image": "内側にあるものを外へ出す。", "pattern": "bring out", "examples": [
+        { "en": "The new lighting brought out the texture of the sign.", "ja": "新しい照明が看板の質感を引き出しました。", "focus": "brought out" },
+        { "en": "The company will bring out a new model this summer.", "ja": "会社はこの夏、新型モデルを発売します。", "focus": "bring out" },
+        { "en": "Good questions can bring out the client’s real needs.", "ja": "良い質問は顧客の本当のニーズを引き出せます。", "focus": "bring out" }
+      ] },
+      { "phrase": "bring down", "ja": "下げる・減らす", "image": "価格・コスト・数値を下げる。", "pattern": "bring down", "examples": [
+        { "en": "We need to bring down the total cost.", "ja": "総コストを下げる必要があります。", "focus": "bring down" },
+        { "en": "The new process brought down the defect rate.", "ja": "新しい手順により不良率が下がりました。", "focus": "brought down" },
+        { "en": "Can we bring down the delivery fee?", "ja": "配送費を下げられますか？", "focus": "bring down" }
+      ] },
+      { "phrase": "bring forward", "ja": "予定を早める・提案する", "image": "予定や案を前に出す。", "pattern": "bring forward", "examples": [
+        { "en": "Can we bring forward the delivery date?", "ja": "納品日を前倒しできますか？", "focus": "bring forward" },
+        { "en": "The team brought forward a new proposal.", "ja": "チームは新しい提案を出しました。", "focus": "brought forward" },
+        { "en": "Please bring forward any concerns by Friday.", "ja": "金曜日までに懸念点を出してください。", "focus": "bring forward" }
+      ] },
+      { "phrase": "bring into", "ja": "〜に持ち込む・参加させる", "image": "物・人・考えを別の場に入れる。", "pattern": "bring into", "examples": [
+        { "en": "We need to bring more data into the discussion.", "ja": "議論にもっとデータを持ち込む必要があります。", "focus": "bring into" },
+        { "en": "The manager brought a specialist into the project.", "ja": "マネージャーは専門家を案件に参加させました。", "focus": "brought into" },
+        { "en": "Please bring this issue into the next meeting.", "ja": "この問題を次の会議に持ち込んでください。", "focus": "bring into" }
+      ] },
+      { "phrase": "bring over", "ja": "持ってくる・連れてくる", "image": "別の場所からこちらへ持ってくる。", "pattern": "bring over", "examples": [
+        { "en": "Can you bring over the sample board tomorrow?", "ja": "明日サンプルボードを持ってきてもらえますか？", "focus": "bring over" },
+        { "en": "I brought over the catalog for the client.", "ja": "顧客用にカタログを持ってきました。", "focus": "brought over" },
+        { "en": "Please bring over the latest price list.", "ja": "最新版の価格表を持ってきてください。", "focus": "bring over" }
       ] }
     ]
   },

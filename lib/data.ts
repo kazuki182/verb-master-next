@@ -7168,672 +7168,229 @@ export const verbs: Verb[] = [
   "syllable": "hold",
   "transitivity": "他動詞・自動詞",
   "importance": "★★★★☆ 重要",
-  "core": "手放さず保つ・場を持つ",
-  "coreDetail": "HOLDは「持つ」だけでなく、会議を開く、状態を保つ、責任や権利を持つなど、何かを一定の位置に保つ感覚で使います。",
+  "core": "手放さず、一定の状態に保つ",
+  "coreDetail": "HOLDは、物・予定・権利・状態を自分の範囲内に保つイメージです。仕事では会議を開く、電話を保留する、役職や責任を持つ、判断を一時的に止める場面でよく使います。",
   "coreVisual": {
     "from": [
       "📄 資料",
-      "📅 予定",
-      "👥 チーム",
-      "💬 連絡",
-      "✅ 判断"
+      "📅 会議",
+      "📞 電話",
+      "✅ 権利",
+      "🧩 状態"
     ],
-    "to": "仕事の流れ",
-    "label": "コアイメージ"
+    "to": "自分・チームの管理下",
+    "label": "持つ → 保つ → 維持する"
   },
   "meanings": [
     {
-      "id": "meeting",
+      "id": "hold-meeting",
       "title": "1 開催する",
-      "pattern": "HOLD + 会議 / イベント",
+      "pattern": "HOLD + meeting / event",
       "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O",
+      "structure": "S + V + O / S + V + M",
       "image": "会議やイベントを開く。",
-      "point": "hold a meeting は仕事で最重要。",
+      "point": "hold a meeting は仕事で頻出。赤文字は hold / held のみ。",
       "examples": [
         {
           "en": "We will hold a meeting tomorrow.",
           "ja": "私たちは明日会議を開きます。",
-          "focus": "hold a meeting",
-          "jaFocus": "会議を開く",
-          "object": "a meeting",
-          "sentencePattern": "S + V + O",
-          "grammarParts": [
-            {
-              "label": "S",
-              "text": "We"
-            },
-            {
-              "label": "V",
-              "text": "hold"
-            },
-            {
-              "label": "O",
-              "text": "a meeting"
-            }
-          ]
+          "focus": "hold",
+          "object": "a meeting"
         },
         {
-          "en": "The company held a training session.",
-          "ja": "会社は研修を開催しました。",
+          "en": "The company held a training session last week.",
+          "ja": "会社は先週研修を開催しました。",
           "focus": "held",
-          "object": "a training session",
-          "jaFocus": "開催しました"
-        },
-        {
-          "en": "We hold weekly reviews every Friday.",
-          "ja": "毎週金曜日にレビュー会議を開いています。",
-          "focus": "hold",
-          "object": "weekly reviews",
-          "jaFocus": "開いています"
+          "object": "a training session"
         }
       ],
-      "dailyExamples": [
+      "dailyExamples": []
+    },
+    {
+      "id": "hold-position",
+      "title": "2 役職・権利を持つ",
+      "pattern": "HOLD + position / right",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "役職・資格・権利を持っている。",
+      "point": "hold は『一定の立場を保つ』にも使います。",
+      "examples": [
         {
-          "en": "The company held a training session.",
-          "ja": "会社は研修を開催しました。",
+          "en": "She holds a senior position in the sales team.",
+          "ja": "彼女は営業チームで上級職に就いています。",
+          "focus": "holds",
+          "object": "a senior position"
+        },
+        {
+          "en": "We hold the right to review the final design.",
+          "ja": "私たちは最終デザインを確認する権利を持っています。",
+          "focus": "hold",
+          "object": "the right"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "hold-line",
+      "title": "3 電話で待つ",
+      "pattern": "HOLD the line",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "電話でそのまま待つ。",
+      "point": "電話対応で使いやすい基本表現。",
+      "examples": [
+        {
+          "en": "Please hold the line while I check the stock.",
+          "ja": "在庫を確認しますので、そのままお待ちください。",
+          "focus": "hold",
+          "object": "the line"
+        },
+        {
+          "en": "Could you hold for a moment?",
+          "ja": "少々お待ちいただけますか。",
+          "focus": "hold"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "hold-status",
+      "title": "4 状態を保つ",
+      "pattern": "HOLD + status / level",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "状態・水準を保つ。",
+      "point": "価格・品質・水準を保つときに使えます。",
+      "examples": [
+        {
+          "en": "We need to hold the current price until Friday.",
+          "ja": "私たちは金曜日まで現在の価格を維持する必要があります。",
+          "focus": "hold",
+          "object": "the current price"
+        },
+        {
+          "en": "The product held its brightness during the test.",
+          "ja": "その製品は試験中も明るさを保ちました。",
           "focus": "held",
-          "object": "a training session",
-          "jaFocus": "開催しました"
-        },
-        {
-          "en": "We hold weekly reviews every Friday.",
-          "ja": "毎週金曜日にレビュー会議を開いています。",
-          "focus": "hold",
-          "object": "weekly reviews",
-          "jaFocus": "開いています"
-        }
-      ]
-    },
-    {
-      "id": "keep",
-      "title": "2 保つ",
-      "pattern": "HOLD + 状態",
-      "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O",
-      "image": "状態を維持する。",
-      "point": "hold steady などで使う。",
-      "examples": [
-        {
-          "en": "Sales held steady this quarter.",
-          "ja": "今四半期の売上は安定していました。",
-          "focus": "held",
-          "jaFocus": "安定していました"
-        },
-        {
-          "en": "Please hold the line for a moment.",
-          "ja": "少々お待ちください。",
-          "focus": "hold",
-          "object": "the line",
-          "jaFocus": "お待ちください"
-        },
-        {
-          "en": "We need to hold the current price.",
-          "ja": "現在の価格を維持する必要があります。",
-          "focus": "hold",
-          "object": "the current price",
-          "jaFocus": "維持する"
+          "object": "its brightness"
         }
       ],
-      "dailyExamples": [
-        {
-          "en": "I hold this on weekends.",
-          "ja": "週末にこれを保つことがあります。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "保つ"
-        },
-        {
-          "en": "It is useful to hold this in daily life.",
-          "ja": "日常生活でこれを保つと便利です。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "保つ"
-        }
-      ]
+      "dailyExamples": []
     },
     {
-      "id": "possess",
-      "title": "3 持つ・保有する",
-      "pattern": "HOLD + 権利 / 役職",
-      "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O",
-      "image": "権利や役職を保有する。",
-      "point": "資格・株・役職などに使う。",
-      "examples": [
-        {
-          "en": "She holds a senior position.",
-          "ja": "彼女は上級職に就いています。",
-          "focus": "holds",
-          "object": "a senior position",
-          "jaFocus": "就いています"
-        },
-        {
-          "en": "The company holds the patent.",
-          "ja": "その会社が特許を保有しています。",
-          "focus": "holds",
-          "object": "the patent",
-          "jaFocus": "保有しています"
-        },
-        {
-          "en": "He holds a license for this work.",
-          "ja": "彼はこの業務の資格を持っています。",
-          "focus": "holds",
-          "object": "a license",
-          "jaFocus": "持っています"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I hold this on weekends.",
-          "ja": "週末にこれを持つ・保有することがあります。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "持つ・保有する"
-        },
-        {
-          "en": "It is useful to hold this in daily life.",
-          "ja": "日常生活でこれを持つ・保有すると便利です。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "持つ・保有する"
-        }
-      ]
-    },
-    {
-      "id": "delay",
-      "title": "4 保留する",
-      "pattern": "HOLD + 名詞",
-      "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O",
-      "image": "判断や処理を一時止める。",
-      "point": "hold the order は保留する。",
-      "examples": [
-        {
-          "en": "Please hold the order until we confirm the details.",
-          "ja": "詳細確認まで注文を保留してください。",
-          "focus": "hold",
-          "object": "the order",
-          "jaFocus": "保留してください"
-        },
-        {
-          "en": "We held the decision for one week.",
-          "ja": "決定を1週間保留しました。",
-          "focus": "held",
-          "object": "the decision",
-          "jaFocus": "保留しました"
-        },
-        {
-          "en": "Can you hold this request for now?",
-          "ja": "この依頼はいったん保留できますか？",
-          "focus": "hold",
-          "object": "this request",
-          "jaFocus": "保留できますか"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I hold this on weekends.",
-          "ja": "週末にこれを保留することがあります。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "保留する"
-        },
-        {
-          "en": "It is useful to hold this in daily life.",
-          "ja": "日常生活でこれを保留すると便利です。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "保留する"
-        }
-      ]
-    },
-    {
-      "id": "believe",
-      "title": "5 考えを持つ",
-      "pattern": "HOLD + opinion/view",
-      "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O",
-      "image": "意見や考えを持つ。",
-      "point": "やや硬めだが議論で使える。",
-      "examples": [
-        {
-          "en": "I hold a different view on this issue.",
-          "ja": "この件について私は別の見方をしています。",
-          "focus": "hold",
-          "object": "a different view",
-          "jaFocus": "見方をしています"
-        },
-        {
-          "en": "Management holds the same position.",
-          "ja": "経営陣も同じ立場です。",
-          "focus": "holds",
-          "object": "the same position",
-          "jaFocus": "同じ立場です"
-        },
-        {
-          "en": "The client holds a strong opinion about quality.",
-          "ja": "顧客は品質について強い意見を持っています。",
-          "focus": "holds",
-          "object": "a strong opinion",
-          "jaFocus": "持っています"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I hold this on weekends.",
-          "ja": "週末にこれを考えを持つことがあります。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "考えを持つ"
-        },
-        {
-          "en": "It is useful to hold this in daily life.",
-          "ja": "日常生活でこれを考えを持つと便利です。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "考えを持つ"
-        }
-      ]
-    },
-    {
-      "id": "contain",
-      "title": "6 収容する・入る",
-      "pattern": "HOLD + 数量",
-      "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O",
-      "image": "容量として入る。",
-      "point": "会場・箱・システム容量に使う。",
-      "examples": [
-        {
-          "en": "The room holds 30 people.",
-          "ja": "その部屋は30人収容できます。",
-          "focus": "holds",
-          "object": "30 people",
-          "jaFocus": "収容できます"
-        },
-        {
-          "en": "This folder holds all project files.",
-          "ja": "このフォルダに案件ファイルがすべて入っています。",
-          "focus": "holds",
-          "object": "all project files",
-          "jaFocus": "入っています"
-        },
-        {
-          "en": "The system can hold more data.",
-          "ja": "そのシステムはより多くのデータを保持できます。",
-          "focus": "hold",
-          "object": "more data",
-          "jaFocus": "保持できます"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I hold this on weekends.",
-          "ja": "週末にこれを収容する・入ることがあります。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "収容する・入る"
-        },
-        {
-          "en": "It is useful to hold this in daily life.",
-          "ja": "日常生活でこれを収容する・入ると便利です。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "収容する・入る"
-        }
-      ]
-    },
-    {
-      "id": "phone",
-      "title": "7 電話を切らず待つ",
-      "pattern": "hold",
-      "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O",
-      "image": "電話で待つ。",
-      "point": "Can you hold? は電話で自然。",
-      "examples": [
-        {
-          "en": "Can you hold for a moment?",
-          "ja": "少々お待ちいただけますか？",
-          "focus": "hold",
-          "jaFocus": "お待ち"
-        },
-        {
-          "en": "Please hold while I check the schedule.",
-          "ja": "予定を確認しますのでお待ちください。",
-          "focus": "hold",
-          "jaFocus": "お待ちください"
-        },
-        {
-          "en": "I was on hold for ten minutes.",
-          "ja": "10分間保留で待っていました。",
-          "focus": "hold",
-          "jaFocus": "保留で待って"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I hold this on weekends.",
-          "ja": "週末にこれを電話を切らず待つことがあります。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "電話を切らず待つ"
-        },
-        {
-          "en": "It is useful to hold this in daily life.",
-          "ja": "日常生活でこれを電話を切らず待つと便利です。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "電話を切らず待つ"
-        }
-      ]
-    },
-    {
-      "id": "responsible",
-      "title": "8 責任を持つ",
+      "id": "hold-responsible",
+      "title": "5 責任があるとみなす",
       "pattern": "HOLD + 人 + responsible",
       "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O",
-      "image": "責任を問う。",
-      "point": "hold someone responsible は重要。",
+      "structure": "S + V + O / S + V + M",
+      "image": "人に責任があると考える。",
+      "point": "少し硬いですがビジネスで使います。",
       "examples": [
         {
-          "en": "We hold the supplier responsible for the delay.",
-          "ja": "遅延について仕入先に責任があると考えています。",
-          "focus": "hold",
-          "object": "the supplier",
-          "jaFocus": "責任がある"
-        },
-        {
-          "en": "The manager held me responsible for the mistake.",
-          "ja": "上司はそのミスについて私に責任があるとしました。",
+          "en": "The manager held the team responsible for the delay.",
+          "ja": "上司は遅延についてチームに責任があると考えました。",
           "focus": "held",
-          "object": "me",
-          "jaFocus": "責任がある"
+          "object": "the team"
         },
         {
-          "en": "We should hold each team accountable.",
-          "ja": "各チームに責任を持たせるべきです。",
+          "en": "We should hold ourselves responsible for the final check.",
+          "ja": "私たちは最終確認に責任を持つべきです。",
           "focus": "hold",
-          "object": "each team",
-          "jaFocus": "責任を持たせる"
+          "object": "ourselves"
         }
       ],
-      "dailyExamples": [
-        {
-          "en": "I hold this on weekends.",
-          "ja": "週末にこれを責任を持つことがあります。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "責任を持つ"
-        },
-        {
-          "en": "It is useful to hold this in daily life.",
-          "ja": "日常生活でこれを責任を持つと便利です。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "責任を持つ"
-        }
-      ]
+      "dailyExamples": []
     },
     {
-      "id": "support",
-      "title": "9 支える",
-      "pattern": "HOLD + 名詞",
+      "id": "hold-opinion",
+      "title": "6 意見・考えを持つ",
+      "pattern": "HOLD + opinion / view",
       "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O",
-      "image": "物や考えを支える。",
-      "point": "hold up は支える/持ちこたえる。",
+      "structure": "S + V + O / S + V + M",
+      "image": "意見や考えを持っている。",
+      "point": "フォーマルな文で使いやすい表現。",
       "examples": [
         {
-          "en": "The data holds up our proposal.",
-          "ja": "そのデータが提案を支えています。",
+          "en": "He holds a different view on the proposal.",
+          "ja": "彼はその提案について別の見方を持っています。",
           "focus": "holds",
-          "object": "our proposal",
-          "jaFocus": "支えています"
+          "object": "a different view"
         },
         {
-          "en": "The plan held up under review.",
-          "ja": "その計画はレビューに耐えました。",
-          "focus": "held up",
-          "jaFocus": "耐えました"
-        },
-        {
-          "en": "The structure holds the sign safely.",
-          "ja": "その構造が看板を安全に支えています。",
-          "focus": "holds",
-          "object": "the sign",
-          "jaFocus": "支えています"
+          "en": "Many clients hold the same opinion about the design.",
+          "ja": "多くの顧客がそのデザインについて同じ意見を持っています。",
+          "focus": "hold",
+          "object": "the same opinion"
         }
       ],
-      "dailyExamples": [
-        {
-          "en": "I hold this on weekends.",
-          "ja": "週末にこれを支えることがあります。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "支える"
-        },
-        {
-          "en": "It is useful to hold this in daily life.",
-          "ja": "日常生活でこれを支えると便利です。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "支える"
-        }
-      ]
+      "dailyExamples": []
     },
     {
-      "id": "reserve",
-      "title": "10 確保する",
-      "pattern": "HOLD + 場所 / 予約",
+      "id": "hold-place",
+      "title": "7 場所・予約を確保する",
+      "pattern": "HOLD + place / reservation",
       "transitivity": "他動詞・自動詞",
-      "structure": "S + V + O",
-      "image": "一時的に確保する。",
-      "point": "席や枠の確保に使える。",
+      "structure": "S + V + O / S + V + M",
+      "image": "場所や予約を押さえる。",
+      "point": "仮押さえ・確保のニュアンス。",
       "examples": [
         {
-          "en": "Can you hold a seat for the client?",
-          "ja": "クライアント用に席を確保できますか？",
+          "en": "Please hold the meeting room until 3 p.m.",
+          "ja": "15時まで会議室を押さえておいてください。",
           "focus": "hold",
-          "object": "a seat",
-          "jaFocus": "確保できますか"
+          "object": "the meeting room"
         },
         {
-          "en": "We held a room for the meeting.",
-          "ja": "会議用に部屋を確保しました。",
+          "en": "We held the reservation for the client.",
+          "ja": "私たちは顧客のために予約を確保しました。",
           "focus": "held",
-          "object": "a room",
-          "jaFocus": "確保しました"
+          "object": "the reservation"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "hold-data",
+      "title": "8 データ・資料を保管する",
+      "pattern": "HOLD + data / document",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "データや資料を保管している。",
+      "point": "在庫・資料・データ管理で使えます。",
+      "examples": [
+        {
+          "en": "The system holds the latest customer data.",
+          "ja": "そのシステムは最新の顧客データを保持しています。",
+          "focus": "holds",
+          "object": "the latest customer data"
         },
         {
-          "en": "Please hold this time slot.",
-          "ja": "この時間枠を確保してください。",
+          "en": "Please hold the original documents until approval.",
+          "ja": "承認まで原本を保管してください。",
           "focus": "hold",
-          "object": "this time slot",
-          "jaFocus": "確保してください"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I hold this on weekends.",
-          "ja": "週末にこれを確保することがあります。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "確保する"
-        },
-        {
-          "en": "It is useful to hold this in daily life.",
-          "ja": "日常生活でこれを確保すると便利です。",
-          "focus": "hold",
-          "object": "this",
-          "jaFocus": "確保する"
-        }
-      ]
-    }
-  ],
-  "collocations": [
-    {
-      "phrase": "hold a meeting",
-      "ja": "会議を開く",
-      "image": "会議や打ち合わせを開催する。",
-      "pattern": "hold a meeting",
-      "examples": [
-        {
-          "en": "We will hold a meeting with the client next week.",
-          "ja": "来週、顧客と会議を開きます。",
-          "focus": "hold a meeting",
-          "jaFocus": "会議を開きます"
-        },
-        {
-          "en": "The team held a short meeting after the site visit.",
-          "ja": "チームは現場訪問後に短い会議を開きました。",
-          "focus": "held a short meeting",
-          "jaFocus": "短い会議を開きました"
-        },
-        {
-          "en": "Can we hold a meeting before sending the quote?",
-          "ja": "見積を送る前に会議を開けますか？",
-          "focus": "hold a meeting",
-          "jaFocus": "会議を開けますか"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "hold the line",
-      "ja": "電話を切らずに待つ",
-      "image": "電話対応で相手を保留にする。",
-      "pattern": "hold the line",
-      "examples": [
-        {
-          "en": "Please hold the line while I transfer your call.",
-          "ja": "お電話を転送しますので、そのままお待ちください。",
-          "focus": "hold the line",
-          "jaFocus": "そのままお待ちください"
-        },
-        {
-          "en": "Could you hold the line for a moment?",
-          "ja": "少々お電話を切らずにお待ちいただけますか？",
-          "focus": "hold the line",
-          "jaFocus": "お待ちいただけますか"
-        },
-        {
-          "en": "I asked the customer to hold the line while I checked the order.",
-          "ja": "注文を確認する間、お客様に電話を切らずに待っていただきました。",
-          "focus": "hold the line",
-          "jaFocus": "電話を切らずに待って"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "hold a position",
-      "ja": "役職に就く・立場を持つ",
-      "image": "役職や立場を正式に持つ。",
-      "pattern": "hold a position",
-      "examples": [
-        {
-          "en": "She holds a management position in the Tokyo office.",
-          "ja": "彼女は東京オフィスで管理職に就いています。",
-          "focus": "holds a management position",
-          "jaFocus": "管理職に就いています"
-        },
-        {
-          "en": "He held the position for five years.",
-          "ja": "彼はその役職を5年間務めました。",
-          "focus": "held the position",
-          "jaFocus": "役職を務めました"
-        },
-        {
-          "en": "We need someone who can hold a leadership position.",
-          "ja": "リーダー職を担える人が必要です。",
-          "focus": "hold a leadership position",
-          "jaFocus": "リーダー職を担える"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "hold responsibility",
-      "ja": "責任を持つ",
-      "image": "業務や結果に責任を持つ。",
-      "pattern": "hold responsibility",
-      "examples": [
-        {
-          "en": "The sales team holds responsibility for client communication.",
-          "ja": "営業チームは顧客連絡に責任を持っています。",
-          "focus": "holds responsibility",
-          "jaFocus": "責任を持っています"
-        },
-        {
-          "en": "Each department holds responsibility for its own data.",
-          "ja": "各部署は自分たちのデータに責任を持っています。",
-          "focus": "holds responsibility",
-          "jaFocus": "責任を持っています"
-        },
-        {
-          "en": "Who holds responsibility for the final approval?",
-          "ja": "最終承認の責任者は誰ですか？",
-          "focus": "holds responsibility",
-          "jaFocus": "責任者は誰ですか"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "hold a patent",
-      "ja": "特許を保有する",
-      "image": "権利として特許を持つ。",
-      "pattern": "hold a patent",
-      "examples": [
-        {
-          "en": "The company holds a patent for the control system.",
-          "ja": "その会社は制御システムの特許を保有しています。",
-          "focus": "holds a patent",
-          "jaFocus": "特許を保有しています"
-        },
-        {
-          "en": "They hold several patents in lighting technology.",
-          "ja": "彼らは照明技術で複数の特許を保有しています。",
-          "focus": "hold several patents",
-          "jaFocus": "複数の特許を保有しています"
-        },
-        {
-          "en": "We should check who holds the patent before using the design.",
-          "ja": "その設計を使う前に、誰が特許を保有しているか確認すべきです。",
-          "focus": "holds the patent",
-          "jaFocus": "特許を保有している"
+          "object": "the original documents"
         }
       ],
       "dailyExamples": []
     }
   ],
+  "collocations": [],
   "phrasalVerbs": [
     {
       "phrase": "hold on",
-      "ja": "少し待つ",
-      "image": "会話や電話で相手に少し待ってもらう。",
+      "ja": "待つ・持ちこたえる",
+      "image": "少し待つ、または状況に耐える。",
       "pattern": "hold on",
       "examples": [
         {
           "en": "Please hold on while I check the file.",
           "ja": "ファイルを確認しますので少々お待ちください。",
-          "focus": "hold on",
-          "jaFocus": "お待ちください"
+          "focus": "hold on"
         },
         {
-          "en": "Hold on, I need to confirm the price first.",
-          "ja": "少し待ってください。先に価格を確認する必要があります。",
-          "focus": "Hold on",
-          "jaFocus": "少し待ってください"
-        },
-        {
-          "en": "Could you hold on for a few minutes?",
-          "ja": "数分お待ちいただけますか？",
-          "focus": "hold on",
-          "jaFocus": "お待ちいただけますか"
+          "en": "We need to hold on until the supplier replies.",
+          "ja": "仕入先から返信が来るまで持ちこたえる必要があります。",
+          "focus": "hold on"
         }
       ],
       "dailyExamples": []
@@ -7841,107 +7398,170 @@ export const verbs: Verb[] = [
     {
       "phrase": "hold off",
       "ja": "延期する・控える",
-      "image": "すぐ実行せず、少し待つ。",
+      "image": "行動や判断を少し待つ。",
       "pattern": "hold off on + 名詞/動名詞",
       "examples": [
         {
-          "en": "We decided to hold off on sending the email.",
-          "ja": "そのメールの送信を少し延期することにしました。",
-          "focus": "hold off on sending",
-          "jaFocus": "送信を延期する"
+          "en": "We should hold off on the order until we confirm the price.",
+          "ja": "価格を確認するまで発注は控えるべきです。",
+          "focus": "hold off"
         },
         {
-          "en": "Please hold off on ordering parts until we get approval.",
-          "ja": "承認が出るまで部材の発注は控えてください。",
-          "focus": "hold off on ordering",
-          "jaFocus": "発注は控えて"
-        },
-        {
-          "en": "The client asked us to hold off until next month.",
-          "ja": "顧客は来月まで待つよう依頼しました。",
-          "focus": "hold off",
-          "jaFocus": "待つよう"
+          "en": "The client held off on the final decision.",
+          "ja": "顧客は最終判断を保留しました。",
+          "focus": "held off"
         }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "hold back",
-      "ja": "抑える・止める",
-      "image": "進行や発言を後ろに止める。",
+      "ja": "抑える・引き止める",
+      "image": "感情・情報・進行を抑える。",
       "pattern": "hold back + 名詞",
       "examples": [
         {
-          "en": "A lack of information held back the project.",
-          "ja": "情報不足が案件の進行を妨げました。",
-          "focus": "held back the project",
-          "jaFocus": "案件の進行を妨げました"
+          "en": "Please do not hold back important information.",
+          "ja": "重要な情報は隠さないでください。",
+          "focus": "hold back"
         },
         {
-          "en": "Please do not hold back important feedback.",
-          "ja": "重要なフィードバックは遠慮せず伝えてください。",
-          "focus": "hold back feedback",
-          "jaFocus": "フィードバックを控える"
-        },
-        {
-          "en": "The budget issue held us back for two weeks.",
-          "ja": "予算の問題で私たちは2週間足止めされました。",
-          "focus": "held us back",
-          "jaFocus": "足止めされました"
+          "en": "The missing data held back the report.",
+          "ja": "不足データが報告書の作成を遅らせました。",
+          "focus": "held back"
         }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "hold up",
-      "ja": "持ちこたえる・遅らせる",
-      "image": "状況に耐える、または進行を止める。",
+      "ja": "遅らせる・持ちこたえる",
+      "image": "進行を止める、または状態が保つ。",
       "pattern": "hold up",
       "examples": [
         {
-          "en": "The plan held up under detailed review.",
-          "ja": "その計画は詳細レビューに耐えました。",
-          "focus": "held up",
-          "jaFocus": "レビューに耐えました"
+          "en": "The approval issue held up the shipment.",
+          "ja": "承認の問題で出荷が遅れました。",
+          "focus": "held up"
         },
         {
-          "en": "The delivery was held up by customs.",
-          "ja": "納品は税関で遅れました。",
-          "focus": "held up",
-          "jaFocus": "遅れました"
-        },
-        {
-          "en": "This structure should hold up in bad weather.",
-          "ja": "この構造は悪天候でも持ちこたえるはずです。",
-          "focus": "hold up",
-          "jaFocus": "持ちこたえる"
+          "en": "The sample held up well during the test.",
+          "ja": "サンプルは試験中よく持ちこたえました。",
+          "focus": "held up"
         }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "hold onto",
-      "ja": "保持する・手放さない",
-      "image": "必要なものを保ち続ける。",
+      "ja": "〜を持ち続ける",
+      "image": "必要なものを手放さず保持する。",
       "pattern": "hold onto + 名詞",
       "examples": [
         {
           "en": "Please hold onto the original receipt.",
           "ja": "原本の領収書は保管しておいてください。",
-          "focus": "hold onto",
-          "jaFocus": "保管して"
+          "focus": "hold onto"
         },
         {
           "en": "We should hold onto this data for future analysis.",
           "ja": "今後の分析のためにこのデータを保持しておくべきです。",
-          "focus": "hold onto this data",
-          "jaFocus": "データを保持して"
+          "focus": "hold onto"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "hold out",
+      "ja": "持ちこたえる・差し出す",
+      "image": "条件を保って待つ、または手を差し出す。",
+      "pattern": "hold out",
+      "examples": [
+        {
+          "en": "The team held out until the deadline was extended.",
+          "ja": "チームは締切が延びるまで持ちこたえました。",
+          "focus": "held out"
         },
         {
-          "en": "The company held onto key clients despite the price increase.",
-          "ja": "値上げにもかかわらず、会社は主要顧客を維持しました。",
-          "focus": "held onto key clients",
-          "jaFocus": "主要顧客を維持しました"
+          "en": "We held out for better payment terms.",
+          "ja": "私たちはより良い支払条件を求めて粘りました。",
+          "focus": "held out"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "hold together",
+      "ja": "まとまった状態を保つ",
+      "image": "チームや計画が崩れずに続く。",
+      "pattern": "hold together",
+      "examples": [
+        {
+          "en": "The project held together because everyone shared updates.",
+          "ja": "全員が情報共有したため、プロジェクトはまとまりを保てました。",
+          "focus": "held together"
+        },
+        {
+          "en": "We need a clear plan to hold the team together.",
+          "ja": "チームをまとめるには明確な計画が必要です。",
+          "focus": "hold together"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "hold down",
+      "ja": "抑える・仕事を続ける",
+      "image": "費用を抑える、または仕事を続ける。",
+      "pattern": "hold down + 名詞",
+      "examples": [
+        {
+          "en": "We need to hold down the total cost.",
+          "ja": "私たちは総コストを抑える必要があります。",
+          "focus": "hold down"
+        },
+        {
+          "en": "He holds down two roles in the project.",
+          "ja": "彼はそのプロジェクトで2つの役割を担い続けています。",
+          "focus": "holds down"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "hold against",
+      "ja": "〜を悪く思う",
+      "image": "過去のことを理由に相手を責める。",
+      "pattern": "hold + 名詞 + against + 人",
+      "examples": [
+        {
+          "en": "I will not hold the delay against you.",
+          "ja": "その遅れについてあなたを責めるつもりはありません。",
+          "focus": "hold against"
+        },
+        {
+          "en": "The client did not hold the mistake against our team.",
+          "ja": "顧客はそのミスを私たちのチームのせいにはしませんでした。",
+          "focus": "hold against"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "hold over",
+      "ja": "延期する・持ち越す",
+      "image": "予定や議題を後に回す。",
+      "pattern": "hold over + 名詞",
+      "examples": [
+        {
+          "en": "We held over the pricing discussion until next week.",
+          "ja": "価格の話し合いは来週に持ち越しました。",
+          "focus": "held over"
+        },
+        {
+          "en": "Please hold over this topic for the next meeting.",
+          "ja": "この議題は次回の会議に持ち越してください。",
+          "focus": "hold over"
         }
       ],
       "dailyExamples": []
@@ -7955,767 +7575,403 @@ export const verbs: Verb[] = [
   "ipa": "/set/",
   "kana": "セット",
   "syllable": "set",
-  "transitivity": "他動詞中心",
+  "transitivity": "他動詞・自動詞",
   "importance": "★★★★★ 超重要",
-  "core": "位置・基準・状態を決めて固定する",
-  "coreDetail": "SETは、物を置く、予定や基準を決める、使える状態にするなど、何かを一定の状態に整えるイメージです。",
+  "core": "位置・予定・基準を決めて整える",
+  "coreDetail": "SETは、物を置く、予定・目標・価格・基準を決める、使える状態に整えるイメージです。仕事では deadline, goal, price, rule, schedule と一緒に非常によく使います。",
   "coreVisual": {
     "from": [
-      "📍 位置",
       "📅 予定",
       "🎯 目標",
-      "⚙️ 設定",
-      "📏 基準"
+      "💰 価格",
+      "📏 基準",
+      "⚙️ 状態"
     ],
-    "to": "自分・チーム",
-    "label": "コアイメージ"
+    "to": "決まった位置・状態",
+    "label": "決める → 置く → 整える"
   },
   "meanings": [
     {
-      "id": "decide",
-      "title": "1 設定する・決める",
-      "pattern": "SET + 名詞",
-      "transitivity": "他動詞中心",
-      "structure": "S + V + O",
-      "image": "基準・予定・目標を決める。",
-      "point": "基準・予定・目標を決める。",
+      "id": "set-deadline",
+      "title": "1 期限を設定する",
+      "pattern": "SET + deadline / date",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "期限や日付を決める。",
+      "point": "set a deadline は仕事で最重要。",
       "examples": [
         {
-          "en": "We set the deadline for Friday.",
-          "ja": "締切を金曜日に設定しました。",
+          "en": "We need to set a deadline for the quotation.",
+          "ja": "私たちは見積の期限を設定する必要があります。",
           "focus": "set",
-          "object": "the deadline",
-          "jaFocus": "設定しました"
+          "object": "a deadline"
         },
         {
-          "en": "Please set a clear goal for this project.",
-          "ja": "この案件に明確な目標を設定してください。",
+          "en": "The client set the final date for the meeting.",
+          "ja": "顧客は会議の最終日程を設定しました。",
           "focus": "set",
-          "object": "a clear goal",
-          "jaFocus": "設定して"
-        },
-        {
-          "en": "The manager set the meeting time.",
-          "ja": "上司が会議時間を設定しました。",
-          "focus": "set",
-          "object": "the meeting time",
-          "jaFocus": "設定しました"
+          "object": "the final date"
         }
       ],
-      "dailyExamples": [
-        {
-          "en": "I set my alarm for six.",
-          "ja": "アラームを6時に設定しました。",
-          "focus": "set",
-          "object": "my alarm",
-          "jaFocus": "設定しました"
-        },
-        {
-          "en": "She set a budget for the trip.",
-          "ja": "彼女は旅行予算を決めました。",
-          "focus": "set",
-          "object": "a budget",
-          "jaFocus": "決めました"
-        }
-      ]
+      "dailyExamples": []
     },
     {
-      "id": "place",
-      "title": "2 置く",
+      "id": "set-goal",
+      "title": "2 目標を設定する",
+      "pattern": "SET + goal / target",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "目標や数値を決める。",
+      "point": "営業目標や学習目標でも使えます。",
+      "examples": [
+        {
+          "en": "We set a sales target for this month.",
+          "ja": "私たちは今月の売上目標を設定しました。",
+          "focus": "set",
+          "object": "a sales target"
+        },
+        {
+          "en": "Please set a clear goal before the next review.",
+          "ja": "次回のレビュー前に明確な目標を設定してください。",
+          "focus": "set",
+          "object": "a clear goal"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "set-price",
+      "title": "3 価格・条件を決める",
+      "pattern": "SET + price / terms",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "価格や条件を決める。",
+      "point": "見積・契約で使いやすい表現。",
+      "examples": [
+        {
+          "en": "The supplier set a new price for the product.",
+          "ja": "仕入先はその製品に新しい価格を設定しました。",
+          "focus": "set",
+          "object": "a new price"
+        },
+        {
+          "en": "We should set the payment terms before sending the contract.",
+          "ja": "契約書を送る前に支払条件を決めるべきです。",
+          "focus": "set",
+          "object": "the payment terms"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "set-rule",
+      "title": "4 ルール・基準を決める",
+      "pattern": "SET + rule / standard",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "ルールや基準を決める。",
+      "point": "品質基準や社内ルールにも使えます。",
+      "examples": [
+        {
+          "en": "The manager set a new rule for sample requests.",
+          "ja": "上司はサンプル依頼に関する新しいルールを決めました。",
+          "focus": "set",
+          "object": "a new rule"
+        },
+        {
+          "en": "We set a quality standard for this project.",
+          "ja": "私たちはこの案件の品質基準を設定しました。",
+          "focus": "set",
+          "object": "a quality standard"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "set-place",
+      "title": "5 置く・配置する",
       "pattern": "SET + 物 + 場所",
-      "transitivity": "他動詞中心",
-      "structure": "S + V + O + M",
-      "image": "ある位置に置く。",
-      "point": "ある位置に置く。",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "物をある場所に置く。",
+      "point": "物理的に置く基本イメージ。",
       "examples": [
         {
-          "en": "Set the sample on the table.",
-          "ja": "サンプルをテーブルに置いてください。",
-          "focus": "Set",
-          "object": "the sample",
-          "jaFocus": "置いて"
+          "en": "Please set the samples on the table.",
+          "ja": "サンプルをテーブルの上に置いてください。",
+          "focus": "set",
+          "object": "the samples"
         },
         {
-          "en": "I set the documents next to the printer.",
-          "ja": "書類をプリンターの横に置きました。",
+          "en": "He set the catalog near the reception desk.",
+          "ja": "彼はカタログを受付の近くに置きました。",
           "focus": "set",
-          "object": "the documents",
-          "jaFocus": "置きました"
-        },
-        {
-          "en": "Please set the display near the entrance.",
-          "ja": "入口近くにディスプレイを置いてください。",
-          "focus": "set",
-          "object": "the display",
-          "jaFocus": "置いて"
+          "object": "the catalog"
         }
       ],
-      "dailyExamples": [
-        {
-          "en": "I set my bag on the chair.",
-          "ja": "バッグを椅子に置きました。",
-          "focus": "set",
-          "object": "my bag",
-          "jaFocus": "置きました"
-        },
-        {
-          "en": "She set the cup on the desk.",
-          "ja": "彼女はカップを机に置きました。",
-          "focus": "set",
-          "object": "the cup",
-          "jaFocus": "置きました"
-        }
-      ]
+      "dailyExamples": []
     },
     {
-      "id": "prepare",
-      "title": "3 整える・準備する",
-      "pattern": "SET + O + up",
-      "transitivity": "他動詞中心",
-      "structure": "S + V + O",
-      "image": "使える状態にする。",
-      "point": "使える状態にする。",
-      "examples": [
-        {
-          "en": "I set up the meeting room.",
-          "ja": "会議室を準備しました。",
-          "focus": "set up",
-          "object": "the meeting room",
-          "jaFocus": "準備しました"
-        },
-        {
-          "en": "We set up the demo environment.",
-          "ja": "デモ環境を設定しました。",
-          "focus": "set up",
-          "object": "the demo environment",
-          "jaFocus": "設定しました"
-        },
-        {
-          "en": "Please set up the projector.",
-          "ja": "プロジェクターを準備してください。",
-          "focus": "set up",
-          "object": "the projector",
-          "jaFocus": "準備して"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I set up my new phone.",
-          "ja": "新しいスマホを設定しました。",
-          "focus": "set up",
-          "object": "my new phone",
-          "jaFocus": "設定しました"
-        },
-        {
-          "en": "We set up a tent.",
-          "ja": "テントを設営しました。",
-          "focus": "set up",
-          "object": "a tent",
-          "jaFocus": "設営しました"
-        }
-      ]
-    },
-    {
-      "id": "standard",
-      "title": "4 基準を作る",
-      "pattern": "SET + standard/rule",
-      "transitivity": "他動詞中心",
-      "structure": "S + V + O",
-      "image": "基準やルールを作る。",
-      "point": "基準やルールを作る。",
-      "examples": [
-        {
-          "en": "This case sets an important standard.",
-          "ja": "この事例は重要な基準になります。",
-          "focus": "sets",
-          "object": "an important standard",
-          "jaFocus": "基準になります"
-        },
-        {
-          "en": "We need to set clear rules.",
-          "ja": "明確なルールを設定する必要があります。",
-          "focus": "set",
-          "object": "clear rules",
-          "jaFocus": "設定する"
-        },
-        {
-          "en": "The company set a new policy.",
-          "ja": "会社は新しい方針を定めました。",
-          "focus": "set",
-          "object": "a new policy",
-          "jaFocus": "定めました"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "Parents set rules at home.",
-          "ja": "親は家庭でルールを決めます。",
-          "focus": "set",
-          "object": "rules",
-          "jaFocus": "決めます"
-        },
-        {
-          "en": "I set a rule for myself.",
-          "ja": "自分にルールを決めました。",
-          "focus": "set",
-          "object": "a rule",
-          "jaFocus": "決めました"
-        }
-      ]
-    },
-    {
-      "id": "start",
-      "title": "5 始める・動き出させる",
-      "pattern": "SET + O + in motion",
-      "transitivity": "他動詞中心",
-      "structure": "S + V + O",
-      "image": "物事を動き出させる。",
-      "point": "物事を動き出させる。",
-      "examples": [
-        {
-          "en": "The approval set the project in motion.",
-          "ja": "承認によりプロジェクトが動き出しました。",
-          "focus": "set",
-          "object": "the project",
-          "jaFocus": "動き出しました"
-        },
-        {
-          "en": "The email set the process in motion.",
-          "ja": "そのメールで手続きが始まりました。",
-          "focus": "set",
-          "object": "the process",
-          "jaFocus": "始まりました"
-        },
-        {
-          "en": "His comment set the discussion in motion.",
-          "ja": "彼の発言で議論が動き出しました。",
-          "focus": "set",
-          "object": "the discussion",
-          "jaFocus": "動き出しました"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "The song set the mood.",
-          "ja": "その曲で雰囲気ができました。",
-          "focus": "set",
-          "object": "the mood",
-          "jaFocus": "雰囲気ができました"
-        },
-        {
-          "en": "The news set things in motion.",
-          "ja": "そのニュースで物事が動き出しました。",
-          "focus": "set",
-          "object": "things",
-          "jaFocus": "動き出しました"
-        }
-      ]
-    },
-    {
-      "id": "adjust",
-      "title": "6 調整する",
-      "pattern": "SET + value/level",
-      "transitivity": "他動詞中心",
-      "structure": "S + V + O",
-      "image": "数値や状態を合わせる。",
-      "point": "数値や状態を合わせる。",
-      "examples": [
-        {
-          "en": "Set the brightness to 80 percent.",
-          "ja": "明るさを80%に設定してください。",
-          "focus": "Set",
-          "object": "the brightness",
-          "jaFocus": "設定して"
-        },
-        {
-          "en": "We set the price based on the estimate.",
-          "ja": "見積に基づいて価格を設定しました。",
-          "focus": "set",
-          "object": "the price",
-          "jaFocus": "設定しました"
-        },
-        {
-          "en": "Please set the volume lower during the call.",
-          "ja": "通話中は音量を下げて設定してください。",
-          "focus": "set",
-          "object": "the volume",
-          "jaFocus": "設定して"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I set the temperature to 24 degrees.",
-          "ja": "温度を24度に設定しました。",
-          "focus": "set",
-          "object": "the temperature",
-          "jaFocus": "設定しました"
-        },
-        {
-          "en": "She set the timer for ten minutes.",
-          "ja": "彼女はタイマーを10分に設定しました。",
-          "focus": "set",
-          "object": "the timer",
-          "jaFocus": "設定しました"
-        }
-      ]
-    },
-    {
-      "id": "example",
-      "title": "7 手本を示す",
+      "id": "set-example",
+      "title": "6 手本を示す",
       "pattern": "SET an example",
-      "transitivity": "他動詞中心",
-      "structure": "S + V + O",
-      "image": "行動で基準を示す。",
-      "point": "行動で基準を示す。",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "良い例を示す。",
+      "point": "リーダー・上司の行動に使いやすい表現。",
       "examples": [
         {
-          "en": "The leader set a good example.",
-          "ja": "リーダーは良い手本を示しました。",
+          "en": "The team leader set a good example for new staff.",
+          "ja": "チームリーダーは新人に良い手本を示しました。",
           "focus": "set",
-          "object": "a good example",
-          "jaFocus": "示しました"
+          "object": "a good example"
         },
         {
-          "en": "We should set an example for new members.",
-          "ja": "新メンバーの手本になるべきです。",
+          "en": "We should set an example by sharing updates early.",
+          "ja": "早めに情報共有することで手本を示すべきです。",
           "focus": "set",
-          "object": "an example",
-          "jaFocus": "手本になる"
-        },
-        {
-          "en": "Her attitude sets a positive example.",
-          "ja": "彼女の姿勢は良い手本になります。",
-          "focus": "sets",
-          "object": "a positive example",
-          "jaFocus": "手本になります"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "Parents set an example for children.",
-          "ja": "親は子どもの手本になります。",
-          "focus": "set",
-          "object": "an example",
-          "jaFocus": "手本になります"
-        },
-        {
-          "en": "He set a good example at school.",
-          "ja": "彼は学校で良い手本を示しました。",
-          "focus": "set",
-          "object": "a good example",
-          "jaFocus": "示しました"
-        }
-      ]
-    },
-    {
-      "id": "arrange",
-      "title": "8 段取りする",
-      "pattern": "SET + appointment/date",
-      "transitivity": "他動詞中心",
-      "structure": "S + V + O",
-      "image": "予定を整える。",
-      "point": "予定を整える。",
-      "examples": [
-        {
-          "en": "I set an appointment with the client.",
-          "ja": "顧客とのアポイントを設定しました。",
-          "focus": "set",
-          "object": "an appointment",
-          "jaFocus": "設定しました"
-        },
-        {
-          "en": "Can you set a date for the review?",
-          "ja": "レビューの日程を設定できますか？",
-          "focus": "set",
-          "object": "a date",
-          "jaFocus": "設定"
-        },
-        {
-          "en": "We set the next meeting for Monday.",
-          "ja": "次回会議を月曜日に設定しました。",
-          "focus": "set",
-          "object": "the next meeting",
-          "jaFocus": "設定しました"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "We set a date for dinner.",
-          "ja": "夕食の日を決めました。",
-          "focus": "set",
-          "object": "a date",
-          "jaFocus": "決めました"
-        },
-        {
-          "en": "I set an appointment at the clinic.",
-          "ja": "病院の予約を取りました。",
-          "focus": "set",
-          "object": "an appointment",
-          "jaFocus": "予約を取りました"
-        }
-      ]
-    },
-    {
-      "id": "fixed",
-      "title": "9 固定する",
-      "pattern": "SET + O",
-      "transitivity": "他動詞中心",
-      "structure": "S + V + O",
-      "image": "変更しにくい状態にする。",
-      "point": "変更しにくい状態にする。",
-      "examples": [
-        {
-          "en": "The budget is set for this quarter.",
-          "ja": "今四半期の予算は決まっています。",
-          "focus": "set",
-          "jaFocus": "決まっています"
-        },
-        {
-          "en": "The delivery date has been set.",
-          "ja": "納期は設定済みです。",
-          "focus": "set",
-          "jaFocus": "設定済み"
-        },
-        {
-          "en": "Once the price is set, we can proceed.",
-          "ja": "価格が決まれば進められます。",
-          "focus": "set",
-          "jaFocus": "決まれば"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "The date is set.",
-          "ja": "日程は決まっています。",
-          "focus": "set",
-          "jaFocus": "決まっています"
-        },
-        {
-          "en": "Everything is set for the party.",
-          "ja": "パーティーの準備は整っています。",
-          "focus": "set",
-          "jaFocus": "整っています"
-        }
-      ]
-    },
-    {
-      "id": "assign",
-      "title": "10 割り当てる",
-      "pattern": "SET + task / SET + 人 + task",
-      "transitivity": "他動詞中心",
-      "structure": "S + V + O",
-      "image": "担当や作業を割り当てる。",
-      "point": "担当や作業を割り当てる。",
-      "examples": [
-        {
-          "en": "I set the task for the design team.",
-          "ja": "設計チームに作業を割り当てました。",
-          "focus": "set",
-          "object": "the task",
-          "jaFocus": "割り当てました"
-        },
-        {
-          "en": "The manager set clear roles for everyone.",
-          "ja": "上司は全員に明確な役割を割り当てました。",
-          "focus": "set",
-          "object": "clear roles",
-          "jaFocus": "割り当てました"
-        },
-        {
-          "en": "Please set priorities for each task.",
-          "ja": "各作業に優先順位を設定してください。",
-          "focus": "set",
-          "object": "priorities",
-          "jaFocus": "設定して"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I set chores for the weekend.",
-          "ja": "週末の家事を割り当てました。",
-          "focus": "set",
-          "object": "chores",
-          "jaFocus": "割り当てました"
-        },
-        {
-          "en": "She set priorities for the day.",
-          "ja": "彼女はその日の優先順位を決めました。",
-          "focus": "set",
-          "object": "priorities",
-          "jaFocus": "決めました"
-        }
-      ]
-    }
-  ],
-  "collocations": [
-    {
-      "phrase": "set a deadline",
-      "ja": "締切を設定する",
-      "image": "締切を具体的に決める。",
-      "pattern": "set a deadline",
-      "examples": [
-        {
-          "en": "We need to set a deadline before assigning the task.",
-          "ja": "作業を割り当てる前に締切を設定する必要があります。",
-          "focus": "set a deadline",
-          "jaFocus": "締切を設定する"
-        },
-        {
-          "en": "Please set a realistic deadline for the client review.",
-          "ja": "顧客レビューのために現実的な締切を設定してください。",
-          "focus": "set a realistic deadline",
-          "jaFocus": "現実的な締切を設定して"
-        },
-        {
-          "en": "The team set a deadline for the first draft.",
-          "ja": "チームは初稿の締切を設定しました。",
-          "focus": "set a deadline",
-          "jaFocus": "締切を設定しました"
+          "object": "an example"
         }
       ],
       "dailyExamples": []
     },
     {
-      "phrase": "set a goal",
-      "ja": "目標を設定する",
-      "image": "達成したい結果を明確にする。",
-      "pattern": "set a goal",
+      "id": "set-tone",
+      "title": "7 雰囲気・方向性を決める",
+      "pattern": "SET the tone / direction",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "会議や提案の雰囲気・方向性を決める。",
+      "point": "抽象的な方向づけにも使えます。",
       "examples": [
         {
-          "en": "We set a goal to increase repeat orders.",
-          "ja": "リピート注文を増やすという目標を設定しました。",
-          "focus": "set a goal",
-          "jaFocus": "目標を設定しました"
+          "en": "The first slide set the tone for the presentation.",
+          "ja": "最初のスライドがプレゼンの雰囲気を決めました。",
+          "focus": "set",
+          "object": "the tone"
         },
         {
-          "en": "Please set a clear goal for the next quarter.",
-          "ja": "次の四半期に向けて明確な目標を設定してください。",
-          "focus": "set a clear goal",
-          "jaFocus": "明確な目標を設定して"
-        },
-        {
-          "en": "The manager set a goal for each salesperson.",
-          "ja": "上司は各営業担当に目標を設定しました。",
-          "focus": "set a goal",
-          "jaFocus": "目標を設定しました"
+          "en": "This decision will set the direction for the project.",
+          "ja": "この判断がプロジェクトの方向性を決めます。",
+          "focus": "set",
+          "object": "the direction"
         }
       ],
       "dailyExamples": []
     },
     {
-      "phrase": "set a price",
-      "ja": "価格を設定する",
-      "image": "販売価格や見積価格を決める。",
-      "pattern": "set a price",
+      "id": "set-value",
+      "title": "8 数値・レベルを設定する",
+      "pattern": "SET + value / level",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "数値や設定値を決める。",
+      "point": "機器・システム設定で使えます。",
       "examples": [
         {
-          "en": "We set a price after checking the material cost.",
-          "ja": "材料費を確認した後に価格を設定しました。",
-          "focus": "set a price",
-          "jaFocus": "価格を設定しました"
+          "en": "Please set the brightness level to 80 percent.",
+          "ja": "明るさのレベルを80%に設定してください。",
+          "focus": "set",
+          "object": "the brightness level"
         },
         {
-          "en": "Please set a price that includes installation.",
-          "ja": "設置費を含めた価格を設定してください。",
-          "focus": "set a price",
-          "jaFocus": "価格を設定して"
-        },
-        {
-          "en": "The supplier set a higher price this month.",
-          "ja": "仕入先は今月、より高い価格を設定しました。",
-          "focus": "set a higher price",
-          "jaFocus": "高い価格を設定しました"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "set priorities",
-      "ja": "優先順位を決める",
-      "image": "複数の作業の順番を決める。",
-      "pattern": "set priorities",
-      "examples": [
-        {
-          "en": "We need to set priorities before the busy season.",
-          "ja": "繁忙期の前に優先順位を決める必要があります。",
-          "focus": "set priorities",
-          "jaFocus": "優先順位を決める"
-        },
-        {
-          "en": "Please set priorities for these three tasks.",
-          "ja": "この3つの作業に優先順位を付けてください。",
-          "focus": "set priorities",
-          "jaFocus": "優先順位を付けて"
-        },
-        {
-          "en": "The team set priorities based on urgency.",
-          "ja": "チームは緊急度に基づいて優先順位を決めました。",
-          "focus": "set priorities",
-          "jaFocus": "優先順位を決めました"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "set clear rules",
-      "ja": "明確なルールを設定する",
-      "image": "曖昧さを減らすためにルールを決める。",
-      "pattern": "set clear rules",
-      "examples": [
-        {
-          "en": "We should set clear rules for approval requests.",
-          "ja": "承認依頼について明確なルールを設定すべきです。",
-          "focus": "set clear rules",
-          "jaFocus": "明確なルールを設定"
-        },
-        {
-          "en": "The company set clear rules for expense reports.",
-          "ja": "会社は経費精算について明確なルールを設定しました。",
-          "focus": "set clear rules",
-          "jaFocus": "明確なルールを設定しました"
-        },
-        {
-          "en": "Please set clear rules before the project starts.",
-          "ja": "案件が始まる前に明確なルールを設定してください。",
-          "focus": "set clear rules",
-          "jaFocus": "明確なルールを設定して"
+          "en": "We set the system value after the test.",
+          "ja": "試験後にシステム値を設定しました。",
+          "focus": "set",
+          "object": "the system value"
         }
       ],
       "dailyExamples": []
     }
   ],
+  "collocations": [],
   "phrasalVerbs": [
     {
       "phrase": "set up",
-      "ja": "準備する・設定する",
-      "image": "使える状態を作る。",
+      "ja": "設定する・準備する",
+      "image": "会議・機器・環境を使える状態にする。",
       "pattern": "set up + 名詞",
       "examples": [
         {
           "en": "We set up a meeting with the client.",
-          "ja": "顧客との会議を設定しました。",
-          "focus": "set up a meeting",
-          "jaFocus": "会議を設定しました"
+          "ja": "私たちは顧客との会議を設定しました。",
+          "focus": "set up"
         },
         {
-          "en": "Please set up the projector before the presentation.",
-          "ja": "プレゼン前にプロジェクターを準備してください。",
-          "focus": "set up the projector",
-          "jaFocus": "プロジェクターを準備して"
-        },
-        {
-          "en": "The engineer set up the new system yesterday.",
-          "ja": "技術者は昨日、新しいシステムを設定しました。",
-          "focus": "set up the new system",
-          "jaFocus": "システムを設定しました"
+          "en": "Please set up the demo environment before noon.",
+          "ja": "正午までにデモ環境を準備してください。",
+          "focus": "set up"
         }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "set aside",
-      "ja": "取っておく・確保する",
-      "image": "時間・お金・場所などを別に確保する。",
+      "ja": "取っておく・脇に置く",
+      "image": "時間・予算・問題を別に確保する。",
       "pattern": "set aside + 名詞",
       "examples": [
         {
-          "en": "We set aside time for the final check.",
-          "ja": "最終確認のために時間を確保しました。",
-          "focus": "set aside time",
-          "jaFocus": "時間を確保しました"
+          "en": "We set aside time to review the proposal.",
+          "ja": "私たちは提案書を確認する時間を確保しました。",
+          "focus": "set aside"
         },
         {
-          "en": "Please set aside some budget for extra parts.",
-          "ja": "追加部材用に予算を少し取っておいてください。",
-          "focus": "set aside some budget",
-          "jaFocus": "予算を取っておいて"
-        },
-        {
-          "en": "The team set aside one hour for training.",
-          "ja": "チームは研修のために1時間を確保しました。",
-          "focus": "set aside one hour",
-          "jaFocus": "1時間を確保しました"
+          "en": "Please set aside this issue until the client replies.",
+          "ja": "顧客から返信が来るまでこの件はいったん脇に置いてください。",
+          "focus": "set aside"
         }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "set back",
-      "ja": "遅らせる・後退させる",
+      "ja": "遅らせる",
       "image": "進行を遅らせる。",
       "pattern": "set back + 名詞",
       "examples": [
         {
-          "en": "The shipping delay set back the project by one week.",
-          "ja": "出荷遅延で案件が1週間遅れました。",
-          "focus": "set back the project",
-          "jaFocus": "案件が遅れました"
+          "en": "The delivery issue set back the project.",
+          "ja": "納品トラブルでプロジェクトが遅れました。",
+          "focus": "set back"
         },
         {
-          "en": "The design change set us back a few days.",
-          "ja": "設計変更で私たちは数日遅れました。",
-          "focus": "set us back",
-          "jaFocus": "数日遅れました"
-        },
-        {
-          "en": "A system error set back the schedule.",
-          "ja": "システムエラーでスケジュールが遅れました。",
-          "focus": "set back the schedule",
-          "jaFocus": "スケジュールが遅れました"
+          "en": "A missing document could set back approval.",
+          "ja": "書類不足で承認が遅れる可能性があります。",
+          "focus": "set back"
         }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "set out",
-      "ja": "説明する・始める",
-      "image": "内容を明確に示す、または取りかかる。",
-      "pattern": "set out + 名詞 / set out to do",
+      "ja": "出発する・説明し始める",
+      "image": "出発する、または方針を示す。",
+      "pattern": "set out",
       "examples": [
         {
-          "en": "The document sets out the project requirements.",
-          "ja": "その資料は案件要件を明確に示しています。",
-          "focus": "sets out the requirements",
-          "jaFocus": "要件を示しています"
+          "en": "We set out the main points in the proposal.",
+          "ja": "私たちは提案書で主なポイントを示しました。",
+          "focus": "set out"
         },
         {
-          "en": "We set out to improve the ordering process.",
-          "ja": "私たちは発注プロセスの改善に取りかかりました。",
-          "focus": "set out to improve",
-          "jaFocus": "改善に取りかかりました"
-        },
-        {
-          "en": "The proposal sets out three options.",
-          "ja": "その提案書は3つの選択肢を示しています。",
-          "focus": "sets out three options",
-          "jaFocus": "選択肢を示しています"
+          "en": "The team set out early for the site.",
+          "ja": "チームは現場へ早めに出発しました。",
+          "focus": "set out"
         }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "set off",
-      "ja": "引き起こす・作動させる",
-      "image": "反応や出来事を引き起こす。",
-      "pattern": "set off + 名詞",
+      "ja": "出発する・引き起こす",
+      "image": "出発する、または反応を引き起こす。",
+      "pattern": "set off",
       "examples": [
         {
-          "en": "The price increase set off complaints from customers.",
-          "ja": "値上げにより顧客からクレームが発生しました。",
-          "focus": "set off complaints",
-          "jaFocus": "クレームが発生しました"
+          "en": "We set off for the client visit at 8 a.m.",
+          "ja": "私たちは午前8時に顧客訪問へ出発しました。",
+          "focus": "set off"
         },
         {
-          "en": "A small error set off a larger problem.",
-          "ja": "小さなミスがより大きな問題を引き起こしました。",
-          "focus": "set off a problem",
-          "jaFocus": "問題を引き起こしました"
+          "en": "The delay set off several schedule changes.",
+          "ja": "その遅れが複数のスケジュール変更を引き起こしました。",
+          "focus": "set off"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "set down",
+      "ja": "書き留める・置く",
+      "image": "情報を書き留める、または置く。",
+      "pattern": "set down + 名詞",
+      "examples": [
+        {
+          "en": "Please set down the agreed points in the minutes.",
+          "ja": "合意事項を議事録に書き留めてください。",
+          "focus": "set down"
         },
         {
-          "en": "The alarm was set off during the inspection.",
-          "ja": "点検中にアラームが作動しました。",
-          "focus": "set off",
-          "jaFocus": "作動しました"
+          "en": "He set down the samples near the entrance.",
+          "ja": "彼はサンプルを入口付近に置きました。",
+          "focus": "set down"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "set in",
+      "ja": "始まる・定着する",
+      "image": "状態が始まり、続く。",
+      "pattern": "set in",
+      "examples": [
+        {
+          "en": "A delay set in after the parts arrived late.",
+          "ja": "部品の到着が遅れた後、遅延が発生しました。",
+          "focus": "set in"
+        },
+        {
+          "en": "Once confusion sets in, the team needs clear instructions.",
+          "ja": "混乱が生じたら、チームには明確な指示が必要です。",
+          "focus": "sets in"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "set about",
+      "ja": "取りかかる",
+      "image": "仕事や作業に取りかかる。",
+      "pattern": "set about + 動名詞",
+      "examples": [
+        {
+          "en": "We set about checking the inventory right away.",
+          "ja": "私たちはすぐに在庫確認に取りかかりました。",
+          "focus": "set about"
+        },
+        {
+          "en": "The team set about preparing the revised estimate.",
+          "ja": "チームは修正版の見積作成に取りかかりました。",
+          "focus": "set about"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "set apart",
+      "ja": "区別する",
+      "image": "他と違う特徴で目立たせる。",
+      "pattern": "set apart + 名詞",
+      "examples": [
+        {
+          "en": "Fast support sets our team apart from competitors.",
+          "ja": "迅速なサポートが私たちのチームを競合と差別化します。",
+          "focus": "sets apart"
+        },
+        {
+          "en": "This feature sets the product apart in the market.",
+          "ja": "この機能が市場でその製品を差別化します。",
+          "focus": "sets apart"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "set against",
+      "ja": "〜に反対させる・対比する",
+      "image": "相手や条件に対立させる。",
+      "pattern": "set + 名詞 + against + 名詞",
+      "examples": [
+        {
+          "en": "The report set the new plan against the old one.",
+          "ja": "その報告書は新しい計画を古い計画と比較しました。",
+          "focus": "set against"
+        },
+        {
+          "en": "We should not set one department against another.",
+          "ja": "私たちは部署同士を対立させるべきではありません。",
+          "focus": "set against"
         }
       ],
       "dailyExamples": []
@@ -8727,462 +7983,251 @@ export const verbs: Verb[] = [
   "rank": 36,
   "word": "CHANGE",
   "ipa": "/tʃeɪndʒ/",
-  "kana": "チェンジ",
+  "kana": "チェインジ",
   "syllable": "change",
   "transitivity": "他動詞・自動詞",
-  "importance": "★★★★★ 基本",
-  "core": "今の状態を別の状態にする",
-  "coreDetail": "CHANGEは、予定・内容・条件・担当・考え方などを今とは違う状態にする基本動詞です。仕事では schedule, design, plan, details, requirements とよく使います。",
+  "importance": "★★★★★ 超重要",
+  "core": "今の状態から別の状態へ変わる・変える",
+  "coreDetail": "CHANGEは、予定・条件・デザイン・考えなどを今の状態から別の状態へ移すイメージです。仕事では schedule, design, price, plan, details と一緒によく使います。",
   "coreVisual": {
     "from": [
-      "現在の状態",
-      "予定",
-      "内容",
-      "条件",
-      "担当"
+      "📅 予定",
+      "📝 条件",
+      "🎨 デザイン",
+      "💭 考え",
+      "🔧 設定"
     ],
-    "to": "別の状態",
-    "label": "change = 今とは違う状態にする"
+    "to": "別の状態・新しい形",
+    "label": "現在の状態 → 新しい状態"
   },
   "meanings": [
     {
-      "id": "object",
-      "title": "1 予定・内容を変更する",
-      "pattern": "change + schedule/details/design",
+      "id": "change-schedule",
+      "title": "1 予定を変更する",
+      "pattern": "CHANGE + schedule / date",
       "transitivity": "他動詞・自動詞",
-      "structure": "型の目安：change + schedule/details/design",
-      "image": "予定や内容を別のものにする。",
-      "point": "change the schedule / change the details は仕事で最重要です。",
-      "examples": [
-        {
-          "en": "We changed the meeting time yesterday.",
-          "ja": "私たちは昨日、会議時間を変更しました。",
-          "focus": "changed the meeting time",
-          "jaFocus": "会議時間を変更しました",
-          "object": "the meeting time"
-        },
-        {
-          "en": "Please change the delivery address before shipping.",
-          "ja": "出荷前に納品先住所を変更してください。",
-          "focus": "change the delivery address",
-          "jaFocus": "住所を変更して",
-          "object": "the delivery address"
-        },
-        {
-          "en": "The client asked us to change the design.",
-          "ja": "顧客はデザインを変更するよう依頼しました。",
-          "focus": "change the design",
-          "jaFocus": "デザインを変更する",
-          "object": "the design"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "intransitive",
-      "title": "2 変わる",
-      "pattern": "change",
-      "transitivity": "他動詞・自動詞",
-      "structure": "型の目安：change",
-      "image": "物事そのものが変わる。",
-      "point": "自動詞として The plan changed. のように使います。",
-      "examples": [
-        {
-          "en": "The schedule changed after the client meeting.",
-          "ja": "顧客との会議後にスケジュールが変わりました。",
-          "focus": "changed",
-          "jaFocus": "変わりました"
-        },
-        {
-          "en": "The requirements changed during the project.",
-          "ja": "案件の途中で要件が変わりました。",
-          "focus": "changed",
-          "jaFocus": "要件が変わりました"
-        },
-        {
-          "en": "Our plan changed because of the delivery delay.",
-          "ja": "納期遅延のため、私たちの計画は変わりました。",
-          "focus": "changed",
-          "jaFocus": "計画は変わりました"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "from-to",
-      "title": "3 AからBに変える",
-      "pattern": "change A from B to C",
-      "transitivity": "他動詞・自動詞",
-      "structure": "型の目安：change A from B to C",
-      "image": "変更前と変更後を明確にする。",
-      "point": "from/to を使うと、何から何へ変えたかが分かります。",
-      "examples": [
-        {
-          "en": "We changed the delivery date from Monday to Wednesday.",
-          "ja": "納品日を月曜日から水曜日に変更しました。",
-          "focus": "changed from Monday to Wednesday",
-          "jaFocus": "月曜日から水曜日に変更しました"
-        },
-        {
-          "en": "Please change the color from white to black.",
-          "ja": "色を白から黒に変更してください。",
-          "focus": "change the color from white to black",
-          "jaFocus": "白から黒に変更して"
-        },
-        {
-          "en": "The team changed the plan from online to in-person.",
-          "ja": "チームは計画をオンラインから対面に変更しました。",
-          "focus": "changed the plan from online to in-person",
-          "jaFocus": "対面に変更しました"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "into",
-      "title": "4 別の形に変える",
-      "pattern": "change A into B",
-      "transitivity": "他動詞・自動詞",
-      "structure": "型の目安：change A into B",
-      "image": "AをBという別の形・状態に変える。",
-      "point": "提案・意見・仕組みなどを別の形にするときに使います。",
-      "examples": [
-        {
-          "en": "We changed the rough idea into a clear proposal.",
-          "ja": "大まかな案を明確な提案に変えました。",
-          "focus": "changed the idea into a proposal",
-          "jaFocus": "提案に変えました"
-        },
-        {
-          "en": "The update changed the screen into a simpler layout.",
-          "ja": "その更新で画面がよりシンプルなレイアウトになりました。",
-          "focus": "changed the screen into",
-          "jaFocus": "レイアウトになりました"
-        },
-        {
-          "en": "The team changed customer feedback into action items.",
-          "ja": "チームは顧客の意見を実行項目に変えました。",
-          "focus": "changed feedback into action items",
-          "jaFocus": "実行項目に変えました"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "make-change",
-      "title": "5 変更を加える",
-      "pattern": "make a change / make changes",
-      "transitivity": "他動詞・自動詞",
-      "structure": "型の目安：make a change / make changes",
-      "image": "具体的に修正や変更を行う。",
-      "point": "change を名詞として使う頻出表現です。",
-      "examples": [
-        {
-          "en": "We need to make a small change to the quote.",
-          "ja": "見積に小さな変更を加える必要があります。",
-          "focus": "make a small change",
-          "jaFocus": "小さな変更を加える"
-        },
-        {
-          "en": "Please make changes to the layout by Friday.",
-          "ja": "金曜日までにレイアウトを変更してください。",
-          "focus": "make changes",
-          "jaFocus": "変更して"
-        },
-        {
-          "en": "The client requested several changes to the design.",
-          "ja": "顧客はデザインにいくつかの変更を求めました。",
-          "focus": "requested several changes",
-          "jaFocus": "変更を求めました"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "mind",
-      "title": "6 考え・方針を変える",
-      "pattern": "change one's mind/approach/policy",
-      "transitivity": "他動詞・自動詞",
-      "structure": "型の目安：change one's mind/approach/policy",
-      "image": "考え方・方針・対応方法を変える。",
-      "point": "change one's mind は日常にも仕事にも使えます。",
-      "examples": [
-        {
-          "en": "The client changed their mind after seeing the sample.",
-          "ja": "顧客はサンプルを見た後、考えを変えました。",
-          "focus": "changed their mind",
-          "jaFocus": "考えを変えました"
-        },
-        {
-          "en": "We changed our approach after reviewing the results.",
-          "ja": "結果を確認した後、私たちはアプローチを変えました。",
-          "focus": "changed our approach",
-          "jaFocus": "アプローチを変えました"
-        },
-        {
-          "en": "Management changed the policy last month.",
-          "ja": "経営陣は先月、方針を変更しました。",
-          "focus": "changed the policy",
-          "jaFocus": "方針を変更しました"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "replace",
-      "title": "7 交換する・取り替える",
-      "pattern": "change + part/item/battery",
-      "transitivity": "他動詞・自動詞",
-      "structure": "型の目安：change + part/item/battery",
-      "image": "部品・道具・資料などを交換する。",
-      "point": "replace に近い意味でも使います。",
-      "examples": [
-        {
-          "en": "We need to change the damaged part.",
-          "ja": "破損した部品を交換する必要があります。",
-          "focus": "change the damaged part",
-          "jaFocus": "部品を交換する",
-          "object": "the damaged part"
-        },
-        {
-          "en": "Please change the battery before the inspection.",
-          "ja": "点検前にバッテリーを交換してください。",
-          "focus": "change the battery",
-          "jaFocus": "バッテリーを交換して",
-          "object": "the battery"
-        },
-        {
-          "en": "The technician changed the cable during the site visit.",
-          "ja": "技術者は現場訪問中にケーブルを交換しました。",
-          "focus": "changed the cable",
-          "jaFocus": "ケーブルを交換しました",
-          "object": "the cable"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "process",
-      "title": "8 手順・仕組みを改善する方向で変える",
-      "pattern": "change + process/system/way",
-      "transitivity": "他動詞・自動詞",
-      "structure": "型の目安：change + process/system/way",
-      "image": "業務のやり方や仕組みを変える。",
-      "point": "change the process は業務改善で使いやすい表現です。",
-      "examples": [
-        {
-          "en": "We changed the process to reduce mistakes.",
-          "ja": "ミスを減らすために手順を変更しました。",
-          "focus": "changed the process",
-          "jaFocus": "手順を変更しました",
-          "object": "the process"
-        },
-        {
-          "en": "The company changed the system to save time.",
-          "ja": "会社は時間を節約するためにシステムを変更しました。",
-          "focus": "changed the system",
-          "jaFocus": "システムを変更しました",
-          "object": "the system"
-        },
-        {
-          "en": "Please change the way we share updates.",
-          "ja": "進捗共有の方法を変えてください。",
-          "focus": "change the way",
-          "jaFocus": "方法を変えて",
-          "object": "the way"
-        }
-      ],
-      "dailyExamples": []
-    }
-  ],
-  "collocations": [
-    {
-      "phrase": "change the schedule",
-      "ja": "スケジュールを変更する",
+      "structure": "S + V + O / S + V + M",
       "image": "予定や日程を変える。",
-      "pattern": "change the schedule",
+      "point": "仕事で最も使いやすい基本表現。",
       "examples": [
         {
-          "en": "We need to change the schedule because of the delay.",
-          "ja": "遅延のためスケジュールを変更する必要があります。",
-          "focus": "change the schedule",
-          "jaFocus": "スケジュールを変更する"
+          "en": "We need to change the schedule for the meeting.",
+          "ja": "私たちは会議の予定を変更する必要があります。",
+          "focus": "change",
+          "object": "the schedule"
         },
         {
-          "en": "Please change the schedule before sending the invitation.",
-          "ja": "招待を送る前にスケジュールを変更してください。",
-          "focus": "change the schedule",
-          "jaFocus": "スケジュールを変更して"
-        },
-        {
-          "en": "The client changed the schedule at the last minute.",
-          "ja": "顧客は直前にスケジュールを変更しました。",
-          "focus": "changed the schedule",
-          "jaFocus": "スケジュールを変更しました"
+          "en": "The client changed the delivery date.",
+          "ja": "顧客は納品日を変更しました。",
+          "focus": "changed",
+          "object": "the delivery date"
         }
       ],
       "dailyExamples": []
     },
     {
-      "phrase": "change the design",
-      "ja": "デザインを変更する",
-      "image": "見た目や仕様を変える。",
-      "pattern": "change the design",
+      "id": "change-plan",
+      "title": "2 計画を変える",
+      "pattern": "CHANGE + plan",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "計画や進め方を変える。",
+      "point": "状況に合わせて方針を変えるときに使います。",
       "examples": [
         {
-          "en": "The client asked us to change the design.",
-          "ja": "顧客はデザインを変更するよう依頼しました。",
-          "focus": "change the design",
-          "jaFocus": "デザインを変更する"
+          "en": "We changed the plan after the site visit.",
+          "ja": "現場確認後に計画を変更しました。",
+          "focus": "changed",
+          "object": "the plan"
         },
         {
-          "en": "We changed the design to make it easier to read.",
-          "ja": "見やすくするためにデザインを変更しました。",
-          "focus": "changed the design",
-          "jaFocus": "デザインを変更しました"
-        },
-        {
-          "en": "Please change the design before the final review.",
-          "ja": "最終レビュー前にデザインを変更してください。",
-          "focus": "change the design",
-          "jaFocus": "デザインを変更して"
+          "en": "Please change the plan if the stock is not enough.",
+          "ja": "在庫が足りない場合は計画を変更してください。",
+          "focus": "change",
+          "object": "the plan"
         }
       ],
       "dailyExamples": []
     },
     {
-      "phrase": "change the details",
-      "ja": "詳細を変更する",
-      "image": "細かい条件や内容を変える。",
-      "pattern": "change the details",
+      "id": "change-design",
+      "title": "3 デザインを変更する",
+      "pattern": "CHANGE + design / layout",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "デザインやレイアウトを変える。",
+      "point": "提案資料や製品仕様で使えます。",
       "examples": [
         {
-          "en": "We changed the details after the client call.",
-          "ja": "顧客との電話後に詳細を変更しました。",
-          "focus": "changed the details",
-          "jaFocus": "詳細を変更しました"
+          "en": "The customer asked us to change the design.",
+          "ja": "顧客は私たちにデザイン変更を依頼しました。",
+          "focus": "change",
+          "object": "the design"
         },
         {
-          "en": "Please change the details in the proposal.",
-          "ja": "提案書の詳細を変更してください。",
-          "focus": "change the details",
-          "jaFocus": "詳細を変更して"
-        },
-        {
-          "en": "The team changed the details to match the new request.",
-          "ja": "チームは新しい依頼に合わせて詳細を変更しました。",
-          "focus": "changed the details",
-          "jaFocus": "詳細を変更しました"
+          "en": "We changed the layout to make it easier to read.",
+          "ja": "読みやすくするためにレイアウトを変更しました。",
+          "focus": "changed",
+          "object": "the layout"
         }
       ],
       "dailyExamples": []
     },
     {
-      "phrase": "change one's mind",
-      "ja": "考えを変える",
-      "image": "一度決めた考えを変える。",
-      "pattern": "change one's mind",
+      "id": "change-price",
+      "title": "4 価格・条件を変更する",
+      "pattern": "CHANGE + price / terms",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "価格や条件を変える。",
+      "point": "見積・契約でよく使います。",
       "examples": [
         {
-          "en": "The client changed their mind about the color.",
-          "ja": "顧客は色について考えを変えました。",
-          "focus": "changed their mind",
-          "jaFocus": "考えを変えました"
+          "en": "We cannot change the price after approval.",
+          "ja": "承認後に価格を変更することはできません。",
+          "focus": "change",
+          "object": "the price"
         },
         {
-          "en": "I changed my mind after checking the cost.",
-          "ja": "費用を確認した後、考えを変えました。",
-          "focus": "changed my mind",
-          "jaFocus": "考えを変えました"
-        },
-        {
-          "en": "Management may change their mind after the report.",
-          "ja": "報告後に経営陣が考えを変えるかもしれません。",
-          "focus": "change their mind",
-          "jaFocus": "考えを変える"
+          "en": "The supplier changed the terms without notice.",
+          "ja": "仕入先は事前連絡なく条件を変更しました。",
+          "focus": "changed",
+          "object": "the terms"
         }
       ],
       "dailyExamples": []
     },
     {
-      "phrase": "make a change",
-      "ja": "変更を加える",
-      "image": "一部を修正・変更する。",
-      "pattern": "make a change",
+      "id": "change-mind",
+      "title": "5 考えを変える",
+      "pattern": "CHANGE one's mind",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "考えや判断を変える。",
+      "point": "顧客・上司・自分の判断に使えます。",
       "examples": [
         {
-          "en": "We need to make a change to the quote.",
-          "ja": "見積に変更を加える必要があります。",
-          "focus": "make a change",
-          "jaFocus": "変更を加える"
+          "en": "The client changed his mind after seeing the sample.",
+          "ja": "顧客はサンプルを見た後で考えを変えました。",
+          "focus": "changed",
+          "object": "his mind"
         },
         {
-          "en": "Please make a small change to the layout.",
-          "ja": "レイアウトに小さな変更を加えてください。",
-          "focus": "make a small change",
-          "jaFocus": "小さな変更を加えて"
+          "en": "I may change my mind after reviewing the data.",
+          "ja": "データを確認した後で考えを変えるかもしれません。",
+          "focus": "change",
+          "object": "my mind"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "change-details",
+      "title": "6 詳細を変更する",
+      "pattern": "CHANGE + details / information",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "詳細や情報を変える。",
+      "point": "資料・メール・登録情報で使えます。",
+      "examples": [
+        {
+          "en": "Please change the details in the quotation.",
+          "ja": "見積書の詳細を変更してください。",
+          "focus": "change",
+          "object": "the details"
         },
         {
-          "en": "The customer asked us to make a change before production.",
-          "ja": "顧客は製作前に変更を加えるよう依頼しました。",
-          "focus": "make a change",
-          "jaFocus": "変更を加える"
+          "en": "We changed the contact information in the system.",
+          "ja": "システム上の連絡先情報を変更しました。",
+          "focus": "changed",
+          "object": "the contact information"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "change-state",
+      "title": "7 状態が変わる",
+      "pattern": "CHANGE + state / situation",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "状態や状況が変わる。",
+      "point": "自動詞としても使います。",
+      "examples": [
+        {
+          "en": "The situation changed after the client called.",
+          "ja": "顧客から電話があった後で状況が変わりました。",
+          "focus": "changed"
+        },
+        {
+          "en": "The color may change under strong light.",
+          "ja": "強い光の下では色が変わる可能性があります。",
+          "focus": "change"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "change-settings",
+      "title": "8 設定を変更する",
+      "pattern": "CHANGE + setting",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + V + O / S + V + M",
+      "image": "機器やアプリの設定を変える。",
+      "point": "システム・アプリ・照明設定で使えます。",
+      "examples": [
+        {
+          "en": "Please change the settings before the test.",
+          "ja": "テスト前に設定を変更してください。",
+          "focus": "change",
+          "object": "the settings"
+        },
+        {
+          "en": "We changed the brightness setting on site.",
+          "ja": "現場で明るさの設定を変更しました。",
+          "focus": "changed",
+          "object": "the brightness setting"
         }
       ],
       "dailyExamples": []
     }
   ],
+  "collocations": [],
   "phrasalVerbs": [
     {
       "phrase": "change into",
       "ja": "〜に変わる・着替える",
-      "image": "別の形・状態になる。",
+      "image": "別の状態や形になる。",
       "pattern": "change into + 名詞",
       "examples": [
         {
-          "en": "The rough idea changed into a clear proposal.",
-          "ja": "大まかな案が明確な提案に変わりました。",
-          "focus": "changed into",
-          "jaFocus": "提案に変わりました"
+          "en": "The inquiry changed into a real order.",
+          "ja": "その問い合わせは実際の注文に変わりました。",
+          "focus": "changed into"
         },
         {
-          "en": "The meeting changed into a discussion about cost.",
-          "ja": "会議は費用についての議論に変わりました。",
-          "focus": "changed into",
-          "jaFocus": "議論に変わりました"
-        },
-        {
-          "en": "The old process changed into a simpler workflow.",
-          "ja": "古い手順がよりシンプルな流れに変わりました。",
-          "focus": "changed into",
-          "jaFocus": "流れに変わりました"
+          "en": "The small issue changed into a larger problem.",
+          "ja": "小さな問題がより大きな問題に変わりました。",
+          "focus": "changed into"
         }
       ],
       "dailyExamples": []
     },
     {
-      "phrase": "change from A to B",
-      "ja": "AからBに変える",
-      "image": "変更前と変更後をはっきり示す。",
+      "phrase": "change from",
+      "ja": "Aから変わる",
+      "image": "元の状態から別の状態へ変わる。",
       "pattern": "change from A to B",
       "examples": [
         {
-          "en": "We changed the meeting from Tuesday to Thursday.",
-          "ja": "会議を火曜日から木曜日に変更しました。",
-          "focus": "changed from Tuesday to Thursday",
-          "jaFocus": "火曜日から木曜日に変更しました"
+          "en": "The status changed from pending to approved.",
+          "ja": "ステータスは保留から承認済みに変わりました。",
+          "focus": "changed from"
         },
         {
-          "en": "Please change the color from red to blue.",
-          "ja": "色を赤から青に変更してください。",
-          "focus": "change from red to blue",
-          "jaFocus": "赤から青に変更して"
-        },
-        {
-          "en": "The plan changed from online to in-person.",
-          "ja": "計画はオンラインから対面に変更されました。",
-          "focus": "changed from online to in-person",
-          "jaFocus": "オンラインから対面に変更されました"
+          "en": "We changed from the old system to the new one.",
+          "ja": "私たちは旧システムから新システムに切り替えました。",
+          "focus": "changed from"
         }
       ],
       "dailyExamples": []
@@ -9190,26 +8235,18 @@ export const verbs: Verb[] = [
     {
       "phrase": "change over",
       "ja": "切り替える",
-      "image": "別のシステム・方法へ移行する。",
+      "image": "システム・方法・体制を切り替える。",
       "pattern": "change over to + 名詞",
       "examples": [
         {
-          "en": "We changed over to the new system last month.",
-          "ja": "先月、新しいシステムに切り替えました。",
-          "focus": "changed over to",
-          "jaFocus": "切り替えました"
-        },
-        {
           "en": "The team will change over to a new workflow.",
-          "ja": "チームは新しい業務フローに切り替える予定です。",
-          "focus": "change over to",
-          "jaFocus": "切り替える"
+          "ja": "チームは新しい作業フローに切り替えます。",
+          "focus": "change over"
         },
         {
           "en": "Please prepare before we change over to the new format.",
           "ja": "新しい形式に切り替える前に準備してください。",
-          "focus": "change over to",
-          "jaFocus": "切り替える"
+          "focus": "change over"
         }
       ],
       "dailyExamples": []
@@ -9223,20 +8260,12 @@ export const verbs: Verb[] = [
         {
           "en": "We changed back to the original layout.",
           "ja": "元のレイアウトに戻しました。",
-          "focus": "changed back",
-          "jaFocus": "元に戻しました"
-        },
-        {
-          "en": "The client asked us to change back to the old design.",
-          "ja": "顧客は以前のデザインに戻すよう依頼しました。",
-          "focus": "change back",
-          "jaFocus": "戻す"
+          "focus": "changed back"
         },
         {
           "en": "Please change the setting back after the test.",
           "ja": "テスト後に設定を元に戻してください。",
-          "focus": "change back",
-          "jaFocus": "元に戻して"
+          "focus": "change back"
         }
       ],
       "dailyExamples": []
@@ -9250,20 +8279,69 @@ export const verbs: Verb[] = [
         {
           "en": "We changed around the order of the slides.",
           "ja": "スライドの順番を入れ替えました。",
-          "focus": "changed around",
-          "jaFocus": "順番を入れ替えました"
+          "focus": "changed around"
         },
         {
           "en": "Please change around the seating for the meeting.",
           "ja": "会議用に席の配置を変えてください。",
-          "focus": "change around",
-          "jaFocus": "配置を変えて"
+          "focus": "change around"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "change out",
+      "ja": "交換する",
+      "image": "部品や古いものを交換する。",
+      "pattern": "change out + 名詞",
+      "examples": [
+        {
+          "en": "We need to change out the damaged part.",
+          "ja": "破損した部品を交換する必要があります。",
+          "focus": "change out"
         },
         {
-          "en": "The team changed around the schedule to fit the deadline.",
-          "ja": "チームは締切に合わせてスケジュールを組み替えました。",
-          "focus": "changed around",
-          "jaFocus": "組み替えました"
+          "en": "The team changed out the old module on site.",
+          "ja": "チームは現場で古いモジュールを交換しました。",
+          "focus": "changed out"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "change up",
+      "ja": "変化をつける",
+      "image": "やり方や流れを少し変える。",
+      "pattern": "change up + 名詞",
+      "examples": [
+        {
+          "en": "We should change up the presentation style.",
+          "ja": "プレゼンの進め方に変化をつけるべきです。",
+          "focus": "change up"
+        },
+        {
+          "en": "The manager changed up the agenda to save time.",
+          "ja": "上司は時間を節約するため議題の順番を変えました。",
+          "focus": "changed up"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "change to",
+      "ja": "〜に変更する",
+      "image": "別の選択肢・状態に変更する。",
+      "pattern": "change to + 名詞",
+      "examples": [
+        {
+          "en": "Please change to the latest version of the file.",
+          "ja": "最新バージョンのファイルに変更してください。",
+          "focus": "change to"
+        },
+        {
+          "en": "We changed to a different supplier after the delay.",
+          "ja": "遅延後、私たちは別の仕入先に変更しました。",
+          "focus": "changed to"
         }
       ],
       "dailyExamples": []

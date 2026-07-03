@@ -11038,28 +11038,27 @@ export const verbs: Verb[] = [
     "syllable": "plan",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 重要",
-    "core": "先の行動を考えて組み立てる",
-    "coreDetail": "PLANは、予定・作業・出張・戦略などを事前に組み立てる動詞です。仕事では、行動する前に流れ・期限・役割・次の手順を決める感覚で使います。",
+    "core": "先の行動を事前に組み立てる",
+    "coreDetail": "PLANは、目的・期限・人員・予算などを先に整理し、実行できる流れにする動詞です。仕事では、会議・訪問・生産・納品・次の対応を考える時によく使います。",
     "coreVisual": {
       "from": [
         "目的",
         "期限",
         "人員",
-        "予算",
-        "リスク"
+        "予算"
       ],
-      "to": "実行できる流れ",
-      "label": "ばらばらの条件 → 実行計画"
+      "to": "実行できる計画",
+      "label": "条件を整理 → 行動計画"
     },
     "meanings": [
       {
-        "id": "plan-a-schedule",
+        "id": "plan-schedule",
         "title": "① 予定・日程を計画する",
-        "pattern": "plan + schedule / meeting / trip",
+        "pattern": "plan + schedule / meeting / visit",
         "transitivity": "他動詞",
-        "structure": "S + plan + O",
-        "image": "日時や順番を事前に組み立てる。",
-        "point": "schedule, meeting, trip など予定に関する名詞とよく使う。",
+        "structure": "基本",
+        "image": "日時や順番を先に組み立てる。",
+        "point": "schedule, meeting, visit など予定に関する名詞とよく使います。",
         "examples": [
           {
             "en": "We planned the schedule for next week.",
@@ -11074,273 +11073,158 @@ export const verbs: Verb[] = [
             "object": "the client meeting"
           },
           {
-            "en": "The team planned the business trip around the site visit.",
-            "ja": "チームは現場訪問に合わせて出張を計画しました。",
+            "en": "She planned a visit to the customer next month.",
+            "ja": "彼女は来月の顧客訪問を予定しました。",
             "focus": "planned",
-            "object": "the business trip"
+            "object": "a visit"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "plan-next-step",
+        "title": "② 次の対応を計画する",
+        "pattern": "plan + next step / action",
+        "transitivity": "他動詞",
+        "structure": "基本",
+        "image": "次に何をするかを決めて流れを作る。",
+        "point": "次の営業対応・社内対応を決める時に使いやすい形です。",
+        "examples": [
+          {
+            "en": "We need to plan the next step after the meeting.",
+            "ja": "私たちは会議後の次の対応を計画する必要があります。",
+            "focus": "plan",
+            "object": "the next step"
+          },
+          {
+            "en": "The team planned a clear action for the delay.",
+            "ja": "チームは遅延に対する明確な対応を計画しました。",
+            "focus": "planned",
+            "object": "a clear action"
+          },
+          {
+            "en": "Please plan the follow-up before you call the client.",
+            "ja": "顧客に電話する前にフォロー対応を計画してください。",
+            "focus": "plan",
+            "object": "the follow-up"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "plan-production",
+        "title": "③ 生産・作業を計画する",
+        "pattern": "plan + production / work",
+        "transitivity": "他動詞",
+        "structure": "基本",
+        "image": "作業量や納期に合わせて流れを整える。",
+        "point": "製造・現場・納品の段取りで使いやすい表現です。",
+        "examples": [
+          {
+            "en": "We planned production based on the latest order forecast.",
+            "ja": "私たちは最新の受注予測をもとに生産を計画しました。",
+            "focus": "planned",
+            "object": "production"
+          },
+          {
+            "en": "Please plan the installation work carefully.",
+            "ja": "設置作業を慎重に計画してください。",
+            "focus": "plan",
+            "object": "the installation work"
+          },
+          {
+            "en": "They planned the delivery route to save time.",
+            "ja": "彼らは時間を節約するために配送ルートを計画しました。",
+            "focus": "planned",
+            "object": "the delivery route"
           }
         ],
         "dailyExamples": []
       },
       {
         "id": "plan-to-do",
-        "title": "② 〜する予定である",
+        "title": "④ 〜する予定である",
         "pattern": "plan to do",
-        "transitivity": "自動詞",
-        "structure": "S + plan + to do",
+        "transitivity": "自動詞的表現",
+        "structure": "基本",
         "image": "これからする行動を予定として持つ。",
-        "point": "未来の予定を自然に言える形。ビジネスでは訪問・送付・確認などに使いやすい。",
+        "point": "訪問・送付・確認など、今後の予定を伝える時に便利です。",
         "examples": [
           {
             "en": "We plan to send the quote tomorrow.",
             "ja": "私たちは明日見積を送る予定です。",
-            "focus": "plan"
+            "focus": "plan",
+            "object": "to send the quote"
           },
           {
             "en": "I plan to visit the client next week.",
             "ja": "私は来週顧客を訪問する予定です。",
-            "focus": "plan"
+            "focus": "plan",
+            "object": "to visit the client"
           },
           {
             "en": "They plan to review the design before approval.",
             "ja": "彼らは承認前にデザインを確認する予定です。",
-            "focus": "plan"
+            "focus": "plan",
+            "object": "to review the design"
           }
         ],
         "dailyExamples": []
       },
       {
-        "id": "plan-for",
-        "title": "③ 〜に向けて準備・計画する",
-        "pattern": "plan for + 名詞",
+        "id": "plan-carefully",
+        "title": "⑤ 慎重に計画する",
+        "pattern": "plan carefully / properly",
         "transitivity": "自動詞",
-        "structure": "S + plan + for + O",
-        "image": "目的やイベントに向けて前もって考える。",
-        "point": "for の後ろに、イベント・リスク・将来の状況を置く。",
+        "structure": "基本",
+        "image": "ミスや遅れを防ぐために丁寧に段取りする。",
+        "point": "carefully, properly, early などと一緒に使うと自然です。",
         "examples": [
           {
-            "en": "We need to plan for the product launch.",
-            "ja": "私たちは製品リリースに向けて計画する必要があります。",
-            "focus": "plan for"
+            "en": "We should plan carefully before ordering the materials.",
+            "ja": "材料を発注する前に慎重に計画するべきです。",
+            "focus": "plan",
+            "object": "carefully"
           },
           {
-            "en": "Please plan for possible delivery delays.",
-            "ja": "納品遅延の可能性に備えて計画してください。",
-            "focus": "plan for"
+            "en": "Please plan properly so we can avoid extra costs.",
+            "ja": "追加費用を避けられるように、きちんと計画してください。",
+            "focus": "plan",
+            "object": "properly"
           },
           {
-            "en": "The manager planned for a busy sales season.",
-            "ja": "マネージャーは忙しい販売シーズンに向けて計画しました。",
-            "focus": "planned for"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "plan-how",
-        "title": "④ どう進めるかを計画する",
-        "pattern": "plan how to do",
-        "transitivity": "他動詞",
-        "structure": "S + plan + how to do",
-        "image": "具体的な進め方を考える。",
-        "point": "how to の後ろに作業内容を置くと、手順を考える意味になる。",
-        "examples": [
-          {
-            "en": "We planned how to explain the issue to the client.",
-            "ja": "私たちはその問題を顧客にどう説明するか計画しました。",
-            "focus": "planned"
-          },
-          {
-            "en": "Please plan how to install the lights safely.",
-            "ja": "照明を安全に設置する方法を計画してください。",
-            "focus": "plan"
-          },
-          {
-            "en": "The team planned how to reduce the cost.",
-            "ja": "チームはコストを下げる方法を計画しました。",
-            "focus": "planned"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "plan-ahead",
-        "title": "⑤ 先を見越して計画する",
-        "pattern": "plan ahead",
-        "transitivity": "自動詞",
-        "structure": "S + plan ahead",
-        "image": "直前ではなく、先回りして準備する。",
-        "point": "仕事ではトラブル防止や段取りの良さを表す。",
-        "examples": [
-          {
-            "en": "We should plan ahead before the busy season starts.",
-            "ja": "繁忙期が始まる前に先を見越して計画するべきです。",
-            "focus": "plan ahead"
-          },
-          {
-            "en": "Please plan ahead for the installation work.",
-            "ja": "設置作業に向けて前もって計画してください。",
-            "focus": "plan ahead"
-          },
-          {
-            "en": "Good teams plan ahead and avoid last-minute problems.",
-            "ja": "良いチームは先を見越して計画し、直前の問題を避けます。",
-            "focus": "plan ahead"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "plan-with",
-        "title": "⑥ 〜と一緒に計画する",
-        "pattern": "plan with + 人 / 部署",
-        "transitivity": "自動詞",
-        "structure": "S + plan + with + 人",
-        "image": "相手と一緒に計画を作る。",
-        "point": "with の後ろに顧客・チーム・部署を置く。",
-        "examples": [
-          {
-            "en": "We planned with the client before finalizing the design.",
-            "ja": "私たちはデザインを確定する前に顧客と一緒に計画しました。",
-            "focus": "planned with"
-          },
-          {
-            "en": "Please plan with the production team.",
-            "ja": "製造チームと一緒に計画してください。",
-            "focus": "plan with"
-          },
-          {
-            "en": "She planned with accounting to control the budget.",
-            "ja": "彼女は予算を管理するために経理部と一緒に計画しました。",
-            "focus": "planned with"
+            "en": "Good teams plan early and avoid last-minute problems.",
+            "ja": "良いチームは早めに計画し、直前の問題を避けます。",
+            "focus": "plan",
+            "object": "early"
           }
         ],
         "dailyExamples": []
       }
     ],
-    "collocations": [
-      {
-        "phrase": "make a plan",
-        "ja": "計画を立てる",
-        "image": "頭の中の案を、実行できる計画にする。",
-        "pattern": "make a plan",
-        "examples": [
-          {
-            "en": "Let's make a plan for the next visit.",
-            "ja": "次回訪問の計画を立てましょう。",
-            "focus": "make a plan"
-          },
-          {
-            "en": "We made a plan to finish the report by Friday.",
-            "ja": "私たちは金曜日までに報告書を終える計画を立てました。",
-            "focus": "made a plan"
-          },
-          {
-            "en": "Please make a plan before ordering the materials.",
-            "ja": "材料を発注する前に計画を立ててください。",
-            "focus": "make a plan"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "business plan",
-        "ja": "事業計画",
-        "image": "事業の目的・売上・費用・進め方をまとめた計画。",
-        "pattern": "business plan",
-        "examples": [
-          {
-            "en": "We updated the business plan for next year.",
-            "ja": "私たちは来年の事業計画を更新しました。",
-            "focus": "business plan"
-          },
-          {
-            "en": "The bank reviewed our business plan.",
-            "ja": "銀行は私たちの事業計画を確認しました。",
-            "focus": "business plan"
-          },
-          {
-            "en": "Please prepare the business plan before the meeting.",
-            "ja": "会議前に事業計画を準備してください。",
-            "focus": "business plan"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "action plan",
-        "ja": "行動計画",
-        "image": "何を・誰が・いつ行うかを具体化した計画。",
-        "pattern": "action plan",
-        "examples": [
-          {
-            "en": "We created an action plan after the customer complaint.",
-            "ja": "私たちは顧客クレームの後、行動計画を作成しました。",
-            "focus": "action plan"
-          },
-          {
-            "en": "Please share the action plan with the team.",
-            "ja": "行動計画をチームに共有してください。",
-            "focus": "action plan"
-          },
-          {
-            "en": "The manager checked the action plan every week.",
-            "ja": "マネージャーは毎週行動計画を確認しました。",
-            "focus": "action plan"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "backup plan",
-        "ja": "代替案・予備計画",
-        "image": "予定通りに進まない場合の別案。",
-        "pattern": "backup plan",
-        "examples": [
-          {
-            "en": "We need a backup plan in case the delivery is delayed.",
-            "ja": "納品が遅れた場合に備えて代替案が必要です。",
-            "focus": "backup plan"
-          },
-          {
-            "en": "Please prepare a backup plan for the event.",
-            "ja": "イベントの代替案を準備してください。",
-            "focus": "backup plan"
-          },
-          {
-            "en": "The backup plan helped us avoid a major problem.",
-            "ja": "代替案のおかげで大きな問題を避けられました。",
-            "focus": "backup plan"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "plan a project",
-        "ja": "プロジェクトを計画する",
-        "image": "案件全体の流れを組み立てる。",
-        "pattern": "plan a project",
-        "examples": [
-          {
-            "en": "We need to plan the project before contacting the supplier.",
-            "ja": "仕入先に連絡する前にプロジェクトを計画する必要があります。",
-            "focus": "plan the project"
-          },
-          {
-            "en": "She planned the project with the sales team.",
-            "ja": "彼女は営業チームと一緒にプロジェクトを計画しました。",
-            "focus": "planned the project"
-          },
-          {
-            "en": "Please plan the project schedule carefully.",
-            "ja": "プロジェクトの予定を慎重に計画してください。",
-            "focus": "plan the project"
-          }
-        ],
-        "dailyExamples": []
-      }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
+      {
+        "phrase": "plan for",
+        "ja": "〜に備えて計画する",
+        "image": "イベント・リスク・将来の状況に向けて準備する。",
+        "pattern": "plan for",
+        "examples": [
+          {
+            "en": "We need to plan for possible delivery delays.",
+            "ja": "私たちは納品遅延の可能性に備えて計画する必要があります。",
+            "focus": "plan for",
+            "object": "possible delivery delays"
+          },
+          {
+            "en": "The team planned for the product launch.",
+            "ja": "チームは製品リリースに向けて計画しました。",
+            "focus": "planned for",
+            "object": "the product launch"
+          }
+        ],
+        "dailyExamples": []
+      },
       {
         "phrase": "plan ahead",
         "ja": "前もって計画する",
@@ -11350,11 +11234,6 @@ export const verbs: Verb[] = [
           {
             "en": "We should plan ahead for the year-end rush.",
             "ja": "年末の繁忙期に向けて前もって計画するべきです。",
-            "focus": "plan ahead"
-          },
-          {
-            "en": "Please plan ahead so we can avoid overtime.",
-            "ja": "残業を避けられるように前もって計画してください。",
             "focus": "plan ahead"
           },
           {
@@ -11369,22 +11248,19 @@ export const verbs: Verb[] = [
         "phrase": "plan out",
         "ja": "細かく計画する",
         "image": "流れや手順を細部まで組み立てる。",
-        "pattern": "plan out + 名詞",
+        "pattern": "plan out",
         "examples": [
           {
             "en": "We planned out the installation steps.",
             "ja": "私たちは設置手順を細かく計画しました。",
-            "focus": "planned out"
+            "focus": "planned out",
+            "object": "the installation steps"
           },
           {
             "en": "Please plan out the schedule before the kickoff meeting.",
             "ja": "キックオフ会議の前にスケジュールを細かく計画してください。",
-            "focus": "plan out"
-          },
-          {
-            "en": "The team planned out each task for the launch.",
-            "ja": "チームはリリースに向けて各作業を細かく計画しました。",
-            "focus": "planned out"
+            "focus": "plan out",
+            "object": "the schedule"
           }
         ],
         "dailyExamples": []
@@ -11392,47 +11268,41 @@ export const verbs: Verb[] = [
       {
         "phrase": "plan around",
         "ja": "〜に合わせて計画する",
-        "image": "制約や予定に合わせて計画を組む。",
-        "pattern": "plan around + 名詞",
+        "image": "制約や相手の予定を中心にして計画する。",
+        "pattern": "plan around",
         "examples": [
           {
             "en": "We planned around the client's available dates.",
             "ja": "私たちは顧客の都合が良い日に合わせて計画しました。",
-            "focus": "planned around"
+            "focus": "planned around",
+            "object": "the client's available dates"
           },
           {
-            "en": "Please plan around the factory schedule.",
-            "ja": "工場の予定に合わせて計画してください。",
-            "focus": "plan around"
-          },
-          {
-            "en": "They planned around the budget limit.",
-            "ja": "彼らは予算上限に合わせて計画しました。",
-            "focus": "planned around"
+            "en": "Please plan around the delivery schedule.",
+            "ja": "納品スケジュールに合わせて計画してください。",
+            "focus": "plan around",
+            "object": "the delivery schedule"
           }
         ],
         "dailyExamples": []
       },
       {
-        "phrase": "plan for",
-        "ja": "〜に備えて計画する",
-        "image": "イベントやリスクに備えて計画する。",
-        "pattern": "plan for + 名詞",
+        "phrase": "plan on",
+        "ja": "〜する予定である",
+        "image": "予定として頭の中に置く。",
+        "pattern": "plan on",
         "examples": [
           {
-            "en": "We planned for a possible price increase.",
-            "ja": "私たちは価格上昇の可能性に備えて計画しました。",
-            "focus": "planned for"
+            "en": "We plan on visiting the site next Tuesday.",
+            "ja": "私たちは来週火曜日に現場を訪問する予定です。",
+            "focus": "plan on",
+            "object": "visiting the site"
           },
           {
-            "en": "Please plan for extra delivery time.",
-            "ja": "追加の配送時間を見込んで計画してください。",
-            "focus": "plan for"
-          },
-          {
-            "en": "The company planned for future growth.",
-            "ja": "会社は将来の成長に備えて計画しました。",
-            "focus": "planned for"
+            "en": "Are you planning on joining the meeting?",
+            "ja": "あなたはその会議に参加する予定ですか？",
+            "focus": "planning on",
+            "object": "joining the meeting"
           }
         ],
         "dailyExamples": []
@@ -11440,23 +11310,20 @@ export const verbs: Verb[] = [
       {
         "phrase": "plan with",
         "ja": "〜と一緒に計画する",
-        "image": "相手と一緒に計画を作る。",
-        "pattern": "plan with + 人",
+        "image": "相手と一緒に流れを組み立てる。",
+        "pattern": "plan with",
         "examples": [
           {
-            "en": "We planned with the client from the early stage.",
-            "ja": "私たちは初期段階から顧客と一緒に計画しました。",
-            "focus": "planned with"
+            "en": "We planned with the production team before confirming the date.",
+            "ja": "私たちは日程を確定する前に製造チームと一緒に計画しました。",
+            "focus": "planned with",
+            "object": "the production team"
           },
           {
-            "en": "Please plan with the design team.",
-            "ja": "デザインチームと一緒に計画してください。",
-            "focus": "plan with"
-          },
-          {
-            "en": "He planned with logistics to reduce delivery risk.",
-            "ja": "彼は配送リスクを下げるために物流部門と一緒に計画しました。",
-            "focus": "planned with"
+            "en": "Please plan with the client before changing the layout.",
+            "ja": "レイアウトを変更する前に顧客と一緒に計画してください。",
+            "focus": "plan with",
+            "object": "the client"
           }
         ],
         "dailyExamples": []
@@ -11470,367 +11337,209 @@ export const verbs: Verb[] = [
     "ipa": "/ˈɔːfər/",
     "kana": "オファー",
     "syllable": "of-fer",
-    "transitivity": "他動詞",
+    "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 重要",
-    "core": "相手が受け取れるものとして差し出す",
-    "coreDetail": "OFFERは、商品・条件・支援・選択肢などを相手に差し出す動詞です。相手が受けるかどうかを選べる状態で提示する感覚があります。",
+    "core": "相手に選べる形で差し出す",
+    "coreDetail": "OFFERは、物・条件・助け・案などを相手が受け取れるように差し出す動詞です。仕事では、割引・サンプル・サポート・解決策・選択肢を提示する時によく使います。",
     "coreVisual": {
       "from": [
-        "提案",
-        "支援",
-        "条件",
-        "選択肢",
-        "価格"
+        "自分・会社"
       ],
       "to": "相手",
-      "label": "こちらから差し出す → 相手が選べる"
+      "label": "差し出す・提示する"
     },
     "meanings": [
       {
-        "id": "offer-a-product",
-        "title": "① 商品・サービスを提供する",
-        "pattern": "offer + 商品 / サービス",
+        "id": "offer-discount",
+        "title": "① 割引・条件を提示する",
+        "pattern": "offer + discount / terms",
         "transitivity": "他動詞",
-        "structure": "S + offer + O",
-        "image": "相手に利用できるものとして出す。",
-        "point": "provideより、相手に選択肢として提示する感覚が強い。",
+        "structure": "基本",
+        "image": "相手に受け取れる条件を提示する。",
+        "point": "discount, terms, price などと使うと営業で自然です。",
         "examples": [
           {
-            "en": "We offer installation support with this product.",
-            "ja": "私たちはこの製品に設置サポートを提供しています。",
-            "focus": "offer",
-            "object": "installation support"
-          },
-          {
-            "en": "The company offers a wide range of lighting solutions.",
-            "ja": "その会社は幅広い照明ソリューションを提供しています。",
-            "focus": "offers",
-            "object": "a wide range of lighting solutions"
-          },
-          {
-            "en": "Can we offer a faster delivery option?",
-            "ja": "私たちはより早い納品オプションを提供できますか？",
-            "focus": "offer",
-            "object": "a faster delivery option"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "offer-a-discount",
-        "title": "② 割引・条件を提示する",
-        "pattern": "offer + discount / price / terms",
-        "transitivity": "他動詞",
-        "structure": "S + offer + O",
-        "image": "価格や条件を相手に提示する。",
-        "point": "営業では discount, price, terms, warranty などとよく使う。",
-        "examples": [
-          {
-            "en": "We offered a discount to the client.",
-            "ja": "私たちは顧客に割引を提示しました。",
+            "en": "We offered a discount for the bulk order.",
+            "ja": "私たちは大量注文に対して割引を提示しました。",
             "focus": "offered",
             "object": "a discount"
           },
           {
-            "en": "The supplier offered better payment terms.",
-            "ja": "仕入先はより良い支払条件を提示しました。",
-            "focus": "offered",
+            "en": "Can we offer better payment terms?",
+            "ja": "私たちはより良い支払い条件を提示できますか？",
+            "focus": "offer",
             "object": "better payment terms"
           },
           {
-            "en": "Please offer the same price as last time.",
-            "ja": "前回と同じ価格を提示してください。",
-            "focus": "offer",
-            "object": "the same price"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "offer-to-do",
-        "title": "③ 〜すると申し出る",
-        "pattern": "offer to do",
-        "transitivity": "他動詞",
-        "structure": "S + offer + to do",
-        "image": "相手のために自分から行動を申し出る。",
-        "point": "help, check, send, prepare などと相性が良い。",
-        "examples": [
-          {
-            "en": "She offered to help with the report.",
-            "ja": "彼女は報告書を手伝うと申し出ました。",
-            "focus": "offered"
-          },
-          {
-            "en": "We offered to send a sample before the order.",
-            "ja": "私たちは発注前にサンプルを送ると申し出ました。",
-            "focus": "offered"
-          },
-          {
-            "en": "He offered to explain the issue to the customer.",
-            "ja": "彼はその問題を顧客に説明すると申し出ました。",
-            "focus": "offered"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "offer-someone-something",
-        "title": "④ 人に物・機会を提供する",
-        "pattern": "offer + 人 + 物",
-        "transitivity": "他動詞",
-        "structure": "S + offer + 人 + O",
-        "image": "相手に具体的なものを差し出す。",
-        "point": "offer the client a discount のように、人を先に置ける。",
-        "examples": [
-          {
-            "en": "We offered the client a replacement product.",
-            "ja": "私たちは顧客に代替品を提供しました。",
+            "en": "The supplier offered a lower price this time.",
+            "ja": "仕入先は今回、より低い価格を提示しました。",
             "focus": "offered",
-            "object": "the client a replacement product"
-          },
-          {
-            "en": "The manager offered her a new role.",
-            "ja": "マネージャーは彼女に新しい役割を提示しました。",
-            "focus": "offered",
-            "object": "her a new role"
-          },
-          {
-            "en": "Can we offer them another option?",
-            "ja": "私たちは彼らに別の選択肢を提示できますか？",
-            "focus": "offer",
-            "object": "them another option"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "offer-an-opportunity",
-        "title": "⑤ 機会を与える・提供する",
-        "pattern": "offer + opportunity / chance",
-        "transitivity": "他動詞",
-        "structure": "S + offer + O",
-        "image": "相手が何かできる機会を差し出す。",
-        "point": "training, meeting, trial など仕事の機会に使える。",
-        "examples": [
-          {
-            "en": "This project offers a chance to work with a new client.",
-            "ja": "この案件は新しい顧客と仕事をする機会を提供します。",
-            "focus": "offers",
-            "object": "a chance"
-          },
-          {
-            "en": "The training offers employees a way to improve their skills.",
-            "ja": "その研修は社員にスキルを伸ばす方法を提供します。",
-            "focus": "offers",
-            "object": "employees a way"
-          },
-          {
-            "en": "We can offer a trial before the full order.",
-            "ja": "正式発注前に試用の機会を提供できます。",
-            "focus": "offer",
-            "object": "a trial"
+            "object": "a lower price"
           }
         ],
         "dailyExamples": []
       },
       {
         "id": "offer-support",
-        "title": "⑥ 支援・協力を申し出る",
-        "pattern": "offer support / assistance",
+        "title": "② サポート・助言を提供する",
+        "pattern": "offer + support / advice",
         "transitivity": "他動詞",
-        "structure": "S + offer + support",
-        "image": "相手を助ける姿勢を差し出す。",
-        "point": "customer support, technical assistance などとよく使う。",
+        "structure": "基本",
+        "image": "相手が困っている時に助けを差し出す。",
+        "point": "support, help, advice などと使うと自然です。",
         "examples": [
           {
-            "en": "We offered technical support during the installation.",
-            "ja": "私たちは設置中に技術サポートを提供しました。",
-            "focus": "offered",
-            "object": "technical support"
-          },
-          {
-            "en": "Please offer assistance if the client has questions.",
-            "ja": "顧客に質問があれば支援を申し出てください。",
-            "focus": "offer",
-            "object": "assistance"
-          },
-          {
-            "en": "The supplier offered support after the delivery.",
-            "ja": "仕入先は納品後にサポートを提供しました。",
+            "en": "We offered support during the installation.",
+            "ja": "私たちは設置中にサポートを提供しました。",
             "focus": "offered",
             "object": "support"
-          }
-        ],
-        "dailyExamples": []
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "offer a discount",
-        "ja": "割引を提示する",
-        "image": "価格条件として割引を差し出す。",
-        "pattern": "offer a discount",
-        "examples": [
-          {
-            "en": "We can offer a discount for a large order.",
-            "ja": "大量注文には割引を提示できます。",
-            "focus": "offer a discount"
           },
           {
-            "en": "The supplier offered a discount for early payment.",
-            "ja": "仕入先は早期支払いに対して割引を提示しました。",
-            "focus": "offered a discount"
+            "en": "She offered advice on the proposal.",
+            "ja": "彼女は提案書について助言しました。",
+            "focus": "offered",
+            "object": "advice"
           },
           {
-            "en": "Please do not offer a discount without approval.",
-            "ja": "承認なしで割引を提示しないでください。",
-            "focus": "offer a discount"
+            "en": "The manager offered help when the issue came up.",
+            "ja": "問題が出た時、マネージャーは助けを申し出ました。",
+            "focus": "offered",
+            "object": "help"
           }
         ],
         "dailyExamples": []
       },
       {
-        "phrase": "offer support",
-        "ja": "支援を提供する",
-        "image": "相手が進められるように助けを差し出す。",
-        "pattern": "offer support",
-        "examples": [
-          {
-            "en": "We offer support from design to installation.",
-            "ja": "私たちは設計から設置までサポートを提供します。",
-            "focus": "offer support"
-          },
-          {
-            "en": "The team offered support during the test.",
-            "ja": "チームはテスト中にサポートを提供しました。",
-            "focus": "offered support"
-          },
-          {
-            "en": "Please offer support when the client needs help.",
-            "ja": "顧客が助けを必要とするときはサポートを提供してください。",
-            "focus": "offer support"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "offer an option",
-        "ja": "選択肢を提示する",
+        "id": "offer-solution",
+        "title": "③ 解決策・選択肢を提案する",
+        "pattern": "offer + solution / option",
+        "transitivity": "他動詞",
+        "structure": "基本",
         "image": "相手が選べる案を出す。",
-        "pattern": "offer an option",
+        "point": "solution, option, alternative は提案でよく使います。",
         "examples": [
           {
-            "en": "We should offer an option with a shorter lead time.",
-            "ja": "より短い納期の選択肢を提示するべきです。",
-            "focus": "offer an option"
+            "en": "We offered a solution for the delivery issue.",
+            "ja": "私たちは納品問題に対する解決策を提案しました。",
+            "focus": "offered",
+            "object": "a solution"
           },
           {
-            "en": "Can we offer another option for the design?",
-            "ja": "デザインについて別の選択肢を提示できますか？",
-            "focus": "offer another option"
+            "en": "Please offer the client two options.",
+            "ja": "顧客に2つの選択肢を提示してください。",
+            "focus": "offer",
+            "object": "two options"
           },
           {
-            "en": "The proposal offered several options for the client.",
-            "ja": "提案書は顧客に複数の選択肢を提示しました。",
-            "focus": "offered several options"
+            "en": "The team offered an alternative plan.",
+            "ja": "チームは代替案を提示しました。",
+            "focus": "offered",
+            "object": "an alternative plan"
           }
         ],
         "dailyExamples": []
       },
       {
-        "phrase": "offer a solution",
-        "ja": "解決策を提示する",
-        "image": "問題に対する具体的な解決策を差し出す。",
-        "pattern": "offer a solution",
+        "id": "offer-sample",
+        "title": "④ サンプル・資料を提供する",
+        "pattern": "offer + sample / information",
+        "transitivity": "他動詞",
+        "structure": "基本",
+        "image": "確認用の物や情報を相手に渡せる形にする。",
+        "point": "sample, document, information などと使えます。",
         "examples": [
           {
-            "en": "We need to offer a solution by tomorrow.",
-            "ja": "明日までに解決策を提示する必要があります。",
-            "focus": "offer a solution"
+            "en": "We offered a sample before the final order.",
+            "ja": "私たちは正式発注前にサンプルを提供しました。",
+            "focus": "offered",
+            "object": "a sample"
           },
           {
-            "en": "The engineer offered a solution to the wiring issue.",
-            "ja": "技術者は配線の問題に対する解決策を提示しました。",
-            "focus": "offered a solution"
+            "en": "Can you offer more information about the product?",
+            "ja": "その製品について、もう少し情報を提供できますか？",
+            "focus": "offer",
+            "object": "more information"
           },
           {
-            "en": "Please offer a practical solution for the client.",
-            "ja": "顧客に現実的な解決策を提示してください。",
-            "focus": "offer a practical solution"
+            "en": "The company offered a trial version to new users.",
+            "ja": "会社は新規ユーザーに試用版を提供しました。",
+            "focus": "offered",
+            "object": "a trial version"
           }
         ],
         "dailyExamples": []
       },
       {
-        "phrase": "offer terms",
-        "ja": "条件を提示する",
-        "image": "価格・支払い・保証などの条件を提示する。",
-        "pattern": "offer terms",
+        "id": "offer-to-help",
+        "title": "⑤ 〜すると申し出る",
+        "pattern": "offer to do",
+        "transitivity": "自動詞的表現",
+        "structure": "基本",
+        "image": "自分から行動を差し出す。",
+        "point": "offer to help, offer to send など、行動の申し出に使います。",
         "examples": [
           {
-            "en": "The supplier offered better terms for repeat orders.",
-            "ja": "仕入先はリピート注文に対してより良い条件を提示しました。",
-            "focus": "offered better terms"
+            "en": "He offered to help with the quotation.",
+            "ja": "彼は見積作成を手伝うと申し出ました。",
+            "focus": "offered",
+            "object": "to help with the quotation"
           },
           {
-            "en": "We cannot offer those terms without approval.",
-            "ja": "承認なしではその条件を提示できません。",
-            "focus": "offer those terms"
+            "en": "We offered to send the sample again.",
+            "ja": "私たちはサンプルを再送すると申し出ました。",
+            "focus": "offered",
+            "object": "to send the sample again"
           },
           {
-            "en": "Please confirm the terms before we offer them.",
-            "ja": "その条件を提示する前に確認してください。",
-            "focus": "offer them"
+            "en": "She offered to explain the details to the client.",
+            "ja": "彼女は顧客に詳細を説明すると申し出ました。",
+            "focus": "offered",
+            "object": "to explain the details"
           }
         ],
         "dailyExamples": []
       }
     ],
+    "collocations": [],
     "phrasalVerbs": [
-      {
-        "phrase": "offer up",
-        "ja": "差し出す・提供する",
-        "image": "意見・案・時間などを差し出す。少し硬い表現。",
-        "pattern": "offer up + 名詞",
-        "examples": [
-          {
-            "en": "The team offered up several ideas during the meeting.",
-            "ja": "チームは会議中にいくつかの案を出しました。",
-            "focus": "offered up"
-          },
-          {
-            "en": "She offered up her time to help the project.",
-            "ja": "彼女はそのプロジェクトを助けるために自分の時間を差し出しました。",
-            "focus": "offered up"
-          },
-          {
-            "en": "The supplier offered up a temporary solution.",
-            "ja": "仕入先は一時的な解決策を差し出しました。",
-            "focus": "offered up"
-          }
-        ],
-        "dailyExamples": []
-      },
       {
         "phrase": "offer to",
         "ja": "〜すると申し出る",
-        "image": "自分から行動を提案する。",
-        "pattern": "offer to do",
+        "image": "自分から行動を相手に差し出す。",
+        "pattern": "offer to",
         "examples": [
           {
-            "en": "We offered to check the product again.",
-            "ja": "私たちは製品を再確認すると申し出ました。",
-            "focus": "offered to"
+            "en": "She offered to call the client for us.",
+            "ja": "彼女は私たちの代わりに顧客へ電話すると申し出ました。",
+            "focus": "offered to",
+            "object": "call the client"
           },
           {
-            "en": "He offered to join the customer meeting.",
-            "ja": "彼は顧客との会議に参加すると申し出ました。",
-            "focus": "offered to"
+            "en": "We offered to replace the sample.",
+            "ja": "私たちはサンプルを交換すると申し出ました。",
+            "focus": "offered to",
+            "object": "replace the sample"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "phrase": "offer up",
+        "ja": "差し出す・提供する",
+        "image": "案や物を相手の前に出す。",
+        "pattern": "offer up",
+        "examples": [
+          {
+            "en": "The team offered up a new idea during the meeting.",
+            "ja": "チームは会議中に新しい案を出しました。",
+            "focus": "offered up",
+            "object": "a new idea"
           },
           {
-            "en": "The engineer offered to visit the site.",
-            "ja": "技術者は現場を訪問すると申し出ました。",
-            "focus": "offered to"
+            "en": "He offered up his time to support the project.",
+            "ja": "彼は案件を支援するために自分の時間を差し出しました。",
+            "focus": "offered up",
+            "object": "his time"
           }
         ],
         "dailyExamples": []
@@ -11838,71 +11547,62 @@ export const verbs: Verb[] = [
       {
         "phrase": "offer for",
         "ja": "〜向けに提供する",
-        "image": "特定の目的・相手向けに提供する。",
-        "pattern": "offer + 名詞 + for + 名詞",
+        "image": "特定の目的や相手に向けて差し出す。",
+        "pattern": "offer for",
         "examples": [
           {
-            "en": "We offered a new package for small businesses.",
-            "ja": "私たちは小規模企業向けに新しいパッケージを提供しました。",
-            "focus": "offered"
+            "en": "The supplier offered samples for testing.",
+            "ja": "仕入先は試験用にサンプルを提供しました。",
+            "focus": "offered for",
+            "object": "testing"
           },
           {
-            "en": "The company offers training for new employees.",
-            "ja": "会社は新入社員向けに研修を提供しています。",
-            "focus": "offers"
-          },
-          {
-            "en": "Please offer this option for urgent orders.",
-            "ja": "急ぎの注文向けにこの選択肢を提供してください。",
-            "focus": "offer"
+            "en": "We offered a special plan for new customers.",
+            "ja": "私たちは新規顧客向けに特別プランを提供しました。",
+            "focus": "offered for",
+            "object": "new customers"
           }
         ],
         "dailyExamples": []
       },
       {
-        "phrase": "offer to someone",
-        "ja": "人に提示する",
-        "image": "相手に何かを差し出す。",
-        "pattern": "offer + 名詞 + to + 人",
+        "phrase": "offer with",
+        "ja": "〜付きで提供する",
+        "image": "別の条件やサービスを添えて提供する。",
+        "pattern": "offer with",
         "examples": [
           {
-            "en": "We offered the proposal to the client last week.",
-            "ja": "私たちは先週その提案を顧客に提示しました。",
-            "focus": "offered"
+            "en": "We offered the product with installation support.",
+            "ja": "私たちは設置サポート付きでその製品を提供しました。",
+            "focus": "offered with",
+            "object": "installation support"
           },
           {
-            "en": "Please offer the warranty details to the customer.",
-            "ja": "保証内容を顧客に提示してください。",
-            "focus": "offer"
-          },
-          {
-            "en": "The sales team offered a solution to the store manager.",
-            "ja": "営業チームは店舗責任者に解決策を提示しました。",
-            "focus": "offered"
+            "en": "The plan is offered with a one-year warranty.",
+            "ja": "そのプランは1年保証付きで提供されています。",
+            "focus": "offered with",
+            "object": "a one-year warranty"
           }
         ],
         "dailyExamples": []
       },
       {
-        "phrase": "offer against",
-        "ja": "〜と比較して条件を提示する",
-        "image": "競合・条件と比較して提案する。やや限定的な表現。",
-        "pattern": "offer + 名詞 + against + 比較対象",
+        "phrase": "offer as",
+        "ja": "〜として提供する",
+        "image": "役割や位置づけを付けて差し出す。",
+        "pattern": "offer as",
         "examples": [
           {
-            "en": "We offered our price against the competitor's quote.",
-            "ja": "私たちは競合の見積と比較して価格を提示しました。",
-            "focus": "offered"
+            "en": "We offered the unit as a temporary replacement.",
+            "ja": "私たちはその機器を一時的な代替品として提供しました。",
+            "focus": "offered as",
+            "object": "a temporary replacement"
           },
           {
-            "en": "The supplier offered new terms against the old contract.",
-            "ja": "仕入先は旧契約と比較して新しい条件を提示しました。",
-            "focus": "offered"
-          },
-          {
-            "en": "Please offer a realistic option against the current budget.",
-            "ja": "現在の予算に照らして現実的な選択肢を提示してください。",
-            "focus": "offer"
+            "en": "The service was offered as part of the package.",
+            "ja": "そのサービスはパッケージの一部として提供されました。",
+            "focus": "offered as",
+            "object": "part of the package"
           }
         ],
         "dailyExamples": []
@@ -11918,368 +11618,207 @@ export const verbs: Verb[] = [
     "syllable": "sup-port",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "相手や物事が倒れないように下から支える",
-    "coreDetail": "SUPPORTは、人・提案・作業・システムを支える動詞です。仕事では、直接助けるだけでなく、方針に賛成する、データで裏付ける、運用を支えるという意味でも使います。",
+    "core": "下から支えて相手や物事を動きやすくする",
+    "coreDetail": "SUPPORTは、人・案件・主張・システムなどを支える動詞です。仕事では、顧客対応、チーム支援、システム対応、提案の裏付けでよく使います。",
     "coreVisual": {
       "from": [
-        "人",
-        "提案",
-        "作業",
-        "システム",
-        "証拠"
+        "支援・根拠・体制"
       ],
-      "to": "安定して進む状態",
-      "label": "下から支える → 続けられる"
+      "to": "相手・案件を支える",
+      "label": "下から支える"
     },
     "meanings": [
       {
-        "id": "support-a-person",
-        "title": "① 人・チームを支援する",
-        "pattern": "support + 人 / team",
+        "id": "support-client",
+        "title": "① 顧客・人を支援する",
+        "pattern": "support + client / person",
         "transitivity": "他動詞",
-        "structure": "S + support + O",
-        "image": "相手が仕事を進められるように助ける。",
-        "point": "helpより継続的・組織的な支援に使いやすい。",
+        "structure": "基本",
+        "image": "相手が困らないように支える。",
+        "point": "client, customer, team, staff など人に使えます。",
         "examples": [
           {
-            "en": "I will support the sales team this week.",
-            "ja": "私は今週、営業チームを支援します。",
-            "focus": "support",
-            "object": "the sales team"
-          },
-          {
-            "en": "We supported the new employee during training.",
-            "ja": "私たちは研修中に新入社員を支援しました。",
-            "focus": "supported",
-            "object": "the new employee"
-          },
-          {
-            "en": "Please support the client during the installation.",
-            "ja": "設置中は顧客を支援してください。",
+            "en": "We support the client after installation.",
+            "ja": "私たちは設置後に顧客をサポートします。",
             "focus": "support",
             "object": "the client"
+          },
+          {
+            "en": "Please support the new staff during the first week.",
+            "ja": "最初の1週間は新しいスタッフを支援してください。",
+            "focus": "support",
+            "object": "the new staff"
+          },
+          {
+            "en": "She supported the customer until the issue was solved.",
+            "ja": "彼女は問題が解決するまで顧客を支援しました。",
+            "focus": "supported",
+            "object": "the customer"
           }
         ],
         "dailyExamples": []
       },
       {
-        "id": "support-a-project",
-        "title": "② 作業・案件を支援する",
-        "pattern": "support + project / task / operation",
+        "id": "support-project",
+        "title": "② 案件・活動を支援する",
+        "pattern": "support + project / activity",
         "transitivity": "他動詞",
-        "structure": "S + support + O",
-        "image": "作業や案件が進むように後押しする。",
-        "point": "project, task, operation, activity などとよく使う。",
+        "structure": "基本",
+        "image": "物事が進むように支える。",
+        "point": "project, sales activities, operation など仕事の活動に使います。",
         "examples": [
           {
-            "en": "The technical team supported the project from the beginning.",
-            "ja": "技術チームは最初からその案件を支援しました。",
+            "en": "Our team supported the project from the planning stage.",
+            "ja": "私たちのチームは計画段階からその案件を支援しました。",
             "focus": "supported",
             "object": "the project"
           },
           {
-            "en": "Can you support the inspection tomorrow?",
-            "ja": "明日の検査を支援できますか？",
-            "focus": "support",
-            "object": "the inspection"
+            "en": "This tool supports daily sales activities.",
+            "ja": "このツールは日々の営業活動を支援します。",
+            "focus": "supports",
+            "object": "daily sales activities"
           },
           {
-            "en": "We need extra staff to support the operation.",
-            "ja": "運用を支援するために追加スタッフが必要です。",
-            "focus": "support",
-            "object": "the operation"
+            "en": "The new process supports faster delivery.",
+            "ja": "新しい手順はより速い納品を支えます。",
+            "focus": "supports",
+            "object": "faster delivery"
           }
         ],
         "dailyExamples": []
       },
       {
-        "id": "support-an-idea",
-        "title": "③ 提案・方針を支持する",
-        "pattern": "support + idea / proposal / decision",
+        "id": "support-system",
+        "title": "③ システム・製品をサポートする",
+        "pattern": "support + system / product",
         "transitivity": "他動詞",
-        "structure": "S + support + O",
-        "image": "考えや決定に賛成して後押しする。",
-        "point": "提案・方針・判断への賛成を表す。",
+        "structure": "基本",
+        "image": "製品や機能が使える状態を支える。",
+        "point": "ITや製品仕様では、対応している・サポートしている意味にもなります。",
         "examples": [
           {
-            "en": "We support this proposal because it reduces cost.",
-            "ja": "コストを削減できるため、私たちはこの提案を支持します。",
-            "focus": "support",
-            "object": "this proposal"
+            "en": "This controller supports multiple lighting patterns.",
+            "ja": "このコントローラーは複数の照明パターンに対応しています。",
+            "focus": "supports",
+            "object": "multiple lighting patterns"
           },
           {
-            "en": "The manager supported the decision to change suppliers.",
-            "ja": "マネージャーは仕入先を変更する決定を支持しました。",
+            "en": "The system supports data export.",
+            "ja": "そのシステムはデータ出力に対応しています。",
+            "focus": "supports",
+            "object": "data export"
+          },
+          {
+            "en": "Does this model support DALI control?",
+            "ja": "このモデルはDALI制御に対応していますか？",
+            "focus": "support",
+            "object": "DALI control"
+          }
+        ],
+        "dailyExamples": []
+      },
+      {
+        "id": "support-claim",
+        "title": "④ 主張・提案を裏付ける",
+        "pattern": "support + claim / proposal",
+        "transitivity": "他動詞",
+        "structure": "基本",
+        "image": "意見や提案を根拠で支える。",
+        "point": "claim, proposal, idea, decision などに使えます。",
+        "examples": [
+          {
+            "en": "The data supports our proposal.",
+            "ja": "そのデータは私たちの提案を裏付けています。",
+            "focus": "supports",
+            "object": "our proposal"
+          },
+          {
+            "en": "Customer feedback supported the decision.",
+            "ja": "顧客の意見がその判断を裏付けました。",
             "focus": "supported",
             "object": "the decision"
           },
           {
-            "en": "Do you support the new sales strategy?",
-            "ja": "あなたは新しい営業戦略を支持しますか？",
+            "en": "Please add evidence to support your explanation.",
+            "ja": "説明を裏付けるために根拠を追加してください。",
             "focus": "support",
-            "object": "the new sales strategy"
+            "object": "your explanation"
           }
         ],
         "dailyExamples": []
       },
       {
-        "id": "support-with",
-        "title": "④ 〜で支援する・支える",
-        "pattern": "support + 人 / 物 + with + 名詞",
+        "id": "support-each-other",
+        "title": "⑤ お互いに支え合う",
+        "pattern": "support each other",
         "transitivity": "他動詞",
-        "structure": "S + support + O + with + 名詞",
-        "image": "資料・情報・人員などを使って支援する。",
-        "point": "with の後ろに支援の手段を置く。",
+        "structure": "基本",
+        "image": "チーム内で助け合う。",
+        "point": "each other と使うと相互支援を表せます。",
         "examples": [
           {
-            "en": "We supported the client with clear instructions.",
-            "ja": "私たちは分かりやすい説明で顧客を支援しました。",
+            "en": "We support each other during busy periods.",
+            "ja": "私たちは忙しい時期にお互いを支え合います。",
+            "focus": "support",
+            "object": "each other"
+          },
+          {
+            "en": "The sales and production teams supported each other.",
+            "ja": "営業チームと製造チームはお互いに支え合いました。",
             "focus": "supported",
-            "object": "the client"
+            "object": "each other"
           },
           {
-            "en": "Please support the sales team with updated data.",
-            "ja": "最新データで営業チームを支援してください。",
+            "en": "Good teams support each other when problems happen.",
+            "ja": "良いチームは問題が起きた時にお互いを支えます。",
             "focus": "support",
-            "object": "the sales team"
-          },
-          {
-            "en": "The engineer supported us with technical advice.",
-            "ja": "技術者は技術的な助言で私たちを支援しました。",
-            "focus": "supported",
-            "object": "us"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "support-by-evidence",
-        "title": "⑤ 証拠・データで裏付ける",
-        "pattern": "support + claim / decision + with + evidence",
-        "transitivity": "他動詞",
-        "structure": "S + support + O + with + evidence",
-        "image": "主張や判断をデータで支える。",
-        "point": "資料・数字・事実で説得力を出す意味。",
-        "examples": [
-          {
-            "en": "Please support your proposal with sales data.",
-            "ja": "提案を売上データで裏付けてください。",
-            "focus": "support",
-            "object": "your proposal"
-          },
-          {
-            "en": "The report supported our decision with clear evidence.",
-            "ja": "その報告書は明確な証拠で私たちの判断を裏付けました。",
-            "focus": "supported",
-            "object": "our decision"
-          },
-          {
-            "en": "We need numbers to support this claim.",
-            "ja": "この主張を裏付ける数字が必要です。",
-            "focus": "support",
-            "object": "this claim"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "support-a-system",
-        "title": "⑥ システム・製品に対応する",
-        "pattern": "support + system / feature / product",
-        "transitivity": "他動詞",
-        "structure": "S + support + O",
-        "image": "システムや製品が機能・形式に対応する。",
-        "point": "ITや製品説明でよく使う意味。",
-        "examples": [
-          {
-            "en": "This system supports multiple users.",
-            "ja": "このシステムは複数ユーザーに対応しています。",
-            "focus": "supports",
-            "object": "multiple users"
-          },
-          {
-            "en": "The new model supports remote control.",
-            "ja": "新しいモデルは遠隔操作に対応しています。",
-            "focus": "supports",
-            "object": "remote control"
-          },
-          {
-            "en": "Does this software support Japanese?",
-            "ja": "このソフトは日本語に対応していますか？",
-            "focus": "support",
-            "object": "Japanese"
+            "object": "each other"
           }
         ],
         "dailyExamples": []
       }
     ],
-    "collocations": [
-      {
-        "phrase": "provide support",
-        "ja": "サポートを提供する",
-        "image": "必要な支援を正式に提供する。",
-        "pattern": "provide support",
-        "examples": [
-          {
-            "en": "We provide support after installation.",
-            "ja": "私たちは設置後にサポートを提供します。",
-            "focus": "provide support"
-          },
-          {
-            "en": "The supplier provided support during the test.",
-            "ja": "仕入先はテスト中にサポートを提供しました。",
-            "focus": "provided support"
-          },
-          {
-            "en": "Please provide support if the customer has trouble.",
-            "ja": "顧客に問題があればサポートを提供してください。",
-            "focus": "provide support"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "technical support",
-        "ja": "技術サポート",
-        "image": "製品・施工・システムに関する技術的な支援。",
-        "pattern": "technical support",
-        "examples": [
-          {
-            "en": "We need technical support for the control system.",
-            "ja": "制御システムについて技術サポートが必要です。",
-            "focus": "technical support"
-          },
-          {
-            "en": "The client asked for technical support after delivery.",
-            "ja": "顧客は納品後に技術サポートを求めました。",
-            "focus": "technical support"
-          },
-          {
-            "en": "Please contact technical support before changing the settings.",
-            "ja": "設定を変更する前に技術サポートに連絡してください。",
-            "focus": "technical support"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "customer support",
-        "ja": "顧客サポート",
-        "image": "顧客の問い合わせや問題への支援。",
-        "pattern": "customer support",
-        "examples": [
-          {
-            "en": "Customer support handled the issue quickly.",
-            "ja": "顧客サポートはその問題に素早く対応しました。",
-            "focus": "Customer support"
-          },
-          {
-            "en": "We improved customer support after the complaint.",
-            "ja": "私たちはクレーム後に顧客サポートを改善しました。",
-            "focus": "customer support"
-          },
-          {
-            "en": "Please share this information with customer support.",
-            "ja": "この情報を顧客サポートに共有してください。",
-            "focus": "customer support"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "support a proposal",
-        "ja": "提案を支持する",
-        "image": "提案内容に賛成して後押しする。",
-        "pattern": "support a proposal",
-        "examples": [
-          {
-            "en": "The manager supported the proposal during the meeting.",
-            "ja": "マネージャーは会議中にその提案を支持しました。",
-            "focus": "supported the proposal"
-          },
-          {
-            "en": "We should support a proposal that reduces risk.",
-            "ja": "リスクを下げる提案を支持するべきです。",
-            "focus": "support a proposal"
-          },
-          {
-            "en": "The data helped us support the proposal.",
-            "ja": "そのデータは提案を支持する助けになりました。",
-            "focus": "support the proposal"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "support the team",
-        "ja": "チームを支援する",
-        "image": "チームが動けるように後押しする。",
-        "pattern": "support the team",
-        "examples": [
-          {
-            "en": "I will support the team during the busy season.",
-            "ja": "繁忙期は私がチームを支援します。",
-            "focus": "support the team"
-          },
-          {
-            "en": "The manager supported the team with clear priorities.",
-            "ja": "マネージャーは明確な優先順位でチームを支援しました。",
-            "focus": "supported the team"
-          },
-          {
-            "en": "Please support the team until the project is finished.",
-            "ja": "プロジェクトが終わるまでチームを支援してください。",
-            "focus": "support the team"
-          }
-        ],
-        "dailyExamples": []
-      }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
       {
         "phrase": "support with",
         "ja": "〜で支援する",
-        "image": "手段・資料・人員を使って支援する。",
-        "pattern": "support + 人 / 物 + with + 名詞",
+        "image": "道具・情報・作業などを使って支える。",
+        "pattern": "support with",
         "examples": [
           {
-            "en": "We supported the client with a detailed manual.",
-            "ja": "私たちは詳しいマニュアルで顧客を支援しました。",
-            "focus": "supported"
+            "en": "We supported the client with technical documents.",
+            "ja": "私たちは技術資料で顧客を支援しました。",
+            "focus": "supported with",
+            "object": "technical documents"
           },
           {
-            "en": "Please support the team with updated documents.",
-            "ja": "更新された資料でチームを支援してください。",
-            "focus": "support"
-          },
-          {
-            "en": "The supplier supported us with replacement parts.",
-            "ja": "仕入先は交換部品で私たちを支援しました。",
-            "focus": "supported"
+            "en": "Can you support the team with the report?",
+            "ja": "あなたは報告書の件でチームを支援できますか？",
+            "focus": "support with",
+            "object": "the report"
           }
         ],
         "dailyExamples": []
       },
       {
         "phrase": "support through",
-        "ja": "〜を通じて支援する",
-        "image": "期間・方法・プロセスを通じて支える。",
-        "pattern": "support + 人 / 物 + through + 名詞",
+        "ja": "〜を通して支援する",
+        "image": "期間や工程を通して支える。",
+        "pattern": "support through",
         "examples": [
           {
-            "en": "We supported the client through the installation process.",
-            "ja": "私たちは設置プロセスを通じて顧客を支援しました。",
-            "focus": "supported"
+            "en": "We supported the customer through the installation.",
+            "ja": "私たちは設置作業を通して顧客を支援しました。",
+            "focus": "supported through",
+            "object": "the installation"
           },
           {
-            "en": "The manager supported the team through the transition.",
-            "ja": "マネージャーは移行期間を通じてチームを支援しました。",
-            "focus": "supported"
-          },
-          {
-            "en": "Please support new users through the setup.",
-            "ja": "設定作業を通じて新規ユーザーを支援してください。",
-            "focus": "support"
+            "en": "The manager supported us through the difficult project.",
+            "ja": "マネージャーは難しい案件を通して私たちを支援しました。",
+            "focus": "supported through",
+            "object": "the difficult project"
           }
         ],
         "dailyExamples": []
@@ -12287,71 +11826,41 @@ export const verbs: Verb[] = [
       {
         "phrase": "support in",
         "ja": "〜において支援する",
-        "image": "特定の作業・場面で支援する。",
-        "pattern": "support + 人 + in + 名詞 / 動名詞",
+        "image": "分野・場面・作業で支える。",
+        "pattern": "support in",
         "examples": [
           {
-            "en": "We supported the client in choosing the right model.",
-            "ja": "私たちは適切なモデルを選ぶ際に顧客を支援しました。",
-            "focus": "supported"
+            "en": "She supported us in preparing the quotation.",
+            "ja": "彼女は見積書の準備で私たちを支援しました。",
+            "focus": "supported in",
+            "object": "preparing the quotation"
           },
           {
-            "en": "Please support the team in preparing the proposal.",
-            "ja": "提案書を準備する際にチームを支援してください。",
-            "focus": "support"
-          },
-          {
-            "en": "The engineer supported us in solving the issue.",
-            "ja": "技術者は問題解決において私たちを支援しました。",
-            "focus": "supported"
+            "en": "We support customers in choosing the right product.",
+            "ja": "私たちは適切な製品選定で顧客を支援します。",
+            "focus": "support in",
+            "object": "choosing the right product"
           }
         ],
         "dailyExamples": []
       },
       {
-        "phrase": "support against",
-        "ja": "〜から守る・対抗できるよう支える",
-        "image": "リスクや反対に対して支える。限定的な表現。",
-        "pattern": "support + 人 / 物 + against + 名詞",
+        "phrase": "support by",
+        "ja": "〜によって支援する",
+        "image": "具体的な方法を使って支える。",
+        "pattern": "support by",
         "examples": [
           {
-            "en": "The data supported our argument against the price increase.",
-            "ja": "そのデータは価格上昇への反論を支えました。",
-            "focus": "supported"
+            "en": "We supported the proposal by adding clear data.",
+            "ja": "私たちは明確なデータを加えて提案を裏付けました。",
+            "focus": "supported by",
+            "object": "adding clear data"
           },
           {
-            "en": "The policy supports employees against unfair treatment.",
-            "ja": "その方針は不公平な扱いから社員を守る形で支えます。",
-            "focus": "supports"
-          },
-          {
-            "en": "We need evidence to support our position against the claim.",
-            "ja": "その主張に対して私たちの立場を支える証拠が必要です。",
-            "focus": "support"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "support on",
-        "ja": "〜について支援する",
-        "image": "特定のテーマ・案件について支援する。",
-        "pattern": "support + 人 + on + 名詞",
-        "examples": [
-          {
-            "en": "Can you support us on this project?",
-            "ja": "この案件について私たちを支援できますか？",
-            "focus": "support"
-          },
-          {
-            "en": "The supplier supported us on the delivery issue.",
-            "ja": "仕入先は納品問題について私たちを支援しました。",
-            "focus": "supported"
-          },
-          {
-            "en": "Please support the sales team on the new proposal.",
-            "ja": "新しい提案について営業チームを支援してください。",
-            "focus": "support"
+            "en": "The system supports users by reducing manual work.",
+            "ja": "そのシステムは手作業を減らしてユーザーを支援します。",
+            "focus": "supports by",
+            "object": "reducing manual work"
           }
         ],
         "dailyExamples": []

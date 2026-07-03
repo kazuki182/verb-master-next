@@ -10655,1298 +10655,160 @@ export const verbs: Verb[] = [
     ]
   },
   {
-  "id": "check",
-  "rank": 52,
-  "word": "CHECK",
-  "ipa": "/tʃek/",
-  "kana": "チェック",
-  "syllable": "check",
-  "transitivity": "他動詞・自動詞",
-  "importance": "★★★★☆ 重要",
-  "core": "不安や抜けをなくすために、内容・状態・相手に確認を入れる",
-  "coreDetail": "CHECKは、書類・数字・状況・相手の意向などを確認して、間違いや抜けを減らす動詞です。仕事では見積、納期、在庫、メール、図面確認で頻出します。",
-  "coreVisual": {
-    "from": [
-      "📄 書類",
-      "📊 数字",
-      "📦 在庫",
-      "📧 メール",
-      "👤 顧客"
+    "id": "check",
+    "rank": 52,
+    "word": "CHECK",
+    "ipa": "/tʃek/",
+    "kana": "チェック",
+    "syllable": "check",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★★☆ 重要",
+    "core": "内容・状態・相手に確認を入れて、不安や抜けをなくす",
+    "coreDetail": "CHECKは、資料・数字・在庫・予定・相手の意向などを確認して、間違いを減らす動詞です。仕事では見積、納期、図面、メール、在庫確認で頻出します。",
+    "coreVisual": {"from": ["📄 資料", "📊 数字", "📦 在庫", "📧 メール", "👤 顧客"], "to": "確認済みの安心できる状態", "label": "不確実 → 確認済み"},
+    "meanings": [
+      {"id":"check-file","title":"① ファイル・内容を確認する","pattern":"check + file / details","transitivity":"他動詞","structure":"基本","image":"資料や内容を見て、間違いがないか確認する。","point":"check the file / check the details は仕事で非常に使いやすい基本表現です。","examples":[
+        {"en":"I will check the file before sending it to the client.","ja":"私は顧客に送る前にファイルを確認します。","focus":"check","object":"the file"},
+        {"en":"Please check the details before replying.","ja":"返信する前に詳細を確認してください。","focus":"check","object":"the details"},
+        {"en":"We checked the drawing before the site meeting.","ja":"私たちは現場打ち合わせの前に図面を確認しました。","focus":"checked","object":"the drawing"}
+      ],"dailyExamples":[]},
+      {"id":"check-schedule","title":"② 予定・納期を確認する","pattern":"check + schedule / lead time","transitivity":"他動詞","structure":"基本","image":"日程や納期を確認して、次の行動を決められる状態にする。","point":"schedule, lead time, availability と相性が良いです。","examples":[
+        {"en":"Can you check the schedule for next Monday?","ja":"来週月曜日の予定を確認してもらえますか？","focus":"check","object":"the schedule"},
+        {"en":"We checked the lead time with the factory.","ja":"私たちは工場に納期を確認しました。","focus":"checked","object":"the lead time"},
+        {"en":"Please check availability before confirming the meeting.","ja":"会議を確定する前に空き状況を確認してください。","focus":"check","object":"availability"}
+      ],"dailyExamples":[]},
+      {"id":"check-stock","title":"③ 在庫・価格を確認する","pattern":"check + stock / price","transitivity":"他動詞","structure":"基本","image":"発注や見積に必要な情報を確認する。","point":"営業では check stock / check the price が頻出です。","examples":[
+        {"en":"Please check stock before accepting the order.","ja":"注文を受ける前に在庫を確認してください。","focus":"check","object":"stock"},
+        {"en":"I will check the price with the supplier.","ja":"私は仕入先に価格を確認します。","focus":"check","object":"the price"},
+        {"en":"She checked the model number before making the quotation.","ja":"彼女は見積を作る前に型番を確認しました。","focus":"checked","object":"the model number"}
+      ],"dailyExamples":[]},
+      {"id":"check-request","title":"④ 依頼内容・メールを確認する","pattern":"check + request / email","transitivity":"他動詞","structure":"基本","image":"受け取った依頼やメール内容を確認する。","point":"check the request / check the email は日常業務でよく使う基本表現です。","examples":[
+        {"en":"I will check the client's request and get back to you.","ja":"私は顧客の依頼内容を確認して、あなたに折り返します。","focus":"check","object":"the client's request"},
+        {"en":"Please check the email before confirming the lead time.","ja":"納期を確定する前にメールを確認してください。","focus":"check","object":"the email"},
+        {"en":"We checked the payment information before issuing the invoice.","ja":"私たちは請求書を発行する前に支払い情報を確認しました。","focus":"checked","object":"the payment information"}
+      ],"dailyExamples":[]},
+      {"id":"check-if","title":"⑤ 〜かどうか確認する","pattern":"check if / whether + sentence","transitivity":"他動詞","structure":"基本","image":"条件や事実が正しいか確認する。","point":"check if は会話でもメールでも使いやすいです。","examples":[
+        {"en":"Please check if the sample has arrived.","ja":"サンプルが到着したか確認してください。","focus":"check","object":"if the sample has arrived"},
+        {"en":"I checked whether the customer approved the design.","ja":"私は顧客がデザインを承認したか確認しました。","focus":"checked","object":"whether the customer approved the design"},
+        {"en":"We need to check if the price includes shipping.","ja":"私たちは価格に送料が含まれているか確認する必要があります。","focus":"check","object":"if the price includes shipping"}
+      ],"dailyExamples":[]},
+      {"id":"check-for","title":"⑥ 問題・ミスがないか確認する","pattern":"check for + error / problem","transitivity":"他動詞","structure":"基本","image":"ミスや不足がないか探して確認する。","point":"check for errors / damage / missing parts の形で使います。","examples":[
+        {"en":"Please check for errors before submitting the report.","ja":"レポートを提出する前にミスがないか確認してください。","focus":"check","object":"for errors"},
+        {"en":"We checked the product for damage after delivery.","ja":"私たちは納品後、製品に傷がないか確認しました。","focus":"checked","object":"the product for damage"},
+        {"en":"The team checked for missing parts before installation.","ja":"チームは施工前に不足部品がないか確認しました。","focus":"checked","object":"for missing parts"}
+      ],"dailyExamples":[]}
     ],
-    "to": "確認して安心できる状態",
-    "label": "不確実 → 確認済み"
+    "collocations": [],
+    "phrasalVerbs": [
+      {"phrase":"check in","ja":"状況確認する・チェックインする","image":"途中で状況を確認する。","pattern":"check in","examples":[{"en":"I will check in with the team tomorrow morning.","ja":"私は明日の朝、チームに状況確認します。","focus":"check in","object":"with the team"}],"dailyExamples":[]},
+      {"phrase":"check out","ja":"確認する・調べる","image":"気になるものを見て確認する。","pattern":"check out","examples":[{"en":"Please check out the new sample page.","ja":"新しいサンプルページを確認してください。","focus":"check out","object":"the new sample page"}],"dailyExamples":[]},
+      {"phrase":"check up on","ja":"様子を確認する","image":"人や状況が大丈夫か確認する。","pattern":"check up on","examples":[{"en":"Can you check up on the delivery status this afternoon?","ja":"今日の午後、納品状況を確認してもらえますか？","focus":"check up on","object":"the delivery status"}],"dailyExamples":[]},
+      {"phrase":"check over","ja":"全体を確認する","image":"一通り目を通して確認する。","pattern":"check over","examples":[{"en":"Please check over the quotation before I send it.","ja":"私が送る前に見積書全体を確認してください。","focus":"check over","object":"the quotation"}],"dailyExamples":[]},
+      {"phrase":"check through","ja":"一通り確認する","image":"最初から最後まで確認する。","pattern":"check through","examples":[{"en":"We checked through the list before placing the order.","ja":"私たちは発注前にリストを一通り確認しました。","focus":"checked through","object":"the list"}],"dailyExamples":[]},
+      {"phrase":"check with","ja":"〜に確認する","image":"相手に確認を取る。","pattern":"check with","examples":[{"en":"Please check with the customer before changing the color.","ja":"色を変更する前に顧客へ確認してください。","focus":"check with","object":"the customer"}],"dailyExamples":[]},
+      {"phrase":"check into","ja":"調査する・詳しく確認する","image":"問題の中に入って調べる。","pattern":"check into","examples":[{"en":"We need to check into the cause of the delay.","ja":"私たちは遅延の原因を詳しく確認する必要があります。","focus":"check into","object":"the cause of the delay"}],"dailyExamples":[]},
+      {"phrase":"check off","ja":"確認してチェックを付ける","image":"確認済みとしてリストから消す。","pattern":"check off","examples":[{"en":"Please check off each item after inspection.","ja":"検査後に各項目へチェックを付けてください。","focus":"check off","object":"each item"}],"dailyExamples":[]},
+      {"phrase":"check back","ja":"後で確認する","image":"時間を置いてもう一度確認する。","pattern":"check back","examples":[{"en":"I will check back after the supplier replies.","ja":"仕入先から返信が来た後、私は再度確認します。","focus":"check back","object":"after the supplier replies"}],"dailyExamples":[]},
+      {"phrase":"check against","ja":"〜と照合する","image":"基準や資料と比べて確認する。","pattern":"check against","examples":[{"en":"We checked the invoice against the purchase order.","ja":"私たちは請求書を発注書と照合しました。","focus":"checked against","object":"the purchase order"}],"dailyExamples":[]}
+    ]
   },
-  "meanings": [
-    {
-      "id": "check-details",
-      "title": "① 内容を確認する",
-      "pattern": "check + 内容・詳細",
-      "transitivity": "他動詞",
-      "structure": "仕事でよく使う自然な型",
-      "image": "資料や情報を見て、間違いがないか確認する。",
-      "point": "details, document, drawing などを目的語にする。",
-      "examples": [
-        {
-          "en": "I will check the details before sending the quote.",
-          "ja": "私は見積を送る前に詳細を確認します。",
-          "focus": "check"
-        },
-        {
-          "en": "Please check the document for any missing information.",
-          "ja": "不足情報がないか、その書類を確認してください。",
-          "focus": "check"
-        },
-        {
-          "en": "We checked the drawing before the site meeting.",
-          "ja": "私たちは現場打ち合わせの前に図面を確認しました。",
-          "focus": "checked"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "check-status",
-      "title": "② 状況・進捗を確認する",
-      "pattern": "check + status / progress",
-      "transitivity": "他動詞",
-      "structure": "仕事でよく使う自然な型",
-      "image": "今どうなっているかを確認する。",
-      "point": "status, progress, schedule と相性が良い。",
-      "examples": [
-        {
-          "en": "Can you check the delivery status today?",
-          "ja": "今日、納品状況を確認してもらえますか？",
-          "focus": "check"
-        },
-        {
-          "en": "We need to check the project progress every week.",
-          "ja": "私たちは毎週、案件の進捗を確認する必要があります。",
-          "focus": "check"
-        },
-        {
-          "en": "She checked the schedule before calling the customer.",
-          "ja": "彼女は顧客に電話する前にスケジュールを確認しました。",
-          "focus": "checked"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "check-with",
-      "title": "③ 相手に確認する",
-      "pattern": "check with + 人・部署",
-      "transitivity": "自動詞に近い使い方",
-      "structure": "仕事でよく使う自然な型",
-      "image": "自分だけで判断せず、関係者に確認する。",
-      "point": "with の後ろに確認相手を置く。",
-      "examples": [
-        {
-          "en": "I will check with the client and get back to you.",
-          "ja": "私は顧客に確認して、あなたに折り返します。",
-          "focus": "check with"
-        },
-        {
-          "en": "Please check with the factory before confirming the lead time.",
-          "ja": "納期を確定する前に工場へ確認してください。",
-          "focus": "check with"
-        },
-        {
-          "en": "We checked with accounting about the payment date.",
-          "ja": "私たちは支払日について経理に確認しました。",
-          "focus": "checked with"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "check-if",
-      "title": "④ 〜かどうか確認する",
-      "pattern": "check if / whether + 文",
-      "transitivity": "他動詞",
-      "structure": "仕事でよく使う自然な型",
-      "image": "条件や事実が正しいか確認する。",
-      "point": "check if は会話でもメールでもよく使う。",
-      "examples": [
-        {
-          "en": "Please check if the sample has arrived.",
-          "ja": "サンプルが到着したか確認してください。",
-          "focus": "check"
-        },
-        {
-          "en": "I checked whether the customer approved the design.",
-          "ja": "私は顧客がデザインを承認したか確認しました。",
-          "focus": "checked"
-        },
-        {
-          "en": "We need to check if the price includes shipping.",
-          "ja": "私たちは価格に送料が含まれているか確認する必要があります。",
-          "focus": "check"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "check-stock",
-      "title": "⑤ 在庫・空き・対応可否を確認する",
-      "pattern": "check stock / availability",
-      "transitivity": "他動詞",
-      "structure": "仕事でよく使う自然な型",
-      "image": "使えるか、空いているか、在庫があるか確認する。",
-      "point": "availability, stock, capacity と一緒に使う。",
-      "examples": [
-        {
-          "en": "Please check stock before accepting the order.",
-          "ja": "注文を受ける前に在庫を確認してください。",
-          "focus": "check"
-        },
-        {
-          "en": "I will check availability for next week.",
-          "ja": "私は来週の空き状況を確認します。",
-          "focus": "check"
-        },
-        {
-          "en": "We checked production capacity with the supplier.",
-          "ja": "私たちは仕入先に生産対応力を確認しました。",
-          "focus": "checked"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "check-for",
-      "title": "⑥ 〜がないか確認する",
-      "pattern": "check for + 問題・ミス",
-      "transitivity": "他動詞",
-      "structure": "仕事でよく使う自然な型",
-      "image": "問題・ミス・不足があるか探して確認する。",
-      "point": "check for errors / defects / missing items の形。",
-      "examples": [
-        {
-          "en": "Please check for errors before submitting the report.",
-          "ja": "レポートを提出する前にミスがないか確認してください。",
-          "focus": "check for"
-        },
-        {
-          "en": "We checked the product for damage after delivery.",
-          "ja": "私たちは納品後、製品に傷がないか確認しました。",
-          "focus": "checked"
-        },
-        {
-          "en": "The team checked for missing parts before installation.",
-          "ja": "チームは施工前に不足部品がないか確認しました。",
-          "focus": "checked for"
-        }
-      ],
-      "dailyExamples": []
-    }
-  ],
-  "collocations": [
-    {
-      "phrase": "check the details",
-      "ja": "詳細を確認する",
-      "image": "細かい内容を確認して認識違いを防ぐ。",
-      "pattern": "check the details",
-      "examples": [
-        {
-          "en": "Please check the details before replying.",
-          "ja": "返信する前に詳細を確認してください。",
-          "focus": "check the details"
-        },
-        {
-          "en": "I checked the details with the sales team.",
-          "ja": "私は営業チームと詳細を確認しました。",
-          "focus": "checked the details"
-        },
-        {
-          "en": "We should check the details again before ordering.",
-          "ja": "発注前にもう一度詳細を確認するべきです。",
-          "focus": "check the details"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "check the schedule",
-      "ja": "スケジュールを確認する",
-      "image": "予定や納期を確認する。",
-      "pattern": "check the schedule",
-      "examples": [
-        {
-          "en": "Can you check the schedule for next Monday?",
-          "ja": "来週月曜日の予定を確認してもらえますか？",
-          "focus": "check the schedule"
-        },
-        {
-          "en": "We checked the schedule before booking the hotel.",
-          "ja": "ホテルを予約する前にスケジュールを確認しました。",
-          "focus": "checked the schedule"
-        },
-        {
-          "en": "Please check the installation schedule with the site team.",
-          "ja": "施工スケジュールを現場チームに確認してください。",
-          "focus": "check the installation schedule"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "check the price",
-      "ja": "価格を確認する",
-      "image": "価格や条件を確認する。",
-      "pattern": "check the price",
-      "examples": [
-        {
-          "en": "I will check the price with the supplier.",
-          "ja": "私は仕入先に価格を確認します。",
-          "focus": "check the price"
-        },
-        {
-          "en": "Please check the price before sending the quotation.",
-          "ja": "見積書を送る前に価格を確認してください。",
-          "focus": "check the price"
-        },
-        {
-          "en": "We checked the price difference between the two models.",
-          "ja": "私たちは2つの型番の価格差を確認しました。",
-          "focus": "checked the price difference"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "check the email",
-      "ja": "メールを確認する",
-      "image": "届いたメールや内容を確認する。",
-      "pattern": "check the email",
-      "examples": [
-        {
-          "en": "Please check the email from the customer.",
-          "ja": "顧客からのメールを確認してください。",
-          "focus": "check the email"
-        },
-        {
-          "en": "I checked the email and found the attachment.",
-          "ja": "メールを確認して、添付ファイルを見つけました。",
-          "focus": "checked the email"
-        },
-        {
-          "en": "We need to check the email history before calling them.",
-          "ja": "電話する前にメール履歴を確認する必要があります。",
-          "focus": "check the email history"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "double-check",
-      "ja": "念のため再確認する",
-      "image": "一度確認したものを念のためもう一度確認する。",
-      "pattern": "double-check + 内容",
-      "examples": [
-        {
-          "en": "Please double-check the quantity before shipment.",
-          "ja": "出荷前に数量を念のため再確認してください。",
-          "focus": "double-check"
-        },
-        {
-          "en": "I double-checked the delivery address.",
-          "ja": "私は納品先住所を念のため再確認しました。",
-          "focus": "double-checked"
-        },
-        {
-          "en": "We should double-check the final layout.",
-          "ja": "私たちは最終レイアウトを再確認するべきです。",
-          "focus": "double-check"
-        }
-      ],
-      "dailyExamples": []
-    }
-  ],
-  "phrasalVerbs": [
-    {
-      "phrase": "check with",
-      "ja": "〜に確認する",
-      "image": "相手に確認を取る。",
-      "pattern": "check with + 人・部署",
-      "examples": [
-        {
-          "en": "Please check with your manager first.",
-          "ja": "まず上司に確認してください。",
-          "focus": "check with"
-        },
-        {
-          "en": "I checked with the warehouse about the stock.",
-          "ja": "私は在庫について倉庫に確認しました。",
-          "focus": "checked with"
-        },
-        {
-          "en": "We need to check with the client before changing the design.",
-          "ja": "デザインを変更する前に顧客へ確認する必要があります。",
-          "focus": "check with"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "check on",
-      "ja": "〜の様子を確認する",
-      "image": "状態や進捗を見に行く・確認する。",
-      "pattern": "check on + 状況・人・物",
-      "examples": [
-        {
-          "en": "I will check on the shipment this afternoon.",
-          "ja": "今日の午後、出荷状況を確認します。",
-          "focus": "check on"
-        },
-        {
-          "en": "Can you check on the installation progress?",
-          "ja": "施工の進捗を確認してもらえますか？",
-          "focus": "check on"
-        },
-        {
-          "en": "She checked on the team after the meeting.",
-          "ja": "彼女は会議後にチームの様子を確認しました。",
-          "focus": "checked on"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "check in",
-      "ja": "到着・参加・状況を知らせる",
-      "image": "到着や進捗を共有する。",
-      "pattern": "check in / check in with",
-      "examples": [
-        {
-          "en": "Please check in when you arrive at the site.",
-          "ja": "現場に到着したら連絡してください。",
-          "focus": "check in"
-        },
-        {
-          "en": "We checked in with the customer after delivery.",
-          "ja": "私たちは納品後に顧客へ状況確認しました。",
-          "focus": "checked in with"
-        },
-        {
-          "en": "I will check in with the team tomorrow morning.",
-          "ja": "明日の朝、チームに状況確認します。",
-          "focus": "check in with"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "check out",
-      "ja": "確認する・見てみる",
-      "image": "資料や候補を確認する。カジュアル寄りだが仕事でも使う。",
-      "pattern": "check out + 内容",
-      "examples": [
-        {
-          "en": "Please check out the new product page.",
-          "ja": "新しい製品ページを見てみてください。",
-          "focus": "check out"
-        },
-        {
-          "en": "We checked out several options before choosing one.",
-          "ja": "私たちは1つ選ぶ前にいくつかの選択肢を確認しました。",
-          "focus": "checked out"
-        },
-        {
-          "en": "You should check out the updated catalog.",
-          "ja": "更新されたカタログを確認するとよいです。",
-          "focus": "check out"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "check off",
-      "ja": "確認済みとして印を付ける",
-      "image": "リストの項目を確認して完了にする。",
-      "pattern": "check off + 項目",
-      "examples": [
-        {
-          "en": "Please check off each item after inspection.",
-          "ja": "検査後に各項目へチェックを入れてください。",
-          "focus": "check off"
-        },
-        {
-          "en": "We checked off the completed tasks.",
-          "ja": "私たちは完了した作業にチェックを入れました。",
-          "focus": "checked off"
-        },
-        {
-          "en": "The supervisor checked off the safety items.",
-          "ja": "責任者は安全項目に確認済みの印を付けました。",
-          "focus": "checked off"
-        }
-      ],
-      "dailyExamples": []
-    }
-  ]
-},
   {
-  "id": "decide",
-  "rank": 53,
-  "word": "DECIDE",
-  "ipa": "/dɪˈsaɪd/",
-  "kana": "ディサイド",
-  "syllable": "de-cide",
-  "transitivity": "他動詞・自動詞",
-  "importance": "★★★★☆ 重要",
-  "core": "迷っている状態から、進む方向を一つに決める",
-  "coreDetail": "DECIDEは、複数の選択肢や迷いがある状態から、方針・日程・担当・行動を一つに決める動詞です。仕事では会議、見積、仕様、納期、承認判断でよく使います。",
-  "coreVisual": {
-    "from": [
-      "案A",
-      "案B",
-      "日程候補",
-      "担当候補",
-      "対応方針"
+    "id": "decide",
+    "rank": 53,
+    "word": "DECIDE",
+    "ipa": "/dɪˈsaɪd/",
+    "kana": "ディサイド",
+    "syllable": "de-cide",
+    "transitivity": "他動詞・自動詞",
+    "importance": "★★★★☆ 重要",
+    "core": "選択肢の中から一つの方向を選んで決める",
+    "coreDetail": "DECIDEは、迷っている状態から一つの方針や行動を選ぶ動詞です。仕事では日程、価格、次の対応、発注判断、採用可否などを決める時に使います。",
+    "coreVisual": {"from": ["A案", "B案", "条件", "結果", "相談内容"], "to": "決定した方針", "label": "複数の選択肢 → 1つに決める"},
+    "meanings": [
+      {"id":"decide-schedule","title":"① 日程・予定を決める","pattern":"decide + schedule / date","transitivity":"他動詞","structure":"基本","image":"複数の候補から予定を決める。","point":"decide the schedule は仕事でよく使う基本表現です。","examples":[
+        {"en":"We need to decide the installation schedule by tomorrow.","ja":"私たちは明日までに施工スケジュールを決める必要があります。","focus":"decide","object":"the installation schedule"},
+        {"en":"The team decided the meeting date after checking availability.","ja":"チームは空き状況を確認した後、会議日を決めました。","focus":"decided","object":"the meeting date"},
+        {"en":"Please decide the delivery date with the customer.","ja":"顧客と納品日を決めてください。","focus":"decide","object":"the delivery date"}
+      ],"dailyExamples":[]},
+      {"id":"decide-price","title":"② 価格・条件を決める","pattern":"decide + price / condition","transitivity":"他動詞","structure":"基本","image":"条件や価格を一つに確定する。","point":"price, condition, quantity と一緒に使えます。","examples":[
+        {"en":"Management decided the final price this morning.","ja":"経営陣は今朝、最終価格を決めました。","focus":"decided","object":"the final price"},
+        {"en":"We should decide the discount rate before sending the quote.","ja":"見積を送る前に割引率を決めるべきです。","focus":"decide","object":"the discount rate"},
+        {"en":"The customer decided the order quantity after the demo.","ja":"顧客はデモの後、発注数量を決めました。","focus":"decided","object":"the order quantity"}
+      ],"dailyExamples":[]},
+      {"id":"decide-next-step","title":"③ 次の対応を決める","pattern":"decide + next step / action","transitivity":"他動詞","structure":"基本","image":"次に何をするかを決める。","point":"会議後や顧客対応後に使いやすい表現です。","examples":[
+        {"en":"Let's decide the next step after reviewing the report.","ja":"レポートを確認した後、次の対応を決めましょう。","focus":"decide","object":"the next step"},
+        {"en":"We decided the action plan during the meeting.","ja":"私たちは会議中に行動計画を決めました。","focus":"decided","object":"the action plan"},
+        {"en":"Please decide what to do before calling the client.","ja":"顧客に電話する前に何をするか決めてください。","focus":"decide","object":"what to do"}
+      ],"dailyExamples":[]},
+      {"id":"decide-whether","title":"④ 〜するかどうか決める","pattern":"decide whether to + verb","transitivity":"他動詞","structure":"基本","image":"やる・やらないを判断する。","point":"decide whether to order / change / continue などで使います。","examples":[
+        {"en":"We need to decide whether to order more stock.","ja":"私たちは在庫を追加発注するかどうか決める必要があります。","focus":"decide","object":"whether to order more stock"},
+        {"en":"The client decided whether to change the color after seeing the sample.","ja":"顧客はサンプルを見た後、色を変更するかどうか決めました。","focus":"decided","object":"whether to change the color"},
+        {"en":"I will decide whether to visit the site after the call.","ja":"私は電話の後、現場を訪問するかどうか決めます。","focus":"decide","object":"whether to visit the site"}
+      ],"dailyExamples":[]},
+      {"id":"decide-based-on","title":"⑤ 結果や条件をもとに決める","pattern":"decide based on + reason","transitivity":"他動詞","structure":"基本","image":"判断材料を見て決定する。","point":"based on は判断理由を示す時に便利です。","examples":[
+        {"en":"We decided based on the test result.","ja":"私たちはテスト結果をもとに決めました。","focus":"decided","object":"based on the test result"},
+        {"en":"Please decide based on the customer's priority.","ja":"顧客の優先度をもとに決めてください。","focus":"decide","object":"based on the customer's priority"},
+        {"en":"She decided after discussing it with her manager.","ja":"彼女は上司と相談した後で決めました。","focus":"decided","object":"after discussing it with her manager"}
+      ],"dailyExamples":[]}
     ],
-    "to": "決定した方向",
-    "label": "迷い → 決定"
+    "collocations": [],
+    "phrasalVerbs": [
+      {"phrase":"decide on","ja":"〜に決める","image":"候補の中から対象を選んで決める。","pattern":"decide on","examples":[{"en":"We decided on the final color.","ja":"私たちは最終色に決めました。","focus":"decided on","object":"the final color"}],"dailyExamples":[]},
+      {"phrase":"decide upon","ja":"〜に決める","image":"やや硬い言い方で正式に決める。","pattern":"decide upon","examples":[{"en":"The board decided upon a new policy.","ja":"役員会は新しい方針に決めました。","focus":"decided upon","object":"a new policy"}],"dailyExamples":[]},
+      {"phrase":"decide against","ja":"〜しないことに決める","image":"選択肢から外す。","pattern":"decide against","examples":[{"en":"We decided against the rush order.","ja":"私たちは急ぎ注文を受けないことに決めました。","focus":"decided against","object":"the rush order"}],"dailyExamples":[]},
+      {"phrase":"decide for","ja":"〜に有利な判断をする・〜のために決める","image":"ある人や案に向けて判断する。","pattern":"decide for","examples":[{"en":"The committee decided for the safer option.","ja":"委員会はより安全な選択肢を選びました。","focus":"decided for","object":"the safer option"}],"dailyExamples":[]},
+      {"phrase":"decide between","ja":"〜のどちらかを決める","image":"2つの選択肢から選ぶ。","pattern":"decide between","examples":[{"en":"We need to decide between these two suppliers.","ja":"私たちはこの2社の仕入先のどちらかを決める必要があります。","focus":"decide between","object":"these two suppliers"}],"dailyExamples":[]},
+      {"phrase":"decide among","ja":"複数の中から決める","image":"複数候補の中から選んで決める。","pattern":"decide among","examples":[{"en":"The client decided among three design options.","ja":"顧客は3つのデザイン案の中から決めました。","focus":"decided among","object":"three design options"}],"dailyExamples":[]}
+    ]
   },
-  "meanings": [
-    {
-      "id": "decide-to",
-      "title": "① 〜することに決める",
-      "pattern": "decide to do",
-      "transitivity": "他動詞的な使い方",
-      "structure": "仕事でよく使う自然な型",
-      "image": "次に取る行動を決める。",
-      "point": "decide to の後ろに具体的な行動を置く。",
-      "examples": [
-        {
-          "en": "We decided to revise the proposal.",
-          "ja": "私たちは提案書を修正することに決めました。",
-          "focus": "decided"
-        },
-        {
-          "en": "The client decided to postpone the meeting.",
-          "ja": "顧客は会議を延期することに決めました。",
-          "focus": "decided"
-        },
-        {
-          "en": "I decided to contact the supplier directly.",
-          "ja": "私は仕入先に直接連絡することに決めました。",
-          "focus": "decided"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "decide-on",
-      "title": "② 〜に決める",
-      "pattern": "decide on + 名詞",
-      "transitivity": "自動詞に近い使い方",
-      "structure": "仕事でよく使う自然な型",
-      "image": "候補の中から対象を選んで決める。",
-      "point": "date, price, design, supplier など名詞と一緒に使う。",
-      "examples": [
-        {
-          "en": "We need to decide on the final design by Friday.",
-          "ja": "私たちは金曜日までに最終デザインを決める必要があります。",
-          "focus": "decide on"
-        },
-        {
-          "en": "Have you decided on the meeting date?",
-          "ja": "会議の日程は決まりましたか？",
-          "focus": "decided on"
-        },
-        {
-          "en": "The team decided on a new supplier.",
-          "ja": "チームは新しい仕入先に決めました。",
-          "focus": "decided on"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "decide-that",
-      "title": "③ 〜だと判断する・決定する",
-      "pattern": "decide that + 文",
-      "transitivity": "他動詞的な使い方",
-      "structure": "仕事でよく使う自然な型",
-      "image": "会議や検討の結果として結論を出す。",
-      "point": "that節で決定内容を説明する。",
-      "examples": [
-        {
-          "en": "We decided that the current plan was too risky.",
-          "ja": "私たちは現在の計画はリスクが高すぎると判断しました。",
-          "focus": "decided"
-        },
-        {
-          "en": "Management decided that the price should not change.",
-          "ja": "経営陣は価格を変更すべきではないと決定しました。",
-          "focus": "decided"
-        },
-        {
-          "en": "The client decided that the sample was acceptable.",
-          "ja": "顧客はサンプルが問題ないと判断しました。",
-          "focus": "decided"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "decide-whether",
-      "title": "④ 〜するかどうか決める",
-      "pattern": "decide whether / if + 文",
-      "transitivity": "他動詞的な使い方",
-      "structure": "仕事でよく使う自然な型",
-      "image": "やるかやらないかを判断する。",
-      "point": "whether は少し丁寧でビジネス文書向き。",
-      "examples": [
-        {
-          "en": "We need to decide whether to accept the order.",
-          "ja": "私たちはその注文を受けるかどうか決める必要があります。",
-          "focus": "decide"
-        },
-        {
-          "en": "Please decide if you can join the meeting.",
-          "ja": "会議に参加できるか決めてください。",
-          "focus": "decide"
-        },
-        {
-          "en": "The manager decided whether the project should continue.",
-          "ja": "マネージャーは案件を継続すべきか判断しました。",
-          "focus": "decided"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "decide-against",
-      "title": "⑤ 〜しないことに決める",
-      "pattern": "decide against + 名詞 / -ing",
-      "transitivity": "自動詞に近い使い方",
-      "structure": "仕事でよく使う自然な型",
-      "image": "検討した結果、やらない方向に決める。",
-      "point": "against は選択肢から外すイメージ。",
-      "examples": [
-        {
-          "en": "We decided against changing the supplier this month.",
-          "ja": "私たちは今月、仕入先を変更しないことに決めました。",
-          "focus": "decided against"
-        },
-        {
-          "en": "The client decided against the expensive option.",
-          "ja": "顧客は高額な選択肢を選ばないことにしました。",
-          "focus": "decided against"
-        },
-        {
-          "en": "They decided against launching the campaign this week.",
-          "ja": "彼らは今週キャンペーンを開始しないことに決めました。",
-          "focus": "decided against"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "decide-by",
-      "title": "⑥ 期限までに決める",
-      "pattern": "decide by + 日時",
-      "transitivity": "自動詞に近い使い方",
-      "structure": "仕事でよく使う自然な型",
-      "image": "期限までに結論を出す。",
-      "point": "by の後ろに決定期限を置く。",
-      "examples": [
-        {
-          "en": "Please decide by tomorrow morning.",
-          "ja": "明日の朝までに決めてください。",
-          "focus": "decide"
-        },
-        {
-          "en": "We must decide by the end of the week.",
-          "ja": "私たちは今週中に決めなければなりません。",
-          "focus": "decide"
-        },
-        {
-          "en": "The customer decided by the deadline.",
-          "ja": "顧客は期限までに決定しました。",
-          "focus": "decided"
-        }
-      ],
-      "dailyExamples": []
-    }
-  ],
-  "collocations": [
-    {
-      "phrase": "make a decision",
-      "ja": "決定する",
-      "image": "decision を make して、決定を形にする。",
-      "pattern": "make a decision",
-      "examples": [
-        {
-          "en": "We need to make a decision today.",
-          "ja": "私たちは今日決定する必要があります。",
-          "focus": "make a decision"
-        },
-        {
-          "en": "The client made a decision after the presentation.",
-          "ja": "顧客はプレゼン後に決定しました。",
-          "focus": "made a decision"
-        },
-        {
-          "en": "Please make a decision before the deadline.",
-          "ja": "期限前に決定してください。",
-          "focus": "make a decision"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "final decision",
-      "ja": "最終決定",
-      "image": "最終的に変わらない決定。",
-      "pattern": "final decision",
-      "examples": [
-        {
-          "en": "We are waiting for the final decision.",
-          "ja": "私たちは最終決定を待っています。",
-          "focus": "final decision"
-        },
-        {
-          "en": "The final decision will be made next week.",
-          "ja": "最終決定は来週行われます。",
-          "focus": "final decision"
-        },
-        {
-          "en": "Please share the final decision with the team.",
-          "ja": "最終決定をチームに共有してください。",
-          "focus": "final decision"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "business decision",
-      "ja": "業務上の判断・経営判断",
-      "image": "仕事上の理由で行う判断。",
-      "pattern": "business decision",
-      "examples": [
-        {
-          "en": "This is a business decision, not a personal issue.",
-          "ja": "これは個人的な問題ではなく業務上の判断です。",
-          "focus": "business decision"
-        },
-        {
-          "en": "Management explained the business decision to the staff.",
-          "ja": "経営陣はその業務上の判断を社員に説明しました。",
-          "focus": "business decision"
-        },
-        {
-          "en": "We need a clear business decision before moving forward.",
-          "ja": "進める前に明確な業務判断が必要です。",
-          "focus": "business decision"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "decide the next step",
-      "ja": "次の対応を決める",
-      "image": "次に何をするか決める。",
-      "pattern": "decide the next step",
-      "examples": [
-        {
-          "en": "Let's decide the next step after reviewing the report.",
-          "ja": "レポートを確認した後、次の対応を決めましょう。",
-          "focus": "decide the next step"
-        },
-        {
-          "en": "We decided the next step during the meeting.",
-          "ja": "私たちは会議中に次の対応を決めました。",
-          "focus": "decided the next step"
-        },
-        {
-          "en": "Please decide the next step with the customer.",
-          "ja": "顧客と次の対応を決めてください。",
-          "focus": "decide the next step"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "decide the schedule",
-      "ja": "スケジュールを決める",
-      "image": "日程を決定する。",
-      "pattern": "decide the schedule",
-      "examples": [
-        {
-          "en": "We need to decide the installation schedule.",
-          "ja": "私たちは施工スケジュールを決める必要があります。",
-          "focus": "decide the installation schedule"
-        },
-        {
-          "en": "The team decided the schedule for the training.",
-          "ja": "チームは研修スケジュールを決めました。",
-          "focus": "decided the schedule"
-        },
-        {
-          "en": "Please decide the schedule after checking availability.",
-          "ja": "空き状況を確認してからスケジュールを決めてください。",
-          "focus": "decide the schedule"
-        }
-      ],
-      "dailyExamples": []
-    }
-  ],
-  "phrasalVerbs": [
-    {
-      "phrase": "decide on",
-      "ja": "〜に決める",
-      "image": "候補の中から対象を決める。",
-      "pattern": "decide on + 名詞",
-      "examples": [
-        {
-          "en": "We decided on the final color.",
-          "ja": "私たちは最終色に決めました。",
-          "focus": "decided on"
-        },
-        {
-          "en": "Please decide on the delivery date.",
-          "ja": "納品日を決めてください。",
-          "focus": "decide on"
-        },
-        {
-          "en": "They decided on a new sales strategy.",
-          "ja": "彼らは新しい営業戦略に決めました。",
-          "focus": "decided on"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "decide between",
-      "ja": "〜のどちらかを決める",
-      "image": "2つの選択肢から決める。",
-      "pattern": "decide between A and B",
-      "examples": [
-        {
-          "en": "We need to decide between these two suppliers.",
-          "ja": "私たちはこの2社の仕入先のどちらかを決める必要があります。",
-          "focus": "decide between"
-        },
-        {
-          "en": "The client decided between the standard model and the premium model.",
-          "ja": "顧客は標準モデルと上位モデルのどちらかを決めました。",
-          "focus": "decided between"
-        },
-        {
-          "en": "Please decide between Monday and Tuesday.",
-          "ja": "月曜日と火曜日のどちらかを決めてください。",
-          "focus": "decide between"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "decide against",
-      "ja": "〜しないことに決める",
-      "image": "選択肢から外す。",
-      "pattern": "decide against + 名詞 / -ing",
-      "examples": [
-        {
-          "en": "We decided against the rush order.",
-          "ja": "私たちは急ぎ注文を受けないことに決めました。",
-          "focus": "decided against"
-        },
-        {
-          "en": "The customer decided against changing the design.",
-          "ja": "顧客はデザインを変更しないことに決めました。",
-          "focus": "decided against"
-        },
-        {
-          "en": "They decided against hiring another vendor.",
-          "ja": "彼らは別の業者を採用しないことに決めました。",
-          "focus": "decided against"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "decide for",
-      "ja": "〜に有利な決定をする",
-      "image": "人や案に対して決める。頻度は低めだが判断表現で使う。",
-      "pattern": "decide for + 人・案",
-      "examples": [
-        {
-          "en": "The committee decided for the safer option.",
-          "ja": "委員会はより安全な選択肢を選びました。",
-          "focus": "decided for"
-        },
-        {
-          "en": "The customer decided for our proposal after the demo.",
-          "ja": "顧客はデモの後、私たちの提案に決めました。",
-          "focus": "decided for"
-        },
-        {
-          "en": "Management decided for a long-term solution.",
-          "ja": "経営陣は長期的な解決策を選びました。",
-          "focus": "decided for"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "decide after",
-      "ja": "〜の後に決める",
-      "image": "必要な確認や検討の後に決める。",
-      "pattern": "decide after + 名詞 / -ing",
-      "examples": [
-        {
-          "en": "We will decide after checking the cost.",
-          "ja": "費用を確認した後で決めます。",
-          "focus": "decide after"
-        },
-        {
-          "en": "The client decided after reviewing the samples.",
-          "ja": "顧客はサンプル確認後に決定しました。",
-          "focus": "decided after"
-        },
-        {
-          "en": "Please decide after discussing it with your team.",
-          "ja": "チームと相談した後で決めてください。",
-          "focus": "decide after"
-        }
-      ],
-      "dailyExamples": []
-    }
-  ]
-},
   {
-  "id": "explain",
-  "rank": 54,
-  "word": "EXPLAIN",
-  "ipa": "/ɪkˈspleɪn/",
-  "kana": "イクスプレイン",
-  "syllable": "ex-plain",
-  "transitivity": "他動詞",
-  "importance": "★★★★☆ 重要",
-  "core": "相手が理解できるように、理由・状況・手順をほどいて伝える",
-  "coreDetail": "EXPLAINは、複雑な内容を分かりやすくして相手に伝える動詞です。仕事では理由、手順、仕様、遅延、変更点、提案内容の説明に使います。",
-  "coreVisual": {
-    "from": [
-      "複雑な情報",
-      "理由",
-      "手順",
-      "仕様",
-      "変更点"
+    "id": "explain",
+    "rank": 54,
+    "word": "EXPLAIN",
+    "ipa": "/ɪkˈspleɪn/",
+    "kana": "イクスプレイン",
+    "syllable": "ex-plain",
+    "transitivity": "他動詞",
+    "importance": "★★★★☆ 重要",
+    "core": "相手が理解できるように、理由・状況・手順をほどいて伝える",
+    "coreDetail": "EXPLAINは、複雑な内容を分かりやすくして相手に伝える動詞です。仕事では理由、手順、仕様、遅延、変更点、提案内容の説明に使います。",
+    "coreVisual": {"from": ["複雑な情報", "理由", "手順", "仕様", "変更点"], "to": "相手が理解できる説明", "label": "分かりにくい → 分かる"},
+    "meanings": [
+      {"id":"explain-issue","title":"① 問題・状況を説明する","pattern":"explain + issue / situation","transitivity":"他動詞","structure":"基本","image":"状況を相手が分かる形にする。","point":"explain の目的語は人ではなく内容です。人には to を使います。","examples":[
+        {"en":"I explained the issue to the client.","ja":"私は顧客にその問題を説明しました。","focus":"explained","object":"the issue"},
+        {"en":"Please explain the situation to the team.","ja":"チームに状況を説明してください。","focus":"explain","object":"the situation"},
+        {"en":"We explained the quotation during the meeting.","ja":"私たちは会議中に見積内容を説明しました。","focus":"explained","object":"the quotation"}
+      ],"dailyExamples":[]},
+      {"id":"explain-reason","title":"② 理由を説明する","pattern":"explain + reason / why","transitivity":"他動詞","structure":"基本","image":"なぜそうなったかを分かるように伝える。","point":"遅延、価格変更、仕様変更の説明でよく使います。","examples":[
+        {"en":"Please explain the reason for the delay.","ja":"遅延の理由を説明してください。","focus":"explain","object":"the reason"},
+        {"en":"We explained why the price had changed.","ja":"私たちは価格が変更された理由を説明しました。","focus":"explained","object":"why the price had changed"},
+        {"en":"The supplier explained that the material was out of stock.","ja":"仕入先は材料が欠品していると説明しました。","focus":"explained","object":"that the material was out of stock"}
+      ],"dailyExamples":[]},
+      {"id":"explain-process","title":"③ 手順・方法を説明する","pattern":"explain + process / how to","transitivity":"他動詞","structure":"基本","image":"作業の流れや使い方を順番に伝える。","point":"explain how to は操作説明で便利です。","examples":[
+        {"en":"Please explain the process to the new staff.","ja":"新しいスタッフに手順を説明してください。","focus":"explain","object":"the process"},
+        {"en":"The engineer explained how to install the product.","ja":"技術者はその製品の設置方法を説明しました。","focus":"explained","object":"how to install the product"},
+        {"en":"We explained how to submit the request online.","ja":"私たちはオンラインで依頼を提出する方法を説明しました。","focus":"explained","object":"how to submit the request online"}
+      ],"dailyExamples":[]},
+      {"id":"explain-difference","title":"④ 違い・変更点を説明する","pattern":"explain + difference / change","transitivity":"他動詞","structure":"基本","image":"比較や変更の理由を分かりやすく伝える。","point":"difference, change, benefit と相性が良いです。","examples":[
+        {"en":"Can you explain the difference between these two models?","ja":"この2つの型番の違いを説明してもらえますか？","focus":"explain","object":"the difference"},
+        {"en":"She explained the schedule change to the customer.","ja":"彼女は顧客にスケジュール変更を説明しました。","focus":"explained","object":"the schedule change"},
+        {"en":"We need to explain the benefit of the new product.","ja":"私たちは新製品の利点を説明する必要があります。","focus":"explain","object":"the benefit"}
+      ],"dailyExamples":[]},
+      {"id":"explain-clearly","title":"⑤ 分かりやすく説明する","pattern":"explain + clearly / simply","transitivity":"他動詞","structure":"基本","image":"相手が理解しやすい形にして伝える。","point":"clearly, simply, briefly と一緒に使いやすいです。","examples":[
+        {"en":"Please explain it clearly in the email.","ja":"メールでそれを分かりやすく説明してください。","focus":"explain","object":"it"},
+        {"en":"He explained the plan briefly before the meeting.","ja":"彼は会議前に計画を簡単に説明しました。","focus":"explained","object":"the plan"},
+        {"en":"We should explain the risk simply to the client.","ja":"私たちは顧客にリスクを簡単に説明するべきです。","focus":"explain","object":"the risk"}
+      ],"dailyExamples":[]}
     ],
-    "to": "相手が理解できる説明",
-    "label": "分かりにくい → 分かる"
+    "collocations": [],
+    "phrasalVerbs": [
+      {"phrase":"explain to","ja":"〜に説明する","image":"説明する相手を示す。","pattern":"explain to","examples":[{"en":"Please explain the change to the customer.","ja":"顧客に変更点を説明してください。","focus":"explain to","object":"the customer"}],"dailyExamples":[]},
+      {"phrase":"explain about","ja":"〜について説明する","image":"説明する話題を示す。","pattern":"explain about","examples":[{"en":"The engineer explained about the new wiring method.","ja":"技術者は新しい配線方法について説明しました。","focus":"explained about","object":"the new wiring method"}],"dailyExamples":[]},
+      {"phrase":"explain away","ja":"言い訳して片付ける","image":"問題を説明で軽く見せようとする。","pattern":"explain away","examples":[{"en":"We should not explain away the delivery mistake.","ja":"私たちは納品ミスを言い訳で片付けるべきではありません。","focus":"explain away","object":"the delivery mistake"}],"dailyExamples":[]},
+      {"phrase":"explain through","ja":"〜を通して説明する","image":"資料や例を使って説明する。","pattern":"explain through","examples":[{"en":"She explained the process through a simple chart.","ja":"彼女は簡単な図を通して手順を説明しました。","focus":"explained through","object":"a simple chart"}],"dailyExamples":[]},
+      {"phrase":"explain with","ja":"〜を使って説明する","image":"資料・例・数字を使って説明する。","pattern":"explain with","examples":[{"en":"Please explain the result with actual numbers.","ja":"実際の数字を使って結果を説明してください。","focus":"explain with","object":"actual numbers"}],"dailyExamples":[]}
+    ]
   },
-  "meanings": [
-    {
-      "id": "explain-content",
-      "title": "① 内容を説明する",
-      "pattern": "explain + 内容",
-      "transitivity": "他動詞",
-      "structure": "仕事でよく使う自然な型",
-      "image": "内容を相手に分かるように伝える。",
-      "point": "explain の目的語は人ではなく内容。人には to を使う。",
-      "examples": [
-        {
-          "en": "I explained the reason to the client.",
-          "ja": "私は顧客に理由を説明しました。",
-          "focus": "explained"
-        },
-        {
-          "en": "Please explain the process to the new staff.",
-          "ja": "新しいスタッフに手順を説明してください。",
-          "focus": "explain"
-        },
-        {
-          "en": "We explained the quotation in the meeting.",
-          "ja": "私たちは会議で見積内容を説明しました。",
-          "focus": "explained"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "explain-to",
-      "title": "② 人に説明する",
-      "pattern": "explain + 内容 + to + 人",
-      "transitivity": "他動詞",
-      "structure": "仕事でよく使う自然な型",
-      "image": "説明する相手を to の後ろに置く。",
-      "point": "explain him ではなく explain it to him が自然。",
-      "examples": [
-        {
-          "en": "Can you explain the issue to the customer?",
-          "ja": "顧客にその問題を説明してもらえますか？",
-          "focus": "explain"
-        },
-        {
-          "en": "She explained the schedule change to the team.",
-          "ja": "彼女はチームにスケジュール変更を説明しました。",
-          "focus": "explained"
-        },
-        {
-          "en": "We need to explain the new rule to all members.",
-          "ja": "私たちは全メンバーに新しいルールを説明する必要があります。",
-          "focus": "explain"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "explain-that",
-      "title": "③ 〜だと説明する",
-      "pattern": "explain that + 文",
-      "transitivity": "他動詞",
-      "structure": "仕事でよく使う自然な型",
-      "image": "状況や理由を文で説明する。",
-      "point": "that節で説明内容を具体的に言える。",
-      "examples": [
-        {
-          "en": "He explained that the delivery was delayed.",
-          "ja": "彼は納品が遅れていると説明しました。",
-          "focus": "explained"
-        },
-        {
-          "en": "The supplier explained that the material was out of stock.",
-          "ja": "仕入先は材料が欠品していると説明しました。",
-          "focus": "explained"
-        },
-        {
-          "en": "I explained that we needed more time.",
-          "ja": "私はさらに時間が必要だと説明しました。",
-          "focus": "explained"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "explain-how",
-      "title": "④ 方法・手順を説明する",
-      "pattern": "explain how to do",
-      "transitivity": "他動詞",
-      "structure": "仕事でよく使う自然な型",
-      "image": "やり方を順番に説明する。",
-      "point": "how to の後ろに作業や操作を置く。",
-      "examples": [
-        {
-          "en": "Please explain how to use the system.",
-          "ja": "そのシステムの使い方を説明してください。",
-          "focus": "explain"
-        },
-        {
-          "en": "The engineer explained how to install the product.",
-          "ja": "技術者はその製品の設置方法を説明しました。",
-          "focus": "explained"
-        },
-        {
-          "en": "We explained how to submit the request online.",
-          "ja": "私たちはオンラインで依頼を提出する方法を説明しました。",
-          "focus": "explained"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "explain-why",
-      "title": "⑤ 理由を説明する",
-      "pattern": "explain why + 文",
-      "transitivity": "他動詞",
-      "structure": "仕事でよく使う自然な型",
-      "image": "なぜそうなったかを説明する。",
-      "point": "クレーム対応や遅延説明でよく使う。",
-      "examples": [
-        {
-          "en": "Please explain why the shipment was delayed.",
-          "ja": "出荷が遅れた理由を説明してください。",
-          "focus": "explain"
-        },
-        {
-          "en": "We explained why the price had changed.",
-          "ja": "私たちは価格が変更された理由を説明しました。",
-          "focus": "explained"
-        },
-        {
-          "en": "The manager explained why the decision was necessary.",
-          "ja": "マネージャーはその決定が必要だった理由を説明しました。",
-          "focus": "explained"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "id": "explain-clearly",
-      "title": "⑥ 分かりやすく説明する",
-      "pattern": "explain clearly / simply",
-      "transitivity": "他動詞",
-      "structure": "仕事でよく使う自然な型",
-      "image": "相手に伝わるように簡単に説明する。",
-      "point": "clearly, simply, briefly など副詞と相性が良い。",
-      "examples": [
-        {
-          "en": "Please explain the point clearly.",
-          "ja": "要点を分かりやすく説明してください。",
-          "focus": "explain"
-        },
-        {
-          "en": "She explained the problem simply for the customer.",
-          "ja": "彼女は顧客向けに問題を簡単に説明しました。",
-          "focus": "explained"
-        },
-        {
-          "en": "We need to explain the benefits briefly.",
-          "ja": "私たちはメリットを簡潔に説明する必要があります。",
-          "focus": "explain"
-        }
-      ],
-      "dailyExamples": []
-    }
-  ],
-  "collocations": [
-    {
-      "phrase": "explain the reason",
-      "ja": "理由を説明する",
-      "image": "理由を分かる形で伝える。",
-      "pattern": "explain the reason",
-      "examples": [
-        {
-          "en": "Please explain the reason for the delay.",
-          "ja": "遅延の理由を説明してください。",
-          "focus": "explain the reason"
-        },
-        {
-          "en": "I explained the reason to the customer by email.",
-          "ja": "私はメールで顧客に理由を説明しました。",
-          "focus": "explained the reason"
-        },
-        {
-          "en": "We need to explain the reason before asking for approval.",
-          "ja": "承認を求める前に理由を説明する必要があります。",
-          "focus": "explain the reason"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "explain the process",
-      "ja": "手順を説明する",
-      "image": "作業の流れを説明する。",
-      "pattern": "explain the process",
-      "examples": [
-        {
-          "en": "The trainer explained the process step by step.",
-          "ja": "研修担当者は手順を段階的に説明しました。",
-          "focus": "explained the process"
-        },
-        {
-          "en": "Please explain the process to the new member.",
-          "ja": "新メンバーに手順を説明してください。",
-          "focus": "explain the process"
-        },
-        {
-          "en": "We explained the order process to the client.",
-          "ja": "私たちは顧客に注文手順を説明しました。",
-          "focus": "explained the order process"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "explain the difference",
-      "ja": "違いを説明する",
-      "image": "2つのものの違いを説明する。",
-      "pattern": "explain the difference",
-      "examples": [
-        {
-          "en": "Can you explain the difference between these two models?",
-          "ja": "この2つのモデルの違いを説明してもらえますか？",
-          "focus": "explain the difference"
-        },
-        {
-          "en": "I explained the difference in price.",
-          "ja": "私は価格の違いを説明しました。",
-          "focus": "explained the difference"
-        },
-        {
-          "en": "We need to explain the difference clearly to the customer.",
-          "ja": "私たちは顧客に違いを明確に説明する必要があります。",
-          "focus": "explain the difference"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "explain the situation",
-      "ja": "状況を説明する",
-      "image": "現在の状況を相手に伝える。",
-      "pattern": "explain the situation",
-      "examples": [
-        {
-          "en": "Please explain the situation to the sales manager.",
-          "ja": "営業マネージャーに状況を説明してください。",
-          "focus": "explain the situation"
-        },
-        {
-          "en": "She explained the situation before the meeting started.",
-          "ja": "彼女は会議が始まる前に状況を説明しました。",
-          "focus": "explained the situation"
-        },
-        {
-          "en": "We explained the situation honestly to the client.",
-          "ja": "私たちは顧客に状況を正直に説明しました。",
-          "focus": "explained the situation"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "explain in detail",
-      "ja": "詳しく説明する",
-      "image": "細かい点まで説明する。",
-      "pattern": "explain in detail",
-      "examples": [
-        {
-          "en": "Please explain the cost breakdown in detail.",
-          "ja": "費用内訳を詳しく説明してください。",
-          "focus": "explain"
-        },
-        {
-          "en": "The engineer explained the installation method in detail.",
-          "ja": "技術者は設置方法を詳しく説明しました。",
-          "focus": "explained"
-        },
-        {
-          "en": "We should explain the risks in detail.",
-          "ja": "私たちはリスクを詳しく説明するべきです。",
-          "focus": "explain"
-        }
-      ],
-      "dailyExamples": []
-    }
-  ],
-  "phrasalVerbs": [
-    {
-      "phrase": "explain to",
-      "ja": "〜に説明する",
-      "image": "説明する相手を示す。",
-      "pattern": "explain + 内容 + to + 人",
-      "examples": [
-        {
-          "en": "Please explain the change to the customer.",
-          "ja": "顧客に変更点を説明してください。",
-          "focus": "explain"
-        },
-        {
-          "en": "I explained the issue to my manager.",
-          "ja": "私は上司にその問題を説明しました。",
-          "focus": "explained"
-        },
-        {
-          "en": "We need to explain the new process to the team.",
-          "ja": "私たちはチームに新しい手順を説明する必要があります。",
-          "focus": "explain"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "explain about",
-      "ja": "〜について説明する",
-      "image": "話題について説明する。内容を目的語にする explain + 内容 より少し広い話題説明。",
-      "pattern": "explain about + 話題",
-      "examples": [
-        {
-          "en": "The trainer explained about the new system.",
-          "ja": "研修担当者は新しいシステムについて説明しました。",
-          "focus": "explained about"
-        },
-        {
-          "en": "Can you explain about the payment process?",
-          "ja": "支払い手順について説明してもらえますか？",
-          "focus": "explain about"
-        },
-        {
-          "en": "We explained about the product warranty.",
-          "ja": "私たちは製品保証について説明しました。",
-          "focus": "explained about"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "explain with",
-      "ja": "〜を使って説明する",
-      "image": "資料や例を使って説明する。",
-      "pattern": "explain with + 資料・例",
-      "examples": [
-        {
-          "en": "Please explain with a simple example.",
-          "ja": "簡単な例を使って説明してください。",
-          "focus": "explain with"
-        },
-        {
-          "en": "She explained the issue with a diagram.",
-          "ja": "彼女は図を使ってその問題を説明しました。",
-          "focus": "explained"
-        },
-        {
-          "en": "We explained the process with slides.",
-          "ja": "私たちはスライドを使って手順を説明しました。",
-          "focus": "explained"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "explain in",
-      "ja": "〜で説明する",
-      "image": "言語・形式・方法を表す。",
-      "pattern": "explain in + 言語・方法",
-      "examples": [
-        {
-          "en": "Can you explain it in simple English?",
-          "ja": "それを簡単な英語で説明できますか？",
-          "focus": "explain"
-        },
-        {
-          "en": "The manual explains the process in detail.",
-          "ja": "そのマニュアルは手順を詳しく説明しています。",
-          "focus": "explains"
-        },
-        {
-          "en": "Please explain the point in one sentence.",
-          "ja": "要点を一文で説明してください。",
-          "focus": "explain"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "explain away",
-      "ja": "言い訳してごまかす",
-      "image": "問題やミスを説明で片付けようとする。仕事では注意表現。",
-      "pattern": "explain away + 問題・ミス",
-      "examples": [
-        {
-          "en": "We cannot explain away the delay without a clear plan.",
-          "ja": "明確な計画なしに遅延を説明だけでごまかすことはできません。",
-          "focus": "explain away"
-        },
-        {
-          "en": "The supplier tried to explain away the quality issue.",
-          "ja": "仕入先は品質問題を説明でごまかそうとしました。",
-          "focus": "explain away"
-        },
-        {
-          "en": "Do not explain away the mistake; propose a solution.",
-          "ja": "ミスをごまかさず、解決策を提案してください。",
-          "focus": "explain away"
-        }
-      ],
-      "dailyExamples": []
-    }
-  ]
-},
   {
   "id": "improve",
   "rank": 55,

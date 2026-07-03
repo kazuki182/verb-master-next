@@ -68,183 +68,81 @@ export const verbs: Verb[] = [
     "importance": "★★★★★ 超重要",
     "core": "外にあるもの・情報・状態が、自分のところへ入ってくる",
     "coreDetail": "GETは『外側にあるものが自分側に入る』感覚です。承認・情報・メール・チャンスを受け取る、状態が変わる、目的地に着く、意味が頭に入る、という使い方まで1つの流れで理解できます。",
-    "coreVisual": {
-      "from": ["📧 メール", "✅ 承認", "💡 情報", "🎯 機会", "📍 目的地"],
-      "to": "自分・自社の領域",
-      "label": "外側 → 自分側へ入る"
-    },
+    "coreVisual": {"from":["📧 メール","✅ 承認","💡 情報","🎯 機会","📍 目的地"],"to":"自分・自社の領域","label":"外側 → 自分側へ入る"},
     "meanings": [
-      {
-        "id": "get-approval",
-        "title": "① get approval / 承認を得る",
-        "pattern": "GET + approval",
-        "transitivity": "他動詞",
-        "structure": "S + get + O",
-        "image": "相手側にあった承認が、自分たちの手元に入るイメージ。",
-        "point": "仕事では approval, permission, confirmation と一緒に使うことが多い。",
-        "examples": [
-          {"en":"We got approval from the client this morning.","ja":"私たちは今朝、顧客から承認を得ました。","focus":"got","object":"approval"},
-          {"en":"I need to get approval before placing the order.","ja":"私は発注前に承認を得る必要があります。","focus":"get","object":"approval"},
-          {"en":"Did you get approval from your manager?","ja":"あなたは上司から承認を得ましたか？","focus":"get","object":"approval"}
-        ]
-      },
-      {
-        "id": "get-information",
-        "title": "② get information / 情報を得る",
-        "pattern": "GET + information",
-        "transitivity": "他動詞",
-        "structure": "S + get + O",
-        "image": "必要な情報が自分の中に入ってくるイメージ。",
-        "point": "latest information, more details, feedback などと相性が良い。",
-        "examples": [
-          {"en":"I got the latest information from the supplier.","ja":"私は仕入先から最新情報を得ました。","focus":"got","object":"the latest information"},
-          {"en":"We need to get more details before the meeting.","ja":"私たちは会議前に、もう少し詳しい情報を得る必要があります。","focus":"get","object":"more details"},
-          {"en":"Can you get feedback from the customer?","ja":"あなたは顧客からフィードバックをもらえますか？","focus":"get","object":"feedback"}
-        ]
-      },
-      {
-        "id": "get-email",
-        "title": "③ get an email / メールを受け取る",
-        "pattern": "GET + email / message",
-        "transitivity": "他動詞",
-        "structure": "S + get + O",
-        "image": "メールや連絡が自分のところに届くイメージ。",
-        "point": "receiveより少し会話的。社内の確認では自然に使える。",
-        "examples": [
-          {"en":"I got your email about the schedule.","ja":"私はスケジュールについてのあなたのメールを受け取りました。","focus":"got","object":"your email"},
-          {"en":"We got a message from the design team.","ja":"私たちは設計チームから連絡を受け取りました。","focus":"got","object":"a message"},
-          {"en":"Did you get the file I sent yesterday?","ja":"あなたは私が昨日送ったファイルを受け取りましたか？","focus":"get","object":"the file"}
-        ]
-      },
-      {
-        "id": "get-sample",
-        "title": "④ get a sample / サンプルを入手する",
-        "pattern": "GET + sample / quote / document",
-        "transitivity": "他動詞",
-        "structure": "S + get + O",
-        "image": "必要な物や資料を手元に持ってくるイメージ。",
-        "point": "sample, quotation, document, parts など、営業や現場確認でよく使う。",
-        "examples": [
-          {"en":"We got the sample from the factory today.","ja":"私たちは今日、工場からサンプルを入手しました。","focus":"got","object":"the sample"},
-          {"en":"I will get the quotation ready by Friday.","ja":"私は金曜日までに見積書を準備します。","focus":"get","object":"the quotation ready"},
-          {"en":"Can you get the drawings from the client?","ja":"あなたは顧客から図面を入手できますか？","focus":"get","object":"the drawings"}
-        ]
-      },
-      {
-        "id": "get-ready",
-        "title": "⑤ get ready / 準備する",
-        "pattern": "GET + ready",
-        "transitivity": "自動詞に近い使い方",
-        "structure": "S + get + C",
-        "image": "準備ができた状態に入るイメージ。",
-        "point": "get ready for ... で『〜に向けて準備する』。",
-        "examples": [
-          {"en":"Please get ready for the meeting by three.","ja":"あなたは3時までに会議の準備をしてください。","focus":"get","object":"ready"},
-          {"en":"We need to get ready for the client visit.","ja":"私たちは顧客訪問に向けて準備する必要があります。","focus":"get","object":"ready"},
-          {"en":"I got the presentation ready last night.","ja":"私は昨夜、提案資料を準備しました。","focus":"got","object":"the presentation ready"}
-        ]
-      },
-      {
-        "id": "get-busy",
-        "title": "⑥ get busy / 忙しくなる",
-        "pattern": "GET + adjective",
-        "transitivity": "自動詞に近い使い方",
-        "structure": "S + get + C",
-        "image": "状態が変化して、その状態に入るイメージ。",
-        "point": "busy, better, difficult, tight など、状態変化を表す形容詞と使う。",
-        "examples": [
-          {"en":"The schedule is getting tight.","ja":"スケジュールが厳しくなってきています。","focus":"getting","object":"tight"},
-          {"en":"Our team got busy after the new order came in.","ja":"私たちのチームは新しい注文が入ってから忙しくなりました。","focus":"got","object":"busy"},
-          {"en":"The process got easier after the update.","ja":"更新後、その作業手順は簡単になりました。","focus":"got","object":"easier"}
-        ]
-      },
-      {
-        "id": "get-to-place",
-        "title": "⑦ get to the office / 到着する",
-        "pattern": "GET TO + place",
-        "transitivity": "自動詞",
-        "structure": "S + get + to 場所",
-        "image": "目的地が自分の到達範囲に入るイメージ。",
-        "point": "場所には get to を使う。ただし home は to を付けず get home。",
-        "examples": [
-          {"en":"I got to the office at eight thirty.","ja":"私は8時30分にオフィスに着きました。","focus":"got","object":"to the office"},
-          {"en":"What time will you get to the client site?","ja":"あなたは何時に顧客の現場へ着きますか？","focus":"get","object":"to the client site"},
-          {"en":"We got home late after the site visit.","ja":"私たちは現場訪問の後、遅く帰宅しました。","focus":"got","object":"home"}
-        ]
-      },
-      {
-        "id": "get-it",
-        "title": "⑧ get it / 理解する",
-        "pattern": "GET + idea / point",
-        "transitivity": "他動詞",
-        "structure": "S + get + O",
-        "image": "意味や意図が頭の中に入るイメージ。",
-        "point": "I get it. は『分かりました』。社内会話では便利だが、丁寧なメールでは understand も使える。",
-        "examples": [
-          {"en":"I get your point.","ja":"私はあなたの要点を理解しています。","focus":"get","object":"your point"},
-          {"en":"I don't get the reason for the delay.","ja":"私は遅延の理由が分かりません。","focus":"get","object":"the reason"},
-          {"en":"Do you get what the client wants?","ja":"あなたは顧客が求めていることを理解していますか？","focus":"get","object":"what the client wants"}
-        ]
-      },
-      {
-        "id": "get-someone-to-do",
-        "title": "⑨ get someone to do / 人に〜してもらう",
-        "pattern": "GET + someone + to do",
-        "transitivity": "他動詞",
-        "structure": "S + get + O + C",
-        "image": "相手を動かして、必要な行動を自分側に引き寄せるイメージ。",
-        "point": "命令ではなく、依頼・調整のニュアンスで使える。",
-        "examples": [
-          {"en":"I will get someone to check the data.","ja":"私は誰かにデータを確認してもらいます。","focus":"get","object":"someone to check the data"},
-          {"en":"Can you get the supplier to send the sample today?","ja":"あなたは仕入先に今日サンプルを送ってもらえますか？","focus":"get","object":"the supplier to send the sample"},
-          {"en":"We got the engineer to review the setting.","ja":"私たちは技術担当者に設定を確認してもらいました。","focus":"got","object":"the engineer to review the setting"}
-        ]
-      },
-      {
-        "id": "get-done",
-        "title": "⑩ get it done / 終わらせる",
-        "pattern": "GET + O + done",
-        "transitivity": "他動詞",
-        "structure": "S + get + O + C",
-        "image": "未完了のものを完了した状態に入れるイメージ。",
-        "point": "仕事では『やり切る』『完了状態にする』という実務的な表現。",
-        "examples": [
-          {"en":"We need to get it done by Friday.","ja":"私たちは金曜日までにそれを終わらせる必要があります。","focus":"get","object":"it done"},
-          {"en":"I got the report done before the meeting.","ja":"私は会議前に報告書を終わらせました。","focus":"got","object":"the report done"},
-          {"en":"Can you get this checked today?","ja":"あなたは今日これを確認済みにできますか？","focus":"get","object":"this checked"}
-        ]
-      }
+      {"id":"get-approval","title":"① get approval / 承認を得る","pattern":"GET + approval","transitivity":"他動詞","structure":"S + get + O","image":"相手側にあった承認が、自分たちの手元に入るイメージ。","point":"approval, permission, confirmation など、仕事で必要な許可や確認を得るときに使う。","examples":[
+        {"en":"We got approval from the client this morning.","ja":"私たちは今朝、顧客から承認を得ました。","focus":"got","object":"approval"},
+        {"en":"I need to get approval before placing the order.","ja":"私は発注前に承認を得る必要があります。","focus":"get","object":"approval"},
+        {"en":"Did you get permission from your manager?","ja":"あなたは上司から許可を得ましたか？","focus":"get","object":"permission"}]},
+      {"id":"get-information","title":"② get information / 情報を得る","pattern":"GET + information","transitivity":"他動詞","structure":"S + get + O","image":"必要な情報が自分の中に入ってくるイメージ。","point":"details, feedback, update などと相性が良い。","examples":[
+        {"en":"I got the latest information from the supplier.","ja":"私は仕入先から最新情報を得ました。","focus":"got","object":"the latest information"},
+        {"en":"We need to get more details before the meeting.","ja":"私たちは会議前に、もう少し詳しい情報を得る必要があります。","focus":"get","object":"more details"},
+        {"en":"Can you get feedback from the customer?","ja":"あなたは顧客からフィードバックをもらえますか？","focus":"get","object":"feedback"}]},
+      {"id":"get-email","title":"③ get an email / メールを受け取る","pattern":"GET + email / message","transitivity":"他動詞","structure":"S + get + O","image":"メールや連絡が自分のところに届くイメージ。","point":"receiveより会話的で、社内確認でも自然に使える。","examples":[
+        {"en":"I got your email about the schedule.","ja":"私はスケジュールについてのあなたのメールを受け取りました。","focus":"got","object":"your email"},
+        {"en":"We got a message from the design team.","ja":"私たちは設計チームから連絡を受け取りました。","focus":"got","object":"a message"},
+        {"en":"Did you get the file I sent yesterday?","ja":"あなたは私が昨日送ったファイルを受け取りましたか？","focus":"get","object":"the file"}]},
+      {"id":"get-sample","title":"④ get a sample / サンプルを入手する","pattern":"GET + sample / quotation / document","transitivity":"他動詞","structure":"S + get + O","image":"必要な物や資料を手元に入れるイメージ。","point":"sample, quotation, document, parts など、営業や現場確認でよく使う。","examples":[
+        {"en":"We got the sample from the factory today.","ja":"私たちは今日、工場からサンプルを入手しました。","focus":"got","object":"the sample"},
+        {"en":"I will get the quotation ready by Friday.","ja":"私は金曜日までに見積書を準備します。","focus":"get","object":"the quotation ready"},
+        {"en":"Can you get the drawings from the client?","ja":"あなたは顧客から図面を入手できますか？","focus":"get","object":"the drawings"}]},
+      {"id":"get-ready","title":"⑤ get ready / 準備する","pattern":"GET + ready","transitivity":"自動詞に近い使い方","structure":"S + get + C","image":"準備できた状態に入るイメージ。","point":"get ready for ... で『〜に向けて準備する』。","examples":[
+        {"en":"Please get ready for the meeting by three.","ja":"あなたは3時までに会議の準備をしてください。","focus":"get","object":"ready"},
+        {"en":"We need to get ready for the client visit.","ja":"私たちは顧客訪問に向けて準備する必要があります。","focus":"get","object":"ready"},
+        {"en":"I got the presentation ready last night.","ja":"私は昨夜、提案資料を準備しました。","focus":"got","object":"the presentation ready"}]},
+      {"id":"get-busy","title":"⑥ get busy / 状態が変わる","pattern":"GET + adjective","transitivity":"自動詞に近い使い方","structure":"S + get + C","image":"状態が変化して、その状態に入るイメージ。","point":"busy, better, difficult, tight など、状態変化を表す形容詞と使う。","examples":[
+        {"en":"The schedule is getting tight.","ja":"スケジュールが厳しくなってきています。","focus":"getting","object":"tight"},
+        {"en":"Our team got busy after the new order came in.","ja":"私たちのチームは新しい注文が入ってから忙しくなりました。","focus":"got","object":"busy"},
+        {"en":"The process got easier after the update.","ja":"更新後、その作業手順は簡単になりました。","focus":"got","object":"easier"}]},
+      {"id":"get-to-place","title":"⑦ get to the office / 到着する","pattern":"GET TO + place","transitivity":"自動詞","structure":"S + get + to 場所","image":"目的地が自分の到達範囲に入るイメージ。","point":"場所には get to を使う。ただし home は to を付けず get home。","examples":[
+        {"en":"I got to the office at eight thirty.","ja":"私は8時30分にオフィスに着きました。","focus":"got","object":"to the office"},
+        {"en":"What time will you get to the client site?","ja":"あなたは何時に顧客の現場へ着きますか？","focus":"get","object":"to the client site"},
+        {"en":"We got home late after the site visit.","ja":"私たちは現場訪問の後、遅く帰宅しました。","focus":"got","object":"home"}]},
+      {"id":"get-it","title":"⑧ get it / 理解する","pattern":"GET + idea / point","transitivity":"他動詞","structure":"S + get + O","image":"意味や意図が頭の中に入るイメージ。","point":"I get it. は『分かりました』。丁寧なメールでは understand も使える。","examples":[
+        {"en":"I get your point.","ja":"私はあなたの要点を理解しています。","focus":"get","object":"your point"},
+        {"en":"I don't get the reason for the delay.","ja":"私は遅延の理由が分かりません。","focus":"get","object":"the reason"},
+        {"en":"Do you get what the client wants?","ja":"あなたは顧客が求めていることを理解していますか？","focus":"get","object":"what the client wants"}]},
+      {"id":"get-someone-to-do","title":"⑨ get someone to do / 人に〜してもらう","pattern":"GET + someone + to do","transitivity":"他動詞","structure":"S + get + O + C","image":"相手を動かして、必要な行動を自分側に引き寄せるイメージ。","point":"命令ではなく、依頼・調整のニュアンスで使える。","examples":[
+        {"en":"I will get someone to check the data.","ja":"私は誰かにデータを確認してもらいます。","focus":"get","object":"someone to check the data"},
+        {"en":"Can you get the supplier to send the sample today?","ja":"あなたは仕入先に今日サンプルを送ってもらえますか？","focus":"get","object":"the supplier to send the sample"},
+        {"en":"We got the engineer to review the setting.","ja":"私たちは技術担当者に設定を確認してもらいました。","focus":"got","object":"the engineer to review the setting"}]},
+      {"id":"get-done","title":"⑩ get it done / 終わらせる","pattern":"GET + O + done","transitivity":"他動詞","structure":"S + get + O + C","image":"未完了のものを完了した状態に入れるイメージ。","point":"仕事では『やり切る』『完了状態にする』という実務的な表現。","examples":[
+        {"en":"We need to get it done by Friday.","ja":"私たちは金曜日までにそれを終わらせる必要があります。","focus":"get","object":"it done"},
+        {"en":"I got the report done before the meeting.","ja":"私は会議前に報告書を終わらせました。","focus":"got","object":"the report done"},
+        {"en":"Can you get this checked today?","ja":"あなたは今日これを確認済みにできますか？","focus":"get","object":"this checked"}]}
     ],
     "collocations": [],
     "phrasalVerbs": [
-      {"phrase":"get back to","ja":"〜に折り返す・後で返答する","image":"相手のところへ連絡を戻すイメージ。","pattern":"GET BACK TO + someone","examples":[
+      {"phrase":"get back to","ja":"折り返す・後で返答する","image":"相手のところへ連絡を戻すイメージ。","pattern":"GET BACK TO + someone","examples":[
         {"en":"I will get back to you after I check the price.","ja":"私は価格を確認した後、あなたに折り返します。","focus":"get back to","object":"you"},
-        {"en":"Can you get back to the client today?","ja":"あなたは今日、顧客に折り返せますか？","focus":"get back to","object":"the client"},
-        {"en":"We need to get back to them by tomorrow morning.","ja":"私たちは明日の朝までに彼らへ返答する必要があります。","focus":"get back to","object":"them"}]},
-      {"phrase":"get in touch with","ja":"〜に連絡を取る","image":"相手と連絡がつながる状態に入るイメージ。","pattern":"GET IN TOUCH WITH + someone","examples":[
+        {"en":"Can you get back to the client today?","ja":"あなたは今日、顧客に折り返せますか？","focus":"get back to","object":"the client"}]},
+      {"phrase":"get in touch with","ja":"連絡を取る","image":"相手と連絡がつながる状態に入るイメージ。","pattern":"GET IN TOUCH WITH + someone","examples":[
         {"en":"I will get in touch with the supplier today.","ja":"私は今日、仕入先に連絡を取ります。","focus":"get in touch with","object":"the supplier"},
-        {"en":"Please get in touch with the customer before noon.","ja":"あなたは正午前に顧客へ連絡を取ってください。","focus":"get in touch with","object":"the customer"},
-        {"en":"We got in touch with the design team yesterday.","ja":"私たちは昨日、設計チームに連絡を取りました。","focus":"got in touch with","object":"the design team"}]},
-      {"phrase":"get along with","ja":"〜とうまくやっていく","image":"相手と同じ方向に進めるイメージ。","pattern":"GET ALONG WITH + someone","examples":[
-        {"en":"I get along with the new team members.","ja":"私は新しいチームメンバーとうまくやっています。","focus":"get along with","object":"the new team members"},
-        {"en":"He gets along with clients very well.","ja":"彼は顧客とうまく関係を築いています。","focus":"gets along with","object":"clients"},
-        {"en":"We need to get along with the local partner.","ja":"私たちは現地パートナーとうまくやっていく必要があります。","focus":"get along with","object":"the local partner"}]},
-      {"phrase":"get over","ja":"〜を乗り越える","image":"問題の上を越えて先に進むイメージ。","pattern":"GET OVER + problem","examples":[
+        {"en":"Please get in touch with the customer before noon.","ja":"あなたは正午前に顧客へ連絡を取ってください。","focus":"get in touch with","object":"the customer"}]},
+      {"phrase":"get over","ja":"乗り越える","image":"問題の上を越えて先に進むイメージ。","pattern":"GET OVER + problem","examples":[
         {"en":"We got over the delivery issue.","ja":"私たちは納期の問題を乗り越えました。","focus":"got over","object":"the delivery issue"},
-        {"en":"I need time to get over this mistake.","ja":"私はこのミスを乗り越えるのに時間が必要です。","focus":"get over","object":"this mistake"},
         {"en":"The team got over a difficult situation last month.","ja":"チームは先月、難しい状況を乗り越えました。","focus":"got over","object":"a difficult situation"}]},
-      {"phrase":"get through","ja":"〜をやり抜く・通過する","image":"大変な作業や期間を通り抜けるイメージ。","pattern":"GET THROUGH + work / period","examples":[
+      {"phrase":"get through","ja":"やり抜く・通過する","image":"大変な作業や期間を通り抜けるイメージ。","pattern":"GET THROUGH + task / period","examples":[
         {"en":"We got through the busy season.","ja":"私たちは繁忙期を乗り切りました。","focus":"got through","object":"the busy season"},
-        {"en":"I need to get through these emails today.","ja":"私は今日これらのメールを処理し切る必要があります。","focus":"get through","object":"these emails"},
-        {"en":"Can we get through the agenda in one hour?","ja":"私たちは1時間で議題を最後まで進められますか？","focus":"get through","object":"the agenda"}]},
-      {"phrase":"get together","ja":"集まる・会う","image":"人が同じ場所にまとまるイメージ。","pattern":"GET TOGETHER","examples":[
-        {"en":"Let's get together next week to review the proposal.","ja":"私たちは来週集まって提案内容を確認しましょう。","focus":"get together","object":"next week"},
-        {"en":"The sales team got together after the meeting.","ja":"営業チームは会議後に集まりました。","focus":"got together","object":"after the meeting"},
-        {"en":"Can we get together for a short call tomorrow?","ja":"私たちは明日、短い電話会議で集まれますか？","focus":"get together","object":"for a short call"}]},
-      {"phrase":"get ahead","ja":"先に進む・有利になる","image":"前へ出る、先回りするイメージ。","pattern":"GET AHEAD","examples":[
-        {"en":"We can get ahead by preparing the documents early.","ja":"私たちは資料を早めに準備することで有利に進められます。","focus":"get ahead","object":"by preparing the documents early"},
-        {"en":"He got ahead because he followed up quickly.","ja":"彼は素早くフォローしたので一歩先に進めました。","focus":"got ahead","object":"because he followed up quickly"},
-        {"en":"I want to get ahead on next week's tasks.","ja":"私は来週の作業を前倒しで進めたいです。","focus":"get ahead","object":"on next week's tasks"}]}
+        {"en":"Can you get through the report by Friday?","ja":"あなたは金曜日までに報告書を終えられますか？","focus":"get through","object":"the report"}]},
+      {"phrase":"get together","ja":"集まる","image":"人が1か所にまとまるイメージ。","pattern":"GET TOGETHER","examples":[
+        {"en":"Let's get together after the client meeting.","ja":"顧客との打合せ後に集まりましょう。","focus":"get together","object":"after the client meeting"},
+        {"en":"The team got together to review the proposal.","ja":"チームは提案書を確認するために集まりました。","focus":"got together","object":"to review the proposal"}]},
+      {"phrase":"get ahead","ja":"先に進む・有利になる","image":"周囲より前に出るイメージ。","pattern":"GET AHEAD","examples":[
+        {"en":"We need to get ahead before the busy season starts.","ja":"繁忙期が始まる前に、私たちは先に進めておく必要があります。","focus":"get ahead","object":"before the busy season starts"},
+        {"en":"Learning these verbs will help you get ahead.","ja":"これらの動詞を学ぶことで、あなたは一歩前に進めます。","focus":"get ahead","object":""}]},
+      {"phrase":"get into","ja":"入る・関わり始める","image":"新しい領域や話題の中に入るイメージ。","pattern":"GET INTO + area / topic","examples":[
+        {"en":"We got into a detailed discussion about the price.","ja":"私たちは価格について詳しい話し合いに入りました。","focus":"got into","object":"a detailed discussion"},
+        {"en":"I want to get into more technical projects.","ja":"私はもっと技術的な案件に関わりたいです。","focus":"get into","object":"more technical projects"}]},
+      {"phrase":"get out of","ja":"抜け出す・避ける","image":"内側にある状態から外へ出るイメージ。","pattern":"GET OUT OF + situation","examples":[
+        {"en":"We need to get out of this delay quickly.","ja":"私たちはこの遅れから早く抜け出す必要があります。","focus":"get out of","object":"this delay"},
+        {"en":"He tried to get out of the extra work.","ja":"彼は追加作業を避けようとしました。","focus":"get out of","object":"the extra work"}]},
+      {"phrase":"get on","ja":"進める・乗る","image":"作業や予定の上に乗って前へ進むイメージ。","pattern":"GET ON + with task","examples":[
+        {"en":"Let's get on with the next task.","ja":"次の作業に進みましょう。","focus":"get on","object":"with the next task"},
+        {"en":"I need to get on the train before seven.","ja":"私は7時前に電車に乗る必要があります。","focus":"get on","object":"the train"}]},
+      {"phrase":"get around to","ja":"ようやく取りかかる","image":"後回しの作業に回り込んで到達するイメージ。","pattern":"GET AROUND TO + task","examples":[
+        {"en":"I finally got around to checking the old quotation.","ja":"私はようやく古い見積書の確認に取りかかりました。","focus":"got around to","object":"checking the old quotation"},
+        {"en":"Can you get around to updating the list today?","ja":"あなたは今日、リスト更新に取りかかれますか？","focus":"get around to","object":"updating the list"}]}
     ]
   },
   {
@@ -256,77 +154,73 @@ export const verbs: Verb[] = [
     "syllable": "take",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★★ 超重要",
-    "core": "対象を自分側に取り込む・選んで持っていく",
-    "coreDetail": "TAKEは『対象を自分側に取る』感覚です。物を取るだけでなく、時間がかかる、担当する、選ぶ、連れて行く、対応する、責任を持つ、という仕事でよく使う形につながります。",
-    "coreVisual": {
-      "from": ["📄 資料", "⏱️ 時間", "✅ 責任", "🧾 注文", "👤 顧客"],
-      "to": "自分・自社側",
-      "label": "対象 → 自分側へ取る"
-    },
+    "core": "対象を自分側に取る・引き受ける",
+    "coreDetail": "TAKEは『外側にあるものを自分側へ取る』感覚です。物を取る、時間がかかる、責任を引き受ける、行動を取る、機会を利用するなどに広がります。",
+    "coreVisual": {"from":["📦 物","⏰ 時間","✅ 責任","🎯 機会","📄 情報"],"to":"自分・担当範囲","label":"対象 → 自分側へ取る"},
     "meanings": [
-      {"id":"take-document","title":"① take the document / 取る・持っていく","pattern":"TAKE + object","transitivity":"他動詞","structure":"S + take + O","image":"物や情報を自分側に取るイメージ。","point":"資料・サンプル・メモなど、手元に取るものに使う。","examples":[
-        {"en":"Please take this document to the meeting.","ja":"あなたはこの資料を会議に持っていってください。","focus":"take","object":"this document"},
-        {"en":"I took some notes during the call.","ja":"私は電話中にメモを取りました。","focus":"took","object":"some notes"},
-        {"en":"Can you take a sample to the client?","ja":"あなたは顧客へサンプルを持っていけますか？","focus":"take","object":"a sample"}]},
-      {"id":"take-time","title":"② take time / 時間がかかる","pattern":"TAKE + time","transitivity":"他動詞","structure":"It + takes + time","image":"作業が時間を取るイメージ。","point":"It takes ... to do は所要時間を伝える定番表現。","examples":[
-        {"en":"It takes two days to prepare the quotation.","ja":"見積書を準備するには2日かかります。","focus":"takes","object":"two days"},
-        {"en":"The installation took longer than expected.","ja":"設置作業は予想より時間がかかりました。","focus":"took","object":"longer than expected"},
-        {"en":"How long will it take to confirm the schedule?","ja":"スケジュールを確認するにはどのくらい時間がかかりますか？","focus":"take","object":"to confirm the schedule"}]},
-      {"id":"take-responsibility","title":"③ take responsibility / 責任を持つ","pattern":"TAKE + responsibility","transitivity":"他動詞","structure":"S + take + O","image":"責任を自分側に引き受けるイメージ。","point":"responsibility, charge, ownership と一緒に使う。","examples":[
-        {"en":"I will take responsibility for this project.","ja":"私はこの案件に責任を持ちます。","focus":"take","object":"responsibility"},
-        {"en":"She took charge of the meeting.","ja":"彼女は会議を担当しました。","focus":"took","object":"charge"},
-        {"en":"We need to take ownership of the issue.","ja":"私たちはその問題を自分たちの責任として扱う必要があります。","focus":"take","object":"ownership"}]},
-      {"id":"take-action","title":"④ take action / 行動する","pattern":"TAKE + action","transitivity":"他動詞","structure":"S + take + O","image":"必要な行動を自分側で実行に移すイメージ。","point":"action, steps, measures と使うと、仕事の対応を自然に表せる。","examples":[
-        {"en":"We need to take action before the deadline.","ja":"私たちは締切前に行動する必要があります。","focus":"take","object":"action"},
-        {"en":"The team took steps to reduce the risk.","ja":"チームはリスクを減らすための手を打ちました。","focus":"took","object":"steps"},
-        {"en":"Please take measures to prevent the same mistake.","ja":"あなたは同じミスを防ぐための対策を取ってください。","focus":"take","object":"measures"}]},
-      {"id":"take-order","title":"⑤ take an order / 注文を受ける","pattern":"TAKE + order / call","transitivity":"他動詞","structure":"S + take + O","image":"注文や電話を自分側で受け持つイメージ。","point":"order, call, request など、受け付ける対象に使える。","examples":[
-        {"en":"We took a new order from the client.","ja":"私たちは顧客から新しい注文を受けました。","focus":"took","object":"a new order"},
-        {"en":"Can you take this call for me?","ja":"あなたは私の代わりにこの電話に出てもらえますか？","focus":"take","object":"this call"},
-        {"en":"I took the customer's request seriously.","ja":"私は顧客の依頼を真剣に受け止めました。","focus":"took","object":"the customer's request"}]},
-      {"id":"take-look","title":"⑥ take a look / ざっと確認する","pattern":"TAKE + a look","transitivity":"他動詞","structure":"S + take + O","image":"視線や注意を少し取って確認するイメージ。","point":"take a look at ... は『少し見て確認する』。look at より柔らかく依頼できる。","examples":[
-        {"en":"Can you take a look at this file?","ja":"あなたはこのファイルを少し確認してもらえますか？","focus":"take","object":"a look"},
-        {"en":"I took a quick look at the proposal.","ja":"私は提案書をざっと確認しました。","focus":"took","object":"a quick look"},
-        {"en":"Please take a look at the revised drawing.","ja":"あなたは修正版の図面を確認してください。","focus":"take","object":"a look"}]},
-      {"id":"take-place","title":"⑦ take place / 行われる","pattern":"TAKE PLACE","transitivity":"自動詞","structure":"S + take place","image":"予定されていた出来事が場所を取って起こるイメージ。","point":"meeting, event, inspection などの開催に使う。","examples":[
+      {"id":"take-responsibility","title":"① take responsibility / 責任を取る","pattern":"TAKE + responsibility","transitivity":"他動詞","structure":"S + take + O","image":"責任を自分の担当範囲に引き受けるイメージ。","point":"責任・役割・担当を引き受ける時に使う。","examples":[
+        {"en":"I will take responsibility for this issue.","ja":"私はこの件について責任を持ちます。","focus":"take","object":"responsibility"},
+        {"en":"We need to take responsibility for the delay.","ja":"私たちは遅延について責任を持つ必要があります。","focus":"take","object":"responsibility"}]},
+      {"id":"take-action","title":"② take action / 行動する","pattern":"TAKE + action","transitivity":"他動詞","structure":"S + take + O","image":"必要な行動を自分側で取るイメージ。","point":"take action, take steps, take measures は仕事でよく使う。","examples":[
+        {"en":"We need to take action before the issue gets bigger.","ja":"問題が大きくなる前に、私たちは行動する必要があります。","focus":"take","object":"action"},
+        {"en":"The team took steps to reduce mistakes.","ja":"チームはミスを減らすための対策を取りました。","focus":"took","object":"steps"}]},
+      {"id":"take-time","title":"③ take time / 時間がかかる","pattern":"TAKE + time","transitivity":"他動詞","structure":"It takes + time","image":"作業が時間を取るイメージ。","point":"It takes ... で『〜かかる』。見積や納期説明で便利。","examples":[
+        {"en":"It takes two weeks to prepare the sample.","ja":"サンプルの準備には2週間かかります。","focus":"takes","object":"two weeks"},
+        {"en":"The installation took longer than expected.","ja":"施工は予想より時間がかかりました。","focus":"took","object":"longer than expected"}]},
+      {"id":"take-look","title":"④ take a look / 見る・確認する","pattern":"TAKE + a look","transitivity":"他動詞","structure":"S + take + O","image":"視線や注意を対象へ取るイメージ。","point":"Can you take a look? は自然な確認依頼。","examples":[
+        {"en":"Can you take a look at this quotation?","ja":"あなたはこの見積書を確認できますか？","focus":"take","object":"a look"},
+        {"en":"I took a quick look at the drawing.","ja":"私は図面を軽く確認しました。","focus":"took","object":"a quick look"}]},
+      {"id":"take-care","title":"⑤ take care of / 対応する・世話をする","pattern":"TAKE CARE OF + object","transitivity":"他動詞句","structure":"S + take care of + O","image":"相手や問題を自分の管理下に置いて対応するイメージ。","point":"句動詞ではなく基本側の重要表現として扱う。","examples":[
+        {"en":"I will take care of the customer request.","ja":"私は顧客からの依頼に対応します。","focus":"take","object":"care of the customer request"},
+        {"en":"Can you take care of the shipment today?","ja":"あなたは今日、出荷対応をしてくれますか？","focus":"take","object":"care of the shipment"}]},
+      {"id":"take-part","title":"⑥ take part in / 参加する","pattern":"TAKE PART IN + event","transitivity":"他動詞句","structure":"S + take part in + O","image":"活動の一部を自分の役割として取るイメージ。","point":"参加するという意味の基本表現。","examples":[
+        {"en":"We will take part in the trade show next month.","ja":"私たちは来月の展示会に参加します。","focus":"take","object":"part in the trade show"},
+        {"en":"Did you take part in the online meeting?","ja":"あなたはオンライン会議に参加しましたか？","focus":"take","object":"part in the online meeting"}]},
+      {"id":"take-place","title":"⑦ take place / 開催される・起こる","pattern":"TAKE PLACE","transitivity":"自動詞句","structure":"S + take place","image":"出来事が場所・予定の中で起こるイメージ。","point":"会議やイベントの案内でよく使う。","examples":[
         {"en":"The meeting will take place at three.","ja":"会議は3時に行われます。","focus":"take","object":"place"},
-        {"en":"The inspection took place last Friday.","ja":"検査は先週金曜日に行われました。","focus":"took","object":"place"},
-        {"en":"Where will the training take place?","ja":"研修はどこで行われますか？","focus":"take","object":"place"}]},
-      {"id":"take-care","title":"⑧ take care of / 対応する・世話をする","pattern":"TAKE CARE OF + object","transitivity":"他動詞句","structure":"S + take care of + O","image":"問題や相手を自分側で引き受けて対応するイメージ。","point":"日常の『世話をする』だけでなく、仕事では『対応する』の意味でよく使う。","examples":[
-        {"en":"I will take care of the hotel booking.","ja":"私はホテル予約を対応します。","focus":"take","object":"care of the hotel booking"},
-        {"en":"Can you take care of this issue today?","ja":"あなたは今日この問題に対応できますか？","focus":"take","object":"care of this issue"},
-        {"en":"We took care of the urgent request.","ja":"私たちは緊急依頼に対応しました。","focus":"took","object":"care of the urgent request"}]},
-      {"id":"take-part","title":"⑨ take part in / 参加する","pattern":"TAKE PART IN + event","transitivity":"自動詞句","structure":"S + take part in + O","image":"活動の一部を自分が取るイメージ。","point":"参加を少しフォーマルに言える表現。","examples":[
-        {"en":"We will take part in the trade show next month.","ja":"私たちは来月、展示会に参加します。","focus":"take","object":"part in the trade show"},
-        {"en":"He took part in the online meeting.","ja":"彼はオンライン会議に参加しました。","focus":"took","object":"part in the online meeting"},
-        {"en":"Can you take part in the product training?","ja":"あなたは製品研修に参加できますか？","focus":"take","object":"part in the product training"}]}
+        {"en":"The inspection took place yesterday.","ja":"検査は昨日行われました。","focus":"took","object":"place"}]},
+      {"id":"take-note","title":"⑧ take notes / メモを取る","pattern":"TAKE + notes","transitivity":"他動詞","structure":"S + take + O","image":"情報を自分側に記録として取るイメージ。","point":"meeting notes と相性が良い。","examples":[
+        {"en":"Please take notes during the meeting.","ja":"会議中にメモを取ってください。","focus":"take","object":"notes"},
+        {"en":"I took notes about the client's request.","ja":"私は顧客の要望についてメモを取りました。","focus":"took","object":"notes"}]},
+      {"id":"take-order","title":"⑨ take an order / 注文を受ける","pattern":"TAKE + order","transitivity":"他動詞","structure":"S + take + O","image":"注文を自分・自社の処理範囲に入れるイメージ。","point":"注文や予約を受ける時に使う。","examples":[
+        {"en":"We took a large order from the client.","ja":"私たちは顧客から大口注文を受けました。","focus":"took","object":"a large order"},
+        {"en":"Can your team take this order today?","ja":"あなたのチームは今日この注文を受けられますか？","focus":"take","object":"this order"}]},
+      {"id":"take-opportunity","title":"⑩ take an opportunity / 機会を活かす","pattern":"TAKE + opportunity","transitivity":"他動詞","structure":"S + take + O","image":"目の前の機会を自分側に取るイメージ。","point":"take a chance, take an opportunity と使う。","examples":[
+        {"en":"We should take this opportunity to introduce the new product.","ja":"私たちはこの機会に新製品を紹介するべきです。","focus":"take","object":"this opportunity"},
+        {"en":"He took the chance to visit the customer.","ja":"彼はその機会を活かして顧客を訪問しました。","focus":"took","object":"the chance"}]}
     ],
     "collocations": [],
     "phrasalVerbs": [
-      {"phrase":"take over","ja":"引き継ぐ","image":"担当や役割を自分側に引き取るイメージ。","pattern":"TAKE OVER + task / role","examples":[
-        {"en":"I will take over this account from next month.","ja":"私は来月からこの顧客を引き継ぎます。","focus":"take over","object":"this account"},
-        {"en":"She took over the project after the meeting.","ja":"彼女は会議後にその案件を引き継ぎました。","focus":"took over","object":"the project"},
-        {"en":"Can you take over the call at three?","ja":"あなたは3時の電話対応を引き継げますか？","focus":"take over","object":"the call"}]},
-      {"phrase":"take off","ja":"外す・離陸する・休みを取る","image":"接していたものが離れるイメージ。","pattern":"TAKE OFF","examples":[
-        {"en":"Please take off the old label before installation.","ja":"あなたは設置前に古いラベルを外してください。","focus":"take off","object":"the old label"},
-        {"en":"The plane took off on time.","ja":"飛行機は定刻に離陸しました。","focus":"took off","object":"on time"},
-        {"en":"I will take Friday off for a family event.","ja":"私は家族の用事で金曜日に休みを取ります。","focus":"take","object":"Friday off"}]},
-      {"phrase":"take out","ja":"取り出す・外へ出す","image":"中にあるものを外へ取るイメージ。","pattern":"TAKE OUT + object","examples":[
-        {"en":"Please take out the old parts from the box.","ja":"あなたは箱から古い部品を取り出してください。","focus":"take out","object":"the old parts"},
-        {"en":"We took out the damaged module.","ja":"私たちは破損したモジュールを取り外しました。","focus":"took out","object":"the damaged module"},
-        {"en":"Can you take out the unnecessary page?","ja":"あなたは不要なページを削除できますか？","focus":"take out","object":"the unnecessary page"}]},
-      {"phrase":"take up","ja":"時間・場所を取る／始める","image":"空いている時間や場所を上に埋めるイメージ。","pattern":"TAKE UP + time / space / activity","examples":[
-        {"en":"The meeting took up most of the morning.","ja":"会議で午前中のほとんどの時間を使いました。","focus":"took up","object":"most of the morning"},
-        {"en":"This equipment takes up too much space.","ja":"この機器は場所を取りすぎます。","focus":"takes up","object":"too much space"},
-        {"en":"I took up English study again this year.","ja":"私は今年、英語学習を再開しました。","focus":"took up","object":"English study"}]},
-      {"phrase":"take on","ja":"引き受ける","image":"仕事や責任を自分の上に乗せるイメージ。","pattern":"TAKE ON + work / responsibility","examples":[
-        {"en":"We can take on the additional work.","ja":"私たちは追加作業を引き受けられます。","focus":"take on","object":"the additional work"},
-        {"en":"He took on a difficult project.","ja":"彼は難しい案件を引き受けました。","focus":"took on","object":"a difficult project"},
-        {"en":"Can your team take on this request?","ja":"あなたのチームはこの依頼を引き受けられますか？","focus":"take on","object":"this request"}]},
-      {"phrase":"take back","ja":"取り戻す・発言を撤回する","image":"相手側や外側に出たものを自分側に戻すイメージ。","pattern":"TAKE BACK + object","examples":[
+      {"phrase":"take over","ja":"引き継ぐ","image":"担当や権限を自分側へ受け取るイメージ。","pattern":"TAKE OVER + task / role","examples":[
+        {"en":"I will take over this project from next week.","ja":"私は来週からこの案件を引き継ぎます。","focus":"take over","object":"this project"},
+        {"en":"Can you take over the customer follow-up?","ja":"あなたは顧客フォローを引き継げますか？","focus":"take over","object":"the customer follow-up"}]},
+      {"phrase":"take off","ja":"外す・離陸する・休む","image":"対象が表面や場所から離れるイメージ。","pattern":"TAKE OFF + object / time","examples":[
+        {"en":"Please take off the old label before shipping.","ja":"出荷前に古いラベルを外してください。","focus":"take off","object":"the old label"},
+        {"en":"I will take off next Friday.","ja":"私は来週金曜日に休みます。","focus":"take off","object":"next Friday"}]},
+      {"phrase":"take out","ja":"取り出す・外へ出す","image":"内側にあるものを外へ取るイメージ。","pattern":"TAKE OUT + object","examples":[
+        {"en":"Please take out the defective parts.","ja":"不良部品を取り出してください。","focus":"take out","object":"the defective parts"},
+        {"en":"We took out the old controller.","ja":"私たちは古いコントローラーを取り外しました。","focus":"took out","object":"the old controller"}]},
+      {"phrase":"take up","ja":"時間・場所を取る／始める","image":"空いている部分を占める、または新しく取り始めるイメージ。","pattern":"TAKE UP + time / space / activity","examples":[
+        {"en":"This task will take up most of the morning.","ja":"この作業で午前中のほとんどを使います。","focus":"take up","object":"most of the morning"},
+        {"en":"She took up English again for work.","ja":"彼女は仕事のために英語をまた始めました。","focus":"took up","object":"English"}]},
+      {"phrase":"take on","ja":"引き受ける","image":"仕事や責任を自分側に背負うイメージ。","pattern":"TAKE ON + work / responsibility","examples":[
+        {"en":"We can take on the installation work.","ja":"私たちは施工業務を引き受けられます。","focus":"take on","object":"the installation work"},
+        {"en":"He took on a difficult project.","ja":"彼は難しい案件を引き受けました。","focus":"took on","object":"a difficult project"}]},
+      {"phrase":"take back","ja":"取り戻す・撤回する","image":"相手側や外側に出たものを自分側に戻すイメージ。","pattern":"TAKE BACK + object","examples":[
         {"en":"We need to take back the defective sample.","ja":"私たちは不良サンプルを回収する必要があります。","focus":"take back","object":"the defective sample"},
-        {"en":"I take back what I said earlier.","ja":"私は先ほど言ったことを撤回します。","focus":"take back","object":"what I said earlier"},
-        {"en":"Can you take back these parts after the test?","ja":"あなたは試験後にこれらの部品を回収できますか？","focus":"take back","object":"these parts"}]}
+        {"en":"I take back what I said earlier.","ja":"私は先ほど言ったことを撤回します。","focus":"take back","object":"what I said earlier"}]},
+      {"phrase":"take apart","ja":"分解する","image":"1つのものを部品へ分けて取るイメージ。","pattern":"TAKE APART + object","examples":[
+        {"en":"We took apart the sample to check the inside.","ja":"私たちは内部を確認するためにサンプルを分解しました。","focus":"took apart","object":"the sample"},
+        {"en":"Please take apart the old display carefully.","ja":"古いディスプレイを慎重に分解してください。","focus":"take apart","object":"the old display"}]},
+      {"phrase":"take down","ja":"書き留める・取り外す","image":"情報や物を上の状態から自分側へ下ろすイメージ。","pattern":"TAKE DOWN + notes / object","examples":[
+        {"en":"Please take down the client's comments.","ja":"顧客のコメントを書き留めてください。","focus":"take down","object":"the client's comments"},
+        {"en":"We took down the old sign after the inspection.","ja":"私たちは検査後に古い看板を取り外しました。","focus":"took down","object":"the old sign"}]},
+      {"phrase":"take in","ja":"理解する・受け入れる","image":"情報や状況を自分の中に取り込むイメージ。","pattern":"TAKE IN + information / situation","examples":[
+        {"en":"It took me a moment to take in the new rules.","ja":"私は新しいルールを理解するのに少し時間がかかりました。","focus":"take in","object":"the new rules"},
+        {"en":"We need to take in the customer's feedback.","ja":"私たちは顧客のフィードバックを受け止める必要があります。","focus":"take in","object":"the customer's feedback"}]},
+      {"phrase":"take away","ja":"取り除く・持ち帰る","image":"対象をその場所から離して取るイメージ。","pattern":"TAKE AWAY + object","examples":[
+        {"en":"This change will take away unnecessary steps.","ja":"この変更で不要な手順がなくなります。","focus":"take away","object":"unnecessary steps"},
+        {"en":"Please take away the old samples after the meeting.","ja":"会議後に古いサンプルを持ち帰ってください。","focus":"take away","object":"the old samples"}]}
     ]
   },
   {
@@ -340,68 +234,71 @@ export const verbs: Verb[] = [
     "importance": "★★★★★ 超重要",
     "core": "手を加えて、新しい形・状態・結果を作る",
     "coreDetail": "MAKEは『何かに働きかけて、形・状態・結果を作る』動詞です。資料を作るだけでなく、決定する、変更する、予約する、状態を〜にする、相手に〜させる、という使い方までつながります。",
-    "coreVisual": {
-      "from": ["🧩 材料", "📄 情報", "💬 意見", "🛠️ 作業", "👥 チーム"],
-      "to": "結果・完成形",
-      "label": "材料・状況 → 作られた結果"
-    },
+    "coreVisual": {"from":["🧩 材料","📄 情報","💬 意見","🛠️ 作業","👥 チーム"],"to":"結果・完成形","label":"材料・状況 → 作られた結果"},
     "meanings": [
       {"id":"make-document","title":"① make a document / 作る","pattern":"MAKE + object","transitivity":"他動詞","structure":"S + make + O","image":"材料や情報から形あるものを作るイメージ。","point":"document, list, plan, sample など、仕事で作るものに使う。","examples":[
         {"en":"I made a simple list for the meeting.","ja":"私は会議用に簡単なリストを作りました。","focus":"made","object":"a simple list"},
-        {"en":"We need to make a new plan for the client.","ja":"私たちは顧客向けに新しい計画を作る必要があります。","focus":"make","object":"a new plan"},
-        {"en":"Can you make a copy of this document?","ja":"あなたはこの資料のコピーを作れますか？","focus":"make","object":"a copy"}]},
-      {"id":"make-decision","title":"② make a decision / 決める","pattern":"MAKE + decision","transitivity":"他動詞","structure":"S + make + O","image":"いくつかの選択肢から1つの結果を作るイメージ。","point":"decision, choice, plan と使う。decideより『決定を作る』感覚。","examples":[
+        {"en":"We need to make a new plan for the client.","ja":"私たちは顧客向けに新しい計画を作る必要があります。","focus":"make","object":"a new plan"}]},
+      {"id":"make-decision","title":"② make a decision / 決定する","pattern":"MAKE + decision","transitivity":"他動詞","structure":"S + make + O","image":"選択肢から1つの結果を作るイメージ。","point":"make a decision は仕事で非常によく使う。","examples":[
         {"en":"We need to make a decision by Friday.","ja":"私たちは金曜日までに決定する必要があります。","focus":"make","object":"a decision"},
-        {"en":"The manager made the final decision.","ja":"上司が最終決定をしました。","focus":"made","object":"the final decision"},
-        {"en":"Can you make a quick decision on this issue?","ja":"あなたはこの件について早めに判断できますか？","focus":"make","object":"a quick decision"}]},
+        {"en":"The manager made the final decision.","ja":"上司が最終決定をしました。","focus":"made","object":"the final decision"}]},
       {"id":"make-change","title":"③ make a change / 変更する","pattern":"MAKE + change","transitivity":"他動詞","structure":"S + make + O","image":"現状に手を加えて別の状態を作るイメージ。","point":"change, adjustment, improvement と一緒に使いやすい。","examples":[
         {"en":"We made a small change to the schedule.","ja":"私たちはスケジュールに小さな変更を加えました。","focus":"made","object":"a small change"},
-        {"en":"I will make an adjustment to the quotation.","ja":"私は見積書に調整を加えます。","focus":"make","object":"an adjustment"},
-        {"en":"Can you make this process easier?","ja":"あなたはこの作業手順をもっと簡単にできますか？","focus":"make","object":"this process easier"}]},
+        {"en":"I will make an adjustment to the quotation.","ja":"私は見積書に調整を加えます。","focus":"make","object":"an adjustment"}]},
       {"id":"make-sure","title":"④ make sure / 必ず確認する","pattern":"MAKE SURE + sentence","transitivity":"他動詞句","structure":"S + make sure + 内容","image":"不安な部分を確実な状態にするイメージ。","point":"確認・再確認の依頼で非常によく使う。","examples":[
         {"en":"Please make sure the price is correct.","ja":"あなたは価格が正しいことを必ず確認してください。","focus":"make","object":"sure the price is correct"},
-        {"en":"I will make sure the sample arrives tomorrow.","ja":"私はサンプルが明日届くように確認します。","focus":"make","object":"sure the sample arrives tomorrow"},
         {"en":"We need to make sure everyone has the latest file.","ja":"私たちは全員が最新版ファイルを持っていることを確認する必要があります。","focus":"make","object":"sure everyone has the latest file"}]},
       {"id":"make-clear","title":"⑤ make it clear / 明確にする","pattern":"MAKE + O + adjective","transitivity":"他動詞","structure":"S + make + O + C","image":"相手に分かりやすい状態を作るイメージ。","point":"make it clear, make it easy, make it possible の形でよく使う。","examples":[
         {"en":"I will make it clear in the email.","ja":"私はメールでそれを明確にします。","focus":"make","object":"it clear"},
-        {"en":"This chart makes the difference easy to understand.","ja":"この図は違いを分かりやすくしています。","focus":"makes","object":"the difference easy to understand"},
-        {"en":"Can you make the explanation shorter?","ja":"あなたは説明をもう少し短くできますか？","focus":"make","object":"the explanation shorter"}]},
-      {"id":"make-someone-do","title":"⑥ make someone do / 人に〜させる","pattern":"MAKE + someone + do","transitivity":"他動詞","structure":"S + make + O + C","image":"相手がその行動をする状態を作るイメージ。","point":"強制のニュアンスが出やすいので、ビジネスでは状況説明として使うと自然。",
-      "examples":[
+        {"en":"This chart makes the difference easy to understand.","ja":"この図は違いを分かりやすくしています。","focus":"makes","object":"the difference easy to understand"}]},
+      {"id":"make-someone-do","title":"⑥ make someone do / 人に〜させる","pattern":"MAKE + someone + do","transitivity":"他動詞","structure":"S + make + O + C","image":"相手がその行動をする状態を作るイメージ。","point":"強制のニュアンスが出やすいので、ビジネスでは状況説明として使うと自然。","examples":[
         {"en":"The delay made us change the schedule.","ja":"遅延により、私たちはスケジュールを変更することになりました。","focus":"made","object":"us change the schedule"},
-        {"en":"This issue made the client ask for another meeting.","ja":"この問題により、顧客は別の会議を求めました。","focus":"made","object":"the client ask for another meeting"},
         {"en":"The new rule makes employees check the data twice.","ja":"新しいルールにより、社員はデータを2回確認します。","focus":"makes","object":"employees check the data twice"}]},
       {"id":"make-call","title":"⑦ make a call / 電話する・判断する","pattern":"MAKE + call","transitivity":"他動詞","structure":"S + make + O","image":"電話や判断という行動を作るイメージ。","point":"make a phone call は電話する。make the call は判断する、決めるという意味でも使う。","examples":[
         {"en":"I will make a call to the client this afternoon.","ja":"私は今日の午後、顧客へ電話します。","focus":"make","object":"a call"},
-        {"en":"The manager made the call to postpone the meeting.","ja":"上司は会議を延期する判断をしました。","focus":"made","object":"the call"},
-        {"en":"Can you make a quick call before lunch?","ja":"あなたは昼食前に短く電話できますか？","focus":"make","object":"a quick call"}]},
+        {"en":"The manager made the call to postpone the meeting.","ja":"上司は会議を延期する判断をしました。","focus":"made","object":"the call"}]},
       {"id":"make-appointment","title":"⑧ make an appointment / 予約・約束を入れる","pattern":"MAKE + appointment / reservation","transitivity":"他動詞","structure":"S + make + O","image":"予定をカレンダー上に作るイメージ。","point":"appointment は面談・訪問予約、reservation は席やホテルの予約に使う。","examples":[
         {"en":"I made an appointment with the client for next Tuesday.","ja":"私は来週火曜日に顧客との面談予定を入れました。","focus":"made","object":"an appointment"},
-        {"en":"Can you make a reservation near the station?","ja":"あなたは駅の近くで予約を取れますか？","focus":"make","object":"a reservation"},
-        {"en":"We need to make an appointment before visiting the office.","ja":"私たちは事務所を訪問する前に予約を入れる必要があります。","focus":"make","object":"an appointment"}]},
-      {"id":"make-progress","title":"⑨ make progress / 進捗を出す","pattern":"MAKE + progress","transitivity":"他動詞","structure":"S + make + O","image":"前に進んだ結果を作るイメージ。","point":"progress, effort, money, profit など抽象的な結果にも使える。","examples":[
+        {"en":"Can you make a reservation near the station?","ja":"あなたは駅の近くで予約を取れますか？","focus":"make","object":"a reservation"}]},
+      {"id":"make-progress","title":"⑨ make progress / 進捗を出す","pattern":"MAKE + progress","transitivity":"他動詞","structure":"S + make + O","image":"前に進んだ結果を作るイメージ。","point":"progress, effort, profit など抽象的な結果にも使える。","examples":[
         {"en":"We made good progress on the proposal.","ja":"私たちは提案書作成を順調に進めました。","focus":"made","object":"good progress"},
-        {"en":"The team is making progress with the new system.","ja":"チームは新しいシステムで進捗を出しています。","focus":"making","object":"progress"},
-        {"en":"I want to make more progress this week.","ja":"私は今週さらに進捗を出したいです。","focus":"make","object":"more progress"}]}
+        {"en":"The team is making progress with the new system.","ja":"チームは新しいシステムで進捗を出しています。","focus":"making","object":"progress"}]},
+      {"id":"make-money","title":"⑩ make money / 利益を出す","pattern":"MAKE + money / profit","transitivity":"他動詞","structure":"S + make + O","image":"仕事や販売から利益という結果を作るイメージ。","point":"売上・利益の話で使える基本表現。","examples":[
+        {"en":"This product makes a good profit.","ja":"この製品は良い利益を生みます。","focus":"makes","object":"a good profit"},
+        {"en":"We need to make money from this project.","ja":"私たちはこの案件から利益を出す必要があります。","focus":"make","object":"money"}]}
     ],
     "collocations": [],
     "phrasalVerbs": [
-      {"phrase":"make up","ja":"作り上げる・埋め合わせる","image":"足りない部分や全体を作るイメージ。","pattern":"MAKE UP + object","examples":[
+      {"phrase":"make up","ja":"作り上げる・構成する・埋め合わせる","image":"足りない部分や全体を作るイメージ。","pattern":"MAKE UP + object","examples":[
         {"en":"These three products make up most of our sales.","ja":"これら3つの商品が私たちの売上の大部分を占めています。","focus":"make up","object":"most of our sales"},
-        {"en":"I will make up for the delay this week.","ja":"私は今週、遅れを取り戻します。","focus":"make up for","object":"the delay"},
         {"en":"We need to make up the missing data.","ja":"私たちは不足しているデータを補う必要があります。","focus":"make up","object":"the missing data"}]},
       {"phrase":"make out","ja":"理解する・判別する","image":"ぼんやりしたものを意味ある形にするイメージ。","pattern":"MAKE OUT + object","examples":[
         {"en":"I can't make out the number in this photo.","ja":"私はこの写真の数字を判別できません。","focus":"make out","object":"the number"},
-        {"en":"Can you make out what the customer wrote?","ja":"あなたは顧客が書いた内容を読み取れますか？","focus":"make out","object":"what the customer wrote"},
-        {"en":"We could not make out the details in the drawing.","ja":"私たちは図面の詳細を判別できませんでした。","focus":"make out","object":"the details"}]},
+        {"en":"Can you make out what the customer wrote?","ja":"あなたは顧客が書いた内容を読み取れますか？","focus":"make out","object":"what the customer wrote"}]},
       {"phrase":"make for","ja":"〜に向かう・〜につながる","image":"ある方向や結果へ進ませるイメージ。","pattern":"MAKE FOR + place / result","examples":[
-        {"en":"This clear layout makes for easier discussion.","ja":"この分かりやすいレイアウトにより、話し合いがしやすくなります。","focus":"makes for","object":"easier discussion"},
-        {"en":"The team made for the meeting room after lunch.","ja":"チームは昼食後、会議室へ向かいました。","focus":"made for","object":"the meeting room"},
-        {"en":"Good preparation makes for a smooth presentation.","ja":"良い準備はスムーズな提案につながります。","focus":"makes for","object":"a smooth presentation"}]},
+        {"en":"Good preparation makes for a smooth presentation.","ja":"良い準備はスムーズな提案につながります。","focus":"makes for","object":"a smooth presentation"},
+        {"en":"The team made for the meeting room after lunch.","ja":"チームは昼食後、会議室へ向かいました。","focus":"made for","object":"the meeting room"}]},
       {"phrase":"make of","ja":"〜についてどう思うか","image":"情報から自分なりの判断を作るイメージ。","pattern":"MAKE OF + object","examples":[
         {"en":"What do you make of the client's comment?","ja":"あなたは顧客のコメントをどう受け止めていますか？","focus":"make of","object":"the client's comment"},
-        {"en":"I don't know what to make of this result.","ja":"私はこの結果をどう判断すればよいか分かりません。","focus":"make of","object":"this result"},
-        {"en":"What did your manager make of the proposal?","ja":"あなたの上司はその提案をどう評価しましたか？","focus":"make of","object":"the proposal"}]}
+        {"en":"I don't know what to make of this result.","ja":"私はこの結果をどう判断すればよいか分かりません。","focus":"make of","object":"this result"}]},
+      {"phrase":"make up for","ja":"埋め合わせる","image":"不足や損失を別のもので補うイメージ。","pattern":"MAKE UP FOR + loss / delay","examples":[
+        {"en":"I will make up for the delay this week.","ja":"私は今週、遅れを取り戻します。","focus":"make up for","object":"the delay"},
+        {"en":"We need to make up for the lost time.","ja":"私たちは失った時間を取り戻す必要があります。","focus":"make up for","object":"the lost time"}]},
+      {"phrase":"make do with","ja":"〜で何とか間に合わせる","image":"限られた材料で結果を作るイメージ。","pattern":"MAKE DO WITH + what you have","examples":[
+        {"en":"We have to make do with the current stock.","ja":"私たちは現在の在庫で何とか対応しなければなりません。","focus":"make do with","object":"the current stock"},
+        {"en":"Can we make do with this sample for now?","ja":"今のところ、このサンプルで何とかできますか？","focus":"make do with","object":"this sample"}]},
+      {"phrase":"make into","ja":"〜を…に作り変える","image":"材料を別の形へ作り変えるイメージ。","pattern":"MAKE + object + INTO + result","examples":[
+        {"en":"We made the notes into a simple report.","ja":"私たちはメモを簡単な報告書にまとめました。","focus":"made into","object":"the notes / a simple report"},
+        {"en":"Can you make this data into a chart?","ja":"あなたはこのデータをグラフにできますか？","focus":"make into","object":"this data / a chart"}]},
+      {"phrase":"make over","ja":"作り直す・改装する","image":"見た目や状態を大きく作り直すイメージ。","pattern":"MAKE OVER + object","examples":[
+        {"en":"We made over the display area before the event.","ja":"私たちはイベント前に展示エリアを作り直しました。","focus":"made over","object":"the display area"},
+        {"en":"The store wants to make over the entrance sign.","ja":"その店舗は入口サインを改装したいと考えています。","focus":"make over","object":"the entrance sign"}]},
+      {"phrase":"make off with","ja":"持ち去る","image":"何かを持って素早く離れるイメージ。","pattern":"MAKE OFF WITH + object","examples":[
+        {"en":"Someone made off with the old samples after the event.","ja":"イベント後、誰かが古いサンプルを持ち去りました。","focus":"made off with","object":"the old samples"},
+        {"en":"The contractor accidentally made off with our tool box.","ja":"業者が誤って私たちの工具箱を持って行ってしまいました。","focus":"made off with","object":"our tool box"}]},
+      {"phrase":"make away with","ja":"処分する・持ち去る","image":"対象をその場からなくすイメージ。","pattern":"MAKE AWAY WITH + object","examples":[
+        {"en":"We should not make away with old records without approval.","ja":"私たちは承認なしに古い記録を処分するべきではありません。","focus":"make away with","object":"old records"},
+        {"en":"The team made away with unnecessary materials after the show.","ja":"チームは展示会後に不要な資材を処分しました。","focus":"made away with","object":"unnecessary materials"}]}
     ]
   },
   {

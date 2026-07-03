@@ -1,24 +1,17 @@
-# Verb Master Ver.133
+# Verb Master
 
-## Added/rebuilt verbs
-- PLAN
-- OFFER
-- SUPPORT
+## 再監査版 GET / TAKE / MAKE final
 
-## Summary
-This version continues the GET-first verb rebuild flow. It keeps the two-category structure:
-- 基本
-- 句動詞
+このZIPは Ver.134 をベースに、初期動詞 GET / TAKE / MAKE を現在の品質基準で再監査・再修正した版です。
 
-## Phrasal counts
-- PLAN: 6
-- OFFER: 5
-- SUPPORT: 4
+### 重要ルール
+- カテゴリは「基本」と「句動詞」のみ
+- 基本の赤文字は動詞のみ
+- 句動詞の赤文字は動詞＋前置詞・副詞まで
+- 目的語は赤文字にしない
+- 基本と句動詞で同じ表現を重複させない
+- 句動詞は句動詞側へ寄せる
+- 保存基盤 Ver.120 は維持
 
-## Preserved fixes
-- Ver.120 save foundation using user_progress_backups
-- Avatar/target date save design
-- Bottom navigation spacing fix
-- Basic red focus = verb only
-- Phrasal red focus = verb + preposition/adverb only
-- No object highlighting
+### 追加SQL
+追加SQLは不要です。Ver.120 の SQL を実行済みなら、そのまま利用できます。

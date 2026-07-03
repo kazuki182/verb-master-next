@@ -8,15 +8,48 @@ import { hasGrammarAccess } from "@/lib/account";
 import type { SavedPhrase } from "@/lib/account";
 
 function highlightText(text: string, target?: string, className = "example-verb") {
-  if (!target || !text.includes(target)) return text;
-  const index = text.indexOf(target);
-  return (
-    <>
-      {text.slice(0, index)}
-      <span className={className}>{target}</span>
-      {text.slice(index + target.length)}
-    </>
-  );
+  if (!target) return text;
+
+  if (text.includes(target)) {
+    const index = text.indexOf(target);
+    return (
+      <>
+        {text.slice(0, index)}
+        <span className={className}>{target}</span>
+        {text.slice(index + target.length)}
+      </>
+    );
+  }
+
+  // Separable phrasal verbs such as "show the customer around",
+  // "tell two products apart", and "ask someone out" do not appear as
+  // one continuous string. Highlight the verb part and the particle part so the
+  // learner can still see the full phrasal-verb frame.
+  const targetParts = target.trim().split(/\s+/);
+  if (targetParts.length === 2) {
+    const [verbPart, particlePart] = targetParts;
+    const tokens = text.split(/(\s+)/);
+    let verbHighlighted = false;
+    let particleHighlighted = false;
+    const rendered = tokens.map((token, index) => {
+      if (/^\s+$/.test(token)) return token;
+      const clean = token.replace(/[.,!?;:]$/g, "");
+      const suffix = token.slice(clean.length);
+      if (!verbHighlighted && clean === verbPart) {
+        verbHighlighted = true;
+        return <span key={index} className={className}>{clean}</span>;
+      }
+      if (verbHighlighted && !particleHighlighted && clean === particlePart) {
+        particleHighlighted = true;
+        return <span key={index} className={className}>{clean}{suffix}</span>;
+      }
+      return token;
+    });
+
+    if (verbHighlighted && particleHighlighted) return <>{rendered}</>;
+  }
+
+  return text;
 }
 
 function simplifyStructure(structure?: string) {

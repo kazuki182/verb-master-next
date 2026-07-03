@@ -1,1 +1,3 @@
-Ver.121 STOP / TRY / HELP追加版 / base: Ver.120 save-foundation-hotfix
+Verb Master Ver.122 Quality Hotfix 1
+Base: Ver.122 SHOW / TELL / ASK
+Changes: checked SHOW/TELL/ASK quality, removed duplicate/weak phrasal placement, improved separated phrasal verb highlighting, preserved V120 cloud save foundation.

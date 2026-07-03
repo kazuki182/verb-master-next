@@ -1,4 +1,1 @@
-Verb Master Ver.117 WATCH / HEAR / LISTEN 追加版
-Base: Ver.116 FIND / SEE / LOOK
-Target verbs added in this version: WATCH / HEAR / LISTEN
-Maintained fixes: profile image persistence, target date persistence, bottom navigation spacing, old quality field compatibility.
+Ver.121 STOP / TRY / HELP追加版 / base: Ver.120 save-foundation-hotfix

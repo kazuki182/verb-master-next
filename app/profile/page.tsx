@@ -57,7 +57,6 @@ function cloudLabel(kind: "profile" | "avatar" | "premium" | "stats", status: Cl
   if (value === "saved") return kind === "avatar" ? "保存済み" : "保存済み";
   if (value === "local-only") return "端末内";
   if (value === "error") {
-    if (kind === "avatar") return "Storage確認";
     return "SQL確認";
   }
   if (kind === "avatar" && hasAvatar) return "端末内";
@@ -99,9 +98,9 @@ function cloudMessage(status: CloudSyncStatus | null) {
     return "学習記録はクラウド保存済みです。一部の補助データはSQL確認が必要ですが、学習記録の保存は維持されています。";
   }
   if ([status.profile, status.avatar, status.premium, status.stats].includes("error")) {
-    return "Supabase接続はありますが、SQL実行またはStorage bucket作成が未完了の可能性があります。アプリ内データは端末側には残っています。";
+    return "Supabase接続はありますが、保存用SQLが未実行の可能性があります。アプリ内データは端末側には残っています。";
   }
-  return status.message || "保存ボタンでプロフィール・学習記録・Premium状態をクラウドへ保存できます。";
+  return status.message || "保存ボタンでプロフィール画像・目標日・学習記録をクラウドバックアップへ保存できます。";
 }
 
 export default function ProfilePage() {
@@ -250,7 +249,7 @@ export default function ProfilePage() {
       setProfileMessage("画像を保存しました。クラウドへ反映中...");
       if (updated) {
         const syncResult = await syncToSupabase(updated);
-        setProfileMessage(syncResult.stats === "saved" ? "画像を保存しました" : "画像を端末に保存しました。クラウド保存は要確認です");
+        setProfileMessage(syncResult.stats === "saved" ? "画像をクラウド保存しました" : syncResult.message);
       }
       setTimeout(() => setProfileMessage(""), 2400);
     } catch (error) {

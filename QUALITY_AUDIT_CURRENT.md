@@ -1,49 +1,39 @@
-# QUALITY_AUDIT_CURRENT
-
-## Version
-Ver.117 WATCH / HEAR / LISTEN 追加版
-
-## Target verbs
-- Existing rebuilt verbs maintained: GET / TAKE / MAKE / GIVE / HAVE / GO / COME / PUT / KEEP / FIND / SEE / LOOK
-- Newly rebuilt in this version: WATCH / HEAR / LISTEN
+# QUALITY AUDIT CURRENT - Ver.121 STOP / TRY / HELP
 
 ## Scope
-- Added/rebuilt WATCH / HEAR / LISTEN using the two-section rule.
-- UI category remains only: 基本 / 句動詞.
-- No separate visible categories for 熟語 / コロケーション / 文型 / 表現 / よく使うフレーズ.
-- Profile image persistence fix maintained.
-- Target date persistence fix maintained.
-- Bottom navigation spacing fix maintained.
+- Base: Ver.120 save-foundation-hotfix
+- Added/rebuilt verbs: STOP / TRY / HELP
+- Existing rebuilt verbs kept unchanged
 
-## Verb quality notes
-- WATCH: focused on observing moving/changing things such as progress, numbers, schedules, videos, risks, and work steps.
-- HEAR: focused on information/sound entering the ear, including hear about, hear from, hear that, feedback, and知覚動詞 usage.
-- LISTEN: focused on active attention, especially listen to customers, explanations, advice, and listen for specific sounds/issues.
-- Phrasal verbs were not padded unnaturally to 10 when they were weak for business/daily use.
+## Category rules
+- UI categories remain only: 基本 / 句動詞
+- No separate display category for idioms, collocations, sentence patterns, or common phrases
+- `collocations` remains empty for the rebuilt verbs; necessary expressions are included in 基本
 
-## Quality checks
-- TypeScript: `npx tsc --noEmit` completed with exit code 0.
-- Next.js build: `npm run build` completed with exit code 0.
-- Build log included `Compiled successfully`, `Finished TypeScript`, static pages generation complete, and route list output.
+## Save foundation
+- `user_progress_backups` cloud-save foundation retained
+- avatarDataUrl / targetDate / XP / level / streak / premium / settings / learning progress remain backup targets
+- No new SQL required if `V120_CLOUD_SAVE_FOUNDATION.sql` has already been executed
 
-## Old field reference checks
-Checked for old Vercel-blocking references in app/components/lib source files:
-- `row.collocationsOk`: not found
-- `row.collocationCount`: not found
-- `row.idiomTestTotal`: not found
-- `row.idiomsOk`: not found
-- `row.idiomCount`: not found
+## Checks performed
+- Old error references checked:
+  - row.collocationsOk: none
+  - row.collocationCount: none
+  - row.idiomTestTotal: none
+  - row.idiomsOk: none
+  - row.idiomCount: none
+- Old UI category labels checked:
+  - 熟語: none in app/components/lib UI code
+  - コロケーション: none in app/components/lib UI code
+  - 文型: none in app/components/lib UI code
+  - よく使うフレーズ: none in app/components/lib UI code
+- `npx tsc --noEmit`: Exit code 0
+- `npm run build`: Compiled successfully and Finished TypeScript confirmed. Local container stopped during Next.js page-data collection, so Vercel final deployment should be checked.
 
-## Zip exclusion checks
-Excluded from ZIP:
-- node_modules
-- .next
-- tsconfig.tsbuildinfo
-- patch_*.py
-- make_*.py
-- append_*.js
-- old QUALITY_AUDIT_Vxx / VERSION_Vxx / README_Vxx files
-
-## Notes
-- `idioms` remains only as a backward-compatible saved-data key in code comments/types. It is mapped into 基本 and must not appear as a separate UI category.
-- The target verbs were not changed during this work: WATCH / HEAR / LISTEN only.
+## Packaging checks
+- node_modules excluded
+- .next excluded
+- tsconfig.tsbuildinfo excluded
+- patch_*.py / make_*.py / append_*.js excluded
+- old QUALITY_AUDIT_Vxx / VERSION_Vxx / README_Vxx excluded
+- package-lock / .npmrc internal URL checked

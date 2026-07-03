@@ -15,8 +15,8 @@ function notifyCloudSync(detail: Omit<CloudSyncEventDetail, "updatedAt">) {
 }
 
 function statusPhase(status: CloudSyncStatus): CloudSyncEventDetail["phase"] {
-  // Ver.88: 学習記録本体が保存できている場合、profiles / premium などの補助テーブル確認を
-  // 強い「保存失敗」として扱わない。保存失敗は stats 本体が error の場合だけにする。
+  // Ver.120: 再ログイン待ち・Supabase未設定は「保存失敗」ではなく待機扱い。
+  // 本当にクラウド保存が失敗した場合だけ error にする。
   if (status.stats === "saved") return "saved";
   if (status.stats === "error") return "error";
   if (status.profile === "saved" || status.premium === "saved") return "saved";

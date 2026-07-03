@@ -137,7 +137,7 @@ export default function Home() {
     setIsTargetEditing(false);
     if (latest) {
       const result = await syncCurrentUserToSupabase(latest);
-      setSaveMessage(result.stats === "saved" ? "目標日をクラウド保存しました" : "端末に保存しました。クラウド保存は要確認です");
+      setSaveMessage(result.stats === "saved" ? "目標日をクラウド保存しました" : result.message);
     }
     window.setTimeout(() => setSaveMessage(""), 3000);
   };

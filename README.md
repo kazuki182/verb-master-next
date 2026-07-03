@@ -1,13 +1,28 @@
-# Verb Master Ver.122
+# Verb Master Ver.123 CALL / RUN / LEAVE final
 
-対象動詞: SHOW / TELL / ASK を新ルールで追加・品質再作成。
+This package adds and finalizes CALL / RUN / LEAVE based on the Ver.120 cloud-save foundation and Ver.122 quality hotfix.
 
-維持内容:
-- 保存基盤: user_progress_backups 中心
-- プロフィール画像・目標日保存設計
-- 下部バー余白修正
-- カテゴリは「基本」「句動詞」のみ
-- GET から順番に作り直し済み
+## Target verbs
+- CALL
+- RUN
+- LEAVE
 
-Supabase:
-- Ver.120 の `supabase/V120_CLOUD_SAVE_FOUNDATION.sql` 実行済みなら追加SQL不要。
+## Phrasal verb counts
+- CALL: 10
+- RUN: 10
+- LEAVE: 8
+
+## Main quality rules
+- Categories remain Basic and Phrasal Verbs only.
+- No duplicate expressions between Basic and Phrasal Verbs.
+- Basic examples highlight only the target verb.
+- Phrasal examples highlight only the verb + preposition/adverb portion.
+- Objects are not highlighted.
+
+## Save foundation
+The Ver.120 `user_progress_backups` save foundation is preserved.
+No new SQL is required if `supabase/V120_CLOUD_SAVE_FOUNDATION.sql` has already been run.
+
+## Checks
+- `npx tsc --noEmit`: passed
+- `npm run build`: passed

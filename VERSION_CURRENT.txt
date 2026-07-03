@@ -1,3 +1,4 @@
-Verb Master Ver.122 Quality Hotfix 1
-Base: Ver.122 SHOW / TELL / ASK
-Changes: checked SHOW/TELL/ASK quality, removed duplicate/weak phrasal placement, improved separated phrasal verb highlighting, preserved V120 cloud save foundation.
+Verb Master Ver.123 CALL / RUN / LEAVE final
+Base: Ver.122 SHOW / TELL / ASK quality hotfix 1 + Ver.120 save foundation
+Target verbs: CALL / RUN / LEAVE
+Created: 2026-07-03

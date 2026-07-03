@@ -302,309 +302,1126 @@ export const verbs: Verb[] = [
     ]
   },
   {
-    "id": "give",
-    "rank": 4,
-    "word": "GIVE",
-    "ipa": "/ɡɪv/",
-    "kana": "ギヴ",
-    "syllable": "give",
-    "transitivity": "他動詞中心",
-    "importance": "★★★★★ 超重要",
-    "core": "自分側にあるもの・情報・権限・印象を、相手側へ渡す",
-    "coreDetail": "GIVEは『自分から相手へ渡す』動詞です。物を渡すだけでなく、情報を共有する、説明する、許可を出す、機会を与える、印象を与えるなど、仕事のやり取りで非常によく使います。矢印は必ず 自分・自社 → 相手・顧客 側です。",
-    "coreVisual": {"from":["🙋 自分・自社","📄 資料","💬 情報","✅ 許可","🎯 機会"],"to":"相手・顧客・チーム","label":"自分側 → 相手側へ渡す"},
-    "meanings": [
-      {"id":"give-file","title":"① give someone a file / 資料を渡す","pattern":"GIVE + someone + object","transitivity":"他動詞","structure":"S + give + 人 + 物","image":"自分の手元にある資料や物を相手側へ渡すイメージ。","point":"give the client a file / give a file to the client の両方が使える。","examples":[
-        {"en":"I gave the client the updated file this morning.","ja":"私は今朝、顧客に更新版ファイルを渡しました。","focus":"gave","object":"the updated file"},
-        {"en":"Please give this document to the sales team.","ja":"あなたはこの資料を営業チームに渡してください。","focus":"give","object":"this document"},
-        {"en":"We gave the supplier the final drawing yesterday.","ja":"私たちは昨日、仕入先に最終図面を渡しました。","focus":"gave","object":"the final drawing"}
-      ],"dailyExamples":[
-        {"en":"I gave my friend a small gift.","ja":"私は友人に小さなプレゼントを渡しました。","focus":"gave","object":"a small gift"},
-        {"en":"Can you give me the remote?","ja":"あなたはリモコンを取ってくれますか？","focus":"give","object":"me the remote"}
-      ]},
-      {"id":"give-info","title":"② give information / 情報を伝える","pattern":"GIVE + information / details","transitivity":"他動詞","structure":"S + give + O","image":"自分が持っている情報を相手の理解側へ渡すイメージ。","point":"details, update, answer, instruction と相性が良い。","examples":[
-        {"en":"Can you give me more details about the schedule?","ja":"あなたはスケジュールについて、もう少し詳しい情報を教えてくれますか？","focus":"give","object":"more details"},
-        {"en":"I will give you an update after the meeting.","ja":"私は会議後にあなたへ進捗を共有します。","focus":"give","object":"an update"},
-        {"en":"The engineer gave us clear instructions.","ja":"技術担当者は私たちに分かりやすい指示を出しました。","focus":"gave","object":"clear instructions"}
-      ],"dailyExamples":[
-        {"en":"Can you give me your address?","ja":"あなたは住所を教えてくれますか？","focus":"give","object":"your address"},
-        {"en":"She gave me a good idea for dinner.","ja":"彼女は夕食の良いアイデアを出してくれました。","focus":"gave","object":"a good idea"}
-      ]},
-      {"id":"give-feedback","title":"③ give feedback / フィードバックする","pattern":"GIVE + feedback / advice","transitivity":"他動詞","structure":"S + give + O","image":"意見や改善点を相手側へ渡すイメージ。","point":"give feedback は自然な仕事表現。give advice は助言する。","examples":[
-        {"en":"My manager gave me helpful feedback on the proposal.","ja":"上司は私の提案書について有益なフィードバックをくれました。","focus":"gave","object":"helpful feedback"},
-        {"en":"We gave the design team our comments yesterday.","ja":"私たちは昨日、設計チームにコメントを伝えました。","focus":"gave","object":"our comments"},
-        {"en":"Can you give me advice before I call the client?","ja":"あなたは私が顧客に電話する前に助言をくれますか？","focus":"give","object":"advice"}
-      ],"dailyExamples":[
-        {"en":"He gave me advice about studying English.","ja":"彼は英語学習について私に助言してくれました。","focus":"gave","object":"advice"},
-        {"en":"I gave my brother honest feedback.","ja":"私は弟に率直な感想を伝えました。","focus":"gave","object":"honest feedback"}
-      ]},
-      {"id":"give-permission","title":"④ give permission / 許可する","pattern":"GIVE + permission / approval","transitivity":"他動詞","structure":"S + give + O","image":"相手が動ける権限を渡すイメージ。","point":"permission は許可、approval は承認。顧客・上司とのやり取りでよく使う。","examples":[
-        {"en":"The client gave us permission to proceed.","ja":"顧客は私たちに進行の許可を出しました。","focus":"gave","object":"permission"},
-        {"en":"Our manager gave approval for the order.","ja":"上司はその発注を承認しました。","focus":"gave","object":"approval"},
-        {"en":"We cannot start until they give us permission.","ja":"私たちは彼らが許可を出すまで開始できません。","focus":"give","object":"permission"}
-      ],"dailyExamples":[
-        {"en":"My parents gave me permission to go out.","ja":"両親は私に外出の許可をくれました。","focus":"gave","object":"permission"},
-        {"en":"The teacher gave us permission to use the room.","ja":"先生は私たちにその部屋を使う許可をくれました。","focus":"gave","object":"permission"}
-      ]},
-      {"id":"give-presentation","title":"⑤ give a presentation / 発表する","pattern":"GIVE + presentation / speech","transitivity":"他動詞","structure":"S + give + O","image":"説明や発表を聞き手側へ届けるイメージ。","point":"プレゼン・説明・報告など、話す仕事で使いやすい。","examples":[
-        {"en":"I gave a presentation to the client last week.","ja":"私は先週、顧客にプレゼンをしました。","focus":"gave","object":"a presentation"},
-        {"en":"She will give a short explanation at the meeting.","ja":"彼女は会議で短く説明します。","focus":"give","object":"a short explanation"},
-        {"en":"We gave a report on the project status.","ja":"私たちは案件の進捗について報告しました。","focus":"gave","object":"a report"}
-      ],"dailyExamples":[
-        {"en":"He gave a speech at the party.","ja":"彼はパーティーでスピーチをしました。","focus":"gave","object":"a speech"},
-        {"en":"I gave a short talk about my trip.","ja":"私は旅行について短く話しました。","focus":"gave","object":"a short talk"}
-      ]},
-      {"id":"give-reason","title":"⑥ give a reason / 理由を示す","pattern":"GIVE + reason / example","transitivity":"他動詞","structure":"S + give + O","image":"相手が納得できる材料を渡すイメージ。","point":"give a reason, give an example で説明を補強できる。","examples":[
-        {"en":"He gave a clear reason for the delay.","ja":"彼は遅延について明確な理由を示しました。","focus":"gave","object":"a clear reason"},
-        {"en":"Can you give an example in the next meeting?","ja":"あなたは次の会議で例を出せますか？","focus":"give","object":"an example"},
-        {"en":"We gave the customer a reason for the price change.","ja":"私たちは顧客に価格変更の理由を説明しました。","focus":"gave","object":"a reason"}
-      ],"dailyExamples":[
-        {"en":"Please give me one reason.","ja":"理由を1つ教えてください。","focus":"give","object":"one reason"},
-        {"en":"She gave a simple example.","ja":"彼女は簡単な例を出しました。","focus":"gave","object":"a simple example"}
-      ]},
-      {"id":"give-chance","title":"⑦ give a chance / 機会を与える","pattern":"GIVE + chance / opportunity","transitivity":"他動詞","structure":"S + give + O","image":"相手が動ける機会を渡すイメージ。","point":"chance は会話的、opportunity は少し丁寧。","examples":[
-        {"en":"This project gave us a new opportunity.","ja":"この案件は私たちに新しい機会を与えてくれました。","focus":"gave","object":"a new opportunity"},
-        {"en":"The manager gave him a chance to lead the meeting.","ja":"上司は彼に会議を進行する機会を与えました。","focus":"gave","object":"a chance"},
-        {"en":"Can we give the supplier another chance?","ja":"私たちはその仕入先にもう一度機会を与えられますか？","focus":"give","object":"another chance"}
-      ],"dailyExamples":[
-        {"en":"Please give me a chance to explain.","ja":"説明する機会をください。","focus":"give","object":"a chance"},
-        {"en":"The trip gave me a chance to relax.","ja":"その旅行は私にリラックスする機会をくれました。","focus":"gave","object":"a chance"}
-      ]},
-      {"id":"give-impression","title":"⑧ give an impression / 印象を与える","pattern":"GIVE + impression","transitivity":"他動詞","structure":"S + give + O","image":"相手の中に印象を残すイメージ。","point":"proposal, design, product などの評価を話す時に使える。","examples":[
-        {"en":"The proposal gave a professional impression.","ja":"その提案書はプロらしい印象を与えました。","focus":"gave","object":"a professional impression"},
-        {"en":"This design gives a clean impression.","ja":"このデザインはすっきりした印象を与えます。","focus":"gives","object":"a clean impression"},
-        {"en":"The first email gave the client confidence.","ja":"最初のメールは顧客に安心感を与えました。","focus":"gave","object":"the client confidence"}
-      ],"dailyExamples":[
-        {"en":"The room gives a warm impression.","ja":"その部屋は温かい印象を与えます。","focus":"gives","object":"a warm impression"},
-        {"en":"His smile gave me confidence.","ja":"彼の笑顔は私に自信をくれました。","focus":"gave","object":"me confidence"}
-      ]}
-    ],
-    "collocations": [],
-    "phrasalVerbs": [
-      {"phrase":"give up","ja":"諦める・やめる","image":"持っていたものを手放すイメージ。","pattern":"GIVE UP + object / GIVE UP","examples":[
-        {"en":"We should not give up on this client yet.","ja":"私たちはまだこの顧客を諦めるべきではありません。","focus":"give up","object":"on this client"},
-        {"en":"He gave up the idea after the cost review.","ja":"彼はコスト確認後、その案を諦めました。","focus":"gave up","object":"the idea"},
-        {"en":"I almost gave up during the negotiation.","ja":"私は交渉中に諦めそうになりました。","focus":"gave up","object":"during the negotiation"}
-      ]},
-      {"phrase":"give back","ja":"返す","image":"受け取ったものを相手側へ戻すイメージ。","pattern":"GIVE BACK + object","examples":[
-        {"en":"Please give back the sample after the test.","ja":"あなたは試験後にサンプルを返してください。","focus":"give back","object":"the sample"},
-        {"en":"I gave back the borrowed equipment yesterday.","ja":"私は昨日、借りた機器を返しました。","focus":"gave back","object":"the borrowed equipment"},
-        {"en":"Can you give the file back to the design team?","ja":"あなたはそのファイルを設計チームに返せますか？","focus":"give back","object":"the file"}
-      ]},
-      {"phrase":"give out","ja":"配る・発表する","image":"複数の相手へ外向きに出すイメージ。","pattern":"GIVE OUT + object","examples":[
-        {"en":"We gave out the new price list at the meeting.","ja":"私たちは会議で新しい価格表を配りました。","focus":"gave out","object":"the new price list"},
-        {"en":"The company will give out the results tomorrow.","ja":"会社は明日、結果を発表します。","focus":"give out","object":"the results"},
-        {"en":"Please give out these documents before the training.","ja":"あなたは研修前にこれらの資料を配ってください。","focus":"give out","object":"these documents"}
-      ]},
-      {"phrase":"give in","ja":"折れる・受け入れる","image":"抵抗していた状態から相手側へ譲るイメージ。","pattern":"GIVE IN","examples":[
-        {"en":"We cannot give in on the safety requirement.","ja":"私たちは安全要件について譲ることはできません。","focus":"give in","object":"on the safety requirement"},
-        {"en":"The supplier finally gave in on the delivery date.","ja":"仕入先は最終的に納期について譲歩しました。","focus":"gave in","object":"on the delivery date"},
-        {"en":"I do not want to give in too quickly during negotiation.","ja":"私は交渉中に早く譲歩しすぎたくありません。","focus":"give in","object":"during negotiation"}
-      ]},
-      {"phrase":"give away","ja":"無料で渡す・うっかり明かす","image":"自分側のものや情報を外へ出してしまうイメージ。","pattern":"GIVE AWAY + object","examples":[
-        {"en":"We should not give away the discount too early.","ja":"私たちは早い段階で値引きを出しすぎるべきではありません。","focus":"give away","object":"the discount"},
-        {"en":"He gave away important details during the call.","ja":"彼は電話中に重要な詳細をうっかり話してしまいました。","focus":"gave away","object":"important details"},
-        {"en":"The campaign gives away samples to new customers.","ja":"そのキャンペーンでは新規顧客にサンプルを配ります。","focus":"gives away","object":"samples"}
-      ]}
-    ]
+      "id": "give",
+      "rank": 4,
+      "word": "GIVE",
+      "ipa": "/ɡɪv/",
+      "kana": "ギヴ",
+      "syllable": "give",
+      "transitivity": "他動詞",
+      "importance": "★★★★★ 超重要",
+      "core": "自分の側にあるもの・情報・許可を、相手側へ渡す",
+      "coreDetail": "GIVEは「自分側から相手側へ渡す」感覚です。物だけでなく、情報・許可・機会・印象・フィードバックなど、仕事で相手に何かを届ける表現に広く使えます。",
+      "coreVisual": {
+          "from": [
+              "自分・自社",
+              "資料",
+              "情報",
+              "許可",
+              "フィードバック"
+          ],
+          "to": "相手・顧客・チーム",
+          "label": "自分側 → 相手側へ渡す"
+      },
+      "meanings": [
+          {
+              "id": "give-info",
+              "title": "① give information / 情報を伝える",
+              "pattern": "GIVE + information",
+              "transitivity": "他動詞",
+              "structure": "S + give + O",
+              "image": "情報を相手の手元へ渡すイメージ。",
+              "point": "details, update, feedback などと相性が良い。",
+              "examples": [
+                  {
+                      "en": "I gave the client the latest information.",
+                      "ja": "私は顧客に最新情報を伝えました。",
+                      "focus": "gave",
+                      "object": "the client the latest information"
+                  },
+                  {
+                      "en": "Can you give me an update after the meeting?",
+                      "ja": "あなたは会議後に私へ進捗を共有できますか？",
+                      "focus": "give",
+                      "object": "me an update"
+                  }
+              ]
+          },
+          {
+              "id": "give-file",
+              "title": "② give someone something / 人に物を渡す",
+              "pattern": "GIVE + someone + something",
+              "transitivity": "他動詞",
+              "structure": "S + give + O + O",
+              "image": "資料やサンプルを相手へ渡すイメージ。",
+              "point": "人を先に置く形と、give something to someone の形がある。",
+              "examples": [
+                  {
+                      "en": "Please give the sales team the sample list.",
+                      "ja": "営業チームにサンプルリストを渡してください。",
+                      "focus": "give",
+                      "object": "the sales team the sample list"
+                  },
+                  {
+                      "en": "I gave the document to my manager yesterday.",
+                      "ja": "私は昨日、その書類を上司に渡しました。",
+                      "focus": "gave",
+                      "object": "the document"
+                  }
+              ]
+          },
+          {
+              "id": "give-feedback",
+              "title": "③ give feedback / フィードバックする",
+              "pattern": "GIVE + feedback",
+              "transitivity": "他動詞",
+              "structure": "S + give + O",
+              "image": "感じたことや改善点を相手に渡すイメージ。",
+              "point": "仕事では feedback, advice, comment などでよく使う。",
+              "examples": [
+                  {
+                      "en": "The client gave us useful feedback.",
+                      "ja": "顧客は私たちに有益なフィードバックをくれました。",
+                      "focus": "gave",
+                      "object": "us useful feedback"
+                  },
+                  {
+                      "en": "I will give feedback on the proposal today.",
+                      "ja": "私は今日、提案書についてフィードバックします。",
+                      "focus": "give",
+                      "object": "feedback"
+                  }
+              ]
+          },
+          {
+              "id": "give-permission",
+              "title": "④ give permission / 許可を与える",
+              "pattern": "GIVE + permission / approval",
+              "transitivity": "他動詞",
+              "structure": "S + give + O",
+              "image": "許可や承認を相手に渡すイメージ。",
+              "point": "permission, approval, access と相性が良い。",
+              "examples": [
+                  {
+                      "en": "The manager gave approval for the order.",
+                      "ja": "上司はその発注を承認しました。",
+                      "focus": "gave",
+                      "object": "approval"
+                  },
+                  {
+                      "en": "Can you give access to the shared folder?",
+                      "ja": "あなたは共有フォルダへのアクセス権を付与できますか？",
+                      "focus": "give",
+                      "object": "access"
+                  }
+              ]
+          },
+          {
+              "id": "give-chance",
+              "title": "⑤ give someone a chance / 機会を与える",
+              "pattern": "GIVE + someone + chance",
+              "transitivity": "他動詞",
+              "structure": "S + give + O + O",
+              "image": "相手に機会を渡すイメージ。",
+              "point": "営業・育成・提案で使いやすい。",
+              "examples": [
+                  {
+                      "en": "This project gave us a chance to work with a new client.",
+                      "ja": "この案件は私たちに新規顧客と仕事をする機会を与えました。",
+                      "focus": "gave",
+                      "object": "us a chance"
+                  },
+                  {
+                      "en": "Please give me a chance to explain the details.",
+                      "ja": "詳細を説明する機会を私にください。",
+                      "focus": "give",
+                      "object": "me a chance"
+                  }
+              ]
+          },
+          {
+              "id": "give-impression",
+              "title": "⑥ give an impression / 印象を与える",
+              "pattern": "GIVE + impression",
+              "transitivity": "他動詞",
+              "structure": "S + give + O",
+              "image": "相手の中に印象を残すイメージ。",
+              "point": "good impression, clear impression など。",
+              "examples": [
+                  {
+                      "en": "The new design gives a clean impression.",
+                      "ja": "新しいデザインはすっきりした印象を与えます。",
+                      "focus": "gives",
+                      "object": "a clean impression"
+                  },
+                  {
+                      "en": "Your quick reply gave the client confidence.",
+                      "ja": "あなたの早い返信は顧客に安心感を与えました。",
+                      "focus": "gave",
+                      "object": "the client confidence"
+                  }
+              ]
+          },
+          {
+              "id": "give-time",
+              "title": "⑦ give someone time / 時間を与える",
+              "pattern": "GIVE + someone + time",
+              "transitivity": "他動詞",
+              "structure": "S + give + O + O",
+              "image": "相手に考える時間や準備時間を渡すイメージ。",
+              "point": "give us time / give the supplier two days など。",
+              "examples": [
+                  {
+                      "en": "Please give us a little more time to check the stock.",
+                      "ja": "在庫確認のため、私たちにもう少し時間をください。",
+                      "focus": "give",
+                      "object": "us a little more time"
+                  },
+                  {
+                      "en": "We gave the supplier two days to reply.",
+                      "ja": "私たちは仕入先に返信まで2日間の猶予を与えました。",
+                      "focus": "gave",
+                      "object": "the supplier two days"
+                  }
+              ]
+          },
+          {
+              "id": "give-result",
+              "title": "⑧ give results / 結果を出す",
+              "pattern": "GIVE + result",
+              "transitivity": "他動詞",
+              "structure": "S + give + O",
+              "image": "行動が結果を相手に返すイメージ。",
+              "point": "result, data, confidence と使える。",
+              "examples": [
+                  {
+                      "en": "This method gave better results than before.",
+                      "ja": "この方法は以前より良い結果を出しました。",
+                      "focus": "gave",
+                      "object": "better results"
+                  },
+                  {
+                      "en": "The campaign gives us useful data.",
+                      "ja": "そのキャンペーンは私たちに有用なデータをもたらします。",
+                      "focus": "gives",
+                      "object": "us useful data"
+                  }
+              ]
+          }
+      ],
+      "collocations": [],
+      "phrasalVerbs": [
+          {
+              "phrase": "give up",
+              "ja": "諦める・やめる",
+              "image": "続けていたものを手放すイメージ。",
+              "pattern": "GIVE UP",
+              "examples": [
+                  {
+                      "en": "We should not give up on this client yet.",
+                      "ja": "私たちはまだこの顧客を諦めるべきではありません。",
+                      "focus": "give up",
+                      "object": "on this client"
+                  },
+                  {
+                      "en": "He gave up after several failed attempts.",
+                      "ja": "彼は何度か失敗した後で諦めました。",
+                      "focus": "gave up"
+                  }
+              ]
+          },
+          {
+              "phrase": "give back",
+              "ja": "返す",
+              "image": "受け取ったものを相手側へ戻すイメージ。",
+              "pattern": "GIVE BACK + object",
+              "examples": [
+                  {
+                      "en": "Please give back the sample after the test.",
+                      "ja": "テスト後にサンプルを返してください。",
+                      "focus": "give back",
+                      "object": "the sample"
+                  },
+                  {
+                      "en": "We gave back the documents yesterday.",
+                      "ja": "私たちは昨日、書類を返却しました。",
+                      "focus": "gave back",
+                      "object": "the documents"
+                  }
+              ]
+          },
+          {
+              "phrase": "give out",
+              "ja": "配る・なくなる",
+              "image": "外へ出して広げる、または尽きるイメージ。",
+              "pattern": "GIVE OUT",
+              "examples": [
+                  {
+                      "en": "We gave out the new price list at the meeting.",
+                      "ja": "私たちは会議で新しい価格表を配布しました。",
+                      "focus": "gave out",
+                      "object": "the new price list"
+                  },
+                  {
+                      "en": "The batteries gave out during the test.",
+                      "ja": "テスト中に電池が切れました。",
+                      "focus": "gave out"
+                  }
+              ]
+          },
+          {
+              "phrase": "give in",
+              "ja": "折れる・屈する",
+              "image": "押されて相手側へ譲るイメージ。",
+              "pattern": "GIVE IN",
+              "examples": [
+                  {
+                      "en": "We should not give in on the delivery condition too quickly.",
+                      "ja": "私たちは納期条件であまり早く譲るべきではありません。",
+                      "focus": "give in",
+                      "object": "on the delivery condition"
+                  },
+                  {
+                      "en": "The supplier finally gave in and accepted the schedule.",
+                      "ja": "仕入先は最終的に折れて、そのスケジュールを受け入れました。",
+                      "focus": "gave in"
+                  }
+              ]
+          },
+          {
+              "phrase": "give away",
+              "ja": "無料で渡す・明かす",
+              "image": "自分側のものを外へ渡してしまうイメージ。",
+              "pattern": "GIVE AWAY + object",
+              "examples": [
+                  {
+                      "en": "We gave away sample units at the exhibition.",
+                      "ja": "私たちは展示会でサンプル品を配布しました。",
+                      "focus": "gave away",
+                      "object": "sample units"
+                  },
+                  {
+                      "en": "Do not give away the price before approval.",
+                      "ja": "承認前に価格を明かさないでください。",
+                      "focus": "give away",
+                      "object": "the price"
+                  }
+              ]
+          },
+          {
+              "phrase": "give off",
+              "ja": "発する",
+              "image": "光・熱・匂いなどを外へ出すイメージ。",
+              "pattern": "GIVE OFF + light / heat / smell",
+              "examples": [
+                  {
+                      "en": "This LED gives off a warm color.",
+                      "ja": "このLEDは暖かい色を発します。",
+                      "focus": "gives off",
+                      "object": "a warm color"
+                  },
+                  {
+                      "en": "The sample gave off too much heat during the test.",
+                      "ja": "そのサンプルはテスト中に熱を出しすぎました。",
+                      "focus": "gave off",
+                      "object": "too much heat"
+                  }
+              ]
+          },
+          {
+              "phrase": "give in to",
+              "ja": "〜に屈する",
+              "image": "圧力や要求に押されて譲るイメージ。",
+              "pattern": "GIVE IN TO + object",
+              "examples": [
+                  {
+                      "en": "We cannot give in to every price request.",
+                      "ja": "私たちはすべての価格要求に応じることはできません。",
+                      "focus": "give in to",
+                      "object": "every price request"
+                  },
+                  {
+                      "en": "He gave in to pressure from the customer.",
+                      "ja": "彼は顧客からの圧力に屈しました。",
+                      "focus": "gave in to",
+                      "object": "pressure"
+                  }
+              ]
+          },
+          {
+              "phrase": "give way to",
+              "ja": "〜に道を譲る・取って代わられる",
+              "image": "自分の位置を相手に譲るイメージ。",
+              "pattern": "GIVE WAY TO + object",
+              "examples": [
+                  {
+                      "en": "Old methods gave way to a faster process.",
+                      "ja": "古い方法はより速い手順に置き換わりました。",
+                      "focus": "gave way to",
+                      "object": "a faster process"
+                  },
+                  {
+                      "en": "We need to give way to urgent orders first.",
+                      "ja": "私たちはまず急ぎの注文を優先する必要があります。",
+                      "focus": "give way to",
+                      "object": "urgent orders"
+                  }
+              ]
+          },
+          {
+              "phrase": "give over",
+              "ja": "引き渡す・任せる",
+              "image": "管理や役割を相手側へ渡すイメージ。",
+              "pattern": "GIVE OVER + object",
+              "examples": [
+                  {
+                      "en": "We gave over the task to the support team.",
+                      "ja": "私たちはその作業をサポートチームに引き渡しました。",
+                      "focus": "gave over",
+                      "object": "the task"
+                  },
+                  {
+                      "en": "Can we give over this part to the factory?",
+                      "ja": "この部分を工場側に任せられますか？",
+                      "focus": "give over",
+                      "object": "this part"
+                  }
+              ]
+          },
+          {
+              "phrase": "give out to",
+              "ja": "〜に配る",
+              "image": "複数の相手へ外向きに渡すイメージ。",
+              "pattern": "GIVE OUT TO + people",
+              "examples": [
+                  {
+                      "en": "Please give out the handouts to the attendees.",
+                      "ja": "参加者に配布資料を配ってください。",
+                      "focus": "give out to",
+                      "object": "the attendees"
+                  },
+                  {
+                      "en": "We gave out notices to all team members.",
+                      "ja": "私たちは全メンバーに通知を配布しました。",
+                      "focus": "gave out to",
+                      "object": "all team members"
+                  }
+              ]
+          }
+      ]
   },
   {
-    "id": "have",
-    "rank": 5,
-    "word": "HAVE",
-    "ipa": "/hæv/",
-    "kana": "ハヴ",
-    "syllable": "have",
-    "transitivity": "他動詞中心",
-    "importance": "★★★★★ 超重要",
-    "core": "自分の範囲の中に持っている・抱えている",
-    "coreDetail": "HAVEは『自分の範囲内にある』感覚です。物を持つだけでなく、予定がある、問題を抱えている、経験する、会議を行う、誰かに何かしてもらう、という仕事で使う形につながります。",
-    "coreVisual": {"from":["📦 物","📅 予定","💬 会議","⚠️ 問題","👤 担当者"],"to":"自分・自社の範囲内","label":"自分の範囲内にある"},
-    "meanings": [
-      {"id":"have-item","title":"① have a file / 持っている","pattern":"HAVE + object","transitivity":"他動詞","structure":"S + have + O","image":"物や情報が自分の範囲内にあるイメージ。","point":"have は所有だけでなく、資料・情報・在庫にも使える。","examples":[
-        {"en":"I have the latest price list.","ja":"私は最新版の価格表を持っています。","focus":"have","object":"the latest price list"},
-        {"en":"Do you have the drawings from the client?","ja":"あなたは顧客からの図面を持っていますか？","focus":"have","object":"the drawings"},
-        {"en":"We have enough stock for this order.","ja":"私たちはこの注文に必要な在庫を十分に持っています。","focus":"have","object":"enough stock"}
-      ],"dailyExamples":[
-        {"en":"I have a new bag.","ja":"私は新しいバッグを持っています。","focus":"have","object":"a new bag"},
-        {"en":"Do you have your phone?","ja":"あなたは携帯を持っていますか？","focus":"have","object":"your phone"}
-      ]},
-      {"id":"have-meeting","title":"② have a meeting / 会議を行う","pattern":"HAVE + meeting / call","transitivity":"他動詞","structure":"S + have + O","image":"会議や電話の時間を自分たちの予定内に持つイメージ。","point":"meeting, call, discussion, interview とよく使う。","examples":[
-        {"en":"We have a meeting with the client at two.","ja":"私たちは2時に顧客との会議があります。","focus":"have","object":"a meeting"},
-        {"en":"I had a short call with the supplier.","ja":"私は仕入先と短く電話しました。","focus":"had","object":"a short call"},
-        {"en":"Can we have a quick discussion before lunch?","ja":"私たちは昼食前に少し打ち合わせできますか？","focus":"have","object":"a quick discussion"}
-      ],"dailyExamples":[
-        {"en":"We had dinner together.","ja":"私たちは一緒に夕食を食べました。","focus":"had","object":"dinner"},
-        {"en":"I had a good time yesterday.","ja":"私は昨日楽しい時間を過ごしました。","focus":"had","object":"a good time"}
-      ]},
-      {"id":"have-schedule","title":"③ have time / 予定・時間がある","pattern":"HAVE + time / schedule","transitivity":"他動詞","structure":"S + have + O","image":"時間や予定が自分のカレンダー内にあるイメージ。","point":"Do you have time? は仕事でかなり使いやすい。","examples":[
-        {"en":"Do you have time to review the quotation today?","ja":"あなたは今日、見積書を確認する時間がありますか？","focus":"have","object":"time"},
-        {"en":"I have another appointment this afternoon.","ja":"私は今日の午後、別の予定があります。","focus":"have","object":"another appointment"},
-        {"en":"We do not have enough time before the deadline.","ja":"私たちは締切まで十分な時間がありません。","focus":"have","object":"enough time"}
-      ],"dailyExamples":[
-        {"en":"Do you have time this weekend?","ja":"あなたは今週末、時間がありますか？","focus":"have","object":"time"},
-        {"en":"I have plans tonight.","ja":"私は今夜予定があります。","focus":"have","object":"plans"}
-      ]},
-      {"id":"have-problem","title":"④ have a problem / 問題がある","pattern":"HAVE + problem / issue","transitivity":"他動詞","structure":"S + have + O","image":"問題が自分たちの範囲内にあるイメージ。","point":"problem は一般的な問題、issue は仕事上の課題・確認事項にも使う。","examples":[
-        {"en":"We have a problem with the delivery schedule.","ja":"私たちは納期スケジュールに問題があります。","focus":"have","object":"a problem"},
-        {"en":"The customer had an issue with the installation.","ja":"顧客は設置に関する問題を抱えていました。","focus":"had","object":"an issue"},
-        {"en":"Do you have any concerns about this proposal?","ja":"あなたはこの提案について懸念点がありますか？","focus":"have","object":"any concerns"}
-      ],"dailyExamples":[
-        {"en":"I have a problem with my computer.","ja":"私はパソコンに問題があります。","focus":"have","object":"a problem"},
-        {"en":"Do you have any questions?","ja":"質問はありますか？","focus":"have","object":"any questions"}
-      ]},
-      {"id":"have-experience","title":"⑤ have experience / 経験がある","pattern":"HAVE + experience","transitivity":"他動詞","structure":"S + have + O","image":"経験が自分の中に蓄積されているイメージ。","point":"experience with ... で『〜の経験』。営業・採用・自己紹介で使える。","examples":[
-        {"en":"Our team has experience with RGB projects.","ja":"私たちのチームはRGB案件の経験があります。","focus":"has","object":"experience"},
-        {"en":"Do you have experience using this system?","ja":"あなたはこのシステムを使った経験がありますか？","focus":"have","object":"experience"},
-        {"en":"He had no experience with overseas orders before.","ja":"彼は以前、海外発注の経験がありませんでした。","focus":"had","object":"no experience"}
-      ],"dailyExamples":[
-        {"en":"I have experience teaching children.","ja":"私は子どもに教えた経験があります。","focus":"have","object":"experience"},
-        {"en":"She has experience living abroad.","ja":"彼女は海外生活の経験があります。","focus":"has","object":"experience"}
-      ]},
-      {"id":"have-someone-do","title":"⑥ have someone do / 人に〜してもらう","pattern":"HAVE + someone + do","transitivity":"他動詞","structure":"S + have + O + C","image":"人や担当者を自分の段取り内に置いて動いてもらうイメージ。","point":"get someone to do より、手配・指示のニュアンスが出やすい。","examples":[
-        {"en":"I will have the engineer check the settings.","ja":"私は技術担当者に設定を確認してもらいます。","focus":"have","object":"the engineer check the settings"},
-        {"en":"We had the supplier send the sample again.","ja":"私たちは仕入先にサンプルを再送してもらいました。","focus":"had","object":"the supplier send the sample again"},
-        {"en":"Can you have someone review this document?","ja":"あなたは誰かにこの資料を確認してもらえますか？","focus":"have","object":"someone review this document"}
-      ],"dailyExamples":[
-        {"en":"I had my brother fix the shelf.","ja":"私は兄に棚を直してもらいました。","focus":"had","object":"my brother fix the shelf"},
-        {"en":"Can you have someone call me?","ja":"誰かに私へ電話してもらえますか？","focus":"have","object":"someone call me"}
-      ]},
-      {"id":"have-done","title":"⑦ have something done / 〜してもらう・済ませる","pattern":"HAVE + object + done","transitivity":"他動詞","structure":"S + have + O + C","image":"物や作業を完了した状態にしてもらうイメージ。","point":"have the document checked のように、受け身的な完了状態を作る。","examples":[
-        {"en":"We had the report checked by the manager.","ja":"私たちは上司に報告書を確認してもらいました。","focus":"had","object":"the report checked"},
-        {"en":"I will have the sample delivered by Friday.","ja":"私は金曜日までにサンプルを配送してもらいます。","focus":"have","object":"the sample delivered"},
-        {"en":"Can you have the quotation revised today?","ja":"あなたは今日、見積書を修正してもらえますか？","focus":"have","object":"the quotation revised"}
-      ],"dailyExamples":[
-        {"en":"I had my hair cut yesterday.","ja":"私は昨日、髪を切ってもらいました。","focus":"had","object":"my hair cut"},
-        {"en":"We had the car repaired.","ja":"私たちは車を修理してもらいました。","focus":"had","object":"the car repaired"}
-      ]}
-    ],
-    "collocations": [],
-    "phrasalVerbs": [
-      {"phrase":"have on","ja":"身につけている・予定がある","image":"服や予定が自分に乗っているイメージ。","pattern":"HAVE ON + clothes / plan","examples":[
-        {"en":"He had a jacket on during the site visit.","ja":"彼は現場訪問中、ジャケットを着ていました。","focus":"had on","object":"a jacket"},
-        {"en":"Do you have anything on this afternoon?","ja":"あなたは今日の午後、何か予定がありますか？","focus":"have on","object":"anything"},
-        {"en":"I have a client meeting on tomorrow morning.","ja":"私は明日の朝、顧客会議の予定があります。","focus":"have on","object":"a client meeting"}
-      ]},
-      {"phrase":"have over","ja":"家や会社に招く","image":"相手を自分側の場所へ迎えるイメージ。","pattern":"HAVE OVER + someone","examples":[
-        {"en":"We had the partner over for a product demo.","ja":"私たちは製品デモのためにパートナーを招きました。","focus":"had over","object":"the partner"},
-        {"en":"Can we have the client over next month?","ja":"私たちは来月、顧客を招けますか？","focus":"have over","object":"the client"},
-        {"en":"They had us over to discuss the new project.","ja":"彼らは新案件を話し合うために私たちを招きました。","focus":"had over","object":"us"}
-      ]},
-      {"phrase":"have around","ja":"近くに置いておく・周りにいる","image":"自分の周囲に人や物があるイメージ。","pattern":"HAVE AROUND + object","examples":[
-        {"en":"It is useful to have the manual around during installation.","ja":"設置中はマニュアルを近くに置いておくと便利です。","focus":"have around","object":"the manual"},
-        {"en":"We should have a technician around during the test.","ja":"私たちは試験中、技術者に近くにいてもらうべきです。","focus":"have around","object":"a technician"},
-        {"en":"Do you have spare parts around?","ja":"あなたは予備部品を近くに置いていますか？","focus":"have around","object":"spare parts"}
-      ]},
-      {"phrase":"have to","ja":"〜しなければならない","image":"やるべきことが自分の範囲内にあるイメージ。","pattern":"HAVE TO + do","examples":[
-        {"en":"We have to confirm the delivery date today.","ja":"私たちは今日、納期を確認しなければなりません。","focus":"have to","object":"confirm the delivery date"},
-        {"en":"I had to call the client again.","ja":"私は顧客にもう一度電話しなければなりませんでした。","focus":"had to","object":"call the client again"},
-        {"en":"Do you have to submit the report by Friday?","ja":"あなたは金曜日までに報告書を提出しなければなりませんか？","focus":"have to","object":"submit the report"}
-      ]},
-      {"phrase":"have got","ja":"持っている・〜がある","image":"手元に入った結果、今持っているイメージ。","pattern":"HAVE GOT + object","examples":[
-        {"en":"We have got enough information now.","ja":"私たちは今、十分な情報を持っています。","focus":"have got","object":"enough information"},
-        {"en":"I have got a question about the quotation.","ja":"私は見積書について質問があります。","focus":"have got","object":"a question"},
-        {"en":"Have you got the latest file?","ja":"あなたは最新版ファイルを持っていますか？","focus":"have got","object":"the latest file"}
-      ]}
-    ]
+      "id": "have",
+      "rank": 5,
+      "word": "HAVE",
+      "ipa": "/hæv/",
+      "kana": "ハヴ",
+      "syllable": "have",
+      "transitivity": "他動詞・助動詞的表現",
+      "importance": "★★★★★ 超重要",
+      "core": "自分の範囲内に、物・予定・状態・問題を持っている",
+      "coreDetail": "HAVEは「自分の範囲内にある」感覚です。物を持つだけでなく、予定がある、問題がある、経験する、〜してもらう、〜しなければならないという使い方まで広がります。",
+      "coreVisual": {
+          "from": [
+              "予定",
+              "問題",
+              "権限",
+              "経験",
+              "作業"
+          ],
+          "to": "自分・自社の範囲内",
+          "label": "自分の領域に持っている"
+      },
+      "meanings": [
+          {
+              "id": "have-meeting",
+              "title": "① have a meeting / 会議がある",
+              "pattern": "HAVE + event",
+              "transitivity": "他動詞",
+              "structure": "S + have + O",
+              "image": "予定やイベントが自分のスケジュール内にあるイメージ。",
+              "point": "meeting, appointment, call などとよく使う。",
+              "examples": [
+                  {
+                      "en": "We have a meeting with the client at three.",
+                      "ja": "私たちは3時に顧客との会議があります。",
+                      "focus": "have",
+                      "object": "a meeting"
+                  },
+                  {
+                      "en": "I had a call with the supplier this morning.",
+                      "ja": "私は今朝、仕入先と電話しました。",
+                      "focus": "had",
+                      "object": "a call"
+                  }
+              ]
+          },
+          {
+              "id": "have-problem",
+              "title": "② have a problem / 問題がある",
+              "pattern": "HAVE + problem",
+              "transitivity": "他動詞",
+              "structure": "S + have + O",
+              "image": "問題が自分たちの管理範囲内にあるイメージ。",
+              "point": "issue, concern, question とも使える。",
+              "examples": [
+                  {
+                      "en": "We have a problem with the delivery schedule.",
+                      "ja": "私たちは納期スケジュールに問題があります。",
+                      "focus": "have",
+                      "object": "a problem"
+                  },
+                  {
+                      "en": "The customer had an issue with the color.",
+                      "ja": "顧客は色味に問題を感じていました。",
+                      "focus": "had",
+                      "object": "an issue"
+                  }
+              ]
+          },
+          {
+              "id": "have-time",
+              "title": "③ have time / 時間がある",
+              "pattern": "HAVE + time",
+              "transitivity": "他動詞",
+              "structure": "S + have + O",
+              "image": "時間を自分の範囲内に持っているイメージ。",
+              "point": "enough time / no time など。",
+              "examples": [
+                  {
+                      "en": "Do you have time to review the quotation today?",
+                      "ja": "あなたは今日、見積書を確認する時間がありますか？",
+                      "focus": "have",
+                      "object": "time"
+                  },
+                  {
+                      "en": "We do not have enough time before the deadline.",
+                      "ja": "私たちは締切まで十分な時間がありません。",
+                      "focus": "have",
+                      "object": "enough time"
+                  }
+              ]
+          },
+          {
+              "id": "have-experience",
+              "title": "④ have experience / 経験がある",
+              "pattern": "HAVE + experience",
+              "transitivity": "他動詞",
+              "structure": "S + have + O",
+              "image": "経験が自分の中に蓄積されているイメージ。",
+              "point": "experience with ... が自然。",
+              "examples": [
+                  {
+                      "en": "She has experience with large LED projects.",
+                      "ja": "彼女は大型LED案件の経験があります。",
+                      "focus": "has",
+                      "object": "experience"
+                  },
+                  {
+                      "en": "We have no experience with this controller yet.",
+                      "ja": "私たちはこのコントローラーの経験がまだありません。",
+                      "focus": "have",
+                      "object": "no experience"
+                  }
+              ]
+          },
+          {
+              "id": "have-to",
+              "title": "⑤ have to do / 〜しなければならない",
+              "pattern": "HAVE TO + verb",
+              "transitivity": "助動詞的表現",
+              "structure": "S + have to + V",
+              "image": "やるべきことを自分の義務として持っているイメージ。",
+              "point": "句動詞ではなく、基本側で扱う重要表現。",
+              "examples": [
+                  {
+                      "en": "We have to confirm the stock before we reply.",
+                      "ja": "私たちは返信前に在庫を確認しなければなりません。",
+                      "focus": "have",
+                      "object": "to confirm the stock"
+                  },
+                  {
+                      "en": "I had to change the schedule yesterday.",
+                      "ja": "私は昨日、スケジュールを変更しなければなりませんでした。",
+                      "focus": "had",
+                      "object": "to change the schedule"
+                  }
+              ]
+          },
+          {
+              "id": "have-got",
+              "title": "⑥ have got / 持っている・受け取っている",
+              "pattern": "HAVE GOT + object",
+              "transitivity": "会話表現",
+              "structure": "S + have got + O",
+              "image": "すでに自分の範囲内に入っているイメージ。",
+              "point": "句動詞ではなく、会話的な基本表現として扱う。",
+              "examples": [
+                  {
+                      "en": "We have got the latest price list.",
+                      "ja": "私たちは最新の価格表を持っています。",
+                      "focus": "have",
+                      "object": "got the latest price list"
+                  },
+                  {
+                      "en": "Have you got the sample yet?",
+                      "ja": "あなたはもうサンプルを受け取りましたか？",
+                      "focus": "Have",
+                      "object": "got the sample"
+                  }
+              ]
+          },
+          {
+              "id": "have-someone-do",
+              "title": "⑦ have someone do / 人に〜してもらう",
+              "pattern": "HAVE + someone + do",
+              "transitivity": "使役",
+              "structure": "S + have + O + V",
+              "image": "人を自分の管理範囲内で動かすイメージ。",
+              "point": "依頼や社内調整で使える。",
+              "examples": [
+                  {
+                      "en": "I will have the engineer check the setting.",
+                      "ja": "私は技術担当者に設定を確認してもらいます。",
+                      "focus": "have",
+                      "object": "the engineer check the setting"
+                  },
+                  {
+                      "en": "We had the factory prepare the samples.",
+                      "ja": "私たちは工場にサンプルを準備してもらいました。",
+                      "focus": "had",
+                      "object": "the factory prepare the samples"
+                  }
+              ]
+          },
+          {
+              "id": "have-done",
+              "title": "⑧ have something done / 〜してもらう・〜される",
+              "pattern": "HAVE + object + done",
+              "transitivity": "使役・受け身的表現",
+              "structure": "S + have + O + past participle",
+              "image": "作業を完了状態として自分側に持つイメージ。",
+              "point": "修理・確認・作成などで便利。",
+              "examples": [
+                  {
+                      "en": "We had the sign repaired last week.",
+                      "ja": "私たちは先週、そのサインを修理してもらいました。",
+                      "focus": "had",
+                      "object": "the sign repaired"
+                  },
+                  {
+                      "en": "I need to have this checked today.",
+                      "ja": "私は今日これを確認してもらう必要があります。",
+                      "focus": "have",
+                      "object": "this checked"
+                  }
+              ]
+          }
+      ],
+      "collocations": [],
+      "phrasalVerbs": [
+          {
+              "phrase": "have on",
+              "ja": "身につけている・予定が入っている",
+              "image": "服や予定を自分の上・予定表に持っているイメージ。",
+              "pattern": "HAVE ON + object",
+              "examples": [
+                  {
+                      "en": "He had on a company jacket at the site.",
+                      "ja": "彼は現場で会社のジャケットを着ていました。",
+                      "focus": "had on",
+                      "object": "a company jacket"
+                  },
+                  {
+                      "en": "I have a lot on this week.",
+                      "ja": "私は今週、予定がかなり詰まっています。",
+                      "focus": "have on",
+                      "object": "a lot"
+                  }
+              ]
+          },
+          {
+              "phrase": "have over",
+              "ja": "家や場所に招く",
+              "image": "人を自分の場所へ迎え入れるイメージ。",
+              "pattern": "HAVE OVER + someone",
+              "examples": [
+                  {
+                      "en": "We had the supplier over for a product briefing.",
+                      "ja": "私たちは製品説明のために仕入先を招きました。",
+                      "focus": "had over",
+                      "object": "the supplier"
+                  },
+                  {
+                      "en": "Can we have the client over next month?",
+                      "ja": "来月、顧客を招くことはできますか？",
+                      "focus": "have over",
+                      "object": "the client"
+                  }
+              ]
+          },
+          {
+              "phrase": "have around",
+              "ja": "近くに置く・そばにいる",
+              "image": "人や物が近くにある状態を持つイメージ。",
+              "pattern": "HAVE AROUND + object",
+              "examples": [
+                  {
+                      "en": "It is useful to have extra samples around.",
+                      "ja": "予備サンプルを手元に置いておくと便利です。",
+                      "focus": "have around",
+                      "object": "extra samples"
+                  },
+                  {
+                      "en": "We had technical staff around during the test.",
+                      "ja": "私たちはテスト中、技術スタッフに近くにいてもらいました。",
+                      "focus": "had around",
+                      "object": "technical staff"
+                  }
+              ]
+          },
+          {
+              "phrase": "have in",
+              "ja": "在庫・人を中に持っている",
+              "image": "倉庫や社内に入っている状態を持つイメージ。",
+              "pattern": "HAVE IN + object",
+              "examples": [
+                  {
+                      "en": "Do we have this model in stock?",
+                      "ja": "この型番は在庫がありますか？",
+                      "focus": "have in",
+                      "object": "stock"
+                  },
+                  {
+                      "en": "We had the parts in the warehouse yesterday.",
+                      "ja": "私たちは昨日、その部品を倉庫に持っていました。",
+                      "focus": "had in",
+                      "object": "the warehouse"
+                  }
+              ]
+          },
+          {
+              "phrase": "have back",
+              "ja": "戻してもらう・取り戻す",
+              "image": "一度出たものを自分側へ戻して持つイメージ。",
+              "pattern": "HAVE BACK + object",
+              "examples": [
+                  {
+                      "en": "Can we have the sample back after the test?",
+                      "ja": "テスト後にサンプルを返してもらえますか？",
+                      "focus": "have back",
+                      "object": "the sample"
+                  },
+                  {
+                      "en": "We had the documents back by noon.",
+                      "ja": "私たちは正午までに書類を返してもらいました。",
+                      "focus": "had back",
+                      "object": "the documents"
+                  }
+              ]
+          }
+      ]
   },
   {
-    "id": "go",
-    "rank": 6,
-    "word": "GO",
-    "ipa": "/ɡoʊ/",
-    "kana": "ゴウ",
-    "syllable": "go",
-    "transitivity": "自動詞中心",
-    "importance": "★★★★★ 超重要",
-    "core": "今いる場所・状態から、別の場所・方向・状態へ進む",
-    "coreDetail": "GOは『離れて進む』動詞です。場所へ行く、会議へ出る、物事が進む、状態が悪くなる、予定どおり進む、という使い方までつながります。矢印は現在地・現在状態 → 目的地・次の状態です。",
-    "coreVisual": {"from":["📍 現在地","🗓️ 今の予定","📊 現在の状況","👤 自分"],"to":"目的地・次の状態・進行方向","label":"現在地・状態 → 先へ進む"},
-    "meanings": [
-      {"id":"go-place","title":"① go to a place / 行く","pattern":"GO TO + place","transitivity":"自動詞","structure":"S + go + to 場所","image":"今いる場所から目的地へ進むイメージ。","point":"場所には go to。home は to を付けず go home。","examples":[
-        {"en":"I will go to the client site tomorrow morning.","ja":"私は明日の朝、顧客の現場へ行きます。","focus":"go","object":"to the client site"},
-        {"en":"We went to the factory for the inspection.","ja":"私たちは検査のために工場へ行きました。","focus":"went","object":"to the factory"},
-        {"en":"Can you go to the meeting room at three?","ja":"あなたは3時に会議室へ行けますか？","focus":"go","object":"to the meeting room"}
-      ],"dailyExamples":[
-        {"en":"I go to the station by bus.","ja":"私はバスで駅へ行きます。","focus":"go","object":"to the station"},
-        {"en":"We went home after dinner.","ja":"私たちは夕食後に帰宅しました。","focus":"went","object":"home"}
-      ]},
-      {"id":"go-meeting","title":"② go to a meeting / 会議・予定に出る","pattern":"GO TO + meeting / event","transitivity":"自動詞","structure":"S + go + to 予定","image":"予定されている場所やイベントへ参加しに進むイメージ。","point":"attend より会話的。go to a meeting で自然に使える。","examples":[
-        {"en":"I have to go to a meeting at four.","ja":"私は4時に会議へ行かなければなりません。","focus":"go","object":"to a meeting"},
-        {"en":"She went to the product training last week.","ja":"彼女は先週、製品研修に参加しました。","focus":"went","object":"to the product training"},
-        {"en":"Are you going to the trade show next month?","ja":"あなたは来月、展示会へ行きますか？","focus":"going","object":"to the trade show"}
-      ],"dailyExamples":[
-        {"en":"I went to a concert last night.","ja":"私は昨夜、コンサートへ行きました。","focus":"went","object":"to a concert"},
-        {"en":"Are you going to the party?","ja":"あなたはパーティーへ行きますか？","focus":"going","object":"to the party"}
-      ]},
-      {"id":"go-well","title":"③ go well / うまくいく","pattern":"GO + adverb/adjective","transitivity":"自動詞","structure":"S + go + C/M","image":"物事が良い方向へ進むイメージ。","point":"meeting went well は仕事で非常によく使う。","examples":[
-        {"en":"The meeting went well yesterday.","ja":"昨日の会議はうまくいきました。","focus":"went","object":"well"},
-        {"en":"I hope the presentation goes well.","ja":"私はプレゼンがうまくいくことを願っています。","focus":"goes","object":"well"},
-        {"en":"Did the installation go smoothly?","ja":"設置は順調に進みましたか？","focus":"go","object":"smoothly"}
-      ],"dailyExamples":[
-        {"en":"The trip went well.","ja":"旅行はうまくいきました。","focus":"went","object":"well"},
-        {"en":"I hope your exam goes well.","ja":"試験がうまくいくといいですね。","focus":"goes","object":"well"}
-      ]},
-      {"id":"go-ahead","title":"④ go ahead / 進める・先に行う","pattern":"GO AHEAD","transitivity":"自動詞","structure":"S + go ahead","image":"止まらず前に進むイメージ。","point":"許可や判断後に、作業を進める意味で使う。","examples":[
-        {"en":"We can go ahead with the order after approval.","ja":"私たちは承認後に発注を進められます。","focus":"go ahead","object":"with the order"},
-        {"en":"Please go ahead and send the quotation.","ja":"あなたはそのまま見積書を送ってください。","focus":"go ahead","object":"and send the quotation"},
-        {"en":"The client told us to go ahead with the plan.","ja":"顧客は私たちにその計画を進めるよう伝えました。","focus":"go ahead","object":"with the plan"}
-      ],"dailyExamples":[
-        {"en":"Please go ahead without me.","ja":"私を待たずに先に進んでください。","focus":"go ahead","object":"without me"},
-        {"en":"Can I go ahead and open it?","ja":"開けてもいいですか？","focus":"go ahead","object":"and open it"}
-      ]},
-      {"id":"go-over","title":"⑤ go over / 確認する・見直す","pattern":"GO OVER + object","transitivity":"自動詞句","structure":"S + go over + O","image":"資料の上を一通り進みながら確認するイメージ。","point":"review に近いが、会議前の確認で自然。","examples":[
-        {"en":"Let's go over the proposal before the meeting.","ja":"私たちは会議前に提案書を確認しましょう。","focus":"go over","object":"the proposal"},
-        {"en":"I went over the quotation with my manager.","ja":"私は上司と一緒に見積書を確認しました。","focus":"went over","object":"the quotation"},
-        {"en":"Can you go over the schedule once more?","ja":"あなたはスケジュールをもう一度確認できますか？","focus":"go over","object":"the schedule"}
-      ],"dailyExamples":[
-        {"en":"I went over my notes before the test.","ja":"私はテスト前にノートを見直しました。","focus":"went over","object":"my notes"},
-        {"en":"Let's go over the plan for tomorrow.","ja":"明日の予定を確認しましょう。","focus":"go over","object":"the plan"}
-      ]},
-      {"id":"go-wrong","title":"⑥ go wrong / うまくいかなくなる","pattern":"GO + wrong / bad","transitivity":"自動詞","structure":"S + go + C","image":"状態が悪い方向へ進むイメージ。","point":"何が悪化したかを説明するときに便利。","examples":[
-        {"en":"Something went wrong with the system update.","ja":"システム更新で何か問題が起きました。","focus":"went","object":"wrong"},
-        {"en":"The installation went wrong because of the wiring issue.","ja":"配線の問題で設置がうまくいきませんでした。","focus":"went","object":"wrong"},
-        {"en":"If anything goes wrong, please call me immediately.","ja":"何か問題が起きたら、すぐに私へ電話してください。","focus":"goes","object":"wrong"}
-      ],"dailyExamples":[
-        {"en":"Something went wrong with my phone.","ja":"私の携帯に何か問題が起きました。","focus":"went","object":"wrong"},
-        {"en":"The plan went wrong at the last minute.","ja":"その計画は最後の最後でうまくいかなくなりました。","focus":"went","object":"wrong"}
-      ]},
-      {"id":"go-with","title":"⑦ go with / 〜に合う・〜を選ぶ","pattern":"GO WITH + object","transitivity":"自動詞句","structure":"S + go with + O","image":"候補や組み合わせの方向へ進むイメージ。","point":"デザイン・案・選択肢を決める時に使える。","examples":[
-        {"en":"This color goes well with the sign design.","ja":"この色は看板デザインによく合います。","focus":"goes","object":"well with the sign design"},
-        {"en":"We decided to go with the second proposal.","ja":"私たちは2つ目の提案で進めることにしました。","focus":"go","object":"with the second proposal"},
-        {"en":"Can we go with this schedule?","ja":"私たちはこのスケジュールで進められますか？","focus":"go","object":"with this schedule"}
-      ],"dailyExamples":[
-        {"en":"This shirt goes well with black pants.","ja":"このシャツは黒いズボンによく合います。","focus":"goes","object":"well with black pants"},
-        {"en":"I will go with the simple option.","ja":"私はシンプルな選択肢にします。","focus":"go","object":"with the simple option"}
-      ]}
-    ],
-    "collocations": [],
-    "phrasalVerbs": [
-      {"phrase":"go ahead","ja":"進める・先に行う","image":"止まらず前へ進むイメージ。","pattern":"GO AHEAD","examples":[
-        {"en":"Please go ahead with the shipment.","ja":"あなたは出荷を進めてください。","focus":"go ahead","object":"with the shipment"},
-        {"en":"We went ahead with the meeting without him.","ja":"私たちは彼なしで会議を進めました。","focus":"went ahead","object":"with the meeting"},
-        {"en":"Can I go ahead and contact the customer?","ja":"私は顧客に連絡してもよいですか？","focus":"go ahead","object":"and contact the customer"}
-      ]},
-      {"phrase":"go over","ja":"確認する・見直す","image":"資料の上を一通り通るイメージ。","pattern":"GO OVER + object","examples":[
-        {"en":"Let's go over the action items.","ja":"私たちは対応事項を確認しましょう。","focus":"go over","object":"the action items"},
-        {"en":"I went over the email before sending it.","ja":"私は送信前にそのメールを見直しました。","focus":"went over","object":"the email"},
-        {"en":"Please go over the estimate again.","ja":"あなたは見積をもう一度確認してください。","focus":"go over","object":"the estimate"}
-      ]},
-      {"phrase":"go through","ja":"通過する・経験する・確認する","image":"中を通り抜けながら進むイメージ。","pattern":"GO THROUGH + object","examples":[
-        {"en":"We went through the contract line by line.","ja":"私たちは契約書を1行ずつ確認しました。","focus":"went through","object":"the contract"},
-        {"en":"The team went through a difficult period.","ja":"チームは難しい時期を経験しました。","focus":"went through","object":"a difficult period"},
-        {"en":"Can you go through the checklist before delivery?","ja":"あなたは納品前にチェックリストを確認できますか？","focus":"go through","object":"the checklist"}
-      ]},
-      {"phrase":"go back","ja":"戻る","image":"前にいた場所や状態へ戻るイメージ。","pattern":"GO BACK","examples":[
-        {"en":"I need to go back to the office after the visit.","ja":"私は訪問後、事務所へ戻る必要があります。","focus":"go back","object":"to the office"},
-        {"en":"Let's go back to the original plan.","ja":"私たちは元の計画に戻りましょう。","focus":"go back","object":"to the original plan"},
-        {"en":"The customer went back to the previous design.","ja":"顧客は前のデザインに戻しました。","focus":"went back","object":"to the previous design"}
-      ]},
-      {"phrase":"go on","ja":"続く・続ける","image":"止まらずそのまま進むイメージ。","pattern":"GO ON","examples":[
-        {"en":"The meeting went on longer than expected.","ja":"会議は予定より長く続きました。","focus":"went on","object":"longer than expected"},
-        {"en":"Please go on with your explanation.","ja":"あなたは説明を続けてください。","focus":"go on","object":"with your explanation"},
-        {"en":"The issue went on for two weeks.","ja":"その問題は2週間続きました。","focus":"went on","object":"for two weeks"}
-      ]}
-    ]
+      "id": "go",
+      "rank": 6,
+      "word": "GO",
+      "ipa": "/ɡoʊ/",
+      "kana": "ゴウ",
+      "syllable": "go",
+      "transitivity": "自動詞",
+      "importance": "★★★★★ 超重要",
+      "core": "今いる場所・状態から、別の場所・状態へ進む",
+      "coreDetail": "GOは「今の地点から外へ進む」感覚です。移動する、進む、うまくいく、悪くなる、次の段階へ進めるなど、状態の変化にも広がります。",
+      "coreVisual": {
+          "from": [
+              "現在地",
+              "今の状態",
+              "今の段階"
+          ],
+          "to": "目的地・次の状態",
+          "label": "今いる場所・状態 → 次へ進む"
+      },
+      "meanings": [
+          {
+              "id": "go-place",
+              "title": "① go to / 場所へ行く",
+              "pattern": "GO TO + place",
+              "transitivity": "自動詞",
+              "structure": "S + go + to 場所",
+              "image": "現在地から目的地へ進むイメージ。",
+              "point": "場所へ向かう一番基本の使い方。",
+              "examples": [
+                  {
+                      "en": "I will go to the client site tomorrow.",
+                      "ja": "私は明日、顧客の現場へ行きます。",
+                      "focus": "go",
+                      "object": "to the client site"
+                  },
+                  {
+                      "en": "We went to the factory for the inspection.",
+                      "ja": "私たちは検査のために工場へ行きました。",
+                      "focus": "went",
+                      "object": "to the factory"
+                  }
+              ]
+          },
+          {
+              "id": "go-well",
+              "title": "② go well / うまくいく",
+              "pattern": "GO + adverb",
+              "transitivity": "自動詞",
+              "structure": "S + go + adverb",
+              "image": "物事が良い方向へ進むイメージ。",
+              "point": "meeting, installation, test など仕事でよく使う。",
+              "examples": [
+                  {
+                      "en": "The meeting went well yesterday.",
+                      "ja": "昨日の会議はうまくいきました。",
+                      "focus": "went",
+                      "object": "well"
+                  },
+                  {
+                      "en": "I hope the installation goes smoothly.",
+                      "ja": "設置が順調に進むことを願っています。",
+                      "focus": "goes",
+                      "object": "smoothly"
+                  }
+              ]
+          },
+          {
+              "id": "go-wrong",
+              "title": "③ go wrong / 問題が起きる",
+              "pattern": "GO + adjective",
+              "transitivity": "自動詞",
+              "structure": "S + go + C",
+              "image": "状態が悪い方向へ進むイメージ。",
+              "point": "something goes wrong が定番。",
+              "examples": [
+                  {
+                      "en": "Something went wrong with the controller.",
+                      "ja": "コントローラーに何か問題が起きました。",
+                      "focus": "went",
+                      "object": "wrong"
+                  },
+                  {
+                      "en": "If the schedule goes wrong, please tell me early.",
+                      "ja": "スケジュールに問題が出たら、早めに教えてください。",
+                      "focus": "goes",
+                      "object": "wrong"
+                  }
+              ]
+          },
+          {
+              "id": "go-with",
+              "title": "④ go with / 〜に合う・選ぶ",
+              "pattern": "GO WITH + object",
+              "transitivity": "自動詞",
+              "structure": "S + go + with O",
+              "image": "一緒に進む、合う選択肢へ進むイメージ。",
+              "point": "デザインや選択肢に使える。",
+              "examples": [
+                  {
+                      "en": "This color goes well with the logo.",
+                      "ja": "この色はロゴによく合います。",
+                      "focus": "goes",
+                      "object": "well with the logo"
+                  },
+                  {
+                      "en": "We will go with the cheaper option this time.",
+                      "ja": "今回は安い方の選択肢で進めます。",
+                      "focus": "go",
+                      "object": "with the cheaper option"
+                  }
+              ]
+          },
+          {
+              "id": "go-live",
+              "title": "⑤ go live / 運用開始する",
+              "pattern": "GO + live",
+              "transitivity": "自動詞",
+              "structure": "S + go + C",
+              "image": "準備状態から公開・運用状態へ進むイメージ。",
+              "point": "Webやシステムでよく使う。",
+              "examples": [
+                  {
+                      "en": "The new page will go live next Monday.",
+                      "ja": "新しいページは来週月曜日に公開されます。",
+                      "focus": "go",
+                      "object": "live"
+                  },
+                  {
+                      "en": "The system went live after the final check.",
+                      "ja": "そのシステムは最終確認後に運用開始しました。",
+                      "focus": "went",
+                      "object": "live"
+                  }
+              ]
+          },
+          {
+              "id": "go-step",
+              "title": "⑥ go step by step / 段階的に進む",
+              "pattern": "GO + manner",
+              "transitivity": "自動詞",
+              "structure": "S + go + 副詞句",
+              "image": "一つずつ次へ進むイメージ。",
+              "point": "説明や作業手順で便利。",
+              "examples": [
+                  {
+                      "en": "Let us go step by step and check each item.",
+                      "ja": "一つずつ進めて各項目を確認しましょう。",
+                      "focus": "go",
+                      "object": "step by step"
+                  },
+                  {
+                      "en": "We went carefully because the site was busy.",
+                      "ja": "現場が混んでいたので、私たちは慎重に進めました。",
+                      "focus": "went",
+                      "object": "carefully"
+                  }
+              ]
+          },
+          {
+              "id": "go-past",
+              "title": "⑦ go past / 期限を過ぎる",
+              "pattern": "GO + past + point",
+              "transitivity": "自動詞",
+              "structure": "S + go + past O",
+              "image": "基準点を越えて進むイメージ。",
+              "point": "時間や期限を越えるときに使う。",
+              "examples": [
+                  {
+                      "en": "The discussion went past the scheduled time.",
+                      "ja": "議論は予定時間を過ぎました。",
+                      "focus": "went",
+                      "object": "past the scheduled time"
+                  },
+                  {
+                      "en": "Do not let the response go past the deadline.",
+                      "ja": "返信が締切を過ぎないようにしてください。",
+                      "focus": "go",
+                      "object": "past the deadline"
+                  }
+              ]
+          },
+          {
+              "id": "go-missing",
+              "title": "⑧ go missing / 見当たらなくなる",
+              "pattern": "GO + adjective",
+              "transitivity": "自動詞",
+              "structure": "S + go + C",
+              "image": "ある状態から消えた状態へ進むイメージ。",
+              "point": "紛失・データ消失の説明に使える。",
+              "examples": [
+                  {
+                      "en": "One sample went missing after the event.",
+                      "ja": "イベント後にサンプルが1つ見当たらなくなりました。",
+                      "focus": "went",
+                      "object": "missing"
+                  },
+                  {
+                      "en": "The file may go missing if we do not save it properly.",
+                      "ja": "正しく保存しないと、そのファイルが見つからなくなる可能性があります。",
+                      "focus": "go",
+                      "object": "missing"
+                  }
+              ]
+          }
+      ],
+      "collocations": [],
+      "phrasalVerbs": [
+          {
+              "phrase": "go ahead",
+              "ja": "先に進める・どうぞ進める",
+              "image": "ためらわず次の段階へ進むイメージ。",
+              "pattern": "GO AHEAD",
+              "examples": [
+                  {
+                      "en": "Please go ahead with the quotation.",
+                      "ja": "見積を進めてください。",
+                      "focus": "go ahead",
+                      "object": "with the quotation"
+                  },
+                  {
+                      "en": "We can go ahead after the client confirms the price.",
+                      "ja": "顧客が価格を確認した後、私たちは進められます。",
+                      "focus": "go ahead"
+                  }
+              ]
+          },
+          {
+              "phrase": "go over",
+              "ja": "確認する・見直す",
+              "image": "内容の上を一通りなぞって確認するイメージ。",
+              "pattern": "GO OVER + object",
+              "examples": [
+                  {
+                      "en": "Let us go over the details before we send the email.",
+                      "ja": "メールを送る前に詳細を確認しましょう。",
+                      "focus": "go over",
+                      "object": "the details"
+                  },
+                  {
+                      "en": "I went over the quotation with my manager.",
+                      "ja": "私は上司と見積書を確認しました。",
+                      "focus": "went over",
+                      "object": "the quotation"
+                  }
+              ]
+          },
+          {
+              "phrase": "go through",
+              "ja": "通過する・確認する・経験する",
+              "image": "中を通り抜けるイメージ。",
+              "pattern": "GO THROUGH + object",
+              "examples": [
+                  {
+                      "en": "We need to go through the checklist before delivery.",
+                      "ja": "納品前にチェックリストを確認する必要があります。",
+                      "focus": "go through",
+                      "object": "the checklist"
+                  },
+                  {
+                      "en": "The team went through a difficult period last month.",
+                      "ja": "チームは先月、難しい時期を経験しました。",
+                      "focus": "went through",
+                      "object": "a difficult period"
+                  }
+              ]
+          },
+          {
+              "phrase": "go back",
+              "ja": "戻る",
+              "image": "前の場所・状態へ戻るイメージ。",
+              "pattern": "GO BACK",
+              "examples": [
+                  {
+                      "en": "We need to go back to the original plan.",
+                      "ja": "私たちは元の計画に戻る必要があります。",
+                      "focus": "go back",
+                      "object": "to the original plan"
+                  },
+                  {
+                      "en": "I went back to the office after the site visit.",
+                      "ja": "私は現場訪問後、会社に戻りました。",
+                      "focus": "went back",
+                      "object": "to the office"
+                  }
+              ]
+          },
+          {
+              "phrase": "go on",
+              "ja": "続く・続ける",
+              "image": "そのまま先へ進み続けるイメージ。",
+              "pattern": "GO ON",
+              "examples": [
+                  {
+                      "en": "The meeting went on longer than expected.",
+                      "ja": "会議は予想より長く続きました。",
+                      "focus": "went on"
+                  },
+                  {
+                      "en": "Please go on with the explanation.",
+                      "ja": "説明を続けてください。",
+                      "focus": "go on",
+                      "object": "with the explanation"
+                  }
+              ]
+          },
+          {
+              "phrase": "go out",
+              "ja": "外へ出る・送られる",
+              "image": "内側から外へ進むイメージ。",
+              "pattern": "GO OUT",
+              "examples": [
+                  {
+                      "en": "The notice went out to all members this morning.",
+                      "ja": "通知は今朝、全メンバーへ送られました。",
+                      "focus": "went out",
+                      "object": "to all members"
+                  },
+                  {
+                      "en": "The lights went out during the test.",
+                      "ja": "テスト中に照明が消えました。",
+                      "focus": "went out"
+                  }
+              ]
+          },
+          {
+              "phrase": "go in",
+              "ja": "中へ入る",
+              "image": "外側から中へ進むイメージ。",
+              "pattern": "GO IN",
+              "examples": [
+                  {
+                      "en": "The order went in before noon.",
+                      "ja": "注文は正午前に入りました。",
+                      "focus": "went in"
+                  },
+                  {
+                      "en": "Please go in through the side entrance.",
+                      "ja": "横の入口から入ってください。",
+                      "focus": "go in"
+                  }
+              ]
+          },
+          {
+              "phrase": "go up",
+              "ja": "上がる",
+              "image": "数値や位置が上へ進むイメージ。",
+              "pattern": "GO UP",
+              "examples": [
+                  {
+                      "en": "Material costs went up this month.",
+                      "ja": "今月、材料費が上がりました。",
+                      "focus": "went up"
+                  },
+                  {
+                      "en": "The number of inquiries may go up after the campaign.",
+                      "ja": "キャンペーン後に問い合わせ件数が増えるかもしれません。",
+                      "focus": "go up"
+                  }
+              ]
+          },
+          {
+              "phrase": "go down",
+              "ja": "下がる",
+              "image": "数値や状態が下へ進むイメージ。",
+              "pattern": "GO DOWN",
+              "examples": [
+                  {
+                      "en": "The price went down after the negotiation.",
+                      "ja": "交渉後、価格は下がりました。",
+                      "focus": "went down"
+                  },
+                  {
+                      "en": "If the voltage goes down, the light may flicker.",
+                      "ja": "電圧が下がると、照明がちらつく可能性があります。",
+                      "focus": "goes down"
+                  }
+              ]
+          },
+          {
+              "phrase": "go along with",
+              "ja": "〜に同意して進む",
+              "image": "相手の考えや計画と一緒に進むイメージ。",
+              "pattern": "GO ALONG WITH + object",
+              "examples": [
+                  {
+                      "en": "We can go along with the client’s schedule.",
+                      "ja": "私たちは顧客のスケジュールに合わせて進められます。",
+                      "focus": "go along with",
+                      "object": "the client’s schedule"
+                  },
+                  {
+                      "en": "He went along with the proposal after the explanation.",
+                      "ja": "説明後、彼はその提案に同意しました。",
+                      "focus": "went along with",
+                      "object": "the proposal"
+                  }
+              ]
+          }
+      ]
   },
   {
     "id": "come",

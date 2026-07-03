@@ -1,16 +1,16 @@
-# Verb Master Ver.123 CALL / RUN / LEAVE final
+# Verb Master Ver.125 HOLD / SET / CHANGE final
 
-This package adds and finalizes CALL / RUN / LEAVE based on the Ver.120 cloud-save foundation and Ver.122 quality hotfix.
+This package adds and finalizes HOLD / SET / CHANGE based on the Ver.120 cloud-save foundation and Ver.124 final.
 
 ## Target verbs
-- CALL
-- RUN
-- LEAVE
+- HOLD
+- SET
+- CHANGE
 
 ## Phrasal verb counts
-- CALL: 10
-- RUN: 10
-- LEAVE: 8
+- HOLD: 10
+- SET: 10
+- CHANGE: 8
 
 ## Main quality rules
 - Categories remain Basic and Phrasal Verbs only.

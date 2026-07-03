@@ -1,12 +1,12 @@
 # QUALITY_AUDIT_CURRENT
 
 ## Version
-- Verb Master Ver.123 CALL / RUN / LEAVE final
+- Verb Master Ver.125 HOLD / SET / CHANGE final
 
 ## Target verbs
-- CALL
-- RUN
-- LEAVE
+- HOLD
+- SET
+- CHANGE
 
 ## Quality policy applied
 - No duplicate expressions between Basic and Phrasal Verb categories.
@@ -17,17 +17,20 @@
 - Separable phrasal verbs are supported by highlighting phrasal parts in order.
 
 ## Phrasal verb counts
-- CALL: 10
-  - call back / call off / call for / call out / call in / call on / call up / call around / call upon / call ahead
-- RUN: 10
-  - run into / run out of / run by / run through / run across / run over / run up against / run after / run away from / run down
-- LEAVE: 8
-  - leave out / leave behind / leave off / leave for / leave aside / leave alone / leave up to / leave with
+- HOLD: 10
+  - hold on / hold off / hold back / hold up / hold onto / hold out / hold together / hold down / hold against / hold over
+- SET: 10
+  - set up / set aside / set back / set out / set off / set down / set in / set about / set apart / set against
+- CHANGE: 8
+  - change into / change from / change over / change back / change around / change out / change up / change to
 
-## Removed or avoided
-- Removed weak CALL candidates such as call through and call together.
-- Removed weak LEAVE candidate leave over.
-- Avoided duplicating call back / call off / run into / leave out etc. in Basic.
+## Fixes made before ZIP
+- Removed old collocation-style category content for HOLD / SET / CHANGE by keeping collocations empty.
+- Moved set up and other phrasal-style expressions to Phrasal Verbs.
+- Changed all Basic example focus values to the verb only: hold / held / holds, set, change / changed.
+- Changed all Phrasal example focus values to verb + particle/preposition only.
+- Removed object highlighting from Basic and Phrasal examples.
+- Kept CHANGE at 8 phrasal verbs to avoid unnatural padding.
 
 ## Build checks
 - npx tsc --noEmit: OK

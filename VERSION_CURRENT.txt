@@ -1,4 +1,4 @@
-Verb Master Ver.123 CALL / RUN / LEAVE final
-Base: Ver.122 SHOW / TELL / ASK quality hotfix 1 + Ver.120 save foundation
-Target verbs: CALL / RUN / LEAVE
+Verb Master Ver.125 HOLD / SET / CHANGE final
+Base: Ver.124 MOVE / TURN / BRING final + Ver.120 save foundation
+Target verbs: HOLD / SET / CHANGE
 Created: 2026-07-03

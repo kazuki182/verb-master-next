@@ -3779,48 +3779,38 @@ export const verbs: Verb[] = [
     "transitivity": "自動詞・他動詞",
     "importance": "★★★★★ 超重要",
     "core": "人・仕組み・方法が目的に向かって動き、成果につながる",
-    "coreDetail": "WORKは、人が働く、チームで取り組む、機械や仕組みが機能する、方法がうまくいく、という感覚まで広く使います。共通するのは『何かが目的に向かって動いて、役に立つ』というイメージです。",
+    "coreDetail": "WORKは、人が働く、機械や仕組みが機能する、方法がうまくいく、課題に取り組む、という意味まで広く使います。共通するイメージは『止まらずに動いて、役に立つ状態になる』です。",
     "coreVisual": {"from":["👤 人","🤝 チーム","⚙️ 仕組み","📝 方法","💻 システム"],"to":"成果・解決・機能","label":"目的に向かって動く → 役に立つ"},
     "meanings": [
-      {"id":"work-job","title":"① work / 働く・仕事をする","pattern":"WORK","transitivity":"自動詞","structure":"S + work","image":"人が仕事として動いているイメージ。","point":"work in sales, work for a company, work with clients の形が仕事でよく使われます。","examples":[
-        {"en":"I work in sales at a lighting company.","ja":"私は照明会社で営業として働いています。","focus":"work","object":"in sales"},
-        {"en":"She works for a supplier in Singapore.","ja":"彼女はシンガポールの仕入先で働いています。","focus":"works","object":"for a supplier"},
-        {"en":"We work with many sign companies.","ja":"私たちは多くのサイン会社と仕事をしています。","focus":"work","object":"with many sign companies"}
+      {"id":"work-job","title":"① work / 働く・仕事をする","pattern":"WORK","transitivity":"自動詞","structure":"S + work","image":"人が仕事として動いているイメージ。","point":"work in sales, work for a company, work as a manager のように、職種・会社・立場を説明できます。","examples":[
+        {"en":"I work in sales at a lighting company.","ja":"私は照明会社で営業として働いています。","focus":"work","object":"in sales at a lighting company"},
+        {"en":"She works for a supplier in Singapore.","ja":"彼女はシンガポールの仕入先で働いています。","focus":"works","object":"for a supplier in Singapore"},
+        {"en":"He worked as a project manager last year.","ja":"彼は昨年、プロジェクトマネージャーとして働いていました。","focus":"worked","object":"as a project manager"}
       ]},
-      {"id":"work-on","title":"② work on / 〜に取り組む","pattern":"WORK ON + task / project","transitivity":"自動詞","structure":"S + work + on O","image":"作業や課題の上で手を動かすイメージ。","point":"資料、見積、案件、改善などに取り組む時の定番表現です。","examples":[
-        {"en":"I am working on the estimate now.","ja":"私は今、見積書に取り組んでいます。","focus":"working","object":"on the estimate"},
-        {"en":"We need to work on the proposal before Friday.","ja":"私たちは金曜日までに提案書に取り組む必要があります。","focus":"work","object":"on the proposal"},
-        {"en":"He worked on the installation plan yesterday.","ja":"彼は昨日、施工計画に取り組みました。","focus":"worked","object":"on the installation plan"}
-      ]},
-      {"id":"work-with","title":"③ work with / 〜と一緒に仕事をする","pattern":"WORK WITH + person / company","transitivity":"自動詞","structure":"S + work + with O","image":"相手と同じ方向へ動くイメージ。","point":"顧客・同僚・仕入先など、相手と協力する時に自然です。","examples":[
-        {"en":"We work with the design team on this project.","ja":"私たちはこの案件で設計チームと一緒に仕事をしています。","focus":"work","object":"with the design team"},
-        {"en":"I worked with the client to confirm the layout.","ja":"私はレイアウト確認のために顧客と一緒に作業しました。","focus":"worked","object":"with the client"},
-        {"en":"Can you work with the supplier on the delivery date?","ja":"あなたは納期について仕入先と調整できますか？","focus":"work","object":"with the supplier"}
-      ]},
-      {"id":"work-for","title":"④ work for / 〜で働く・〜に役立つ","pattern":"WORK FOR + company / purpose","transitivity":"自動詞","structure":"S + work + for O","image":"会社や目的に向かって動くイメージ。","point":"会社で働く意味と、『その方法が目的に合う』意味の両方があります。","examples":[
-        {"en":"He works for a manufacturing company.","ja":"彼はメーカーで働いています。","focus":"works","object":"for a manufacturing company"},
-        {"en":"This schedule works for us.","ja":"このスケジュールで私たちは問題ありません。","focus":"works","object":"for us"},
-        {"en":"Does this delivery plan work for the customer?","ja":"この納品計画は顧客にとって問題ありませんか？","focus":"work","object":"for the customer"}
-      ]},
-      {"id":"work-function","title":"⑤ work / 機能する・動く","pattern":"WORK","transitivity":"自動詞","structure":"S + work","image":"機械・仕組み・方法がちゃんと動くイメージ。","point":"機器、アプリ、方法、計画が『うまく機能する』時に使います。","examples":[
+      {"id":"work-function","title":"② work / 機能する・動く","pattern":"WORK","transitivity":"自動詞","structure":"S + work","image":"機械・仕組み・方法がちゃんと動くイメージ。","point":"機器、アプリ、方法、計画が『機能する』時に使います。","examples":[
         {"en":"The remote controller works correctly now.","ja":"リモコンは今、正しく動いています。","focus":"works","object":"correctly"},
         {"en":"This app does not work after login.","ja":"このアプリはログイン後に正常に動きません。","focus":"work","object":"after login"},
         {"en":"The new process worked well for the team.","ja":"新しい手順はチームにとってうまく機能しました。","focus":"worked","object":"well"}
       ]},
-      {"id":"work-well","title":"⑥ work well / うまくいく","pattern":"WORK WELL","transitivity":"自動詞","structure":"S + work + M","image":"方法や提案がスムーズに成果へ進むイメージ。","point":"説明・提案・スケジュールなどがうまくいく時に便利です。","examples":[
+      {"id":"work-well","title":"③ work well / うまくいく","pattern":"WORK WELL","transitivity":"自動詞","structure":"S + work + adverb","image":"方法や提案がスムーズに成果へ進むイメージ。","point":"提案・スケジュール・方法が問題なく合う時に便利です。","examples":[
         {"en":"I think this idea will work well.","ja":"私はこの案はうまくいくと思います。","focus":"work","object":"well"},
         {"en":"The meeting format worked well last time.","ja":"前回、その会議形式はうまくいきました。","focus":"worked","object":"well"},
-        {"en":"Will this arrangement work well for the client?","ja":"この段取りは顧客にとってうまくいきそうですか？","focus":"work","object":"well"}
+        {"en":"Will this arrangement work for the client?","ja":"この段取りは顧客にとって問題なさそうですか？","focus":"work","object":"for the client"}
       ]},
-      {"id":"work-time","title":"⑦ work late / 遅くまで働く","pattern":"WORK + time expression","transitivity":"自動詞","structure":"S + work + M","image":"働く時間の長さや時間帯を表すイメージ。","point":"work late, work overtime, work from home など、働き方を説明できます。","examples":[
+      {"id":"work-properly","title":"④ work properly / 正しく動く","pattern":"WORK PROPERLY","transitivity":"自動詞","structure":"S + work + adverb","image":"想定どおりに動作しているイメージ。","point":"機器・システム・アプリの確認でよく使います。","examples":[
+        {"en":"The system is working properly now.","ja":"システムは今、正しく動いています。","focus":"working","object":"properly"},
+        {"en":"Please check if the dimmer works properly.","ja":"調光器が正しく動くか確認してください。","focus":"works","object":"properly"},
+        {"en":"The login button did not work yesterday.","ja":"昨日、ログインボタンが動きませんでした。","focus":"work","object":"yesterday"}
+      ]},
+      {"id":"work-hard","title":"⑤ work hard / 一生懸命働く・努力する","pattern":"WORK HARD","transitivity":"自動詞","structure":"S + work + adverb","image":"力を入れて行動し続けるイメージ。","point":"人の努力を表す基本表現です。","examples":[
+        {"en":"We worked hard to finish the proposal.","ja":"私たちは提案書を仕上げるために一生懸命取り組みました。","focus":"worked","object":"hard"},
+        {"en":"She works hard every day.","ja":"彼女は毎日一生懸命働いています。","focus":"works","object":"hard"},
+        {"en":"I need to work harder on my English.","ja":"私は英語にもっと一生懸命取り組む必要があります。","focus":"work","object":"harder"}
+      ]},
+      {"id":"work-late","title":"⑥ work late / 遅くまで働く","pattern":"WORK + time expression","transitivity":"自動詞","structure":"S + work + time expression","image":"働く時間の長さや時間帯を表すイメージ。","point":"work late, work overtime, work from home など、働き方を説明できます。","examples":[
         {"en":"I worked late to finish the report.","ja":"私は報告書を終わらせるために遅くまで働きました。","focus":"worked","object":"late"},
         {"en":"She works from home on Fridays.","ja":"彼女は金曜日に在宅勤務をしています。","focus":"works","object":"from home"},
         {"en":"We may need to work overtime this week.","ja":"私たちは今週、残業する必要があるかもしれません。","focus":"work","object":"overtime"}
-      ]},
-      {"id":"work-out-result","title":"⑧ work out / うまくいく・解決する","pattern":"WORK OUT","transitivity":"自動詞","structure":"S + work + out","image":"問題がほどけて、結果が見えるイメージ。","point":"計画や問題が最終的にうまくまとまる時に使います。","examples":[
-        {"en":"I hope the schedule works out.","ja":"私はそのスケジュールがうまくいくことを願っています。","focus":"works","object":"out"},
-        {"en":"The delivery issue worked out in the end.","ja":"納品の問題は最終的に解決しました。","focus":"worked","object":"out"},
-        {"en":"Did everything work out with the customer?","ja":"顧客との件はすべてうまくいきましたか？","focus":"work","object":"out"}
       ]}
     ],
     "collocations": [],
@@ -3835,25 +3825,45 @@ export const verbs: Verb[] = [
         {"en":"We work with the customer to finalize the design.","ja":"私たちはデザインを確定するために顧客と協力します。","focus":"work with","object":"the customer"},
         {"en":"Can you work with sales on the schedule?","ja":"あなたはスケジュールについて営業と調整できますか？","focus":"work with","object":"sales"}
       ]},
-      {"phrase":"work for","ja":"〜で働く・〜に都合がよい","image":"会社や目的のために動くイメージ。","pattern":"WORK FOR + company / person","examples":[
-        {"en":"She works for our Singapore office.","ja":"彼女は私たちのシンガポールオフィスで働いています。","focus":"works for","object":"our Singapore office"},
-        {"en":"Monday works for me.","ja":"月曜日で私は大丈夫です。","focus":"works for","object":"me"},
-        {"en":"Does this plan work for your team?","ja":"この計画であなたのチームは問題ありませんか？","focus":"work for","object":"your team"}
+      {"phrase":"work out","ja":"うまくいく・解決する","image":"問題がほどけて結果が見えるイメージ。","pattern":"WORK OUT","examples":[
+        {"en":"I hope the schedule works out.","ja":"私はそのスケジュールがうまくいくことを願っています。","focus":"works out","object":"the schedule"},
+        {"en":"The delivery issue worked out in the end.","ja":"納品の問題は最終的に解決しました。","focus":"worked out","object":"the delivery issue"},
+        {"en":"Did everything work out with the customer?","ja":"顧客との件はすべてうまくいきましたか？","focus":"work out","object":"with the customer"}
       ]},
-      {"phrase":"work out","ja":"うまくいく・解決する・計算する","image":"絡まったものが外へ出て、答えが見えるイメージ。","pattern":"WORK OUT","examples":[
-        {"en":"The issue worked out after the call.","ja":"その問題は電話の後に解決しました。","focus":"worked out","object":"after the call"},
-        {"en":"We need to work out the total cost.","ja":"私たちは総費用を算出する必要があります。","focus":"work out","object":"the total cost"},
-        {"en":"I hope everything works out.","ja":"すべてうまくいくことを願っています。","focus":"works out"}
-      ]},
-      {"phrase":"work through","ja":"〜を一つずつ処理する","image":"問題の中を通り抜けるイメージ。","pattern":"WORK THROUGH + problem / list","examples":[
+      {"phrase":"work through","ja":"〜を処理する・乗り越える","image":"難しいものを一つずつ通り抜けるイメージ。","pattern":"WORK THROUGH + issue / list","examples":[
         {"en":"Let's work through the checklist together.","ja":"チェックリストを一緒に一つずつ確認しましょう。","focus":"work through","object":"the checklist"},
-        {"en":"We worked through the problems before the meeting.","ja":"私たちは会議前に問題を一つずつ処理しました。","focus":"worked through","object":"the problems"},
-        {"en":"Please work through these comments by tomorrow.","ja":"明日までにこれらのコメントを一つずつ確認してください。","focus":"work through","object":"these comments"}
+        {"en":"We worked through the problem before the deadline.","ja":"私たちは締切前にその問題を処理しました。","focus":"worked through","object":"the problem"},
+        {"en":"She is working through the customer comments.","ja":"彼女は顧客コメントを一つずつ確認しています。","focus":"working through","object":"the customer comments"}
       ]},
-      {"phrase":"work around","ja":"〜を回避して対応する","image":"障害物の周りを回って進むイメージ。","pattern":"WORK AROUND + problem","examples":[
-        {"en":"We need to work around the delivery delay.","ja":"私たちは納期遅れを回避する形で対応する必要があります。","focus":"work around","object":"the delivery delay"},
-        {"en":"They worked around the system issue.","ja":"彼らはシステムの問題を回避して対応しました。","focus":"worked around","object":"the system issue"},
-        {"en":"Can we work around this limitation?","ja":"私たちはこの制限を回避して対応できますか？","focus":"work around","object":"this limitation"}
+      {"phrase":"work around","ja":"〜を回避して対応する","image":"障害物を避けて別ルートで進むイメージ。","pattern":"WORK AROUND + problem","examples":[
+        {"en":"We need to work around the delivery delay.","ja":"私たちは納品遅延を回避して対応する必要があります。","focus":"work around","object":"the delivery delay"},
+        {"en":"The team worked around the system error.","ja":"チームはシステムエラーを回避して対応しました。","focus":"worked around","object":"the system error"},
+        {"en":"Can we work around this limitation?","ja":"この制限を回避して対応できますか？","focus":"work around","object":"this limitation"}
+      ]},
+      {"phrase":"work toward","ja":"〜に向けて取り組む","image":"目標へ向かって動き続けるイメージ。","pattern":"WORK TOWARD + goal","examples":[
+        {"en":"We are working toward the launch date.","ja":"私たちはリリース日に向けて取り組んでいます。","focus":"working toward","object":"the launch date"},
+        {"en":"He worked toward a better solution.","ja":"彼はより良い解決策に向けて取り組みました。","focus":"worked toward","object":"a better solution"},
+        {"en":"Let's work toward a clear decision today.","ja":"今日は明確な決定に向けて進めましょう。","focus":"work toward","object":"a clear decision"}
+      ]},
+      {"phrase":"work into","ja":"〜に組み込む","image":"内容を別のものの中へ入れてなじませるイメージ。","pattern":"WORK INTO + plan / document","examples":[
+        {"en":"Please work the new condition into the proposal.","ja":"新しい条件を提案書に組み込んでください。","focus":"work into","object":"the proposal"},
+        {"en":"We worked the customer's request into the design.","ja":"私たちは顧客の要望をデザインに組み込みました。","focus":"worked into","object":"the design"},
+        {"en":"Can you work this point into the meeting agenda?","ja":"この点を会議の議題に組み込めますか？","focus":"work into","object":"the meeting agenda"}
+      ]},
+      {"phrase":"work up","ja":"徐々に作る・高める","image":"少しずつ積み上げて状態を作るイメージ。","pattern":"WORK UP + idea / courage","examples":[
+        {"en":"I worked up a simple draft for the client.","ja":"私は顧客向けに簡単な草案を作りました。","focus":"worked up","object":"a simple draft"},
+        {"en":"She worked up the courage to ask for help.","ja":"彼女は助けを求める勇気を出しました。","focus":"worked up","object":"the courage"},
+        {"en":"Can you work up a rough estimate by tomorrow?","ja":"明日までに概算見積を作れますか？","focus":"work up","object":"a rough estimate"}
+      ]},
+      {"phrase":"work off","ja":"〜を解消する・減らす","image":"余分なものを動いて落とすイメージ。","pattern":"WORK OFF + stress / debt / excess","examples":[
+        {"en":"I went for a walk to work off stress.","ja":"私はストレスを解消するために散歩しました。","focus":"work off","object":"stress"},
+        {"en":"The team worked off the backlog last week.","ja":"チームは先週、滞留していた作業を減らしました。","focus":"worked off","object":"the backlog"},
+        {"en":"We need to work off the remaining tasks today.","ja":"私たちは今日、残りの作業を片付ける必要があります。","focus":"work off","object":"the remaining tasks"}
+      ]},
+      {"phrase":"work back from","ja":"〜から逆算する","image":"ゴールから手順を逆向きにたどるイメージ。","pattern":"WORK BACK FROM + goal / date","examples":[
+        {"en":"Let's work back from the delivery date.","ja":"納品日から逆算しましょう。","focus":"work back from","object":"the delivery date"},
+        {"en":"We worked back from the event date to make the schedule.","ja":"私たちはイベント日から逆算してスケジュールを作りました。","focus":"worked back from","object":"the event date"},
+        {"en":"Please work back from the customer's deadline.","ja":"顧客の締切から逆算してください。","focus":"work back from","object":"the customer's deadline"}
       ]}
     ]
   },
@@ -3866,16 +3876,16 @@ export const verbs: Verb[] = [
     "syllable": "use",
     "transitivity": "他動詞",
     "importance": "★★★★★ 超重要",
-    "core": "目的のために道具・情報・方法を使う",
-    "coreDetail": "USEは、何かを目的達成のために活用する動詞です。道具、資料、データ、時間、方法、人の経験などを『役立てる』感覚で使います。",
-    "coreVisual": {"from":["🛠️ 道具","📊 データ","📄 資料","⏰ 時間","💡 方法"],"to":"目的・成果","label":"手元のものを活用する → 目的へ"},
+    "core": "道具・情報・時間を目的のために使う",
+    "coreDetail": "USEは、物・情報・時間・方法を目的のために活用する動詞です。仕事では、データを使う、資料を使う、ツールを使う、時間を有効に使う、という形で非常によく使います。",
+    "coreVisual": {"from":["🔧 道具","📊 データ","⏰ 時間","📄 資料","💡 方法"],"to":"目的・成果","label":"手段を目的へ向けて使う"},
     "meanings": [
-      {"id":"use-tool","title":"① use / 〜を使う","pattern":"USE + tool / system","transitivity":"他動詞","structure":"S + use + O","image":"道具やシステムを目的のために動かすイメージ。","point":"tool, system, app, software などとよく使います。","examples":[
+      {"id":"use-tool","title":"① use / 物・道具を使う","pattern":"USE + thing","transitivity":"他動詞","structure":"S + use + O","image":"手元の道具を目的のために動かすイメージ。","point":"tool, system, app, software, file などとよく使います。","examples":[
         {"en":"We use this system to manage orders.","ja":"私たちは注文を管理するためにこのシステムを使っています。","focus":"use","object":"this system"},
         {"en":"I used the app to check my progress.","ja":"私は進捗を確認するためにそのアプリを使いました。","focus":"used","object":"the app"},
         {"en":"Can you use this tool for the report?","ja":"あなたは報告書にこのツールを使えますか？","focus":"use","object":"this tool"}
       ]},
-      {"id":"use-data","title":"② use data / データを使う","pattern":"USE + data / information","transitivity":"他動詞","structure":"S + use + O","image":"情報を判断材料として活用するイメージ。","point":"data, information, feedback, results と相性が良いです。","examples":[
+      {"id":"use-data","title":"② use data / データ・情報を活用する","pattern":"USE + data / information","transitivity":"他動詞","structure":"S + use + O","image":"情報を判断材料として活用するイメージ。","point":"data, information, feedback, results と相性が良いです。","examples":[
         {"en":"We used the sales data for the meeting.","ja":"私たちは会議のために売上データを使いました。","focus":"used","object":"the sales data"},
         {"en":"Please use the latest information in the proposal.","ja":"提案書には最新情報を使ってください。","focus":"use","object":"the latest information"},
         {"en":"I will use the customer's feedback to improve the document.","ja":"私は資料を改善するために顧客のフィードバックを使います。","focus":"use","object":"the customer's feedback"}
@@ -3883,32 +3893,22 @@ export const verbs: Verb[] = [
       {"id":"use-time","title":"③ use time / 時間を使う","pattern":"USE + time","transitivity":"他動詞","structure":"S + use + O","image":"限られた時間を目的のために充てるイメージ。","point":"use time wisely, use the morning to ... など、時間配分に使えます。","examples":[
         {"en":"Let's use this time to confirm the details.","ja":"この時間を使って詳細を確認しましょう。","focus":"use","object":"this time"},
         {"en":"I used the morning to prepare the estimate.","ja":"私は午前中を使って見積書を準備しました。","focus":"used","object":"the morning"},
-        {"en":"We need to use our time wisely before the deadline.","ja":"私たちは締切前に時間をうまく使う必要があります。","focus":"use","object":"our time"}
+        {"en":"We need to use our time effectively before the deadline.","ja":"私たちは締切前に時間を有効に使う必要があります。","focus":"use","object":"our time"}
       ]},
-      {"id":"use-for","title":"④ use A for B / AをBに使う","pattern":"USE A FOR B","transitivity":"他動詞","structure":"S + use + O + for O","image":"物や情報の使い道を示すイメージ。","point":"何に使うのかを for で説明します。","examples":[
-        {"en":"We use this material for outdoor signs.","ja":"私たちはこの材料を屋外サインに使います。","focus":"use","object":"this material"},
-        {"en":"Can we use this image for the presentation?","ja":"この画像をプレゼン資料に使えますか？","focus":"use","object":"this image"},
-        {"en":"They used the sample for color checking.","ja":"彼らは色確認のためにサンプルを使いました。","focus":"used","object":"the sample"}
+      {"id":"use-power","title":"④ use power / 電力・資源を使う","pattern":"USE + resource","transitivity":"他動詞","structure":"S + use + O","image":"電力・材料・予算などを消費するイメージ。","point":"照明・設備・在庫・コストの話で便利です。","examples":[
+        {"en":"This product uses less power than the old model.","ja":"この製品は旧モデルより消費電力が少ないです。","focus":"uses","object":"less power"},
+        {"en":"The sign uses three LED modules.","ja":"そのサインはLEDモジュールを3個使います。","focus":"uses","object":"three LED modules"},
+        {"en":"We used too much material for the sample.","ja":"私たちはサンプルに材料を使いすぎました。","focus":"used","object":"too much material"}
       ]},
       {"id":"use-to-do","title":"⑤ use A to do / 〜するためにAを使う","pattern":"USE A TO DO","transitivity":"他動詞","structure":"S + use + O + to V","image":"目的に向けて道具を使うイメージ。","point":"何のために使うのかを to do で説明します。","examples":[
         {"en":"We use photos to explain the installation method.","ja":"私たちは施工方法を説明するために写真を使います。","focus":"use","object":"photos"},
         {"en":"I used a checklist to avoid mistakes.","ja":"私はミスを避けるためにチェックリストを使いました。","focus":"used","object":"a checklist"},
         {"en":"Can you use this file to update the quote?","ja":"あなたは見積を更新するためにこのファイルを使えますか？","focus":"use","object":"this file"}
       ]},
-      {"id":"use-as","title":"⑥ use A as B / AをBとして使う","pattern":"USE A AS B","transitivity":"他動詞","structure":"S + use + O + as O","image":"ものに役割を与えて使うイメージ。","point":"as は『〜として』。仮資料・参考資料・基準として使う時に便利です。","examples":[
-        {"en":"We can use this drawing as a reference.","ja":"私たちはこの図面を参考資料として使えます。","focus":"use","object":"this drawing"},
-        {"en":"I used the old estimate as a template.","ja":"私は古い見積書をテンプレートとして使いました。","focus":"used","object":"the old estimate"},
-        {"en":"Please use this number as a rough guide.","ja":"この数字を大まかな目安として使ってください。","focus":"use","object":"this number"}
-      ]},
-      {"id":"used-to","title":"⑦ used to / 以前は〜していた","pattern":"USED TO + verb","transitivity":"助動詞的表現","structure":"S + used to + V","image":"過去の習慣が今とは違う場所にあるイメージ。","point":"useの過去形に見えますが、意味は『以前は〜していた』です。","examples":[
-        {"en":"We used to manage orders by email.","ja":"私たちは以前、メールで注文を管理していました。","focus":"used","object":"to manage orders by email"},
-        {"en":"I used to call the supplier every week.","ja":"私は以前、毎週仕入先に電話していました。","focus":"used","object":"to call the supplier"},
-        {"en":"Did you use to work with this client?","ja":"あなたは以前この顧客と仕事をしていましたか？","focus":"use","object":"to work with this client"}
-      ]},
-      {"id":"be-used-to","title":"⑧ be used to / 〜に慣れている","pattern":"BE USED TO + noun / -ing","transitivity":"形容詞的表現","structure":"S + be used to + O","image":"自分がその状況に慣れた状態にあるイメージ。","point":"to の後ろは名詞か -ing です。be used to working の形に注意します。","examples":[
-        {"en":"I am used to checking orders in the morning.","ja":"私は朝に注文を確認することに慣れています。","focus":"used","object":"to checking orders"},
-        {"en":"She is used to speaking with overseas customers.","ja":"彼女は海外顧客と話すことに慣れています。","focus":"used","object":"to speaking with overseas customers"},
-        {"en":"Are you used to this system yet?","ja":"あなたはもうこのシステムに慣れましたか？","focus":"used","object":"to this system"}
+      {"id":"use-latest","title":"⑥ use the latest file / 最新のものを使う","pattern":"USE + latest / correct + noun","transitivity":"他動詞","structure":"S + use + O","image":"正しい材料を選んで使うイメージ。","point":"見積・図面・資料の版管理でよく使います。","examples":[
+        {"en":"Please use the latest file for the estimate.","ja":"見積には最新ファイルを使ってください。","focus":"use","object":"the latest file"},
+        {"en":"I used the wrong version by mistake.","ja":"私は間違えて古い版を使ってしまいました。","focus":"used","object":"the wrong version"},
+        {"en":"We should use the correct product code.","ja":"私たちは正しい品番を使うべきです。","focus":"use","object":"the correct product code"}
       ]}
     ],
     "collocations": [],
@@ -3918,15 +3918,25 @@ export const verbs: Verb[] = [
         {"en":"Please don't use up the remaining stock.","ja":"残りの在庫を使い切らないでください。","focus":"use up","object":"the remaining stock"},
         {"en":"The project used up more time than expected.","ja":"その案件は予想以上に時間を使いました。","focus":"used up","object":"more time"}
       ]},
-      {"phrase":"be used to","ja":"〜に慣れている","image":"その状況が自分にとって普通になるイメージ。","pattern":"BE USED TO + noun / -ing","examples":[
-        {"en":"I am used to tight schedules.","ja":"私は厳しいスケジュールに慣れています。","focus":"used to","object":"tight schedules"},
-        {"en":"We are used to handling urgent orders.","ja":"私たちは急ぎの注文対応に慣れています。","focus":"used to","object":"handling urgent orders"},
-        {"en":"Are you used to using this app?","ja":"あなたはこのアプリを使うことに慣れていますか？","focus":"used to","object":"using this app"}
+      {"phrase":"use for","ja":"〜に使う","image":"使い道を目的へ向けるイメージ。","pattern":"USE + thing + FOR + purpose","examples":[
+        {"en":"We use this material for outdoor signs.","ja":"私たちはこの材料を屋外サインに使います。","focus":"use for","object":"outdoor signs"},
+        {"en":"Can we use this image for the presentation?","ja":"この画像をプレゼン資料に使えますか？","focus":"use for","object":"the presentation"},
+        {"en":"They used the sample for color checking.","ja":"彼らは色確認のためにサンプルを使いました。","focus":"used for","object":"color checking"}
       ]},
-      {"phrase":"used to","ja":"以前は〜していた","image":"過去の習慣を振り返るイメージ。","pattern":"USED TO + verb","examples":[
-        {"en":"We used to send reports by fax.","ja":"私たちは以前、FAXで報告書を送っていました。","focus":"used to","object":"send reports"},
-        {"en":"I used to visit this customer every month.","ja":"私は以前、この顧客を毎月訪問していました。","focus":"used to","object":"visit this customer"},
-        {"en":"Did you use to prepare the quote manually?","ja":"あなたは以前、見積を手作業で作っていましたか？","focus":"use to","object":"prepare the quote manually"}
+      {"phrase":"use as","ja":"〜として使う","image":"ものに役割を与えて使うイメージ。","pattern":"USE + thing + AS + role","examples":[
+        {"en":"We can use this drawing as a reference.","ja":"私たちはこの図面を参考資料として使えます。","focus":"use as","object":"a reference"},
+        {"en":"I used the old estimate as a template.","ja":"私は古い見積書をテンプレートとして使いました。","focus":"used as","object":"a template"},
+        {"en":"Please use this number as a rough guide.","ja":"この数字を大まかな目安として使ってください。","focus":"use as","object":"a rough guide"}
+      ]},
+      {"phrase":"use with","ja":"〜と一緒に使う","image":"別のものと組み合わせて使うイメージ。","pattern":"USE + thing + WITH + thing","examples":[
+        {"en":"Use this controller with the new LED module.","ja":"このコントローラーを新しいLEDモジュールと一緒に使ってください。","focus":"use with","object":"the new LED module"},
+        {"en":"We used the sample with a different power supply.","ja":"私たちは別の電源と一緒にサンプルを使いました。","focus":"used with","object":"a different power supply"},
+        {"en":"Can we use this part with the existing system?","ja":"この部品を既存システムと一緒に使えますか？","focus":"use with","object":"the existing system"}
+      ]},
+      {"phrase":"use on","ja":"〜に使う・適用する","image":"対象の表面や用途に当てるイメージ。","pattern":"USE + thing + ON + target","examples":[
+        {"en":"Do not use this cleaner on acrylic.","ja":"この洗剤をアクリルに使わないでください。","focus":"use on","object":"acrylic"},
+        {"en":"We used the new tape on the sample sign.","ja":"私たちはサンプルサインに新しいテープを使いました。","focus":"used on","object":"the sample sign"},
+        {"en":"Can we use this finish on the front panel?","ja":"この仕上げを前面パネルに使えますか？","focus":"use on","object":"the front panel"}
       ]}
     ]
   },
@@ -3953,58 +3963,63 @@ export const verbs: Verb[] = [
         {"en":"We started preparing the documents yesterday.","ja":"私たちは昨日、資料の準備を始めました。","focus":"started","object":"preparing the documents"},
         {"en":"She will start calling customers tomorrow.","ja":"彼女は明日、顧客への電話を始めます。","focus":"start","object":"calling customers"}
       ]},
-      {"id":"start-at","title":"③ start at / 〜時に始まる","pattern":"START AT + time","transitivity":"自動詞","structure":"S + start + at time","image":"予定がある時刻から動き出すイメージ。","point":"時間には at、曜日や日付には on を使います。","examples":[
+      {"id":"start-time","title":"③ start at / 〜時に始まる","pattern":"START AT + time","transitivity":"自動詞","structure":"S + start + at time","image":"予定がある時刻から動き出すイメージ。","point":"時間には at、曜日や日付には on を使います。","examples":[
         {"en":"The meeting starts at ten.","ja":"会議は10時に始まります。","focus":"starts","object":"at ten"},
         {"en":"The training started at nine thirty.","ja":"研修は9時30分に始まりました。","focus":"started","object":"at nine thirty"},
         {"en":"What time does the call start?","ja":"その電話会議は何時に始まりますか？","focus":"start","object":"what time"}
       ]},
-      {"id":"start-from","title":"④ start from / 〜から始める","pattern":"START FROM + point","transitivity":"自動詞","structure":"S + start + from O","image":"出発点や基準点から動き出すイメージ。","point":"start from the basics, start from this page のように開始点を示します。","examples":[
-        {"en":"Let's start from the main issue.","ja":"主な問題から始めましょう。","focus":"start","object":"from the main issue"},
-        {"en":"We should start from the customer's request.","ja":"私たちは顧客の要望から始めるべきです。","focus":"start","object":"from the customer's request"},
-        {"en":"Please start from page two of the document.","ja":"資料の2ページ目から始めてください。","focus":"start","object":"from page two"}
+      {"id":"start-production","title":"④ start production / 生産を開始する","pattern":"START + production / process","transitivity":"他動詞","structure":"S + start + O","image":"業務や工程を動かし始めるイメージ。","point":"start production, start delivery, start installation など業務で使いやすいです。","examples":[
+        {"en":"The factory will start production next month.","ja":"工場は来月、生産を開始します。","focus":"start","object":"production"},
+        {"en":"We started the installation in the morning.","ja":"私たちは午前中に施工を開始しました。","focus":"started","object":"the installation"},
+        {"en":"Please start the approval process today.","ja":"今日、承認プロセスを開始してください。","focus":"start","object":"the approval process"}
       ]},
-      {"id":"start-with","title":"⑤ start with / 〜から始める","pattern":"START WITH + item","transitivity":"自動詞","structure":"S + start + with O","image":"最初に扱うものを手に取って始めるイメージ。","point":"会議の議題や説明の最初に使いやすい表現です。","examples":[
-        {"en":"Let's start with the delivery schedule.","ja":"納品スケジュールから始めましょう。","focus":"start","object":"with the delivery schedule"},
-        {"en":"I will start with a short summary.","ja":"私は短い要約から始めます。","focus":"start","object":"with a short summary"},
-        {"en":"Can we start with the customer's question?","ja":"顧客からの質問から始めてもよいですか？","focus":"start","object":"with the customer's question"}
+      {"id":"start-work","title":"⑤ start work / 仕事を始める","pattern":"START WORK","transitivity":"他動詞的表現","structure":"S + start + work","image":"仕事モードへ動き出すイメージ。","point":"start work, start working の両方が使えます。","examples":[
+        {"en":"I start work at nine every day.","ja":"私は毎日9時に仕事を始めます。","focus":"start","object":"work"},
+        {"en":"We started working on the estimate after the meeting.","ja":"私たちは会議後に見積作成を始めました。","focus":"started","object":"working on the estimate"},
+        {"en":"Can you start work on this issue now?","ja":"あなたは今この問題に取りかかれますか？","focus":"start","object":"work on this issue"}
       ]},
-      {"id":"start-business","title":"⑥ start a business / 事業を始める","pattern":"START + business / service","transitivity":"他動詞","structure":"S + start + O","image":"新しい活動をゼロから動かし始めるイメージ。","point":"会社、サービス、キャンペーンなどを始める時に使えます。","examples":[
-        {"en":"They started a new service for small shops.","ja":"彼らは小規模店舗向けの新しいサービスを始めました。","focus":"started","object":"a new service"},
-        {"en":"We will start a new campaign next month.","ja":"私たちは来月、新しいキャンペーンを始めます。","focus":"start","object":"a new campaign"},
-        {"en":"He started his own company after working in sales.","ja":"彼は営業職で働いた後、自分の会社を始めました。","focus":"started","object":"his own company"}
-      ]},
-      {"id":"start-machine","title":"⑦ start / 起動する・動き始める","pattern":"START","transitivity":"自動詞・他動詞","structure":"S + start / start + O","image":"機械やシステムが止まった状態から動き出すイメージ。","point":"car, machine, system, app などにも使えます。","examples":[
-        {"en":"The app starts slowly on my phone.","ja":"そのアプリは私のスマホで起動が遅いです。","focus":"starts","object":"slowly"},
-        {"en":"Please start the system before the test.","ja":"テスト前にシステムを起動してください。","focus":"start","object":"the system"},
-        {"en":"The machine started after we changed the setting.","ja":"設定を変更した後、その機械は動き始めました。","focus":"started","object":"after we changed the setting"}
+      {"id":"start-preparing","title":"⑥ start preparing / 準備を始める","pattern":"START + -ING","transitivity":"他動詞","structure":"S + start + V-ing","image":"準備作業が動き出すイメージ。","point":"今から準備を始める、早めに準備するなどに使いやすいです。","examples":[
+        {"en":"Let's start preparing for the presentation.","ja":"プレゼンの準備を始めましょう。","focus":"start","object":"preparing for the presentation"},
+        {"en":"I started checking the stock this morning.","ja":"私は今朝、在庫確認を始めました。","focus":"started","object":"checking the stock"},
+        {"en":"We should start reviewing the contract soon.","ja":"私たちはそろそろ契約書の確認を始めるべきです。","focus":"start","object":"reviewing the contract"}
       ]}
     ],
     "collocations": [],
     "phrasalVerbs": [
-      {"phrase":"start with","ja":"〜から始める","image":"最初に扱うものを選んで始めるイメージ。","pattern":"START WITH + item","examples":[
-        {"en":"Let's start with the schedule.","ja":"スケジュールから始めましょう。","focus":"start with","object":"the schedule"},
-        {"en":"We started with the client's main concern.","ja":"私たちは顧客の主な懸念点から始めました。","focus":"started with","object":"the client's main concern"},
-        {"en":"Can you start with a quick update?","ja":"あなたは簡単な進捗共有から始められますか？","focus":"start with","object":"a quick update"}
+      {"phrase":"start with","ja":"〜から始める","image":"最初に扱うものを手に取って始めるイメージ。","pattern":"START WITH + item","examples":[
+        {"en":"Let's start with the delivery schedule.","ja":"納品スケジュールから始めましょう。","focus":"start with","object":"the delivery schedule"},
+        {"en":"I will start with a short summary.","ja":"私は短い要約から始めます。","focus":"start with","object":"a short summary"},
+        {"en":"Can we start with the customer's question?","ja":"顧客からの質問から始めてもよいですか？","focus":"start with","object":"the customer's question"}
       ]},
-      {"phrase":"start from","ja":"〜から始める","image":"開始地点から動き出すイメージ。","pattern":"START FROM + point","examples":[
-        {"en":"Let's start from the basic information.","ja":"基本情報から始めましょう。","focus":"start from","object":"the basic information"},
-        {"en":"We started from the customer's request.","ja":"私たちは顧客の要望から始めました。","focus":"started from","object":"the customer's request"},
-        {"en":"Please start from the first item on the list.","ja":"リストの最初の項目から始めてください。","focus":"start from","object":"the first item"}
+      {"phrase":"start from","ja":"〜から始める","image":"出発点や基準点から動き出すイメージ。","pattern":"START FROM + point","examples":[
+        {"en":"Let's start from the main issue.","ja":"主な問題から始めましょう。","focus":"start from","object":"the main issue"},
+        {"en":"We should start from the customer's request.","ja":"私たちは顧客の要望から始めるべきです。","focus":"start from","object":"the customer's request"},
+        {"en":"Please start from page two of the document.","ja":"資料の2ページ目から始めてください。","focus":"start from","object":"page two"}
       ]},
-      {"phrase":"start over","ja":"最初からやり直す","image":"進めたものを戻して、もう一度始めるイメージ。","pattern":"START OVER","examples":[
-        {"en":"We may need to start over with the design.","ja":"私たちはデザインを最初からやり直す必要があるかもしれません。","focus":"start over","object":"with the design"},
-        {"en":"The data was wrong, so I started over.","ja":"データが間違っていたので、私は最初からやり直しました。","focus":"started over"},
-        {"en":"Can we start over and check the process again?","ja":"最初からやり直して、手順をもう一度確認できますか？","focus":"start over"}
+      {"phrase":"start up","ja":"起動する・立ち上げる","image":"機械や事業が動き始めるイメージ。","pattern":"START UP + system / business","examples":[
+        {"en":"Please start up the system before the test.","ja":"テスト前にシステムを起動してください。","focus":"start up","object":"the system"},
+        {"en":"The machine started up without any problem.","ja":"機械は問題なく起動しました。","focus":"started up","object":"the machine"},
+        {"en":"They started up a new service last year.","ja":"彼らは昨年、新しいサービスを立ち上げました。","focus":"started up","object":"a new service"}
       ]},
-      {"phrase":"start up","ja":"起動する・立ち上げる","image":"止まっていたものが立ち上がるイメージ。","pattern":"START UP + system / business","examples":[
-        {"en":"The system starts up quickly now.","ja":"システムは今、すぐに起動します。","focus":"starts up","object":"quickly"},
-        {"en":"They started up a new service last year.","ja":"彼らは昨年、新しいサービスを立ち上げました。","focus":"started up","object":"a new service"},
-        {"en":"Please start up the app again.","ja":"アプリをもう一度起動してください。","focus":"start up","object":"the app"}
+      {"phrase":"start over","ja":"最初からやり直す","image":"スタート地点へ戻ってもう一度始めるイメージ。","pattern":"START OVER","examples":[
+        {"en":"We may need to start over with the layout.","ja":"私たちはレイアウトを最初からやり直す必要があるかもしれません。","focus":"start over","object":"with the layout"},
+        {"en":"I started over after finding the mistake.","ja":"私はミスを見つけた後、最初からやり直しました。","focus":"started over","object":"after finding the mistake"},
+        {"en":"Let's start over and check the data again.","ja":"最初からやり直して、データをもう一度確認しましょう。","focus":"start over","object":"and check the data again"}
       ]},
-      {"phrase":"start off","ja":"始める・始まる","image":"最初の一歩を踏み出すイメージ。","pattern":"START OFF","examples":[
-        {"en":"Let's start off with a quick review.","ja":"簡単な確認から始めましょう。","focus":"start off","object":"with a quick review"},
-        {"en":"The project started off well.","ja":"その案件は順調に始まりました。","focus":"started off","object":"well"},
-        {"en":"We started off by checking the schedule.","ja":"私たちはスケジュール確認から始めました。","focus":"started off","object":"by checking the schedule"}
+      {"phrase":"start off","ja":"始める・始まる","image":"最初の一歩を踏み出すイメージ。","pattern":"START OFF + with / by","examples":[
+        {"en":"Let's start off with a quick update.","ja":"簡単な進捗共有から始めましょう。","focus":"start off","object":"with a quick update"},
+        {"en":"The meeting started off smoothly.","ja":"会議は順調に始まりました。","focus":"started off","object":"smoothly"},
+        {"en":"We started off by checking the stock.","ja":"私たちは在庫確認から始めました。","focus":"started off","object":"by checking the stock"}
+      ]},
+      {"phrase":"start out","ja":"始める・出発する","image":"最初の状態から進み出すイメージ。","pattern":"START OUT + as / with","examples":[
+        {"en":"The project started out as a small request.","ja":"その案件は小さな依頼として始まりました。","focus":"started out","object":"as a small request"},
+        {"en":"I started out in sales before moving to planning.","ja":"私は企画に移る前、営業から始めました。","focus":"started out","object":"in sales"},
+        {"en":"We started out with a simple design.","ja":"私たちはシンプルなデザインから始めました。","focus":"started out","object":"with a simple design"}
+      ]},
+      {"phrase":"start on","ja":"〜に取りかかる","image":"作業の上に乗って動き出すイメージ。","pattern":"START ON + task","examples":[
+        {"en":"Can you start on the estimate today?","ja":"あなたは今日、見積に取りかかれますか？","focus":"start on","object":"the estimate"},
+        {"en":"We started on the report after lunch.","ja":"私たちは昼食後に報告書に取りかかりました。","focus":"started on","object":"the report"},
+        {"en":"Please start on the sample list first.","ja":"まずサンプルリストに取りかかってください。","focus":"start on","object":"the sample list"}
       ]}
     ]
   },

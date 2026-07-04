@@ -53,7 +53,7 @@ export type CloudBackupComparison = {
 };
 
 const CLOUD_CREDENTIAL_KEY = "verbMaster.cloudCredentials";
-const CLOUD_SQL_HINT = "Supabase SQLが未実行、または保存用RPCが見つかりません。supabase/V120_CLOUD_SAVE_FOUNDATION.sql をSupabase SQL Editorで実行してください。";
+const CLOUD_SQL_HINT = "Supabase SQLが未実行、または保存用RPCが見つかりません。supabase/V135_PERSISTENCE_AUTOSAVE_FOUNDATION.sql をSupabase SQL Editorで実行してください。";
 
 type CloudCredentialMap = Record<string, { passwordHash: string; savedAt: string }>;
 type BackupRow = {
@@ -64,6 +64,26 @@ type BackupRow = {
 
 function nowText() {
   return new Date().toISOString();
+}
+
+function timestampMs(value?: string | null) {
+  if (!value) return 0;
+  const parsed = Date.parse(value);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function localIsNewer(localStamp?: string, remoteStamp?: string) {
+  const local = timestampMs(localStamp);
+  const remote = timestampMs(remoteStamp);
+  return local > 0 && local >= remote;
+}
+
+function remoteHasProfile(remote?: Partial<UserProgress> | null) {
+  return Boolean(remote?.displayName || remote?.avatarDataUrl || remote?.profileUpdatedAt);
+}
+
+function remoteHasSettings(remote?: Partial<UserProgress> | null) {
+  return Boolean(remote?.targetDate || remote?.studyDays || remote?.studyPace || remote?.settingsUpdatedAt);
 }
 
 function baseStatus(message: string): CloudSyncStatus {
@@ -183,8 +203,17 @@ function summarizeProgress(progress: Partial<UserProgress> | null | undefined): 
 function mergeRemoteLearningWithLocalProfile(local: UserProgress, remote?: Partial<UserProgress> | null): UserProgress {
   if (!remote) return local;
   const remoteProgress = remote as UserProgress;
-  const localHasCustomName = Boolean(local.displayName && local.displayName !== local.username);
-  return {
+  const localProfileWins = localIsNewer(local.profileUpdatedAt, remoteProgress.profileUpdatedAt) || !remoteHasProfile(remoteProgress);
+  const localSettingsWins = localIsNewer(local.settingsUpdatedAt, remoteProgress.settingsUpdatedAt) || !remoteHasSettings(remoteProgress);
+
+  const displayName = localProfileWins
+    ? (local.displayName || remoteProgress.displayName || local.username)
+    : (remoteProgress.displayName || local.displayName || local.username);
+  const avatarDataUrl = localProfileWins
+    ? (local.avatarDataUrl || remoteProgress.avatarDataUrl || "")
+    : (remoteProgress.avatarDataUrl || local.avatarDataUrl || "");
+
+  const merged: UserProgress = {
     ...local,
     ...remoteProgress,
     username: local.username,
@@ -201,35 +230,51 @@ function mergeRemoteLearningWithLocalProfile(local: UserProgress, remote?: Parti
     testSessions: { ...(remoteProgress.testSessions || {}), ...(local.testSessions || {}) },
     testItemStats: { ...(remoteProgress.testItemStats || {}), ...(local.testItemStats || {}) },
     weeklyStats: { ...(remoteProgress.weeklyStats || {}), ...(local.weeklyStats || {}) },
-    displayName: localHasCustomName ? local.displayName : (remoteProgress.displayName || local.displayName || local.username),
-    avatarDataUrl: local.avatarDataUrl || remoteProgress.avatarDataUrl || "",
-    notificationsEnabled: typeof local.notificationsEnabled === "boolean" ? local.notificationsEnabled : remoteProgress.notificationsEnabled,
-    voiceSettings: local.voiceSettings || remoteProgress.voiceSettings,
-    targetDate: local.targetDate || remoteProgress.targetDate,
-    targetStartDate: local.targetStartDate || remoteProgress.targetStartDate,
-    studyDays: local.studyDays || remoteProgress.studyDays,
-    studyPace: local.studyPace || remoteProgress.studyPace,
+    displayName,
+    avatarDataUrl,
+    notificationsEnabled: localSettingsWins
+      ? (typeof local.notificationsEnabled === "boolean" ? local.notificationsEnabled : remoteProgress.notificationsEnabled)
+      : (typeof remoteProgress.notificationsEnabled === "boolean" ? remoteProgress.notificationsEnabled : local.notificationsEnabled),
+    voiceSettings: localSettingsWins ? (local.voiceSettings || remoteProgress.voiceSettings) : (remoteProgress.voiceSettings || local.voiceSettings),
+    targetDate: localSettingsWins ? (local.targetDate || remoteProgress.targetDate) : (remoteProgress.targetDate || local.targetDate),
+    targetStartDate: localSettingsWins ? (local.targetStartDate || remoteProgress.targetStartDate) : (remoteProgress.targetStartDate || local.targetStartDate),
+    studyDays: localSettingsWins ? (local.studyDays || remoteProgress.studyDays) : (remoteProgress.studyDays || local.studyDays),
+    studyPace: localSettingsWins ? (local.studyPace || remoteProgress.studyPace) : (remoteProgress.studyPace || local.studyPace),
+    profileUpdatedAt: localProfileWins ? (local.profileUpdatedAt || remoteProgress.profileUpdatedAt) : (remoteProgress.profileUpdatedAt || local.profileUpdatedAt),
+    settingsUpdatedAt: localSettingsWins ? (local.settingsUpdatedAt || remoteProgress.settingsUpdatedAt) : (remoteProgress.settingsUpdatedAt || local.settingsUpdatedAt),
+    cloudRestoredAt: nowText(),
     unlockedVerbCount: Math.max(Number(local.unlockedVerbCount || 0), Number(remoteProgress.unlockedVerbCount || 0)),
     purchaseTotalYen: Math.max(Number(local.purchaseTotalYen || 0), Number(remoteProgress.purchaseTotalYen || 0)),
     premiumSource: local.premiumSource || remoteProgress.premiumSource,
     premiumUpdatedAt: local.premiumUpdatedAt || remoteProgress.premiumUpdatedAt,
   };
+  return merged;
 }
 
+
 function prepareBackupProgress(progress: UserProgress, existing?: Partial<UserProgress> | null): UserProgress {
-  const currentName = progress.displayName && progress.displayName !== progress.username ? progress.displayName : "";
+  const existingProgress = existing as UserProgress | undefined;
+  const localProfileWins = localIsNewer(progress.profileUpdatedAt, existingProgress?.profileUpdatedAt) || !remoteHasProfile(existingProgress);
+  const localSettingsWins = localIsNewer(progress.settingsUpdatedAt, existingProgress?.settingsUpdatedAt) || !remoteHasSettings(existingProgress);
+  const now = nowText();
+  const currentName = progress.displayName && progress.displayName !== progress.username ? progress.displayName : progress.username;
+
   return {
     ...progress,
-    displayName: currentName || existing?.displayName || progress.username,
-    avatarDataUrl: progress.avatarDataUrl || existing?.avatarDataUrl || "",
-    notificationsEnabled: typeof progress.notificationsEnabled === "boolean" ? progress.notificationsEnabled : existing?.notificationsEnabled ?? true,
-    voiceSettings: progress.voiceSettings || existing?.voiceSettings || { gender: "female", lang: "en-US" },
-    targetDate: progress.targetDate || existing?.targetDate,
-    targetStartDate: progress.targetStartDate || existing?.targetStartDate,
-    studyDays: progress.studyDays || existing?.studyDays,
-    studyPace: progress.studyPace || existing?.studyPace,
+    displayName: localProfileWins ? currentName : (existingProgress?.displayName || currentName),
+    avatarDataUrl: localProfileWins ? (progress.avatarDataUrl || existingProgress?.avatarDataUrl || "") : (existingProgress?.avatarDataUrl || progress.avatarDataUrl || ""),
+    profileUpdatedAt: localProfileWins ? (progress.profileUpdatedAt || existingProgress?.profileUpdatedAt || now) : (existingProgress?.profileUpdatedAt || progress.profileUpdatedAt),
+    notificationsEnabled: typeof progress.notificationsEnabled === "boolean" ? progress.notificationsEnabled : existingProgress?.notificationsEnabled ?? true,
+    voiceSettings: progress.voiceSettings || existingProgress?.voiceSettings || { gender: "female", lang: "en-US" },
+    targetDate: localSettingsWins ? (progress.targetDate || existingProgress?.targetDate) : (existingProgress?.targetDate || progress.targetDate),
+    targetStartDate: localSettingsWins ? (progress.targetStartDate || existingProgress?.targetStartDate) : (existingProgress?.targetStartDate || progress.targetStartDate),
+    studyDays: localSettingsWins ? (progress.studyDays || existingProgress?.studyDays) : (existingProgress?.studyDays || progress.studyDays),
+    studyPace: localSettingsWins ? (progress.studyPace || existingProgress?.studyPace) : (existingProgress?.studyPace || progress.studyPace),
+    settingsUpdatedAt: localSettingsWins ? (progress.settingsUpdatedAt || existingProgress?.settingsUpdatedAt || now) : (existingProgress?.settingsUpdatedAt || progress.settingsUpdatedAt),
+    cloudSyncedAt: now,
   };
 }
+
 
 async function rpcFetchBackup(username: string, passwordHash: string): Promise<BackupRow | null> {
   if (!supabase) return null;
@@ -247,7 +292,7 @@ async function rpcUpsertBackup(progress: UserProgress, passwordHash: string) {
     p_password_hash: passwordHash,
     p_progress_json: progress,
     p_settings_json: settings,
-    p_app_version: "v120-save-foundation",
+    p_app_version: "v135-persistence-autosave",
   });
   if (error) throw new Error(normalizeSupabaseError(error));
   const result = asRpcResult(data);
@@ -417,7 +462,7 @@ export async function getCloudBackupComparison(username: string): Promise<CloudB
 }
 
 export async function verifyCloudBackup(username: string) {
-  if (!supabase) return { ok: false, message: "Supabase未設定です。", updatedAt: "", summary: null as null | { xp: number; studied: number; savedPhrases: number; tests: number } };
+  if (!supabase) return { ok: false, message: "Supabase未設定です。", updatedAt: "", summary: null as null | { xp: number; studied: number; savedPhrases: number; tests: number; targetDate?: string; displayName?: string; avatarSaved?: boolean } };
   const passwordHash = getCloudPasswordHash(username);
   if (!passwordHash) return { ok: false, message: "クラウド確認には再ログインが必要です。", updatedAt: "", summary: null };
   try {
@@ -429,6 +474,9 @@ export async function verifyCloudBackup(username: string) {
       studied: (progress.studiedVerbIds || []).length,
       savedPhrases: (progress.savedPhrases || []).length,
       tests: Number(progress.testCorrect || 0) + Number(progress.testWrong || 0),
+      targetDate: progress.targetDate || "",
+      displayName: progress.displayName || "",
+      avatarSaved: Boolean(progress.avatarDataUrl),
     };
     return { ok: true, message: "クラウドバックアップを確認できました。", updatedAt: backup.updated_at || "", summary };
   } catch (error) {

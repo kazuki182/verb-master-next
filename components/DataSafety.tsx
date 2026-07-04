@@ -73,6 +73,8 @@ export default function DataSafety() {
       if (document.visibilityState === "hidden") void run("before-hide");
     };
     document.addEventListener("visibilitychange", onVisibility);
+    const onOnline = () => void run("visible");
+    window.addEventListener("online", onOnline);
 
     const onProgressSaved = () => {
       if (debounceRef.current) window.clearTimeout(debounceRef.current);
@@ -84,6 +86,7 @@ export default function DataSafety() {
       window.clearInterval(timer);
       if (debounceRef.current) window.clearTimeout(debounceRef.current);
       document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("online", onOnline);
       window.removeEventListener(PROGRESS_SAVED_EVENT, onProgressSaved);
     };
   }, []);

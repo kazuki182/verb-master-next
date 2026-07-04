@@ -83,10 +83,12 @@ export default function Home() {
       setPaceVerbs(String(savedPace.verbs));
     };
 
-    loadLocalState();
+    // V135: 先にクラウド復元を試す。
+    // getTargetDate() は未保存ユーザーに初期目標日を作るため、復元前に呼ぶと
+    // クラウドの目標日より端末の初期値が優先される事故が起きる。
     void restoreLearningDataFromSupabase(user)
-      .then(() => loadLocalState())
-      .catch(() => undefined);
+      .catch(() => undefined)
+      .finally(() => loadLocalState());
   }, []);
 
   if (!username || !progress) return <p className="text-muted">Loading...</p>;

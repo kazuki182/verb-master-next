@@ -1,4 +1,3 @@
-Verb Master Reaudit WATCH / HEAR / LISTEN Final
-Base: latest cumulative project with Ver.134 + prior reaudit fixes
-Target verbs: WATCH / HEAR / LISTEN
-Rules: 基本/句動詞 only, basic red highlight verb only, phrasal red highlight verb + particle only, no object highlight.
+Verb Master V135 Persistence Autosave Foundation
+Base: latest cumulative project with Ver.134 + early verb reaudit fixes through WORK / USE / START
+Purpose: fix profile image, target date, nickname persistence with Supabase-backed autosave and rollback history.

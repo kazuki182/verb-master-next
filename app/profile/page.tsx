@@ -191,7 +191,7 @@ export default function ProfilePage() {
     setCloudSyncing(false);
     if (verify.ok && verify.summary) {
       setCloudTestMessage(
-        `確認OK：XP ${verify.summary.xp} / 学習 ${verify.summary.studied}語 / テスト ${verify.summary.tests}問 / 保存フレーズ ${verify.summary.savedPhrases}件`,
+        `確認OK：XP ${verify.summary.xp} / 学習 ${verify.summary.studied}語 / テスト ${verify.summary.tests}問 / 保存フレーズ ${verify.summary.savedPhrases}件 / 目標日 ${verify.summary.targetDate || "未設定"} / 画像 ${verify.summary.avatarSaved ? "保存済み" : "未登録"}`,
       );
     } else {
       setCloudTestMessage(`確認NG：${verify.message}`);

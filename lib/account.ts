@@ -158,6 +158,11 @@ export type UserProgress = {
   studyPace?: StudyPaceSetting;
   lastStudyDate?: string;
   lastLoginAt?: string;
+  updatedAt?: string;
+  profileUpdatedAt?: string;
+  settingsUpdatedAt?: string;
+  cloudSyncedAt?: string;
+  cloudRestoredAt?: string;
 };
 
 const ACCOUNTS_KEY = "verbMaster.accounts";
@@ -198,6 +203,18 @@ function todayKey() {
 
 function nowText() {
   return new Date().toISOString();
+}
+
+function timestampMs(value?: string | null) {
+  if (!value) return 0;
+  const parsed = Date.parse(value);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function isRemoteSnapshotNewer(localStamp?: string, remoteStamp?: string) {
+  const local = timestampMs(localStamp);
+  const remote = timestampMs(remoteStamp);
+  return remote > 0 && remote >= local;
 }
 
 function weekKey(date = new Date()) {
@@ -321,16 +338,24 @@ export function initAdminAccount() {
 export function updateUserProfile(settings: { displayName?: string; avatarDataUrl?: string; notificationsEnabled?: boolean }) {
   const progress = getCurrentProgress();
   if (!progress) return null;
+  const touchedAt = nowText();
+  let profileTouched = false;
+  let settingsTouched = false;
   if (typeof settings.displayName === "string") {
     const name = settings.displayName.trim();
     progress.displayName = name || progress.username;
+    profileTouched = true;
   }
   if (typeof settings.avatarDataUrl === "string") {
     progress.avatarDataUrl = settings.avatarDataUrl;
+    profileTouched = true;
   }
   if (typeof settings.notificationsEnabled === "boolean") {
     progress.notificationsEnabled = settings.notificationsEnabled;
+    settingsTouched = true;
   }
+  if (profileTouched) progress.profileUpdatedAt = touchedAt;
+  if (settingsTouched) progress.settingsUpdatedAt = touchedAt;
   saveProgress(progress);
   return progress;
 }
@@ -511,6 +536,7 @@ export function getCurrentProgress() {
 export function saveProgress(progress: UserProgress) {
   const map = progressMap();
   progress.level = Math.max(1, Math.floor(progress.xp / 100) + 1);
+  progress.updatedAt = nowText();
   map[progress.username] = normalizeProgress(progress);
   saveProgressMap(map);
   emitProgressSaved(progress.username);
@@ -1004,6 +1030,7 @@ export function setStudyPaceSetting(value: StudyPaceSetting) {
   const progress = getCurrentProgressWithoutInit();
   if (progress) {
     progress.studyPace = normalized;
+    progress.settingsUpdatedAt = nowText();
     saveProgress(progress);
   }
 }
@@ -1057,6 +1084,7 @@ export function setStudyDaysSetting(value: StudyDaysSetting) {
   const progress = getCurrentProgressWithoutInit();
   if (progress) {
     progress.studyDays = normalized;
+    progress.settingsUpdatedAt = nowText();
     saveProgress(progress);
   }
 }
@@ -1126,6 +1154,7 @@ export function setTargetDate(value: string) {
     if (progress) {
       progress.targetDate = value;
       progress.targetStartDate = start;
+      progress.settingsUpdatedAt = nowText();
       saveProgress(progress);
     }
   }
@@ -1146,6 +1175,8 @@ export type ClientStudySettingsSnapshot = {
   purchaseTotalYen?: number;
   premiumSource?: UserProgress["premiumSource"];
   premiumUpdatedAt?: string;
+  profileUpdatedAt?: string;
+  settingsUpdatedAt?: string;
 };
 
 export function getClientStudySettingsSnapshot(progress?: UserProgress | null): ClientStudySettingsSnapshot {
@@ -1165,22 +1196,35 @@ export function getClientStudySettingsSnapshot(progress?: UserProgress | null): 
     purchaseTotalYen: progress?.purchaseTotalYen,
     premiumSource: progress?.premiumSource,
     premiumUpdatedAt: progress?.premiumUpdatedAt,
+    profileUpdatedAt: progress?.profileUpdatedAt,
+    settingsUpdatedAt: progress?.settingsUpdatedAt,
   };
 }
 
 export function applyClientStudySettingsSnapshot(snapshot?: ClientStudySettingsSnapshot | null, progress?: UserProgress | null) {
   if (typeof window === "undefined" || !snapshot) return;
-  if (snapshot.targetDate) writeScopedStorage(TARGET_DATE_KEY, snapshot.targetDate, progress?.username);
-  if (snapshot.targetStartDate) writeScopedStorage(TARGET_START_DATE_KEY, snapshot.targetStartDate, progress?.username);
-  if (snapshot.studyDays) writeScopedStorage(STUDY_DAYS_KEY, JSON.stringify(normalizeStudyDays(snapshot.studyDays)), progress?.username);
-  if (snapshot.studyPace) writeScopedStorage(STUDY_PACE_KEY, JSON.stringify(normalizeStudyPace(snapshot.studyPace)), progress?.username);
+  const localSettingsNewer = progress ? !isRemoteSnapshotNewer(progress.settingsUpdatedAt, snapshot.settingsUpdatedAt) && timestampMs(progress.settingsUpdatedAt) > 0 : false;
+  const localProfileNewer = progress ? !isRemoteSnapshotNewer(progress.profileUpdatedAt, snapshot.profileUpdatedAt) && timestampMs(progress.profileUpdatedAt) > 0 : false;
+
+  if (!localSettingsNewer) {
+    if (snapshot.targetDate) writeScopedStorage(TARGET_DATE_KEY, snapshot.targetDate, progress?.username);
+    if (snapshot.targetStartDate) writeScopedStorage(TARGET_START_DATE_KEY, snapshot.targetStartDate, progress?.username);
+    if (snapshot.studyDays) writeScopedStorage(STUDY_DAYS_KEY, JSON.stringify(normalizeStudyDays(snapshot.studyDays)), progress?.username);
+    if (snapshot.studyPace) writeScopedStorage(STUDY_PACE_KEY, JSON.stringify(normalizeStudyPace(snapshot.studyPace)), progress?.username);
+  }
   if (!progress) return;
-  if (snapshot.targetDate) progress.targetDate = snapshot.targetDate;
-  if (snapshot.targetStartDate) progress.targetStartDate = snapshot.targetStartDate;
-  if (snapshot.studyDays) progress.studyDays = normalizeStudyDays(snapshot.studyDays);
-  if (snapshot.studyPace) progress.studyPace = normalizeStudyPace(snapshot.studyPace);
-  if (snapshot.displayName || snapshot.nickname) progress.displayName = snapshot.displayName || snapshot.nickname || progress.displayName || progress.username;
-  if (snapshot.avatarUrl || snapshot.avatarDataUrl) progress.avatarDataUrl = snapshot.avatarUrl || snapshot.avatarDataUrl || progress.avatarDataUrl || "";
+  if (!localSettingsNewer) {
+    if (snapshot.targetDate) progress.targetDate = snapshot.targetDate;
+    if (snapshot.targetStartDate) progress.targetStartDate = snapshot.targetStartDate;
+    if (snapshot.studyDays) progress.studyDays = normalizeStudyDays(snapshot.studyDays);
+    if (snapshot.studyPace) progress.studyPace = normalizeStudyPace(snapshot.studyPace);
+    if (snapshot.settingsUpdatedAt) progress.settingsUpdatedAt = snapshot.settingsUpdatedAt;
+  }
+  if (!localProfileNewer) {
+    if (snapshot.displayName || snapshot.nickname) progress.displayName = snapshot.displayName || snapshot.nickname || progress.displayName || progress.username;
+    if (snapshot.avatarUrl || snapshot.avatarDataUrl) progress.avatarDataUrl = snapshot.avatarUrl || snapshot.avatarDataUrl || progress.avatarDataUrl || "";
+    if (snapshot.profileUpdatedAt) progress.profileUpdatedAt = snapshot.profileUpdatedAt;
+  }
   if (typeof snapshot.notificationsEnabled === "boolean") progress.notificationsEnabled = snapshot.notificationsEnabled;
   if (snapshot.voiceSettings) progress.voiceSettings = snapshot.voiceSettings;
   if (typeof snapshot.unlockedVerbCount === "number") progress.unlockedVerbCount = Math.max(progress.unlockedVerbCount || 0, snapshot.unlockedVerbCount);
@@ -1188,6 +1232,7 @@ export function applyClientStudySettingsSnapshot(snapshot?: ClientStudySettingsS
   if (snapshot.premiumSource) progress.premiumSource = snapshot.premiumSource;
   if (snapshot.premiumUpdatedAt) progress.premiumUpdatedAt = snapshot.premiumUpdatedAt;
 }
+
 
 export function getLearningPlan(totalVerbs: number, completedVerbs: number) {
   const targetDate = getTargetDate();

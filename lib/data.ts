@@ -3497,53 +3497,53 @@ export const verbs: Verb[] = [
     "syllable": "think",
     "transitivity": "自動詞・他動詞",
     "importance": "★★★★★ 超重要",
-    "core": "頭の中で考えを動かす",
-    "coreDetail": "THINKは、情報・可能性・理由を頭の中で動かして判断へ近づける感覚です。意見を持つ、検討する、思い出す、予想する、深く考える、という仕事の会話で頻繁に使います。",
+    "core": "頭の中で考える・判断する",
+    "coreDetail": "THINKは、情報・可能性・理由を頭の中で動かして、意見や判断に近づける動詞です。仕事では、提案前の検討、返信前の判断、リスク確認、先を読む場面でよく使います。",
     "coreVisual": {
-      "from": ["💡 情報", "❓ 課題", "📊 数字", "🗣️ 意見", "🗓️ 予定"],
-      "to": "頭の中の判断・考え",
+      "from": ["📄 情報", "❓ 課題", "📊 数字", "🗣️ 意見", "🗓️ 予定"],
+      "to": "頭の中の考え・判断",
       "label": "情報・可能性 → 頭の中で考える"
     },
     "meanings": [
-      {"id":"think-opinion","title":"① think / 〜だと思う","pattern":"THINK + sentence","transitivity":"他動詞","structure":"S + think + that節","image":"頭の中の判断を言葉にするイメージ。","point":"I think ... は意見をやわらかく伝える基本表現。thatは省略されることが多い。","examples":[
+      {"id":"think-opinion","title":"① think / 〜だと思う","pattern":"THINK + sentence","transitivity":"他動詞","structure":"S + think + that節","image":"頭の中の判断を相手に伝えるイメージ。","point":"I think ... は意見をやわらかく伝える基本表現。thatは省略されることが多い。","examples":[
         {"en":"I think the schedule is realistic.","ja":"私はそのスケジュールは現実的だと思います。","focus":"think","object":"the schedule is realistic"},
         {"en":"We think this proposal will help the client.","ja":"私たちはこの提案が顧客の役に立つと思います。","focus":"think","object":"this proposal will help the client"},
         {"en":"Do you think the price is acceptable?","ja":"あなたはその価格が受け入れられると思いますか？","focus":"think","object":"the price is acceptable"}
       ]},
-      {"id":"think-about","title":"② think about / 〜について考える","pattern":"THINK ABOUT + topic","transitivity":"自動詞","structure":"S + think + about O","image":"あるテーマを頭の中で扱うイメージ。","point":"案件・条件・予定・提案など、検討対象を置く時に使いやすい。","examples":[
-        {"en":"I will think about the customer's request.","ja":"私は顧客の要望について考えます。","focus":"think","object":"about the customer's request"},
-        {"en":"We need to think about the delivery date again.","ja":"私たちは納期についてもう一度考える必要があります。","focus":"think","object":"about the delivery date"},
-        {"en":"Please think about the best way to explain it.","ja":"あなたはそれを説明する最善の方法について考えてください。","focus":"think","object":"about the best way to explain it"}
-      ]},
-      {"id":"think-of","title":"③ think of / 〜を思いつく・思い浮かべる","pattern":"THINK OF + idea / name","transitivity":"自動詞","structure":"S + think + of O","image":"頭の中にアイデアや名前が浮かぶイメージ。","point":"idea, solution, name などと相性が良い。","examples":[
-        {"en":"I thought of a better example for the meeting.","ja":"私は会議用により良い例を思いつきました。","focus":"thought","object":"of a better example"},
-        {"en":"Can you think of another option?","ja":"あなたは別の選択肢を思いつけますか？","focus":"think","object":"of another option"},
-        {"en":"We couldn't think of a simple solution yesterday.","ja":"私たちは昨日、簡単な解決策を思いつけませんでした。","focus":"think","object":"of a simple solution"}
-      ]},
-      {"id":"think-need","title":"④ think we need / 必要だと思う","pattern":"THINK + S + need","transitivity":"他動詞","structure":"S + think + sentence","image":"必要性を頭の中で判断するイメージ。","point":"仕事では We think we need ... の形が自然。押しつけすぎず提案できる。","examples":[
-        {"en":"We think we need more time to check the data.","ja":"私たちはデータ確認にもう少し時間が必要だと思います。","focus":"think","object":"we need more time"},
-        {"en":"I think we need approval before sending the estimate.","ja":"私は見積を送る前に承認が必要だと思います。","focus":"think","object":"we need approval"},
-        {"en":"Do you think we need another meeting?","ja":"あなたは私たちにもう一度会議が必要だと思いますか？","focus":"think","object":"we need another meeting"}
-      ]},
-      {"id":"think-through","title":"⑤ think through / よく考える","pattern":"THINK THROUGH + issue / plan","transitivity":"他動詞","structure":"S + think + through O","image":"問題の中を最後まで通して考えるイメージ。","point":"失敗を防ぐために、計画や条件を丁寧に考える時に使う。","examples":[
-        {"en":"We should think through the installation plan.","ja":"私たちは施工計画をよく考えるべきです。","focus":"think","object":"through the installation plan"},
-        {"en":"I thought through the risks before the proposal.","ja":"私は提案前にリスクをよく考えました。","focus":"thought","object":"through the risks"},
-        {"en":"Please think through the schedule before you reply.","ja":"あなたは返信前にスケジュールをよく考えてください。","focus":"think","object":"through the schedule"}
-      ]},
-      {"id":"think-carefully","title":"⑥ think carefully / 慎重に考える","pattern":"THINK + carefully","transitivity":"自動詞","structure":"S + think + M","image":"判断を急がず、頭の中で丁寧に確認するイメージ。","point":"carefully, clearly, seriously とよく使う。","examples":[
-        {"en":"Please think carefully before changing the specification.","ja":"あなたは仕様を変更する前に慎重に考えてください。","focus":"think","object":"carefully"},
-        {"en":"We thought seriously about the customer's concern.","ja":"私たちは顧客の懸念について真剣に考えました。","focus":"thought","object":"seriously"},
+      {"id":"think-carefully","title":"② think carefully / 慎重に考える","pattern":"THINK + adverb","transitivity":"自動詞","structure":"S + think + M","image":"判断を急がず、頭の中で丁寧に確認するイメージ。","point":"carefully, clearly, logically などとよく使う。","examples":[
+        {"en":"Please think carefully before changing the specification.","ja":"仕様を変更する前に慎重に考えてください。","focus":"think","object":"carefully"},
+        {"en":"We thought seriously before we replied to the client.","ja":"私たちは顧客に返信する前に真剣に考えました。","focus":"thought","object":"seriously"},
         {"en":"I need to think clearly before the call.","ja":"私は電話の前に冷静に考える必要があります。","focus":"think","object":"clearly"}
+      ]},
+      {"id":"think-possible","title":"③ think it is possible / 可能だと思う","pattern":"THINK + sentence","transitivity":"他動詞","structure":"S + think + sentence","image":"可能性を頭の中で判断するイメージ。","point":"possible, difficult, necessary など判断を伝える時に使いやすい。","examples":[
+        {"en":"I think it is possible to deliver it by Friday.","ja":"私は金曜日までに納品することは可能だと思います。","focus":"think","object":"it is possible"},
+        {"en":"We thought it was difficult to change the design this week.","ja":"私たちは今週デザインを変更するのは難しいと思いました。","focus":"thought","object":"it was difficult"},
+        {"en":"Do you think it is necessary to confirm the quantity again?","ja":"あなたは数量をもう一度確認する必要があると思いますか？","focus":"think","object":"it is necessary"}
+      ]},
+      {"id":"think-should","title":"④ think we should / 〜すべきだと思う","pattern":"THINK + S + should","transitivity":"他動詞","structure":"S + think + sentence","image":"次の行動について判断するイメージ。","point":"We think we should ... は会議や提案で自然に使える。","examples":[
+        {"en":"We think we should wait for the client's reply.","ja":"私たちは顧客の返信を待つべきだと思います。","focus":"think","object":"we should wait"},
+        {"en":"I think we should check the data again before sending it.","ja":"私は送る前にデータをもう一度確認すべきだと思います。","focus":"think","object":"we should check"},
+        {"en":"Do you think we should schedule another meeting?","ja":"あなたは私たちがもう一度会議を設定すべきだと思いますか？","focus":"think","object":"we should schedule"}
+      ]},
+      {"id":"think-before","title":"⑤ think before replying / 返信前に考える","pattern":"THINK + before V-ing","transitivity":"自動詞","structure":"S + think + before V-ing","image":"行動する前に一度止まって考えるイメージ。","point":"メール返信・価格回答・納期回答の前に使いやすい。","examples":[
+        {"en":"Please think before replying to the customer.","ja":"顧客に返信する前に考えてください。","focus":"think","object":"before replying"},
+        {"en":"We need to think before changing the price.","ja":"私たちは価格を変更する前に考える必要があります。","focus":"think","object":"before changing"},
+        {"en":"I thought before I accepted the new condition.","ja":"私は新しい条件を受け入れる前に考えました。","focus":"thought","object":"before I accepted"}
+      ]},
+      {"id":"think-differently","title":"⑥ think differently / 違う考え方をする","pattern":"THINK + adverb","transitivity":"自動詞","structure":"S + think + M","image":"いつもと違う方向で考えるイメージ。","point":"改善案や代替案を考える時に使える。","examples":[
+        {"en":"We need to think differently about this project.","ja":"私たちはこの案件について違う考え方をする必要があります。","focus":"think","object":"differently"},
+        {"en":"She thinks logically when she checks the numbers.","ja":"彼女は数字を確認するとき論理的に考えます。","focus":"thinks","object":"logically"},
+        {"en":"Let's think creatively about the display design.","ja":"ディスプレイデザインについて創造的に考えましょう。","focus":"think","object":"creatively"}
       ]},
       {"id":"think-so","title":"⑦ I think so / そう思う","pattern":"THINK + so / not","transitivity":"自動詞に近い使い方","structure":"S + think + so / not","image":"前の内容への判断を短く返すイメージ。","point":"返答で便利。I don't think so. は『そうは思いません』。","examples":[
         {"en":"I think so, but I will confirm it.","ja":"私はそう思いますが、確認します。","focus":"think","object":"so"},
         {"en":"We don't think so at this stage.","ja":"私たちはこの段階ではそう思っていません。","focus":"think","object":"so"},
         {"en":"Do you think so too?","ja":"あなたもそう思いますか？","focus":"think","object":"so"}
       ]},
-      {"id":"think-ahead","title":"⑧ think ahead / 先を考える","pattern":"THINK AHEAD","transitivity":"自動詞","structure":"S + think + ahead","image":"今だけでなく、先の状況まで考えるイメージ。","point":"営業・納期・在庫・予定管理で使いやすい。","examples":[
-        {"en":"We need to think ahead before the busy season.","ja":"私たちは繁忙期の前に先を考える必要があります。","focus":"think","object":"ahead"},
-        {"en":"I thought ahead and prepared extra samples.","ja":"私は先を考えて追加サンプルを準備しました。","focus":"thought","object":"ahead"},
-        {"en":"Please think ahead about the next order.","ja":"あなたは次の注文について先を考えてください。","focus":"think","object":"ahead"}
+      {"id":"think-main-issue","title":"⑧ think timing is important / 重要だと思う","pattern":"THINK + sentence","transitivity":"他動詞","structure":"S + think + sentence","image":"重要点や原因を頭の中で判断するイメージ。","point":"timing, cost, quality などを主語にして、仕事上の判断を自然に伝える。","examples":[
+        {"en":"We think timing is important for this project.","ja":"私たちはこの案件ではタイミングが重要だと思います。","focus":"think","object":"timing is important"},
+        {"en":"I thought cost was the main issue.","ja":"私はコストが主な問題だと思いました。","focus":"thought","object":"cost was the main issue"},
+        {"en":"Do you think quality is more important than price?","ja":"あなたは価格より品質の方が重要だと思いますか？","focus":"think","object":"quality is more important"}
       ]}
     ],
     "collocations": [],
@@ -3560,18 +3560,33 @@ export const verbs: Verb[] = [
       ]},
       {"phrase":"think over","ja":"〜をよく考える・検討する","image":"決定前に考えを寝かせて検討するイメージ。","pattern":"THINK OVER + plan / offer","examples":[
         {"en":"Please think over the offer before you decide.","ja":"決める前にその提案をよく考えてください。","focus":"think over","object":"the offer"},
-        {"en":"I need to think it over tonight.","ja":"私は今夜それをよく考える必要があります。","focus":"think it over","object":"it"},
+        {"en":"We will think over your request this week.","ja":"私たちは今週あなたの要望を検討します。","focus":"think over","object":"your request"},
         {"en":"The client will think over our proposal.","ja":"顧客は私たちの提案を検討します。","focus":"think over","object":"our proposal"}
       ]},
       {"phrase":"think through","ja":"〜を最後まで考え抜く","image":"計画や問題の中を通って結論まで考えるイメージ。","pattern":"THINK THROUGH + issue / plan","examples":[
         {"en":"We need to think through the details.","ja":"私たちは詳細を最後まで考える必要があります。","focus":"think through","object":"the details"},
         {"en":"I thought through the schedule before I replied.","ja":"私は返信前にスケジュールをよく考えました。","focus":"thought through","object":"the schedule"},
-        {"en":"Please think this through with the team.","ja":"チームと一緒にこれをよく考えてください。","focus":"think this through","object":"this"}
+        {"en":"Please think through the risk with the team.","ja":"チームと一緒にそのリスクをよく考えてください。","focus":"think through","object":"the risk"}
       ]},
       {"phrase":"think ahead","ja":"先を考える","image":"現在から先の予定・リスクへ視線を伸ばすイメージ。","pattern":"THINK AHEAD","examples":[
         {"en":"We should think ahead about inventory.","ja":"私たちは在庫について先を考えるべきです。","focus":"think ahead","object":"about inventory"},
         {"en":"He always thinks ahead before a big meeting.","ja":"彼は大きな会議の前にいつも先を考えます。","focus":"thinks ahead"},
         {"en":"Let's think ahead and prepare the documents now.","ja":"先を考えて、今のうちに資料を準備しましょう。","focus":"think ahead"}
+      ]},
+      {"phrase":"think back","ja":"思い返す","image":"頭の中で過去に戻るイメージ。","pattern":"THINK BACK TO + time / event","examples":[
+        {"en":"Think back to the last customer complaint.","ja":"前回の顧客クレームを思い返してください。","focus":"Think back","object":"to the last customer complaint"},
+        {"en":"We thought back to the previous project.","ja":"私たちは前回の案件を思い返しました。","focus":"thought back","object":"to the previous project"},
+        {"en":"I need to think back before I answer.","ja":"私は回答する前に思い返す必要があります。","focus":"think back"}
+      ]},
+      {"phrase":"think up","ja":"考え出す・思いつく","image":"頭の中で新しい案を作るイメージ。","pattern":"THINK UP + idea / plan","examples":[
+        {"en":"We need to think up a new campaign idea.","ja":"私たちは新しいキャンペーン案を考え出す必要があります。","focus":"think up","object":"a new campaign idea"},
+        {"en":"She thought up a simple way to explain it.","ja":"彼女はそれを説明する簡単な方法を考え出しました。","focus":"thought up","object":"a simple way"},
+        {"en":"Can you think up another option by Friday?","ja":"金曜日までに別の選択肢を考え出せますか？","focus":"think up","object":"another option"}
+      ]},
+      {"phrase":"think out","ja":"考え抜く・考えて形にする","image":"頭の中の案を外に出せる形まで考えるイメージ。","pattern":"THINK OUT + plan / details","examples":[
+        {"en":"We have to think out the full plan before the meeting.","ja":"私たちは会議前に全体計画を考え抜く必要があります。","focus":"think out","object":"the full plan"},
+        {"en":"He thought out the details carefully.","ja":"彼は詳細を慎重に考え抜きました。","focus":"thought out","object":"the details"},
+        {"en":"Please think out the next step before you call the client.","ja":"顧客に電話する前に次の対応を考え抜いてください。","focus":"think out","object":"the next step"}
       ]}
     ]
   },
@@ -3592,45 +3607,45 @@ export const verbs: Verb[] = [
       "label": "情報・経験 → 自分の中にある"
     },
     "meanings": [
-      {"id":"know-fact","title":"① know / 事実を知っている","pattern":"KNOW + fact / answer","transitivity":"他動詞","structure":"S + know + O","image":"必要な情報が自分の中にあるイメージ。","point":"I know the reason. のように、理由・答え・状況を知っている時に使う。","examples":[
+      {"id":"know-fact","title":"① know / 事実を知っている","pattern":"KNOW + fact / answer","transitivity":"他動詞","structure":"S + know + O","image":"必要な情報が自分の中にあるイメージ。","point":"理由・答え・状況を知っている時に使う。","examples":[
         {"en":"I know the reason for the delay.","ja":"私は遅延の理由を知っています。","focus":"know","object":"the reason"},
         {"en":"Do you know the delivery date?","ja":"あなたは納期を知っていますか？","focus":"know","object":"the delivery date"},
         {"en":"We know the client wants a quick reply.","ja":"私たちは顧客が早い返信を求めていることを知っています。","focus":"know","object":"the client wants a quick reply"}
       ]},
-      {"id":"know-about","title":"② know about / 〜について知っている","pattern":"KNOW ABOUT + topic","transitivity":"自動詞","structure":"S + know + about O","image":"あるテーマについての情報を持っているイメージ。","point":"案件・問題・製品・変更などについて知っている時に使う。","examples":[
-        {"en":"I know about the schedule change.","ja":"私はスケジュール変更について知っています。","focus":"know","object":"about the schedule change"},
-        {"en":"Do you know about this product?","ja":"あなたはこの製品について知っていますか？","focus":"know","object":"about this product"},
-        {"en":"We need to know about the new rule before we reply.","ja":"私たちは返信前に新しいルールについて知る必要があります。","focus":"know","object":"about the new rule"}
+      {"id":"know-how","title":"② know how to / やり方が分かる","pattern":"KNOW HOW TO + verb","transitivity":"他動詞","structure":"S + know + how to V","image":"手順や方法が自分の中にあるイメージ。","point":"操作方法・説明方法・確認方法に使いやすい。","examples":[
+        {"en":"I know how to use this system.","ja":"私はこのシステムの使い方が分かります。","focus":"know","object":"how to use this system"},
+        {"en":"Do you know how to check the stock?","ja":"あなたは在庫の確認方法が分かりますか？","focus":"know","object":"how to check the stock"},
+        {"en":"We know how to explain the difference.","ja":"私たちはその違いの説明方法が分かっています。","focus":"know","object":"how to explain the difference"}
       ]},
-      {"id":"know-person","title":"③ know someone / 人を知っている","pattern":"KNOW + person / company","transitivity":"他動詞","structure":"S + know + O","image":"人や会社が自分の経験の中にあるイメージ。","point":"meetは会う、knowは知っている・面識がある。","examples":[
-        {"en":"I know the person in charge at that company.","ja":"私はその会社の担当者を知っています。","focus":"know","object":"the person in charge"},
-        {"en":"Do you know anyone in the design team?","ja":"あなたは設計チームに知っている人がいますか？","focus":"know","object":"anyone"},
-        {"en":"We know the supplier well.","ja":"私たちはその仕入先をよく知っています。","focus":"know","object":"the supplier"}
-      ]},
-      {"id":"know-how","title":"④ know how to / 〜のやり方が分かる","pattern":"KNOW HOW TO + verb","transitivity":"他動詞","structure":"S + know + how to V","image":"手順や方法が自分の中にあるイメージ。","point":"仕事では操作・確認・説明・手配のやり方を表す時に便利。","examples":[
-        {"en":"I know how to update the file.","ja":"私はそのファイルの更新方法を知っています。","focus":"know","object":"how to update the file"},
-        {"en":"Do you know how to check the setting?","ja":"あなたは設定の確認方法を知っていますか？","focus":"know","object":"how to check the setting"},
-        {"en":"We know how to explain this to the client.","ja":"私たちはこれを顧客に説明する方法を分かっています。","focus":"know","object":"how to explain this"}
-      ]},
-      {"id":"know-if","title":"⑤ know if / 〜かどうか分かる","pattern":"KNOW IF / WHETHER + sentence","transitivity":"他動詞","structure":"S + know + if節","image":"未確定の情報が分かっているか確認するイメージ。","point":"確認の質問でよく使う。whetherは少し丁寧。","examples":[
-        {"en":"Do you know if the client approved it?","ja":"あなたは顧客がそれを承認したかどうか分かりますか？","focus":"know","object":"if the client approved it"},
-        {"en":"I don't know whether the sample has arrived.","ja":"私はサンプルが到着したかどうか分かりません。","focus":"know","object":"whether the sample has arrived"},
-        {"en":"We need to know if the schedule is still possible.","ja":"私たちはそのスケジュールがまだ可能かどうか知る必要があります。","focus":"know","object":"if the schedule is still possible"}
-      ]},
-      {"id":"know-what","title":"⑥ know what to do / 何をすべきか分かる","pattern":"KNOW WHAT TO DO","transitivity":"他動詞","structure":"S + know + what to do","image":"次の行動が自分の中で見えているイメージ。","point":"トラブル時や確認後の行動に使いやすい。","examples":[
+      {"id":"know-what","title":"③ know what to do / 何をすべきか分かる","pattern":"KNOW WHAT TO DO","transitivity":"他動詞","structure":"S + know + what to do","image":"次の行動が自分の中で見えているイメージ。","point":"トラブル時や確認後の行動に使いやすい。","examples":[
         {"en":"I know what to do next.","ja":"私は次に何をすべきか分かっています。","focus":"know","object":"what to do next"},
         {"en":"We don't know what to do without the drawing.","ja":"私たちは図面がないと何をすべきか分かりません。","focus":"know","object":"what to do"},
         {"en":"Do you know what to prepare for the meeting?","ja":"あなたは会議に何を準備すべきか分かりますか？","focus":"know","object":"what to prepare"}
       ]},
-      {"id":"know-well","title":"⑦ know well / よく知っている","pattern":"KNOW + O + well","transitivity":"他動詞","structure":"S + know + O + M","image":"対象について深い知識や経験があるイメージ。","point":"製品・顧客・市場・手順について詳しい時に使う。","examples":[
-        {"en":"She knows the product well.","ja":"彼女はその製品をよく知っています。","focus":"knows","object":"the product"},
+      {"id":"know-client","title":"④ know the client well / 顧客をよく知っている","pattern":"KNOW + O + well","transitivity":"他動詞","structure":"S + know + O + M","image":"対象について深い知識や経験があるイメージ。","point":"製品・顧客・市場・手順について詳しい時に使う。","examples":[
+        {"en":"She knows the client well.","ja":"彼女はその顧客をよく知っています。","focus":"knows","object":"the client"},
         {"en":"We know this market very well.","ja":"私たちはこの市場をとてもよく知っています。","focus":"know","object":"this market"},
         {"en":"Do you know the process well enough to explain it?","ja":"あなたはそれを説明できるくらい、その手順をよく知っていますか？","focus":"know","object":"the process"}
       ]},
-      {"id":"know-let-me","title":"⑧ let me know / 私に知らせる","pattern":"LET + person + KNOW","transitivity":"他動詞","structure":"let + O + know","image":"相手の中にある情報を自分へ知らせてもらうイメージ。","point":"メールやチャットで非常によく使う。丁寧で自然。","examples":[
+      {"id":"know-that","title":"⑤ know that / 〜だと知っている","pattern":"KNOW THAT + sentence","transitivity":"他動詞","structure":"S + know + that節","image":"事実が自分の中に入っているイメージ。","point":"thatは省略されることが多い。変更や事実確認に便利。","examples":[
+        {"en":"We know that the schedule changed.","ja":"私たちはスケジュールが変更されたことを知っています。","focus":"know","object":"that the schedule changed"},
+        {"en":"I knew the order was urgent.","ja":"私はその注文が急ぎだと知っていました。","focus":"knew","object":"the order was urgent"},
+        {"en":"Do you know that the client approved it?","ja":"あなたは顧客がそれを承認したことを知っていますか？","focus":"know","object":"that the client approved it"}
+      ]},
+      {"id":"know-let-me","title":"⑥ let me know / 私に知らせる","pattern":"LET + person + KNOW","transitivity":"他動詞","structure":"let + O + know","image":"相手の中にある情報を自分へ知らせてもらうイメージ。","point":"メールやチャットで非常によく使う。KNOWページでは赤は know だけ。","examples":[
         {"en":"Please let me know when you receive the file.","ja":"あなたがファイルを受け取ったら私に知らせてください。","focus":"know","object":"when you receive the file"},
         {"en":"Could you let us know the final quantity?","ja":"最終数量を私たちに知らせていただけますか？","focus":"know","object":"the final quantity"},
         {"en":"I will let you know after I confirm it.","ja":"確認後にあなたへ知らせます。","focus":"know","object":"after I confirm it"}
+      ]},
+      {"id":"know-answer","title":"⑦ know the answer / 答えが分かる","pattern":"KNOW + answer / reason","transitivity":"他動詞","structure":"S + know + O","image":"必要な答えが自分の中にあるイメージ。","point":"answer, reason, cause, details と相性が良い。","examples":[
+        {"en":"I don't know the answer yet.","ja":"私はまだ答えが分かりません。","focus":"know","object":"the answer"},
+        {"en":"We need to know the cause before we reply.","ja":"私たちは返信前に原因を知る必要があります。","focus":"know","object":"the cause"},
+        {"en":"Do you know the details of the request?","ja":"あなたはその依頼の詳細を知っていますか？","focus":"know","object":"the details"}
+      ]},
+      {"id":"know-person","title":"⑧ know someone / 人を知っている","pattern":"KNOW + person","transitivity":"他動詞","structure":"S + know + O","image":"人との接点や情報が自分の中にあるイメージ。","point":"meetは『会う』、knowは『知っている・面識がある』。","examples":[
+        {"en":"I know the person in charge.","ja":"私は担当者を知っています。","focus":"know","object":"the person in charge"},
+        {"en":"She knows someone at the supplier.","ja":"彼女はその仕入先に知り合いがいます。","focus":"knows","object":"someone"},
+        {"en":"Do you know anyone who can check this?","ja":"あなたはこれを確認できる人を誰か知っていますか？","focus":"know","object":"anyone"}
       ]}
     ],
     "collocations": [],
@@ -3645,15 +3660,20 @@ export const verbs: Verb[] = [
         {"en":"Do you know of any similar cases?","ja":"あなたは似た事例を何か知っていますか？","focus":"know of","object":"any similar cases"},
         {"en":"We know of one possible risk.","ja":"私たちは考えられるリスクを1つ把握しています。","focus":"know of","object":"one possible risk"}
       ]},
+      {"phrase":"know from","ja":"〜から分かる","image":"情報源から事実が分かるイメージ。","pattern":"KNOW FROM + source","examples":[
+        {"en":"We know from the report that sales increased.","ja":"私たちは報告書から売上が増えたことが分かります。","focus":"know from","object":"the report"},
+        {"en":"I knew from the email that the meeting was canceled.","ja":"私はメールから会議がキャンセルされたと分かりました。","focus":"knew from","object":"the email"},
+        {"en":"You can know from the label which version it is.","ja":"ラベルからそれがどのバージョンか分かります。","focus":"know from","object":"the label"}
+      ]},
       {"phrase":"know by","ja":"〜で分かる・見分ける","image":"名前や特徴を手がかりに分かるイメージ。","pattern":"KNOW + O + BY + clue","examples":[
         {"en":"You can know the version by the label.","ja":"ラベルでバージョンが分かります。","focus":"know by","object":"the label"},
         {"en":"We know the model by its code number.","ja":"私たちは型番でそのモデルを見分けます。","focus":"know by","object":"its code number"},
         {"en":"I knew the customer by the company name.","ja":"私は会社名でその顧客だと分かりました。","focus":"knew by","object":"the company name"}
       ]},
-      {"phrase":"know better than to","ja":"〜するほど分別がないわけではない","image":"経験があるので、その悪い行動を避けられるイメージ。","pattern":"KNOW BETTER THAN TO + verb","examples":[
-        {"en":"We know better than to send the estimate without checking it.","ja":"私たちは確認せずに見積を送るようなことはしません。","focus":"know better than to","object":"send the estimate"},
-        {"en":"He knows better than to promise an impossible delivery date.","ja":"彼は不可能な納期を約束するようなことはしません。","focus":"knows better than to","object":"promise an impossible delivery date"},
-        {"en":"You know better than to change the data without approval.","ja":"あなたは承認なしにデータを変更するようなことはしないはずです。","focus":"know better than to","object":"change the data"}
+      {"phrase":"know as","ja":"〜として知られている","image":"名前や役割として周りに知られているイメージ。","pattern":"KNOW AS + name / role","examples":[
+        {"en":"This product is known as a durable option.","ja":"この製品は耐久性のある選択肢として知られています。","focus":"known as","object":"a durable option"},
+        {"en":"He is known as the person in charge of this project.","ja":"彼はこの案件の担当者として知られています。","focus":"known as","object":"the person in charge"},
+        {"en":"The area is known as a busy shopping district.","ja":"そのエリアはにぎやかな商業地区として知られています。","focus":"known as","object":"a busy shopping district"}
       ]}
     ]
   },
@@ -3666,76 +3686,86 @@ export const verbs: Verb[] = [
     "syllable": "feel",
     "transitivity": "自動詞・他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "体・心・直感で感じる",
-    "coreDetail": "FEELは、体の感覚、気持ち、印象、直感を自分の中で感じる動詞です。仕事では『〜だと感じる』『不安に感じる』『自由に〜してください』『〜したい気がする』など、相手にやわらかく伝える表現にもなります。",
+    "core": "心・体・直感で感じる",
+    "coreDetail": "FEELは、体の感覚、気持ち、印象、直感を自分の中で感じる動詞です。仕事では『〜だと感じる』『不安に感じる』『遠慮なく〜してください』『〜したい気がする』など、相手にやわらかく伝える表現にもなります。",
     "coreVisual": {
       "from": ["💭 印象", "😊 気持ち", "⚠️ 不安", "🤝 雰囲気", "💡 直感"],
       "to": "自分の心・体の感覚",
       "label": "外の状況・内側の変化 → 感覚として入る"
     },
     "meanings": [
-      {"id":"feel-adjective","title":"① feel good / 〜に感じる","pattern":"FEEL + adjective","transitivity":"自動詞","structure":"S + feel + C","image":"自分の心や体がその状態にあるイメージ。","point":"good, tired, nervous, comfortable など形容詞と使う。","examples":[
-        {"en":"I feel confident about the presentation.","ja":"私はそのプレゼンに自信を感じています。","focus":"feel","object":"confident"},
+      {"id":"feel-comfortable","title":"① feel comfortable / 安心している・抵抗がない","pattern":"FEEL + adjective","transitivity":"自動詞","structure":"S + feel + C","image":"自分の心や体がその状態にあるイメージ。","point":"comfortable, confident, unsure, nervous など形容詞と使う。","examples":[
+        {"en":"I feel comfortable with this schedule.","ja":"私はこのスケジュールで問題ないと感じています。","focus":"feel","object":"comfortable"},
         {"en":"She felt nervous before the client meeting.","ja":"彼女は顧客との会議前に緊張を感じました。","focus":"felt","object":"nervous"},
-        {"en":"Do you feel comfortable with this schedule?","ja":"あなたはこのスケジュールで問題ないと感じますか？","focus":"feel","object":"comfortable"}
+        {"en":"Do you feel confident about the presentation?","ja":"あなたはそのプレゼンに自信がありますか？","focus":"feel","object":"confident"}
       ]},
-      {"id":"feel-that","title":"② feel that / 〜だと感じる","pattern":"FEEL THAT + sentence","transitivity":"他動詞","structure":"S + feel + that節","image":"状況から受けた印象を判断として伝えるイメージ。","point":"thinkより感覚・印象寄り。ビジネスでは柔らかく意見を言える。","examples":[
-        {"en":"I feel that we should check the details again.","ja":"私は私たちが詳細をもう一度確認すべきだと感じています。","focus":"feel","object":"that we should check the details again"},
-        {"en":"We feel that the price is still high.","ja":"私たちは価格がまだ高いと感じています。","focus":"feel","object":"that the price is still high"},
-        {"en":"Do you feel that the client understood our point?","ja":"あなたは顧客が私たちの要点を理解したと感じますか？","focus":"feel","object":"that the client understood our point"}
+      {"id":"feel-difference","title":"② feel the difference / 違いを感じる","pattern":"FEEL + noun","transitivity":"他動詞","structure":"S + feel + O","image":"違いや変化を感覚として受け取るイメージ。","point":"difference, pressure, stress, concern などとよく使う。","examples":[
+        {"en":"Can you feel the difference in brightness?","ja":"明るさの違いを感じられますか？","focus":"feel","object":"the difference"},
+        {"en":"We felt pressure before the presentation.","ja":"私たちはプレゼン前にプレッシャーを感じました。","focus":"felt","object":"pressure"},
+        {"en":"The team feels some concern about the deadline.","ja":"チームはその締切について少し懸念を感じています。","focus":"feels","object":"some concern"}
       ]},
-      {"id":"feel-about","title":"③ feel about / 〜についてどう感じる","pattern":"FEEL ABOUT + topic","transitivity":"自動詞","structure":"S + feel + about O","image":"あるテーマに対する気持ちや印象を持つイメージ。","point":"How do you feel about ...? は意見や印象を聞く自然な質問。","examples":[
-        {"en":"How do you feel about the new design?","ja":"あなたは新しいデザインについてどう感じますか？","focus":"feel","object":"about the new design"},
-        {"en":"I feel good about the proposal.","ja":"私はその提案に良い感触を持っています。","focus":"feel","object":"about the proposal"},
-        {"en":"We don't feel comfortable about the deadline.","ja":"私たちはその締切に不安を感じています。","focus":"feel","object":"about the deadline"}
+      {"id":"feel-necessary","title":"③ feel it is necessary / 必要だと感じる","pattern":"FEEL + sentence","transitivity":"他動詞","structure":"S + feel + sentence","image":"状況から受けた印象を判断として伝えるイメージ。","point":"thinkより感覚・印象寄り。ビジネスでは柔らかく意見を言える。","examples":[
+        {"en":"I feel it is necessary to confirm the quantity again.","ja":"私は数量をもう一度確認する必要があると感じています。","focus":"feel","object":"it is necessary"},
+        {"en":"We felt the price was still high.","ja":"私たちは価格がまだ高いと感じました。","focus":"felt","object":"the price was still high"},
+        {"en":"Do you feel the client understood our point?","ja":"あなたは顧客が私たちの要点を理解したと感じますか？","focus":"feel","object":"the client understood our point"}
       ]},
-      {"id":"feel-like","title":"④ feel like / 〜したい気がする・〜のように感じる","pattern":"FEEL LIKE + noun / -ing","transitivity":"自動詞","structure":"S + feel + like O / V-ing","image":"気持ちがある方向へ向くイメージ。","point":"I feel like checking it again. は『もう一度確認したい気がする』。仕事では使いすぎず、会話で自然。","examples":[
-        {"en":"I feel like we should call the client first.","ja":"私はまず顧客に電話した方がよい気がします。","focus":"feel","object":"like we should call the client first"},
-        {"en":"She felt like the meeting went well.","ja":"彼女は会議がうまくいったように感じました。","focus":"felt","object":"like the meeting went well"},
-        {"en":"Do you feel like reviewing the document again?","ja":"あなたは資料をもう一度確認したい気がしますか？","focus":"feel","object":"like reviewing the document again"}
-      ]},
-      {"id":"feel-free","title":"⑤ feel free to / 遠慮なく〜する","pattern":"FEEL FREE TO + verb","transitivity":"自動詞","structure":"feel free to V","image":"相手が自由に動ける状態を感じられるようにするイメージ。","point":"メールで非常によく使う丁寧表現。Please feel free to contact me. が定番。","examples":[
+      {"id":"feel-free","title":"④ feel free to / 遠慮なく〜する","pattern":"FEEL FREE TO + verb","transitivity":"自動詞","structure":"feel free to V","image":"相手が自由に動ける状態を感じられるようにするイメージ。","point":"メールで非常によく使う丁寧表現。Please feel free to contact me. が定番。","examples":[
         {"en":"Please feel free to contact me if you have any questions.","ja":"ご質問があれば、遠慮なく私にご連絡ください。","focus":"feel","object":"free to contact me"},
         {"en":"Please feel free to ask us about the specification.","ja":"仕様について遠慮なく私たちにご質問ください。","focus":"feel","object":"free to ask us"},
         {"en":"Feel free to share your opinion in the meeting.","ja":"会議では遠慮なくあなたの意見を共有してください。","focus":"Feel","object":"free to share your opinion"}
       ]},
-      {"id":"feel-need","title":"⑥ feel the need to / 〜する必要を感じる","pattern":"FEEL THE NEED TO + verb","transitivity":"他動詞","structure":"S + feel + O","image":"必要性を感覚として強く受け取るイメージ。","point":"少し硬め。判断理由を丁寧に伝える時に使える。","examples":[
-        {"en":"We feel the need to confirm the quantity again.","ja":"私たちは数量をもう一度確認する必要を感じています。","focus":"feel","object":"the need to confirm the quantity"},
-        {"en":"I felt the need to explain the risk clearly.","ja":"私はリスクを明確に説明する必要を感じました。","focus":"felt","object":"the need to explain the risk"},
-        {"en":"Do you feel the need to update the customer today?","ja":"あなたは今日顧客に最新状況を伝える必要を感じますか？","focus":"feel","object":"the need to update the customer"}
+      {"id":"feel-unsure","title":"⑤ feel unsure / 不安に感じる","pattern":"FEEL + adjective","transitivity":"自動詞","structure":"S + feel + C","image":"状況に対して心が不安定に反応するイメージ。","point":"unsure, worried, relieved, ready など仕事でも使いやすい。","examples":[
+        {"en":"I feel unsure about the delivery date.","ja":"私は納期について不安を感じています。","focus":"feel","object":"unsure"},
+        {"en":"We felt relieved after receiving approval.","ja":"私たちは承認を得て安心しました。","focus":"felt","object":"relieved"},
+        {"en":"Do you feel ready for the meeting?","ja":"あなたは会議の準備ができていると感じますか？","focus":"feel","object":"ready"}
       ]},
-      {"id":"feel-pressure","title":"⑦ feel pressure / プレッシャーを感じる","pattern":"FEEL + pressure / stress","transitivity":"他動詞","structure":"S + feel + O","image":"外からの負荷を心で受けるイメージ。","point":"pressure, stress, concern, risk などとよく使う。","examples":[
-        {"en":"I felt pressure before the presentation.","ja":"私はプレゼン前にプレッシャーを感じました。","focus":"felt","object":"pressure"},
-        {"en":"The team feels stress because the deadline is tight.","ja":"チームは締切が厳しいためストレスを感じています。","focus":"feels","object":"stress"},
-        {"en":"We feel some concern about the delivery plan.","ja":"私たちは納品計画について少し懸念を感じています。","focus":"feel","object":"some concern"}
-      ]},
-      {"id":"feel-better","title":"⑧ feel better / 良く感じる・体調が良くなる","pattern":"FEEL + better","transitivity":"自動詞","structure":"S + feel + C","image":"状態が前より良く感じられるイメージ。","point":"体調にも、状況への安心感にも使える。","examples":[
+      {"id":"feel-better","title":"⑥ feel better / 良く感じる・安心する","pattern":"FEEL + better","transitivity":"自動詞","structure":"S + feel + C","image":"状態が前より良く感じられるイメージ。","point":"体調にも、状況への安心感にも使える。","examples":[
         {"en":"I feel better after confirming the schedule.","ja":"私はスケジュールを確認した後、安心しました。","focus":"feel","object":"better"},
         {"en":"She felt better after talking with her manager.","ja":"彼女は上司と話した後、気持ちが楽になりました。","focus":"felt","object":"better"},
         {"en":"Do you feel better about the plan now?","ja":"あなたは今、その計画について前より安心していますか？","focus":"feel","object":"better"}
+      ]},
+      {"id":"feel-strongly","title":"⑦ feel strongly / 強く感じる","pattern":"FEEL + adverb","transitivity":"自動詞","structure":"S + feel + M","image":"気持ちや判断が強く出ているイメージ。","point":"strongly, differently, clearly などと使う。","examples":[
+        {"en":"We feel strongly that this issue should be fixed.","ja":"私たちはこの問題は修正すべきだと強く感じています。","focus":"feel","object":"strongly"},
+        {"en":"I felt differently after hearing the explanation.","ja":"私は説明を聞いた後、違う印象を持ちました。","focus":"felt","object":"differently"},
+        {"en":"Do you feel clearly that the proposal is ready?","ja":"あなたはその提案の準備ができているとはっきり感じますか？","focus":"feel","object":"clearly"}
+      ]},
+      {"id":"feel-need","title":"⑧ feel the need to / 〜する必要を感じる","pattern":"FEEL THE NEED TO + verb","transitivity":"他動詞","structure":"S + feel + O","image":"必要性を感覚として強く受け取るイメージ。","point":"少し硬め。判断理由を丁寧に伝える時に使える。","examples":[
+        {"en":"We feel the need to confirm the quantity again.","ja":"私たちは数量をもう一度確認する必要を感じています。","focus":"feel","object":"the need to confirm the quantity"},
+        {"en":"I felt the need to explain the risk clearly.","ja":"私はリスクを明確に説明する必要を感じました。","focus":"felt","object":"the need to explain the risk"},
+        {"en":"Do you feel the need to update the customer today?","ja":"あなたは今日顧客に最新状況を伝える必要を感じますか？","focus":"feel","object":"the need to update the customer"}
       ]}
     ],
     "collocations": [],
     "phrasalVerbs": [
-      {"phrase":"feel like","ja":"〜したい気がする・〜のように感じる","image":"気持ちがある方向へ向くイメージ。","pattern":"FEEL LIKE + noun / -ing / sentence","examples":[
-        {"en":"I feel like we should confirm it first.","ja":"私はまずそれを確認した方がよい気がします。","focus":"feel like","object":"we should confirm it first"},
-        {"en":"She felt like the customer was still unsure.","ja":"彼女は顧客がまだ迷っているように感じました。","focus":"felt like","object":"the customer was still unsure"},
-        {"en":"Do you feel like joining the call?","ja":"あなたはその電話会議に参加したい気がしますか？","focus":"feel like","object":"joining the call"}
+      {"phrase":"feel like","ja":"〜のように感じる・〜したい気がする","image":"気持ちがある方向へ向くイメージ。","pattern":"FEEL LIKE + noun / -ing / sentence","examples":[
+        {"en":"I feel like we should call the client first.","ja":"私はまず顧客に電話した方がよい気がします。","focus":"feel like","object":"we should call the client first"},
+        {"en":"She felt like the meeting went well.","ja":"彼女は会議がうまくいったように感じました。","focus":"felt like","object":"the meeting went well"},
+        {"en":"Do you feel like reviewing the document again?","ja":"あなたは資料をもう一度確認したい気がしますか？","focus":"feel like","object":"reviewing the document again"}
       ]},
-      {"phrase":"feel about","ja":"〜について感じる","image":"テーマに対する気持ち・印象を持つイメージ。","pattern":"FEEL ABOUT + topic","examples":[
-        {"en":"How do you feel about this proposal?","ja":"この提案についてどう感じますか？","focus":"feel about","object":"this proposal"},
-        {"en":"We feel good about the new schedule.","ja":"私たちは新しいスケジュールに良い感触を持っています。","focus":"feel good about","object":"the new schedule"},
-        {"en":"I don't feel comfortable about the price yet.","ja":"私はまだその価格に安心できていません。","focus":"feel comfortable about","object":"the price"}
+      {"phrase":"feel about","ja":"〜についてどう感じる","image":"あるテーマに対する気持ちや印象を持つイメージ。","pattern":"FEEL ABOUT + topic","examples":[
+        {"en":"How do you feel about the new design?","ja":"あなたは新しいデザインについてどう感じますか？","focus":"feel about","object":"the new design"},
+        {"en":"I feel good about the proposal.","ja":"私はその提案に良い感触を持っています。","focus":"feel about","object":"the proposal"},
+        {"en":"We don't feel comfortable about the deadline.","ja":"私たちはその締切に不安を感じています。","focus":"feel about","object":"the deadline"}
       ]},
-      {"phrase":"feel for","ja":"〜に同情する・気持ちを理解する","image":"相手の気持ちの方へ心を寄せるイメージ。","pattern":"FEEL FOR + person","examples":[
-        {"en":"I feel for the team because the deadline is tight.","ja":"締切が厳しいので、私はチームの気持ちが分かります。","focus":"feel for","object":"the team"},
-        {"en":"We feel for the customer after the delay.","ja":"私たちは遅延後の顧客の気持ちを理解しています。","focus":"feel for","object":"the customer"},
-        {"en":"She felt for the new staff during the busy week.","ja":"彼女は忙しい週の新しいスタッフに同情しました。","focus":"felt for","object":"the new staff"}
+      {"phrase":"feel for","ja":"〜に同情する・手探りで探す","image":"相手の気持ちに触れる、または手で探るイメージ。","pattern":"FEEL FOR + person / thing","examples":[
+        {"en":"I feel for the team because the schedule is tight.","ja":"スケジュールが厳しいので、私はチームに同情します。","focus":"feel for","object":"the team"},
+        {"en":"We felt for the customer after hearing the complaint.","ja":"私たちはクレームを聞いて顧客に同情しました。","focus":"felt for","object":"the customer"},
+        {"en":"He felt for the switch in the dark room.","ja":"彼は暗い部屋でスイッチを手探りで探しました。","focus":"felt for","object":"the switch"}
       ]},
-      {"phrase":"feel up to","ja":"〜できる気力・体力がある","image":"自分の状態が行動に届くイメージ。","pattern":"FEEL UP TO + noun / -ing","examples":[
-        {"en":"I don't feel up to joining the meeting today.","ja":"私は今日は会議に参加できる気力がありません。","focus":"feel up to","object":"joining the meeting"},
-        {"en":"Do you feel up to calling the client now?","ja":"あなたは今、顧客に電話できそうですか？","focus":"feel up to","object":"calling the client"},
-        {"en":"She felt up to explaining the issue after a short break.","ja":"彼女は短い休憩後、その問題を説明できそうだと感じました。","focus":"felt up to","object":"explaining the issue"}
+      {"phrase":"feel out","ja":"探りを入れる","image":"相手の反応を少しずつ探るイメージ。","pattern":"FEEL OUT + person / reaction","examples":[
+        {"en":"We should feel out the client's reaction before we propose the change.","ja":"変更を提案する前に顧客の反応を探るべきです。","focus":"feel out","object":"the client's reaction"},
+        {"en":"I felt out the team before setting the schedule.","ja":"私はスケジュールを決める前にチームの反応を探りました。","focus":"felt out","object":"the team"},
+        {"en":"Please feel out the supplier about the new condition.","ja":"新しい条件について仕入先の反応を探ってください。","focus":"feel out","object":"the supplier"}
+      ]},
+      {"phrase":"feel up to","ja":"〜する気力・体力がある","image":"自分の状態がその行動に届いているイメージ。","pattern":"FEEL UP TO + noun / -ing","examples":[
+        {"en":"I don't feel up to another meeting today.","ja":"私は今日これ以上会議をする気力がありません。","focus":"feel up to","object":"another meeting"},
+        {"en":"Do you feel up to calling the client now?","ja":"あなたは今顧客に電話する気力がありますか？","focus":"feel up to","object":"calling the client"},
+        {"en":"She felt up to presenting the proposal.","ja":"彼女はその提案を発表する気力がありました。","focus":"felt up to","object":"presenting the proposal"}
+      ]},
+      {"phrase":"feel around","ja":"手探りで探す","image":"手や感覚で周りを探るイメージ。","pattern":"FEEL AROUND + place","examples":[
+        {"en":"He felt around for the cable behind the sign.","ja":"彼はサインの裏でケーブルを手探りで探しました。","focus":"felt around","object":"for the cable"},
+        {"en":"I felt around the panel to find the switch.","ja":"私はスイッチを見つけるためにパネル周りを手探りで探しました。","focus":"felt around","object":"the panel"},
+        {"en":"Please feel around carefully before moving the part.","ja":"部品を動かす前に慎重に手探りで確認してください。","focus":"feel around","object":"carefully"}
       ]}
     ]
   },

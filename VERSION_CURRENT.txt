@@ -1,16 +1,4 @@
-Ver.133 PLAN / OFFER / SUPPORT final
-Base: Ver.132 IMPROVE / MANAGE / PREPARE final
-Date: 2026-07-03
-
-Added/rebuilt verbs:
-- PLAN
-- OFFER
-- SUPPORT
-
-Rules maintained:
-- Categories: 基本 / 句動詞 only
-- Basic examples highlight only target verb
-- Phrasal examples highlight verb + preposition/adverb only
-- Objects are not highlighted
-- No duplicate entries between 基本 and 句動詞
-- Ver.120 save foundation preserved
+Verb Master Reaudit WATCH / HEAR / LISTEN Final
+Base: latest cumulative project with Ver.134 + prior reaudit fixes
+Target verbs: WATCH / HEAR / LISTEN
+Rules: 基本/句動詞 only, basic red highlight verb only, phrasal red highlight verb + particle only, no object highlight.

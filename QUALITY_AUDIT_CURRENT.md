@@ -1,16 +1,28 @@
-# QUALITY_AUDIT_CURRENT
+# Verb Master Reaudit WATCH / HEAR / LISTEN Final
 
-Re-audit final: FIND / SEE / LOOK
+## Target verbs
+- WATCH
+- HEAR
+- LISTEN
 
-- FIND phrasal verbs: 5
-- SEE phrasal verbs: 8
-- LOOK phrasal verbs: 10
-- Categories: basic / phrasal only
-- collocations: empty for target verbs
-- Basic examples highlight only target verb forms
-- Phrasal examples highlight verb + preposition/adverb only
-- Objects are not highlighted
-- Ver.120 cloud save foundation preserved
-- Bottom navigation fixes preserved
-- npx tsc --noEmit: OK after npm install
-- npm run build: Compiled successfully / TypeScript finished / static pages generation started; local environment timed out during page data/static generation
+## Phrasal verb counts
+- WATCH: 8
+- HEAR: 6
+- LISTEN: 6
+
+## Quality checks
+- Categories are unified to 基本 / 句動詞 only.
+- `collocations` is empty for the target verbs.
+- Basic examples highlight only the target verb.
+- Phrasal examples highlight only the verb + preposition/adverb particle.
+- Objects are not included in red highlight.
+- Ver.120 cloud save foundation is preserved.
+- Bottom navigation spacing fix is preserved.
+- `npx tsc --noEmit`: OK.
+- `npm run build`: compiled successfully and TypeScript completed; local environment timed out during page data collection.
+
+## ZIP exclusions
+- node_modules excluded
+- .next excluded
+- tsconfig.tsbuildinfo excluded
+- working scripts excluded

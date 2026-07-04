@@ -1,7 +1,9 @@
-# Verb Master - Re-audit FIND / SEE / LOOK final
+# Verb Master Reaudit WATCH / HEAR / LISTEN Final
 
-Target verbs: FIND / SEE / LOOK
+This build updates WATCH / HEAR / LISTEN using the current quality rules.
 
-This package keeps the Ver.120 save foundation and updates the early verb quality data for FIND, SEE, and LOOK.
+- WATCH: 8 phrasal verbs
+- HEAR: 6 phrasal verbs
+- LISTEN: 6 phrasal verbs
 
-No additional SQL is required if V120_CLOUD_SAVE_FOUNDATION.sql has already been applied.
+No additional Supabase SQL is required if Ver.120 SQL has already been executed.

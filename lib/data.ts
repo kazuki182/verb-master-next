@@ -3273,13 +3273,9 @@ export const verbs: Verb[] = [
     "syllable": "watch",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 重要",
-    "core": "動いているもの・変化しそうなものを注意して見る",
-    "coreDetail": "WATCHは、ただ目に入るseeではなく、動き・変化・危険・数字をしばらく注意して見る感覚です。動画を見る、状況を見守る、数値や進捗を注視する、という使い方につながります。",
-    "coreVisual": {
-      "from": ["📊 数字", "🚚 納期", "🎥 動画", "⚠️ リスク", "👥 状況"],
-      "to": "自分の注意・観察範囲",
-      "label": "変化するもの → 注意して見続ける"
-    },
+    "core": "変化するものを意識して見守る",
+    "coreDetail": "WATCHは、ただ目に入るseeではなく、動き・変化・危険・数字をしばらく注意して見る感覚です。進捗、数字、動画、リスクなどを見守る場面で使います。",
+    "coreVisual": {"from":["📊 数字","🚚 納期","🎥 動画","⚠️ リスク","👥 状況"],"to":"自分の注意・観察範囲","label":"変化するもの → 注意して見続ける"},
     "meanings": [
       {"id":"watch-progress","title":"① watch progress / 進捗を見る","pattern":"WATCH + progress / situation","transitivity":"他動詞","structure":"S + watch + O","image":"進捗や状況の変化を注意して追うイメージ。","point":"seeよりも『しばらく注意して見る』ニュアンスが強い。","examples":[
         {"en":"We need to watch the project progress this week.","ja":"私たちは今週、その案件の進捗を注意して見る必要があります。","focus":"watch","object":"the project progress"},
@@ -3296,17 +3292,17 @@ export const verbs: Verb[] = [
         {"en":"Please watch this product demo first.","ja":"あなたはまずこの製品デモを見てください。","focus":"watch","object":"this product demo"},
         {"en":"We watched the presentation recording together.","ja":"私たちは一緒にプレゼン録画を見ました。","focus":"watched","object":"the presentation recording"}
       ]},
-      {"id":"watch-for-risk","title":"④ watch for problems / 問題に注意する","pattern":"WATCH FOR + problem / change","transitivity":"自動詞","structure":"S + watch + for O","image":"問題が出てこないか注意して待つイメージ。","point":"watch for ... は『〜に注意する』。risk, change, error と相性が良い。","examples":[
-        {"en":"Please watch for any errors in the report.","ja":"あなたは報告書にミスがないか注意してください。","focus":"watch","object":"for any errors"},
-        {"en":"We need to watch for changes in the delivery date.","ja":"私たちは納期変更に注意する必要があります。","focus":"watch","object":"for changes"},
-        {"en":"The team watched for safety issues during the installation.","ja":"チームは施工中、安全上の問題に注意していました。","focus":"watched","object":"for safety issues"}
+      {"id":"watch-market","title":"④ watch the market / 市場を見る","pattern":"WATCH + market / trend","transitivity":"他動詞","structure":"S + watch + O","image":"市場や傾向を継続して観察するイメージ。","point":"market, trend, demand, competitor と相性が良い。","examples":[
+        {"en":"We should watch the market before changing the price.","ja":"私たちは価格を変更する前に市場を注意して見るべきです。","focus":"watch","object":"the market"},
+        {"en":"I watched the competitor's campaign closely.","ja":"私は競合のキャンペーンを注意深く見ていました。","focus":"watched","object":"the competitor's campaign"},
+        {"en":"Please watch the demand trend this month.","ja":"あなたは今月の需要の動きを注意して見てください。","focus":"watch","object":"the demand trend"}
       ]},
       {"id":"watch-someone-do","title":"⑤ watch someone do / 人が〜するのを見る","pattern":"WATCH + someone + do","transitivity":"他動詞","structure":"S + watch + O + V","image":"人の動作を最初から最後まで注意して見るイメージ。","point":"作業手順・説明・現場確認で使いやすい形。","examples":[
         {"en":"I watched the engineer check the wiring.","ja":"私は技術担当者が配線を確認するのを見ました。","focus":"watched","object":"the engineer check the wiring"},
         {"en":"Please watch me set up the system first.","ja":"あなたはまず私がシステムを設定するところを見てください。","focus":"watch","object":"me set up the system"},
         {"en":"We watched the client test the lighting.","ja":"私たちは顧客が照明をテストするのを見ました。","focus":"watched","object":"the client test the lighting"}
       ]},
-      {"id":"watch-closely","title":"⑥ watch closely / 注意深く見る","pattern":"WATCH + closely / carefully","transitivity":"他動詞・自動詞","structure":"S + watch + M","image":"注意の距離を近づけて見るイメージ。","point":"carefully / closely と一緒に使うと、見落とし防止の感じが出る。","examples":[
+      {"id":"watch-carefully","title":"⑥ watch carefully / 注意深く見る","pattern":"WATCH + carefully / closely","transitivity":"他動詞・自動詞","structure":"S + watch + M","image":"注意を強く向けて見るイメージ。","point":"carefully, closely と一緒に使うと、見落とし防止の感じが出る。","examples":[
         {"en":"Please watch carefully during the test.","ja":"あなたはテスト中、注意深く見てください。","focus":"watch","object":"carefully"},
         {"en":"We watched closely after the system update.","ja":"私たちはシステム更新後、注意深く状況を見ました。","focus":"watched","object":"closely"},
         {"en":"I will watch this issue closely until Friday.","ja":"私は金曜日までこの問題を注意深く見ます。","focus":"watch","object":"this issue closely"}
@@ -3316,13 +3312,35 @@ export const verbs: Verb[] = [
     "phrasalVerbs": [
       {"phrase":"watch out","ja":"気をつける","image":"危ないものを見逃さないように注意を外へ向けるイメージ。","pattern":"WATCH OUT","examples":[
         {"en":"Watch out during the installation.","ja":"施工中は気をつけてください。","focus":"Watch out"},
-        {"en":"We should watch out when handling the sample.","ja":"私たちはサンプルを扱う時に気をつけるべきです。","focus":"watch out"},
-        {"en":"Please watch out for wet paint near the entrance.","ja":"入口付近の塗りたてのペンキに気をつけてください。","focus":"watch out for","object":"wet paint"}
+        {"en":"We should watch out when handling the sample.","ja":"私たちはサンプルを扱う時に気をつけるべきです。","focus":"watch out"}
+      ]},
+      {"phrase":"watch out for","ja":"〜に注意する","image":"危険や変化を探すように注意を向けるイメージ。","pattern":"WATCH OUT FOR + risk / change","examples":[
+        {"en":"Please watch out for wet paint near the entrance.","ja":"入口付近の塗りたてのペンキに気をつけてください。","focus":"watch out for","object":"wet paint"},
+        {"en":"We need to watch out for changes in the delivery date.","ja":"私たちは納期変更に注意する必要があります。","focus":"watch out for","object":"changes in the delivery date"}
       ]},
       {"phrase":"watch over","ja":"〜を見守る・管理する","image":"上から全体を見て守るイメージ。","pattern":"WATCH OVER + person / process","examples":[
         {"en":"The manager watched over the new team during the project.","ja":"上司はその案件中、新しいチームを見守りました。","focus":"watched over","object":"the new team"},
-        {"en":"We need someone to watch over the testing process.","ja":"私たちはテスト工程を管理する人が必要です。","focus":"watch over","object":"the testing process"},
-        {"en":"She watched over the booth during the event.","ja":"彼女はイベント中、ブースを管理しました。","focus":"watched over","object":"the booth"}
+        {"en":"We need someone to watch over the testing process.","ja":"私たちはテスト工程を管理する人が必要です。","focus":"watch over","object":"the testing process"}
+      ]},
+      {"phrase":"watch for","ja":"〜に注意する・待つ","image":"何かが出てくるのを注意して待つイメージ。","pattern":"WATCH FOR + change / error","examples":[
+        {"en":"Please watch for any errors in the report.","ja":"あなたは報告書にミスがないか注意してください。","focus":"watch for","object":"any errors"},
+        {"en":"The team watched for safety issues during the installation.","ja":"チームは施工中、安全上の問題に注意していました。","focus":"watched for","object":"safety issues"}
+      ]},
+      {"phrase":"watch from","ja":"〜から見る","image":"ある位置から状況を見るイメージ。","pattern":"WATCH FROM + place","examples":[
+        {"en":"We watched from the back of the showroom.","ja":"私たちはショールームの後方から見ました。","focus":"watched from","object":"the back of the showroom"},
+        {"en":"I watched from the office while the test was running.","ja":"私はテスト中、事務所から状況を見ていました。","focus":"watched from","object":"the office"}
+      ]},
+      {"phrase":"watch as","ja":"〜するのを見る","image":"出来事が進む様子を見るイメージ。","pattern":"WATCH AS + sentence","examples":[
+        {"en":"We watched as the system restarted.","ja":"私たちはシステムが再起動する様子を見ました。","focus":"watched as","object":"the system restarted"},
+        {"en":"I watched as the client tested the sample.","ja":"私は顧客がサンプルを試す様子を見ました。","focus":"watched as","object":"the client tested the sample"}
+      ]},
+      {"phrase":"watch through","ja":"最後まで見る","image":"動画や説明を最後まで通して見るイメージ。","pattern":"WATCH THROUGH + video / demo","examples":[
+        {"en":"Please watch through the demo video before the meeting.","ja":"あなたは会議前にデモ動画を最後まで見てください。","focus":"watch through","object":"the demo video"},
+        {"en":"We watched through the training material together.","ja":"私たちは研修資料を一緒に最後まで見ました。","focus":"watched through","object":"the training material"}
+      ]},
+      {"phrase":"watch back","ja":"見返す","image":"録画や映像をもう一度見るイメージ。","pattern":"WATCH BACK + recording","examples":[
+        {"en":"I watched back the meeting recording last night.","ja":"私は昨夜、会議録画を見返しました。","focus":"watched back","object":"the meeting recording"},
+        {"en":"Please watch back the test video before you report it.","ja":"あなたは報告前にテスト動画を見返してください。","focus":"watch back","object":"the test video"}
       ]}
     ]
   },
@@ -3337,38 +3355,34 @@ export const verbs: Verb[] = [
     "importance": "★★★★☆ 重要",
     "core": "音・話・情報が耳に入る",
     "coreDetail": "HEARは、自分から集中して聞くlistenよりも、音や情報が耳に入る感覚です。連絡を受ける、噂を聞く、相手の話が聞こえる、結果を知る、という仕事表現にも広がります。",
-    "coreVisual": {
-      "from": ["📞 連絡", "🗣️ 話", "🔔 音", "💬 噂", "📣 知らせ"],
-      "to": "自分の耳・情報範囲",
-      "label": "外の音・情報 → 耳に入る"
-    },
+    "coreVisual": {"from":["📞 連絡","🗣️ 話","🔔 音","💬 噂","📣 知らせ"],"to":"自分の耳・情報範囲","label":"外の音・情報 → 耳に入る"},
     "meanings": [
       {"id":"hear-sound","title":"① hear a sound / 音が聞こえる","pattern":"HEAR + sound / voice","transitivity":"他動詞","structure":"S + hear + O","image":"音が自然に耳へ入ってくるイメージ。","point":"listenは意識して聞く。hearは聞こえる・耳に入る。","examples":[
         {"en":"I heard a noise from the machine.","ja":"私は機械から音が聞こえました。","focus":"heard","object":"a noise"},
         {"en":"Can you hear me clearly on the call?","ja":"あなたは電話で私の声がはっきり聞こえますか？","focus":"hear","object":"me"},
         {"en":"We heard the alarm during the test.","ja":"私たちはテスト中にアラーム音を聞きました。","focus":"heard","object":"the alarm"}
       ]},
-      {"id":"hear-about","title":"② hear about / 〜について聞く","pattern":"HEAR ABOUT + topic","transitivity":"自動詞","structure":"S + hear + about O","image":"ある話題についての情報が耳に入るイメージ。","point":"案件・問題・変更などを知った時に使いやすい。","examples":[
-        {"en":"I heard about the schedule change this morning.","ja":"私は今朝、スケジュール変更について聞きました。","focus":"heard","object":"about the schedule change"},
-        {"en":"Did you hear about the issue from the client?","ja":"あなたは顧客からその問題について聞きましたか？","focus":"hear","object":"about the issue"},
-        {"en":"We heard about a new project in Osaka.","ja":"私たちは大阪の新しい案件について聞きました。","focus":"heard","object":"about a new project"}
+      {"id":"hear-news","title":"② hear the news / 知らせを聞く","pattern":"HEAR + news / update","transitivity":"他動詞","structure":"S + hear + O","image":"知らせや更新情報が耳に入るイメージ。","point":"news, update, result, rumor など情報系の名詞と相性が良い。","examples":[
+        {"en":"I heard the news from the sales team.","ja":"私は営業チームからその知らせを聞きました。","focus":"heard","object":"the news"},
+        {"en":"We heard the latest update this morning.","ja":"私たちは今朝、最新情報を聞きました。","focus":"heard","object":"the latest update"},
+        {"en":"Did you hear the result of the meeting?","ja":"あなたは会議の結果を聞きましたか？","focus":"hear","object":"the result"}
       ]},
-      {"id":"hear-from","title":"③ hear from / 〜から連絡がある","pattern":"HEAR FROM + person / company","transitivity":"自動詞","structure":"S + hear + from O","image":"相手からの連絡や返事が自分に届くイメージ。","point":"返事待ちの場面でとても自然。contactより会話的。","examples":[
-        {"en":"I heard from the supplier yesterday.","ja":"私は昨日、仕入先から連絡を受けました。","focus":"heard","object":"from the supplier"},
-        {"en":"Have you heard from the client yet?","ja":"あなたはもう顧客から連絡を受けましたか？","focus":"heard","object":"from the client"},
-        {"en":"We haven't heard from the factory about the sample.","ja":"私たちはサンプルについて、まだ工場から連絡を受けていません。","focus":"heard","object":"from the factory"}
-      ]},
-      {"id":"hear-that","title":"④ hear that / 〜だと聞く","pattern":"HEAR THAT + sentence","transitivity":"他動詞","structure":"S + hear + that節","image":"文の形をした情報が耳に入るイメージ。","point":"thatは省略されることも多いが、学習ではまず形を意識する。","examples":[
+      {"id":"hear-that","title":"③ hear that / 〜だと聞く","pattern":"HEAR THAT + sentence","transitivity":"他動詞","structure":"S + hear + that節","image":"文の形をした情報が耳に入るイメージ。","point":"thatは省略されることも多いが、学習ではまず形を意識する。","examples":[
         {"en":"I heard that the delivery date was moved.","ja":"私は納期が変更されたと聞きました。","focus":"heard","object":"that the delivery date was moved"},
         {"en":"We heard that the client approved the quotation.","ja":"私たちは顧客が見積を承認したと聞きました。","focus":"heard","object":"that the client approved the quotation"},
         {"en":"Did you hear that the meeting was canceled?","ja":"あなたは会議がキャンセルされたと聞きましたか？","focus":"hear","object":"that the meeting was canceled"}
       ]},
-      {"id":"hear-feedback","title":"⑤ hear feedback / 反応を聞く","pattern":"HEAR + feedback / opinion","transitivity":"他動詞","structure":"S + hear + O","image":"相手の意見や反応が自分に入ってくるイメージ。","point":"feedback, opinion, comments などと使いやすい。","examples":[
+      {"id":"hear-feedback","title":"④ hear feedback / 反応を聞く","pattern":"HEAR + feedback / opinion","transitivity":"他動詞","structure":"S + hear + O","image":"相手の意見や反応が自分に入ってくるイメージ。","point":"feedback, opinion, comments などと使いやすい。","examples":[
         {"en":"We heard positive feedback from the customer.","ja":"私たちは顧客から良い反応を聞きました。","focus":"heard","object":"positive feedback"},
         {"en":"I want to hear your opinion before we decide.","ja":"私は決定前にあなたの意見を聞きたいです。","focus":"hear","object":"your opinion"},
         {"en":"The sales team heard several comments after the demo.","ja":"営業チームはデモ後にいくつかコメントを聞きました。","focus":"heard","object":"several comments"}
       ]},
-      {"id":"hear-someone-do","title":"⑥ hear someone say / 人が〜と言うのを聞く","pattern":"HEAR + someone + do","transitivity":"他動詞","structure":"S + hear + O + V","image":"相手の発言や音が耳に入るイメージ。","point":"see/watchと同じく、知覚動詞の形。仕事では say / mention と相性が良い。","examples":[
+      {"id":"hear-complaint","title":"⑤ hear a complaint / クレームを聞く","pattern":"HEAR + complaint / concern","transitivity":"他動詞","structure":"S + hear + O","image":"相手の不満や懸念が耳に入るイメージ。","point":"complaint, concern, request と一緒に使える。","examples":[
+        {"en":"We heard a complaint about the delivery delay.","ja":"私たちは納期遅れについてのクレームを聞きました。","focus":"heard","object":"a complaint"},
+        {"en":"I heard the client's concern during the call.","ja":"私は電話中に顧客の懸念を聞きました。","focus":"heard","object":"the client's concern"},
+        {"en":"Please hear the customer's request first.","ja":"あなたはまず顧客の要望を聞いてください。","focus":"hear","object":"the customer's request"}
+      ]},
+      {"id":"hear-someone-say","title":"⑥ hear someone say / 人が〜と言うのを聞く","pattern":"HEAR + someone + do","transitivity":"他動詞","structure":"S + hear + O + V","image":"相手の発言や音が耳に入るイメージ。","point":"say / mention / explain などと相性が良い。","examples":[
         {"en":"I heard the client say the color was good.","ja":"私は顧客が色味は良いと言うのを聞きました。","focus":"heard","object":"the client say the color was good"},
         {"en":"We heard the manager mention the new target.","ja":"私たちは上司が新しい目標に触れるのを聞きました。","focus":"heard","object":"the manager mention the new target"},
         {"en":"Did you hear him explain the reason?","ja":"あなたは彼が理由を説明するのを聞きましたか？","focus":"hear","object":"him explain the reason"}
@@ -3376,15 +3390,29 @@ export const verbs: Verb[] = [
     ],
     "collocations": [],
     "phrasalVerbs": [
-      {"phrase":"hear from","ja":"〜から連絡がある","image":"相手から連絡が自分の耳・受信範囲へ届くイメージ。","pattern":"HEAR FROM + person / company","examples":[
-        {"en":"Please let me know when you hear from the client.","ja":"顧客から連絡があったら私に教えてください。","focus":"hear from","object":"the client"},
-        {"en":"We heard from the supplier about the new price.","ja":"私たちは仕入先から新価格について連絡を受けました。","focus":"heard from","object":"the supplier"},
-        {"en":"I haven't heard from him this week.","ja":"私は今週、彼から連絡を受けていません。","focus":"heard from","object":"him"}
+      {"phrase":"hear from","ja":"〜から連絡を受ける","image":"相手からの連絡や返事が自分に届くイメージ。","pattern":"HEAR FROM + person / company","examples":[
+        {"en":"I heard from the supplier yesterday.","ja":"私は昨日、仕入先から連絡を受けました。","focus":"heard from","object":"the supplier"},
+        {"en":"Have you heard from the client yet?","ja":"あなたはもう顧客から連絡を受けましたか？","focus":"heard from","object":"the client"}
       ]},
-      {"phrase":"hear about","ja":"〜について聞く","image":"話題に関する情報が耳に入るイメージ。","pattern":"HEAR ABOUT + topic","examples":[
-        {"en":"I heard about the problem from accounting.","ja":"私は経理からその問題について聞きました。","focus":"heard about","object":"the problem"},
-        {"en":"Did you hear about the new order?","ja":"あなたは新しい注文について聞きましたか？","focus":"hear about","object":"the new order"},
-        {"en":"We heard about the change after lunch.","ja":"私たちは昼食後にその変更について聞きました。","focus":"heard about","object":"the change"}
+      {"phrase":"hear about","ja":"〜について聞く","image":"ある話題についての情報が耳に入るイメージ。","pattern":"HEAR ABOUT + topic","examples":[
+        {"en":"I heard about the schedule change this morning.","ja":"私は今朝、スケジュール変更について聞きました。","focus":"heard about","object":"the schedule change"},
+        {"en":"Did you hear about the issue from the client?","ja":"あなたは顧客からその問題について聞きましたか？","focus":"hear about","object":"the issue"}
+      ]},
+      {"phrase":"hear of","ja":"〜の存在を聞く","image":"名前や存在が耳に入るイメージ。","pattern":"HEAR OF + person / product","examples":[
+        {"en":"Have you heard of this supplier before?","ja":"あなたは以前この仕入先のことを聞いたことがありますか？","focus":"heard of","object":"this supplier"},
+        {"en":"We heard of a new product from the client.","ja":"私たちは顧客から新製品の存在を聞きました。","focus":"heard of","object":"a new product"}
+      ]},
+      {"phrase":"hear out","ja":"最後まで話を聞く","image":"相手の話を途中で止めず最後まで受け取るイメージ。","pattern":"HEAR OUT + person","examples":[
+        {"en":"Please hear the customer out before you reply.","ja":"あなたは返答する前に顧客の話を最後まで聞いてください。","focus":"hear out","object":"the customer"},
+        {"en":"We heard him out and then explained our position.","ja":"私たちは彼の話を最後まで聞いてから、自分たちの立場を説明しました。","focus":"heard out","object":"him"}
+      ]},
+      {"phrase":"hear back","ja":"返事をもらう","image":"こちらの連絡に対して返事が戻ってくるイメージ。","pattern":"HEAR BACK","examples":[
+        {"en":"I will update you when I hear back.","ja":"返事が来たらあなたに共有します。","focus":"hear back"},
+        {"en":"We haven't heard back about the quotation yet.","ja":"私たちは見積についてまだ返事をもらっていません。","focus":"heard back","object":"about the quotation"}
+      ]},
+      {"phrase":"hear through","ja":"〜を通じて聞く","image":"人やルートを通って情報が耳に入るイメージ。","pattern":"HEAR THROUGH + person / channel","examples":[
+        {"en":"We heard through the distributor that the stock was low.","ja":"私たちは代理店を通じて在庫が少ないと聞きました。","focus":"heard through","object":"the distributor"},
+        {"en":"I heard through another customer that the product was popular.","ja":"私は別の顧客を通じて、その製品が人気だと聞きました。","focus":"heard through","object":"another customer"}
       ]}
     ]
   },
@@ -3393,44 +3421,40 @@ export const verbs: Verb[] = [
     "rank": 15,
     "word": "LISTEN",
     "ipa": "/ˈlɪsən/",
-    "kana": "リッスン",
+    "kana": "リスン",
     "syllable": "lis-ten",
     "transitivity": "自動詞",
     "importance": "★★★★☆ 重要",
     "core": "意識を向けて聞く",
-    "coreDetail": "LISTENは、音や相手の話に自分から注意を向けて聞く感覚です。hearが『耳に入る』なら、listenは『聞こうとして聞く』です。顧客の要望を聞く、説明を聞く、アドバイスを受け入れる、という仕事表現につながります。",
-    "coreVisual": {
-      "from": ["🗣️ 顧客の声", "📋 説明", "💡 提案", "⚠️ 注意", "🎧 音声"],
-      "to": "自分の注意・理解",
-      "label": "音・話 → 意識を向けて聞く"
-    },
+    "coreDetail": "LISTENは、音が自然に入るhearと違い、自分から意識を向けて聞く感覚です。顧客の話、説明、意見、フィードバックを受け止める場面で重要です。",
+    "coreVisual": {"from":["🗣️ 相手の話","👂 耳","💬 意見","📢 説明","🤝 顧客の声"],"to":"自分の理解・判断","label":"相手の話 → 意識して聞く"},
     "meanings": [
-      {"id":"listen-to-person","title":"① listen to someone / 人の話を聞く","pattern":"LISTEN TO + person","transitivity":"自動詞","structure":"S + listen + to O","image":"相手に注意を向けて話を受け止めるイメージ。","point":"listenは基本的に listen to の形で目的語を置く。","examples":[
-        {"en":"Please listen to the customer's request carefully.","ja":"あなたは顧客の要望を注意深く聞いてください。","focus":"listen","object":"to the customer's request"},
-        {"en":"I listened to my manager before replying.","ja":"私は返信する前に上司の話を聞きました。","focus":"listened","object":"to my manager"},
-        {"en":"We should listen to the site staff first.","ja":"私たちはまず現場スタッフの話を聞くべきです。","focus":"listen","object":"to the site staff"}
-      ]},
-      {"id":"listen-to-explanation","title":"② listen to an explanation / 説明を聞く","pattern":"LISTEN TO + explanation / presentation","transitivity":"自動詞","structure":"S + listen + to O","image":"説明の内容に意識を向けて理解しようとするイメージ。","point":"説明・提案・発表などを聞く時に使いやすい。","examples":[
-        {"en":"I listened to the explanation about the new system.","ja":"私は新しいシステムについての説明を聞きました。","focus":"listened","object":"to the explanation"},
-        {"en":"Please listen to the presentation and ask questions later.","ja":"あなたはプレゼンを聞いて、後で質問してください。","focus":"listen","object":"to the presentation"},
-        {"en":"We listened to the supplier's proposal yesterday.","ja":"私たちは昨日、仕入先の提案を聞きました。","focus":"listened","object":"to the supplier's proposal"}
-      ]},
-      {"id":"listen-carefully","title":"③ listen carefully / 注意深く聞く","pattern":"LISTEN + carefully / closely","transitivity":"自動詞","structure":"S + listen + M","image":"聞く意識を強くして、内容を取りこぼさないイメージ。","point":"carefully, closely と相性が良い。会議や指示確認で便利。","examples":[
+      {"id":"listen-carefully","title":"① listen carefully / 注意深く聞く","pattern":"LISTEN + carefully / closely","transitivity":"自動詞","structure":"S + listen + M","image":"聞く意識を強くして、内容を取りこぼさないイメージ。","point":"carefully, closely と相性が良い。会議や指示確認で便利。","examples":[
         {"en":"Please listen carefully during the safety briefing.","ja":"あなたは安全説明中、注意深く聞いてください。","focus":"listen","object":"carefully"},
         {"en":"I listened closely to the client's concerns.","ja":"私は顧客の懸念を注意深く聞きました。","focus":"listened","object":"closely"},
         {"en":"We need to listen carefully before making a decision.","ja":"私たちは決定する前に注意深く聞く必要があります。","focus":"listen","object":"carefully"}
       ]},
-      {"id":"listen-for","title":"④ listen for / 〜を聞き取ろうとする","pattern":"LISTEN FOR + sound / word","transitivity":"自動詞","structure":"S + listen + for O","image":"目的の音や言葉を探すように聞くイメージ。","point":"listen for は『〜が聞こえるか注意して聞く』。","examples":[
-        {"en":"Please listen for any unusual noise from the machine.","ja":"あなたは機械から異音がしないか注意して聞いてください。","focus":"listen","object":"for any unusual noise"},
-        {"en":"We listened for the alarm during the test.","ja":"私たちはテスト中、アラーム音が鳴らないか聞きました。","focus":"listened","object":"for the alarm"},
-        {"en":"I listened for the customer's key point in the meeting.","ja":"私は会議で顧客の重要なポイントを聞き取ろうとしました。","focus":"listened","object":"for the customer's key point"}
+      {"id":"listen-actively","title":"② listen actively / 積極的に聞く","pattern":"LISTEN + actively","transitivity":"自動詞","structure":"S + listen + M","image":"ただ黙って聞くのではなく、理解するために聞くイメージ。","point":"営業や会議では active listening が重要。","examples":[
+        {"en":"We should listen actively during the customer interview.","ja":"私たちは顧客ヒアリング中、積極的に聞くべきです。","focus":"listen","object":"actively"},
+        {"en":"I listened actively and asked follow-up questions.","ja":"私は積極的に聞いて、追加質問をしました。","focus":"listened","object":"actively"},
+        {"en":"Please listen actively to the team's feedback.","ja":"あなたはチームのフィードバックを積極的に聞いてください。","focus":"listen","object":"actively"}
+      ]},
+      {"id":"listen-before-replying","title":"③ listen before replying / 返答前に聞く","pattern":"LISTEN + before V-ing","transitivity":"自動詞","structure":"S + listen + before V-ing","image":"返事を急がず、先に相手の話を受け止めるイメージ。","point":"顧客対応やクレーム対応で使いやすい。","examples":[
+        {"en":"Please listen before replying to the complaint.","ja":"あなたはクレームに返答する前に、まず話を聞いてください。","focus":"listen","object":"before replying"},
+        {"en":"We listened before suggesting a solution.","ja":"私たちは解決策を提案する前に話を聞きました。","focus":"listened","object":"before suggesting a solution"},
+        {"en":"I will listen first and then confirm the details.","ja":"私はまず話を聞いてから詳細を確認します。","focus":"listen","object":"first"}
+      ]},
+      {"id":"listen-without-interrupting","title":"④ listen without interrupting / 遮らずに聞く","pattern":"LISTEN + without V-ing","transitivity":"自動詞","structure":"S + listen + without V-ing","image":"相手の話を途中で止めずに受け止めるイメージ。","point":"会議・クレーム・ヒアリングで自然。","examples":[
+        {"en":"We should listen without interrupting the client.","ja":"私たちは顧客の話を遮らずに聞くべきです。","focus":"listen","object":"without interrupting the client"},
+        {"en":"I listened without interrupting and took notes.","ja":"私は遮らずに聞き、メモを取りました。","focus":"listened","object":"without interrupting"},
+        {"en":"Please listen without judging the idea too quickly.","ja":"あなたはその案をすぐ判断せずに聞いてください。","focus":"listen","object":"without judging"}
       ]},
       {"id":"listen-and-understand","title":"⑤ listen and understand / 聞いて理解する","pattern":"LISTEN + and + verb","transitivity":"自動詞","structure":"S + listen + and V","image":"聞いた内容を理解や行動につなげるイメージ。","point":"listenだけで終わらず、understand / respond / improve につながる形。","examples":[
         {"en":"We listened and understood the client's concern.","ja":"私たちは顧客の懸念を聞いて理解しました。","focus":"listened","object":"and understood"},
         {"en":"Please listen and respond after I finish.","ja":"あなたは私が話し終えてから聞いて返答してください。","focus":"listen","object":"and respond"},
         {"en":"The team listened and improved the proposal.","ja":"チームは話を聞いて提案書を改善しました。","focus":"listened","object":"and improved"}
       ]},
-      {"id":"listen-to-advice","title":"⑥ listen to advice / アドバイスを聞く","pattern":"LISTEN TO + advice / feedback","transitivity":"自動詞","structure":"S + listen + to O","image":"相手の助言を受け止めるイメージ。","point":"単に耳で聞くだけでなく『受け入れる』ニュアンスも出る。","examples":[
+      {"id":"listen-feedback","title":"⑥ listen to feedback / フィードバックに耳を傾ける","pattern":"LISTEN TO + feedback / advice","transitivity":"自動詞","structure":"S + listen + to O","image":"相手の助言や意見を受け止めるイメージ。","point":"単に耳で聞くだけでなく『受け入れる』ニュアンスも出る。","examples":[
         {"en":"We should listen to the engineer's advice.","ja":"私たちは技術担当者のアドバイスを聞くべきです。","focus":"listen","object":"to the engineer's advice"},
         {"en":"I listened to the customer's feedback and changed the layout.","ja":"私は顧客の意見を聞いて、レイアウトを変更しました。","focus":"listened","object":"to the customer's feedback"},
         {"en":"Please listen to the team's suggestion before deciding.","ja":"あなたは決定前にチームの提案を聞いてください。","focus":"listen","object":"to the team's suggestion"}
@@ -3440,13 +3464,27 @@ export const verbs: Verb[] = [
     "phrasalVerbs": [
       {"phrase":"listen to","ja":"〜を聞く・〜に耳を傾ける","image":"相手や内容へ注意を向けるイメージ。","pattern":"LISTEN TO + person / idea","examples":[
         {"en":"We need to listen to the customer's needs.","ja":"私たちは顧客のニーズに耳を傾ける必要があります。","focus":"listen to","object":"the customer's needs"},
-        {"en":"I listened to the new proposal carefully.","ja":"私は新しい提案を注意深く聞きました。","focus":"listened to","object":"the new proposal"},
-        {"en":"Please listen to the instruction before starting.","ja":"あなたは始める前に指示を聞いてください。","focus":"listen to","object":"the instruction"}
+        {"en":"I listened to the new proposal carefully.","ja":"私は新しい提案を注意深く聞きました。","focus":"listened to","object":"the new proposal"}
       ]},
-      {"phrase":"listen in","ja":"こっそり聞く・会話に聞き耳を立てる","image":"外側から会話の中へ耳を入れるイメージ。","pattern":"LISTEN IN","examples":[
-        {"en":"I did not listen in on the private call.","ja":"私はその個人的な電話をこっそり聞いていません。","focus":"listen in","object":"on the private call"},
-        {"en":"Please do not listen in during the customer call.","ja":"顧客との電話中に聞き耳を立てないでください。","focus":"listen in"},
-        {"en":"He listened in for a moment and then left the room.","ja":"彼は少し聞き耳を立ててから部屋を出ました。","focus":"listened in"}
+      {"phrase":"listen in","ja":"参加して聞く・こっそり聞く","image":"会話や会議の中へ耳を入れるイメージ。","pattern":"LISTEN IN","examples":[
+        {"en":"Can I listen in on the sales call?","ja":"私はその営業電話に参加して聞いてもよいですか？","focus":"listen in","object":"on the sales call"},
+        {"en":"Please do not listen in on a private call.","ja":"個人的な電話をこっそり聞かないでください。","focus":"listen in","object":"on a private call"}
+      ]},
+      {"phrase":"listen for","ja":"〜に耳を澄ます","image":"目的の音や言葉を探すように聞くイメージ。","pattern":"LISTEN FOR + sound / word","examples":[
+        {"en":"Please listen for any unusual noise from the machine.","ja":"あなたは機械から異音がしないか注意して聞いてください。","focus":"listen for","object":"any unusual noise"},
+        {"en":"I listened for the customer's key point in the meeting.","ja":"私は会議で顧客の重要なポイントを聞き取ろうとしました。","focus":"listened for","object":"the customer's key point"}
+      ]},
+      {"phrase":"listen out for","ja":"〜を聞き逃さないようにする","image":"必要な音や情報を待ちながら聞くイメージ。","pattern":"LISTEN OUT FOR + signal / update","examples":[
+        {"en":"Please listen out for any update from the client.","ja":"あなたは顧客からの更新情報を聞き逃さないようにしてください。","focus":"listen out for","object":"any update"},
+        {"en":"We listened out for the alarm during the test.","ja":"私たちはテスト中、アラーム音を聞き逃さないようにしていました。","focus":"listened out for","object":"the alarm"}
+      ]},
+      {"phrase":"listen up","ja":"よく聞く","image":"注意を集めて聞くイメージ。","pattern":"LISTEN UP","examples":[
+        {"en":"Listen up before we start the installation.","ja":"施工を始める前によく聞いてください。","focus":"Listen up"},
+        {"en":"Everyone listened up when the manager explained the change.","ja":"上司が変更点を説明した時、全員がよく聞きました。","focus":"listened up"}
+      ]},
+      {"phrase":"listen through","ja":"最後まで聞く","image":"説明や音声を最後まで通して聞くイメージ。","pattern":"LISTEN THROUGH + audio / explanation","examples":[
+        {"en":"Please listen through the explanation before asking questions.","ja":"質問する前に説明を最後まで聞いてください。","focus":"listen through","object":"the explanation"},
+        {"en":"I listened through the recording and found the important point.","ja":"私は録音を最後まで聞いて、重要な点を見つけました。","focus":"listened through","object":"the recording"}
       ]}
     ]
   },

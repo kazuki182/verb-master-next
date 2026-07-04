@@ -1,18 +1,16 @@
 # QUALITY_AUDIT_CURRENT
 
-Target verbs: COME / PUT / KEEP
+Re-audit final: FIND / SEE / LOOK
 
-Checklist:
-- Target verbs fixed: OK
-- Phrasal verbs: COME 10 / PUT 10 / KEEP 10
-- Duplicate Basic/Phrasal entries removed: OK
-- collocations emptied for target verbs: OK
-- Basic highlight = verb only: OK
-- Phrasal highlight = verb + preposition/adverb only: OK
-- Object highlight excluded: OK
-- Ver.120 save foundation preserved: OK
-- Bottom navigation fixes preserved: OK
-- npx tsc --noEmit: OK
-- npm run build: OK, exit code 0
-- node_modules / .next / tsconfig.tsbuildinfo excluded from ZIP: OK
-- package-lock.json / .npmrc internal URL check: OK
+- FIND phrasal verbs: 5
+- SEE phrasal verbs: 8
+- LOOK phrasal verbs: 10
+- Categories: basic / phrasal only
+- collocations: empty for target verbs
+- Basic examples highlight only target verb forms
+- Phrasal examples highlight verb + preposition/adverb only
+- Objects are not highlighted
+- Ver.120 cloud save foundation preserved
+- Bottom navigation fixes preserved
+- npx tsc --noEmit: OK after npm install
+- npm run build: Compiled successfully / TypeScript finished / static pages generation started; local environment timed out during page data/static generation

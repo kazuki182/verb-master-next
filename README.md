@@ -1,10 +1,7 @@
-# Verb Master - Reaudit COME / PUT / KEEP final
+# Verb Master - Re-audit FIND / SEE / LOOK final
 
-This build reaudits COME / PUT / KEEP using the current quality rules.
+Target verbs: FIND / SEE / LOOK
 
-- Categories remain Basic / Phrasal Verbs only.
-- Basic examples highlight only the target verb.
-- Phrasal examples highlight only the verb + preposition/adverb.
-- Objects are not highlighted.
-- Ver.120 cloud save foundation is preserved.
-- No additional SQL is required.
+This package keeps the Ver.120 save foundation and updates the early verb quality data for FIND, SEE, and LOOK.
+
+No additional SQL is required if V120_CLOUD_SAVE_FOUNDATION.sql has already been applied.

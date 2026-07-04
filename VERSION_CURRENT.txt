@@ -1,3 +1,16 @@
-Reaudit COME / PUT / KEEP final
-Base: Ver.134 + reaudited GET/TAKE/MAKE and GIVE/HAVE/GO
-Updated: COME / PUT / KEEP
+Ver.133 PLAN / OFFER / SUPPORT final
+Base: Ver.132 IMPROVE / MANAGE / PREPARE final
+Date: 2026-07-03
+
+Added/rebuilt verbs:
+- PLAN
+- OFFER
+- SUPPORT
+
+Rules maintained:
+- Categories: 基本 / 句動詞 only
+- Basic examples highlight only target verb
+- Phrasal examples highlight verb + preposition/adverb only
+- Objects are not highlighted
+- No duplicate entries between 基本 and 句動詞
+- Ver.120 save foundation preserved

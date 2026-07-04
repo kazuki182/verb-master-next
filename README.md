@@ -1,17 +1,10 @@
-# Verb Master
+# Verb Master - Reaudit COME / PUT / KEEP final
 
-## 再監査版 GET / TAKE / MAKE final
+This build reaudits COME / PUT / KEEP using the current quality rules.
 
-このZIPは Ver.134 をベースに、初期動詞 GET / TAKE / MAKE を現在の品質基準で再監査・再修正した版です。
-
-### 重要ルール
-- カテゴリは「基本」と「句動詞」のみ
-- 基本の赤文字は動詞のみ
-- 句動詞の赤文字は動詞＋前置詞・副詞まで
-- 目的語は赤文字にしない
-- 基本と句動詞で同じ表現を重複させない
-- 句動詞は句動詞側へ寄せる
-- 保存基盤 Ver.120 は維持
-
-### 追加SQL
-追加SQLは不要です。Ver.120 の SQL を実行済みなら、そのまま利用できます。
+- Categories remain Basic / Phrasal Verbs only.
+- Basic examples highlight only the target verb.
+- Phrasal examples highlight only the verb + preposition/adverb.
+- Objects are not highlighted.
+- Ver.120 cloud save foundation is preserved.
+- No additional SQL is required.

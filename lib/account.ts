@@ -146,6 +146,10 @@ export type UserProgress = {
   voiceSettings?: VoiceSettings;
   displayName?: string;
   avatarDataUrl?: string;
+  avatarUrl?: string;
+  avatarPath?: string;
+  avatarUpdatedAt?: string;
+  avatarStorageProvider?: "supabase-storage" | "legacy-data-url" | "none";
   notificationsEnabled?: boolean;
   unlockedVerbCount?: number;
   purchaseTotalYen?: number;
@@ -215,6 +219,31 @@ function isRemoteSnapshotNewer(localStamp?: string, remoteStamp?: string) {
   const local = timestampMs(localStamp);
   const remote = timestampMs(remoteStamp);
   return remote > 0 && remote >= local;
+}
+
+function isInlineAvatar(value?: string | null) {
+  return Boolean(value && value.startsWith("data:image/"));
+}
+
+function isRemoteAvatar(value?: string | null) {
+  return Boolean(value && /^https?:\/\//.test(value));
+}
+
+export function getProgressAvatarSrc(progress?: Partial<UserProgress> | null) {
+  if (!progress) return "";
+  return progress.avatarUrl || progress.avatarDataUrl || "";
+}
+
+function normalizeAvatarFields(progress: UserProgress) {
+  const dataUrl = progress.avatarDataUrl || "";
+  if (progress.avatarUrl && !dataUrl) progress.avatarDataUrl = progress.avatarUrl;
+  if (!progress.avatarUrl && isRemoteAvatar(dataUrl)) progress.avatarUrl = dataUrl;
+  if (!progress.avatarStorageProvider) {
+    if (progress.avatarPath || progress.avatarUrl || isRemoteAvatar(progress.avatarDataUrl)) progress.avatarStorageProvider = "supabase-storage";
+    else if (isInlineAvatar(progress.avatarDataUrl)) progress.avatarStorageProvider = "legacy-data-url";
+    else progress.avatarStorageProvider = "none";
+  }
+  return progress;
 }
 
 function weekKey(date = new Date()) {
@@ -335,7 +364,7 @@ export function initAdminAccount() {
 }
 
 
-export function updateUserProfile(settings: { displayName?: string; avatarDataUrl?: string; notificationsEnabled?: boolean }) {
+export function updateUserProfile(settings: { displayName?: string; avatarDataUrl?: string; avatarUrl?: string; avatarPath?: string; avatarUpdatedAt?: string; avatarStorageProvider?: UserProgress["avatarStorageProvider"]; notificationsEnabled?: boolean }) {
   const progress = getCurrentProgress();
   if (!progress) return null;
   const touchedAt = nowText();
@@ -348,6 +377,24 @@ export function updateUserProfile(settings: { displayName?: string; avatarDataUr
   }
   if (typeof settings.avatarDataUrl === "string") {
     progress.avatarDataUrl = settings.avatarDataUrl;
+    if (/^https?:\/\//.test(settings.avatarDataUrl)) progress.avatarUrl = settings.avatarDataUrl;
+    profileTouched = true;
+  }
+  if (typeof settings.avatarUrl === "string") {
+    progress.avatarUrl = settings.avatarUrl;
+    progress.avatarDataUrl = settings.avatarUrl || progress.avatarDataUrl || "";
+    profileTouched = true;
+  }
+  if (typeof settings.avatarPath === "string") {
+    progress.avatarPath = settings.avatarPath;
+    profileTouched = true;
+  }
+  if (typeof settings.avatarUpdatedAt === "string") {
+    progress.avatarUpdatedAt = settings.avatarUpdatedAt;
+    profileTouched = true;
+  }
+  if (settings.avatarStorageProvider) {
+    progress.avatarStorageProvider = settings.avatarStorageProvider;
     profileTouched = true;
   }
   if (typeof settings.notificationsEnabled === "boolean") {
@@ -455,6 +502,7 @@ function normalizeProgress(progress: UserProgress) {
     progress.voiceSettings = { gender: "female", lang: "en-US" };
   }
   if (!progress.displayName) progress.displayName = progress.username;
+  normalizeAvatarFields(progress);
   if (typeof progress.notificationsEnabled !== "boolean")
     progress.notificationsEnabled = true;
   recordWeeklyLogin(progress);
@@ -511,6 +559,10 @@ export function ensureProgress(username: string): UserProgress {
       voiceSettings: { gender: "female", lang: "en-US" },
       displayName: username,
       avatarDataUrl: "",
+      avatarUrl: "",
+      avatarPath: "",
+      avatarUpdatedAt: "",
+      avatarStorageProvider: "none",
       notificationsEnabled: true,
       unlockedVerbCount: 0,
       purchaseTotalYen: 0,
@@ -1169,6 +1221,9 @@ export type ClientStudySettingsSnapshot = {
   nickname?: string;
   avatarUrl?: string;
   avatarDataUrl?: string;
+  avatarPath?: string;
+  avatarUpdatedAt?: string;
+  avatarStorageProvider?: "supabase-storage" | "legacy-data-url" | "none";
   notificationsEnabled?: boolean;
   voiceSettings?: VoiceSettings;
   unlockedVerbCount?: number;
@@ -1188,8 +1243,11 @@ export function getClientStudySettingsSnapshot(progress?: UserProgress | null): 
     studyPace: progress?.studyPace || getStudyPaceSetting(),
     displayName: progress?.displayName || progress?.username,
     nickname: progress?.displayName || progress?.username,
-    avatarUrl: progress?.avatarDataUrl || undefined,
-    avatarDataUrl: progress?.avatarDataUrl || undefined,
+    avatarUrl: progress?.avatarUrl || (progress?.avatarDataUrl && !isInlineAvatar(progress.avatarDataUrl) ? progress.avatarDataUrl : undefined),
+    avatarDataUrl: progress?.avatarUrl || (progress?.avatarDataUrl && !isInlineAvatar(progress.avatarDataUrl) ? progress.avatarDataUrl : undefined),
+    avatarPath: progress?.avatarPath || undefined,
+    avatarUpdatedAt: progress?.avatarUpdatedAt,
+    avatarStorageProvider: progress?.avatarStorageProvider,
     notificationsEnabled: progress?.notificationsEnabled,
     voiceSettings: progress?.voiceSettings,
     unlockedVerbCount: progress?.unlockedVerbCount,
@@ -1222,7 +1280,15 @@ export function applyClientStudySettingsSnapshot(snapshot?: ClientStudySettingsS
   }
   if (!localProfileNewer) {
     if (snapshot.displayName || snapshot.nickname) progress.displayName = snapshot.displayName || snapshot.nickname || progress.displayName || progress.username;
-    if (snapshot.avatarUrl || snapshot.avatarDataUrl) progress.avatarDataUrl = snapshot.avatarUrl || snapshot.avatarDataUrl || progress.avatarDataUrl || "";
+    if (snapshot.avatarUrl || snapshot.avatarDataUrl) {
+      const avatar = snapshot.avatarUrl || snapshot.avatarDataUrl || "";
+      progress.avatarUrl = snapshot.avatarUrl || (!isInlineAvatar(avatar) ? avatar : progress.avatarUrl || "");
+      progress.avatarDataUrl = avatar || progress.avatarDataUrl || "";
+    }
+    if (snapshot.avatarPath) progress.avatarPath = snapshot.avatarPath;
+    if (snapshot.avatarUpdatedAt) progress.avatarUpdatedAt = snapshot.avatarUpdatedAt;
+    if (snapshot.avatarStorageProvider) progress.avatarStorageProvider = snapshot.avatarStorageProvider;
+    normalizeAvatarFields(progress);
     if (snapshot.profileUpdatedAt) progress.profileUpdatedAt = snapshot.profileUpdatedAt;
   }
   if (typeof snapshot.notificationsEnabled === "boolean") progress.notificationsEnabled = snapshot.notificationsEnabled;

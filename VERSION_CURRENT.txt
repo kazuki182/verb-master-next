@@ -1,3 +1,1 @@
-Verb Master V135 Persistence Autosave Foundation
-Base: latest cumulative project with Ver.134 + early verb reaudit fixes through WORK / USE / START
-Purpose: fix profile image, target date, nickname persistence with Supabase-backed autosave and rollback history.
+Ver.136 scalable save storage foundation

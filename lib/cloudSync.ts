@@ -24,7 +24,7 @@ export type CloudSyncEventDetail = {
 export type CloudSyncStatus = {
   configured: boolean;
   profile: "idle" | "saved" | "error";
-  avatar: "idle" | "saved" | "error" | "local-only";
+  avatar: "idle" | "saved" | "error" | "local-only" | "storage";
   premium: "idle" | "saved" | "error";
   stats: "idle" | "saved" | "error";
   message: string;
@@ -53,7 +53,7 @@ export type CloudBackupComparison = {
 };
 
 const CLOUD_CREDENTIAL_KEY = "verbMaster.cloudCredentials";
-const CLOUD_SQL_HINT = "Supabase SQLが未実行、または保存用RPCが見つかりません。supabase/V135_PERSISTENCE_AUTOSAVE_FOUNDATION.sql をSupabase SQL Editorで実行してください。";
+const CLOUD_SQL_HINT = "Supabase SQLが未実行、または保存用RPCが見つかりません。supabase/V136_SCALABLE_SAVE_STORAGE.sql をSupabase SQL Editorで実行してください。";
 
 type CloudCredentialMap = Record<string, { passwordHash: string; savedAt: string }>;
 type BackupRow = {
@@ -78,8 +78,22 @@ function localIsNewer(localStamp?: string, remoteStamp?: string) {
   return local > 0 && local >= remote;
 }
 
+function isInlineAvatar(value?: string | null) {
+  return Boolean(value && value.startsWith("data:image/"));
+}
+
+function avatarUrlOf(progress?: Partial<UserProgress> | null) {
+  if (!progress) return "";
+  const dataUrl = progress.avatarDataUrl || "";
+  return progress.avatarUrl || (!isInlineAvatar(dataUrl) ? dataUrl : "");
+}
+
+function avatarSaved(progress?: Partial<UserProgress> | null) {
+  return Boolean(progress?.avatarPath || avatarUrlOf(progress) || progress?.avatarDataUrl);
+}
+
 function remoteHasProfile(remote?: Partial<UserProgress> | null) {
-  return Boolean(remote?.displayName || remote?.avatarDataUrl || remote?.profileUpdatedAt);
+  return Boolean(remote?.displayName || remote?.avatarPath || remote?.avatarUrl || remote?.avatarDataUrl || remote?.profileUpdatedAt);
 }
 
 function remoteHasSettings(remote?: Partial<UserProgress> | null) {
@@ -209,9 +223,18 @@ function mergeRemoteLearningWithLocalProfile(local: UserProgress, remote?: Parti
   const displayName = localProfileWins
     ? (local.displayName || remoteProgress.displayName || local.username)
     : (remoteProgress.displayName || local.displayName || local.username);
-  const avatarDataUrl = localProfileWins
+  const avatarUrl = localProfileWins
+    ? (avatarUrlOf(local) || avatarUrlOf(remoteProgress) || "")
+    : (avatarUrlOf(remoteProgress) || avatarUrlOf(local) || "");
+  const avatarDataUrl = avatarUrl || (localProfileWins
     ? (local.avatarDataUrl || remoteProgress.avatarDataUrl || "")
-    : (remoteProgress.avatarDataUrl || local.avatarDataUrl || "");
+    : (remoteProgress.avatarDataUrl || local.avatarDataUrl || ""));
+  const avatarPath = localProfileWins
+    ? (local.avatarPath || remoteProgress.avatarPath || "")
+    : (remoteProgress.avatarPath || local.avatarPath || "");
+  const avatarUpdatedAt = localProfileWins
+    ? (local.avatarUpdatedAt || remoteProgress.avatarUpdatedAt || "")
+    : (remoteProgress.avatarUpdatedAt || local.avatarUpdatedAt || "");
 
   const merged: UserProgress = {
     ...local,
@@ -232,6 +255,10 @@ function mergeRemoteLearningWithLocalProfile(local: UserProgress, remote?: Parti
     weeklyStats: { ...(remoteProgress.weeklyStats || {}), ...(local.weeklyStats || {}) },
     displayName,
     avatarDataUrl,
+    avatarUrl,
+    avatarPath,
+    avatarUpdatedAt,
+    avatarStorageProvider: avatarPath || avatarUrl ? "supabase-storage" : (isInlineAvatar(avatarDataUrl) ? "legacy-data-url" : "none"),
     notificationsEnabled: localSettingsWins
       ? (typeof local.notificationsEnabled === "boolean" ? local.notificationsEnabled : remoteProgress.notificationsEnabled)
       : (typeof remoteProgress.notificationsEnabled === "boolean" ? remoteProgress.notificationsEnabled : local.notificationsEnabled),
@@ -262,7 +289,13 @@ function prepareBackupProgress(progress: UserProgress, existing?: Partial<UserPr
   return {
     ...progress,
     displayName: localProfileWins ? currentName : (existingProgress?.displayName || currentName),
-    avatarDataUrl: localProfileWins ? (progress.avatarDataUrl || existingProgress?.avatarDataUrl || "") : (existingProgress?.avatarDataUrl || progress.avatarDataUrl || ""),
+    avatarUrl: localProfileWins ? (avatarUrlOf(progress) || avatarUrlOf(existingProgress) || "") : (avatarUrlOf(existingProgress) || avatarUrlOf(progress) || ""),
+    avatarPath: localProfileWins ? (progress.avatarPath || existingProgress?.avatarPath || "") : (existingProgress?.avatarPath || progress.avatarPath || ""),
+    avatarUpdatedAt: localProfileWins ? (progress.avatarUpdatedAt || existingProgress?.avatarUpdatedAt || "") : (existingProgress?.avatarUpdatedAt || progress.avatarUpdatedAt || ""),
+    avatarStorageProvider: localProfileWins ? (progress.avatarStorageProvider || existingProgress?.avatarStorageProvider || "none") : (existingProgress?.avatarStorageProvider || progress.avatarStorageProvider || "none"),
+    avatarDataUrl: localProfileWins
+      ? (avatarUrlOf(progress) || (!isInlineAvatar(progress.avatarDataUrl) ? progress.avatarDataUrl : existingProgress?.avatarDataUrl || "") || avatarUrlOf(existingProgress) || "")
+      : (avatarUrlOf(existingProgress) || (!isInlineAvatar(existingProgress?.avatarDataUrl) ? existingProgress?.avatarDataUrl || "" : progress.avatarDataUrl || "") || avatarUrlOf(progress) || ""),
     profileUpdatedAt: localProfileWins ? (progress.profileUpdatedAt || existingProgress?.profileUpdatedAt || now) : (existingProgress?.profileUpdatedAt || progress.profileUpdatedAt),
     notificationsEnabled: typeof progress.notificationsEnabled === "boolean" ? progress.notificationsEnabled : existingProgress?.notificationsEnabled ?? true,
     voiceSettings: progress.voiceSettings || existingProgress?.voiceSettings || { gender: "female", lang: "en-US" },
@@ -292,7 +325,7 @@ async function rpcUpsertBackup(progress: UserProgress, passwordHash: string) {
     p_password_hash: passwordHash,
     p_progress_json: progress,
     p_settings_json: settings,
-    p_app_version: "v135-persistence-autosave",
+    p_app_version: "v136-scalable-save-storage",
   });
   if (error) throw new Error(normalizeSupabaseError(error));
   const result = asRpcResult(data);
@@ -350,7 +383,7 @@ export async function syncCurrentUserToSupabase(progress: UserProgress, options:
   const status: CloudSyncStatus = {
     configured: true,
     profile: "idle",
-    avatar: progress.avatarDataUrl ? "saved" : "idle",
+    avatar: avatarSaved(progress) ? "saved" : "idle",
     premium: "idle",
     stats: "idle",
     message: "クラウド保存中です...",
@@ -372,9 +405,9 @@ export async function syncCurrentUserToSupabase(progress: UserProgress, options:
     await rpcUpsertBackup(backupProgress, passwordHash);
     status.stats = "saved";
     status.profile = "saved";
-    status.avatar = backupProgress.avatarDataUrl ? "saved" : "idle";
+    status.avatar = avatarSaved(backupProgress) ? "saved" : "idle";
     status.premium = "saved";
-    status.message = "プロフィール画像・目標日・学習記録をクラウドバックアップへ保存しました。";
+    status.message = "プロフィール・目標日・学習記録をクラウド保存しました。画像はStorage保存設計です。";
     status.updatedAt = nowText();
     return status;
   } catch (error) {
@@ -419,9 +452,9 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
 
     status.stats = "saved";
     status.profile = "saved";
-    status.avatar = merged.avatarDataUrl ? "saved" : "idle";
+    status.avatar = avatarSaved(merged) ? "saved" : "idle";
     status.premium = "saved";
-    status.message = "クラウドバックアップからプロフィール画像・目標日・学習記録を復元しました。";
+    status.message = "クラウドからプロフィール・画像・目標日・学習記録を復元しました。";
     status.updatedAt = backup.updated_at || nowText();
     return { ok: true, changed: true, message: status.message, status };
   } catch (error) {
@@ -476,7 +509,7 @@ export async function verifyCloudBackup(username: string) {
       tests: Number(progress.testCorrect || 0) + Number(progress.testWrong || 0),
       targetDate: progress.targetDate || "",
       displayName: progress.displayName || "",
-      avatarSaved: Boolean(progress.avatarDataUrl),
+      avatarSaved: avatarSaved(progress),
     };
     return { ok: true, message: "クラウドバックアップを確認できました。", updatedAt: backup.updated_at || "", summary };
   } catch (error) {
@@ -485,10 +518,32 @@ export async function verifyCloudBackup(username: string) {
 }
 
 export async function uploadAvatarToSupabase(username: string, avatarDataUrl?: string) {
-  // Ver.120: 画像はStorageではなく user_progress_backups.progress_json.avatarDataUrl を本命にする。
-  // Storage bucket未作成が原因でアプリ全体の保存が失敗しないようにする。
-  if (!avatarDataUrl) return { ok: false, url: "", message: "画像が選択されていません。" };
-  return { ok: true, url: avatarDataUrl, message: `${username} の画像はクラウドバックアップへ保存対象です。` };
+  if (!avatarDataUrl) return { ok: false, url: "", path: "", message: "画像が選択されていません。" };
+  const passwordHash = getCloudPasswordHash(username);
+  if (!passwordHash) {
+    return { ok: false, url: "", path: "", message: "画像のクラウド保存には再ログインが必要です。前の画像は消しません。" };
+  }
+  try {
+    const response = await fetch("/api/profile/avatar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, passwordHash, avatarDataUrl }),
+    });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok || payload?.ok === false) {
+      return { ok: false, url: "", path: "", message: payload?.message || "画像のクラウド保存に失敗しました。前の画像は維持されています。" };
+    }
+    return {
+      ok: true,
+      url: String(payload.url || ""),
+      path: String(payload.path || ""),
+      message: payload.message || "画像をStorageへ保存しました。",
+      oldAvatarDeleted: Boolean(payload.oldAvatarDeleted),
+      updatedAt: String(payload.updatedAt || ""),
+    };
+  } catch (error) {
+    return { ok: false, url: "", path: "", message: error instanceof Error ? error.message : "画像のクラウド保存に失敗しました。前の画像は維持されています。" };
+  }
 }
 
 export async function restorePremiumFromSupabase(username: string) {

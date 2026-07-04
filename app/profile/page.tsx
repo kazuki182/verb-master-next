@@ -26,6 +26,7 @@ import {
   getCloudReadiness,
   restoreLearningDataFromSupabase,
   syncCurrentUserToSupabase,
+  uploadAvatarToSupabase,
   verifyCloudBackup,
   type CloudBackupComparison,
   type CloudSyncEventDetail,
@@ -244,12 +245,23 @@ export default function ProfilePage() {
     try {
       setProfileMessage("画像を保存中です...");
       const result = await resizeAvatarImage(file);
-      const updated = updateUserProfile({ avatarDataUrl: result });
+      const uploaded = await uploadAvatarToSupabase(username || "", result);
+      if (!uploaded.ok || !uploaded.url) {
+        setProfileMessage(uploaded.message || "画像のクラウド保存に失敗しました。前の画像は維持されています。");
+        return;
+      }
+      const updated = updateUserProfile({
+        avatarDataUrl: uploaded.url,
+        avatarUrl: uploaded.url,
+        avatarPath: uploaded.path,
+        avatarUpdatedAt: uploaded.updatedAt || new Date().toISOString(),
+        avatarStorageProvider: "supabase-storage",
+      });
       setProgress(updated);
-      setProfileMessage("画像を保存しました。クラウドへ反映中...");
+      setProfileMessage(uploaded.oldAvatarDeleted ? "画像を保存し、前の画像を削除しました" : "画像をクラウド保存しました");
       if (updated) {
         const syncResult = await syncToSupabase(updated);
-        setProfileMessage(syncResult.stats === "saved" ? "画像をクラウド保存しました" : syncResult.message);
+        setProfileMessage(syncResult.stats === "saved" ? (uploaded.oldAvatarDeleted ? "画像保存OK：前の画像も削除済み" : "画像をクラウド保存しました") : syncResult.message);
       }
       setTimeout(() => setProfileMessage(""), 2400);
     } catch (error) {

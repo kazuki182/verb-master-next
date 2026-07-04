@@ -1,21 +1,31 @@
+# Verb Master
 
-## V135 保存設計・自動保存基盤
+Ver.136 scalable save storage foundation.
 
-プロフィール画像・ニックネーム・目標日・XP・課金状態が更新や再ログインで消えないよう、Supabaseの `user_progress_backups` を本命保存先にした自動保存設計へ修正しました。
+## 重要
 
-重要ファイル:
+今回は動詞追加ではなく、課金アプリ運用に向けた保存基盤の見直し版です。
 
-- `docs/V135_SAVE_DESIGN_AND_OPERATION.md`
-- `supabase/V135_PERSISTENCE_AUTOSAVE_FOUNDATION.sql`
+## 変更点
 
-GitHub/Vercel反映後、Supabase SQL Editorで `V135_PERSISTENCE_AUTOSAVE_FOUNDATION.sql` を実行してください。
+- プロフィール画像をSupabase Storageへ保存
+- DBには画像本体ではなく `avatarPath / avatarUrl` を保存
+- 画像変更時は新画像保存とDB更新成功後に旧画像を削除
+- ニックネーム・目標日・学習記録は `user_progress_backups` を正データとして維持
+- 保存履歴は `user_progress_backup_events`
+- 画像履歴は `user_profile_assets`
+- 保存設計書を追加: `docs/V136_SCALABLE_SAVE_DESIGN_AND_OPERATION.md`
+- SQL追加: `supabase/V136_SCALABLE_SAVE_STORAGE.sql`
 
-# Verb Master Reaudit WATCH / HEAR / LISTEN Final
+## 導入手順
 
-This build updates WATCH / HEAR / LISTEN using the current quality rules.
-
-- WATCH: 8 phrasal verbs
-- HEAR: 6 phrasal verbs
-- LISTEN: 6 phrasal verbs
-
-No additional Supabase SQL is required if Ver.120 SQL has already been executed.
+1. GitHubへZIP中身を上書きアップロード
+2. Vercelに以下の環境変数を設定
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY`
+3. Supabase SQL Editorで `supabase/V136_SCALABLE_SAVE_STORAGE.sql` を実行
+4. VercelでReady確認
+5. アプリでログアウト → 再ログイン
+6. ニックネーム・目標日・画像を変更
+7. 画面更新、ログアウト、再ログインで残るか確認

@@ -1,35 +1,17 @@
-# QUALITY AUDIT CURRENT
+# QUALITY AUDIT CURRENT - Ver.143
 
-## Ver.141 candidate: STOP / TRY / HELP re-audit
+## 対象
+- ZIP更新後でもデータが初期化されない保存基盤
+- Ver.140 シンプル頭文字検索維持
+- STOP / TRY / HELP 再監査データ維持
 
-- Base: Ver.140 simple prefix search
-- Scope: STOP / TRY / HELP only
-- Save foundation: Ver.136 scalable save and Ver.139 avatar local save fixes preserved
-- Search UI: Ver.140 simple prefix search preserved
-
-## Verb audit
-
-| Verb | Basic meanings | Collocations | Phrasal verbs | Status |
-|---|---:|---:|---:|---|
-| STOP | 5 | 0 | 6 | OK |
-| TRY | 5 | 0 | 5 | OK |
-| HELP | 5 | 0 | 5 | OK |
-
-## Checks
-
-- Basic category and phrasal category only.
-- `collocations` emptied for the target verbs.
-- Basic examples highlight only the target verb form.
-- Phrasal examples highlight verb + particle/preposition.
-- Objects are not included in the red highlight target.
-- Business examples were adjusted for quotation, schedule, customer, proposal, shipment, installation, reports, and support.
-
-## Build checks
-
-- `npx tsc --noEmit`: OK
-- `npm run build`: OK
-- Static pages generated: 27/27
-
-## SQL
-
-No new SQL required.
+## 確認項目
+- localStorageを本命にしない設計へ強化
+- クラウド復元失敗時は空データを保存しない
+- クラウドの方が進んでいる場合、端末を復元してから保存
+- 端末側復旧スナップショットを最大12件保存
+- DB側RPCで単純上書き禁止、安全マージ
+- 学習記録は大きい方/和集合を採用
+- 画像・ニックネーム・目標日はupdatedAtで採用し、空値で削除しない
+- 保存履歴をeventsへ保持
+- TypeScript/build確認済み

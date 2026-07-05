@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { registerAccount } from "@/lib/account";
-import { registerCloudAccount } from "@/lib/cloudSync";
+import { isCloudConfigured, registerCloudAccount } from "@/lib/cloudSync";
 
 export default function SignupPage() {
   const [username, setUsername] = useState("");
@@ -17,6 +17,13 @@ export default function SignupPage() {
     const cloud = await registerCloudAccount(username, password);
     if (cloud.ok) {
       window.location.href = "/";
+      return;
+    }
+
+    // V142: 本番ではクラウド登録できない場合にローカル専用アカウントを作らない。
+    // ローカル専用アカウントはZIP更新・端末変更で消えるため、課金アプリでは危険。
+    if (isCloudConfigured()) {
+      setMessage(`${cloud.message} データ保護のため、クラウド登録できる状態で作成してください。`);
       return;
     }
 

@@ -43,6 +43,9 @@ export default function DataSafety() {
             message: restored.message,
             status: restored.status,
           });
+          // V143: 起動・復帰時にクラウド復元できなかった場合、空の端末データを保存しに行かない。
+          // 再ログイン/SQL確認を優先する。
+          if (!restored.ok) return;
         }
         const progress = getCurrentProgress();
         if (progress) {

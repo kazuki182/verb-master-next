@@ -6,7 +6,7 @@ export const runtime = "nodejs";
 
 const AVATAR_BUCKET = "avatars";
 const MAX_AVATAR_BYTES = 1024 * 1024;
-const APP_VERSION = "v136-scalable-save-storage";
+const APP_VERSION = "v143-deploy-safe-persistence-system";
 
 function json(status: number, payload: Record<string, unknown>) {
   return NextResponse.json(payload, { status });

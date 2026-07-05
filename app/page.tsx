@@ -7,7 +7,7 @@ import VerbProgressPanel, {
   getTotalVerbProgress,
 } from "@/components/VerbProgressPanel";
 import { HOME_NEWS } from "@/lib/news";
-import { restoreLearningDataFromSupabase, syncCurrentUserToSupabase } from "@/lib/cloudSync";
+import { hasCloudSession, isCloudConfigured, restoreLearningDataFromSupabase, syncCurrentUserToSupabase } from "@/lib/cloudSync";
 import {
   getComputedBadges,
   getCurrentProgress,
@@ -83,12 +83,25 @@ export default function Home() {
       setPaceVerbs(String(savedPace.verbs));
     };
 
-    // V135: 先にクラウド復元を試す。
-    // getTargetDate() は未保存ユーザーに初期目標日を作るため、復元前に呼ぶと
-    // クラウドの目標日より端末の初期値が優先される事故が起きる。
+    // V142: クラウドを本命保存先に固定。ZIP更新後や別URLで端末キャッシュが空でも、
+    // まずクラウドセッションを確認し、復元できない状態では0/124の新規画面を出さない。
+    if (isCloudConfigured() && !hasCloudSession(user)) {
+      window.location.href = "/login";
+      return;
+    }
+
+    // V135+: 先にクラウド復元を試す。
+    // 復元前に getTargetDate() や ensureProgress() の初期値を画面へ出すと、
+    // ユーザーには「ZIP更新で最初から」に見えるため、復元後にだけ表示する。
     void restoreLearningDataFromSupabase(user)
-      .catch(() => undefined)
-      .finally(() => loadLocalState());
+      .then(() => loadLocalState())
+      .catch(() => {
+        if (isCloudConfigured()) {
+          window.location.href = "/login";
+          return;
+        }
+        loadLocalState();
+      });
   }, []);
 
   if (!username || !progress) return <p className="text-muted">Loading...</p>;

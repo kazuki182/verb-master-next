@@ -1,1 +1,1 @@
-Ver.140 - Simple prefix verb search redesign
+Ver.143 deploy-safe persistence system

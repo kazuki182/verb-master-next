@@ -172,6 +172,8 @@ export type UserProgress = {
 const ACCOUNTS_KEY = "verbMaster.accounts";
 const CURRENT_USER_KEY = "verbMaster.currentUser";
 const PROGRESS_KEY = "verbMaster.progress";
+const LOCAL_RECOVERY_KEY = "verbMaster.localRecoverySnapshots";
+const MAX_LOCAL_RECOVERY_SNAPSHOTS = 12;
 export const PROGRESS_SAVED_EVENT = "verbmaster:progress-saved";
 
 function emitProgressSaved(username: string) {
@@ -486,6 +488,82 @@ function saveProgressMap(map: Record<string, UserProgress>) {
   localStorage.setItem(PROGRESS_KEY, JSON.stringify(map));
 }
 
+function progressRecoveryScore(progress?: Partial<UserProgress> | null) {
+  if (!progress) return 0;
+  return (Number(progress.xp || 0) * 2) +
+    (Number(progress.totalStudied || 0) * 20) +
+    ((progress.studiedVerbIds || []).length * 100) +
+    (Number(progress.testCorrect || 0) * 10) +
+    (Number(progress.testWrong || 0) * 6) +
+    ((progress.weakItems || []).length * 5) +
+    (Object.keys(progress.reviewItems || {}).length * 8) +
+    ((progress.savedPhrases || []).length * 8) +
+    (progress.displayName && progress.displayName !== progress.username ? 5 : 0) +
+    (progress.targetDate ? 5 : 0) +
+    (progress.avatarPath || progress.avatarUrl || progress.avatarDataUrl ? 5 : 0);
+}
+
+function localRecoveryMap(): Record<string, UserProgress[]> {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(localStorage.getItem(LOCAL_RECOVERY_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function saveLocalRecoverySnapshot(progress: UserProgress) {
+  if (typeof window === "undefined") return;
+  if (progressRecoveryScore(progress) <= 0) return;
+  const map = localRecoveryMap();
+  const list = map[progress.username] || [];
+  const previous = list[0];
+  const previousKey = previous ? JSON.stringify({
+    xp: previous.xp,
+    totalStudied: previous.totalStudied,
+    studiedVerbIds: previous.studiedVerbIds,
+    testCorrect: previous.testCorrect,
+    testWrong: previous.testWrong,
+    displayName: previous.displayName,
+    targetDate: previous.targetDate,
+    avatarPath: previous.avatarPath,
+    avatarUrl: previous.avatarUrl,
+  }) : "";
+  const nextKey = JSON.stringify({
+    xp: progress.xp,
+    totalStudied: progress.totalStudied,
+    studiedVerbIds: progress.studiedVerbIds,
+    testCorrect: progress.testCorrect,
+    testWrong: progress.testWrong,
+    displayName: progress.displayName,
+    targetDate: progress.targetDate,
+    avatarPath: progress.avatarPath,
+    avatarUrl: progress.avatarUrl,
+  });
+  if (previousKey === nextKey) return;
+  map[progress.username] = [JSON.parse(JSON.stringify(progress)), ...list].slice(0, MAX_LOCAL_RECOVERY_SNAPSHOTS);
+  localStorage.setItem(LOCAL_RECOVERY_KEY, JSON.stringify(map));
+}
+
+export function getLocalRecoverySnapshots(username?: string | null) {
+  const name = username || getCurrentUsername();
+  if (!name) return [] as UserProgress[];
+  return (localRecoveryMap()[name] || []).map(normalizeProgress);
+}
+
+export function restoreLatestLocalRecoverySnapshot(username?: string | null) {
+  const name = username || getCurrentUsername();
+  if (!name) return null;
+  const snapshots = getLocalRecoverySnapshots(name);
+  const best = snapshots.sort((a, b) => progressRecoveryScore(b) - progressRecoveryScore(a))[0];
+  if (!best) return null;
+  const map = progressMap();
+  map[name] = normalizeProgress({ ...best, username: name, updatedAt: nowText() });
+  saveProgressMap(map);
+  emitProgressSaved(name);
+  return map[name];
+}
+
 function normalizeProgress(progress: UserProgress): UserProgress {
   if (!progress.weakItems) progress.weakItems = [];
   if (!progress.reviewItems) progress.reviewItems = {};
@@ -590,6 +668,7 @@ export function saveProgress(progress: UserProgress) {
   progress.level = Math.max(1, Math.floor(progress.xp / 100) + 1);
   progress.updatedAt = nowText();
   map[progress.username] = normalizeProgress(progress);
+  saveLocalRecoverySnapshot(map[progress.username]);
   saveProgressMap(map);
   emitProgressSaved(progress.username);
 }

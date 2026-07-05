@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { initAdminAccount, loginAccount } from "@/lib/account";
-import { loginCloudAccount } from "@/lib/cloudSync";
+import { isCloudConfigured, loginCloudAccount } from "@/lib/cloudSync";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -19,6 +19,14 @@ export default function LoginPage() {
     const cloud = await loginCloudAccount(username, password);
     if (cloud.ok) {
       window.location.href = "/";
+      return;
+    }
+
+    // V142: Supabaseが設定されている本番運用では、ローカルだけのログインに逃がさない。
+    // ローカルログインへ落ちるとZIP更新・ドメイン変更時に0/124の新規データが作られ、
+    // クラウド復元前に空データを見てしまうため。
+    if (isCloudConfigured()) {
+      setMessage(`${cloud.message} データ保護のため、クラウドに復元できない状態ではログインを止めています。`);
       return;
     }
 

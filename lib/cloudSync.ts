@@ -3,6 +3,7 @@ import {
   applyClientStudySettingsSnapshot,
   ensureProgress,
   getClientStudySettingsSnapshot,
+  getLocalRecoverySnapshots,
   restorePremiumEntitlement,
   saveProgress,
   setCurrentUser,
@@ -54,7 +55,12 @@ export type CloudBackupComparison = {
 
 const CLOUD_CREDENTIAL_KEY = "verbMaster.cloudCredentials";
 const PENDING_AVATAR_KEY = "verbMaster.pendingAvatarUploads";
-const CLOUD_SQL_HINT = "Supabase SQLが未実行、または保存用RPCが見つかりません。supabase/V136_SCALABLE_SAVE_STORAGE.sql をSupabase SQL Editorで実行してください。";
+const CLOUD_SQL_HINT = "Supabase SQLが未実行、または保存用RPCが見つかりません。supabase/V143_DEPLOY_SAFE_PERSISTENCE_SYSTEM.sql をSupabase SQL Editorで実行してください。";
+
+export function isCloudConfigured() {
+  return Boolean(supabase);
+}
+
 
 type CloudCredentialMap = Record<string, { passwordHash: string; savedAt: string }>;
 type PendingAvatarMap = Record<string, { avatarDataUrl: string; savedAt: string }>;
@@ -362,7 +368,7 @@ async function rpcUpsertBackup(progress: UserProgress, passwordHash: string) {
     p_password_hash: passwordHash,
     p_progress_json: progress,
     p_settings_json: settings,
-    p_app_version: "v136-scalable-save-storage",
+    p_app_version: "v143-deploy-safe-persistence-system",
   });
   if (error) throw new Error(normalizeSupabaseError(error));
   const result = asRpcResult(data);
@@ -391,24 +397,47 @@ export async function registerCloudAccount(username: string, password: string) {
 }
 
 export async function loginCloudAccount(username: string, password: string) {
-  if (!supabase) return { ok: false, message: "Supabase未設定のため端末内ログインのみになります。" };
+  if (!supabase) return { ok: false, cloudUnavailable: true, message: "Supabase未設定のため端末内ログインのみになります。" };
   const name = username.trim();
   try {
     const passwordHash = await hashPassword(password);
     const { data, error } = await supabase.rpc("vm_login_cloud_account", { p_username: name, p_password_hash: passwordHash });
     if (error) throw new Error(normalizeSupabaseError(error));
     const result = asRpcResult(data);
-    if (result.ok === false) return { ok: false, message: result.message || "ユーザー名またはパスワードが違います。" };
+    if (result.ok === false) {
+      return {
+        ok: false,
+        cloudUnavailable: false,
+        message: result.message || "ユーザー名またはパスワードが違います。",
+      };
+    }
     saveCloudCredential(name, passwordHash);
     setCurrentUser(name);
-    await restoreLearningDataFromSupabase(name).catch(() => undefined);
+    const restored = await restoreLearningDataFromSupabase(name).catch((error) => ({
+      ok: false,
+      changed: false,
+      message: error instanceof Error ? error.message : "クラウド復元に失敗しました。",
+      status: sqlErrorStatus(error instanceof Error ? error.message : "クラウド復元に失敗しました。"),
+    }));
+    if (!restored.ok) {
+      return {
+        ok: false,
+        cloudUnavailable: false,
+        message: restored.message || "クラウド復元に失敗しました。データ保護のためログインを止めました。",
+      };
+    }
     return {
       ok: true,
-      message: result.message || "クラウドログインしました。",
+      message: restored.message || result.message || "クラウドログインしました。",
+      restored: true,
       account: { username: name, password: "", role: result.role === "admin" ? "admin" : "user", createdAt: nowText() } as Account,
     };
   } catch (error) {
-    return { ok: false, message: error instanceof Error ? error.message : "クラウドログインに失敗しました。" };
+    return {
+      ok: false,
+      cloudUnavailable: false,
+      message: error instanceof Error ? error.message : "クラウドログインに失敗しました。",
+    };
   }
 }
 
@@ -433,8 +462,19 @@ export async function syncCurrentUserToSupabase(progress: UserProgress, options:
     const remoteScore = progressScore(existingBackup?.progress_json);
     let safeProgress = progress;
 
-    if (!options.allowEmptyOverwrite && remoteScore > 0 && localScore <= 0) {
+    // V143: クラウドを本命にする。ローカルが空、またはクラウドより明らかに少ない時は、
+    // 先にクラウドを端末へ戻してから保存する。ZIP更新後の0/124上書きを防ぐ。
+    if (!options.allowEmptyOverwrite && remoteScore > localScore) {
       safeProgress = mergeRemoteLearningWithLocalProfile(progress, existingBackup?.progress_json);
+      saveProgress(safeProgress);
+    }
+
+    // V143: 端末にだけ残った復旧スナップショットが現在データより多い場合は採用する。
+    // 同一ドメイン内の事故復旧用。クラウドがある場合は上のremote優先が先に働く。
+    const recovery = getLocalRecoverySnapshots(progress.username)
+      .sort((a, b) => progressScore(b) - progressScore(a))[0];
+    if (recovery && progressScore(recovery) > progressScore(safeProgress) && progressScore(recovery) >= remoteScore) {
+      safeProgress = recovery;
       saveProgress(safeProgress);
     }
 
@@ -477,6 +517,16 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
     const backup = await rpcFetchBackup(username, passwordHash);
     const local = ensureProgress(username);
     if (!backup?.progress_json) {
+      const recovery = getLocalRecoverySnapshots(username)
+        .sort((a, b) => progressScore(b) - progressScore(a))[0];
+      if (recovery && progressScore(recovery) > progressScore(local)) {
+        saveProgress(recovery);
+        status.stats = "saved";
+        status.profile = "saved";
+        status.avatar = avatarSaved(recovery) ? "saved" : "idle";
+        status.message = "クラウドバックアップは未作成ですが、端末の復旧スナップショットから復元しました。続けてクラウド保存してください。";
+        return { ok: true, changed: true, message: status.message, status };
+      }
       status.message = "クラウドバックアップはまだありません。端末データを保存できます。";
       return { ok: true, changed: false, message: status.message, status };
     }

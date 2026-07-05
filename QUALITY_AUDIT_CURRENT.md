@@ -1,20 +1,35 @@
-# QUALITY AUDIT CURRENT - Ver.140
+# QUALITY AUDIT CURRENT
 
-## 対象
+## Ver.141 candidate: STOP / TRY / HELP re-audit
 
-- 動詞検索BOXのシンプル化
-- 頭文字予測検索
+- Base: Ver.140 simple prefix search
+- Scope: STOP / TRY / HELP only
+- Save foundation: Ver.136 scalable save and Ver.139 avatar local save fixes preserved
+- Search UI: Ver.140 simple prefix search preserved
 
-## 結果
+## Verb audit
 
-- npx tsc --noEmit: OK
-- npm run build: OK
-- static pages: OK
-- 追加SQL: なし
+| Verb | Basic meanings | Collocations | Phrasal verbs | Status |
+|---|---:|---:|---:|---|
+| STOP | 5 | 0 | 6 | OK |
+| TRY | 5 | 0 | 5 | OK |
+| HELP | 5 | 0 | 5 | OK |
 
-## 保持事項
+## Checks
 
-- Ver.136 scalable save/storage foundation maintained
-- Ver.137 search documents maintained internally
-- Ver.138/139 avatar save reliability fixes maintained
-- node_modules / .next / tsconfig.tsbuildinfo are excluded from ZIP
+- Basic category and phrasal category only.
+- `collocations` emptied for the target verbs.
+- Basic examples highlight only the target verb form.
+- Phrasal examples highlight verb + particle/preposition.
+- Objects are not included in the red highlight target.
+- Business examples were adjusted for quotation, schedule, customer, proposal, shipment, installation, reports, and support.
+
+## Build checks
+
+- `npx tsc --noEmit`: OK
+- `npm run build`: OK
+- Static pages generated: 27/27
+
+## SQL
+
+No new SQL required.

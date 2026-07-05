@@ -4032,15 +4032,14 @@ export const verbs: Verb[] = [
   "syllable": "stop",
   "transitivity": "他動詞・自動詞",
   "importance": "★★★★★ 超重要",
-  "core": "動いているもの・続いている状態を止める",
-  "coreDetail": "STOPは、作業・予定・問題・習慣など、続いている流れをそこで止めるイメージです。会議を止める、使用をやめる、遅延を防ぐ、立ち寄るという使い方まで、流れを一度止める感覚で理解できます。",
+  "core": "動いているもの・続いている状態をそこで止める",
+  "coreDetail": "STOPは、作業・販売・問題・習慣など、続いている流れをそこで止めるイメージです。仕事では『作業を止める』『使用をやめる』『問題を防ぐ』、日常では『立ち止まる』『立ち寄る』まで広がります。",
   "coreVisual": {
     "from": [
-      "▶️ 作業中",
-      "📅 進行中の予定",
-      "⚠️ 問題",
-      "🔁 習慣",
-      "🚶 移動中"
+      "▶️ 進行中の作業",
+      "🔁 続いている習慣",
+      "⚠️ 広がる問題",
+      "🚚 動いている配送"
     ],
     "to": "止まった状態・中断点",
     "label": "進行中 → そこで止める"
@@ -4053,19 +4052,19 @@ export const verbs: Verb[] = [
       "transitivity": "他動詞",
       "structure": "S + stop + O",
       "image": "進んでいる作業や流れを止めるイメージ。",
-      "point": "仕事では work, production, delivery, meeting などと使いやすい。",
+      "point": "work, production, shipment, meeting などと使いやすい。",
       "examples": [
         {
-          "en": "We stopped the test because the result was unstable.",
-          "ja": "私たちは結果が不安定だったため、テストを止めました。",
-          "focus": "stopped",
-          "object": "the test"
-        },
-        {
           "en": "Please stop the shipment until we confirm the details.",
-          "ja": "詳細を確認するまで、出荷を止めてください。",
+          "ja": "詳細を確認するまで出荷を止めてください。",
           "focus": "stop",
           "object": "the shipment"
+        },
+        {
+          "en": "We stopped the test because the result was unstable.",
+          "ja": "結果が不安定だったため、私たちはテストを止めました。",
+          "focus": "stopped",
+          "object": "the test"
         },
         {
           "en": "The manager stopped the meeting for ten minutes.",
@@ -4076,16 +4075,16 @@ export const verbs: Verb[] = [
       ],
       "dailyExamples": [
         {
-          "en": "I stopped the video to check the subtitles.",
-          "ja": "私は字幕を確認するために動画を止めました。",
-          "focus": "stopped",
-          "object": "the video"
-        },
-        {
           "en": "Please stop the car near the station.",
           "ja": "駅の近くで車を止めてください。",
           "focus": "stop",
           "object": "the car"
+        },
+        {
+          "en": "I stopped the video to check the subtitles.",
+          "ja": "字幕を確認するために動画を止めました。",
+          "focus": "stopped",
+          "object": "the video"
         }
       ]
     },
@@ -4105,8 +4104,8 @@ export const verbs: Verb[] = [
           "object": "using the old price list"
         },
         {
-          "en": "You should stop sending the file before we review it.",
-          "ja": "あなたは私たちが確認する前に、そのファイルを送るのをやめるべきです。",
+          "en": "Please stop sending the file before we review it.",
+          "ja": "私たちが確認する前に、そのファイルを送るのはやめてください。",
           "focus": "stop",
           "object": "sending the file"
         },
@@ -4120,7 +4119,7 @@ export const verbs: Verb[] = [
       "dailyExamples": [
         {
           "en": "I stopped drinking coffee at night.",
-          "ja": "私は夜にコーヒーを飲むのをやめました。",
+          "ja": "夜にコーヒーを飲むのをやめました。",
           "focus": "stopped",
           "object": "drinking coffee"
         },
@@ -4138,18 +4137,18 @@ export const verbs: Verb[] = [
       "pattern": "STOP to do",
       "transitivity": "自動詞",
       "structure": "S + stop + to V",
-      "image": "移動や作業を止めて、別の行動に入るイメージ。",
-      "point": "stop doing と混同しやすい。stop to check は『確認するために止まる』。",
+      "image": "動きや作業を止めて、別の行動に入るイメージ。",
+      "point": "stop doing と混同しやすい重要表現。",
       "examples": [
         {
           "en": "We stopped to check the installation drawing.",
-          "ja": "私たちは施工図を確認するために立ち止まりました。",
+          "ja": "私たちは施工図を確認するために手を止めました。",
           "focus": "stopped",
           "object": "to check the installation drawing"
         },
         {
           "en": "I stopped to call the customer before sending the quote.",
-          "ja": "私は見積を送る前に顧客へ電話するために立ち止まりました。",
+          "ja": "見積を送る前に顧客へ電話するため、私は一度手を止めました。",
           "focus": "stopped",
           "object": "to call the customer"
         },
@@ -4163,30 +4162,30 @@ export const verbs: Verb[] = [
       "dailyExamples": [
         {
           "en": "I stopped to take a photo of the sunset.",
-          "ja": "私は夕日を撮るために立ち止まりました。",
+          "ja": "夕日を撮るために立ち止まりました。",
           "focus": "stopped",
           "object": "to take a photo"
         },
         {
           "en": "We stopped to buy drinks on the way.",
-          "ja": "私たちは途中で飲み物を買うために立ち寄りました。",
+          "ja": "途中で飲み物を買うために立ち寄りました。",
           "focus": "stopped",
           "object": "to buy drinks"
         }
       ]
     },
     {
-      "id": "stop-someone",
-      "title": "④ stop someone from doing / 〜がするのを止める",
+      "id": "stop-prevent",
+      "title": "④ stop someone from doing / 〜がするのを防ぐ",
       "pattern": "STOP + 人/物 + from -ing",
       "transitivity": "他動詞",
       "structure": "S + stop + O + from V-ing",
       "image": "人や問題が進むのを止めるイメージ。",
-      "point": "トラブルやミスを防ぐ時に使いやすい形。",
+      "point": "ミス防止やトラブル防止で使いやすい。",
       "examples": [
         {
           "en": "The new checklist stopped us from missing important details.",
-          "ja": "新しいチェックリストのおかげで、私たちは重要な点を見落とさずに済みました。",
+          "ja": "新しいチェックリストのおかげで、重要な点を見落とさずに済みました。",
           "focus": "stopped",
           "object": "us from missing important details"
         },
@@ -4197,128 +4196,36 @@ export const verbs: Verb[] = [
           "object": "customers from ordering the wrong item"
         },
         {
-          "en": "The error message stopped him from submitting the form.",
-          "ja": "エラーメッセージにより、彼はフォームを送信できませんでした。",
-          "focus": "stopped",
-          "object": "him from submitting the form"
+          "en": "This process helps us stop small mistakes early.",
+          "ja": "この手順により、私たちは小さなミスを早めに防げます。",
+          "focus": "stop",
+          "object": "small mistakes"
         }
       ],
       "dailyExamples": [
         {
           "en": "The rain stopped us from going outside.",
-          "ja": "雨のせいで、私たちは外に出られませんでした。",
+          "ja": "雨のせいで、外に出られませんでした。",
           "focus": "stopped",
           "object": "us from going outside"
         },
         {
-          "en": "A phone call stopped me from leaving the house.",
-          "ja": "電話があったため、私は家を出るのをやめました。",
-          "focus": "stopped",
-          "object": "me from leaving the house"
-        }
-      ]
-    },
-    {
-      "id": "stop-problem",
-      "title": "⑤ stop a problem / 問題を止める・防ぐ",
-      "pattern": "STOP + problem / delay",
-      "transitivity": "他動詞",
-      "structure": "S + stop + O",
-      "image": "問題の広がりを止めるイメージ。",
-      "point": "delay, mistake, issue, trouble などと相性が良い。",
-      "examples": [
-        {
-          "en": "We need to stop the delay before it affects the customer.",
-          "ja": "私たちは顧客に影響する前に遅延を止める必要があります。",
-          "focus": "stop",
-          "object": "the delay"
-        },
-        {
-          "en": "This process helps us stop small mistakes early.",
-          "ja": "この手順により、私たちは小さなミスを早めに防げます。",
-          "focus": "stop",
-          "object": "small mistakes"
-        },
-        {
-          "en": "The team stopped the issue from becoming bigger.",
-          "ja": "チームはその問題が大きくなるのを防ぎました。",
-          "focus": "stopped",
-          "object": "the issue"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "Good sleep can stop small mistakes during the day.",
-          "ja": "よく眠ることで、日中の小さなミスを防げます。",
-          "focus": "stop",
-          "object": "small mistakes"
-        },
-        {
-          "en": "This cover stops dust from getting inside.",
+          "en": "The cover stops dust from getting inside.",
           "ja": "このカバーはほこりが中に入るのを防ぎます。",
           "focus": "stops",
-          "object": "dust"
-        }
-      ]
-    },
-    {
-      "id": "stop-at",
-      "title": "⑥ stop at / 〜で止まる・立ち寄る",
-      "pattern": "STOP AT + place / point",
-      "transitivity": "自動詞",
-      "structure": "S + stop + at O",
-      "image": "ある地点で移動を止めるイメージ。",
-      "point": "場所だけでなく、価格や数字の上限を示す時にも使える。",
-      "examples": [
-        {
-          "en": "The delivery truck stopped at our office this morning.",
-          "ja": "配送トラックは今朝、私たちのオフィスに停まりました。",
-          "focus": "stopped",
-          "object": "at our office"
-        },
-        {
-          "en": "Let's stop at this point and check the numbers.",
-          "ja": "この時点で止めて、数字を確認しましょう。",
-          "focus": "stop",
-          "object": "at this point"
-        },
-        {
-          "en": "The discussion stopped at the budget issue.",
-          "ja": "議論は予算の問題で止まりました。",
-          "focus": "stopped",
-          "object": "at the budget issue"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "The bus stopped at the next station.",
-          "ja": "バスは次の駅で止まりました。",
-          "focus": "stopped",
-          "object": "at the next station"
-        },
-        {
-          "en": "We stopped at a convenience store on the way home.",
-          "ja": "私たちは帰り道にコンビニへ立ち寄りました。",
-          "focus": "stopped",
-          "object": "at a convenience store"
+          "object": "dust from getting inside"
         }
       ]
     },
     {
       "id": "stop-for",
-      "title": "⑦ stop for / 〜のために止まる",
+      "title": "⑤ stop for / 〜のために止まる",
       "pattern": "STOP FOR + reason",
       "transitivity": "自動詞",
       "structure": "S + stop + for O",
       "image": "理由や目的のために一度止まるイメージ。",
       "point": "break, lunch, safety check などと使いやすい。",
       "examples": [
-        {
-          "en": "We stopped for a short break after the site visit.",
-          "ja": "私たちは現場確認の後、短い休憩のために止まりました。",
-          "focus": "stopped",
-          "object": "for a short break"
-        },
         {
           "en": "The team stopped for a safety check before installation.",
           "ja": "チームは施工前に安全確認のため作業を止めました。",
@@ -4327,21 +4234,27 @@ export const verbs: Verb[] = [
         },
         {
           "en": "Can we stop for five minutes and review the quote?",
-          "ja": "5分止めて、見積を確認できますか？",
+          "ja": "5分止めて見積を確認できますか？",
           "focus": "stop",
           "object": "for five minutes"
+        },
+        {
+          "en": "We stopped for a short break after the site visit.",
+          "ja": "現場確認後、短い休憩のために立ち寄りました。",
+          "focus": "stopped",
+          "object": "for a short break"
         }
       ],
       "dailyExamples": [
         {
           "en": "We stopped for lunch near the park.",
-          "ja": "私たちは公園の近くで昼食のために立ち寄りました。",
+          "ja": "公園の近くで昼食のために立ち寄りました。",
           "focus": "stopped",
           "object": "for lunch"
         },
         {
           "en": "I stopped for coffee before work.",
-          "ja": "私は仕事前にコーヒーを買うために立ち寄りました。",
+          "ja": "仕事前にコーヒーを買うために立ち寄りました。",
           "focus": "stopped",
           "object": "for coffee"
         }
@@ -4364,7 +4277,7 @@ export const verbs: Verb[] = [
         },
         {
           "en": "Can you stop by the warehouse and check the stock?",
-          "ja": "あなたは倉庫に立ち寄って在庫を確認できますか？",
+          "ja": "倉庫に立ち寄って在庫を確認できますか？",
           "focus": "stop by",
           "object": "the warehouse"
         },
@@ -4374,31 +4287,17 @@ export const verbs: Verb[] = [
           "focus": "stopped by",
           "object": "my desk"
         }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I stopped by a bookstore after work.",
-          "ja": "私は仕事の後に本屋へ少し立ち寄りました。",
-          "focus": "stopped by",
-          "object": "a bookstore"
-        },
-        {
-          "en": "Please stop by my house this weekend.",
-          "ja": "今週末、私の家に少し寄ってください。",
-          "focus": "stop by",
-          "object": "my house"
-        }
       ]
     },
     {
       "phrase": "stop off",
       "ja": "途中で立ち寄る",
-      "image": "目的地に向かう途中で一度止まるイメージ。",
-      "pattern": "STOP OFF + place",
+      "image": "目的地へ向かう途中で一度止まるイメージ。",
+      "pattern": "STOP OFF + at / in",
       "examples": [
         {
           "en": "We stopped off at the factory before visiting the client.",
-          "ja": "私たちは顧客訪問の前に工場へ立ち寄りました。",
+          "ja": "顧客訪問の前に工場へ立ち寄りました。",
           "focus": "stopped off",
           "object": "at the factory"
         },
@@ -4414,31 +4313,17 @@ export const verbs: Verb[] = [
           "focus": "stopped off",
           "object": "in Osaka"
         }
-      ],
-      "dailyExamples": [
-        {
-          "en": "We stopped off for dinner on the way home.",
-          "ja": "私たちは帰り道に夕食のため立ち寄りました。",
-          "focus": "stopped off",
-          "object": "for dinner"
-        },
-        {
-          "en": "I stopped off at the station to buy a ticket.",
-          "ja": "私は切符を買うために駅へ立ち寄りました。",
-          "focus": "stopped off",
-          "object": "at the station"
-        }
       ]
     },
     {
       "phrase": "stop over",
       "ja": "途中で一泊する・乗り継ぎで滞在する",
       "image": "長い移動の途中で一度泊まるイメージ。",
-      "pattern": "STOP OVER + place",
+      "pattern": "STOP OVER + in / at",
       "examples": [
         {
           "en": "We stopped over in Singapore before the meeting in Jakarta.",
-          "ja": "私たちはジャカルタでの会議前にシンガポールで一泊しました。",
+          "ja": "ジャカルタでの会議前にシンガポールで一泊しました。",
           "focus": "stopped over",
           "object": "in Singapore"
         },
@@ -4449,62 +4334,62 @@ export const verbs: Verb[] = [
           "object": "in Fukuoka"
         },
         {
-          "en": "She stopped over near the airport because the flight was early.",
-          "ja": "彼女は便が早かったため、空港近くで一泊しました。",
+          "en": "I stopped over at a hotel near the airport.",
+          "ja": "空港近くのホテルで一泊しました。",
           "focus": "stopped over",
-          "object": "near the airport"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "We stopped over in Kyoto during our trip.",
-          "ja": "私たちは旅行中に京都で一泊しました。",
-          "focus": "stopped over",
-          "object": "in Kyoto"
-        },
-        {
-          "en": "He stopped over at his friend's place.",
-          "ja": "彼は友人の家に一泊しました。",
-          "focus": "stopped over",
-          "object": "at his friend's place"
+          "object": "at a hotel"
         }
       ]
     },
     {
       "phrase": "stop in",
-      "ja": "少し寄る",
-      "image": "短い用事で中に入って寄るイメージ。",
-      "pattern": "STOP IN + place",
+      "ja": "少し立ち寄る",
+      "image": "建物や場所の中へ入って少し寄るイメージ。",
+      "pattern": "STOP IN + at / to do",
       "examples": [
         {
-          "en": "I stopped in at the branch office to check the documents.",
-          "ja": "私は書類を確認するために支店へ少し寄りました。",
-          "focus": "stopped in",
-          "object": "at the branch office"
+          "en": "Please stop in at the office before the site visit.",
+          "ja": "現場訪問前にオフィスへ少し立ち寄ってください。",
+          "focus": "stop in",
+          "object": "at the office"
         },
         {
-          "en": "Please stop in when you come near our showroom.",
-          "ja": "ショールームの近くに来たら、少し寄ってください。",
-          "focus": "stop in"
+          "en": "I stopped in to ask about the delivery date.",
+          "ja": "納期について聞くために少し立ち寄りました。",
+          "focus": "stopped in",
+          "object": "to ask about the delivery date"
         },
         {
-          "en": "He stopped in for a quick update before the call.",
-          "ja": "彼は電話会議の前に簡単な進捗確認のため立ち寄りました。",
+          "en": "She stopped in at the showroom after the meeting.",
+          "ja": "彼女は会議後にショールームへ立ち寄りました。",
           "focus": "stopped in",
-          "object": "for a quick update"
+          "object": "at the showroom"
         }
-      ],
-      "dailyExamples": [
+      ]
+    },
+    {
+      "phrase": "stop up",
+      "ja": "ふさぐ・詰まらせる",
+      "image": "流れや穴を止めてふさぐイメージ。",
+      "pattern": "STOP UP + hole / drain",
+      "examples": [
         {
-          "en": "I stopped in at a cafe for tea.",
-          "ja": "私はお茶を飲むためにカフェへ寄りました。",
-          "focus": "stopped in",
-          "object": "at a cafe"
+          "en": "Dust stopped up the small ventilation hole.",
+          "ja": "ほこりが小さな通気口をふさぎました。",
+          "focus": "stopped up",
+          "object": "the small ventilation hole"
         },
         {
-          "en": "She stopped in to say hello.",
-          "ja": "彼女は挨拶をするために少し寄りました。",
-          "focus": "stopped in"
+          "en": "Please check if the drain is stopped up.",
+          "ja": "排水口が詰まっていないか確認してください。",
+          "focus": "stopped up",
+          "object": "the drain"
+        },
+        {
+          "en": "The tape stopped up the gap temporarily.",
+          "ja": "テープが一時的に隙間をふさぎました。",
+          "focus": "stopped up",
+          "object": "the gap"
         }
       ]
     },
@@ -4512,39 +4397,25 @@ export const verbs: Verb[] = [
       "phrase": "stop from",
       "ja": "〜を防ぐ",
       "image": "人や物事が進むのを止めるイメージ。",
-      "pattern": "STOP + O + from -ing",
+      "pattern": "STOP + O + FROM -ing",
       "examples": [
         {
           "en": "This rule stops us from sending incomplete reports.",
-          "ja": "このルールにより、私たちは不完全な報告書を送らずに済みます。",
-          "focus": "stops",
-          "object": "us from sending incomplete reports"
+          "ja": "このルールにより、不完全な報告書を送らずに済みます。",
+          "focus": "stops from",
+          "object": "us / sending incomplete reports"
         },
         {
           "en": "The approval step stopped the team from making a costly mistake.",
           "ja": "承認手順により、チームは大きなミスを防げました。",
-          "focus": "stopped",
-          "object": "the team from making a costly mistake"
+          "focus": "stopped from",
+          "object": "the team / making a costly mistake"
         },
         {
           "en": "Clear labels can stop customers from choosing the wrong product.",
           "ja": "分かりやすいラベルは、顧客が誤った商品を選ぶのを防げます。",
-          "focus": "stop",
-          "object": "customers from choosing the wrong product"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "The alarm stopped me from oversleeping.",
-          "ja": "アラームのおかげで、私は寝坊せずに済みました。",
-          "focus": "stopped",
-          "object": "me from oversleeping"
-        },
-        {
-          "en": "The cover stops rain from getting inside.",
-          "ja": "カバーは雨が中に入るのを防ぎます。",
-          "focus": "stops",
-          "object": "rain from getting inside"
+          "focus": "stop from",
+          "object": "customers / choosing the wrong product"
         }
       ]
     }
@@ -4560,7 +4431,7 @@ export const verbs: Verb[] = [
   "transitivity": "他動詞・自動詞",
   "importance": "★★★★★ 超重要",
   "core": "結果がまだ分からない方法に、一度力を入れてみる",
-  "coreDetail": "TRYは、方法・提案・作業に一度手を伸ばして試すイメージです。成功が確定していなくても、まずやってみる、努力する、試験的に使う、という場面で自然に使えます。",
+  "coreDetail": "TRYは、成功するか分からない方法・案・行動に一度手を伸ばして試すイメージです。『試す』『努力する』『別の方法を試す』『もう一度やる』を仕事で自然に使えるように整理します。",
   "coreVisual": {
     "from": [
       "💡 案",
@@ -4580,31 +4451,31 @@ export const verbs: Verb[] = [
       "transitivity": "他動詞",
       "structure": "S + try + O",
       "image": "方法や物を一度使ってみるイメージ。",
-      "point": "a different approach, another method, this sample などとよく使う。",
+      "point": "method, approach, sample, layout などと相性が良い。",
       "examples": [
         {
-          "en": "We tried a different approach for this customer.",
-          "ja": "私たちはこの顧客に対して別の方法を試しました。",
+          "en": "Let's try this method for the next proposal.",
+          "ja": "次の提案ではこの方法を試しましょう。",
+          "focus": "try",
+          "object": "this method"
+        },
+        {
+          "en": "We tried a different layout for the sign.",
+          "ja": "私たちはサインに別の配置を試しました。",
           "focus": "tried",
-          "object": "a different approach"
+          "object": "a different layout"
         },
         {
           "en": "Please try this sample before we place the order.",
           "ja": "発注前にこのサンプルを試してください。",
           "focus": "try",
           "object": "this sample"
-        },
-        {
-          "en": "I will try another way to explain the price change.",
-          "ja": "私は価格変更を説明する別の方法を試します。",
-          "focus": "try",
-          "object": "another way"
         }
       ],
       "dailyExamples": [
         {
           "en": "I tried a new restaurant near the station.",
-          "ja": "私は駅の近くの新しいレストランを試しました。",
+          "ja": "駅の近くの新しいレストランを試しました。",
           "focus": "tried",
           "object": "a new restaurant"
         },
@@ -4639,7 +4510,7 @@ export const verbs: Verb[] = [
         },
         {
           "en": "Can you try to contact the supplier today?",
-          "ja": "あなたは今日、仕入先に連絡してみてもらえますか？",
+          "ja": "今日、仕入先に連絡してみてもらえますか？",
           "focus": "try",
           "object": "to contact the supplier"
         }
@@ -4647,7 +4518,7 @@ export const verbs: Verb[] = [
       "dailyExamples": [
         {
           "en": "I tried to wake up early this morning.",
-          "ja": "私は今朝、早く起きようとしました。",
+          "ja": "今朝、早く起きようとしました。",
           "focus": "tried",
           "object": "to wake up early"
         },
@@ -4676,13 +4547,13 @@ export const verbs: Verb[] = [
         },
         {
           "en": "We tried calling the customer in the morning.",
-          "ja": "私たちは午前中に顧客へ電話してみました。",
+          "ja": "午前中に顧客へ電話してみました。",
           "focus": "tried",
           "object": "calling the customer"
         },
         {
           "en": "You could try sending a reminder email.",
-          "ja": "あなたはリマインドメールを送ってみてもよいと思います。",
+          "ja": "リマインドメールを送ってみてもよいと思います。",
           "focus": "try",
           "object": "sending a reminder email"
         }
@@ -4696,30 +4567,73 @@ export const verbs: Verb[] = [
         },
         {
           "en": "I tried walking to the station today.",
-          "ja": "私は今日、駅まで歩いてみました。",
+          "ja": "今日は駅まで歩いてみました。",
           "focus": "tried",
           "object": "walking to the station"
         }
       ]
     },
     {
+      "id": "try-again",
+      "title": "④ try again / もう一度試す",
+      "pattern": "TRY again",
+      "transitivity": "自動詞",
+      "structure": "S + try again",
+      "image": "失敗後にもう一度手を伸ばすイメージ。",
+      "point": "エラー、電話、確認作業などでよく使う。",
+      "examples": [
+        {
+          "en": "The upload failed, so I will try again.",
+          "ja": "アップロードに失敗したので、もう一度試します。",
+          "focus": "try",
+          "object": "again"
+        },
+        {
+          "en": "Can you try again after checking the file size?",
+          "ja": "ファイルサイズを確認した後、もう一度試せますか？",
+          "focus": "try",
+          "object": "again"
+        },
+        {
+          "en": "We tried again and the system worked.",
+          "ja": "私たちはもう一度試し、システムは動きました。",
+          "focus": "tried",
+          "object": "again"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "Please try again later.",
+          "ja": "後でもう一度試してください。",
+          "focus": "try",
+          "object": "again"
+        },
+        {
+          "en": "I missed the shot, so I tried again.",
+          "ja": "シュートを外したので、もう一度試しました。",
+          "focus": "tried",
+          "object": "again"
+        }
+      ]
+    },
+    {
       "id": "try-best",
-      "title": "④ try my best / 最善を尽くす",
-      "pattern": "TRY one's BEST",
+      "title": "⑤ try my best / 最善を尽くす",
+      "pattern": "TRY one's best",
       "transitivity": "他動詞",
       "structure": "S + try + one's best",
       "image": "できる限り力を入れるイメージ。",
-      "point": "返答や謝罪、納期調整で使いやすい丁寧な表現。",
+      "point": "納期調整や顧客対応で丁寧に伝えやすい。",
       "examples": [
         {
           "en": "I will try my best to meet the deadline.",
-          "ja": "私は締切に間に合うよう最善を尽くします。",
+          "ja": "締切に間に合うよう最善を尽くします。",
           "focus": "try",
           "object": "my best"
         },
         {
           "en": "We will try our best to support your project.",
-          "ja": "私たちは御社の案件を支援できるよう最善を尽くします。",
+          "ja": "御社の案件を支援できるよう最善を尽くします。",
           "focus": "try",
           "object": "our best"
         },
@@ -4733,7 +4647,7 @@ export const verbs: Verb[] = [
       "dailyExamples": [
         {
           "en": "I tried my best on the test.",
-          "ja": "私はそのテストで最善を尽くしました。",
+          "ja": "そのテストで最善を尽くしました。",
           "focus": "tried",
           "object": "my best"
         },
@@ -4742,135 +4656,6 @@ export const verbs: Verb[] = [
           "ja": "彼は試合で最善を尽くしました。",
           "focus": "tried",
           "object": "his best"
-        }
-      ]
-    },
-    {
-      "id": "try-again",
-      "title": "⑤ try again / もう一度試す",
-      "pattern": "TRY again",
-      "transitivity": "自動詞",
-      "structure": "S + try again",
-      "image": "失敗後にもう一度手を伸ばすイメージ。",
-      "point": "エラー、電話、確認作業などでよく使う。",
-      "examples": [
-        {
-          "en": "The upload failed, so I will try again.",
-          "ja": "アップロードに失敗したので、私はもう一度試します。",
-          "focus": "try",
-          "object": "again"
-        },
-        {
-          "en": "Can you try again after checking the file size?",
-          "ja": "あなたはファイルサイズを確認した後、もう一度試せますか？",
-          "focus": "try",
-          "object": "again"
-        },
-        {
-          "en": "We tried again and the system worked.",
-          "ja": "私たちはもう一度試し、システムは動きました。",
-          "focus": "tried",
-          "object": "again"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I missed the shot, so I tried again.",
-          "ja": "私はシュートを外したので、もう一度試しました。",
-          "focus": "tried",
-          "object": "again"
-        },
-        {
-          "en": "Please try again later.",
-          "ja": "後でもう一度試してください。",
-          "focus": "try",
-          "object": "again"
-        }
-      ]
-    },
-    {
-      "id": "try-for",
-      "title": "⑥ try for / 〜を目指す",
-      "pattern": "TRY FOR + target",
-      "transitivity": "自動詞",
-      "structure": "S + try + for O",
-      "image": "目標に向かって挑戦するイメージ。",
-      "point": "target, discount, better schedule など、目指す結果を示す。",
-      "examples": [
-        {
-          "en": "We should try for an earlier delivery date.",
-          "ja": "私たちはより早い納期を目指すべきです。",
-          "focus": "try",
-          "object": "for an earlier delivery date"
-        },
-        {
-          "en": "I will try for a better price with the supplier.",
-          "ja": "私は仕入先により良い価格を掛け合ってみます。",
-          "focus": "try",
-          "object": "for a better price"
-        },
-        {
-          "en": "The team is trying for a smoother approval process.",
-          "ja": "チームはよりスムーズな承認手順を目指しています。",
-          "focus": "trying",
-          "object": "for a smoother approval process"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "She is trying for a new personal record.",
-          "ja": "彼女は自己ベスト更新を目指しています。",
-          "focus": "trying",
-          "object": "for a new personal record"
-        },
-        {
-          "en": "I tried for a seat near the window.",
-          "ja": "私は窓際の席を取ろうとしました。",
-          "focus": "tried",
-          "object": "for a seat"
-        }
-      ]
-    },
-    {
-      "id": "try-hard",
-      "title": "⑦ try hard / 一生懸命やる",
-      "pattern": "TRY hard",
-      "transitivity": "自動詞",
-      "structure": "S + try hard",
-      "image": "強く努力するイメージ。",
-      "point": "頑張りを伝える自然な表現。ビジネスメールでは使いすぎず、会話で便利。",
-      "examples": [
-        {
-          "en": "We tried hard to fix the problem before the meeting.",
-          "ja": "私たちは会議前に問題を直そうと一生懸命対応しました。",
-          "focus": "tried",
-          "object": "hard"
-        },
-        {
-          "en": "He is trying hard to learn the new system.",
-          "ja": "彼は新しいシステムを覚えようと一生懸命取り組んでいます。",
-          "focus": "trying",
-          "object": "hard"
-        },
-        {
-          "en": "The team tried hard, but the schedule was too tight.",
-          "ja": "チームは一生懸命取り組みましたが、スケジュールが厳しすぎました。",
-          "focus": "tried",
-          "object": "hard"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I tried hard to finish the book.",
-          "ja": "私はその本を読み終えようと一生懸命頑張りました。",
-          "focus": "tried",
-          "object": "hard"
-        },
-        {
-          "en": "They tried hard during practice.",
-          "ja": "彼らは練習中に一生懸命取り組みました。",
-          "focus": "tried",
-          "object": "hard"
         }
       ]
     }
@@ -4885,13 +4670,13 @@ export const verbs: Verb[] = [
       "examples": [
         {
           "en": "We tried out the new app during the meeting.",
-          "ja": "私たちは会議中に新しいアプリを試しました。",
+          "ja": "会議中に新しいアプリを試しました。",
           "focus": "tried out",
           "object": "the new app"
         },
         {
           "en": "Can you try out this format for the report?",
-          "ja": "あなたは報告書でこの形式を試せますか？",
+          "ja": "報告書でこの形式を試せますか？",
           "focus": "try out",
           "object": "this format"
         },
@@ -4900,20 +4685,6 @@ export const verbs: Verb[] = [
           "ja": "チームは新しい営業トークを試しました。",
           "focus": "tried out",
           "object": "a new sales script"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I tried out a new camera yesterday.",
-          "ja": "私は昨日、新しいカメラを試しました。",
-          "focus": "tried out",
-          "object": "a new camera"
-        },
-        {
-          "en": "She tried out a new recipe.",
-          "ja": "彼女は新しいレシピを試しました。",
-          "focus": "tried out",
-          "object": "a new recipe"
         }
       ]
     },
@@ -4924,36 +4695,22 @@ export const verbs: Verb[] = [
       "pattern": "TRY ON + clothing",
       "examples": [
         {
-          "en": "The staff tried on the sample uniform before ordering it.",
-          "ja": "スタッフは発注前にサンプル制服を試着しました。",
-          "focus": "tried on",
-          "object": "the sample uniform"
-        },
-        {
           "en": "Please try on the safety vest before the site visit.",
           "ja": "現場訪問前に安全ベストを試着してください。",
           "focus": "try on",
           "object": "the safety vest"
         },
         {
+          "en": "The staff tried on the sample uniform before ordering it.",
+          "ja": "スタッフは発注前にサンプル制服を試着しました。",
+          "focus": "tried on",
+          "object": "the sample uniform"
+        },
+        {
           "en": "He tried on the jacket to check the size.",
           "ja": "彼はサイズを確認するためにジャケットを試着しました。",
           "focus": "tried on",
           "object": "the jacket"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I tried on three shirts at the store.",
-          "ja": "私は店でシャツを3枚試着しました。",
-          "focus": "tried on",
-          "object": "three shirts"
-        },
-        {
-          "en": "Can I try on these shoes?",
-          "ja": "この靴を試着してもいいですか？",
-          "focus": "try on",
-          "object": "these shoes"
         }
       ]
     },
@@ -4965,13 +4722,13 @@ export const verbs: Verb[] = [
       "examples": [
         {
           "en": "We will try for a shorter lead time.",
-          "ja": "私たちはより短いリードタイムを目指します。",
+          "ja": "より短いリードタイムを目指します。",
           "focus": "try for",
           "object": "a shorter lead time"
         },
         {
           "en": "I tried for a better discount, but it was difficult.",
-          "ja": "私はより良い値引きを目指しましたが、難しかったです。",
+          "ja": "より良い値引きを目指しましたが、難しかったです。",
           "focus": "tried for",
           "object": "a better discount"
         },
@@ -4981,60 +4738,6 @@ export const verbs: Verb[] = [
           "focus": "trying for",
           "object": "a higher response rate"
         }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I tried for a window seat.",
-          "ja": "私は窓側の席を取ろうとしました。",
-          "focus": "tried for",
-          "object": "a window seat"
-        },
-        {
-          "en": "She is trying for first place.",
-          "ja": "彼女は1位を目指しています。",
-          "focus": "trying for",
-          "object": "first place"
-        }
-      ]
-    },
-    {
-      "phrase": "try back",
-      "ja": "後でもう一度連絡する",
-      "image": "今つながらない相手へ後で再挑戦するイメージ。",
-      "pattern": "TRY BACK + time",
-      "examples": [
-        {
-          "en": "The client is in a meeting, so I will try back later.",
-          "ja": "顧客は会議中なので、私は後でもう一度連絡します。",
-          "focus": "try back",
-          "object": "later"
-        },
-        {
-          "en": "Can you try back after lunch?",
-          "ja": "あなたは昼食後にもう一度連絡できますか？",
-          "focus": "try back",
-          "object": "after lunch"
-        },
-        {
-          "en": "I tried back at three, but he was still busy.",
-          "ja": "私は3時にもう一度連絡しましたが、彼はまだ忙しかったです。",
-          "focus": "tried back",
-          "object": "at three"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I called the shop, but I need to try back later.",
-          "ja": "私は店に電話しましたが、後でもう一度かける必要があります。",
-          "focus": "try back",
-          "object": "later"
-        },
-        {
-          "en": "Please try back tomorrow morning.",
-          "ja": "明日の朝、もう一度連絡してください。",
-          "focus": "try back",
-          "object": "tomorrow morning"
-        }
       ]
     },
     {
@@ -5043,12 +4746,6 @@ export const verbs: Verb[] = [
       "image": "ある役割に入れるか試されるイメージ。",
       "pattern": "TRY OUT FOR + role",
       "examples": [
-        {
-          "en": "He tried out for the new project team.",
-          "ja": "彼は新しいプロジェクトチームに挑戦しました。",
-          "focus": "tried out for",
-          "object": "the new project team"
-        },
         {
           "en": "She is trying out for a trainer role next month.",
           "ja": "彼女は来月、トレーナー役に挑戦します。",
@@ -5060,20 +4757,38 @@ export const verbs: Verb[] = [
           "ja": "数名のメンバーがプレゼン担当に挑戦しました。",
           "focus": "tried out for",
           "object": "the presentation role"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "He tried out for the school team.",
-          "ja": "彼は学校のチームに挑戦しました。",
-          "focus": "tried out for",
-          "object": "the school team"
         },
         {
-          "en": "She tried out for the band.",
-          "ja": "彼女はそのバンドのオーディションを受けました。",
+          "en": "He tried out for the new project team.",
+          "ja": "彼は新しいプロジェクトチームに挑戦しました。",
           "focus": "tried out for",
-          "object": "the band"
+          "object": "the new project team"
+        }
+      ]
+    },
+    {
+      "phrase": "try back",
+      "ja": "後でもう一度連絡する",
+      "image": "今つながらない相手へ後で再挑戦するイメージ。",
+      "pattern": "TRY BACK + time",
+      "examples": [
+        {
+          "en": "The client is in a meeting, so I will try back later.",
+          "ja": "顧客は会議中なので、後でもう一度連絡します。",
+          "focus": "try back",
+          "object": "later"
+        },
+        {
+          "en": "Can you try back after lunch?",
+          "ja": "昼食後にもう一度連絡できますか？",
+          "focus": "try back",
+          "object": "after lunch"
+        },
+        {
+          "en": "I tried back at three, but he was still busy.",
+          "ja": "3時にもう一度連絡しましたが、彼はまだ忙しかったです。",
+          "focus": "tried back",
+          "object": "at three"
         }
       ]
     }
@@ -5088,23 +4803,22 @@ export const verbs: Verb[] = [
   "syllable": "help",
   "transitivity": "他動詞・自動詞",
   "importance": "★★★★★ 超重要",
-  "core": "相手や状況の負担を軽くして、前に進める",
-  "coreDetail": "HELPは、人・仕事・問題が前に進みやすくなるように支えるイメージです。人を手伝うだけでなく、資料が理解を助ける、改善につながる、避けられないという使い方にも広がります。",
+  "core": "相手や状況の負担を軽くして前に進める",
+  "coreDetail": "HELPは、人・チーム・顧客・作業が前に進みやすくなるよう支えるイメージです。『人を助ける』だけでなく、『資料が理解を助ける』『改善に役立つ』『手伝う』まで広がります。",
   "coreVisual": {
     "from": [
-      "🤝 支援",
-      "📄 資料",
+      "🤝 支援が必要な人",
+      "📄 難しい資料",
       "🧩 問題",
-      "📈 改善",
-      "⏱️ 負担"
+      "📈 改善したい業務"
     ],
-    "to": "相手・チームが前に進む",
-    "label": "負担を軽くする → 前に進む"
+    "to": "負担が軽くなり前に進む",
+    "label": "負担を軽くする → 前進"
   },
   "meanings": [
     {
       "id": "help-person",
-      "title": "① help someone / 人を手伝う",
+      "title": "① help someone / 人を助ける・手伝う",
       "pattern": "HELP + person",
       "transitivity": "他動詞",
       "structure": "S + help + O",
@@ -5113,13 +4827,13 @@ export const verbs: Verb[] = [
       "examples": [
         {
           "en": "I helped the sales team with the proposal.",
-          "ja": "私は営業チームの提案書作成を手伝いました。",
+          "ja": "営業チームの提案書作成を手伝いました。",
           "focus": "helped",
           "object": "the sales team"
         },
         {
           "en": "Can you help me with this report?",
-          "ja": "あなたはこの報告書を手伝ってもらえますか？",
+          "ja": "この報告書を手伝ってもらえますか？",
           "focus": "help",
           "object": "me"
         },
@@ -5133,7 +4847,7 @@ export const verbs: Verb[] = [
       "dailyExamples": [
         {
           "en": "I helped my brother move yesterday.",
-          "ja": "私は昨日、兄の引っ越しを手伝いました。",
+          "ja": "昨日、兄の引っ越しを手伝いました。",
           "focus": "helped",
           "object": "my brother"
         },
@@ -5146,72 +4860,29 @@ export const verbs: Verb[] = [
       ]
     },
     {
-      "id": "help-with",
-      "title": "② help with / 〜を手伝う",
-      "pattern": "HELP WITH + task",
-      "transitivity": "自動詞",
-      "structure": "S + help + with O",
-      "image": "作業の一部を支えるイメージ。",
-      "point": "資料、確認、準備、設定など具体的な作業に使いやすい。",
-      "examples": [
-        {
-          "en": "Could you help with the delivery schedule?",
-          "ja": "あなたは納品スケジュールの件を手伝ってもらえますか？",
-          "focus": "help",
-          "object": "with the delivery schedule"
-        },
-        {
-          "en": "We need someone to help with the setup tomorrow.",
-          "ja": "私たちは明日の設営を手伝ってくれる人が必要です。",
-          "focus": "help",
-          "object": "with the setup"
-        },
-        {
-          "en": "He helped with the final check before submission.",
-          "ja": "彼は提出前の最終確認を手伝いました。",
-          "focus": "helped",
-          "object": "with the final check"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "She helped with dinner last night.",
-          "ja": "彼女は昨夜、夕食の準備を手伝いました。",
-          "focus": "helped",
-          "object": "with dinner"
-        },
-        {
-          "en": "Can you help with the cleaning?",
-          "ja": "掃除を手伝ってくれますか？",
-          "focus": "help",
-          "object": "with the cleaning"
-        }
-      ]
-    },
-    {
       "id": "help-do",
-      "title": "③ help someone do / 〜するのを助ける",
-      "pattern": "HELP + person + DO",
+      "title": "② help someone do / 〜するのを助ける",
+      "pattern": "HELP + person + do",
       "transitivity": "他動詞",
       "structure": "S + help + O + V",
       "image": "相手が行動できるよう支えるイメージ。",
       "point": "help me check, help customers understand のように使う。",
       "examples": [
         {
-          "en": "This chart helps customers understand the price difference.",
-          "ja": "この表は顧客が価格差を理解する助けになります。",
+          "en": "This chart helps customers understand the difference.",
+          "ja": "この図は顧客が違いを理解するのに役立ちます。",
           "focus": "helps",
           "object": "customers"
         },
         {
-          "en": "The checklist helped us avoid mistakes.",
-          "ja": "チェックリストは私たちがミスを避ける助けになりました。",
+          "en": "The checklist helped us find the mistake early.",
+          "ja": "チェックリストは私たちが早くミスを見つけるのに役立ちました。",
           "focus": "helped",
           "object": "us"
         },
         {
-          "en": "Can you help me prepare the meeting materials?",
-          "ja": "あなたは私が会議資料を準備するのを手伝ってもらえますか？",
+          "en": "Can you help me prepare for the meeting?",
+          "ja": "会議の準備を手伝ってもらえますか？",
           "focus": "help",
           "object": "me"
         }
@@ -5219,187 +4890,144 @@ export const verbs: Verb[] = [
       "dailyExamples": [
         {
           "en": "This app helps me study English.",
-          "ja": "このアプリは私が英語を勉強する助けになります。",
+          "ja": "このアプリは私の英語学習に役立ちます。",
           "focus": "helps",
           "object": "me"
         },
         {
-          "en": "Music helps me relax.",
-          "ja": "音楽は私がリラックスする助けになります。",
-          "focus": "helps",
+          "en": "My friend helped me choose a gift.",
+          "ja": "友人がプレゼント選びを手伝ってくれました。",
+          "focus": "helped",
           "object": "me"
         }
       ]
     },
     {
-      "id": "help-improve",
-      "title": "④ help improve / 改善に役立つ",
-      "pattern": "HELP + improve / reduce / increase",
+      "id": "help-reduce",
+      "title": "③ help reduce / 減らすのに役立つ",
+      "pattern": "HELP + verb",
       "transitivity": "他動詞",
       "structure": "S + help + V",
-      "image": "改善の方向に押し上げるイメージ。",
-      "point": "数字や業務改善を説明する時に便利。",
+      "image": "改善や削減を後押しするイメージ。",
+      "point": "ミス、時間、コスト、負担を減らす時に使いやすい。",
       "examples": [
         {
-          "en": "This process helps improve response speed.",
-          "ja": "この手順は対応スピードの改善に役立ちます。",
+          "en": "This process helps reduce mistakes.",
+          "ja": "この手順はミスを減らすのに役立ちます。",
           "focus": "helps",
-          "object": "improve response speed"
-        },
-        {
-          "en": "The new template helped reduce mistakes in quotes.",
-          "ja": "新しいテンプレートは見積のミス削減に役立ちました。",
-          "focus": "helped",
           "object": "reduce mistakes"
         },
         {
-          "en": "Clear photos can help increase customer trust.",
-          "ja": "分かりやすい写真は顧客の信頼向上に役立ちます。",
+          "en": "The template helped improve the report quality.",
+          "ja": "そのテンプレートは報告書の品質改善に役立ちました。",
+          "focus": "helped",
+          "object": "improve the report quality"
+        },
+        {
+          "en": "Clear photos can help avoid misunderstanding.",
+          "ja": "分かりやすい写真は誤解を避けるのに役立ちます。",
           "focus": "help",
-          "object": "increase customer trust"
+          "object": "avoid misunderstanding"
         }
       ],
       "dailyExamples": [
         {
-          "en": "Walking helps improve my mood.",
-          "ja": "歩くことは気分を良くする助けになります。",
+          "en": "Drinking water helps reduce tiredness.",
+          "ja": "水を飲むことは疲れを減らすのに役立ちます。",
           "focus": "helps",
-          "object": "improve my mood"
+          "object": "reduce tiredness"
         },
         {
-          "en": "Drinking water can help reduce tiredness.",
-          "ja": "水を飲むことは疲れを減らす助けになります。",
-          "focus": "help",
-          "object": "reduce tiredness"
+          "en": "A short walk helps clear my head.",
+          "ja": "短い散歩は頭をすっきりさせるのに役立ちます。",
+          "focus": "helps",
+          "object": "clear my head"
         }
       ]
     },
     {
-      "id": "helpful",
-      "title": "⑤ be helpful / 役に立つ",
-      "pattern": "be helpful",
-      "transitivity": "形容詞的表現",
-      "structure": "S + be + helpful",
-      "image": "相手にとって助けになる状態。",
-      "point": "資料や説明への感想として自然に使える。",
+      "id": "help-understand",
+      "title": "④ help me understand / 理解を助ける",
+      "pattern": "HELP + person + understand",
+      "transitivity": "他動詞",
+      "structure": "S + help + O + V",
+      "image": "分からない状態から理解へ進めるイメージ。",
+      "point": "説明・資料・確認で便利。",
       "examples": [
         {
-          "en": "Your explanation was very helpful.",
-          "ja": "あなたの説明はとても役に立ちました。",
-          "focus": "helpful",
-          "object": "very helpful"
+          "en": "Your explanation helped me understand the issue.",
+          "ja": "あなたの説明で、私は問題を理解できました。",
+          "focus": "helped",
+          "object": "me"
         },
         {
-          "en": "This document will be helpful for the meeting.",
-          "ja": "この資料は会議に役立ちます。",
-          "focus": "helpful",
-          "object": "for the meeting"
+          "en": "Can you help us understand the customer's request?",
+          "ja": "顧客の要望を理解するのを手伝ってもらえますか？",
+          "focus": "help",
+          "object": "us"
         },
         {
-          "en": "The customer's feedback was helpful for improving the proposal.",
-          "ja": "顧客の意見は提案改善に役立ちました。",
-          "focus": "helpful",
-          "object": "for improving the proposal"
+          "en": "The sample helped the client understand the color.",
+          "ja": "サンプルにより、顧客は色を理解しやすくなりました。",
+          "focus": "helped",
+          "object": "the client"
         }
       ],
       "dailyExamples": [
         {
-          "en": "Your advice was helpful.",
-          "ja": "あなたの助言は役に立ちました。",
-          "focus": "helpful",
-          "object": "helpful"
+          "en": "The video helped me understand the rule.",
+          "ja": "その動画でルールを理解できました。",
+          "focus": "helped",
+          "object": "me"
         },
         {
-          "en": "This map is helpful when I travel.",
-          "ja": "この地図は旅行するときに役立ちます。",
-          "focus": "helpful",
-          "object": "helpful"
+          "en": "This note helps me remember the plan.",
+          "ja": "このメモは予定を思い出すのに役立ちます。",
+          "focus": "helps",
+          "object": "me"
         }
       ]
     },
     {
       "id": "cannot-help",
-      "title": "⑥ can't help / 〜せずにはいられない・避けられない",
-      "pattern": "CAN'T HELP + -ing",
-      "transitivity": "慣用的表現",
-      "structure": "S + can't help + V-ing",
-      "image": "気持ちや反応を止められないイメージ。",
-      "point": "ビジネスでは使いすぎないが、自然な感想表現として重要。",
+      "title": "⑤ cannot help -ing / 〜せずにはいられない",
+      "pattern": "cannot HELP + -ing",
+      "transitivity": "他動詞",
+      "structure": "S + cannot help + V-ing",
+      "image": "自分では止められない反応のイメージ。",
+      "point": "日常寄りだが、英語表現として重要。",
       "examples": [
         {
-          "en": "I can't help worrying about the delivery schedule.",
-          "ja": "私は納品スケジュールが心配で仕方ありません。",
+          "en": "I cannot help feeling worried about the delay.",
+          "ja": "私はその遅延について心配せずにはいられません。",
           "focus": "help",
-          "object": "worrying about the delivery schedule"
+          "object": "feeling worried"
         },
         {
-          "en": "We couldn't help noticing the difference in color.",
-          "ja": "私たちは色の違いに気づかずにはいられませんでした。",
+          "en": "We could not help noticing the same mistake.",
+          "ja": "私たちは同じミスに気づかずにはいられませんでした。",
           "focus": "help",
-          "object": "noticing the difference in color"
+          "object": "noticing the same mistake"
         },
         {
-          "en": "She couldn't help asking one more question.",
-          "ja": "彼女はもう一つ質問せずにはいられませんでした。",
+          "en": "He cannot help checking the numbers twice.",
+          "ja": "彼は数字を二度確認せずにはいられません。",
           "focus": "help",
-          "object": "asking one more question"
+          "object": "checking the numbers twice"
         }
       ],
       "dailyExamples": [
         {
-          "en": "I can't help laughing at that scene.",
-          "ja": "私はその場面で笑わずにはいられません。",
-          "focus": "help",
-          "object": "laughing"
-        },
-        {
-          "en": "He couldn't help smiling.",
-          "ja": "彼は笑顔にならずにはいられませんでした。",
+          "en": "I cannot help smiling when I hear that song.",
+          "ja": "その曲を聞くと笑顔にならずにはいられません。",
           "focus": "help",
           "object": "smiling"
-        }
-      ]
-    },
-    {
-      "id": "help-yourself",
-      "title": "⑦ help yourself to / 自由に取る",
-      "pattern": "HELP YOURSELF TO + item",
-      "transitivity": "慣用的表現",
-      "structure": "S + help yourself to O",
-      "image": "相手が自分で取れるようにするイメージ。",
-      "point": "来客対応やカジュアルな案内で使える。",
-      "examples": [
-        {
-          "en": "Please help yourself to coffee before the meeting.",
-          "ja": "会議前にコーヒーをご自由にお取りください。",
-          "focus": "help",
-          "object": "yourself to coffee"
         },
         {
-          "en": "Visitors can help themselves to the product brochures.",
-          "ja": "来場者は製品パンフレットを自由に取れます。",
+          "en": "She could not help laughing.",
+          "ja": "彼女は笑わずにはいられませんでした。",
           "focus": "help",
-          "object": "themselves to the product brochures"
-        },
-        {
-          "en": "Please help yourself to the samples on the table.",
-          "ja": "テーブル上のサンプルをご自由にお取りください。",
-          "focus": "help",
-          "object": "yourself to the samples"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "Please help yourself to some snacks.",
-          "ja": "お菓子を自由に取ってください。",
-          "focus": "help",
-          "object": "yourself to some snacks"
-        },
-        {
-          "en": "You can help yourself to water.",
-          "ja": "水は自由に飲んでいいですよ。",
-          "focus": "help",
-          "object": "yourself to water"
+          "object": "laughing"
         }
       ]
     }
@@ -5407,201 +5035,132 @@ export const verbs: Verb[] = [
   "collocations": [],
   "phrasalVerbs": [
     {
-      "phrase": "help out",
-      "ja": "手助けする",
-      "image": "困っている人やチームを支えるイメージ。",
-      "pattern": "HELP OUT + person / team",
+      "phrase": "help with",
+      "ja": "〜を手伝う",
+      "image": "作業の一部を支えるイメージ。",
+      "pattern": "HELP WITH + task",
       "examples": [
         {
-          "en": "Can you help out the support team this afternoon?",
-          "ja": "あなたは今日の午後、サポートチームを手伝えますか？",
-          "focus": "help out",
-          "object": "the support team"
+          "en": "Could you help with the delivery schedule?",
+          "ja": "納品スケジュールの件を手伝ってもらえますか？",
+          "focus": "help with",
+          "object": "the delivery schedule"
         },
         {
-          "en": "She helped out with the event preparation.",
-          "ja": "彼女はイベント準備を手伝いました。",
-          "focus": "helped out",
-          "object": "with the event preparation"
+          "en": "We need someone to help with the setup tomorrow.",
+          "ja": "明日の設営を手伝ってくれる人が必要です。",
+          "focus": "help with",
+          "object": "the setup"
         },
         {
-          "en": "We need someone to help out during the busy season.",
-          "ja": "繁忙期に手伝ってくれる人が必要です。",
-          "focus": "help out"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "I helped out at my friend's shop.",
-          "ja": "私は友人の店を手伝いました。",
-          "focus": "helped out",
-          "object": "at my friend's shop"
-        },
-        {
-          "en": "Can you help out at home tonight?",
-          "ja": "今夜、家で手伝ってくれますか？",
-          "focus": "help out",
-          "object": "at home"
+          "en": "He helped with the final check before submission.",
+          "ja": "彼は提出前の最終確認を手伝いました。",
+          "focus": "helped with",
+          "object": "the final check"
         }
       ]
     },
     {
-      "phrase": "help with",
-      "ja": "〜を手伝う",
-      "image": "作業に横から支援を入れるイメージ。",
-      "pattern": "HELP WITH + task",
+      "phrase": "help out",
+      "ja": "手伝う・助ける",
+      "image": "困っている状況に入って支えるイメージ。",
+      "pattern": "HELP OUT",
       "examples": [
         {
-          "en": "Please help with the quote check.",
-          "ja": "見積確認を手伝ってください。",
-          "focus": "help with",
-          "object": "the quote check"
+          "en": "Can you help out during the event tomorrow?",
+          "ja": "明日のイベント中に手伝ってもらえますか？",
+          "focus": "help out",
+          "object": "during the event"
         },
         {
-          "en": "He helped with the customer presentation.",
-          "ja": "彼は顧客向けプレゼンを手伝いました。",
-          "focus": "helped with",
-          "object": "the customer presentation"
+          "en": "The team helped out when the order volume increased.",
+          "ja": "注文量が増えた時、チームが手伝ってくれました。",
+          "focus": "helped out",
+          "object": "when the order volume increased"
         },
         {
-          "en": "Can you help with the sample shipment?",
-          "ja": "あなたはサンプル出荷を手伝えますか？",
-          "focus": "help with",
-          "object": "the sample shipment"
+          "en": "I can help out after the meeting.",
+          "ja": "会議後なら手伝えます。",
+          "focus": "help out",
+          "object": "after the meeting"
         }
-      ],
-      "dailyExamples": [
+      ]
+    },
+    {
+      "phrase": "help out with",
+      "ja": "〜を手伝う",
+      "image": "具体的な作業を一緒に支えるイメージ。",
+      "pattern": "HELP OUT WITH + task",
+      "examples": [
         {
-          "en": "I helped with the shopping.",
-          "ja": "私は買い物を手伝いました。",
-          "focus": "helped with",
-          "object": "the shopping"
+          "en": "She helped out with the sample packing.",
+          "ja": "彼女はサンプルの梱包を手伝いました。",
+          "focus": "helped out with",
+          "object": "the sample packing"
         },
         {
-          "en": "She helped with the homework.",
-          "ja": "彼女は宿題を手伝いました。",
-          "focus": "helped with",
-          "object": "the homework"
+          "en": "Can you help out with the customer list?",
+          "ja": "顧客リストを手伝ってもらえますか？",
+          "focus": "help out with",
+          "object": "the customer list"
+        },
+        {
+          "en": "We helped out with the urgent shipment.",
+          "ja": "私たちは急ぎの出荷を手伝いました。",
+          "focus": "helped out with",
+          "object": "the urgent shipment"
+        }
+      ]
+    },
+    {
+      "phrase": "help along",
+      "ja": "進めるのを助ける",
+      "image": "物事が前に進むよう後押しするイメージ。",
+      "pattern": "HELP ALONG + process",
+      "examples": [
+        {
+          "en": "The clear schedule helped along the approval process.",
+          "ja": "明確なスケジュールが承認プロセスを進める助けになりました。",
+          "focus": "helped along",
+          "object": "the approval process"
+        },
+        {
+          "en": "Good examples can help along the training.",
+          "ja": "良い例は研修を進める助けになります。",
+          "focus": "help along",
+          "object": "the training"
+        },
+        {
+          "en": "The checklist helped the discussion along.",
+          "ja": "チェックリストが議論を前に進めました。",
+          "focus": "helped along",
+          "object": "the discussion"
         }
       ]
     },
     {
       "phrase": "help through",
       "ja": "困難を乗り越えるのを助ける",
-      "image": "難しい期間を一緒に通り抜けるイメージ。",
-      "pattern": "HELP + person + THROUGH + situation",
+      "image": "難しい状況を通り抜けるまで支えるイメージ。",
+      "pattern": "HELP + person + THROUGH + difficulty",
       "examples": [
         {
-          "en": "The manager helped us through the urgent project.",
-          "ja": "マネージャーは私たちが急ぎ案件を乗り切るのを助けてくれました。",
-          "focus": "helped",
-          "object": "us through the urgent project"
+          "en": "Our manager helped us through the busy season.",
+          "ja": "上司が繁忙期を乗り越えるのを助けてくれました。",
+          "focus": "helped through",
+          "object": "us / the busy season"
         },
         {
-          "en": "Clear instructions helped the team through the new process.",
-          "ja": "明確な指示はチームが新しい手順を進める助けになりました。",
-          "focus": "helped",
-          "object": "the team through the new process"
+          "en": "The support team helped the client through the setup.",
+          "ja": "サポートチームが顧客の設定作業を最後まで支援しました。",
+          "focus": "helped through",
+          "object": "the client / the setup"
         },
         {
-          "en": "Her advice helped me through the difficult negotiation.",
-          "ja": "彼女の助言は、私が難しい交渉を乗り切る助けになりました。",
-          "focus": "helped",
-          "object": "me through the difficult negotiation"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "My friend helped me through a hard week.",
-          "ja": "友人は私が大変な一週間を乗り切る助けになりました。",
-          "focus": "helped",
-          "object": "me through a hard week"
-        },
-        {
-          "en": "Music helped me through a long trip.",
-          "ja": "音楽は長旅を乗り切る助けになりました。",
-          "focus": "helped",
-          "object": "me through a long trip"
-        }
-      ]
-    },
-    {
-      "phrase": "help along",
-      "ja": "進みやすくする",
-      "image": "物事を少し前に押すイメージ。",
-      "pattern": "HELP + O + along",
-      "examples": [
-        {
-          "en": "The template helped the report along.",
-          "ja": "テンプレートは報告書作成を進めやすくしました。",
-          "focus": "helped",
-          "object": "the report along"
-        },
-        {
-          "en": "A quick call helped the approval process along.",
-          "ja": "短い電話が承認手続きを進みやすくしました。",
-          "focus": "helped",
-          "object": "the approval process along"
-        },
-        {
-          "en": "The new checklist will help the project along.",
-          "ja": "新しいチェックリストは案件を進めやすくします。",
-          "focus": "help",
-          "object": "the project along"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "A small hint helped me along.",
-          "ja": "小さなヒントが私を前に進めてくれました。",
-          "focus": "helped",
-          "object": "me along"
-        },
-        {
-          "en": "Her message helped the conversation along.",
-          "ja": "彼女のメッセージが会話を進めやすくしました。",
-          "focus": "helped",
-          "object": "the conversation along"
-        }
-      ]
-    },
-    {
-      "phrase": "help yourself to",
-      "ja": "自由に取る",
-      "image": "相手が自分で取れるように促すイメージ。",
-      "pattern": "HELP YOURSELF TO + item",
-      "examples": [
-        {
-          "en": "Please help yourself to the catalogs at the entrance.",
-          "ja": "入口のカタログをご自由にお取りください。",
-          "focus": "help yourself to",
-          "object": "the catalogs"
-        },
-        {
-          "en": "Guests can help themselves to drinks during the break.",
-          "ja": "来客は休憩中に飲み物を自由に取れます。",
-          "focus": "help themselves to",
-          "object": "drinks"
-        },
-        {
-          "en": "Please help yourself to the sample cards.",
-          "ja": "サンプルカードをご自由にお取りください。",
-          "focus": "help yourself to",
-          "object": "the sample cards"
-        }
-      ],
-      "dailyExamples": [
-        {
-          "en": "Please help yourself to tea.",
-          "ja": "お茶をご自由にどうぞ。",
-          "focus": "help yourself to",
-          "object": "tea"
-        },
-        {
-          "en": "You can help yourself to snacks.",
-          "ja": "お菓子は自由に取っていいですよ。",
-          "focus": "help yourself to",
-          "object": "snacks"
+          "en": "This guide will help new users through the first steps.",
+          "ja": "このガイドは新規ユーザーが最初の手順を進める助けになります。",
+          "focus": "help through",
+          "object": "new users / the first steps"
         }
       ]
     }

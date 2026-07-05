@@ -25,10 +25,6 @@ function lockedMessage(index: number) {
   return index > 120 ? "Step 4：120語パックで追加教材として解放されます。" : "Step 4：120語パックで解放されます。";
 }
 
-type SearchScope = "all" | "basic" | "phrasal" | "examples";
-type AccessFilter = "all" | "unlocked" | "locked";
-type SortMode = "rank" | "match";
-
 type SearchDoc = {
   all: string;
   basic: string;
@@ -83,28 +79,72 @@ function verbSearchDoc(verb: Verb): SearchDoc {
   return { all, basic, examples, phrasal, labels };
 }
 
-function scoreVerb(verb: Verb, doc: SearchDoc, tokens: string[], scope: SearchScope) {
-  if (tokens.length === 0) return 0;
+function editDistance(a: string, b: string) {
+  if (!a || !b) return Math.max(a.length, b.length);
+  const shortA = a.slice(0, 12);
+  const shortB = b.slice(0, 12);
+  const dp = Array.from({ length: shortA.length + 1 }, () => Array(shortB.length + 1).fill(0));
+  for (let i = 0; i <= shortA.length; i += 1) dp[i][0] = i;
+  for (let j = 0; j <= shortB.length; j += 1) dp[0][j] = j;
+  for (let i = 1; i <= shortA.length; i += 1) {
+    for (let j = 1; j <= shortB.length; j += 1) {
+      const cost = shortA[i - 1] === shortB[j - 1] ? 0 : 1;
+      dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + cost);
+    }
+  }
+  return dp[shortA.length][shortB.length];
+}
 
-  const target = scope === "all" ? doc.all : doc[scope];
-  if (!tokens.every((token) => target.includes(token))) return -1;
+function scoreVerb(verb: Verb, doc: SearchDoc, tokens: string[]) {
+  if (tokens.length === 0) return 0;
 
   const word = normalizeText(verb.word);
   const id = normalizeText(verb.id);
   const kana = normalizeText(verb.kana);
   let score = 0;
+  let matched = false;
 
-  tokens.forEach((token) => {
-    if (word === token || id === token) score += 1000;
-    else if (word.startsWith(token) || id.startsWith(token)) score += 650;
-    else if (word.includes(token) || id.includes(token) || kana.includes(token)) score += 420;
+  tokens.forEach((token, tokenIndex) => {
+    const firstTokenBonus = tokenIndex === 0 ? 1 : 0.8;
 
-    if (doc.phrasal.includes(token)) score += 220;
-    if (doc.basic.includes(token)) score += 130;
-    if (doc.examples.includes(token)) score += 90;
-    if (normalizeText(verb.core).includes(token)) score += 80;
+    if (word === token || id === token) {
+      score += 2000 * firstTokenBonus;
+      matched = true;
+    } else if (word.startsWith(token) || id.startsWith(token)) {
+      score += 1500 * firstTokenBonus;
+      matched = true;
+    } else if (word.includes(token) || id.includes(token)) {
+      score += 900 * firstTokenBonus;
+      matched = true;
+    } else if (token.length >= 2 && editDistance(token, word.slice(0, Math.max(token.length, 3))) <= 1) {
+      score += 650 * firstTokenBonus;
+      matched = true;
+    }
+
+    if (kana.includes(token)) {
+      score += 500;
+      matched = true;
+    }
+
+    if (doc.phrasal.includes(token)) {
+      score += 320;
+      matched = true;
+    }
+    if (doc.basic.includes(token)) {
+      score += 220;
+      matched = true;
+    }
+    if (doc.examples.includes(token)) {
+      score += 140;
+      matched = true;
+    }
+    if (normalizeText(verb.core).includes(token)) {
+      score += 180;
+      matched = true;
+    }
   });
 
+  if (!matched) return -1;
   return score;
 }
 
@@ -118,14 +158,13 @@ function hitLabels(doc: SearchDoc, tokens: string[]) {
 }
 
 function highlightText(text: string, tokens: string[]) {
-  const term = tokens.find((token) => token.length >= 2);
+  const term = tokens.find((token) => token.length >= 1);
   if (!term) return text;
 
   const source = normalizeText(text);
   const index = source.indexOf(term);
   if (index < 0) return text;
 
-  // 英単語・日本語どちらでも安全に表示するため、表示文字列は崩さず近い位置だけ強調する。
   const displayIndex = Math.min(index, text.length);
   const before = text.slice(0, displayIndex);
   const match = text.slice(displayIndex, displayIndex + term.length);
@@ -140,13 +179,10 @@ function highlightText(text: string, tokens: string[]) {
   );
 }
 
-const recommendedQueries = ["承認", "会議", "見積", "顧客", "納期", "調査", "連絡", "句動詞"];
+const quickPrefixes = ["a", "b", "c", "d", "f", "g", "h", "l", "m", "p", "r", "s", "t", "w"];
 
 export default function VerbSearchList({ verbs }: { verbs: Verb[] }) {
   const [query, setQuery] = useState("");
-  const [scope, setScope] = useState<SearchScope>("all");
-  const [accessFilter, setAccessFilter] = useState<AccessFilter>("all");
-  const [sortMode, setSortMode] = useState<SortMode>("rank");
   const [unlockedCount, setUnlockedCount] = useState(3);
 
   useEffect(() => {
@@ -161,34 +197,27 @@ export default function VerbSearchList({ verbs }: { verbs: Verb[] }) {
     return map;
   }, [verbs]);
 
+  const rankedRows = useMemo(() => {
+    const rows = verbs.map((verb, index) => {
+      const originalIndex = index + 1;
+      const locked = originalIndex > unlockedCount;
+      const doc = searchDocs.get(verb.id) ?? verbSearchDoc(verb);
+      const score = scoreVerb(verb, doc, tokens);
+      return { verb, originalIndex, locked, doc, score };
+    });
+
+    if (tokens.length === 0) return rows.sort((a, b) => a.originalIndex - b.originalIndex);
+
+    return rows
+      .filter((row) => row.score >= 0)
+      .sort((a, b) => b.score - a.score || a.originalIndex - b.originalIndex);
+  }, [searchDocs, tokens, unlockedCount, verbs]);
+
+  const predictedVerbs = useMemo(() => rankedRows.slice(0, 8), [rankedRows]);
   const filtered = useMemo(() => {
-    const rows = verbs
-      .map((verb, index) => {
-        const originalIndex = index + 1;
-        const locked = originalIndex > unlockedCount;
-        const doc = searchDocs.get(verb.id) ?? verbSearchDoc(verb);
-        const score = scoreVerb(verb, doc, tokens, scope);
-        return { verb, originalIndex, locked, doc, score };
-      })
-      .filter((row) => {
-        if (accessFilter === "unlocked" && row.locked) return false;
-        if (accessFilter === "locked" && !row.locked) return false;
-        if (tokens.length === 0) return true;
-        return row.score >= 0;
-      });
-
-    if (tokens.length > 0 && sortMode === "match") {
-      return rows.sort((a, b) => b.score - a.score || a.originalIndex - b.originalIndex);
-    }
-
-    return rows.sort((a, b) => a.originalIndex - b.originalIndex);
-  }, [accessFilter, scope, searchDocs, sortMode, tokens, unlockedCount, verbs]);
-
-  const activeFilterText = [
-    scope === "all" ? "全範囲" : scope === "basic" ? "基本のみ" : scope === "phrasal" ? "句動詞のみ" : "例文のみ",
-    accessFilter === "all" ? "全動詞" : accessFilter === "unlocked" ? "解放済み" : "未解放",
-    sortMode === "rank" ? "番号順" : "一致順",
-  ].join(" / ");
+    if (tokens.length === 0) return rankedRows;
+    return rankedRows.slice(0, 30);
+  }, [rankedRows, tokens]);
 
   return (
     <div className="space-y-4">
@@ -197,9 +226,9 @@ export default function VerbSearchList({ verbs }: { verbs: Verb[] }) {
           <div>
             <label className="flex items-center gap-2 text-sm font-bold text-cyan-100" htmlFor="verb-search">
               <span>🔍</span>
-              <span>検索BOX：動詞・日本語・句動詞・例文を横断検索</span>
+              <span>動詞検索</span>
             </label>
-            <p className="mt-1 text-xs text-muted">複数語はスペース区切りでAND検索。例：<span className="text-cyan-100">会議 start</span> / <span className="text-cyan-100">顧客 連絡</span></p>
+            <p className="mt-1 text-xs text-muted">頭文字だけで候補を表示します。例：<span className="text-cyan-100">s</span> → start / stop / send</p>
           </div>
           {query && (
             <button
@@ -218,55 +247,47 @@ export default function VerbSearchList({ verbs }: { verbs: Verb[] }) {
             id="verb-search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="例：work / 句動詞 / 見積 / 顧客 / 納期 / find out"
+            placeholder="頭文字で検索：s / st / start / 始める"
             className="block w-full bg-transparent py-2 text-base text-white outline-none placeholder:text-slate-500"
             autoComplete="off"
+            inputMode="search"
           />
         </div>
 
-        <div className="mt-3 flex flex-wrap gap-2">
-          {recommendedQueries.map((item) => (
-            <button
-              key={item}
-              type="button"
-              onClick={() => setQuery(item)}
-              className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-bold text-slate-200 hover:border-cyan-300/50 hover:text-cyan-100"
-            >
-              {item}
-            </button>
-          ))}
-        </div>
-
-        <div className="mt-4 grid gap-3 md:grid-cols-3">
-          <div>
-            <p className="mb-1 text-xs font-bold text-slate-400">検索対象</p>
-            <select value={scope} onChange={(e) => setScope(e.target.value as SearchScope)} className="w-full rounded-2xl border border-white/10 bg-slate-900 px-3 py-3 text-sm font-bold text-white outline-none">
-              <option value="all">全範囲</option>
-              <option value="basic">基本だけ</option>
-              <option value="phrasal">句動詞だけ</option>
-              <option value="examples">例文だけ</option>
-            </select>
+        {tokens.length === 0 ? (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {quickPrefixes.map((prefix) => (
+              <button
+                key={prefix}
+                type="button"
+                onClick={() => setQuery(prefix)}
+                className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-black uppercase tracking-wide text-slate-200 hover:border-cyan-300/50 hover:text-cyan-100"
+              >
+                {prefix}
+              </button>
+            ))}
           </div>
-          <div>
-            <p className="mb-1 text-xs font-bold text-slate-400">表示範囲</p>
-            <select value={accessFilter} onChange={(e) => setAccessFilter(e.target.value as AccessFilter)} className="w-full rounded-2xl border border-white/10 bg-slate-900 px-3 py-3 text-sm font-bold text-white outline-none">
-              <option value="all">全動詞</option>
-              <option value="unlocked">解放済みだけ</option>
-              <option value="locked">未解放だけ</option>
-            </select>
+        ) : (
+          <div className="mt-3 rounded-2xl border border-cyan-300/20 bg-cyan-300/5 p-3">
+            <p className="mb-2 text-xs font-bold text-cyan-100">近い候補</p>
+            <div className="flex flex-wrap gap-2">
+              {predictedVerbs.map(({ verb, locked }) => (
+                <button
+                  key={verb.id}
+                  type="button"
+                  onClick={() => setQuery(verb.word)}
+                  className="rounded-full border border-cyan-300/20 bg-slate-950 px-3 py-1.5 text-sm font-black text-white hover:border-cyan-300/60"
+                >
+                  {locked ? "🔒 " : ""}{verb.word}
+                </button>
+              ))}
+            </div>
           </div>
-          <div>
-            <p className="mb-1 text-xs font-bold text-slate-400">並び順</p>
-            <select value={sortMode} onChange={(e) => setSortMode(e.target.value as SortMode)} className="w-full rounded-2xl border border-white/10 bg-slate-900 px-3 py-3 text-sm font-bold text-white outline-none">
-              <option value="rank">番号順</option>
-              <option value="match">一致度順</option>
-            </select>
-          </div>
-        </div>
+        )}
 
         <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-muted">
           <span className="rounded-full bg-cyan-300/10 px-2 py-1 font-bold text-cyan-100">{filtered.length} / {verbs.length} 動詞</span>
-          <span>{activeFilterText}</span>
+          {tokens.length > 0 && <span>一致度が高い順に表示</span>}
         </div>
       </section>
 
@@ -315,19 +336,14 @@ export default function VerbSearchList({ verbs }: { verbs: Verb[] }) {
 
       {filtered.length === 0 && (
         <div className="card p-5 text-center">
-          <p className="text-lg font-bold text-white">該当する動詞がありません。</p>
-          <p className="mt-2 text-sm text-muted">検索対象や表示範囲を変えるか、別のキーワードで検索してください。</p>
+          <p className="text-lg font-bold text-white">近い動詞が見つかりません。</p>
+          <p className="mt-2 text-sm text-muted">頭文字だけで入れ直してみてください。例：s / st / t</p>
           <button
             type="button"
-            onClick={() => {
-              setQuery("");
-              setScope("all");
-              setAccessFilter("all");
-              setSortMode("rank");
-            }}
+            onClick={() => setQuery("")}
             className="mt-4 rounded-2xl bg-cyan-300 px-4 py-2 text-sm font-black text-slate-950"
           >
-            検索条件をリセット
+            検索をクリア
           </button>
         </div>
       )}

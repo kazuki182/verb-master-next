@@ -1,18 +1,20 @@
-# QUALITY AUDIT CURRENT
+# QUALITY AUDIT CURRENT - Ver.140
 
-Version: Ver.139 avatar local save fix
+## 対象
 
-## Fixed
+- 動詞検索BOXのシンプル化
+- 頭文字予測検索
 
-- Fixed profile image local save failure caused by unstable progress normalization/save path.
-- Added pending avatar rescue on My Page reload.
-- My Page now displays pending avatar image even when cloud upload is waiting for re-login.
-- Keeps Ver.136 scalable Storage design.
-- Keeps Ver.137 search box redesign.
-- Keeps Ver.138 cloud avatar upload flow.
+## 結果
 
-## Checks
+- npx tsc --noEmit: OK
+- npm run build: OK
+- static pages: OK
+- 追加SQL: なし
 
-- TypeScript compile: OK
-- Next build: OK
-- No new SQL required
+## 保持事項
+
+- Ver.136 scalable save/storage foundation maintained
+- Ver.137 search documents maintained internally
+- Ver.138/139 avatar save reliability fixes maintained
+- node_modules / .next / tsconfig.tsbuildinfo are excluded from ZIP

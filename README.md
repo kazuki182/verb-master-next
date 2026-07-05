@@ -1,12 +1,15 @@
 # Verb Master
 
-Current package: Ver.139 avatar local save fix.
+## Ver.140
 
-This version focuses on fixing profile image persistence on My Page.
+動詞検索BOXをスマホ向けにシンプル化。
+頭文字から近い動詞を予測して候補表示する設計に変更。
 
-## Important
+- 入力欄1つだけ
+- 1文字検索対応
+- 頭文字一致を優先
+- 近い候補チップ表示
+- セレクトBOX撤去
+- 追加SQLなし
 
-- No new SQL is required for Ver.139.
-- If Storage has not been configured yet, run `supabase/V136_SCALABLE_SAVE_STORAGE.sql` in Supabase SQL Editor.
-- Vercel must include `SUPABASE_SERVICE_ROLE_KEY` for real cloud avatar upload.
-- Even if cloud upload cannot run, Ver.139 keeps the selected image locally and restores pending images on My Page.
+保存基盤、画像保存修正、課金設計は前版から維持。

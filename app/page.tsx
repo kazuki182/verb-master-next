@@ -83,25 +83,20 @@ export default function Home() {
       setPaceVerbs(String(savedPace.verbs));
     };
 
-    // V142: クラウドを本命保存先に固定。ZIP更新後や別URLで端末キャッシュが空でも、
-    // まずクラウドセッションを確認し、復元できない状態では0/124の新規画面を出さない。
-    if (isCloudConfigured() && !hasCloudSession(user)) {
-      window.location.href = "/login";
+    // V145: ログイン認証・クラウド復元・画面表示を分離する。
+    // クラウド資格情報がない/復元に失敗しただけでログイン画面へ戻すと、
+    // 正しいID/パスワードでも締め出しになり、ユーザーには「ZIP更新で最初から」に見える。
+    // ただし保存時は cloudSync 側で空データ上書きを防止する。
+    if (isCloudConfigured() && hasCloudSession(user)) {
+      void restoreLearningDataFromSupabase(user)
+        .then(() => loadLocalState())
+        .catch(() => loadLocalState());
       return;
     }
 
-    // V135+: 先にクラウド復元を試す。
-    // 復元前に getTargetDate() や ensureProgress() の初期値を画面へ出すと、
-    // ユーザーには「ZIP更新で最初から」に見えるため、復元後にだけ表示する。
-    void restoreLearningDataFromSupabase(user)
-      .then(() => loadLocalState())
-      .catch(() => {
-        if (isCloudConfigured()) {
-          window.location.href = "/login";
-          return;
-        }
-        loadLocalState();
-      });
+    // クラウド未設定、または再ログイン待ちの場合もローカル復旧スナップショットを表示する。
+    // DataSafety/syncCurrentUserToSupabase は資格情報なしではクラウド上書きしない。
+    loadLocalState();
   }, []);
 
   if (!username || !progress) return <p className="text-muted">Loading...</p>;

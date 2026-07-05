@@ -129,11 +129,21 @@ function credentialMap(): CloudCredentialMap {
   }
 }
 
-function saveCloudCredential(username: string, passwordHash: string) {
+export function saveCloudCredential(username: string, passwordHash: string) {
   if (typeof window === "undefined") return;
+  const name = username.trim();
+  if (!name || !passwordHash) return;
   const map = credentialMap();
-  map[username] = { passwordHash, savedAt: nowText() };
+  map[name] = { passwordHash, savedAt: nowText() };
   localStorage.setItem(CLOUD_CREDENTIAL_KEY, JSON.stringify(map));
+}
+
+export async function rememberCloudCredentialFromPassword(username: string, password: string) {
+  const name = username.trim();
+  if (!name || !password) return false;
+  const passwordHash = await hashPassword(password);
+  saveCloudCredential(name, passwordHash);
+  return true;
 }
 
 function getCloudPasswordHash(username: string) {
@@ -143,6 +153,17 @@ function getCloudPasswordHash(username: string) {
 export function hasCloudSession(username?: string | null) {
   if (!username) return false;
   return Boolean(getCloudPasswordHash(username));
+}
+
+export function getCloudSessionState(username?: string | null) {
+  if (!supabase) return { configured: false, hasCredential: false, mode: "local-only" as const };
+  if (!username) return { configured: true, hasCredential: false, mode: "signed-out" as const };
+  const hasCredential = hasCloudSession(username);
+  return {
+    configured: true,
+    hasCredential,
+    mode: hasCredential ? ("cloud-ready" as const) : ("needs-reauth" as const),
+  };
 }
 
 function pendingAvatarMap(): PendingAvatarMap {
@@ -224,7 +245,7 @@ function normalizeSupabaseError(error: unknown) {
   return message;
 }
 
-async function hashPassword(password: string) {
+export async function hashPassword(password: string) {
   const text = `verb-master-v63:${password}`;
   const data = new TextEncoder().encode(text);
   const digest = await crypto.subtle.digest("SHA-256", data);
@@ -419,17 +440,19 @@ export async function loginCloudAccount(username: string, password: string) {
       message: error instanceof Error ? error.message : "クラウド復元に失敗しました。",
       status: sqlErrorStatus(error instanceof Error ? error.message : "クラウド復元に失敗しました。"),
     }));
-    if (!restored.ok) {
-      return {
-        ok: false,
-        cloudUnavailable: false,
-        message: restored.message || "クラウド復元に失敗しました。データ保護のためログインを止めました。",
-      };
-    }
+
+    // V145: authentication and restoration are related, but they must not be the same gate.
+    // A correct cloud password should open the app and keep the credential. If restore fails
+    // because SQL/RPC/network is temporarily unavailable, the app enters safe recovery mode:
+    // local cache can be shown, but empty data must not overwrite cloud data.
     return {
       ok: true,
-      message: restored.message || result.message || "クラウドログインしました。",
-      restored: true,
+      message: restored.ok
+        ? (restored.message || result.message || "クラウドログインしました。")
+        : `ログインは成功しました。クラウド復元は保留です: ${restored.message || "復元に失敗しました。"}`,
+      restored: Boolean(restored.ok && restored.changed),
+      restoreOk: Boolean(restored.ok),
+      recoveryMode: !restored.ok,
       account: { username: name, password: "", role: result.role === "admin" ? "admin" : "user", createdAt: nowText() } as Account,
     };
   } catch (error) {

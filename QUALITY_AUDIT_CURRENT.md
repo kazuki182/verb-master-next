@@ -1,17 +1,22 @@
-# QUALITY AUDIT CURRENT - Ver.143
+# QUALITY AUDIT CURRENT - Ver.145
 
-## 対象
-- ZIP更新後でもデータが初期化されない保存基盤
-- Ver.140 シンプル頭文字検索維持
-- STOP / TRY / HELP 再監査データ維持
+## Scope
 
-## 確認項目
-- localStorageを本命にしない設計へ強化
-- クラウド復元失敗時は空データを保存しない
-- クラウドの方が進んでいる場合、端末を復元してから保存
-- 端末側復旧スナップショットを最大12件保存
-- DB側RPCで単純上書き禁止、安全マージ
-- 学習記録は大きい方/和集合を採用
-- 画像・ニックネーム・目標日はupdatedAtで採用し、空値で削除しない
-- 保存履歴をeventsへ保持
-- TypeScript/build確認済み
+- Authentication / cloud restore / local recovery separation
+- ZIP update safe persistence
+- Preserve Ver.143 cloud source-of-truth protection
+- Preserve Ver.140 simple prefix search
+- Preserve SHOW / TELL / ASK re-audit data
+
+## Checks
+
+- Login success is no longer blocked only because restore failed.
+- Home no longer redirects to login solely because cloud credential is missing.
+- Missing cloud credential does not trigger cloud overwrite.
+- Local verified account can enter recovery mode.
+- A derived cloud credential is kept after a valid local login to allow later restore/sync recovery.
+- Cloud account creation is attempted after valid local login when cloud account is missing.
+- Empty local data overwrite protection remains in cloudSync and Supabase RPC.
+- `npx tsc --noEmit`: OK
+- `npm run build`: OK, static pages 27/27
+- Additional SQL: none

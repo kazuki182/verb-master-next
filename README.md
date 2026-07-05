@@ -1,33 +1,29 @@
-# Verb Master Ver.143
+# Verb Master Ver.145
 
-デプロイ更新に強い保存基盤版です。
+This package fixes the relationship between login, cloud restore, and persistence.
 
-## 重要
-この版は、ZIP更新・Vercel再デプロイ・Preview URL変更・端末キャッシュ消失が起きても、クラウドの本命データを守るための修正版です。
+## Main change
 
-## 必須作業
-Supabase SQL Editorで次を実行してください。
+Authentication, restore, and save are now handled as separate states:
 
-```text
-supabase/V143_DEPLOY_SAFE_PERSISTENCE_SYSTEM.sql
-```
+1. Login can succeed even if cloud restore is temporarily unavailable.
+2. Cloud restore is tried when possible.
+3. Cloud save is blocked if credentials are missing.
+4. Empty local data must not overwrite real cloud data.
+5. Local recovery snapshots remain available after ZIP updates.
 
-## 保存設計
+## Preserved
 
-- `user_progress_backups` = 本命データ
-- `localStorage` = 一時キャッシュ
-- `user_progress_backup_events` = ロールバック用履歴
-- 端末内にも復旧スナップショットを最大12件保持
-- 既存クラウドデータを端末の空データで上書きしない
-- DB側でも安全マージして学習記録を後退させない
+- Ver.143 deploy-safe persistence design
+- Ver.140 simple prefix search
+- Ver.136 Storage avatar design
+- SHOW / TELL / ASK re-audit content
 
-## 確認手順
+## SQL
 
-1. ZIPをGitHubへ上書き
-2. Vercel Ready確認
-3. Supabase SQL EditorでV143 SQLを実行
-4. 既存ユーザーでログイン
-5. 学習・画像・ニックネーム・目標日を変更
-6. 画面更新
-7. ログアウト→再ログイン
-8. もう一度ZIP更新しても0/124へ戻らないか確認
+No new SQL is required for Ver.145.
+
+If not already done, run:
+
+- `supabase/V143_DEPLOY_SAFE_PERSISTENCE_SYSTEM.sql`
+- `supabase/V136_SCALABLE_SAVE_STORAGE.sql` for avatar Storage

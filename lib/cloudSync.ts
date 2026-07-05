@@ -53,9 +53,11 @@ export type CloudBackupComparison = {
 };
 
 const CLOUD_CREDENTIAL_KEY = "verbMaster.cloudCredentials";
+const PENDING_AVATAR_KEY = "verbMaster.pendingAvatarUploads";
 const CLOUD_SQL_HINT = "Supabase SQLが未実行、または保存用RPCが見つかりません。supabase/V136_SCALABLE_SAVE_STORAGE.sql をSupabase SQL Editorで実行してください。";
 
 type CloudCredentialMap = Record<string, { passwordHash: string; savedAt: string }>;
+type PendingAvatarMap = Record<string, { avatarDataUrl: string; savedAt: string }>;
 type BackupRow = {
   progress_json?: Partial<UserProgress> | null;
   settings_json?: ClientStudySettingsSnapshot | null;
@@ -135,6 +137,41 @@ function getCloudPasswordHash(username: string) {
 export function hasCloudSession(username?: string | null) {
   if (!username) return false;
   return Boolean(getCloudPasswordHash(username));
+}
+
+function pendingAvatarMap(): PendingAvatarMap {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(localStorage.getItem(PENDING_AVATAR_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function savePendingAvatarMap(map: PendingAvatarMap) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(PENDING_AVATAR_KEY, JSON.stringify(map));
+}
+
+export function savePendingAvatarForCloud(username: string, avatarDataUrl: string) {
+  if (!username || !avatarDataUrl || typeof window === "undefined") return;
+  const map = pendingAvatarMap();
+  map[username] = { avatarDataUrl, savedAt: nowText() };
+  savePendingAvatarMap(map);
+}
+
+export function getPendingAvatarForCloud(username?: string | null) {
+  if (!username) return null;
+  return pendingAvatarMap()[username] || null;
+}
+
+export function clearPendingAvatarForCloud(username?: string | null) {
+  if (!username || typeof window === "undefined") return;
+  const map = pendingAvatarMap();
+  if (map[username]) {
+    delete map[username];
+    savePendingAvatarMap(map);
+  }
 }
 
 function missingCredentialStatus(): CloudSyncStatus {
@@ -544,6 +581,16 @@ export async function uploadAvatarToSupabase(username: string, avatarDataUrl?: s
   } catch (error) {
     return { ok: false, url: "", path: "", message: error instanceof Error ? error.message : "画像のクラウド保存に失敗しました。前の画像は維持されています。" };
   }
+}
+
+export async function flushPendingAvatarToCloud(username: string) {
+  const pending = getPendingAvatarForCloud(username);
+  if (!pending?.avatarDataUrl) {
+    return { ok: false, url: "", path: "", message: "未送信の画像はありません。" };
+  }
+  const result = await uploadAvatarToSupabase(username, pending.avatarDataUrl);
+  if (result.ok) clearPendingAvatarForCloud(username);
+  return { ...result, pendingSavedAt: pending.savedAt };
 }
 
 export async function restorePremiumFromSupabase(username: string) {

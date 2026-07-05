@@ -23,8 +23,13 @@ import DataBackupPanel from "@/components/DataBackupPanel";
 import {
   CLOUD_SYNC_EVENT,
   getCloudBackupComparison,
+  clearPendingAvatarForCloud,
+  flushPendingAvatarToCloud,
   getCloudReadiness,
+  getPendingAvatarForCloud,
+  hasCloudSession,
   restoreLearningDataFromSupabase,
+  savePendingAvatarForCloud,
   syncCurrentUserToSupabase,
   uploadAvatarToSupabase,
   verifyCloudBackup,
@@ -118,9 +123,22 @@ export default function ProfilePage() {
   const [showSaveDetails, setShowSaveDetails] = useState(false);
   const [isEditingName, setIsEditingName] = useState(false);
   const fileRef = useRef<HTMLInputElement | null>(null);
+  const pendingAvatarFlushRef = useRef(false);
 
   const reload = () => {
-    const next = getCurrentProgress();
+    let next = getCurrentProgress();
+    const activeUsername = next?.username || getCurrentUsername() || "";
+    const pendingAvatar = getPendingAvatarForCloud(activeUsername);
+    // Ver.139: 以前の保存不具合でprogress側の画像が空になっても、未送信画像から即復旧する。
+    if (next && !next.avatarDataUrl && !next.avatarUrl && pendingAvatar?.avatarDataUrl) {
+      next = updateUserProfile({
+        avatarDataUrl: pendingAvatar.avatarDataUrl,
+        avatarUrl: "",
+        avatarPath: "",
+        avatarUpdatedAt: pendingAvatar.savedAt,
+        avatarStorageProvider: "legacy-data-url",
+      }) || next;
+    }
     setProgress(next);
     setRanking(getAllProgress());
     setDisplayNameDraft(next?.displayName || next?.username || "");
@@ -166,6 +184,36 @@ export default function ProfilePage() {
     await refreshBackupComparison(target.username);
     return result;
   };
+
+  useEffect(() => {
+    if (!username || pendingAvatarFlushRef.current || !hasCloudSession(username)) return;
+    const pending = getPendingAvatarForCloud(username);
+    if (!pending?.avatarDataUrl) return;
+    pendingAvatarFlushRef.current = true;
+    let cancelled = false;
+    (async () => {
+      setProfileMessage("未送信のプロフィール画像をクラウド保存中です...");
+      const uploaded = await flushPendingAvatarToCloud(username);
+      if (cancelled) return;
+      if (uploaded.ok && uploaded.url) {
+        const updated = updateUserProfile({
+          avatarDataUrl: uploaded.url,
+          avatarUrl: uploaded.url,
+          avatarPath: uploaded.path,
+          avatarUpdatedAt: String((uploaded as { updatedAt?: string }).updatedAt || new Date().toISOString()),
+          avatarStorageProvider: "supabase-storage",
+        });
+        setProgress(updated);
+        if (updated) await syncToSupabase(updated);
+        setProfileMessage("未送信だった画像をクラウド保存しました");
+        setTimeout(() => setProfileMessage(""), 2600);
+      } else {
+        pendingAvatarFlushRef.current = false;
+        setProfileMessage(uploaded.message || "未送信画像のクラウド保存に失敗しました。端末内画像は残しています。");
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [username]);
 
   const restoreFromSupabase = async () => {
     if (!username) return;
@@ -243,13 +291,36 @@ export default function ProfilePage() {
       return;
     }
     try {
-      setProfileMessage("画像を保存中です...");
+      setProfileMessage("画像を端末に反映しています...");
       const result = await resizeAvatarImage(file);
-      const uploaded = await uploadAvatarToSupabase(username || "", result);
-      if (!uploaded.ok || !uploaded.url) {
-        setProfileMessage(uploaded.message || "画像のクラウド保存に失敗しました。前の画像は維持されています。");
+      if (!username) {
+        setProfileMessage("ログイン情報を確認できません。ログインし直してください。");
         return;
       }
+
+      // Ver.138: 先に端末へ安全保存して、クラウド保存失敗時でも画像が消えないようにする。
+      const localUpdated = updateUserProfile({
+        avatarDataUrl: result,
+        avatarUrl: "",
+        avatarPath: "",
+        avatarUpdatedAt: new Date().toISOString(),
+        avatarStorageProvider: "legacy-data-url",
+      });
+      setProgress(localUpdated);
+      savePendingAvatarForCloud(username, result);
+
+      if (!hasCloudSession(username)) {
+        setProfileMessage("画像は端末に保存しました。クラウド保存には一度ログインし直してください。再ログイン後に自動保存します。");
+        return;
+      }
+
+      setProfileMessage("画像をクラウド保存中です...");
+      const uploaded = await uploadAvatarToSupabase(username, result);
+      if (!uploaded.ok || !uploaded.url) {
+        setProfileMessage((uploaded.message || "画像のクラウド保存に失敗しました。") + " 画像は端末に残し、次回ログイン後に再送信します。");
+        return;
+      }
+      clearPendingAvatarForCloud(username);
       const updated = updateUserProfile({
         avatarDataUrl: uploaded.url,
         avatarUrl: uploaded.url,
@@ -258,12 +329,12 @@ export default function ProfilePage() {
         avatarStorageProvider: "supabase-storage",
       });
       setProgress(updated);
-      setProfileMessage(uploaded.oldAvatarDeleted ? "画像を保存し、前の画像を削除しました" : "画像をクラウド保存しました");
+      setProfileMessage(uploaded.oldAvatarDeleted ? "画像保存OK：前の画像も削除済み" : "画像をクラウド保存しました");
       if (updated) {
         const syncResult = await syncToSupabase(updated);
         setProfileMessage(syncResult.stats === "saved" ? (uploaded.oldAvatarDeleted ? "画像保存OK：前の画像も削除済み" : "画像をクラウド保存しました") : syncResult.message);
       }
-      setTimeout(() => setProfileMessage(""), 2400);
+      setTimeout(() => setProfileMessage(""), 2600);
     } catch (error) {
       setProfileMessage(error instanceof Error ? error.message : "画像の保存に失敗しました");
     }
@@ -309,6 +380,9 @@ export default function ProfilePage() {
   const cloudBadge = cloudStatusBadge(cloudStatus, cloudSyncing);
   const restoreRecommended = backupComparison?.recommendation === "restore_remote";
 
+  const pendingAvatar = getPendingAvatarForCloud(username);
+  const avatarSrc = progress.avatarDataUrl || progress.avatarUrl || pendingAvatar?.avatarDataUrl || "";
+
   return (
     <div className="space-y-5 pb-24">
       <header className="space-y-1">
@@ -324,10 +398,10 @@ export default function ProfilePage() {
             type="button"
             aria-label="プロフィール画像を変更"
           >
-            {progress.avatarDataUrl ? (
+            {avatarSrc ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
-                src={progress.avatarDataUrl}
+                src={avatarSrc}
                 alt="プロフィール画像"
                 className="h-full w-full object-cover"
               />
@@ -521,10 +595,10 @@ export default function ProfilePage() {
         {showSaveDetails && (
           <div className="mt-3 space-y-3">
             <div className="grid grid-cols-2 gap-2 text-center text-xs">
-              <div className="rounded-xl bg-slate-950/70 p-3">プロフィール<br /><b>{cloudLabel("profile", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
-              <div className="rounded-xl bg-slate-950/70 p-3">画像<br /><b>{cloudLabel("avatar", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
-              <div className="rounded-xl bg-slate-950/70 p-3">Premium<br /><b>{cloudLabel("premium", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
-              <div className="rounded-xl bg-slate-950/70 p-3">学習記録<br /><b>{cloudLabel("stats", cloudStatus, Boolean(progress.avatarDataUrl))}</b></div>
+              <div className="rounded-xl bg-slate-950/70 p-3">プロフィール<br /><b>{cloudLabel("profile", cloudStatus, Boolean(avatarSrc))}</b></div>
+              <div className="rounded-xl bg-slate-950/70 p-3">画像<br /><b>{cloudLabel("avatar", cloudStatus, Boolean(avatarSrc))}</b></div>
+              <div className="rounded-xl bg-slate-950/70 p-3">Premium<br /><b>{cloudLabel("premium", cloudStatus, Boolean(avatarSrc))}</b></div>
+              <div className="rounded-xl bg-slate-950/70 p-3">学習記録<br /><b>{cloudLabel("stats", cloudStatus, Boolean(avatarSrc))}</b></div>
               <div className="rounded-xl bg-slate-950/70 p-3">音声・設定<br /><b>{cloudStatus?.stats === "saved" ? "保存対象" : cloudStatus?.configured ? "待機" : "端末内"}</b></div>
             </div>
 

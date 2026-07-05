@@ -486,7 +486,7 @@ function saveProgressMap(map: Record<string, UserProgress>) {
   localStorage.setItem(PROGRESS_KEY, JSON.stringify(map));
 }
 
-function normalizeProgress(progress: UserProgress) {
+function normalizeProgress(progress: UserProgress): UserProgress {
   if (!progress.weakItems) progress.weakItems = [];
   if (!progress.reviewItems) progress.reviewItems = {};
   if (!progress.sectionClearIds) progress.sectionClearIds = [];

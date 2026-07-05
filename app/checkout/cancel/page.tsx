@@ -19,8 +19,6 @@ export default function CheckoutCancelPage() {
           <Link className="btn btn-soft block text-center" href="/profile">マイページへ戻る</Link>
         </div>
       </section>
-
-      <p className="text-center text-xs text-muted">Verb Master Version 72</p>
     </div>
   );
 }

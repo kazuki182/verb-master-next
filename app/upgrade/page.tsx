@@ -73,7 +73,7 @@ export default function UpgradePage() {
         <p className="text-sm font-bold text-cyan-200">UPGRADE / PREMIUM</p>
         <h1 className="mt-2 text-3xl font-black">Premium</h1>
         <p className="mt-2 text-sm text-slate-300">
-          Ver.73では、30・60・90・120の段階課金に合わせて、動詞データを120語まで完成し、Ver.82で仕事向け追加4語を加えました。
+          30・60・90・120の段階課金に合わせて、仕事で使う基本動詞を124語まで学習できます。
           91番以降は、120語パック対象として学習できます。
         </p>
       </header>
@@ -116,7 +116,7 @@ export default function UpgradePage() {
           <div className="rounded-2xl bg-paper p-4"><b>Step 1</b><br />4〜30番：最初の課金で残り27動詞を解放</div>
           <div className="rounded-2xl bg-paper p-4"><b>Step 2</b><br />31〜60番：仕事と日常で使う基本動詞を拡張</div>
           <div className="rounded-2xl bg-paper p-4"><b>Step 3</b><br />61〜90番：主要動詞90語まで解放</div>
-          <div className="rounded-2xl border border-amber-300/25 bg-amber-950/20 p-4 text-amber-100"><b>Step 4</b><br />91番以降：120語パック対象。Ver.82で追加4語を含めて124語まで確認できます。</div>
+          <div className="rounded-2xl border border-amber-300/25 bg-amber-950/20 p-4 text-amber-100"><b>Step 4</b><br />91番以降：120語パック対象。124語まで確認できます。</div>
         </div>
       </section>
 

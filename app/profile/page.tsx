@@ -38,8 +38,6 @@ import {
   type CloudSyncStatus,
 } from "@/lib/cloudSync";
 
-const VERSION = "Version 88";
-
 function sumWeeklyMinutes(progress: UserProgress) {
   return Object.values(progress.weeklyStats || {}).reduce(
     (sum, stat) => sum + (stat.studyMinutes || 0),
@@ -467,8 +465,6 @@ export default function ProfilePage() {
                 </div>
               </div>
             )}
-            {profileMessage && <p className="mt-2 text-sm font-bold text-cyan-100">✅ {profileMessage}</p>}
-
             <div className="profile-summary-row">
               <span className="profile-summary-chip">Lv <strong>{progress.level}</strong></span>
               <span className="profile-summary-chip">XP <strong>{progress.xp}</strong></span>
@@ -552,6 +548,7 @@ export default function ProfilePage() {
         </div>
       </section>
 
+      {isAdmin && (
       <section className="rounded-2xl border border-cyan-300/15 bg-slate-900/45 p-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
@@ -669,6 +666,8 @@ export default function ProfilePage() {
           </div>
         )}
       </section>
+      )}
+
 
       <section className="card p-5">
         <h2 className="text-xl font-bold">設定</h2>
@@ -682,7 +681,7 @@ export default function ProfilePage() {
             通知設定：{progress.notificationsEnabled ? "ON" : "OFF"}
             <p className="mt-1 text-sm font-normal text-muted">通知機能は今後の実装準備です。</p>
           </button>
-          <DataBackupPanel />
+          {isAdmin && <DataBackupPanel />}
           {isAdmin && <Link className="rounded-2xl bg-paper p-4 font-bold" href="/admin">管理画面</Link>}
         </div>
       </section>
@@ -691,57 +690,6 @@ export default function ProfilePage() {
 
       {/* Ver.88: 獲得バッジの詳細はHOMEレベルカードの下から出るシートへ統合。 */}
 
-{isAdmin && (
-      <section className="card p-5">
-        <h2 className="text-xl font-bold">アップデート履歴</h2>
-        <div className="mt-4 space-y-3 text-sm">
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.88</p><p className="mt-1 text-muted">保存失敗表示を学習記録本体と補助データで分離。HOMEのプロフィールアイコンとXP表示を改善し、次のレベルまでのXPを追加。獲得バッジはHOMEレベルカードに統合し、タップで下から詳細シートを開く形にしました。マイページのプロフィールにPremium状態と解放範囲も追加。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.87</p><p className="mt-1 text-muted">HOME上部をプロフィール＋レベルカードに統合。マイページのニックネーム、アイコン、レベル、リーグ、XP、連続学習、バッジをHOMEで見やすく整理し、主要機能は下部ナビに集約しました。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.86</p><p className="mt-1 text-muted">管理者専用の動詞品質チェックページを追加。使い方数、例文数、Premium日常例文、大文字表記、仮文、テスト日本語、構造データの確認状態を一覧で見られるようにしました。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.85</p><p className="mt-1 text-muted">PCとスマホ間の目標日同期を改善。HOMEの使い方ガイドカードを削除し、レベル欄へバッジを移動。Streakを連続学習に日本語化し、保存状態の表示も学習記録中心に整理しました。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.84</p><p className="mt-1 text-muted">テスト途中保存を見える化。単語別テスト画面に途中保存カードを追加し、テスト完了後も何回でもランダム10問を受け直せるようにしました。完了ボーナスも毎回加算されます。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.83</p><p className="mt-1 text-muted">アップデート履歴を管理者だけに表示。一般ユーザー向けには、任意でHOMEに1行の新着ニュースだけを出せるように整理しました。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.82</p><p className="mt-1 text-muted">仕事で使う頻度が高い negotiate / remind / require / select を単純追加。120語パック購入者向けの追加教材として124語まで学習できるようにし、動詞選定は大人の日本語文から逆算する方針を継続します。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.81</p><p className="mt-1 text-muted">マイページの保存状態をユーザー向けに簡素化。通常は自動保存と最終保存時刻だけ表示し、クラウド保存・復元・保存テストなどの詳細操作は折りたたみ内に整理しました。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.80</p><p className="mt-1 text-muted">HOMEのダッシュボードを簡素化。登録動詞・習得済み・残り・目標日・学習日数・バッジだけに絞り、スマホで見やすくしました。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.79</p><p className="mt-1 text-muted">SV/SVO/SVC/SVOCなどの構造ラベルは、全例文を手動監査するまでユーザー画面から一旦非表示にしました。誤った構造で覚えてしまうリスクを避けるための品質優先対応です。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.78</p><p className="mt-1 text-muted">例文・テスト日本語の品質を改善。不自然な自動生成文を削除し、主語・時制・目的語が分かる日本語へ調整。START / SHOW / RUNなどの句動詞例文も仕事向けの自然な表現に修正しました。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.77</p><p className="mt-1 text-muted">120語の品質監査を開始。重複動詞を解消し、reply / schedule / submit / respond / inform / verify / gather / propose へ差し替え。borrowは残し、SV/SVOや前置詞句の扱いをダブルチェックしました。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.76</p><p className="mt-1 text-muted">プロフィール画像をSupabase Storageへ保存・復元しやすくし、更新時に画像URLを空で上書きしない保護を追加。型表示の英語大文字を自然な小文字表記へ統一する下準備も追加。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.75</p><p className="mt-1 text-muted">HOMEの学習ダッシュボードを現在の解放パックに連動。無料は3語、30/60/90/120語パックでは各解放語数を学習対象として、習得済み・残り・必要ペースを計算するよう修正。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.74</p><p className="mt-1 text-muted">右側の↑↓スクロールボタンが下部ナビに被って押せない問題を修正。スマホで押しやすい位置とサイズに調整しました。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.73</p><p className="mt-1 text-muted">動詞を120語まで拡張。adjust / apply / approve / borrow / check / collect / communicate / describe / earn / estimate / focus / identify / introduce / join / lead / maintain / mention / protect / replace / train を追加し、120語パックを実データ化。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.72</p><p className="mt-1 text-muted">120語パック準備版。91〜100番を120語パック先行収録として表示し、30 / 60 / 90 / 120の段階解放、ロック表示、購入画面の説明を整理。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.71</p><p className="mt-1 text-muted">動詞を100語へ拡張。achieve / arrange / attend / cancel / connect / contact / control / handle / organize / share を追加し、91〜100番を120動詞パック側の教材として整備。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.69</p><p className="mt-1 text-muted">動詞を90語へ拡張。accept / avoid / consider / depend / expect / follow / include / notice / prefer / recommend を追加し、構造・例文・テスト文を社会人向けに整備。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.68</p><p className="mt-1 text-muted">テストを最大10問に整理。未出題・苦手・復習対象・最近やっていない問題を優先して、出題バランスと終了後の復習案内を改善。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.67</p><p className="mt-1 text-muted">初回ログイン時の復元判断と空データ上書き防止を強化。端末データとクラウドデータの比較表示を追加。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.66</p><p className="mt-1 text-muted">クラウドバックアップを優先する保存/復元へ修正。補助テーブル未作成でも学習データ本体を守り、クラウド保存テストを追加。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.65</p><p className="mt-1 text-muted">クラウド同期状態をユーザー向けに表示。手動保存・復元ボタン、最終同期時間、プライベート閲覧時の注意を追加。</p></div>
-<div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.64</p><p className="mt-1 text-muted">スマホ下部ナビを拡大。下部固定を強化し、横スワイプできるタブバーへ改善。</p></div>
-                    <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.62</p><p className="mt-1 text-muted">学習データ保護版。自動クラウド同期、Supabase復元、JSONバックアップ書き出し/復元、プライベート閲覧の注意表示を追加。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.61</p><p className="mt-1 text-muted">80動詞品質完成版。テストの戻る操作、学習ペース数字入力、構造品質ルール、教材データ監査メモを改善。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.60</p><p className="mt-1 text-muted">動詞データを80語まで拡張。REQUEST / SUGGEST / AGREE / ARRANGE / CONTACT など実務で使う動詞を追加。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.59</p><p className="mt-1 text-muted">動詞データを70語まで拡張。REPORT / UPDATE / REVIEW / COMPARE / INTRODUCE を追加。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.58</p><p className="mt-1 text-muted">動詞データを60語まで拡張。仕事で使いやすい自然な例文、主語が分かる日本語訳、構造表示の方針を追加。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.57</p><p className="mt-1 text-muted">GETの構造表示、例文品質、テスト音声、ランダム10問、途中保存、戻る機能、数字入力を改善。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.56</p><p className="mt-1 text-muted">ダッシュボードから見られる使い方ガイドを追加。各機能の目的と使い方をまとめました。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.55</p><p className="mt-1 text-muted">学習ペースと目標日を編集モード式に変更。保存ボタンは編集時だけ表示し、保存後は設定内容だけを表示。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.54</p><p className="mt-1 text-muted">学習ペースと目標日の編集をボタン式にして、保存後は画面がスマートに戻るように改善。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.53</p><p className="mt-1 text-muted">ホーム右上アイコン、ニックネーム編集、マイページのデータ保存表示をスマート化。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.52</p><p className="mt-1 text-muted">スマホ下タブ、マイページ表示、クラウド保存状態、学習ペース説明を改善。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.51</p><p className="mt-1 text-muted">Stripe Webhook、決済反映、キャンセルページの準備を追加。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.50</p><p className="mt-1 text-muted">Stripe決済モード、決済設定確認、管理画面の決済タブを追加。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.49</p><p className="mt-1 text-muted">購入確認、仮購入完了、購入履歴反映の導線を追加。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.48</p><p className="mt-1 text-muted">購入履歴、購入状態復元、Premium安全確認を追加。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.47</p><p className="mt-1 text-muted">無料/Premiumロック判定の土台を追加。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.46</p><p className="mt-1 text-muted">Supabase保存、Storage画像、Premium状態管理の土台を追加。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.45</p><p className="mt-1 text-muted">マイページ強化、プロフィール画像、ニックネーム変更、学習記録整理。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.44</p><p className="mt-1 text-muted">下タブ整理、アップグレードページ、Premium土台。</p></div>
-          <div className="rounded-2xl bg-paper p-4"><p className="font-bold">Ver.43</p><p className="mt-1 text-muted">管理画面の土台を追加。</p></div>
-        </div>
-      </section>
-      )}
 
       <section className="card p-5">
         <h2 className="text-xl font-bold">XPランキング</h2>
@@ -754,8 +702,6 @@ export default function ProfilePage() {
           ))}
         </div>
       </section>
-
-      <p className="pb-4 text-center text-xs text-muted">Verb Master {VERSION}</p>
     </div>
   );
 }

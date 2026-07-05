@@ -307,9 +307,6 @@ export default function PurchaseHistoryPage() {
       <Link className="btn btn-soft block text-center" href="/profile">
         マイページへ戻る
       </Link>
-      <p className="pb-4 text-center text-xs text-muted">
-        Verb Master Version 48
-      </p>
     </div>
   );
 }

@@ -1,17 +1,25 @@
-# QUALITY_AUDIT_CURRENT
+# QUALITY AUDIT CURRENT
 
-## Ver.147 CALL / RUN / LEAVE 再監査 final
+## Ver.148 MOVE / TURN / BRING Re-audit Final
 
-- 対象動詞: CALL / RUN / LEAVE
-- CALL 句動詞: 8個
-- RUN 句動詞: 10個
-- LEAVE 句動詞: 8個
-- collocations: 3語とも空に整理
-- 基本の赤文字: 動詞のみ
-- 句動詞の赤文字: 動詞 + 前置詞/副詞のみ
-- 目的語は赤文字対象外
-- Ver.145 ログイン・復元・保存基盤を維持
-- Ver.146 ユーザー画面クリーンアップを維持
-- Ver.140 シンプル頭文字検索を維持
-- npx tsc --noEmit: OK
-- npm run build: OK / static pages 27/27
+- Base: Ver.147 CALL / RUN / LEAVE re-audit final
+- Target verbs: MOVE / TURN / BRING
+- Category policy: 基本 / 句動詞 only
+- collocations: empty for target verbs
+- Persistence: Ver.145 auth/restore/save system preserved
+- User UI cleanup: Ver.146 preserved
+- Search: Ver.140 simple prefix search preserved
+
+## Phrasal verb counts
+
+- MOVE: 9
+- TURN: 10
+- BRING: 10
+
+## Checks
+
+- Basic focus: verb only
+- Phrasal focus: verb + particle/preposition only
+- Object highlight: excluded
+- TypeScript: OK
+- Build: OK

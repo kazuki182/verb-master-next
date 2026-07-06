@@ -7619,7 +7619,7 @@ export const verbs: Verb[] = [
     }
   ]
 },
-  {
+    {
     "id": "move",
     "rank": 31,
     "word": "MOVE",
@@ -7629,90 +7629,343 @@ export const verbs: Verb[] = [
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 重要",
     "core": "人・物・予定・状況を別の位置や段階へ動かす",
-    "coreDetail": "MOVEは、物理的に移動するだけでなく、会議や締切を変更する、案件を前に進める、気持ちを動かす時にも使います。仕事では日程調整・データ移行・案件進行で特に重要です。",
-    "coreVisual": { "from": ["📦 物", "📅 予定", "💾 データ", "📈 案件", "😊 気持ち"], "to": "➡️ 別の場所・時間・段階", "label": "動かして移す" },
+    "coreDetail": "MOVEは、物理的に移動するだけでなく、会議や締切を変更する、案件を前に進める、データを移す時にも使います。仕事では日程調整・データ移行・案件進行で特に重要です。",
+    "coreVisual": {
+      "from": [
+        "📦 物",
+        "📅 予定",
+        "💾 データ",
+        "📈 案件",
+        "👤 人"
+      ],
+      "to": "別の場所・時間・段階",
+      "label": "位置や状態を動かす"
+    },
     "meanings": [
-      { "id": "move-object", "title": "1 物を移動する", "pattern": "move + 物", "transitivity": "他動詞", "structure": "基本", "image": "物を別の場所へ動かす。", "point": "ファイル・在庫・サンプルなどを移動する時に使います。", "examples": [
-        { "en": "Please move the files to the shared folder.", "ja": "ファイルを共有フォルダに移動してください。", "focus": "move", "object": "the files" },
-        { "en": "We moved the stock to another warehouse.", "ja": "私たちは在庫を別の倉庫に移動しました。", "focus": "moved", "object": "the stock" },
-        { "en": "Can you move the samples to the meeting room?", "ja": "サンプルを会議室に移動してもらえますか？", "focus": "move", "object": "the samples" }
-      ] },
-      { "id": "move-place", "title": "2 人・拠点が移る", "pattern": "move to + 場所", "transitivity": "自動詞", "structure": "基本", "image": "人や拠点が別の場所へ移る。", "point": "会社・部署・住居の移動に使えます。", "examples": [
-        { "en": "Our office will move to a new building next month.", "ja": "私たちのオフィスは来月、新しいビルに移転します。", "focus": "move" },
-        { "en": "He moved to the sales department last year.", "ja": "彼は昨年、営業部へ異動しました。", "focus": "moved" },
-        { "en": "The team moved to a larger workspace.", "ja": "チームはより広い作業スペースへ移りました。", "focus": "moved" }
-      ] },
-      { "id": "move-schedule", "title": "3 予定を変更する", "pattern": "move + 予定 + to + 時間", "transitivity": "他動詞", "structure": "基本", "image": "予定を別の日時へ動かす。", "point": "move the meeting to Friday は仕事で頻出です。", "examples": [
-        { "en": "Can we move the meeting to Friday?", "ja": "会議を金曜日に変更できますか？", "focus": "move", "object": "the meeting" },
-        { "en": "We moved the deadline to next week.", "ja": "私たちは締切を来週に変更しました。", "focus": "moved", "object": "the deadline" },
-        { "en": "Please move the call to the afternoon.", "ja": "電話会議を午後に変更してください。", "focus": "move", "object": "the call" }
-      ] },
-      { "id": "move-data", "title": "4 データ・仕組みを移す", "pattern": "move + データ + to + 場所", "transitivity": "他動詞", "structure": "基本", "image": "情報や仕組みを別の場所へ移す。", "point": "システム移行・ファイル移動で使います。", "examples": [
-        { "en": "We need to move the data to the new system.", "ja": "私たちはデータを新しいシステムへ移行する必要があります。", "focus": "move", "object": "the data" },
-        { "en": "The IT team moved the customer records to a secure server.", "ja": "ITチームは顧客記録を安全なサーバーへ移行しました。", "focus": "moved", "object": "the customer records" },
-        { "en": "Please move the latest version to the production folder.", "ja": "最新版を本番用フォルダへ移動してください。", "focus": "move", "object": "the latest version" }
-      ] },
-      { "id": "move-emotion", "title": "5 心を動かす", "pattern": "move + 人", "transitivity": "他動詞", "structure": "基本", "image": "相手の気持ちを動かす。", "point": "be moved by の形もよく使います。", "examples": [
-        { "en": "The customer was moved by our quick support.", "ja": "顧客は私たちの素早いサポートに感動しました。", "focus": "moved" },
-        { "en": "Her story moved everyone in the meeting.", "ja": "彼女の話は会議にいた全員の心を動かしました。", "focus": "moved", "object": "everyone" },
-        { "en": "A sincere apology can move the client.", "ja": "誠実な謝罪は顧客の心を動かすことがあります。", "focus": "move", "object": "the client" }
-      ] }
+      {
+        "id": "move-object",
+        "title": "① 物・データを移動する",
+        "pattern": "move + 物",
+        "transitivity": "他動詞",
+        "structure": "S + move + O",
+        "image": "物やデータを別の場所へ動かすイメージ。",
+        "point": "ファイル・在庫・サンプル・データ移行でよく使います。",
+        "examples": [
+          {
+            "en": "Please move the file to the shared folder.",
+            "ja": "ファイルを共有フォルダに移動してください。",
+            "focus": "move",
+            "object": "the file"
+          },
+          {
+            "en": "We moved the product to another warehouse.",
+            "ja": "私たちは商品を別の倉庫へ移しました。",
+            "focus": "moved",
+            "object": "the product"
+          },
+          {
+            "en": "The team moved the data to the new system.",
+            "ja": "チームはデータを新しいシステムへ移しました。",
+            "focus": "moved",
+            "object": "the data"
+          }
+        ]
+      },
+      {
+        "id": "move-schedule",
+        "title": "② 予定・締切を変更する",
+        "pattern": "move + 予定/締切",
+        "transitivity": "他動詞",
+        "structure": "S + move + O",
+        "image": "予定を別の日時へ動かすイメージ。",
+        "point": "move the meeting / move the deadline は仕事で頻出です。",
+        "examples": [
+          {
+            "en": "Can we move the meeting to Friday?",
+            "ja": "会議を金曜日に変更できますか？",
+            "focus": "move",
+            "object": "the meeting"
+          },
+          {
+            "en": "We moved the deadline to next week.",
+            "ja": "私たちは締切を来週に変更しました。",
+            "focus": "moved",
+            "object": "the deadline"
+          },
+          {
+            "en": "Please move the call to the afternoon.",
+            "ja": "電話会議を午後に変更してください。",
+            "focus": "move",
+            "object": "the call"
+          }
+        ]
+      },
+      {
+        "id": "move-forward-basic",
+        "title": "③ 案件・作業を進める",
+        "pattern": "move + 仕事/案件",
+        "transitivity": "他動詞・自動詞",
+        "structure": "S + move",
+        "image": "物事が次の段階へ進むイメージ。",
+        "point": "句動詞のmove forwardとは分け、基本側ではmove自体の『動く・進む』感覚を扱います。",
+        "examples": [
+          {
+            "en": "We need to move quickly on this project.",
+            "ja": "私たちはこの案件で素早く動く必要があります。",
+            "focus": "move"
+          },
+          {
+            "en": "The project moved to the next phase.",
+            "ja": "その案件は次の段階へ進みました。",
+            "focus": "moved"
+          },
+          {
+            "en": "This decision will move the plan in the right direction.",
+            "ja": "この判断は計画を正しい方向へ進めます。",
+            "focus": "move",
+            "object": "the plan"
+          }
+        ]
+      },
+      {
+        "id": "move-place",
+        "title": "④ 人・拠点が移る",
+        "pattern": "move to + 場所",
+        "transitivity": "自動詞",
+        "structure": "S + move + M",
+        "image": "人や拠点が別の場所へ移るイメージ。",
+        "point": "部署異動・移転・引っ越しで使います。",
+        "examples": [
+          {
+            "en": "Our office will move to a new building next month.",
+            "ja": "私たちのオフィスは来月、新しいビルへ移転します。",
+            "focus": "move"
+          },
+          {
+            "en": "He moved to the sales department last year.",
+            "ja": "彼は昨年、営業部へ異動しました。",
+            "focus": "moved"
+          },
+          {
+            "en": "The team moved to a larger workspace.",
+            "ja": "チームはより広い作業スペースへ移りました。",
+            "focus": "moved"
+          }
+        ]
+      }
     ],
     "collocations": [],
     "phrasalVerbs": [
-      { "phrase": "move on", "ja": "次に進む・気持ちを切り替える", "image": "今の場所や話題から次へ進む。", "pattern": "move on", "examples": [
-        { "en": "Let’s move on to the next topic.", "ja": "次の議題に進みましょう。", "focus": "move on" },
-        { "en": "After the issue was resolved, we moved on quickly.", "ja": "問題が解決した後、私たちはすぐ次に進みました。", "focus": "moved on" },
-        { "en": "We cannot move on until the client approves it.", "ja": "顧客が承認するまで、私たちは次に進めません。", "focus": "move on" }
-      ] },
-      { "phrase": "move forward", "ja": "前に進む・進める", "image": "案件や計画が次の段階へ進む。", "pattern": "move forward", "examples": [
-        { "en": "Let’s move forward with this proposal.", "ja": "この提案で進めましょう。", "focus": "move forward" },
-        { "en": "The approval allowed us to move forward.", "ja": "承認により、私たちは前に進めました。", "focus": "move forward" },
-        { "en": "We need to move forward before the deadline.", "ja": "締切前に前へ進める必要があります。", "focus": "move forward" }
-      ] },
-      { "phrase": "move up", "ja": "予定を早める・上がる", "image": "時間や順位を上・前へ動かす。", "pattern": "move up", "examples": [
-        { "en": "Can we move up the meeting to ten?", "ja": "会議を10時に早められますか？", "focus": "move up" },
-        { "en": "The deadline was moved up by two days.", "ja": "締切が2日早まりました。", "focus": "moved up" },
-        { "en": "The product moved up in the sales ranking.", "ja": "その製品は売上ランキングで順位を上げました。", "focus": "moved up" }
-      ] },
-      { "phrase": "move back", "ja": "予定を遅らせる・後ろへ下げる", "image": "時間や位置を後ろへ動かす。", "pattern": "move back", "examples": [
-        { "en": "Can we move back the review meeting?", "ja": "確認会議を後ろにずらせますか？", "focus": "move back" },
-        { "en": "We moved back the delivery date by one week.", "ja": "私たちは納品日を1週間遅らせました。", "focus": "moved back" },
-        { "en": "The launch was moved back because of a parts delay.", "ja": "部品遅延により発売が延期されました。", "focus": "moved back" }
-      ] },
-      { "phrase": "move into", "ja": "〜に移る・参入する", "image": "新しい場所や分野に入る。", "pattern": "move into", "examples": [
-        { "en": "The company moved into the lighting control market.", "ja": "その会社は照明制御市場に参入しました。", "focus": "moved into" },
-        { "en": "We moved into the new office last month.", "ja": "私たちは先月、新しいオフィスに移転しました。", "focus": "moved into" },
-        { "en": "The team moved into the testing phase.", "ja": "チームはテスト段階に入りました。", "focus": "moved into" }
-      ] },
-      { "phrase": "move out", "ja": "退去する・外へ移す", "image": "内側から外へ出る。", "pattern": "move out", "examples": [
-        { "en": "The team moved out of the temporary office.", "ja": "チームは仮オフィスから退去しました。", "focus": "moved out" },
-        { "en": "We need to move out the old equipment by Friday.", "ja": "金曜日までに古い機器を外へ出す必要があります。", "focus": "move out" },
-        { "en": "The tenant moved out at the end of March.", "ja": "テナントは3月末に退去しました。", "focus": "moved out" }
-      ] },
-      { "phrase": "move away from", "ja": "〜から離れる・脱却する", "image": "古いやり方や場所から距離を取る。", "pattern": "move away from", "examples": [
-        { "en": "We should move away from manual tracking.", "ja": "私たちは手作業の管理から脱却すべきです。", "focus": "move away from" },
-        { "en": "The market is moving away from low-efficiency products.", "ja": "市場は低効率製品から離れつつあります。", "focus": "moving away from" },
-        { "en": "The company moved away from paper-based approval.", "ja": "会社は紙ベースの承認から脱却しました。", "focus": "moved away from" }
-      ] },
-      { "phrase": "move toward", "ja": "〜に向かう", "image": "目標や方向へ進む。", "pattern": "move toward", "examples": [
-        { "en": "We are moving toward a final agreement.", "ja": "私たちは最終合意に向かっています。", "focus": "moving toward" },
-        { "en": "The project moved toward mass production.", "ja": "その案件は量産に向かいました。", "focus": "moved toward" },
-        { "en": "This plan helps us move toward our sales target.", "ja": "この計画は売上目標に近づく助けになります。", "focus": "move toward" }
-      ] },
-      { "phrase": "move around", "ja": "動き回る・配置を変える", "image": "同じ範囲の中であちこち動く。", "pattern": "move around", "examples": [
-        { "en": "We moved around the furniture before the client visit.", "ja": "顧客訪問前に家具の配置を変えました。", "focus": "moved around" },
-        { "en": "The staff moved around the venue during setup.", "ja": "スタッフは設営中、会場内を動き回りました。", "focus": "moved around" },
-        { "en": "Please do not move around the display samples.", "ja": "展示サンプルの配置を変えないでください。", "focus": "move around" }
-      ] },
-      { "phrase": "move ahead", "ja": "先へ進む・実行に移る", "image": "止まらずに計画を先へ進める。", "pattern": "move ahead", "examples": [
-        { "en": "We can move ahead once the estimate is approved.", "ja": "見積が承認されれば、私たちは先へ進めます。", "focus": "move ahead" },
-        { "en": "The client decided to move ahead with the order.", "ja": "顧客は発注を進めることにしました。", "focus": "move ahead" },
-        { "en": "Let’s move ahead and prepare the documents.", "ja": "先へ進めて、資料を準備しましょう。", "focus": "move ahead" }
-      ] }
+      {
+        "phrase": "move on",
+        "ja": "次へ進む・気持ちを切り替える",
+        "image": "今の話題や段階から次へ進む。",
+        "pattern": "move on",
+        "examples": [
+          {
+            "en": "Let’s move on to the next topic.",
+            "ja": "次の議題に進みましょう。",
+            "focus": "move on"
+          },
+          {
+            "en": "We cannot move on until the client approves it.",
+            "ja": "顧客が承認するまで、私たちは次に進めません。",
+            "focus": "move on"
+          },
+          {
+            "en": "After the issue was resolved, we moved on quickly.",
+            "ja": "問題が解決した後、私たちはすぐ次に進みました。",
+            "focus": "moved on"
+          }
+        ]
+      },
+      {
+        "phrase": "move forward",
+        "ja": "前に進む・進める",
+        "image": "案件や計画が次の段階へ進む。",
+        "pattern": "move forward",
+        "examples": [
+          {
+            "en": "Let’s move forward with this proposal.",
+            "ja": "この提案で進めましょう。",
+            "focus": "move forward"
+          },
+          {
+            "en": "The approval allowed us to move forward.",
+            "ja": "承認により、私たちは前に進めました。",
+            "focus": "move forward"
+          },
+          {
+            "en": "We need to move forward before the deadline.",
+            "ja": "締切前に進める必要があります。",
+            "focus": "move forward"
+          }
+        ]
+      },
+      {
+        "phrase": "move back",
+        "ja": "後ろへ動く・延期する",
+        "image": "時間や位置を後ろへ動かす。",
+        "pattern": "move back",
+        "examples": [
+          {
+            "en": "Can we move back the review meeting?",
+            "ja": "確認会議を後ろにずらせますか？",
+            "focus": "move back"
+          },
+          {
+            "en": "We moved back the delivery date by one week.",
+            "ja": "私たちは納品日を1週間遅らせました。",
+            "focus": "moved back"
+          },
+          {
+            "en": "The launch was moved back because of a parts delay.",
+            "ja": "部品遅延により発売が延期されました。",
+            "focus": "moved back"
+          }
+        ]
+      },
+      {
+        "phrase": "move up",
+        "ja": "前倒しする・上がる",
+        "image": "時間や順位を上・前へ動かす。",
+        "pattern": "move up",
+        "examples": [
+          {
+            "en": "Can we move up the meeting to ten?",
+            "ja": "会議を10時に早められますか？",
+            "focus": "move up"
+          },
+          {
+            "en": "The deadline was moved up by two days.",
+            "ja": "締切が2日早まりました。",
+            "focus": "moved up"
+          },
+          {
+            "en": "The product moved up in the sales ranking.",
+            "ja": "その製品は売上ランキングで順位を上げました。",
+            "focus": "moved up"
+          }
+        ]
+      },
+      {
+        "phrase": "move down",
+        "ja": "下げる・下がる",
+        "image": "位置・順位・数値を下へ動かす。",
+        "pattern": "move down",
+        "examples": [
+          {
+            "en": "Please move down the item on the list.",
+            "ja": "リスト上のその項目を下に移動してください。",
+            "focus": "move down"
+          },
+          {
+            "en": "The product moved down in the ranking.",
+            "ja": "その製品はランキングで順位を下げました。",
+            "focus": "moved down"
+          },
+          {
+            "en": "Can we move down this section in the proposal?",
+            "ja": "提案書のこのセクションを下へ移動できますか？",
+            "focus": "move down"
+          }
+        ]
+      },
+      {
+        "phrase": "move away",
+        "ja": "離れる・遠ざかる",
+        "image": "今いる場所や状態から離れる。",
+        "pattern": "move away",
+        "examples": [
+          {
+            "en": "Please move away from the entrance during setup.",
+            "ja": "設営中は入口から離れてください。",
+            "focus": "move away"
+          },
+          {
+            "en": "The market is moving away from low-efficiency products.",
+            "ja": "市場は低効率製品から離れつつあります。",
+            "focus": "moving away"
+          },
+          {
+            "en": "We should move away from manual tracking.",
+            "ja": "私たちは手作業の管理から離れるべきです。",
+            "focus": "move away"
+          }
+        ]
+      },
+      {
+        "phrase": "move into",
+        "ja": "〜へ移る・入る",
+        "image": "新しい場所や段階の中へ入る。",
+        "pattern": "move into",
+        "examples": [
+          {
+            "en": "The team moved into the testing phase.",
+            "ja": "チームはテスト段階に入りました。",
+            "focus": "moved into"
+          },
+          {
+            "en": "We moved into the new office last month.",
+            "ja": "私たちは先月、新しいオフィスへ移転しました。",
+            "focus": "moved into"
+          },
+          {
+            "en": "The company moved into the control system market.",
+            "ja": "その会社は制御システム市場に参入しました。",
+            "focus": "moved into"
+          }
+        ]
+      },
+      {
+        "phrase": "move out",
+        "ja": "外へ出る・退去する",
+        "image": "内側から外へ出る。",
+        "pattern": "move out",
+        "examples": [
+          {
+            "en": "The team moved out of the temporary office.",
+            "ja": "チームは仮オフィスから退去しました。",
+            "focus": "moved out"
+          },
+          {
+            "en": "We need to move out the old equipment by Friday.",
+            "ja": "金曜日までに古い機器を外へ出す必要があります。",
+            "focus": "move out"
+          },
+          {
+            "en": "The tenant moved out at the end of March.",
+            "ja": "テナントは3月末に退去しました。",
+            "focus": "moved out"
+          }
+        ]
+      },
+      {
+        "phrase": "move around",
+        "ja": "動き回る・配置を変える",
+        "image": "同じ範囲の中であちこち動く。",
+        "pattern": "move around",
+        "examples": [
+          {
+            "en": "We moved around the furniture before the client visit.",
+            "ja": "顧客訪問前に家具の配置を変えました。",
+            "focus": "moved around"
+          },
+          {
+            "en": "The staff moved around the venue during setup.",
+            "ja": "スタッフは設営中、会場内を動き回りました。",
+            "focus": "moved around"
+          },
+          {
+            "en": "Please do not move around the display samples.",
+            "ja": "展示サンプルの配置を変えないでください。",
+            "focus": "move around"
+          }
+        ]
+      }
     ]
   },
-  {
+    {
     "id": "turn",
     "rank": 32,
     "word": "TURN",
@@ -7722,85 +7975,338 @@ export const verbs: Verb[] = [
     "transitivity": "自動詞・他動詞",
     "importance": "★★★★★ 超重要",
     "core": "向き・状態・判断を別の方向へ変える",
-    "coreDetail": "TURNは、向きを変える、状態が変わる、判断や話題を別方向へ向けるイメージです。仕事では機器のON/OFF、依頼の断り、結果の判明、話題の切り替えでよく使います。",
-    "coreVisual": { "from": ["➡️ 今の向き", "💡 今の状態", "📌 今の話題", "🔌 電源"], "to": "↩️ 別の向き・状態・判断", "label": "向きを変える" },
+    "coreDetail": "TURNは、向きを変える、状態が変わる、判断や話題を別方向へ向けるイメージです。仕事では機器のON/OFF、依頼の断り、結果の判明、提出、立て直しでよく使います。",
+    "coreVisual": {
+      "from": [
+        "➡️ 向き",
+        "💡 状態",
+        "📌 話題",
+        "🔌 電源",
+        "📄 提出物"
+      ],
+      "to": "別の向き・状態・相手側",
+      "label": "向きや状態が変わる"
+    },
     "meanings": [
-      { "id": "turn-direction", "title": "1 向きを変える", "pattern": "turn + 方向", "transitivity": "自動詞・他動詞", "structure": "基本", "image": "物や人の向きが変わる。", "point": "道案内・画面の向き・視線の方向で使います。", "examples": [
-        { "en": "Turn left at the reception desk.", "ja": "受付で左に曲がってください。", "focus": "Turn" },
-        { "en": "Please turn the screen toward the client.", "ja": "画面を顧客の方へ向けてください。", "focus": "turn", "object": "the screen" },
-        { "en": "The camera turns toward the entrance.", "ja": "カメラは入口の方を向きます。", "focus": "turns" }
-      ] },
-      { "id": "turn-change", "title": "2 状態が変わる", "pattern": "turn + 形容詞", "transitivity": "自動詞", "structure": "基本", "image": "状態が別の状態へ変わる。", "point": "色・状況・雰囲気の変化に使います。", "examples": [
-        { "en": "The discussion turned positive after the demo.", "ja": "デモの後、議論は前向きになりました。", "focus": "turned" },
-        { "en": "The situation turned difficult after the delay.", "ja": "遅延後、状況は難しくなりました。", "focus": "turned" },
-        { "en": "The indicator turned red during the test.", "ja": "テスト中に表示ランプが赤に変わりました。", "focus": "turned" }
-      ] },
-      { "id": "turn-age", "title": "3 年齢・節目を迎える", "pattern": "turn + 数字", "transitivity": "自動詞", "structure": "基本", "image": "年齢や節目が次の段階へ変わる。", "point": "会社・サービス・人の年齢に使えます。", "examples": [
-        { "en": "The company turns ten this year.", "ja": "会社は今年10周年を迎えます。", "focus": "turns" },
-        { "en": "Our service turns one next month.", "ja": "私たちのサービスは来月1周年を迎えます。", "focus": "turns" },
-        { "en": "The project turned three years old last week.", "ja": "そのプロジェクトは先週3年目を迎えました。", "focus": "turned" }
-      ] },
-      { "id": "turn-page", "title": "4 ページ・つまみを回す", "pattern": "turn + 物", "transitivity": "他動詞", "structure": "基本", "image": "ページやつまみを回す。", "point": "turn the page / turn the knob のように物理的に回す時に使います。", "examples": [
-        { "en": "Please turn the page and check the next diagram.", "ja": "ページをめくって、次の図を確認してください。", "focus": "turn", "object": "the page" },
-        { "en": "He turned the dial slowly during the test.", "ja": "彼はテスト中につまみをゆっくり回しました。", "focus": "turned", "object": "the dial" },
-        { "en": "Do not turn the valve without approval.", "ja": "承認なしでバルブを回さないでください。", "focus": "turn", "object": "the valve" }
-      ] }
+      {
+        "id": "turn-direction",
+        "title": "① 向きを変える・曲がる",
+        "pattern": "turn + 方向/物",
+        "transitivity": "自動詞・他動詞",
+        "structure": "S + turn / S + turn + O",
+        "image": "向きが別方向へ変わるイメージ。",
+        "point": "道案内・画面の向き・物の向きで使います。",
+        "examples": [
+          {
+            "en": "Turn left at the reception desk.",
+            "ja": "受付で左に曲がってください。",
+            "focus": "Turn"
+          },
+          {
+            "en": "Please turn the screen toward the client.",
+            "ja": "画面を顧客の方へ向けてください。",
+            "focus": "turn",
+            "object": "the screen"
+          },
+          {
+            "en": "Turn the page and check the next section.",
+            "ja": "ページをめくって次のセクションを確認してください。",
+            "focus": "Turn",
+            "object": "the page"
+          }
+        ]
+      },
+      {
+        "id": "turn-change",
+        "title": "② 状態が変わる",
+        "pattern": "turn + 形容詞/名詞",
+        "transitivity": "自動詞",
+        "structure": "S + turn + C",
+        "image": "状態が別の状態へ変わる。",
+        "point": "turn red / turn positive のように使います。",
+        "examples": [
+          {
+            "en": "The indicator turned red during the test.",
+            "ja": "テスト中に表示ランプが赤に変わりました。",
+            "focus": "turned"
+          },
+          {
+            "en": "The discussion turned positive after the demo.",
+            "ja": "デモの後、議論は前向きになりました。",
+            "focus": "turned"
+          },
+          {
+            "en": "The small issue turned serious after the delay.",
+            "ja": "遅延後、小さな問題が深刻になりました。",
+            "focus": "turned"
+          }
+        ]
+      },
+      {
+        "id": "turn-transform",
+        "title": "③ 変化させる・形にする",
+        "pattern": "turn + O + into + 状態",
+        "transitivity": "他動詞",
+        "structure": "S + turn + O + into + C",
+        "image": "アイデアや情報を別の形に変える。",
+        "point": "turn the idea into a plan は仕事で使いやすい形です。",
+        "examples": [
+          {
+            "en": "We turned the idea into a clear plan.",
+            "ja": "私たちはそのアイデアを明確な計画にしました。",
+            "focus": "turned",
+            "object": "the idea"
+          },
+          {
+            "en": "The team turned feedback into action items.",
+            "ja": "チームはフィードバックを行動項目に変えました。",
+            "focus": "turned",
+            "object": "feedback"
+          },
+          {
+            "en": "This update can turn a problem into an opportunity.",
+            "ja": "この更新は問題を機会に変えられます。",
+            "focus": "turn",
+            "object": "a problem"
+          }
+        ]
+      }
     ],
     "collocations": [],
     "phrasalVerbs": [
-      { "phrase": "turn on", "ja": "電源を入れる・つける", "image": "機器や照明をONにする。", "pattern": "turn on", "examples": [
-        { "en": "Please turn on the projector before the meeting.", "ja": "会議前にプロジェクターをつけてください。", "focus": "turn on" },
-        { "en": "We turned on the test unit after checking the wiring.", "ja": "配線確認後、私たちは試験機の電源を入れました。", "focus": "turned on" },
-        { "en": "Can you turn on the lights in the showroom?", "ja": "ショールームの照明をつけてもらえますか？", "focus": "turn on" }
-      ] },
-      { "phrase": "turn off", "ja": "電源を切る・消す", "image": "機器や照明をOFFにする。", "pattern": "turn off", "examples": [
-        { "en": "Please turn off the lights after the meeting.", "ja": "会議後に照明を消してください。", "focus": "turn off" },
-        { "en": "We turned off the controller before replacing the cable.", "ja": "ケーブル交換前にコントローラーの電源を切りました。", "focus": "turned off" },
-        { "en": "Do not turn off the system during the update.", "ja": "更新中にシステムを切らないでください。", "focus": "turn off" }
-      ] },
-      { "phrase": "turn down", "ja": "断る・音量などを下げる", "image": "提案や数値を下方向へ下げる。", "pattern": "turn down", "examples": [
-        { "en": "The client turned down our first proposal.", "ja": "顧客は私たちの最初の提案を断りました。", "focus": "turned down" },
-        { "en": "Please turn down the volume during the call.", "ja": "通話中は音量を下げてください。", "focus": "turn down" },
-        { "en": "We should not turn down this opportunity too quickly.", "ja": "この機会を早く断りすぎるべきではありません。", "focus": "turn down" }
-      ] },
-      { "phrase": "turn in", "ja": "提出する", "image": "書類や課題を相手側へ出す。", "pattern": "turn in", "examples": [
-        { "en": "Please turn in the report by Friday.", "ja": "金曜日までに報告書を提出してください。", "focus": "turn in" },
-        { "en": "We turned in the final documents yesterday.", "ja": "私たちは昨日、最終書類を提出しました。", "focus": "turned in" },
-        { "en": "He forgot to turn in the application form.", "ja": "彼は申請書を提出するのを忘れました。", "focus": "turn in" }
-      ] },
-      { "phrase": "turn out", "ja": "結果的に〜になる・判明する", "image": "最後に結果が見えてくる。", "pattern": "turn out", "examples": [
-        { "en": "The meeting turned out well.", "ja": "会議はうまくいきました。", "focus": "turned out" },
-        { "en": "The issue turned out to be minor.", "ja": "その問題は軽微だと分かりました。", "focus": "turned out" },
-        { "en": "The new process turned out effective.", "ja": "新しい手順は効果的でした。", "focus": "turned out" }
-      ] },
-      { "phrase": "turn to", "ja": "〜に頼る・話題を移す", "image": "注意や助けを別の対象へ向ける。", "pattern": "turn to", "examples": [
-        { "en": "Let’s turn to the next topic.", "ja": "次の議題に移りましょう。", "focus": "turn to" },
-        { "en": "The client turned to us for support.", "ja": "顧客は支援を求めて私たちに頼りました。", "focus": "turned to" },
-        { "en": "We turned to the data for answers.", "ja": "私たちは答えを求めてデータに目を向けました。", "focus": "turned to" }
-      ] },
-      { "phrase": "turn into", "ja": "〜に変わる・変える", "image": "別の形や状態へ変化する。", "pattern": "turn into", "examples": [
-        { "en": "The idea turned into a strong proposal.", "ja": "そのアイデアは良い提案になりました。", "focus": "turned into" },
-        { "en": "We turned the feedback into a clear action plan.", "ja": "私たちはフィードバックを明確な行動計画にしました。", "focus": "turned into" },
-        { "en": "A small delay can turn into a major issue.", "ja": "小さな遅れが大きな問題になることがあります。", "focus": "turn into" }
-      ] },
-      { "phrase": "turn over", "ja": "引き渡す・めくる・ひっくり返す", "image": "反対側へ回す、または相手に渡す。", "pattern": "turn over", "examples": [
-        { "en": "Please turn over the sample and check the label.", "ja": "サンプルを裏返してラベルを確認してください。", "focus": "turn over" },
-        { "en": "We turned over the documents to the legal team.", "ja": "私たちは書類を法務チームに引き渡しました。", "focus": "turned over" },
-        { "en": "The warehouse turns over inventory quickly.", "ja": "その倉庫は在庫の回転が速いです。", "focus": "turns over" }
-      ] },
-      { "phrase": "turn around", "ja": "好転させる・方向転換する", "image": "悪い流れや向きを反対方向へ変える。", "pattern": "turn around", "examples": [
-        { "en": "We need to turn around this project quickly.", "ja": "私たちはこの案件を早く立て直す必要があります。", "focus": "turn around" },
-        { "en": "The new manager turned around the sales team.", "ja": "新しいマネージャーは営業チームを立て直しました。", "focus": "turned around" },
-        { "en": "Please turn around at the next corner.", "ja": "次の角で方向転換してください。", "focus": "turn around" }
-      ] },
-      { "phrase": "turn back", "ja": "引き返す・元に戻る", "image": "進んだ方向から戻る。", "pattern": "turn back", "examples": [
-        { "en": "We had to turn back because the site was closed.", "ja": "現場が閉まっていたため、私たちは引き返す必要がありました。", "focus": "turn back" },
-        { "en": "Once we send the order, we cannot turn back.", "ja": "発注を送ったら、もう後戻りできません。", "focus": "turn back" },
-        { "en": "The driver turned back after receiving the new instruction.", "ja": "運転手は新しい指示を受けて引き返しました。", "focus": "turned back" }
-      ] }
+      {
+        "phrase": "turn on",
+        "ja": "電源を入れる・作動させる",
+        "image": "機器や機能をONにする。",
+        "pattern": "turn on",
+        "examples": [
+          {
+            "en": "Please turn on the controller before the test.",
+            "ja": "テスト前にコントローラーの電源を入れてください。",
+            "focus": "turn on"
+          },
+          {
+            "en": "I turned on the lights for the inspection.",
+            "ja": "点検のために照明を点けました。",
+            "focus": "turned on"
+          },
+          {
+            "en": "Can you turn on the display?",
+            "ja": "ディスプレイをつけてもらえますか？",
+            "focus": "turn on"
+          }
+        ]
+      },
+      {
+        "phrase": "turn off",
+        "ja": "電源を切る・止める",
+        "image": "機器や機能をOFFにする。",
+        "pattern": "turn off",
+        "examples": [
+          {
+            "en": "Please turn off the power after the test.",
+            "ja": "テスト後に電源を切ってください。",
+            "focus": "turn off"
+          },
+          {
+            "en": "We turned off the old system last night.",
+            "ja": "昨夜、古いシステムを停止しました。",
+            "focus": "turned off"
+          },
+          {
+            "en": "Do not turn off the controller during setup.",
+            "ja": "設定中にコントローラーの電源を切らないでください。",
+            "focus": "turn off"
+          }
+        ]
+      },
+      {
+        "phrase": "turn up",
+        "ja": "現れる・出てくる・上げる",
+        "image": "人や情報が出てくる、または音量などを上げる。",
+        "pattern": "turn up",
+        "examples": [
+          {
+            "en": "New issues turned up during the inspection.",
+            "ja": "点検中に新しい問題が出てきました。",
+            "focus": "turned up"
+          },
+          {
+            "en": "He turned up late for the meeting.",
+            "ja": "彼は会議に遅れて現れました。",
+            "focus": "turned up"
+          },
+          {
+            "en": "Please turn up the volume a little.",
+            "ja": "音量を少し上げてください。",
+            "focus": "turn up"
+          }
+        ]
+      },
+      {
+        "phrase": "turn down",
+        "ja": "断る・下げる",
+        "image": "依頼を断る、または数値を下げる。",
+        "pattern": "turn down",
+        "examples": [
+          {
+            "en": "The client turned down our first proposal.",
+            "ja": "顧客は私たちの最初の提案を断りました。",
+            "focus": "turned down"
+          },
+          {
+            "en": "Please turn down the brightness during the demo.",
+            "ja": "デモ中は明るさを下げてください。",
+            "focus": "turn down"
+          },
+          {
+            "en": "We had to turn down the request because of the deadline.",
+            "ja": "締切の都合でその依頼を断る必要がありました。",
+            "focus": "turn down"
+          }
+        ]
+      },
+      {
+        "phrase": "turn in",
+        "ja": "提出する・引き渡す",
+        "image": "書類や成果物を相手側へ渡す。",
+        "pattern": "turn in",
+        "examples": [
+          {
+            "en": "Please turn in the report by Friday.",
+            "ja": "金曜日までにレポートを提出してください。",
+            "focus": "turn in"
+          },
+          {
+            "en": "We turned in the final estimate yesterday.",
+            "ja": "私たちは昨日、最終見積を提出しました。",
+            "focus": "turned in"
+          },
+          {
+            "en": "Did you turn in the application form?",
+            "ja": "申込書を提出しましたか？",
+            "focus": "turn in"
+          }
+        ]
+      },
+      {
+        "phrase": "turn out",
+        "ja": "結果として〜になる・判明する",
+        "image": "最終的な結果が見える。",
+        "pattern": "turn out",
+        "examples": [
+          {
+            "en": "The test turned out well.",
+            "ja": "テストはうまくいきました。",
+            "focus": "turned out"
+          },
+          {
+            "en": "It turned out that the wiring was incorrect.",
+            "ja": "配線が間違っていたことが判明しました。",
+            "focus": "turned out"
+          },
+          {
+            "en": "The event turned out better than expected.",
+            "ja": "イベントは予想以上に良い結果になりました。",
+            "focus": "turned out"
+          }
+        ]
+      },
+      {
+        "phrase": "turn into",
+        "ja": "〜に変わる・変える",
+        "image": "別の形や状態へ変化する。",
+        "pattern": "turn into",
+        "examples": [
+          {
+            "en": "The idea turned into a strong proposal.",
+            "ja": "そのアイデアは良い提案になりました。",
+            "focus": "turned into"
+          },
+          {
+            "en": "We turned the feedback into a clear action plan.",
+            "ja": "私たちはフィードバックを明確な行動計画にしました。",
+            "focus": "turned into"
+          },
+          {
+            "en": "A small delay can turn into a major issue.",
+            "ja": "小さな遅れが大きな問題になることがあります。",
+            "focus": "turn into"
+          }
+        ]
+      },
+      {
+        "phrase": "turn around",
+        "ja": "振り向く・立て直す",
+        "image": "向きを反対にする、または悪い流れを良い方向へ変える。",
+        "pattern": "turn around",
+        "examples": [
+          {
+            "en": "We need to turn around this project quickly.",
+            "ja": "私たちはこの案件を早く立て直す必要があります。",
+            "focus": "turn around"
+          },
+          {
+            "en": "The new manager turned around the sales team.",
+            "ja": "新しいマネージャーは営業チームを立て直しました。",
+            "focus": "turned around"
+          },
+          {
+            "en": "Please turn around at the next corner.",
+            "ja": "次の角で方向転換してください。",
+            "focus": "turn around"
+          }
+        ]
+      },
+      {
+        "phrase": "turn over",
+        "ja": "ひっくり返す・引き渡す",
+        "image": "反対側へ回す、または相手に渡す。",
+        "pattern": "turn over",
+        "examples": [
+          {
+            "en": "Please turn over the sample and check the label.",
+            "ja": "サンプルを裏返してラベルを確認してください。",
+            "focus": "turn over"
+          },
+          {
+            "en": "We turned over the documents to the legal team.",
+            "ja": "私たちは書類を法務チームに引き渡しました。",
+            "focus": "turned over"
+          },
+          {
+            "en": "The warehouse turns over inventory quickly.",
+            "ja": "その倉庫は在庫の回転が速いです。",
+            "focus": "turns over"
+          }
+        ]
+      },
+      {
+        "phrase": "turn to",
+        "ja": "〜に頼る・取りかかる",
+        "image": "助けや次の行動へ向きを変える。",
+        "pattern": "turn to",
+        "examples": [
+          {
+            "en": "We turned to the engineer for advice.",
+            "ja": "私たちは助言を求めて技術者に頼りました。",
+            "focus": "turned to"
+          },
+          {
+            "en": "After the meeting, we turned to the next task.",
+            "ja": "会議後、私たちは次の作業に取りかかりました。",
+            "focus": "turned to"
+          },
+          {
+            "en": "Clients often turn to us for lighting advice.",
+            "ja": "顧客は照明の相談でよく私たちを頼ります。",
+            "focus": "turn to"
+          }
+        ]
+      }
     ]
   },
-  {
+    {
     "id": "bring",
     "rank": 33,
     "word": "BRING",
@@ -7810,82 +8316,368 @@ export const verbs: Verb[] = [
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
     "core": "物・人・情報を話し手側や目的地へ持ってくる",
-    "coreDetail": "BRINGは、物や人をこちら側へ持ってくる・連れてくるイメージです。仕事では資料・サンプル・情報・価値・話題を相手や会議の場に持ち込む時によく使います。",
-    "coreVisual": { "from": ["📦 物", "👤 人", "📄 情報", "💡 話題", "⭐ 価値"], "to": "➡️ 話し手側・会議・顧客の場", "label": "こちらへ持ってくる" },
+    "coreDetail": "BRINGは、物や人をこちら側へ持ってくる・連れてくるイメージです。仕事では資料・サンプル・情報・価値・話題を会議や顧客の場に持ち込む時によく使います。",
+    "coreVisual": {
+      "from": [
+        "📦 物",
+        "👤 人",
+        "📄 情報",
+        "💡 話題",
+        "⭐ 価値"
+      ],
+      "to": "話し手側・会議・顧客の場",
+      "label": "こちらへ持ってくる・もたらす"
+    },
     "meanings": [
-      { "id": "bring-object", "title": "1 物を持ってくる", "pattern": "bring + 物", "transitivity": "他動詞", "structure": "基本", "image": "物をこちら側や目的地へ持ってくる。", "point": "資料・サンプル・機材などを持ってくる時に使います。", "examples": [
-        { "en": "Please bring the documents to the meeting.", "ja": "会議に資料を持ってきてください。", "focus": "bring", "object": "the documents" },
-        { "en": "We brought the samples to the client’s office.", "ja": "私たちはサンプルを顧客のオフィスに持っていきました。", "focus": "brought", "object": "the samples" },
-        { "en": "Can you bring your laptop tomorrow?", "ja": "明日ノートパソコンを持ってきてもらえますか？", "focus": "bring", "object": "your laptop" }
-      ] },
-      { "id": "bring-person", "title": "2 人を連れてくる", "pattern": "bring + 人", "transitivity": "他動詞", "structure": "基本", "image": "人をこちら側や目的地へ連れてくる。", "point": "同僚・上司・専門家などを連れてくる時に使います。", "examples": [
-        { "en": "I will bring our engineer to the next meeting.", "ja": "次の会議には技術担当を連れていきます。", "focus": "bring", "object": "our engineer" },
-        { "en": "She brought a new team member to the site.", "ja": "彼女は新しいチームメンバーを現場に連れていきました。", "focus": "brought", "object": "a new team member" },
-        { "en": "Please bring someone who understands the system.", "ja": "そのシステムを理解している人を連れてきてください。", "focus": "bring", "object": "someone" }
-      ] },
-      { "id": "bring-result", "title": "3 結果・価値をもたらす", "pattern": "bring + 結果", "transitivity": "他動詞", "structure": "基本", "image": "行動が良い結果や価値を生む。", "point": "bring value / bring results のように使います。", "examples": [
-        { "en": "This change will bring better results.", "ja": "この変更はより良い結果をもたらします。", "focus": "bring", "object": "better results" },
-        { "en": "Fast support brought value to the client.", "ja": "迅速なサポートは顧客に価値をもたらしました。", "focus": "brought", "object": "value" },
-        { "en": "The new system can bring major benefits.", "ja": "新しいシステムは大きなメリットをもたらす可能性があります。", "focus": "bring", "object": "major benefits" }
-      ] },
-      { "id": "bring-topic", "title": "4 話題・問題を持ち出す", "pattern": "bring + 話題", "transitivity": "他動詞", "structure": "基本", "image": "話題や問題を会議の場へ出す。", "point": "bring the issue to someone のように使えます。", "examples": [
-        { "en": "Please bring the issue to the manager.", "ja": "その問題を上司に伝えてください。", "focus": "bring", "object": "the issue" },
-        { "en": "We brought the customer’s concern to the team.", "ja": "私たちは顧客の懸念をチームに共有しました。", "focus": "brought", "object": "the customer’s concern" },
-        { "en": "He brought an important point to the discussion.", "ja": "彼は議論に重要な点を持ち込みました。", "focus": "brought", "object": "an important point" }
-      ] }
+      {
+        "id": "bring-object",
+        "title": "① 物・資料を持ってくる",
+        "pattern": "bring + 物",
+        "transitivity": "他動詞",
+        "structure": "S + bring + O",
+        "image": "物をこちら側や目的地へ持ってくる。",
+        "point": "資料・サンプル・機材などで使います。",
+        "examples": [
+          {
+            "en": "Please bring the sample to the meeting.",
+            "ja": "会議にサンプルを持ってきてください。",
+            "focus": "bring",
+            "object": "the sample"
+          },
+          {
+            "en": "We brought the documents to the client’s office.",
+            "ja": "私たちは資料を顧客のオフィスへ持っていきました。",
+            "focus": "brought",
+            "object": "the documents"
+          },
+          {
+            "en": "Can you bring everything we need for the demo?",
+            "ja": "デモに必要なものを全部持ってきてもらえますか？",
+            "focus": "bring",
+            "object": "everything"
+          }
+        ]
+      },
+      {
+        "id": "bring-person",
+        "title": "② 人を連れてくる",
+        "pattern": "bring + 人",
+        "transitivity": "他動詞",
+        "structure": "S + bring + O",
+        "image": "人をこちら側や目的地へ連れてくる。",
+        "point": "同僚・技術者・顧客などを連れてくる時に使います。",
+        "examples": [
+          {
+            "en": "I will bring our engineer to the next meeting.",
+            "ja": "次の会議には技術担当を連れていきます。",
+            "focus": "bring",
+            "object": "our engineer"
+          },
+          {
+            "en": "She brought a new team member to the site.",
+            "ja": "彼女は新しいチームメンバーを現場に連れていきました。",
+            "focus": "brought",
+            "object": "a new team member"
+          },
+          {
+            "en": "Please bring someone who understands the system.",
+            "ja": "そのシステムを理解している人を連れてきてください。",
+            "focus": "bring",
+            "object": "someone"
+          }
+        ]
+      },
+      {
+        "id": "bring-result",
+        "title": "③ 結果・価値をもたらす",
+        "pattern": "bring + 結果/価値",
+        "transitivity": "他動詞",
+        "structure": "S + bring + O",
+        "image": "行動が良い結果や価値をこちらへ生む。",
+        "point": "bring value / bring results のように使います。",
+        "examples": [
+          {
+            "en": "This change will bring better results.",
+            "ja": "この変更はより良い結果をもたらします。",
+            "focus": "bring",
+            "object": "better results"
+          },
+          {
+            "en": "Fast support brought value to the client.",
+            "ja": "迅速なサポートは顧客に価値をもたらしました。",
+            "focus": "brought",
+            "object": "value"
+          },
+          {
+            "en": "The new system can bring major benefits.",
+            "ja": "新しいシステムは大きなメリットをもたらす可能性があります。",
+            "focus": "bring",
+            "object": "major benefits"
+          }
+        ]
+      },
+      {
+        "id": "bring-price",
+        "title": "④ 数値・価格を動かす",
+        "pattern": "bring + 価格/数値 + down",
+        "transitivity": "他動詞",
+        "structure": "S + bring + O + C",
+        "image": "価格や数値を別の状態へ持っていく。",
+        "point": "基本側ではbring自体の『もたらす・動かす』感覚を扱います。",
+        "examples": [
+          {
+            "en": "We need to bring the price down.",
+            "ja": "私たちは価格を下げる必要があります。",
+            "focus": "bring",
+            "object": "the price"
+          },
+          {
+            "en": "The new process brought the defect rate down.",
+            "ja": "新しい手順により不良率が下がりました。",
+            "focus": "brought",
+            "object": "the defect rate"
+          },
+          {
+            "en": "This plan can bring costs under control.",
+            "ja": "この計画はコストを管理下にできます。",
+            "focus": "bring",
+            "object": "costs"
+          }
+        ]
+      }
     ],
     "collocations": [],
     "phrasalVerbs": [
-      { "phrase": "bring up", "ja": "話題に出す・育てる", "image": "話題を会議や会話の場に上げる。", "pattern": "bring up", "examples": [
-        { "en": "Please bring up the delivery issue in the meeting.", "ja": "会議で納期の問題を話題に出してください。", "focus": "bring up" },
-        { "en": "The client brought up a concern about the price.", "ja": "顧客は価格に関する懸念を話題に出しました。", "focus": "brought up" },
-        { "en": "I will bring up this point with my manager.", "ja": "この点を上司に相談します。", "focus": "bring up" }
-      ] },
-      { "phrase": "bring back", "ja": "持ち帰る・復活させる", "image": "離れたものを元の場所や状態へ戻す。", "pattern": "bring back", "examples": [
-        { "en": "Please bring back the signed document tomorrow.", "ja": "署名済み書類を明日持ち帰ってください。", "focus": "bring back" },
-        { "en": "The update brought back the old feature.", "ja": "その更新で古い機能が復活しました。", "focus": "brought back" },
-        { "en": "We need to bring back customer trust.", "ja": "私たちは顧客の信頼を取り戻す必要があります。", "focus": "bring back" }
-      ] },
-      { "phrase": "bring in", "ja": "導入する・呼び入れる・獲得する", "image": "外から新しいものや人を入れる。", "pattern": "bring in", "examples": [
-        { "en": "We brought in a specialist for the project.", "ja": "その案件のために専門家を呼び入れました。", "focus": "brought in" },
-        { "en": "The company plans to bring in a new system.", "ja": "会社は新しいシステムを導入する予定です。", "focus": "bring in" },
-        { "en": "This campaign brought in many new customers.", "ja": "このキャンペーンで多くの新規顧客を獲得しました。", "focus": "brought in" }
-      ] },
-      { "phrase": "bring together", "ja": "集める・まとめる", "image": "別々の人や情報を一つにする。", "pattern": "bring together", "examples": [
-        { "en": "The workshop brought together different departments.", "ja": "そのワークショップで複数の部署が集まりました。", "focus": "brought together" },
-        { "en": "Please bring together the latest information.", "ja": "最新情報をまとめてください。", "focus": "bring together" },
-        { "en": "This document brings together all key points.", "ja": "この資料はすべての重要ポイントをまとめています。", "focus": "brings together" }
-      ] },
-      { "phrase": "bring about", "ja": "引き起こす・もたらす", "image": "原因となって変化を生む。", "pattern": "bring about", "examples": [
-        { "en": "The new rule brought about major changes.", "ja": "新しい規則は大きな変化をもたらしました。", "focus": "brought about" },
-        { "en": "Better planning can bring about fewer delays.", "ja": "より良い計画により遅延を減らせます。", "focus": "bring about" },
-        { "en": "The system error brought about several complaints.", "ja": "システムエラーにより、いくつかのクレームが発生しました。", "focus": "brought about" }
-      ] },
-      { "phrase": "bring out", "ja": "引き出す・発売する", "image": "内側にあるものを外へ出す。", "pattern": "bring out", "examples": [
-        { "en": "The new lighting brought out the texture of the sign.", "ja": "新しい照明が看板の質感を引き出しました。", "focus": "brought out" },
-        { "en": "The company will bring out a new model this summer.", "ja": "会社はこの夏、新型モデルを発売します。", "focus": "bring out" },
-        { "en": "Good questions can bring out the client’s real needs.", "ja": "良い質問は顧客の本当のニーズを引き出せます。", "focus": "bring out" }
-      ] },
-      { "phrase": "bring down", "ja": "下げる・減らす", "image": "価格・コスト・数値を下げる。", "pattern": "bring down", "examples": [
-        { "en": "We need to bring down the total cost.", "ja": "総コストを下げる必要があります。", "focus": "bring down" },
-        { "en": "The new process brought down the defect rate.", "ja": "新しい手順により不良率が下がりました。", "focus": "brought down" },
-        { "en": "Can we bring down the delivery fee?", "ja": "配送費を下げられますか？", "focus": "bring down" }
-      ] },
-      { "phrase": "bring forward", "ja": "予定を早める・提案する", "image": "予定や案を前に出す。", "pattern": "bring forward", "examples": [
-        { "en": "Can we bring forward the delivery date?", "ja": "納品日を前倒しできますか？", "focus": "bring forward" },
-        { "en": "The team brought forward a new proposal.", "ja": "チームは新しい提案を出しました。", "focus": "brought forward" },
-        { "en": "Please bring forward any concerns by Friday.", "ja": "金曜日までに懸念点を出してください。", "focus": "bring forward" }
-      ] },
-      { "phrase": "bring into", "ja": "〜に持ち込む・参加させる", "image": "物・人・考えを別の場に入れる。", "pattern": "bring into", "examples": [
-        { "en": "We need to bring more data into the discussion.", "ja": "議論にもっとデータを持ち込む必要があります。", "focus": "bring into" },
-        { "en": "The manager brought a specialist into the project.", "ja": "マネージャーは専門家を案件に参加させました。", "focus": "brought into" },
-        { "en": "Please bring this issue into the next meeting.", "ja": "この問題を次の会議に持ち込んでください。", "focus": "bring into" }
-      ] },
-      { "phrase": "bring over", "ja": "持ってくる・連れてくる", "image": "別の場所からこちらへ持ってくる。", "pattern": "bring over", "examples": [
-        { "en": "Can you bring over the sample board tomorrow?", "ja": "明日サンプルボードを持ってきてもらえますか？", "focus": "bring over" },
-        { "en": "I brought over the catalog for the client.", "ja": "顧客用にカタログを持ってきました。", "focus": "brought over" },
-        { "en": "Please bring over the latest price list.", "ja": "最新版の価格表を持ってきてください。", "focus": "bring over" }
-      ] }
+      {
+        "phrase": "bring up",
+        "ja": "話題に出す・育てる",
+        "image": "話題を会議や会話の場に上げる。",
+        "pattern": "bring up",
+        "examples": [
+          {
+            "en": "Please bring up the delivery issue in the meeting.",
+            "ja": "会議で納期の問題を話題に出してください。",
+            "focus": "bring up"
+          },
+          {
+            "en": "The client brought up a concern about the price.",
+            "ja": "顧客は価格に関する懸念を話題に出しました。",
+            "focus": "brought up"
+          },
+          {
+            "en": "I will bring up this point with my manager.",
+            "ja": "この点を上司に相談します。",
+            "focus": "bring up"
+          }
+        ]
+      },
+      {
+        "phrase": "bring in",
+        "ja": "導入する・呼び込む",
+        "image": "外から新しいものや人を入れる。",
+        "pattern": "bring in",
+        "examples": [
+          {
+            "en": "We brought in a specialist for the project.",
+            "ja": "その案件のために専門家を呼び入れました。",
+            "focus": "brought in"
+          },
+          {
+            "en": "The company plans to bring in a new system.",
+            "ja": "会社は新しいシステムを導入する予定です。",
+            "focus": "bring in"
+          },
+          {
+            "en": "This campaign brought in many new customers.",
+            "ja": "このキャンペーンで多くの新規顧客を獲得しました。",
+            "focus": "brought in"
+          }
+        ]
+      },
+      {
+        "phrase": "bring out",
+        "ja": "引き出す・発売する",
+        "image": "内側にあるものを外へ出す。",
+        "pattern": "bring out",
+        "examples": [
+          {
+            "en": "The new lighting brought out the texture of the sign.",
+            "ja": "新しい照明が看板の質感を引き出しました。",
+            "focus": "brought out"
+          },
+          {
+            "en": "The company will bring out a new model this summer.",
+            "ja": "会社はこの夏、新型モデルを発売します。",
+            "focus": "bring out"
+          },
+          {
+            "en": "Good questions can bring out the client’s real needs.",
+            "ja": "良い質問は顧客の本当のニーズを引き出せます。",
+            "focus": "bring out"
+          }
+        ]
+      },
+      {
+        "phrase": "bring back",
+        "ja": "持ち帰る・復活させる",
+        "image": "離れたものを元の場所や状態へ戻す。",
+        "pattern": "bring back",
+        "examples": [
+          {
+            "en": "Please bring back the signed document tomorrow.",
+            "ja": "署名済み書類を明日持ち帰ってください。",
+            "focus": "bring back"
+          },
+          {
+            "en": "The update brought back the old feature.",
+            "ja": "その更新で古い機能が復活しました。",
+            "focus": "brought back"
+          },
+          {
+            "en": "We need to bring back customer trust.",
+            "ja": "私たちは顧客の信頼を取り戻す必要があります。",
+            "focus": "bring back"
+          }
+        ]
+      },
+      {
+        "phrase": "bring down",
+        "ja": "下げる・減らす",
+        "image": "価格・コスト・数値を下げる。",
+        "pattern": "bring down",
+        "examples": [
+          {
+            "en": "We need to bring down the total cost.",
+            "ja": "総コストを下げる必要があります。",
+            "focus": "bring down"
+          },
+          {
+            "en": "The new process brought down the defect rate.",
+            "ja": "新しい手順により不良率が下がりました。",
+            "focus": "brought down"
+          },
+          {
+            "en": "Can we bring down the delivery fee?",
+            "ja": "配送費を下げられますか？",
+            "focus": "bring down"
+          }
+        ]
+      },
+      {
+        "phrase": "bring along",
+        "ja": "持ってくる・連れてくる",
+        "image": "必要な物や人を一緒に連れてくる。",
+        "pattern": "bring along",
+        "examples": [
+          {
+            "en": "Please bring along the latest catalog.",
+            "ja": "最新版のカタログを持ってきてください。",
+            "focus": "bring along"
+          },
+          {
+            "en": "I brought along our engineer for the site check.",
+            "ja": "現場確認のために技術担当を連れてきました。",
+            "focus": "brought along"
+          },
+          {
+            "en": "Can you bring along the sample board?",
+            "ja": "サンプルボードを持ってきてもらえますか？",
+            "focus": "bring along"
+          }
+        ]
+      },
+      {
+        "phrase": "bring about",
+        "ja": "引き起こす・もたらす",
+        "image": "原因となって変化を生む。",
+        "pattern": "bring about",
+        "examples": [
+          {
+            "en": "The new rule brought about major changes.",
+            "ja": "新しい規則は大きな変化をもたらしました。",
+            "focus": "brought about"
+          },
+          {
+            "en": "Better planning can bring about fewer delays.",
+            "ja": "より良い計画により遅延を減らせます。",
+            "focus": "bring about"
+          },
+          {
+            "en": "The system error brought about several complaints.",
+            "ja": "システムエラーにより、いくつかのクレームが発生しました。",
+            "focus": "brought about"
+          }
+        ]
+      },
+      {
+        "phrase": "bring together",
+        "ja": "まとめる・集める",
+        "image": "別々の人や情報を一つにする。",
+        "pattern": "bring together",
+        "examples": [
+          {
+            "en": "The workshop brought together different departments.",
+            "ja": "そのワークショップで複数の部署が集まりました。",
+            "focus": "brought together"
+          },
+          {
+            "en": "Please bring together the latest information.",
+            "ja": "最新情報をまとめてください。",
+            "focus": "bring together"
+          },
+          {
+            "en": "This document brings together all key points.",
+            "ja": "この資料はすべての重要ポイントをまとめています。",
+            "focus": "brings together"
+          }
+        ]
+      },
+      {
+        "phrase": "bring forward",
+        "ja": "前倒しする・提案する",
+        "image": "予定や案を前に出す。",
+        "pattern": "bring forward",
+        "examples": [
+          {
+            "en": "Can we bring forward the delivery date?",
+            "ja": "納品日を前倒しできますか？",
+            "focus": "bring forward"
+          },
+          {
+            "en": "The team brought forward a new proposal.",
+            "ja": "チームは新しい提案を出しました。",
+            "focus": "brought forward"
+          },
+          {
+            "en": "Please bring forward any concerns by Friday.",
+            "ja": "金曜日までに懸念点を出してください。",
+            "focus": "bring forward"
+          }
+        ]
+      },
+      {
+        "phrase": "bring over",
+        "ja": "持ってくる・連れてくる",
+        "image": "別の場所からこちらへ持ってくる。",
+        "pattern": "bring over",
+        "examples": [
+          {
+            "en": "Can you bring over the sample board tomorrow?",
+            "ja": "明日サンプルボードを持ってきてもらえますか？",
+            "focus": "bring over"
+          },
+          {
+            "en": "I brought over the catalog for the client.",
+            "ja": "顧客用にカタログを持ってきました。",
+            "focus": "brought over"
+          },
+          {
+            "en": "Please bring over the latest price list.",
+            "ja": "最新版の価格表を持ってきてください。",
+            "focus": "bring over"
+          }
+        ]
+      }
     ]
   },
   {

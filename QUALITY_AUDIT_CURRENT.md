@@ -1,18 +1,17 @@
-# QUALITY AUDIT CURRENT - V146 User Clean Profile UI
+# QUALITY_AUDIT_CURRENT
 
-## Scope
-- Hide save/storage technical messages from normal users.
-- Remove version/update history from user-facing screens.
-- Preserve Ver.145 auth/restore/persistence system.
-- Preserve Ver.140 simple prefix search.
-- Preserve SHOW / TELL / ASK re-audit data.
+## Ver.147 CALL / RUN / LEAVE 再監査 final
 
-## Checks
-- Profile header no longer renders profileMessage.
-- Normal users no longer see the detailed Auto Save / cloud debug panel.
-- Manual backup panel is admin-only.
-- My Page update history removed.
-- Visible version footer removed from profile / checkout / purchases pages.
-- No additional SQL.
-- TypeScript OK.
-- Production build OK.
+- 対象動詞: CALL / RUN / LEAVE
+- CALL 句動詞: 8個
+- RUN 句動詞: 10個
+- LEAVE 句動詞: 8個
+- collocations: 3語とも空に整理
+- 基本の赤文字: 動詞のみ
+- 句動詞の赤文字: 動詞 + 前置詞/副詞のみ
+- 目的語は赤文字対象外
+- Ver.145 ログイン・復元・保存基盤を維持
+- Ver.146 ユーザー画面クリーンアップを維持
+- Ver.140 シンプル頭文字検索を維持
+- npx tsc --noEmit: OK
+- npm run build: OK / static pages 27/27

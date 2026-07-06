@@ -1,18 +1,9 @@
-# Verb Master V146
+# Verb Master
 
-User-facing cleanup for paid-app readiness.
+Ver.147 CALL / RUN / LEAVE re-audit final.
 
-## Main changes
-- Hide technical save/storage messages from normal users.
-- Remove version/update history from customer-facing My Page.
-- Remove visible version footers from customer-facing pages.
-- Keep save, login, cloud restore, and ZIP-update-safe persistence from Ver.145.
-- Keep simple prefix search from Ver.140.
-- Keep SHOW / TELL / ASK re-audit data.
+## Notes
 
-## SQL
-No new SQL is required for this version.
-
-## Build checks
-- npx tsc --noEmit: OK
-- npm run build: OK
+- Based on Ver.146 user-clean profile UI and Ver.145 auth/restore/persistence system.
+- CALL / RUN / LEAVE have been re-audited under the current two-category rule: 基本 / 句動詞 only.
+- No additional SQL is required for this update.

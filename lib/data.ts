@@ -8903,16 +8903,30 @@ export const verbs: Verb[] = [
       "image": "少し待つ、または状況に耐える。",
       "pattern": "hold on",
       "examples": [
-        {
-          "en": "Please hold on while I check the file.",
-          "ja": "ファイルを確認しますので少々お待ちください。",
-          "focus": "hold on"
-        },
-        {
-          "en": "We need to hold on until the supplier replies.",
-          "ja": "仕入先から返信が来るまで持ちこたえる必要があります。",
-          "focus": "hold on"
-        }
+        { "en": "Please hold on while I check the stock.", "ja": "在庫を確認しますので少々お待ちください。", "focus": "hold on" },
+        { "en": "We need to hold on until the supplier replies.", "ja": "仕入先から返信が来るまで持ちこたえる必要があります。", "focus": "hold on" }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "hold up",
+      "ja": "遅らせる・持ちこたえる",
+      "image": "進行を止める、または状態を保つ。",
+      "pattern": "hold up",
+      "examples": [
+        { "en": "The approval issue held up the shipment.", "ja": "承認の問題で出荷が遅れました。", "focus": "held up" },
+        { "en": "The sample held up well during the test.", "ja": "サンプルは試験中よく持ちこたえました。", "focus": "held up" }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "hold back",
+      "ja": "抑える・控える",
+      "image": "感情・情報・進行を抑える。",
+      "pattern": "hold back + 名詞",
+      "examples": [
+        { "en": "Please do not hold back important information.", "ja": "重要な情報は隠さないでください。", "focus": "hold back" },
+        { "en": "The missing data held back the report.", "ja": "不足データが報告書の作成を遅らせました。", "focus": "held back" }
       ],
       "dailyExamples": []
     },
@@ -8922,73 +8936,8 @@ export const verbs: Verb[] = [
       "image": "行動や判断を少し待つ。",
       "pattern": "hold off on + 名詞/動名詞",
       "examples": [
-        {
-          "en": "We should hold off on the order until we confirm the price.",
-          "ja": "価格を確認するまで発注は控えるべきです。",
-          "focus": "hold off"
-        },
-        {
-          "en": "The client held off on the final decision.",
-          "ja": "顧客は最終判断を保留しました。",
-          "focus": "held off"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "hold back",
-      "ja": "抑える・引き止める",
-      "image": "感情・情報・進行を抑える。",
-      "pattern": "hold back + 名詞",
-      "examples": [
-        {
-          "en": "Please do not hold back important information.",
-          "ja": "重要な情報は隠さないでください。",
-          "focus": "hold back"
-        },
-        {
-          "en": "The missing data held back the report.",
-          "ja": "不足データが報告書の作成を遅らせました。",
-          "focus": "held back"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "hold up",
-      "ja": "遅らせる・持ちこたえる",
-      "image": "進行を止める、または状態が保つ。",
-      "pattern": "hold up",
-      "examples": [
-        {
-          "en": "The approval issue held up the shipment.",
-          "ja": "承認の問題で出荷が遅れました。",
-          "focus": "held up"
-        },
-        {
-          "en": "The sample held up well during the test.",
-          "ja": "サンプルは試験中よく持ちこたえました。",
-          "focus": "held up"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "hold onto",
-      "ja": "〜を持ち続ける",
-      "image": "必要なものを手放さず保持する。",
-      "pattern": "hold onto + 名詞",
-      "examples": [
-        {
-          "en": "Please hold onto the original receipt.",
-          "ja": "原本の領収書は保管しておいてください。",
-          "focus": "hold onto"
-        },
-        {
-          "en": "We should hold onto this data for future analysis.",
-          "ja": "今後の分析のためにこのデータを保持しておくべきです。",
-          "focus": "hold onto"
-        }
+        { "en": "We should hold off on the order until we confirm the price.", "ja": "価格を確認するまで発注は控えるべきです。", "focus": "hold off" },
+        { "en": "The client held off on the final decision.", "ja": "顧客は最終判断を保留しました。", "focus": "held off" }
       ],
       "dailyExamples": []
     },
@@ -8998,16 +8947,19 @@ export const verbs: Verb[] = [
       "image": "条件を保って待つ、または手を差し出す。",
       "pattern": "hold out",
       "examples": [
-        {
-          "en": "The team held out until the deadline was extended.",
-          "ja": "チームは締切が延びるまで持ちこたえました。",
-          "focus": "held out"
-        },
-        {
-          "en": "We held out for better payment terms.",
-          "ja": "私たちはより良い支払条件を求めて粘りました。",
-          "focus": "held out"
-        }
+        { "en": "The team held out until the deadline was extended.", "ja": "チームは締切が延びるまで持ちこたえました。", "focus": "held out" },
+        { "en": "We held out for better payment terms.", "ja": "私たちはより良い支払条件を求めて粘りました。", "focus": "held out" }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "hold onto",
+      "ja": "〜を手放さない・持ち続ける",
+      "image": "必要なものを手放さず保持する。",
+      "pattern": "hold onto + 名詞",
+      "examples": [
+        { "en": "Please hold onto the original receipt.", "ja": "原本の領収書は保管しておいてください。", "focus": "hold onto" },
+        { "en": "We should hold onto this data for future analysis.", "ja": "今後の分析のためにこのデータを保持しておくべきです。", "focus": "hold onto" }
       ],
       "dailyExamples": []
     },
@@ -9017,73 +8969,19 @@ export const verbs: Verb[] = [
       "image": "チームや計画が崩れずに続く。",
       "pattern": "hold together",
       "examples": [
-        {
-          "en": "The project held together because everyone shared updates.",
-          "ja": "全員が情報共有したため、プロジェクトはまとまりを保てました。",
-          "focus": "held together"
-        },
-        {
-          "en": "We need a clear plan to hold the team together.",
-          "ja": "チームをまとめるには明確な計画が必要です。",
-          "focus": "hold together"
-        }
+        { "en": "The project held together because everyone shared updates.", "ja": "全員が情報共有したため、プロジェクトはまとまりを保てました。", "focus": "held together" },
+        { "en": "We need a clear plan to hold the team together.", "ja": "チームをまとめるには明確な計画が必要です。", "focus": "hold together" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "hold down",
-      "ja": "抑える・仕事を続ける",
-      "image": "費用を抑える、または仕事を続ける。",
+      "ja": "抑える・仕事を維持する",
+      "image": "費用を抑える、または仕事や役割を続ける。",
       "pattern": "hold down + 名詞",
       "examples": [
-        {
-          "en": "We need to hold down the total cost.",
-          "ja": "私たちは総コストを抑える必要があります。",
-          "focus": "hold down"
-        },
-        {
-          "en": "He holds down two roles in the project.",
-          "ja": "彼はそのプロジェクトで2つの役割を担い続けています。",
-          "focus": "holds down"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "hold against",
-      "ja": "〜を悪く思う",
-      "image": "過去のことを理由に相手を責める。",
-      "pattern": "hold + 名詞 + against + 人",
-      "examples": [
-        {
-          "en": "I will not hold the delay against you.",
-          "ja": "その遅れについてあなたを責めるつもりはありません。",
-          "focus": "hold against"
-        },
-        {
-          "en": "The client did not hold the mistake against our team.",
-          "ja": "顧客はそのミスを私たちのチームのせいにはしませんでした。",
-          "focus": "hold against"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "hold over",
-      "ja": "延期する・持ち越す",
-      "image": "予定や議題を後に回す。",
-      "pattern": "hold over + 名詞",
-      "examples": [
-        {
-          "en": "We held over the pricing discussion until next week.",
-          "ja": "価格の話し合いは来週に持ち越しました。",
-          "focus": "held over"
-        },
-        {
-          "en": "Please hold over this topic for the next meeting.",
-          "ja": "この議題は次回の会議に持ち越してください。",
-          "focus": "hold over"
-        }
+        { "en": "We need to hold down the total cost.", "ja": "私たちは総コストを抑える必要があります。", "focus": "hold down" },
+        { "en": "He holds down two roles in the project.", "ja": "彼はそのプロジェクトで2つの役割を担い続けています。", "focus": "holds down" }
       ],
       "dailyExamples": []
     }
@@ -9309,58 +9207,12 @@ export const verbs: Verb[] = [
   "phrasalVerbs": [
     {
       "phrase": "set up",
-      "ja": "設定する・準備する",
+      "ja": "設定する・準備する・設置する",
       "image": "会議・機器・環境を使える状態にする。",
       "pattern": "set up + 名詞",
       "examples": [
-        {
-          "en": "We set up a meeting with the client.",
-          "ja": "私たちは顧客との会議を設定しました。",
-          "focus": "set up"
-        },
-        {
-          "en": "Please set up the demo environment before noon.",
-          "ja": "正午までにデモ環境を準備してください。",
-          "focus": "set up"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "set aside",
-      "ja": "取っておく・脇に置く",
-      "image": "時間・予算・問題を別に確保する。",
-      "pattern": "set aside + 名詞",
-      "examples": [
-        {
-          "en": "We set aside time to review the proposal.",
-          "ja": "私たちは提案書を確認する時間を確保しました。",
-          "focus": "set aside"
-        },
-        {
-          "en": "Please set aside this issue until the client replies.",
-          "ja": "顧客から返信が来るまでこの件はいったん脇に置いてください。",
-          "focus": "set aside"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "set back",
-      "ja": "遅らせる",
-      "image": "進行を遅らせる。",
-      "pattern": "set back + 名詞",
-      "examples": [
-        {
-          "en": "The delivery issue set back the project.",
-          "ja": "納品トラブルでプロジェクトが遅れました。",
-          "focus": "set back"
-        },
-        {
-          "en": "A missing document could set back approval.",
-          "ja": "書類不足で承認が遅れる可能性があります。",
-          "focus": "set back"
-        }
+        { "en": "We set up a meeting with the client.", "ja": "私たちは顧客との会議を設定しました。", "focus": "set up" },
+        { "en": "Please set up the demo environment before noon.", "ja": "正午までにデモ環境を準備してください。", "focus": "set up" }
       ],
       "dailyExamples": []
     },
@@ -9370,16 +9222,8 @@ export const verbs: Verb[] = [
       "image": "出発する、または方針を示す。",
       "pattern": "set out",
       "examples": [
-        {
-          "en": "We set out the main points in the proposal.",
-          "ja": "私たちは提案書で主なポイントを示しました。",
-          "focus": "set out"
-        },
-        {
-          "en": "The team set out early for the site.",
-          "ja": "チームは現場へ早めに出発しました。",
-          "focus": "set out"
-        }
+        { "en": "We set out the main points in the proposal.", "ja": "私たちは提案書で主なポイントを示しました。", "focus": "set out" },
+        { "en": "The team set out early for the site.", "ja": "チームは現場へ早めに出発しました。", "focus": "set out" }
       ],
       "dailyExamples": []
     },
@@ -9389,35 +9233,41 @@ export const verbs: Verb[] = [
       "image": "出発する、または反応を引き起こす。",
       "pattern": "set off",
       "examples": [
-        {
-          "en": "We set off for the client visit at 8 a.m.",
-          "ja": "私たちは午前8時に顧客訪問へ出発しました。",
-          "focus": "set off"
-        },
-        {
-          "en": "The delay set off several schedule changes.",
-          "ja": "その遅れが複数のスケジュール変更を引き起こしました。",
-          "focus": "set off"
-        }
+        { "en": "We set off for the client visit at 8 a.m.", "ja": "私たちは午前8時に顧客訪問へ出発しました。", "focus": "set off" },
+        { "en": "The delay set off several schedule changes.", "ja": "その遅れが複数のスケジュール変更を引き起こしました。", "focus": "set off" }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "set aside",
+      "ja": "取っておく・脇に置く",
+      "image": "時間・予算・問題を別に確保する。",
+      "pattern": "set aside + 名詞",
+      "examples": [
+        { "en": "We set aside time to review the proposal.", "ja": "私たちは提案書を確認する時間を確保しました。", "focus": "set aside" },
+        { "en": "Please set aside this issue until the client replies.", "ja": "顧客から返信が来るまでこの件はいったん脇に置いてください。", "focus": "set aside" }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "set back",
+      "ja": "遅らせる・後退させる",
+      "image": "進行を遅らせる。",
+      "pattern": "set back + 名詞",
+      "examples": [
+        { "en": "The delivery issue set back the project.", "ja": "納品トラブルでプロジェクトが遅れました。", "focus": "set back" },
+        { "en": "A missing document could set back approval.", "ja": "書類不足で承認が遅れる可能性があります。", "focus": "set back" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "set down",
       "ja": "書き留める・置く",
-      "image": "情報を書き留める、または置く。",
+      "image": "情報を書き留める、または物を置く。",
       "pattern": "set down + 名詞",
       "examples": [
-        {
-          "en": "Please set down the agreed points in the minutes.",
-          "ja": "合意事項を議事録に書き留めてください。",
-          "focus": "set down"
-        },
-        {
-          "en": "He set down the samples near the entrance.",
-          "ja": "彼はサンプルを入口付近に置きました。",
-          "focus": "set down"
-        }
+        { "en": "Please set down the agreed points in the minutes.", "ja": "合意事項を議事録に書き留めてください。", "focus": "set down" },
+        { "en": "He set down the samples near the entrance.", "ja": "彼はサンプルを入口付近に置きました。", "focus": "set down" }
       ],
       "dailyExamples": []
     },
@@ -9427,16 +9277,8 @@ export const verbs: Verb[] = [
       "image": "状態が始まり、続く。",
       "pattern": "set in",
       "examples": [
-        {
-          "en": "A delay set in after the parts arrived late.",
-          "ja": "部品の到着が遅れた後、遅延が発生しました。",
-          "focus": "set in"
-        },
-        {
-          "en": "Once confusion sets in, the team needs clear instructions.",
-          "ja": "混乱が生じたら、チームには明確な指示が必要です。",
-          "focus": "sets in"
-        }
+        { "en": "A delay set in after the parts arrived late.", "ja": "部品の到着が遅れた後、遅延が発生しました。", "focus": "set in" },
+        { "en": "Once confusion sets in, the team needs clear instructions.", "ja": "混乱が生じたら、チームには明確な指示が必要です。", "focus": "sets in" }
       ],
       "dailyExamples": []
     },
@@ -9446,54 +9288,30 @@ export const verbs: Verb[] = [
       "image": "仕事や作業に取りかかる。",
       "pattern": "set about + 動名詞",
       "examples": [
-        {
-          "en": "We set about checking the inventory right away.",
-          "ja": "私たちはすぐに在庫確認に取りかかりました。",
-          "focus": "set about"
-        },
-        {
-          "en": "The team set about preparing the revised estimate.",
-          "ja": "チームは修正版の見積作成に取りかかりました。",
-          "focus": "set about"
-        }
+        { "en": "We set about checking the inventory right away.", "ja": "私たちはすぐに在庫確認に取りかかりました。", "focus": "set about" },
+        { "en": "The team set about preparing the revised estimate.", "ja": "チームは修正版の見積作成に取りかかりました。", "focus": "set about" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "set apart",
-      "ja": "区別する",
+      "ja": "区別する・差別化する",
       "image": "他と違う特徴で目立たせる。",
       "pattern": "set apart + 名詞",
       "examples": [
-        {
-          "en": "Fast support sets our team apart from competitors.",
-          "ja": "迅速なサポートが私たちのチームを競合と差別化します。",
-          "focus": "sets apart"
-        },
-        {
-          "en": "This feature sets the product apart in the market.",
-          "ja": "この機能が市場でその製品を差別化します。",
-          "focus": "sets apart"
-        }
+        { "en": "Fast support sets our team apart from competitors.", "ja": "迅速なサポートが私たちのチームを競合と差別化します。", "focus": "sets apart" },
+        { "en": "This feature sets the product apart in the market.", "ja": "この機能が市場でその製品を差別化します。", "focus": "sets apart" }
       ],
       "dailyExamples": []
     },
     {
-      "phrase": "set against",
-      "ja": "〜に反対させる・対比する",
-      "image": "相手や条件に対立させる。",
-      "pattern": "set + 名詞 + against + 名詞",
+      "phrase": "set forth",
+      "ja": "説明する・提示する",
+      "image": "条件・方針・考えを正式に示す。",
+      "pattern": "set forth + 名詞",
       "examples": [
-        {
-          "en": "The report set the new plan against the old one.",
-          "ja": "その報告書は新しい計画を古い計画と比較しました。",
-          "focus": "set against"
-        },
-        {
-          "en": "We should not set one department against another.",
-          "ja": "私たちは部署同士を対立させるべきではありません。",
-          "focus": "set against"
-        }
+        { "en": "The document sets forth the basic terms.", "ja": "その書類は基本条件を提示しています。", "focus": "sets forth" },
+        { "en": "We set forth the main reasons in the report.", "ja": "私たちは報告書で主な理由を示しました。", "focus": "set forth" }
       ],
       "dailyExamples": []
     }
@@ -9721,35 +9539,19 @@ export const verbs: Verb[] = [
       "image": "別の状態や形になる。",
       "pattern": "change into + 名詞",
       "examples": [
-        {
-          "en": "The inquiry changed into a real order.",
-          "ja": "その問い合わせは実際の注文に変わりました。",
-          "focus": "changed into"
-        },
-        {
-          "en": "The small issue changed into a larger problem.",
-          "ja": "小さな問題がより大きな問題に変わりました。",
-          "focus": "changed into"
-        }
+        { "en": "The inquiry changed into a real order.", "ja": "その問い合わせは実際の注文に変わりました。", "focus": "changed into" },
+        { "en": "The small issue changed into a larger problem.", "ja": "小さな問題がより大きな問題に変わりました。", "focus": "changed into" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "change from",
-      "ja": "Aから変わる",
+      "ja": "〜から変わる",
       "image": "元の状態から別の状態へ変わる。",
       "pattern": "change from A to B",
       "examples": [
-        {
-          "en": "The status changed from pending to approved.",
-          "ja": "ステータスは保留から承認済みに変わりました。",
-          "focus": "changed from"
-        },
-        {
-          "en": "We changed from the old system to the new one.",
-          "ja": "私たちは旧システムから新システムに切り替えました。",
-          "focus": "changed from"
-        }
+        { "en": "The status changed from pending to approved.", "ja": "ステータスは保留から承認済みに変わりました。", "focus": "changed from" },
+        { "en": "We changed from the old system to the new one.", "ja": "私たちは旧システムから新システムに切り替えました。", "focus": "changed from" }
       ],
       "dailyExamples": []
     },
@@ -9759,35 +9561,19 @@ export const verbs: Verb[] = [
       "image": "システム・方法・体制を切り替える。",
       "pattern": "change over to + 名詞",
       "examples": [
-        {
-          "en": "The team will change over to a new workflow.",
-          "ja": "チームは新しい作業フローに切り替えます。",
-          "focus": "change over"
-        },
-        {
-          "en": "Please prepare before we change over to the new format.",
-          "ja": "新しい形式に切り替える前に準備してください。",
-          "focus": "change over"
-        }
+        { "en": "The team will change over to a new workflow.", "ja": "チームは新しい作業フローに切り替えます。", "focus": "change over" },
+        { "en": "Please prepare before we change over to the new format.", "ja": "新しい形式に切り替える前に準備してください。", "focus": "change over" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "change back",
-      "ja": "元に戻す",
+      "ja": "元に戻す・戻る",
       "image": "以前の状態へ戻す。",
       "pattern": "change back",
       "examples": [
-        {
-          "en": "We changed back to the original layout.",
-          "ja": "元のレイアウトに戻しました。",
-          "focus": "changed back"
-        },
-        {
-          "en": "Please change the setting back after the test.",
-          "ja": "テスト後に設定を元に戻してください。",
-          "focus": "change back"
-        }
+        { "en": "We changed back to the original layout.", "ja": "元のレイアウトに戻しました。", "focus": "changed back" },
+        { "en": "Please change the setting back after the test.", "ja": "テスト後に設定を元に戻してください。", "focus": "change back" }
       ],
       "dailyExamples": []
     },
@@ -9797,35 +9583,8 @@ export const verbs: Verb[] = [
       "image": "順番や配置を変える。",
       "pattern": "change around + 名詞",
       "examples": [
-        {
-          "en": "We changed around the order of the slides.",
-          "ja": "スライドの順番を入れ替えました。",
-          "focus": "changed around"
-        },
-        {
-          "en": "Please change around the seating for the meeting.",
-          "ja": "会議用に席の配置を変えてください。",
-          "focus": "change around"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "change out",
-      "ja": "交換する",
-      "image": "部品や古いものを交換する。",
-      "pattern": "change out + 名詞",
-      "examples": [
-        {
-          "en": "We need to change out the damaged part.",
-          "ja": "破損した部品を交換する必要があります。",
-          "focus": "change out"
-        },
-        {
-          "en": "The team changed out the old module on site.",
-          "ja": "チームは現場で古いモジュールを交換しました。",
-          "focus": "changed out"
-        }
+        { "en": "We changed around the order of the slides.", "ja": "スライドの順番を入れ替えました。", "focus": "changed around" },
+        { "en": "Please change around the seating for the meeting.", "ja": "会議用に席の配置を変えてください。", "focus": "change around" }
       ],
       "dailyExamples": []
     },
@@ -9835,35 +9594,8 @@ export const verbs: Verb[] = [
       "image": "やり方や流れを少し変える。",
       "pattern": "change up + 名詞",
       "examples": [
-        {
-          "en": "We should change up the presentation style.",
-          "ja": "プレゼンの進め方に変化をつけるべきです。",
-          "focus": "change up"
-        },
-        {
-          "en": "The manager changed up the agenda to save time.",
-          "ja": "上司は時間を節約するため議題の順番を変えました。",
-          "focus": "changed up"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "change to",
-      "ja": "〜に変更する",
-      "image": "別の選択肢・状態に変更する。",
-      "pattern": "change to + 名詞",
-      "examples": [
-        {
-          "en": "Please change to the latest version of the file.",
-          "ja": "最新バージョンのファイルに変更してください。",
-          "focus": "change to"
-        },
-        {
-          "en": "We changed to a different supplier after the delay.",
-          "ja": "遅延後、私たちは別の仕入先に変更しました。",
-          "focus": "changed to"
-        }
+        { "en": "We should change up the presentation style.", "ja": "プレゼンの進め方に変化をつけるべきです。", "focus": "change up" },
+        { "en": "The manager changed up the agenda to save time.", "ja": "上司は時間を節約するため議題の順番を変えました。", "focus": "changed up" }
       ],
       "dailyExamples": []
     }

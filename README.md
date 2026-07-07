@@ -1,9 +1,7 @@
 # Verb Master
 
-Ver.147 CALL / RUN / LEAVE re-audit final.
+Reaudit OPEN / CLOSE / LET final package.
 
-## Notes
+This build preserves the Ver.145 auth/restore/persistence foundation, the Ver.146 user-facing cleanup, and the Ver.140 simple prefix search.
 
-- Based on Ver.146 user-clean profile UI and Ver.145 auth/restore/persistence system.
-- CALL / RUN / LEAVE have been re-audited under the current two-category rule: 基本 / 句動詞 only.
-- No additional SQL is required for this update.
+No additional SQL is required for this update.

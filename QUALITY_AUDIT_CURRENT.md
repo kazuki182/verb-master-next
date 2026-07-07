@@ -1,25 +1,14 @@
-# QUALITY AUDIT CURRENT
+# QUALITY_AUDIT_CURRENT
 
-## Ver.148 MOVE / TURN / BRING Re-audit Final
+Current package: Reaudit OPEN / CLOSE / LET final
 
-- Base: Ver.147 CALL / RUN / LEAVE re-audit final
-- Target verbs: MOVE / TURN / BRING
-- Category policy: 基本 / 句動詞 only
-- collocations: empty for target verbs
-- Persistence: Ver.145 auth/restore/save system preserved
-- User UI cleanup: Ver.146 preserved
-- Search: Ver.140 simple prefix search preserved
-
-## Phrasal verb counts
-
-- MOVE: 9
-- TURN: 10
-- BRING: 10
-
-## Checks
-
-- Basic focus: verb only
-- Phrasal focus: verb + particle/preposition only
-- Object highlight: excluded
-- TypeScript: OK
-- Build: OK
+Checks:
+- Target verbs: OPEN / CLOSE / LET
+- Phrasal verb counts: OPEN 6, CLOSE 7, LET 8
+- Categories: 基本 / 句動詞 only
+- Collocations: empty for target verbs
+- Highlight policy: basic = verb only; phrasal = verb + particle/preposition only
+- Persistence/auth: Ver.145 preserved
+- User clean profile UI: Ver.146 preserved
+- Simple prefix search: Ver.140 preserved
+- Additional SQL: none

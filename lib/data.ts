@@ -9856,119 +9856,67 @@ export const verbs: Verb[] = [
   "phrasalVerbs": [
     {
       "phrase": "open up",
-      "ja": "心を開く・詳しく話す",
-      "image": "閉じていた情報や気持ちを外に出す。",
+      "ja": "開く・心を開く・可能性を広げる",
+      "image": "閉じていたもの・気持ち・可能性が外へ開く。",
       "pattern": "open up",
       "examples": [
-        {
-          "en": "The client opened up during the follow-up call.",
-          "ja": "その顧客はフォローの電話で本音を話してくれました。",
-          "focus": "opened up"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "open up about",
-      "ja": "〜について詳しく話す",
-      "image": "特定の話題について本音を話す。",
-      "pattern": "open up about",
-      "examples": [
-        {
-          "en": "She opened up about the problem with the schedule.",
-          "ja": "彼女はスケジュールの問題について詳しく話しました。",
-          "focus": "opened up about",
-          "object": "the problem"
-        }
+        { "en": "The client opened up during the follow-up call.", "ja": "その顧客はフォローの電話で本音を話してくれました。", "focus": "opened up" },
+        { "en": "This new feature opens up more sales opportunities.", "ja": "この新機能はより多くの営業機会を広げます。", "focus": "opens up", "object": "more sales opportunities" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "open out",
       "ja": "広がる・展開する",
-      "image": "話や景色、状況が広がる。",
+      "image": "話・景色・状況が広がっていく。",
       "pattern": "open out",
       "examples": [
-        {
-          "en": "The discussion opened out into a larger issue.",
-          "ja": "その議論はより大きな問題へと広がりました。",
-          "focus": "opened out"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "open onto",
-      "ja": "〜に面している・〜へ開く",
-      "image": "扉や部屋がある場所へつながる。",
-      "pattern": "open onto",
-      "examples": [
-        {
-          "en": "The meeting room opens onto the main office area.",
-          "ja": "その会議室はメインオフィスエリアに面しています。",
-          "focus": "opens onto",
-          "object": "the main office area"
-        }
+        { "en": "The discussion opened out into a larger issue.", "ja": "その議論はより大きな問題へと広がりました。", "focus": "opened out" },
+        { "en": "The path opens out near the main entrance.", "ja": "その通路は正面入口の近くで広がります。", "focus": "opens out" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "open into",
-      "ja": "〜へ開く・〜につながる",
-      "image": "扉や入口が別の場所へつながる。",
-      "pattern": "open into",
+      "ja": "〜へ通じる・〜へ広がる",
+      "image": "ある場所や状態から別の場所・状態へ開いていく。",
+      "pattern": "open into + 名詞",
       "examples": [
-        {
-          "en": "This door opens into the storage room.",
-          "ja": "このドアは倉庫につながっています。",
-          "focus": "opens into",
-          "object": "the storage room"
-        }
+        { "en": "The meeting room opens into the showroom.", "ja": "その会議室はショールームへ通じています。", "focus": "opens into", "object": "the showroom" },
+        { "en": "The small project opened into a long-term partnership.", "ja": "その小さな案件は長期的な協力関係へ広がりました。", "focus": "opened into", "object": "a long-term partnership" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "open for",
-      "ja": "営業・受付を開始する",
-      "image": "利用や受付のために開く。",
-      "pattern": "open for",
+      "ja": "〜向けに開く・受付を開始する",
+      "image": "特定の目的や相手に向けて利用可能にする。",
+      "pattern": "open for + 名詞",
       "examples": [
-        {
-          "en": "Registration opens for new users next week.",
-          "ja": "新規ユーザー向けの登録受付は来週始まります。",
-          "focus": "opens for",
-          "object": "new users"
-        }
+        { "en": "Registration opens for new users next week.", "ja": "新規ユーザー向けの登録受付は来週始まります。", "focus": "opens for", "object": "new users" },
+        { "en": "The showroom opened for visitors at ten.", "ja": "ショールームは10時に来場者向けに開きました。", "focus": "opened for", "object": "visitors" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "open with",
       "ja": "〜で始める",
-      "image": "会議や発表を特定の内容で始める。",
-      "pattern": "open with",
+      "image": "会議・説明・話を特定の内容から始める。",
+      "pattern": "open with + 名詞",
       "examples": [
-        {
-          "en": "The presenter opened with a quick summary.",
-          "ja": "発表者は短い要約から始めました。",
-          "focus": "opened with",
-          "object": "a quick summary"
-        }
+        { "en": "Let's open with a quick review of the schedule.", "ja": "まずスケジュールの簡単な確認から始めましょう。", "focus": "open with", "object": "a quick review" },
+        { "en": "The presentation opened with the main problem.", "ja": "そのプレゼンは主な課題から始まりました。", "focus": "opened with", "object": "the main problem" }
       ],
       "dailyExamples": []
     },
     {
-      "phrase": "open back up",
-      "ja": "再開する・再び開く",
-      "image": "一度閉じたものを再び開く。",
-      "pattern": "open back up",
+      "phrase": "open to",
+      "ja": "〜に前向きである・開かれている",
+      "image": "考えや提案を受け入れられる状態でいる。",
+      "pattern": "open to + 名詞",
       "examples": [
-        {
-          "en": "We opened the registration back up for one more week.",
-          "ja": "私たちは登録受付をもう1週間再開しました。",
-          "focus": "opened back up",
-          "object": "the registration"
-        }
+        { "en": "The client is open to a different design.", "ja": "顧客は別のデザインにも前向きです。", "focus": "open to", "object": "a different design" },
+        { "en": "We are open to new ideas from the team.", "ja": "私たちはチームからの新しい案を受け入れる姿勢です。", "focus": "open to", "object": "new ideas" }
       ],
       "dailyExamples": []
     }
@@ -10200,91 +10148,78 @@ export const verbs: Verb[] = [
   "phrasalVerbs": [
     {
       "phrase": "close down",
-      "ja": "閉鎖する・停止する",
-      "image": "事業やシステムを完全に止める。",
+      "ja": "閉鎖する・営業を停止する",
+      "image": "店・事業・システムを終わらせる。",
       "pattern": "close down",
       "examples": [
-        {
-          "en": "The company closed down the old system.",
-          "ja": "会社は古いシステムを停止しました。",
-          "focus": "closed down",
-          "object": "the old system"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "close out",
-      "ja": "完了処理する・締める",
-      "image": "案件や会計を最後まで処理する。",
-      "pattern": "close out",
-      "examples": [
-        {
-          "en": "We need to close out this project by Friday.",
-          "ja": "私たちは金曜日までにこの案件を完了処理する必要があります。",
-          "focus": "close out",
-          "object": "this project"
-        }
+        { "en": "The old branch closed down last month.", "ja": "その古い支店は先月閉鎖しました。", "focus": "closed down" },
+        { "en": "We may close down the test environment after approval.", "ja": "承認後にテスト環境を停止するかもしれません。", "focus": "close down", "object": "the test environment" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "close off",
-      "ja": "封鎖する・締め切る",
-      "image": "場所や選択肢を使えない状態にする。",
-      "pattern": "close off",
+      "ja": "封鎖する・遮断する",
+      "image": "通路・選択肢・流れを閉じて通れなくする。",
+      "pattern": "close off + 名詞",
       "examples": [
-        {
-          "en": "They closed off the area during the installation.",
-          "ja": "設置作業中、そのエリアは封鎖されました。",
-          "focus": "closed off",
-          "object": "the area"
-        }
+        { "en": "The team closed off the area during the installation.", "ja": "設置作業中、チームはそのエリアを封鎖しました。", "focus": "closed off", "object": "the area" },
+        { "en": "This decision may close off other options.", "ja": "この判断で他の選択肢が閉ざされる可能性があります。", "focus": "close off", "object": "other options" }
       ],
       "dailyExamples": []
     },
     {
-      "phrase": "close up",
-      "ja": "閉店する・隙間を閉じる",
-      "image": "店やスペースを閉じる。",
-      "pattern": "close up",
+      "phrase": "close in",
+      "ja": "近づく・迫る",
+      "image": "距離や期限が近づいてくる。",
+      "pattern": "close in",
       "examples": [
-        {
-          "en": "Please close up the office after the meeting.",
-          "ja": "会議後にオフィスを閉めてください。",
-          "focus": "close up",
-          "object": "the office"
-        }
+        { "en": "The deadline is closing in quickly.", "ja": "締切が急速に近づいています。", "focus": "closing in" },
+        { "en": "Competitors are closing in on our price range.", "ja": "競合が私たちの価格帯に近づいています。", "focus": "closing in" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "close in on",
       "ja": "〜に迫る",
-      "image": "目標や期限に近づく。",
-      "pattern": "close in on",
+      "image": "目標・期限・相手に近づいていく。",
+      "pattern": "close in on + 名詞",
       "examples": [
-        {
-          "en": "We are closing in on the final deadline.",
-          "ja": "私たちは最終期限に近づいています。",
-          "focus": "closing in on",
-          "object": "the final deadline"
-        }
+        { "en": "We are closing in on the final decision.", "ja": "私たちは最終判断に近づいています。", "focus": "closing in on", "object": "the final decision" },
+        { "en": "The team is closing in on the cause of the issue.", "ja": "チームは問題の原因に迫っています。", "focus": "closing in on", "object": "the cause" }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "close out",
+      "ja": "終了する・売り切る",
+      "image": "案件・在庫・期間を締めて完了する。",
+      "pattern": "close out + 名詞",
+      "examples": [
+        { "en": "Let's close out this project by Friday.", "ja": "金曜日までにこの案件を完了させましょう。", "focus": "close out", "object": "this project" },
+        { "en": "The store closed out the old stock at a discount.", "ja": "その店は旧在庫を値引きして売り切りました。", "focus": "closed out", "object": "the old stock" }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "close up",
+      "ja": "閉める・近づける",
+      "image": "店や隙間を閉じる。",
+      "pattern": "close up",
+      "examples": [
+        { "en": "Please close up the office after the meeting.", "ja": "会議後にオフィスを閉めてください。", "focus": "close up", "object": "the office" },
+        { "en": "The gap closed up after we adjusted the panel.", "ja": "パネルを調整した後、隙間が閉じました。", "focus": "closed up" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "close with",
-      "ja": "〜で締める",
-      "image": "発表や会議を特定の内容で終える。",
-      "pattern": "close with",
+      "ja": "〜で終える・〜と合意する",
+      "image": "話や交渉を特定の内容で締める。",
+      "pattern": "close with + 名詞",
       "examples": [
-        {
-          "en": "I will close with a quick summary.",
-          "ja": "最後に短い要約で締めます。",
-          "focus": "close with",
-          "object": "a quick summary"
-        }
+        { "en": "The meeting closed with a clear action plan.", "ja": "その会議は明確な行動計画で締めくくられました。", "focus": "closed with", "object": "a clear action plan" },
+        { "en": "We hope to close with the client next week.", "ja": "来週その顧客と合意に至りたいです。", "focus": "close with", "object": "the client" }
       ],
       "dailyExamples": []
     }
@@ -10494,147 +10429,87 @@ export const verbs: Verb[] = [
       "phrase": "let in",
       "ja": "中に入れる",
       "image": "人・光・空気などを中へ通す。",
-      "pattern": "let in",
+      "pattern": "let in + 名詞",
       "examples": [
-        {
-          "en": "Please let the visitor in after checking his name.",
-          "ja": "名前を確認してから来訪者を中に入れてください。",
-          "focus": "let in",
-          "object": "the visitor"
-        }
+        { "en": "Please let the delivery team in when they arrive.", "ja": "配送チームが到着したら中に入れてください。", "focus": "let in", "object": "the delivery team" },
+        { "en": "The new window lets in more light.", "ja": "新しい窓はより多くの光を取り込みます。", "focus": "lets in", "object": "more light" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "let out",
       "ja": "外へ出す・漏らす",
-      "image": "人や情報を外に出す。",
-      "pattern": "let out",
+      "image": "中にあるものを外へ出す。",
+      "pattern": "let out + 名詞",
       "examples": [
-        {
-          "en": "Do not let this information out before the announcement.",
-          "ja": "発表前にこの情報を外へ漏らさないでください。",
-          "focus": "let out",
-          "object": "this information"
-        }
+        { "en": "Please do not let out any confidential information.", "ja": "機密情報を漏らさないでください。", "focus": "let out", "object": "any confidential information" },
+        { "en": "The system lets out a warning sound when it fails.", "ja": "システムは不具合時に警告音を出します。", "focus": "lets out", "object": "a warning sound" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "let down",
-      "ja": "がっかりさせる",
-      "image": "期待に応えられず相手を失望させる。",
-      "pattern": "let down",
+      "ja": "がっかりさせる・期待を裏切る",
+      "image": "相手の期待や信頼を下げてしまう。",
+      "pattern": "let down + 人",
       "examples": [
-        {
-          "en": "We cannot let the client down on this project.",
-          "ja": "この案件で顧客をがっかりさせるわけにはいきません。",
-          "focus": "let down",
-          "object": "the client"
-        }
+        { "en": "We must not let the client down.", "ja": "私たちは顧客をがっかりさせてはいけません。", "focus": "let down", "object": "the client" },
+        { "en": "The late delivery let the team down.", "ja": "納品遅れでチームを失望させました。", "focus": "let down", "object": "the team" }
       ],
       "dailyExamples": []
     },
     {
-      "phrase": "let through",
-      "ja": "通す・通過させる",
-      "image": "人や情報を通過させる。",
-      "pattern": "let through",
+      "phrase": "let go",
+      "ja": "手放す・解放する",
+      "image": "持っているものやこだわりを離す。",
+      "pattern": "let go",
       "examples": [
-        {
-          "en": "Security let the delivery staff through the gate.",
-          "ja": "警備員は配送スタッフをゲートに通しました。",
-          "focus": "let through",
-          "object": "the delivery staff"
-        }
+        { "en": "We need to let go and move to the next option.", "ja": "私たちはこだわりを手放して次の選択肢へ進む必要があります。", "focus": "let go" },
+        { "en": "The manager let go after the issue was solved.", "ja": "問題が解決した後、マネージャーはこだわりを手放しました。", "focus": "let go" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "let go of",
-      "ja": "手放す・やめる",
-      "image": "考えや物を手放す。",
-      "pattern": "let go of",
+      "ja": "〜を手放す",
+      "image": "物・考え・不安などを手放す。",
+      "pattern": "let go of + 名詞",
       "examples": [
-        {
-          "en": "We need to let go of the old process.",
-          "ja": "私たちは古い手順を手放す必要があります。",
-          "focus": "let go of",
-          "object": "the old process"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "let on",
-      "ja": "口外する・ほのめかす",
-      "image": "秘密や情報を外へ出す。",
-      "pattern": "let on",
-      "examples": [
-        {
-          "en": "Please do not let on that the price will change.",
-          "ja": "価格が変わることはまだ口外しないでください。",
-          "focus": "let on"
-        }
+        { "en": "We should let go of the old process.", "ja": "私たちは古いやり方を手放すべきです。", "focus": "let go of", "object": "the old process" },
+        { "en": "He let go of the first idea after the review.", "ja": "彼はレビュー後に最初の案を手放しました。", "focus": "let go of", "object": "the first idea" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "let off",
-      "ja": "許す・解放する",
-      "image": "罰や負担から解放する。",
-      "pattern": "let off",
+      "ja": "免除する・解放する",
+      "image": "罰や負担から相手を解放する。",
+      "pattern": "let off + 人",
       "examples": [
-        {
-          "en": "The manager let him off with a warning.",
-          "ja": "マネージャーは彼を注意だけで許しました。",
-          "focus": "let off",
-          "object": "him"
-        }
+        { "en": "The manager let him off with a warning.", "ja": "マネージャーは注意だけで彼を許しました。", "focus": "let off", "object": "him" },
+        { "en": "We cannot let the supplier off without checking the reason.", "ja": "理由を確認せずに仕入先を免責にはできません。", "focus": "let off", "object": "the supplier" }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "let on",
+      "ja": "秘密を漏らす・明かす",
+      "image": "まだ言わないはずの情報を外に出す。",
+      "pattern": "let on",
+      "examples": [
+        { "en": "Do not let on that the price will change next month.", "ja": "来月価格が変わることはまだ漏らさないでください。", "focus": "let on" },
+        { "en": "She did not let on that there was a problem.", "ja": "彼女は問題があることを明かしませんでした。", "focus": "let on" }
       ],
       "dailyExamples": []
     },
     {
       "phrase": "let up",
-      "ja": "弱まる・緩む",
-      "image": "雨・圧力・忙しさなどが弱まる。",
+      "ja": "弱まる・和らぐ",
+      "image": "雨・忙しさ・圧力などが弱くなる。",
       "pattern": "let up",
       "examples": [
-        {
-          "en": "The workload has not let up this week.",
-          "ja": "今週は業務量がまだ落ち着いていません。",
-          "focus": "let up"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "let into",
-      "ja": "〜の中に入れる・参加させる",
-      "image": "人を場所や活動に入れる。",
-      "pattern": "let into",
-      "examples": [
-        {
-          "en": "We let the new partner into the project after approval.",
-          "ja": "承認後、新しいパートナーを案件に参加させました。",
-          "focus": "let into",
-          "object": "the new partner"
-        }
-      ],
-      "dailyExamples": []
-    },
-    {
-      "phrase": "let in on",
-      "ja": "秘密・情報を共有する",
-      "image": "人に内部情報や計画を教える。",
-      "pattern": "let in on",
-      "examples": [
-        {
-          "en": "She let me in on the plan before the meeting.",
-          "ja": "彼女は会議前にその計画を私に教えてくれました。",
-          "focus": "let in on",
-          "object": "me"
-        }
+        { "en": "The pressure will not let up until the deadline.", "ja": "締切まではプレッシャーが弱まりません。", "focus": "let up" },
+        { "en": "The rain let up before the site visit.", "ja": "現場訪問前に雨が弱まりました。", "focus": "let up" }
       ],
       "dailyExamples": []
     }

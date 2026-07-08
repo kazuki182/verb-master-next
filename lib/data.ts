@@ -10516,805 +10516,816 @@ export const verbs: Verb[] = [
   ]
 },
     {
-    "id": "build",
-    "rank": 40,
-    "word": "BUILD",
-    "ipa": "",
-    "kana": "ビルド",
-    "syllable": "build",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 基本",
-    "core": "少しずつ積み上げて作る・築く",
-    "coreDetail": "BUILDは、建物だけでなく、信頼・関係・体制・経験を時間をかけて積み上げる動詞です。仕事では build trust, build a system, build a relationship が特に重要です。",
-    "coreVisual": {
-      "from": [
-        "🧱 部品",
-        "📋 仕組み",
-        "🤝 信頼",
-        "👥 関係"
-      ],
-      "to": "積み上げて形にする",
-      "label": "材料 → 形・成果へ"
-    },
-    "meanings": [
-      {
-        "id": "build-system",
-        "title": "1 仕組み・体制を作る",
-        "pattern": "build + system / process / team",
-        "transitivity": "他動詞",
-        "structure": "基本",
-        "image": "部品を積み上げて、仕事が回る形にする。",
-        "point": "build は「使える形まで作り上げる」感覚です。",
-        "examples": [
-          {
-            "en": "We need to build a better sales process.",
-            "ja": "私たちはより良い営業プロセスを作る必要があります。",
-            "focus": "build",
-            "object": "a better sales process"
-          },
-          {
-            "en": "The team built a new ordering system.",
-            "ja": "チームは新しい発注システムを構築しました。",
-            "focus": "built",
-            "object": "a new ordering system"
-          },
-          {
-            "en": "She is building a checklist for new staff.",
-            "ja": "彼女は新人向けのチェックリストを作っています。",
-            "focus": "building",
-            "object": "a checklist"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "build-trust",
-        "title": "2 信頼・関係を築く",
-        "pattern": "build + trust / relationship",
-        "transitivity": "他動詞",
-        "structure": "基本",
-        "image": "信頼や関係を時間をかけて積み上げる。",
-        "point": "営業・顧客対応で非常に使いやすい基本表現です。",
-        "examples": [
-          {
-            "en": "Good support builds trust with clients.",
-            "ja": "良いサポートは顧客との信頼を築きます。",
-            "focus": "builds",
-            "object": "trust"
-          },
-          {
-            "en": "We should build a stronger relationship with this client.",
-            "ja": "私たちはこの顧客とより強い関係を築くべきです。",
-            "focus": "build",
-            "object": "a stronger relationship"
-          },
-          {
-            "en": "Regular updates helped us build trust.",
-            "ja": "定期的な報告が信頼構築に役立ちました。",
-            "focus": "build",
-            "object": "trust"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "build-plan",
-        "title": "3 計画・提案を組み立てる",
-        "pattern": "build + plan / proposal",
-        "transitivity": "他動詞",
-        "structure": "基本",
-        "image": "材料を整理して、提案や計画として形にする。",
-        "point": "make よりも「段階的に組み立てる」印象があります。",
-        "examples": [
-          {
-            "en": "We built the proposal around the client's budget.",
-            "ja": "私たちは顧客の予算を軸に提案を組み立てました。",
-            "focus": "built",
-            "object": "the proposal"
-          },
-          {
-            "en": "Please build a plan for the next meeting.",
-            "ja": "次回会議に向けた計画を組み立ててください。",
-            "focus": "build",
-            "object": "a plan"
-          },
-          {
-            "en": "He builds clear action plans after each call.",
-            "ja": "彼は各電話の後に明確な行動計画を作ります。",
-            "focus": "builds",
-            "object": "clear action plans"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "build-experience",
-        "title": "4 経験・実績を積む",
-        "pattern": "build + experience / record",
-        "transitivity": "他動詞",
-        "structure": "基本",
-        "image": "経験や実績を少しずつ増やす。",
-        "point": "人や会社の成長を表す時に自然です。",
-        "examples": [
-          {
-            "en": "We need to build more experience with RGB projects.",
-            "ja": "私たちはRGB案件の経験をもっと積む必要があります。",
-            "focus": "build",
-            "object": "more experience"
-          },
-          {
-            "en": "The new team built a strong track record.",
-            "ja": "新しいチームはしっかりした実績を積みました。",
-            "focus": "built",
-            "object": "a strong track record"
-          },
-          {
-            "en": "This project will help us build confidence.",
-            "ja": "この案件は私たちが自信をつける助けになります。",
-            "focus": "build",
-            "object": "confidence"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "build-result",
-        "title": "5 数値・成果を積み上げる",
-        "pattern": "build + results / sales",
-        "transitivity": "他動詞",
-        "structure": "基本",
-        "image": "小さな成果を重ねて大きな結果にする。",
-        "point": "営業成績や実績の説明に使えます。",
-        "examples": [
-          {
-            "en": "We built sales little by little in this area.",
-            "ja": "私たちはこのエリアで少しずつ売上を積み上げました。",
-            "focus": "built",
-            "object": "sales"
-          },
-          {
-            "en": "The campaign is building momentum.",
-            "ja": "そのキャンペーンは勢いを増しています。",
-            "focus": "building",
-            "object": "momentum"
-          },
-          {
-            "en": "Small improvements build long-term results.",
-            "ja": "小さな改善が長期的な成果につながります。",
-            "focus": "build",
-            "object": "long-term results"
-          }
-        ],
-        "dailyExamples": []
-      }
+  "id": "build",
+  "rank": 40,
+  "word": "BUILD",
+  "ipa": "",
+  "kana": "ビルド",
+  "syllable": "build",
+  "transitivity": "他動詞・自動詞",
+  "importance": "★★★★☆ 基本",
+  "core": "材料や経験を少しずつ積み上げて形にする・築く",
+  "coreDetail": "BUILDは、建物だけでなく、信頼・関係・仕組み・経験を時間をかけて積み上げる動詞です。仕事では build trust, build a system, build a relationship が特に重要です。",
+  "coreVisual": {
+    "from": [
+      "🧱 部品",
+      "📋 仕組み",
+      "🤝 信頼",
+      "📈 経験"
     ],
-    "collocations": [],
-    "phrasalVerbs": [
-      {
-        "phrase": "build up",
-        "ja": "積み上げる・高める",
-        "image": "量・力・信頼などを少しずつ増やす。",
-        "pattern": "build up",
-        "examples": [
-          {
-            "en": "We need to build up our project experience.",
-            "ja": "私たちは案件経験を積み上げる必要があります。",
-            "focus": "build up",
-            "object": "our project experience"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "build on",
-        "ja": "〜を土台にする",
-        "image": "既存の実績・案を活かして次に進む。",
-        "pattern": "build on",
-        "examples": [
-          {
-            "en": "Let's build on the client's feedback.",
-            "ja": "顧客の意見をもとにさらに改善しましょう。",
-            "focus": "build on",
-            "object": "the client's feedback"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "build upon",
-        "ja": "〜を土台に発展させる",
-        "image": "build on より少し硬めで、資料・提案向き。",
-        "pattern": "build upon",
-        "examples": [
-          {
-            "en": "The proposal builds upon last year's results.",
-            "ja": "その提案は昨年の結果を土台に発展させています。",
-            "focus": "builds upon",
-            "object": "last year's results"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "build into",
-        "ja": "〜に組み込む",
-        "image": "機能や確認項目を仕組みに入れる。",
-        "pattern": "build into",
-        "examples": [
-          {
-            "en": "Please build this check into the workflow.",
-            "ja": "この確認を業務フローに組み込んでください。",
-            "focus": "build into",
-            "object": "this check"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "build in",
-        "ja": "組み込む",
-        "image": "機能や余裕を最初から入れておく。",
-        "pattern": "build in",
-        "examples": [
-          {
-            "en": "We should build in extra time for approval.",
-            "ja": "承認のための余裕時間を組み込むべきです。",
-            "focus": "build in",
-            "object": "extra time"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "build around",
-        "ja": "〜を中心に作る",
-        "image": "提案や計画の中心に置く。",
-        "pattern": "build around",
-        "examples": [
-          {
-            "en": "We built the plan around the delivery date.",
-            "ja": "私たちは納期を中心に計画を組み立てました。",
-            "focus": "built around",
-            "object": "the delivery date"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "build out",
-        "ja": "拡張する",
-        "image": "機能・チーム・体制を広げる。",
-        "pattern": "build out",
-        "examples": [
-          {
-            "en": "The team will build out the support system next month.",
-            "ja": "チームは来月、サポート体制を拡張します。",
-            "focus": "build out",
-            "object": "the support system"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "build from",
-        "ja": "〜から作る",
-        "image": "小さな材料や既存データから作る。",
-        "pattern": "build from",
-        "examples": [
-          {
-            "en": "We built the estimate from the latest drawing.",
-            "ja": "私たちは最新図面をもとに見積を作りました。",
-            "focus": "built from",
-            "object": "the latest drawing"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "build toward",
-        "ja": "〜に向けて積み上げる",
-        "image": "目標達成に向けて進める。",
-        "pattern": "build toward",
-        "examples": [
-          {
-            "en": "We are building toward a stronger sales pipeline.",
-            "ja": "私たちはより強い営業案件の流れに向けて積み上げています。",
-            "focus": "building toward",
-            "object": "a stronger sales pipeline"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "build off",
-        "ja": "〜をもとに発展させる",
-        "image": "会話では使われるが、やや口語的。",
-        "pattern": "build off",
-        "examples": [
-          {
-            "en": "We can build off this idea for the next proposal.",
-            "ja": "次の提案ではこの案をもとに発展させられます。",
-            "focus": "build off",
-            "object": "this idea"
-          }
-        ],
-        "dailyExamples": []
-      }
-    ]
+    "to": "積み上がった形・成果",
+    "label": "材料・経験 → 形・信頼へ"
   },
+  "meanings": [
     {
-    "id": "learn",
-    "rank": 41,
-    "word": "LEARN",
-    "ipa": "",
-    "kana": "ラーン",
-    "syllable": "learn",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 基本",
-    "core": "外から情報・経験を取り込み、自分の知識にする",
-    "coreDetail": "LEARNは、勉強だけでなく、仕事の手順・顧客情報・失敗からの教訓を自分の中に取り込む動詞です。",
-    "coreVisual": {
-      "from": [
-        "📘 知識",
-        "🧪 経験",
-        "📩 情報",
-        "👂 フィードバック"
+      "id": "build-house",
+      "title": "① 建物・形あるものを作る",
+      "pattern": "BUILD + building / object",
+      "transitivity": "他動詞",
+      "structure": "基本",
+      "image": "材料を積み上げて形あるものを作る。",
+      "point": "build a house は基本の意味。仕事では展示物や設備の話にも使えます。",
+      "examples": [
+        {
+          "en": "They built a new showroom near the station.",
+          "ja": "彼らは駅の近くに新しいショールームを建てました。",
+          "focus": "built",
+          "object": "a new showroom"
+        },
+        {
+          "en": "We are building a simple demo stand for the client.",
+          "ja": "私たちは顧客向けに簡単なデモ台を作っています。",
+          "focus": "building",
+          "object": "a simple demo stand"
+        }
       ],
-      "to": "自分の理解・スキル",
-      "label": "外の情報 → 自分の中へ"
+      "dailyExamples": []
     },
-    "meanings": [
-      {
-        "id": "learn-skill",
-        "title": "1 知識・スキルを学ぶ",
-        "pattern": "learn + skill / English / process",
-        "transitivity": "他動詞",
-        "structure": "基本",
-        "image": "新しい知識ややり方を自分の中に入れる。",
-        "point": "learn は「勉強する」だけでなく、仕事の手順や製品知識を身につける時にも使います。",
-        "examples": [
-          {
-            "en": "We need to learn the new ordering process.",
-            "ja": "私たちは新しい発注手順を覚える必要があります。",
-            "focus": "learn",
-            "object": "the new ordering process"
-          },
-          {
-            "en": "She learned how to use the system quickly.",
-            "ja": "彼女はそのシステムの使い方をすぐに覚えました。",
-            "focus": "learned",
-            "object": "how to use the system"
-          },
-          {
-            "en": "I am learning more about LED control.",
-            "ja": "私はLED制御についてさらに学んでいます。",
-            "focus": "learning",
-            "object": "more about LED control"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "learn-fact",
-        "title": "2 情報・事実を知る",
-        "pattern": "learn + that / details",
-        "transitivity": "他動詞",
-        "structure": "基本",
-        "image": "調べたり聞いたりして、新しい事実を知る。",
-        "point": "ビジネスでは「〜だと分かった」という意味でもよく使います。",
-        "examples": [
-          {
-            "en": "We learned that the delivery date changed.",
-            "ja": "私たちは納期が変更になったと分かりました。",
-            "focus": "learned",
-            "object": "that the delivery date changed"
-          },
-          {
-            "en": "He learned the details from the customer.",
-            "ja": "彼は顧客から詳細を知りました。",
-            "focus": "learned",
-            "object": "the details"
-          },
-          {
-            "en": "Please let me know if you learn anything new.",
-            "ja": "新しいことが分かったら教えてください。",
-            "focus": "learn",
-            "object": "anything new"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "learn-lesson",
-        "title": "3 経験から教訓を得る",
-        "pattern": "learn + lesson",
-        "transitivity": "他動詞",
-        "structure": "基本",
-        "image": "経験を通じて、次に活かせることを得る。",
-        "point": "失敗や改善点を前向きに説明する時に自然です。",
-        "examples": [
-          {
-            "en": "We learned an important lesson from this issue.",
-            "ja": "私たちはこの問題から重要な教訓を得ました。",
-            "focus": "learned",
-            "object": "an important lesson"
-          },
-          {
-            "en": "The team learned a lot during the project.",
-            "ja": "チームはその案件を通じて多くを学びました。",
-            "focus": "learned",
-            "object": "a lot"
-          },
-          {
-            "en": "I learned not to skip the final check.",
-            "ja": "私は最終確認を省いてはいけないと学びました。",
-            "focus": "learned",
-            "object": "not to skip the final check"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "learn-how",
-        "title": "4 やり方を覚える",
-        "pattern": "learn how to + 動詞",
-        "transitivity": "他動詞",
-        "structure": "基本",
-        "image": "手順や方法を身につける。",
-        "point": "仕事の引き継ぎや新人教育でよく使います。",
-        "examples": [
-          {
-            "en": "New staff learn how to prepare estimates.",
-            "ja": "新人は見積の作り方を覚えます。",
-            "focus": "learn",
-            "object": "how to prepare estimates"
-          },
-          {
-            "en": "We learned how to check the stock list.",
-            "ja": "私たちは在庫表の確認方法を覚えました。",
-            "focus": "learned",
-            "object": "how to check the stock list"
-          },
-          {
-            "en": "He is learning how to explain the product clearly.",
-            "ja": "彼は製品を分かりやすく説明する方法を学んでいます。",
-            "focus": "learning",
-            "object": "how to explain the product clearly"
-          }
-        ],
-        "dailyExamples": []
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": [
-      {
-        "phrase": "learn about",
-        "ja": "〜について学ぶ・知る",
-        "image": "テーマや内容について情報を得る。",
-        "pattern": "learn about",
-        "examples": [
-          {
-            "en": "We learned about the client's new project.",
-            "ja": "私たちは顧客の新しい案件について知りました。",
-            "focus": "learned about",
-            "object": "the client's new project"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "learn from",
-        "ja": "〜から学ぶ",
-        "image": "経験・人・失敗から教訓を得る。",
-        "pattern": "learn from",
-        "examples": [
-          {
-            "en": "We should learn from this mistake.",
-            "ja": "私たちはこのミスから学ぶべきです。",
-            "focus": "learn from",
-            "object": "this mistake"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "learn of",
-        "ja": "〜を知る",
-        "image": "やや硬めで、情報を知る感覚。",
-        "pattern": "learn of",
-        "examples": [
-          {
-            "en": "We learned of the schedule change this morning.",
-            "ja": "私たちは今朝、スケジュール変更を知りました。",
-            "focus": "learned of",
-            "object": "the schedule change"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "learn by",
-        "ja": "〜によって学ぶ",
-        "image": "方法や手段を示す。",
-        "pattern": "learn by",
-        "examples": [
-          {
-            "en": "You can learn by checking real customer emails.",
-            "ja": "実際の顧客メールを確認することで学べます。",
-            "focus": "learn by",
-            "object": "checking real customer emails"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "learn through",
-        "ja": "〜を通して学ぶ",
-        "image": "経験や活動を通じて身につける。",
-        "pattern": "learn through",
-        "examples": [
-          {
-            "en": "She learned through hands-on project work.",
-            "ja": "彼女は実際の案件作業を通じて学びました。",
-            "focus": "learned through",
-            "object": "hands-on project work"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "learn to",
-        "ja": "〜するようになる",
-        "image": "練習や経験でできるようになる。",
-        "pattern": "learn to",
-        "examples": [
-          {
-            "en": "We learned to explain the issue more clearly.",
-            "ja": "私たちはその問題をより分かりやすく説明できるようになりました。",
-            "focus": "learned to",
-            "object": "explain the issue"
-          }
-        ],
-        "dailyExamples": []
-      }
-    ]
-  },
     {
-    "id": "meet",
-    "rank": 42,
-    "word": "MEET",
-    "ipa": "",
-    "kana": "ミート",
-    "syllable": "meet",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 基本",
-    "core": "人・条件・期待と合う、到達する",
-    "coreDetail": "MEETは、人と会うだけでなく、締切・条件・期待・需要に届く感覚があります。営業・会議・納期管理で非常に使いやすい動詞です。",
-    "coreVisual": {
-      "from": [
-        "👤 人",
-        "📅 締切",
-        "✅ 条件",
-        "🎯 期待"
+      "id": "build-relationship",
+      "title": "② 信頼・関係を築く",
+      "pattern": "BUILD + trust / relationship",
+      "transitivity": "他動詞",
+      "structure": "基本",
+      "image": "信頼や関係を時間をかけて積み上げる。",
+      "point": "営業・顧客対応では非常に重要な使い方です。",
+      "examples": [
+        {
+          "en": "Good follow-up helps us build trust with the client.",
+          "ja": "丁寧な追加確認は顧客との信頼構築に役立ちます。",
+          "focus": "build",
+          "object": "trust"
+        },
+        {
+          "en": "We should build a stronger relationship with this supplier.",
+          "ja": "私たちはこの仕入先とより強い関係を築くべきです。",
+          "focus": "build",
+          "object": "a stronger relationship"
+        }
       ],
-      "to": "相手・基準と合う",
-      "label": "自分の行動 → 相手・基準に届く"
+      "dailyExamples": []
     },
-    "meanings": [
-      {
-        "id": "meet-person",
-        "title": "1 人に会う",
-        "pattern": "meet + person / client",
-        "transitivity": "他動詞",
-        "structure": "基本",
-        "image": "人と会う・初めて会う。",
-        "point": "営業・会議・訪問で基本になる使い方です。",
-        "examples": [
-          {
-            "en": "We will meet the client at 3 p.m.",
-            "ja": "私たちは15時に顧客と会います。",
-            "focus": "meet",
-            "object": "the client"
-          },
-          {
-            "en": "I met the new manager yesterday.",
-            "ja": "私は昨日、新しいマネージャーに会いました。",
-            "focus": "met",
-            "object": "the new manager"
-          },
-          {
-            "en": "She is meeting the design team tomorrow.",
-            "ja": "彼女は明日デザインチームと会います。",
-            "focus": "meeting",
-            "object": "the design team"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "meet-deadline",
-        "title": "2 締切・条件を満たす",
-        "pattern": "meet + deadline / requirements",
-        "transitivity": "他動詞",
-        "structure": "基本",
-        "image": "求められている基準に届く。",
-        "point": "meet a deadline は「締切に間に合う」、meet requirements は「条件を満たす」です。",
-        "examples": [
-          {
-            "en": "We need to meet the deadline for this order.",
-            "ja": "私たちはこの注文の締切に間に合わせる必要があります。",
-            "focus": "meet",
-            "object": "the deadline"
-          },
-          {
-            "en": "This product meets the safety requirements.",
-            "ja": "この製品は安全条件を満たしています。",
-            "focus": "meets",
-            "object": "the safety requirements"
-          },
-          {
-            "en": "The current design does not meet the client's request.",
-            "ja": "現在のデザインは顧客の要望を満たしていません。",
-            "focus": "meet",
-            "object": "the client's request"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "meet-expectations",
-        "title": "3 期待・需要に応える",
-        "pattern": "meet + expectations / demand",
-        "transitivity": "他動詞",
-        "structure": "基本",
-        "image": "相手が求めるレベルに応える。",
-        "point": "提案・製品・対応品質の説明に便利です。",
-        "examples": [
-          {
-            "en": "The proposal met the client's expectations.",
-            "ja": "その提案は顧客の期待に応えました。",
-            "focus": "met",
-            "object": "the client's expectations"
-          },
-          {
-            "en": "We need more stock to meet demand.",
-            "ja": "需要に応えるため、もっと在庫が必要です。",
-            "focus": "meet",
-            "object": "demand"
-          },
-          {
-            "en": "Fast replies help us meet customer needs.",
-            "ja": "早い返信は顧客ニーズに応える助けになります。",
-            "focus": "meet",
-            "object": "customer needs"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "id": "meet-halfway",
-        "title": "4 歩み寄る",
-        "pattern": "meet halfway",
-        "transitivity": "他動詞",
-        "structure": "基本",
-        "image": "お互いに譲り合って折り合う。",
-        "point": "交渉や調整で使いやすい表現です。",
-        "examples": [
-          {
-            "en": "We may need to meet the client halfway on the price.",
-            "ja": "価格については顧客と歩み寄る必要があるかもしれません。",
-            "focus": "meet",
-            "object": "the client halfway"
-          },
-          {
-            "en": "Both teams met halfway on the schedule.",
-            "ja": "両チームはスケジュールについて歩み寄りました。",
-            "focus": "met",
-            "object": "halfway"
-          },
-          {
-            "en": "Can we meet halfway on the delivery date?",
-            "ja": "納期について中間案で調整できますか？",
-            "focus": "meet",
-            "object": "halfway"
-          }
-        ],
-        "dailyExamples": []
-      }
+    {
+      "id": "build-system",
+      "title": "③ 仕組み・体制を作る",
+      "pattern": "BUILD + system / process / team",
+      "transitivity": "他動詞",
+      "structure": "基本",
+      "image": "仕事が回る形を段階的に作る。",
+      "point": "makeよりも、使える状態まで組み上げる感覚があります。",
+      "examples": [
+        {
+          "en": "The team built a new ordering system.",
+          "ja": "チームは新しい発注システムを構築しました。",
+          "focus": "built",
+          "object": "a new ordering system"
+        },
+        {
+          "en": "We need to build a better process for stock checks.",
+          "ja": "私たちは在庫確認のためのより良い手順を作る必要があります。",
+          "focus": "build",
+          "object": "a better process"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "build-experience",
+      "title": "④ 経験・実績を積む",
+      "pattern": "BUILD + experience / record / confidence",
+      "transitivity": "他動詞",
+      "structure": "基本",
+      "image": "経験や実績を少しずつ増やす。",
+      "point": "人や会社の成長を説明する時に自然です。",
+      "examples": [
+        {
+          "en": "This project will help us build experience with RGB control.",
+          "ja": "この案件はRGB制御の経験を積む助けになります。",
+          "focus": "build",
+          "object": "experience"
+        },
+        {
+          "en": "Small wins build confidence in the team.",
+          "ja": "小さな成功がチームの自信を積み上げます。",
+          "focus": "build",
+          "object": "confidence"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "build-habit",
+      "title": "⑤ 習慣・流れを作る",
+      "pattern": "BUILD + habit / routine",
+      "transitivity": "他動詞",
+      "structure": "基本",
+      "image": "繰り返しによって行動の型を作る。",
+      "point": "学習や営業活動の継続にも使いやすい表現です。",
+      "examples": [
+        {
+          "en": "I want to build the habit of studying every morning.",
+          "ja": "私は毎朝勉強する習慣を作りたいです。",
+          "focus": "build",
+          "object": "the habit"
+        },
+        {
+          "en": "We built a weekly routine for checking open issues.",
+          "ja": "私たちは未解決事項を確認する週次の流れを作りました。",
+          "focus": "built",
+          "object": "a weekly routine"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ],
+  "collocations": [],
+  "phrasalVerbs": [
+    {
+      "phrase": "build up",
+      "ja": "積み上げる・高める",
+      "image": "量・力・信頼などを少しずつ増やす。",
+      "pattern": "build up",
+      "examples": [
+        {
+          "en": "We need to build up our project experience.",
+          "ja": "私たちは案件経験を積み上げる必要があります。",
+          "focus": "build up",
+          "object": "our project experience"
+        },
+        {
+          "en": "The team built up trust through quick replies.",
+          "ja": "チームは早い返信を通じて信頼を高めました。",
+          "focus": "built up",
+          "object": "trust"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "build on",
+      "ja": "〜を土台にする",
+      "image": "既存の実績・意見を活かして次へ進む。",
+      "pattern": "build on",
+      "examples": [
+        {
+          "en": "Let's build on the client's feedback.",
+          "ja": "顧客の意見をもとにさらに改善しましょう。",
+          "focus": "build on",
+          "object": "the client's feedback"
+        },
+        {
+          "en": "We built on last year's results.",
+          "ja": "私たちは昨年の結果を土台にしました。",
+          "focus": "built on",
+          "object": "last year's results"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "build into",
+      "ja": "〜に組み込む",
+      "image": "確認項目や機能を仕組みの中に入れる。",
+      "pattern": "build into",
+      "examples": [
+        {
+          "en": "Please build this check into the workflow.",
+          "ja": "この確認を業務フローに組み込んでください。",
+          "focus": "build into",
+          "object": "this check"
+        },
+        {
+          "en": "We built approval steps into the process.",
+          "ja": "私たちは承認手順をそのプロセスに組み込みました。",
+          "focus": "built into",
+          "object": "approval steps"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "build around",
+      "ja": "〜を中心に作る",
+      "image": "提案や計画の中心に置く。",
+      "pattern": "build around",
+      "examples": [
+        {
+          "en": "We built the plan around the delivery date.",
+          "ja": "私たちは納期を中心に計画を組み立てました。",
+          "focus": "built around",
+          "object": "the delivery date"
+        },
+        {
+          "en": "The proposal is built around the client's budget.",
+          "ja": "その提案は顧客の予算を中心に組まれています。",
+          "focus": "built around",
+          "object": "the client's budget"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "build in",
+      "ja": "組み込む",
+      "image": "余裕や機能を最初から入れておく。",
+      "pattern": "build in",
+      "examples": [
+        {
+          "en": "We should build in extra time for approval.",
+          "ja": "承認のための余裕時間を組み込むべきです。",
+          "focus": "build in",
+          "object": "extra time"
+        },
+        {
+          "en": "The system has a reminder built in.",
+          "ja": "そのシステムにはリマインダーが組み込まれています。",
+          "focus": "built in",
+          "object": "a reminder"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "build out",
+      "ja": "拡張する",
+      "image": "機能・体制・範囲を広げる。",
+      "pattern": "build out",
+      "examples": [
+        {
+          "en": "The team will build out the support system next month.",
+          "ja": "チームは来月サポート体制を拡張します。",
+          "focus": "build out",
+          "object": "the support system"
+        },
+        {
+          "en": "We need to build out the search function later.",
+          "ja": "後で検索機能を拡張する必要があります。",
+          "focus": "build out",
+          "object": "the search function"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "build from",
+      "ja": "〜から作る",
+      "image": "材料・情報・既存データを出発点にして作る。",
+      "pattern": "build from",
+      "examples": [
+        {
+          "en": "We built the estimate from the latest drawing.",
+          "ja": "私たちは最新図面をもとに見積を作りました。",
+          "focus": "built from",
+          "object": "the latest drawing"
+        },
+        {
+          "en": "You can build a report from this data.",
+          "ja": "このデータから報告書を作れます。",
+          "focus": "build from",
+          "object": "this data"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "build toward",
+      "ja": "〜に向けて積み上げる",
+      "image": "目標に向けて少しずつ進める。",
+      "pattern": "build toward",
+      "examples": [
+        {
+          "en": "We are building toward a stronger sales pipeline.",
+          "ja": "私たちはより強い営業案件の流れに向けて積み上げています。",
+          "focus": "building toward",
+          "object": "a stronger sales pipeline"
+        },
+        {
+          "en": "This practice builds toward better presentations.",
+          "ja": "この練習はより良いプレゼンに向けた積み上げになります。",
+          "focus": "builds toward",
+          "object": "better presentations"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ]
+},
+    {
+  "id": "learn",
+  "rank": 41,
+  "word": "LEARN",
+  "ipa": "",
+  "kana": "ラーン",
+  "syllable": "learn",
+  "transitivity": "他動詞・自動詞",
+  "importance": "★★★★☆ 基本",
+  "core": "情報や経験を取り込み、自分の知識・スキルにする",
+  "coreDetail": "LEARNは、勉強だけでなく、仕事の手順・製品知識・顧客情報・失敗からの教訓を自分の中に取り込む動詞です。",
+  "coreVisual": {
+    "from": [
+      "📘 知識",
+      "🧪 経験",
+      "📩 情報",
+      "👂 フィードバック"
     ],
-    "collocations": [],
-    "phrasalVerbs": [
-      {
-        "phrase": "meet up",
-        "ja": "会う・集まる",
-        "image": "予定を合わせて集まる。",
-        "pattern": "meet up",
-        "examples": [
-          {
-            "en": "Let's meet up before the client visit.",
-            "ja": "顧客訪問の前に集まりましょう。",
-            "focus": "meet up"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "meet with",
-        "ja": "〜と会う・経験する",
-        "image": "人と会う、または反応・問題に直面する。",
-        "pattern": "meet with",
-        "examples": [
-          {
-            "en": "We will meet with the supplier next week.",
-            "ja": "私たちは来週、仕入先と会います。",
-            "focus": "meet with",
-            "object": "the supplier"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "meet up with",
-        "ja": "〜と会う",
-        "image": "meet up より相手を明示する形。",
-        "pattern": "meet up with",
-        "examples": [
-          {
-            "en": "I will meet up with the sales team after lunch.",
-            "ja": "昼食後に営業チームと合流します。",
-            "focus": "meet up with",
-            "object": "the sales team"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "meet for",
-        "ja": "〜のために会う",
-        "image": "目的を示して会う。",
-        "pattern": "meet for",
-        "examples": [
-          {
-            "en": "We met for a quick project review.",
-            "ja": "私たちは簡単な案件レビューのために会いました。",
-            "focus": "met for",
-            "object": "a quick project review"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "meet at",
-        "ja": "〜で会う",
-        "image": "場所や時間を指定して会う。",
-        "pattern": "meet at",
-        "examples": [
-          {
-            "en": "Please meet at the entrance at ten.",
-            "ja": "10時に入口で集合してください。",
-            "focus": "meet at",
-            "object": "the entrance"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "meet over",
-        "ja": "〜をしながら会う",
-        "image": "食事やコーヒーなどをしながら話す。",
-        "pattern": "meet over",
-        "examples": [
-          {
-            "en": "We can meet over coffee and review the proposal.",
-            "ja": "コーヒーを飲みながら会って提案を確認できます。",
-            "focus": "meet over",
-            "object": "coffee"
-          }
-        ],
-        "dailyExamples": []
-      }
-    ]
+    "to": "自分の理解・スキル",
+    "label": "外の情報 → 自分の中へ"
   },
+  "meanings": [
+    {
+      "id": "learn-skill",
+      "title": "① 知識・スキルを学ぶ",
+      "pattern": "LEARN + skill / English / process",
+      "transitivity": "他動詞",
+      "structure": "基本",
+      "image": "知識ややり方を自分の中に入れる。",
+      "point": "仕事の手順や製品知識を身につける時にも使います。",
+      "examples": [
+        {
+          "en": "We need to learn the new ordering process.",
+          "ja": "私たちは新しい発注手順を覚える必要があります。",
+          "focus": "learn",
+          "object": "the new ordering process"
+        },
+        {
+          "en": "She learned how to use the system quickly.",
+          "ja": "彼女はそのシステムの使い方をすぐに覚えました。",
+          "focus": "learned",
+          "object": "how to use the system"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "learn-fact",
+      "title": "② 情報・事実を知る",
+      "pattern": "LEARN + that / details",
+      "transitivity": "他動詞",
+      "structure": "基本",
+      "image": "調べたり聞いたりして新しい事実を知る。",
+      "point": "ビジネスでは『〜だと分かった』という意味でも使います。",
+      "examples": [
+        {
+          "en": "We learned that the delivery date changed.",
+          "ja": "私たちは納期が変更になったと分かりました。",
+          "focus": "learned",
+          "object": "that the delivery date changed"
+        },
+        {
+          "en": "Please let me know if you learn anything new.",
+          "ja": "新しいことが分かったら教えてください。",
+          "focus": "learn",
+          "object": "anything new"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "learn-lesson",
+      "title": "③ 経験から教訓を得る",
+      "pattern": "LEARN + lesson",
+      "transitivity": "他動詞",
+      "structure": "基本",
+      "image": "経験を通じて次に活かせることを得る。",
+      "point": "失敗や改善点を前向きに説明する時に自然です。",
+      "examples": [
+        {
+          "en": "We learned an important lesson from this issue.",
+          "ja": "私たちはこの問題から重要な教訓を得ました。",
+          "focus": "learned",
+          "object": "an important lesson"
+        },
+        {
+          "en": "I learned not to skip the final check.",
+          "ja": "私は最終確認を省いてはいけないと学びました。",
+          "focus": "learned",
+          "object": "not to skip the final check"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "learn-how",
+      "title": "④ やり方を覚える",
+      "pattern": "LEARN HOW TO + verb",
+      "transitivity": "他動詞",
+      "structure": "基本",
+      "image": "手順や方法を身につける。",
+      "point": "引き継ぎや新人教育でよく使います。",
+      "examples": [
+        {
+          "en": "New staff learn how to prepare estimates.",
+          "ja": "新人は見積の作り方を覚えます。",
+          "focus": "learn",
+          "object": "how to prepare estimates"
+        },
+        {
+          "en": "He is learning how to explain the product clearly.",
+          "ja": "彼は製品を分かりやすく説明する方法を学んでいます。",
+          "focus": "learning",
+          "object": "how to explain the product clearly"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "learn-quickly",
+      "title": "⑤ 早く覚える・身につける",
+      "pattern": "LEARN + adverb",
+      "transitivity": "他動詞・自動詞",
+      "structure": "基本",
+      "image": "新しいことを短い時間で吸収する。",
+      "point": "learn quickly は仕事でも日常でも使いやすい表現です。",
+      "examples": [
+        {
+          "en": "She learns quickly and asks good questions.",
+          "ja": "彼女は覚えが早く、良い質問をします。",
+          "focus": "learns"
+        },
+        {
+          "en": "We learned faster after using real examples.",
+          "ja": "実例を使った後、私たちはより早く覚えました。",
+          "focus": "learned"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ],
+  "collocations": [],
+  "phrasalVerbs": [
+    {
+      "phrase": "learn from",
+      "ja": "〜から学ぶ",
+      "image": "経験・人・失敗から教訓を得る。",
+      "pattern": "learn from",
+      "examples": [
+        {
+          "en": "We should learn from this mistake.",
+          "ja": "私たちはこのミスから学ぶべきです。",
+          "focus": "learn from",
+          "object": "this mistake"
+        },
+        {
+          "en": "I learned from my senior colleague.",
+          "ja": "私は先輩から学びました。",
+          "focus": "learned from",
+          "object": "my senior colleague"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "learn about",
+      "ja": "〜について学ぶ・知る",
+      "image": "テーマや内容について情報を得る。",
+      "pattern": "learn about",
+      "examples": [
+        {
+          "en": "We learned about the client's new project.",
+          "ja": "私たちは顧客の新しい案件について知りました。",
+          "focus": "learned about",
+          "object": "the client's new project"
+        },
+        {
+          "en": "Please learn about the product before the visit.",
+          "ja": "訪問前にその製品について学んでください。",
+          "focus": "learn about",
+          "object": "the product"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "learn of",
+      "ja": "〜を知る",
+      "image": "やや硬めで、情報を知る感覚。",
+      "pattern": "learn of",
+      "examples": [
+        {
+          "en": "We learned of the schedule change this morning.",
+          "ja": "私たちは今朝スケジュール変更を知りました。",
+          "focus": "learned of",
+          "object": "the schedule change"
+        },
+        {
+          "en": "She learned of the issue from the report.",
+          "ja": "彼女は報告書からその問題を知りました。",
+          "focus": "learned of",
+          "object": "the issue"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "learn by",
+      "ja": "〜によって学ぶ",
+      "image": "方法や手段を示す。",
+      "pattern": "learn by",
+      "examples": [
+        {
+          "en": "You can learn by checking real customer emails.",
+          "ja": "実際の顧客メールを確認することで学べます。",
+          "focus": "learn by",
+          "object": "checking real customer emails"
+        },
+        {
+          "en": "We learned by doing small tests.",
+          "ja": "私たちは小さなテストを行うことで学びました。",
+          "focus": "learned by",
+          "object": "doing small tests"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "learn through",
+      "ja": "〜を通じて学ぶ",
+      "image": "経験や活動を通じて身につける。",
+      "pattern": "learn through",
+      "examples": [
+        {
+          "en": "She learned through hands-on project work.",
+          "ja": "彼女は実際の案件作業を通じて学びました。",
+          "focus": "learned through",
+          "object": "hands-on project work"
+        },
+        {
+          "en": "We learn through feedback from clients.",
+          "ja": "私たちは顧客からのフィードバックを通じて学びます。",
+          "focus": "learn through",
+          "object": "feedback from clients"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ]
+},
+    {
+  "id": "meet",
+  "rank": 42,
+  "word": "MEET",
+  "ipa": "",
+  "kana": "ミート",
+  "syllable": "meet",
+  "transitivity": "他動詞・自動詞",
+  "importance": "★★★★☆ 基本",
+  "core": "人・条件・期限・期待と合う、到達する",
+  "coreDetail": "MEETは、人と会うだけでなく、締切・条件・期待・需要に届く感覚があります。営業・会議・納期管理で非常に使いやすい動詞です。",
+  "coreVisual": {
+    "from": [
+      "👤 人",
+      "📅 締切",
+      "✅ 条件",
+      "🎯 期待"
+    ],
+    "to": "相手・基準と合う",
+    "label": "自分の行動 → 相手・基準に届く"
+  },
+  "meanings": [
+    {
+      "id": "meet-person",
+      "title": "① 人に会う",
+      "pattern": "MEET + person / client",
+      "transitivity": "他動詞",
+      "structure": "基本",
+      "image": "人と会う・初めて会う。",
+      "point": "営業・会議・訪問で基本になる使い方です。",
+      "examples": [
+        {
+          "en": "We will meet the client at 3 p.m.",
+          "ja": "私たちは15時に顧客と会います。",
+          "focus": "meet",
+          "object": "the client"
+        },
+        {
+          "en": "I met the new manager yesterday.",
+          "ja": "私は昨日、新しいマネージャーに会いました。",
+          "focus": "met",
+          "object": "the new manager"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "meet-place",
+      "title": "② 場所・時間を決めて会う",
+      "pattern": "MEET + at / in + place",
+      "transitivity": "自動詞",
+      "structure": "基本",
+      "image": "場所や時間を合わせて会う。",
+      "point": "meet at the office のように場所をつけて使います。",
+      "examples": [
+        {
+          "en": "Let's meet at the office before the site visit.",
+          "ja": "現場訪問前に事務所で会いましょう。",
+          "focus": "meet"
+        },
+        {
+          "en": "We met in the lobby at ten.",
+          "ja": "私たちは10時にロビーで会いました。",
+          "focus": "met"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "meet-deadline",
+      "title": "③ 締切・条件を満たす",
+      "pattern": "MEET + deadline / requirements",
+      "transitivity": "他動詞",
+      "structure": "基本",
+      "image": "求められている基準に届く。",
+      "point": "meet a deadline は『締切に間に合う』、meet requirements は『条件を満たす』です。",
+      "examples": [
+        {
+          "en": "We need to meet the deadline for this order.",
+          "ja": "私たちはこの注文の締切に間に合わせる必要があります。",
+          "focus": "meet",
+          "object": "the deadline"
+        },
+        {
+          "en": "This product meets the safety requirements.",
+          "ja": "この製品は安全条件を満たしています。",
+          "focus": "meets",
+          "object": "the safety requirements"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "meet-expectations",
+      "title": "④ 期待・需要に応える",
+      "pattern": "MEET + expectations / demand / needs",
+      "transitivity": "他動詞",
+      "structure": "基本",
+      "image": "相手が求めるレベルに応える。",
+      "point": "提案・製品・対応品質の説明に便利です。",
+      "examples": [
+        {
+          "en": "The proposal met the client's expectations.",
+          "ja": "その提案は顧客の期待に応えました。",
+          "focus": "met",
+          "object": "the client's expectations"
+        },
+        {
+          "en": "We need more stock to meet demand.",
+          "ja": "需要に応えるため、もっと在庫が必要です。",
+          "focus": "meet",
+          "object": "demand"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "id": "meet-standard",
+      "title": "⑤ 基準・条件に合う",
+      "pattern": "MEET + standard / condition",
+      "transitivity": "他動詞",
+      "structure": "基本",
+      "image": "決められた基準や条件に合う。",
+      "point": "品質・仕様・安全基準の説明に使いやすいです。",
+      "examples": [
+        {
+          "en": "The sample meets the required standard.",
+          "ja": "そのサンプルは必要な基準を満たしています。",
+          "focus": "meets",
+          "object": "the required standard"
+        },
+        {
+          "en": "The design did not meet the customer's condition.",
+          "ja": "そのデザインは顧客の条件を満たしていませんでした。",
+          "focus": "meet",
+          "object": "the customer's condition"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ],
+  "collocations": [],
+  "phrasalVerbs": [
+    {
+      "phrase": "meet up",
+      "ja": "会う・集まる",
+      "image": "予定を合わせて集まる。",
+      "pattern": "meet up",
+      "examples": [
+        {
+          "en": "Let's meet up before the client visit.",
+          "ja": "顧客訪問の前に集まりましょう。",
+          "focus": "meet up"
+        },
+        {
+          "en": "We met up near the station.",
+          "ja": "私たちは駅の近くで合流しました。",
+          "focus": "met up"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "meet with",
+      "ja": "〜と会う・経験する",
+      "image": "人と会う、または反応・問題に直面する。",
+      "pattern": "meet with",
+      "examples": [
+        {
+          "en": "We will meet with the supplier next week.",
+          "ja": "私たちは来週、仕入先と会います。",
+          "focus": "meet with",
+          "object": "the supplier"
+        },
+        {
+          "en": "The proposal met with a positive response.",
+          "ja": "その提案は好意的な反応を得ました。",
+          "focus": "met with",
+          "object": "a positive response"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "meet at",
+      "ja": "〜で会う",
+      "image": "場所や時間を指定して会う。",
+      "pattern": "meet at",
+      "examples": [
+        {
+          "en": "Please meet at the entrance at ten.",
+          "ja": "10時に入口で集合してください。",
+          "focus": "meet at",
+          "object": "the entrance"
+        },
+        {
+          "en": "We met at the client's office.",
+          "ja": "私たちは顧客の事務所で会いました。",
+          "focus": "met at",
+          "object": "the client's office"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "meet for",
+      "ja": "〜のために会う",
+      "image": "会う目的を示す。",
+      "pattern": "meet for",
+      "examples": [
+        {
+          "en": "We met for a quick project review.",
+          "ja": "私たちは簡単な案件レビューのために会いました。",
+          "focus": "met for",
+          "object": "a quick project review"
+        },
+        {
+          "en": "Let's meet for a short update tomorrow.",
+          "ja": "明日、短い進捗確認のために会いましょう。",
+          "focus": "meet for",
+          "object": "a short update"
+        }
+      ],
+      "dailyExamples": []
+    },
+    {
+      "phrase": "meet halfway",
+      "ja": "歩み寄る・妥協する",
+      "image": "お互いに譲り合って中間点で合う。",
+      "pattern": "meet halfway",
+      "examples": [
+        {
+          "en": "We may need to meet halfway on the price.",
+          "ja": "価格については歩み寄る必要があるかもしれません。",
+          "focus": "meet halfway"
+        },
+        {
+          "en": "Both teams met halfway on the schedule.",
+          "ja": "両チームはスケジュールについて歩み寄りました。",
+          "focus": "met halfway"
+        }
+      ],
+      "dailyExamples": []
+    }
+  ]
+},
   {
     "id": "send",
     "rank": 43,

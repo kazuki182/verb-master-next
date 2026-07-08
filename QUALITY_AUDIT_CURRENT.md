@@ -1,30 +1,37 @@
-# QUALITY AUDIT CURRENT
+# Verb Master Ver.140 Simple Prefix Search Design
 
-## Latest
-V150 SEND / PAY / BUY Reaudit Final
+## 目的
 
-## Build checks
-- npx tsc --noEmit: OK
-- npm run build: OK
+Ver.137 の検索BOXは多機能だったが、スマホでは操作項目が多く使いづらかった。
+Ver.140では、動詞一覧の検索を「頭文字から近い動詞を予測して出す」シンプルな設計に戻す。
 
-## Persistence
-- Ver.145 auth / restore / persistence system maintained.
-- Ver.146 clean user profile UI maintained.
-- Ver.140 simple prefix search maintained.
+## 変更内容
 
-## Current verb batch
-- SEND: 9 phrasal verbs
-- PAY: 7 phrasal verbs
-- BUY: 5 phrasal verbs
+- 検索対象・表示範囲・並び順のセレクトBOXを撤去
+- 入力欄1つだけのシンプル検索へ変更
+- 1文字入力でも候補を表示
+- `s` → `start / stop / send / sell / set / see` のように頭文字一致を優先
+- `st` → `start / stop` のように近い動詞を上位表示
+- 動詞名の完全一致、前方一致、部分一致をスコア化
+- 軽いタイプミスも近い候補として拾う
+- 候補チップを押すと検索語をその動詞に変更
+- 日本語・句動詞・例文の検索能力は裏側に残す
+- 検索時は一致度の高い順に最大30件表示
 
-## Ver.151 SELL / CHOOSE / FOLLOW Reaudit
+## 保存基盤への影響
 
-- Target verbs: SELL / CHOOSE / FOLLOW
-- SELL phrasal verbs: 6
-- CHOOSE phrasal verbs: 5
-- FOLLOW phrasal verbs: 8
-- Collocations: empty for target verbs
-- Basic red highlight: verb only
-- Phrasal red highlight: verb + particle/preposition only
-- Preserved: Ver.145 persistence, Ver.146 clean profile UI, Ver.140 simple prefix search
+なし。
+Ver.136 Storage保存設計、Ver.138/139 画像保存修正は維持。
+追加SQLなし。
 
+## 確認キーワード
+
+- `s`
+- `st`
+- `sta`
+- `start`
+- `t`
+- `ta`
+- `take`
+- `連絡`
+- `見積`

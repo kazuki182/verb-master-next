@@ -1,5 +1,19 @@
-# Verb Master
+# Ver.141 STOP / TRY / HELP Re-audit
 
-Current package: V150 SEND / PAY / BUY Reaudit Final.
+This document records the re-audit of STOP / TRY / HELP.
 
-This package keeps the deploy-safe persistence system, clean user profile UI, and simple prefix search while updating the SEND / PAY / BUY verb data.
+## Design policy
+
+- Keep only two learning categories: basic and phrasal verbs.
+- Do not add separate collocation categories.
+- Phrasal verbs should stay in the phrasal section.
+- Basic examples should highlight only the verb.
+- Phrasal examples should highlight the verb plus particle/preposition.
+
+## Result
+
+- STOP: 6 phrasal verbs
+- TRY: 5 phrasal verbs
+- HELP: 5 phrasal verbs
+
+No database or Supabase changes are required.

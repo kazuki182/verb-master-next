@@ -16,3 +16,15 @@ V150 SEND / PAY / BUY Reaudit Final
 - SEND: 9 phrasal verbs
 - PAY: 7 phrasal verbs
 - BUY: 5 phrasal verbs
+
+## Ver.151 SELL / CHOOSE / FOLLOW Reaudit
+
+- Target verbs: SELL / CHOOSE / FOLLOW
+- SELL phrasal verbs: 6
+- CHOOSE phrasal verbs: 5
+- FOLLOW phrasal verbs: 8
+- Collocations: empty for target verbs
+- Basic red highlight: verb only
+- Phrasal red highlight: verb + particle/preposition only
+- Preserved: Ver.145 persistence, Ver.146 clean profile UI, Ver.140 simple prefix search
+

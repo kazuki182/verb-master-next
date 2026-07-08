@@ -1,7 +1,5 @@
 # Verb Master
 
-Reaudit OPEN / CLOSE / LET final package.
+Current package: V150 SEND / PAY / BUY Reaudit Final.
 
-This build preserves the Ver.145 auth/restore/persistence foundation, the Ver.146 user-facing cleanup, and the Ver.140 simple prefix search.
-
-No additional SQL is required for this update.
+This package keeps the deploy-safe persistence system, clean user profile UI, and simple prefix search while updating the SEND / PAY / BUY verb data.

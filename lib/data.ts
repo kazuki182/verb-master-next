@@ -11421,14 +11421,15 @@ export const verbs: Verb[] = [
     ],
     "collocations": [],
     "phrasalVerbs": [
-      {"phrase": "send out", "ja": "一斉に送る・発送する", "image": "案内や資料を複数の相手へ送り出す。", "pattern": "send out", "examples": [{"en": "We will send out the announcement this afternoon.", "ja": "私たちは今日の午後、その案内を一斉送信します。", "focus": "send out", "object": "the announcement"}], "dailyExamples": []},
+      {"phrase": "send out", "ja": "発送する・一斉に送る", "image": "案内や資料を複数の相手へ送り出す。", "pattern": "send out", "examples": [{"en": "We will send out the announcement this afternoon.", "ja": "私たちは今日の午後、その案内を一斉送信します。", "focus": "send out", "object": "the announcement"}], "dailyExamples": []},
+      {"phrase": "send off", "ja": "発送する・送り出す", "image": "荷物や人を正式に送り出す。", "pattern": "send off", "examples": [{"en": "We sent off the samples after the final check.", "ja": "私たちは最終確認後にサンプルを発送しました。", "focus": "sent off", "object": "the samples"}], "dailyExamples": []},
+      {"phrase": "send in", "ja": "提出する・送付する", "image": "必要な場所や窓口へ資料を送る。", "pattern": "send in", "examples": [{"en": "Please send in the application before the deadline.", "ja": "締切前に申請書を提出してください。", "focus": "send in", "object": "the application"}], "dailyExamples": []},
       {"phrase": "send back", "ja": "送り返す・返送する", "image": "相手から来たものを戻す。", "pattern": "send back", "examples": [{"en": "Please send back the signed document by Friday.", "ja": "金曜日までに署名済み書類を返送してください。", "focus": "send back", "object": "the signed document"}], "dailyExamples": []},
       {"phrase": "send over", "ja": "送って渡す", "image": "相手の手元へ資料や情報を送る。", "pattern": "send over", "examples": [{"en": "I will send over the latest price list.", "ja": "最新の価格表を送ります。", "focus": "send over", "object": "the latest price list"}], "dailyExamples": []},
-      {"phrase": "send in", "ja": "提出する・送り込む", "image": "必要な場所や窓口へ提出する。", "pattern": "send in", "examples": [{"en": "Please send in the application before the deadline.", "ja": "締切前に申請書を提出してください。", "focus": "send in", "object": "the application"}], "dailyExamples": []},
-      {"phrase": "send off", "ja": "発送する・送り出す", "image": "荷物や人を出発させる。", "pattern": "send off", "examples": [{"en": "We sent off the samples after the final check.", "ja": "私たちは最終確認後にサンプルを発送しました。", "focus": "sent off", "object": "the samples"}], "dailyExamples": []},
-      {"phrase": "send for", "ja": "〜を呼びにやる・取り寄せる", "image": "必要な人や物を呼ぶ・取り寄せる。", "pattern": "send for", "examples": [{"en": "We should send for a technician if the issue continues.", "ja": "問題が続くなら、技術者を呼ぶべきです。", "focus": "send for", "object": "a technician"}], "dailyExamples": []},
-      {"phrase": "send away", "ja": "送り出す・追い返す", "image": "人や物を自分の場所から離す。", "pattern": "send away", "examples": [{"en": "The reception desk sent away visitors without appointments.", "ja": "受付は予約のない来訪者を帰しました。", "focus": "sent away", "object": "visitors"}], "dailyExamples": []},
-      {"phrase": "send up", "ja": "上に送る・上位へ回す", "image": "上司や上位部門へ情報を上げる。", "pattern": "send up", "examples": [{"en": "Please send up the report to the manager today.", "ja": "今日中にその報告書をマネージャーへ上げてください。", "focus": "send up", "object": "the report"}], "dailyExamples": []}
+      {"phrase": "send through", "ja": "送信する・通す", "image": "メールやシステム経由で相手へ通して送る。", "pattern": "send through", "examples": [{"en": "Please send through the final data after approval.", "ja": "承認後に最終データを送信してください。", "focus": "send through", "object": "the final data"}], "dailyExamples": []},
+      {"phrase": "send for", "ja": "取り寄せる・呼び寄せる", "image": "必要な人や物を呼ぶ・取り寄せる。", "pattern": "send for", "examples": [{"en": "We should send for a technician if the issue continues.", "ja": "問題が続くなら、技術者を呼ぶべきです。", "focus": "send for", "object": "a technician"}], "dailyExamples": []},
+      {"phrase": "send on", "ja": "転送する", "image": "受け取った情報を次の相手へ送る。", "pattern": "send on", "examples": [{"en": "I will send on the client's comments to the design team.", "ja": "顧客のコメントを設計チームへ転送します。", "focus": "send on", "object": "the client's comments"}], "dailyExamples": []},
+      {"phrase": "send around", "ja": "回覧する・共有する", "image": "資料や案内を関係者の間で回す。", "pattern": "send around", "examples": [{"en": "Please send around the meeting notes to everyone.", "ja": "会議メモを全員に共有してください。", "focus": "send around", "object": "the meeting notes"}], "dailyExamples": []}
     ]
   },
   {
@@ -11452,14 +11453,13 @@ export const verbs: Verb[] = [
     ],
     "collocations": [],
     "phrasalVerbs": [
-      {"phrase": "pay off", "ja": "報われる・完済する", "image": "努力や支払いが最後に良い結果になる。", "pattern": "pay off", "examples": [{"en": "Our preparation paid off during the presentation.", "ja": "私たちの準備はプレゼン中に報われました。", "focus": "paid off"}], "dailyExamples": []},
+      {"phrase": "pay for", "ja": "〜の代金を払う", "image": "対象に対して代金を支払う。", "pattern": "pay for", "examples": [{"en": "The client will pay for the additional work.", "ja": "顧客は追加作業の代金を支払います。", "focus": "pay for", "object": "the additional work"}], "dailyExamples": []},
+      {"phrase": "pay off", "ja": "完済する・報われる", "image": "支払いを終える、または努力が良い結果になる。", "pattern": "pay off", "examples": [{"en": "Our preparation paid off during the presentation.", "ja": "私たちの準備はプレゼン中に報われました。", "focus": "paid off"}], "dailyExamples": []},
       {"phrase": "pay back", "ja": "返済する・返す", "image": "借りたお金や恩を返す。", "pattern": "pay back", "examples": [{"en": "We need to pay back the advance payment.", "ja": "私たちは前受金を返済する必要があります。", "focus": "pay back", "object": "the advance payment"}], "dailyExamples": []},
-      {"phrase": "pay for", "ja": "〜の代金を支払う", "image": "対象に対して代金を支払う。", "pattern": "pay for", "examples": [{"en": "The client will pay for the additional work.", "ja": "顧客は追加作業の代金を支払います。", "focus": "pay for", "object": "the additional work"}], "dailyExamples": []},
-      {"phrase": "pay up", "ja": "支払うべきお金を払う", "image": "未払いの金額を支払う。", "pattern": "pay up", "examples": [{"en": "The client finally paid up after several reminders.", "ja": "顧客は何度かリマインドした後、ようやく支払いました。", "focus": "paid up"}], "dailyExamples": []},
+      {"phrase": "pay up", "ja": "全額払う・しぶしぶ払う", "image": "未払いの金額を支払う。", "pattern": "pay up", "examples": [{"en": "The client finally paid up after several reminders.", "ja": "顧客は何度かリマインドした後、ようやく支払いました。", "focus": "paid up"}], "dailyExamples": []},
+      {"phrase": "pay in", "ja": "払い込む・入金する", "image": "お金を口座や制度に入れる。", "pattern": "pay in", "examples": [{"en": "Please pay in the deposit before production starts.", "ja": "生産開始前に前金を入金してください。", "focus": "pay in", "object": "the deposit"}], "dailyExamples": []},
       {"phrase": "pay out", "ja": "支払う・払い出す", "image": "会社や制度からお金を支払う。", "pattern": "pay out", "examples": [{"en": "The company paid out the bonus in June.", "ja": "会社は6月に賞与を支払いました。", "focus": "paid out", "object": "the bonus"}], "dailyExamples": []},
-      {"phrase": "pay into", "ja": "〜に払い込む", "image": "口座や制度へお金を入れる。", "pattern": "pay into", "examples": [{"en": "We pay into the company pension plan every month.", "ja": "私たちは毎月、会社の年金制度に払い込んでいます。", "focus": "pay into", "object": "the company pension plan"}], "dailyExamples": []},
-      {"phrase": "pay down", "ja": "借金を少しずつ減らす", "image": "支払いによって残高を下げる。", "pattern": "pay down", "examples": [{"en": "The company plans to pay down its debt this year.", "ja": "会社は今年、借入金を減らす計画です。", "focus": "pay down", "object": "its debt"}], "dailyExamples": []},
-      {"phrase": "pay in", "ja": "入金する・払い込む", "image": "お金を口座などに入れる。", "pattern": "pay in", "examples": [{"en": "Please pay in the deposit before production starts.", "ja": "生産開始前に前金を入金してください。", "focus": "pay in", "object": "the deposit"}], "dailyExamples": []}
+      {"phrase": "pay down", "ja": "借金を減らす", "image": "支払いによって残高を下げる。", "pattern": "pay down", "examples": [{"en": "The company plans to pay down its debt this year.", "ja": "会社は今年、借入金を減らす計画です。", "focus": "pay down", "object": "its debt"}], "dailyExamples": []}
     ]
   },
   {
@@ -11483,12 +11483,11 @@ export const verbs: Verb[] = [
     ],
     "collocations": [],
     "phrasalVerbs": [
-      {"phrase": "buy into", "ja": "考えに賛成する・信じ込む", "image": "案や考えを自分の中に受け入れる。", "pattern": "buy into", "examples": [{"en": "The team did not buy into the new proposal at first.", "ja": "チームは最初、その新しい提案に納得していませんでした。", "focus": "buy into", "object": "the new proposal"}], "dailyExamples": []},
-      {"phrase": "buy out", "ja": "買収する・買い取る", "image": "相手の持分や会社を買って自分側に入れる。", "pattern": "buy out", "examples": [{"en": "A larger company bought out the small supplier.", "ja": "大きな会社がその小さな仕入先を買収しました。", "focus": "bought out", "object": "the small supplier"}], "dailyExamples": []},
+      {"phrase": "buy into", "ja": "考えを信じる・受け入れる", "image": "案や考えを自分の中に受け入れる。", "pattern": "buy into", "examples": [{"en": "The team did not buy into the new proposal at first.", "ja": "チームは最初、その新しい提案に納得していませんでした。", "focus": "buy into", "object": "the new proposal"}], "dailyExamples": []},
       {"phrase": "buy up", "ja": "買い占める", "image": "市場にあるものを大量に買う。", "pattern": "buy up", "examples": [{"en": "Some customers bought up the remaining stock.", "ja": "一部の顧客が残りの在庫を買い占めました。", "focus": "bought up", "object": "the remaining stock"}], "dailyExamples": []},
-      {"phrase": "buy back", "ja": "買い戻す", "image": "一度手放したものを再び買う。", "pattern": "buy back", "examples": [{"en": "The company bought back the old equipment.", "ja": "会社は古い設備を買い戻しました。", "focus": "bought back", "object": "the old equipment"}], "dailyExamples": []},
-      {"phrase": "buy off", "ja": "買収して黙らせる", "image": "お金で相手の行動や発言を抑える。", "pattern": "buy off", "examples": [{"en": "The article claimed that the official was bought off.", "ja": "その記事は、その職員が買収されたと主張しました。", "focus": "bought off"}], "dailyExamples": []},
-      {"phrase": "buy in", "ja": "買い入れる・賛同する", "image": "商品や考えを中に取り入れる。", "pattern": "buy in", "examples": [{"en": "We bought in extra materials before the price increase.", "ja": "私たちは値上げ前に追加材料を買い入れました。", "focus": "bought in", "object": "extra materials"}], "dailyExamples": []}
+      {"phrase": "buy out", "ja": "買収する・買い取る", "image": "相手の持分や会社を買って自分側に入れる。", "pattern": "buy out", "examples": [{"en": "A larger company bought out the small supplier.", "ja": "大きな会社がその小さな仕入先を買収しました。", "focus": "bought out", "object": "the small supplier"}], "dailyExamples": []},
+      {"phrase": "buy in", "ja": "買い込む・賛同する", "image": "商品や考えを中に取り入れる。", "pattern": "buy in", "examples": [{"en": "We bought in extra materials before the price increase.", "ja": "私たちは値上げ前に追加材料を買い込みました。", "focus": "bought in", "object": "extra materials"}], "dailyExamples": []},
+      {"phrase": "buy back", "ja": "買い戻す", "image": "一度手放したものを再び買う。", "pattern": "buy back", "examples": [{"en": "The company bought back the old equipment.", "ja": "会社は古い設備を買い戻しました。", "focus": "bought back", "object": "the old equipment"}], "dailyExamples": []}
     ]
   },
   {

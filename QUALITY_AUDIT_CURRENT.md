@@ -1,14 +1,18 @@
-# QUALITY_AUDIT_CURRENT
+# QUALITY AUDIT CURRENT
 
-Current package: Reaudit OPEN / CLOSE / LET final
+## Latest
+V150 SEND / PAY / BUY Reaudit Final
 
-Checks:
-- Target verbs: OPEN / CLOSE / LET
-- Phrasal verb counts: OPEN 6, CLOSE 7, LET 8
-- Categories: 基本 / 句動詞 only
-- Collocations: empty for target verbs
-- Highlight policy: basic = verb only; phrasal = verb + particle/preposition only
-- Persistence/auth: Ver.145 preserved
-- User clean profile UI: Ver.146 preserved
-- Simple prefix search: Ver.140 preserved
-- Additional SQL: none
+## Build checks
+- npx tsc --noEmit: OK
+- npm run build: OK
+
+## Persistence
+- Ver.145 auth / restore / persistence system maintained.
+- Ver.146 clean user profile UI maintained.
+- Ver.140 simple prefix search maintained.
+
+## Current verb batch
+- SEND: 9 phrasal verbs
+- PAY: 7 phrasal verbs
+- BUY: 5 phrasal verbs

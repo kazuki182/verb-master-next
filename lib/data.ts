@@ -14982,432 +14982,293 @@ export const verbs: Verb[] = [
     "core": "人・物・仕組みを相手の前に初めて出す",
     "coreDetail": "INTRODUCEは、まだ知られていない人・商品・方法・仕組みを相手の前に出して、使える状態や理解できる状態にする動詞です。仕事では人の紹介だけでなく、新商品・制度・改善策の導入にも使います。",
     "coreVisual": {
-      "from": [
-        "新しい人",
-        "新商品",
-        "新制度",
-        "新しい方法",
-        "新しい考え"
-      ],
-      "to": "相手・会社・市場",
-      "label": "初めて前に出す"
+        "from": [
+            "新しい人",
+            "新商品",
+            "新制度",
+            "新しい方法",
+            "新しい考え"
+        ],
+        "to": "相手・会社・市場",
+        "label": "初めて前に出す"
     },
     "meanings": [
-      {
-        "id": "introduce-person",
-        "title": "① 人を紹介する",
-        "pattern": "introduce A to B",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "人と人をつなぐために初めて会わせる。",
-        "point": "introduce 人 to 人 の形で、顧客・担当者・同僚を紹介する時に使います。",
-        "examples": [
-          {
-            "en": "I introduced the new sales manager to the client.",
-            "ja": "私は新しい営業マネージャーを顧客に紹介しました。",
-            "focus": "introduced"
-          },
-          {
-            "en": "Can you introduce me to the purchasing team?",
-            "ja": "購買チームに私を紹介してもらえますか？",
-            "focus": "introduce"
-          },
-          {
-            "en": "We introduced our engineer to the project members.",
-            "ja": "私たちは技術担当者をプロジェクトメンバーに紹介しました。",
-            "focus": "introduced"
-          }
-        ]
-      },
-      {
-        "id": "introduce-product",
-        "title": "② 商品・サービスを紹介する",
-        "pattern": "introduce a product / service",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "相手が知らない商品やサービスを初めて説明する。",
-        "point": "展示会・商談・メールで商品やサービスを紹介する時に使います。",
-        "examples": [
-          {
-            "en": "We introduced our new lighting product at the exhibition.",
-            "ja": "私たちは展示会で新しい照明製品を紹介しました。",
-            "focus": "introduced"
-          },
-          {
-            "en": "The sales team introduced the service to several new clients.",
-            "ja": "営業チームはそのサービスを複数の新規顧客に紹介しました。",
-            "focus": "introduced"
-          },
-          {
-            "en": "Please introduce this product during the client meeting.",
-            "ja": "顧客との打ち合わせでこの商品を紹介してください。",
-            "focus": "introduce"
-          }
-        ]
-      },
-      {
-        "id": "introduce-system",
-        "title": "③ 制度・仕組みを導入する",
-        "pattern": "introduce a system / rule / process",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "新しい仕組みを会社やチームに入れる。",
-        "point": "introduceは『紹介する』だけでなく、制度や仕組みを『導入する』意味でもよく使います。",
-        "examples": [
-          {
-            "en": "We introduced a new approval process last month.",
-            "ja": "私たちは先月、新しい承認プロセスを導入しました。",
-            "focus": "introduced"
-          },
-          {
-            "en": "The company introduced a new attendance system.",
-            "ja": "会社は新しい勤怠システムを導入しました。",
-            "focus": "introduced"
-          },
-          {
-            "en": "They introduced clear rules for handling customer complaints.",
-            "ja": "彼らは顧客クレーム対応の明確なルールを導入しました。",
-            "focus": "introduced"
-          }
-        ]
-      },
-      {
-        "id": "introduce-idea",
-        "title": "④ 考え・提案を出す",
-        "pattern": "introduce an idea / proposal",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "会議や資料で新しい考えを場に出す。",
-        "point": "新しい案や考えを議論の中に出す時にも使います。",
-        "examples": [
-          {
-            "en": "She introduced a new idea during the planning meeting.",
-            "ja": "彼女は企画会議で新しい考えを出しました。",
-            "focus": "introduced"
-          },
-          {
-            "en": "We introduced a proposal to reduce delivery delays.",
-            "ja": "私たちは納期遅延を減らす提案を出しました。",
-            "focus": "introduced"
-          },
-          {
-            "en": "The manager introduced a different approach to the problem.",
-            "ja": "マネージャーはその問題に対して別の方法を提示しました。",
-            "focus": "introduced"
-          }
-        ]
-      },
-      {
-        "id": "introduce-change",
-        "title": "⑤ 変更・改善を取り入れる",
-        "pattern": "introduce a change / improvement",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "今のやり方に新しい変更や改善を加える。",
-        "point": "改善活動や業務フロー変更でよく使います。",
-        "examples": [
-          {
-            "en": "We introduced a small change to the quotation format.",
-            "ja": "私たちは見積書の形式に小さな変更を加えました。",
-            "focus": "introduced"
-          },
-          {
-            "en": "The team introduced improvements to the inspection process.",
-            "ja": "チームは検査工程に改善を取り入れました。",
-            "focus": "introduced"
-          },
-          {
-            "en": "Please introduce the change gradually to avoid confusion.",
-            "ja": "混乱を避けるため、その変更は段階的に導入してください。",
-            "focus": "introduce"
-          }
-        ]
-      },
-      {
-        "id": "introduce-to-market",
-        "title": "⑥ 市場・顧客へ投入する",
-        "pattern": "introduce A to the market / customers",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "商品やサービスを市場や顧客に初めて出す。",
-        "point": "新商品発表や販売開始の文脈で使いやすい表現です。",
-        "examples": [
-          {
-            "en": "We plan to introduce the new model to the market in July.",
-            "ja": "私たちは7月に新モデルを市場へ投入する予定です。",
-            "focus": "introduce"
-          },
-          {
-            "en": "The company introduced the updated product to key customers first.",
-            "ja": "会社は主要顧客に先に改良版の商品を投入しました。",
-            "focus": "introduced"
-          },
-          {
-            "en": "They introduced the service to the Japanese market last year.",
-            "ja": "彼らは昨年、そのサービスを日本市場に投入しました。",
-            "focus": "introduced"
-          }
-        ]
-      }
+        {
+            "id": "introduce-person",
+            "title": "① 人・担当者を紹介する",
+            "pattern": "introduce a person / speaker",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "会議や商談で新しい人を相手の前に出す。",
+            "point": "紹介先を強調する表現は introduce to で学びます。基本側では紹介する行為そのものを扱います。",
+            "examples": [
+                {
+                    "en": "The host introduced the new project leader.",
+                    "ja": "司会者は新しいプロジェクトリーダーを紹介しました。",
+                    "focus": "introduced"
+                },
+                {
+                    "en": "Please introduce our technical specialist at the meeting.",
+                    "ja": "会議で当社の技術担当者を紹介してください。",
+                    "focus": "introduce"
+                },
+                {
+                    "en": "She introduced the guest speaker before the presentation.",
+                    "ja": "彼女はプレゼンテーションの前にゲスト講演者を紹介しました。",
+                    "focus": "introduced"
+                }
+            ]
+        },
+        {
+            "id": "introduce-product",
+            "title": "② 商品・サービスを紹介する",
+            "pattern": "introduce a product / service",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "相手が知らない商品やサービスを初めて説明する。",
+            "point": "展示会・商談・メールで新しい商品やサービスを紹介する時に使います。",
+            "examples": [
+                {
+                    "en": "We introduced our new lighting product at the exhibition.",
+                    "ja": "私たちは展示会で新しい照明製品を紹介しました。",
+                    "focus": "introduced"
+                },
+                {
+                    "en": "The sales team introduced a maintenance service during the meeting.",
+                    "ja": "営業チームは打ち合わせで保守サービスを紹介しました。",
+                    "focus": "introduced"
+                },
+                {
+                    "en": "Please introduce this product during the client meeting.",
+                    "ja": "顧客との打ち合わせでこの商品を紹介してください。",
+                    "focus": "introduce"
+                }
+            ]
+        },
+        {
+            "id": "introduce-system",
+            "title": "③ 制度・仕組みを導入する",
+            "pattern": "introduce a system / rule / process",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "新しい仕組みを会社やチームに入れる。",
+            "point": "introduceは「紹介する」だけでなく、制度・仕組み・ルールを「導入する」意味でも使います。",
+            "examples": [
+                {
+                    "en": "We introduced a new approval process last month.",
+                    "ja": "私たちは先月、新しい承認プロセスを導入しました。",
+                    "focus": "introduced"
+                },
+                {
+                    "en": "The company introduced a new attendance system.",
+                    "ja": "会社は新しい勤怠システムを導入しました。",
+                    "focus": "introduced"
+                },
+                {
+                    "en": "They introduced clear rules for handling customer complaints.",
+                    "ja": "彼らは顧客クレーム対応の明確なルールを導入しました。",
+                    "focus": "introduced"
+                }
+            ]
+        },
+        {
+            "id": "introduce-idea",
+            "title": "④ 考え・提案を提示する",
+            "pattern": "introduce an idea / proposal",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "会議や資料で新しい考えを議論の場に出す。",
+            "point": "新しい案や考えを会議・提案書の中で提示する時に使います。",
+            "examples": [
+                {
+                    "en": "She introduced a new idea during the planning meeting.",
+                    "ja": "彼女は企画会議で新しい考えを提示しました。",
+                    "focus": "introduced"
+                },
+                {
+                    "en": "We introduced a proposal to reduce delivery delays.",
+                    "ja": "私たちは納期遅延を減らす提案を提示しました。",
+                    "focus": "introduced"
+                },
+                {
+                    "en": "The manager introduced a different approach during the discussion.",
+                    "ja": "マネージャーは話し合いの中で別の方法を提示しました。",
+                    "focus": "introduced"
+                }
+            ]
+        },
+        {
+            "id": "introduce-change",
+            "title": "⑤ 変更・改善を取り入れる",
+            "pattern": "introduce a change / improvement",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "現在のやり方に新しい変更や改善を加える。",
+            "point": "改善活動や業務フローの変更でよく使います。",
+            "examples": [
+                {
+                    "en": "We introduced a small change to the quotation format.",
+                    "ja": "私たちは見積書の形式に小さな変更を加えました。",
+                    "focus": "introduced"
+                },
+                {
+                    "en": "The team introduced improvements to the inspection process.",
+                    "ja": "チームは検査工程に改善を取り入れました。",
+                    "focus": "introduced"
+                },
+                {
+                    "en": "Please introduce the change gradually to avoid confusion.",
+                    "ja": "混乱を避けるため、その変更は段階的に導入してください。",
+                    "focus": "introduce"
+                }
+            ]
+        },
+        {
+            "id": "introduce-topic",
+            "title": "⑥ 話題・項目を取り上げる",
+            "pattern": "introduce a topic / subject",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "会議や説明の中で新しい話題を始める。",
+            "point": "説明や会議で、次に扱う話題・論点を出す時にも使えます。",
+            "examples": [
+                {
+                    "en": "The chair introduced the next topic.",
+                    "ja": "議長は次の議題を取り上げました。",
+                    "focus": "introduced"
+                },
+                {
+                    "en": "I will introduce the main issue first.",
+                    "ja": "私は最初に主要な問題を取り上げます。",
+                    "focus": "introduce"
+                },
+                {
+                    "en": "The report introduces the key points clearly.",
+                    "ja": "その報告書は重要なポイントを分かりやすく提示しています。",
+                    "focus": "introduces"
+                }
+            ]
+        }
     ],
-    "collocations": [
-      {
-        "phrase": "introduce someone to someone",
-        "ja": "人を人に紹介する",
-        "image": "人と人の接点を作る。",
-        "pattern": "introduce A to B",
-        "examples": [
-          {
-            "en": "Please introduce Mr. Sato to the design team.",
-            "ja": "佐藤様をデザインチームに紹介してください。",
-            "focus": "introduce Mr. Sato to"
-          },
-          {
-            "en": "I introduced the client to our technical manager.",
-            "ja": "私は顧客を当社の技術マネージャーに紹介しました。",
-            "focus": "introduced the client to"
-          },
-          {
-            "en": "Can you introduce me to the person in charge?",
-            "ja": "担当者に私を紹介してもらえますか？",
-            "focus": "introduce me to"
-          }
-        ]
-      },
-      {
-        "phrase": "introduce a new product",
-        "ja": "新商品を紹介する",
-        "image": "新しい商品を顧客に見せる。",
-        "pattern": "introduce a new product",
-        "examples": [
-          {
-            "en": "We will introduce a new product at the trade show.",
-            "ja": "展示会で新商品を紹介します。",
-            "focus": "introduce a new product"
-          },
-          {
-            "en": "The brochure introduces a new product line.",
-            "ja": "そのパンフレットは新しい商品ラインを紹介しています。",
-            "focus": "introduces a new product"
-          },
-          {
-            "en": "Please introduce the new product in the next newsletter.",
-            "ja": "次のニュースレターで新商品を紹介してください。",
-            "focus": "introduce the new product"
-          }
-        ]
-      },
-      {
-        "phrase": "introduce a new system",
-        "ja": "新しいシステムを導入する",
-        "image": "業務に新しいシステムを入れる。",
-        "pattern": "introduce a new system",
-        "examples": [
-          {
-            "en": "We introduced a new system to track orders.",
-            "ja": "受注を管理するために新しいシステムを導入しました。",
-            "focus": "introduced a new system"
-          },
-          {
-            "en": "The company will introduce a new system next quarter.",
-            "ja": "会社は次の四半期に新しいシステムを導入します。",
-            "focus": "introduce a new system"
-          },
-          {
-            "en": "Please explain why we need to introduce a new system.",
-            "ja": "なぜ新しいシステムを導入する必要があるのか説明してください。",
-            "focus": "introduce a new system"
-          }
-        ]
-      },
-      {
-        "phrase": "introduce a change",
-        "ja": "変更を加える・導入する",
-        "image": "やり方や仕様に変更を入れる。",
-        "pattern": "introduce a change",
-        "examples": [
-          {
-            "en": "We introduced a change to the delivery process.",
-            "ja": "配送プロセスに変更を加えました。",
-            "focus": "introduced a change"
-          },
-          {
-            "en": "The client asked us to introduce a change to the design.",
-            "ja": "顧客はデザインに変更を加えるよう依頼しました。",
-            "focus": "introduce a change"
-          },
-          {
-            "en": "Do not introduce a change without approval.",
-            "ja": "承認なしに変更を加えないでください。",
-            "focus": "introduce a change"
-          }
-        ]
-      },
-      {
-        "phrase": "introduce an idea",
-        "ja": "考えを提示する",
-        "image": "会議で新しい考えを出す。",
-        "pattern": "introduce an idea",
-        "examples": [
-          {
-            "en": "He introduced an idea to reduce material waste.",
-            "ja": "彼は材料の無駄を減らす考えを提示しました。",
-            "focus": "introduced an idea"
-          },
-          {
-            "en": "We should introduce an idea that is easy to test.",
-            "ja": "試しやすい案を提示すべきです。",
-            "focus": "introduce an idea"
-          },
-          {
-            "en": "The team introduced an idea for improving customer support.",
-            "ja": "チームは顧客サポートを改善する案を提示しました。",
-            "focus": "introduced an idea"
-          }
-        ]
-      },
-      {
-        "phrase": "introduce a policy",
-        "ja": "方針・制度を導入する",
-        "image": "会社やチームのルールとして入れる。",
-        "pattern": "introduce a policy",
-        "examples": [
-          {
-            "en": "The company introduced a policy for remote work.",
-            "ja": "会社はリモートワークに関する制度を導入しました。",
-            "focus": "introduced a policy"
-          },
-          {
-            "en": "We need to introduce a policy for data handling.",
-            "ja": "データ取扱いに関する方針を導入する必要があります。",
-            "focus": "introduce a policy"
-          },
-          {
-            "en": "Management introduced a policy to improve safety.",
-            "ja": "経営陣は安全性を高める方針を導入しました。",
-            "focus": "introduced a policy"
-          }
-        ]
-      }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
-      {
-        "phrase": "introduce A into B",
-        "ja": "AをBに取り入れる・導入する",
-        "image": "新しいものを既存の環境へ入れる。",
-        "pattern": "introduce A into B",
-        "examples": [
-          {
-            "en": "We introduced automation into the inspection process.",
-            "ja": "検査工程に自動化を取り入れました。",
-            "focus": "introduced automation into"
-          },
-          {
-            "en": "The team introduced new materials into the product design.",
-            "ja": "チームは製品設計に新しい材料を取り入れました。",
-            "focus": "introduced new materials into"
-          },
-          {
-            "en": "Please introduce this method into the next training session.",
-            "ja": "次回の研修にこの方法を取り入れてください。",
-            "focus": "introduce this method into"
-          }
-        ]
-      },
-      {
-        "phrase": "introduce A to B",
-        "ja": "AをBに紹介する・投入する",
-        "image": "相手や市場へ初めて出す。",
-        "pattern": "introduce A to B",
-        "examples": [
-          {
-            "en": "We introduced the product to a new customer segment.",
-            "ja": "その商品を新しい顧客層に紹介しました。",
-            "focus": "introduced the product to"
-          },
-          {
-            "en": "Can you introduce this tool to the sales team?",
-            "ja": "このツールを営業チームに紹介してもらえますか？",
-            "focus": "introduce this tool to"
-          },
-          {
-            "en": "They introduced the service to local companies.",
-            "ja": "彼らはそのサービスを地元企業に紹介しました。",
-            "focus": "introduced the service to"
-          }
-        ]
-      },
-      {
-        "phrase": "be introduced to",
-        "ja": "〜に紹介される・触れる",
-        "image": "受け身で新しい人や物に出会う。",
-        "pattern": "be introduced to",
-        "examples": [
-          {
-            "en": "I was introduced to the new project leader yesterday.",
-            "ja": "私は昨日、新しいプロジェクトリーダーを紹介されました。",
-            "focus": "was introduced to"
-          },
-          {
-            "en": "New staff are introduced to our internal tools during training.",
-            "ja": "新入社員は研修中に社内ツールを紹介されます。",
-            "focus": "are introduced to"
-          },
-          {
-            "en": "The client was introduced to our maintenance service.",
-            "ja": "顧客は当社の保守サービスを紹介されました。",
-            "focus": "was introduced to"
-          }
-        ]
-      },
-      {
-        "phrase": "introduce gradually",
-        "ja": "段階的に導入する",
-        "image": "急に変えず少しずつ入れる。",
-        "pattern": "introduce gradually",
-        "examples": [
-          {
-            "en": "We should introduce the new process gradually.",
-            "ja": "新しいプロセスは段階的に導入すべきです。",
-            "focus": "introduce the new process gradually"
-          },
-          {
-            "en": "The company introduced the rule gradually across all branches.",
-            "ja": "会社はそのルールを全拠点に段階的に導入しました。",
-            "focus": "introduced the rule gradually"
-          },
-          {
-            "en": "Please introduce the change gradually to reduce confusion.",
-            "ja": "混乱を減らすため、その変更は段階的に導入してください。",
-            "focus": "introduce the change gradually"
-          }
-        ]
-      },
-      {
-        "phrase": "newly introduced",
-        "ja": "新しく導入された",
-        "image": "導入された直後の状態を表す。",
-        "pattern": "newly introduced + 名詞",
-        "examples": [
-          {
-            "en": "The newly introduced system reduced manual work.",
-            "ja": "新しく導入されたシステムは手作業を減らしました。",
-            "focus": "newly introduced system"
-          },
-          {
-            "en": "We tested the newly introduced rule for one month.",
-            "ja": "新しく導入されたルールを1か月間試しました。",
-            "focus": "newly introduced rule"
-          },
-          {
-            "en": "The newly introduced product received positive feedback.",
-            "ja": "新しく投入された商品は良い反応を得ました。",
-            "focus": "newly introduced product"
-          }
-        ]
-      }
+        {
+            "phrase": "introduce to",
+            "ja": "〜に紹介する・初めて触れさせる",
+            "image": "人・商品・考えを相手へ初めて示す。",
+            "pattern": "introduce to",
+            "examples": [
+                {
+                    "en": "I was introduced to the new project leader yesterday.",
+                    "ja": "私は昨日、新しいプロジェクトリーダーを紹介されました。",
+                    "focus": "introduced to"
+                },
+                {
+                    "en": "The client was introduced to our maintenance service.",
+                    "ja": "顧客は当社の保守サービスを紹介されました。",
+                    "focus": "introduced to"
+                },
+                {
+                    "en": "New staff are introduced to the internal tools during training.",
+                    "ja": "新入社員は研修中に社内ツールを紹介されます。",
+                    "focus": "introduced to"
+                }
+            ]
+        },
+        {
+            "phrase": "introduce into",
+            "ja": "〜に導入する・取り入れる",
+            "image": "新しい仕組みや材料を既存の環境へ入れる。",
+            "pattern": "introduce into",
+            "examples": [
+                {
+                    "en": "Automation was introduced into the inspection process.",
+                    "ja": "検査工程に自動化が導入されました。",
+                    "focus": "introduced into"
+                },
+                {
+                    "en": "New materials were introduced into the product design.",
+                    "ja": "製品設計に新しい材料が取り入れられました。",
+                    "focus": "introduced into"
+                },
+                {
+                    "en": "This method will be introduced into the next training session.",
+                    "ja": "この方法は次回の研修に取り入れられます。",
+                    "focus": "introduced into"
+                }
+            ]
+        },
+        {
+            "phrase": "introduce as",
+            "ja": "〜として紹介する",
+            "image": "人や商品を特定の役割・位置付けで示す。",
+            "pattern": "introduce as",
+            "examples": [
+                {
+                    "en": "She was introduced as the new sales manager.",
+                    "ja": "彼女は新しい営業マネージャーとして紹介されました。",
+                    "focus": "introduced as"
+                },
+                {
+                    "en": "The model was introduced as a cost-effective option.",
+                    "ja": "そのモデルは費用対効果の高い選択肢として紹介されました。",
+                    "focus": "introduced as"
+                },
+                {
+                    "en": "This feature was introduced as a major improvement.",
+                    "ja": "この機能は大きな改善点として紹介されました。",
+                    "focus": "introduced as"
+                }
+            ]
+        },
+        {
+            "phrase": "introduce through",
+            "ja": "〜を通して紹介・導入する",
+            "image": "代理店・研修・キャンペーンなどの経路を使う。",
+            "pattern": "introduce through",
+            "examples": [
+                {
+                    "en": "The product was introduced through our distributor network.",
+                    "ja": "その商品は販売代理店網を通して紹介されました。",
+                    "focus": "introduced through"
+                },
+                {
+                    "en": "The new process was introduced through staff training.",
+                    "ja": "新しい工程は社員研修を通して導入されました。",
+                    "focus": "introduced through"
+                },
+                {
+                    "en": "The service will be introduced through a customer seminar.",
+                    "ja": "そのサービスは顧客向けセミナーを通して紹介されます。",
+                    "focus": "introduced through"
+                }
+            ]
+        },
+        {
+            "phrase": "introduce by",
+            "ja": "〜することで紹介・導入する",
+            "image": "説明・実演・段階展開などの方法を示す。",
+            "pattern": "introduce by",
+            "examples": [
+                {
+                    "en": "The new tool was introduced by giving a live demonstration.",
+                    "ja": "新しいツールは実演することで紹介されました。",
+                    "focus": "introduced by"
+                },
+                {
+                    "en": "The policy was introduced by explaining its purpose first.",
+                    "ja": "その方針は最初に目的を説明することで導入されました。",
+                    "focus": "introduced by"
+                },
+                {
+                    "en": "The change was introduced by starting with one department.",
+                    "ja": "その変更は一つの部署から始めることで導入されました。",
+                    "focus": "introduced by"
+                }
+            ]
+        }
     ]
-  },
+},
   {
     "id": "request",
     "rank": 71,
@@ -15420,409 +15281,270 @@ export const verbs: Verb[] = [
     "core": "必要なものや対応を丁寧・正式に求める",
     "coreDetail": "REQUESTは、相手に必要な対応・資料・承認・変更を丁寧または正式に求める動詞です。askよりビジネス寄りで、メールや申請、顧客対応でよく使います。",
     "coreVisual": {
-      "from": [
-        "資料",
-        "承認",
-        "変更",
-        "確認",
-        "対応"
-      ],
-      "to": "相手・担当部署",
-      "label": "丁寧に求める"
+        "from": [
+            "資料",
+            "承認",
+            "変更",
+            "確認",
+            "対応"
+        ],
+        "to": "相手・担当部署",
+        "label": "丁寧に求める"
     },
     "meanings": [
-      {
-        "id": "request-info",
-        "title": "① 情報・資料を依頼する",
-        "pattern": "request information / documents",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "必要な情報や資料を正式に求める。",
-        "point": "メールや見積依頼でよく使う基本形です。",
-        "examples": [
-          {
-            "en": "I requested the latest price list from the supplier.",
-            "ja": "私は仕入先に最新の価格表を依頼しました。",
-            "focus": "requested"
-          },
-          {
-            "en": "We requested additional documents for the application.",
-            "ja": "私たちは申請のために追加資料を依頼しました。",
-            "focus": "requested"
-          },
-          {
-            "en": "Please request the product specifications by Friday.",
-            "ja": "金曜日までに製品仕様書を依頼してください。",
-            "focus": "request"
-          }
-        ]
-      },
-      {
-        "id": "request-approval",
-        "title": "② 承認を依頼する",
-        "pattern": "request approval",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "発注・変更・提出前に承認を求める。",
-        "point": "request approvalは仕事でとても仕事で使う表現です。",
-        "examples": [
-          {
-            "en": "We requested approval before placing the order.",
-            "ja": "私たちは発注前に承認を依頼しました。",
-            "focus": "requested"
-          },
-          {
-            "en": "Please request approval from your manager first.",
-            "ja": "まず上司に承認を依頼してください。",
-            "focus": "request"
-          },
-          {
-            "en": "The team requested approval to change the design.",
-            "ja": "チームはデザイン変更の承認を依頼しました。",
-            "focus": "requested"
-          }
-        ]
-      },
-      {
-        "id": "request-action",
-        "title": "③ 対応を依頼する",
-        "pattern": "request action / support / confirmation",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "相手に具体的な対応を求める。",
-        "point": "確認・修正・サポートなどを丁寧に求める時に使います。",
-        "examples": [
-          {
-            "en": "The client requested urgent support for the issue.",
-            "ja": "顧客はその問題について緊急サポートを依頼しました。",
-            "focus": "requested"
-          },
-          {
-            "en": "We requested confirmation of the delivery date.",
-            "ja": "私たちは納期の確認を依頼しました。",
-            "focus": "requested"
-          },
-          {
-            "en": "Please request action from the responsible department.",
-            "ja": "担当部署に対応を依頼してください。",
-            "focus": "request"
-          }
-        ]
-      },
-      {
-        "id": "request-change",
-        "title": "④ 変更を依頼する",
-        "pattern": "request a change / revision",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "仕様・日程・内容の変更を求める。",
-        "point": "顧客要望や社内調整でよく使います。",
-        "examples": [
-          {
-            "en": "The client requested a change to the delivery schedule.",
-            "ja": "顧客は納期スケジュールの変更を依頼しました。",
-            "focus": "requested"
-          },
-          {
-            "en": "We requested a revision to the proposal.",
-            "ja": "私たちは提案書の修正を依頼しました。",
-            "focus": "requested"
-          },
-          {
-            "en": "Please request a change only after checking the cost.",
-            "ja": "費用を確認してから変更を依頼してください。",
-            "focus": "request"
-          }
-        ]
-      },
-      {
-        "id": "request-someone-to-do",
-        "title": "⑤ 人に〜するよう依頼する",
-        "pattern": "request someone to do",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "人に具体的な行動を丁寧に求める。",
-        "point": "少し硬めの形ですが、正式なメールや文書で使えます。",
-        "examples": [
-          {
-            "en": "We requested the vendor to send the samples earlier.",
-            "ja": "私たちは業者にサンプルを早めに送るよう依頼しました。",
-            "focus": "requested"
-          },
-          {
-            "en": "The client requested us to review the quotation again.",
-            "ja": "顧客は私たちに見積を再確認するよう依頼しました。",
-            "focus": "requested"
-          },
-          {
-            "en": "Management requested each team to submit a report.",
-            "ja": "経営陣は各チームに報告書を提出するよう依頼しました。",
-            "focus": "requested"
-          }
-        ]
-      },
-      {
-        "id": "request-formal",
-        "title": "⑥ 正式に要請する",
-        "pattern": "formally request",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "文書や手続きとして正式に求める。",
-        "point": "申請・契約・トラブル対応など、正式さが必要な場面で使います。",
-        "examples": [
-          {
-            "en": "We formally requested an extension of the deadline.",
-            "ja": "私たちは期限延長を正式に要請しました。",
-            "focus": "requested"
-          },
-          {
-            "en": "The company requested payment in writing.",
-            "ja": "会社は書面で支払いを要請しました。",
-            "focus": "requested"
-          },
-          {
-            "en": "Please request permission through the official form.",
-            "ja": "正式なフォームで許可を申請してください。",
-            "focus": "request"
-          }
-        ]
-      }
+        {
+            "id": "request-info",
+            "title": "① 情報・資料を依頼する",
+            "pattern": "request information / documents",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "必要な情報や資料を正式に求める。",
+            "point": "メールや申請で資料・仕様・データを求める時に使います。",
+            "examples": [
+                {
+                    "en": "I requested the latest price list yesterday.",
+                    "ja": "私は昨日、最新の価格表を依頼しました。",
+                    "focus": "requested"
+                },
+                {
+                    "en": "We requested additional documents for the application.",
+                    "ja": "私たちは申請に必要な追加書類を依頼しました。",
+                    "focus": "requested"
+                },
+                {
+                    "en": "Please request the product specifications by Friday.",
+                    "ja": "金曜日までに製品仕様書を依頼してください。",
+                    "focus": "request"
+                }
+            ]
+        },
+        {
+            "id": "request-approval",
+            "title": "② 承認・許可を依頼する",
+            "pattern": "request approval / permission",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "決定や実行に必要な承認を正式に求める。",
+            "point": "注文・変更・支出などの承認を求める時に使います。",
+            "examples": [
+                {
+                    "en": "We requested approval before placing the order.",
+                    "ja": "私たちは発注前に承認を依頼しました。",
+                    "focus": "requested"
+                },
+                {
+                    "en": "Please request permission before changing the settings.",
+                    "ja": "設定を変更する前に許可を依頼してください。",
+                    "focus": "request"
+                },
+                {
+                    "en": "The team requested approval to revise the design.",
+                    "ja": "チームは設計を修正する承認を依頼しました。",
+                    "focus": "requested"
+                }
+            ]
+        },
+        {
+            "id": "request-action",
+            "title": "③ 対応・支援を依頼する",
+            "pattern": "request action / support / confirmation",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "相手に必要な対応や支援を正式に求める。",
+            "point": "顧客対応、技術支援、納期確認などでよく使います。",
+            "examples": [
+                {
+                    "en": "The client requested urgent support for the issue.",
+                    "ja": "顧客はその問題について緊急対応を依頼しました。",
+                    "focus": "requested"
+                },
+                {
+                    "en": "We requested confirmation of the delivery date.",
+                    "ja": "私たちは納品日の確認を依頼しました。",
+                    "focus": "requested"
+                },
+                {
+                    "en": "Please request action from the responsible department.",
+                    "ja": "担当部署に対応を依頼してください。",
+                    "focus": "request"
+                }
+            ]
+        },
+        {
+            "id": "request-change",
+            "title": "④ 変更・修正を依頼する",
+            "pattern": "request a change / revision",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "予定・設計・資料などの変更を正式に求める。",
+            "point": "顧客要望や社内調整で変更を求める時に使います。",
+            "examples": [
+                {
+                    "en": "The client requested a change to the delivery schedule.",
+                    "ja": "顧客は納品スケジュールの変更を依頼しました。",
+                    "focus": "requested"
+                },
+                {
+                    "en": "We requested a revision to the proposal.",
+                    "ja": "私たちは提案書の修正を依頼しました。",
+                    "focus": "requested"
+                },
+                {
+                    "en": "Please request a change only after checking the cost.",
+                    "ja": "費用を確認してから変更を依頼してください。",
+                    "focus": "request"
+                }
+            ]
+        },
+        {
+            "id": "request-that",
+            "title": "⑤ 〜するよう正式に依頼する",
+            "pattern": "request that + 主語 + 動詞",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "相手にしてほしい行動を文で明確に示す。",
+            "point": "request someone to do より、request that someone do の形が自然で安全です。",
+            "examples": [
+                {
+                    "en": "We requested that the vendor send the samples earlier.",
+                    "ja": "私たちは仕入先にサンプルを早めに送るよう依頼しました。",
+                    "focus": "requested"
+                },
+                {
+                    "en": "The client requested that we review the quotation again.",
+                    "ja": "顧客は私たちに見積書を再確認するよう依頼しました。",
+                    "focus": "requested"
+                },
+                {
+                    "en": "Management requested that each team submit a report.",
+                    "ja": "経営陣は各チームに報告書を提出するよう依頼しました。",
+                    "focus": "requested"
+                }
+            ]
+        },
+        {
+            "id": "request-formal",
+            "title": "⑥ 正式に要請する",
+            "pattern": "formally request",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "期限延長や支払いなどを正式な手続きで求める。",
+            "point": "request自体が正式な語なので、ビジネスメールや申請書でよく使います。",
+            "examples": [
+                {
+                    "en": "We formally requested an extension of the deadline.",
+                    "ja": "私たちは期限の延長を正式に要請しました。",
+                    "focus": "requested"
+                },
+                {
+                    "en": "The company requested payment before shipment.",
+                    "ja": "会社は出荷前の支払いを要請しました。",
+                    "focus": "requested"
+                },
+                {
+                    "en": "Please request permission using the official form.",
+                    "ja": "正式な申請フォームを使って許可を依頼してください。",
+                    "focus": "request"
+                }
+            ]
+        }
     ],
-    "collocations": [
-      {
-        "phrase": "request approval",
-        "ja": "承認を依頼する",
-        "image": "判断や許可を求める。",
-        "pattern": "request approval",
-        "examples": [
-          {
-            "en": "Please request approval before sending the final quotation.",
-            "ja": "最終見積を送る前に承認を依頼してください。",
-            "focus": "request approval"
-          },
-          {
-            "en": "We requested approval for the additional cost.",
-            "ja": "追加費用について承認を依頼しました。",
-            "focus": "requested approval"
-          },
-          {
-            "en": "The sales team requested approval from management.",
-            "ja": "営業チームは経営陣に承認を依頼しました。",
-            "focus": "requested approval"
-          }
-        ]
-      },
-      {
-        "phrase": "request information",
-        "ja": "情報を依頼する",
-        "image": "必要な情報を相手に求める。",
-        "pattern": "request information",
-        "examples": [
-          {
-            "en": "We requested information about the warranty terms.",
-            "ja": "保証条件について情報を依頼しました。",
-            "focus": "requested information"
-          },
-          {
-            "en": "Please request information from the overseas office.",
-            "ja": "海外拠点に情報を依頼してください。",
-            "focus": "request information"
-          },
-          {
-            "en": "The customer requested information about installation.",
-            "ja": "顧客は設置について情報を求めました。",
-            "focus": "requested information"
-          }
-        ]
-      },
-      {
-        "phrase": "request a change",
-        "ja": "変更を依頼する",
-        "image": "日程・仕様・内容の変更を求める。",
-        "pattern": "request a change",
-        "examples": [
-          {
-            "en": "The client requested a change to the sign design.",
-            "ja": "顧客は看板デザインの変更を依頼しました。",
-            "focus": "requested a change"
-          },
-          {
-            "en": "We need to request a change in the delivery date.",
-            "ja": "納期変更を依頼する必要があります。",
-            "focus": "request a change"
-          },
-          {
-            "en": "Please request a change before production starts.",
-            "ja": "製作開始前に変更を依頼してください。",
-            "focus": "request a change"
-          }
-        ]
-      },
-      {
-        "phrase": "request support",
-        "ja": "サポートを依頼する",
-        "image": "助けや技術対応を求める。",
-        "pattern": "request support",
-        "examples": [
-          {
-            "en": "We requested support from the technical team.",
-            "ja": "技術チームにサポートを依頼しました。",
-            "focus": "requested support"
-          },
-          {
-            "en": "Please request support if the system error continues.",
-            "ja": "システムエラーが続く場合はサポートを依頼してください。",
-            "focus": "request support"
-          },
-          {
-            "en": "The branch requested support for the customer visit.",
-            "ja": "支店は顧客訪問のサポートを依頼しました。",
-            "focus": "requested support"
-          }
-        ]
-      },
-      {
-        "phrase": "at someone’s request",
-        "ja": "〜の依頼で",
-        "image": "依頼元を示す表現。",
-        "pattern": "at + 人 + request",
-        "examples": [
-          {
-            "en": "We revised the document at the client's request.",
-            "ja": "顧客の依頼で資料を修正しました。",
-            "focus": "at the client's request"
-          },
-          {
-            "en": "At management's request, we reviewed the process again.",
-            "ja": "経営陣の依頼で、プロセスを再確認しました。",
-            "focus": "At management's request"
-          },
-          {
-            "en": "The sample was sent at the customer's request.",
-            "ja": "サンプルは顧客の依頼で送られました。",
-            "focus": "at the customer's request"
-          }
-        ]
-      }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
-      {
-        "phrase": "request from",
-        "ja": "〜から依頼する・求める",
-        "image": "依頼先や情報元を示す。",
-        "pattern": "request A from B",
-        "examples": [
-          {
-            "en": "We requested the drawing from the design team.",
-            "ja": "設計チームに図面を依頼しました。",
-            "focus": "requested the drawing from"
-          },
-          {
-            "en": "Please request the data from the supplier.",
-            "ja": "仕入先にデータを依頼してください。",
-            "focus": "request the data from"
-          },
-          {
-            "en": "I requested confirmation from the client.",
-            "ja": "顧客に確認を依頼しました。",
-            "focus": "requested confirmation from"
-          }
-        ]
-      },
-      {
-        "phrase": "request for",
-        "ja": "〜を求める依頼・要望",
-        "image": "名詞requestと一緒によく使う。",
-        "pattern": "request for + 名詞",
-        "examples": [
-          {
-            "en": "We received a request for additional samples.",
-            "ja": "追加サンプルの依頼を受けました。",
-            "focus": "request for"
-          },
-          {
-            "en": "The request for approval is still pending.",
-            "ja": "承認依頼はまだ保留中です。",
-            "focus": "request for approval"
-          },
-          {
-            "en": "Please review the request for a schedule change.",
-            "ja": "スケジュール変更の依頼を確認してください。",
-            "focus": "request for"
-          }
-        ]
-      },
-      {
-        "phrase": "request to do",
-        "ja": "〜するよう依頼する",
-        "image": "行動内容をto doで示す。",
-        "pattern": "request to do",
-        "examples": [
-          {
-            "en": "The customer requested to change the delivery address.",
-            "ja": "顧客は納品先住所の変更を依頼しました。",
-            "focus": "requested to change"
-          },
-          {
-            "en": "We requested to extend the quotation deadline.",
-            "ja": "見積期限の延長を依頼しました。",
-            "focus": "requested to extend"
-          },
-          {
-            "en": "They requested to receive the report by email.",
-            "ja": "彼らは報告書をメールで受け取ることを希望しました。",
-            "focus": "requested to receive"
-          }
-        ]
-      },
-      {
-        "phrase": "request in writing",
-        "ja": "書面で依頼する",
-        "image": "口頭ではなく文書で依頼する。",
-        "pattern": "request in writing",
-        "examples": [
-          {
-            "en": "Please request the change in writing.",
-            "ja": "その変更は書面で依頼してください。",
-            "focus": "request the change in writing"
-          },
-          {
-            "en": "The client requested the cancellation in writing.",
-            "ja": "顧客はキャンセルを書面で依頼しました。",
-            "focus": "requested the cancellation in writing"
-          },
-          {
-            "en": "We should request confirmation in writing.",
-            "ja": "書面で確認を依頼すべきです。",
-            "focus": "request confirmation in writing"
-          }
-        ]
-      },
-      {
-        "phrase": "upon request",
-        "ja": "依頼があれば",
-        "image": "依頼があった場合に提供する。",
-        "pattern": "upon request",
-        "examples": [
-          {
-            "en": "Additional documents are available upon request.",
-            "ja": "追加資料は依頼があれば提供できます。",
-            "focus": "upon request"
-          },
-          {
-            "en": "Samples can be sent upon request.",
-            "ja": "サンプルは依頼があれば送付できます。",
-            "focus": "upon request"
-          },
-          {
-            "en": "A detailed breakdown is available upon request.",
-            "ja": "詳細な内訳は依頼があれば提供できます。",
-            "focus": "upon request"
-          }
-        ]
-      }
+        {
+            "phrase": "request from",
+            "ja": "〜に依頼する・〜から求める",
+            "image": "依頼先や入手先を示す。",
+            "pattern": "request from",
+            "examples": [
+                {
+                    "en": "The drawing was requested from the design team.",
+                    "ja": "図面は設計チームに依頼されました。",
+                    "focus": "requested from"
+                },
+                {
+                    "en": "Additional data was requested from the supplier.",
+                    "ja": "追加データは仕入先に依頼されました。",
+                    "focus": "requested from"
+                },
+                {
+                    "en": "Confirmation was requested from the client.",
+                    "ja": "確認は顧客に依頼されました。",
+                    "focus": "requested from"
+                }
+            ]
+        },
+        {
+            "phrase": "request through",
+            "ja": "〜を通して依頼する",
+            "image": "システム・担当者・正式な窓口を経由して依頼する。",
+            "pattern": "request through",
+            "examples": [
+                {
+                    "en": "Technical support was requested through the online portal.",
+                    "ja": "技術支援はオンライン窓口を通して依頼されました。",
+                    "focus": "requested through"
+                },
+                {
+                    "en": "The change was requested through the project manager.",
+                    "ja": "その変更はプロジェクトマネージャーを通して依頼されました。",
+                    "focus": "requested through"
+                },
+                {
+                    "en": "Approval must be requested through the internal system.",
+                    "ja": "承認は社内システムを通して依頼する必要があります。",
+                    "focus": "requested through"
+                }
+            ]
+        },
+        {
+            "phrase": "request by",
+            "ja": "〜の方法で依頼する",
+            "image": "メール・電話・フォームなど、依頼方法を示す。",
+            "pattern": "request by",
+            "examples": [
+                {
+                    "en": "The documents were requested by email.",
+                    "ja": "書類はメールで依頼されました。",
+                    "focus": "requested by"
+                },
+                {
+                    "en": "A site visit was requested by phone.",
+                    "ja": "現場訪問は電話で依頼されました。",
+                    "focus": "requested by"
+                },
+                {
+                    "en": "Samples can be requested by completing this form.",
+                    "ja": "サンプルはこのフォームに記入することで依頼できます。",
+                    "focus": "requested by"
+                }
+            ]
+        },
+        {
+            "phrase": "request on behalf of",
+            "ja": "〜を代表して依頼する",
+            "image": "顧客・部署・上司などの代わりに依頼する。",
+            "pattern": "request on behalf of",
+            "examples": [
+                {
+                    "en": "The extension was requested on behalf of the client.",
+                    "ja": "期限延長は顧客を代表して依頼されました。",
+                    "focus": "requested on behalf of"
+                },
+                {
+                    "en": "Additional support was requested on behalf of the sales team.",
+                    "ja": "追加支援は営業チームを代表して依頼されました。",
+                    "focus": "requested on behalf of"
+                },
+                {
+                    "en": "The meeting was requested on behalf of management.",
+                    "ja": "その会議は経営陣を代表して依頼されました。",
+                    "focus": "requested on behalf of"
+                }
+            ]
+        }
     ]
-  },
+},
   {
     "id": "suggest",
     "rank": 72,
@@ -15835,409 +15557,247 @@ export const verbs: Verb[] = [
     "core": "相手が判断できるように案を差し出す",
     "coreDetail": "SUGGESTは、命令ではなく選択肢や考えを相手に差し出す動詞です。仕事では改善案・日程・方法・代替案を提案する時に使います。suggest 人 to do は通常使わず、suggest that 文 / suggest doing / suggest 名詞 の形が重要です。",
     "coreVisual": {
-      "from": [
-        "案",
-        "方法",
-        "日程",
-        "改善策",
-        "代替案"
-      ],
-      "to": "相手の判断",
-      "label": "案を差し出す"
+        "from": [
+            "案",
+            "方法",
+            "日程",
+            "改善策",
+            "代替案"
+        ],
+        "to": "相手の判断",
+        "label": "案を差し出す"
     },
     "meanings": [
-      {
-        "id": "suggest-idea",
-        "title": "① 案・考えを提案する",
-        "pattern": "suggest an idea / a plan",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "相手に検討してもらう案を出す。",
-        "point": "命令ではなく、判断材料として案を出す時に使います。",
-        "examples": [
-          {
-            "en": "I suggested a new schedule for the meeting.",
-            "ja": "私は会議の新しい日程を提案しました。",
-            "focus": "suggested"
-          },
-          {
-            "en": "We suggested a different layout for the proposal.",
-            "ja": "私たちは提案書の別レイアウトを提案しました。",
-            "focus": "suggested"
-          },
-          {
-            "en": "She suggested an idea to improve the customer flow.",
-            "ja": "彼女は顧客導線を改善する案を提案しました。",
-            "focus": "suggested"
-          }
-        ]
-      },
-      {
-        "id": "suggest-that",
-        "title": "② 〜することを提案する",
-        "pattern": "suggest that + 文",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "具体的な行動案を文で出す。",
-        "point": "suggest that 主語 + 動詞 の形で、少し丁寧に提案できます。",
-        "examples": [
-          {
-            "en": "We suggested that they check the sample first.",
-            "ja": "私たちは彼らが先にサンプルを確認することを提案しました。",
-            "focus": "suggested"
-          },
-          {
-            "en": "The manager suggested that we review the schedule again.",
-            "ja": "マネージャーは私たちがスケジュールを再確認することを提案しました。",
-            "focus": "suggested"
-          },
-          {
-            "en": "I suggested that the team share updates every Friday.",
-            "ja": "私はチームが毎週金曜に進捗を共有することを提案しました。",
-            "focus": "suggested"
-          }
-        ]
-      },
-      {
-        "id": "suggest-doing",
-        "title": "③ 〜することを提案する",
-        "pattern": "suggest doing",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "動名詞で行動案を出す。",
-        "point": "suggest to doではなく、suggest doingが自然な形です。",
-        "examples": [
-          {
-            "en": "I suggested checking the inventory before ordering.",
-            "ja": "私は発注前に在庫を確認することを提案しました。",
-            "focus": "suggested checking"
-          },
-          {
-            "en": "We suggested sending the report by email.",
-            "ja": "私たちは報告書をメールで送ることを提案しました。",
-            "focus": "suggested sending"
-          },
-          {
-            "en": "She suggested reviewing the quotation one more time.",
-            "ja": "彼女は見積をもう一度確認することを提案しました。",
-            "focus": "suggested reviewing"
-          }
-        ]
-      },
-      {
-        "id": "suggest-way",
-        "title": "④ 方法・手段を提案する",
-        "pattern": "suggest a way / method",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "問題解決や改善の方法を出す。",
-        "point": "改善・効率化・問題解決の文脈でよく使います。",
-        "examples": [
-          {
-            "en": "Can you suggest a better way to manage the data?",
-            "ja": "データを管理するより良い方法を提案してもらえますか？",
-            "focus": "suggest"
-          },
-          {
-            "en": "The consultant suggested a method to reduce manual work.",
-            "ja": "コンサルタントは手作業を減らす方法を提案しました。",
-            "focus": "suggested"
-          },
-          {
-            "en": "We suggested a simple way to explain the product features.",
-            "ja": "私たちは商品の特徴を説明する簡単な方法を提案しました。",
-            "focus": "suggested"
-          }
-        ]
-      },
-      {
-        "id": "suggest-option",
-        "title": "⑤ 選択肢・代替案を示す",
-        "pattern": "suggest an option / alternative",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "相手が選べる候補を出す。",
-        "point": "相手の判断を助けるために候補を示す時に使います。",
-        "examples": [
-          {
-            "en": "Please suggest an alternative if this part is not available.",
-            "ja": "この部品が入手できない場合は代替案を提案してください。",
-            "focus": "suggest"
-          },
-          {
-            "en": "We suggested two options for the delivery schedule.",
-            "ja": "私たちは納期スケジュールについて2つの選択肢を提案しました。",
-            "focus": "suggested"
-          },
-          {
-            "en": "The supplier suggested a cheaper alternative.",
-            "ja": "仕入先はより安い代替案を提案しました。",
-            "focus": "suggested"
-          }
-        ]
-      },
-      {
-        "id": "suggest-possibility",
-        "title": "⑥ 可能性・兆候を示す",
-        "pattern": "suggest that something may be true",
-        "transitivity": "他動詞",
-        "structure": "仕事でよく使う基本パターン",
-        "image": "データや状況が何かを示す。",
-        "point": "suggestは人が提案するだけでなく、データや状況が可能性を示す意味でも使います。",
-        "examples": [
-          {
-            "en": "The data suggests that demand is increasing.",
-            "ja": "そのデータは需要が増えていることを示しています。",
-            "focus": "suggests"
-          },
-          {
-            "en": "The survey results suggest a need for better support.",
-            "ja": "調査結果はより良いサポートの必要性を示しています。",
-            "focus": "suggest"
-          },
-          {
-            "en": "The delay suggests that we need to review the process.",
-            "ja": "その遅延はプロセスを見直す必要があることを示しています。",
-            "focus": "suggests"
-          }
-        ]
-      }
+        {
+            "id": "suggest-idea",
+            "title": "① 案・考えを提案する",
+            "pattern": "suggest an idea / a plan",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "相手に検討してもらう案を出す。",
+            "point": "命令ではなく、判断材料として案を出す時に使います。",
+            "examples": [
+                {
+                    "en": "I suggested a new schedule for the meeting.",
+                    "ja": "私は会議の新しい日程を提案しました。",
+                    "focus": "suggested"
+                },
+                {
+                    "en": "We suggested a different layout for the proposal.",
+                    "ja": "私たちは提案書の別レイアウトを提案しました。",
+                    "focus": "suggested"
+                },
+                {
+                    "en": "She suggested an idea to improve the customer flow.",
+                    "ja": "彼女は顧客導線を改善する案を提案しました。",
+                    "focus": "suggested"
+                }
+            ]
+        },
+        {
+            "id": "suggest-that",
+            "title": "② 〜することを提案する",
+            "pattern": "suggest that + 文",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "具体的な行動案を文で出す。",
+            "point": "suggest that + 主語 + 動詞で、相手にしてほしい行動や考えを文として提案します。",
+            "examples": [
+                {
+                    "en": "We suggested that they check the sample first.",
+                    "ja": "私たちは彼らが先にサンプルを確認することを提案しました。",
+                    "focus": "suggested"
+                },
+                {
+                    "en": "The manager suggested that we review the schedule again.",
+                    "ja": "マネージャーは私たちがスケジュールを再確認することを提案しました。",
+                    "focus": "suggested"
+                },
+                {
+                    "en": "I suggested that the team share updates every Friday.",
+                    "ja": "私はチームが毎週金曜に進捗を共有することを提案しました。",
+                    "focus": "suggested"
+                }
+            ]
+        },
+        {
+            "id": "suggest-doing",
+            "title": "③ 〜することを提案する",
+            "pattern": "suggest doing",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "動名詞で行動案を出す。",
+            "point": "suggestの後ろに動名詞を置き、「〜することを提案する」と表します。suggest to do にはしません。",
+            "examples": [
+                {
+                    "en": "I suggested checking the inventory before ordering.",
+                    "ja": "私は発注前に在庫を確認することを提案しました。",
+                    "focus": "suggested"
+                },
+                {
+                    "en": "We suggested sending the report by email.",
+                    "ja": "私たちは報告書をメールで送ることを提案しました。",
+                    "focus": "suggested"
+                },
+                {
+                    "en": "She suggested reviewing the quotation one more time.",
+                    "ja": "彼女は見積をもう一度確認することを提案しました。",
+                    "focus": "suggested"
+                }
+            ]
+        },
+        {
+            "id": "suggest-way",
+            "title": "④ 方法・手段を提案する",
+            "pattern": "suggest a way / method",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "問題解決や改善の方法を出す。",
+            "point": "改善・効率化・問題解決の文脈でよく使います。",
+            "examples": [
+                {
+                    "en": "Can you suggest a better way to manage the data?",
+                    "ja": "データを管理するより良い方法を提案してもらえますか？",
+                    "focus": "suggest"
+                },
+                {
+                    "en": "The consultant suggested a method to reduce manual work.",
+                    "ja": "コンサルタントは手作業を減らす方法を提案しました。",
+                    "focus": "suggested"
+                },
+                {
+                    "en": "We suggested a simple way to explain the product features.",
+                    "ja": "私たちは商品の特徴を説明する簡単な方法を提案しました。",
+                    "focus": "suggested"
+                }
+            ]
+        },
+        {
+            "id": "suggest-option",
+            "title": "⑤ 選択肢・代替案を示す",
+            "pattern": "suggest an option / alternative",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "相手が選べる候補を出す。",
+            "point": "相手の判断を助けるために候補を示す時に使います。",
+            "examples": [
+                {
+                    "en": "Please suggest an alternative if this part is not available.",
+                    "ja": "この部品が入手できない場合は代替案を提案してください。",
+                    "focus": "suggest"
+                },
+                {
+                    "en": "We suggested two options for the delivery schedule.",
+                    "ja": "私たちは納期スケジュールについて2つの選択肢を提案しました。",
+                    "focus": "suggested"
+                },
+                {
+                    "en": "The supplier suggested a cheaper alternative.",
+                    "ja": "仕入先はより安い代替案を提案しました。",
+                    "focus": "suggested"
+                }
+            ]
+        },
+        {
+            "id": "suggest-possibility",
+            "title": "⑥ 可能性・兆候を示す",
+            "pattern": "suggest that something may be true",
+            "transitivity": "他動詞",
+            "structure": "仕事でよく使う基本パターン",
+            "image": "データや状況が何かを示す。",
+            "point": "suggestは人が提案するだけでなく、データや状況が可能性を示す意味でも使います。",
+            "examples": [
+                {
+                    "en": "The data suggests that demand is increasing.",
+                    "ja": "そのデータは需要が増えていることを示しています。",
+                    "focus": "suggests"
+                },
+                {
+                    "en": "The survey results suggest a need for better support.",
+                    "ja": "調査結果はより良いサポートの必要性を示しています。",
+                    "focus": "suggest"
+                },
+                {
+                    "en": "The delay suggests that we need to review the process.",
+                    "ja": "その遅延はプロセスを見直す必要があることを示しています。",
+                    "focus": "suggests"
+                }
+            ]
+        }
     ],
-    "collocations": [
-      {
-        "phrase": "suggest an idea",
-        "ja": "案を提案する",
-        "image": "検討するための考えを出す。",
-        "pattern": "suggest an idea",
-        "examples": [
-          {
-            "en": "She suggested an idea for the next campaign.",
-            "ja": "彼女は次のキャンペーンの案を提案しました。",
-            "focus": "suggested an idea"
-          },
-          {
-            "en": "Please suggest an idea that fits the budget.",
-            "ja": "予算に合う案を提案してください。",
-            "focus": "suggest an idea"
-          },
-          {
-            "en": "The team suggested an idea to improve the display.",
-            "ja": "チームは表示を改善する案を提案しました。",
-            "focus": "suggested an idea"
-          }
-        ]
-      },
-      {
-        "phrase": "suggest a solution",
-        "ja": "解決策を提案する",
-        "image": "問題に対する解決策を出す。",
-        "pattern": "suggest a solution",
-        "examples": [
-          {
-            "en": "Can you suggest a solution for this issue?",
-            "ja": "この問題の解決策を提案してもらえますか？",
-            "focus": "suggest a solution"
-          },
-          {
-            "en": "We suggested a solution to reduce installation time.",
-            "ja": "設置時間を短縮する解決策を提案しました。",
-            "focus": "suggested a solution"
-          },
-          {
-            "en": "The engineer suggested a practical solution.",
-            "ja": "技術者は実用的な解決策を提案しました。",
-            "focus": "suggested a practical solution"
-          }
-        ]
-      },
-      {
-        "phrase": "suggest a date",
-        "ja": "日程を提案する",
-        "image": "候補日を出す。",
-        "pattern": "suggest a date",
-        "examples": [
-          {
-            "en": "Please suggest a date for the next meeting.",
-            "ja": "次回会議の日程を提案してください。",
-            "focus": "suggest a date"
-          },
-          {
-            "en": "The client suggested a date for the site visit.",
-            "ja": "顧客は現場訪問の日程を提案しました。",
-            "focus": "suggested a date"
-          },
-          {
-            "en": "We suggested three dates for the product demo.",
-            "ja": "製品デモの日程を3つ提案しました。",
-            "focus": "suggested three dates"
-          }
-        ]
-      },
-      {
-        "phrase": "suggest an alternative",
-        "ja": "代替案を提案する",
-        "image": "別の選択肢を出す。",
-        "pattern": "suggest an alternative",
-        "examples": [
-          {
-            "en": "The supplier suggested an alternative material.",
-            "ja": "仕入先は代替材料を提案しました。",
-            "focus": "suggested an alternative"
-          },
-          {
-            "en": "Please suggest an alternative if the item is out of stock.",
-            "ja": "在庫切れの場合は代替案を提案してください。",
-            "focus": "suggest an alternative"
-          },
-          {
-            "en": "We suggested an alternative plan to control the cost.",
-            "ja": "費用を抑えるために代替案を提案しました。",
-            "focus": "suggested an alternative"
-          }
-        ]
-      },
-      {
-        "phrase": "strongly suggest",
-        "ja": "強く提案する・強く示す",
-        "image": "提案や示唆の強さを出す。",
-        "pattern": "strongly suggest",
-        "examples": [
-          {
-            "en": "I strongly suggest reviewing the contract before signing.",
-            "ja": "署名前に契約書を確認することを強く提案します。",
-            "focus": "strongly suggest"
-          },
-          {
-            "en": "The results strongly suggest a need for improvement.",
-            "ja": "その結果は改善の必要性を強く示しています。",
-            "focus": "strongly suggest"
-          },
-          {
-            "en": "We strongly suggest testing the product before launch.",
-            "ja": "発売前に製品をテストすることを強く提案します。",
-            "focus": "strongly suggest"
-          }
-        ]
-      }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
-      {
-        "phrase": "suggest that",
-        "ja": "〜ということを提案する・示す",
-        "image": "文全体を目的語にする基本形。",
-        "pattern": "suggest that + 文",
-        "examples": [
-          {
-            "en": "I suggest that we confirm the details first.",
-            "ja": "まず詳細を確認することを提案します。",
-            "focus": "suggest that"
-          },
-          {
-            "en": "The report suggests that sales are improving.",
-            "ja": "その報告書は売上が改善していることを示しています。",
-            "focus": "suggests that"
-          },
-          {
-            "en": "She suggested that we contact the supplier directly.",
-            "ja": "彼女は仕入先に直接連絡することを提案しました。",
-            "focus": "suggested that"
-          }
-        ]
-      },
-      {
-        "phrase": "suggest doing",
-        "ja": "〜することを提案する",
-        "image": "to doではなくdoingを使う。",
-        "pattern": "suggest doing",
-        "examples": [
-          {
-            "en": "We suggest checking the stock before ordering.",
-            "ja": "発注前に在庫を確認することを提案します。",
-            "focus": "suggest checking"
-          },
-          {
-            "en": "He suggested changing the meeting format.",
-            "ja": "彼は会議形式を変更することを提案しました。",
-            "focus": "suggested changing"
-          },
-          {
-            "en": "I suggest sending a follow-up email today.",
-            "ja": "今日フォローアップメールを送ることを提案します。",
-            "focus": "suggest sending"
-          }
-        ]
-      },
-      {
-        "phrase": "suggest to someone",
-        "ja": "人に提案する",
-        "image": "提案相手をtoで示す。",
-        "pattern": "suggest A to someone",
-        "examples": [
-          {
-            "en": "We suggested the plan to the client.",
-            "ja": "私たちはその計画を顧客に提案しました。",
-            "focus": "suggested the plan to"
-          },
-          {
-            "en": "Please suggest this option to the purchasing team.",
-            "ja": "この選択肢を購買チームに提案してください。",
-            "focus": "suggest this option to"
-          },
-          {
-            "en": "The consultant suggested a new method to management.",
-            "ja": "コンサルタントは経営陣に新しい方法を提案しました。",
-            "focus": "suggested a new method to"
-          }
-        ]
-      },
-      {
-        "phrase": "suggest as",
-        "ja": "〜として提案する",
-        "image": "役割や選択肢として出す。",
-        "pattern": "suggest A as B",
-        "examples": [
-          {
-            "en": "We suggested this model as the best option.",
-            "ja": "私たちはこのモデルを最適な選択肢として提案しました。",
-            "focus": "suggested this model as"
-          },
-          {
-            "en": "She suggested him as the project leader.",
-            "ja": "彼女は彼をプロジェクトリーダーとして推薦しました。",
-            "focus": "suggested him as"
-          },
-          {
-            "en": "The team suggested Friday as the delivery date.",
-            "ja": "チームは金曜日を納品日として提案しました。",
-            "focus": "suggested Friday as"
-          }
-        ]
-      },
-      {
-        "phrase": "suggest for",
-        "ja": "〜向けに提案する",
-        "image": "目的や相手に合う案を出す。",
-        "pattern": "suggest A for B",
-        "examples": [
-          {
-            "en": "Can you suggest a product for this client?",
-            "ja": "この顧客向けの商品を提案してもらえますか？",
-            "focus": "suggest a product for"
-          },
-          {
-            "en": "We suggested a simple layout for the brochure.",
-            "ja": "パンフレット向けにシンプルなレイアウトを提案しました。",
-            "focus": "suggested a simple layout for"
-          },
-          {
-            "en": "The supplier suggested a different material for outdoor use.",
-            "ja": "仕入先は屋外使用向けに別の材料を提案しました。",
-            "focus": "suggested a different material for"
-          }
-        ]
-      }
+        {
+            "phrase": "suggest to",
+            "ja": "〜に提案する",
+            "image": "提案する相手をtoで示す。",
+            "pattern": "suggest to",
+            "examples": [
+                {
+                    "en": "I suggested to the client that we test the sample first.",
+                    "ja": "私は顧客に、まずサンプルを試すことを提案しました。",
+                    "focus": "suggested to"
+                },
+                {
+                    "en": "We suggested to management that the launch be delayed.",
+                    "ja": "私たちは経営陣に発売を延期することを提案しました。",
+                    "focus": "suggested to"
+                },
+                {
+                    "en": "She suggested to the team that they use a simpler layout.",
+                    "ja": "彼女はチームに、より簡単なレイアウトを使うことを提案しました。",
+                    "focus": "suggested to"
+                }
+            ]
+        },
+        {
+            "phrase": "suggest as",
+            "ja": "〜として提案する",
+            "image": "役割・位置付け・選択肢として示す。",
+            "pattern": "suggest as",
+            "examples": [
+                {
+                    "en": "This model was suggested as the best option for the project.",
+                    "ja": "このモデルは案件に最適な選択肢として提案されました。",
+                    "focus": "suggested as"
+                },
+                {
+                    "en": "The meeting room was suggested as a temporary workspace.",
+                    "ja": "その会議室は一時的な作業場所として提案されました。",
+                    "focus": "suggested as"
+                },
+                {
+                    "en": "A phased rollout was suggested as a safer approach.",
+                    "ja": "段階的な展開がより安全な方法として提案されました。",
+                    "focus": "suggested as"
+                }
+            ]
+        },
+        {
+            "phrase": "suggest for",
+            "ja": "〜向けに提案する",
+            "image": "用途・顧客・状況に合うものとして示す。",
+            "pattern": "suggest for",
+            "examples": [
+                {
+                    "en": "This product is suggested for outdoor installations.",
+                    "ja": "この製品は屋外設置向けとして提案されています。",
+                    "focus": "suggested for"
+                },
+                {
+                    "en": "The lower-cost option was suggested for the temporary display.",
+                    "ja": "低価格の選択肢が仮設展示向けに提案されました。",
+                    "focus": "suggested for"
+                },
+                {
+                    "en": "A warmer color temperature was suggested for the restaurant.",
+                    "ja": "より暖かい色温度がそのレストラン向けに提案されました。",
+                    "focus": "suggested for"
+                }
+            ]
+        }
     ]
-  },
+},
   {
       "id": "agree",
       "rank": 73,

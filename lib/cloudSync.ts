@@ -150,6 +150,56 @@ function getCloudPasswordHash(username: string) {
   return credentialMap()[username]?.passwordHash || "";
 }
 
+
+export type DedicatedProfile = {
+  username: string;
+  displayName: string;
+  avatarUrl: string;
+  avatarPath: string;
+  updatedAt: string;
+};
+
+async function callProfileApi(username: string, action: "get" | "save-name", extra: Record<string, unknown> = {}) {
+  const passwordHash = getCloudPasswordHash(username);
+  if (!passwordHash) return { ok: false as const, message: "プロフィールのクラウド保存には再ログインが必要です。" };
+  try {
+    const response = await fetch("/api/profile", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, passwordHash, action, ...extra }),
+    });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok || payload?.ok === false) {
+      return { ok: false as const, message: String(payload?.message || "プロフィール専用保存に失敗しました。") };
+    }
+    return { ok: true as const, message: String(payload?.message || "プロフィールを確認しました。"), profile: payload.profile as DedicatedProfile, verified: Boolean(payload.verified), source: String(payload.source || "") };
+  } catch (error) {
+    return { ok: false as const, message: error instanceof Error ? error.message : "プロフィール専用保存に失敗しました。" };
+  }
+}
+
+export async function fetchDedicatedProfile(username: string) {
+  return callProfileApi(username, "get");
+}
+
+export async function saveDedicatedDisplayName(username: string, displayName: string) {
+  return callProfileApi(username, "save-name", { displayName });
+}
+
+function applyDedicatedProfile(progress: UserProgress, profile?: DedicatedProfile | null) {
+  if (!profile) return progress;
+  return {
+    ...progress,
+    displayName: profile.displayName || progress.username,
+    avatarUrl: profile.avatarUrl || "",
+    avatarDataUrl: profile.avatarUrl || "",
+    avatarPath: profile.avatarPath || "",
+    avatarUpdatedAt: profile.updatedAt || progress.avatarUpdatedAt,
+    profileUpdatedAt: profile.updatedAt || progress.profileUpdatedAt,
+    avatarStorageProvider: profile.avatarUrl || profile.avatarPath ? "supabase-storage" as const : "none" as const,
+  };
+}
+
 export function hasCloudSession(username?: string | null) {
   if (!username) return false;
   return Boolean(getCloudPasswordHash(username));
@@ -504,10 +554,10 @@ export async function syncCurrentUserToSupabase(progress: UserProgress, options:
     const backupProgress = prepareBackupProgress(safeProgress, existingBackup?.progress_json);
     await rpcUpsertBackup(backupProgress, passwordHash);
     status.stats = "saved";
-    status.profile = "saved";
-    status.avatar = avatarSaved(backupProgress) ? "saved" : "idle";
+    status.profile = "idle";
+    status.avatar = avatarSaved(backupProgress) ? "storage" : "idle";
     status.premium = "saved";
-    status.message = "プロフィール・目標日・学習記録をクラウド保存しました。画像はStorage保存設計です。";
+    status.message = "目標日・学習記録をクラウド保存しました。ニックネームと画像はプロフィール専用保存で管理します。";
     status.updatedAt = nowText();
     return status;
   } catch (error) {
@@ -555,9 +605,11 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
     }
 
     const remote = backup.progress_json as UserProgress;
-    const merged = mergeRemoteLearningWithLocalProfile(local, remote);
+    let merged = mergeRemoteLearningWithLocalProfile(local, remote);
     if (backup.settings_json) applyClientStudySettingsSnapshot(backup.settings_json, merged);
     applyClientStudySettingsSnapshot(remote as ClientStudySettingsSnapshot, merged);
+    const dedicated = await fetchDedicatedProfile(username);
+    if (dedicated.ok && dedicated.profile) merged = applyDedicatedProfile(merged, dedicated.profile);
     saveProgress(merged);
 
     status.stats = "saved";

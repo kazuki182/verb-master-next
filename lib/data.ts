@@ -17471,917 +17471,2940 @@ export const verbs: Verb[] = [
   "phrasalVerbs": []
 },
   {
-    "id": "reply",
-    "rank": 86,
-    "word": "REPLY",
-    "ipa": "/rɪˈplaɪ/",
-    "kana": "リプライ",
-    "syllable": "re-ply",
-    "transitivity": "自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "相手の連絡や質問に返事をする",
-    "coreDetail": "REPLYは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「返信する・返答する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
-    "meanings": [
-      {
-        "id": "business-core",
-        "title": "① 返信する・返答する",
-        "pattern": "reply to an email",
-        "transitivity": "自動詞",
-        "structure": "S + V + to + 相手・連絡",
-        "image": "受け取った連絡に対して返す",
-        "point": "reply は自動詞なので、相手やメールを続けるときは reply to ... を使います。to 以降は前置詞句で、目的語Oではありません。",
-        "examples": [
+      "id": "reply",
+      "rank": 86,
+      "word": "REPLY",
+      "ipa": "/rɪˈplaɪ/",
+      "kana": "リプライ",
+      "syllable": "re-ply",
+      "transitivity": "自動詞",
+      "importance": "★★★★☆ 重要",
+      "core": "相手の連絡や質問に返事をする",
+      "coreDetail": "REPLYは、受け取ったメール・質問・意見に返事をする動詞です。相手や連絡内容を続けるときは、通常 reply to ... を使います。基本側では返答内容やthat節を扱い、reply toは句動詞側で整理します。",
+      "meanings": [
           {
-            "en": "I will reply to the client by this afternoon.",
-            "ja": "私は今日の午後までにクライアントへ返信します。",
-            "focus": "reply to the client",
-            "jaFocus": "返信する・返答する",
-            "sentencePattern": "S + V + to + 相手・連絡",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "主語"
-              },
-              {
-                "label": "V",
-                "text": "reply"
-              },
-              {
-                "label": "M",
-                "text": "to the client"
-              }
-            ],
-            "grammarNote": "この文は前置詞句を補足情報として扱います。前置詞の後ろの名詞だけを目的語Oにしないように注意します。"
+              "id": "meaning-1",
+              "title": "1 返事をする",
+              "pattern": "REPLY",
+              "transitivity": "自動詞",
+              "structure": "S + V",
+              "image": "相手の働きかけに言葉で返す",
+              "point": "単独でも「返事をする」という意味で使えます。",
+              "examples": [
+                  {
+                      "en": "I replied immediately.",
+                      "ja": "私はすぐに返事をしました。",
+                      "focus": "replied",
+                      "jaFocus": "私はすぐに返事をしました",
+                      "sentencePattern": "S + V",
+                      "grammarParts": [
+                          {
+                              "label": "S",
+                              "text": "I"
+                          },
+                          {
+                              "label": "V",
+                              "text": "replied"
+                          },
+                          {
+                              "label": "M",
+                              "text": "immediately"
+                          }
+                      ]
+                  },
+                  {
+                      "en": "She has not replied yet.",
+                      "ja": "彼女はまだ返事をしていません。",
+                      "focus": "replied",
+                      "jaFocus": "彼女はまだ返事をしていません"
+                  },
+                  {
+                      "en": "Please reply when you are available.",
+                      "ja": "時間があるときに返事をしてください。",
+                      "focus": "reply",
+                      "jaFocus": "時間があるときに返事をしてください"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I replied after dinner.",
+                      "ja": "私は夕食後に返事をしました。",
+                      "focus": "replied",
+                      "jaFocus": "私は夕食後に返事をしました"
+                  },
+                  {
+                      "en": "He usually replies quickly.",
+                      "ja": "彼は普段すぐに返事をします。",
+                      "focus": "replies",
+                      "jaFocus": "彼は普段すぐに返事をします"
+                  }
+              ]
           },
           {
-            "en": "Please reply to the email when you have time.",
-            "ja": "時間がある時にそのメールへ返信してください。",
-            "focus": "reply to an email",
-            "jaFocus": "メールに返信する"
-          }
-        ],
-        "dailyExamples": [
+              "id": "meaning-2",
+              "title": "2 内容を添えて返答する",
+              "pattern": "REPLY + with + 内容",
+              "transitivity": "自動詞",
+              "structure": "S + V + M",
+              "image": "言葉・情報を返答として示す",
+              "point": "with以下で返答内容を示しますが、reply with自体は独立項目にせず基本用法として扱います。",
+              "examples": [
+                  {
+                      "en": "The supplier replied with a revised quotation.",
+                      "ja": "仕入先は修正版の見積書を添えて返答しました。",
+                      "focus": "replied",
+                      "jaFocus": "仕入先は修正版の見積書を添えて返答しました"
+                  },
+                  {
+                      "en": "I replied with the requested dimensions.",
+                      "ja": "私は依頼された寸法を記載して返答しました。",
+                      "focus": "replied",
+                      "jaFocus": "私は依頼された寸法を記載して返答しました"
+                  },
+                  {
+                      "en": "She replied with a short explanation.",
+                      "ja": "彼女は短い説明を添えて返答しました。",
+                      "focus": "replied",
+                      "jaFocus": "彼女は短い説明を添えて返答しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "He replied with a photo.",
+                      "ja": "彼は写真を添えて返事をしました。",
+                      "focus": "replied",
+                      "jaFocus": "彼は写真を添えて返事をしました"
+                  },
+                  {
+                      "en": "I replied with my available dates.",
+                      "ja": "私は都合のよい日程を伝えて返事をしました。",
+                      "focus": "replied",
+                      "jaFocus": "私は都合のよい日程を伝えて返事をしました"
+                  }
+              ]
+          },
           {
-            "en": "Please reply to the email when you have time.",
-            "ja": "時間がある時にそのメールへ返信してください。",
-            "focus": "reply to an email",
-            "jaFocus": "メールに返信する"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "reply to an email",
-        "ja": "メールに返信する",
-        "image": "受け取った連絡に対して返す",
-        "pattern": "reply to an email",
-        "examples": [
+              "id": "meaning-3",
+              "title": "3 〜だと答える",
+              "pattern": "REPLY + that節",
+              "transitivity": "自動詞",
+              "structure": "S + V + that節",
+              "image": "返答した内容を文で示す",
+              "point": "that節で、何と答えたかを具体的に表します。",
+              "examples": [
+                  {
+                      "en": "The customer replied that the color was acceptable.",
+                      "ja": "顧客は、その色で問題ないと返答しました。",
+                      "focus": "replied",
+                      "jaFocus": "顧客は、その色で問題ないと返答しました"
+                  },
+                  {
+                      "en": "He replied that the shipment would arrive on Friday.",
+                      "ja": "彼は、出荷品が金曜日に到着すると返答しました。",
+                      "focus": "replied",
+                      "jaFocus": "彼は、出荷品が金曜日に到着すると返答しました"
+                  },
+                  {
+                      "en": "I replied that we needed more time.",
+                      "ja": "私は、私たちにはもう少し時間が必要だと返答しました。",
+                      "focus": "replied",
+                      "jaFocus": "私は、私たちにはもう少し時間が必要だと返答しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "She replied that she was busy.",
+                      "ja": "彼女は、忙しいと返事をしました。",
+                      "focus": "replied",
+                      "jaFocus": "彼女は、忙しいと返事をしました"
+                  },
+                  {
+                      "en": "I replied that I could join.",
+                      "ja": "私は、参加できると返事をしました。",
+                      "focus": "replied",
+                      "jaFocus": "私は、参加できると返事をしました"
+                  }
+              ]
+          },
           {
-            "en": "Please reply to the email when you have time.",
-            "ja": "時間がある時にそのメールへ返信してください。",
-            "focus": "reply to an email",
-            "jaFocus": "メールに返信する"
+              "id": "meaning-4",
+              "title": "4 丁寧さや態度を添えて返答する",
+              "pattern": "REPLY + 副詞",
+              "transitivity": "自動詞",
+              "structure": "S + V + M",
+              "image": "返答の仕方や態度を示す",
+              "point": "politely、clearly、calmlyなどを添えて、どのように返答したかを表します。",
+              "examples": [
+                  {
+                      "en": "The engineer replied clearly.",
+                      "ja": "技術者は分かりやすく返答しました。",
+                      "focus": "replied",
+                      "jaFocus": "分かりやすく返答する"
+                  },
+                  {
+                      "en": "Please reply briefly.",
+                      "ja": "簡潔に返答してください。",
+                      "focus": "reply",
+                      "jaFocus": "簡潔に返答する"
+                  },
+                  {
+                      "en": "The manager replied calmly.",
+                      "ja": "マネージャーは落ち着いて返答しました。",
+                      "focus": "replied",
+                      "jaFocus": "落ち着いて返答する"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I replied honestly.",
+                      "ja": "私は正直に返答しました。",
+                      "focus": "replied",
+                      "jaFocus": "正直に返答する"
+                  },
+                  {
+                      "en": "He replied politely.",
+                      "ja": "彼は丁寧に返事をしました。",
+                      "focus": "replied",
+                      "jaFocus": "丁寧に返事をする"
+                  }
+              ]
+          },
+          {
+              "id": "meaning-5",
+              "title": "5 返事がない状態を表す",
+              "pattern": "NOT REPLY / FAIL TO REPLY",
+              "transitivity": "自動詞",
+              "structure": "S + V",
+              "image": "返答が届かないことを示す",
+              "point": "否定形やfail to replyで、返事がないことを自然に表せます。",
+              "examples": [
+                  {
+                      "en": "The customer did not reply by the deadline.",
+                      "ja": "顧客は期限までに返答しませんでした。",
+                      "focus": "reply",
+                      "jaFocus": "顧客は期限までに返答しませんでした"
+                  },
+                  {
+                      "en": "The supplier failed to reply by the deadline.",
+                      "ja": "仕入先は期限までに返答しませんでした。",
+                      "focus": "reply",
+                      "jaFocus": "期限までに返答しない"
+                  },
+                  {
+                      "en": "Please contact me again if I do not reply.",
+                      "ja": "私が返事をしない場合は、もう一度連絡してください。",
+                      "focus": "reply",
+                      "jaFocus": "私が返事をしない場合は、もう一度連絡してください"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "He did not reply yesterday.",
+                      "ja": "彼は昨日返事をしませんでした。",
+                      "focus": "reply",
+                      "jaFocus": "彼は昨日返事をしませんでした"
+                  },
+                  {
+                      "en": "I sometimes forget to reply.",
+                      "ja": "私は時々、返事をするのを忘れます。",
+                      "focus": "reply",
+                      "jaFocus": "私は時々、返事をするのを忘れます"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
+      ],
+      "collocations": [],
+      "phrasalVerbs": [
+          {
+              "phrase": "reply to",
+              "ja": "〜に返信する・返答する",
+              "image": "相手・メール・質問に返事を返す",
+              "pattern": "REPLY TO + 相手・連絡",
+              "examples": [
+                  {
+                      "en": "I will reply to the client this afternoon.",
+                      "ja": "私は今日の午後、顧客に返信します。",
+                      "focus": "reply to",
+                      "jaFocus": "私は今日の午後、顧客に返信します"
+                  },
+                  {
+                      "en": "Please reply to the email by Friday.",
+                      "ja": "金曜日までにそのメールへ返信してください。",
+                      "focus": "reply to",
+                      "jaFocus": "金曜日までにそのメールへ返信してください"
+                  },
+                  {
+                      "en": "She replied to every question clearly.",
+                      "ja": "彼女はすべての質問に分かりやすく答えました。",
+                      "focus": "replied to",
+                      "jaFocus": "彼女はすべての質問に分かりやすく答えました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I replied to my friend last night.",
+                      "ja": "私は昨夜、友人に返信しました。",
+                      "focus": "replied to",
+                      "jaFocus": "私は昨夜、友人に返信しました"
+                  },
+                  {
+                      "en": "He has not replied to my message yet.",
+                      "ja": "彼はまだ私のメッセージに返信していません。",
+                      "focus": "replied to",
+                      "jaFocus": "彼はまだ私のメッセージに返信していません"
+                  }
+              ]
+          }
+      ]
   },
   {
-    "id": "include",
-    "rank": 87,
-    "word": "INCLUDE",
-    "ipa": "/ɪnˈkluːd/",
-    "kana": "インクルード",
-    "syllable": "in-clude",
-    "transitivity": "他動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "必要なものを中に含める",
-    "coreDetail": "INCLUDEは、資料・価格・メール・見積に必要な情報を「含める」動詞です。仕事では include tax / include the details / include shipping cost などが頻出です。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 含める・含む",
-        "pattern": "INCLUDE + 名詞",
-        "transitivity": "他動詞",
-        "structure": "S + include + O",
-        "image": "全体の中に必要な要素を入れる",
-        "point": "contain は中に入っている事実、include はリストや範囲に含める感じが強いです。",
-        "examples": [
+      "id": "include",
+      "rank": 87,
+      "word": "INCLUDE",
+      "ipa": "/ɪnˈkluːd/",
+      "kana": "インクルード",
+      "syllable": "in-clude",
+      "transitivity": "他動詞",
+      "importance": "★★★☆☆ 基本",
+      "core": "必要なものを中に含める",
+      "coreDetail": "INCLUDEは、全体の中に人・物・費用・情報などを入れる動詞です。include + 名詞、include A in B、受け身のbe included inを基本文型として整理します。",
+      "meanings": [
           {
-            "en": "Please include the delivery date in the quotation.",
-            "ja": "見積書に納期を含めてください。",
-            "focus": "include",
-            "jaFocus": "含めてください",
-            "object": "the delivery date",
-            "sentencePattern": "V + O + M",
-            "grammarParts": [
-              {
-                "label": "V",
-                "text": "Please include"
-              },
-              {
-                "label": "O",
-                "text": "the delivery date"
-              },
-              {
-                "label": "M",
-                "text": "in the quotation"
-              }
-            ]
+              "id": "meaning-1",
+              "title": "1 情報や項目を含める",
+              "pattern": "INCLUDE + 情報・項目",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "必要な内容を全体の中へ入れる",
+              "point": "目的語に、含める情報や項目を置きます。",
+              "examples": [
+                  {
+                      "en": "Please include the delivery date in the quotation.",
+                      "ja": "見積書に納品日を記載してください。",
+                      "focus": "include",
+                      "jaFocus": "見積書に納品日を記載してください",
+                      "sentencePattern": "V + O + M",
+                      "grammarParts": [
+                          {
+                              "label": "V",
+                              "text": "include"
+                          },
+                          {
+                              "label": "O",
+                              "text": "the delivery date"
+                          },
+                          {
+                              "label": "M",
+                              "text": "in the quotation"
+                          }
+                      ]
+                  },
+                  {
+                      "en": "The report includes the latest sales figures.",
+                      "ja": "その報告書には最新の売上数字が含まれています。",
+                      "focus": "includes",
+                      "jaFocus": "その報告書には最新の売上数字が含まれています"
+                  },
+                  {
+                      "en": "We included the installation conditions in the proposal.",
+                      "ja": "私たちは提案書に設置条件を含めました。",
+                      "focus": "included",
+                      "jaFocus": "私たちは提案書に設置条件を含めました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "Please include your phone number.",
+                      "ja": "あなたの電話番号も記載してください。",
+                      "focus": "include",
+                      "jaFocus": "あなたの電話番号も記載してください"
+                  },
+                  {
+                      "en": "The price includes breakfast.",
+                      "ja": "その料金には朝食が含まれています。",
+                      "focus": "includes",
+                      "jaFocus": "その料金には朝食が含まれています"
+                  }
+              ]
           },
           {
-            "en": "The price includes tax.",
-            "ja": "その価格には税金が含まれています。",
-            "focus": "includes",
-            "jaFocus": "含まれています",
-            "object": "tax",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "The price"
-              },
-              {
-                "label": "V",
-                "text": "includes"
-              },
-              {
-                "label": "O",
-                "text": "tax"
-              }
-            ]
+              "id": "meaning-2",
+              "title": "2 費用やサービスを含む",
+              "pattern": "INCLUDE + 費用・サービス",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "価格や契約の範囲に入っている",
+              "point": "税、送料、保証などが料金に含まれる場合に使います。",
+              "examples": [
+                  {
+                      "en": "The price includes tax and delivery.",
+                      "ja": "その価格には税金と配送費が含まれています。",
+                      "focus": "includes",
+                      "jaFocus": "その価格には税金と配送費が含まれています"
+                  },
+                  {
+                      "en": "This plan includes technical support.",
+                      "ja": "このプランには技術サポートが含まれています。",
+                      "focus": "includes",
+                      "jaFocus": "このプランには技術サポートが含まれています"
+                  },
+                  {
+                      "en": "The quotation does not include installation work.",
+                      "ja": "その見積書には設置作業が含まれていません。",
+                      "focus": "include",
+                      "jaFocus": "その見積書には設置作業が含まれていません"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "The ticket includes one drink.",
+                      "ja": "そのチケットには飲み物が1杯含まれています。",
+                      "focus": "includes",
+                      "jaFocus": "そのチケットには飲み物が1杯含まれています"
+                  },
+                  {
+                      "en": "The rent includes internet service.",
+                      "ja": "その家賃にはインターネット料金が含まれています。",
+                      "focus": "includes",
+                      "jaFocus": "その家賃にはインターネット料金が含まれています"
+                  }
+              ]
           },
           {
-            "en": "We included the product details in the email.",
-            "ja": "私たちはメールに製品詳細を含めました。",
-            "focus": "included",
-            "jaFocus": "含めました",
-            "object": "the product details",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "included"
-              },
-              {
-                "label": "O",
-                "text": "the product details"
-              },
-              {
-                "label": "M",
-                "text": "in the email"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "include the details",
-        "ja": "詳細を含める",
-        "image": "必要な情報を入れる",
-        "pattern": "INCLUDE + details",
-        "examples": [
+              "id": "meaning-3",
+              "title": "3 人を対象・参加者に含める",
+              "pattern": "INCLUDE + 人",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "人をグループや対象範囲に加える",
+              "point": "参加者や送信先に人を含める場合に使います。",
+              "examples": [
+                  {
+                      "en": "Please include the technical team in the meeting.",
+                      "ja": "会議の参加者に技術チームも含めてください。",
+                      "focus": "include",
+                      "jaFocus": "会議の参加者に技術チームも含めてください"
+                  },
+                  {
+                      "en": "We included the client in the email thread.",
+                      "ja": "私たちはメールのやり取りに顧客も加えました。",
+                      "focus": "included",
+                      "jaFocus": "私たちはメールのやり取りに顧客も加えました"
+                  },
+                  {
+                      "en": "The survey included customers from three regions.",
+                      "ja": "その調査には3地域の顧客が含まれていました。",
+                      "focus": "included",
+                      "jaFocus": "その調査には3地域の顧客が含まれていました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "Please include me in the group.",
+                      "ja": "そのグループに私も入れてください。",
+                      "focus": "include",
+                      "jaFocus": "そのグループに私も入れてください"
+                  },
+                  {
+                      "en": "They included their children in the trip.",
+                      "ja": "彼らは旅行に子どもたちも参加させました。",
+                      "focus": "included",
+                      "jaFocus": "彼らは旅行に子どもたちも参加させました"
+                  }
+              ]
+          },
           {
-            "en": "Please include the details in your reply.",
-            "ja": "返信に詳細を含めてください。",
-            "focus": "include the details",
-            "jaFocus": "詳細を含めてください",
-            "object": "the details"
+              "id": "meaning-4",
+              "title": "4 〜の中に含める",
+              "pattern": "INCLUDE A IN B",
+              "transitivity": "他動詞",
+              "structure": "S + V + O + M",
+              "image": "AをBの一部として入れる",
+              "point": "in以下で、どこに含めるかを示します。include inは句動詞ではなく基本文型です。",
+              "examples": [
+                  {
+                      "en": "Please include this note in the final document.",
+                      "ja": "最終資料にこの注意書きを入れてください。",
+                      "focus": "include",
+                      "jaFocus": "最終資料にこの注意書きを入れてください"
+                  },
+                  {
+                      "en": "We included the new model in the comparison table.",
+                      "ja": "私たちは比較表に新しいモデルを含めました。",
+                      "focus": "included",
+                      "jaFocus": "私たちは比較表に新しいモデルを含めました"
+                  },
+                  {
+                      "en": "The designer included our logo in the layout.",
+                      "ja": "デザイナーはレイアウトに私たちのロゴを入れました。",
+                      "focus": "included",
+                      "jaFocus": "デザイナーはレイアウトに私たちのロゴを入れました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I included a map in the invitation.",
+                      "ja": "私は招待状に地図を入れました。",
+                      "focus": "included",
+                      "jaFocus": "私は招待状に地図を入れました"
+                  },
+                  {
+                      "en": "She included a photo in her message.",
+                      "ja": "彼女はメッセージに写真を入れました。",
+                      "focus": "included",
+                      "jaFocus": "彼女はメッセージに写真を入れました"
+                  }
+              ]
+          },
+          {
+              "id": "meaning-5",
+              "title": "5 含まれている",
+              "pattern": "BE INCLUDED IN",
+              "transitivity": "受け身",
+              "structure": "S + be + V-ed + M",
+              "image": "全体の一部として入っている",
+              "point": "受け身で、あるものが範囲に含まれていることを表します。",
+              "examples": [
+                  {
+                      "en": "Installation is included in the total price.",
+                      "ja": "設置費は合計金額に含まれています。",
+                      "focus": "included",
+                      "jaFocus": "設置費は合計金額に含まれています"
+                  },
+                  {
+                      "en": "Two spare parts are included in the package.",
+                      "ja": "予備部品が2個、その梱包に含まれています。",
+                      "focus": "included",
+                      "jaFocus": "予備部品が2個、その梱包に含まれています"
+                  },
+                  {
+                      "en": "The warranty is included in the standard contract.",
+                      "ja": "保証は標準契約に含まれています。",
+                      "focus": "included",
+                      "jaFocus": "保証は標準契約に含まれています"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "Breakfast is included in the room rate.",
+                      "ja": "朝食は宿泊料金に含まれています。",
+                      "focus": "included",
+                      "jaFocus": "朝食は宿泊料金に含まれています"
+                  },
+                  {
+                      "en": "Batteries are not included in the box.",
+                      "ja": "電池は箱に含まれていません。",
+                      "focus": "included",
+                      "jaFocus": "電池は箱に含まれていません"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
+      ],
+      "collocations": [],
+      "phrasalVerbs": []
   },
   {
-    "id": "notice",
-    "rank": 88,
-    "word": "NOTICE",
-    "ipa": "/ˈnoʊtɪs/",
-    "kana": "ノーティス",
-    "syllable": "no-tice",
-    "transitivity": "他動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "変化・問題・小さな点に気づく",
-    "coreDetail": "NOTICEは、問題・変化・違いなどを見たり聞いたりして気づく動詞です。仕事では notice an issue / notice a change などが便利です。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 気づく",
-        "pattern": "NOTICE + 名詞 / NOTICE + that節",
-        "transitivity": "他動詞",
-        "structure": "S + notice + O",
-        "image": "見落としそうな点が意識に入ってくる",
-        "point": "realize は頭で理解する感じ、notice は見たり聞いたりして気づく感じです。",
-        "examples": [
+      "id": "notice",
+      "rank": 88,
+      "word": "NOTICE",
+      "ipa": "/ˈnoʊtɪs/",
+      "kana": "ノーティス",
+      "syllable": "no-tice",
+      "transitivity": "他動詞",
+      "importance": "★★★☆☆ 基本",
+      "core": "変化・問題・小さな点に気づく",
+      "coreDetail": "NOTICEは、目や耳などを通じて変化・問題・人の行動に気づく動詞です。notice + 名詞、notice that、notice someone doing / doを基本文型として整理します。",
+      "meanings": [
           {
-            "en": "I noticed a mistake in the document.",
-            "ja": "私は書類の中のミスに気づきました。",
-            "focus": "noticed",
-            "jaFocus": "気づきました",
-            "object": "a mistake",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "noticed"
-              },
-              {
-                "label": "O",
-                "text": "a mistake"
-              },
-              {
-                "label": "M",
-                "text": "in the document"
-              }
-            ]
+              "id": "meaning-1",
+              "title": "1 変化や問題に気づく",
+              "pattern": "NOTICE + 名詞",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "目立つ変化や異常を認識する",
+              "point": "問題、違い、変化などを目的語に取ります。",
+              "examples": [
+                  {
+                      "en": "I noticed a small error in the quotation.",
+                      "ja": "私は見積書の小さな誤りに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "私は見積書の小さな誤りに気づきました"
+                  },
+                  {
+                      "en": "We noticed a change in the light color.",
+                      "ja": "私たちは光の色の変化に気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "私たちは光の色の変化に気づきました"
+                  },
+                  {
+                      "en": "The technician noticed a loose connection.",
+                      "ja": "技術者は接続の緩みに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "技術者は接続の緩みに気づきました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I noticed a new shop near the station.",
+                      "ja": "私は駅の近くに新しい店ができたことに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "私は駅の近くに新しい店ができたことに気づきました"
+                  },
+                  {
+                      "en": "She noticed the smell immediately.",
+                      "ja": "彼女はすぐにそのにおいに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "彼女はすぐにそのにおいに気づきました"
+                  }
+              ]
           },
           {
-            "en": "Did you notice the color difference?",
-            "ja": "あなたは色の違いに気づきましたか？",
-            "focus": "notice",
-            "jaFocus": "気づきましたか",
-            "object": "the color difference",
-            "sentencePattern": "Do + S + V + O",
-            "grammarParts": [
-              {
-                "label": "M",
-                "text": "Did"
-              },
-              {
-                "label": "S",
-                "text": "you"
-              },
-              {
-                "label": "V",
-                "text": "notice"
-              },
-              {
-                "label": "O",
-                "text": "the color difference"
-              }
-            ],
-            "grammarNote": "Did は疑問文を作る助動詞です。"
+              "id": "meaning-2",
+              "title": "2 〜だと気づく",
+              "pattern": "NOTICE + that節",
+              "transitivity": "他動詞",
+              "structure": "S + V + that節",
+              "image": "状況を文として認識する",
+              "point": "that節で、気づいた内容を具体的に示します。",
+              "examples": [
+                  {
+                      "en": "We noticed that one module was not working.",
+                      "ja": "私たちは、モジュールが1個動作していないことに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "私たちは、モジュールが1個動作していないことに気づきました"
+                  },
+                  {
+                      "en": "I noticed that the delivery date had changed.",
+                      "ja": "私は、納品日が変更されていることに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "私は、納品日が変更されていることに気づきました"
+                  },
+                  {
+                      "en": "The client noticed that the sample was brighter.",
+                      "ja": "顧客は、そのサンプルの方が明るいことに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "顧客は、そのサンプルの方が明るいことに気づきました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I noticed that the door was open.",
+                      "ja": "私は、ドアが開いていることに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "私は、ドアが開いていることに気づきました"
+                  },
+                  {
+                      "en": "She noticed that I was tired.",
+                      "ja": "彼女は、私が疲れていることに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "彼女は、私が疲れていることに気づきました"
+                  }
+              ]
           },
           {
-            "en": "We noticed that the quantity was different.",
-            "ja": "私たちは数量が違うことに気づきました。",
-            "focus": "noticed",
-            "jaFocus": "気づきました",
-            "object": "that the quantity was different",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "noticed"
-              },
-              {
-                "label": "O",
-                "text": "that the quantity was different"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "notice a problem",
-        "ja": "問題に気づく",
-        "image": "早い段階で異常や問題を見つける",
-        "pattern": "NOTICE + problem",
-        "examples": [
+              "id": "meaning-3",
+              "title": "3 人が〜しているのに気づく",
+              "pattern": "NOTICE + 人 + doing",
+              "transitivity": "他動詞",
+              "structure": "S + V + O + C",
+              "image": "動作の途中を見たり聞いたりする",
+              "point": "doingは進行中の動作に気づいたことを表します。",
+              "examples": [
+                  {
+                      "en": "I noticed the indicator flashing.",
+                      "ja": "私は表示灯が点滅していることに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "私は表示灯が点滅していることに気づきました"
+                  },
+                  {
+                      "en": "We noticed the customer looking at the new display.",
+                      "ja": "私たちは、顧客が新しいディスプレイを見ていることに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "私たちは、顧客が新しいディスプレイを見ていることに気づきました"
+                  },
+                  {
+                      "en": "The manager noticed the team working late.",
+                      "ja": "マネージャーは、チームが遅くまで働いていることに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "マネージャーは、チームが遅くまで働いていることに気づきました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I noticed a child crying nearby.",
+                      "ja": "私は近くで子どもが泣いていることに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "私は近くで子どもが泣いていることに気づきました"
+                  },
+                  {
+                      "en": "She noticed me waiting outside.",
+                      "ja": "彼女は私が外で待っていることに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "彼女は私が外で待っていることに気づきました"
+                  }
+              ]
+          },
           {
-            "en": "We noticed a problem before shipment.",
-            "ja": "私たちは出荷前に問題に気づきました。",
-            "focus": "noticed a problem",
-            "jaFocus": "問題に気づきました",
-            "object": "a problem"
+              "id": "meaning-4",
+              "title": "4 人が〜するのに気づく",
+              "pattern": "NOTICE + 人 + 動詞原形",
+              "transitivity": "他動詞",
+              "structure": "S + V + O + C",
+              "image": "動作の一連の流れを認識する",
+              "point": "動詞原形は、動作全体を見聞きした場合に使います。",
+              "examples": [
+                  {
+                      "en": "I noticed the voltage drop during the test.",
+                      "ja": "私は試験中に電圧が低下するのに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "私は試験中に電圧が低下するのに気づきました"
+                  },
+                  {
+                      "en": "We noticed the customer enter the showroom.",
+                      "ja": "私たちは顧客がショールームに入るのに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "私たちは顧客がショールームに入るのに気づきました"
+                  },
+                  {
+                      "en": "The engineer noticed the system restart automatically.",
+                      "ja": "技術者はシステムが自動的に再起動するのに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "技術者はシステムが自動的に再起動するのに気づきました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I noticed him leave early.",
+                      "ja": "私は彼が早く帰るのに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "私は彼が早く帰るのに気づきました"
+                  },
+                  {
+                      "en": "She noticed the cat jump onto the table.",
+                      "ja": "彼女は猫がテーブルに飛び乗るのに気づきました。",
+                      "focus": "noticed",
+                      "jaFocus": "彼女は猫がテーブルに飛び乗るのに気づきました"
+                  }
+              ]
+          },
+          {
+              "id": "meaning-5",
+              "title": "5 気づかない・見落とす",
+              "pattern": "NOT NOTICE / FAIL TO NOTICE",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "変化や問題を認識できなかった",
+              "point": "否定形で「気づかなかった」、fail to noticeで「見落とした」と表せます。",
+              "examples": [
+                  {
+                      "en": "I did not notice the incorrect model number.",
+                      "ja": "私は品番が間違っていることに気づきませんでした。",
+                      "focus": "notice",
+                      "jaFocus": "私は品番が間違っていることに気づきませんでした"
+                  },
+                  {
+                      "en": "We failed to notice the missing attachment.",
+                      "ja": "私たちは添付ファイルがないことを見落としました。",
+                      "focus": "notice",
+                      "jaFocus": "私たちは添付ファイルがないことを見落としました"
+                  },
+                  {
+                      "en": "The customer may not notice the small difference.",
+                      "ja": "顧客はその小さな違いには気づかないかもしれません。",
+                      "focus": "notice",
+                      "jaFocus": "顧客はその小さな違いには気づかないかもしれません"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I did not notice the time.",
+                      "ja": "私は時間に気づきませんでした。",
+                      "focus": "notice",
+                      "jaFocus": "私は時間に気づきませんでした"
+                  },
+                  {
+                      "en": "He failed to notice my message.",
+                      "ja": "彼は私のメッセージを見落としました。",
+                      "focus": "notice",
+                      "jaFocus": "彼は私のメッセージを見落としました"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
+      ],
+      "collocations": [],
+      "phrasalVerbs": []
   },
   {
-    "id": "prefer",
-    "rank": 89,
-    "word": "PREFER",
-    "ipa": "/prɪˈfɜːr/",
-    "kana": "プリファー",
-    "syllable": "pre-fer",
-    "transitivity": "他動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "複数の中からより好む",
-    "coreDetail": "PREFERは、AとBを比べてAの方を好む時に使います。prefer A to B / prefer to do の形がよく出ます。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 〜をより好む",
-        "pattern": "PREFER + 名詞 / PREFER A TO B / PREFER TO DO",
-        "transitivity": "他動詞",
-        "structure": "S + prefer + O",
-        "image": "いくつかの選択肢の中で一方を選びたい気持ち",
-        "point": "prefer A than B ではなく prefer A to B が基本です。",
-        "examples": [
+      "id": "prefer",
+      "rank": 89,
+      "word": "PREFER",
+      "ipa": "/prɪˈfɜːr/",
+      "kana": "プリファー",
+      "syllable": "pre-fer",
+      "transitivity": "他動詞",
+      "importance": "★★★☆☆ 基本",
+      "core": "複数の中からより好む",
+      "coreDetail": "PREFERは、複数の選択肢の中で、より好むものを示す動詞です。prefer + 名詞、prefer A to B、prefer doing to doing、prefer to do、would prefer to doを基本側で整理します。",
+      "meanings": [
           {
-            "en": "I prefer online meetings to long emails.",
-            "ja": "私は長いメールよりオンライン会議の方を好みます。",
-            "focus": "prefer",
-            "jaFocus": "好みます",
-            "object": "online meetings",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "prefer"
-              },
-              {
-                "label": "O",
-                "text": "online meetings"
-              },
-              {
-                "label": "M",
-                "text": "to long emails"
-              }
-            ],
-            "grammarNote": "to long emails は比較対象を補足する語句です。"
+              "id": "meaning-1",
+              "title": "1 〜をより好む",
+              "pattern": "PREFER + 名詞",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "ある選択肢を好む",
+              "point": "目的語に好む物・方法・条件を置きます。",
+              "examples": [
+                  {
+                      "en": "The client prefers the warmer color.",
+                      "ja": "顧客は、より暖かみのある色を好みます。",
+                      "focus": "prefers",
+                      "jaFocus": "顧客は、より暖かみのある色を好みます"
+                  },
+                  {
+                      "en": "I prefer a simple design.",
+                      "ja": "私はシンプルなデザインを好みます。",
+                      "focus": "prefer",
+                      "jaFocus": "私はシンプルなデザインを好みます"
+                  },
+                  {
+                      "en": "We prefer local delivery for urgent orders.",
+                      "ja": "私たちは緊急注文では国内配送を好みます。",
+                      "focus": "prefer",
+                      "jaFocus": "私たちは緊急注文では国内配送を好みます"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I prefer tea in the morning.",
+                      "ja": "私は朝は紅茶の方が好きです。",
+                      "focus": "prefer",
+                      "jaFocus": "私は朝は紅茶の方が好きです"
+                  },
+                  {
+                      "en": "She prefers quiet places.",
+                      "ja": "彼女は静かな場所を好みます。",
+                      "focus": "prefers",
+                      "jaFocus": "彼女は静かな場所を好みます"
+                  }
+              ]
           },
           {
-            "en": "Many customers prefer simple explanations.",
-            "ja": "多くの顧客は分かりやすい説明を好みます。",
-            "focus": "prefer",
-            "jaFocus": "好みます",
-            "object": "simple explanations",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "Many customers"
-              },
-              {
-                "label": "V",
-                "text": "prefer"
-              },
-              {
-                "label": "O",
-                "text": "simple explanations"
-              }
-            ]
+              "id": "meaning-2",
+              "title": "2 Aの方をBより好む",
+              "pattern": "PREFER A TO B",
+              "transitivity": "他動詞",
+              "structure": "S + V + O + M",
+              "image": "2つを比べてAを選ぶ",
+              "point": "比較ではthanではなくtoを使います。",
+              "examples": [
+                  {
+                      "en": "The customer prefers this model to the larger one.",
+                      "ja": "顧客は大型モデルよりこのモデルを好みます。",
+                      "focus": "prefers",
+                      "jaFocus": "顧客は大型モデルよりこのモデルを好みます"
+                  },
+                  {
+                      "en": "I prefer email to phone calls for detailed requests.",
+                      "ja": "私は詳しい依頼では電話よりメールを好みます。",
+                      "focus": "prefer",
+                      "jaFocus": "私は詳しい依頼では電話よりメールを好みます"
+                  },
+                  {
+                      "en": "We prefer quality to a small price difference.",
+                      "ja": "私たちはわずかな価格差より品質を優先します。",
+                      "focus": "prefer",
+                      "jaFocus": "私たちはわずかな価格差より品質を優先します"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I prefer summer to winter.",
+                      "ja": "私は冬より夏の方が好きです。",
+                      "focus": "prefer",
+                      "jaFocus": "私は冬より夏の方が好きです"
+                  },
+                  {
+                      "en": "She prefers cats to dogs.",
+                      "ja": "彼女は犬より猫の方が好きです。",
+                      "focus": "prefers",
+                      "jaFocus": "彼女は犬より猫の方が好きです"
+                  }
+              ]
           },
           {
-            "en": "I prefer to study in the morning.",
-            "ja": "私は朝に勉強する方が好きです。",
-            "focus": "prefer to study",
-            "jaFocus": "好きです",
-            "object": "to study",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "prefer"
-              },
-              {
-                "label": "O",
-                "text": "to study"
-              },
-              {
-                "label": "M",
-                "text": "in the morning"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "prefer A to B",
-        "ja": "BよりAを好む",
-        "image": "比較して一方を選ぶ",
-        "pattern": "prefer a to b",
-        "examples": [
+              "id": "meaning-3",
+              "title": "3 〜する方を好む",
+              "pattern": "PREFER doing TO doing",
+              "transitivity": "他動詞",
+              "structure": "S + V + O + M",
+              "image": "行動同士を比較する",
+              "point": "動作を比較するときは、doing to doingの形を使えます。",
+              "examples": [
+                  {
+                      "en": "I prefer meeting clients in person to speaking only by phone.",
+                      "ja": "私は電話だけで話すより、顧客と直接会う方を好みます。",
+                      "focus": "prefer",
+                      "jaFocus": "私は電話だけで話すより、顧客と直接会う方を好みます"
+                  },
+                  {
+                      "en": "We prefer testing the sample to making a decision immediately.",
+                      "ja": "私たちはすぐに決定するより、サンプルを試験する方を好みます。",
+                      "focus": "prefer",
+                      "jaFocus": "私たちはすぐに決定するより、サンプルを試験する方を好みます"
+                  },
+                  {
+                      "en": "She prefers preparing early to rushing at the last minute.",
+                      "ja": "彼女は直前に慌てるより、早めに準備する方を好みます。",
+                      "focus": "prefers",
+                      "jaFocus": "彼女は直前に慌てるより、早めに準備する方を好みます"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I prefer walking to driving.",
+                      "ja": "私は車を運転するより歩く方が好きです。",
+                      "focus": "prefer",
+                      "jaFocus": "私は車を運転するより歩く方が好きです"
+                  },
+                  {
+                      "en": "He prefers cooking to eating out.",
+                      "ja": "彼は外食するより料理する方が好きです。",
+                      "focus": "prefers",
+                      "jaFocus": "彼は外食するより料理する方が好きです"
+                  }
+              ]
+          },
           {
-            "en": "I prefer this design to the old one.",
-            "ja": "私は古いものよりこのデザインを好みます。",
-            "focus": "prefer this design",
-            "jaFocus": "このデザインを好みます",
-            "object": "this design"
+              "id": "meaning-4",
+              "title": "4 〜する方がよい",
+              "pattern": "PREFER TO DO",
+              "transitivity": "他動詞",
+              "structure": "S + V + to不定詞",
+              "image": "自分が選びたい行動を示す",
+              "point": "to不定詞で、好んで選ぶ行動を表します。赤文字はpreferだけです。",
+              "examples": [
+                  {
+                      "en": "I prefer to confirm the details by email.",
+                      "ja": "私は詳細をメールで確認する方を好みます。",
+                      "focus": "prefer",
+                      "jaFocus": "私は詳細をメールで確認する方を好みます"
+                  },
+                  {
+                      "en": "The client prefers to review the sample first.",
+                      "ja": "顧客は、まずサンプルを確認する方を希望しています。",
+                      "focus": "prefers",
+                      "jaFocus": "顧客は、まずサンプルを確認する方を希望しています"
+                  },
+                  {
+                      "en": "We prefer to avoid last-minute changes.",
+                      "ja": "私たちは直前の変更を避けたいと考えています。",
+                      "focus": "prefer",
+                      "jaFocus": "私たちは直前の変更を避けたいと考えています"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I prefer to study in the morning.",
+                      "ja": "私は朝に勉強する方が好きです。",
+                      "focus": "prefer",
+                      "jaFocus": "私は朝に勉強する方が好きです"
+                  },
+                  {
+                      "en": "She prefers to travel by train.",
+                      "ja": "彼女は電車で旅行する方を好みます。",
+                      "focus": "prefers",
+                      "jaFocus": "彼女は電車で旅行する方を好みます"
+                  }
+              ]
+          },
+          {
+              "id": "meaning-5",
+              "title": "5 できれば〜したい",
+              "pattern": "WOULD PREFER TO DO",
+              "transitivity": "他動詞",
+              "structure": "S + would + V + to不定詞",
+              "image": "丁寧に希望を示す",
+              "point": "would preferは、具体的な場面での希望を丁寧に伝えます。",
+              "examples": [
+                  {
+                      "en": "We would prefer to receive the samples by Thursday.",
+                      "ja": "私たちは、できれば木曜日までにサンプルを受け取りたいです。",
+                      "focus": "prefer",
+                      "jaFocus": "私たちは、できれば木曜日までにサンプルを受け取りたいです"
+                  },
+                  {
+                      "en": "The client would prefer to meet online.",
+                      "ja": "顧客は、できればオンラインで打ち合わせたいと考えています。",
+                      "focus": "prefer",
+                      "jaFocus": "顧客は、できればオンラインで打ち合わせたいと考えています"
+                  },
+                  {
+                      "en": "I would prefer to discuss the price privately.",
+                      "ja": "私は、できれば価格について個別に話したいです。",
+                      "focus": "prefer",
+                      "jaFocus": "私は、できれば価格について個別に話したいです"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I would prefer to stay home tonight.",
+                      "ja": "私は今夜、できれば家にいたいです。",
+                      "focus": "prefer",
+                      "jaFocus": "私は今夜、できれば家にいたいです"
+                  },
+                  {
+                      "en": "She would prefer to leave early.",
+                      "ja": "彼女は、できれば早めに出発したいです。",
+                      "focus": "prefer",
+                      "jaFocus": "彼女は、できれば早めに出発したいです"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
+      ],
+      "collocations": [],
+      "phrasalVerbs": []
   },
   {
-    "id": "recommend",
-    "rank": 90,
-    "word": "RECOMMEND",
-    "ipa": "/ˌrekəˈmend/",
-    "kana": "レコメンド",
-    "syllable": "rec-om-mend",
-    "transitivity": "他動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "相手に合う選択肢をすすめる",
-    "coreDetail": "RECOMMENDは、商品・方法・案などを相手にすすめる動詞です。営業・提案・日常のおすすめで使いやすい重要語です。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① おすすめする・推奨する",
-        "pattern": "RECOMMEND + 名詞 / RECOMMEND + doing",
-        "transitivity": "他動詞",
-        "structure": "S + recommend + O",
-        "image": "相手にとって良いと思う選択肢を前に出す",
-        "point": "recommend to do より recommend doing / recommend that S V の形が自然です。",
-        "examples": [
+      "id": "recommend",
+      "rank": 90,
+      "word": "RECOMMEND",
+      "ipa": "/ˌrekəˈmend/",
+      "kana": "レコメンド",
+      "syllable": "rec-om-mend",
+      "transitivity": "他動詞",
+      "importance": "★★★☆☆ 基本",
+      "core": "相手に合う選択肢をすすめる",
+      "coreDetail": "RECOMMENDは、経験や判断に基づいて相手に合う選択肢をすすめる動詞です。recommend + 名詞、recommend doing、recommend that、recommend A to someoneを基本側で扱い、recommend againstは句動詞側で整理します。",
+      "meanings": [
           {
-            "en": "We recommend this product for outdoor signs.",
-            "ja": "私たちは屋外サインにはこの製品をおすすめします。",
-            "focus": "recommend",
-            "jaFocus": "おすすめします",
-            "object": "this product",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "recommend"
-              },
-              {
-                "label": "O",
-                "text": "this product"
-              },
-              {
-                "label": "M",
-                "text": "for outdoor signs"
-              }
-            ]
+              "id": "meaning-1",
+              "title": "1 商品・方法をすすめる",
+              "pattern": "RECOMMEND + 名詞",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "適切だと判断した選択肢を示す",
+              "point": "商品、方法、店、資料などを目的語に取ります。",
+              "examples": [
+                  {
+                      "en": "We recommend this model for small signs.",
+                      "ja": "私たちは小型看板にはこのモデルをおすすめします。",
+                      "focus": "recommend",
+                      "jaFocus": "私たちは小型看板にはこのモデルをおすすめします"
+                  },
+                  {
+                      "en": "The engineer recommended a different power supply.",
+                      "ja": "技術者は別の電源をすすめました。",
+                      "focus": "recommended",
+                      "jaFocus": "技術者は別の電源をすすめました"
+                  },
+                  {
+                      "en": "I recommend the revised proposal.",
+                      "ja": "私は修正版の提案をおすすめします。",
+                      "focus": "recommend",
+                      "jaFocus": "私は修正版の提案をおすすめします"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I recommend this restaurant.",
+                      "ja": "私はこのレストランをおすすめします。",
+                      "focus": "recommend",
+                      "jaFocus": "私はこのレストランをおすすめします"
+                  },
+                  {
+                      "en": "She recommended a useful book.",
+                      "ja": "彼女は役に立つ本をすすめました。",
+                      "focus": "recommended",
+                      "jaFocus": "彼女は役に立つ本をすすめました"
+                  }
+              ]
           },
           {
-            "en": "I recommend checking the stock before ordering.",
-            "ja": "私は発注前に在庫を確認することをおすすめします。",
-            "focus": "recommend checking",
-            "jaFocus": "おすすめします",
-            "object": "checking the stock",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "recommend"
-              },
-              {
-                "label": "O",
-                "text": "checking the stock"
-              },
-              {
-                "label": "M",
-                "text": "before ordering"
-              }
-            ]
+              "id": "meaning-2",
+              "title": "2 〜することをすすめる",
+              "pattern": "RECOMMEND doing",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "行動を選択肢としてすすめる",
+              "point": "recommendの後ろには動名詞を置けます。recommend to doとはしません。",
+              "examples": [
+                  {
+                      "en": "We recommend checking the stock before placing the order.",
+                      "ja": "私たちは注文前に在庫を確認することをおすすめします。",
+                      "focus": "recommend",
+                      "jaFocus": "私たちは注文前に在庫を確認することをおすすめします"
+                  },
+                  {
+                      "en": "The technician recommended replacing the damaged cable.",
+                      "ja": "技術者は損傷したケーブルを交換することをすすめました。",
+                      "focus": "recommended",
+                      "jaFocus": "技術者は損傷したケーブルを交換することをすすめました"
+                  },
+                  {
+                      "en": "I recommend testing the sample on site.",
+                      "ja": "私は現場でサンプルを試験することをおすすめします。",
+                      "focus": "recommend",
+                      "jaFocus": "私は現場でサンプルを試験することをおすすめします"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I recommend booking early.",
+                      "ja": "私は早めに予約することをおすすめします。",
+                      "focus": "recommend",
+                      "jaFocus": "私は早めに予約することをおすすめします"
+                  },
+                  {
+                      "en": "She recommended taking a break.",
+                      "ja": "彼女は休憩を取ることをすすめました。",
+                      "focus": "recommended",
+                      "jaFocus": "彼女は休憩を取ることをすすめました"
+                  }
+              ]
           },
           {
-            "en": "The manager recommended a simpler plan.",
-            "ja": "そのマネージャーはよりシンプルな計画をすすめました。",
-            "focus": "recommended",
-            "jaFocus": "すすめました",
-            "object": "a simpler plan",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "The manager"
-              },
-              {
-                "label": "V",
-                "text": "recommended"
-              },
-              {
-                "label": "O",
-                "text": "a simpler plan"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "recommend a solution",
-        "ja": "解決策をすすめる",
-        "image": "相手の問題に合う案を出す",
-        "pattern": "RECOMMEND + solution",
-        "examples": [
+              "id": "meaning-3",
+              "title": "3 〜するよう提案する",
+              "pattern": "RECOMMEND + that節",
+              "transitivity": "他動詞",
+              "structure": "S + V + that節",
+              "image": "相手や組織に具体的な行動を提案する",
+              "point": "that節では、米語で動詞原形を使う形がよく使われます。",
+              "examples": [
+                  {
+                      "en": "We recommend that the client review the sample first.",
+                      "ja": "私たちは、顧客がまずサンプルを確認することをおすすめします。",
+                      "focus": "recommend",
+                      "jaFocus": "私たちは、顧客がまずサンプルを確認することをおすすめします"
+                  },
+                  {
+                      "en": "The manager recommended that we revise the schedule.",
+                      "ja": "マネージャーは、私たちが日程を修正するよう提案しました。",
+                      "focus": "recommended",
+                      "jaFocus": "マネージャーは、私たちが日程を修正するよう提案しました"
+                  },
+                  {
+                      "en": "I recommend that the team document the test results.",
+                      "ja": "私は、チームが試験結果を記録することをおすすめします。",
+                      "focus": "recommend",
+                      "jaFocus": "私は、チームが試験結果を記録することをおすすめします"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I recommend that you rest today.",
+                      "ja": "私は、あなたが今日は休むことをおすすめします。",
+                      "focus": "recommend",
+                      "jaFocus": "私は、あなたが今日は休むことをおすすめします"
+                  },
+                  {
+                      "en": "She recommended that he call again.",
+                      "ja": "彼女は、彼がもう一度電話するようすすめました。",
+                      "focus": "recommended",
+                      "jaFocus": "彼女は、彼がもう一度電話するようすすめました"
+                  }
+              ]
+          },
           {
-            "en": "We recommended a solution for the installation issue.",
-            "ja": "私たちは施工上の問題に対する解決策をすすめました。",
-            "focus": "recommended a solution",
-            "jaFocus": "解決策をすすめました",
-            "object": "a solution"
+              "id": "meaning-4",
+              "title": "4 人に何かをすすめる",
+              "pattern": "RECOMMEND A TO someone",
+              "transitivity": "他動詞",
+              "structure": "S + V + O + M",
+              "image": "選択肢を特定の人へ紹介する",
+              "point": "語順はrecommend A to someoneです。recommend someone Aとは通常しません。",
+              "examples": [
+                  {
+                      "en": "I recommended this product to the client.",
+                      "ja": "私はこの製品を顧客におすすめしました。",
+                      "focus": "recommended",
+                      "jaFocus": "私はこの製品を顧客におすすめしました"
+                  },
+                  {
+                      "en": "The distributor recommended our system to the contractor.",
+                      "ja": "販売代理店は私たちのシステムを施工会社にすすめました。",
+                      "focus": "recommended",
+                      "jaFocus": "販売代理店は私たちのシステムを施工会社にすすめました"
+                  },
+                  {
+                      "en": "She recommended the training course to new employees.",
+                      "ja": "彼女はその研修を新入社員にすすめました。",
+                      "focus": "recommended",
+                      "jaFocus": "彼女はその研修を新入社員にすすめました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I recommended the movie to my friend.",
+                      "ja": "私はその映画を友人にすすめました。",
+                      "focus": "recommended",
+                      "jaFocus": "私はその映画を友人にすすめました"
+                  },
+                  {
+                      "en": "He recommended the app to his family.",
+                      "ja": "彼はそのアプリを家族にすすめました。",
+                      "focus": "recommended",
+                      "jaFocus": "彼はそのアプリを家族にすすめました"
+                  }
+              ]
+          },
+          {
+              "id": "meaning-5",
+              "title": "5 高く評価して推薦する",
+              "pattern": "HIGHLY RECOMMEND",
+              "transitivity": "他動詞",
+              "structure": "S + M + V + O",
+              "image": "強い自信を持ってすすめる",
+              "point": "highlyは程度を強める副詞です。赤文字は対象動詞だけにします。",
+              "examples": [
+                  {
+                      "en": "We highly recommend the waterproof version for outdoor use.",
+                      "ja": "私たちは屋外用途には防水仕様を強くおすすめします。",
+                      "focus": "recommend",
+                      "jaFocus": "私たちは屋外用途には防水仕様を強くおすすめします"
+                  },
+                  {
+                      "en": "The client highly recommended our support team.",
+                      "ja": "顧客は私たちのサポートチームを高く評価して推薦しました。",
+                      "focus": "recommended",
+                      "jaFocus": "顧客は私たちのサポートチームを高く評価して推薦しました"
+                  },
+                  {
+                      "en": "I highly recommend reviewing the contract carefully.",
+                      "ja": "私は契約書を慎重に確認することを強くおすすめします。",
+                      "focus": "recommend",
+                      "jaFocus": "私は契約書を慎重に確認することを強くおすすめします"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I highly recommend this hotel.",
+                      "ja": "私はこのホテルを強くおすすめします。",
+                      "focus": "recommend",
+                      "jaFocus": "私はこのホテルを強くおすすめします"
+                  },
+                  {
+                      "en": "She highly recommended the class.",
+                      "ja": "彼女はその講座を強くすすめました。",
+                      "focus": "recommended",
+                      "jaFocus": "彼女はその講座を強くすすめました"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
+      ],
+      "collocations": [],
+      "phrasalVerbs": [
+          {
+              "phrase": "recommend against",
+              "ja": "〜しないようすすめる",
+              "image": "危険・不適切な選択を避けるよう助言する",
+              "pattern": "RECOMMEND AGAINST + 名詞・doing",
+              "examples": [
+                  {
+                      "en": "We recommend against using this product outdoors.",
+                      "ja": "私たちは、この製品を屋外で使用しないことをおすすめします。",
+                      "focus": "recommend against",
+                      "jaFocus": "私たちは、この製品を屋外で使用しないことをおすすめします"
+                  },
+                  {
+                      "en": "The engineer recommended against extending the cable further.",
+                      "ja": "技術者は、ケーブルをこれ以上延長しないようすすめました。",
+                      "focus": "recommended against",
+                      "jaFocus": "技術者は、ケーブルをこれ以上延長しないようすすめました"
+                  },
+                  {
+                      "en": "I recommend against changing the settings without approval.",
+                      "ja": "私は、承認なしで設定を変更しないようおすすめします。",
+                      "focus": "recommend against",
+                      "jaFocus": "私は、承認なしで設定を変更しないようおすすめします"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "The doctor recommended against heavy exercise.",
+                      "ja": "医師は激しい運動をしないようすすめました。",
+                      "focus": "recommended against",
+                      "jaFocus": "医師は激しい運動をしないようすすめました"
+                  },
+                  {
+                      "en": "I recommend against driving in this weather.",
+                      "ja": "私はこの天候で運転しないようおすすめします。",
+                      "focus": "recommend against",
+                      "jaFocus": "私はこの天候で運転しないようおすすめします"
+                  }
+              ]
+          }
+      ]
   },
   {
-    "id": "achieve",
-    "rank": 91,
-    "word": "ACHIEVE",
-    "ipa": "/əˈtʃiːv/",
-    "kana": "アチーヴ",
-    "syllable": "a-chieve",
-    "transitivity": "他動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "努力して目標や成果に到達する",
-    "coreDetail": "ACHIEVEは、仕事でも日常でも使いやすい基本動詞です。まずは「達成する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
-    "meanings": [
-      {
-        "id": "m1",
-        "title": "① 達成する",
-        "pattern": "achieve a goal",
-        "transitivity": "他動詞",
-        "structure": "S + V + O（目的語）",
-        "image": "努力して目標や成果に到達する",
-        "point": "achieve の後ろに「何を達成するのか」を置きます。仕事では achieve a goal の形でよく使います。",
-        "examples": [
+      "id": "achieve",
+      "rank": 91,
+      "word": "ACHIEVE",
+      "ipa": "/əˈtʃiːv/",
+      "kana": "アチーヴ",
+      "syllable": "a-chieve",
+      "transitivity": "他動詞",
+      "importance": "★★★★☆ 重要",
+      "core": "努力して目標や成果に到達する",
+      "coreDetail": "ACHIEVEは、努力や工夫を重ねて、目標・成果・状態を実現する他動詞です。目的語にgoal、target、result、balanceなどを置きます。",
+      "meanings": [
           {
-            "en": "We achieved our sales target this month.",
-            "ja": "私たちは今月、売上目標を達成しました。",
-            "focus": "achieved",
-            "object": "a goal",
-            "jaFocus": "達成する",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "achieved"
-              },
-              {
-                "label": "O",
-                "text": "a goal"
-              }
-            ]
+              "id": "meaning-1",
+              "title": "1 目標を達成する",
+              "pattern": "ACHIEVE + goal / target",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "努力して設定した到達点に届く",
+              "point": "goalやtargetを目的語に取ります。",
+              "examples": [
+                  {
+                      "en": "We achieved our sales target this month.",
+                      "ja": "私たちは今月の売上目標を達成しました。",
+                      "focus": "achieved",
+                      "jaFocus": "私たちは今月の売上目標を達成しました",
+                      "sentencePattern": "S + V + O",
+                      "grammarParts": [
+                          {
+                              "label": "S",
+                              "text": "We"
+                          },
+                          {
+                              "label": "V",
+                              "text": "achieved"
+                          },
+                          {
+                              "label": "O",
+                              "text": "our sales target"
+                          }
+                      ]
+                  },
+                  {
+                      "en": "The team achieved its annual goal ahead of schedule.",
+                      "ja": "チームは年間目標を予定より早く達成しました。",
+                      "focus": "achieved",
+                      "jaFocus": "チームは年間目標を予定より早く達成しました"
+                  },
+                  {
+                      "en": "She achieved her training target.",
+                      "ja": "彼女は研修目標を達成しました。",
+                      "focus": "achieved",
+                      "jaFocus": "彼女は研修目標を達成しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I achieved my savings goal.",
+                      "ja": "私は貯金の目標を達成しました。",
+                      "focus": "achieved",
+                      "jaFocus": "私は貯金の目標を達成しました"
+                  },
+                  {
+                      "en": "He achieved his goal of running a marathon.",
+                      "ja": "彼はマラソンを走るという目標を達成しました。",
+                      "focus": "achieved",
+                      "jaFocus": "彼はマラソンを走るという目標を達成しました"
+                  }
+              ]
           },
           {
-            "en": "I achieved my fitness goal this year.",
-            "ja": "私は今年、運動の目標を達成しました。",
-            "focus": "achieve",
-            "jaFocus": "達成する"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "achieve results",
-        "ja": "成果を出す",
-        "image": "努力して目標や成果に到達する",
-        "pattern": "achieve results",
-        "examples": [
+              "id": "meaning-2",
+              "title": "2 成果を上げる",
+              "pattern": "ACHIEVE + results",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "仕事や活動で望ましい結果を出す",
+              "point": "resultやoutcomeを目的語に取ります。",
+              "examples": [
+                  {
+                      "en": "The new sales approach achieved strong results.",
+                      "ja": "新しい営業方法は大きな成果を上げました。",
+                      "focus": "achieved",
+                      "jaFocus": "新しい営業方法は大きな成果を上げました"
+                  },
+                  {
+                      "en": "We achieved better results with the revised layout.",
+                      "ja": "私たちは修正したレイアウトで、より良い成果を得ました。",
+                      "focus": "achieved",
+                      "jaFocus": "私たちは修正したレイアウトで、より良い成果を得ました"
+                  },
+                  {
+                      "en": "The campaign achieved the expected outcome.",
+                      "ja": "そのキャンペーンは期待された成果を上げました。",
+                      "focus": "achieved",
+                      "jaFocus": "そのキャンペーンは期待された成果を上げました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "The new routine achieved good results.",
+                      "ja": "新しい習慣は良い成果につながりました。",
+                      "focus": "achieved",
+                      "jaFocus": "新しい習慣は良い成果につながりました"
+                  },
+                  {
+                      "en": "We achieved more than we expected.",
+                      "ja": "私たちは予想以上の成果を上げました。",
+                      "focus": "achieved",
+                      "jaFocus": "私たちは予想以上の成果を上げました"
+                  }
+              ]
+          },
           {
-            "en": "Our team achieved strong results after improving the process.",
-            "ja": "私たちのチームは工程を改善した後、良い成果を出しました。",
-            "focus": "achieve results",
-            "jaFocus": "成果を出す",
-            "object": "results"
+              "id": "meaning-3",
+              "title": "3 品質や性能を実現する",
+              "pattern": "ACHIEVE + level / performance",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "求める品質・明るさ・効率に到達する",
+              "point": "数値や性能水準を実現する場合に使います。",
+              "examples": [
+                  {
+                      "en": "This design achieves uniform brightness.",
+                      "ja": "この設計は均一な明るさを実現します。",
+                      "focus": "achieves",
+                      "jaFocus": "この設計は均一な明るさを実現します"
+                  },
+                  {
+                      "en": "The new module achieved higher efficiency.",
+                      "ja": "新しいモジュールはより高い効率を実現しました。",
+                      "focus": "achieved",
+                      "jaFocus": "新しいモジュールはより高い効率を実現しました"
+                  },
+                  {
+                      "en": "We achieved the required color consistency.",
+                      "ja": "私たちは必要な色の均一性を実現しました。",
+                      "focus": "achieved",
+                      "jaFocus": "私たちは必要な色の均一性を実現しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "The camera achieves excellent image quality.",
+                      "ja": "そのカメラは優れた画質を実現します。",
+                      "focus": "achieves",
+                      "jaFocus": "そのカメラは優れた画質を実現します"
+                  },
+                  {
+                      "en": "This method achieves a smoother finish.",
+                      "ja": "この方法はより滑らかな仕上がりを実現します。",
+                      "focus": "achieves",
+                      "jaFocus": "この方法はより滑らかな仕上がりを実現します"
+                  }
+              ]
+          },
+          {
+              "id": "meaning-4",
+              "title": "4 合意やバランスを実現する",
+              "pattern": "ACHIEVE + agreement / balance",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "複数の条件を調整して望ましい状態にする",
+              "point": "agreementやbalanceなど抽象的な状態にも使えます。",
+              "examples": [
+                  {
+                      "en": "Both sides achieved an agreement on the price.",
+                      "ja": "双方は価格について合意に達しました。",
+                      "focus": "achieved",
+                      "jaFocus": "双方は価格について合意に達しました"
+                  },
+                  {
+                      "en": "We achieved a good balance between cost and quality.",
+                      "ja": "私たちはコストと品質の良いバランスを実現しました。",
+                      "focus": "achieved",
+                      "jaFocus": "私たちはコストと品質の良いバランスを実現しました"
+                  },
+                  {
+                      "en": "The meeting achieved a common understanding.",
+                      "ja": "その会議によって共通認識が得られました。",
+                      "focus": "achieved",
+                      "jaFocus": "その会議によって共通認識が得られました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I achieved a better work-life balance.",
+                      "ja": "私は仕事と生活のより良いバランスを実現しました。",
+                      "focus": "achieved",
+                      "jaFocus": "私は仕事と生活のより良いバランスを実現しました"
+                  },
+                  {
+                      "en": "They achieved an agreement quickly.",
+                      "ja": "彼らはすぐに合意に達しました。",
+                      "focus": "achieved",
+                      "jaFocus": "彼らはすぐに合意に達しました"
+                  }
+              ]
+          },
+          {
+              "id": "meaning-5",
+              "title": "5 長期的な成功を収める",
+              "pattern": "ACHIEVE + success / growth",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "継続的な努力で成功や成長を得る",
+              "point": "successやgrowthを目的語に取れます。",
+              "examples": [
+                  {
+                      "en": "The company achieved steady growth in Asia.",
+                      "ja": "その会社はアジアで着実な成長を遂げました。",
+                      "focus": "achieved",
+                      "jaFocus": "その会社はアジアで着実な成長を遂げました"
+                  },
+                  {
+                      "en": "The project achieved long-term success.",
+                      "ja": "そのプロジェクトは長期的な成功を収めました。",
+                      "focus": "achieved",
+                      "jaFocus": "そのプロジェクトは長期的な成功を収めました"
+                  },
+                  {
+                      "en": "We can achieve sustainable growth by improving service.",
+                      "ja": "私たちはサービスを改善することで持続的な成長を実現できます。",
+                      "focus": "achieve",
+                      "jaFocus": "私たちはサービスを改善することで持続的な成長を実現できます"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "She achieved success through hard work.",
+                      "ja": "彼女は努力によって成功を収めました。",
+                      "focus": "achieved",
+                      "jaFocus": "彼女は努力によって成功を収めました"
+                  },
+                  {
+                      "en": "The team achieved remarkable growth.",
+                      "ja": "そのチームは著しい成長を遂げました。",
+                      "focus": "achieved",
+                      "jaFocus": "そのチームは著しい成長を遂げました"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
+      ],
+      "collocations": [],
+      "phrasalVerbs": []
   },
   {
-    "id": "schedule",
-    "rank": 92,
-    "word": "SCHEDULE",
-    "ipa": "/ˈskedʒuːl/",
-    "kana": "スケジュール",
-    "syllable": "sched-ule",
-    "transitivity": "他動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "予定や日程を決めて入れる",
-    "coreDetail": "SCHEDULEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「予定を組む・日程を決める」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
-    "meanings": [
-      {
-        "id": "business-core",
-        "title": "① 予定を組む・日程を決める",
-        "pattern": "schedule a meeting",
-        "transitivity": "他動詞",
-        "structure": "S + V + O",
-        "image": "会議や作業を予定に入れる",
-        "point": "schedule は「何を予定するか」を目的語に置きます。仕事では meeting, call, visit, delivery とよく使います。",
-        "examples": [
+      "id": "schedule",
+      "rank": 92,
+      "word": "SCHEDULE",
+      "ipa": "/ˈskedʒuːl/",
+      "kana": "スケジュール",
+      "syllable": "sched-ule",
+      "transitivity": "他動詞",
+      "importance": "★★★★☆ 重要",
+      "core": "予定や日程を決めて入れる",
+      "coreDetail": "SCHEDULEは、会議・訪問・作業などを特定の日や時間に予定として入れる他動詞です。schedule + 目的語、schedule A for B、受け身のbe scheduled forを基本側で整理し、around / inは実用表現として句動詞側で扱います。",
+      "meanings": [
           {
-            "en": "We scheduled a meeting for next Monday.",
-            "ja": "私たちは来週月曜日に会議を予定しました。",
-            "focus": "scheduled a meeting",
-            "jaFocus": "予定を組む・日程を決める",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "主語"
-              },
-              {
-                "label": "V",
-                "text": "schedule"
-              },
-              {
-                "label": "O",
-                "text": "scheduled a meeting"
-              }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+              "id": "meaning-1",
+              "title": "1 会議や打ち合わせを予定する",
+              "pattern": "SCHEDULE + meeting / call",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "予定表に会議を入れる",
+              "point": "meeting、call、appointmentなどを目的語に取ります。",
+              "examples": [
+                  {
+                      "en": "We scheduled a meeting for Tuesday morning.",
+                      "ja": "私たちは火曜日の午前に会議を設定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "私たちは火曜日の午前に会議を設定しました",
+                      "sentencePattern": "S + V + O + M",
+                      "grammarParts": [
+                          {
+                              "label": "S",
+                              "text": "We"
+                          },
+                          {
+                              "label": "V",
+                              "text": "scheduled"
+                          },
+                          {
+                              "label": "O",
+                              "text": "a meeting"
+                          },
+                          {
+                              "label": "M",
+                              "text": "for Tuesday morning"
+                          }
+                      ]
+                  },
+                  {
+                      "en": "Can we schedule a call for tomorrow?",
+                      "ja": "私たちは明日、電話またはオンラインで打ち合わせを設定できますか。",
+                      "focus": "schedule",
+                      "jaFocus": "私たちは明日、電話またはオンラインで打ち合わせを設定できますか"
+                  },
+                  {
+                      "en": "I scheduled an appointment with the client.",
+                      "ja": "私は顧客との面談を予定に入れました。",
+                      "focus": "scheduled",
+                      "jaFocus": "私は顧客との面談を予定に入れました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I scheduled a dentist appointment.",
+                      "ja": "私は歯科の予約を入れました。",
+                      "focus": "scheduled",
+                      "jaFocus": "私は歯科の予約を入れました"
+                  },
+                  {
+                      "en": "We scheduled a family meeting.",
+                      "ja": "私たちは家族で話す時間を予定に入れました。",
+                      "focus": "scheduled",
+                      "jaFocus": "私たちは家族で話す時間を予定に入れました"
+                  }
+              ]
           },
           {
-            "en": "Can we schedule a call for tomorrow?",
-            "ja": "明日に電話打合せを設定できますか。",
-            "focus": "schedule a call",
-            "jaFocus": "電話・オンライン打合せを予定する"
-          }
-        ],
-        "dailyExamples": [
+              "id": "meaning-2",
+              "title": "2 訪問や作業を予定する",
+              "pattern": "SCHEDULE + visit / work",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "現場訪問や作業を日程に入れる",
+              "point": "訪問、点検、設置、試験などに使います。",
+              "examples": [
+                  {
+                      "en": "We scheduled the site visit for next Wednesday.",
+                      "ja": "私たちは現場訪問を来週水曜日に設定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "私たちは現場訪問を来週水曜日に設定しました"
+                  },
+                  {
+                      "en": "The engineer scheduled the inspection for the afternoon.",
+                      "ja": "技術者は点検を午後に予定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "技術者は点検を午後に予定しました"
+                  },
+                  {
+                      "en": "I scheduled the sample test before the client meeting.",
+                      "ja": "私は顧客との会議前にサンプル試験を予定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "私は顧客との会議前にサンプル試験を予定しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I scheduled the repair for Saturday.",
+                      "ja": "私は修理を土曜日に予定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "私は修理を土曜日に予定しました"
+                  },
+                  {
+                      "en": "She scheduled her study time after dinner.",
+                      "ja": "彼女は夕食後に勉強時間を予定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "彼女は夕食後に勉強時間を予定しました"
+                  }
+              ]
+          },
           {
-            "en": "Can we schedule a call for tomorrow?",
-            "ja": "明日に電話打合せを設定できますか。",
-            "focus": "schedule a call",
-            "jaFocus": "電話・オンライン打合せを予定する"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "schedule a call",
-        "ja": "電話・オンライン打合せを予定する",
-        "image": "会議や作業を予定に入れる",
-        "pattern": "schedule a call",
-        "examples": [
+              "id": "meaning-3",
+              "title": "3 〜の日時に予定する",
+              "pattern": "SCHEDULE A FOR B",
+              "transitivity": "他動詞",
+              "structure": "S + V + O + M",
+              "image": "予定する日時をfor以下で示す",
+              "point": "forの後ろに日時を置きます。schedule forは句動詞ではなく基本文型です。",
+              "examples": [
+                  {
+                      "en": "We scheduled the delivery for July 20.",
+                      "ja": "私たちは納品を7月20日に予定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "私たちは納品を7月20日に予定しました"
+                  },
+                  {
+                      "en": "The manager scheduled the review for 3 p.m.",
+                      "ja": "マネージャーは確認会を午後3時に設定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "マネージャーは確認会を午後3時に設定しました"
+                  },
+                  {
+                      "en": "I scheduled the presentation for the final day.",
+                      "ja": "私はプレゼンを最終日に予定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "私はプレゼンを最終日に予定しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I scheduled lunch for noon.",
+                      "ja": "私は昼食を正午に予定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "私は昼食を正午に予定しました"
+                  },
+                  {
+                      "en": "They scheduled the game for Sunday.",
+                      "ja": "彼らは試合を日曜日に予定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "彼らは試合を日曜日に予定しました"
+                  }
+              ]
+          },
           {
-            "en": "Can we schedule a call for tomorrow?",
-            "ja": "明日に電話打合せを設定できますか。",
-            "focus": "schedule a call",
-            "jaFocus": "電話・オンライン打合せを予定する"
+              "id": "meaning-4",
+              "title": "4 予定されている",
+              "pattern": "BE SCHEDULED FOR / TO DO",
+              "transitivity": "受け身",
+              "structure": "S + be + V-ed + M",
+              "image": "すでに予定として決まっている",
+              "point": "受け身で、予定日時や予定行動を示します。",
+              "examples": [
+                  {
+                      "en": "The delivery is scheduled for Friday.",
+                      "ja": "納品は金曜日に予定されています。",
+                      "focus": "scheduled",
+                      "jaFocus": "納品は金曜日に予定されています"
+                  },
+                  {
+                      "en": "The system test is scheduled to start at 10 a.m.",
+                      "ja": "システム試験は午前10時に始まる予定です。",
+                      "focus": "scheduled",
+                      "jaFocus": "システム試験は午前10時に始まる予定です"
+                  },
+                  {
+                      "en": "The client meeting has been scheduled for next week.",
+                      "ja": "顧客との会議は来週に予定されています。",
+                      "focus": "scheduled",
+                      "jaFocus": "顧客との会議は来週に予定されています"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "The train is scheduled to arrive at six.",
+                      "ja": "その電車は6時に到着する予定です。",
+                      "focus": "scheduled",
+                      "jaFocus": "その電車は6時に到着する予定です"
+                  },
+                  {
+                      "en": "The event is scheduled for October.",
+                      "ja": "そのイベントは10月に予定されています。",
+                      "focus": "scheduled",
+                      "jaFocus": "そのイベントは10月に予定されています"
+                  }
+              ]
+          },
+          {
+              "id": "meaning-5",
+              "title": "5 予定を変更して入れ直す",
+              "pattern": "RESCHEDULE / SCHEDULE AGAIN",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "変更後の日時で予定を組み直す",
+              "point": "schedule自体を再度使う形やrescheduleと関連づけて理解します。",
+              "examples": [
+                  {
+                      "en": "We scheduled the meeting again after the client replied.",
+                      "ja": "顧客から返答があった後、私たちは会議を改めて設定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "顧客から返答があった後、私たちは会議を改めて設定しました"
+                  },
+                  {
+                      "en": "I scheduled a new visit after the cancellation.",
+                      "ja": "私は中止後に新しい訪問日を設定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "私は中止後に新しい訪問日を設定しました"
+                  },
+                  {
+                      "en": "The team scheduled another test for next month.",
+                      "ja": "チームは来月に追加試験を予定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "チームは来月に追加試験を予定しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I scheduled another appointment.",
+                      "ja": "私は別の予約を入れました。",
+                      "focus": "scheduled",
+                      "jaFocus": "私は別の予約を入れました"
+                  },
+                  {
+                      "en": "She scheduled a new lesson for Friday.",
+                      "ja": "彼女は金曜日に新しいレッスンを予定しました。",
+                      "focus": "scheduled",
+                      "jaFocus": "彼女は金曜日に新しいレッスンを予定しました"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
+      ],
+      "collocations": [],
+      "phrasalVerbs": [
+          {
+              "phrase": "schedule around",
+              "ja": "〜に合わせて日程を組む",
+              "image": "相手の都合や制約を避けながら予定する",
+              "pattern": "SCHEDULE AROUND + 都合・制約",
+              "examples": [
+                  {
+                      "en": "We scheduled around the client’s availability.",
+                      "ja": "私たちは顧客の都合に合わせて日程を組みました。",
+                      "focus": "scheduled around",
+                      "jaFocus": "私たちは顧客の都合に合わせて日程を組みました"
+                  },
+                  {
+                      "en": "The team scheduled around the factory shutdown.",
+                      "ja": "チームは工場停止期間を避けて日程を組みました。",
+                      "focus": "scheduled around",
+                      "jaFocus": "チームは工場停止期間を避けて日程を組みました"
+                  },
+                  {
+                      "en": "I scheduled around the technician’s travel dates.",
+                      "ja": "私は技術者の出張日程に合わせて予定を組みました。",
+                      "focus": "scheduled around",
+                      "jaFocus": "私は技術者の出張日程に合わせて予定を組みました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I scheduled around my family plans.",
+                      "ja": "私は家族の予定に合わせて日程を組みました。",
+                      "focus": "scheduled around",
+                      "jaFocus": "私は家族の予定に合わせて日程を組みました"
+                  },
+                  {
+                      "en": "She scheduled around her classes.",
+                      "ja": "彼女は授業の予定に合わせて日程を組みました。",
+                      "focus": "scheduled around",
+                      "jaFocus": "彼女は授業の予定に合わせて日程を組みました"
+                  }
+              ]
+          },
+          {
+              "phrase": "schedule in",
+              "ja": "予定に組み込む",
+              "image": "空いている時間に予定を入れる",
+              "pattern": "SCHEDULE IN + 人・作業",
+              "examples": [
+                  {
+                      "en": "We scheduled in an extra inspection before delivery.",
+                      "ja": "私たちは納品前に追加点検を予定へ組み込みました。",
+                      "focus": "scheduled in",
+                      "jaFocus": "私たちは納品前に追加点検を予定へ組み込みました"
+                  },
+                  {
+                      "en": "The manager scheduled in time for a final review.",
+                      "ja": "マネージャーは最終確認の時間を予定に組み込みました。",
+                      "focus": "scheduled in",
+                      "jaFocus": "マネージャーは最終確認の時間を予定に組み込みました"
+                  },
+                  {
+                      "en": "I scheduled in a short call with the supplier.",
+                      "ja": "私は仕入先との短い電話打ち合わせを予定に入れました。",
+                      "focus": "scheduled in",
+                      "jaFocus": "私は仕入先との短い電話打ち合わせを予定に入れました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I scheduled in some exercise this morning.",
+                      "ja": "私は今朝、運動の時間を予定に入れました。",
+                      "focus": "scheduled in",
+                      "jaFocus": "私は今朝、運動の時間を予定に入れました"
+                  },
+                  {
+                      "en": "She scheduled in a break after lunch.",
+                      "ja": "彼女は昼食後に休憩を予定へ入れました。",
+                      "focus": "scheduled in",
+                      "jaFocus": "彼女は昼食後に休憩を予定へ入れました"
+                  }
+              ]
+          }
+      ]
   },
   {
-    "id": "submit",
-    "rank": 93,
-    "word": "SUBMIT",
-    "ipa": "/səbˈmɪt/",
-    "kana": "サブミット",
-    "syllable": "sub-mit",
-    "transitivity": "他動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "書類や申請を正式に提出する",
-    "coreDetail": "SUBMITは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「提出する・申請する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
-    "meanings": [
-      {
-        "id": "business-core",
-        "title": "① 提出する・申請する",
-        "pattern": "submit a document",
-        "transitivity": "他動詞",
-        "structure": "S + V + O",
-        "image": "必要な書類や情報を相手に正式に渡す",
-        "point": "submit は report, application, document, form などを目的語にして使います。",
-        "examples": [
+      "id": "submit",
+      "rank": 93,
+      "word": "SUBMIT",
+      "ipa": "/səbˈmɪt/",
+      "kana": "サブミット",
+      "syllable": "sub-mit",
+      "transitivity": "他動詞",
+      "importance": "★★★★☆ 重要",
+      "core": "書類や申請を正式に提出する",
+      "coreDetail": "SUBMITは、書類・申請・提案などを正式な手順で提出する動詞です。基本側では提出物を扱い、submit to / for / throughは句動詞側で整理します。",
+      "meanings": [
           {
-            "en": "We submitted the quotation yesterday.",
-            "ja": "私たちは昨日、見積書を提出しました。",
-            "focus": "submitted the quotation",
-            "jaFocus": "提出する・申請する",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "主語"
-              },
-              {
-                "label": "V",
-                "text": "submit"
-              },
-              {
-                "label": "O",
-                "text": "submitted the quotation"
-              }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+              "id": "meaning-1",
+              "title": "1 書類を提出する",
+              "pattern": "SUBMIT + document",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "正式な相手や制度へ書類を渡す",
+              "point": "report、quotation、documentなどを目的語に取ります。",
+              "examples": [
+                  {
+                      "en": "We submitted the quotation yesterday.",
+                      "ja": "私たちは昨日、見積書を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "私たちは昨日、見積書を提出しました",
+                      "sentencePattern": "S + V + O",
+                      "grammarParts": [
+                          {
+                              "label": "S",
+                              "text": "We"
+                          },
+                          {
+                              "label": "V",
+                              "text": "submitted"
+                          },
+                          {
+                              "label": "O",
+                              "text": "the quotation"
+                          },
+                          {
+                              "label": "M",
+                              "text": "yesterday"
+                          }
+                      ]
+                  },
+                  {
+                      "en": "Please submit the final report by Friday.",
+                      "ja": "金曜日までに最終報告書を提出してください。",
+                      "focus": "submit",
+                      "jaFocus": "金曜日までに最終報告書を提出してください"
+                  },
+                  {
+                      "en": "The contractor submitted the required documents.",
+                      "ja": "施工会社は必要書類を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "施工会社は必要書類を提出しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I submitted my homework online.",
+                      "ja": "私は宿題をオンラインで提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "私は宿題をオンラインで提出しました"
+                  },
+                  {
+                      "en": "She submitted the form yesterday.",
+                      "ja": "彼女は昨日その用紙を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "彼女は昨日その用紙を提出しました"
+                  }
+              ]
           },
           {
-            "en": "Please submit the report by Friday.",
-            "ja": "金曜日までに報告書を提出してください。",
-            "focus": "submit a report",
-            "jaFocus": "報告書を提出する"
-          }
-        ],
-        "dailyExamples": [
+              "id": "meaning-2",
+              "title": "2 申請を提出する",
+              "pattern": "SUBMIT + application / request",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "承認や手続きを求めて申請する",
+              "point": "application、request、claimなどを目的語に取ります。",
+              "examples": [
+                  {
+                      "en": "We submitted an application for product approval.",
+                      "ja": "私たちは製品承認の申請を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "私たちは製品承認の申請を提出しました"
+                  },
+                  {
+                      "en": "The client submitted a request for a schedule change.",
+                      "ja": "顧客は日程変更の依頼を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "顧客は日程変更の依頼を提出しました"
+                  },
+                  {
+                      "en": "I submitted the expense claim this morning.",
+                      "ja": "私は今朝、経費精算を申請しました。",
+                      "focus": "submitted",
+                      "jaFocus": "私は今朝、経費精算を申請しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I submitted a job application.",
+                      "ja": "私は求人に応募書類を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "私は求人に応募書類を提出しました"
+                  },
+                  {
+                      "en": "He submitted a request for leave.",
+                      "ja": "彼は休暇申請を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "彼は休暇申請を提出しました"
+                  }
+              ]
+          },
           {
-            "en": "Please submit the report by Friday.",
-            "ja": "金曜日までに報告書を提出してください。",
-            "focus": "submit a report",
-            "jaFocus": "報告書を提出する"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "submit a report",
-        "ja": "報告書を提出する",
-        "image": "必要な書類や情報を相手に正式に渡す",
-        "pattern": "submit a report",
-        "examples": [
+              "id": "meaning-3",
+              "title": "3 提案や見積を正式に提出する",
+              "pattern": "SUBMIT + proposal / quotation",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "検討や選定のために正式資料を出す",
+              "point": "営業や入札でよく使う用法です。",
+              "examples": [
+                  {
+                      "en": "We submitted our proposal before the deadline.",
+                      "ja": "私たちは期限前に提案書を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "私たちは期限前に提案書を提出しました"
+                  },
+                  {
+                      "en": "The sales team submitted a revised quotation.",
+                      "ja": "営業チームは修正版の見積書を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "営業チームは修正版の見積書を提出しました"
+                  },
+                  {
+                      "en": "Three companies submitted bids for the project.",
+                      "ja": "3社がその案件に入札書を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "3社がその案件に入札書を提出しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I submitted my design idea yesterday.",
+                      "ja": "私は昨日、自分のデザイン案を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "デザイン案を提出する"
+                  },
+                  {
+                      "en": "She submitted a design proposal.",
+                      "ja": "彼女はデザイン提案を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "彼女はデザイン提案を提出しました"
+                  }
+              ]
+          },
           {
-            "en": "Please submit the report by Friday.",
-            "ja": "金曜日までに報告書を提出してください。",
-            "focus": "submit a report",
-            "jaFocus": "報告書を提出する"
+              "id": "meaning-4",
+              "title": "4 データや回答を送信する",
+              "pattern": "SUBMIT + data / answer",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "フォームやシステムから情報を確定送信する",
+              "point": "ウェブフォームの送信ボタンにもsubmitが使われます。",
+              "examples": [
+                  {
+                      "en": "Please submit the test data online.",
+                      "ja": "試験データをオンラインで提出してください。",
+                      "focus": "submit",
+                      "jaFocus": "オンラインで提出する"
+                  },
+                  {
+                      "en": "I submitted my answer before the time limit.",
+                      "ja": "私は制限時間前に回答を送信しました。",
+                      "focus": "submitted",
+                      "jaFocus": "私は制限時間前に回答を送信しました"
+                  },
+                  {
+                      "en": "The user submitted the registration information successfully.",
+                      "ja": "利用者は登録情報を正常に送信しました。",
+                      "focus": "submitted",
+                      "jaFocus": "利用者は登録情報を正常に送信しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I submitted the online form.",
+                      "ja": "私はオンラインフォームを送信しました。",
+                      "focus": "submitted",
+                      "jaFocus": "私はオンラインフォームを送信しました"
+                  },
+                  {
+                      "en": "She submitted her answers at noon.",
+                      "ja": "彼女は正午に回答を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "彼女は正午に回答を提出しました"
+                  }
+              ]
+          },
+          {
+              "id": "meaning-5",
+              "title": "5 期限までに提出する",
+              "pattern": "SUBMIT + O + by deadline",
+              "transitivity": "他動詞",
+              "structure": "S + V + O + M",
+              "image": "提出期限を守って正式に出す",
+              "point": "by以下で提出期限を示します。",
+              "examples": [
+                  {
+                      "en": "All teams must submit their plans by Monday.",
+                      "ja": "すべてのチームは月曜日までに計画書を提出しなければなりません。",
+                      "focus": "submit",
+                      "jaFocus": "すべてのチームは月曜日までに計画書を提出しなければなりません"
+                  },
+                  {
+                      "en": "Please submit the signed contract by the end of today.",
+                      "ja": "本日中に署名済み契約書を提出してください。",
+                      "focus": "submit",
+                      "jaFocus": "本日中に署名済み契約書を提出してください"
+                  },
+                  {
+                      "en": "We submitted the documents two days before the deadline.",
+                      "ja": "私たちは期限の2日前に書類を提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "私たちは期限の2日前に書類を提出しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I must submit the form by tomorrow.",
+                      "ja": "私は明日までにその用紙を提出しなければなりません。",
+                      "focus": "submit",
+                      "jaFocus": "私は明日までにその用紙を提出しなければなりません"
+                  },
+                  {
+                      "en": "She submitted her assignment on time.",
+                      "ja": "彼女は課題を期限どおりに提出しました。",
+                      "focus": "submitted",
+                      "jaFocus": "彼女は課題を期限どおりに提出しました"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
+      ],
+      "collocations": [],
+      "phrasalVerbs": [
+          {
+              "phrase": "submit to",
+              "ja": "〜へ提出する・〜に従う",
+              "image": "提出先や権限のある相手へ差し出す",
+              "pattern": "SUBMIT TO + 相手・機関",
+              "examples": [
+                  {
+                      "en": "The proposal was submitted to management.",
+                      "ja": "その提案書は経営陣へ提出されました。",
+                      "focus": "submitted to",
+                      "jaFocus": "その提案書は経営陣へ提出されました"
+                  },
+                  {
+                      "en": "The application was submitted to the local authority.",
+                      "ja": "その申請書は地方当局へ提出されました。",
+                      "focus": "submitted to",
+                      "jaFocus": "その申請書は地方当局へ提出されました"
+                  },
+                  {
+                      "en": "The final report was submitted to the client.",
+                      "ja": "最終報告書は顧客へ提出されました。",
+                      "focus": "submitted to",
+                      "jaFocus": "最終報告書は顧客へ提出されました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "My application was submitted to the school.",
+                      "ja": "私の申請書は学校へ提出されました。",
+                      "focus": "submitted to",
+                      "jaFocus": "私の申請書は学校へ提出されました"
+                  },
+                  {
+                      "en": "The form was submitted to the office.",
+                      "ja": "その用紙は事務局へ提出されました。",
+                      "focus": "submitted to",
+                      "jaFocus": "その用紙は事務局へ提出されました"
+                  }
+              ]
+          },
+          {
+              "phrase": "submit for",
+              "ja": "〜を得るために提出する",
+              "image": "承認・確認・検討を目的として提出する",
+              "pattern": "SUBMIT FOR + approval / review",
+              "examples": [
+                  {
+                      "en": "The design was submitted for approval.",
+                      "ja": "その設計は承認を得るために提出されました。",
+                      "focus": "submitted for",
+                      "jaFocus": "その設計は承認を得るために提出されました"
+                  },
+                  {
+                      "en": "The sample was submitted for testing.",
+                      "ja": "そのサンプルは試験のために提出されました。",
+                      "focus": "submitted for",
+                      "jaFocus": "そのサンプルは試験のために提出されました"
+                  },
+                  {
+                      "en": "The contract was submitted for legal review.",
+                      "ja": "その契約書は法務確認のために提出されました。",
+                      "focus": "submitted for",
+                      "jaFocus": "その契約書は法務確認のために提出されました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "My photo was submitted for the contest.",
+                      "ja": "私の写真はコンテスト審査のために提出されました。",
+                      "focus": "submitted for",
+                      "jaFocus": "私の写真はコンテスト審査のために提出されました"
+                  },
+                  {
+                      "en": "The document was submitted for review.",
+                      "ja": "その書類は確認のために提出されました。",
+                      "focus": "submitted for",
+                      "jaFocus": "その書類は確認のために提出されました"
+                  }
+              ]
+          },
+          {
+              "phrase": "submit through",
+              "ja": "〜を通して提出する",
+              "image": "システム・代理人・窓口を経由して提出する",
+              "pattern": "SUBMIT THROUGH + 手段・窓口",
+              "examples": [
+                  {
+                      "en": "The request was submitted through the online portal.",
+                      "ja": "その依頼はオンラインポータルを通して提出されました。",
+                      "focus": "submitted through",
+                      "jaFocus": "その依頼はオンラインポータルを通して提出されました"
+                  },
+                  {
+                      "en": "The documents were submitted through our distributor.",
+                      "ja": "書類は私たちの販売代理店を通して提出されました。",
+                      "focus": "submitted through",
+                      "jaFocus": "書類は私たちの販売代理店を通して提出されました"
+                  },
+                  {
+                      "en": "The expense claim was submitted through the company system.",
+                      "ja": "経費申請は社内システムを通して提出されました。",
+                      "focus": "submitted through",
+                      "jaFocus": "経費申請は社内システムを通して提出されました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "The form was submitted through the website.",
+                      "ja": "その用紙はウェブサイトを通して提出されました。",
+                      "focus": "submitted through",
+                      "jaFocus": "その用紙はウェブサイトを通して提出されました"
+                  },
+                  {
+                      "en": "My application was submitted through an agency.",
+                      "ja": "私の申請書は代理店を通して提出されました。",
+                      "focus": "submitted through",
+                      "jaFocus": "私の申請書は代理店を通して提出されました"
+                  }
+              ]
+          }
+      ]
   },
   {
-    "id": "cancel",
-    "rank": 94,
-    "word": "CANCEL",
-    "ipa": "/ˈkænsəl/",
-    "kana": "キャンセル",
-    "syllable": "can-cel",
-    "transitivity": "他動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "予定や注文を止める",
-    "coreDetail": "CANCELは、仕事でも日常でも使いやすい基本動詞です。まずは「キャンセルする・中止する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
-    "meanings": [
-      {
-        "id": "m1",
-        "title": "① キャンセルする・中止する",
-        "pattern": "cancel an order",
-        "transitivity": "他動詞",
-        "structure": "S + V + O（目的語）",
-        "image": "予定や注文を止める",
-        "point": "cancel の後ろに「何をキャンセルする・中止するのか」を置きます。仕事では cancel an order の形でよく使います。",
-        "examples": [
+      "id": "cancel",
+      "rank": 94,
+      "word": "CANCEL",
+      "ipa": "/ˈkænsəl/",
+      "kana": "キャンセル",
+      "syllable": "can-cel",
+      "transitivity": "他動詞",
+      "importance": "★★★★☆ 重要",
+      "core": "予定や注文を止める",
+      "coreDetail": "CANCELは、予定・注文・契約・サービスなどを取りやめる他動詞です。基本側では取り消す対象を整理し、自然な句動詞cancel outは別に扱います。",
+      "meanings": [
           {
-            "en": "The customer canceled the order yesterday.",
-            "ja": "その顧客は昨日、注文をキャンセルしました。",
-            "focus": "customer",
-            "object": "an order",
-            "jaFocus": "キャンセルする",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "The"
-              },
-              {
-                "label": "V",
-                "text": "customer"
-              },
-              {
-                "label": "O",
-                "text": "an order"
-              }
-            ]
+              "id": "meaning-1",
+              "title": "1 会議や予定を中止する",
+              "pattern": "CANCEL + meeting / plan",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "決まっていた予定を取りやめる",
+              "point": "meeting、visit、eventなどを目的語に取ります。",
+              "examples": [
+                  {
+                      "en": "We canceled the meeting because of the weather.",
+                      "ja": "私たちは天候のため会議を中止しました。",
+                      "focus": "canceled",
+                      "jaFocus": "私たちは天候のため会議を中止しました",
+                      "sentencePattern": "S + V + O + M",
+                      "grammarParts": [
+                          {
+                              "label": "S",
+                              "text": "We"
+                          },
+                          {
+                              "label": "V",
+                              "text": "canceled"
+                          },
+                          {
+                              "label": "O",
+                              "text": "the meeting"
+                          },
+                          {
+                              "label": "M",
+                              "text": "because of the weather"
+                          }
+                      ]
+                  },
+                  {
+                      "en": "The client canceled the site visit.",
+                      "ja": "顧客は現場訪問を中止しました。",
+                      "focus": "canceled",
+                      "jaFocus": "顧客は現場訪問を中止しました"
+                  },
+                  {
+                      "en": "I canceled my appointment for Friday.",
+                      "ja": "私は金曜日の予約をキャンセルしました。",
+                      "focus": "canceled",
+                      "jaFocus": "私は金曜日の予約をキャンセルしました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I canceled my weekend plans.",
+                      "ja": "私は週末の予定を取りやめました。",
+                      "focus": "canceled",
+                      "jaFocus": "私は週末の予定を取りやめました"
+                  },
+                  {
+                      "en": "They canceled the outdoor event.",
+                      "ja": "彼らは屋外イベントを中止しました。",
+                      "focus": "canceled",
+                      "jaFocus": "彼らは屋外イベントを中止しました"
+                  }
+              ]
           },
           {
-            "en": "I canceled my plan because it rained.",
-            "ja": "雨が降ったので、私は予定をキャンセルしました。",
-            "focus": "cancel",
-            "jaFocus": "キャンセルする"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "cancel a meeting",
-        "ja": "会議を中止する",
-        "image": "予定や注文を止める",
-        "pattern": "cancel a meeting",
-        "examples": [
+              "id": "meaning-2",
+              "title": "2 注文や予約を取り消す",
+              "pattern": "CANCEL + order / reservation",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "発注済み・予約済みの内容を取り消す",
+              "point": "order、booking、reservationなどに使います。",
+              "examples": [
+                  {
+                      "en": "The customer canceled the order yesterday.",
+                      "ja": "顧客は昨日、その注文を取り消しました。",
+                      "focus": "canceled",
+                      "jaFocus": "顧客は昨日、その注文を取り消しました",
+                      "sentencePattern": "S + V + O + M",
+                      "grammarParts": [
+                          {
+                              "label": "S",
+                              "text": "The customer"
+                          },
+                          {
+                              "label": "V",
+                              "text": "canceled"
+                          },
+                          {
+                              "label": "O",
+                              "text": "the order"
+                          },
+                          {
+                              "label": "M",
+                              "text": "yesterday"
+                          }
+                      ]
+                  },
+                  {
+                      "en": "We canceled the hotel reservation without a fee.",
+                      "ja": "私たちは手数料なしでホテルの予約を取り消しました。",
+                      "focus": "canceled",
+                      "jaFocus": "私たちは手数料なしでホテルの予約を取り消しました"
+                  },
+                  {
+                      "en": "Please cancel the duplicate purchase order.",
+                      "ja": "重複した発注書を取り消してください。",
+                      "focus": "cancel",
+                      "jaFocus": "重複した発注書を取り消してください"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I canceled my restaurant booking.",
+                      "ja": "私はレストランの予約をキャンセルしました。",
+                      "focus": "canceled",
+                      "jaFocus": "私はレストランの予約をキャンセルしました"
+                  },
+                  {
+                      "en": "She canceled the online order.",
+                      "ja": "彼女はオンライン注文を取り消しました。",
+                      "focus": "canceled",
+                      "jaFocus": "彼女はオンライン注文を取り消しました"
+                  }
+              ]
+          },
           {
-            "en": "We canceled the meeting because the client was unavailable.",
-            "ja": "クライアントの都合が合わなかったため、私たちは会議を中止しました。",
-            "focus": "cancel a meeting",
-            "jaFocus": "会議を中止する",
-            "object": "a meeting"
+              "id": "meaning-3",
+              "title": "3 契約やサービスを解約する",
+              "pattern": "CANCEL + contract / service",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "継続中の契約や利用を終了する",
+              "point": "契約、会員登録、定期サービスなどに使います。",
+              "examples": [
+                  {
+                      "en": "The company canceled the maintenance contract.",
+                      "ja": "その会社は保守契約を解約しました。",
+                      "focus": "canceled",
+                      "jaFocus": "その会社は保守契約を解約しました"
+                  },
+                  {
+                      "en": "I canceled the subscription before renewal.",
+                      "ja": "私は更新前に定期契約を解約しました。",
+                      "focus": "canceled",
+                      "jaFocus": "私は更新前に定期契約を解約しました"
+                  },
+                  {
+                      "en": "The client decided to cancel the optional service.",
+                      "ja": "顧客はオプションサービスを解約することを決めました。",
+                      "focus": "cancel",
+                      "jaFocus": "顧客はオプションサービスを解約することを決めました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I canceled my gym membership.",
+                      "ja": "私はジムの会員契約を解約しました。",
+                      "focus": "canceled",
+                      "jaFocus": "私はジムの会員契約を解約しました"
+                  },
+                  {
+                      "en": "She canceled the streaming service.",
+                      "ja": "彼女は動画配信サービスを解約しました。",
+                      "focus": "canceled",
+                      "jaFocus": "彼女は動画配信サービスを解約しました"
+                  }
+              ]
+          },
+          {
+              "id": "meaning-4",
+              "title": "4 処理や申請を取り消す",
+              "pattern": "CANCEL + request / payment",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "進行中の処理を無効にする",
+              "point": "申請、支払い、送信処理などにも使います。",
+              "examples": [
+                  {
+                      "en": "We canceled the payment before it was processed.",
+                      "ja": "私たちは処理前に支払いを取り消しました。",
+                      "focus": "canceled",
+                      "jaFocus": "私たちは処理前に支払いを取り消しました"
+                  },
+                  {
+                      "en": "The user canceled the download.",
+                      "ja": "利用者はダウンロードを中止しました。",
+                      "focus": "canceled",
+                      "jaFocus": "利用者はダウンロードを中止しました"
+                  },
+                  {
+                      "en": "Please cancel the previous request.",
+                      "ja": "以前の依頼を取り消してください。",
+                      "focus": "cancel",
+                      "jaFocus": "以前の依頼を取り消してください"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I canceled the file transfer.",
+                      "ja": "私はファイル転送を中止しました。",
+                      "focus": "canceled",
+                      "jaFocus": "私はファイル転送を中止しました"
+                  },
+                  {
+                      "en": "He canceled the print job.",
+                      "ja": "彼は印刷処理を中止しました。",
+                      "focus": "canceled",
+                      "jaFocus": "彼は印刷処理を中止しました"
+                  }
+              ]
+          },
+          {
+              "id": "meaning-5",
+              "title": "5 中止になる・取り消される",
+              "pattern": "BE CANCELED",
+              "transitivity": "受け身",
+              "structure": "S + be + V-ed",
+              "image": "予定や処理が取り消された状態",
+              "point": "受け身で、中止された予定や注文を主語にできます。",
+              "examples": [
+                  {
+                      "en": "The exhibition was canceled due to the storm.",
+                      "ja": "展示会は嵐のため中止されました。",
+                      "focus": "canceled",
+                      "jaFocus": "展示会は嵐のため中止されました"
+                  },
+                  {
+                      "en": "The order was canceled automatically.",
+                      "ja": "その注文は自動的に取り消されました。",
+                      "focus": "canceled",
+                      "jaFocus": "その注文は自動的に取り消されました"
+                  },
+                  {
+                      "en": "Tomorrow’s installation has been canceled.",
+                      "ja": "明日の設置作業は中止になりました。",
+                      "focus": "canceled",
+                      "jaFocus": "明日の設置作業は中止になりました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "The game was canceled because of rain.",
+                      "ja": "試合は雨のため中止されました。",
+                      "focus": "canceled",
+                      "jaFocus": "試合は雨のため中止されました"
+                  },
+                  {
+                      "en": "My flight was canceled this morning.",
+                      "ja": "私の飛行機は今朝欠航になりました。",
+                      "focus": "canceled",
+                      "jaFocus": "私の飛行機は今朝欠航になりました"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
+      ],
+      "collocations": [],
+      "phrasalVerbs": [
+          {
+              "phrase": "cancel out",
+              "ja": "相殺する・効果を打ち消す",
+              "image": "反対の作用で結果をゼロに近づける",
+              "pattern": "CANCEL OUT + 効果・費用",
+              "examples": [
+                  {
+                      "en": "The additional discount canceled out the delivery cost.",
+                      "ja": "追加値引きによって配送費が相殺されました。",
+                      "focus": "canceled out",
+                      "jaFocus": "追加値引きによって配送費が相殺されました"
+                  },
+                  {
+                      "en": "The two adjustments canceled each other out.",
+                      "ja": "2つの調整が互いの効果を打ち消しました。",
+                      "focus": "canceled out",
+                      "jaFocus": "2つの調整が互いの効果を打ち消しました"
+                  },
+                  {
+                      "en": "Higher efficiency can cancel out the initial cost difference.",
+                      "ja": "効率の向上によって初期費用の差を相殺できます。",
+                      "focus": "cancel out",
+                      "jaFocus": "効率の向上によって初期費用の差を相殺できます"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "The gains and losses canceled each other out.",
+                      "ja": "利益と損失が互いに相殺されました。",
+                      "focus": "canceled out",
+                      "jaFocus": "利益と損失が互いに相殺されました"
+                  },
+                  {
+                      "en": "The noise-canceling headphones cancel out background sound.",
+                      "ja": "そのノイズキャンセリングヘッドホンは周囲の音を打ち消します。",
+                      "focus": "cancel out",
+                      "jaFocus": "そのノイズキャンセリングヘッドホンは周囲の音を打ち消します"
+                  }
+              ]
+          }
+      ]
   },
   {
-    "id": "connect",
-    "rank": 95,
-    "word": "CONNECT",
-    "ipa": "/kəˈnekt/",
-    "kana": "コネクト",
-    "syllable": "con-nect",
-    "transitivity": "他動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "人・物・情報をつなげる",
-    "coreDetail": "CONNECTは、仕事でも日常でも使いやすい基本動詞です。まずは「つなぐ・接続する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
-    "meanings": [
-      {
-        "id": "m1",
-        "title": "① つなぐ・接続する",
-        "pattern": "connect a to b",
-        "transitivity": "他動詞",
-        "structure": "S + V + O（目的語）",
-        "image": "人・物・情報をつなげる",
-        "point": "connect の後ろに「何をつなぐ・接続するのか」を置きます。仕事では connect A to B の形でよく使います。",
-        "examples": [
+      "id": "connect",
+      "rank": 95,
+      "word": "CONNECT",
+      "ipa": "/kəˈnekt/",
+      "kana": "コネクト",
+      "syllable": "con-nect",
+      "transitivity": "他動詞・自動詞",
+      "importance": "★★★★☆ 重要",
+      "core": "人・物・情報をつなげる",
+      "coreDetail": "CONNECTは、機器・システム・人・情報をつなぐ動詞です。他動詞のconnect A to Bと、自動詞のconnect to / withを区別し、実用的な前置詞・副詞表現は句動詞側で整理します。",
+      "meanings": [
           {
-            "en": "Please connect this cable to the controller.",
-            "ja": "このケーブルをコントローラーにつないでください。",
-            "focus": "connect",
-            "object": "A to B",
-            "jaFocus": "つなぐ",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "you（省略）"
-              },
-              {
-                "label": "V",
-                "text": "please"
-              },
-              {
-                "label": "O",
-                "text": "A to B"
-              }
-            ]
+              "id": "meaning-1",
+              "title": "1 物をつなぐ",
+              "pattern": "CONNECT + A + TO + B",
+              "transitivity": "他動詞",
+              "structure": "S + V + O + M",
+              "image": "2つの物理的な物を接続する",
+              "point": "ケーブル、電源、機器などを接続する基本文型です。",
+              "examples": [
+                  {
+                      "en": "Please connect this cable to the controller.",
+                      "ja": "このケーブルをコントローラーに接続してください。",
+                      "focus": "connect",
+                      "jaFocus": "このケーブルをコントローラーに接続してください",
+                      "sentencePattern": "V + O + M",
+                      "grammarParts": [
+                          {
+                              "label": "M",
+                              "text": "Please"
+                          },
+                          {
+                              "label": "V",
+                              "text": "connect"
+                          },
+                          {
+                              "label": "O",
+                              "text": "this cable"
+                          },
+                          {
+                              "label": "M",
+                              "text": "to the controller"
+                          }
+                      ]
+                  },
+                  {
+                      "en": "I connected my phone to the speaker.",
+                      "ja": "私はスマートフォンをスピーカーに接続しました。",
+                      "focus": "connected",
+                      "jaFocus": "私はスマートフォンをスピーカーに接続しました"
+                  },
+                  {
+                      "en": "The installer connected the power supply to the module.",
+                      "ja": "施工担当者は電源をモジュールに接続しました。",
+                      "focus": "connected",
+                      "jaFocus": "施工担当者は電源をモジュールに接続しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I connected the charger to my laptop.",
+                      "ja": "私は充電器をノートパソコンに接続しました。",
+                      "focus": "connected",
+                      "jaFocus": "私は充電器をノートパソコンに接続しました"
+                  },
+                  {
+                      "en": "She connected the hose to the tap.",
+                      "ja": "彼女はホースを蛇口につなぎました。",
+                      "focus": "connected",
+                      "jaFocus": "彼女はホースを蛇口につなぎました"
+                  }
+              ]
           },
           {
-            "en": "I connected my phone to the speaker.",
-            "ja": "私はスマホをスピーカーに接続しました。",
-            "focus": "connect",
-            "jaFocus": "つなぐ"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "connect with a client",
-        "ja": "顧客と関係を作る",
-        "image": "人・物・情報をつなげる",
-        "pattern": "connect with a client",
-        "examples": [
+              "id": "meaning-2",
+              "title": "2 場所や設備を結ぶ",
+              "pattern": "CONNECT + places / systems",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "2つの場所や仕組みを結び付ける",
+              "point": "道路、回線、システムなどにも使います。",
+              "examples": [
+                  {
+                      "en": "This cable connects the control room and the display.",
+                      "ja": "このケーブルは制御室と表示装置をつないでいます。",
+                      "focus": "connects",
+                      "jaFocus": "このケーブルは制御室と表示装置をつないでいます"
+                  },
+                  {
+                      "en": "The new API connects the sales system and the inventory database.",
+                      "ja": "新しいAPIは営業システムと在庫データベースを接続します。",
+                      "focus": "connects",
+                      "jaFocus": "新しいAPIは営業システムと在庫データベースを接続します"
+                  },
+                  {
+                      "en": "A covered walkway connects the two buildings.",
+                      "ja": "屋根付き通路が2つの建物を結んでいます。",
+                      "focus": "connects",
+                      "jaFocus": "屋根付き通路が2つの建物を結んでいます"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "A bridge connects the island to the mainland.",
+                      "ja": "橋がその島と本土を結んでいます。",
+                      "focus": "connects",
+                      "jaFocus": "橋がその島と本土を結んでいます"
+                  },
+                  {
+                      "en": "This road connects two small towns.",
+                      "ja": "この道路は2つの小さな町を結んでいます。",
+                      "focus": "connects",
+                      "jaFocus": "この道路は2つの小さな町を結んでいます"
+                  }
+              ]
+          },
           {
-            "en": "We need to connect with the client before sending the proposal.",
-            "ja": "提案書を送る前に、私たちは顧客と関係を作る必要があります。",
-            "focus": "connect with a client",
-            "jaFocus": "顧客と関係を作る",
-            "object": "with a client"
+              "id": "meaning-3",
+              "title": "3 情報や考えを結び付ける",
+              "pattern": "CONNECT + information / ideas",
+              "transitivity": "他動詞",
+              "structure": "S + V + O",
+              "image": "別々の情報の関係を理解する",
+              "point": "事実、原因、結果、考えを関連づける場合に使います。",
+              "examples": [
+                  {
+                      "en": "The report connects customer feedback with product improvements.",
+                      "ja": "その報告書は顧客の意見と製品改善を結び付けています。",
+                      "focus": "connects",
+                      "jaFocus": "その報告書は顧客の意見と製品改善を結び付けています"
+                  },
+                  {
+                      "en": "We connected the sales decline to the supply delay.",
+                      "ja": "私たちは売上減少を供給遅延と関連づけました。",
+                      "focus": "connected",
+                      "jaFocus": "私たちは売上減少を供給遅延と関連づけました"
+                  },
+                  {
+                      "en": "The presentation connected the technical details with customer benefits.",
+                      "ja": "そのプレゼンは技術的な詳細と顧客の利点を結び付けました。",
+                      "focus": "connected",
+                      "jaFocus": "そのプレゼンは技術的な詳細と顧客の利点を結び付けました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I connected the story with my own experience.",
+                      "ja": "私はその話を自分の経験と結び付けました。",
+                      "focus": "connected",
+                      "jaFocus": "私はその話を自分の経験と結び付けました"
+                  },
+                  {
+                      "en": "She connected the two clues quickly.",
+                      "ja": "彼女は2つの手掛かりをすぐに結び付けました。",
+                      "focus": "connected",
+                      "jaFocus": "彼女は2つの手掛かりをすぐに結び付けました"
+                  }
+              ]
+          },
+          {
+              "id": "meaning-4",
+              "title": "4 人を紹介してつなぐ",
+              "pattern": "CONNECT + 人 + WITH + 人",
+              "transitivity": "他動詞",
+              "structure": "S + V + O + M",
+              "image": "必要な相手同士を引き合わせる",
+              "point": "人と人を紹介して関係を作る場合に使います。",
+              "examples": [
+                  {
+                      "en": "I connected the client with our technical manager.",
+                      "ja": "私は顧客を当社の技術責任者につなぎました。",
+                      "focus": "connected",
+                      "jaFocus": "私は顧客を当社の技術責任者につなぎました"
+                  },
+                  {
+                      "en": "The distributor connected us with a local contractor.",
+                      "ja": "販売代理店は私たちを地元の施工会社に紹介しました。",
+                      "focus": "connected",
+                      "jaFocus": "販売代理店は私たちを地元の施工会社に紹介しました"
+                  },
+                  {
+                      "en": "Please connect the customer with the support team.",
+                      "ja": "顧客をサポートチームにつないでください。",
+                      "focus": "connect",
+                      "jaFocus": "顧客をサポートチームにつないでください"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "My friend connected me with a travel agent.",
+                      "ja": "友人が私を旅行代理店に紹介してくれました。",
+                      "focus": "connected",
+                      "jaFocus": "友人が私を旅行代理店に紹介してくれました"
+                  },
+                  {
+                      "en": "She connected two people with similar interests.",
+                      "ja": "彼女は興味が似ている2人を引き合わせました。",
+                      "focus": "connected",
+                      "jaFocus": "彼女は興味が似ている2人を引き合わせました"
+                  }
+              ]
+          },
+          {
+              "id": "meaning-5",
+              "title": "5 接続状態を確認する",
+              "pattern": "BE CONNECTED / STAY CONNECTED",
+              "transitivity": "受け身・状態",
+              "structure": "S + be + V-ed",
+              "image": "機器や人がつながっている状態",
+              "point": "接続済みの状態や関係が続くことを表します。",
+              "examples": [
+                  {
+                      "en": "The controller is connected correctly.",
+                      "ja": "コントローラーは正しく接続されています。",
+                      "focus": "connected",
+                      "jaFocus": "コントローラーは正しく接続されています"
+                  },
+                  {
+                      "en": "All modules must remain connected during the test.",
+                      "ja": "試験中はすべてのモジュールを接続した状態にしておく必要があります。",
+                      "focus": "connected",
+                      "jaFocus": "試験中はすべてのモジュールを接続した状態にしておく必要があります"
+                  },
+                  {
+                      "en": "The remote unit remains connected during operation.",
+                      "ja": "遠隔装置は動作中も接続された状態を保ちます。",
+                      "focus": "connected",
+                      "jaFocus": "接続された状態を保つ"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "My phone is connected and ready to use.",
+                      "ja": "私のスマートフォンは接続済みで、使用できる状態です。",
+                      "focus": "connected",
+                      "jaFocus": "接続済みである"
+                  },
+                  {
+                      "en": "We stayed connected during the trip.",
+                      "ja": "私たちは旅行中も連絡を取り合いました。",
+                      "focus": "connected",
+                      "jaFocus": "私たちは旅行中も連絡を取り合いました"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
+      ],
+      "collocations": [],
+      "phrasalVerbs": [
+          {
+              "phrase": "connect to",
+              "ja": "〜に接続する",
+              "image": "機器・ネットワーク・サービスへつながる",
+              "pattern": "CONNECT TO + 機器・ネットワーク",
+              "examples": [
+                  {
+                      "en": "The app connects to the server automatically.",
+                      "ja": "そのアプリは自動的にサーバーへ接続します。",
+                      "focus": "connects to",
+                      "jaFocus": "そのアプリは自動的にサーバーへ接続します"
+                  },
+                  {
+                      "en": "The controller connected to the network successfully.",
+                      "ja": "コントローラーはネットワークへ正常に接続しました。",
+                      "focus": "connected to",
+                      "jaFocus": "コントローラーはネットワークへ正常に接続しました"
+                  },
+                  {
+                      "en": "Please check whether the device can connect to Wi-Fi.",
+                      "ja": "その機器がWi-Fiに接続できるか確認してください。",
+                      "focus": "connect to",
+                      "jaFocus": "その機器がWi-Fiに接続できるか確認してください"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "My laptop connects to the internet quickly.",
+                      "ja": "私のノートパソコンはすぐにインターネットへ接続します。",
+                      "focus": "connects to",
+                      "jaFocus": "私のノートパソコンはすぐにインターネットへ接続します"
+                  },
+                  {
+                      "en": "The speaker connected to my phone.",
+                      "ja": "スピーカーは私のスマートフォンに接続しました。",
+                      "focus": "connected to",
+                      "jaFocus": "スピーカーは私のスマートフォンに接続しました"
+                  }
+              ]
+          },
+          {
+              "phrase": "connect with",
+              "ja": "〜とつながる・関係を築く",
+              "image": "人や組織と交流して関係を作る",
+              "pattern": "CONNECT WITH + 人・組織",
+              "examples": [
+                  {
+                      "en": "I connected with the client at the exhibition.",
+                      "ja": "私は展示会で顧客とつながりました。",
+                      "focus": "connected with",
+                      "jaFocus": "私は展示会で顧客とつながりました"
+                  },
+                  {
+                      "en": "Our sales team connects with new partners online.",
+                      "ja": "私たちの営業チームはオンラインで新しい協力会社と関係を築いています。",
+                      "focus": "connects with",
+                      "jaFocus": "私たちの営業チームはオンラインで新しい協力会社と関係を築いています"
+                  },
+                  {
+                      "en": "She connected with the project manager directly.",
+                      "ja": "彼女はプロジェクトマネージャーと直接つながりました。",
+                      "focus": "connected with",
+                      "jaFocus": "彼女はプロジェクトマネージャーと直接つながりました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I connected with an old friend again.",
+                      "ja": "私は昔の友人と再びつながりました。",
+                      "focus": "connected with",
+                      "jaFocus": "私は昔の友人と再びつながりました"
+                  },
+                  {
+                      "en": "He connects with people easily.",
+                      "ja": "彼は人とすぐに打ち解けます。",
+                      "focus": "connects with",
+                      "jaFocus": "彼は人とすぐに打ち解けます"
+                  }
+              ]
+          },
+          {
+              "phrase": "connect through",
+              "ja": "〜を通して接続する・つながる",
+              "image": "中継手段や紹介者を介してつながる",
+              "pattern": "CONNECT THROUGH + 手段・人",
+              "examples": [
+                  {
+                      "en": "The lighting system connects through a central controller.",
+                      "ja": "照明システムは中央コントローラーを通して接続されます。",
+                      "focus": "connects through",
+                      "jaFocus": "照明システムは中央コントローラーを通して接続されます"
+                  },
+                  {
+                      "en": "We connected through a mutual business partner.",
+                      "ja": "私たちは共通の取引先を通してつながりました。",
+                      "focus": "connected through",
+                      "jaFocus": "私たちは共通の取引先を通してつながりました"
+                  },
+                  {
+                      "en": "The remote units connect through the company network.",
+                      "ja": "遠隔装置は社内ネットワークを通して接続します。",
+                      "focus": "connect through",
+                      "jaFocus": "遠隔装置は社内ネットワークを通して接続します"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "We connected through social media.",
+                      "ja": "私たちはSNSを通してつながりました。",
+                      "focus": "connected through",
+                      "jaFocus": "私たちはSNSを通してつながりました"
+                  },
+                  {
+                      "en": "The two devices connect through Bluetooth.",
+                      "ja": "2つの機器はBluetoothを通して接続します。",
+                      "focus": "connect through",
+                      "jaFocus": "2つの機器はBluetoothを通して接続します"
+                  }
+              ]
+          },
+          {
+              "phrase": "connect up",
+              "ja": "機器を接続して使える状態にする",
+              "image": "複数のケーブルや機器をまとめて接続する",
+              "pattern": "CONNECT UP + 機器",
+              "examples": [
+                  {
+                      "en": "Please connect up the controller before the test.",
+                      "ja": "試験前にコントローラーを接続してください。",
+                      "focus": "connect up",
+                      "jaFocus": "試験前にコントローラーを接続してください"
+                  },
+                  {
+                      "en": "The technician connected up all the display units.",
+                      "ja": "技術者はすべての表示装置を接続しました。",
+                      "focus": "connected up",
+                      "jaFocus": "技術者はすべての表示装置を接続しました"
+                  },
+                  {
+                      "en": "We connected up the temporary lighting system.",
+                      "ja": "私たちは仮設照明システムを接続しました。",
+                      "focus": "connected up",
+                      "jaFocus": "私たちは仮設照明システムを接続しました"
+                  }
+              ],
+              "dailyExamples": [
+                  {
+                      "en": "I connected up the new printer.",
+                      "ja": "私は新しいプリンターを接続しました。",
+                      "focus": "connected up",
+                      "jaFocus": "私は新しいプリンターを接続しました"
+                  },
+                  {
+                      "en": "He connected up the speakers for the party.",
+                      "ja": "彼はパーティー用のスピーカーを接続しました。",
+                      "focus": "connected up",
+                      "jaFocus": "彼はパーティー用のスピーカーを接続しました"
+                  }
+              ]
+          }
+      ]
   },
   {
     "id": "respond",

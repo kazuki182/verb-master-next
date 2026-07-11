@@ -1,10 +1,10 @@
 # QUALITY AUDIT CURRENT
 
 ## Current audit target
-CHECK / DECIDE / EXPLAIN
+IMPROVE / MANAGE / PREPARE
 
 ## Status
-Reworked and evaluated. ZIP not generated in this step.
+Final ZIP generated for re-audit release.
 
 ## Persistence / UI safeguards
 - Ver.145 auth / restore / persistence design preserved

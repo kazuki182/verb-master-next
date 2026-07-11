@@ -1,6 +1,6 @@
 # Verb Master
 
-Current working version includes CHECK / DECIDE / EXPLAIN re-audit changes.
+Current working version includes IMPROVE / MANAGE / PREPARE re-audit changes.
 
 - Save foundation preserved
 - User clean profile UI preserved

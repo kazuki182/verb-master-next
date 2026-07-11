@@ -1,15 +1,15 @@
 # Verb Master
 
-Current: Ver.153 PLAN / OFFER / SUPPORT Reaudit Final
+Current: Ver.155 DELIVER / SOLVE / REPORT Reaudit Final
 
-- 対象動詞: PLAN / OFFER / SUPPORT
+- 対象動詞: DELIVER / SOLVE / REPORT
+- DELIVER 句動詞: 6個
+- SOLVE 句動詞: 4個
+- REPORT 句動詞: 5個
+- カテゴリは「基本」「句動詞」のみ
+- collocations は空に整理
+- 基本の赤文字は動詞のみ
+- 句動詞の赤文字は動詞 + 前置詞/副詞まで
+- 目的語は赤文字対象外
 - 追加SQLなし
 - Ver.145 保存基盤、Ver.146 クリーンUI、Ver.140 検索BOXを維持
-
-
-Current working version includes IMPROVE / MANAGE / PREPARE re-audit changes.
-
-- Save foundation preserved
-- User clean profile UI preserved
-- Simple prefix search preserved
-- No additional SQL for this re-audit

@@ -6,7 +6,7 @@ export const runtime = "nodejs";
 
 const AVATAR_BUCKET = "avatars";
 const MAX_AVATAR_BYTES = 1024 * 1024;
-const APP_VERSION = "v143-deploy-safe-persistence-system";
+const APP_VERSION = "v158-profile-source-of-truth";
 
 function json(status: number, payload: Record<string, unknown>) {
   return NextResponse.json(payload, { status });
@@ -115,6 +115,30 @@ export async function POST(request: NextRequest) {
       profileUpdatedAt: now,
     };
 
+    const profileSaved = await admin.from("user_profiles").upsert({
+      username,
+      display_name: String(existingProgress.displayName || username),
+      avatar_url: publicUrl,
+      avatar_path: path,
+      updated_at: now,
+      app_version: APP_VERSION,
+    }, { onConflict: "username" }).select("avatar_url,avatar_path,updated_at").single();
+
+    if (profileSaved.error) {
+      await safeRemoveAvatar(admin, path);
+      throw new Error(`プロフィール専用テーブルへの画像保存に失敗しました: ${profileSaved.error.message}`);
+    }
+
+    const verified = await admin.from("user_profiles")
+      .select("avatar_url,avatar_path,updated_at")
+      .eq("username", username)
+      .single();
+    if (verified.error || verified.data?.avatar_path !== path || verified.data?.avatar_url !== publicUrl) {
+      await safeRemoveAvatar(admin, path);
+      throw new Error("保存後の再確認で画像情報が一致しませんでした。前の画像は維持されています。");
+    }
+
+    // Legacy backup is updated for backward compatibility only. The dedicated table is the source of truth.
     const upserted = await admin.rpc("vm_upsert_progress_backup", {
       p_username: username,
       p_password_hash: passwordHash,
@@ -124,8 +148,8 @@ export async function POST(request: NextRequest) {
     });
 
     if (upserted.error || normalizeRpcResult(upserted.data).ok === false) {
-      await safeRemoveAvatar(admin, path);
-      throw new Error(upserted.error?.message || normalizeRpcResult(upserted.data).message || "画像メタ情報の保存に失敗しました。前の画像は維持されています。");
+      // Do not delete the newly verified avatar: the dedicated profile table already saved it safely.
+      console.warn("Legacy profile backup update failed:", upserted.error?.message || normalizeRpcResult(upserted.data).message);
     }
 
     await admin.from("user_profile_assets").insert({
@@ -156,7 +180,8 @@ export async function POST(request: NextRequest) {
       path,
       updatedAt: now,
       oldAvatarDeleted,
-      message: oldAvatarDeleted ? "画像を保存し、前の画像を削除しました。" : "画像をStorageへ保存しました。",
+      message: oldAvatarDeleted ? "画像を保存・再確認し、前の画像を削除しました。" : "画像を保存し、クラウド上の一致を再確認しました。",
+      verified: true,
     });
   } catch (error) {
     return json(500, {

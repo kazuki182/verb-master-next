@@ -25,6 +25,8 @@ import {
   getCloudBackupComparison,
   clearPendingAvatarForCloud,
   flushPendingAvatarToCloud,
+  fetchDedicatedProfile,
+  saveDedicatedDisplayName,
   getCloudReadiness,
   getPendingAvatarForCloud,
   hasCloudSession,
@@ -143,6 +145,23 @@ export default function ProfilePage() {
     setCloudStatus(getCloudReadiness());
   };
 
+  const refreshDedicatedProfile = async (targetUsername: string) => {
+    if (!hasCloudSession(targetUsername)) return null;
+    const result = await fetchDedicatedProfile(targetUsername);
+    if (!result.ok || !result.profile) return result;
+    const verified = updateUserProfile({
+      displayName: result.profile.displayName,
+      avatarDataUrl: result.profile.avatarUrl,
+      avatarUrl: result.profile.avatarUrl,
+      avatarPath: result.profile.avatarPath,
+      avatarUpdatedAt: result.profile.updatedAt,
+      avatarStorageProvider: result.profile.avatarUrl || result.profile.avatarPath ? "supabase-storage" : "none",
+    });
+    setProgress(verified);
+    setDisplayNameDraft(result.profile.displayName || targetUsername);
+    return result;
+  };
+
   const refreshBackupComparison = async (targetUsername = username) => {
     if (!targetUsername) return;
     const comparison = await getCloudBackupComparison(targetUsername);
@@ -157,6 +176,7 @@ export default function ProfilePage() {
     }
     setUsername(user);
     reload();
+    void refreshDedicatedProfile(user);
     void refreshBackupComparison(user);
   }, []);
 
@@ -202,8 +222,8 @@ export default function ProfilePage() {
           avatarStorageProvider: "supabase-storage",
         });
         setProgress(updated);
-        if (updated) await syncToSupabase(updated);
-        setProfileMessage("未送信だった画像をクラウド保存しました");
+        const verified = await refreshDedicatedProfile(username);
+        setProfileMessage(verified?.ok ? "未送信だった画像を保存し、再確認しました" : "画像は保存されましたが、再確認に失敗しました");
         setTimeout(() => setProfileMessage(""), 2600);
       } else {
         pendingAvatarFlushRef.current = false;
@@ -247,12 +267,30 @@ export default function ProfilePage() {
   };
 
   const onSaveProfile = async () => {
-    const updated = updateUserProfile({ displayName: displayNameDraft });
+    if (!username) return;
+    const nextName = displayNameDraft.trim();
+    if (!nextName) {
+      setProfileMessage("ニックネームを入力してください");
+      return;
+    }
+    if (!hasCloudSession(username)) {
+      setProfileMessage("ニックネームの確実な保存には一度ログインし直してください。");
+      return;
+    }
+    setCloudSyncing(true);
+    setProfileMessage("ニックネームをクラウド保存し、再確認しています...");
+    const saved = await saveDedicatedDisplayName(username, nextName);
+    setCloudSyncing(false);
+    if (!saved.ok || !saved.profile || !saved.verified) {
+      setProfileMessage(saved.message || "ニックネームの保存確認に失敗しました。");
+      return;
+    }
+    const updated = updateUserProfile({ displayName: saved.profile.displayName });
     setProgress(updated);
-    setProfileMessage("保存しました");
+    setDisplayNameDraft(saved.profile.displayName);
     setIsEditingName(false);
-    setTimeout(() => setProfileMessage(""), 1800);
-    if (updated) await syncToSupabase(updated);
+    setProfileMessage("ニックネームをクラウド保存し、再確認しました");
+    setTimeout(() => setProfileMessage(""), 2600);
   };
 
   const resizeAvatarImage = (file: File): Promise<string> => {
@@ -327,12 +365,13 @@ export default function ProfilePage() {
         avatarStorageProvider: "supabase-storage",
       });
       setProgress(updated);
-      setProfileMessage(uploaded.oldAvatarDeleted ? "画像保存OK：前の画像も削除済み" : "画像をクラウド保存しました");
-      if (updated) {
-        const syncResult = await syncToSupabase(updated);
-        setProfileMessage(syncResult.stats === "saved" ? (uploaded.oldAvatarDeleted ? "画像保存OK：前の画像も削除済み" : "画像をクラウド保存しました") : syncResult.message);
+      const verified = await refreshDedicatedProfile(username);
+      if (!verified?.ok || !verified.profile || verified.profile.avatarPath !== uploaded.path) {
+        setProfileMessage("画像の保存後確認に失敗しました。前の画像は削除していません。");
+        return;
       }
-      setTimeout(() => setProfileMessage(""), 2600);
+      setProfileMessage(uploaded.oldAvatarDeleted ? "画像保存・再確認OK：前の画像も削除済み" : "画像をクラウド保存し、再確認しました");
+      setTimeout(() => setProfileMessage(""), 2800);
     } catch (error) {
       setProfileMessage(error instanceof Error ? error.message : "画像の保存に失敗しました");
     }

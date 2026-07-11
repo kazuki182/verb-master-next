@@ -20416,73 +20416,179 @@ export const verbs: Verb[] = [
     "transitivity": "自動詞",
     "importance": "★★★★☆ 重要",
     "core": "質問・依頼・状況に反応して返す",
-    "coreDetail": "RESPONDは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「対応する・返答する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "coreDetail": "RESPONDは、質問や依頼に返答するだけでなく、問題や変化に対して行動する意味でも使います。通常は自動詞で、相手や対象を続けるときは respond to ... を使います。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 対応する・返答する",
-        "pattern": "respond to a request",
+        "id": "respond-answer",
+        "title": "① 返事をする",
+        "pattern": "RESPOND",
         "transitivity": "自動詞",
-        "structure": "S + V + to + 内容",
-        "image": "相手の依頼や状況に対して返す・動く",
-        "point": "respond は自動詞なので、依頼や質問を続けるときは respond to ... を使います。to 以下は前置詞句です。",
+        "structure": "S + V",
+        "image": "相手からの連絡に返事を返す",
+        "point": "対象を言わず、respondだけで『返事をする』と表せます。",
         "examples": [
           {
-            "en": "We responded to the customer request quickly.",
-            "ja": "私たちは顧客の依頼にすばやく対応しました。",
-            "focus": "responded to the request",
-            "jaFocus": "対応する・返答する",
-            "sentencePattern": "S + V + to + 内容",
+            "en": "The supplier responded within an hour.",
+            "ja": "その仕入先は1時間以内に返事をしました。",
+            "focus": "responded",
+            "jaFocus": "返事をしました",
+            "sentencePattern": "S + V + M",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "The supplier"
               },
               {
                 "label": "V",
-                "text": "respond"
+                "text": "responded"
               },
               {
                 "label": "M",
-                "text": "to the customer request"
+                "text": "within an hour"
               }
-            ],
-            "grammarNote": "この文は前置詞句を補足情報として扱います。前置詞の後ろの名詞だけを目的語Oにしないように注意します。"
+            ]
           },
           {
-            "en": "Please respond to the question by email.",
-            "ja": "その質問にはメールで回答してください。",
-            "focus": "respond to a question",
-            "jaFocus": "質問に答える"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please respond to the question by email.",
-            "ja": "その質問にはメールで回答してください。",
-            "focus": "respond to a question",
-            "jaFocus": "質問に答える"
+            "en": "I responded as soon as I saw the message.",
+            "ja": "私はそのメッセージを見てすぐに返事をしました。",
+            "focus": "responded",
+            "jaFocus": "返事をしました"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "respond to a question",
-        "ja": "質問に答える",
-        "image": "相手の依頼や状況に対して返す・動く",
-        "pattern": "respond to a question",
+        "id": "respond-manner",
+        "title": "② 丁寧に・迅速に返答する",
+        "pattern": "RESPOND + 副詞",
+        "transitivity": "自動詞",
+        "structure": "S + V + M",
+        "image": "返答の仕方や速さを表す",
+        "point": "quickly, politely, clearlyなどを加えて、返答の仕方を示せます。",
         "examples": [
           {
-            "en": "Please respond to the question by email.",
-            "ja": "その質問にはメールで回答してください。",
-            "focus": "respond to a question",
-            "jaFocus": "質問に答える"
+            "en": "We responded quickly and explained the situation.",
+            "ja": "私たちはすぐに返答し、状況を説明しました。",
+            "focus": "responded",
+            "jaFocus": "返答しました"
+          },
+          {
+            "en": "Please respond clearly so the client can understand.",
+            "ja": "顧客が理解できるよう、明確に返答してください。",
+            "focus": "respond",
+            "jaFocus": "返答してください"
+          }
+        ]
+      },
+      {
+        "id": "respond-situation",
+        "title": "③ 状況・変化に対応する",
+        "pattern": "RESPOND in a situation",
+        "transitivity": "自動詞",
+        "structure": "S + V + to + 内容",
+        "image": "変化や問題を受けて行動する",
+        "point": "仕事では『返事をする』だけでなく、『状況に対応する』意味でもよく使います。",
+        "examples": [
+          {
+            "en": "The team responded quickly when the system stopped.",
+            "ja": "システムが停止したとき、チームはすぐに対応しました。",
+            "focus": "responded",
+            "jaFocus": "対応しました"
+          },
+          {
+            "en": "We must respond calmly during an emergency.",
+            "ja": "緊急時には、私たちは冷静に対応しなければなりません。",
+            "focus": "respond",
+            "jaFocus": "対応しなければなりません"
+          }
+        ]
+      },
+      {
+        "id": "respond-result",
+        "title": "④ 反応する",
+        "pattern": "RESPOND + well/badly",
+        "transitivity": "自動詞",
+        "structure": "S + V + C/M",
+        "image": "施策や処置に反応を示す",
+        "point": "人・機器・市場などが何かに反応する場合にも使います。",
+        "examples": [
+          {
+            "en": "Customers responded positively after the product launch.",
+            "ja": "顧客は製品発売後、良い反応を示しました。",
+            "focus": "responded",
+            "jaFocus": "良い反応を示しました"
+          },
+          {
+            "en": "The light did not respond when I pressed the switch.",
+            "ja": "スイッチを押しても、その照明は反応しませんでした。",
+            "focus": "respond",
+            "jaFocus": "反応しませんでした"
           }
         ]
       }
     ],
-    "phrasalVerbs": []
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "respond to",
+        "ja": "〜に返答する・対応する",
+        "image": "質問・依頼・問題を受けて返事や行動を返す",
+        "pattern": "RESPOND TO + 人・質問・状況",
+        "examples": [
+          {
+            "en": "We responded to the customer's request the same day.",
+            "ja": "私たちはその日のうちに顧客の依頼へ対応しました。",
+            "focus": "responded to",
+            "jaFocus": "対応しました"
+          },
+          {
+            "en": "Please respond to my email by Friday.",
+            "ja": "金曜日までに私のメールへ返信してください。",
+            "focus": "respond to",
+            "jaFocus": "返信してください"
+          }
+        ]
+      },
+      {
+        "phrase": "respond with",
+        "ja": "〜で返答する・〜を返す",
+        "image": "言葉・行動・内容を使って返答する",
+        "pattern": "RESPOND WITH + 内容",
+        "examples": [
+          {
+            "en": "The client responded with a revised drawing.",
+            "ja": "顧客は修正版の図面を送って返答しました。",
+            "focus": "responded with",
+            "jaFocus": "送って返答しました"
+          },
+          {
+            "en": "She responded with a short explanation.",
+            "ja": "彼女は短い説明を添えて返答しました。",
+            "focus": "responded with",
+            "jaFocus": "説明を添えて返答しました"
+          }
+        ]
+      },
+      {
+        "phrase": "respond by",
+        "ja": "〜することで対応する",
+        "image": "行動や手段によって対応方法を示す",
+        "pattern": "RESPOND BY + doing",
+        "examples": [
+          {
+            "en": "We responded by sending a replacement unit.",
+            "ja": "私たちは交換品を送ることで対応しました。",
+            "focus": "responded by",
+            "jaFocus": "送ることで対応しました"
+          },
+          {
+            "en": "The company responded by changing the process.",
+            "ja": "その会社は工程を変更することで対応しました。",
+            "focus": "responded by",
+            "jaFocus": "変更することで対応しました"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "control",
@@ -20494,65 +20600,167 @@ export const verbs: Verb[] = [
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
     "core": "状況や機器が乱れないように管理する",
-    "coreDetail": "CONTROLは、仕事でも日常でも使いやすい基本動詞です。まずは「管理する・制御する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+    "coreDetail": "CONTROLは、機器を操作して望む状態に保つことから、費用・感情・リスクを抑えて管理することまで表します。基本は他動詞で、後ろに管理対象を置きます。",
     "meanings": [
       {
-        "id": "m1",
-        "title": "① 管理する・制御する",
-        "pattern": "control the schedule",
+        "id": "control-equipment",
+        "title": "① 機器・照明を制御する",
+        "pattern": "CONTROL + 機器・明るさ",
         "transitivity": "他動詞",
-        "structure": "S + V + O（目的語）",
-        "image": "状況や機器が乱れないように管理する",
-        "point": "control の後ろに「何を管理する・制御するのか」を置きます。仕事では control the schedule の形でよく使います。",
+        "structure": "S + V + O",
+        "image": "機器を操作して望む状態に保つ",
+        "point": "照明、温度、速度、機械などを操作するときに使います。",
         "examples": [
           {
-            "en": "We need to control the schedule carefully.",
-            "ja": "私たちはスケジュールを慎重に管理する必要があります。",
-            "focus": "need",
-            "object": "the schedule",
-            "jaFocus": "管理する",
-            "sentencePattern": "S + V + O",
+            "en": "This system can control the brightness of the LED modules.",
+            "ja": "このシステムはLEDモジュールの明るさを制御できます。",
+            "focus": "control",
+            "jaFocus": "制御できます",
+            "sentencePattern": "S + M + V + O",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "This system"
+              },
+              {
+                "label": "M",
+                "text": "can"
+              },
+              {
+                "label": "V",
+                "text": "control"
+              },
+              {
+                "label": "O",
+                "text": "the brightness of the LED modules"
+              }
+            ]
+          },
+          {
+            "en": "We control the lighting from a tablet.",
+            "ja": "私たちはタブレットから照明を制御します。",
+            "focus": "control",
+            "jaFocus": "制御します"
+          }
+        ]
+      },
+      {
+        "id": "control-cost",
+        "title": "② 費用・予算を管理する",
+        "pattern": "CONTROL + costs/budget",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "使いすぎないよう数字を管理する",
+        "point": "支出や予算を許容範囲に収める場面で使います。",
+        "examples": [
+          {
+            "en": "We need to control the project costs carefully.",
+            "ja": "私たちはプロジェクト費用を慎重に管理する必要があります。",
+            "focus": "control",
+            "jaFocus": "管理する必要があります",
+            "sentencePattern": "S + M + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
                 "text": "We"
               },
               {
+                "label": "M",
+                "text": "need to"
+              },
+              {
                 "label": "V",
-                "text": "need"
+                "text": "control"
               },
               {
                 "label": "O",
-                "text": "the schedule"
+                "text": "the project costs"
+              },
+              {
+                "label": "M",
+                "text": "carefully"
               }
             ]
           },
           {
-            "en": "I try to control my spending every month.",
-            "ja": "私は毎月、支出を管理するようにしています。",
+            "en": "I control my spending by setting a monthly limit.",
+            "ja": "私は月ごとの上限を決めて支出を管理しています。",
+            "focus": "control",
+            "jaFocus": "管理しています"
+          }
+        ]
+      },
+      {
+        "id": "control-situation",
+        "title": "③ 状況・リスクを管理する",
+        "pattern": "CONTROL + situation/risk",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "問題が広がらないよう抑える",
+        "point": "事故、品質問題、在庫リスクなどを管理する場面で使います。",
+        "examples": [
+          {
+            "en": "The team controlled the situation before it became serious.",
+            "ja": "チームは深刻になる前に状況を収めました。",
+            "focus": "controlled",
+            "jaFocus": "収めました"
+          },
+          {
+            "en": "Regular inspections help control quality risks.",
+            "ja": "定期検査は品質リスクの管理に役立ちます。",
             "focus": "control",
             "jaFocus": "管理する"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "control the brightness",
-        "ja": "明るさを制御する",
-        "image": "状況や機器が乱れないように管理する",
-        "pattern": "control the brightness",
+        "id": "control-emotion",
+        "title": "④ 感情・反応を抑える",
+        "pattern": "CONTROL + emotion/reaction",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "感情が表に出すぎないよう抑える",
+        "point": "怒り、緊張、反応などを抑える意味でも使います。",
         "examples": [
           {
-            "en": "This system can control the brightness of the LED modules.",
-            "ja": "このシステムはLEDモジュールの明るさを制御できます。",
-            "focus": "control the brightness",
-            "jaFocus": "明るさを制御する",
-            "object": "the brightness"
+            "en": "He controlled his frustration during the meeting.",
+            "ja": "彼は会議中、いら立ちを抑えました。",
+            "focus": "controlled",
+            "jaFocus": "抑えました"
+          },
+          {
+            "en": "I could not control my laughter.",
+            "ja": "私は笑いを抑えられませんでした。",
+            "focus": "control",
+            "jaFocus": "抑えられませんでした"
+          }
+        ]
+      },
+      {
+        "id": "control-power",
+        "title": "⑤ 支配する・決定権を持つ",
+        "pattern": "CONTROL + company/market/process",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "人や組織が決定権を握る",
+        "point": "会社、工程、資源などを支配・統括する意味です。",
+        "examples": [
+          {
+            "en": "The head office controls the final approval process.",
+            "ja": "本社が最終承認の工程を管理しています。",
+            "focus": "controls",
+            "jaFocus": "管理しています"
+          },
+          {
+            "en": "No single company controls the entire market.",
+            "ja": "1社だけで市場全体を支配しているわけではありません。",
+            "focus": "controls",
+            "jaFocus": "支配している"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -20565,36 +20773,39 @@ export const verbs: Verb[] = [
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
     "core": "問題・仕事・相手を受け止めて処理する",
-    "coreDetail": "HANDLEは、仕事でも日常でも使いやすい基本動詞です。まずは「対応する・扱う」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+    "coreDetail": "HANDLEは、問題に対応する、仕事を処理する、機器を取り扱う、プレッシャーに対処するなど、状況を実際に引き受けて進める感覚の動詞です。",
     "meanings": [
       {
-        "id": "m1",
-        "title": "① 対応する・扱う",
-        "pattern": "handle a complaint",
+        "id": "handle-problem",
+        "title": "① 問題・クレームに対応する",
+        "pattern": "HANDLE + problem/complaint",
         "transitivity": "他動詞",
-        "structure": "S + V + O（目的語）",
-        "image": "問題・仕事・相手を受け止めて処理する",
-        "point": "handle の後ろに「何を対応する・扱うのか」を置きます。仕事では handle a complaint の形でよく使います。",
+        "structure": "S + V + O",
+        "image": "問題を引き受けて解決へ進める",
+        "point": "クレームやトラブルへの対応でよく使います。",
         "examples": [
           {
             "en": "Our team handled the customer complaint quickly.",
             "ja": "私たちのチームは顧客のクレームにすばやく対応しました。",
-            "focus": "team",
-            "object": "a complaint",
-            "jaFocus": "対応する",
-            "sentencePattern": "S + V + O",
+            "focus": "handled",
+            "jaFocus": "対応しました",
+            "sentencePattern": "S + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "Our"
+                "text": "Our team"
               },
               {
                 "label": "V",
-                "text": "team"
+                "text": "handled"
               },
               {
                 "label": "O",
-                "text": "a complaint"
+                "text": "the customer complaint"
+              },
+              {
+                "label": "M",
+                "text": "quickly"
               }
             ]
           },
@@ -20602,28 +20813,104 @@ export const verbs: Verb[] = [
             "en": "I can handle this problem by myself.",
             "ja": "私はこの問題に自分で対応できます。",
             "focus": "handle",
-            "jaFocus": "対応する"
+            "jaFocus": "対応できます"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "handle an urgent request",
-        "ja": "急ぎの依頼に対応する",
-        "image": "問題・仕事・相手を受け止めて処理する",
-        "pattern": "handle an urgent request",
+        "id": "handle-work",
+        "title": "② 注文・案件・問い合わせを処理する",
+        "pattern": "HANDLE + order/project/inquiry",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "担当業務を引き受けて進める",
+        "point": "案件や注文を担当・処理する意味です。",
         "examples": [
           {
+            "en": "She handles all inquiries from overseas customers.",
+            "ja": "彼女は海外顧客からの問い合わせをすべて担当しています。",
+            "focus": "handles",
+            "jaFocus": "担当しています"
+          },
+          {
             "en": "We handled an urgent request from the client yesterday.",
-            "ja": "私たちは昨日、クライアントからの急ぎの依頼に対応しました。",
-            "focus": "handle an urgent request",
-            "jaFocus": "急ぎの依頼に対応する",
-            "object": "an urgent request"
+            "ja": "私たちは昨日、顧客からの急ぎの依頼に対応しました。",
+            "focus": "handled",
+            "jaFocus": "対応しました"
+          }
+        ]
+      },
+      {
+        "id": "handle-equipment",
+        "title": "③ 機器・製品を取り扱う",
+        "pattern": "HANDLE + equipment/product",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "壊さないよう安全に扱う",
+        "point": "製品や材料を物理的に扱う意味です。",
+        "examples": [
+          {
+            "en": "Please handle the LED modules carefully.",
+            "ja": "LEDモジュールは丁寧に取り扱ってください。",
+            "focus": "handle",
+            "jaFocus": "取り扱ってください"
+          },
+          {
+            "en": "Only trained staff may handle this equipment.",
+            "ja": "この機器を扱えるのは訓練を受けたスタッフだけです。",
+            "focus": "handle",
+            "jaFocus": "扱える"
+          }
+        ]
+      },
+      {
+        "id": "handle-pressure",
+        "title": "④ 責任・プレッシャーに対処する",
+        "pattern": "HANDLE + pressure/responsibility",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "精神的な負担を受け止める",
+        "point": "負担や忙しさに耐えて対処する意味です。",
+        "examples": [
+          {
+            "en": "He handles pressure well during busy periods.",
+            "ja": "彼は繁忙期でもプレッシャーにうまく対処します。",
+            "focus": "handles",
+            "jaFocus": "対処します"
+          },
+          {
+            "en": "Can you handle this level of responsibility?",
+            "ja": "あなたはこのレベルの責任を担えますか。",
+            "focus": "handle",
+            "jaFocus": "担えますか"
+          }
+        ]
+      },
+      {
+        "id": "handle-person",
+        "title": "⑤ 難しい相手・状況にうまく対応する",
+        "pattern": "HANDLE + person/situation",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "相手に合わせて状況を進める",
+        "point": "難しい顧客や交渉を落ち着いて進める意味です。",
+        "examples": [
+          {
+            "en": "She handled the difficult client professionally.",
+            "ja": "彼女は難しい顧客にプロとして対応しました。",
+            "focus": "handled",
+            "jaFocus": "対応しました"
+          },
+          {
+            "en": "Let me handle the negotiation this time.",
+            "ja": "今回は私に交渉を任せてください。",
+            "focus": "handle",
+            "jaFocus": "任せてください"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -20636,24 +20923,23 @@ export const verbs: Verb[] = [
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
     "core": "情報・物・予定を分かりやすくまとめる",
-    "coreDetail": "ORGANIZEは、仕事でも日常でも使いやすい基本動詞です。まずは「整理する・企画する」の感覚で、目的語を後ろに置く形を覚えると使いやすくなります。",
+    "coreDetail": "ORGANIZEは、物や情報を整理するだけでなく、会議やイベントを企画し、人や予定をうまくまとめる意味でも使います。",
     "meanings": [
       {
-        "id": "m1",
-        "title": "① 整理する・企画する",
-        "pattern": "organize documents",
+        "id": "organize-info",
+        "title": "① 書類・情報を整理する",
+        "pattern": "ORGANIZE + documents/information",
         "transitivity": "他動詞",
-        "structure": "S + V + O（目的語）",
-        "image": "情報・物・予定を分かりやすくまとめる",
-        "point": "organize の後ろに「何を整理する・企画するのか」を置きます。仕事では organize documents の形でよく使います。",
+        "structure": "S + V + O",
+        "image": "必要な情報を探しやすくまとめる",
+        "point": "書類、データ、メールなどを整理するときに使います。",
         "examples": [
           {
             "en": "I organized the documents before the meeting.",
             "ja": "私は会議の前に資料を整理しました。",
             "focus": "organized",
-            "object": "documents",
-            "jaFocus": "整理する",
-            "sentencePattern": "S + V + O",
+            "jaFocus": "整理しました",
+            "sentencePattern": "S + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
@@ -20665,36 +20951,116 @@ export const verbs: Verb[] = [
               },
               {
                 "label": "O",
-                "text": "documents"
+                "text": "the documents"
+              },
+              {
+                "label": "M",
+                "text": "before the meeting"
               }
             ]
           },
           {
-            "en": "I organized my photos on my phone.",
-            "ja": "私はスマホの写真を整理しました。",
+            "en": "Please organize the customer data by region.",
+            "ja": "顧客データを地域別に整理してください。",
             "focus": "organize",
-            "jaFocus": "整理する"
+            "jaFocus": "整理してください"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "organize an event",
-        "ja": "イベントを企画する",
-        "image": "情報・物・予定を分かりやすくまとめる",
-        "pattern": "organize an event",
+        "id": "organize-things",
+        "title": "② 物を順序よく並べる",
+        "pattern": "ORGANIZE + items/files",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "物を使いやすい順序に整える",
+        "point": "商品、工具、写真などを整える意味です。",
+        "examples": [
+          {
+            "en": "We organized the samples by product type.",
+            "ja": "私たちはサンプルを製品種類別に整理しました。",
+            "focus": "organized",
+            "jaFocus": "整理しました"
+          },
+          {
+            "en": "I organized the photos on my phone.",
+            "ja": "私はスマートフォン内の写真を整理しました。",
+            "focus": "organized",
+            "jaFocus": "整理しました"
+          }
+        ]
+      },
+      {
+        "id": "organize-event",
+        "title": "③ 会議・イベントを企画する",
+        "pattern": "ORGANIZE + meeting/event",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "人・場所・内容をまとめて実施する",
+        "point": "会議、展示会、勉強会などを企画・運営します。",
         "examples": [
           {
             "en": "Our team organized a small customer event.",
             "ja": "私たちのチームは小規模な顧客イベントを企画しました。",
-            "focus": "organize an event",
-            "jaFocus": "イベントを企画する",
-            "object": "an event"
+            "focus": "organized",
+            "jaFocus": "企画しました"
+          },
+          {
+            "en": "She is organizing a product seminar for next month.",
+            "ja": "彼女は来月の商品セミナーを企画しています。",
+            "focus": "organizing",
+            "jaFocus": "企画しています"
+          }
+        ]
+      },
+      {
+        "id": "organize-people",
+        "title": "④ 人・チームをまとめる",
+        "pattern": "ORGANIZE + team/people",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "役割を決めて人を動かす",
+        "point": "チーム編成や作業員の配置を行う意味です。",
+        "examples": [
+          {
+            "en": "The manager organized the team into three groups.",
+            "ja": "マネージャーはチームを3つのグループに分けました。",
+            "focus": "organized",
+            "jaFocus": "分けました"
+          },
+          {
+            "en": "We organized the technicians for the site visit.",
+            "ja": "私たちは現場訪問に向けて技術者を手配しました。",
+            "focus": "organized",
+            "jaFocus": "手配しました"
+          }
+        ]
+      },
+      {
+        "id": "organize-self",
+        "title": "⑤ 予定・考えを整理する",
+        "pattern": "ORGANIZE + schedule/thoughts",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "頭や予定を分かりやすく整える",
+        "point": "自分の予定や考えをまとめるときにも使います。",
+        "examples": [
+          {
+            "en": "I need a few minutes to organize my thoughts.",
+            "ja": "考えを整理するために数分必要です。",
+            "focus": "organize",
+            "jaFocus": "整理する"
+          },
+          {
+            "en": "She organized her schedule before the business trip.",
+            "ja": "彼女は出張前に予定を整理しました。",
+            "focus": "organized",
+            "jaFocus": "整理しました"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -20707,72 +21073,144 @@ export const verbs: Verb[] = [
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
     "core": "必要な情報を相手に知らせる",
-    "coreDetail": "INFORMは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「知らせる・通知する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "coreDetail": "INFORMは、相手に正式または明確に情報を知らせる動詞です。基本は inform + 人 + about/of + 内容、または inform + 人 + that節の形です。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 知らせる・通知する",
-        "pattern": "inform a client",
+        "id": "inform-about",
+        "title": "① 人に〜について知らせる",
+        "pattern": "INFORM + 人 + ABOUT + 内容",
         "transitivity": "他動詞",
-        "structure": "S + V + O + of/about + 内容",
-        "image": "相手が知らない情報を伝えて共有する",
-        "point": "inform は「誰に知らせるか」を目的語に置き、内容は of/about で続けることが多いです。",
+        "structure": "S + V + O + M",
+        "image": "相手に変更や状況を伝える",
+        "point": "aboutは話題・内容を幅広く知らせるときに使います。",
         "examples": [
           {
             "en": "We informed the client about the schedule change.",
-            "ja": "私たちは日程変更についてクライアントに知らせました。",
-            "focus": "informed the client",
-            "jaFocus": "知らせる・通知する",
-            "sentencePattern": "S + V + O + of/about + 内容",
+            "ja": "私たちは顧客に日程変更を知らせました。",
+            "focus": "informed",
+            "jaFocus": "知らせました",
+            "sentencePattern": "S + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "We"
               },
               {
                 "label": "V",
-                "text": "inform"
+                "text": "informed"
               },
               {
                 "label": "O",
-                "text": "informed the client"
+                "text": "the client"
+              },
+              {
+                "label": "M",
+                "text": "about the schedule change"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
-            "en": "Please inform the team about the new deadline.",
-            "ja": "新しい締切についてチームに知らせてください。",
-            "focus": "inform someone about a change",
-            "jaFocus": "変更について知らせる"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please inform the team about the new deadline.",
-            "ja": "新しい締切についてチームに知らせてください。",
-            "focus": "inform someone about a change",
-            "jaFocus": "変更について知らせる"
+            "en": "Please inform the team about the new procedure.",
+            "ja": "新しい手順についてチームに知らせてください。",
+            "focus": "inform",
+            "jaFocus": "知らせてください"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "inform someone about a change",
-        "ja": "変更について知らせる",
-        "image": "相手が知らない情報を伝えて共有する",
-        "pattern": "inform someone about a change",
+        "id": "inform-of",
+        "title": "② 人に事実・決定を通知する",
+        "pattern": "INFORM + 人 + OF + 内容",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + M",
+        "image": "正式な事実や決定を通知する",
+        "point": "ofは決定、結果、変更などをやや正式に通知するときによく使います。",
         "examples": [
           {
-            "en": "Please inform the team about the new deadline.",
-            "ja": "新しい締切についてチームに知らせてください。",
-            "focus": "inform someone about a change",
-            "jaFocus": "変更について知らせる"
+            "en": "The supplier informed us of the delay.",
+            "ja": "仕入先は私たちに遅延を知らせました。",
+            "focus": "informed",
+            "jaFocus": "知らせました"
+          },
+          {
+            "en": "We informed management of the test result.",
+            "ja": "私たちは経営陣に試験結果を報告しました。",
+            "focus": "informed",
+            "jaFocus": "報告しました"
+          }
+        ]
+      },
+      {
+        "id": "inform-that",
+        "title": "③ 〜であると知らせる",
+        "pattern": "INFORM + 人 + THAT + 文",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + that節",
+        "image": "文章の形で具体的な内容を伝える",
+        "point": "that節を使うと、誰が何をするかまで明確に知らせられます。",
+        "examples": [
+          {
+            "en": "We informed the customer that the product was ready.",
+            "ja": "私たちは顧客に製品の準備ができたと知らせました。",
+            "focus": "informed",
+            "jaFocus": "知らせました"
+          },
+          {
+            "en": "She informed me that the meeting had been canceled.",
+            "ja": "彼女は私に会議が中止になったと知らせました。",
+            "focus": "informed",
+            "jaFocus": "知らせました"
+          }
+        ]
+      },
+      {
+        "id": "inform-formal",
+        "title": "④ 正式に通知する",
+        "pattern": "INFORM + 人 + formally/in writing",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + M",
+        "image": "記録が残る方法で正式に知らせる",
+        "point": "メールや書面など、正式な通知で使います。",
+        "examples": [
+          {
+            "en": "We informed all partners in writing.",
+            "ja": "私たちはすべての取引先へ書面で通知しました。",
+            "focus": "informed",
+            "jaFocus": "通知しました"
+          },
+          {
+            "en": "The company formally informed employees of the change.",
+            "ja": "会社は従業員にその変更を正式に通知しました。",
+            "focus": "informed",
+            "jaFocus": "通知しました"
+          }
+        ]
+      },
+      {
+        "id": "be-informed",
+        "title": "⑤ 知らされる",
+        "pattern": "BE INFORMED + of/about",
+        "transitivity": "他動詞・受け身",
+        "structure": "S + be + Vpp + M",
+        "image": "必要な情報を受け取る",
+        "point": "受け身では『知らされる・通知を受ける』という意味になります。",
+        "examples": [
+          {
+            "en": "We were informed of the delivery delay yesterday.",
+            "ja": "私たちは昨日、納品遅延について知らされました。",
+            "focus": "informed",
+            "jaFocus": "知らされました"
+          },
+          {
+            "en": "You will be informed about the result by email.",
+            "ja": "結果はメールで通知されます。",
+            "focus": "informed",
+            "jaFocus": "通知されます"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -20784,74 +21222,164 @@ export const verbs: Verb[] = [
     "syllable": "ad-just",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 重要",
-    "core": "状況に合わせて少し変える",
-    "coreDetail": "ADJUSTは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「調整する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "予定・数値・やり方を合うように微調整する",
+    "coreDetail": "ADJUSTは、大きく変更するというより、条件や目的に合うよう少しずつ調整する動詞です。また、adjust toで新しい環境に慣れる意味にもなります。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 調整する",
-        "pattern": "adjust the schedule",
-        "transitivity": "他動詞・自動詞",
+        "id": "adjust-schedule",
+        "title": "① 予定・時間を調整する",
+        "pattern": "ADJUST + schedule/time",
+        "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "予定・数値・やり方を合うように直す",
-        "point": "adjust は schedule, price, plan, settings などを目的語にして使います。",
+        "image": "条件に合わせて予定を少し変える",
+        "point": "会議時間、納期、訪問予定などの微調整で使います。",
         "examples": [
           {
             "en": "We adjusted the schedule after the client called.",
-            "ja": "クライアントから連絡があった後、私たちは予定を調整しました。",
-            "focus": "adjusted the schedule",
-            "jaFocus": "調整する",
-            "sentencePattern": "S + V + O",
+            "ja": "顧客から電話があった後、私たちは予定を調整しました。",
+            "focus": "adjusted",
+            "jaFocus": "調整しました",
+            "sentencePattern": "S + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "We"
               },
               {
                 "label": "V",
-                "text": "adjust"
+                "text": "adjusted"
               },
               {
                 "label": "O",
-                "text": "adjusted the schedule"
+                "text": "the schedule"
+              },
+              {
+                "label": "M",
+                "text": "after the client called"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
-            "en": "Can we adjust the price for this order?",
-            "ja": "この注文の価格を調整できますか。",
-            "focus": "adjust the price",
-            "jaFocus": "価格を調整する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Can we adjust the price for this order?",
-            "ja": "この注文の価格を調整できますか。",
-            "focus": "adjust the price",
-            "jaFocus": "価格を調整する"
+            "en": "Can we adjust the meeting time?",
+            "ja": "会議時間を調整できますか。",
+            "focus": "adjust",
+            "jaFocus": "調整できますか"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "adjust the price",
-        "ja": "価格を調整する",
-        "image": "予定・数値・やり方を合うように直す",
-        "pattern": "adjust the price",
+        "id": "adjust-price",
+        "title": "② 価格・数量を調整する",
+        "pattern": "ADJUST + price/amount",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "数値を適切な水準へ変える",
+        "point": "価格、数量、予算などを調整します。",
         "examples": [
           {
-            "en": "Can we adjust the price for this order?",
-            "ja": "この注文の価格を調整できますか。",
-            "focus": "adjust the price",
-            "jaFocus": "価格を調整する"
+            "en": "We adjusted the price to match the revised specification.",
+            "ja": "私たちは修正仕様に合わせて価格を調整しました。",
+            "focus": "adjusted",
+            "jaFocus": "調整しました"
+          },
+          {
+            "en": "Please adjust the order quantity before submitting it.",
+            "ja": "提出前に注文数量を調整してください。",
+            "focus": "adjust",
+            "jaFocus": "調整してください"
+          }
+        ]
+      },
+      {
+        "id": "adjust-equipment",
+        "title": "③ 設定・機器を調整する",
+        "pattern": "ADJUST + setting/equipment",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "機器を望む状態へ微調整する",
+        "point": "明るさ、角度、設定値などを調整する意味です。",
+        "examples": [
+          {
+            "en": "The technician adjusted the light angle.",
+            "ja": "技術者は照明の角度を調整しました。",
+            "focus": "adjusted",
+            "jaFocus": "調整しました"
+          },
+          {
+            "en": "You can adjust the brightness from this screen.",
+            "ja": "この画面から明るさを調整できます。",
+            "focus": "adjust",
+            "jaFocus": "調整できます"
+          }
+        ]
+      },
+      {
+        "id": "adjust-clothing",
+        "title": "④ 位置・形を整える",
+        "pattern": "ADJUST + position/clothing",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "物の位置や身に着けた物を整える",
+        "point": "椅子、鏡、ベルトなどの位置を変える日常用法です。",
+        "examples": [
+          {
+            "en": "I adjusted my chair before the online meeting.",
+            "ja": "オンライン会議の前に椅子を調整しました。",
+            "focus": "adjusted",
+            "jaFocus": "調整しました"
+          },
+          {
+            "en": "She adjusted the strap on her bag.",
+            "ja": "彼女はバッグのストラップを調整しました。",
+            "focus": "adjusted",
+            "jaFocus": "調整しました"
           }
         ]
       }
     ],
-    "phrasalVerbs": []
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "adjust to",
+        "ja": "〜に慣れる・適応する",
+        "image": "新しい環境や条件に自分を合わせる",
+        "pattern": "ADJUST TO + 環境・変化",
+        "examples": [
+          {
+            "en": "It took me a week to adjust to the new system.",
+            "ja": "新しいシステムに慣れるまで1週間かかりました。",
+            "focus": "adjust to",
+            "jaFocus": "慣れる"
+          },
+          {
+            "en": "The team adjusted to the new schedule quickly.",
+            "ja": "チームは新しい予定にすぐ適応しました。",
+            "focus": "adjusted to",
+            "jaFocus": "適応しました"
+          }
+        ]
+      },
+      {
+        "phrase": "adjust for",
+        "ja": "〜を考慮して調整する",
+        "image": "条件や差を計算に入れて修正する",
+        "pattern": "ADJUST FOR + 条件・差",
+        "examples": [
+          {
+            "en": "We adjusted for seasonal demand in the forecast.",
+            "ja": "私たちは予測で季節需要を考慮して調整しました。",
+            "focus": "adjusted for",
+            "jaFocus": "考慮して調整しました"
+          },
+          {
+            "en": "The price was adjusted for the additional work.",
+            "ja": "価格は追加作業を考慮して調整されました。",
+            "focus": "adjusted for",
+            "jaFocus": "考慮して調整されました"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "apply",
@@ -20862,74 +21390,181 @@ export const verbs: Verb[] = [
     "syllable": "ap-ply",
     "transitivity": "自動詞・他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "申し込む・適用する",
-    "coreDetail": "APPLYは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「申し込む・適用する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "申し込む・当てはめる・塗る",
+    "coreDetail": "APPLYは、apply forで申請する、apply toで当てはまる、apply A to BでAをBに適用するという異なる文型を持ちます。意味ごとに語順を分けて覚えることが重要です。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 申し込む・適用する",
-        "pattern": "apply for approval",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + for + 申請内容",
-        "image": "制度や機会に申し込む、またはルールを当てはめる",
-        "point": "apply for は「申し込む」、apply A to B は「AをBに適用する」です。",
+        "id": "apply-rule",
+        "title": "① ルール・方法を適用する",
+        "pattern": "APPLY + A + TO + B",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + M",
+        "image": "方法や規則を対象へ当てはめる",
+        "point": "apply A to Bで『AをBに適用する』です。",
         "examples": [
           {
-            "en": "We need to apply for approval before ordering.",
-            "ja": "私たちは発注前に承認を申請する必要があります。",
-            "focus": "apply for approval",
-            "jaFocus": "申し込む・適用する",
-            "sentencePattern": "S + V + for + 申請内容",
+            "en": "Please apply the new rule to this case.",
+            "ja": "この件には新しいルールを適用してください。",
+            "focus": "apply",
+            "jaFocus": "適用してください",
+            "sentencePattern": "M + V + O + M",
             "grammarParts": [
               {
-                "label": "S",
-                "text": "主語"
+                "label": "M",
+                "text": "Please"
               },
               {
                 "label": "V",
                 "text": "apply"
               },
               {
+                "label": "O",
+                "text": "the new rule"
+              },
+              {
                 "label": "M",
-                "text": "for approval"
+                "text": "to this case"
               }
-            ],
-            "grammarNote": "この文は前置詞句を補足情報として扱います。前置詞の後ろの名詞だけを目的語Oにしないように注意します。"
+            ]
           },
           {
-            "en": "Please apply the new rule to this case.",
-            "ja": "この件には新しいルールを適用してください。",
-            "focus": "apply a rule",
-            "jaFocus": "ルールを適用する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please apply the new rule to this case.",
-            "ja": "この件には新しいルールを適用してください。",
-            "focus": "apply a rule",
-            "jaFocus": "ルールを適用する"
+            "en": "We applied the same method to the second project.",
+            "ja": "私たちは同じ方法を2番目の案件にも適用しました。",
+            "focus": "applied",
+            "jaFocus": "適用しました"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "apply a rule",
-        "ja": "ルールを適用する",
-        "image": "制度や機会に申し込む、またはルールを当てはめる",
-        "pattern": "apply a rule",
+        "id": "apply-material",
+        "title": "② 塗る・加える",
+        "pattern": "APPLY + paint/pressure/cream",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + M",
+        "image": "物質や力を対象へ加える",
+        "point": "塗料、接着剤、圧力などを加える意味です。",
         "examples": [
           {
-            "en": "Please apply the new rule to this case.",
-            "ja": "この件には新しいルールを適用してください。",
-            "focus": "apply a rule",
-            "jaFocus": "ルールを適用する"
+            "en": "Apply the adhesive evenly to the surface.",
+            "ja": "接着剤を表面へ均一に塗ってください。",
+            "focus": "Apply",
+            "jaFocus": "塗ってください"
+          },
+          {
+            "en": "The machine applies pressure to both sides.",
+            "ja": "その機械は両側に圧力を加えます。",
+            "focus": "applies",
+            "jaFocus": "加えます"
+          }
+        ]
+      },
+      {
+        "id": "apply-effort",
+        "title": "④ 努力・知識を生かす",
+        "pattern": "APPLY + knowledge/effort",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + M",
+        "image": "持っている能力を実際に使う",
+        "point": "知識、技能、努力を仕事へ生かす意味です。",
+        "examples": [
+          {
+            "en": "She applied her technical knowledge to the proposal.",
+            "ja": "彼女は技術知識を提案に生かしました。",
+            "focus": "applied",
+            "jaFocus": "生かしました"
+          },
+          {
+            "en": "We must apply more effort to quality control.",
+            "ja": "私たちは品質管理にさらに力を注ぐ必要があります。",
+            "focus": "apply",
+            "jaFocus": "力を注ぐ"
           }
         ]
       }
     ],
-    "phrasalVerbs": []
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "apply for",
+        "ja": "〜に申し込む・申請する",
+        "image": "許可、仕事、制度などを得るため申し込む",
+        "pattern": "APPLY FOR + 申請対象",
+        "examples": [
+          {
+            "en": "We need to apply for approval before ordering.",
+            "ja": "私たちは発注前に承認を申請する必要があります。",
+            "focus": "apply for",
+            "jaFocus": "申請する"
+          },
+          {
+            "en": "She applied for a sales position last week.",
+            "ja": "彼女は先週、営業職に応募しました。",
+            "focus": "applied for",
+            "jaFocus": "応募しました"
+          }
+        ]
+      },
+      {
+        "phrase": "apply to",
+        "ja": "〜に当てはまる・〜へ申し込む",
+        "image": "規則の対象になる、または組織へ応募する",
+        "pattern": "APPLY TO + 対象・組織",
+        "examples": [
+          {
+            "en": "This condition applies to overseas orders.",
+            "ja": "この条件は海外注文に適用されます。",
+            "focus": "applies to",
+            "jaFocus": "適用されます"
+          },
+          {
+            "en": "He applied to three companies.",
+            "ja": "彼は3社に応募しました。",
+            "focus": "applied to",
+            "jaFocus": "応募しました"
+          }
+        ]
+      },
+      {
+        "phrase": "apply as",
+        "ja": "〜として応募する",
+        "image": "職種や立場を示して応募する",
+        "pattern": "APPLY AS + 職種・役割",
+        "examples": [
+          {
+            "en": "She applied as a project coordinator.",
+            "ja": "彼女はプロジェクトコーディネーターとして応募しました。",
+            "focus": "applied as",
+            "jaFocus": "として応募しました"
+          },
+          {
+            "en": "I applied as a volunteer for the event.",
+            "ja": "私はそのイベントのボランティアとして応募しました。",
+            "focus": "applied as",
+            "jaFocus": "として応募しました"
+          }
+        ]
+      },
+      {
+        "phrase": "apply through",
+        "ja": "〜を通して申請する",
+        "image": "システム、代理店、窓口などを利用する",
+        "pattern": "APPLY THROUGH + 経路",
+        "examples": [
+          {
+            "en": "You can apply through the online portal.",
+            "ja": "オンラインポータルから申請できます。",
+            "focus": "apply through",
+            "jaFocus": "から申請できます"
+          },
+          {
+            "en": "We applied through our local distributor.",
+            "ja": "私たちは現地代理店を通して申請しました。",
+            "focus": "applied through",
+            "jaFocus": "通して申請しました"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "approve",
@@ -20941,73 +21576,143 @@ export const verbs: Verb[] = [
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 重要",
     "core": "内容を確認して正式に認める",
-    "coreDetail": "APPROVEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「承認する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "coreDetail": "APPROVEは、計画・見積・申請などへ正式な許可を出す他動詞です。approve ofは、行動や考えを良いと思う・賛成するという別の使い方です。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 承認する",
-        "pattern": "approve a request",
-        "transitivity": "他動詞・自動詞",
+        "id": "approve-request",
+        "title": "① 依頼・申請を承認する",
+        "pattern": "APPROVE + request/application",
+        "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "申請・見積・依頼にOKを出す",
-        "point": "approve は request, plan, quotation, budget などを目的語にして使います。",
+        "image": "申請内容に正式な許可を出す",
+        "point": "社内申請や顧客依頼の承認で使います。",
         "examples": [
           {
             "en": "The manager approved the request this morning.",
-            "ja": "マネージャーは今朝その依頼を承認しました。",
-            "focus": "approved the request",
-            "jaFocus": "承認する",
-            "sentencePattern": "S + V + O",
+            "ja": "マネージャーは今朝、その依頼を承認しました。",
+            "focus": "approved",
+            "jaFocus": "承認しました",
+            "sentencePattern": "S + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "The manager"
               },
               {
                 "label": "V",
-                "text": "approve"
+                "text": "approved"
               },
               {
                 "label": "O",
-                "text": "approved the request"
+                "text": "the request"
+              },
+              {
+                "label": "M",
+                "text": "this morning"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
-            "en": "The client approved the quotation yesterday.",
-            "ja": "クライアントは昨日、その見積を承認しました。",
-            "focus": "approve a quotation",
-            "jaFocus": "見積を承認する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "The client approved the quotation yesterday.",
-            "ja": "クライアントは昨日、その見積を承認しました。",
-            "focus": "approve a quotation",
-            "jaFocus": "見積を承認する"
+            "en": "The director approved my leave application.",
+            "ja": "部長は私の休暇申請を承認しました。",
+            "focus": "approved",
+            "jaFocus": "承認しました"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "approve a quotation",
-        "ja": "見積を承認する",
-        "image": "申請・見積・依頼にOKを出す",
-        "pattern": "approve a quotation",
+        "id": "approve-budget",
+        "title": "② 予算・支出を承認する",
+        "pattern": "APPROVE + budget/cost",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "会社のお金を使う許可を出す",
+        "point": "予算、追加費用、値引きなどの承認に使います。",
         "examples": [
           {
-            "en": "The client approved the quotation yesterday.",
-            "ja": "クライアントは昨日、その見積を承認しました。",
-            "focus": "approve a quotation",
-            "jaFocus": "見積を承認する"
+            "en": "Management approved the additional budget.",
+            "ja": "経営陣は追加予算を承認しました。",
+            "focus": "approved",
+            "jaFocus": "承認しました"
+          },
+          {
+            "en": "We are waiting for the client to approve the extra cost.",
+            "ja": "私たちは顧客が追加費用を承認するのを待っています。",
+            "focus": "approve",
+            "jaFocus": "承認する"
+          }
+        ]
+      },
+      {
+        "id": "approve-design",
+        "title": "③ デザイン・仕様を承認する",
+        "pattern": "APPROVE + design/specification",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "提出された内容に正式なOKを出す",
+        "point": "図面、見積、仕様、サンプルの承認で使います。",
+        "examples": [
+          {
+            "en": "The client approved the final quotation yesterday.",
+            "ja": "顧客は昨日、最終見積を承認しました。",
+            "focus": "approved",
+            "jaFocus": "承認しました"
+          },
+          {
+            "en": "Please approve the drawing before production starts.",
+            "ja": "生産開始前に図面を承認してください。",
+            "focus": "approve",
+            "jaFocus": "承認してください"
+          }
+        ]
+      },
+      {
+        "id": "be-approved",
+        "title": "④ 承認される",
+        "pattern": "BE APPROVED",
+        "transitivity": "他動詞・受け身",
+        "structure": "S + be + Vpp",
+        "image": "申請や案が正式に認められる",
+        "point": "受け身で『承認された』と表します。",
+        "examples": [
+          {
+            "en": "The new design was approved without changes.",
+            "ja": "新しいデザインは修正なしで承認されました。",
+            "focus": "approved",
+            "jaFocus": "承認されました"
+          },
+          {
+            "en": "Your request has been approved.",
+            "ja": "あなたの依頼は承認されました。",
+            "focus": "approved",
+            "jaFocus": "承認されました"
           }
         ]
       }
     ],
-    "phrasalVerbs": []
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "approve of",
+        "ja": "〜に賛成する・〜を良いと認める",
+        "image": "考えや行動を好ましいと判断する",
+        "pattern": "APPROVE OF + 行動・考え",
+        "examples": [
+          {
+            "en": "I approve of the plan to improve safety.",
+            "ja": "私は安全性を高めるその計画に賛成です。",
+            "focus": "approve of",
+            "jaFocus": "賛成です"
+          },
+          {
+            "en": "The manager did not approve of his behavior.",
+            "ja": "マネージャーは彼の行動を良いとは認めませんでした。",
+            "focus": "approve of",
+            "jaFocus": "良いとは認めませんでした"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "borrow",
@@ -21019,27 +21724,31 @@ export const verbs: Verb[] = [
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
     "core": "一時的に相手から借りて使う",
-    "coreDetail": "BORROWは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「借りる」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "coreDetail": "BORROWは『借りる』側の動詞で、borrow A from Bの形を使います。LENDは『貸す』側なので、主語と物の移動方向が逆になります。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 借りる",
-        "pattern": "borrow a charger",
+        "id": "borrow-item",
+        "title": "① 物を借りる",
+        "pattern": "BORROW + 物",
         "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "相手の物やお金を一時的に借りる",
-        "point": "borrow は「借りる」。相手を言うときは borrow A from B の形を使います。大人の日常・仕事でもよく使います。",
+        "image": "相手の物を一時的に使う",
+        "point": "ペン、充電器、工具などを一時的に借ります。",
         "examples": [
           {
             "en": "Can I borrow your charger during the meeting?",
             "ja": "会議中にあなたの充電器を借りてもいいですか。",
-            "focus": "borrow your charger",
-            "jaFocus": "借りる",
-            "sentencePattern": "S + V + O",
+            "focus": "borrow",
+            "jaFocus": "借りてもいいですか",
+            "sentencePattern": "S + M + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "I"
+              },
+              {
+                "label": "M",
+                "text": "Can"
               },
               {
                 "label": "V",
@@ -21047,44 +21756,116 @@ export const verbs: Verb[] = [
               },
               {
                 "label": "O",
-                "text": "borrow your charger"
+                "text": "your charger"
+              },
+              {
+                "label": "M",
+                "text": "during the meeting"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
-            "en": "I borrowed a projector from another team.",
-            "ja": "私は別のチームからプロジェクターを借りました。",
-            "focus": "borrow A from B",
-            "jaFocus": "BからAを借りる"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I borrowed a projector from another team.",
-            "ja": "私は別のチームからプロジェクターを借りました。",
-            "focus": "borrow A from B",
-            "jaFocus": "BからAを借りる"
+            "en": "I borrowed a projector for the presentation.",
+            "ja": "私はプレゼン用にプロジェクターを借りました。",
+            "focus": "borrowed",
+            "jaFocus": "借りました"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "borrow A from B",
-        "ja": "BからAを借りる",
-        "image": "相手の物やお金を一時的に借りる",
-        "pattern": "borrow A from B",
+        "id": "borrow-from",
+        "title": "② 人・部署から借りる",
+        "pattern": "BORROW + A + FROM + B",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + M",
+        "image": "借りた相手や場所を示す",
+        "point": "borrow A from Bで『BからAを借りる』です。",
         "examples": [
           {
             "en": "I borrowed a projector from another team.",
             "ja": "私は別のチームからプロジェクターを借りました。",
-            "focus": "borrow A from B",
-            "jaFocus": "BからAを借りる"
+            "focus": "borrowed",
+            "jaFocus": "借りました"
+          },
+          {
+            "en": "We borrowed tools from the maintenance department.",
+            "ja": "私たちは保全部門から工具を借りました。",
+            "focus": "borrowed",
+            "jaFocus": "借りました"
+          }
+        ]
+      },
+      {
+        "id": "borrow-money",
+        "title": "③ お金を借りる",
+        "pattern": "BORROW + money",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + M",
+        "image": "後で返す前提でお金を受け取る",
+        "point": "銀行や人からお金を借りる場合にも使います。",
+        "examples": [
+          {
+            "en": "The company borrowed money to expand the factory.",
+            "ja": "その会社は工場を拡張するために資金を借りました。",
+            "focus": "borrowed",
+            "jaFocus": "借りました"
+          },
+          {
+            "en": "I try not to borrow money from friends.",
+            "ja": "私は友人からお金を借りないようにしています。",
+            "focus": "borrow",
+            "jaFocus": "借りない"
+          }
+        ]
+      },
+      {
+        "id": "borrow-idea",
+        "title": "④ 言葉・アイデアを借用する",
+        "pattern": "BORROW + idea/word",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + M",
+        "image": "他の人や文化の表現を取り入れる",
+        "point": "比喩的に、アイデアや言葉を借りる意味があります。",
+        "examples": [
+          {
+            "en": "We borrowed an idea from another industry.",
+            "ja": "私たちは別の業界からアイデアを借用しました。",
+            "focus": "borrowed",
+            "jaFocus": "借用しました"
+          },
+          {
+            "en": "Japanese has borrowed many words from English.",
+            "ja": "日本語は英語から多くの単語を取り入れています。",
+            "focus": "borrowed",
+            "jaFocus": "取り入れています"
+          }
+        ]
+      },
+      {
+        "id": "borrow-vs-lend",
+        "title": "⑤ BORROWとLENDを区別する",
+        "pattern": "BORROW = 借りる / LEND = 貸す",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "物が自分側へ来るか相手側へ行くかを区別する",
+        "point": "Can I borrow...?は『借りてもよいですか』、Can you lend me...?は『貸してもらえますか』です。",
+        "examples": [
+          {
+            "en": "Can I borrow your pen?",
+            "ja": "あなたのペンを借りてもいいですか。",
+            "focus": "borrow",
+            "jaFocus": "借りてもいいですか"
+          },
+          {
+            "en": "I borrowed his pen and returned it after the meeting.",
+            "ja": "私は彼のペンを借り、会議後に返しました。",
+            "focus": "borrowed",
+            "jaFocus": "借りました"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -21096,73 +21877,145 @@ export const verbs: Verb[] = [
     "syllable": "ver-i-fy",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "正しいかどうかを確認する",
-    "coreDetail": "VERIFYは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「確認する・検証する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "証拠やデータを使って正しいか確認する",
+    "coreDetail": "VERIFYは、単に見るだけでなく、記録・数字・証拠と照合して正しさを確かめる正式な動詞です。CHECKやCONFIRMより『裏付けて検証する』意味が強くなります。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 確認する・検証する",
-        "pattern": "verify the details",
+        "id": "verify-details",
+        "title": "① 情報・詳細を確認する",
+        "pattern": "VERIFY + information/details",
         "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "情報や数字が正しいか裏取りする",
-        "point": "verify は check より少し正式で、「正確性を確認する」ニュアンスです。",
+        "image": "情報が正しいか裏付ける",
+        "point": "注文内容、住所、品番などを照合します。",
         "examples": [
           {
             "en": "We verified the order details before shipping.",
             "ja": "私たちは出荷前に注文内容を確認しました。",
-            "focus": "verified the details",
-            "jaFocus": "確認する・検証する",
-            "sentencePattern": "S + V + O",
+            "focus": "verified",
+            "jaFocus": "確認しました",
+            "sentencePattern": "S + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "We"
               },
               {
                 "label": "V",
-                "text": "verify"
+                "text": "verified"
               },
               {
                 "label": "O",
-                "text": "verified the details"
+                "text": "the order details"
+              },
+              {
+                "label": "M",
+                "text": "before shipping"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
-            "en": "Please verify the information before sending it.",
-            "ja": "送信前にその情報を確認してください。",
-            "focus": "verify information",
-            "jaFocus": "情報を確認する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please verify the information before sending it.",
-            "ja": "送信前にその情報を確認してください。",
-            "focus": "verify information",
-            "jaFocus": "情報を確認する"
+            "en": "Please verify the delivery address before sending the goods.",
+            "ja": "商品を送る前に配送先住所を確認してください。",
+            "focus": "verify",
+            "jaFocus": "確認してください"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "verify information",
-        "ja": "情報を確認する",
-        "image": "情報や数字が正しいか裏取りする",
-        "pattern": "verify information",
+        "id": "verify-number",
+        "title": "② 数字・寸法を検証する",
+        "pattern": "VERIFY + figure/measurement",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "測定値や計算結果が正しいか確かめる",
+        "point": "売上数字、寸法、電圧などを再確認します。",
         "examples": [
           {
-            "en": "Please verify the information before sending it.",
-            "ja": "送信前にその情報を確認してください。",
-            "focus": "verify information",
-            "jaFocus": "情報を確認する"
+            "en": "The engineer verified the measurements on site.",
+            "ja": "技術者は現場で寸法を検証しました。",
+            "focus": "verified",
+            "jaFocus": "検証しました"
+          },
+          {
+            "en": "We need to verify the total before issuing the invoice.",
+            "ja": "請求書を発行する前に合計金額を確認する必要があります。",
+            "focus": "verify",
+            "jaFocus": "確認する必要があります"
+          }
+        ]
+      },
+      {
+        "id": "verify-identity",
+        "title": "③ 本人確認をする",
+        "pattern": "VERIFY + identity/account",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "本人やアカウントが正しいか確かめる",
+        "point": "ログイン、支払い、契約時の本人確認に使います。",
+        "examples": [
+          {
+            "en": "The system verifies the user's identity.",
+            "ja": "そのシステムは利用者の本人確認を行います。",
+            "focus": "verifies",
+            "jaFocus": "本人確認を行います"
+          },
+          {
+            "en": "Please verify your email address to activate the account.",
+            "ja": "アカウントを有効にするため、メールアドレスを確認してください。",
+            "focus": "verify",
+            "jaFocus": "確認してください"
+          }
+        ]
+      },
+      {
+        "id": "verify-result",
+        "title": "④ 動作・結果を検証する",
+        "pattern": "VERIFY + operation/result",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "期待どおりに動くか試して確かめる",
+        "point": "製品やシステムの動作確認で使います。",
+        "examples": [
+          {
+            "en": "We verified the lighting operation after installation.",
+            "ja": "私たちは設置後に照明の動作を検証しました。",
+            "focus": "verified",
+            "jaFocus": "検証しました"
+          },
+          {
+            "en": "The test verified the effectiveness of the new design.",
+            "ja": "その試験によって新しい設計の有効性が確認されました。",
+            "focus": "verified",
+            "jaFocus": "確認されました"
+          }
+        ]
+      },
+      {
+        "id": "verify-clause",
+        "title": "⑤ 〜であるか確認する",
+        "pattern": "VERIFY + that/whether + 文",
+        "transitivity": "他動詞",
+        "structure": "S + V + that/whether節",
+        "image": "文章の内容が正しいか確かめる",
+        "point": "that節は事実を、whether節は可否を確認するときに使います。",
+        "examples": [
+          {
+            "en": "Please verify that all modules are working.",
+            "ja": "すべてのモジュールが動作していることを確認してください。",
+            "focus": "verify",
+            "jaFocus": "確認してください"
+          },
+          {
+            "en": "We verified whether the data had been updated.",
+            "ja": "私たちはデータが更新されているか確認しました。",
+            "focus": "verified",
+            "jaFocus": "確認しました"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {

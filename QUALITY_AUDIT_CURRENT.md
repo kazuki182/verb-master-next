@@ -1,37 +1,19 @@
-# Verb Master Ver.140 Simple Prefix Search Design
+# QUALITY AUDIT CURRENT
 
-## 目的
+## Current audit target
+CHECK / DECIDE / EXPLAIN
 
-Ver.137 の検索BOXは多機能だったが、スマホでは操作項目が多く使いづらかった。
-Ver.140では、動詞一覧の検索を「頭文字から近い動詞を予測して出す」シンプルな設計に戻す。
+## Status
+Reworked and evaluated. ZIP not generated in this step.
 
-## 変更内容
+## Persistence / UI safeguards
+- Ver.145 auth / restore / persistence design preserved
+- Ver.146 clean user profile UI preserved
+- Ver.140 simple prefix search preserved
 
-- 検索対象・表示範囲・並び順のセレクトBOXを撤去
-- 入力欄1つだけのシンプル検索へ変更
-- 1文字入力でも候補を表示
-- `s` → `start / stop / send / sell / set / see` のように頭文字一致を優先
-- `st` → `start / stop` のように近い動詞を上位表示
-- 動詞名の完全一致、前方一致、部分一致をスコア化
-- 軽いタイプミスも近い候補として拾う
-- 候補チップを押すと検索語をその動詞に変更
-- 日本語・句動詞・例文の検索能力は裏側に残す
-- 検索時は一致度の高い順に最大30件表示
-
-## 保存基盤への影響
-
-なし。
-Ver.136 Storage保存設計、Ver.138/139 画像保存修正は維持。
-追加SQLなし。
-
-## 確認キーワード
-
-- `s`
-- `st`
-- `sta`
-- `start`
-- `t`
-- `ta`
-- `take`
-- `連絡`
-- `見積`
+## Rules
+- Categories: 基本 / 句動詞 only
+- collocations empty for target verbs
+- Basic focus: verb only
+- Phrasal focus: verb + particle/preposition only
+- Objects are not highlighted

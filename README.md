@@ -1,19 +1,8 @@
-# Ver.141 STOP / TRY / HELP Re-audit
+# Verb Master
 
-This document records the re-audit of STOP / TRY / HELP.
+Current working version includes CHECK / DECIDE / EXPLAIN re-audit changes.
 
-## Design policy
-
-- Keep only two learning categories: basic and phrasal verbs.
-- Do not add separate collocation categories.
-- Phrasal verbs should stay in the phrasal section.
-- Basic examples should highlight only the verb.
-- Phrasal examples should highlight the verb plus particle/preposition.
-
-## Result
-
-- STOP: 6 phrasal verbs
-- TRY: 5 phrasal verbs
-- HELP: 5 phrasal verbs
-
-No database or Supabase changes are required.
+- Save foundation preserved
+- User clean profile UI preserved
+- Simple prefix search preserved
+- No additional SQL for this re-audit

@@ -14228,413 +14228,222 @@ export const verbs: Verb[] = [
     "ipa": "/ˌʌpˈdeɪt/",
     "kana": "アップデイト",
     "syllable": "up-date",
-    "transitivity": "他動詞・名詞",
+    "transitivity": "他動詞",
     "importance": "★★★★☆ 仕事で重要",
     "core": "古い情報や状態を新しい状態にする",
     "coreDetail": "UPDATEは、資料・リスト・予定・システム・相手への共有内容を最新状態にする動詞です。仕事では「更新する」だけでなく「進捗を共有する」「状況を知らせる」という意味でも使います。",
     "coreVisual": {
-        "from": [
-            "古い資料",
-            "前回の予定",
-            "未共有の状況",
-            "古いシステム"
-        ],
-        "to": "最新情報・共有済みの状態",
-        "label": "古い状態 → 最新状態にする"
+      "from": [
+        "古い資料",
+        "前回の予定",
+        "未共有の状況",
+        "古いシステム"
+      ],
+      "to": "最新情報・共有済みの状態",
+      "label": "古い状態 → 最新状態にする"
     },
     "meanings": [
-        {
-            "id": "update-file",
-            "title": "① 資料・ファイルを更新する",
-            "pattern": "update + 資料/ファイル/リスト",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "古い内容を直して最新版にする。",
-            "point": "資料、顧客リスト、価格表などを新しくする時に使います。",
-            "examples": [
-                {
-                    "en": "I updated the quotation before sending it to the client.",
-                    "ja": "顧客へ送る前に見積書を更新しました。",
-                    "focus": "updated"
-                },
-                {
-                    "en": "Please update the customer list by the end of the day.",
-                    "ja": "本日中に顧客リストを更新してください。",
-                    "focus": "update"
-                },
-                {
-                    "en": "We need to update the presentation with the latest numbers.",
-                    "ja": "最新の数字を入れてプレゼン資料を更新する必要があります。",
-                    "focus": "update"
-                }
-            ]
-        },
-        {
-            "id": "update-person",
-            "title": "② 人に最新情報を共有する",
-            "pattern": "update + 人 + on + 内容",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "相手に現在の状況を知らせる。",
-            "point": "update you on the status は仕事メールで非常によく使います。",
-            "examples": [
-                {
-                    "en": "I will update you on the delivery schedule tomorrow.",
-                    "ja": "明日、納品スケジュールについて最新情報を共有します。",
-                    "focus": "update"
-                },
-                {
-                    "en": "Please update the team on the project status.",
-                    "ja": "プロジェクト状況についてチームに共有してください。",
-                    "focus": "update"
-                },
-                {
-                    "en": "She updated the manager on the client meeting.",
-                    "ja": "彼女は顧客との打ち合わせについて上司に報告しました。",
-                    "focus": "updated"
-                }
-            ]
-        },
-        {
-            "id": "update-schedule",
-            "title": "③ 予定・スケジュールを更新する",
-            "pattern": "update + schedule/timeline/deadline",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "日程や予定を新情報に合わせる。",
-            "point": "納期変更や工程表の修正で使います。",
-            "examples": [
-                {
-                    "en": "We updated the schedule after the client changed the deadline.",
-                    "ja": "顧客が締切を変更した後、スケジュールを更新しました。",
-                    "focus": "updated"
-                },
-                {
-                    "en": "Can you update the project timeline after the meeting?",
-                    "ja": "会議後にプロジェクト工程表を更新できますか？",
-                    "focus": "update"
-                },
-                {
-                    "en": "The sales team updated the visit schedule for next week.",
-                    "ja": "営業チームは来週の訪問予定を更新しました。",
-                    "focus": "updated"
-                }
-            ]
-        },
-        {
-            "id": "update-system",
-            "title": "④ システム・アプリを更新する",
-            "pattern": "update + system/app/software",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "古いバージョンを新しくする。",
-            "point": "IT、アプリ、管理システムでよく使います。",
-            "examples": [
-                {
-                    "en": "We updated the system to fix the login issue.",
-                    "ja": "ログイン問題を修正するためにシステムを更新しました。",
-                    "focus": "updated"
-                },
-                {
-                    "en": "Please update the app before using the new feature.",
-                    "ja": "新機能を使う前にアプリを更新してください。",
-                    "focus": "update"
-                },
-                {
-                    "en": "The IT team updated the software last night.",
-                    "ja": "ITチームは昨夜ソフトウェアを更新しました。",
-                    "focus": "updated"
-                }
-            ]
-        },
-        {
-            "id": "update-records",
-            "title": "⑤ 記録・ステータスを更新する",
-            "pattern": "update + records/status/history",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "管理データを最新にする。",
-            "point": "Salesforce、受注状況、対応履歴などで使いやすいです。",
-            "examples": [
-                {
-                    "en": "I updated the sales record after the customer visit.",
-                    "ja": "顧客訪問後に営業記録を更新しました。",
-                    "focus": "updated"
-                },
-                {
-                    "en": "Please update the order status in the system.",
-                    "ja": "システム上の注文ステータスを更新してください。",
-                    "focus": "update"
-                },
-                {
-                    "en": "We updated the meeting history for future reference.",
-                    "ja": "今後の確認のために会議履歴を更新しました。",
-                    "focus": "updated"
-                }
-            ]
-        },
-        {
-            "id": "give-update",
-            "title": "⑥ 最新情報・進捗を伝える",
-            "pattern": "give/provide an update",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "情報をまとめて伝える。",
-            "point": "名詞updateを使う自然な仕事表現です。",
-            "examples": [
-                {
-                    "en": "I will give you an update after I confirm the details.",
-                    "ja": "詳細確認後に最新情報をお伝えします。",
-                    "focus": "give you an update"
-                },
-                {
-                    "en": "Can you provide an update on the payment status?",
-                    "ja": "支払い状況について最新情報を共有できますか？",
-                    "focus": "provide an update"
-                },
-                {
-                    "en": "We need an update before the client meeting.",
-                    "ja": "顧客との会議前に最新情報が必要です。",
-                    "focus": "update"
-                }
-            ]
-        }
+      {
+        "id": "update-file",
+        "title": "① 資料・ファイルを更新する",
+        "pattern": "update + 資料/ファイル/リスト",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "古い内容を直して最新版にする。",
+        "point": "資料、顧客リスト、価格表などを新しくする時に使います。",
+        "examples": [
+          {
+            "en": "I updated the quotation before sending it to the client.",
+            "ja": "顧客へ送る前に見積書を更新しました。",
+            "focus": "updated"
+          },
+          {
+            "en": "Please update the customer list by the end of the day.",
+            "ja": "本日中に顧客リストを更新してください。",
+            "focus": "update"
+          },
+          {
+            "en": "The latest figures changed, so we updated the presentation.",
+            "ja": "最新の数字が変わったため、プレゼン資料を更新しました。",
+            "focus": "updated"
+          }
+        ]
+      },
+      {
+        "id": "update-schedule",
+        "title": "③ 予定・スケジュールを更新する",
+        "pattern": "update + schedule/timeline/deadline",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "日程や予定を新情報に合わせる。",
+        "point": "納期変更や工程表の修正で使います。",
+        "examples": [
+          {
+            "en": "We updated the schedule after the client changed the deadline.",
+            "ja": "顧客が締切を変更した後、スケジュールを更新しました。",
+            "focus": "updated"
+          },
+          {
+            "en": "Can you update the project timeline after the meeting?",
+            "ja": "会議後にプロジェクト工程表を更新できますか？",
+            "focus": "update"
+          },
+          {
+            "en": "The sales team updated the visit schedule for next week.",
+            "ja": "営業チームは来週の訪問予定を更新しました。",
+            "focus": "updated"
+          }
+        ]
+      },
+      {
+        "id": "update-system",
+        "title": "④ システム・アプリを更新する",
+        "pattern": "update + system/app/software",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "古いバージョンを新しくする。",
+        "point": "IT、アプリ、管理システムでよく使います。",
+        "examples": [
+          {
+            "en": "We updated the system to fix the login issue.",
+            "ja": "ログイン問題を修正するためにシステムを更新しました。",
+            "focus": "updated"
+          },
+          {
+            "en": "Please update the app before using the new feature.",
+            "ja": "新機能を使う前にアプリを更新してください。",
+            "focus": "update"
+          },
+          {
+            "en": "The IT team updated the software last night.",
+            "ja": "ITチームは昨夜ソフトウェアを更新しました。",
+            "focus": "updated"
+          }
+        ]
+      },
+      {
+        "id": "update-records",
+        "title": "⑤ 記録・ステータスを更新する",
+        "pattern": "update + records/status/history",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "管理データを最新にする。",
+        "point": "Salesforce、受注状況、対応履歴などで使いやすいです。",
+        "examples": [
+          {
+            "en": "I updated the sales record after the customer visit.",
+            "ja": "顧客訪問後に営業記録を更新しました。",
+            "focus": "updated"
+          },
+          {
+            "en": "Please update the order status today.",
+            "ja": "今日、注文ステータスを更新してください。",
+            "focus": "update"
+          },
+          {
+            "en": "We updated the meeting history for future reference.",
+            "ja": "今後の確認のために会議履歴を更新しました。",
+            "focus": "updated"
+          }
+        ]
+      }
     ],
-    "collocations": [
-        {
-            "phrase": "update the file",
-            "ja": "ファイルを更新する",
-            "image": "ファイルを最新版にする。",
-            "pattern": "update the file",
-            "examples": [
-                {
-                    "en": "Please update the file with the latest price.",
-                    "ja": "最新価格を入れてファイルを更新してください。",
-                    "focus": "update the file"
-                },
-                {
-                    "en": "I updated the file before sharing it with the team.",
-                    "ja": "チームに共有する前にファイルを更新しました。",
-                    "focus": "updated the file"
-                },
-                {
-                    "en": "We should update the file every Friday.",
-                    "ja": "毎週金曜日にファイルを更新するべきです。",
-                    "focus": "update the file"
-                }
-            ]
-        },
-        {
-            "phrase": "update the status",
-            "ja": "状況を更新する",
-            "image": "進捗や処理状態を最新にする。",
-            "pattern": "update the status",
-            "examples": [
-                {
-                    "en": "Please update the status after you contact the client.",
-                    "ja": "顧客に連絡した後、ステータスを更新してください。",
-                    "focus": "update the status"
-                },
-                {
-                    "en": "I updated the status to show that the order was shipped.",
-                    "ja": "注文が出荷済みだと分かるようにステータスを更新しました。",
-                    "focus": "updated the status"
-                },
-                {
-                    "en": "The system automatically updates the status every hour.",
-                    "ja": "システムは毎時間ステータスを自動更新します。",
-                    "focus": "updates the status"
-                }
-            ]
-        },
-        {
-            "phrase": "update someone on the progress",
-            "ja": "進捗を共有する",
-            "image": "相手に進み具合を知らせる。",
-            "pattern": "update + 人 + on the progress",
-            "examples": [
-                {
-                    "en": "I will update you on the progress this afternoon.",
-                    "ja": "今日の午後に進捗を共有します。",
-                    "focus": "update you on the progress"
-                },
-                {
-                    "en": "Please update the client on the progress by email.",
-                    "ja": "メールで顧客に進捗を共有してください。",
-                    "focus": "update the client on the progress"
-                },
-                {
-                    "en": "She updated us on the progress during the meeting.",
-                    "ja": "彼女は会議中に進捗を共有してくれました。",
-                    "focus": "updated us on the progress"
-                }
-            ]
-        },
-        {
-            "phrase": "latest update",
-            "ja": "最新情報",
-            "image": "一番新しい情報や更新内容。",
-            "pattern": "latest update",
-            "examples": [
-                {
-                    "en": "Do you have the latest update from the supplier?",
-                    "ja": "仕入先からの最新情報はありますか？",
-                    "focus": "latest update"
-                },
-                {
-                    "en": "The latest update shows a two-day delay.",
-                    "ja": "最新情報では2日の遅れが示されています。",
-                    "focus": "latest update"
-                },
-                {
-                    "en": "Please share the latest update with the sales team.",
-                    "ja": "最新情報を営業チームに共有してください。",
-                    "focus": "latest update"
-                }
-            ]
-        },
-        {
-            "phrase": "status update",
-            "ja": "状況報告",
-            "image": "現在の状況を短く伝える報告。",
-            "pattern": "status update",
-            "examples": [
-                {
-                    "en": "Please send me a status update before noon.",
-                    "ja": "正午前に状況報告を送ってください。",
-                    "focus": "status update"
-                },
-                {
-                    "en": "We have a short status update every Monday.",
-                    "ja": "毎週月曜日に短い状況報告を行います。",
-                    "focus": "status update"
-                },
-                {
-                    "en": "The manager asked for a status update on the project.",
-                    "ja": "上司はその案件の状況報告を求めました。",
-                    "focus": "status update"
-                }
-            ]
-        }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
-        {
-            "phrase": "update on",
-            "ja": "〜について最新情報を伝える",
-            "image": "onで話題を示す。",
-            "pattern": "update + 人 + on + 内容",
-            "examples": [
-                {
-                    "en": "Please update me on the inspection result.",
-                    "ja": "検査結果について最新情報を共有してください。",
-                    "focus": "update me on"
-                },
-                {
-                    "en": "I updated the team on the new delivery date.",
-                    "ja": "新しい納品日についてチームに共有しました。",
-                    "focus": "updated the team on"
-                },
-                {
-                    "en": "We need to update management on the issue.",
-                    "ja": "その問題について経営陣に共有する必要があります。",
-                    "focus": "update management on"
-                }
-            ]
-        },
-        {
-            "phrase": "update with",
-            "ja": "〜を入れて更新する",
-            "image": "withで追加する新情報を示す。",
-            "pattern": "update + 名詞 + with + 新情報",
-            "examples": [
-                {
-                    "en": "Please update the proposal with the new design.",
-                    "ja": "新しいデザインを入れて提案書を更新してください。",
-                    "focus": "update the proposal with"
-                },
-                {
-                    "en": "I updated the report with the latest sales numbers.",
-                    "ja": "最新の売上数字を入れて報告書を更新しました。",
-                    "focus": "updated the report with"
-                },
-                {
-                    "en": "We should update the catalog with the new product images.",
-                    "ja": "新しい商品画像を入れてカタログを更新するべきです。",
-                    "focus": "update the catalog with"
-                }
-            ]
-        },
-        {
-            "phrase": "update in",
-            "ja": "〜上で更新する",
-            "image": "inで更新する場所やツールを示す。",
-            "pattern": "update + 名詞 + in + system/tool",
-            "examples": [
-                {
-                    "en": "Please update the customer information in Salesforce.",
-                    "ja": "Salesforce上の顧客情報を更新してください。",
-                    "focus": "update the customer information in"
-                },
-                {
-                    "en": "I updated the order status in the system.",
-                    "ja": "システム上の注文ステータスを更新しました。",
-                    "focus": "updated the order status in"
-                },
-                {
-                    "en": "We need to update the schedule in the shared calendar.",
-                    "ja": "共有カレンダー上の予定を更新する必要があります。",
-                    "focus": "update the schedule in"
-                }
-            ]
-        },
-        {
-            "phrase": "update after",
-            "ja": "〜の後に更新する",
-            "image": "afterで更新のタイミングを示す。",
-            "pattern": "update + 名詞 + after + 出来事",
-            "examples": [
-                {
-                    "en": "Please update the record after the meeting.",
-                    "ja": "会議後に記録を更新してください。",
-                    "focus": "update the record after"
-                },
-                {
-                    "en": "I updated the forecast after receiving the new order.",
-                    "ja": "新しい注文を受けた後、予測を更新しました。",
-                    "focus": "updated the forecast after"
-                },
-                {
-                    "en": "We will update the plan after the client review.",
-                    "ja": "顧客確認後に計画を更新します。",
-                    "focus": "update the plan after"
-                }
-            ]
-        },
-        {
-            "phrase": "keep updated",
-            "ja": "最新情報を伝え続ける",
-            "image": "keep + 人 + updatedで継続的に知らせる。",
-            "pattern": "keep + 人 + updated",
-            "examples": [
-                {
-                    "en": "I will keep you updated on the delivery schedule.",
-                    "ja": "納品スケジュールについて随時共有します。",
-                    "focus": "keep you updated"
-                },
-                {
-                    "en": "Please keep the team updated during the issue.",
-                    "ja": "問題対応中はチームに随時共有してください。",
-                    "focus": "keep the team updated"
-                },
-                {
-                    "en": "She kept the client updated until the product arrived.",
-                    "ja": "彼女は商品が届くまで顧客に随時共有しました。",
-                    "focus": "kept the client updated"
-                }
-            ]
-        }
+      {
+        "phrase": "update on",
+        "ja": "〜について最新情報を伝える",
+        "image": "onで共有する話題を示す。",
+        "pattern": "update + 人 + on + 内容",
+        "examples": [
+          {
+            "en": "Please update me on the inspection result.",
+            "ja": "検査結果について最新情報を共有してください。",
+            "focus": "update on"
+          },
+          {
+            "en": "I updated the team on the new delivery date.",
+            "ja": "新しい納品日についてチームに共有しました。",
+            "focus": "updated on"
+          },
+          {
+            "en": "We need to update management on the issue.",
+            "ja": "その問題について経営陣に共有する必要があります。",
+            "focus": "update on"
+          }
+        ]
+      },
+      {
+        "phrase": "update with",
+        "ja": "〜を加えて更新する",
+        "image": "withで追加する新情報や内容を示す。",
+        "pattern": "update + 名詞 + with + 新情報",
+        "examples": [
+          {
+            "en": "Please update the proposal with the new design.",
+            "ja": "新しいデザインを加えて提案書を更新してください。",
+            "focus": "update with"
+          },
+          {
+            "en": "I updated the report with the latest sales numbers.",
+            "ja": "最新の売上数字を加えて報告書を更新しました。",
+            "focus": "updated with"
+          },
+          {
+            "en": "We should update the catalog with the new product images.",
+            "ja": "新しい商品画像を加えてカタログを更新するべきです。",
+            "focus": "update with"
+          }
+        ]
+      },
+      {
+        "phrase": "update in",
+        "ja": "〜上で更新する",
+        "image": "inで更新するシステムや管理場所を示す。",
+        "pattern": "update + 名詞 + in + system/tool",
+        "examples": [
+          {
+            "en": "Please update the customer information in Salesforce.",
+            "ja": "Salesforce上で顧客情報を更新してください。",
+            "focus": "update in"
+          },
+          {
+            "en": "I updated the order status in the system.",
+            "ja": "システム上で注文ステータスを更新しました。",
+            "focus": "updated in"
+          },
+          {
+            "en": "We need to update the schedule in the shared calendar.",
+            "ja": "共有カレンダー上で予定を更新する必要があります。",
+            "focus": "update in"
+          }
+        ]
+      },
+      {
+        "phrase": "update to",
+        "ja": "〜に更新する・新しい版へ切り替える",
+        "image": "toで更新後の状態やバージョンを示す。",
+        "pattern": "update + 名詞 + to + new version/state",
+        "examples": [
+          {
+            "en": "Please update the software to the latest version.",
+            "ja": "ソフトウェアを最新版に更新してください。",
+            "focus": "update to"
+          },
+          {
+            "en": "We updated the price list to reflect the new rates.",
+            "ja": "新料金を反映するように価格表を更新しました。",
+            "focus": "updated to"
+          },
+          {
+            "en": "The team updated the status to completed.",
+            "ja": "チームはステータスを完了に更新しました。",
+            "focus": "updated to"
+          }
+        ]
+      }
     ]
-},
+  },
   {
     "id": "review",
     "rank": 68,
@@ -14642,414 +14451,226 @@ export const verbs: Verb[] = [
     "ipa": "/rɪˈvjuː/",
     "kana": "リビュー",
     "syllable": "re-view",
-    "transitivity": "他動詞・名詞",
+    "transitivity": "他動詞",
     "importance": "★★★★☆ 仕事で重要",
     "core": "内容をもう一度見て、判断・改善につなげる",
     "coreDetail": "REVIEWは、資料・計画・結果・契約・作業内容を見直して、問題点や改善点を確認する動詞です。checkより広く、しっかり中身を見るニュアンスがあります。",
     "coreVisual": {
-        "from": [
-            "資料",
-            "計画",
-            "結果",
-            "契約",
-            "作業内容"
-        ],
-        "to": "確認・判断・改善点",
-        "label": "もう一度見る → 判断する"
+      "from": [
+        "資料",
+        "計画",
+        "結果",
+        "契約",
+        "作業内容"
+      ],
+      "to": "確認・判断・改善点",
+      "label": "もう一度見る → 判断する"
     },
     "meanings": [
-        {
-            "id": "review-document",
-            "title": "① 資料・書類を確認する",
-            "pattern": "review + document/proposal/report",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "資料を読み直し、内容を確認する。",
-            "point": "proposal, report, quotation, contract とよく使います。",
-            "examples": [
-                {
-                    "en": "Please review the proposal before we send it.",
-                    "ja": "送付前に提案書を確認してください。",
-                    "focus": "review"
-                },
-                {
-                    "en": "I reviewed the quotation and found one mistake.",
-                    "ja": "見積書を確認して、1つミスを見つけました。",
-                    "focus": "reviewed"
-                },
-                {
-                    "en": "We need to review the contract carefully.",
-                    "ja": "契約書を慎重に確認する必要があります。",
-                    "focus": "review"
-                }
-            ]
-        },
-        {
-            "id": "review-plan",
-            "title": "② 計画・予定を見直す",
-            "pattern": "review + plan/schedule/timeline",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "計画を見直して調整点を探す。",
-            "point": "変更や改善が必要かを見る時に使います。",
-            "examples": [
-                {
-                    "en": "We reviewed the project plan after the client meeting.",
-                    "ja": "顧客との会議後にプロジェクト計画を見直しました。",
-                    "focus": "reviewed"
-                },
-                {
-                    "en": "Please review the schedule before confirming the delivery date.",
-                    "ja": "納品日を確定する前にスケジュールを見直してください。",
-                    "focus": "review"
-                },
-                {
-                    "en": "The team reviewed the timeline and adjusted the tasks.",
-                    "ja": "チームは工程表を見直し、作業を調整しました。",
-                    "focus": "reviewed"
-                }
-            ]
-        },
-        {
-            "id": "review-results",
-            "title": "③ 結果・実績を確認する",
-            "pattern": "review + results/performance/data",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "結果を見て、良し悪しや原因を確認する。",
-            "point": "売上・テスト結果・実績確認に向いています。",
-            "examples": [
-                {
-                    "en": "We reviewed the sales results for last month.",
-                    "ja": "先月の売上結果を確認しました。",
-                    "focus": "reviewed"
-                },
-                {
-                    "en": "The manager reviewed the test data with the team.",
-                    "ja": "上司はチームと試験データを確認しました。",
-                    "focus": "reviewed"
-                },
-                {
-                    "en": "Please review the performance before the next meeting.",
-                    "ja": "次の会議前に実績を確認してください。",
-                    "focus": "review"
-                }
-            ]
-        },
-        {
-            "id": "review-work",
-            "title": "④ 作業内容を見直す",
-            "pattern": "review + work/task/process",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "作業が正しくできているか確認する。",
-            "point": "納品前チェックや品質確認に使いやすいです。",
-            "examples": [
-                {
-                    "en": "I reviewed the work before sending it to the client.",
-                    "ja": "顧客へ送る前に作業内容を見直しました。",
-                    "focus": "reviewed"
-                },
-                {
-                    "en": "We should review the process to prevent the same issue.",
-                    "ja": "同じ問題を防ぐために工程を見直すべきです。",
-                    "focus": "review"
-                },
-                {
-                    "en": "Please review your task list before you leave.",
-                    "ja": "退勤前に自分のタスクリストを見直してください。",
-                    "focus": "review"
-                }
-            ]
-        },
-        {
-            "id": "review-feedback",
-            "title": "⑤ 意見・フィードバックを確認する",
-            "pattern": "review + feedback/comments/requests",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "相手からの意見を読み、対応内容を考える。",
-            "point": "顧客要望や社内コメントの確認に使います。",
-            "examples": [
-                {
-                    "en": "We reviewed the client feedback this morning.",
-                    "ja": "今朝、顧客からのフィードバックを確認しました。",
-                    "focus": "reviewed"
-                },
-                {
-                    "en": "Please review the comments before revising the document.",
-                    "ja": "資料を修正する前にコメントを確認してください。",
-                    "focus": "review"
-                },
-                {
-                    "en": "She reviewed the request and prepared a response.",
-                    "ja": "彼女は依頼内容を確認し、回答を準備しました。",
-                    "focus": "reviewed"
-                }
-            ]
-        },
-        {
-            "id": "have-review",
-            "title": "⑥ レビュー・確認会を行う",
-            "pattern": "have/conduct a review",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "確認のための場や手続きを行う。",
-            "point": "名詞reviewを使った仕事表現です。",
-            "examples": [
-                {
-                    "en": "We will have a review meeting next Monday.",
-                    "ja": "来週月曜日に確認会議を行います。",
-                    "focus": "review meeting"
-                },
-                {
-                    "en": "The team conducted a review after the project ended.",
-                    "ja": "プロジェクト終了後、チームは振り返りを行いました。",
-                    "focus": "conducted a review"
-                },
-                {
-                    "en": "Please prepare the materials for the design review.",
-                    "ja": "デザインレビュー用の資料を準備してください。",
-                    "focus": "design review"
-                }
-            ]
-        }
+      {
+        "id": "review-document",
+        "title": "① 資料・書類を確認する",
+        "pattern": "review + document/proposal/report",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "資料を読み直し、内容を確認する。",
+        "point": "proposal, report, quotation, contract とよく使います。",
+        "examples": [
+          {
+            "en": "Please review the proposal before we send it.",
+            "ja": "送付前に提案書を確認してください。",
+            "focus": "review"
+          },
+          {
+            "en": "I reviewed the quotation and found one mistake.",
+            "ja": "見積書を確認して、1つミスを見つけました。",
+            "focus": "reviewed"
+          },
+          {
+            "en": "We need to review the contract carefully.",
+            "ja": "契約書を慎重に確認する必要があります。",
+            "focus": "review"
+          }
+        ]
+      },
+      {
+        "id": "review-plan",
+        "title": "② 計画・予定を見直す",
+        "pattern": "review + plan/schedule/timeline",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "計画を見直して調整点を探す。",
+        "point": "変更や改善が必要かを見る時に使います。",
+        "examples": [
+          {
+            "en": "We reviewed the project plan after the client meeting.",
+            "ja": "顧客との会議後にプロジェクト計画を見直しました。",
+            "focus": "reviewed"
+          },
+          {
+            "en": "Please review the schedule before confirming the delivery date.",
+            "ja": "納品日を確定する前にスケジュールを見直してください。",
+            "focus": "review"
+          },
+          {
+            "en": "The team reviewed the timeline and adjusted the tasks.",
+            "ja": "チームは工程表を見直し、作業を調整しました。",
+            "focus": "reviewed"
+          }
+        ]
+      },
+      {
+        "id": "review-results",
+        "title": "③ 結果・実績を確認する",
+        "pattern": "review + results/performance/data",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "結果を見て、良し悪しや原因を確認する。",
+        "point": "売上・テスト結果・実績確認に向いています。",
+        "examples": [
+          {
+            "en": "We reviewed the sales results for last month.",
+            "ja": "先月の売上結果を確認しました。",
+            "focus": "reviewed"
+          },
+          {
+            "en": "The manager reviewed the test data carefully.",
+            "ja": "上司は試験データを慎重に確認しました。",
+            "focus": "reviewed"
+          },
+          {
+            "en": "Please review the performance before the next meeting.",
+            "ja": "次の会議前に実績を確認してください。",
+            "focus": "review"
+          }
+        ]
+      },
+      {
+        "id": "review-work",
+        "title": "④ 作業内容を見直す",
+        "pattern": "review + work/task/process",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "作業が正しくできているか確認する。",
+        "point": "納品前チェックや品質確認に使いやすいです。",
+        "examples": [
+          {
+            "en": "I reviewed the work before sending it to the client.",
+            "ja": "顧客へ送る前に作業内容を見直しました。",
+            "focus": "reviewed"
+          },
+          {
+            "en": "We should review the process to prevent the same issue.",
+            "ja": "同じ問題を防ぐために工程を見直すべきです。",
+            "focus": "review"
+          },
+          {
+            "en": "Please review your task list before you leave.",
+            "ja": "退勤前に自分のタスクリストを見直してください。",
+            "focus": "review"
+          }
+        ]
+      },
+      {
+        "id": "review-feedback",
+        "title": "⑤ 意見・フィードバックを確認する",
+        "pattern": "review + feedback/comments/requests",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "相手からの意見を読み、対応内容を考える。",
+        "point": "顧客要望や社内コメントの確認に使います。",
+        "examples": [
+          {
+            "en": "We reviewed the client feedback this morning.",
+            "ja": "今朝、顧客からのフィードバックを確認しました。",
+            "focus": "reviewed"
+          },
+          {
+            "en": "Please review the comments before revising the document.",
+            "ja": "資料を修正する前にコメントを確認してください。",
+            "focus": "review"
+          },
+          {
+            "en": "She reviewed the request and prepared a response.",
+            "ja": "彼女は依頼内容を確認し、回答を準備しました。",
+            "focus": "reviewed"
+          }
+        ]
+      }
     ],
-    "collocations": [
-        {
-            "phrase": "review the document",
-            "ja": "資料を確認する",
-            "image": "資料を見直す基本。",
-            "pattern": "review the document",
-            "examples": [
-                {
-                    "en": "Please review the document and share your comments.",
-                    "ja": "資料を確認してコメントを共有してください。",
-                    "focus": "review the document"
-                },
-                {
-                    "en": "I reviewed the document before the meeting.",
-                    "ja": "会議前に資料を確認しました。",
-                    "focus": "reviewed the document"
-                },
-                {
-                    "en": "We need to review the document again after the revision.",
-                    "ja": "修正後に資料をもう一度確認する必要があります。",
-                    "focus": "review the document"
-                }
-            ]
-        },
-        {
-            "phrase": "review the plan",
-            "ja": "計画を見直す",
-            "image": "計画の妥当性や修正点を確認する。",
-            "pattern": "review the plan",
-            "examples": [
-                {
-                    "en": "Let's review the plan before we contact the client.",
-                    "ja": "顧客へ連絡する前に計画を見直しましょう。",
-                    "focus": "review the plan"
-                },
-                {
-                    "en": "I reviewed the plan with the project leader.",
-                    "ja": "プロジェクトリーダーと計画を見直しました。",
-                    "focus": "reviewed the plan"
-                },
-                {
-                    "en": "We should review the plan every month.",
-                    "ja": "毎月計画を見直すべきです。",
-                    "focus": "review the plan"
-                }
-            ]
-        },
-        {
-            "phrase": "review the results",
-            "ja": "結果を確認する",
-            "image": "結果を見て判断する。",
-            "pattern": "review the results",
-            "examples": [
-                {
-                    "en": "We reviewed the results and decided the next action.",
-                    "ja": "結果を確認し、次の対応を決めました。",
-                    "focus": "reviewed the results"
-                },
-                {
-                    "en": "Please review the results before making a report.",
-                    "ja": "報告書を作る前に結果を確認してください。",
-                    "focus": "review the results"
-                },
-                {
-                    "en": "The team reviewed the results from the trial.",
-                    "ja": "チームは試験結果を確認しました。",
-                    "focus": "reviewed the results"
-                }
-            ]
-        },
-        {
-            "phrase": "final review",
-            "ja": "最終確認",
-            "image": "提出前の最後の確認。",
-            "pattern": "final review",
-            "examples": [
-                {
-                    "en": "This document needs a final review before submission.",
-                    "ja": "この資料は提出前に最終確認が必要です。",
-                    "focus": "final review"
-                },
-                {
-                    "en": "I will do the final review this afternoon.",
-                    "ja": "今日の午後に最終確認を行います。",
-                    "focus": "final review"
-                },
-                {
-                    "en": "Please send the file after the final review.",
-                    "ja": "最終確認後にファイルを送ってください。",
-                    "focus": "final review"
-                }
-            ]
-        },
-        {
-            "phrase": "review meeting",
-            "ja": "確認会議・レビュー会議",
-            "image": "内容を確認するための会議。",
-            "pattern": "review meeting",
-            "examples": [
-                {
-                    "en": "We have a review meeting every Friday.",
-                    "ja": "毎週金曜日に確認会議を行います。",
-                    "focus": "review meeting"
-                },
-                {
-                    "en": "Please prepare the agenda for the review meeting.",
-                    "ja": "確認会議の議題を準備してください。",
-                    "focus": "review meeting"
-                },
-                {
-                    "en": "The review meeting helped us find the issue early.",
-                    "ja": "確認会議のおかげで問題を早めに見つけられました。",
-                    "focus": "review meeting"
-                }
-            ]
-        }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
-        {
-            "phrase": "review with",
-            "ja": "〜と一緒に確認する",
-            "image": "withで一緒に確認する相手を示す。",
-            "pattern": "review + 名詞 + with + 人",
-            "examples": [
-                {
-                    "en": "Please review the proposal with the sales manager.",
-                    "ja": "営業マネージャーと提案書を確認してください。",
-                    "focus": "review the proposal with"
-                },
-                {
-                    "en": "I reviewed the numbers with the accounting team.",
-                    "ja": "経理チームと数字を確認しました。",
-                    "focus": "reviewed the numbers with"
-                },
-                {
-                    "en": "We need to review the design with the client.",
-                    "ja": "顧客とデザインを確認する必要があります。",
-                    "focus": "review the design with"
-                }
-            ]
-        },
-        {
-            "phrase": "review before",
-            "ja": "〜の前に確認する",
-            "image": "beforeで確認するタイミングを示す。",
-            "pattern": "review + 名詞 + before + 行動",
-            "examples": [
-                {
-                    "en": "Please review the email before sending it.",
-                    "ja": "送信前にメールを確認してください。",
-                    "focus": "review the email before"
-                },
-                {
-                    "en": "I reviewed the quote before calling the client.",
-                    "ja": "顧客へ電話する前に見積を確認しました。",
-                    "focus": "reviewed the quote before"
-                },
-                {
-                    "en": "We should review the checklist before installation.",
-                    "ja": "施工前にチェックリストを確認するべきです。",
-                    "focus": "review the checklist before"
-                }
-            ]
-        },
-        {
-            "phrase": "review after",
-            "ja": "〜の後に見直す",
-            "image": "afterで見直すタイミングを示す。",
-            "pattern": "review + 名詞 + after + 出来事",
-            "examples": [
-                {
-                    "en": "We reviewed the process after the issue occurred.",
-                    "ja": "問題発生後に工程を見直しました。",
-                    "focus": "reviewed the process after"
-                },
-                {
-                    "en": "Please review the record after the visit.",
-                    "ja": "訪問後に記録を見直してください。",
-                    "focus": "review the record after"
-                },
-                {
-                    "en": "The team reviewed the result after the test.",
-                    "ja": "チームは試験後に結果を確認しました。",
-                    "focus": "reviewed the result after"
-                }
-            ]
-        },
-        {
-            "phrase": "review for",
-            "ja": "〜を確認するために見直す",
-            "image": "forで確認目的を示す。",
-            "pattern": "review + 名詞 + for + 確認項目",
-            "examples": [
-                {
-                    "en": "Please review the contract for missing information.",
-                    "ja": "不足情報がないか契約書を確認してください。",
-                    "focus": "review the contract for"
-                },
-                {
-                    "en": "I reviewed the report for calculation errors.",
-                    "ja": "計算ミスがないか報告書を確認しました。",
-                    "focus": "reviewed the report for"
-                },
-                {
-                    "en": "We should review the design for safety issues.",
-                    "ja": "安全上の問題がないかデザインを確認するべきです。",
-                    "focus": "review the design for"
-                }
-            ]
-        },
-        {
-            "phrase": "under review",
-            "ja": "確認中・審査中",
-            "image": "まだ確認されている途中の状態。",
-            "pattern": "be under review",
-            "examples": [
-                {
-                    "en": "The proposal is currently under review.",
-                    "ja": "提案書は現在確認中です。",
-                    "focus": "under review"
-                },
-                {
-                    "en": "Your request is under review by the manager.",
-                    "ja": "あなたの依頼は上司が確認中です。",
-                    "focus": "under review"
-                },
-                {
-                    "en": "The contract is still under review.",
-                    "ja": "契約書はまだ確認中です。",
-                    "focus": "under review"
-                }
-            ]
-        }
+      {
+        "phrase": "review with",
+        "ja": "〜と一緒に確認する",
+        "image": "withで一緒に確認する相手を示す。",
+        "pattern": "review + 名詞 + with + 人",
+        "examples": [
+          {
+            "en": "Please review the proposal with the sales manager.",
+            "ja": "営業マネージャーと提案書を確認してください。",
+            "focus": "review with"
+          },
+          {
+            "en": "I reviewed the numbers with the accounting team.",
+            "ja": "経理チームと数字を確認しました。",
+            "focus": "reviewed with"
+          },
+          {
+            "en": "We need to review the design with the client.",
+            "ja": "顧客とデザインを確認する必要があります。",
+            "focus": "review with"
+          }
+        ]
+      },
+      {
+        "phrase": "review for",
+        "ja": "〜がないか確認する",
+        "image": "forで探すミス・不足・問題を示す。",
+        "pattern": "review + 名詞 + for + problem/error",
+        "examples": [
+          {
+            "en": "Please review the contract for missing information.",
+            "ja": "不足情報がないか契約書を確認してください。",
+            "focus": "review for"
+          },
+          {
+            "en": "I reviewed the report for calculation errors.",
+            "ja": "計算ミスがないか報告書を確認しました。",
+            "focus": "reviewed for"
+          },
+          {
+            "en": "We should review the design for safety issues.",
+            "ja": "安全上の問題がないかデザインを確認するべきです。",
+            "focus": "review for"
+          }
+        ]
+      },
+      {
+        "phrase": "review against",
+        "ja": "基準・条件に照らして確認する",
+        "image": "againstで判断に使う基準を示す。",
+        "pattern": "review + 名詞 + against + criteria/requirements",
+        "examples": [
+          {
+            "en": "Please review the proposal against the client requirements.",
+            "ja": "顧客要件に照らして提案書を確認してください。",
+            "focus": "review against"
+          },
+          {
+            "en": "We reviewed the results against the target.",
+            "ja": "目標に照らして結果を確認しました。",
+            "focus": "reviewed against"
+          },
+          {
+            "en": "The engineer reviewed the design against the safety standards.",
+            "ja": "技術者は安全基準に照らして設計を確認しました。",
+            "focus": "reviewed against"
+          }
+        ]
+      }
     ]
-},
+  },
   {
     "id": "compare",
     "rank": 69,
@@ -15062,409 +14683,293 @@ export const verbs: Verb[] = [
     "core": "2つ以上を並べて、違い・共通点・良し悪しを見る",
     "coreDetail": "COMPAREは、価格・仕様・条件・結果・提案などを比べて判断材料を作る時に使います。営業、購買、資料作成でよく使う実用的な動詞です。",
     "coreVisual": {
-        "from": [
-            "A案",
-            "B案",
-            "価格",
-            "仕様",
-            "結果"
-        ],
-        "to": "違い・共通点・判断材料",
-        "label": "並べて見る → 違いを判断する"
+      "from": [
+        "A案",
+        "B案",
+        "価格",
+        "仕様",
+        "結果"
+      ],
+      "to": "違い・共通点・判断材料",
+      "label": "並べて見る → 違いを判断する"
     },
     "meanings": [
-        {
-            "id": "compare-two",
-            "title": "① 2つを比較する",
-            "pattern": "compare + A + with/to + B",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "2つを並べて違いを見る。",
-            "point": "compare A with B は仕事で特によく使います。",
-            "examples": [
-                {
-                    "en": "We compared the new model with the current model.",
-                    "ja": "新しいモデルを現行モデルと比較しました。",
-                    "focus": "compared"
-                },
-                {
-                    "en": "Please compare these two quotations before we decide.",
-                    "ja": "決定前にこの2つの見積を比較してください。",
-                    "focus": "compare"
-                },
-                {
-                    "en": "I compared the sample with the approved design.",
-                    "ja": "サンプルを承認済みデザインと比較しました。",
-                    "focus": "compared"
-                }
-            ]
-        },
-        {
-            "id": "compare-prices",
-            "title": "② 価格を比較する",
-            "pattern": "compare + prices/costs",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "価格やコストを比べる。",
-            "point": "営業・購買・見積確認で使いやすい型です。",
-            "examples": [
-                {
-                    "en": "We compared the prices from three suppliers.",
-                    "ja": "3社の仕入先の価格を比較しました。",
-                    "focus": "compared"
-                },
-                {
-                    "en": "Please compare the total cost, not just the unit price.",
-                    "ja": "単価だけでなく総額を比較してください。",
-                    "focus": "compare"
-                },
-                {
-                    "en": "The client compared our price with a competitor's offer.",
-                    "ja": "顧客は当社価格を競合の提案と比較しました。",
-                    "focus": "compared"
-                }
-            ]
-        },
-        {
-            "id": "compare-specs",
-            "title": "③ 仕様・条件を比較する",
-            "pattern": "compare + specifications/conditions/options",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "仕様や条件を比べる。",
-            "point": "製品選定や提案比較に向いています。",
-            "examples": [
-                {
-                    "en": "Can you compare the specifications of these two products?",
-                    "ja": "この2つの製品仕様を比較できますか？",
-                    "focus": "compare"
-                },
-                {
-                    "en": "We compared the conditions before selecting the supplier.",
-                    "ja": "仕入先を選ぶ前に条件を比較しました。",
-                    "focus": "compared"
-                },
-                {
-                    "en": "Please compare the options and choose the best one.",
-                    "ja": "選択肢を比較して最適なものを選んでください。",
-                    "focus": "compare"
-                }
-            ]
-        },
-        {
-            "id": "compare-results",
-            "title": "④ 結果・実績を比較する",
-            "pattern": "compare + results/performance/data",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "結果を比べて変化や差を見る。",
-            "point": "前月比・前年比・テスト比較で使います。",
-            "examples": [
-                {
-                    "en": "We compared this month's results with last month's results.",
-                    "ja": "今月の結果を先月の結果と比較しました。",
-                    "focus": "compared"
-                },
-                {
-                    "en": "Please compare the test data before and after the change.",
-                    "ja": "変更前後の試験データを比較してください。",
-                    "focus": "compare"
-                },
-                {
-                    "en": "The manager compared the sales performance by area.",
-                    "ja": "上司はエリア別の売上実績を比較しました。",
-                    "focus": "compared"
-                }
-            ]
-        },
-        {
-            "id": "compare-standard",
-            "title": "⑤ 基準・目標と比較する",
-            "pattern": "compare + result + to/against + standard",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "基準と照らし合わせる。",
-            "point": "目標、基準値、仕様書との差を見る時に使います。",
-            "examples": [
-                {
-                    "en": "We compared the result against the quality standard.",
-                    "ja": "結果を品質基準と比較しました。",
-                    "focus": "compared"
-                },
-                {
-                    "en": "Please compare the actual cost to the budget.",
-                    "ja": "実際の費用を予算と比較してください。",
-                    "focus": "compare"
-                },
-                {
-                    "en": "The team compared the delivery time against the target.",
-                    "ja": "チームは納期を目標と比較しました。",
-                    "focus": "compared"
-                }
-            ]
-        },
-        {
-            "id": "hard-compare",
-            "title": "⑥ 比較できない・比べにくい",
-            "pattern": "cannot compare / be hard to compare",
-            "transitivity": "他動詞",
-            "structure": "仕事で自然に使う型",
-            "image": "条件が違いすぎて比べにくい。",
-            "point": "比較できない理由を説明する時に使います。",
-            "examples": [
-                {
-                    "en": "We cannot compare these prices because the conditions are different.",
-                    "ja": "条件が違うため、これらの価格は比較できません。",
-                    "focus": "compare"
-                },
-                {
-                    "en": "It is hard to compare the two proposals directly.",
-                    "ja": "2つの提案を直接比較するのは難しいです。",
-                    "focus": "compare"
-                },
-                {
-                    "en": "The samples are difficult to compare without the same test conditions.",
-                    "ja": "同じ試験条件がないとサンプルを比較するのは難しいです。",
-                    "focus": "compare"
-                }
-            ]
-        }
+      {
+        "id": "compare-two",
+        "title": "① 2つを比較する",
+        "pattern": "compare + A + with/to + B",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "2つを並べて違いを見る。",
+        "point": "compare A with B は仕事で特によく使います。",
+        "examples": [
+          {
+            "en": "We compared the new model with the current model.",
+            "ja": "新しいモデルを現行モデルと比較しました。",
+            "focus": "compared"
+          },
+          {
+            "en": "Please compare these two quotations before we decide.",
+            "ja": "決定前にこの2つの見積を比較してください。",
+            "focus": "compare"
+          },
+          {
+            "en": "I compared the sample with the approved design.",
+            "ja": "サンプルを承認済みデザインと比較しました。",
+            "focus": "compared"
+          }
+        ]
+      },
+      {
+        "id": "compare-prices",
+        "title": "② 価格を比較する",
+        "pattern": "compare + prices/costs",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "価格やコストを比べる。",
+        "point": "営業・購買・見積確認で使いやすい型です。",
+        "examples": [
+          {
+            "en": "We compared the prices from three suppliers.",
+            "ja": "3社の仕入先の価格を比較しました。",
+            "focus": "compared"
+          },
+          {
+            "en": "Please compare the total cost, not just the unit price.",
+            "ja": "単価だけでなく総額を比較してください。",
+            "focus": "compare"
+          },
+          {
+            "en": "The client compared our price with a competitor's offer.",
+            "ja": "顧客は当社価格を競合の提案と比較しました。",
+            "focus": "compared"
+          }
+        ]
+      },
+      {
+        "id": "compare-specs",
+        "title": "③ 仕様・条件を比較する",
+        "pattern": "compare + specifications/conditions/options",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "仕様や条件を比べる。",
+        "point": "製品選定や提案比較に向いています。",
+        "examples": [
+          {
+            "en": "Can you compare the specifications of these two products?",
+            "ja": "この2つの製品仕様を比較できますか？",
+            "focus": "compare"
+          },
+          {
+            "en": "We compared the conditions before selecting the supplier.",
+            "ja": "仕入先を選ぶ前に条件を比較しました。",
+            "focus": "compared"
+          },
+          {
+            "en": "Please compare the options and choose the best one.",
+            "ja": "選択肢を比較して最適なものを選んでください。",
+            "focus": "compare"
+          }
+        ]
+      },
+      {
+        "id": "compare-results",
+        "title": "④ 結果・実績を比較する",
+        "pattern": "compare + results/performance/data",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "結果を比べて変化や差を見る。",
+        "point": "前月比・前年比・テスト比較で使います。",
+        "examples": [
+          {
+            "en": "We compared this month's results with last month's results.",
+            "ja": "今月の結果を先月の結果と比較しました。",
+            "focus": "compared"
+          },
+          {
+            "en": "Please compare the test data before and after the change.",
+            "ja": "変更前後の試験データを比較してください。",
+            "focus": "compare"
+          },
+          {
+            "en": "The manager compared the sales performance by area.",
+            "ja": "上司はエリア別の売上実績を比較しました。",
+            "focus": "compared"
+          }
+        ]
+      },
+      {
+        "id": "compare-standard",
+        "title": "⑤ 基準・目標と比較する",
+        "pattern": "compare + result + to/against + standard",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "基準と照らし合わせる。",
+        "point": "目標、基準値、仕様書との差を見る時に使います。",
+        "examples": [
+          {
+            "en": "We compared the result against the quality standard.",
+            "ja": "結果を品質基準と比較しました。",
+            "focus": "compared"
+          },
+          {
+            "en": "Please compare the actual cost to the budget.",
+            "ja": "実際の費用を予算と比較してください。",
+            "focus": "compare"
+          },
+          {
+            "en": "The team compared the delivery time against the target.",
+            "ja": "チームは納期を目標と比較しました。",
+            "focus": "compared"
+          }
+        ]
+      },
+      {
+        "id": "hard-compare",
+        "title": "⑥ 比較できない・比べにくい",
+        "pattern": "cannot compare / be hard to compare",
+        "transitivity": "他動詞",
+        "structure": "仕事で自然に使う型",
+        "image": "条件が違いすぎて比べにくい。",
+        "point": "比較できない理由を説明する時に使います。",
+        "examples": [
+          {
+            "en": "We cannot compare these prices because the conditions are different.",
+            "ja": "条件が違うため、これらの価格は比較できません。",
+            "focus": "compare"
+          },
+          {
+            "en": "It is hard to compare the two proposals directly.",
+            "ja": "2つの提案を直接比較するのは難しいです。",
+            "focus": "compare"
+          },
+          {
+            "en": "The samples are difficult to compare without the same test conditions.",
+            "ja": "同じ試験条件がないとサンプルを比較するのは難しいです。",
+            "focus": "compare"
+          }
+        ]
+      }
     ],
-    "collocations": [
-        {
-            "phrase": "compare prices",
-            "ja": "価格を比較する",
-            "image": "複数の価格を比べる。",
-            "pattern": "compare prices",
-            "examples": [
-                {
-                    "en": "We need to compare prices before placing the order.",
-                    "ja": "発注前に価格を比較する必要があります。",
-                    "focus": "compare prices"
-                },
-                {
-                    "en": "I compared prices from three vendors.",
-                    "ja": "3社の販売会社の価格を比較しました。",
-                    "focus": "compared prices"
-                },
-                {
-                    "en": "Please compare prices and check the delivery terms.",
-                    "ja": "価格を比較して納品条件を確認してください。",
-                    "focus": "compare prices"
-                }
-            ]
-        },
-        {
-            "phrase": "compare specifications",
-            "ja": "仕様を比較する",
-            "image": "製品やサービスの仕様を比べる。",
-            "pattern": "compare specifications",
-            "examples": [
-                {
-                    "en": "Please compare specifications before choosing the model.",
-                    "ja": "機種を選ぶ前に仕様を比較してください。",
-                    "focus": "compare specifications"
-                },
-                {
-                    "en": "We compared specifications with the customer's request.",
-                    "ja": "顧客の要望と仕様を比較しました。",
-                    "focus": "compared specifications"
-                },
-                {
-                    "en": "The team compared specifications and found one difference.",
-                    "ja": "チームは仕様を比較し、1つ違いを見つけました。",
-                    "focus": "compared specifications"
-                }
-            ]
-        },
-        {
-            "phrase": "compare results",
-            "ja": "結果を比較する",
-            "image": "複数の結果を見比べる。",
-            "pattern": "compare results",
-            "examples": [
-                {
-                    "en": "Let's compare results after the second test.",
-                    "ja": "2回目の試験後に結果を比較しましょう。",
-                    "focus": "compare results"
-                },
-                {
-                    "en": "We compared results from both branches.",
-                    "ja": "両支店の結果を比較しました。",
-                    "focus": "compared results"
-                },
-                {
-                    "en": "Please compare results before preparing the report.",
-                    "ja": "報告書を準備する前に結果を比較してください。",
-                    "focus": "compare results"
-                }
-            ]
-        },
-        {
-            "phrase": "compare options",
-            "ja": "選択肢を比較する",
-            "image": "複数案から選ぶために比べる。",
-            "pattern": "compare options",
-            "examples": [
-                {
-                    "en": "We should compare options before making a recommendation.",
-                    "ja": "提案する前に選択肢を比較するべきです。",
-                    "focus": "compare options"
-                },
-                {
-                    "en": "The client compared options and chose the cheaper plan.",
-                    "ja": "顧客は選択肢を比較し、安いプランを選びました。",
-                    "focus": "compared options"
-                },
-                {
-                    "en": "Please compare options based on cost and quality.",
-                    "ja": "費用と品質を基準に選択肢を比較してください。",
-                    "focus": "compare options"
-                }
-            ]
-        },
-        {
-            "phrase": "side-by-side comparison",
-            "ja": "並列表での比較",
-            "image": "横に並べて比較すること。",
-            "pattern": "side-by-side comparison",
-            "examples": [
-                {
-                    "en": "Please make a side-by-side comparison of the two proposals.",
-                    "ja": "2つの提案の並列表比較を作ってください。",
-                    "focus": "side-by-side comparison"
-                },
-                {
-                    "en": "A side-by-side comparison makes the differences clear.",
-                    "ja": "並列表比較にすると違いが明確になります。",
-                    "focus": "side-by-side comparison"
-                },
-                {
-                    "en": "We used a side-by-side comparison in the sales meeting.",
-                    "ja": "営業会議で並列表比較を使いました。",
-                    "focus": "side-by-side comparison"
-                }
-            ]
-        }
-    ],
+    "collocations": [],
     "phrasalVerbs": [
-        {
-            "phrase": "compare with",
-            "ja": "〜と比較する",
-            "image": "withは比較対象を示す基本形。",
-            "pattern": "compare A with B",
-            "examples": [
-                {
-                    "en": "Please compare this quote with the previous quote.",
-                    "ja": "この見積を前回の見積と比較してください。",
-                    "focus": "compare this quote with"
-                },
-                {
-                    "en": "We compared the new design with the original design.",
-                    "ja": "新しいデザインを元のデザインと比較しました。",
-                    "focus": "compared the new design with"
-                },
-                {
-                    "en": "I compared the schedule with the client's request.",
-                    "ja": "スケジュールを顧客の要望と比較しました。",
-                    "focus": "compared the schedule with"
-                }
-            ]
-        },
-        {
-            "phrase": "compare to",
-            "ja": "〜と比べる",
-            "image": "toも比較対象を示す。",
-            "pattern": "compare A to B",
-            "examples": [
-                {
-                    "en": "Please compare the actual cost to the budget.",
-                    "ja": "実際の費用を予算と比較してください。",
-                    "focus": "compare the actual cost to"
-                },
-                {
-                    "en": "We compared this year's sales to last year's sales.",
-                    "ja": "今年の売上を昨年の売上と比較しました。",
-                    "focus": "compared this year's sales to"
-                },
-                {
-                    "en": "The report compares our service to the competitor's service.",
-                    "ja": "その報告書は当社サービスを競合サービスと比較しています。",
-                    "focus": "compares our service to"
-                }
-            ]
-        },
-        {
-            "phrase": "compare against",
-            "ja": "基準に照らして比較する",
-            "image": "againstは基準・目標との比較に向く。",
-            "pattern": "compare A against B",
-            "examples": [
-                {
-                    "en": "We compared the result against the target.",
-                    "ja": "結果を目標と比較しました。",
-                    "focus": "compared the result against"
-                },
-                {
-                    "en": "Please compare the sample against the approved specification.",
-                    "ja": "サンプルを承認済み仕様と比較してください。",
-                    "focus": "compare the sample against"
-                },
-                {
-                    "en": "The team compared the cost against the original estimate.",
-                    "ja": "チームは費用を当初見積と比較しました。",
-                    "focus": "compared the cost against"
-                }
-            ]
-        },
-        {
-            "phrase": "compare before and after",
-            "ja": "変更前後を比較する",
-            "image": "改善や変更の効果を見る。",
-            "pattern": "compare before and after",
-            "examples": [
-                {
-                    "en": "Let's compare before and after the system update.",
-                    "ja": "システム更新の前後を比較しましょう。",
-                    "focus": "compare before and after"
-                },
-                {
-                    "en": "We compared before and after photos for the report.",
-                    "ja": "報告書用に変更前後の写真を比較しました。",
-                    "focus": "compared before and after"
-                },
-                {
-                    "en": "Please compare before and after data to check the effect.",
-                    "ja": "効果を確認するために変更前後のデータを比較してください。",
-                    "focus": "compare before and after"
-                }
-            ]
-        },
-        {
-            "phrase": "be compared with",
-            "ja": "〜と比較される",
-            "image": "受け身で比較対象として扱われる。",
-            "pattern": "be compared with + 比較対象",
-            "examples": [
-                {
-                    "en": "Our proposal was compared with two other proposals.",
-                    "ja": "当社の提案は他の2つの提案と比較されました。",
-                    "focus": "was compared with"
-                },
-                {
-                    "en": "This product is often compared with cheaper alternatives.",
-                    "ja": "この製品は安価な代替品とよく比較されます。",
-                    "focus": "compared with"
-                },
-                {
-                    "en": "The new result should be compared with the previous result.",
-                    "ja": "新しい結果は前回の結果と比較されるべきです。",
-                    "focus": "be compared with"
-                }
-            ]
-        }
+      {
+        "phrase": "compare with",
+        "ja": "〜と詳しく比較する",
+        "image": "withは違いと共通点を見る比較対象を示す。",
+        "pattern": "compare A with B",
+        "examples": [
+          {
+            "en": "Please compare this quote with the previous quote.",
+            "ja": "この見積を前回の見積と比較してください。",
+            "focus": "compare with"
+          },
+          {
+            "en": "We compared the new design with the original design.",
+            "ja": "新しいデザインを元のデザインと比較しました。",
+            "focus": "compared with"
+          },
+          {
+            "en": "Our proposal was compared with two other proposals.",
+            "ja": "当社の提案は他の2つの提案と比較されました。",
+            "focus": "compared with"
+          }
+        ]
+      },
+      {
+        "phrase": "compare to",
+        "ja": "〜と比べる・〜になぞらえる",
+        "image": "toは一般的な比較や、似たものへのたとえに使う。",
+        "pattern": "compare A to B",
+        "examples": [
+          {
+            "en": "Please compare the actual cost to the budget.",
+            "ja": "実際の費用を予算と比較してください。",
+            "focus": "compare to"
+          },
+          {
+            "en": "We compared this year's sales to last year's sales.",
+            "ja": "今年の売上を昨年の売上と比較しました。",
+            "focus": "compared to"
+          },
+          {
+            "en": "The report compares our service to the competitor's service.",
+            "ja": "その報告書は当社サービスを競合サービスと比較しています。",
+            "focus": "compares to"
+          }
+        ]
+      },
+      {
+        "phrase": "compare against",
+        "ja": "基準・目標に照らして比較する",
+        "image": "againstは目標、基準、見積との比較に向く。",
+        "pattern": "compare A against B",
+        "examples": [
+          {
+            "en": "We compared the result against the target.",
+            "ja": "結果を目標に照らして比較しました。",
+            "focus": "compared against"
+          },
+          {
+            "en": "Please compare the sample against the approved specification.",
+            "ja": "サンプルを承認済み仕様に照らして比較してください。",
+            "focus": "compare against"
+          },
+          {
+            "en": "The team compared the cost against the original estimate.",
+            "ja": "チームは費用を当初見積に照らして比較しました。",
+            "focus": "compared against"
+          }
+        ]
+      },
+      {
+        "phrase": "compare across",
+        "ja": "複数の範囲・グループにわたって比較する",
+        "image": "acrossで複数の地域、期間、製品群を横断する。",
+        "pattern": "compare + data/items + across + groups/periods",
+        "examples": [
+          {
+            "en": "We compared sales across all regions.",
+            "ja": "全地域にわたって売上を比較しました。",
+            "focus": "compared across"
+          },
+          {
+            "en": "Please compare the prices across the three suppliers.",
+            "ja": "3社の仕入先にわたって価格を比較してください。",
+            "focus": "compare across"
+          },
+          {
+            "en": "The report compares performance across different periods.",
+            "ja": "その報告書は異なる期間にわたって実績を比較しています。",
+            "focus": "compares across"
+          }
+        ]
+      },
+      {
+        "phrase": "compare by",
+        "ja": "基準・項目別に比較する",
+        "image": "byで比較に使う項目や分類方法を示す。",
+        "pattern": "compare + items + by + category/feature",
+        "examples": [
+          {
+            "en": "Please compare the products by price and brightness.",
+            "ja": "製品を価格と明るさの項目別に比較してください。",
+            "focus": "compare by"
+          },
+          {
+            "en": "We compared the proposals by cost, schedule, and risk.",
+            "ja": "提案を費用、日程、リスクの項目別に比較しました。",
+            "focus": "compared by"
+          },
+          {
+            "en": "The dashboard compares customers by sales volume.",
+            "ja": "ダッシュボードは顧客を売上規模別に比較します。",
+            "focus": "compares by"
+          }
+        ]
+      }
     ]
-},
+  },
   {
     "id": "introduce",
     "rank": 70,

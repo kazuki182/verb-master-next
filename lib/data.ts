@@ -15973,1160 +15973,1503 @@ export const verbs: Verb[] = [
       ]
   },
   {
-    "id": "contact",
-    "rank": 76,
-    "word": "CONTACT",
-    "ipa": "/ˈkɑːntækt/",
-    "kana": "コンタクト",
-    "syllable": "con-tact",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "相手との連絡線をつなぐ",
-    "coreDetail": "CONTACTは、電話・メール・チャットなどで相手に連絡線をつなぐ動詞です。基本は contact + 人/会社 で、contact to 人 とは言いません。仕事では顧客・仕入先・担当者へ連絡する場面で頻出します。",
-    "coreVisual": {
-      "from": ["👤 自分・会社", "✉️ メール", "📞 電話", "💬 チャット", "📋 用件"],
-      "to": "相手・担当者",
-      "label": "自分側 → 連絡手段 → 相手へつなぐ"
+  "id": "contact",
+  "rank": 76,
+  "word": "CONTACT",
+  "ipa": "/ˈkɑːntækt/",
+  "kana": "コンタクト",
+  "syllable": "con-tact",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "相手との連絡線をつなぐ",
+  "coreDetail": "CONTACTは、電話・メール・チャットなどで相手や会社に連絡する他動詞です。基本は contact + 人・会社で、contact to 人とは言いません。aboutで用件、byで手段、forで目的を加えられます。",
+  "meanings": [
+    {
+      "id": "contact-person",
+      "title": "① 人・会社に連絡する",
+      "pattern": "CONTACT + 人/会社",
+      "transitivity": "他動詞",
+      "structure": "S + contact + O",
+      "image": "相手へ直接連絡線をつなぐ。",
+      "point": "contactは他動詞です。contact the clientのように、相手を直接後ろに置きます。",
+      "examples": [
+        {
+          "en": "I contacted the supplier this morning.",
+          "ja": "私は今朝、仕入先に連絡しました。",
+          "focus": "contacted",
+          "object": "the supplier"
+        },
+        {
+          "en": "We need to contact the customer today.",
+          "ja": "私たちは今日、その顧客に連絡する必要があります。",
+          "focus": "contact",
+          "object": "the customer"
+        },
+        {
+          "en": "Please contact me if you have any questions.",
+          "ja": "質問があれば、私に連絡してください。",
+          "focus": "contact",
+          "object": "me"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "I contacted my friend after work.",
+          "ja": "私は仕事の後、友人に連絡しました。",
+          "focus": "contacted",
+          "object": "my friend"
+        },
+        {
+          "en": "Please contact me when you arrive.",
+          "ja": "到着したら、私に連絡してください。",
+          "focus": "contact",
+          "object": "me"
+        }
+      ]
     },
-    "meanings": [
-      {
-        "id": "contact-person",
-        "title": "① 人・会社に連絡する",
-        "pattern": "CONTACT + 人/会社",
-        "transitivity": "他動詞",
-        "structure": "S + contact + O",
-        "image": "相手にメール・電話・チャットなどで連絡する。",
-        "point": "contactは他動詞なので、contact the client のように直接目的語を置きます。contact to the client は避けます。",
-        "examples": [
-          { "en": "I contacted the supplier this morning.", "ja": "私は今朝、仕入先に連絡しました。", "focus": "contacted", "object": "the supplier", "jaFocus": "連絡しました" },
-          { "en": "We need to contact the customer today.", "ja": "私たちは今日、その顧客に連絡する必要があります。", "focus": "contact", "object": "the customer", "jaFocus": "連絡する必要があります" },
-          { "en": "Please contact me if you have any questions.", "ja": "質問があれば私に連絡してください。", "focus": "contact", "object": "me", "jaFocus": "連絡してください" }
-        ],
-        "dailyExamples": [
-          { "en": "I contacted my friend after work.", "ja": "仕事の後、友人に連絡しました。", "focus": "contacted", "object": "my friend", "jaFocus": "連絡しました" },
-          { "en": "Please contact me when you arrive.", "ja": "到着したら私に連絡してください。", "focus": "contact", "object": "me", "jaFocus": "連絡してください" }
-        ]
-      },
-      {
-        "id": "contact-about",
-        "title": "② 〜の件で連絡する",
-        "pattern": "CONTACT + 人 + ABOUT + 件名",
-        "transitivity": "他動詞",
-        "structure": "S + contact + O + about + 名詞",
-        "image": "用件を添えて、相手に連絡する。",
-        "point": "contact someone about ... は、問い合わせ・納期・請求書などの件名を伝える時に便利です。",
-        "examples": [
-          { "en": "I contacted the client about the delivery schedule.", "ja": "納期の件で顧客に連絡しました。", "focus": "contacted", "object": "the client", "jaFocus": "連絡しました" },
-          { "en": "We should contact accounting about the invoice.", "ja": "請求書の件で経理に連絡した方がいいです。", "focus": "contact", "object": "accounting", "jaFocus": "連絡した方がいい" },
-          { "en": "She contacted support about the login issue.", "ja": "彼女はログイン問題の件でサポートに連絡しました。", "focus": "contacted", "object": "support", "jaFocus": "連絡しました" }
-        ],
-        "dailyExamples": [
-          { "en": "I contacted the hotel about my reservation.", "ja": "予約の件でホテルに連絡しました。", "focus": "contacted", "object": "the hotel", "jaFocus": "連絡しました" },
-          { "en": "He contacted the shop about the repair.", "ja": "彼は修理の件で店に連絡しました。", "focus": "contacted", "object": "the shop", "jaFocus": "連絡しました" }
-        ]
-      },
-      {
-        "id": "contact-by",
-        "title": "③ 手段で連絡する",
-        "pattern": "CONTACT + 人 + BY email/phone/chat",
-        "transitivity": "他動詞",
-        "structure": "S + contact + O + by + 手段",
-        "image": "メール・電話など、連絡手段を指定する。",
-        "point": "by email / by phone / through chat を付けると、連絡方法まで明確にできます。",
-        "examples": [
-          { "en": "Please contact the customer by email first.", "ja": "まずメールで顧客に連絡してください。", "focus": "contact", "object": "the customer", "jaFocus": "連絡してください" },
-          { "en": "We contacted the supplier by phone.", "ja": "私たちは電話で仕入先に連絡しました。", "focus": "contacted", "object": "the supplier", "jaFocus": "連絡しました" },
-          { "en": "Can you contact the team through chat?", "ja": "チャットでチームに連絡してもらえますか。", "focus": "contact", "object": "the team", "jaFocus": "連絡して" }
-        ],
-        "dailyExamples": [
-          { "en": "I contacted my family by video call.", "ja": "ビデオ通話で家族に連絡しました。", "focus": "contacted", "object": "my family", "jaFocus": "連絡しました" },
-          { "en": "She contacted me through the app.", "ja": "彼女はアプリ経由で私に連絡しました。", "focus": "contacted", "object": "me", "jaFocus": "連絡しました" }
-        ]
-      },
-      {
-        "id": "contact-for",
-        "title": "④ 目的のために連絡する",
-        "pattern": "CONTACT + 人 + FOR + 目的",
-        "transitivity": "他動詞",
-        "structure": "S + contact + O + for + 名詞",
-        "image": "確認・見積・サポートなど、目的を持って連絡する。",
-        "point": "for a quote / for support / for confirmation のように、連絡する目的を表せます。",
-        "examples": [
-          { "en": "We contacted the vendor for a quote.", "ja": "見積のために販売会社へ連絡しました。", "focus": "contacted", "object": "the vendor", "jaFocus": "連絡しました" },
-          { "en": "Please contact the sales team for more details.", "ja": "詳細については営業チームに連絡してください。", "focus": "contact", "object": "the sales team", "jaFocus": "連絡してください" },
-          { "en": "I contacted IT for support.", "ja": "サポートを受けるためにIT担当へ連絡しました。", "focus": "contacted", "object": "IT", "jaFocus": "連絡しました" }
-        ],
-        "dailyExamples": [
-          { "en": "I contacted the gym for membership information.", "ja": "会員情報を聞くためにジムに連絡しました。", "focus": "contacted", "object": "the gym", "jaFocus": "連絡しました" },
-          { "en": "She contacted the school for details.", "ja": "彼女は詳細を聞くために学校へ連絡しました。", "focus": "contacted", "object": "the school", "jaFocus": "連絡しました" }
-        ]
-      },
-      {
-        "id": "contact-directly",
-        "title": "⑤ 直接連絡する",
-        "pattern": "CONTACT + 人 + DIRECTLY",
-        "transitivity": "他動詞",
-        "structure": "S + contact + O + 副詞",
-        "image": "間に人を挟まず、担当者本人に連絡する。",
-        "point": "directly を付けると、代理ではなく本人・担当窓口へ直接連絡するニュアンスになります。",
-        "examples": [
-          { "en": "Please contact the person in charge directly.", "ja": "担当者に直接連絡してください。", "focus": "contact", "object": "the person in charge", "jaFocus": "直接連絡してください" },
-          { "en": "The client contacted our manager directly.", "ja": "顧客は当社の管理者に直接連絡しました。", "focus": "contacted", "object": "our manager", "jaFocus": "直接連絡しました" },
-          { "en": "I will contact the manufacturer directly.", "ja": "メーカーに直接連絡します。", "focus": "contact", "object": "the manufacturer", "jaFocus": "直接連絡します" }
-        ],
-        "dailyExamples": [
-          { "en": "You can contact me directly on LINE.", "ja": "LINEで私に直接連絡できます。", "focus": "contact", "object": "me", "jaFocus": "直接連絡できます" },
-          { "en": "He contacted the owner directly.", "ja": "彼はオーナーに直接連絡しました。", "focus": "contacted", "object": "the owner", "jaFocus": "直接連絡しました" }
-        ]
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": []
-  },
-  {
-    "id": "share",
-    "rank": 77,
-    "word": "SHARE",
-    "ipa": "/ʃer/",
-    "kana": "シェア",
-    "syllable": "share",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "情報・物・経験を相手と同じ場に置く",
-    "coreDetail": "SHAREは、情報・資料・考え・作業・成果を相手と同じ場に置くイメージです。仕事では share + 名詞 + with + 人 が特に重要で、share to 人 ではなく with を使うのが基本です。",
-    "coreVisual": {
-      "from": ["📄 資料", "💡 情報", "🧠 意見", "📊 結果", "🧩 作業"],
-      "to": "チーム・顧客・相手",
-      "label": "自分が持つもの → 相手と同じ場に置く"
+    {
+      "id": "contact-about",
+      "title": "② 用件を添えて連絡する",
+      "pattern": "CONTACT + 人 + ABOUT + 用件",
+      "transitivity": "他動詞",
+      "structure": "S + contact + O + about + 名詞",
+      "image": "何についての連絡かを明確にする。",
+      "point": "aboutの後ろに納期、請求書、予約などの用件を置きます。",
+      "examples": [
+        {
+          "en": "I contacted the client about the delivery schedule.",
+          "ja": "私は納期の件で顧客に連絡しました。",
+          "focus": "contacted",
+          "object": "the client"
+        },
+        {
+          "en": "We should contact accounting about the invoice.",
+          "ja": "私たちは請求書の件で経理に連絡した方がよいです。",
+          "focus": "contact",
+          "object": "accounting"
+        },
+        {
+          "en": "She contacted support about the login issue.",
+          "ja": "彼女はログイン問題の件でサポートに連絡しました。",
+          "focus": "contacted",
+          "object": "support"
+        }
+      ]
     },
-    "meanings": [
-      {
-        "id": "share-info",
-        "title": "① 情報・資料を共有する",
-        "pattern": "SHARE + 情報/資料 + WITH + 人",
-        "transitivity": "他動詞",
-        "structure": "S + share + O + with + 人",
-        "image": "自分が持つ情報や資料を、相手も見られる状態にする。",
-        "point": "ビジネスで最頻出の形です。share the file with the team のように with を使います。",
-        "examples": [
-          { "en": "I shared the file with the team.", "ja": "私はそのファイルをチームと共有しました。", "focus": "shared", "object": "the file", "jaFocus": "共有しました" },
-          { "en": "We should share the schedule with the client.", "ja": "私たちはそのスケジュールを顧客と共有すべきです。", "focus": "share", "object": "the schedule", "jaFocus": "共有すべきです" },
-          { "en": "Please share the latest price list with sales.", "ja": "最新の価格表を営業チームと共有してください。", "focus": "share", "object": "the latest price list", "jaFocus": "共有してください" }
-        ],
-        "dailyExamples": [
-          { "en": "I shared the photos with my family.", "ja": "家族と写真を共有しました。", "focus": "shared", "object": "the photos", "jaFocus": "共有しました" },
-          { "en": "Can you share the link with me?", "ja": "そのリンクを私に共有してくれますか。", "focus": "share", "object": "the link", "jaFocus": "共有して" }
-        ]
-      },
-      {
-        "id": "share-update",
-        "title": "② 報告・最新状況を伝える",
-        "pattern": "SHARE + update/result/news",
-        "transitivity": "他動詞",
-        "structure": "S + share + O",
-        "image": "進捗や結果を関係者に見える形で伝える。",
-        "point": "share an update / share the results は会議・メールでとても自然です。tellより少し協力的な響きがあります。",
-        "examples": [
-          { "en": "I will share an update after the meeting.", "ja": "会議後に最新状況を共有します。", "focus": "share", "object": "an update", "jaFocus": "共有します" },
-          { "en": "She shared the results with the manager.", "ja": "彼女は結果を上司と共有しました。", "focus": "shared", "object": "the results", "jaFocus": "共有しました" },
-          { "en": "Can you share the current status by Friday?", "ja": "金曜日までに現在の状況を共有できますか。", "focus": "share", "object": "the current status", "jaFocus": "共有できますか" }
-        ],
-        "dailyExamples": [
-          { "en": "I shared good news with my friends.", "ja": "友人に良い知らせを共有しました。", "focus": "shared", "object": "good news", "jaFocus": "共有しました" },
-          { "en": "She shared an update about her trip.", "ja": "彼女は旅行について近況を共有しました。", "focus": "shared", "object": "an update", "jaFocus": "共有しました" }
-        ]
-      },
-      {
-        "id": "share-idea",
-        "title": "③ 意見・考えを共有する",
-        "pattern": "SHARE + idea/opinion/thought",
-        "transitivity": "他動詞",
-        "structure": "S + share + O",
-        "image": "自分の考えを会議や相談の場に出す。",
-        "point": "share my idea / share your opinion は、会議で発言する時に使いやすい表現です。",
-        "examples": [
-          { "en": "I would like to share my idea first.", "ja": "まず私の考えを共有したいです。", "focus": "share", "object": "my idea", "jaFocus": "共有したいです" },
-          { "en": "Please share your opinion during the meeting.", "ja": "会議中にあなたの意見を共有してください。", "focus": "share", "object": "your opinion", "jaFocus": "共有してください" },
-          { "en": "The engineer shared a different view.", "ja": "その技術者は別の見方を共有しました。", "focus": "shared", "object": "a different view", "jaFocus": "共有しました" }
-        ],
-        "dailyExamples": [
-          { "en": "Can I share my thoughts?", "ja": "私の考えを話してもいいですか。", "focus": "share", "object": "my thoughts", "jaFocus": "話して" },
-          { "en": "He shared his opinion honestly.", "ja": "彼は正直に自分の意見を話しました。", "focus": "shared", "object": "his opinion", "jaFocus": "話しました" }
-        ]
-      },
-      {
-        "id": "share-responsibility",
-        "title": "④ 作業・責任を分担する",
-        "pattern": "SHARE + work/responsibility/task",
-        "transitivity": "他動詞",
-        "structure": "S + share + O",
-        "image": "一人で抱えず、複数人で同じ負担を持つ。",
-        "point": "share the workload / share responsibility は、チーム作業で使いやすい表現です。",
-        "examples": [
-          { "en": "We need to share the workload this week.", "ja": "今週は作業量を分担する必要があります。", "focus": "share", "object": "the workload", "jaFocus": "分担する必要があります" },
-          { "en": "The two teams shared responsibility for the project.", "ja": "2つのチームがその案件の責任を分担しました。", "focus": "shared", "object": "responsibility", "jaFocus": "分担しました" },
-          { "en": "Can we share the follow-up tasks?", "ja": "フォロー作業を分担できますか。", "focus": "share", "object": "the follow-up tasks", "jaFocus": "分担できますか" }
-        ],
-        "dailyExamples": [
-          { "en": "We shared the housework.", "ja": "私たちは家事を分担しました。", "focus": "shared", "object": "the housework", "jaFocus": "分担しました" },
-          { "en": "They shared the driving on the trip.", "ja": "彼らは旅行中に運転を交代で分担しました。", "focus": "shared", "object": "the driving", "jaFocus": "分担しました" }
-        ]
-      },
-      {
-        "id": "share-use",
-        "title": "⑤ 共同で使う",
-        "pattern": "SHARE + space/tool/resource",
-        "transitivity": "他動詞・自動詞",
-        "structure": "S + share + O",
-        "image": "同じ場所・道具・リソースを複数人で使う。",
-        "point": "share a folder / share a room / share resources のように、共同利用にも使います。",
-        "examples": [
-          { "en": "We share the same folder for project files.", "ja": "私たちは案件資料用に同じフォルダを共有しています。", "focus": "share", "object": "the same folder", "jaFocus": "共有しています" },
-          { "en": "The sales team shares a meeting room with marketing.", "ja": "営業チームはマーケティング部門と会議室を共同利用しています。", "focus": "shares", "object": "a meeting room", "jaFocus": "共同利用しています" },
-          { "en": "We can share the sample set during the visit.", "ja": "訪問中はサンプルセットを共同で使えます。", "focus": "share", "object": "the sample set", "jaFocus": "共同で使えます" }
-        ],
-        "dailyExamples": [
-          { "en": "We shared a table at the cafe.", "ja": "カフェでテーブルを相席しました。", "focus": "shared", "object": "a table", "jaFocus": "相席しました" },
-          { "en": "The kids shared one umbrella.", "ja": "子どもたちは1本の傘を一緒に使いました。", "focus": "shared", "object": "one umbrella", "jaFocus": "一緒に使いました" }
-        ]
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": [
-      {
-        "phrase": "share out",
-        "ja": "分けて配る・分配する",
-        "image": "1つの量を複数人へ公平に配る。",
-        "pattern": "share out + 名詞 / share + 名詞 + out",
-        "examples": [
-          { "en": "Let's share out the remaining tasks.", "ja": "残りの作業を分担しましょう。", "focus": "share out", "object": "the remaining tasks", "jaFocus": "分担しましょう" },
-          { "en": "The manager shared out the sample kits among the sales team.", "ja": "上司はサンプルキットを営業チーム内で分配しました。", "focus": "shared out", "object": "the sample kits", "jaFocus": "分配しました" },
-          { "en": "We shared the cost out across three departments.", "ja": "費用を3つの部門で分担しました。", "focus": "shared out", "object": "the cost", "jaFocus": "分担しました" }
-        ],
-        "dailyExamples": [
-          { "en": "We shared out the snacks after the game.", "ja": "試合後にお菓子を分けました。", "focus": "shared out", "object": "the snacks", "jaFocus": "分けました" },
-          { "en": "They shared the prize money out equally.", "ja": "彼らは賞金を均等に分けました。", "focus": "shared out", "object": "the prize money", "jaFocus": "分けました" }
-        ]
-      },
-      {
-        "phrase": "share in",
-        "ja": "〜を共にする・〜に加わる",
-        "image": "成果・責任・感情などに、参加者として一緒に入る。",
-        "pattern": "share in + 名詞",
-        "examples": [
-          { "en": "Everyone on the team should share in the success.", "ja": "チーム全員がその成功を分かち合うべきです。", "focus": "share in", "object": "the success", "jaFocus": "分かち合うべきです" },
-          { "en": "We all share in the responsibility for quality.", "ja": "私たちは全員、品質に対する責任を共有しています。", "focus": "share in", "object": "the responsibility", "jaFocus": "責任を共有しています" },
-          { "en": "New members can share in the project results.", "ja": "新しいメンバーも案件の成果を共有できます。", "focus": "share in", "object": "the project results", "jaFocus": "共有できます" }
-        ],
-        "dailyExamples": [
-          { "en": "I want to share in your happiness.", "ja": "あなたの幸せを一緒に分かち合いたいです。", "focus": "share in", "object": "your happiness", "jaFocus": "分かち合いたい" },
-          { "en": "They shared in the excitement.", "ja": "彼らはその興奮を共に味わいました。", "focus": "shared in", "object": "the excitement", "jaFocus": "共に味わいました" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "collect",
-    "rank": 78,
-    "word": "COLLECT",
-    "ipa": "/kəˈlekt/",
-    "kana": "コレクト",
-    "syllable": "col-lect",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "散らばったものを一か所に集める",
-    "coreDetail": "COLLECTは、情報・資料・サンプル・意見・お金など、散らばっているものを一か所に集める動詞です。仕事ではデータ収集、資料回収、フィードバック集めでよく使います。",
-    "coreVisual": {
-      "from": ["📊 データ", "📄 資料", "💬 意見", "📦 サンプル", "💰 支払い"],
-      "to": "一か所・自分側",
-      "label": "複数の場所 → 一か所に集める"
+    {
+      "id": "contact-method",
+      "title": "③ 連絡手段を示す",
+      "pattern": "CONTACT + 人 + BY/THROUGH + 手段",
+      "transitivity": "他動詞",
+      "structure": "S + contact + O + by/through + 手段",
+      "image": "メールや電話などの連絡方法を示す。",
+      "point": "by email、by phone、through chatなどを加えます。これは句動詞ではなく、連絡手段を表す基本用法です。",
+      "examples": [
+        {
+          "en": "Please contact the customer by email first.",
+          "ja": "まずメールで顧客に連絡してください。",
+          "focus": "contact",
+          "object": "the customer"
+        },
+        {
+          "en": "We contacted the supplier by phone.",
+          "ja": "私たちは電話で仕入先に連絡しました。",
+          "focus": "contacted",
+          "object": "the supplier"
+        },
+        {
+          "en": "Can you contact the team through chat?",
+          "ja": "あなたはチャットでチームに連絡できますか。",
+          "focus": "contact",
+          "object": "the team"
+        }
+      ]
     },
-    "meanings": [
-      {
-        "id": "collect-data",
-        "title": "① 情報・データを集める",
-        "pattern": "COLLECT + data/information/feedback",
-        "transitivity": "他動詞",
-        "structure": "S + collect + O",
-        "image": "判断や報告のために、必要な情報を集める。",
-        "point": "collect data / collect information / collect feedback は仕事で非常に使いやすい形です。",
-        "examples": [
-          { "en": "I collected the data for the report.", "ja": "報告書のためにデータを集めました。", "focus": "collected", "object": "the data", "jaFocus": "集めました" },
-          { "en": "We need to collect feedback from users.", "ja": "ユーザーからフィードバックを集める必要があります。", "focus": "collect", "object": "feedback", "jaFocus": "集める必要があります" },
-          { "en": "She collected information about the new market.", "ja": "彼女は新しい市場について情報を集めました。", "focus": "collected", "object": "information", "jaFocus": "集めました" }
-        ],
-        "dailyExamples": [
-          { "en": "I collected information for my trip.", "ja": "旅行のために情報を集めました。", "focus": "collected", "object": "information", "jaFocus": "集めました" },
-          { "en": "He collected reviews before buying the camera.", "ja": "彼はカメラを買う前にレビューを集めました。", "focus": "collected", "object": "reviews", "jaFocus": "集めました" }
-        ]
-      },
-      {
-        "id": "collect-documents",
-        "title": "② 資料・書類を回収する",
-        "pattern": "COLLECT + documents/forms/reports",
-        "transitivity": "他動詞",
-        "structure": "S + collect + O",
-        "image": "人や場所に分かれている資料を手元に集める。",
-        "point": "collect documents は『集める』、collect forms は『回収する』のように訳すと自然です。",
-        "examples": [
-          { "en": "She collected all the documents before the meeting.", "ja": "彼女は会議前にすべての資料を集めました。", "focus": "collected", "object": "all the documents", "jaFocus": "集めました" },
-          { "en": "Please collect the signed forms by Friday.", "ja": "金曜日までに署名済みの用紙を回収してください。", "focus": "collect", "object": "the signed forms", "jaFocus": "回収してください" },
-          { "en": "We collected the reports from each branch.", "ja": "各支店から報告書を集めました。", "focus": "collected", "object": "the reports", "jaFocus": "集めました" }
-        ],
-        "dailyExamples": [
-          { "en": "The teacher collected the homework.", "ja": "先生は宿題を回収しました。", "focus": "collected", "object": "the homework", "jaFocus": "回収しました" },
-          { "en": "I collected old photos from my parents' house.", "ja": "実家から古い写真を集めました。", "focus": "collected", "object": "old photos", "jaFocus": "集めました" }
-        ]
-      },
-      {
-        "id": "collect-from",
-        "title": "③ 〜から受け取る・引き取る",
-        "pattern": "COLLECT + 人/物 + FROM + 場所/人",
-        "transitivity": "他動詞",
-        "structure": "S + collect + O + from + 場所/人",
-        "image": "ある場所へ行って、人や物を引き取る。",
-        "point": "イギリス英語で特によく見られます。collect samples from the warehouse のように、物を取りに行く意味でも使えます。",
-        "examples": [
-          { "en": "I will collect the samples from the warehouse.", "ja": "倉庫からサンプルを引き取ります。", "focus": "collect", "object": "the samples", "jaFocus": "引き取ります" },
-          { "en": "Please collect the package from reception.", "ja": "受付から荷物を受け取ってください。", "focus": "collect", "object": "the package", "jaFocus": "受け取ってください" },
-          { "en": "We collected the prototype from the factory.", "ja": "工場から試作品を引き取りました。", "focus": "collected", "object": "the prototype", "jaFocus": "引き取りました" }
-        ],
-        "dailyExamples": [
-          { "en": "I collected my ticket from the counter.", "ja": "カウンターでチケットを受け取りました。", "focus": "collected", "object": "my ticket", "jaFocus": "受け取りました" },
-          { "en": "She collected her son from school.", "ja": "彼女は学校へ息子を迎えに行きました。", "focus": "collected", "object": "her son", "jaFocus": "迎えに行きました" }
-        ]
-      },
-      {
-        "id": "collect-payment",
-        "title": "④ お金・代金を回収する",
-        "pattern": "COLLECT + payment/fee/rent",
-        "transitivity": "他動詞",
-        "structure": "S + collect + O",
-        "image": "支払い・料金などを受け取って集める。",
-        "point": "collect payment は『代金を回収する』。営業・経理・請求管理で使えます。",
-        "examples": [
-          { "en": "Accounting will collect the payment next week.", "ja": "経理が来週、代金を回収します。", "focus": "collect", "object": "the payment", "jaFocus": "回収します" },
-          { "en": "We need to collect the remaining balance before delivery.", "ja": "納品前に残金を回収する必要があります。", "focus": "collect", "object": "the remaining balance", "jaFocus": "回収する必要があります" },
-          { "en": "The company collected service fees from each user.", "ja": "会社は各ユーザーからサービス料金を徴収しました。", "focus": "collected", "object": "service fees", "jaFocus": "徴収しました" }
-        ],
-        "dailyExamples": [
-          { "en": "The club collected the membership fee.", "ja": "クラブは会費を集めました。", "focus": "collected", "object": "the membership fee", "jaFocus": "集めました" },
-          { "en": "They collected donations at the event.", "ja": "彼らはイベントで寄付を集めました。", "focus": "collected", "object": "donations", "jaFocus": "集めました" }
-        ]
-      },
-      {
-        "id": "collect-thoughts",
-        "title": "⑤ 考えをまとめる",
-        "pattern": "COLLECT + thoughts/yourself",
-        "transitivity": "他動詞",
-        "structure": "S + collect + O",
-        "image": "散らばった考えや気持ちを落ち着かせて整える。",
-        "point": "collect my thoughts は、会議前や発言前に『考えをまとめる』という意味で使えます。",
-        "examples": [
-          { "en": "I need a minute to collect my thoughts.", "ja": "考えをまとめるために少し時間が必要です。", "focus": "collect", "object": "my thoughts", "jaFocus": "考えをまとめる" },
-          { "en": "She paused to collect her thoughts before the presentation.", "ja": "彼女は発表前に考えをまとめるため、少し間を置きました。", "focus": "collect", "object": "her thoughts", "jaFocus": "考えをまとめる" },
-          { "en": "Let's collect our thoughts before we reply.", "ja": "返信する前に考えを整理しましょう。", "focus": "collect", "object": "our thoughts", "jaFocus": "考えを整理しましょう" }
-        ],
-        "dailyExamples": [
-          { "en": "I took a walk to collect my thoughts.", "ja": "考えを整理するために散歩しました。", "focus": "collect", "object": "my thoughts", "jaFocus": "考えを整理する" },
-          { "en": "He closed his eyes to collect himself.", "ja": "彼は気持ちを落ち着かせるために目を閉じました。", "focus": "collect", "object": "himself", "jaFocus": "気持ちを落ち着かせる" }
-        ]
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": [
-      {
-        "phrase": "collect up",
-        "ja": "集め上げる・まとめて集める",
-        "image": "散らばっている物を一つ残らず集める。",
-        "pattern": "collect up + 名詞 / collect + 名詞 + up",
-        "examples": [
-          { "en": "Please collect up the sample cards after the presentation.", "ja": "発表後にサンプルカードをまとめて回収してください。", "focus": "collect up", "object": "the sample cards", "jaFocus": "回収してください" },
-          { "en": "We collected up the old price lists before sending the new version.", "ja": "新版を送る前に古い価格表をまとめて回収しました。", "focus": "collected up", "object": "the old price lists", "jaFocus": "回収しました" },
-          { "en": "The team collected all the parts up for inventory.", "ja": "チームは棚卸しのためにすべての部品を集めました。", "focus": "collected up", "object": "all the parts", "jaFocus": "集めました" }
-        ],
-        "dailyExamples": [
-          { "en": "We collected up the toys before dinner.", "ja": "夕食前におもちゃを片付けて集めました。", "focus": "collected up", "object": "the toys", "jaFocus": "集めました" },
-          { "en": "She collected the tickets up at the entrance.", "ja": "彼女は入口でチケットを回収しました。", "focus": "collected up", "object": "the tickets", "jaFocus": "回収しました" }
-        ]
-      }
-    ]
-  },
+    {
+      "id": "contact-purpose",
+      "title": "④ 目的のために連絡する",
+      "pattern": "CONTACT + 人 + FOR + 目的",
+      "transitivity": "他動詞",
+      "structure": "S + contact + O + for + 名詞",
+      "image": "見積、確認、支援などの目的を添える。",
+      "point": "for a quote、for support、for confirmationなどで目的を表します。",
+      "examples": [
+        {
+          "en": "We contacted the supplier for a quotation.",
+          "ja": "私たちは見積を依頼するため、仕入先に連絡しました。",
+          "focus": "contacted",
+          "object": "the supplier"
+        },
+        {
+          "en": "Please contact the sales team for more details.",
+          "ja": "詳細については、営業チームに連絡してください。",
+          "focus": "contact",
+          "object": "the sales team"
+        },
+        {
+          "en": "I contacted IT for support.",
+          "ja": "私はサポートを受けるため、IT担当に連絡しました。",
+          "focus": "contacted",
+          "object": "IT"
+        }
+      ]
+    },
+    {
+      "id": "contact-directly",
+      "title": "⑤ 直接連絡する",
+      "pattern": "CONTACT + 人 + DIRECTLY",
+      "transitivity": "他動詞",
+      "structure": "S + contact + O + directly",
+      "image": "仲介者を挟まず、本人や窓口へ直接連絡する。",
+      "point": "directlyは副詞なので、基本カテゴリで扱います。",
+      "examples": [
+        {
+          "en": "Please contact the person in charge directly.",
+          "ja": "担当者に直接連絡してください。",
+          "focus": "contact",
+          "object": "the person in charge"
+        },
+        {
+          "en": "The client contacted our manager directly.",
+          "ja": "顧客は当社の管理者に直接連絡しました。",
+          "focus": "contacted",
+          "object": "our manager"
+        },
+        {
+          "en": "I will contact the manufacturer directly.",
+          "ja": "私はメーカーに直接連絡します。",
+          "focus": "contact",
+          "object": "the manufacturer"
+        }
+      ]
+    }
+  ],
+  "collocations": [],
+  "phrasalVerbs": []
+},
   {
-    "id": "reduce",
-    "rank": 79,
-    "word": "REDUCE",
-    "ipa": "/rɪˈduːs/",
-    "kana": "リデュース",
-    "syllable": "re-duce",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "量・時間・費用・負担を少なくする",
-    "coreDetail": "REDUCEは、コスト・時間・リスク・負担などを減らす時に使います。ビジネス改善の話でよく出ます。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 減らす",
-        "pattern": "REDUCE + 名詞",
-        "transitivity": "基本動詞",
-        "structure": "S + reduce + O",
-        "image": "量・時間・費用・負担を少なくする",
-        "point": "REDUCEは、コスト・時間・リスク・負担などを減らす時に使います。ビジネス改善の話でよく出ます。",
-        "examples": [
-          {
-            "en": "We need to reduce the cost.",
-            "ja": "私たちはコストを削減する必要があります。",
-            "focus": "reduce",
-            "object": "the cost",
-            "jaFocus": "減する必要があります",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "need to reduce"
-              },
-              {
-                "label": "O",
-                "text": "the cost"
-              }
-            ]
-          },
-          {
-            "en": "This tool reduces manual work.",
-            "ja": "このツールは手作業を減らします。",
-            "focus": "reduces",
-            "object": "manual work",
-            "jaFocus": "は手作業を減らします",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "This tool"
-              },
-              {
-                "label": "V",
-                "text": "reduces"
-              },
-              {
-                "label": "O",
-                "text": "manual work"
-              }
-            ]
-          },
-          {
-            "en": "They reduced the delivery time by two days.",
-            "ja": "彼らは納期を2日短縮しました。",
-            "focus": "reduced",
-            "object": "the delivery time",
-            "jaFocus": "期を2日短縮しました",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "They"
-              },
-              {
-                "label": "V",
-                "text": "reduced"
-              },
-              {
-                "label": "O",
-                "text": "the delivery time"
-              },
-              {
-                "label": "M",
-                "text": "by two days"
-              }
-            ],
-            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
-          }
-        ]
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": []
-  },
+  "id": "share",
+  "rank": 77,
+  "word": "SHARE",
+  "ipa": "/ʃer/",
+  "kana": "シェア",
+  "syllable": "share",
+  "transitivity": "他動詞・自動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "情報・物・経験を相手と同じ場に置く",
+  "coreDetail": "SHAREは、情報、資料、考え、責任、空間などを相手と共に持つ動詞です。基本は share + 名詞 + with + 人です。share outは具体的に分配する、share inは成功や責任などに加わる意味です。",
+  "meanings": [
+    {
+      "id": "share-info",
+      "title": "① 情報・資料を共有する",
+      "pattern": "SHARE + 情報/資料 + WITH + 人",
+      "transitivity": "他動詞",
+      "structure": "S + share + O + with + 人",
+      "image": "自分が持つ情報を相手も使える状態にする。",
+      "point": "仕事ではshare the file with the teamの形が頻出です。",
+      "examples": [
+        {
+          "en": "I shared the file with the team.",
+          "ja": "私はそのファイルをチームと共有しました。",
+          "focus": "shared",
+          "object": "the file"
+        },
+        {
+          "en": "We should share the schedule with the client.",
+          "ja": "私たちはそのスケジュールを顧客と共有すべきです。",
+          "focus": "share",
+          "object": "the schedule"
+        },
+        {
+          "en": "Please share the latest price list with the sales team.",
+          "ja": "最新の価格表を営業チームと共有してください。",
+          "focus": "share",
+          "object": "the latest price list"
+        }
+      ]
+    },
+    {
+      "id": "share-update",
+      "title": "② 状況・結果を共有する",
+      "pattern": "SHARE + update/result/news",
+      "transitivity": "他動詞",
+      "structure": "S + share + O",
+      "image": "進捗や結果を関係者へ伝える。",
+      "point": "share an update、share the resultsは会議やメールで自然です。",
+      "examples": [
+        {
+          "en": "I will share an update after the meeting.",
+          "ja": "私は会議後に最新状況を共有します。",
+          "focus": "share",
+          "object": "an update"
+        },
+        {
+          "en": "She shared the results with the manager.",
+          "ja": "彼女は結果を上司と共有しました。",
+          "focus": "shared",
+          "object": "the results"
+        },
+        {
+          "en": "Can you share the current status by Friday?",
+          "ja": "あなたは金曜日までに現在の状況を共有できますか。",
+          "focus": "share",
+          "object": "the current status"
+        }
+      ]
+    },
+    {
+      "id": "share-idea",
+      "title": "③ 意見・考えを共有する",
+      "pattern": "SHARE + idea/opinion/thought",
+      "transitivity": "他動詞",
+      "structure": "S + share + O",
+      "image": "自分の考えを会議や相談の場に出す。",
+      "point": "share your opinionは丁寧に意見を求める表現です。",
+      "examples": [
+        {
+          "en": "I would like to share my idea first.",
+          "ja": "私はまず自分の考えを共有したいです。",
+          "focus": "share",
+          "object": "my idea"
+        },
+        {
+          "en": "Please share your opinion during the meeting.",
+          "ja": "会議中にあなたの意見を共有してください。",
+          "focus": "share",
+          "object": "your opinion"
+        },
+        {
+          "en": "The engineer shared a different view.",
+          "ja": "その技術者は別の見方を共有しました。",
+          "focus": "shared",
+          "object": "a different view"
+        }
+      ]
+    },
+    {
+      "id": "share-responsibility",
+      "title": "④ 責任・負担を共に持つ",
+      "pattern": "SHARE + responsibility/workload",
+      "transitivity": "他動詞",
+      "structure": "S + share + O",
+      "image": "複数人で同じ責任や負担を持つ。",
+      "point": "基本のshareは共同で持つことを表し、share outの具体的な割り振りとは区別します。",
+      "examples": [
+        {
+          "en": "We need to share the workload this week.",
+          "ja": "私たちは今週、作業負担を分担する必要があります。",
+          "focus": "share",
+          "object": "the workload"
+        },
+        {
+          "en": "The two teams shared responsibility for the project.",
+          "ja": "2つのチームがその案件の責任を分担しました。",
+          "focus": "shared",
+          "object": "responsibility"
+        },
+        {
+          "en": "We share responsibility for customer support.",
+          "ja": "私たちは顧客対応の責任を共同で担っています。",
+          "focus": "share",
+          "object": "responsibility"
+        }
+      ]
+    },
+    {
+      "id": "share-resource",
+      "title": "⑤ 物・場所を共同で使う",
+      "pattern": "SHARE + space/tool/resource",
+      "transitivity": "他動詞",
+      "structure": "S + share + O",
+      "image": "一つの物や場所を複数人で使う。",
+      "point": "share an office、share a carなど、共同利用を表します。",
+      "examples": [
+        {
+          "en": "The two teams share the meeting room.",
+          "ja": "2つのチームはその会議室を共同で使っています。",
+          "focus": "share",
+          "object": "the meeting room"
+        },
+        {
+          "en": "We share the testing equipment with another department.",
+          "ja": "私たちは試験機器を別の部署と共同で使っています。",
+          "focus": "share",
+          "object": "the testing equipment"
+        },
+        {
+          "en": "They shared a taxi to the airport.",
+          "ja": "彼らは空港までタクシーに相乗りしました。",
+          "focus": "shared",
+          "object": "a taxi"
+        }
+      ]
+    }
+  ],
+  "collocations": [],
+  "phrasalVerbs": [
+    {
+      "phrase": "share out",
+      "ja": "分けて配る・割り振る",
+      "image": "物、費用、作業などを複数人へ具体的に分配する。",
+      "pattern": "SHARE OUT + 物 / SHARE + 物 + OUT",
+      "examples": [
+        {
+          "en": "We shared out the remaining tasks among the team members.",
+          "ja": "私たちは残りの作業をチームメンバーに割り振りました。",
+          "focus": "shared out",
+          "object": "the remaining tasks"
+        },
+        {
+          "en": "The manager shared out the samples equally.",
+          "ja": "管理者はサンプルを均等に配りました。",
+          "focus": "shared out",
+          "object": "the samples"
+        },
+        {
+          "en": "We shared out the cost among the three departments.",
+          "ja": "私たちは費用を3つの部署で分担しました。",
+          "focus": "shared out",
+          "object": "the cost"
+        }
+      ]
+    },
+    {
+      "phrase": "share in",
+      "ja": "〜を共にする・〜に加わる",
+      "image": "成功、責任、喜びなどを他の人と共にする。",
+      "pattern": "SHARE IN + success/responsibility/joy",
+      "examples": [
+        {
+          "en": "All team members shared in the success of the project.",
+          "ja": "すべてのチームメンバーがその案件の成功を共に喜びました。",
+          "focus": "shared in",
+          "object": "the success"
+        },
+        {
+          "en": "The partner will share in the responsibility.",
+          "ja": "そのパートナーも責任を共に負います。",
+          "focus": "share in",
+          "object": "the responsibility"
+        },
+        {
+          "en": "New members can share in the benefits of the program.",
+          "ja": "新しいメンバーもその制度の恩恵を受けられます。",
+          "focus": "share in",
+          "object": "the benefits"
+        }
+      ]
+    }
+  ]
+},
   {
-    "id": "increase",
-    "rank": 80,
-    "word": "INCREASE",
-    "ipa": "/ɪnˈkriːs/",
-    "kana": "インクリース",
-    "syllable": "in-crease",
-    "transitivity": "他動詞・自動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "数・量・売上・可能性を増やす",
-    "coreDetail": "INCREASEは、売上・数量・時間・可能性などが増える、または増やす時に使います。increase sales / increase the chance の形がよく使われます。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 増える・増やす",
-        "pattern": "INCREASE + 名詞 / 数量 INCREASES",
-        "transitivity": "基本動詞",
-        "structure": "S + increase + O / S + increases",
-        "image": "数・量・売上・可能性を増やす",
-        "point": "INCREASEは、売上・数量・時間・可能性などが増える、または増やす時に使います。increase sales / increase the chance の形がよく使われます。",
-        "examples": [
-          {
-            "en": "We want to increase sales this year.",
-            "ja": "私たちは今年売上を増やしたいです。",
-            "focus": "increase",
-            "object": "sales",
-            "jaFocus": "売上を増やしたいです",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "want to increase"
-              },
-              {
-                "label": "O",
-                "text": "sales"
-              },
-              {
-                "label": "M",
-                "text": "this year"
-              }
-            ],
-            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
-          },
-          {
-            "en": "The number of inquiries increased last month.",
-            "ja": "先月、問い合わせの数が増えました。",
-            "focus": "increased",
-            "jaFocus": "わせの数が増えました",
-            "sentencePattern": "S + V + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "The number of inquiries"
-              },
-              {
-                "label": "V",
-                "text": "increased"
-              },
-              {
-                "label": "M",
-                "text": "last month"
-              }
-            ],
-            "grammarNote": "M は時・場所・相手・理由などを補足する語句です。"
-          },
-          {
-            "en": "This change will increase the chance of success.",
-            "ja": "この変更は成功の可能性を高めます。",
-            "focus": "increase",
-            "object": "the chance of success",
-            "jaFocus": "功の可能性を高めます",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "This change"
-              },
-              {
-                "label": "V",
-                "text": "will increase"
-              },
-              {
-                "label": "O",
-                "text": "the chance of success"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "collocations": [],
-    "phrasalVerbs": []
-  },
+  "id": "collect",
+  "rank": 78,
+  "word": "COLLECT",
+  "ipa": "/kəˈlekt/",
+  "kana": "コレクト",
+  "syllable": "col-lect",
+  "transitivity": "他動詞・自動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "散らばった物・情報を一か所へ集める",
+  "coreDetail": "COLLECTは、データ、書類、サンプル、代金などを一か所へ集める動詞です。collect upは、散らばった物を残さずまとめて回収するニュアンスです。",
+  "meanings": [
+    {
+      "id": "collect-data",
+      "title": "① データ・情報を集める",
+      "pattern": "COLLECT + data/information/feedback",
+      "transitivity": "他動詞",
+      "structure": "S + collect + O",
+      "image": "必要な情報を複数の場所から集める。",
+      "point": "営業分析、調査、顧客の声の収集に使います。",
+      "examples": [
+        {
+          "en": "We collected sales data from each branch.",
+          "ja": "私たちは各支店から売上データを集めました。",
+          "focus": "collected",
+          "object": "sales data"
+        },
+        {
+          "en": "Please collect feedback from the customers.",
+          "ja": "顧客から意見を集めてください。",
+          "focus": "collect",
+          "object": "feedback"
+        },
+        {
+          "en": "The team collected enough information to make a decision.",
+          "ja": "チームは判断に必要な情報を十分に集めました。",
+          "focus": "collected",
+          "object": "enough information"
+        }
+      ]
+    },
+    {
+      "id": "collect-documents",
+      "title": "② 書類・サンプルを回収する",
+      "pattern": "COLLECT + document/sample/item",
+      "transitivity": "他動詞",
+      "structure": "S + collect + O",
+      "image": "必要な物を回収して手元にそろえる。",
+      "point": "collect the samples from the warehouseのように、fromで受取場所を示せます。",
+      "examples": [
+        {
+          "en": "I collected the samples from the warehouse.",
+          "ja": "私は倉庫からサンプルを受け取りました。",
+          "focus": "collected",
+          "object": "the samples"
+        },
+        {
+          "en": "Please collect the signed documents by Friday.",
+          "ja": "金曜日までに署名済みの書類を回収してください。",
+          "focus": "collect",
+          "object": "the signed documents"
+        },
+        {
+          "en": "She collected the package from reception.",
+          "ja": "彼女は受付で荷物を受け取りました。",
+          "focus": "collected",
+          "object": "the package"
+        }
+      ]
+    },
+    {
+      "id": "collect-payment",
+      "title": "③ 代金・料金を回収する",
+      "pattern": "COLLECT + payment/fee/money",
+      "transitivity": "他動詞",
+      "structure": "S + collect + O",
+      "image": "支払われるべき代金を受け取る。",
+      "point": "営業や経理ではcollect payment、collect feesを使います。",
+      "examples": [
+        {
+          "en": "We need to collect payment before shipment.",
+          "ja": "私たちは出荷前に代金を回収する必要があります。",
+          "focus": "collect",
+          "object": "payment"
+        },
+        {
+          "en": "The company collects a monthly service fee.",
+          "ja": "その会社は毎月サービス料を徴収します。",
+          "focus": "collects",
+          "object": "a monthly service fee"
+        },
+        {
+          "en": "The sales team collected the outstanding balance.",
+          "ja": "営業チームは未払い残高を回収しました。",
+          "focus": "collected",
+          "object": "the outstanding balance"
+        }
+      ]
+    },
+    {
+      "id": "collect-thoughts",
+      "title": "④ 考え・気持ちを整える",
+      "pattern": "COLLECT + thoughts / oneself",
+      "transitivity": "他動詞",
+      "structure": "S + collect + O",
+      "image": "散らかった考えや感情を落ち着かせる。",
+      "point": "collect my thoughtsは考えをまとめる、collect myselfは気持ちを落ち着ける意味です。",
+      "examples": [
+        {
+          "en": "I need a moment to collect my thoughts before the presentation.",
+          "ja": "私は発表前に考えをまとめる時間が少し必要です。",
+          "focus": "collect",
+          "object": "my thoughts"
+        },
+        {
+          "en": "She paused to collect her thoughts.",
+          "ja": "彼女は考えをまとめるために少し間を置きました。",
+          "focus": "collect",
+          "object": "her thoughts"
+        },
+        {
+          "en": "He took a deep breath to collect himself.",
+          "ja": "彼は気持ちを落ち着けるために深呼吸しました。",
+          "focus": "collect",
+          "object": "himself"
+        }
+      ]
+    }
+  ],
+  "collocations": [],
+  "phrasalVerbs": [
+    {
+      "phrase": "collect up",
+      "ja": "まとめて集める・回収する",
+      "image": "散らばった物を一つずつ拾い、残さずまとめる。",
+      "pattern": "COLLECT UP + 物 / COLLECT + 物 + UP",
+      "examples": [
+        {
+          "en": "Please collect up all the test samples after the inspection.",
+          "ja": "検査後、すべての試験サンプルをまとめて回収してください。",
+          "focus": "collect up",
+          "object": "all the test samples"
+        },
+        {
+          "en": "We collected up the documents before leaving the site.",
+          "ja": "私たちは現場を出る前に書類をまとめて回収しました。",
+          "focus": "collected up",
+          "object": "the documents"
+        },
+        {
+          "en": "She collected the tools up and returned them to storage.",
+          "ja": "彼女は工具をまとめて回収し、保管場所へ戻しました。",
+          "focus": "collected up",
+          "object": "the tools"
+        }
+      ]
+    }
+  ]
+},
   {
-    "id": "accept",
-    "rank": 81,
-    "word": "ACCEPT",
-    "ipa": "/əkˈsept/",
-    "kana": "アクセプト",
-    "syllable": "ac-cept",
-    "transitivity": "他動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "提案・条件・事実を受け入れる",
-    "coreDetail": "ACCEPTは、相手から来た提案・依頼・条件・責任などを「受け入れる」動詞です。仕事では accept an offer / accept responsibility / accept the schedule のように使います。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 受け入れる・承諾する",
-        "pattern": "ACCEPT + 名詞",
-        "transitivity": "他動詞",
-        "structure": "S + accept + O",
-        "image": "相手から来たものを自分の側で受け止める",
-        "point": "agree よりも「条件や提案を正式に受け入れる」感じが強いです。",
-        "examples": [
-          {
-            "en": "We accepted the revised delivery date.",
-            "ja": "私たちは修正された納期を受け入れました。",
-            "focus": "accepted",
-            "jaFocus": "受け入れました",
-            "object": "the revised delivery date",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "accepted"
-              },
-              {
-                "label": "O",
-                "text": "the revised delivery date"
-              }
-            ]
-          },
-          {
-            "en": "The client accepted our proposal.",
-            "ja": "その顧客は私たちの提案を承諾しました。",
-            "focus": "accepted",
-            "jaFocus": "承諾しました",
-            "object": "our proposal",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "The client"
-              },
-              {
-                "label": "V",
-                "text": "accepted"
-              },
-              {
-                "label": "O",
-                "text": "our proposal"
-              }
-            ]
-          },
-          {
-            "en": "I accept responsibility for this mistake.",
-            "ja": "私はこのミスの責任を受け入れます。",
-            "focus": "accept",
-            "jaFocus": "責任を受け入れます",
-            "object": "responsibility",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "accept"
-              },
-              {
-                "label": "O",
-                "text": "responsibility"
-              },
-              {
-                "label": "M",
-                "text": "for this mistake"
-              }
-            ],
-            "grammarNote": "for this mistake は理由・対象を補足する語句です。"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "accept an offer",
-        "ja": "申し出を受け入れる",
-        "image": "相手からの条件や申し出を正式に受ける",
-        "pattern": "ACCEPT + offer",
-        "examples": [
-          {
-            "en": "We decided to accept their offer.",
-            "ja": "私たちは彼らの申し出を受け入れることにしました。",
-            "focus": "accept their offer",
-            "jaFocus": "申し出を受け入れる",
-            "object": "their offer"
-          }
-        ]
-      },
-      {
-        "phrase": "accept responsibility",
-        "ja": "責任を受け入れる",
-        "image": "自分の担当・責任として認める",
-        "pattern": "ACCEPT + responsibility",
-        "examples": [
-          {
-            "en": "A good leader accepts responsibility.",
-            "ja": "良いリーダーは責任を受け入れます。",
-            "focus": "accepts responsibility",
-            "jaFocus": "責任を受け入れます",
-            "object": "responsibility"
-          }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
-  },
+  "id": "reduce",
+  "rank": 79,
+  "word": "REDUCE",
+  "ipa": "/rɪˈduːs/",
+  "kana": "リデュース",
+  "syllable": "re-duce",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "量・程度・負担を小さくする",
+  "coreDetail": "REDUCEは、費用、時間、リスク、作業量などを今より小さくする他動詞です。reduce byは減った量、reduce toは減った後の到達値を表します。",
+  "meanings": [
+    {
+      "id": "reduce-cost-time",
+      "title": "① 費用・時間を減らす",
+      "pattern": "REDUCE + cost/time",
+      "transitivity": "他動詞",
+      "structure": "S + reduce + O",
+      "image": "大きすぎる費用や時間を小さくする。",
+      "point": "営業や業務改善で頻出します。",
+      "examples": [
+        {
+          "en": "We need to reduce the production cost.",
+          "ja": "私たちは製造費を削減する必要があります。",
+          "focus": "reduce",
+          "object": "the production cost"
+        },
+        {
+          "en": "The new process reduced manual work.",
+          "ja": "新しい工程によって手作業が減りました。",
+          "focus": "reduced",
+          "object": "manual work"
+        },
+        {
+          "en": "We reduced the delivery time by two days.",
+          "ja": "私たちは納期を2日短縮しました。",
+          "focus": "reduced",
+          "object": "the delivery time"
+        }
+      ]
+    },
+    {
+      "id": "reduce-risk-errors",
+      "title": "② リスク・ミスを減らす",
+      "pattern": "REDUCE + risk/error/confusion",
+      "transitivity": "他動詞",
+      "structure": "S + reduce + O",
+      "image": "問題が起こる可能性や間違いを小さくする。",
+      "point": "reduce risk、reduce errorsは提案や改善説明でよく使います。",
+      "examples": [
+        {
+          "en": "This check will reduce the risk of installation errors.",
+          "ja": "この確認により、設置ミスのリスクを減らせます。",
+          "focus": "reduce",
+          "object": "the risk"
+        },
+        {
+          "en": "Clear instructions reduced mistakes on site.",
+          "ja": "明確な指示によって現場のミスが減りました。",
+          "focus": "reduced",
+          "object": "mistakes"
+        },
+        {
+          "en": "We changed the layout to reduce confusion.",
+          "ja": "私たちは混乱を減らすためにレイアウトを変更しました。",
+          "focus": "reduce",
+          "object": "confusion"
+        }
+      ]
+    },
+    {
+      "id": "reduce-load-use",
+      "title": "③ 負担・消費量を減らす",
+      "pattern": "REDUCE + workload/energy/use",
+      "transitivity": "他動詞",
+      "structure": "S + reduce + O",
+      "image": "人や設備にかかる負担、資源消費を軽くする。",
+      "point": "reduce the workload、reduce energy useなどが自然です。",
+      "examples": [
+        {
+          "en": "The tool reduced the workload of the sales team.",
+          "ja": "そのツールによって営業チームの負担が減りました。",
+          "focus": "reduced",
+          "object": "the workload"
+        },
+        {
+          "en": "We are trying to reduce energy use in the office.",
+          "ja": "私たちはオフィスのエネルギー使用量を減らそうとしています。",
+          "focus": "reduce",
+          "object": "energy use"
+        },
+        {
+          "en": "This design reduces the load on the power supply.",
+          "ja": "この設計は電源への負荷を軽減します。",
+          "focus": "reduces",
+          "object": "the load"
+        }
+      ]
+    },
+    {
+      "id": "reduce-by-to",
+      "title": "④ 減少量・到達値を示す",
+      "pattern": "REDUCE + O + BY/TO + 数値",
+      "transitivity": "他動詞",
+      "structure": "S + reduce + O + by/to + 数値",
+      "image": "どれだけ減らすか、どこまで減らすかを示す。",
+      "point": "byは減少量、toは減少後の値です。",
+      "examples": [
+        {
+          "en": "We reduced the price by 10 percent.",
+          "ja": "私たちは価格を10％下げました。",
+          "focus": "reduced",
+          "object": "the price"
+        },
+        {
+          "en": "The team reduced the defect rate to 2 percent.",
+          "ja": "チームは不良率を2％まで下げました。",
+          "focus": "reduced",
+          "object": "the defect rate"
+        },
+        {
+          "en": "We need to reduce the lead time from ten days to seven.",
+          "ja": "私たちはリードタイムを10日から7日まで短縮する必要があります。",
+          "focus": "reduce",
+          "object": "the lead time"
+        }
+      ]
+    }
+  ],
+  "collocations": [],
+  "phrasalVerbs": []
+},
   {
-    "id": "avoid",
-    "rank": 82,
-    "word": "AVOID",
-    "ipa": "/əˈvɔɪd/",
-    "kana": "アヴォイド",
-    "syllable": "a-void",
-    "transitivity": "他動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "問題・リスク・不要な行動を避ける",
-    "coreDetail": "AVOIDは、ミス・遅れ・混乱などを起こさないように避ける動詞です。後ろに動詞を置く時は avoid doing の形にします。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 避ける・防ぐ",
-        "pattern": "AVOID + 名詞 / AVOID + doing",
-        "transitivity": "他動詞",
-        "structure": "S + avoid + O",
-        "image": "問題が起きる方向へ行かないようにする",
-        "point": "avoid to do ではなく avoid doing が自然です。",
-        "examples": [
-          {
-            "en": "We should avoid mistakes in the quotation.",
-            "ja": "私たちは見積書でミスを避けるべきです。",
-            "focus": "avoid",
-            "jaFocus": "ミスを避けるべきです",
-            "object": "mistakes",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "should avoid"
-              },
-              {
-                "label": "O",
-                "text": "mistakes"
-              },
-              {
-                "label": "M",
-                "text": "in the quotation"
-              }
-            ]
-          },
-          {
-            "en": "Please avoid sending unclear emails.",
-            "ja": "不明確なメールを送ることは避けてください。",
-            "focus": "avoid sending",
-            "jaFocus": "避けてください",
-            "object": "sending unclear emails",
-            "sentencePattern": "V + O",
-            "grammarParts": [
-              {
-                "label": "V",
-                "text": "Please avoid"
-              },
-              {
-                "label": "O",
-                "text": "sending unclear emails"
-              }
-            ],
-            "grammarNote": "命令文では主語 you が省略されています。"
-          },
-          {
-            "en": "This check helps us avoid delivery delays.",
-            "ja": "この確認は私たちが納期遅れを避けるのに役立ちます。",
-            "focus": "avoid",
-            "jaFocus": "納期遅れを避ける",
-            "object": "delivery delays",
-            "sentencePattern": "S + V + O + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "This check"
-              },
-              {
-                "label": "V",
-                "text": "helps"
-              },
-              {
-                "label": "O",
-                "text": "us"
-              },
-              {
-                "label": "V",
-                "text": "avoid"
-              },
-              {
-                "label": "O",
-                "text": "delivery delays"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "avoid confusion",
-        "ja": "混乱を避ける",
-        "image": "相手が誤解しないようにする",
-        "pattern": "AVOID + confusion",
-        "examples": [
-          {
-            "en": "We added a note to avoid confusion.",
-            "ja": "私たちは混乱を避けるために注記を追加しました。",
-            "focus": "avoid confusion",
-            "jaFocus": "混乱を避ける",
-            "object": "confusion"
-          }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
-  },
+  "id": "increase",
+  "rank": 80,
+  "word": "INCREASE",
+  "ipa": "/ɪnˈkriːs/",
+  "kana": "インクリース",
+  "syllable": "in-crease",
+  "transitivity": "他動詞・自動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "量・程度を今より大きくする、または大きくなる",
+  "coreDetail": "INCREASEは、売上、問い合わせ、費用、温度などが増える、またはそれらを増やす動詞です。他動詞と自動詞の両方があり、increase byは増加量、increase toは到達値を表します。",
+  "meanings": [
+    {
+      "id": "increase-transitive",
+      "title": "① 〜を増やす・高める",
+      "pattern": "INCREASE + sales/chance/capacity",
+      "transitivity": "他動詞",
+      "structure": "S + increase + O",
+      "image": "働きかけて数値や可能性を大きくする。",
+      "point": "目的語を直接置きます。",
+      "examples": [
+        {
+          "en": "We need to increase sales in the second half.",
+          "ja": "私たちは下半期に売上を増やす必要があります。",
+          "focus": "increase",
+          "object": "sales"
+        },
+        {
+          "en": "This proposal could increase the chance of success.",
+          "ja": "この提案によって成功の可能性を高められます。",
+          "focus": "increase",
+          "object": "the chance"
+        },
+        {
+          "en": "The new equipment increased production capacity.",
+          "ja": "新しい設備によって生産能力が向上しました。",
+          "focus": "increased",
+          "object": "production capacity"
+        }
+      ]
+    },
+    {
+      "id": "increase-intransitive",
+      "title": "② 増える・高まる",
+      "pattern": "SUBJECT + INCREASE",
+      "transitivity": "自動詞",
+      "structure": "S + increase",
+      "image": "数値や量が自然に大きくなる。",
+      "point": "目的語を取らず、主語そのものが増えます。",
+      "examples": [
+        {
+          "en": "The number of inquiries increased last month.",
+          "ja": "先月、問い合わせ件数が増えました。",
+          "focus": "increased"
+        },
+        {
+          "en": "Material costs have increased this year.",
+          "ja": "今年、材料費が上昇しています。",
+          "focus": "increased"
+        },
+        {
+          "en": "Demand for this product is increasing.",
+          "ja": "この製品の需要は増えています。",
+          "focus": "increasing"
+        }
+      ]
+    },
+    {
+      "id": "increase-by-to",
+      "title": "③ 増加量・到達値を示す",
+      "pattern": "INCREASE + BY/TO + 数値",
+      "transitivity": "自動詞・他動詞",
+      "structure": "S + increase + by/to + 数値",
+      "image": "どれだけ増えたか、どこまで増えたかを示す。",
+      "point": "byは増加量、toは増加後の値です。",
+      "examples": [
+        {
+          "en": "Sales increased by 20 percent.",
+          "ja": "売上は20％増加しました。",
+          "focus": "increased"
+        },
+        {
+          "en": "Monthly sales increased to 20 million yen.",
+          "ja": "月間売上は2,000万円まで増加しました。",
+          "focus": "increased"
+        },
+        {
+          "en": "We increased the output from 500 units to 700 units.",
+          "ja": "私たちは生産量を500台から700台に増やしました。",
+          "focus": "increased",
+          "object": "the output"
+        }
+      ]
+    },
+    {
+      "id": "increase-gradually",
+      "title": "④ 徐々に増やす・増える",
+      "pattern": "INCREASE gradually/steadily",
+      "transitivity": "他動詞・自動詞",
+      "structure": "S + increase + M",
+      "image": "急にではなく、段階的に大きくする。",
+      "point": "gradually、steadilyなどの副詞とよく使います。",
+      "examples": [
+        {
+          "en": "We will gradually increase the order volume.",
+          "ja": "私たちは発注量を段階的に増やします。",
+          "focus": "increase",
+          "object": "the order volume"
+        },
+        {
+          "en": "Customer interest increased steadily after the exhibition.",
+          "ja": "展示会後、顧客の関心は着実に高まりました。",
+          "focus": "increased"
+        },
+        {
+          "en": "The company plans to increase prices gradually.",
+          "ja": "その会社は価格を段階的に引き上げる予定です。",
+          "focus": "increase",
+          "object": "prices"
+        }
+      ]
+    }
+  ],
+  "collocations": [],
+  "phrasalVerbs": []
+},
   {
-    "id": "consider",
-    "rank": 83,
-    "word": "CONSIDER",
-    "ipa": "/kənˈsɪdər/",
-    "kana": "コンシダー",
-    "syllable": "con-sid-er",
-    "transitivity": "他動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "選択肢・提案・状況をよく考える",
-    "coreDetail": "CONSIDERは、すぐ決めずに「よく検討する」動詞です。仕事では proposal, option, schedule, price などとよく使います。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 検討する・よく考える",
-        "pattern": "CONSIDER + 名詞 / CONSIDER + doing",
-        "transitivity": "他動詞",
-        "structure": "S + consider + O",
-        "image": "複数の条件を頭の中で比べながら考える",
-        "point": "consider to do ではなく consider doing が自然です。",
-        "examples": [
-          {
-            "en": "We are considering a new supplier.",
-            "ja": "私たちは新しい仕入先を検討しています。",
-            "focus": "considering",
-            "jaFocus": "検討しています",
-            "object": "a new supplier",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "are considering"
-              },
-              {
-                "label": "O",
-                "text": "a new supplier"
-              }
-            ]
-          },
-          {
-            "en": "Please consider our proposal.",
-            "ja": "私たちの提案をご検討ください。",
-            "focus": "consider",
-            "jaFocus": "ご検討ください",
-            "object": "our proposal",
-            "sentencePattern": "V + O",
-            "grammarParts": [
-              {
-                "label": "V",
-                "text": "Please consider"
-              },
-              {
-                "label": "O",
-                "text": "our proposal"
-              }
-            ],
-            "grammarNote": "命令文では主語 you が省略されています。"
-          },
-          {
-            "en": "I am considering changing the study plan.",
-            "ja": "私は学習計画を変更することを検討しています。",
-            "focus": "considering changing",
-            "jaFocus": "検討しています",
-            "object": "changing the study plan",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "am considering"
-              },
-              {
-                "label": "O",
-                "text": "changing the study plan"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "consider the cost",
-        "ja": "費用を考慮する",
-        "image": "価格や予算を判断材料に入れる",
-        "pattern": "CONSIDER + cost",
-        "examples": [
-          {
-            "en": "We need to consider the cost before ordering.",
-            "ja": "私たちは発注前に費用を考慮する必要があります。",
-            "focus": "consider the cost",
-            "jaFocus": "費用を考慮する",
-            "object": "the cost"
-          }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
-  },
+  "id": "accept",
+  "rank": 81,
+  "word": "ACCEPT",
+  "ipa": "/əkˈsept/",
+  "kana": "アクセプト",
+  "syllable": "ac-cept",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "差し出されたものや事実を受け入れる",
+  "coreDetail": "ACCEPTは、提案、条件、責任、事実、支払いなどを拒まず受け入れる他動詞です。句動詞を無理に作らず、実務で使う基本用法を整理します。",
+  "meanings": [
+    {
+      "id": "accept-offer",
+      "title": "① 提案・条件を受け入れる",
+      "pattern": "ACCEPT + offer/condition/price",
+      "transitivity": "他動詞",
+      "structure": "S + accept + O",
+      "image": "相手から提示された内容に同意する。",
+      "point": "accept an offer、accept the termsが自然です。",
+      "examples": [
+        {
+          "en": "The client accepted our offer.",
+          "ja": "顧客は私たちの提案を受け入れました。",
+          "focus": "accepted",
+          "object": "our offer"
+        },
+        {
+          "en": "We cannot accept these payment terms.",
+          "ja": "私たちはこの支払条件を受け入れられません。",
+          "focus": "accept",
+          "object": "these payment terms"
+        },
+        {
+          "en": "They accepted the revised price.",
+          "ja": "彼らは改定後の価格を受け入れました。",
+          "focus": "accepted",
+          "object": "the revised price"
+        }
+      ]
+    },
+    {
+      "id": "accept-responsibility",
+      "title": "② 責任・役割を引き受ける",
+      "pattern": "ACCEPT + responsibility/role/task",
+      "transitivity": "他動詞",
+      "structure": "S + accept + O",
+      "image": "求められた責任や役割を自分のものとして引き受ける。",
+      "point": "accept responsibilityは仕事で重要な表現です。",
+      "examples": [
+        {
+          "en": "The manager accepted responsibility for the mistake.",
+          "ja": "管理者はそのミスの責任を引き受けました。",
+          "focus": "accepted",
+          "object": "responsibility"
+        },
+        {
+          "en": "She accepted the role of project leader.",
+          "ja": "彼女はプロジェクトリーダーの役割を引き受けました。",
+          "focus": "accepted",
+          "object": "the role"
+        },
+        {
+          "en": "We accepted the task despite the short deadline.",
+          "ja": "私たちは納期が短いにもかかわらず、その業務を引き受けました。",
+          "focus": "accepted",
+          "object": "the task"
+        }
+      ]
+    },
+    {
+      "id": "accept-fact",
+      "title": "③ 事実・結果を受け入れる",
+      "pattern": "ACCEPT + fact/result/reality",
+      "transitivity": "他動詞",
+      "structure": "S + accept + O",
+      "image": "好ましくなくても、現実として認める。",
+      "point": "agreeとは異なり、納得よりも現実として受け止める意味があります。",
+      "examples": [
+        {
+          "en": "We have to accept the fact that the schedule has changed.",
+          "ja": "私たちは予定が変更されたという事実を受け入れなければなりません。",
+          "focus": "accept",
+          "object": "the fact"
+        },
+        {
+          "en": "The team accepted the test result.",
+          "ja": "チームはその試験結果を受け入れました。",
+          "focus": "accepted",
+          "object": "the test result"
+        },
+        {
+          "en": "He finally accepted the situation.",
+          "ja": "彼は最終的にその状況を受け入れました。",
+          "focus": "accepted",
+          "object": "the situation"
+        }
+      ]
+    },
+    {
+      "id": "accept-payment-order",
+      "title": "④ 支払い・注文・申請を受け付ける",
+      "pattern": "ACCEPT + payment/order/application",
+      "transitivity": "他動詞",
+      "structure": "S + accept + O",
+      "image": "会社や店舗が正式に受理する。",
+      "point": "accept credit cards、accept ordersなどで使います。",
+      "examples": [
+        {
+          "en": "We accept payment by credit card.",
+          "ja": "当社ではクレジットカードでの支払いを受け付けています。",
+          "focus": "accept",
+          "object": "payment"
+        },
+        {
+          "en": "The factory accepted the urgent order.",
+          "ja": "工場はその緊急注文を受け付けました。",
+          "focus": "accepted",
+          "object": "the urgent order"
+        },
+        {
+          "en": "The system is now accepting applications.",
+          "ja": "そのシステムは現在、申請を受け付けています。",
+          "focus": "accepting",
+          "object": "applications"
+        }
+      ]
+    },
+    {
+      "id": "accept-apology",
+      "title": "⑤ 謝罪・招待を受け入れる",
+      "pattern": "ACCEPT + apology/invitation",
+      "transitivity": "他動詞",
+      "structure": "S + accept + O",
+      "image": "相手の謝罪や招待を受け入れる。",
+      "point": "日常でも仕事でも使える基本表現です。",
+      "examples": [
+        {
+          "en": "The customer accepted our apology.",
+          "ja": "顧客は私たちの謝罪を受け入れました。",
+          "focus": "accepted",
+          "object": "our apology"
+        },
+        {
+          "en": "I accepted the invitation to the event.",
+          "ja": "私はそのイベントへの招待を受けました。",
+          "focus": "accepted",
+          "object": "the invitation"
+        },
+        {
+          "en": "She accepted his explanation.",
+          "ja": "彼女は彼の説明を受け入れました。",
+          "focus": "accepted",
+          "object": "his explanation"
+        }
+      ]
+    }
+  ],
+  "collocations": [],
+  "phrasalVerbs": []
+},
   {
-    "id": "depend",
-    "rank": 84,
-    "word": "DEPEND",
-    "ipa": "/dɪˈpend/",
-    "kana": "ディペンド",
-    "syllable": "de-pend",
-    "transitivity": "自動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "結果や判断が何かに左右される",
-    "coreDetail": "DEPENDは、予定・価格・結果などが「何に左右されるか」を表します。基本形は depend on + 名詞です。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 〜による・〜次第である",
-        "pattern": "DEPEND ON + 名詞",
-        "transitivity": "自動詞",
-        "structure": "S + depend on + O",
-        "image": "判断や結果が別の条件に支えられている",
-        "point": "depend は on とセットで使うことが多いです。on だけをCにせず、depend on をまとまりで見ます。",
-        "examples": [
-          {
-            "en": "The delivery date depends on the stock situation.",
-            "ja": "納期は在庫状況によります。",
-            "focus": "depends on",
-            "jaFocus": "在庫状況によります",
-            "object": "the stock situation",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "The delivery date"
-              },
-              {
-                "label": "V",
-                "text": "depends on"
-              },
-              {
-                "label": "O",
-                "text": "the stock situation"
-              }
-            ]
-          },
-          {
-            "en": "The final price depends on the quantity.",
-            "ja": "最終価格は数量によります。",
-            "focus": "depends on",
-            "jaFocus": "数量によります",
-            "object": "the quantity",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "The final price"
-              },
-              {
-                "label": "V",
-                "text": "depends on"
-              },
-              {
-                "label": "O",
-                "text": "the quantity"
-              }
-            ]
-          },
-          {
-            "en": "It depends on your schedule.",
-            "ja": "それはあなたの予定次第です。",
-            "focus": "depends on",
-            "jaFocus": "予定次第です",
-            "object": "your schedule",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "It"
-              },
-              {
-                "label": "V",
-                "text": "depends on"
-              },
-              {
-                "label": "O",
-                "text": "your schedule"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "depend on the schedule",
-        "ja": "スケジュール次第である",
-        "image": "予定に左右される",
-        "pattern": "DEPEND ON + schedule",
-        "examples": [
-          {
-            "en": "Our visit depends on the schedule.",
-            "ja": "私たちの訪問はスケジュール次第です。",
-            "focus": "depends on the schedule",
-            "jaFocus": "スケジュール次第です",
-            "object": "the schedule"
-          }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
-  },
+  "id": "avoid",
+  "rank": 82,
+  "word": "AVOID",
+  "ipa": "/əˈvɔɪd/",
+  "kana": "アヴォイド",
+  "syllable": "a-void",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "問題や好ましくない行動から距離を取る",
+  "coreDetail": "AVOIDは、ミス、遅延、混乱などを避ける他動詞です。後ろに動作を置く場合はavoid doingを使い、avoid to doとはしません。",
+  "meanings": [
+    {
+      "id": "avoid-problem",
+      "title": "① 問題・リスクを避ける",
+      "pattern": "AVOID + problem/risk/delay",
+      "transitivity": "他動詞",
+      "structure": "S + avoid + O",
+      "image": "問題が起きる状況に入らないようにする。",
+      "point": "avoid delays、avoid unnecessary riskなどが自然です。",
+      "examples": [
+        {
+          "en": "We need to avoid delays in delivery.",
+          "ja": "私たちは納品の遅れを避ける必要があります。",
+          "focus": "avoid",
+          "object": "delays"
+        },
+        {
+          "en": "This check helps us avoid unnecessary risks.",
+          "ja": "この確認により、不要なリスクを避けられます。",
+          "focus": "avoid",
+          "object": "unnecessary risks"
+        },
+        {
+          "en": "Please confirm the quantity to avoid problems later.",
+          "ja": "後の問題を避けるため、数量を確認してください。",
+          "focus": "avoid",
+          "object": "problems"
+        }
+      ]
+    },
+    {
+      "id": "avoid-mistake",
+      "title": "② ミス・混乱を防ぐ",
+      "pattern": "AVOID + mistake/confusion/misunderstanding",
+      "transitivity": "他動詞",
+      "structure": "S + avoid + O",
+      "image": "間違いや認識のずれが起きないようにする。",
+      "point": "日本語では「避ける」より「防ぐ」が自然な場合があります。",
+      "examples": [
+        {
+          "en": "We should double-check the quotation to avoid mistakes.",
+          "ja": "私たちは見積書のミスを防ぐため、再確認すべきです。",
+          "focus": "avoid",
+          "object": "mistakes"
+        },
+        {
+          "en": "Use clear labels to avoid confusion.",
+          "ja": "混乱を防ぐため、分かりやすいラベルを使ってください。",
+          "focus": "avoid",
+          "object": "confusion"
+        },
+        {
+          "en": "I sent a summary to avoid any misunderstanding.",
+          "ja": "私は誤解を防ぐため、要約を送りました。",
+          "focus": "avoid",
+          "object": "any misunderstanding"
+        }
+      ]
+    },
+    {
+      "id": "avoid-doing",
+      "title": "③ 〜することを避ける",
+      "pattern": "AVOID + doing",
+      "transitivity": "他動詞",
+      "structure": "S + avoid + V-ing",
+      "image": "好ましくない行動をしないようにする。",
+      "point": "avoidの後ろには動名詞を置きます。赤文字はavoidだけです。",
+      "examples": [
+        {
+          "en": "Please avoid sending large files by email.",
+          "ja": "大きなファイルをメールで送ることは避けてください。",
+          "focus": "avoid",
+          "object": "sending large files"
+        },
+        {
+          "en": "We should avoid changing the design at the last minute.",
+          "ja": "私たちは直前に設計を変更することを避けるべきです。",
+          "focus": "avoid",
+          "object": "changing the design"
+        },
+        {
+          "en": "He avoided making the same mistake again.",
+          "ja": "彼は同じミスを再びすることを避けました。",
+          "focus": "avoided",
+          "object": "making the same mistake"
+        }
+      ]
+    },
+    {
+      "id": "avoid-person-place",
+      "title": "④ 人・場所を避ける",
+      "pattern": "AVOID + person/place",
+      "transitivity": "他動詞",
+      "structure": "S + avoid + O",
+      "image": "会いたくない人や危険な場所から距離を取る。",
+      "point": "日常会話で使う基本的な意味です。",
+      "examples": [
+        {
+          "en": "The driver avoided the busy road.",
+          "ja": "運転手は混雑した道路を避けました。",
+          "focus": "avoided",
+          "object": "the busy road"
+        },
+        {
+          "en": "She avoided him after the argument.",
+          "ja": "彼女は口論の後、彼を避けました。",
+          "focus": "avoided",
+          "object": "him"
+        },
+        {
+          "en": "We avoided the construction area.",
+          "ja": "私たちは工事区域を避けました。",
+          "focus": "avoided",
+          "object": "the construction area"
+        }
+      ]
+    }
+  ],
+  "collocations": [],
+  "phrasalVerbs": []
+},
   {
-    "id": "expect",
-    "rank": 85,
-    "word": "EXPECT",
-    "ipa": "/ɪkˈspekt/",
-    "kana": "エクスペクト",
-    "syllable": "ex-pect",
-    "transitivity": "他動詞",
-    "importance": "★★★☆☆ 基本",
-    "core": "起こること・返事・結果を予想して待つ",
-    "coreDetail": "EXPECTは、返事・納品・結果などを「来るだろう」と見込む動詞です。hope よりも現実的な予想の感じがあります。",
-    "meanings": [
-      {
-        "id": "main",
-        "title": "① 予想する・期待する・見込む",
-        "pattern": "EXPECT + 名詞 / EXPECT + to do",
-        "transitivity": "他動詞",
-        "structure": "S + expect + O",
-        "image": "未来の出来事が来ると見込んで待つ",
-        "point": "仕事では expect a reply / expect delivery / expect a result のように使います。",
-        "examples": [
-          {
-            "en": "We expect a reply by Friday.",
-            "ja": "私たちは金曜日までに返信が来ると見込んでいます。",
-            "focus": "expect",
-            "jaFocus": "見込んでいます",
-            "object": "a reply",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "We"
-              },
-              {
-                "label": "V",
-                "text": "expect"
-              },
-              {
-                "label": "O",
-                "text": "a reply"
-              },
-              {
-                "label": "M",
-                "text": "by Friday"
-              }
-            ]
-          },
-          {
-            "en": "The client expects a clear explanation.",
-            "ja": "その顧客は分かりやすい説明を期待しています。",
-            "focus": "expects",
-            "jaFocus": "期待しています",
-            "object": "a clear explanation",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "The client"
-              },
-              {
-                "label": "V",
-                "text": "expects"
-              },
-              {
-                "label": "O",
-                "text": "a clear explanation"
-              }
-            ]
-          },
-          {
-            "en": "I expect to finish the report today.",
-            "ja": "私は今日その報告書を終える予定です。",
-            "focus": "expect to finish",
-            "jaFocus": "予定です",
-            "object": "to finish the report",
-            "sentencePattern": "S + V + O + M",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "I"
-              },
-              {
-                "label": "V",
-                "text": "expect"
-              },
-              {
-                "label": "O",
-                "text": "to finish the report"
-              },
-              {
-                "label": "M",
-                "text": "today"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "expect a reply",
-        "ja": "返信を見込む",
-        "image": "相手からの返信が来ると考える",
-        "pattern": "EXPECT + reply",
-        "examples": [
-          {
-            "en": "We expect a reply from the customer soon.",
-            "ja": "私たちはまもなく顧客から返信が来ると見込んでいます。",
-            "focus": "expect a reply",
-            "jaFocus": "返信が来ると見込んでいます",
-            "object": "a reply"
-          }
-        ]
-      }
-    ],
-    "phrasalVerbs": []
-  },
+  "id": "consider",
+  "rank": 83,
+  "word": "CONSIDER",
+  "ipa": "/kənˈsɪdər/",
+  "kana": "コンシダー",
+  "syllable": "con-sid-er",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "選択肢や条件を頭の中でよく検討する",
+  "coreDetail": "CONSIDERは、案や選択肢を検討する、条件を考慮に入れる、人や物を〜だと考える動詞です。後ろに動作を置く場合はconsider doingを使います。",
+  "meanings": [
+    {
+      "id": "consider-option",
+      "title": "① 案・選択肢を検討する",
+      "pattern": "CONSIDER + option/proposal/plan",
+      "transitivity": "他動詞",
+      "structure": "S + consider + O",
+      "image": "決定前に候補を慎重に考える。",
+      "point": "consider the proposal、consider another supplierなどが自然です。",
+      "examples": [
+        {
+          "en": "We are considering another supplier.",
+          "ja": "私たちは別の仕入先を検討しています。",
+          "focus": "considering",
+          "object": "another supplier"
+        },
+        {
+          "en": "Please consider our proposal.",
+          "ja": "私たちの提案をご検討ください。",
+          "focus": "consider",
+          "object": "our proposal"
+        },
+        {
+          "en": "The client will consider the revised plan.",
+          "ja": "顧客は修正案を検討します。",
+          "focus": "consider",
+          "object": "the revised plan"
+        }
+      ]
+    },
+    {
+      "id": "consider-doing",
+      "title": "② 〜することを検討する",
+      "pattern": "CONSIDER + doing",
+      "transitivity": "他動詞",
+      "structure": "S + consider + V-ing",
+      "image": "行動を選択肢として考える。",
+      "point": "consider to doではなくconsider doingです。赤文字はconsiderだけにします。",
+      "examples": [
+        {
+          "en": "We are considering changing the delivery method.",
+          "ja": "私たちは配送方法の変更を検討しています。",
+          "focus": "considering",
+          "object": "changing the delivery method"
+        },
+        {
+          "en": "She considered joining the training program.",
+          "ja": "彼女は研修プログラムへの参加を検討しました。",
+          "focus": "considered",
+          "object": "joining the training program"
+        },
+        {
+          "en": "Please consider using a different material.",
+          "ja": "別の材料を使用することをご検討ください。",
+          "focus": "consider",
+          "object": "using a different material"
+        }
+      ]
+    },
+    {
+      "id": "consider-factor",
+      "title": "③ 条件・費用を考慮に入れる",
+      "pattern": "CONSIDER + factor/cost/risk",
+      "transitivity": "他動詞",
+      "structure": "S + consider + O",
+      "image": "判断に影響する条件を忘れずに含める。",
+      "point": "consider the cost、consider the installation spaceなどが実務的です。",
+      "examples": [
+        {
+          "en": "We must consider the total cost.",
+          "ja": "私たちは総費用を考慮しなければなりません。",
+          "focus": "consider",
+          "object": "the total cost"
+        },
+        {
+          "en": "Please consider the installation space before choosing the product.",
+          "ja": "製品を選ぶ前に、設置スペースを考慮してください。",
+          "focus": "consider",
+          "object": "the installation space"
+        },
+        {
+          "en": "The proposal considers future maintenance.",
+          "ja": "その提案では将来のメンテナンスも考慮しています。",
+          "focus": "considers",
+          "object": "future maintenance"
+        }
+      ]
+    },
+    {
+      "id": "consider-as",
+      "title": "④ 人・物を〜だと考える",
+      "pattern": "CONSIDER + O + C",
+      "transitivity": "他動詞",
+      "structure": "S + consider + O + C",
+      "image": "対象をある評価や状態だと判断する。",
+      "point": "consider A suitable、consider A a successの形です。",
+      "examples": [
+        {
+          "en": "We consider this model suitable for the project.",
+          "ja": "私たちはこのモデルが案件に適していると考えています。",
+          "focus": "consider",
+          "object": "this model"
+        },
+        {
+          "en": "The client considered the test a success.",
+          "ja": "顧客はその試験が成功だったと考えました。",
+          "focus": "considered",
+          "object": "the test"
+        },
+        {
+          "en": "Many users consider the app easy to use.",
+          "ja": "多くの利用者はそのアプリが使いやすいと考えています。",
+          "focus": "consider",
+          "object": "the app"
+        }
+      ]
+    }
+  ],
+  "collocations": [],
+  "phrasalVerbs": []
+},
+  {
+  "id": "depend",
+  "rank": 84,
+  "word": "DEPEND",
+  "ipa": "/dɪˈpend/",
+  "kana": "ディペンド",
+  "syllable": "de-pend",
+  "transitivity": "自動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "結果や判断が別の条件に支えられて決まる",
+  "coreDetail": "DEPENDは通常、depend onの形で「〜次第である」「〜に頼る」を表します。depend uponは少し硬い同義表現です。単独ではほとんど使いません。",
+  "meanings": [
+    {
+      "id": "depend-basic",
+      "title": "① 条件によって決まる",
+      "pattern": "DEPEND（通常は前置詞と使う）",
+      "transitivity": "自動詞",
+      "structure": "S + depend",
+      "image": "結果がまだ固定されず、別の条件で決まる。",
+      "point": "DEPENDの中心表現は句動詞カテゴリのdepend onです。基本側では動詞の全体像だけを示します。",
+      "examples": [
+        {
+          "en": "The final result may depend on several factors.",
+          "ja": "最終結果はいくつかの要因によって決まる可能性があります。",
+          "focus": "depend"
+        },
+        {
+          "en": "The answer will depend on the situation.",
+          "ja": "答えは状況によって変わります。",
+          "focus": "depend"
+        },
+        {
+          "en": "It depends.",
+          "ja": "状況次第です。",
+          "focus": "depends"
+        }
+      ]
+    }
+  ],
+  "collocations": [],
+  "phrasalVerbs": [
+    {
+      "phrase": "depend on",
+      "ja": "〜次第である・〜に頼る",
+      "image": "結果、判断、生活などが別の条件や人に支えられている。",
+      "pattern": "DEPEND ON + 条件/人/物",
+      "examples": [
+        {
+          "en": "The delivery date depends on the production schedule.",
+          "ja": "納品日は生産スケジュール次第です。",
+          "focus": "depends on",
+          "object": "the production schedule"
+        },
+        {
+          "en": "The price will depend on the order quantity.",
+          "ja": "価格は発注数量によって決まります。",
+          "focus": "depend on",
+          "object": "the order quantity"
+        },
+        {
+          "en": "We depend on the supplier for these parts.",
+          "ja": "私たちはこれらの部品をその仕入先に頼っています。",
+          "focus": "depend on",
+          "object": "the supplier"
+        }
+      ],
+      "dailyExamples": [
+        {
+          "en": "It depends on the weather.",
+          "ja": "それは天候次第です。",
+          "focus": "depends on",
+          "object": "the weather"
+        },
+        {
+          "en": "Children depend on adults for support.",
+          "ja": "子どもは支援を大人に頼っています。",
+          "focus": "depend on",
+          "object": "adults"
+        }
+      ]
+    },
+    {
+      "phrase": "depend upon",
+      "ja": "〜次第である・〜に依存する",
+      "image": "depend onと同じ意味だが、少し硬く改まった響きがある。",
+      "pattern": "DEPEND UPON + 条件/人/物",
+      "examples": [
+        {
+          "en": "Approval will depend upon the final test results.",
+          "ja": "承認は最終試験結果次第です。",
+          "focus": "depend upon",
+          "object": "the final test results"
+        },
+        {
+          "en": "The decision depends upon the available budget.",
+          "ja": "その決定は利用可能な予算によって決まります。",
+          "focus": "depends upon",
+          "object": "the available budget"
+        },
+        {
+          "en": "Success depends upon careful preparation.",
+          "ja": "成功は慎重な準備にかかっています。",
+          "focus": "depends upon",
+          "object": "careful preparation"
+        }
+      ]
+    }
+  ]
+},
+  {
+  "id": "expect",
+  "rank": 85,
+  "word": "EXPECT",
+  "ipa": "/ɪkˈspekt/",
+  "kana": "エクスペクト",
+  "syllable": "ex-pect",
+  "transitivity": "他動詞",
+  "importance": "★★★☆☆ 基本",
+  "core": "根拠をもとに、起こることや相手の行動を見込む",
+  "coreDetail": "EXPECTは、返信、結果、行動などが起こると現実的に見込む動詞です。expect + 名詞、expect to do、expect 人 to do、expect that節を基本側で整理します。",
+  "meanings": [
+    {
+      "id": "expect-noun",
+      "title": "① 物・結果を予想する",
+      "pattern": "EXPECT + 名詞",
+      "transitivity": "他動詞",
+      "structure": "S + expect + O",
+      "image": "返信、遅れ、変化などが起こると見込む。",
+      "point": "hopeよりも、根拠のある予想を表します。",
+      "examples": [
+        {
+          "en": "We expect a reply by Friday.",
+          "ja": "私たちは金曜日までに返信が来ると見込んでいます。",
+          "focus": "expect",
+          "object": "a reply"
+        },
+        {
+          "en": "The client expects a clear explanation.",
+          "ja": "顧客は明確な説明を求めています。",
+          "focus": "expects",
+          "object": "a clear explanation"
+        },
+        {
+          "en": "We expect some delays during the holiday period.",
+          "ja": "私たちは休日期間中に多少の遅れが出ると予想しています。",
+          "focus": "expect",
+          "object": "some delays"
+        }
+      ]
+    },
+    {
+      "id": "expect-to",
+      "title": "② 自分が〜する予定・見込みである",
+      "pattern": "EXPECT TO + 動詞",
+      "transitivity": "他動詞",
+      "structure": "S + expect + to V",
+      "image": "自分や主語が行うことを見込む。",
+      "point": "to不定詞は基本文型です。赤文字はexpectだけです。",
+      "examples": [
+        {
+          "en": "We expect to finish the work by Thursday.",
+          "ja": "私たちは木曜日までに作業を終える見込みです。",
+          "focus": "expect",
+          "object": "to finish the work"
+        },
+        {
+          "en": "I expect to receive the sample tomorrow.",
+          "ja": "私は明日サンプルを受け取る見込みです。",
+          "focus": "expect",
+          "object": "to receive the sample"
+        },
+        {
+          "en": "Sales are expected to increase next month.",
+          "ja": "売上は来月増加する見込みです。",
+          "focus": "expected",
+          "object": "to increase"
+        }
+      ]
+    },
+    {
+      "id": "expect-person",
+      "title": "③ 人が〜することを見込む・求める",
+      "pattern": "EXPECT + 人 + TO DO",
+      "transitivity": "他動詞",
+      "structure": "S + expect + O + to V",
+      "image": "相手が行動すると予想する、または当然のこととして求める。",
+      "point": "日本語の主語を省略せず、誰が行動するかを明確にします。",
+      "examples": [
+        {
+          "en": "We expect the supplier to deliver the samples tomorrow.",
+          "ja": "私たちは、その仕入先が明日サンプルを納品すると見込んでいます。",
+          "focus": "expect",
+          "object": "the supplier"
+        },
+        {
+          "en": "The client expects us to respond quickly.",
+          "ja": "顧客は、私たちが迅速に対応することを求めています。",
+          "focus": "expects",
+          "object": "us"
+        },
+        {
+          "en": "I expected him to join the meeting.",
+          "ja": "私は、彼が会議に参加すると思っていました。",
+          "focus": "expected",
+          "object": "him"
+        }
+      ]
+    },
+    {
+      "id": "expect-that",
+      "title": "④ 〜だと予想する",
+      "pattern": "EXPECT THAT + 文",
+      "transitivity": "他動詞",
+      "structure": "S + expect + that節",
+      "image": "文全体の内容が起こると見込む。",
+      "point": "会話ではthatを省略することもあります。",
+      "examples": [
+        {
+          "en": "We expect that demand will increase next year.",
+          "ja": "私たちは来年、需要が増えると予想しています。",
+          "focus": "expect"
+        },
+        {
+          "en": "I expect that the client will approve the proposal.",
+          "ja": "私は顧客がその提案を承認すると見込んでいます。",
+          "focus": "expect"
+        },
+        {
+          "en": "They expected that the test would take two hours.",
+          "ja": "彼らはその試験に2時間かかると予想していました。",
+          "focus": "expected"
+        }
+      ]
+    },
+    {
+      "id": "expect-from",
+      "title": "⑤ 〜に期待する水準を示す",
+      "pattern": "EXPECT + 物 + FROM + 人",
+      "transitivity": "他動詞",
+      "structure": "S + expect + O + from + 人",
+      "image": "相手に求める品質、行動、結果を示す。",
+      "point": "expect fromは句動詞ではなく、目的語とfrom句を伴う基本用法です。",
+      "examples": [
+        {
+          "en": "We expect high quality from our suppliers.",
+          "ja": "私たちは仕入先に高い品質を求めています。",
+          "focus": "expect",
+          "object": "high quality"
+        },
+        {
+          "en": "The manager expects accurate reports from the team.",
+          "ja": "管理者はチームに正確な報告を求めています。",
+          "focus": "expects",
+          "object": "accurate reports"
+        },
+        {
+          "en": "Customers expect quick support from us.",
+          "ja": "顧客は私たちに迅速なサポートを期待しています。",
+          "focus": "expect",
+          "object": "quick support"
+        }
+      ]
+    }
+  ],
+  "collocations": [],
+  "phrasalVerbs": []
+},
   {
     "id": "reply",
     "rank": 86,

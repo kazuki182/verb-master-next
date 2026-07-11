@@ -13003,60 +13003,115 @@ export const verbs: Verb[] = [
       "syllable": "dis-cuss",
       "transitivity": "他動詞",
       "importance": "★★★★☆ 重要",
-      "core": "一つのテーマを相手と掘り下げて話し合う",
-      "coreDetail": "DISCUSSは、予定・条件・課題・提案などを、結論や理解に近づけるために話し合う動詞です。基本は discuss the issue のように目的語を直接置きます。discuss about は通常避けます。",
+      "core": "議題を中心に意見を出し合い、理解や判断に近づける",
+      "coreDetail": "DISCUSSは、問題・条件・計画・提案などを、相手と掘り下げて話し合う動詞です。基本は discuss the issue のように目的語を直接置きます。discuss about は通常避けます。",
       "coreVisual": { "from": ["議題", "意見", "条件", "問題"], "to": "理解・合意・次の行動", "label": "テーマを中心に意見を交わす" },
       "meanings": [
-          { "id": "discuss-topic", "title": "① 議題・問題について話し合う", "pattern": "discuss + 議題 / 問題", "transitivity": "他動詞", "structure": "S + discuss + O", "image": "議題をテーブルに置き、関係者で話し合う。", "point": "discuss about ではなく discuss the issue が自然です。", "examples": [
-              { "en": "We discussed the delivery issue with the client.", "ja": "私たちは顧客と納品の問題について話し合いました。", "focus": "discussed", "object": "the delivery issue" },
-              { "en": "Let's discuss the quotation before we send it.", "ja": "見積を送る前に、その内容について話し合いましょう。", "focus": "discuss", "object": "the quotation" },
-              { "en": "The team discussed the problem during the morning meeting.", "ja": "チームは朝の会議でその問題について話し合いました。", "focus": "discussed", "object": "the problem" }
-          ], "dailyExamples": [] },
-          { "id": "discuss-details", "title": "② 詳細・条件を詰める", "pattern": "discuss + details / terms / conditions", "transitivity": "他動詞", "structure": "S + discuss + O", "image": "未確定の細部を話し合って整理する。", "point": "details, terms, conditions は仕事でよく使う組み合わせです。", "examples": [
-              { "en": "We discussed the details of the new order.", "ja": "私たちは新しい注文の詳細について話し合いました。", "focus": "discussed", "object": "the details" },
-              { "en": "Let's discuss the terms before signing the agreement.", "ja": "契約書に署名する前に条件について話し合いましょう。", "focus": "discuss", "object": "the terms" },
-              { "en": "They discussed the conditions for the next shipment.", "ja": "彼らは次回出荷の条件について話し合いました。", "focus": "discussed", "object": "the conditions" }
-          ], "dailyExamples": [] },
-          { "id": "discuss-plan", "title": "③ 計画・予定を話し合う", "pattern": "discuss + plan / schedule / timeline", "transitivity": "他動詞", "structure": "S + discuss + O", "image": "予定や段取りを確認しながら進め方を話す。", "point": "計画やスケジュール調整で使いやすい形です。", "examples": [
-              { "en": "We discussed the project plan with the manager.", "ja": "私たちは上司とプロジェクト計画について話し合いました。", "focus": "discussed", "object": "the project plan" },
-              { "en": "Let's discuss the timeline for installation.", "ja": "設置のスケジュールについて話し合いましょう。", "focus": "discuss", "object": "the timeline" },
-              { "en": "The sales team discussed next month's visit schedule.", "ja": "営業チームは来月の訪問スケジュールについて話し合いました。", "focus": "discussed", "object": "next month's visit schedule" }
-          ], "dailyExamples": [] },
-          { "id": "discuss-options", "title": "④ 選択肢・対応方法を話し合う", "pattern": "discuss whether / how / what + 文", "transitivity": "他動詞", "structure": "S + discuss + whether/how/what ...", "image": "複数の選択肢を比べながら判断に近づく。", "point": "何をどうするか未定の時に便利です。", "examples": [
-              { "en": "We discussed whether we should change the supplier.", "ja": "私たちは仕入先を変更すべきか話し合いました。", "focus": "discussed", "object": "whether we should change the supplier" },
-              { "en": "Let's discuss how we can reduce the cost.", "ja": "どのようにコストを削減できるか話し合いましょう。", "focus": "discuss", "object": "how we can reduce the cost" },
-              { "en": "They discussed what information to include in the report.", "ja": "彼らは報告書にどの情報を入れるか話し合いました。", "focus": "discussed", "object": "what information to include" }
-          ], "dailyExamples": [] },
-          { "id": "discuss-internally", "title": "⑤ 社内で協議する", "pattern": "discuss internally", "transitivity": "他動詞", "structure": "S + discuss + O + internally", "image": "顧客へ返答する前に社内で意見をそろえる。", "point": "internally を付けると『社内で』という営業現場で使いやすい表現になります。", "examples": [
-              { "en": "We need to discuss the request internally first.", "ja": "私たちはまず社内でその依頼について協議する必要があります。", "focus": "discuss", "object": "the request" },
-              { "en": "I will discuss the price change internally and get back to you.", "ja": "価格変更について社内で確認し、改めてご連絡します。", "focus": "discuss", "object": "the price change" },
-              { "en": "They discussed the proposal internally before the presentation.", "ja": "彼らはプレゼン前に社内で提案について話し合いました。", "focus": "discussed", "object": "the proposal" }
-          ], "dailyExamples": [] }
+        {
+          "id": "discuss-topic",
+          "title": "① 議題・問題について話し合う",
+          "pattern": "discuss + 議題 / 問題",
+          "transitivity": "他動詞",
+          "structure": "S + discuss + O",
+          "image": "議題をテーブルに置き、関係者で話し合う。",
+          "point": "discuss about ではなく discuss the issue が自然です。",
+          "examples": [
+            { "en": "We discussed the delivery issue with the client.", "ja": "私たちは顧客と納品の問題について話し合いました。", "focus": "discussed", "object": "the delivery issue" },
+            { "en": "Let's discuss the quotation before we send it.", "ja": "見積を送る前に、その内容について話し合いましょう。", "focus": "discuss", "object": "the quotation" },
+            { "en": "The team discussed the problem during the morning meeting.", "ja": "チームは朝の会議でその問題について話し合いました。", "focus": "discussed", "object": "the problem" }
+          ],
+          "dailyExamples": []
+        },
+        {
+          "id": "discuss-details",
+          "title": "② 詳細・条件を詰める",
+          "pattern": "discuss + details / terms / conditions",
+          "transitivity": "他動詞",
+          "structure": "S + discuss + O",
+          "image": "未確定の細部を話し合って整理する。",
+          "point": "details, terms, conditions は仕事でよく使う組み合わせです。",
+          "examples": [
+            { "en": "We discussed the details of the new order.", "ja": "私たちは新しい注文の詳細について話し合いました。", "focus": "discussed", "object": "the details" },
+            { "en": "Let's discuss the terms before signing the agreement.", "ja": "契約書に署名する前に条件について話し合いましょう。", "focus": "discuss", "object": "the terms" },
+            { "en": "They discussed the conditions for the next shipment.", "ja": "彼らは次回出荷の条件について話し合いました。", "focus": "discussed", "object": "the conditions" }
+          ],
+          "dailyExamples": []
+        },
+        {
+          "id": "discuss-plan",
+          "title": "③ 計画・予定を話し合う",
+          "pattern": "discuss + plan / schedule / timeline",
+          "transitivity": "他動詞",
+          "structure": "S + discuss + O",
+          "image": "予定や段取りを確認しながら進め方を話す。",
+          "point": "計画やスケジュール調整で使いやすい形です。",
+          "examples": [
+            { "en": "We discussed the project plan with the manager.", "ja": "私たちは上司とプロジェクト計画について話し合いました。", "focus": "discussed", "object": "the project plan" },
+            { "en": "Let's discuss the timeline for installation.", "ja": "設置のスケジュールについて話し合いましょう。", "focus": "discuss", "object": "the timeline" },
+            { "en": "The sales team discussed next month's visit schedule.", "ja": "営業チームは来月の訪問スケジュールについて話し合いました。", "focus": "discussed", "object": "next month's visit schedule" }
+          ],
+          "dailyExamples": []
+        },
+        {
+          "id": "discuss-options",
+          "title": "④ 選択肢・対応方法を話し合う",
+          "pattern": "discuss whether / how / what + 文",
+          "transitivity": "他動詞",
+          "structure": "S + discuss + whether/how/what ...",
+          "image": "複数の選択肢を比べながら判断に近づく。",
+          "point": "何をどうするか未定の時に便利です。",
+          "examples": [
+            { "en": "We discussed whether we should change the supplier.", "ja": "私たちは仕入先を変更すべきか話し合いました。", "focus": "discussed", "object": "whether we should change the supplier" },
+            { "en": "Let's discuss how we can reduce the cost.", "ja": "どのようにコストを削減できるか話し合いましょう。", "focus": "discuss", "object": "how we can reduce the cost" },
+            { "en": "They discussed what information to include in the report.", "ja": "彼らは報告書にどの情報を入れるか話し合いました。", "focus": "discussed", "object": "what information to include" }
+          ],
+          "dailyExamples": []
+        },
+        {
+          "id": "discuss-internally",
+          "title": "⑤ 社内で協議する",
+          "pattern": "discuss + O + internally",
+          "transitivity": "他動詞",
+          "structure": "S + discuss + O + internally",
+          "image": "顧客へ返答する前に社内で意見をそろえる。",
+          "point": "internally を付けると『社内で』という営業現場で使いやすい表現になります。",
+          "examples": [
+            { "en": "We need to discuss the request internally first.", "ja": "私たちはまず社内でその依頼について協議する必要があります。", "focus": "discuss", "object": "the request" },
+            { "en": "I will discuss the price change internally and get back to you.", "ja": "価格変更について社内で協議し、改めてご連絡します。", "focus": "discuss", "object": "the price change" },
+            { "en": "They discussed the proposal internally before the presentation.", "ja": "彼らはプレゼン前に社内で提案について話し合いました。", "focus": "discussed", "object": "the proposal" }
+          ],
+          "dailyExamples": []
+        }
       ],
       "collocations": [],
       "phrasalVerbs": [
-          { "phrase": "discuss with", "ja": "〜と話し合う", "image": "相手と同じ議題を見ながら意見を交わす。", "pattern": "discuss + 内容 + with + 相手", "examples": [
-              { "en": "I discussed the order with the customer.", "ja": "私は顧客と注文について話し合いました。", "focus": "discuss with" },
-              { "en": "Please discuss the delivery plan with the warehouse team.", "ja": "倉庫チームと納品計画について話し合ってください。", "focus": "discuss with" },
-              { "en": "We discussed the request with our manager.", "ja": "私たちは上司とその依頼について話し合いました。", "focus": "discuss with" }
-          ], "dailyExamples": [] },
-          { "phrase": "discuss among", "ja": "〜の間で話し合う", "image": "複数人・部署の間で共有して話し合う。", "pattern": "discuss among + 人・部署", "examples": [
-              { "en": "The issue was discussed among the sales members.", "ja": "その問題は営業メンバーの間で話し合われました。", "focus": "discuss among" },
-              { "en": "Please discuss the policy among the project leaders.", "ja": "プロジェクトリーダーの間でその方針を話し合ってください。", "focus": "discuss among" },
-              { "en": "The price change was discussed among the managers.", "ja": "価格変更は管理者の間で話し合われました。", "focus": "discuss among" }
-          ], "dailyExamples": [] },
-          { "phrase": "discuss between", "ja": "〜の間で話し合う", "image": "二者または複数の間で議題を共有する。", "pattern": "discuss between + parties", "examples": [
-              { "en": "The delivery issue was discussed between both companies.", "ja": "納品の問題は両社間で話し合われました。", "focus": "discuss between" },
-              { "en": "The terms were discussed between the buyer and the supplier.", "ja": "条件は買い手と仕入先の間で話し合われました。", "focus": "discuss between" },
-              { "en": "The schedule was discussed between the sales and production teams.", "ja": "スケジュールは営業チームと製造チームの間で話し合われました。", "focus": "discuss between" }
-          ], "dailyExamples": [] },
-          { "phrase": "discuss over", "ja": "〜を通じて・〜しながら話し合う", "image": "メール・電話・会食などの場を使って話し合う。", "pattern": "discuss over + medium / meal", "examples": [
-              { "en": "We discussed the changes over email.", "ja": "私たちは変更点についてメールで話し合いました。", "focus": "discuss over" },
-              { "en": "Can we discuss the details over a quick call?", "ja": "短い電話で詳細について話し合えますか？", "focus": "discuss over" },
-              { "en": "They discussed the quotation over lunch.", "ja": "彼らは昼食中に見積について話し合いました。", "focus": "discuss over" }
-          ], "dailyExamples": [] }
+        { "phrase": "discuss with", "ja": "〜と話し合う", "image": "相手と同じ議題を見ながら意見を交わす。", "pattern": "discuss + 内容 + with + 相手", "examples": [
+          { "en": "I discussed the order with the customer.", "ja": "私は顧客と注文について話し合いました。", "focus": "discuss with" },
+          { "en": "Please discuss the delivery plan with the warehouse team.", "ja": "倉庫チームと納品計画について話し合ってください。", "focus": "discuss with" },
+          { "en": "We discussed the request with our manager.", "ja": "私たちは上司とその依頼について話し合いました。", "focus": "discuss with" }
+        ], "dailyExamples": [] },
+        { "phrase": "discuss among", "ja": "〜の間で話し合う", "image": "複数人・部署の間で共有して話し合う。", "pattern": "discuss among + 人・部署", "examples": [
+          { "en": "The issue was discussed among the sales members.", "ja": "その問題は営業メンバーの間で話し合われました。", "focus": "discuss among" },
+          { "en": "Please discuss the policy among the project leaders.", "ja": "プロジェクトリーダーの間でその方針を話し合ってください。", "focus": "discuss among" },
+          { "en": "The price change was discussed among the managers.", "ja": "価格変更は管理者の間で話し合われました。", "focus": "discuss among" }
+        ], "dailyExamples": [] },
+        { "phrase": "discuss over", "ja": "〜を通じて・〜しながら話し合う", "image": "メール・電話・会食などの場を使って話し合う。", "pattern": "discuss over + medium / meal", "examples": [
+          { "en": "We discussed the changes over email.", "ja": "私たちは変更点についてメールで話し合いました。", "focus": "discuss over" },
+          { "en": "Can we discuss the details over a quick call?", "ja": "短い電話で詳細について話し合えますか？", "focus": "discuss over" },
+          { "en": "They discussed the quotation over lunch.", "ja": "彼らは昼食中に見積について話し合いました。", "focus": "discuss over" }
+        ], "dailyExamples": [] },
+        { "phrase": "discuss together", "ja": "一緒に話し合う", "image": "同じ議題に向かって一緒に考える。", "pattern": "discuss together", "examples": [
+          { "en": "Let's discuss the next step together.", "ja": "次の対応を一緒に話し合いましょう。", "focus": "discuss together" },
+          { "en": "We discussed the proposal together before the meeting.", "ja": "私たちは会議前に提案内容を一緒に話し合いました。", "focus": "discussed together" },
+          { "en": "The sales and technical teams should discuss this together.", "ja": "営業チームと技術チームはこれを一緒に話し合うべきです。", "focus": "discuss together" }
+        ], "dailyExamples": [] },
+        { "phrase": "discuss in", "ja": "〜の中で話し合う", "image": "会議・場・グループの中で議題を扱う。", "pattern": "discuss in + meeting / group", "examples": [
+          { "en": "We will discuss the issue in tomorrow's meeting.", "ja": "私たちは明日の会議でその問題を話し合います。", "focus": "discuss in" },
+          { "en": "Please discuss the schedule in the project group.", "ja": "プロジェクトグループ内でスケジュールを話し合ってください。", "focus": "discuss in" },
+          { "en": "The topic was discussed in the sales meeting.", "ja": "その話題は営業会議で話し合われました。", "focus": "discuss in" }
+        ], "dailyExamples": [] }
       ]
-  },
+    },
   {
       "id": "confirm",
       "rank": 62,
@@ -13070,61 +13125,66 @@ export const verbs: Verb[] = [
       "coreDetail": "CONFIRMは、日程・数量・条件・承認などを確認し、安心して進められる状態に固める動詞です。checkより少し正式で、仕事メールでもよく使います。",
       "coreVisual": { "from": ["未確認", "仮予定", "不明点", "承認待ち"], "to": "確定・共有できる状態", "label": "不確か → 確かな状態" },
       "meanings": [
-          { "id": "confirm-details", "title": "① 情報・詳細を確認する", "pattern": "confirm + details / information", "transitivity": "他動詞", "structure": "S + confirm + O", "image": "曖昧な情報を確かな情報にする。", "point": "confirm the details は仕事で非常によく使います。", "examples": [
-              { "en": "Please confirm the details before we place the order.", "ja": "私たちが発注する前に詳細を確認してください。", "focus": "confirm", "object": "the details" },
-              { "en": "We confirmed the product information with the supplier.", "ja": "私たちは仕入先と製品情報を確認しました。", "focus": "confirmed", "object": "the product information" },
-              { "en": "Can you confirm the installation requirements?", "ja": "設置条件を確認できますか？", "focus": "confirm", "object": "the installation requirements" }
-          ], "dailyExamples": [] },
-          { "id": "confirm-schedule", "title": "② 日程・予定を確認する", "pattern": "confirm + date / time / schedule", "transitivity": "他動詞", "structure": "S + confirm + O", "image": "予定を確定し、関係者の認識を合わせる。", "point": "会議・納期・訪問予定でよく使います。", "examples": [
-              { "en": "Please confirm the meeting time by this afternoon.", "ja": "本日午後までに会議時間を確認してください。", "focus": "confirm", "object": "the meeting time" },
-              { "en": "We confirmed the delivery date with the customer.", "ja": "私たちは顧客と納期を確認しました。", "focus": "confirmed", "object": "the delivery date" },
-              { "en": "I will confirm the visit schedule and reply today.", "ja": "訪問予定を確認して、本日返信します。", "focus": "confirm", "object": "the visit schedule" }
-          ], "dailyExamples": [] },
-          { "id": "confirm-order", "title": "③ 注文・数量・価格を確認する", "pattern": "confirm + order / quantity / price", "transitivity": "他動詞", "structure": "S + confirm + O", "image": "取引に必要な条件を確かなものにする。", "point": "営業・購買・出荷のやり取りで便利です。", "examples": [
-              { "en": "We confirmed the order quantity this morning.", "ja": "私たちは今朝、注文数量を確認しました。", "focus": "confirmed", "object": "the order quantity" },
-              { "en": "Can you confirm the latest price?", "ja": "最新価格を確認できますか？", "focus": "confirm", "object": "the latest price" },
-              { "en": "The client confirmed the order by email.", "ja": "顧客はメールで注文を確定しました。", "focus": "confirmed", "object": "the order" }
-          ], "dailyExamples": [] },
-          { "id": "confirm-approval", "title": "④ 承認・決定を確認する", "pattern": "confirm + approval / decision", "transitivity": "他動詞", "structure": "S + confirm + O", "image": "進めてよいかを確かな状態にする。", "point": "approval, decision, status と相性が良いです。", "examples": [
-              { "en": "Please confirm approval before we start production.", "ja": "生産を始める前に承認を確認してください。", "focus": "confirm", "object": "approval" },
-              { "en": "I confirmed the decision with my manager.", "ja": "私は上司とその決定を確認しました。", "focus": "confirmed", "object": "the decision" },
-              { "en": "We need to confirm the project status by Friday.", "ja": "私たちは金曜日までに案件状況を確認する必要があります。", "focus": "confirm", "object": "the project status" }
-          ], "dailyExamples": [] },
-          { "id": "confirm-whether", "title": "⑤ 〜かどうかを確認する", "pattern": "confirm whether / if + 文", "transitivity": "他動詞", "structure": "S + confirm + whether/if ...", "image": "不明な点を yes/no で確かめる。", "point": "在庫・納期・対応可否の確認に便利です。", "examples": [
-              { "en": "Please confirm whether the item is available.", "ja": "その商品が入手可能か確認してください。", "focus": "confirm", "object": "whether the item is available" },
-              { "en": "I will confirm if we can ship it today.", "ja": "本日出荷できるか確認します。", "focus": "confirm", "object": "if we can ship it today" },
-              { "en": "Can you confirm whether the client approved the sample?", "ja": "顧客がサンプルを承認したか確認できますか？", "focus": "confirm", "object": "whether the client approved the sample" }
-          ], "dailyExamples": [] }
+        { "id": "confirm-details", "title": "① 情報・詳細を確認する", "pattern": "confirm + details / information", "transitivity": "他動詞", "structure": "S + confirm + O", "image": "曖昧な情報を確かな情報にする。", "point": "confirm the details は仕事で非常によく使います。", "examples": [
+          { "en": "Please confirm the details before we place the order.", "ja": "私たちが発注する前に詳細を確認してください。", "focus": "confirm", "object": "the details" },
+          { "en": "We confirmed the product information with the supplier.", "ja": "私たちは仕入先と製品情報を確認しました。", "focus": "confirmed", "object": "the product information" },
+          { "en": "Can you confirm the installation requirements?", "ja": "設置条件を確認できますか？", "focus": "confirm", "object": "the installation requirements" }
+        ], "dailyExamples": [] },
+        { "id": "confirm-schedule", "title": "② 日程・予定を確認する", "pattern": "confirm + date / time / schedule", "transitivity": "他動詞", "structure": "S + confirm + O", "image": "予定を確定し、関係者の認識を合わせる。", "point": "会議・納期・訪問予定でよく使います。", "examples": [
+          { "en": "Please confirm the meeting time by this afternoon.", "ja": "本日午後までに会議時間を確認してください。", "focus": "confirm", "object": "the meeting time" },
+          { "en": "We confirmed the delivery date with the customer.", "ja": "私たちは顧客と納期を確認しました。", "focus": "confirmed", "object": "the delivery date" },
+          { "en": "I will confirm the visit schedule and reply today.", "ja": "訪問予定を確認して、本日返信します。", "focus": "confirm", "object": "the visit schedule" }
+        ], "dailyExamples": [] },
+        { "id": "confirm-order", "title": "③ 注文・数量・価格を確認する", "pattern": "confirm + order / quantity / price", "transitivity": "他動詞", "structure": "S + confirm + O", "image": "取引に必要な条件を確かなものにする。", "point": "営業・購買・出荷のやり取りで便利です。", "examples": [
+          { "en": "We confirmed the order quantity this morning.", "ja": "私たちは今朝、注文数量を確認しました。", "focus": "confirmed", "object": "the order quantity" },
+          { "en": "Can you confirm the latest price?", "ja": "最新価格を確認できますか？", "focus": "confirm", "object": "the latest price" },
+          { "en": "The client confirmed the order by email.", "ja": "顧客はメールで注文を確定しました。", "focus": "confirmed", "object": "the order" }
+        ], "dailyExamples": [] },
+        { "id": "confirm-if", "title": "④ 正しいかどうか確認する", "pattern": "confirm if / whether + 文", "transitivity": "他動詞", "structure": "S + confirm + if/whether ...", "image": "不明点をYes/Noで確かめる。", "point": "confirm if it is correct は、念のため確認する時に使いやすいです。", "examples": [
+          { "en": "Please confirm if the address is correct.", "ja": "住所が正しいか確認してください。", "focus": "confirm", "object": "if the address is correct" },
+          { "en": "We need to confirm whether the product is available.", "ja": "私たちはその製品が入手可能か確認する必要があります。", "focus": "confirm", "object": "whether the product is available" },
+          { "en": "I confirmed that the file was attached.", "ja": "私はファイルが添付されていることを確認しました。", "focus": "confirmed", "object": "that the file was attached" }
+        ], "dailyExamples": [] },
+        { "id": "confirm-before", "title": "⑤ 送信・出荷前に確認する", "pattern": "confirm + O + before + 動作", "transitivity": "他動詞", "structure": "S + confirm + O + M", "image": "次の作業に進む前に内容を固める。", "point": "before sending / before shipping は仕事で使いやすい形です。", "examples": [
+          { "en": "Please confirm the quotation before sending it.", "ja": "送信前に見積を確認してください。", "focus": "confirm", "object": "the quotation" },
+          { "en": "We confirmed the address before shipping the sample.", "ja": "私たちはサンプル出荷前に住所を確認しました。", "focus": "confirmed", "object": "the address" },
+          { "en": "Confirm the final design before production starts.", "ja": "製作開始前に最終デザインを確認してください。", "focus": "Confirm", "object": "the final design" }
+        ], "dailyExamples": [] }
       ],
       "collocations": [],
       "phrasalVerbs": [
-          { "phrase": "confirm with", "ja": "〜に確認する", "image": "相手に照会して情報を確かな状態にする。", "pattern": "confirm with + 人・部署", "examples": [
-              { "en": "I will confirm with the warehouse team.", "ja": "倉庫チームに確認します。", "focus": "confirm with" },
-              { "en": "Please confirm the delivery date with the customer.", "ja": "顧客に納期を確認してください。", "focus": "confirm with" },
-              { "en": "We confirmed the price with our manager.", "ja": "私たちは上司に価格を確認しました。", "focus": "confirmed with" }
-          ], "dailyExamples": [] },
-          { "phrase": "confirm by", "ja": "〜で確認する", "image": "メール・電話などの手段で確認する。", "pattern": "confirm by + method", "examples": [
-              { "en": "Please confirm by email after the meeting.", "ja": "会議後にメールで確認してください。", "focus": "confirm by" },
-              { "en": "The order was confirmed by phone.", "ja": "注文は電話で確認されました。", "focus": "confirmed by" },
-              { "en": "We confirmed the address by checking the invoice.", "ja": "私たちは請求書を確認して住所を確かめました。", "focus": "confirmed by" }
-          ], "dailyExamples": [] },
-          { "phrase": "confirm through", "ja": "〜を通して確認する", "image": "システムや担当者などの経路を通して確認する。", "pattern": "confirm through + channel", "examples": [
-              { "en": "We confirmed the payment through the system.", "ja": "私たちはシステムを通して支払いを確認しました。", "focus": "confirmed through" },
-              { "en": "Please confirm the status through the portal.", "ja": "ポータルを通して状況を確認してください。", "focus": "confirm through" },
-              { "en": "I confirmed the request through the sales team.", "ja": "私は営業チームを通してその依頼を確認しました。", "focus": "confirmed through" }
-          ], "dailyExamples": [] },
-          { "phrase": "confirm against", "ja": "〜と照合して確認する", "image": "基準や資料と比べて正しいか確認する。", "pattern": "confirm against + record / list", "examples": [
-              { "en": "Please confirm the quantity against the order sheet.", "ja": "注文書と照合して数量を確認してください。", "focus": "confirm against" },
-              { "en": "We confirmed the model number against the drawing.", "ja": "私たちは図面と照合して型番を確認しました。", "focus": "confirmed against" },
-              { "en": "I will confirm the price against the latest list.", "ja": "最新リストと照合して価格を確認します。", "focus": "confirm against" }
-          ], "dailyExamples": [] },
-          { "phrase": "confirm as", "ja": "〜として確定する", "image": "状態や役割を確定させる。", "pattern": "confirm as + status / role", "examples": [
-              { "en": "The date was confirmed as final.", "ja": "その日程は最終確定となりました。", "focus": "confirmed as" },
-              { "en": "We confirmed the order as urgent.", "ja": "私たちはその注文を緊急扱いとして確定しました。", "focus": "confirmed as" },
-              { "en": "The sample was confirmed as approved.", "ja": "そのサンプルは承認済みとして確定されました。", "focus": "confirmed as" }
-          ], "dailyExamples": [] }
+        { "phrase": "confirm with", "ja": "〜に確認する", "image": "相手に聞いて内容を確かにする。", "pattern": "confirm + 内容 + with + 相手", "examples": [
+          { "en": "I will confirm the delivery date with the supplier.", "ja": "仕入先に納期を確認します。", "focus": "confirm with" },
+          { "en": "Please confirm the price with the client.", "ja": "顧客に価格を確認してください。", "focus": "confirm with" },
+          { "en": "We confirmed the schedule with the installation team.", "ja": "私たちは施工チームにスケジュールを確認しました。", "focus": "confirmed with" }
+        ], "dailyExamples": [] },
+        { "phrase": "confirm by", "ja": "〜で確認する・〜までに確定する", "image": "確認する手段や期限を示す。", "pattern": "confirm by + method / time", "examples": [
+          { "en": "Please confirm by email.", "ja": "メールで確認してください。", "focus": "confirm by" },
+          { "en": "Can you confirm by noon?", "ja": "正午までに確定できますか？", "focus": "confirm by" },
+          { "en": "The customer confirmed the order by phone.", "ja": "顧客は電話で注文を確認しました。", "focus": "confirmed by" }
+        ], "dailyExamples": [] },
+        { "phrase": "confirm in", "ja": "〜で確認する", "image": "文書・システム・会議の中で確認する。", "pattern": "confirm in + document / system / meeting", "examples": [
+          { "en": "Please confirm the change in the document.", "ja": "資料内で変更点を確認してください。", "focus": "confirm in" },
+          { "en": "We confirmed the quantity in the system.", "ja": "私たちはシステム上で数量を確認しました。", "focus": "confirmed in" },
+          { "en": "The final schedule was confirmed in the meeting.", "ja": "最終スケジュールは会議で確認されました。", "focus": "confirmed in" }
+        ], "dailyExamples": [] },
+        { "phrase": "confirm on", "ja": "〜について確認する", "image": "特定の件・日付・条件について確認する。", "pattern": "confirm on + topic / date", "examples": [
+          { "en": "Please confirm on the delivery schedule.", "ja": "納品スケジュールについて確認してください。", "focus": "confirm on" },
+          { "en": "We need to confirm on the final price.", "ja": "私たちは最終価格について確認する必要があります。", "focus": "confirm on" },
+          { "en": "The team confirmed on the next action.", "ja": "チームは次の対応について確認しました。", "focus": "confirmed on" }
+        ], "dailyExamples": [] },
+        { "phrase": "confirm through", "ja": "〜を通して確認する", "image": "人・システム・資料を通じて確認する。", "pattern": "confirm through + channel", "examples": [
+          { "en": "We confirmed the order through the online system.", "ja": "私たちはオンラインシステムを通して注文を確認しました。", "focus": "confirmed through" },
+          { "en": "Please confirm the details through the sales representative.", "ja": "営業担当者を通して詳細を確認してください。", "focus": "confirm through" },
+          { "en": "The delivery status can be confirmed through the tracking page.", "ja": "配送状況は追跡ページを通して確認できます。", "focus": "confirmed through" }
+        ], "dailyExamples": [] },
+        { "phrase": "confirm against", "ja": "〜と照合して確認する", "image": "基準・リスト・注文内容と照らし合わせる。", "pattern": "confirm against + list / order / standard", "examples": [
+          { "en": "Please confirm the items against the order sheet.", "ja": "注文書と照合して品目を確認してください。", "focus": "confirm against" },
+          { "en": "We confirmed the shipment against the packing list.", "ja": "私たちは梱包リストと照合して出荷内容を確認しました。", "focus": "confirmed against" },
+          { "en": "Confirm the final design against the approved drawing.", "ja": "承認済み図面と照合して最終デザインを確認してください。", "focus": "Confirm against" }
+        ], "dailyExamples": [] }
       ]
-  },
+    },
   {
       "id": "receive",
       "rank": 63,
@@ -13134,70 +13194,70 @@ export const verbs: Verb[] = [
       "syllable": "re-ceive",
       "transitivity": "他動詞",
       "importance": "★★★★☆ 重要",
-      "core": "外から来たものを受け取る",
-      "coreDetail": "RECEIVEは、メール・注文・支払い・承認・サンプルなど、外部や相手から来たものを受け取る動詞です。仕事では『受領する』『受信する』『承認を得る』のように訳します。",
-      "coreVisual": { "from": ["顧客", "仕入先", "システム", "外部"], "to": "自分・自社・担当者", "label": "外から入ってくるものを受け取る" },
+      "core": "相手・外部から自分や会社側に入ってくるものを受け取る",
+      "coreDetail": "RECEIVEは、メール・注文・資料・支払い・連絡などが、外側から自分側へ入ってくるイメージです。getより少し正式で、仕事メールや受領表現でよく使います。",
+      "coreVisual": { "from": ["顧客", "仕入先", "外部", "相手"], "to": "自分・会社側", "label": "外から自分側へ入ってくる" },
       "meanings": [
-          { "id": "receive-item", "title": "① 物・書類を受け取る", "pattern": "receive + item / document", "transitivity": "他動詞", "structure": "S + receive + O", "image": "相手から送られてきた物や資料を受け取る。", "point": "getより少し正式で、仕事メールにも合います。", "examples": [
-              { "en": "We received the sample this morning.", "ja": "私たちは今朝サンプルを受け取りました。", "focus": "received", "object": "the sample" },
-              { "en": "Please let me know when you receive the documents.", "ja": "書類を受け取ったら教えてください。", "focus": "receive", "object": "the documents" },
-              { "en": "The warehouse received the new stock yesterday.", "ja": "倉庫は昨日、新しい在庫を受け取りました。", "focus": "received", "object": "the new stock" }
-          ], "dailyExamples": [] },
-          { "id": "receive-email", "title": "② メール・連絡を受信する", "pattern": "receive + email / message / request", "transitivity": "他動詞", "structure": "S + receive + O", "image": "相手から情報や依頼が届く。", "point": "receive an email はビジネスでよく使う表現です。", "examples": [
-              { "en": "I received your email about the quotation.", "ja": "見積についてのメールを受け取りました。", "focus": "received", "object": "your email" },
-              { "en": "We received a request from the client yesterday.", "ja": "私たちは昨日、顧客から依頼を受けました。", "focus": "received", "object": "a request" },
-              { "en": "Did you receive the message from the supplier?", "ja": "仕入先からのメッセージを受け取りましたか？", "focus": "receive", "object": "the message" }
-          ], "dailyExamples": [] },
-          { "id": "receive-order-payment", "title": "③ 注文・支払いを受ける", "pattern": "receive + order / payment", "transitivity": "他動詞", "structure": "S + receive + O", "image": "取引に必要な注文や入金が自社に入る。", "point": "receive payment は『支払いを受け取る』です。", "examples": [
-              { "en": "We received the order after sending the revised quote.", "ja": "修正見積を送った後、私たちは注文を受けました。", "focus": "received", "object": "the order" },
-              { "en": "The accounting team received payment today.", "ja": "経理チームは本日、支払いを受け取りました。", "focus": "received", "object": "payment" },
-              { "en": "We cannot ship the items until we receive payment.", "ja": "支払いを受け取るまで、私たちは商品を出荷できません。", "focus": "receive", "object": "payment" }
-          ], "dailyExamples": [] },
-          { "id": "receive-feedback", "title": "④ 反応・フィードバックを受ける", "pattern": "receive + feedback / response", "transitivity": "他動詞", "structure": "S + receive + O", "image": "相手の反応や評価が自分側に届く。", "point": "feedback, response, comment と相性が良いです。", "examples": [
-              { "en": "We received positive feedback from the customer.", "ja": "私たちは顧客から良いフィードバックを受けました。", "focus": "received", "object": "positive feedback" },
-              { "en": "The proposal received a quick response.", "ja": "その提案にはすぐに返答がありました。", "focus": "received", "object": "a quick response" },
-              { "en": "I received helpful comments from my manager.", "ja": "私は上司から役立つコメントを受けました。", "focus": "received", "object": "helpful comments" }
-          ], "dailyExamples": [] },
-          { "id": "receive-approval", "title": "⑤ 承認・許可を得る", "pattern": "receive + approval / permission", "transitivity": "他動詞", "structure": "S + receive + O", "image": "相手や上位者から承認が自分側へ届く。", "point": "receive approval は『承認を得る』という仕事向けの表現です。", "examples": [
-              { "en": "We received approval to proceed with the order.", "ja": "私たちは注文を進める承認を得ました。", "focus": "received", "object": "approval" },
-              { "en": "Please wait until we receive internal approval.", "ja": "社内承認を得るまでお待ちください。", "focus": "receive", "object": "internal approval" },
-              { "en": "The project received final approval last week.", "ja": "その案件は先週、最終承認を得ました。", "focus": "received", "object": "final approval" }
-          ], "dailyExamples": [] }
+        { "id": "receive-mail", "title": "① メール・連絡を受け取る", "pattern": "receive + email / message / call", "transitivity": "他動詞", "structure": "S + receive + O", "image": "相手から情報が届く。", "point": "receive an email は仕事でよく使う丁寧な表現です。", "examples": [
+          { "en": "We received your email this morning.", "ja": "私たちは今朝あなたのメールを受け取りました。", "focus": "received", "object": "your email" },
+          { "en": "Did you receive the message from the client?", "ja": "顧客からのメッセージを受け取りましたか？", "focus": "receive", "object": "the message" },
+          { "en": "I received a call about the delivery schedule.", "ja": "納品スケジュールについて電話を受けました。", "focus": "received", "object": "a call" }
+        ], "dailyExamples": [] },
+        { "id": "receive-order", "title": "② 注文・依頼を受ける", "pattern": "receive + order / request", "transitivity": "他動詞", "structure": "S + receive + O", "image": "顧客や社内から依頼が入ってくる。", "point": "receive an order は、注文を正式に受ける場面で使えます。", "examples": [
+          { "en": "We received a new order from the customer.", "ja": "私たちは顧客から新しい注文を受けました。", "focus": "received", "object": "a new order" },
+          { "en": "The sales team received a request for a quotation.", "ja": "営業チームは見積依頼を受けました。", "focus": "received", "object": "a request" },
+          { "en": "Please tell me when you receive the purchase order.", "ja": "注文書を受け取ったら教えてください。", "focus": "receive", "object": "the purchase order" }
+        ], "dailyExamples": [] },
+        { "id": "receive-document", "title": "③ 資料・サンプルを受け取る", "pattern": "receive + document / sample / file", "transitivity": "他動詞", "structure": "S + receive + O", "image": "物やデータが相手から届く。", "point": "資料・サンプル・ファイルの受領に使いやすい形です。", "examples": [
+          { "en": "We received the sample yesterday.", "ja": "私たちは昨日サンプルを受け取りました。", "focus": "received", "object": "the sample" },
+          { "en": "Please confirm when you receive the document.", "ja": "資料を受け取ったら確認してください。", "focus": "receive", "object": "the document" },
+          { "en": "I received the updated file from the designer.", "ja": "私はデザイナーから更新されたファイルを受け取りました。", "focus": "received", "object": "the updated file" }
+        ], "dailyExamples": [] },
+        { "id": "receive-payment", "title": "④ 支払いを受け取る", "pattern": "receive + payment", "transitivity": "他動詞", "structure": "S + receive + O", "image": "代金や入金が会社側に入る。", "point": "receive payment は経理・営業で使いやすい表現です。", "examples": [
+          { "en": "We received payment from the client today.", "ja": "私たちは本日、顧客から支払いを受け取りました。", "focus": "received", "object": "payment" },
+          { "en": "The order will ship after we receive payment.", "ja": "支払いを受け取った後に注文品を出荷します。", "focus": "receive", "object": "payment" },
+          { "en": "Please check whether we received the deposit.", "ja": "私たちが前金を受け取ったか確認してください。", "focus": "received", "object": "the deposit" }
+        ], "dailyExamples": [] },
+        { "id": "receive-feedback", "title": "⑤ フィードバック・評価を受ける", "pattern": "receive + feedback / response", "transitivity": "他動詞", "structure": "S + receive + O", "image": "相手の反応や評価が自分側に返ってくる。", "point": "receive feedback は、改善や提案後の反応でよく使います。", "examples": [
+          { "en": "We received positive feedback from the client.", "ja": "私たちは顧客から良いフィードバックを受けました。", "focus": "received", "object": "positive feedback" },
+          { "en": "Did you receive any response to the proposal?", "ja": "提案に対して何か返答を受け取りましたか？", "focus": "receive", "object": "any response" },
+          { "en": "The new product received good reviews.", "ja": "新商品は良い評価を受けました。", "focus": "received", "object": "good reviews" }
+        ], "dailyExamples": [] }
       ],
       "collocations": [],
       "phrasalVerbs": [
-          { "phrase": "receive from", "ja": "〜から受け取る", "image": "相手や外部から自分側へ入ってくる。", "pattern": "receive + O + from + 人・会社", "examples": [
-              { "en": "We received the request from the client.", "ja": "私たちは顧客から依頼を受けました。", "focus": "receive from" },
-              { "en": "I received the drawings from the supplier.", "ja": "私は仕入先から図面を受け取りました。", "focus": "received from" },
-              { "en": "The team received feedback from the site staff.", "ja": "チームは現場スタッフからフィードバックを受けました。", "focus": "received from" }
-          ], "dailyExamples": [] },
-          { "phrase": "receive into", "ja": "〜に受け入れる", "image": "外から来たものを組織・場所・状態の中に入れる。", "pattern": "receive into + place / group", "examples": [
-              { "en": "The new members were received into the project team.", "ja": "新しいメンバーはプロジェクトチームに受け入れられました。", "focus": "received into" },
-              { "en": "The goods were received into the warehouse system.", "ja": "商品は倉庫システムに受け入れ処理されました。", "focus": "received into" },
-              { "en": "The sample was received into inventory today.", "ja": "そのサンプルは本日在庫に受け入れられました。", "focus": "received into" }
-          ], "dailyExamples": [] },
-          { "phrase": "receive back", "ja": "返ってきたものを受け取る", "image": "一度出たものが戻ってきて受け取る。", "pattern": "receive + O + back", "examples": [
-              { "en": "We received the signed document back from the client.", "ja": "私たちは顧客から署名済み書類を返送で受け取りました。", "focus": "received back" },
-              { "en": "I received the sample back after testing.", "ja": "テスト後にサンプルが戻ってきました。", "focus": "received back" },
-              { "en": "The team received the repaired unit back yesterday.", "ja": "チームは昨日、修理済みユニットを受け取りました。", "focus": "received back" }
-          ], "dailyExamples": [] },
-          { "phrase": "receive by", "ja": "〜で受け取る", "image": "手段や期限を通して受け取る。", "pattern": "receive by + method / date", "examples": [
-              { "en": "We received the confirmation by email.", "ja": "私たちはメールで確認を受け取りました。", "focus": "received by" },
-              { "en": "Please make sure we receive the order by Friday.", "ja": "金曜日までに注文を受け取れるようにしてください。", "focus": "receive by" },
-              { "en": "The customer received the notice by post.", "ja": "顧客は郵送で通知を受け取りました。", "focus": "received by" }
-          ], "dailyExamples": [] },
-          { "phrase": "receive through", "ja": "〜を通して受け取る", "image": "システムや担当者などの経路を通って届く。", "pattern": "receive through + channel", "examples": [
-              { "en": "We received the inquiry through the website.", "ja": "私たちはウェブサイト経由で問い合わせを受けました。", "focus": "received through" },
-              { "en": "I received the update through the sales portal.", "ja": "私は営業ポータル経由で更新情報を受け取りました。", "focus": "received through" },
-              { "en": "The request was received through our distributor.", "ja": "その依頼は代理店経由で届きました。", "focus": "received through" }
-          ], "dailyExamples": [] },
-          { "phrase": "receive with", "ja": "〜をもって受け止める", "image": "相手の反応や態度と一緒に受け取られる。", "pattern": "receive with + reaction", "examples": [
-              { "en": "The proposal was received with interest by the client.", "ja": "その提案は顧客に興味を持って受け止められました。", "focus": "received with" },
-              { "en": "Our price change was received with concern.", "ja": "私たちの価格変更は懸念をもって受け止められました。", "focus": "received with" },
-              { "en": "The new service was received with positive feedback.", "ja": "新サービスは好意的な反応をもって受け止められました。", "focus": "received with" }
-          ], "dailyExamples": [] }
+        { "phrase": "receive from", "ja": "〜から受け取る", "image": "受け取り元を示す。", "pattern": "receive + O + from + 相手", "examples": [
+          { "en": "We received the order from the client.", "ja": "私たちは顧客から注文を受けました。", "focus": "receive from" },
+          { "en": "I received the file from the designer.", "ja": "私はデザイナーからファイルを受け取りました。", "focus": "received from" },
+          { "en": "Please check the sample we received from the supplier.", "ja": "仕入先から受け取ったサンプルを確認してください。", "focus": "received from" }
+        ], "dailyExamples": [] },
+        { "phrase": "receive by", "ja": "〜で受け取る・〜までに受け取る", "image": "手段や期限を示す。", "pattern": "receive by + method / date", "examples": [
+          { "en": "We received the confirmation by email.", "ja": "私たちはメールで確認を受け取りました。", "focus": "received by" },
+          { "en": "Can we receive the sample by Friday?", "ja": "金曜日までにサンプルを受け取れますか？", "focus": "receive by" },
+          { "en": "The order must be received by the end of the month.", "ja": "その注文は月末までに受領される必要があります。", "focus": "received by" }
+        ], "dailyExamples": [] },
+        { "phrase": "receive into", "ja": "〜に受け入れる", "image": "人・物・情報を組織や場所の中に受け入れる。", "pattern": "receive + O + into + 場所/組織", "examples": [
+          { "en": "The new data was received into the system.", "ja": "新しいデータはシステムに取り込まれました。", "focus": "received into" },
+          { "en": "The parts were received into inventory yesterday.", "ja": "部品は昨日在庫に受け入れられました。", "focus": "received into" },
+          { "en": "The visitor was received into the meeting room.", "ja": "来客は会議室に案内されました。", "focus": "received into" }
+        ], "dailyExamples": [] },
+        { "phrase": "receive with", "ja": "〜とともに受け取る・〜の態度で受け止める", "image": "一緒に受け取る物や受け止め方を示す。", "pattern": "receive + O + with + thing / attitude", "examples": [
+          { "en": "We received the product with the inspection report.", "ja": "私たちは検査報告書と一緒に製品を受け取りました。", "focus": "received with" },
+          { "en": "The proposal was received with interest.", "ja": "その提案は関心を持って受け止められました。", "focus": "received with" },
+          { "en": "The announcement was received with concern by the team.", "ja": "その発表はチームに心配を持って受け止められました。", "focus": "received with" }
+        ], "dailyExamples": [] },
+        { "phrase": "receive through", "ja": "〜を通して受け取る", "image": "システム・窓口・人を通じて入ってくる。", "pattern": "receive + O + through + channel", "examples": [
+          { "en": "We received the request through the website.", "ja": "私たちはWebサイトを通して依頼を受けました。", "focus": "received through" },
+          { "en": "The sales team received the information through the distributor.", "ja": "営業チームは代理店を通してその情報を受け取りました。", "focus": "received through" },
+          { "en": "You can receive updates through the system.", "ja": "システムを通して更新情報を受け取れます。", "focus": "receive through" }
+        ], "dailyExamples": [] },
+        { "phrase": "receive at", "ja": "〜で受け取る", "image": "受け取り場所を示す。", "pattern": "receive + O + at + place", "examples": [
+          { "en": "We received the package at the office.", "ja": "私たちは会社で荷物を受け取りました。", "focus": "received at" },
+          { "en": "The documents were received at the front desk.", "ja": "資料は受付で受け取られました。", "focus": "received at" },
+          { "en": "Please receive the sample at the warehouse.", "ja": "倉庫でサンプルを受け取ってください。", "focus": "receive at" }
+        ], "dailyExamples": [] }
       ]
-  },
+    },
   {
     "id": "deliver",
     "rank": 64,

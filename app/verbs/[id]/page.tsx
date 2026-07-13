@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getVerb } from "@/lib/data";
-import SpeakButton from "@/components/SpeakButton";
+import SpeakButton from "@/components/SpeechButton";
 import ExampleCard from "@/components/ExampleCard";
 import PremiumExamples from "@/components/PremiumExamples";
 import AutoBookmark from "@/components/AutoBookmark";

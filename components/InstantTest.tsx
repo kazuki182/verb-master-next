@@ -4,7 +4,7 @@ import { naturalPatternText } from "@/lib/display";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getVerb, getTestItemById, getTestItemsForVerb, type TestItem, type TestSection } from "@/lib/data";
-import SpeakButton from "./SpeakButton";
+import SpeakButton from "@/components/SpeechButton";
 import { clearTestSession, getCurrentProgress, getTestSession, recordReviewResult, recordSectionClear, recordTestCompletion, recordTestResult, recordVerbMastery, saveProgress, saveTestSession, type UserProgress } from "@/lib/account";
 
 type InstantTestProps = {

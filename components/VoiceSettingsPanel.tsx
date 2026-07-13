@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getVoiceSettings, saveVoiceSettings, type VoiceGender, type VoiceSettings } from "@/lib/account";
-import SpeakButton from "./SpeakButton";
+import SpeakButton from "@/components/SpeechButton";
 
 export default function VoiceSettingsPanel() {
   const [settings, setSettings] = useState<VoiceSettings>({ gender: "female", lang: "en-US" });

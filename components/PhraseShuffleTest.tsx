@@ -3,7 +3,7 @@
 import { naturalPatternText } from "@/lib/display";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import SpeakButton from "./SpeakButton";
+import SpeakButton from "@/components/SpeechButton";
 import { clearTestSession, getSavedPhrases, getTestSession, hasPremiumFeatureAccess, recordTestResult, saveTestSession, type SavedPhrase } from "@/lib/account";
 
 function answerUnderline(sentence: string) {

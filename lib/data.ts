@@ -22027,74 +22027,207 @@ export const verbs: Verb[] = [
     "syllable": "gath-er",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 重要",
-    "core": "必要なものや情報を集める",
-    "coreDetail": "GATHERは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「集める」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "散らばった情報・人・物を一か所へ集める",
+    "coreDetail": "GATHERは、情報や人、物を一か所へ集める動詞です。自動詞では「人々が集まる」、他動詞では「情報や勇気を集める」と表せます。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 集める",
-        "pattern": "gather information",
-        "transitivity": "他動詞・自動詞",
+        "id": "gather-information",
+        "title": "① 情報・意見を集める",
+        "pattern": "GATHER + 情報・意見",
+        "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "バラバラの情報や資料を一か所に集める",
-        "point": "gather は information, feedback, data, documents と相性が良い仕事向け動詞です。",
+        "image": "必要な情報を複数の場所から集める",
+        "point": "feedback, data, information, evidenceなどとよく使います。",
         "examples": [
           {
             "en": "We gathered feedback from the sales team.",
             "ja": "私たちは営業チームから意見を集めました。",
-            "focus": "gathered feedback",
-            "jaFocus": "集める",
-            "sentencePattern": "S + V + O",
+            "focus": "gathered",
+            "jaFocus": "集めました",
+            "sentencePattern": "S + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "We"
               },
               {
                 "label": "V",
-                "text": "gather"
+                "text": "gathered"
               },
               {
                 "label": "O",
-                "text": "gathered feedback"
+                "text": "feedback"
+              },
+              {
+                "label": "M",
+                "text": "from the sales team"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
             "en": "We need to gather data before making a decision.",
-            "ja": "決定する前にデータを集める必要があります。",
-            "focus": "gather data",
-            "jaFocus": "データを集める"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "We need to gather data before making a decision.",
-            "ja": "決定する前にデータを集める必要があります。",
-            "focus": "gather data",
-            "jaFocus": "データを集める"
+            "ja": "私たちは決定する前にデータを集める必要があります。",
+            "focus": "gather",
+            "jaFocus": "集める必要があります"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "gather data",
-        "ja": "データを集める",
-        "image": "バラバラの情報や資料を一か所に集める",
-        "pattern": "gather data",
+        "id": "gather-people",
+        "title": "② 人を集める",
+        "pattern": "GATHER + 人",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "会議や説明のために人を呼び集める",
+        "point": "team members, staff, participantsなどを目的語にします。",
         "examples": [
           {
-            "en": "We need to gather data before making a decision.",
-            "ja": "決定する前にデータを集める必要があります。",
-            "focus": "gather data",
-            "jaFocus": "データを集める"
+            "en": "The manager gathered the team for a short meeting.",
+            "ja": "マネージャーは短い会議のためにチームを集めました。",
+            "focus": "gathered",
+            "jaFocus": "集めました"
+          },
+          {
+            "en": "Please gather the participants near the entrance.",
+            "ja": "参加者を入口付近に集めてください。",
+            "focus": "gather",
+            "jaFocus": "集めてください"
+          }
+        ]
+      },
+      {
+        "id": "gather-things",
+        "title": "③ 物を集める",
+        "pattern": "GATHER + 物",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "散らばった物を一か所へ寄せる",
+        "point": "documents, tools, samplesなどをまとめる場面で使います。",
+        "examples": [
+          {
+            "en": "I gathered the samples before leaving the site.",
+            "ja": "私は現場を出る前にサンプルを集めました。",
+            "focus": "gathered",
+            "jaFocus": "集めました"
+          },
+          {
+            "en": "She gathered the documents from each desk.",
+            "ja": "彼女は各机から書類を集めました。",
+            "focus": "gathered",
+            "jaFocus": "集めました"
+          }
+        ]
+      },
+      {
+        "id": "gather-strength",
+        "title": "④ 勇気・考えをまとめる",
+        "pattern": "GATHER + courage/thoughts/strength",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "気持ちや考えを内側からまとめる",
+        "point": "gather courage, gather your thoughts, gather strengthは比喩的な表現です。",
+        "examples": [
+          {
+            "en": "I gathered my thoughts before the presentation.",
+            "ja": "私はプレゼンの前に考えをまとめました。",
+            "focus": "gathered",
+            "jaFocus": "まとめました"
+          },
+          {
+            "en": "She gathered the courage to speak to the client.",
+            "ja": "彼女は顧客に話しかける勇気を振り絞りました。",
+            "focus": "gathered",
+            "jaFocus": "振り絞りました"
+          }
+        ]
+      },
+      {
+        "id": "gather-intransitive",
+        "title": "⑤ 人々が集まる",
+        "pattern": "GATHER",
+        "transitivity": "自動詞",
+        "structure": "S + V",
+        "image": "人々が自然に一か所へ集まる",
+        "point": "目的語を取らず「集まる」と表す用法です。",
+        "examples": [
+          {
+            "en": "The staff gathered in the conference room.",
+            "ja": "スタッフは会議室に集まりました。",
+            "focus": "gathered",
+            "jaFocus": "集まりました"
+          },
+          {
+            "en": "A crowd gathered outside the store.",
+            "ja": "店の外に人だかりができました。",
+            "focus": "gathered",
+            "jaFocus": "集まりました"
           }
         ]
       }
     ],
-    "phrasalVerbs": []
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "gather around",
+        "ja": "〜の周りに集まる",
+        "image": "人々が一つの場所や物の周りに寄る",
+        "pattern": "GATHER AROUND + 人・物",
+        "examples": [
+          {
+            "en": "The team gathered around the sample.",
+            "ja": "チームはサンプルの周りに集まりました。",
+            "focus": "gathered around",
+            "jaFocus": "周りに集まりました"
+          },
+          {
+            "en": "Please gather around the table.",
+            "ja": "テーブルの周りに集まってください。",
+            "focus": "gather around",
+            "jaFocus": "周りに集まってください"
+          }
+        ]
+      },
+      {
+        "phrase": "gather together",
+        "ja": "一緒に集まる・集める",
+        "image": "人や物を一か所へまとめる",
+        "pattern": "GATHER TOGETHER",
+        "examples": [
+          {
+            "en": "We gathered together to discuss the issue.",
+            "ja": "私たちはその問題を話し合うために集まりました。",
+            "focus": "gathered together",
+            "jaFocus": "集まりました"
+          },
+          {
+            "en": "She gathered together all the required documents.",
+            "ja": "彼女は必要な書類をすべてまとめました。",
+            "focus": "gathered together",
+            "jaFocus": "まとめました"
+          }
+        ]
+      },
+      {
+        "phrase": "gather up",
+        "ja": "まとめて集める",
+        "image": "散らばった物を手早く集める",
+        "pattern": "GATHER UP + 物",
+        "examples": [
+          {
+            "en": "Please gather up the tools after the installation.",
+            "ja": "設置後に工具をまとめて回収してください。",
+            "focus": "gather up",
+            "jaFocus": "まとめて回収してください"
+          },
+          {
+            "en": "He gathered up the cables from the floor.",
+            "ja": "彼は床のケーブルをまとめて拾いました。",
+            "focus": "gathered up",
+            "jaFocus": "まとめて拾いました"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "communicate",
@@ -22105,74 +22238,164 @@ export const verbs: Verb[] = [
     "syllable": "com-mu-ni-cate",
     "transitivity": "自動詞・他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "考えや情報を相手に伝えて共有する",
-    "coreDetail": "COMMUNICATEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「伝える・連絡を取る」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "考えや情報を相手に伝え、共有する",
+    "coreDetail": "COMMUNICATEは、人と意思疎通する自動詞用法と、情報や方針を伝える他動詞用法があります。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 伝える・連絡を取る",
-        "pattern": "communicate with clients",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + with + 相手",
-        "image": "相手と情報や考えをやり取りする",
-        "point": "communicate with ... は「〜と連絡を取る・意思疎通する」。with clients は前置詞句で、clientsだけを目的語Oにしません。",
+        "id": "communicate-message",
+        "title": "① 情報・方針を伝える",
+        "pattern": "COMMUNICATE + 内容",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "必要な内容を相手へ明確に伝える",
+        "point": "deadline, policy, idea, concernなどを目的語にできます。",
         "examples": [
           {
-            "en": "We communicate with clients mainly by email.",
-            "ja": "私たちは主にメールでクライアントと連絡を取っています。",
-            "focus": "communicate with clients",
-            "jaFocus": "伝える・連絡を取る",
-            "sentencePattern": "S + V + with + 相手",
+            "en": "Please communicate the deadline clearly to the team.",
+            "ja": "締切をチームへ明確に伝えてください。",
+            "focus": "communicate",
+            "jaFocus": "伝えてください",
+            "sentencePattern": "M + V + O + M",
             "grammarParts": [
               {
-                "label": "S",
-                "text": "主語"
+                "label": "M",
+                "text": "Please"
               },
               {
                 "label": "V",
                 "text": "communicate"
               },
               {
+                "label": "O",
+                "text": "the deadline"
+              },
+              {
                 "label": "M",
-                "text": "with clients"
+                "text": "clearly to the team"
               }
-            ],
-            "grammarNote": "この文は前置詞句を補足情報として扱います。前置詞の後ろの名詞だけを目的語Oにしないように注意します。"
+            ]
           },
           {
-            "en": "Please communicate the deadline clearly to the team.",
-            "ja": "締切をチームに明確に伝えてください。",
-            "focus": "communicate clearly",
-            "jaFocus": "明確に伝える"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please communicate the deadline clearly to the team.",
-            "ja": "締切をチームに明確に伝えてください。",
-            "focus": "communicate clearly",
-            "jaFocus": "明確に伝える"
+            "en": "The manager communicated the new policy to all employees.",
+            "ja": "マネージャーは新しい方針を全社員へ伝えました。",
+            "focus": "communicated",
+            "jaFocus": "伝えました"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "communicate clearly",
-        "ja": "明確に伝える",
-        "image": "相手と情報や考えをやり取りする",
-        "pattern": "communicate clearly",
+        "id": "communicate-idea",
+        "title": "② 考え・意図を表現する",
+        "pattern": "COMMUNICATE + 考え・意図",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "自分の考えを分かる形で表す",
+        "point": "communicate an idea, intention, concernなどと使います。",
         "examples": [
           {
-            "en": "Please communicate the deadline clearly to the team.",
-            "ja": "締切をチームに明確に伝えてください。",
-            "focus": "communicate clearly",
-            "jaFocus": "明確に伝える"
+            "en": "The diagram communicates the main idea clearly.",
+            "ja": "その図は主な考えを明確に伝えています。",
+            "focus": "communicates",
+            "jaFocus": "伝えています"
+          },
+          {
+            "en": "She communicated her concerns during the meeting.",
+            "ja": "彼女は会議で懸念を伝えました。",
+            "focus": "communicated",
+            "jaFocus": "伝えました"
+          }
+        ]
+      },
+      {
+        "id": "communicate-nonverbal",
+        "title": "③ 言葉を使わず伝える",
+        "pattern": "COMMUNICATE without words",
+        "transitivity": "自動詞・他動詞",
+        "structure": "S + V + M",
+        "image": "表情・色・動きなどで意味を伝える",
+        "point": "言葉以外の手段で意図や感情を伝える場合にも使います。",
+        "examples": [
+          {
+            "en": "Colors can communicate different emotions.",
+            "ja": "色はさまざまな感情を伝えることができます。",
+            "focus": "communicate",
+            "jaFocus": "伝えることができます"
+          },
+          {
+            "en": "He communicated without saying a word.",
+            "ja": "彼は一言も話さずに意思を伝えました。",
+            "focus": "communicated",
+            "jaFocus": "意思を伝えました"
+          }
+        ]
+      },
+      {
+        "id": "communicate-effectively",
+        "title": "④ 円滑に意思疎通する",
+        "pattern": "COMMUNICATE + 副詞",
+        "transitivity": "自動詞",
+        "structure": "S + V + M",
+        "image": "相手と分かりやすくやり取りする",
+        "point": "clearly, effectively, openlyなどで意思疎通の仕方を表します。",
+        "examples": [
+          {
+            "en": "Good salespeople communicate clearly and calmly.",
+            "ja": "優れた営業担当者は明確かつ冷静に意思疎通します。",
+            "focus": "communicate",
+            "jaFocus": "意思疎通します"
+          },
+          {
+            "en": "The two departments did not communicate effectively.",
+            "ja": "その2部署は効果的に意思疎通できませんでした。",
+            "focus": "communicate",
+            "jaFocus": "意思疎通できませんでした"
           }
         ]
       }
     ],
-    "phrasalVerbs": []
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "communicate with",
+        "ja": "〜と連絡を取る・意思疎通する",
+        "image": "相手と双方向に情報をやり取りする",
+        "pattern": "COMMUNICATE WITH + 人",
+        "examples": [
+          {
+            "en": "We communicate with clients mainly by email.",
+            "ja": "私たちは主にメールで顧客と連絡を取っています。",
+            "focus": "communicate with",
+            "jaFocus": "連絡を取っています"
+          },
+          {
+            "en": "Please communicate with the technical team directly.",
+            "ja": "技術チームと直接連絡を取ってください。",
+            "focus": "communicate with",
+            "jaFocus": "連絡を取ってください"
+          }
+        ]
+      },
+      {
+        "phrase": "communicate through",
+        "ja": "〜を通して伝える",
+        "image": "人・媒体・仕組みを経由して情報を伝える",
+        "pattern": "COMMUNICATE THROUGH + 手段",
+        "examples": [
+          {
+            "en": "We communicated through the local distributor.",
+            "ja": "私たちは現地代理店を通して連絡を取りました。",
+            "focus": "communicated through",
+            "jaFocus": "通して連絡を取りました"
+          },
+          {
+            "en": "The system communicates through a wireless network.",
+            "ja": "そのシステムは無線ネットワークを通して通信します。",
+            "focus": "communicates through",
+            "jaFocus": "通して通信します"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "describe",
@@ -22183,28 +22406,28 @@ export const verbs: Verb[] = [
     "syllable": "de-scribe",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "特徴や状況を言葉で説明する",
-    "coreDetail": "DESCRIBEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「説明する・描写する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "特徴・見た目・状況を言葉で伝える",
+    "coreDetail": "DESCRIBEは、物や人の特徴、起きた状況を言葉で描写する動詞です。理由や仕組みを説明するEXPLAINとは役割が異なります。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 説明する・描写する",
-        "pattern": "describe the situation",
+        "id": "describe-thing",
+        "title": "① 人・物・状況を説明する",
+        "pattern": "DESCRIBE + 人・物・状況",
         "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "状況や特徴を言葉で相手に伝える",
-        "point": "describe は situation, problem, product, process と相性が良いです。",
+        "image": "特徴や状態を言葉で表す",
+        "point": "見た目、特徴、状況などを具体的に伝えます。",
         "examples": [
           {
             "en": "Please describe the issue in detail.",
             "ja": "その問題を詳しく説明してください。",
-            "focus": "describe the issue",
-            "jaFocus": "説明する・描写する",
-            "sentencePattern": "S + V + O",
+            "focus": "describe",
+            "jaFocus": "説明してください",
+            "sentencePattern": "M + V + O + M",
             "grammarParts": [
               {
-                "label": "S",
-                "text": "主語"
+                "label": "M",
+                "text": "Please"
               },
               {
                 "label": "V",
@@ -22212,44 +22435,116 @@ export const verbs: Verb[] = [
               },
               {
                 "label": "O",
-                "text": "describe the issue"
+                "text": "the issue"
+              },
+              {
+                "label": "M",
+                "text": "in detail"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
             "en": "Can you describe the product features?",
             "ja": "製品の特徴を説明できますか。",
-            "focus": "describe a product",
-            "jaFocus": "製品を説明する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Can you describe the product features?",
-            "ja": "製品の特徴を説明できますか。",
-            "focus": "describe a product",
-            "jaFocus": "製品を説明する"
+            "focus": "describe",
+            "jaFocus": "説明できますか"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "describe a product",
-        "ja": "製品を説明する",
-        "image": "状況や特徴を言葉で相手に伝える",
-        "pattern": "describe a product",
+        "id": "describe-how",
+        "title": "② どのように起きたか説明する",
+        "pattern": "DESCRIBE how + 文",
+        "transitivity": "他動詞",
+        "structure": "S + V + how節",
+        "image": "手順や出来事の流れを言葉で伝える",
+        "point": "how節を使うと、方法や経緯を説明できます。",
         "examples": [
           {
-            "en": "Can you describe the product features?",
-            "ja": "製品の特徴を説明できますか。",
-            "focus": "describe a product",
-            "jaFocus": "製品を説明する"
+            "en": "Please describe how the problem occurred.",
+            "ja": "その問題がどのように起きたか説明してください。",
+            "focus": "describe",
+            "jaFocus": "説明してください"
+          },
+          {
+            "en": "He described how the system controls the lights.",
+            "ja": "彼はそのシステムがどのように照明を制御するか説明しました。",
+            "focus": "described",
+            "jaFocus": "説明しました"
+          }
+        ]
+      },
+      {
+        "id": "describe-what",
+        "title": "③ 何が起きたか説明する",
+        "pattern": "DESCRIBE what + 文",
+        "transitivity": "他動詞",
+        "structure": "S + V + what節",
+        "image": "出来事や内容を具体的に伝える",
+        "point": "what節を目的語として使えます。",
+        "examples": [
+          {
+            "en": "She described what she saw at the site.",
+            "ja": "彼女は現場で見たことを説明しました。",
+            "focus": "described",
+            "jaFocus": "説明しました"
+          },
+          {
+            "en": "Please describe what needs to be changed.",
+            "ja": "何を変更する必要があるか説明してください。",
+            "focus": "describe",
+            "jaFocus": "説明してください"
+          }
+        ]
+      },
+      {
+        "id": "describe-as",
+        "title": "④ 〜だと表現する",
+        "pattern": "DESCRIBE A AS B",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + C",
+        "image": "人や物を特定の言葉で評価・表現する",
+        "point": "AをBだと表現する文型です。",
+        "examples": [
+          {
+            "en": "The client described the light as too bright.",
+            "ja": "顧客はその照明が明るすぎると表現しました。",
+            "focus": "described",
+            "jaFocus": "表現しました"
+          },
+          {
+            "en": "The report describes the result as successful.",
+            "ja": "その報告書は結果を成功だったと述べています。",
+            "focus": "describes",
+            "jaFocus": "述べています"
+          }
+        ]
+      },
+      {
+        "id": "describe-passive",
+        "title": "⑤ 〜と表現される",
+        "pattern": "BE DESCRIBED AS",
+        "transitivity": "他動詞・受け身",
+        "structure": "S + be + Vpp + C",
+        "image": "他者からどのように表現されるか示す",
+        "point": "受け身ではbe described asの形がよく使われます。",
+        "examples": [
+          {
+            "en": "The product is described as easy to install.",
+            "ja": "その製品は設置が簡単だと説明されています。",
+            "focus": "described",
+            "jaFocus": "説明されています"
+          },
+          {
+            "en": "The town was described as quiet and historic.",
+            "ja": "その町は静かで歴史的だと表現されました。",
+            "focus": "described",
+            "jaFocus": "表現されました"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -22261,73 +22556,145 @@ export const verbs: Verb[] = [
     "syllable": "earn",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "働きや結果によって得る",
-    "coreDetail": "EARNは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「稼ぐ・得る」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "努力や成果の結果として得る",
+    "coreDetail": "EARNは、お金だけでなく、信頼・尊敬・評価・権利などを努力の結果として得ることを表します。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 稼ぐ・得る",
-        "pattern": "earn trust",
+        "id": "earn-money",
+        "title": "① お金・収入を得る",
+        "pattern": "EARN + money/income",
         "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "努力や仕事の結果としてお金・信頼・評価を得る",
-        "point": "earn は money だけでなく trust, respect, experience とも使えます。",
+        "image": "仕事や活動の対価として収入を得る",
+        "point": "salary, income, profit, commissionなどと使います。",
         "examples": [
           {
-            "en": "We earned the client's trust through quick support.",
-            "ja": "私たちは迅速なサポートを通じて顧客の信頼を得ました。",
-            "focus": "earned trust",
-            "jaFocus": "稼ぐ・得る",
-            "sentencePattern": "S + V + O",
+            "en": "She earns a good salary in sales.",
+            "ja": "彼女は営業職で良い給与を得ています。",
+            "focus": "earns",
+            "jaFocus": "得ています",
+            "sentencePattern": "S + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "She"
               },
               {
                 "label": "V",
-                "text": "earn"
+                "text": "earns"
               },
               {
                 "label": "O",
-                "text": "earned trust"
+                "text": "a good salary"
+              },
+              {
+                "label": "M",
+                "text": "in sales"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
-            "en": "He earns money by doing freelance work.",
-            "ja": "彼はフリーランスの仕事でお金を稼いでいます。",
-            "focus": "earn money",
-            "jaFocus": "お金を稼ぐ"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "He earns money by doing freelance work.",
-            "ja": "彼はフリーランスの仕事でお金を稼いでいます。",
-            "focus": "earn money",
-            "jaFocus": "お金を稼ぐ"
+            "en": "The company earned a profit last year.",
+            "ja": "その会社は昨年利益を上げました。",
+            "focus": "earned",
+            "jaFocus": "利益を上げました"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "earn money",
-        "ja": "お金を稼ぐ",
-        "image": "努力や仕事の結果としてお金・信頼・評価を得る",
-        "pattern": "earn money",
+        "id": "earn-trust",
+        "title": "② 信頼・尊敬を得る",
+        "pattern": "EARN + trust/respect",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "誠実な行動を重ねて相手の信頼を得る",
+        "point": "努力や行動の結果として得るニュアンスがあります。",
         "examples": [
           {
-            "en": "He earns money by doing freelance work.",
-            "ja": "彼はフリーランスの仕事でお金を稼いでいます。",
-            "focus": "earn money",
-            "jaFocus": "お金を稼ぐ"
+            "en": "We earned the client's trust through quick support.",
+            "ja": "私たちは迅速な対応によって顧客の信頼を得ました。",
+            "focus": "earned",
+            "jaFocus": "得ました"
+          },
+          {
+            "en": "He earned the respect of his team.",
+            "ja": "彼はチームの尊敬を得ました。",
+            "focus": "earned",
+            "jaFocus": "得ました"
+          }
+        ]
+      },
+      {
+        "id": "earn-reputation",
+        "title": "③ 評価・評判を得る",
+        "pattern": "EARN + reputation/recognition",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "実績によって高い評価を獲得する",
+        "point": "reputation, recognition, praiseなどと使います。",
+        "examples": [
+          {
+            "en": "The product earned a strong reputation for reliability.",
+            "ja": "その製品は信頼性の高さで高い評価を得ました。",
+            "focus": "earned",
+            "jaFocus": "得ました"
+          },
+          {
+            "en": "Her work earned recognition from management.",
+            "ja": "彼女の仕事は経営陣から評価されました。",
+            "focus": "earned",
+            "jaFocus": "評価されました"
+          }
+        ]
+      },
+      {
+        "id": "earn-points",
+        "title": "④ ポイント・利益を獲得する",
+        "pattern": "EARN + points/rewards",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "制度や取引を通じて特典を得る",
+        "point": "points, rewards, interestなども目的語になります。",
+        "examples": [
+          {
+            "en": "Customers earn points with every purchase.",
+            "ja": "顧客は購入ごとにポイントを獲得します。",
+            "focus": "earn",
+            "jaFocus": "獲得します"
+          },
+          {
+            "en": "This account earns interest each month.",
+            "ja": "この口座には毎月利息が付きます。",
+            "focus": "earns",
+            "jaFocus": "利息が付きます"
+          }
+        ]
+      },
+      {
+        "id": "earn-right",
+        "title": "⑤ 権利・資格を努力で得る",
+        "pattern": "EARN + right/qualification",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "努力や条件達成によって権利を得る",
+        "point": "休暇、資格、参加権などにも使えます。",
+        "examples": [
+          {
+            "en": "She earned the right to lead the project.",
+            "ja": "彼女はそのプロジェクトを率いる権利を得ました。",
+            "focus": "earned",
+            "jaFocus": "得ました"
+          },
+          {
+            "en": "He earned an extra day off by working overtime.",
+            "ja": "彼は残業したことで追加の休暇を1日得ました。",
+            "focus": "earned",
+            "jaFocus": "得ました"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -22339,73 +22706,145 @@ export const verbs: Verb[] = [
     "syllable": "es-ti-mate",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "おおよその量・費用・時間を見積もる",
-    "coreDetail": "ESTIMATEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「見積もる」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "正確な数字がない段階で概算する",
+    "coreDetail": "ESTIMATEは、費用・時間・数量などを利用可能な情報から概算する動詞です。正式な見積書はquotationやquoteを使うことが多いです。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 見積もる",
-        "pattern": "estimate the cost",
+        "id": "estimate-cost",
+        "title": "① 費用・時間・数量を見積もる",
+        "pattern": "ESTIMATE + 数量・費用",
         "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "正確な数字が出る前に大まかに計算する",
-        "point": "estimate は cost, time, amount, size とよく使います。",
+        "image": "情報を基におおよその数値を出す",
+        "point": "cost, time, quantity, demandなどを目的語にします。",
         "examples": [
           {
             "en": "We estimated the cost before sending the quotation.",
             "ja": "私たちは見積書を送る前に費用を概算しました。",
-            "focus": "estimated the cost",
-            "jaFocus": "見積もる",
-            "sentencePattern": "S + V + O",
+            "focus": "estimated",
+            "jaFocus": "概算しました",
+            "sentencePattern": "S + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "We"
               },
               {
                 "label": "V",
-                "text": "estimate"
+                "text": "estimated"
               },
               {
                 "label": "O",
-                "text": "estimated the cost"
+                "text": "the cost"
+              },
+              {
+                "label": "M",
+                "text": "before sending the quotation"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
-            "en": "Can you estimate the time required for this task?",
-            "ja": "この作業に必要な時間を見積もれますか。",
-            "focus": "estimate the time",
-            "jaFocus": "時間を見積もる"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Can you estimate the time required for this task?",
-            "ja": "この作業に必要な時間を見積もれますか。",
-            "focus": "estimate the time",
-            "jaFocus": "時間を見積もる"
+            "en": "Can you estimate the installation time?",
+            "ja": "設置時間を見積もれますか。",
+            "focus": "estimate",
+            "jaFocus": "見積もれますか"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "estimate the time",
-        "ja": "時間を見積もる",
-        "image": "正確な数字が出る前に大まかに計算する",
-        "pattern": "estimate the time",
+        "id": "estimate-that",
+        "title": "② 〜だと見積もる",
+        "pattern": "ESTIMATE that + 文",
+        "transitivity": "他動詞",
+        "structure": "S + V + that節",
+        "image": "予測した内容を文で示す",
+        "point": "that節で見積もり内容を表せます。",
         "examples": [
           {
-            "en": "Can you estimate the time required for this task?",
-            "ja": "この作業に必要な時間を見積もれますか。",
-            "focus": "estimate the time",
-            "jaFocus": "時間を見積もる"
+            "en": "We estimate that the work will take three days.",
+            "ja": "私たちはその作業に3日かかると見積もっています。",
+            "focus": "estimate",
+            "jaFocus": "見積もっています"
+          },
+          {
+            "en": "The team estimated that demand would increase.",
+            "ja": "チームは需要が増えると予測しました。",
+            "focus": "estimated",
+            "jaFocus": "予測しました"
+          }
+        ]
+      },
+      {
+        "id": "estimate-at",
+        "title": "③ 数値を〜と見積もる",
+        "pattern": "ESTIMATE A AT B",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + M",
+        "image": "対象の価値や規模を特定の数値で示す",
+        "point": "価格・損失・数量などの概算値を示します。",
+        "examples": [
+          {
+            "en": "They estimated the total cost at 500,000 yen.",
+            "ja": "彼らは総費用を50万円と見積もりました。",
+            "focus": "estimated",
+            "jaFocus": "見積もりました"
+          },
+          {
+            "en": "We estimated the audience at about 300 people.",
+            "ja": "私たちは参加者数を約300人と見積もりました。",
+            "focus": "estimated",
+            "jaFocus": "見積もりました"
+          }
+        ]
+      },
+      {
+        "id": "estimate-passive-at",
+        "title": "④ 〜と見積もられる",
+        "pattern": "BE ESTIMATED AT",
+        "transitivity": "他動詞・受け身",
+        "structure": "S + be + Vpp + M",
+        "image": "数値の概算を受け身で示す",
+        "point": "報告書やニュースでよく使われる形です。",
+        "examples": [
+          {
+            "en": "The repair cost is estimated at 200,000 yen.",
+            "ja": "修理費は20万円と見積もられています。",
+            "focus": "estimated",
+            "jaFocus": "見積もられています"
+          },
+          {
+            "en": "The project value was estimated at ten million yen.",
+            "ja": "その案件の価値は1,000万円と見積もられました。",
+            "focus": "estimated",
+            "jaFocus": "見積もられました"
+          }
+        ]
+      },
+      {
+        "id": "estimate-to-be",
+        "title": "⑤ 〜であると推定される",
+        "pattern": "BE ESTIMATED TO BE/TAKE",
+        "transitivity": "他動詞・受け身",
+        "structure": "S + be + Vpp + to do",
+        "image": "所要時間や状態を推定する",
+        "point": "be estimated to take/beの形で推定を表します。",
+        "examples": [
+          {
+            "en": "Delivery is estimated to take two weeks.",
+            "ja": "納品には2週間かかると見込まれています。",
+            "focus": "estimated",
+            "jaFocus": "見込まれています"
+          },
+          {
+            "en": "The market is estimated to be worth five billion yen.",
+            "ja": "その市場は50億円規模と推定されています。",
+            "focus": "estimated",
+            "jaFocus": "推定されています"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -22417,74 +22856,141 @@ export const verbs: Verb[] = [
     "syllable": "fo-cus",
     "transitivity": "自動詞・他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "注意や力を一つの対象に向ける",
-    "coreDetail": "FOCUSは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「集中する・注力する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "注意や力を一つの対象へ向ける",
+    "coreDetail": "FOCUSは、注意を集中する自動詞用法と、カメラや議論の焦点を合わせる他動詞用法があります。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 集中する・注力する",
-        "pattern": "focus on quality",
-        "transitivity": "自動詞・他動詞",
-        "structure": "S + V + on + 対象",
-        "image": "注意を一つの対象へ向ける",
-        "point": "focus on ... は「〜に集中する」。on quality は前置詞句で、qualityだけを目的語Oにしません。",
+        "id": "focus-attention",
+        "title": "① 注意を向ける",
+        "pattern": "FOCUS + attention/effort",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + M",
+        "image": "注意や努力を一つの方向へ向ける",
+        "point": "focus attention/effort/resources on ... の形で使います。",
         "examples": [
           {
-            "en": "We should focus on quality first.",
-            "ja": "私たちはまず品質に注力すべきです。",
-            "focus": "focus on quality",
-            "jaFocus": "集中する・注力する",
-            "sentencePattern": "S + V + on + 対象",
+            "en": "We focused our efforts on improving quality.",
+            "ja": "私たちは品質改善に力を集中しました。",
+            "focus": "focused",
+            "jaFocus": "集中しました",
+            "sentencePattern": "S + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "We"
               },
               {
                 "label": "V",
-                "text": "focus"
+                "text": "focused"
+              },
+              {
+                "label": "O",
+                "text": "our efforts"
               },
               {
                 "label": "M",
-                "text": "on quality"
+                "text": "on improving quality"
               }
-            ],
-            "grammarNote": "この文は前置詞句を補足情報として扱います。前置詞の後ろの名詞だけを目的語Oにしないように注意します。"
+            ]
           },
           {
-            "en": "I need to focus on this task today.",
-            "ja": "私は今日この作業に集中する必要があります。",
-            "focus": "focus on a task",
-            "jaFocus": "作業に集中する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I need to focus on this task today.",
-            "ja": "私は今日この作業に集中する必要があります。",
-            "focus": "focus on a task",
-            "jaFocus": "作業に集中する"
+            "en": "Please focus your attention on the safety instructions.",
+            "ja": "安全上の注意に意識を向けてください。",
+            "focus": "focus",
+            "jaFocus": "向けてください"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "focus on a task",
-        "ja": "作業に集中する",
-        "image": "注意を一つの対象へ向ける",
-        "pattern": "focus on a task",
+        "id": "focus-camera",
+        "title": "② カメラ・目の焦点を合わせる",
+        "pattern": "FOCUS + camera/eyes",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "像がはっきり見えるように調整する",
+        "point": "camera, lens, eyesなどを目的語にします。",
         "examples": [
           {
-            "en": "I need to focus on this task today.",
-            "ja": "私は今日この作業に集中する必要があります。",
-            "focus": "focus on a task",
-            "jaFocus": "作業に集中する"
+            "en": "Focus the camera before taking the photo.",
+            "ja": "写真を撮る前にカメラの焦点を合わせてください。",
+            "focus": "Focus",
+            "jaFocus": "焦点を合わせてください"
+          },
+          {
+            "en": "It took a moment for my eyes to focus.",
+            "ja": "目の焦点が合うまで少し時間がかかりました。",
+            "focus": "focus",
+            "jaFocus": "焦点が合う"
+          }
+        ]
+      },
+      {
+        "id": "focus-discussion",
+        "title": "③ 議論・内容の焦点を絞る",
+        "pattern": "FOCUS + discussion/topic",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + M",
+        "image": "議論の対象を重要点へ絞る",
+        "point": "focus the discussion on ... の形がよく使われます。",
+        "examples": [
+          {
+            "en": "The manager focused the discussion on costs.",
+            "ja": "マネージャーは議論を費用に絞りました。",
+            "focus": "focused",
+            "jaFocus": "絞りました"
+          },
+          {
+            "en": "This slide focuses the presentation on the main benefits.",
+            "ja": "このスライドはプレゼンの焦点を主な利点に絞っています。",
+            "focus": "focuses",
+            "jaFocus": "絞っています"
           }
         ]
       }
     ],
-    "phrasalVerbs": []
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "focus on",
+        "ja": "〜に集中する・注力する",
+        "image": "注意や努力を一つの対象へ向ける",
+        "pattern": "FOCUS ON + 名詞/doing",
+        "examples": [
+          {
+            "en": "We need to focus on customer needs.",
+            "ja": "私たちは顧客のニーズに注力する必要があります。",
+            "focus": "focus on",
+            "jaFocus": "注力する必要があります"
+          },
+          {
+            "en": "Please focus on this task first.",
+            "ja": "まずこの作業に集中してください。",
+            "focus": "focus on",
+            "jaFocus": "集中してください"
+          }
+        ]
+      },
+      {
+        "phrase": "focus in on",
+        "ja": "〜へ注意を絞り込む",
+        "image": "広い範囲から特定の点へ焦点を狭める",
+        "pattern": "FOCUS IN ON + 対象",
+        "examples": [
+          {
+            "en": "The discussion focused in on the delivery issue.",
+            "ja": "議論は納期の問題に絞られました。",
+            "focus": "focused in on",
+            "jaFocus": "絞られました"
+          },
+          {
+            "en": "Let us focus in on the main cause.",
+            "ja": "主な原因に焦点を絞りましょう。",
+            "focus": "focus in on",
+            "jaFocus": "焦点を絞りましょう"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "identify",
@@ -22493,76 +22999,165 @@ export const verbs: Verb[] = [
     "ipa": "/aɪˈdentɪfaɪ/",
     "kana": "アイデンティファイ",
     "syllable": "i-den-ti-fy",
-    "transitivity": "他動詞",
+    "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 重要",
-    "core": "何かを見分けて特定する",
-    "coreDetail": "IDENTIFYは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「特定する・見つけ出す」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "対象を見分けて、それが何かを特定する",
+    "coreDetail": "IDENTIFYは、原因・問題・人・特徴などを見分けて特定する動詞です。identify withでは「共感する」という別の意味になります。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 特定する・見つけ出す",
-        "pattern": "identify the problem",
+        "id": "identify-cause",
+        "title": "① 問題・原因を特定する",
+        "pattern": "IDENTIFY + 問題・原因",
         "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "問題や原因を見つけてはっきりさせる",
-        "point": "identify は problem, cause, risk, need とよく使う仕事向け動詞です。",
+        "image": "調査によって原因を明らかにする",
+        "point": "cause, issue, problemなどと使います。",
         "examples": [
           {
             "en": "We identified the cause of the delay.",
             "ja": "私たちは遅延の原因を特定しました。",
-            "focus": "identified the cause",
-            "jaFocus": "特定する・見つけ出す",
+            "focus": "identified",
+            "jaFocus": "特定しました",
             "sentencePattern": "S + V + O",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "We"
               },
               {
                 "label": "V",
-                "text": "identify"
+                "text": "identified"
               },
               {
                 "label": "O",
-                "text": "identified the cause"
+                "text": "the cause of the delay"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
-            "en": "We need to identify the main risk first.",
-            "ja": "まず主なリスクを特定する必要があります。",
-            "focus": "identify a risk",
-            "jaFocus": "リスクを特定する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "We need to identify the main risk first.",
-            "ja": "まず主なリスクを特定する必要があります。",
-            "focus": "identify a risk",
-            "jaFocus": "リスクを特定する"
+            "en": "The engineer identified a wiring problem.",
+            "ja": "技術者は配線上の問題を特定しました。",
+            "focus": "identified",
+            "jaFocus": "特定しました"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "identify a risk",
-        "ja": "リスクを特定する",
-        "image": "問題や原因を見つけてはっきりさせる",
-        "pattern": "identify a risk",
+        "id": "identify-risk",
+        "title": "② リスク・ニーズを見つける",
+        "pattern": "IDENTIFY + risk/need",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "事前に注意すべき点を洗い出す",
+        "point": "risk, need, opportunityなどを特定します。",
         "examples": [
           {
-            "en": "We need to identify the main risk first.",
-            "ja": "まず主なリスクを特定する必要があります。",
-            "focus": "identify a risk",
-            "jaFocus": "リスクを特定する"
+            "en": "We identified three major risks in the plan.",
+            "ja": "私たちは計画の中に3つの大きなリスクを特定しました。",
+            "focus": "identified",
+            "jaFocus": "特定しました"
+          },
+          {
+            "en": "The survey helped us identify customer needs.",
+            "ja": "その調査は顧客ニーズの特定に役立ちました。",
+            "focus": "identify",
+            "jaFocus": "特定する"
+          }
+        ]
+      },
+      {
+        "id": "identify-person",
+        "title": "③ 人・製品を見分ける",
+        "pattern": "IDENTIFY + 人・物",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "特徴や番号から対象を判別する",
+        "point": "人物、製品、部品などを識別します。",
+        "examples": [
+          {
+            "en": "The serial number identifies the product.",
+            "ja": "シリアル番号によって製品を識別できます。",
+            "focus": "identifies",
+            "jaFocus": "識別できます"
+          },
+          {
+            "en": "The witness identified the person in the photo.",
+            "ja": "目撃者は写真の人物を特定しました。",
+            "focus": "identified",
+            "jaFocus": "特定しました"
+          }
+        ]
+      },
+      {
+        "id": "identify-pattern",
+        "title": "④ 特徴・傾向を見つける",
+        "pattern": "IDENTIFY + pattern/trend",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "データから共通点や傾向を見つける",
+        "point": "pattern, trend, differenceなどと使います。",
+        "examples": [
+          {
+            "en": "The report identifies a clear sales trend.",
+            "ja": "その報告書は明確な売上傾向を示しています。",
+            "focus": "identifies",
+            "jaFocus": "示しています"
+          },
+          {
+            "en": "We identified several differences between the samples.",
+            "ja": "私たちはサンプル間のいくつかの違いを見つけました。",
+            "focus": "identified",
+            "jaFocus": "見つけました"
+          }
+        ]
+      },
+      {
+        "id": "identify-as",
+        "title": "⑤ 〜だと特定・分類する",
+        "pattern": "IDENTIFY A AS B",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + C",
+        "image": "対象を特定の種類や人物だと判断する",
+        "point": "受け身のbe identified asもよく使われます。",
+        "examples": [
+          {
+            "en": "The team identified the module as defective.",
+            "ja": "チームはそのモジュールを不良品だと判断しました。",
+            "focus": "identified",
+            "jaFocus": "判断しました"
+          },
+          {
+            "en": "This issue was identified as the main cause.",
+            "ja": "この問題が主な原因だと特定されました。",
+            "focus": "identified",
+            "jaFocus": "特定されました"
           }
         ]
       }
     ],
-    "phrasalVerbs": []
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "identify with",
+        "ja": "〜に共感する・自分を重ねる",
+        "image": "人の経験や気持ちを自分のことのように感じる",
+        "pattern": "IDENTIFY WITH + 人・考え",
+        "examples": [
+          {
+            "en": "Many customers identify with the brand message.",
+            "ja": "多くの顧客がそのブランドメッセージに共感しています。",
+            "focus": "identify with",
+            "jaFocus": "共感しています"
+          },
+          {
+            "en": "I identified with his experience as a new manager.",
+            "ja": "私は新任マネージャーとしての彼の経験に共感しました。",
+            "focus": "identified with",
+            "jaFocus": "共感しました"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "propose",
@@ -22571,76 +23166,169 @@ export const verbs: Verb[] = [
     "ipa": "/prəˈpoʊz/",
     "kana": "プロポーズ",
     "syllable": "pro-pose",
-    "transitivity": "他動詞",
+    "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 重要",
-    "core": "案や方法を相手に提案する",
-    "coreDetail": "PROPOSEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「提案する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "案・計画を正式な提案として示す",
+    "coreDetail": "PROPOSEは、SUGGESTより正式に、案・計画・変更を提示する動詞です。結婚を申し込む意味もあります。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 提案する",
-        "pattern": "propose a solution",
+        "id": "propose-noun",
+        "title": "① 案・計画を提案する",
+        "pattern": "PROPOSE + 案・計画",
         "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "相手に新しい案や解決策を出す",
-        "point": "propose は idea, plan, solution, change などを目的語に置きます。仕事では提案・改善案でよく使います。",
+        "image": "検討してもらう正式案を提示する",
+        "point": "solution, plan, change, budgetなどを目的語にします。",
         "examples": [
           {
             "en": "We proposed a new solution to the client.",
-            "ja": "私たちはクライアントに新しい解決策を提案しました。",
-            "focus": "proposed a solution",
-            "jaFocus": "提案する",
-            "sentencePattern": "S + V + O",
+            "ja": "私たちは顧客に新しい解決策を提案しました。",
+            "focus": "proposed",
+            "jaFocus": "提案しました",
+            "sentencePattern": "S + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "We"
               },
               {
                 "label": "V",
-                "text": "propose"
+                "text": "proposed"
               },
               {
                 "label": "O",
-                "text": "proposed a solution"
+                "text": "a new solution"
+              },
+              {
+                "label": "M",
+                "text": "to the client"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
-            "en": "She proposed a better plan for the project.",
-            "ja": "彼女はそのプロジェクトにより良い計画を提案しました。",
-            "focus": "propose a plan",
-            "jaFocus": "計画を提案する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "She proposed a better plan for the project.",
-            "ja": "彼女はそのプロジェクトにより良い計画を提案しました。",
-            "focus": "propose a plan",
-            "jaFocus": "計画を提案する"
+            "en": "She proposed a revised schedule.",
+            "ja": "彼女は修正した日程を提案しました。",
+            "focus": "proposed",
+            "jaFocus": "提案しました"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "propose a plan",
-        "ja": "計画を提案する",
-        "image": "相手に新しい案や解決策を出す",
-        "pattern": "propose a plan",
+        "id": "propose-doing",
+        "title": "② 〜することを提案する",
+        "pattern": "PROPOSE doing",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "行動案を動名詞で示す",
+        "point": "propose to doではなく、行動案にはpropose doingを使えます。",
         "examples": [
           {
-            "en": "She proposed a better plan for the project.",
-            "ja": "彼女はそのプロジェクトにより良い計画を提案しました。",
-            "focus": "propose a plan",
-            "jaFocus": "計画を提案する"
+            "en": "I propose starting the meeting at nine.",
+            "ja": "私は9時に会議を始めることを提案します。",
+            "focus": "propose",
+            "jaFocus": "提案します"
+          },
+          {
+            "en": "They proposed reducing the number of parts.",
+            "ja": "彼らは部品数を減らすことを提案しました。",
+            "focus": "proposed",
+            "jaFocus": "提案しました"
+          }
+        ]
+      },
+      {
+        "id": "propose-that",
+        "title": "③ 〜するよう正式に提案する",
+        "pattern": "PROPOSE that + 文",
+        "transitivity": "他動詞",
+        "structure": "S + V + that節",
+        "image": "提案内容を文で示す",
+        "point": "that節では原形動詞を使う形がよく見られます。",
+        "examples": [
+          {
+            "en": "We propose that the client review the sample first.",
+            "ja": "私たちは顧客がまずサンプルを確認することを提案します。",
+            "focus": "propose",
+            "jaFocus": "提案します"
+          },
+          {
+            "en": "She proposed that the deadline be extended.",
+            "ja": "彼女は期限を延長するよう提案しました。",
+            "focus": "proposed",
+            "jaFocus": "提案しました"
+          }
+        ]
+      },
+      {
+        "id": "propose-as",
+        "title": "④ 〜として提案する",
+        "pattern": "PROPOSE A AS B",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + C",
+        "image": "候補・役割・解決策として提示する",
+        "point": "AをBとして正式に提示する文型です。",
+        "examples": [
+          {
+            "en": "We proposed this model as the best option.",
+            "ja": "私たちはこのモデルを最適な選択肢として提案しました。",
+            "focus": "proposed",
+            "jaFocus": "提案しました"
+          },
+          {
+            "en": "He was proposed as the project leader.",
+            "ja": "彼はプロジェクトリーダーの候補として提案されました。",
+            "focus": "proposed",
+            "jaFocus": "提案されました"
+          }
+        ]
+      },
+      {
+        "id": "propose-formal",
+        "title": "⑤ 正式な変更・動議を提出する",
+        "pattern": "PROPOSE + formal change",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "会議や組織で正式案を出す",
+        "point": "会議の動議や制度変更にも使います。",
+        "examples": [
+          {
+            "en": "The committee proposed a change to the policy.",
+            "ja": "委員会は方針の変更を提案しました。",
+            "focus": "proposed",
+            "jaFocus": "提案しました"
+          },
+          {
+            "en": "She proposed a motion at the meeting.",
+            "ja": "彼女は会議で動議を提出しました。",
+            "focus": "proposed",
+            "jaFocus": "提出しました"
           }
         ]
       }
     ],
-    "phrasalVerbs": []
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "propose to",
+        "ja": "〜に結婚を申し込む",
+        "image": "相手に結婚の意思を伝える",
+        "pattern": "PROPOSE TO + 人",
+        "examples": [
+          {
+            "en": "He proposed to his partner during the trip.",
+            "ja": "彼は旅行中にパートナーへ結婚を申し込みました。",
+            "focus": "proposed to",
+            "jaFocus": "結婚を申し込みました"
+          },
+          {
+            "en": "She plans to propose to him next month.",
+            "ja": "彼女は来月、彼に結婚を申し込む予定です。",
+            "focus": "propose to",
+            "jaFocus": "結婚を申し込む予定です"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "join",
@@ -22650,29 +23338,33 @@ export const verbs: Verb[] = [
     "kana": "ジョイン",
     "syllable": "join",
     "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "人や活動の中に加わる",
-    "coreDetail": "JOINは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「参加する・加わる」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "importance": "★★★★★ 最重要",
+    "core": "人・活動・組織に加わる、または物をつなぐ",
+    "coreDetail": "JOINは、会議やチームに加わる他動詞用法と、join inなどで活動に参加する句動詞があります。ATTENDより「輪に加わる」感覚があります。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 参加する・加わる",
-        "pattern": "join a meeting",
-        "transitivity": "他動詞・自動詞",
+        "id": "join-event",
+        "title": "① 会議・イベントに参加する",
+        "pattern": "JOIN + 会議・イベント",
+        "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "会議・チーム・活動の中に入る",
-        "point": "join は meeting, team, project, event などを目的語にして使えます。",
+        "image": "進行中または予定された場へ加わる",
+        "point": "join the meetingのようにinを付けません。",
         "examples": [
           {
             "en": "I will join the meeting at three.",
-            "ja": "私は3時にその会議に参加します。",
-            "focus": "join the meeting",
-            "jaFocus": "参加する・加わる",
-            "sentencePattern": "S + V + O",
+            "ja": "私は3時に会議へ参加します。",
+            "focus": "join",
+            "jaFocus": "参加します",
+            "sentencePattern": "S + M + V + O + M",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "I"
+              },
+              {
+                "label": "M",
+                "text": "will"
               },
               {
                 "label": "V",
@@ -22680,45 +23372,198 @@ export const verbs: Verb[] = [
               },
               {
                 "label": "O",
-                "text": "join the meeting"
+                "text": "the meeting"
+              },
+              {
+                "label": "M",
+                "text": "at three"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
-            "en": "She joined the project last month.",
-            "ja": "彼女は先月そのプロジェクトに参加しました。",
-            "focus": "join a project",
-            "jaFocus": "プロジェクトに参加する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "She joined the project last month.",
-            "ja": "彼女は先月そのプロジェクトに参加しました。",
-            "focus": "join a project",
-            "jaFocus": "プロジェクトに参加する"
+            "en": "Can you join the online session tomorrow?",
+            "ja": "明日のオンラインセッションに参加できますか。",
+            "focus": "join",
+            "jaFocus": "参加できますか"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "join a project",
-        "ja": "プロジェクトに参加する",
-        "image": "会議・チーム・活動の中に入る",
-        "pattern": "join a project",
+        "id": "join-team",
+        "title": "② チーム・会社に加わる",
+        "pattern": "JOIN + 組織",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "組織の一員になる",
+        "point": "team, company, project, clubなどを目的語にします。",
         "examples": [
           {
-            "en": "She joined the project last month.",
-            "ja": "彼女は先月そのプロジェクトに参加しました。",
-            "focus": "join a project",
-            "jaFocus": "プロジェクトに参加する"
+            "en": "She joined the sales team last month.",
+            "ja": "彼女は先月営業チームに加わりました。",
+            "focus": "joined",
+            "jaFocus": "加わりました"
+          },
+          {
+            "en": "Two engineers will join the project.",
+            "ja": "2人の技術者がその案件に加わります。",
+            "focus": "join",
+            "jaFocus": "加わります"
+          }
+        ]
+      },
+      {
+        "id": "join-person",
+        "title": "③ 人と一緒になる",
+        "pattern": "JOIN + 人",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "人のいる場所や行動へ加わる",
+        "point": "食事・移動・会話などで人に合流する意味です。",
+        "examples": [
+          {
+            "en": "I will join you for lunch.",
+            "ja": "私は昼食であなたと合流します。",
+            "focus": "join",
+            "jaFocus": "合流します"
+          },
+          {
+            "en": "Please join us in the conference room.",
+            "ja": "会議室で私たちに加わってください。",
+            "focus": "join",
+            "jaFocus": "加わってください"
+          }
+        ]
+      },
+      {
+        "id": "join-things",
+        "title": "④ 物をつなぐ",
+        "pattern": "JOIN + 物",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "二つ以上の部品・線・道を接続する",
+        "point": "parts, cables, sections, roadsなどをつなぎます。",
+        "examples": [
+          {
+            "en": "Join the two cables with this connector.",
+            "ja": "このコネクターで2本のケーブルをつないでください。",
+            "focus": "Join",
+            "jaFocus": "つないでください"
+          },
+          {
+            "en": "This road joins the two towns.",
+            "ja": "この道路は2つの町を結んでいます。",
+            "focus": "joins",
+            "jaFocus": "結んでいます"
+          }
+        ]
+      },
+      {
+        "id": "join-invite",
+        "title": "⑤ 参加を呼びかける",
+        "pattern": "JOIN + us/me",
+        "transitivity": "他動詞",
+        "structure": "V + O",
+        "image": "相手を活動や場へ誘う",
+        "point": "Join us.は自然な参加の誘いです。",
+        "examples": [
+          {
+            "en": "Please join us for the product demonstration.",
+            "ja": "製品デモにぜひご参加ください。",
+            "focus": "join",
+            "jaFocus": "ご参加ください"
+          },
+          {
+            "en": "Would you like to join me for coffee?",
+            "ja": "一緒にコーヒーを飲みませんか。",
+            "focus": "join",
+            "jaFocus": "一緒に飲みませんか"
           }
         ]
       }
     ],
-    "phrasalVerbs": []
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "join in",
+        "ja": "活動・会話に加わる",
+        "image": "すでに行われている活動へ参加する",
+        "pattern": "JOIN IN + 活動",
+        "examples": [
+          {
+            "en": "Everyone joined in the discussion.",
+            "ja": "全員が議論に加わりました。",
+            "focus": "joined in",
+            "jaFocus": "加わりました"
+          },
+          {
+            "en": "You can join in at any time.",
+            "ja": "いつでも参加できます。",
+            "focus": "join in",
+            "jaFocus": "参加できます"
+          }
+        ]
+      },
+      {
+        "phrase": "join up",
+        "ja": "加入する・つなぎ合わせる",
+        "image": "組織へ加入する、または複数の物を接続する",
+        "pattern": "JOIN UP",
+        "examples": [
+          {
+            "en": "The two teams joined up for the project.",
+            "ja": "2つのチームはその案件のために合流しました。",
+            "focus": "joined up",
+            "jaFocus": "合流しました"
+          },
+          {
+            "en": "We joined up the two sections of cable.",
+            "ja": "私たちは2本のケーブル部分をつなぎ合わせました。",
+            "focus": "joined up",
+            "jaFocus": "つなぎ合わせました"
+          }
+        ]
+      },
+      {
+        "phrase": "join with",
+        "ja": "〜と協力する・結合する",
+        "image": "別の人や組織と力を合わせる",
+        "pattern": "JOIN WITH + 人・組織",
+        "examples": [
+          {
+            "en": "We joined with a local company to develop the product.",
+            "ja": "私たちは製品開発のために地元企業と協力しました。",
+            "focus": "joined with",
+            "jaFocus": "協力しました"
+          },
+          {
+            "en": "The two departments joined with each other on the event.",
+            "ja": "2つの部署はそのイベントで協力しました。",
+            "focus": "joined with",
+            "jaFocus": "協力しました"
+          }
+        ]
+      },
+      {
+        "phrase": "join together",
+        "ja": "一緒になる・結合する",
+        "image": "複数の人や物が一つになる",
+        "pattern": "JOIN TOGETHER",
+        "examples": [
+          {
+            "en": "The teams joined together to solve the problem.",
+            "ja": "各チームは問題解決のために協力しました。",
+            "focus": "joined together",
+            "jaFocus": "協力しました"
+          },
+          {
+            "en": "These parts join together easily.",
+            "ja": "これらの部品は簡単に組み合わさります。",
+            "focus": "join together",
+            "jaFocus": "組み合わさります"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "lead",
@@ -22728,29 +23573,33 @@ export const verbs: Verb[] = [
     "kana": "リード",
     "syllable": "lead",
     "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 重要",
-    "core": "人や仕事を前に進める",
-    "coreDetail": "LEADは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「導く・担当して進める」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "importance": "★★★★★ 最重要",
+    "core": "人や活動を先頭に立って導く",
+    "coreDetail": "LEADは、チームや会議を率いるほか、ある結果につながることも表します。過去形・過去分詞はled /led/です。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 導く・担当して進める",
-        "pattern": "lead a project",
-        "transitivity": "他動詞・自動詞",
+        "id": "lead-team",
+        "title": "① チーム・案件を率いる",
+        "pattern": "LEAD + チーム・案件",
+        "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "チームや案件を先頭に立って進める",
-        "point": "lead は team, project, meeting などを目的語にして使います。",
+        "image": "責任者として人や活動を前へ進める",
+        "point": "team, project, departmentなどを目的語にします。",
         "examples": [
           {
             "en": "She will lead the new project.",
-            "ja": "彼女が新しいプロジェクトを主導します。",
-            "focus": "lead the project",
-            "jaFocus": "導く・担当して進める",
-            "sentencePattern": "S + V + O",
+            "ja": "彼女が新しいプロジェクトを率います。",
+            "focus": "lead",
+            "jaFocus": "率います",
+            "sentencePattern": "S + M + V + O",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "She"
+              },
+              {
+                "label": "M",
+                "text": "will"
               },
               {
                 "label": "V",
@@ -22758,45 +23607,214 @@ export const verbs: Verb[] = [
               },
               {
                 "label": "O",
-                "text": "lead the project"
+                "text": "the new project"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
-            "en": "Can you lead the meeting tomorrow?",
-            "ja": "明日の会議を進行してもらえますか。",
-            "focus": "lead a meeting",
-            "jaFocus": "会議を進行する"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Can you lead the meeting tomorrow?",
-            "ja": "明日の会議を進行してもらえますか。",
-            "focus": "lead a meeting",
-            "jaFocus": "会議を進行する"
+            "en": "He led the sales team for five years.",
+            "ja": "彼は5年間営業チームを率いました。",
+            "focus": "led",
+            "jaFocus": "率いました"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "lead a meeting",
-        "ja": "会議を進行する",
-        "image": "チームや案件を先頭に立って進める",
-        "pattern": "lead a meeting",
+        "id": "lead-meeting",
+        "title": "② 会議・議論を進行する",
+        "pattern": "LEAD + meeting/discussion",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "参加者を導きながら話を進める",
+        "point": "会議の司会・進行を担当する意味です。",
         "examples": [
           {
-            "en": "Can you lead the meeting tomorrow?",
-            "ja": "明日の会議を進行してもらえますか。",
-            "focus": "lead a meeting",
-            "jaFocus": "会議を進行する"
+            "en": "I will lead the meeting this afternoon.",
+            "ja": "今日の午後は私が会議を進行します。",
+            "focus": "lead",
+            "jaFocus": "進行します"
+          },
+          {
+            "en": "She led the discussion calmly.",
+            "ja": "彼女は落ち着いて議論を進行しました。",
+            "focus": "led",
+            "jaFocus": "進行しました"
+          }
+        ]
+      },
+      {
+        "id": "lead-market",
+        "title": "③ 先頭に立つ・首位に立つ",
+        "pattern": "LEAD + market/ranking",
+        "transitivity": "他動詞・自動詞",
+        "structure": "S + V + O/M",
+        "image": "競争や順位で先頭に立つ",
+        "point": "market, industry, raceなどで首位に立つ意味です。",
+        "examples": [
+          {
+            "en": "Our company leads the market in this category.",
+            "ja": "当社はこのカテゴリーで市場をリードしています。",
+            "focus": "leads",
+            "jaFocus": "リードしています"
+          },
+          {
+            "en": "The blue team is leading by ten points.",
+            "ja": "青チームが10点差でリードしています。",
+            "focus": "leading",
+            "jaFocus": "リードしています"
+          }
+        ]
+      },
+      {
+        "id": "lead-person",
+        "title": "④ 人を場所へ案内する",
+        "pattern": "LEAD + 人 + 場所",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + M",
+        "image": "先に立って人を目的地へ導く",
+        "point": "lead someone to/into a placeの形で使います。",
+        "examples": [
+          {
+            "en": "The staff member led us to the meeting room.",
+            "ja": "スタッフが私たちを会議室へ案内しました。",
+            "focus": "led",
+            "jaFocus": "案内しました"
+          },
+          {
+            "en": "She led the visitors through the showroom.",
+            "ja": "彼女は来訪者をショールーム内へ案内しました。",
+            "focus": "led",
+            "jaFocus": "案内しました"
+          }
+        ]
+      },
+      {
+        "id": "lead-life",
+        "title": "⑤ 生活・人生を送る",
+        "pattern": "LEAD + life",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "特定の状態の生活を送る",
+        "point": "lead a busy/quiet/healthy lifeの形があります。",
+        "examples": [
+          {
+            "en": "He leads a busy life as a manager.",
+            "ja": "彼は管理職として忙しい生活を送っています。",
+            "focus": "leads",
+            "jaFocus": "送っています"
+          },
+          {
+            "en": "They want to lead a healthier life.",
+            "ja": "彼らはより健康的な生活を送りたいと考えています。",
+            "focus": "lead",
+            "jaFocus": "送りたいと考えています"
           }
         ]
       }
     ],
-    "phrasalVerbs": []
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "lead to",
+        "ja": "〜につながる・〜を引き起こす",
+        "image": "原因が結果を生み出す",
+        "pattern": "LEAD TO + 結果",
+        "examples": [
+          {
+            "en": "Poor communication can lead to mistakes.",
+            "ja": "意思疎通不足はミスにつながる可能性があります。",
+            "focus": "lead to",
+            "jaFocus": "つながる可能性があります"
+          },
+          {
+            "en": "The change led to higher sales.",
+            "ja": "その変更は売上増加につながりました。",
+            "focus": "led to",
+            "jaFocus": "つながりました"
+          }
+        ]
+      },
+      {
+        "phrase": "lead into",
+        "ja": "〜へ導く・話題へつなぐ",
+        "image": "人や話を次の場所・内容へ移す",
+        "pattern": "LEAD INTO + 場所・話題",
+        "examples": [
+          {
+            "en": "This question leads into the next topic.",
+            "ja": "この質問は次の話題につながります。",
+            "focus": "leads into",
+            "jaFocus": "つながります"
+          },
+          {
+            "en": "The guide led us into the main hall.",
+            "ja": "案内係が私たちをメインホールへ導きました。",
+            "focus": "led into",
+            "jaFocus": "導きました"
+          }
+        ]
+      },
+      {
+        "phrase": "lead with",
+        "ja": "〜を最初に示す・始める",
+        "image": "重要な情報や強みを最初に出す",
+        "pattern": "LEAD WITH + 内容",
+        "examples": [
+          {
+            "en": "Lead with the main benefit in your presentation.",
+            "ja": "プレゼンでは主な利点から話し始めてください。",
+            "focus": "Lead with",
+            "jaFocus": "話し始めてください"
+          },
+          {
+            "en": "The email led with a clear apology.",
+            "ja": "そのメールは明確な謝罪から始まっていました。",
+            "focus": "led with",
+            "jaFocus": "始まっていました"
+          }
+        ]
+      },
+      {
+        "phrase": "lead up to",
+        "ja": "〜に至る・〜の前段階となる",
+        "image": "複数の出来事が重要な時点へ続く",
+        "pattern": "LEAD UP TO + 出来事",
+        "examples": [
+          {
+            "en": "Several meetings led up to the final agreement.",
+            "ja": "最終合意に至るまでに複数の会議が行われました。",
+            "focus": "led up to",
+            "jaFocus": "至りました"
+          },
+          {
+            "en": "The training leads up to a final test.",
+            "ja": "その研修は最終試験へとつながります。",
+            "focus": "leads up to",
+            "jaFocus": "つながります"
+          }
+        ]
+      },
+      {
+        "phrase": "lead on",
+        "ja": "期待を持たせて惑わせる",
+        "image": "本当の意図がないのに期待させる",
+        "pattern": "LEAD + 人 + ON",
+        "examples": [
+          {
+            "en": "Do not lead the customer on with an unrealistic promise.",
+            "ja": "現実的でない約束で顧客に期待を持たせないでください。",
+            "focus": "lead on",
+            "jaFocus": "期待を持たせないでください"
+          },
+          {
+            "en": "He felt that the company had led him on.",
+            "ja": "彼は会社に期待を持たされていたと感じました。",
+            "focus": "led on",
+            "jaFocus": "期待を持たされていました"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "maintain",

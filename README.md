@@ -18,3 +18,4 @@ Current: Ver.155 DELIVER / SOLVE / REPORT Reaudit Final
 ニックネームとプロフィール画像を `user_profiles` 専用テーブルへ分離しました。
 デプロイ前に `supabase/V158_PROFILE_SOURCE_OF_TRUTH.sql` をSupabase SQL Editorで1回実行してください。
 詳細は `docs/V158_PROFILE_SOURCE_OF_TRUTH.md` を参照してください。
+Deployment retry

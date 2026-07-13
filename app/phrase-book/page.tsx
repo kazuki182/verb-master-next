@@ -1,8 +1,9 @@
+
 "use client";
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import SpeakButton from "@/components/SpeakButton";
+import SpeakButton from "@/components/SpeechButton";
 import { getSavedPhrases, hasPremiumFeatureAccess, removeSavedPhrase, type SavedPhrase } from "@/lib/account";
 
 function sectionLabel(section: SavedPhrase["section"]) {

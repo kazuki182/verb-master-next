@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import SpeakButton from "./SpeakButton";
+import SpeakButton from "@/components/SpeechButton";
 import PhraseSaveButton from "./PhraseSaveButton";
 import type { Example } from "@/lib/data";
 import { hasGrammarAccess } from "@/lib/account";

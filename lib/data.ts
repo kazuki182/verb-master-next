@@ -5497,10 +5497,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "She saw the message on her phone.",
-            "ja": "彼女はスマホでそのメッセージを見ました。",
-            "focus": "saw",
-            "object": "the message"
+            "en": "I saw the sunset from my balcony.",
+            "ja": "ベランダから夕日を見ました。",
+            "focus": "saw"
+          },
+          {
+            "en": "Did you see the photo I posted?",
+            "ja": "私が投稿した写真、見た？",
+            "focus": "see"
           }
         ]
       },
@@ -5528,10 +5532,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "Now I see the difference.",
-            "ja": "今なら私は違いが分かります。",
-            "focus": "see",
-            "object": "the difference"
+            "en": "Oh, I see what you mean now.",
+            "ja": "ああ、今あなたの言いたいことが分かりました。",
+            "focus": "see"
+          },
+          {
+            "en": "I can see why you like this place.",
+            "ja": "あなたがこの場所を好きな理由が分かります。",
+            "focus": "see"
           }
         ]
       },
@@ -5557,8 +5565,13 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "We need to see if the schedule still works.",
-            "ja": "私たちはそのスケジュールでまだ問題ないか確認する必要があります。",
+            "en": "Let me see if the store is still open.",
+            "ja": "その店がまだ開いているか確認してみるね。",
+            "focus": "see"
+          },
+          {
+            "en": "Can you see whether the door is locked?",
+            "ja": "ドアに鍵がかかっているか確認してくれる？",
             "focus": "see"
           }
         ]
@@ -5587,10 +5600,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "She saw her friend after work.",
-            "ja": "彼女は仕事の後に友人に会いました。",
-            "focus": "saw",
-            "object": "her friend"
+            "en": "I saw an old friend at the station.",
+            "ja": "駅で昔の友人に会いました。",
+            "focus": "saw"
+          },
+          {
+            "en": "Are you seeing your family this weekend?",
+            "ja": "今週末は家族に会うの？",
+            "focus": "seeing"
           }
         ]
       }
@@ -5618,10 +5635,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "He saw through the excuse.",
-            "ja": "彼はその言い訳を見抜きました。",
-            "focus": "saw through",
-            "object": "the excuse"
+            "en": "I could see through his excuse right away.",
+            "ja": "彼の言い訳をすぐに見抜けました。",
+            "focus": "see through"
+          },
+          {
+            "en": "We saw through the trick immediately.",
+            "ja": "私たちはその仕掛けをすぐに見抜きました。",
+            "focus": "saw through"
           }
         ]
       },
@@ -5646,10 +5667,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "She saw to the booking.",
-            "ja": "彼女は予約の手配をしました。",
-            "focus": "saw to",
-            "object": "the booking"
+            "en": "I will see to the food for the party.",
+            "ja": "パーティーの食事は私が手配します。",
+            "focus": "see to"
+          },
+          {
+            "en": "She saw to the children while I cooked.",
+            "ja": "私が料理をしている間、彼女が子どもたちの面倒を見ました。",
+            "focus": "saw to"
           }
         ]
       },
@@ -5674,10 +5699,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "He will see about dinner.",
-            "ja": "彼が夕食のことを手配します。",
-            "focus": "see about",
-            "object": "dinner"
+            "en": "I will see about ordering dinner.",
+            "ja": "夕食を注文できるか確認してみます。",
+            "focus": "see about"
+          },
+          {
+            "en": "We need to see about getting the sink fixed.",
+            "ja": "シンクを修理してもらうことを検討する必要があります。",
+            "focus": "see about"
           }
         ]
       },
@@ -5702,10 +5731,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "I saw my family off at the station.",
-            "ja": "私は駅で家族を見送りました。",
-            "focus": "saw off",
-            "object": "my family"
+            "en": "We went to the station to see off my parents.",
+            "ja": "両親を見送るために駅へ行きました。",
+            "focus": "see off"
+          },
+          {
+            "en": "I came to the airport to see off my sister.",
+            "ja": "姉を見送るために空港へ来ました。",
+            "focus": "see off"
           }
         ]
       },
@@ -5730,10 +5763,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "They saw out the year without major problems.",
-            "ja": "彼らは大きな問題なくその年を終えました。",
-            "focus": "saw out",
-            "object": "the year"
+            "en": "I will see out the guests after dinner.",
+            "ja": "夕食後、私が客を玄関まで見送ります。",
+            "focus": "see out"
+          },
+          {
+            "en": "She stayed to see out the last guest.",
+            "ja": "彼女は最後の客を見送るために残りました。",
+            "focus": "see out"
           }
         ]
       },
@@ -5758,10 +5795,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "She saw into the matter quickly.",
-            "ja": "彼女はその件をすぐ調べました。",
-            "focus": "saw into",
-            "object": "the matter"
+            "en": "From here, you can see into the kitchen.",
+            "ja": "ここからキッチンの中が見えます。",
+            "focus": "see into"
+          },
+          {
+            "en": "The window lets us see into the garden.",
+            "ja": "その窓から庭の中が見えます。",
+            "focus": "see into"
           }
         ]
       },
@@ -5786,10 +5827,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "We saw over the new office.",
-            "ja": "私たちは新しいオフィスを見て回りました。",
-            "focus": "saw over",
-            "object": "the new office"
+            "en": "We went to see over the apartment.",
+            "ja": "私たちはそのアパートを見て回りに行きました。",
+            "focus": "see over"
+          },
+          {
+            "en": "Can we see over the house this afternoon?",
+            "ja": "今日の午後、その家を見学できますか？",
+            "focus": "see over"
           }
         ]
       },
@@ -5814,10 +5859,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "He saw us around the museum.",
-            "ja": "彼は私たちを博物館に案内してくれました。",
-            "focus": "saw around",
-            "object": "us"
+            "en": "I often see around town the same friendly dog.",
+            "ja": "町で同じ人懐っこい犬をよく見かけます。",
+            "focus": "see around"
+          },
+          {
+            "en": "You may see around the neighborhood some colorful birds.",
+            "ja": "近所で色鮮やかな鳥を見かけるかもしれません。",
+            "focus": "see around"
           }
         ]
       }
@@ -5867,8 +5916,13 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "This design looks simple and clean.",
-            "ja": "このデザインはシンプルできれいに見えます。",
+            "en": "You look tired today.",
+            "ja": "今日は疲れているように見えるよ。",
+            "focus": "look"
+          },
+          {
+            "en": "This cake looks delicious.",
+            "ja": "このケーキはおいしそうに見えます。",
             "focus": "looks"
           }
         ]
@@ -5895,8 +5949,13 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "She looked toward the entrance.",
-            "ja": "彼女は入口の方を見ました。",
+            "en": "Look at the sky for a second.",
+            "ja": "ちょっと空を見て。",
+            "focus": "Look"
+          },
+          {
+            "en": "She looked toward the door when the bell rang.",
+            "ja": "ベルが鳴ると、彼女はドアの方を見ました。",
             "focus": "looked"
           }
         ]
@@ -5923,9 +5982,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "He always looks ahead before making a plan.",
-            "ja": "彼は計画を立てる前にいつも先を見ます。",
-            "focus": "looks"
+            "en": "We need to look ahead and plan for next month.",
+            "ja": "先を見て来月の予定を立てる必要があります。",
+            "focus": "look"
+          },
+          {
+            "en": "I try to look ahead before spending too much money.",
+            "ja": "お金を使いすぎる前に先のことを考えるようにしています。",
+            "focus": "look"
           }
         ]
       }
@@ -5953,10 +6017,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "She looked at the menu.",
-            "ja": "彼女はメニューを見ました。",
-            "focus": "looked at",
-            "object": "the menu"
+            "en": "Look at this funny picture.",
+            "ja": "この面白い写真を見て。",
+            "focus": "Look at"
+          },
+          {
+            "en": "I looked at the menu before ordering.",
+            "ja": "注文前にメニューを見ました。",
+            "focus": "looked at"
           }
         ]
       },
@@ -5981,10 +6049,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "She looked into the old record.",
-            "ja": "彼女は古い記録を調べました。",
-            "focus": "looked into",
-            "object": "the old record"
+            "en": "I will look into why the Wi-Fi keeps disconnecting.",
+            "ja": "Wi-Fiが何度も切れる原因を調べてみます。",
+            "focus": "look into"
+          },
+          {
+            "en": "She looked into cheaper phone plans.",
+            "ja": "彼女はもっと安いスマホ料金プランを調べました。",
+            "focus": "looked into"
           }
         ]
       },
@@ -6009,10 +6081,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "He is looking for his keys.",
-            "ja": "彼は鍵を探しています。",
-            "focus": "looking for",
-            "object": "his keys"
+            "en": "I am looking for my keys.",
+            "ja": "鍵を探しています。",
+            "focus": "looking for"
+          },
+          {
+            "en": "We looked for a quiet place to eat.",
+            "ja": "静かに食事できる場所を探しました。",
+            "focus": "looked for"
           }
         ]
       },
@@ -6037,10 +6113,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "He looks after his younger brother.",
-            "ja": "彼は弟の世話をしています。",
-            "focus": "looks after",
-            "object": "his younger brother"
+            "en": "Can you look after the dog tonight?",
+            "ja": "今夜犬の世話をしてくれる？",
+            "focus": "look after"
+          },
+          {
+            "en": "My sister looked after the children.",
+            "ja": "姉が子どもたちの世話をしました。",
+            "focus": "looked after"
           }
         ]
       },
@@ -6065,10 +6145,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "She looked over the notes.",
-            "ja": "彼女はメモにざっと目を通しました。",
-            "focus": "looked over",
-            "object": "the notes"
+            "en": "Please look over this message before I send it.",
+            "ja": "送る前にこのメッセージをざっと確認して。",
+            "focus": "look over"
+          },
+          {
+            "en": "I looked over the bill for mistakes.",
+            "ja": "請求書に間違いがないかざっと確認しました。",
+            "focus": "looked over"
           }
         ]
       },
@@ -6093,10 +6177,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "He looked through the photos.",
-            "ja": "彼は写真に目を通しました。",
-            "focus": "looked through",
-            "object": "the photos"
+            "en": "We looked through old family photos.",
+            "ja": "昔の家族写真を一通り見ました。",
+            "focus": "looked through"
+          },
+          {
+            "en": "I looked through the drawer for a pen.",
+            "ja": "ペンを探して引き出しの中を見ました。",
+            "focus": "looked through"
           }
         ]
       },
@@ -6121,10 +6209,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "She looked up the word online.",
-            "ja": "彼女はその単語をオンラインで調べました。",
-            "focus": "looked up",
-            "object": "the word"
+            "en": "I looked up the word on my phone.",
+            "ja": "スマホでその単語を調べました。",
+            "focus": "looked up"
+          },
+          {
+            "en": "Can you look up the last train time?",
+            "ja": "終電の時間を調べてくれる？",
+            "focus": "look up"
           }
         ]
       },
@@ -6149,10 +6241,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "She looks up to her teacher.",
-            "ja": "彼女は先生を尊敬しています。",
-            "focus": "looks up to",
-            "object": "her teacher"
+            "en": "I have always looked up to my older sister.",
+            "ja": "私はずっと姉を尊敬しています。",
+            "focus": "looked up to"
+          },
+          {
+            "en": "The children really look up to their coach.",
+            "ja": "子どもたちはコーチをとても尊敬しています。",
+            "focus": "look up to"
           }
         ]
       },
@@ -6177,10 +6273,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "They look forward to the trip.",
-            "ja": "彼らは旅行を楽しみにしています。",
-            "focus": "look forward to",
-            "object": "the trip"
+            "en": "I am looking forward to the weekend.",
+            "ja": "週末を楽しみにしています。",
+            "focus": "looking forward to"
+          },
+          {
+            "en": "We look forward to seeing you again.",
+            "ja": "また会えるのを楽しみにしています。",
+            "focus": "look forward to"
           }
         ]
       },
@@ -6205,10 +6305,14 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
+            "en": "I look back on that trip with a smile.",
+            "ja": "その旅行を笑顔で振り返ります。",
+            "focus": "look back on"
+          },
+          {
             "en": "She looked back on her school days.",
             "ja": "彼女は学生時代を振り返りました。",
-            "focus": "looked back on",
-            "object": "her school days"
+            "focus": "looked back on"
           }
         ]
       }
@@ -6264,6 +6368,18 @@ export const verbs: Verb[] = [
             "focus": "watch",
             "object": "the schedule"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I watched the cake rise in the oven.",
+            "ja": "オーブンの中でケーキが膨らむのを見ていました。",
+            "focus": "watched"
+          },
+          {
+            "en": "We watched the sky get darker.",
+            "ja": "私たちは空が暗くなっていくのを見ました。",
+            "focus": "watched"
+          }
         ]
       },
       {
@@ -6292,6 +6408,18 @@ export const verbs: Verb[] = [
             "ja": "あなたは来週、在庫数を確認してくれますか？",
             "focus": "watch",
             "object": "the inventory level"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I am watching my spending this month.",
+            "ja": "今月は出費に気をつけています。",
+            "focus": "watching"
+          },
+          {
+            "en": "Watch the temperature while the soup is cooking.",
+            "ja": "スープを作っている間は温度を確認してね。",
+            "focus": "Watch"
           }
         ]
       },
@@ -6322,6 +6450,18 @@ export const verbs: Verb[] = [
             "focus": "watched",
             "object": "the presentation recording"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We watched a movie after dinner.",
+            "ja": "夕食後に映画を見ました。",
+            "focus": "watched"
+          },
+          {
+            "en": "I watched a cooking video on my phone.",
+            "ja": "スマホで料理動画を見ました。",
+            "focus": "watched"
+          }
         ]
       },
       {
@@ -6350,6 +6490,18 @@ export const verbs: Verb[] = [
             "ja": "あなたは今月の需要の動きを注意して見てください。",
             "focus": "watch",
             "object": "the demand trend"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "My dad watches house prices in our area.",
+            "ja": "父は近所の住宅価格をチェックしています。",
+            "focus": "watches"
+          },
+          {
+            "en": "I am watching for discounts before I buy a new phone.",
+            "ja": "新しいスマホを買う前に値下げをチェックしています。",
+            "focus": "watching"
           }
         ]
       },
@@ -6380,6 +6532,18 @@ export const verbs: Verb[] = [
             "focus": "watched",
             "object": "the client test the lighting"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I watched my daughter ride her bike.",
+            "ja": "娘が自転車に乗るのを見ました。",
+            "focus": "watched"
+          },
+          {
+            "en": "We watched the chef make our dessert.",
+            "ja": "シェフがデザートを作るのを見ました。",
+            "focus": "watched"
+          }
         ]
       },
       {
@@ -6409,6 +6573,18 @@ export const verbs: Verb[] = [
             "focus": "watch",
             "object": "this issue closely"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Watch carefully so you do not miss the turn.",
+            "ja": "曲がり角を見逃さないようによく見てね。",
+            "focus": "Watch"
+          },
+          {
+            "en": "I watched the baby carefully near the stairs.",
+            "ja": "階段の近くで赤ちゃんを注意深く見守りました。",
+            "focus": "watched"
+          }
         ]
       }
     ],
@@ -6428,6 +6604,18 @@ export const verbs: Verb[] = [
           {
             "en": "We should watch out when handling the sample.",
             "ja": "私たちはサンプルを扱う時に気をつけるべきです。",
+            "focus": "watch out"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Watch out! The floor is wet.",
+            "ja": "気をつけて！床がぬれています。",
+            "focus": "Watch out"
+          },
+          {
+            "en": "You need to watch out on these stairs.",
+            "ja": "この階段では気をつけてね。",
             "focus": "watch out"
           }
         ]
@@ -6450,6 +6638,18 @@ export const verbs: Verb[] = [
             "focus": "watch out for",
             "object": "changes in the delivery date"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Watch out for bikes when you cross the street.",
+            "ja": "道を渡る時は自転車に注意して。",
+            "focus": "Watch out for"
+          },
+          {
+            "en": "We need to watch out for extra fees.",
+            "ja": "追加料金に注意する必要があります。",
+            "focus": "watch out for"
+          }
         ]
       },
       {
@@ -6469,6 +6669,18 @@ export const verbs: Verb[] = [
             "ja": "私たちはテスト工程を管理する人が必要です。",
             "focus": "watch over",
             "object": "the testing process"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Can you watch over the kids for a minute?",
+            "ja": "少しの間、子どもたちを見ていてくれる？",
+            "focus": "watch over"
+          },
+          {
+            "en": "Our neighbor watched over the house while we were away.",
+            "ja": "留守中、近所の人が家を見守ってくれました。",
+            "focus": "watched over"
           }
         ]
       },
@@ -6490,6 +6702,18 @@ export const verbs: Verb[] = [
             "focus": "watched for",
             "object": "safety issues"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Watch for the blue sign near the station.",
+            "ja": "駅の近くにある青い看板を探してね。",
+            "focus": "Watch for"
+          },
+          {
+            "en": "I was watching for your message.",
+            "ja": "あなたのメッセージを待っていました。",
+            "focus": "watching for"
+          }
         ]
       },
       {
@@ -6509,6 +6733,18 @@ export const verbs: Verb[] = [
             "ja": "私はテスト中、事務所から状況を見ていました。",
             "focus": "watched from",
             "object": "the office"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We watched from the balcony as the fireworks began.",
+            "ja": "花火が始まるのをベランダから見ました。",
+            "focus": "watched from"
+          },
+          {
+            "en": "I watched from the back row during the game.",
+            "ja": "試合中、後ろの席から見ていました。",
+            "focus": "watched from"
           }
         ]
       },
@@ -6530,6 +6766,18 @@ export const verbs: Verb[] = [
             "focus": "watched as",
             "object": "the client tested the sample"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I watched as the children opened their gifts.",
+            "ja": "子どもたちがプレゼントを開ける様子を見ました。",
+            "focus": "watched as"
+          },
+          {
+            "en": "We watched as the sun disappeared behind the mountains.",
+            "ja": "太陽が山の向こうに沈む様子を見ました。",
+            "focus": "watched as"
+          }
         ]
       },
       {
@@ -6550,6 +6798,18 @@ export const verbs: Verb[] = [
             "focus": "watched through",
             "object": "the training material"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I watched through to the end before trying it.",
+            "ja": "試す前に最後まで見ました。",
+            "focus": "watched through"
+          },
+          {
+            "en": "We watched through the final episode together.",
+            "ja": "私たちは最終話を一緒に最後まで見ました。",
+            "focus": "watched through"
+          }
         ]
       },
       {
@@ -6569,6 +6829,18 @@ export const verbs: Verb[] = [
             "ja": "あなたは報告前にテスト動画を見返してください。",
             "focus": "watch back",
             "object": "the test video"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I watched back the video to check my form.",
+            "ja": "自分のフォームを確認するために動画を見返しました。",
+            "focus": "watched back"
+          },
+          {
+            "en": "Let us watch back that part.",
+            "ja": "その部分をもう一度見返そう。",
+            "focus": "watch back"
           }
         ]
       }
@@ -6624,6 +6896,18 @@ export const verbs: Verb[] = [
             "focus": "heard",
             "object": "the alarm"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I heard a strange noise outside.",
+            "ja": "外で変な音が聞こえました。",
+            "focus": "heard"
+          },
+          {
+            "en": "Can you hear the music from upstairs?",
+            "ja": "上の階から音楽が聞こえる？",
+            "focus": "hear"
+          }
         ]
       },
       {
@@ -6652,6 +6936,18 @@ export const verbs: Verb[] = [
             "ja": "あなたは会議の結果を聞きましたか？",
             "focus": "hear",
             "object": "the result"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I heard the good news this morning.",
+            "ja": "今朝そのうれしい知らせを聞きました。",
+            "focus": "heard"
+          },
+          {
+            "en": "Did you hear the news about Ken?",
+            "ja": "ケンのニュースを聞いた？",
+            "focus": "hear"
           }
         ]
       },
@@ -6682,6 +6978,18 @@ export const verbs: Verb[] = [
             "focus": "hear",
             "object": "that the meeting was canceled"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I heard that the cafe is closing.",
+            "ja": "そのカフェが閉店すると聞きました。",
+            "focus": "heard"
+          },
+          {
+            "en": "We heard that you are moving next month.",
+            "ja": "来月引っ越すと聞きました。",
+            "focus": "heard"
+          }
         ]
       },
       {
@@ -6710,6 +7018,18 @@ export const verbs: Verb[] = [
             "ja": "営業チームはデモ後にいくつかコメントを聞きました。",
             "focus": "heard",
             "object": "several comments"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I would like to hear what you think of this song.",
+            "ja": "この曲についてどう思うか聞きたいです。",
+            "focus": "hear"
+          },
+          {
+            "en": "It was nice to hear everyone's thoughts.",
+            "ja": "みんなの意見を聞けてよかったです。",
+            "focus": "hear"
           }
         ]
       },
@@ -6740,6 +7060,18 @@ export const verbs: Verb[] = [
             "focus": "hear",
             "object": "the customer's request"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I heard my son complain about the homework.",
+            "ja": "息子が宿題について文句を言うのを聞きました。",
+            "focus": "heard"
+          },
+          {
+            "en": "She heard a complaint about the noise next door.",
+            "ja": "彼女は隣の騒音についての苦情を聞きました。",
+            "focus": "heard"
+          }
         ]
       },
       {
@@ -6769,6 +7101,18 @@ export const verbs: Verb[] = [
             "focus": "hear",
             "object": "him explain the reason"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I heard Maya say she was tired.",
+            "ja": "マヤが疲れたと言うのを聞きました。",
+            "focus": "heard"
+          },
+          {
+            "en": "Did you hear him say my name?",
+            "ja": "彼が私の名前を言うのを聞いた？",
+            "focus": "hear"
+          }
         ]
       }
     ],
@@ -6792,6 +7136,18 @@ export const verbs: Verb[] = [
             "focus": "heard from",
             "object": "the client"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I heard from Yuki yesterday.",
+            "ja": "昨日ユキから連絡がありました。",
+            "focus": "heard from"
+          },
+          {
+            "en": "Have you heard from your brother lately?",
+            "ja": "最近お兄さんから連絡あった？",
+            "focus": "heard from"
+          }
         ]
       },
       {
@@ -6811,6 +7167,18 @@ export const verbs: Verb[] = [
             "ja": "あなたは顧客からその問題について聞きましたか？",
             "focus": "hear about",
             "object": "the issue"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I heard about the new bakery from a friend.",
+            "ja": "友人から新しいパン屋について聞きました。",
+            "focus": "heard about"
+          },
+          {
+            "en": "Did you hear about their wedding?",
+            "ja": "二人の結婚について聞いた？",
+            "focus": "hear about"
           }
         ]
       },
@@ -6832,6 +7200,18 @@ export const verbs: Verb[] = [
             "focus": "heard of",
             "object": "a new product"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I have never heard of that singer.",
+            "ja": "その歌手のことは聞いたことがありません。",
+            "focus": "heard of"
+          },
+          {
+            "en": "Have you heard of this app?",
+            "ja": "このアプリを聞いたことある？",
+            "focus": "heard of"
+          }
         ]
       },
       {
@@ -6852,6 +7232,18 @@ export const verbs: Verb[] = [
             "focus": "heard out",
             "object": "him"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Please hear out my side before you decide.",
+            "ja": "決める前に私の言い分を最後まで聞いてください。",
+            "focus": "hear out"
+          },
+          {
+            "en": "She heard out his explanation without interrupting.",
+            "ja": "彼女は彼の説明を遮らず最後まで聞きました。",
+            "focus": "heard out"
+          }
         ]
       },
       {
@@ -6871,13 +7263,25 @@ export const verbs: Verb[] = [
             "focus": "heard back",
             "object": "about the quotation"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I am still waiting to hear back from the hotel.",
+            "ja": "ホテルから返事が来るのをまだ待っています。",
+            "focus": "hear back"
+          },
+          {
+            "en": "Did you hear back about the reservation?",
+            "ja": "予約について返事は来た？",
+            "focus": "hear back"
+          }
         ]
       },
       {
-        "phrase": "hear through",
-        "ja": "〜を通じて聞く",
+        "phrase": "hear through the grapevine",
+        "ja": "うわさで聞く",
         "image": "人やルートを通って情報が耳に入るイメージ。",
-        "pattern": "HEAR THROUGH + person / channel",
+        "pattern": "HEAR THROUGH THE GRAPEVINE",
         "examples": [
           {
             "en": "We heard through the distributor that the stock was low.",
@@ -6890,6 +7294,18 @@ export const verbs: Verb[] = [
             "ja": "私は別の顧客を通じて、その製品が人気だと聞きました。",
             "focus": "heard through",
             "object": "another customer"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I heard through the grapevine that they are moving.",
+            "ja": "うわさで彼らが引っ越すと聞きました。",
+            "focus": "heard through the grapevine"
+          },
+          {
+            "en": "We heard through the grapevine about the surprise party.",
+            "ja": "うわさでサプライズパーティーのことを聞きました。",
+            "focus": "heard through the grapevine"
           }
         ]
       }
@@ -6945,6 +7361,18 @@ export const verbs: Verb[] = [
             "focus": "listen",
             "object": "carefully"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Listen carefully to the station announcement.",
+            "ja": "駅のアナウンスをよく聞いてね。",
+            "focus": "Listen"
+          },
+          {
+            "en": "I listened carefully to the directions.",
+            "ja": "道順を注意深く聞きました。",
+            "focus": "listened"
+          }
         ]
       },
       {
@@ -6973,6 +7401,18 @@ export const verbs: Verb[] = [
             "ja": "あなたはチームのフィードバックを積極的に聞いてください。",
             "focus": "listen",
             "object": "actively"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I put my phone away and listened to my friend.",
+            "ja": "スマホをしまって友人の話をしっかり聞きました。",
+            "focus": "listened"
+          },
+          {
+            "en": "She listens and asks questions when I need advice.",
+            "ja": "私が相談すると、彼女は話を聞いて質問してくれます。",
+            "focus": "listens"
           }
         ]
       },
@@ -7003,6 +7443,18 @@ export const verbs: Verb[] = [
             "focus": "listen",
             "object": "first"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Please listen before you answer.",
+            "ja": "答える前に話を聞いてください。",
+            "focus": "listen"
+          },
+          {
+            "en": "I listened for a moment before replying.",
+            "ja": "返事をする前に少し話を聞きました。",
+            "focus": "listened"
+          }
         ]
       },
       {
@@ -7031,6 +7483,18 @@ export const verbs: Verb[] = [
             "ja": "あなたはその案をすぐ判断せずに聞いてください。",
             "focus": "listen",
             "object": "without judging"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "He listened without interrupting me.",
+            "ja": "彼は私の話を遮らずに聞いてくれました。",
+            "focus": "listened"
+          },
+          {
+            "en": "Can you listen until I finish?",
+            "ja": "私が話し終わるまで聞いてくれる？",
+            "focus": "listen"
           }
         ]
       },
@@ -7061,6 +7525,18 @@ export const verbs: Verb[] = [
             "focus": "listened",
             "object": "and improved"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I listened again and finally understood the lyrics.",
+            "ja": "もう一度聞いて、ようやく歌詞を理解しました。",
+            "focus": "listened"
+          },
+          {
+            "en": "Listen to the whole story before deciding.",
+            "ja": "決める前に話を全部聞いてください。",
+            "focus": "Listen"
+          }
         ]
       },
       {
@@ -7090,6 +7566,18 @@ export const verbs: Verb[] = [
             "focus": "listen",
             "object": "to the team's suggestion"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I listened to my family's advice.",
+            "ja": "家族の助言に耳を傾けました。",
+            "focus": "listened"
+          },
+          {
+            "en": "You should listen to what your body is telling you.",
+            "ja": "自分の体が出しているサインに耳を傾けた方がいいよ。",
+            "focus": "listen"
+          }
         ]
       }
     ],
@@ -7113,6 +7601,18 @@ export const verbs: Verb[] = [
             "focus": "listened to",
             "object": "the new proposal"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I listen to music while cooking.",
+            "ja": "料理中に音楽を聴きます。",
+            "focus": "listen to"
+          },
+          {
+            "en": "Please listen to what I am saying.",
+            "ja": "私が言っていることを聞いてください。",
+            "focus": "listen to"
+          }
         ]
       },
       {
@@ -7132,6 +7632,18 @@ export const verbs: Verb[] = [
             "ja": "個人的な電話をこっそり聞かないでください。",
             "focus": "listen in",
             "object": "on a private call"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I listened in on the online class.",
+            "ja": "オンライン授業に参加して聞きました。",
+            "focus": "listened in"
+          },
+          {
+            "en": "The children tried to listen in on our conversation.",
+            "ja": "子どもたちは私たちの会話をこっそり聞こうとしました。",
+            "focus": "listen in"
           }
         ]
       },
@@ -7153,6 +7665,18 @@ export const verbs: Verb[] = [
             "focus": "listened for",
             "object": "the customer's key point"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Listen for your name at the reception desk.",
+            "ja": "受付で自分の名前が呼ばれるのを聞いていてね。",
+            "focus": "Listen for"
+          },
+          {
+            "en": "I listened for the sound of the delivery truck.",
+            "ja": "配達トラックの音に耳を澄ませました。",
+            "focus": "listened for"
+          }
         ]
       },
       {
@@ -7173,6 +7697,18 @@ export const verbs: Verb[] = [
             "focus": "listened out for",
             "object": "the alarm"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Listen out for the doorbell while I shower.",
+            "ja": "私がシャワーを浴びている間、呼び鈴を聞き逃さないでね。",
+            "focus": "Listen out for"
+          },
+          {
+            "en": "We listened out for the station announcement.",
+            "ja": "駅のアナウンスを聞き逃さないようにしていました。",
+            "focus": "listened out for"
+          }
         ]
       },
       {
@@ -7190,6 +7726,18 @@ export const verbs: Verb[] = [
             "en": "Everyone listened up when the manager explained the change.",
             "ja": "上司が変更点を説明した時、全員がよく聞きました。",
             "focus": "listened up"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Listen up, everyone. Dinner is ready.",
+            "ja": "みんなよく聞いて。夕食ができたよ。",
+            "focus": "Listen up"
+          },
+          {
+            "en": "Listen up because I will only say this once.",
+            "ja": "一度しか言わないから、よく聞いて。",
+            "focus": "Listen up"
           }
         ]
       },
@@ -7210,6 +7758,18 @@ export const verbs: Verb[] = [
             "ja": "私は録音を最後まで聞いて、重要な点を見つけました。",
             "focus": "listened through",
             "object": "the recording"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I listened through the whole album on the train.",
+            "ja": "電車でアルバムを最初から最後まで聴きました。",
+            "focus": "listened through"
+          },
+          {
+            "en": "Listen through the message before you reply.",
+            "ja": "返事をする前にメッセージを最後まで聞いてください。",
+            "focus": "Listen through"
           }
         ]
       }
@@ -7265,6 +7825,18 @@ export const verbs: Verb[] = [
             "focus": "think",
             "object": "the price is acceptable"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I think this movie is really funny.",
+            "ja": "この映画は本当に面白いと思います。",
+            "focus": "think"
+          },
+          {
+            "en": "What do you think of my new glasses?",
+            "ja": "私の新しい眼鏡、どう思う？",
+            "focus": "think"
+          }
         ]
       },
       {
@@ -7293,6 +7865,18 @@ export const verbs: Verb[] = [
             "ja": "私は電話の前に冷静に考える必要があります。",
             "focus": "think",
             "object": "clearly"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I need to think carefully before buying it.",
+            "ja": "それを買う前によく考える必要があります。",
+            "focus": "think"
+          },
+          {
+            "en": "Think carefully about what you want to say.",
+            "ja": "何を言いたいのかよく考えてね。",
+            "focus": "Think"
           }
         ]
       },
@@ -7323,6 +7907,18 @@ export const verbs: Verb[] = [
             "focus": "think",
             "object": "it is necessary"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I think it is possible to finish today.",
+            "ja": "今日中に終えられると思います。",
+            "focus": "think"
+          },
+          {
+            "en": "Do you think it is possible to walk there?",
+            "ja": "そこまで歩いて行けると思う？",
+            "focus": "think"
+          }
         ]
       },
       {
@@ -7351,6 +7947,18 @@ export const verbs: Verb[] = [
             "ja": "あなたは私たちがもう一度会議を設定すべきだと思いますか？",
             "focus": "think",
             "object": "we should schedule"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I think we should leave a little earlier.",
+            "ja": "少し早めに出た方がいいと思います。",
+            "focus": "think"
+          },
+          {
+            "en": "Do you think I should call her?",
+            "ja": "彼女に電話した方がいいと思う？",
+            "focus": "think"
           }
         ]
       },
@@ -7381,6 +7989,18 @@ export const verbs: Verb[] = [
             "focus": "thought",
             "object": "before I accepted"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Think before you post that photo.",
+            "ja": "その写真を投稿する前に考えてね。",
+            "focus": "Think"
+          },
+          {
+            "en": "I always think before I reply when I am upset.",
+            "ja": "腹が立っている時は、返事をする前に必ず考えます。",
+            "focus": "think"
+          }
         ]
       },
       {
@@ -7409,6 +8029,18 @@ export const verbs: Verb[] = [
             "ja": "ディスプレイデザインについて創造的に考えましょう。",
             "focus": "think",
             "object": "creatively"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "My sister and I think differently about money.",
+            "ja": "姉と私はお金について考え方が違います。",
+            "focus": "think"
+          },
+          {
+            "en": "Try to think differently if the usual way does not work.",
+            "ja": "いつもの方法がうまくいかないなら、違う考え方をしてみて。",
+            "focus": "think"
           }
         ]
       },
@@ -7439,6 +8071,18 @@ export const verbs: Verb[] = [
             "focus": "think",
             "object": "so"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Is this the right train? I think so.",
+            "ja": "これは正しい電車かな？そうだと思うよ。",
+            "focus": "think"
+          },
+          {
+            "en": "Do you think he will come? I do not think so.",
+            "ja": "彼は来ると思う？来ないと思う。",
+            "focus": "think"
+          }
         ]
       },
       {
@@ -7467,6 +8111,18 @@ export const verbs: Verb[] = [
             "ja": "あなたは価格より品質の方が重要だと思いますか？",
             "focus": "think",
             "object": "quality is more important"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I think sleep is more important than another episode.",
+            "ja": "もう1話見るより睡眠の方が大事だと思います。",
+            "focus": "think"
+          },
+          {
+            "en": "I think the weather is the main problem today.",
+            "ja": "今日は天気が一番の問題だと思います。",
+            "focus": "think"
           }
         ]
       }
@@ -7497,6 +8153,18 @@ export const verbs: Verb[] = [
             "focus": "think about",
             "object": "the customer's budget"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I am thinking about changing my hairstyle.",
+            "ja": "髪型を変えようか考えています。",
+            "focus": "thinking about"
+          },
+          {
+            "en": "Think about what you want for dinner.",
+            "ja": "夕食に何が食べたいか考えておいて。",
+            "focus": "Think about"
+          }
         ]
       },
       {
@@ -7522,6 +8190,18 @@ export const verbs: Verb[] = [
             "ja": "私たちは簡単な説明を考え出す必要があります。",
             "focus": "think of",
             "object": "a simple explanation"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I cannot think of his name right now.",
+            "ja": "今、彼の名前が思い出せません。",
+            "focus": "think of"
+          },
+          {
+            "en": "Can you think of a good birthday gift?",
+            "ja": "良い誕生日プレゼントを思いつく？",
+            "focus": "think of"
           }
         ]
       },
@@ -7549,6 +8229,18 @@ export const verbs: Verb[] = [
             "focus": "think over",
             "object": "our proposal"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Let me think over the idea tonight.",
+            "ja": "今夜その案をよく考えさせてください。",
+            "focus": "think over"
+          },
+          {
+            "en": "She thought over the offer before answering.",
+            "ja": "彼女は返事をする前にその提案をよく考えました。",
+            "focus": "thought over"
+          }
         ]
       },
       {
@@ -7575,6 +8267,18 @@ export const verbs: Verb[] = [
             "focus": "think through",
             "object": "the risk"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We need to think through the travel plan.",
+            "ja": "旅行の計画を最後までよく考える必要があります。",
+            "focus": "think through"
+          },
+          {
+            "en": "I thought through the problem before calling for help.",
+            "ja": "助けを求める前に、その問題を筋道立てて考えました。",
+            "focus": "thought through"
+          }
         ]
       },
       {
@@ -7598,6 +8302,18 @@ export const verbs: Verb[] = [
             "en": "Let's think ahead and prepare the documents now.",
             "ja": "先を考えて、今のうちに資料を準備しましょう。",
             "focus": "think ahead"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We packed snacks because we thought ahead.",
+            "ja": "先のことを考えて、おやつを持っていきました。",
+            "focus": "thought ahead"
+          },
+          {
+            "en": "Think ahead and charge your phone before the trip.",
+            "ja": "先のことを考えて、旅行前にスマホを充電しておいて。",
+            "focus": "Think ahead"
           }
         ]
       },
@@ -7623,6 +8339,18 @@ export const verbs: Verb[] = [
             "en": "I need to think back before I answer.",
             "ja": "私は回答する前に思い返す必要があります。",
             "focus": "think back"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I often think back to our first trip together.",
+            "ja": "一緒に行った最初の旅行をよく思い返します。",
+            "focus": "think back"
+          },
+          {
+            "en": "She thought back to her childhood.",
+            "ja": "彼女は子どもの頃を思い返しました。",
+            "focus": "thought back"
           }
         ]
       },
@@ -7650,6 +8378,18 @@ export const verbs: Verb[] = [
             "focus": "think up",
             "object": "another option"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We thought up a game for the children.",
+            "ja": "子どもたちのためにゲームを考え出しました。",
+            "focus": "thought up"
+          },
+          {
+            "en": "Can you think up a name for the group?",
+            "ja": "そのグループの名前を考えられる？",
+            "focus": "think up"
+          }
         ]
       },
       {
@@ -7675,6 +8415,18 @@ export const verbs: Verb[] = [
             "ja": "顧客に電話する前に次の対応を考え抜いてください。",
             "focus": "think out",
             "object": "the next step"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I need to think out what I want to say.",
+            "ja": "何を言いたいかよく考えてまとめる必要があります。",
+            "focus": "think out"
+          },
+          {
+            "en": "They thought out a simple way to share the chores.",
+            "ja": "彼らは家事を分担する簡単な方法を考え出しました。",
+            "focus": "thought out"
           }
         ]
       }
@@ -7730,6 +8482,18 @@ export const verbs: Verb[] = [
             "focus": "know",
             "object": "the client wants a quick reply"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I know the store closes at eight.",
+            "ja": "その店が8時に閉まることを知っています。",
+            "focus": "know"
+          },
+          {
+            "en": "Do you know her phone number?",
+            "ja": "彼女の電話番号を知ってる？",
+            "focus": "know"
+          }
         ]
       },
       {
@@ -7758,6 +8522,18 @@ export const verbs: Verb[] = [
             "ja": "私たちはその違いの説明方法が分かっています。",
             "focus": "know",
             "object": "how to explain the difference"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I know how to make this soup.",
+            "ja": "このスープの作り方を知っています。",
+            "focus": "know"
+          },
+          {
+            "en": "Do you know how to connect the speaker?",
+            "ja": "スピーカーのつなぎ方を知ってる？",
+            "focus": "know"
           }
         ]
       },
@@ -7788,6 +8564,18 @@ export const verbs: Verb[] = [
             "focus": "know",
             "object": "what to prepare"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I do not know what to wear tonight.",
+            "ja": "今夜何を着ればいいか分かりません。",
+            "focus": "know"
+          },
+          {
+            "en": "She knew what to do when the power went out.",
+            "ja": "停電した時、彼女は何をすべきか分かっていました。",
+            "focus": "knew"
+          }
         ]
       },
       {
@@ -7816,6 +8604,18 @@ export const verbs: Verb[] = [
             "ja": "あなたはそれを説明できるくらい、その手順をよく知っていますか？",
             "focus": "know",
             "object": "the process"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I know my neighbors pretty well.",
+            "ja": "近所の人たちをかなりよく知っています。",
+            "focus": "know"
+          },
+          {
+            "en": "He knows his children's favorite foods.",
+            "ja": "彼は子どもたちの好物をよく知っています。",
+            "focus": "knows"
           }
         ]
       },
@@ -7846,6 +8646,18 @@ export const verbs: Verb[] = [
             "focus": "know",
             "object": "that the client approved it"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I know that you are busy today.",
+            "ja": "今日は忙しいことを知っています。",
+            "focus": "know"
+          },
+          {
+            "en": "We knew that the road would be crowded.",
+            "ja": "その道が混むと分かっていました。",
+            "focus": "knew"
+          }
         ]
       },
       {
@@ -7874,6 +8686,18 @@ export const verbs: Verb[] = [
             "ja": "確認後にあなたへ知らせます。",
             "focus": "know",
             "object": "after I confirm it"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Let me know when you get home.",
+            "ja": "家に着いたら知らせてね。",
+            "focus": "know"
+          },
+          {
+            "en": "Please let me know if you need a ride.",
+            "ja": "車で送ってほしかったら知らせてください。",
+            "focus": "know"
           }
         ]
       },
@@ -7904,6 +8728,18 @@ export const verbs: Verb[] = [
             "focus": "know",
             "object": "the details"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I know the answer to this question.",
+            "ja": "この質問の答えが分かります。",
+            "focus": "know"
+          },
+          {
+            "en": "Does anyone know the answer?",
+            "ja": "誰か答えが分かる？",
+            "focus": "know"
+          }
         ]
       },
       {
@@ -7932,6 +8768,18 @@ export const verbs: Verb[] = [
             "ja": "あなたはこれを確認できる人を誰か知っていますか？",
             "focus": "know",
             "object": "anyone"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I have known Aya since high school.",
+            "ja": "アヤとは高校時代からの知り合いです。",
+            "focus": "known"
+          },
+          {
+            "en": "Do you know the man standing by the door?",
+            "ja": "ドアのそばに立っている男性を知ってる？",
+            "focus": "know"
           }
         ]
       }
@@ -7962,6 +8810,18 @@ export const verbs: Verb[] = [
             "focus": "know about",
             "object": "the client's situation"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Do you know about the festival this weekend?",
+            "ja": "今週末のお祭りについて知ってる？",
+            "focus": "know about"
+          },
+          {
+            "en": "She knows about many local plants.",
+            "ja": "彼女は地域の植物についてよく知っています。",
+            "focus": "knows about"
+          }
         ]
       },
       {
@@ -7987,6 +8847,18 @@ export const verbs: Verb[] = [
             "ja": "私たちは考えられるリスクを1つ把握しています。",
             "focus": "know of",
             "object": "one possible risk"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I know of a good restaurant near the station.",
+            "ja": "駅の近くに良いレストランがあるのを知っています。",
+            "focus": "know of"
+          },
+          {
+            "en": "Do you know of anyone who can fix bikes?",
+            "ja": "自転車を直せる人を誰か知ってる？",
+            "focus": "know of"
           }
         ]
       },
@@ -8014,6 +8886,18 @@ export const verbs: Verb[] = [
             "focus": "know from",
             "object": "the label"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I know from experience that this road gets busy.",
+            "ja": "経験から、この道が混むことを知っています。",
+            "focus": "know from"
+          },
+          {
+            "en": "You can know from his face that he is tired.",
+            "ja": "彼の顔を見れば疲れていると分かります。",
+            "focus": "know from"
+          }
         ]
       },
       {
@@ -8040,13 +8924,25 @@ export const verbs: Verb[] = [
             "focus": "knew by",
             "object": "the company name"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I know by the opening notes that it is that song.",
+            "ja": "最初の音を聞けば、その曲だと分かります。",
+            "focus": "know by"
+          },
+          {
+            "en": "She knows by their voices which child is calling.",
+            "ja": "声を聞けば、どの子が呼んでいるか分かります。",
+            "focus": "knows by"
+          }
         ]
       },
       {
-        "phrase": "know as",
+        "phrase": "be known as",
         "ja": "〜として知られている",
         "image": "名前や役割として周りに知られているイメージ。",
-        "pattern": "KNOW AS + name / role",
+        "pattern": "BE KNOWN AS + 名詞",
         "examples": [
           {
             "en": "This product is known as a durable option.",
@@ -8065,6 +8961,18 @@ export const verbs: Verb[] = [
             "ja": "そのエリアはにぎやかな商業地区として知られています。",
             "focus": "known as",
             "object": "a busy shopping district"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "This area is known as a good place for families.",
+            "ja": "この地域は家族に住みやすい場所として知られています。",
+            "focus": "is known as"
+          },
+          {
+            "en": "He is known as the best cook in our family.",
+            "ja": "彼は家族で一番料理が上手な人として知られています。",
+            "focus": "is known as"
           }
         ]
       }
@@ -8120,6 +9028,18 @@ export const verbs: Verb[] = [
             "focus": "feel",
             "object": "confident"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I feel comfortable talking to her.",
+            "ja": "彼女には安心して話せます。",
+            "focus": "feel"
+          },
+          {
+            "en": "Do you feel comfortable in these shoes?",
+            "ja": "この靴は履いていて楽？",
+            "focus": "feel"
+          }
         ]
       },
       {
@@ -8148,6 +9068,18 @@ export const verbs: Verb[] = [
             "ja": "チームはその締切について少し懸念を感じています。",
             "focus": "feels",
             "object": "some concern"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I can feel the difference after changing pillows.",
+            "ja": "枕を替えた後、違いを感じます。",
+            "focus": "feel"
+          },
+          {
+            "en": "Can you feel the cold air coming in?",
+            "ja": "冷たい空気が入ってくるのを感じる？",
+            "focus": "feel"
           }
         ]
       },
@@ -8178,6 +9110,18 @@ export const verbs: Verb[] = [
             "focus": "feel",
             "object": "the client understood our point"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I feel it is necessary to apologize.",
+            "ja": "謝る必要があると感じています。",
+            "focus": "feel"
+          },
+          {
+            "en": "She felt it was necessary to call her parents.",
+            "ja": "彼女は両親に電話する必要があると感じました。",
+            "focus": "felt"
+          }
         ]
       },
       {
@@ -8206,6 +9150,18 @@ export const verbs: Verb[] = [
             "ja": "会議では遠慮なくあなたの意見を共有してください。",
             "focus": "Feel",
             "object": "free to share your opinion"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Feel free to use the kitchen.",
+            "ja": "遠慮なくキッチンを使ってください。",
+            "focus": "Feel"
+          },
+          {
+            "en": "Please feel free to ask me anything.",
+            "ja": "遠慮なく何でも聞いてください。",
+            "focus": "feel"
           }
         ]
       },
@@ -8236,6 +9192,18 @@ export const verbs: Verb[] = [
             "focus": "feel",
             "object": "ready"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I feel unsure about driving in the snow.",
+            "ja": "雪道を運転するのは不安です。",
+            "focus": "feel"
+          },
+          {
+            "en": "She felt unsure about going alone.",
+            "ja": "彼女は一人で行くことに不安を感じました。",
+            "focus": "felt"
+          }
         ]
       },
       {
@@ -8264,6 +9232,18 @@ export const verbs: Verb[] = [
             "ja": "あなたは今、その計画について前より安心していますか？",
             "focus": "feel",
             "object": "better"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I feel better after taking a short walk.",
+            "ja": "少し歩いたら気分がよくなりました。",
+            "focus": "feel"
+          },
+          {
+            "en": "Do you feel better today?",
+            "ja": "今日は体調がよくなった？",
+            "focus": "feel"
           }
         ]
       },
@@ -8294,6 +9274,18 @@ export const verbs: Verb[] = [
             "focus": "feel",
             "object": "clearly"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I feel strongly that children need more sleep.",
+            "ja": "子どもにはもっと睡眠が必要だと強く感じています。",
+            "focus": "feel"
+          },
+          {
+            "en": "She feels strongly about protecting animals.",
+            "ja": "彼女は動物を守ることについて強い思いがあります。",
+            "focus": "feels"
+          }
         ]
       },
       {
@@ -8322,6 +9314,18 @@ export const verbs: Verb[] = [
             "ja": "あなたは今日顧客に最新状況を伝える必要を感じますか？",
             "focus": "feel",
             "object": "the need to update the customer"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I feel the need to clean my room today.",
+            "ja": "今日は部屋を掃除する必要を感じます。",
+            "focus": "feel"
+          },
+          {
+            "en": "He felt the need to take a break.",
+            "ja": "彼は休憩する必要を感じました。",
+            "focus": "felt"
           }
         ]
       }
@@ -8352,6 +9356,18 @@ export const verbs: Verb[] = [
             "focus": "feel like",
             "object": "reviewing the document again"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I feel like eating something sweet.",
+            "ja": "何か甘い物を食べたい気分です。",
+            "focus": "feel like"
+          },
+          {
+            "en": "It feels like spring today.",
+            "ja": "今日は春のように感じます。",
+            "focus": "feels like"
+          }
         ]
       },
       {
@@ -8377,6 +9393,18 @@ export const verbs: Verb[] = [
             "ja": "私たちはその締切に不安を感じています。",
             "focus": "feel about",
             "object": "the deadline"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "How do you feel about moving closer to the station?",
+            "ja": "駅の近くへ引っ越すことをどう思う？",
+            "focus": "feel about"
+          },
+          {
+            "en": "I am not sure how I feel about this color.",
+            "ja": "この色をどう感じるか、まだよく分かりません。",
+            "focus": "feel about"
           }
         ]
       },
@@ -8404,6 +9432,18 @@ export const verbs: Verb[] = [
             "focus": "felt for",
             "object": "the switch"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I really feel for her after what happened.",
+            "ja": "あんなことがあったので、彼女に本当に同情します。",
+            "focus": "feel for"
+          },
+          {
+            "en": "We all felt for him when he lost his dog.",
+            "ja": "犬を亡くした彼にみんな同情しました。",
+            "focus": "felt for"
+          }
         ]
       },
       {
@@ -8429,6 +9469,18 @@ export const verbs: Verb[] = [
             "ja": "新しい条件について仕入先の反応を探ってください。",
             "focus": "feel out",
             "object": "the supplier"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I tried to feel out whether she wanted to come.",
+            "ja": "彼女が来たがっているか探りを入れました。",
+            "focus": "feel out"
+          },
+          {
+            "en": "He felt out the group before suggesting the trip.",
+            "ja": "旅行を提案する前に、彼はみんなの反応を探りました。",
+            "focus": "felt out"
           }
         ]
       },
@@ -8456,6 +9508,18 @@ export const verbs: Verb[] = [
             "focus": "felt up to",
             "object": "presenting the proposal"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I do not feel up to going out tonight.",
+            "ja": "今夜は外出する気力がありません。",
+            "focus": "feel up to"
+          },
+          {
+            "en": "Do you feel up to cooking dinner?",
+            "ja": "夕食を作る元気はある？",
+            "focus": "feel up to"
+          }
         ]
       },
       {
@@ -8481,6 +9545,18 @@ export const verbs: Verb[] = [
             "ja": "部品を動かす前に慎重に手探りで確認してください。",
             "focus": "feel around",
             "object": "carefully"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I felt around for my glasses in the dark.",
+            "ja": "暗闇で眼鏡を手探りで探しました。",
+            "focus": "felt around"
+          },
+          {
+            "en": "She felt around inside her bag for the key.",
+            "ja": "彼女はバッグの中を手探りして鍵を探しました。",
+            "focus": "felt around"
           }
         ]
       }
@@ -8536,6 +9612,18 @@ export const verbs: Verb[] = [
             "focus": "worked",
             "object": "as a project manager"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I work from home on Fridays.",
+            "ja": "金曜日は在宅で働いています。",
+            "focus": "work"
+          },
+          {
+            "en": "My brother works at a small cafe.",
+            "ja": "弟は小さなカフェで働いています。",
+            "focus": "works"
+          }
         ]
       },
       {
@@ -8564,6 +9652,18 @@ export const verbs: Verb[] = [
             "ja": "新しい手順はチームにとってうまく機能しました。",
             "focus": "worked",
             "object": "well"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "This old camera still works.",
+            "ja": "この古いカメラはまだ動きます。",
+            "focus": "works"
+          },
+          {
+            "en": "The remote does not work anymore.",
+            "ja": "そのリモコンはもう動きません。",
+            "focus": "work"
           }
         ]
       },
@@ -8594,6 +9694,18 @@ export const verbs: Verb[] = [
             "focus": "work",
             "object": "for the client"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "This cleaning method works well.",
+            "ja": "この掃除方法はうまくいきます。",
+            "focus": "works"
+          },
+          {
+            "en": "The new schedule works well for our family.",
+            "ja": "新しい予定は家族にとって都合よく機能しています。",
+            "focus": "works"
+          }
         ]
       },
       {
@@ -8622,6 +9734,18 @@ export const verbs: Verb[] = [
             "ja": "昨日、ログインボタンが動きませんでした。",
             "focus": "work",
             "object": "yesterday"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Is the air conditioner working properly?",
+            "ja": "エアコンは正常に動いてる？",
+            "focus": "working"
+          },
+          {
+            "en": "My phone started working properly again.",
+            "ja": "スマホがまた正常に動くようになりました。",
+            "focus": "working"
           }
         ]
       },
@@ -8652,6 +9776,18 @@ export const verbs: Verb[] = [
             "focus": "work",
             "object": "harder"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She works hard to support her family.",
+            "ja": "彼女は家族を支えるために一生懸命働いています。",
+            "focus": "works"
+          },
+          {
+            "en": "I worked hard to finish the puzzle.",
+            "ja": "パズルを完成させるために頑張りました。",
+            "focus": "worked"
+          }
         ]
       },
       {
@@ -8680,6 +9816,18 @@ export const verbs: Verb[] = [
             "ja": "私たちは今週、残業する必要があるかもしれません。",
             "focus": "work",
             "object": "overtime"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I have to work late tonight.",
+            "ja": "今夜は遅くまで働かなければなりません。",
+            "focus": "work"
+          },
+          {
+            "en": "He worked late and missed dinner.",
+            "ja": "彼は遅くまで働いて夕食に間に合いませんでした。",
+            "focus": "worked"
           }
         ]
       }
@@ -8710,6 +9858,18 @@ export const verbs: Verb[] = [
             "focus": "worked on",
             "object": "the customer report"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I am working on a photo album for my parents.",
+            "ja": "両親のために写真アルバムを作っています。",
+            "focus": "working on"
+          },
+          {
+            "en": "We worked on the puzzle after dinner.",
+            "ja": "夕食後にパズルに取り組みました。",
+            "focus": "worked on"
+          }
         ]
       },
       {
@@ -8735,6 +9895,18 @@ export const verbs: Verb[] = [
             "ja": "あなたはスケジュールについて営業と調整できますか？",
             "focus": "work with",
             "object": "sales"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I work with my sister at the weekend market.",
+            "ja": "週末の市場で姉と一緒に働いています。",
+            "focus": "work with"
+          },
+          {
+            "en": "This app works with most smart watches.",
+            "ja": "このアプリはほとんどのスマートウォッチと連携します。",
+            "focus": "works with"
           }
         ]
       },
@@ -8762,6 +9934,18 @@ export const verbs: Verb[] = [
             "focus": "work out",
             "object": "with the customer"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Everything worked out in the end.",
+            "ja": "最終的にはすべてうまくいきました。",
+            "focus": "worked out"
+          },
+          {
+            "en": "I work out three times a week.",
+            "ja": "週に3回運動します。",
+            "focus": "work out"
+          }
         ]
       },
       {
@@ -8787,6 +9971,18 @@ export const verbs: Verb[] = [
             "ja": "彼女は顧客コメントを一つずつ確認しています。",
             "focus": "working through",
             "object": "the customer comments"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We worked through the problem together.",
+            "ja": "その問題を一緒に乗り越えました。",
+            "focus": "worked through"
+          },
+          {
+            "en": "I worked through the instructions step by step.",
+            "ja": "説明書を一つずつ確認しながら進めました。",
+            "focus": "worked through"
           }
         ]
       },
@@ -8814,6 +10010,18 @@ export const verbs: Verb[] = [
             "focus": "work around",
             "object": "this limitation"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We worked around the broken oven and used the grill.",
+            "ja": "壊れたオーブンを避けてグリルを使いました。",
+            "focus": "worked around"
+          },
+          {
+            "en": "I can work around your schedule.",
+            "ja": "あなたの予定に合わせて調整できます。",
+            "focus": "work around"
+          }
         ]
       },
       {
@@ -8840,13 +10048,25 @@ export const verbs: Verb[] = [
             "focus": "work toward",
             "object": "a clear decision"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I am working toward running five kilometers.",
+            "ja": "5キロ走れるようになることを目指しています。",
+            "focus": "working toward"
+          },
+          {
+            "en": "We are working toward saving enough for a trip.",
+            "ja": "旅行に必要なお金を貯めることを目指しています。",
+            "focus": "working toward"
+          }
         ]
       },
       {
-        "phrase": "work into",
-        "ja": "〜に組み込む",
+        "phrase": "work in",
+        "ja": "予定などに組み込む",
         "image": "内容を別のものの中へ入れてなじませるイメージ。",
-        "pattern": "WORK INTO + plan / document",
+        "pattern": "WORK IN + 名詞",
         "examples": [
           {
             "en": "Please work the new condition into the proposal.",
@@ -8865,6 +10085,18 @@ export const verbs: Verb[] = [
             "ja": "この点を会議の議題に組み込めますか？",
             "focus": "work into",
             "object": "the meeting agenda"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Can we work in a short break?",
+            "ja": "短い休憩を予定に入れられる？",
+            "focus": "work in"
+          },
+          {
+            "en": "I worked in a walk before dinner.",
+            "ja": "夕食前に散歩の時間を入れました。",
+            "focus": "worked in"
           }
         ]
       },
@@ -8892,6 +10124,18 @@ export const verbs: Verb[] = [
             "focus": "work up",
             "object": "a rough estimate"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I worked up the courage to call her.",
+            "ja": "彼女に電話する勇気を振り絞りました。",
+            "focus": "worked up"
+          },
+          {
+            "en": "We worked up an appetite during the hike.",
+            "ja": "ハイキングでお腹がすきました。",
+            "focus": "worked up"
+          }
         ]
       },
       {
@@ -8918,6 +10162,18 @@ export const verbs: Verb[] = [
             "focus": "work off",
             "object": "the remaining tasks"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I went for a walk to work off lunch.",
+            "ja": "昼食で食べた分を消費するために散歩しました。",
+            "focus": "work off"
+          },
+          {
+            "en": "He worked off his stress at the gym.",
+            "ja": "彼はジムで運動してストレスを発散しました。",
+            "focus": "worked off"
+          }
         ]
       },
       {
@@ -8943,6 +10199,18 @@ export const verbs: Verb[] = [
             "ja": "顧客の締切から逆算してください。",
             "focus": "work back from",
             "object": "the customer's deadline"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We worked back from the train time to decide when to leave.",
+            "ja": "電車の時間から逆算して出発時刻を決めました。",
+            "focus": "worked back from"
+          },
+          {
+            "en": "I worked back from the deadline and made a simple plan.",
+            "ja": "締め切りから逆算して簡単な計画を立てました。",
+            "focus": "worked back from"
           }
         ]
       }
@@ -8998,6 +10266,18 @@ export const verbs: Verb[] = [
             "focus": "use",
             "object": "this tool"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Can I use your charger?",
+            "ja": "充電器を使ってもいい？",
+            "focus": "use"
+          },
+          {
+            "en": "I use this knife for cutting bread.",
+            "ja": "パンを切るのにこのナイフを使います。",
+            "focus": "use"
+          }
         ]
       },
       {
@@ -9026,6 +10306,18 @@ export const verbs: Verb[] = [
             "ja": "私は資料を改善するために顧客のフィードバックを使います。",
             "focus": "use",
             "object": "the customer's feedback"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I used the map on my phone to find the cafe.",
+            "ja": "カフェを探すためにスマホの地図を使いました。",
+            "focus": "used"
+          },
+          {
+            "en": "We use reviews to choose a hotel.",
+            "ja": "ホテルを選ぶ時に口コミを活用します。",
+            "focus": "use"
           }
         ]
       },
@@ -9056,6 +10348,18 @@ export const verbs: Verb[] = [
             "focus": "use",
             "object": "our time"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I used my lunch break to buy groceries.",
+            "ja": "昼休みを使って食料品を買いました。",
+            "focus": "used"
+          },
+          {
+            "en": "Use your free time to get some rest.",
+            "ja": "空いた時間を使って少し休んでね。",
+            "focus": "Use"
+          }
         ]
       },
       {
@@ -9084,6 +10388,18 @@ export const verbs: Verb[] = [
             "ja": "私たちはサンプルに材料を使いすぎました。",
             "focus": "used",
             "object": "too much material"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "This heater uses a lot of electricity.",
+            "ja": "このヒーターは電気をたくさん使います。",
+            "focus": "uses"
+          },
+          {
+            "en": "We try not to use too much water.",
+            "ja": "水を使いすぎないようにしています。",
+            "focus": "use"
           }
         ]
       },
@@ -9114,6 +10430,18 @@ export const verbs: Verb[] = [
             "focus": "use",
             "object": "this file"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I used a spoon to open the lid.",
+            "ja": "ふたを開けるためにスプーンを使いました。",
+            "focus": "used"
+          },
+          {
+            "en": "She uses an app to track her steps.",
+            "ja": "彼女は歩数を記録するためにアプリを使っています。",
+            "focus": "uses"
+          }
         ]
       },
       {
@@ -9142,6 +10470,18 @@ export const verbs: Verb[] = [
             "ja": "私たちは正しい品番を使うべきです。",
             "focus": "use",
             "object": "the correct product code"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Use the latest version of the app.",
+            "ja": "アプリの最新版を使ってください。",
+            "focus": "Use"
+          },
+          {
+            "en": "I used the newest photo for my profile.",
+            "ja": "プロフィールには一番新しい写真を使いました。",
+            "focus": "used"
           }
         ]
       }
@@ -9172,6 +10512,18 @@ export const verbs: Verb[] = [
             "focus": "used up",
             "object": "more time"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We used up all the milk this morning.",
+            "ja": "今朝、牛乳を全部使い切りました。",
+            "focus": "used up"
+          },
+          {
+            "en": "Do not use up all the hot water.",
+            "ja": "お湯を全部使い切らないでね。",
+            "focus": "use up"
+          }
         ]
       },
       {
@@ -9197,6 +10549,18 @@ export const verbs: Verb[] = [
             "ja": "彼らは色確認のためにサンプルを使いました。",
             "focus": "used for",
             "object": "color checking"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "This pan is used for frying eggs.",
+            "ja": "このフライパンは卵を焼くために使います。",
+            "focus": "used for"
+          },
+          {
+            "en": "What is this button used for?",
+            "ja": "このボタンは何に使うの？",
+            "focus": "used for"
           }
         ]
       },
@@ -9224,6 +10588,18 @@ export const verbs: Verb[] = [
             "focus": "use as",
             "object": "a rough guide"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "This box is used as a small table.",
+            "ja": "この箱は小さなテーブルとして使っています。",
+            "focus": "used as"
+          },
+          {
+            "en": "The spare room is used as an office.",
+            "ja": "空いている部屋は仕事部屋として使われています。",
+            "focus": "used as"
+          }
         ]
       },
       {
@@ -9250,6 +10626,18 @@ export const verbs: Verb[] = [
             "focus": "use with",
             "object": "the existing system"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "This sauce is best used with grilled meat.",
+            "ja": "このソースは焼いた肉と一緒に使うのが一番です。",
+            "focus": "used with"
+          },
+          {
+            "en": "Can this charger be used with my phone?",
+            "ja": "この充電器は私のスマホと一緒に使えますか？",
+            "focus": "used with"
+          }
         ]
       },
       {
@@ -9275,6 +10663,18 @@ export const verbs: Verb[] = [
             "ja": "この仕上げを前面パネルに使えますか？",
             "focus": "use on",
             "object": "the front panel"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "This cream can be used on dry skin.",
+            "ja": "このクリームは乾燥した肌に使えます。",
+            "focus": "used on"
+          },
+          {
+            "en": "This cleaner should not be used on wood.",
+            "ja": "この洗剤を木材には使わないでください。",
+            "focus": "used on"
           }
         ]
       }
@@ -36460,6 +37860,7 @@ function attachPremiumDailyExamples() {
   for (const verb of verbs) {
     if (!premiumVerbs.has(verb.id)) continue;
     for (const meaning of verb.meanings) {
+      if (meaning.dailyExamples && meaning.dailyExamples.length > 0) continue;
       meaning.dailyExamples = dailyMeaningExamples[verb.id]?.[meaning.id] ?? fallbackDailyExamples(verb, meaning.title, verb.word.toLowerCase());
     }
     for (const phrase of [...verb.collocations, ...verb.phrasalVerbs]) {

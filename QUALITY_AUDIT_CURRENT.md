@@ -31,3 +31,11 @@ Ver.164
 - `npm run build`: passed
 - Static pages: 28 / 28
 - ZIP re-extraction build: required before release
+
+### Ver.166 Premium batch
+
+- MOVE / TURN / BRING / HOLD / SET / CHANGE / OPEN / CLOSE / LET / BUILD
+- 270 Premium daily examples
+- Premium progress: 40 / 124 verbs
+- Every retained usage block contains two examples
+- Duplicate and low-frequency expressions were consolidated or removed

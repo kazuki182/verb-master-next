@@ -23825,28 +23825,32 @@ export const verbs: Verb[] = [
     "syllable": "main-tain",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "良い状態を保つ",
-    "coreDetail": "MAINTAINは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「維持する・保つ」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "良い状態を保ち続ける",
+    "coreDetail": "MAINTAINは、品質・関係・設備・状態・立場などを、崩さず継続して保つ動詞です。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 維持する・保つ",
-        "pattern": "maintain quality",
+        "id": "maintain-quality",
+        "title": "① 品質・水準を維持する",
+        "pattern": "MAINTAIN + quality/level",
         "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "品質・関係・状態を崩さず保つ",
-        "point": "maintain は quality, relationship, level, system とよく使います。",
+        "image": "一定の品質や水準を落とさず保つ",
+        "point": "keepよりやや正式で、品質管理や業務基準に自然です。",
         "examples": [
           {
             "en": "We need to maintain product quality.",
             "ja": "私たちは製品品質を維持する必要があります。",
-            "focus": "maintain quality",
-            "jaFocus": "維持する・保つ",
-            "sentencePattern": "S + V + O",
+            "focus": "maintain",
+            "jaFocus": "私たちは製品品質を維持する必要があります。",
+            "object": "product quality",
             "grammarParts": [
               {
                 "label": "S",
-                "text": "主語"
+                "text": "We"
+              },
+              {
+                "label": "M",
+                "text": "need to"
               },
               {
                 "label": "V",
@@ -23854,44 +23858,158 @@ export const verbs: Verb[] = [
               },
               {
                 "label": "O",
-                "text": "maintain quality"
+                "text": "product quality"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
-            "en": "It is important to maintain a good relationship with clients.",
-            "ja": "顧客と良い関係を維持することは重要です。",
-            "focus": "maintain a relationship",
-            "jaFocus": "関係を維持する"
+            "en": "The team maintained a high service level.",
+            "ja": "チームは高いサービス水準を維持しました。",
+            "focus": "maintained",
+            "jaFocus": "チームは高いサービス水準を維持しました。",
+            "object": "a high service level"
+          },
+          {
+            "en": "Please maintain the same brightness across all panels.",
+            "ja": "すべてのパネルで同じ明るさを維持してください。",
+            "focus": "maintain",
+            "jaFocus": "すべてのパネルで同じ明るさを維持してください。",
+            "object": "the same brightness"
           }
         ],
         "dailyExamples": [
           {
-            "en": "It is important to maintain a good relationship with clients.",
-            "ja": "顧客と良い関係を維持することは重要です。",
-            "focus": "maintain a relationship",
-            "jaFocus": "関係を維持する"
+            "en": "I try to maintain a regular sleep schedule.",
+            "ja": "私は規則正しい睡眠時間を保つようにしています。",
+            "focus": "maintain",
+            "jaFocus": "私は規則正しい睡眠時間を保つようにしています。"
+          },
+          {
+            "en": "She maintains a healthy balance between work and family.",
+            "ja": "彼女は仕事と家庭の健全なバランスを保っています。",
+            "focus": "maintains",
+            "jaFocus": "彼女は仕事と家庭の健全なバランスを保っています。"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "maintain a relationship",
-        "ja": "関係を維持する",
-        "image": "品質・関係・状態を崩さず保つ",
-        "pattern": "maintain a relationship",
+        "id": "maintain-relationship",
+        "title": "② 関係・信頼を保つ",
+        "pattern": "MAINTAIN + relationship/trust",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "築いた関係を継続して良好に保つ",
+        "point": "good relationship, trust, contactとよく使います。",
         "examples": [
           {
-            "en": "It is important to maintain a good relationship with clients.",
-            "ja": "顧客と良い関係を維持することは重要です。",
-            "focus": "maintain a relationship",
-            "jaFocus": "関係を維持する"
+            "en": "We maintain a good relationship with the client.",
+            "ja": "私たちは顧客と良好な関係を維持しています。",
+            "focus": "maintain",
+            "jaFocus": "私たちは顧客と良好な関係を維持しています。"
+          },
+          {
+            "en": "Regular visits help us maintain customer trust.",
+            "ja": "定期訪問は顧客の信頼を保つのに役立ちます。",
+            "focus": "maintain",
+            "jaFocus": "定期訪問は顧客の信頼を保つのに役立ちます。"
+          },
+          {
+            "en": "She maintained close contact with the supplier.",
+            "ja": "彼女は仕入先との密な連絡を保ちました。",
+            "focus": "maintained",
+            "jaFocus": "彼女は仕入先との密な連絡を保ちました。"
+          }
+        ]
+      },
+      {
+        "id": "maintain-equipment",
+        "title": "③ 機器・設備を保守する",
+        "pattern": "MAINTAIN + equipment/system",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "正常に使えるよう点検・整備する",
+        "point": "設備の維持管理・保守にも使います。",
+        "examples": [
+          {
+            "en": "The factory maintains the equipment every month.",
+            "ja": "工場は毎月その設備を保守しています。",
+            "focus": "maintains",
+            "jaFocus": "工場は毎月その設備を保守しています。"
+          },
+          {
+            "en": "We hired a specialist to maintain the control system.",
+            "ja": "私たちは制御システムを保守する専門家を雇いました。",
+            "focus": "maintain",
+            "jaFocus": "私たちは制御システムを保守する専門家を雇いました。"
+          },
+          {
+            "en": "Proper cleaning helps maintain the product performance.",
+            "ja": "適切な清掃は製品性能の維持に役立ちます。",
+            "focus": "maintain",
+            "jaFocus": "適切な清掃は製品性能の維持に役立ちます。"
+          }
+        ]
+      },
+      {
+        "id": "maintain-state",
+        "title": "④ 状態・バランスを保つ",
+        "pattern": "MAINTAIN + condition/balance",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "望ましい状態を変えずに保つ",
+        "point": "temperature, pressure, balanceなどと使います。",
+        "examples": [
+          {
+            "en": "The controller maintains a stable temperature.",
+            "ja": "そのコントローラーは安定した温度を保ちます。",
+            "focus": "maintains",
+            "jaFocus": "そのコントローラーは安定した温度を保ちます。"
+          },
+          {
+            "en": "We must maintain enough stock for urgent orders.",
+            "ja": "私たちは緊急注文に備えて十分な在庫を保つ必要があります。",
+            "focus": "maintain",
+            "jaFocus": "私たちは緊急注文に備えて十分な在庫を保つ必要があります。"
+          },
+          {
+            "en": "The design maintains a balance between cost and quality.",
+            "ja": "その設計はコストと品質のバランスを保っています。",
+            "focus": "maintains",
+            "jaFocus": "その設計はコストと品質のバランスを保っています。"
+          }
+        ]
+      },
+      {
+        "id": "maintain-position",
+        "title": "⑤ 主張・立場を維持する",
+        "pattern": "MAINTAIN + position / MAINTAIN that",
+        "transitivity": "他動詞",
+        "structure": "S + V + O / that節",
+        "image": "意見や立場を変えず主張し続ける",
+        "point": "maintain thatで「〜だと主張し続ける」です。",
+        "examples": [
+          {
+            "en": "The company maintained its original position.",
+            "ja": "会社は当初の立場を維持しました。",
+            "focus": "maintained",
+            "jaFocus": "会社は当初の立場を維持しました。"
+          },
+          {
+            "en": "He maintains that the calculation is correct.",
+            "ja": "彼はその計算が正しいと主張し続けています。",
+            "focus": "maintains",
+            "jaFocus": "彼はその計算が正しいと主張し続けています。"
+          },
+          {
+            "en": "We maintained our policy despite the pressure.",
+            "ja": "私たちは圧力があっても方針を維持しました。",
+            "focus": "maintained",
+            "jaFocus": "私たちは圧力があっても方針を維持しました。"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -23903,28 +24021,28 @@ export const verbs: Verb[] = [
     "syllable": "men-tion",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "話や文章の中で少し触れる",
-    "coreDetail": "MENTIONは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「言及する・触れる」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "話や文章の中で短く触れる",
+    "coreDetail": "MENTIONは、詳しく説明するのではなく、話題・事実・名前などに短く触れる動詞です。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 言及する・触れる",
-        "pattern": "mention the issue",
+        "id": "mention-noun",
+        "title": "① 話題・情報に触れる",
+        "pattern": "MENTION + 名詞",
         "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "必要な内容を会話やメールの中で取り上げる",
-        "point": "mention は issue, detail, name, point と相性が良いです。",
+        "image": "会話やメールで必要な点を短く取り上げる",
+        "point": "mentionの直後に話題を置きます。",
         "examples": [
           {
             "en": "Please mention the delivery date in your email.",
             "ja": "メールの中で納期に触れてください。",
-            "focus": "mention the delivery date",
-            "jaFocus": "言及する・触れる",
-            "sentencePattern": "S + V + O",
+            "focus": "mention",
+            "jaFocus": "メールの中で納期に触れてください。",
+            "object": "the delivery date",
             "grammarParts": [
               {
-                "label": "S",
-                "text": "主語"
+                "label": "M",
+                "text": "Please"
               },
               {
                 "label": "V",
@@ -23932,44 +24050,146 @@ export const verbs: Verb[] = [
               },
               {
                 "label": "O",
-                "text": "mention the delivery date"
+                "text": "the delivery date"
+              },
+              {
+                "label": "M",
+                "text": "in your email"
               }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            ]
           },
           {
             "en": "He mentioned an important point during the meeting.",
             "ja": "彼は会議中に重要な点に触れました。",
-            "focus": "mention a point",
-            "jaFocus": "ポイントに触れる"
-          }
-        ],
-        "dailyExamples": [
+            "focus": "mentioned",
+            "jaFocus": "彼は会議中に重要な点に触れました。"
+          },
           {
-            "en": "He mentioned an important point during the meeting.",
-            "ja": "彼は会議中に重要な点に触れました。",
-            "focus": "mention a point",
-            "jaFocus": "ポイントに触れる"
+            "en": "The customer mentioned a problem with the connector.",
+            "ja": "顧客はコネクターの問題に触れました。",
+            "focus": "mentioned",
+            "jaFocus": "顧客はコネクターの問題に触れました。"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "mention a point",
-        "ja": "ポイントに触れる",
-        "image": "必要な内容を会話やメールの中で取り上げる",
-        "pattern": "mention a point",
+        "id": "mention-that",
+        "title": "② mention that + 文",
+        "pattern": "MENTION + that節",
+        "transitivity": "他動詞",
+        "structure": "S + V + that節",
+        "image": "事実や予定を文の形で短く伝える",
+        "point": "thatは会話では省略されることもあります。",
         "examples": [
           {
-            "en": "He mentioned an important point during the meeting.",
-            "ja": "彼は会議中に重要な点に触れました。",
-            "focus": "mention a point",
-            "jaFocus": "ポイントに触れる"
+            "en": "She mentioned that the delivery might be delayed.",
+            "ja": "彼女は納品が遅れる可能性に触れました。",
+            "focus": "mentioned",
+            "jaFocus": "彼女は納品が遅れる可能性に触れました。"
+          },
+          {
+            "en": "I should mention that the price does not include tax.",
+            "ja": "価格に税が含まれていないことにも触れておくべきです。",
+            "focus": "mention",
+            "jaFocus": "価格に税が含まれていないことにも触れておくべきです。"
+          },
+          {
+            "en": "They mentioned that a new model was coming soon.",
+            "ja": "彼らは新モデルが間もなく出ることに触れました。",
+            "focus": "mentioned",
+            "jaFocus": "彼らは新モデルが間もなく出ることに触れました。"
+          }
+        ]
+      },
+      {
+        "id": "mention-doing",
+        "title": "③ mention doing",
+        "pattern": "MENTION + doing",
+        "transitivity": "他動詞",
+        "structure": "S + V + 動名詞",
+        "image": "経験や行動に触れる",
+        "point": "mention to doではなくmention doingを使います。",
+        "examples": [
+          {
+            "en": "He mentioned meeting the client before.",
+            "ja": "彼は以前その顧客に会ったことに触れました。",
+            "focus": "mentioned",
+            "jaFocus": "彼は以前その顧客に会ったことに触れました。"
+          },
+          {
+            "en": "She mentioned using a different supplier.",
+            "ja": "彼女は別の仕入先を使うことに触れました。",
+            "focus": "mentioned",
+            "jaFocus": "彼女は別の仕入先を使うことに触れました。"
+          },
+          {
+            "en": "I remember mentioning this issue last week.",
+            "ja": "私は先週この問題に触れたことを覚えています。",
+            "focus": "mentioning",
+            "jaFocus": "私は先週この問題に触れたことを覚えています。"
+          }
+        ]
+      },
+      {
+        "id": "mention-to",
+        "title": "④ 人に内容を伝える",
+        "pattern": "MENTION + 内容 + to + 人",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + to 人",
+        "image": "内容を先に置き、聞き手をtoで示す",
+        "point": "人をmentionの直後に置かない点に注意します。",
+        "examples": [
+          {
+            "en": "I mentioned the schedule change to my manager.",
+            "ja": "私は上司にスケジュール変更のことを伝えました。",
+            "focus": "mentioned",
+            "jaFocus": "私は上司にスケジュール変更のことを伝えました。"
+          },
+          {
+            "en": "Did you mention the discount to the customer?",
+            "ja": "顧客に値引きのことを伝えましたか。",
+            "focus": "mention",
+            "jaFocus": "顧客に値引きのことを伝えましたか。"
+          },
+          {
+            "en": "Please mention this request to the design team.",
+            "ja": "この依頼について設計チームに伝えてください。",
+            "focus": "mention",
+            "jaFocus": "この依頼について設計チームに伝えてください。"
+          }
+        ]
+      },
+      {
+        "id": "mention-negative",
+        "title": "⑤ 触れない・言い忘れる",
+        "pattern": "NOT MENTION / FAIL TO MENTION",
+        "transitivity": "他動詞",
+        "structure": "S + 助動詞 + V + O",
+        "image": "重要な内容に触れない、または言い忘れる",
+        "point": "fail to mentionは「言い忘れる」です。",
+        "examples": [
+          {
+            "en": "The email did not mention the deadline.",
+            "ja": "そのメールには期限について書かれていませんでした。",
+            "focus": "mention",
+            "jaFocus": "そのメールには期限について書かれていませんでした。"
+          },
+          {
+            "en": "I forgot to mention the additional cost.",
+            "ja": "追加費用のことを言い忘れました。",
+            "focus": "mention",
+            "jaFocus": "追加費用のことを言い忘れました。"
+          },
+          {
+            "en": "He failed to mention that the specification had changed.",
+            "ja": "彼は仕様が変わったことを伝え忘れました。",
+            "focus": "mention",
+            "jaFocus": "彼は仕様が変わったことを伝え忘れました。"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -23981,73 +24201,175 @@ export const verbs: Verb[] = [
     "syllable": "pro-tect",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "危険や損失から守る",
-    "coreDetail": "PROTECTは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「守る・保護する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "危険・損失・損傷から守る",
+    "coreDetail": "PROTECTは、人・情報・製品などを危険や損失から守り、安全な状態に保つ動詞です。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 守る・保護する",
-        "pattern": "protect data",
+        "id": "protect-people",
+        "title": "① 人・安全を守る",
+        "pattern": "PROTECT + 人",
         "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "情報・人・品質をリスクから守る",
-        "point": "protect は data, privacy, product, people と使えます。仕事でも情報管理でよく出ます。",
+        "image": "危険から人を守る",
+        "point": "人や作業者の安全を守る場面で使います。",
+        "examples": [
+          {
+            "en": "Safety equipment protects workers on the site.",
+            "ja": "安全装備は現場の作業員を守ります。",
+            "focus": "protects",
+            "jaFocus": "安全装備は現場の作業員を守ります。",
+            "object": "workers",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "Safety equipment"
+              },
+              {
+                "label": "V",
+                "text": "protects"
+              },
+              {
+                "label": "O",
+                "text": "workers"
+              },
+              {
+                "label": "M",
+                "text": "on the site"
+              }
+            ]
+          },
+          {
+            "en": "We must protect visitors during the installation.",
+            "ja": "私たちは施工中、来訪者の安全を守らなければなりません。",
+            "focus": "protect",
+            "jaFocus": "私たちは施工中、来訪者の安全を守らなければなりません。"
+          },
+          {
+            "en": "The guardrail protected him from falling.",
+            "ja": "その手すりは彼が転落するのを防ぎました。",
+            "focus": "protected",
+            "jaFocus": "その手すりは彼が転落するのを防ぎました。"
+          }
+        ]
+      },
+      {
+        "id": "protect-data",
+        "title": "② 情報・プライバシーを守る",
+        "pattern": "PROTECT + data/privacy",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "情報を不正利用や漏えいから守る",
+        "point": "data, privacy, accountとよく使います。",
         "examples": [
           {
             "en": "We must protect customer data carefully.",
             "ja": "私たちは顧客データを慎重に守らなければなりません。",
-            "focus": "protect data",
-            "jaFocus": "守る・保護する",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "主語"
-              },
-              {
-                "label": "V",
-                "text": "protect"
-              },
-              {
-                "label": "O",
-                "text": "protect data"
-              }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            "focus": "protect",
+            "jaFocus": "私たちは顧客データを慎重に守らなければなりません。"
           },
           {
             "en": "This rule protects user privacy.",
-            "ja": "このルールはユーザーのプライバシーを守ります。",
-            "focus": "protect privacy",
-            "jaFocus": "プライバシーを守る"
-          }
-        ],
-        "dailyExamples": [
+            "ja": "このルールは利用者のプライバシーを守ります。",
+            "focus": "protects",
+            "jaFocus": "このルールは利用者のプライバシーを守ります。"
+          },
           {
-            "en": "This rule protects user privacy.",
-            "ja": "このルールはユーザーのプライバシーを守ります。",
-            "focus": "protect privacy",
-            "jaFocus": "プライバシーを守る"
+            "en": "Strong passwords protect company accounts.",
+            "ja": "強力なパスワードは会社のアカウントを守ります。",
+            "focus": "protect",
+            "jaFocus": "強力なパスワードは会社のアカウントを守ります。"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "protect privacy",
-        "ja": "プライバシーを守る",
-        "image": "情報・人・品質をリスクから守る",
-        "pattern": "protect privacy",
+        "id": "protect-from",
+        "title": "③ protect A from B",
+        "pattern": "PROTECT + A + FROM + B",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + from B",
+        "image": "具体的な危険や損傷源から守る",
+        "point": "fromの後ろに危険・原因を置きます。",
         "examples": [
           {
-            "en": "This rule protects user privacy.",
-            "ja": "このルールはユーザーのプライバシーを守ります。",
-            "focus": "protect privacy",
-            "jaFocus": "プライバシーを守る"
+            "en": "This cover protects the module from water.",
+            "ja": "このカバーはモジュールを水から守ります。",
+            "focus": "protects",
+            "jaFocus": "このカバーはモジュールを水から守ります。"
+          },
+          {
+            "en": "Packaging protects the panels from scratches.",
+            "ja": "梱包はパネルを傷から守ります。",
+            "focus": "protects",
+            "jaFocus": "梱包はパネルを傷から守ります。"
+          },
+          {
+            "en": "The coating protects the metal from corrosion.",
+            "ja": "そのコーティングは金属を腐食から守ります。",
+            "focus": "protects",
+            "jaFocus": "そのコーティングは金属を腐食から守ります。"
+          }
+        ]
+      },
+      {
+        "id": "protect-against",
+        "title": "④ protect A against B",
+        "pattern": "PROTECT + A + AGAINST + B",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + against B",
+        "image": "攻撃・不正・将来のリスクに備えて守る",
+        "point": "againstは対抗・防御のニュアンスがあります。",
+        "examples": [
+          {
+            "en": "The system protects the account against unauthorized access.",
+            "ja": "そのシステムはアカウントを不正アクセスから守ります。",
+            "focus": "protects",
+            "jaFocus": "そのシステムはアカウントを不正アクセスから守ります。"
+          },
+          {
+            "en": "Insurance protects the company against major losses.",
+            "ja": "保険は会社を大きな損失から守ります。",
+            "focus": "protects",
+            "jaFocus": "保険は会社を大きな損失から守ります。"
+          },
+          {
+            "en": "We added a fuse to protect the circuit against overload.",
+            "ja": "回路を過負荷から守るためヒューズを追加しました。",
+            "focus": "protect",
+            "jaFocus": "回路を過負荷から守るためヒューズを追加しました。"
+          }
+        ]
+      },
+      {
+        "id": "protect-passive",
+        "title": "⑤ 保護されている",
+        "pattern": "BE PROTECTED + by/from",
+        "transitivity": "他動詞の受け身",
+        "structure": "S + be + protected",
+        "image": "何によって・何から守られているかを表す",
+        "point": "protected byで手段、protected fromで危険源を示します。",
+        "examples": [
+          {
+            "en": "The data is protected by encryption.",
+            "ja": "そのデータは暗号化によって保護されています。",
+            "focus": "protected",
+            "jaFocus": "そのデータは暗号化によって保護されています。"
+          },
+          {
+            "en": "The product is protected from dust and moisture.",
+            "ja": "その製品はほこりと湿気から保護されています。",
+            "focus": "protected",
+            "jaFocus": "その製品はほこりと湿気から保護されています。"
+          },
+          {
+            "en": "All files are protected by access controls.",
+            "ja": "すべてのファイルはアクセス制御で保護されています。",
+            "focus": "protected",
+            "jaFocus": "すべてのファイルはアクセス制御で保護されています。"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -24059,73 +24381,175 @@ export const verbs: Verb[] = [
     "syllable": "re-place",
     "transitivity": "他動詞",
     "importance": "★★★★☆ 重要",
-    "core": "古いものを別のものに替える",
-    "coreDetail": "REPLACEは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「交換する・置き換える」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "古いもの・人を別のものに替える",
+    "coreDetail": "REPLACEは、古い物・壊れた物・担当者などを別の物や人に入れ替える動詞です。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 交換する・置き換える",
-        "pattern": "replace the old part",
+        "id": "replace-item",
+        "title": "① 部品・製品を交換する",
+        "pattern": "REPLACE + 部品・製品",
         "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "古いものや合わないものを新しいものに替える",
-        "point": "replace A with B で「AをBに置き換える」です。",
+        "image": "古い物や壊れた物を取り外して新しくする",
+        "point": "交換される古い物を目的語に置きます。",
+        "examples": [
+          {
+            "en": "We replaced the damaged cable yesterday.",
+            "ja": "私たちは昨日、破損したケーブルを交換しました。",
+            "focus": "replaced",
+            "jaFocus": "私たちは昨日、破損したケーブルを交換しました。",
+            "object": "the damaged cable",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "replaced"
+              },
+              {
+                "label": "O",
+                "text": "the damaged cable"
+              },
+              {
+                "label": "M",
+                "text": "yesterday"
+              }
+            ]
+          },
+          {
+            "en": "Please replace the battery before shipment.",
+            "ja": "出荷前に電池を交換してください。",
+            "focus": "replace",
+            "jaFocus": "出荷前に電池を交換してください。"
+          },
+          {
+            "en": "The factory will replace the defective module.",
+            "ja": "工場は不良モジュールを交換します。",
+            "focus": "replace",
+            "jaFocus": "工場は不良モジュールを交換します。"
+          }
+        ]
+      },
+      {
+        "id": "replace-with",
+        "title": "② replace A with B",
+        "pattern": "REPLACE + A + WITH + B",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + with B",
+        "image": "Aを外してBを新しく入れる",
+        "point": "withの後ろに新しい物を置きます。",
         "examples": [
           {
             "en": "We replaced the old part with a new one.",
             "ja": "私たちは古い部品を新しいものに交換しました。",
-            "focus": "replaced the old part",
-            "jaFocus": "交換する・置き換える",
-            "sentencePattern": "S + V + O",
-            "grammarParts": [
-              {
-                "label": "S",
-                "text": "主語"
-              },
-              {
-                "label": "V",
-                "text": "replace"
-              },
-              {
-                "label": "O",
-                "text": "replaced the old part"
-              }
-            ],
-            "grammarNote": "この文では、動詞の後ろに「何を・誰を」にあたる目的語を置く形として確認します。"
+            "focus": "replaced",
+            "jaFocus": "私たちは古い部品を新しいものに交換しました。"
           },
           {
-            "en": "We replaced the old system with a new one.",
-            "ja": "私たちは古いシステムを新しいものに置き換えました。",
-            "focus": "replace A with B",
-            "jaFocus": "AをBに置き換える"
-          }
-        ],
-        "dailyExamples": [
+            "en": "They replaced the fluorescent lamps with LEDs.",
+            "ja": "彼らは蛍光灯をLEDに交換しました。",
+            "focus": "replaced",
+            "jaFocus": "彼らは蛍光灯をLEDに交換しました。"
+          },
           {
-            "en": "We replaced the old system with a new one.",
-            "ja": "私たちは古いシステムを新しいものに置き換えました。",
-            "focus": "replace A with B",
-            "jaFocus": "AをBに置き換える"
+            "en": "Please replace this image with the latest version.",
+            "ja": "この画像を最新版に差し替えてください。",
+            "focus": "replace",
+            "jaFocus": "この画像を最新版に差し替えてください。"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "replace A with B",
-        "ja": "AをBに置き換える",
-        "image": "古いものや合わないものを新しいものに替える",
-        "pattern": "replace A with B",
+        "id": "replace-system",
+        "title": "③ システム・方法を置き換える",
+        "pattern": "REPLACE + system/process",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "古い仕組みを新しい仕組みに刷新する",
+        "point": "設備だけでなく手順や方式にも使います。",
         "examples": [
           {
-            "en": "We replaced the old system with a new one.",
-            "ja": "私たちは古いシステムを新しいものに置き換えました。",
-            "focus": "replace A with B",
-            "jaFocus": "AをBに置き換える"
+            "en": "The new app replaced the old spreadsheet process.",
+            "ja": "新しいアプリは古い表計算の作業方法に取って代わりました。",
+            "focus": "replaced",
+            "jaFocus": "新しいアプリは古い表計算の作業方法に取って代わりました。"
+          },
+          {
+            "en": "We plan to replace the manual process next year.",
+            "ja": "私たちは来年、手作業の工程を置き換える予定です。",
+            "focus": "replace",
+            "jaFocus": "私たちは来年、手作業の工程を置き換える予定です。"
+          },
+          {
+            "en": "Digital signs are replacing printed notices.",
+            "ja": "デジタルサインが印刷された案内に取って代わりつつあります。",
+            "focus": "replacing",
+            "jaFocus": "デジタルサインが印刷された案内に取って代わりつつあります。"
+          }
+        ]
+      },
+      {
+        "id": "replace-person",
+        "title": "④ 人の代わりをする",
+        "pattern": "REPLACE + 人",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "退職・欠勤した人の後任や代役になる",
+        "point": "人を目的語にすると「その人の後任になる」です。",
+        "examples": [
+          {
+            "en": "A new manager will replace him next month.",
+            "ja": "来月、新しい管理職が彼の後任になります。",
+            "focus": "replace",
+            "jaFocus": "来月、新しい管理職が彼の後任になります。"
+          },
+          {
+            "en": "Can anyone replace me at the meeting?",
+            "ja": "誰か会議で私の代わりをできますか。",
+            "focus": "replace",
+            "jaFocus": "誰か会議で私の代わりをできますか。"
+          },
+          {
+            "en": "The company has not found anyone to replace the engineer.",
+            "ja": "会社はその技術者の後任をまだ見つけていません。",
+            "focus": "replace",
+            "jaFocus": "会社はその技術者の後任をまだ見つけていません。"
+          }
+        ]
+      },
+      {
+        "id": "replace-passive",
+        "title": "⑤ 置き換えられる",
+        "pattern": "BE REPLACED + by/with",
+        "transitivity": "他動詞の受け身",
+        "structure": "S + be + replaced",
+        "image": "古い物が何に置き換えられたかを表す",
+        "point": "byは後継の主体、withは新しく入れる物を示します。",
+        "examples": [
+          {
+            "en": "The old controller was replaced with a newer model.",
+            "ja": "古いコントローラーは新しいモデルに交換されました。",
+            "focus": "replaced",
+            "jaFocus": "古いコントローラーは新しいモデルに交換されました。"
+          },
+          {
+            "en": "Manual entry was replaced by an automated system.",
+            "ja": "手入力は自動システムに置き換えられました。",
+            "focus": "replaced",
+            "jaFocus": "手入力は自動システムに置き換えられました。"
+          },
+          {
+            "en": "The damaged panel must be replaced.",
+            "ja": "破損したパネルは交換しなければなりません。",
+            "focus": "replaced",
+            "jaFocus": "破損したパネルは交換しなければなりません。"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -24137,24 +24561,24 @@ export const verbs: Verb[] = [
     "syllable": "train",
     "transitivity": "他動詞・自動詞",
     "importance": "★★★★☆ 重要",
-    "core": "練習や指導でできるようにする",
-    "coreDetail": "TRAINは、大人の日常・仕事の日本語文から逆算して選んだ実用動詞です。まずは「研修する・訓練する」の感覚と、よく使う語のまとまりを覚えると会話・メールで使いやすくなります。",
+    "core": "知識・技能・身体を繰り返し鍛える",
+    "coreDetail": "TRAINは、人に仕事を教える、技能を練習する、AIモデルを学習させるなど、繰り返し能力を高める動詞です。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 研修する・訓練する",
-        "pattern": "train new staff",
-        "transitivity": "他動詞・自動詞",
+        "id": "train-staff",
+        "title": "① 人・チームを研修する",
+        "pattern": "TRAIN + 人・チーム",
+        "transitivity": "他動詞",
         "structure": "S + V + O",
-        "image": "人に教えてできるようにする、または自分が練習する",
-        "point": "train は「人を研修する」と「自分が訓練する」の両方で使います。仕事では train new staff が実用的です。",
+        "image": "仕事に必要な知識・技能を教える",
+        "point": "staff, employee, teamとよく使います。",
         "examples": [
           {
-            "en": "We trained new staff on the product basics.",
-            "ja": "私たちは新しいスタッフに製品の基本を研修しました。",
-            "focus": "trained new staff",
-            "jaFocus": "研修する・訓練する",
-            "sentencePattern": "S + V + O + M",
+            "en": "We trained the new staff last week.",
+            "ja": "私たちは先週、新入社員を研修しました。",
+            "focus": "trained",
+            "jaFocus": "私たちは先週、新入社員を研修しました。",
+            "object": "the new staff",
             "grammarParts": [
               {
                 "label": "S",
@@ -24166,50 +24590,200 @@ export const verbs: Verb[] = [
               },
               {
                 "label": "O",
-                "text": "new staff"
+                "text": "the new staff"
               },
               {
                 "label": "M",
-                "text": "on the product basics"
+                "text": "last week"
               }
-            ],
-            "grammarNote": "train は他動詞として「人を研修する」に使えます。on the product basics は研修内容を示す補足です。",
-            "object": "new staff"
+            ]
           },
           {
-            "en": "The manager trained the team carefully.",
-            "ja": "そのマネージャーはチームを丁寧に育成しました。",
-            "focus": "train a team",
-            "jaFocus": "チームを育成する"
-          }
-        ],
-        "dailyExamples": [
+            "en": "She trains the sales team every month.",
+            "ja": "彼女は毎月営業チームを研修しています。",
+            "focus": "trains",
+            "jaFocus": "彼女は毎月営業チームを研修しています。"
+          },
           {
-            "en": "The manager trained the team carefully.",
-            "ja": "そのマネージャーはチームを丁寧に育成しました。",
-            "focus": "train a team",
-            "jaFocus": "チームを育成する"
+            "en": "The supplier trained our engineers on the new controller.",
+            "ja": "仕入先は新しいコントローラーについて当社技術者を研修しました。",
+            "focus": "trained",
+            "jaFocus": "仕入先は新しいコントローラーについて当社技術者を研修しました。"
           }
         ]
-      }
-    ],
-    "collocations": [
+      },
       {
-        "phrase": "train a team",
-        "ja": "チームを育成する",
-        "image": "人に教えてできるようにする、または自分が練習する",
-        "pattern": "train a team",
+        "id": "train-to-do",
+        "title": "② train someone to do",
+        "pattern": "TRAIN + 人 + TO DO",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + C",
+        "image": "人が特定の作業をできるよう教える",
+        "point": "to不定詞で身につける行動を示します。",
         "examples": [
           {
-            "en": "The manager trained the team carefully.",
-            "ja": "そのマネージャーはチームを丁寧に育成しました。",
-            "focus": "train a team",
-            "jaFocus": "チームを育成する"
+            "en": "We trained the staff to use the new system.",
+            "ja": "私たちは社員に新しいシステムの使い方を教えました。",
+            "focus": "trained",
+            "jaFocus": "私たちは社員に新しいシステムの使い方を教えました。"
+          },
+          {
+            "en": "The manager trained me to handle complaints.",
+            "ja": "上司は私にクレーム対応を教えました。",
+            "focus": "trained",
+            "jaFocus": "上司は私にクレーム対応を教えました。"
+          },
+          {
+            "en": "They are training technicians to install the product.",
+            "ja": "彼らは技術者に製品の設置方法を研修しています。",
+            "focus": "training",
+            "jaFocus": "彼らは技術者に製品の設置方法を研修しています。"
+          }
+        ]
+      },
+      {
+        "id": "train-skill",
+        "title": "③ 技能・競技を練習する",
+        "pattern": "TRAIN",
+        "transitivity": "自動詞",
+        "structure": "S + V",
+        "image": "目標に向けて身体や技能を鍛える",
+        "point": "スポーツや実技練習では自動詞でも使います。",
+        "examples": [
+          {
+            "en": "I train three times a week.",
+            "ja": "私は週3回トレーニングしています。",
+            "focus": "train",
+            "jaFocus": "私は週3回トレーニングしています。"
+          },
+          {
+            "en": "She is training hard for the competition.",
+            "ja": "彼女は大会に向けて一生懸命練習しています。",
+            "focus": "training",
+            "jaFocus": "彼女は大会に向けて一生懸命練習しています。"
+          },
+          {
+            "en": "The team trained outdoors yesterday.",
+            "ja": "チームは昨日屋外で練習しました。",
+            "focus": "trained",
+            "jaFocus": "チームは昨日屋外で練習しました。"
+          }
+        ]
+      },
+      {
+        "id": "train-model",
+        "title": "④ AI・モデルを訓練する",
+        "pattern": "TRAIN + model + on data",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + on data",
+        "image": "データを使ってモデルの性能を高める",
+        "point": "受け身のbe trained on dataも頻出です。",
+        "examples": [
+          {
+            "en": "We trained the model on product data.",
+            "ja": "私たちは製品データでモデルを訓練しました。",
+            "focus": "trained",
+            "jaFocus": "私たちは製品データでモデルを訓練しました。"
+          },
+          {
+            "en": "The AI was trained to identify defects.",
+            "ja": "そのAIは不良を識別するよう訓練されました。",
+            "focus": "trained",
+            "jaFocus": "そのAIは不良を識別するよう訓練されました。"
+          },
+          {
+            "en": "More examples are needed to train the system accurately.",
+            "ja": "システムを正確に学習させるには、より多くの例が必要です。",
+            "focus": "train",
+            "jaFocus": "システムを正確に学習させるには、より多くの例が必要です。"
+          }
+        ]
+      },
+      {
+        "id": "train-mind-body",
+        "title": "⑤ 身体・考え方を鍛える",
+        "pattern": "TRAIN + body/mind/eyes",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "繰り返しによって反応や習慣を身につける",
+        "point": "mind, body, eyesなどにも使えます。",
+        "examples": [
+          {
+            "en": "You can train your eyes to notice small differences.",
+            "ja": "小さな違いに気づくよう目を鍛えられます。",
+            "focus": "train",
+            "jaFocus": "小さな違いに気づくよう目を鍛えられます。"
+          },
+          {
+            "en": "The exercise trains the muscles around the shoulder.",
+            "ja": "その運動は肩周りの筋肉を鍛えます。",
+            "focus": "trains",
+            "jaFocus": "その運動は肩周りの筋肉を鍛えます。"
+          },
+          {
+            "en": "Practice trained me to stay calm under pressure.",
+            "ja": "練習によって私はプレッシャー下でも冷静でいられるようになりました。",
+            "focus": "trained",
+            "jaFocus": "練習によって私はプレッシャー下でも冷静でいられるようになりました。"
           }
         ]
       }
     ],
-    "phrasalVerbs": []
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "train for",
+        "ja": "〜に備えて練習・訓練する",
+        "image": "試合・資格・仕事などの目標へ向けて準備する",
+        "pattern": "TRAIN FOR + 目標",
+        "examples": [
+          {
+            "en": "She is training for a marathon.",
+            "ja": "彼女はマラソンに向けて練習しています。",
+            "focus": "training for",
+            "jaFocus": "彼女はマラソンに向けて練習しています。"
+          },
+          {
+            "en": "We trained for the emergency drill.",
+            "ja": "私たちは緊急訓練に備えて練習しました。",
+            "focus": "trained for",
+            "jaFocus": "私たちは緊急訓練に備えて練習しました。"
+          },
+          {
+            "en": "He is training for a management position.",
+            "ja": "彼は管理職に向けて訓練を受けています。",
+            "focus": "training for",
+            "jaFocus": "彼は管理職に向けて訓練を受けています。"
+          }
+        ]
+      },
+      {
+        "phrase": "train as",
+        "ja": "〜になるため訓練する",
+        "image": "職業・役割に必要な訓練を受ける",
+        "pattern": "TRAIN AS + 職業・役割",
+        "examples": [
+          {
+            "en": "She trained as an engineer.",
+            "ja": "彼女は技術者になるため訓練を受けました。",
+            "focus": "trained as",
+            "jaFocus": "彼女は技術者になるため訓練を受けました。"
+          },
+          {
+            "en": "He is training as a sales representative.",
+            "ja": "彼は営業担当者になるため研修中です。",
+            "focus": "training as",
+            "jaFocus": "彼は営業担当者になるため研修中です。"
+          },
+          {
+            "en": "I trained as an electrician before joining this company.",
+            "ja": "私はこの会社に入る前、電気技師として訓練を受けました。",
+            "focus": "trained as",
+            "jaFocus": "私はこの会社に入る前、電気技師として訓練を受けました。"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "negotiate",
@@ -24219,83 +24793,256 @@ export const verbs: Verb[] = [
     "kana": "ネゴシエイト",
     "syllable": "ne-go-ti-ate",
     "transitivity": "他動詞・自動詞",
-    "importance": "★★★★☆ 仕事で重要",
-    "core": "条件や意見をすり合わせて合意に近づける",
-    "coreDetail": "NEGOTIATEは、価格・条件・納期・契約などを相手と話し合い、合意できる形に近づける動詞です。仕事ではnegotiate the price / negotiate with a clientのように使います。",
+    "importance": "★★★★☆ 重要",
+    "core": "条件を調整し、合意を目指す",
+    "coreDetail": "NEGOTIATEは、価格・契約・納期などについて相手と条件を調整し、合意を作る動詞です。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 交渉する・協議する",
-        "pattern": "negotiate with + 相手 / negotiate + 条件",
-        "transitivity": "他動詞・自動詞",
-        "structure": "構造ラベルは非表示。with + 相手は補足として扱います。",
-        "image": "相手と条件をすり合わせる",
-        "point": "negotiate with a client は「顧客と交渉する」。negotiate the price は「価格を交渉する」。withの後ろの相手をそのまま目的語扱いしないように注意します。",
+        "id": "negotiate-terms",
+        "title": "① 価格・条件を交渉する",
+        "pattern": "NEGOTIATE + price/terms",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "双方が納得できる条件へ調整する",
+        "point": "price, terms, discountなどを目的語にできます。",
         "examples": [
           {
-            "en": "We negotiated the price with the client yesterday.",
-            "ja": "私たちは昨日、顧客と価格を交渉しました。",
-            "focus": "negotiated the price",
+            "en": "We negotiated the price with the supplier.",
+            "ja": "私たちは仕入先と価格を交渉しました。",
+            "focus": "negotiated",
+            "jaFocus": "私たちは仕入先と価格を交渉しました。",
             "object": "the price",
-            "jaFocus": "価格を交渉しました"
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "negotiated"
+              },
+              {
+                "label": "O",
+                "text": "the price"
+              },
+              {
+                "label": "M",
+                "text": "with the supplier"
+              }
+            ]
           },
           {
-            "en": "I need to negotiate the delivery schedule with the supplier.",
-            "ja": "私は仕入先と納品スケジュールを交渉する必要があります。",
-            "focus": "negotiate the delivery schedule",
-            "object": "the delivery schedule",
-            "jaFocus": "納品スケジュールを交渉する"
+            "en": "The customer wants to negotiate the payment terms.",
+            "ja": "顧客は支払条件を交渉したいと考えています。",
+            "focus": "negotiate",
+            "jaFocus": "顧客は支払条件を交渉したいと考えています。"
           },
           {
-            "en": "Can we negotiate the payment terms before we sign the contract?",
-            "ja": "契約書に署名する前に、支払い条件を交渉できますか？",
-            "focus": "negotiate the payment terms",
-            "object": "the payment terms",
-            "jaFocus": "支払い条件を交渉"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I negotiated the rent before I moved in.",
-            "ja": "私は入居前に家賃を交渉しました。",
-            "focus": "negotiated the rent",
-            "object": "the rent",
-            "jaFocus": "家賃を交渉しました"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "negotiate the price",
-        "ja": "価格を交渉する",
-        "image": "価格について相手と条件をすり合わせる",
-        "pattern": "negotiate the price",
-        "examples": [
-          {
-            "en": "We negotiated the price with the client yesterday.",
-            "ja": "私たちは昨日、顧客と価格を交渉しました。",
-            "focus": "negotiate the price",
-            "jaFocus": "価格を交渉する"
+            "en": "She negotiated a better discount for the project.",
+            "ja": "彼女は案件のためにより良い値引きを交渉しました。",
+            "focus": "negotiated",
+            "jaFocus": "彼女は案件のためにより良い値引きを交渉しました。"
           }
         ]
       },
       {
-        "phrase": "negotiate with a client",
-        "ja": "顧客と交渉する",
-        "image": "顧客と条件を話し合う",
-        "pattern": "negotiate with + 相手",
+        "id": "negotiate-contract",
+        "title": "② 契約・合意をまとめる",
+        "pattern": "NEGOTIATE + contract/agreement",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "話し合いを通じて契約内容をまとめる",
+        "point": "contract, agreement, dealとよく使います。",
         "examples": [
           {
-            "en": "We negotiated with the client about the project scope.",
-            "ja": "私たちはプロジェクト範囲について顧客と交渉しました。",
-            "focus": "negotiated with the client",
-            "jaFocus": "顧客と交渉しました"
+            "en": "The legal team negotiated the contract.",
+            "ja": "法務チームは契約内容を交渉しました。",
+            "focus": "negotiated",
+            "jaFocus": "法務チームは契約内容を交渉しました。"
+          },
+          {
+            "en": "We are negotiating a long-term agreement.",
+            "ja": "私たちは長期契約を交渉中です。",
+            "focus": "negotiating",
+            "jaFocus": "私たちは長期契約を交渉中です。"
+          },
+          {
+            "en": "Both companies negotiated a new deal.",
+            "ja": "両社は新しい取引条件を交渉しました。",
+            "focus": "negotiated",
+            "jaFocus": "両社は新しい取引条件を交渉しました。"
+          }
+        ]
+      },
+      {
+        "id": "negotiate-schedule",
+        "title": "③ 納期・日程を調整する",
+        "pattern": "NEGOTIATE + schedule/deadline",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "実行可能な日程へ条件を調整する",
+        "point": "delivery schedule, deadlineなどにも使えます。",
+        "examples": [
+          {
+            "en": "We negotiated a later delivery date.",
+            "ja": "私たちはより遅い納期を交渉しました。",
+            "focus": "negotiated",
+            "jaFocus": "私たちはより遅い納期を交渉しました。"
+          },
+          {
+            "en": "Can we negotiate the installation schedule?",
+            "ja": "設置日程を交渉できますか。",
+            "focus": "negotiate",
+            "jaFocus": "設置日程を交渉できますか。"
+          },
+          {
+            "en": "The team negotiated an extension of the deadline.",
+            "ja": "チームは期限延長を交渉しました。",
+            "focus": "negotiated",
+            "jaFocus": "チームは期限延長を交渉しました。"
+          }
+        ]
+      },
+      {
+        "id": "negotiate-way",
+        "title": "④ 難しい場所・状況を切り抜ける",
+        "pattern": "NEGOTIATE + way/path",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "慎重に進み、障害を乗り越える",
+        "point": "物理的な道や難しい手続きにも使います。",
+        "examples": [
+          {
+            "en": "The driver negotiated the narrow entrance carefully.",
+            "ja": "運転手は狭い入口を慎重に通り抜けました。",
+            "focus": "negotiated",
+            "jaFocus": "運転手は狭い入口を慎重に通り抜けました。"
+          },
+          {
+            "en": "We negotiated our way through the approval process.",
+            "ja": "私たちは承認手続きをうまく切り抜けました。",
+            "focus": "negotiated",
+            "jaFocus": "私たちは承認手続きをうまく切り抜けました。"
+          },
+          {
+            "en": "She negotiated the difficult discussion calmly.",
+            "ja": "彼女は難しい話し合いを冷静に進めました。",
+            "focus": "negotiated",
+            "jaFocus": "彼女は難しい話し合いを冷静に進めました。"
+          }
+        ]
+      },
+      {
+        "id": "negotiate-result",
+        "title": "⑤ 交渉して結果を得る",
+        "pattern": "NEGOTIATE + result",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "交渉の結果として権利や条件を得る",
+        "point": "salary, warranty, settlementなどと使えます。",
+        "examples": [
+          {
+            "en": "He negotiated a higher salary.",
+            "ja": "彼はより高い給与を交渉で得ました。",
+            "focus": "negotiated",
+            "jaFocus": "彼はより高い給与を交渉で得ました。"
+          },
+          {
+            "en": "We negotiated a two-year warranty.",
+            "ja": "私たちは2年間の保証を交渉で得ました。",
+            "focus": "negotiated",
+            "jaFocus": "私たちは2年間の保証を交渉で得ました。"
+          },
+          {
+            "en": "The lawyer negotiated a settlement.",
+            "ja": "弁護士は和解を交渉でまとめました。",
+            "focus": "negotiated",
+            "jaFocus": "弁護士は和解を交渉でまとめました。"
           }
         ]
       }
     ],
-    "phrasalVerbs": []
+    "collocations": [],
+    "phrasalVerbs": [
+      {
+        "phrase": "negotiate with",
+        "ja": "〜と交渉する",
+        "image": "交渉相手と条件を調整する",
+        "pattern": "NEGOTIATE WITH + 人・組織",
+        "examples": [
+          {
+            "en": "We negotiated with the client about the price.",
+            "ja": "私たちは価格について顧客と交渉しました。",
+            "focus": "negotiated with",
+            "jaFocus": "私たちは価格について顧客と交渉しました。"
+          },
+          {
+            "en": "She is negotiating with three suppliers.",
+            "ja": "彼女は3社の仕入先と交渉中です。",
+            "focus": "negotiating with",
+            "jaFocus": "彼女は3社の仕入先と交渉中です。"
+          },
+          {
+            "en": "The union negotiated with management.",
+            "ja": "組合は経営側と交渉しました。",
+            "focus": "negotiated with",
+            "jaFocus": "組合は経営側と交渉しました。"
+          }
+        ]
+      },
+      {
+        "phrase": "negotiate for",
+        "ja": "〜を得るため交渉する",
+        "image": "必要な条件・権利を得る目的で交渉する",
+        "pattern": "NEGOTIATE FOR + 条件・権利",
+        "examples": [
+          {
+            "en": "We negotiated for a lower price.",
+            "ja": "私たちはより低い価格を得るため交渉しました。",
+            "focus": "negotiated for",
+            "jaFocus": "私たちはより低い価格を得るため交渉しました。"
+          },
+          {
+            "en": "He negotiated for more time.",
+            "ja": "彼はより多くの時間を得るため交渉しました。",
+            "focus": "negotiated for",
+            "jaFocus": "彼はより多くの時間を得るため交渉しました。"
+          },
+          {
+            "en": "The customer negotiated for free delivery.",
+            "ja": "顧客は無料配送を得るため交渉しました。",
+            "focus": "negotiated for",
+            "jaFocus": "顧客は無料配送を得るため交渉しました。"
+          }
+        ]
+      },
+      {
+        "phrase": "negotiate over",
+        "ja": "〜について交渉する",
+        "image": "争点や条件をテーマとして交渉する",
+        "pattern": "NEGOTIATE OVER + 議題",
+        "examples": [
+          {
+            "en": "The companies negotiated over the contract terms.",
+            "ja": "両社は契約条件について交渉しました。",
+            "focus": "negotiated over",
+            "jaFocus": "両社は契約条件について交渉しました。"
+          },
+          {
+            "en": "We are still negotiating over the final price.",
+            "ja": "私たちは最終価格についてまだ交渉中です。",
+            "focus": "negotiating over",
+            "jaFocus": "私たちは最終価格についてまだ交渉中です。"
+          },
+          {
+            "en": "They negotiated over who would pay the additional cost.",
+            "ja": "追加費用を誰が負担するかについて交渉しました。",
+            "focus": "negotiated over",
+            "jaFocus": "追加費用を誰が負担するかについて交渉しました。"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "remind",
@@ -24305,82 +25052,176 @@ export const verbs: Verb[] = [
     "kana": "リマインド",
     "syllable": "re-mind",
     "transitivity": "他動詞",
-    "importance": "★★★★☆ 仕事で重要",
-    "core": "忘れそうなことを相手の意識に戻す",
-    "coreDetail": "REMINDは、予定・締切・依頼内容などを思い出させる動詞です。仕事ではremind someone about ... や remind someone to do ... が非常に実用的です。",
+    "importance": "★★★★☆ 重要",
+    "core": "人に予定・事実・記憶を思い出させる",
+    "coreDetail": "REMINDは、人が忘れないように予定や行動を伝えたり、過去の人・物を思い出させたりする動詞です。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 思い出させる・リマインドする",
-        "pattern": "remind + 人 + about + 内容 / remind + 人 + to do",
+        "id": "remind-about",
+        "title": "① remind 人 about 内容",
+        "pattern": "REMIND + 人 + ABOUT + 内容",
         "transitivity": "他動詞",
-        "structure": "構造ラベルは非表示。人と内容をセットで見る形です。",
-        "image": "相手に必要な予定や行動を思い出させる",
-        "point": "remind me about the meeting は「会議について私に思い出させる」。remind him to reply は「彼に返信するよう思い出させる」。",
+        "structure": "S + V + O + about 内容",
+        "image": "人に予定や用件を思い出させる",
+        "point": "remindの直後には人を置きます。",
         "examples": [
           {
-            "en": "Please remind me about the meeting tomorrow morning.",
-            "ja": "明日の朝、会議について私にリマインドしてください。",
-            "focus": "remind me about the meeting",
+            "en": "Please remind me about the meeting tomorrow.",
+            "ja": "明日の会議について私に知らせてください。",
+            "focus": "remind",
+            "jaFocus": "明日の会議について私に知らせてください。",
             "object": "me",
-            "jaFocus": "リマインドしてください"
+            "grammarParts": [
+              {
+                "label": "M",
+                "text": "Please"
+              },
+              {
+                "label": "V",
+                "text": "remind"
+              },
+              {
+                "label": "O",
+                "text": "me"
+              },
+              {
+                "label": "M",
+                "text": "about the meeting tomorrow"
+              }
+            ]
           },
           {
-            "en": "I reminded the client to send the signed document.",
-            "ja": "私は顧客に署名済み書類を送るようリマインドしました。",
-            "focus": "reminded the client to send",
-            "object": "the client",
-            "jaFocus": "リマインドしました"
+            "en": "I reminded the team about the deadline.",
+            "ja": "私はチームに期限を再確認しました。",
+            "focus": "reminded",
+            "jaFocus": "私はチームに期限を再確認しました。"
           },
           {
-            "en": "Could you remind the team about the deadline?",
-            "ja": "チームに締切についてリマインドしてもらえますか？",
-            "focus": "remind the team about the deadline",
-            "object": "the team",
-            "jaFocus": "リマインドしてもらえますか"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "Please remind me to buy milk after work.",
-            "ja": "仕事の後に牛乳を買うよう私にリマインドしてください。",
-            "focus": "remind me to buy",
-            "object": "me",
-            "jaFocus": "リマインドしてください"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "remind someone about something",
-        "ja": "人に何かをリマインドする",
-        "image": "相手に予定や内容を思い出させる",
-        "pattern": "remind + 人 + about + 内容",
-        "examples": [
-          {
-            "en": "Could you remind the team about the deadline?",
-            "ja": "チームに締切についてリマインドしてもらえますか？",
-            "focus": "remind the team about the deadline",
-            "jaFocus": "締切についてリマインド"
+            "en": "Can you remind him about the customer visit?",
+            "ja": "顧客訪問について彼に念押ししてもらえますか。",
+            "focus": "remind",
+            "jaFocus": "顧客訪問について彼に念押ししてもらえますか。"
           }
         ]
       },
       {
-        "phrase": "remind someone to do",
-        "ja": "人に〜するよう思い出させる",
-        "image": "相手に必要な行動を思い出させる",
-        "pattern": "remind + 人 + to do",
+        "id": "remind-to",
+        "title": "② remind 人 to do",
+        "pattern": "REMIND + 人 + TO DO",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + C",
+        "image": "人が必要な行動を忘れないよう伝える",
+        "point": "to不定詞で思い出させる行動を示します。",
         "examples": [
           {
             "en": "I reminded the client to send the signed document.",
-            "ja": "私は顧客に署名済み書類を送るようリマインドしました。",
-            "focus": "reminded the client to send",
-            "jaFocus": "送るようリマインド"
+            "ja": "私は顧客に署名済み書類を送るよう念押ししました。",
+            "focus": "reminded",
+            "jaFocus": "私は顧客に署名済み書類を送るよう念押ししました。"
+          },
+          {
+            "en": "Please remind me to call the supplier.",
+            "ja": "仕入先へ電話することを私に思い出させてください。",
+            "focus": "remind",
+            "jaFocus": "仕入先へ電話することを私に思い出させてください。"
+          },
+          {
+            "en": "She reminded us to check the stock.",
+            "ja": "彼女は私たちに在庫を確認するよう念押ししました。",
+            "focus": "reminded",
+            "jaFocus": "彼女は私たちに在庫を確認するよう念押ししました。"
+          }
+        ]
+      },
+      {
+        "id": "remind-that",
+        "title": "③ remind 人 that + 文",
+        "pattern": "REMIND + 人 + THAT節",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + that節",
+        "image": "事実や条件を文の形で再確認させる",
+        "point": "that節には思い出させる内容を置きます。",
+        "examples": [
+          {
+            "en": "I reminded him that the meeting starts at nine.",
+            "ja": "私は彼に会議が9時に始まることを念押ししました。",
+            "focus": "reminded",
+            "jaFocus": "私は彼に会議が9時に始まることを念押ししました。"
+          },
+          {
+            "en": "Please remind the customer that payment is due Friday.",
+            "ja": "支払期限が金曜日であることを顧客に再確認してください。",
+            "focus": "remind",
+            "jaFocus": "支払期限が金曜日であることを顧客に再確認してください。"
+          },
+          {
+            "en": "She reminded us that the design was confidential.",
+            "ja": "彼女はその設計が機密であることを私たちに再確認しました。",
+            "focus": "reminded",
+            "jaFocus": "彼女はその設計が機密であることを私たちに再確認しました。"
+          }
+        ]
+      },
+      {
+        "id": "remind-of",
+        "title": "④ remind 人 of 人・物",
+        "pattern": "REMIND + 人 + OF + 人・物",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + of 内容",
+        "image": "見た物が過去の記憶を呼び起こす",
+        "point": "rememberは自分で思い出す、remindは何かが思い出させるです。",
+        "examples": [
+          {
+            "en": "This product reminds me of the previous model.",
+            "ja": "この製品を見ると以前のモデルを思い出します。",
+            "focus": "reminds",
+            "jaFocus": "この製品を見ると以前のモデルを思い出します。"
+          },
+          {
+            "en": "The song reminded her of her childhood.",
+            "ja": "その曲は彼女に子どもの頃を思い出させました。",
+            "focus": "reminded",
+            "jaFocus": "その曲は彼女に子どもの頃を思い出させました。"
+          },
+          {
+            "en": "Your explanation reminds me of our first project.",
+            "ja": "あなたの説明を聞くと最初の案件を思い出します。",
+            "focus": "reminds",
+            "jaFocus": "あなたの説明を聞くと最初の案件を思い出します。"
+          }
+        ]
+      },
+      {
+        "id": "remind-passive",
+        "title": "⑤ 思い出させられる",
+        "pattern": "BE REMINDED + of/about",
+        "transitivity": "他動詞の受け身",
+        "structure": "S + be + reminded",
+        "image": "人が通知や出来事によって思い出す",
+        "point": "受け身で「思い出した・念押しされた」を表します。",
+        "examples": [
+          {
+            "en": "I was reminded of the deadline this morning.",
+            "ja": "私は今朝、期限のことを思い出させてもらいました。",
+            "focus": "reminded",
+            "jaFocus": "私は今朝、期限のことを思い出させてもらいました。"
+          },
+          {
+            "en": "All participants were reminded about the safety rules.",
+            "ja": "参加者全員に安全規則が再確認されました。",
+            "focus": "reminded",
+            "jaFocus": "参加者全員に安全規則が再確認されました。"
+          },
+          {
+            "en": "We were reminded to bring identification.",
+            "ja": "私たちは身分証明書を持参するよう念押しされました。",
+            "focus": "reminded",
+            "jaFocus": "私たちは身分証明書を持参するよう念押しされました。"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -24391,82 +25232,172 @@ export const verbs: Verb[] = [
     "kana": "リクワイア",
     "syllable": "re-quire",
     "transitivity": "他動詞",
-    "importance": "★★★★☆ 仕事で重要",
-    "core": "条件として必要とする",
-    "coreDetail": "REQUIREは、ルール・手続き・案件などが何かを必要とする時に使う動詞です。needより少し硬く、仕事の文書や説明でよく使います。",
+    "importance": "★★★★☆ 重要",
+    "core": "条件・規則として必要とする",
+    "coreDetail": "REQUIREは、物・行動・承認などが条件や規則として必要であることを表す、NEEDより正式な動詞です。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 必要とする・求める",
-        "pattern": "require + 名詞 / require + 人 + to do",
+        "id": "require-thing",
+        "title": "① 物・承認を必要とする",
+        "pattern": "REQUIRE + 名詞",
         "transitivity": "他動詞",
-        "structure": "構造ラベルは非表示。必要なもの・必要な行動を後ろに置きます。",
-        "image": "条件として必要なものがある",
-        "point": "This process requires approval. は「この手続きには承認が必要です」。require someone to do は「人に〜することを求める」です。",
+        "structure": "S + V + O",
+        "image": "作業や案件の成立条件として必要とする",
+        "point": "approval, document, equipmentなどと使います。",
         "examples": [
           {
-            "en": "This order requires approval before shipment.",
-            "ja": "この注文は出荷前に承認が必要です。",
-            "focus": "requires approval",
-            "object": "approval",
-            "jaFocus": "承認が必要です"
+            "en": "This project requires final approval.",
+            "ja": "この案件には最終承認が必要です。",
+            "focus": "requires",
+            "jaFocus": "この案件には最終承認が必要です。",
+            "object": "final approval",
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "This project"
+              },
+              {
+                "label": "V",
+                "text": "requires"
+              },
+              {
+                "label": "O",
+                "text": "final approval"
+              }
+            ]
           },
           {
-            "en": "The client requires us to submit the report by Friday.",
-            "ja": "顧客は私たちに金曜日までに報告書を提出するよう求めています。",
-            "focus": "requires us to submit",
-            "object": "us",
-            "jaFocus": "提出するよう求めています"
+            "en": "The installation requires special tools.",
+            "ja": "その設置作業には専用工具が必要です。",
+            "focus": "requires",
+            "jaFocus": "その設置作業には専用工具が必要です。"
           },
           {
-            "en": "Does this project require an additional estimate?",
-            "ja": "この案件には追加見積が必要ですか？",
-            "focus": "require an additional estimate",
-            "object": "an additional estimate",
-            "jaFocus": "追加見積が必要"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "This form requires your signature.",
-            "ja": "この用紙にはあなたの署名が必要です。",
-            "focus": "requires your signature",
-            "object": "your signature",
-            "jaFocus": "署名が必要です"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "require approval",
-        "ja": "承認を必要とする",
-        "image": "手続き上、承認が条件になる",
-        "pattern": "require approval",
-        "examples": [
-          {
-            "en": "This order requires approval before shipment.",
-            "ja": "この注文は出荷前に承認が必要です。",
-            "focus": "requires approval",
-            "jaFocus": "承認が必要"
+            "en": "The customer may require an additional estimate.",
+            "ja": "顧客は追加見積を必要とする可能性があります。",
+            "focus": "require",
+            "jaFocus": "顧客は追加見積を必要とする可能性があります。"
           }
         ]
       },
       {
-        "phrase": "require someone to do",
-        "ja": "人に〜することを求める",
-        "image": "必要な行動を相手に求める",
-        "pattern": "require + 人 + to do",
+        "id": "require-person",
+        "title": "② require 人 to do",
+        "pattern": "REQUIRE + 人 + TO DO",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + C",
+        "image": "人に行動を義務として求める",
+        "point": "requestより強く、規則・条件のニュアンスがあります。",
         "examples": [
           {
-            "en": "The client requires us to submit the report by Friday.",
-            "ja": "顧客は私たちに金曜日までに報告書を提出するよう求めています。",
-            "focus": "requires us to submit",
-            "jaFocus": "提出するよう求める"
+            "en": "The process requires us to submit two documents.",
+            "ja": "その手続きでは私たちが2つの書類を提出する必要があります。",
+            "focus": "requires",
+            "jaFocus": "その手続きでは私たちが2つの書類を提出する必要があります。"
+          },
+          {
+            "en": "The client requires suppliers to follow the specification.",
+            "ja": "顧客は仕入先に仕様を守ることを求めています。",
+            "focus": "requires",
+            "jaFocus": "顧客は仕入先に仕様を守ることを求めています。"
+          },
+          {
+            "en": "Company policy requires employees to report incidents.",
+            "ja": "会社方針は社員に事故報告を義務づけています。",
+            "focus": "requires",
+            "jaFocus": "会社方針は社員に事故報告を義務づけています。"
+          }
+        ]
+      },
+      {
+        "id": "require-that",
+        "title": "③ require that + 文",
+        "pattern": "REQUIRE + THAT節",
+        "transitivity": "他動詞",
+        "structure": "S + V + that節",
+        "image": "正式な条件を文の形で示す",
+        "point": "米語ではthat節内で動詞の原形がよく使われます。",
+        "examples": [
+          {
+            "en": "The contract requires that payment be made in advance.",
+            "ja": "契約では前払いが必要とされています。",
+            "focus": "requires",
+            "jaFocus": "契約では前払いが必要とされています。"
+          },
+          {
+            "en": "The customer requires that all samples meet the standard.",
+            "ja": "顧客はすべてのサンプルが基準を満たすことを求めています。",
+            "focus": "requires",
+            "jaFocus": "顧客はすべてのサンプルが基準を満たすことを求めています。"
+          },
+          {
+            "en": "The rule requires that visitors wear identification.",
+            "ja": "規則では来訪者が身分証を着用する必要があります。",
+            "focus": "requires",
+            "jaFocus": "規則では来訪者が身分証を着用する必要があります。"
+          }
+        ]
+      },
+      {
+        "id": "require-passive",
+        "title": "④ be required to do",
+        "pattern": "BE REQUIRED TO DO",
+        "transitivity": "他動詞の受け身",
+        "structure": "S + be + required + to do",
+        "image": "規則や会社から行動を義務づけられる",
+        "point": "業務ルールの説明で非常によく使います。",
+        "examples": [
+          {
+            "en": "All employees are required to complete the training.",
+            "ja": "全社員は研修を修了する必要があります。",
+            "focus": "required",
+            "jaFocus": "全社員は研修を修了する必要があります。"
+          },
+          {
+            "en": "You are required to wear safety shoes on site.",
+            "ja": "現場では安全靴の着用が義務づけられています。",
+            "focus": "required",
+            "jaFocus": "現場では安全靴の着用が義務づけられています。"
+          },
+          {
+            "en": "The form is required to process the request.",
+            "ja": "その依頼を処理するには、この書類が必要です。",
+            "focus": "required",
+            "jaFocus": "その依頼を処理するには、この書類が必要です。"
+          }
+        ]
+      },
+      {
+        "id": "require-work",
+        "title": "⑤ 時間・作業・注意を必要とする",
+        "pattern": "REQUIRE + time/work/attention",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "完了するために労力や時間が必要である",
+        "point": "物ではなく抽象的な資源も目的語にできます。",
+        "examples": [
+          {
+            "en": "This repair requires several hours of work.",
+            "ja": "この修理には数時間の作業が必要です。",
+            "focus": "requires",
+            "jaFocus": "この修理には数時間の作業が必要です。"
+          },
+          {
+            "en": "The issue requires further investigation.",
+            "ja": "この問題には追加調査が必要です。",
+            "focus": "requires",
+            "jaFocus": "この問題には追加調査が必要です。"
+          },
+          {
+            "en": "Handling this product requires careful attention.",
+            "ja": "この製品の取り扱いには細心の注意が必要です。",
+            "focus": "requires",
+            "jaFocus": "この製品の取り扱いには細心の注意が必要です。"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   },
   {
@@ -24477,82 +25408,176 @@ export const verbs: Verb[] = [
     "kana": "セレクト",
     "syllable": "se-lect",
     "transitivity": "他動詞",
-    "importance": "★★★★☆ 仕事で重要",
-    "core": "複数の候補から目的に合うものを選び出す",
-    "coreDetail": "SELECTは、候補・条件・製品・担当者などを選定する時に使います。chooseより少し硬く、仕事の文書や画面操作でもよく使います。",
+    "importance": "★★★★☆ 重要",
+    "core": "複数の候補から基準に合うものを選定する",
+    "coreDetail": "SELECTは、複数の候補から基準に基づいて慎重に選ぶ、または画面上で項目を選択する正式な動詞です。",
     "meanings": [
       {
-        "id": "business-core",
-        "title": "① 選定する・選ぶ",
-        "pattern": "select + 名詞 / select A from B",
+        "id": "select-option",
+        "title": "① 製品・候補を選ぶ",
+        "pattern": "SELECT + product/option",
         "transitivity": "他動詞",
-        "structure": "構造ラベルは非表示。選ぶ対象を後ろに置きます。",
-        "image": "候補の中から条件に合うものを選ぶ",
-        "point": "select a product は「製品を選定する」。select A from B は「Bの中からAを選ぶ」です。",
+        "structure": "S + V + O",
+        "image": "基準を使って最適な候補を選定する",
+        "point": "chooseより正式で、選定・画面操作に向きます。",
         "examples": [
           {
-            "en": "We selected the best product for the client.",
-            "ja": "私たちは顧客に最適な製品を選定しました。",
-            "focus": "selected the best product",
+            "en": "We selected the best product for the project.",
+            "ja": "私たちは案件に最適な製品を選定しました。",
+            "focus": "selected",
+            "jaFocus": "私たちは案件に最適な製品を選定しました。",
             "object": "the best product",
-            "jaFocus": "選定しました"
+            "grammarParts": [
+              {
+                "label": "S",
+                "text": "We"
+              },
+              {
+                "label": "V",
+                "text": "selected"
+              },
+              {
+                "label": "O",
+                "text": "the best product"
+              },
+              {
+                "label": "M",
+                "text": "for the project"
+              }
+            ]
           },
           {
-            "en": "Please select one option from the list.",
-            "ja": "リストから選択肢を1つ選んでください。",
-            "focus": "select one option",
-            "object": "one option",
-            "jaFocus": "選んでください"
+            "en": "Please select the correct model.",
+            "ja": "正しいモデルを選択してください。",
+            "focus": "select",
+            "jaFocus": "正しいモデルを選択してください。"
           },
           {
-            "en": "Did you select the supplier for this project?",
-            "ja": "あなたはこの案件の仕入先を選定しましたか？",
-            "focus": "select the supplier",
-            "object": "the supplier",
-            "jaFocus": "仕入先を選定しましたか"
-          }
-        ],
-        "dailyExamples": [
-          {
-            "en": "I selected a seat near the window.",
-            "ja": "私は窓の近くの席を選びました。",
-            "focus": "selected a seat",
-            "object": "a seat",
-            "jaFocus": "席を選びました"
-          }
-        ]
-      }
-    ],
-    "collocations": [
-      {
-        "phrase": "select a product",
-        "ja": "製品を選定する",
-        "image": "条件に合う製品を選ぶ",
-        "pattern": "select a product",
-        "examples": [
-          {
-            "en": "We selected the best product for the client.",
-            "ja": "私たちは顧客に最適な製品を選定しました。",
-            "focus": "selected the best product",
-            "jaFocus": "製品を選定しました"
+            "en": "The customer selected the lower-cost option.",
+            "ja": "顧客はより低価格の選択肢を選びました。",
+            "focus": "selected",
+            "jaFocus": "顧客はより低価格の選択肢を選びました。"
           }
         ]
       },
       {
-        "phrase": "select A from B",
-        "ja": "Bの中からAを選ぶ",
-        "image": "複数候補の中から一つを選ぶ",
-        "pattern": "select A from B",
+        "id": "select-from",
+        "title": "② select A from B",
+        "pattern": "SELECT + A + FROM + B",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + from B",
+        "image": "候補群の中から1つ以上を選ぶ",
+        "point": "fromの後ろに選択肢の範囲を置きます。",
         "examples": [
           {
             "en": "Please select one option from the list.",
-            "ja": "リストから選択肢を1つ選んでください。",
-            "focus": "select one option from the list",
-            "jaFocus": "リストから選ぶ"
+            "ja": "一覧から選択肢を1つ選んでください。",
+            "focus": "select",
+            "jaFocus": "一覧から選択肢を1つ選んでください。"
+          },
+          {
+            "en": "We selected three suppliers from ten candidates.",
+            "ja": "私たちは10社の候補から3社の仕入先を選定しました。",
+            "focus": "selected",
+            "jaFocus": "私たちは10社の候補から3社の仕入先を選定しました。"
+          },
+          {
+            "en": "You can select a color from the menu.",
+            "ja": "メニューから色を選択できます。",
+            "focus": "select",
+            "jaFocus": "メニューから色を選択できます。"
+          }
+        ]
+      },
+      {
+        "id": "select-person",
+        "title": "③ 人を役割・チームに選ぶ",
+        "pattern": "SELECT + 人 + for/as",
+        "transitivity": "他動詞",
+        "structure": "S + V + O + for/as",
+        "image": "能力や条件に基づいて人を選出する",
+        "point": "forは目的・役割、asは選ばれた立場を示します。",
+        "examples": [
+          {
+            "en": "The board selected her for the leadership team.",
+            "ja": "取締役会は彼女をリーダーチームに選びました。",
+            "focus": "selected",
+            "jaFocus": "取締役会は彼女をリーダーチームに選びました。"
+          },
+          {
+            "en": "They selected Ken as the project leader.",
+            "ja": "彼らはケンをプロジェクトリーダーに選びました。",
+            "focus": "selected",
+            "jaFocus": "彼らはケンをプロジェクトリーダーに選びました。"
+          },
+          {
+            "en": "We selected two engineers for the site visit.",
+            "ja": "私たちは現場訪問のため技術者を2名選びました。",
+            "focus": "selected",
+            "jaFocus": "私たちは現場訪問のため技術者を2名選びました。"
+          }
+        ]
+      },
+      {
+        "id": "select-screen",
+        "title": "④ 画面上で項目を選択する",
+        "pattern": "SELECT + item/button",
+        "transitivity": "他動詞",
+        "structure": "S + V + O",
+        "image": "画面のメニューや設定項目を選ぶ",
+        "point": "アプリや機器の操作説明で頻出です。",
+        "examples": [
+          {
+            "en": "Select the settings icon on the home screen.",
+            "ja": "ホーム画面で設定アイコンを選択してください。",
+            "focus": "Select",
+            "jaFocus": "ホーム画面で設定アイコンを選択してください。"
+          },
+          {
+            "en": "The user can select multiple files.",
+            "ja": "利用者は複数のファイルを選択できます。",
+            "focus": "select",
+            "jaFocus": "利用者は複数のファイルを選択できます。"
+          },
+          {
+            "en": "Please select your preferred language.",
+            "ja": "希望する言語を選択してください。",
+            "focus": "select",
+            "jaFocus": "希望する言語を選択してください。"
+          }
+        ]
+      },
+      {
+        "id": "select-passive",
+        "title": "⑤ 選定・選出される",
+        "pattern": "BE SELECTED + for/as",
+        "transitivity": "他動詞の受け身",
+        "structure": "S + be + selected",
+        "image": "選考の結果として選ばれたことを表す",
+        "point": "selected forは対象、selected asは役割を示します。",
+        "examples": [
+          {
+            "en": "She was selected as the project leader.",
+            "ja": "彼女はプロジェクトリーダーに選ばれました。",
+            "focus": "selected",
+            "jaFocus": "彼女はプロジェクトリーダーに選ばれました。"
+          },
+          {
+            "en": "Our product was selected for the new store.",
+            "ja": "当社製品は新店舗用に選定されました。",
+            "focus": "selected",
+            "jaFocus": "当社製品は新店舗用に選定されました。"
+          },
+          {
+            "en": "Three designs were selected for final review.",
+            "ja": "3つのデザインが最終審査用に選ばれました。",
+            "focus": "selected",
+            "jaFocus": "3つのデザインが最終審査用に選ばれました。"
           }
         ]
       }
     ],
+    "collocations": [],
     "phrasalVerbs": []
   }
 ];

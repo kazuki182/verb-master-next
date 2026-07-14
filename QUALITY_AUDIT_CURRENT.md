@@ -39,3 +39,11 @@ Ver.164
 - Premium progress: 40 / 124 verbs
 - Every retained usage block contains two examples
 - Duplicate and low-frequency expressions were consolidated or removed
+
+### Ver.167 Premium batch
+
+- LEARN / MEET / SEND / PAY / BUY / SELL / CHOOSE / FOLLOW / CREATE / REACH
+- 190 Premium daily examples
+- Premium progress: 50 / 124 verbs
+- Every retained usage block contains two examples
+- Duplicate, specialist, and low-frequency expressions were consolidated or removed

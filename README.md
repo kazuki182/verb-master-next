@@ -26,3 +26,7 @@ Premium daily conversation examples for START / STOP / TRY / HELP / SHOW / TELL 
 ## Ver.166 Premium daily-example audit
 
 Premium daily conversation examples for MOVE / TURN / BRING / HOLD / SET / CHANGE / OPEN / CLOSE / LET / BUILD were re-audited. This batch contains 270 examples and brings Premium audit progress to 40 / 124 verbs. See `docs/V166_PREMIUM_DAILY_MOVE_TO_BUILD_REAUDIT.md`.
+
+## Ver.167 Premium daily-example audit
+
+Premium daily conversation examples were re-audited for LEARN / MEET / SEND / PAY / BUY / SELL / CHOOSE / FOLLOW / CREATE / REACH. The batch contains 190 examples across 95 retained usage blocks. Duplicate, low-frequency, and specialist expressions were consolidated or removed instead of being padded.

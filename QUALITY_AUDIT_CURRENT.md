@@ -1,27 +1,27 @@
-# QUALITY AUDIT CURRENT
+# Quality Audit Current
 
-Target: UPDATE / REVIEW / COMPARE
+## Current version
+Ver.163
 
-## Conclusion
-UPDATE / REVIEW / COMPARE have been reaudited and are ready for final ZIP packaging.
+## Standard verb re-audit
+- Completed: 124 / 124 verbs
+- `collocations`: empty for all verbs
+- Verb ids and ranks: unique
 
-## Check results
-- Verb order: OK
-- UPDATE phrasal expressions: 4
-- REVIEW phrasal expressions: 3
-- COMPARE phrasal expressions: 5
-- Categories: Basic / Phrasal Verb only
-- collocations: cleared
+## Premium daily conversation re-audit
+- Completed: 10 / 124 verbs
+- Batch: GET / TAKE / MAKE / GIVE / HAVE / GO / COME / PUT / KEEP / FIND
+- Every meaning and phrasal-verb entry in this batch: exactly 2 daily examples
+- Batch total: 260 daily examples
+- Natural spoken English and Japanese translation reviewed
 - Basic focus: verb only
-- Phrasal focus: verb + preposition/adverb only
-- Objects excluded from focus: OK
-- update after removed: OK
-- keep updated removed from UPDATE: OK
-- review before / review after removed: OK
-- under review removed from phrasal section: OK
-- compare before and after reorganized: OK
-- be compared with merged into compare with: OK
-- Ver.145 persistence retained
-- Ver.146 user UI cleanup retained
-- Ver.140 search retained
-- Additional SQL: none
+- Phrasal focus: verb plus particle/preposition only
+- Objects excluded from focus
+
+## Deployment and package safety
+- Root misplaced source audit: passed
+- JSX-like syntax in `.ts`: passed
+- `npm run verify:deploy`: passed
+- `npx tsc --noEmit`: passed
+- `npm run build`: passed
+- Static pages: 28 / 28

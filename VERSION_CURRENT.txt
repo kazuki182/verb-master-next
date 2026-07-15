@@ -1,5 +1,5 @@
-Ver.172
-Premium daily-example re-audit: ACHIEVE / SCHEDULE / SUBMIT / CANCEL / CONNECT / RESPOND / CONTROL / HANDLE / ORGANIZE / INFORM
-Premium progress: 100 / 124 verbs
-Batch examples: 106
-Cumulative completed-batch examples: 1,850
+Ver.173
+Premium daily-example re-audit: ADJUST / APPLY / APPROVE / BORROW / VERIFY / GATHER / COMMUNICATE / DESCRIBE / EARN / ESTIMATE
+Premium progress: 110 / 124 verbs
+Batch examples: 104
+Cumulative completed-batch examples: 1,954

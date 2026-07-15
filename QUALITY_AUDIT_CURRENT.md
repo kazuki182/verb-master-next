@@ -1,7 +1,7 @@
 # Quality Audit Current
 
 ## Current version
-Ver.172
+Ver.173
 
 ## Standard verb re-audit
 - Completed: 124 / 124 verbs
@@ -9,7 +9,7 @@ Ver.172
 - Verb ids and ranks: 124 unique entries
 
 ## Premium daily conversation re-audit
-- Completed: 100 / 124 verbs
+- Completed: 110 / 124 verbs
 - Completed batches:
   - GET / TAKE / MAKE / GIVE / HAVE / GO / COME / PUT / KEEP / FIND — 260 examples
   - SEE / LOOK / WATCH / HEAR / LISTEN / THINK / KNOW / FEEL / WORK / USE — 266 examples
@@ -21,18 +21,21 @@ Ver.172
   - REQUEST / SUGGEST / AGREE / ARRANGE / ATTEND / CONTACT / SHARE / COLLECT / REDUCE / INCREASE — 112 examples
   - ACCEPT / AVOID / CONSIDER / DEPEND / EXPECT / REPLY / INCLUDE / NOTICE / PREFER / RECOMMEND — 94 examples
   - ACHIEVE / SCHEDULE / SUBMIT / CANCEL / CONNECT / RESPOND / CONTROL / HANDLE / ORGANIZE / INFORM — 106 examples
-- Cumulative completed-batch total: 1,850 daily examples
+  - ADJUST / APPLY / APPROVE / BORROW / VERIFY / GATHER / COMMUNICATE / DESCRIBE / EARN / ESTIMATE — 104 examples
+- Cumulative completed-batch total: 1,954 daily examples
 - Every retained meaning and phrasal-expression block in completed batches: exactly 2 daily examples
 - Natural spoken English and Japanese translation reviewed
 - Basic focus: verb only
 - Phrasal focus: verb plus particle/preposition only
 - Objects excluded from focus
 
-## Ver.172 batch notes
+## Ver.173 batch notes
 - Ordinary preposition patterns were integrated into basic usage blocks where appropriate.
-- All 106 examples contain their configured focus text.
+- Retained expression blocks: `adjust to`, `apply for`, `apply to`, `approve of`, `gather around`, `gather up`, and `communicate with`.
+- Removed or integrated expression blocks: `adjust for`, `apply as`, `apply through`, `gather together`, and `communicate through`.
+- All 104 examples contain their configured focus text.
 - No duplicate English examples were found within the batch.
-- Retained blocks: 53, with exactly 2 daily examples each.
+- Retained blocks: 52, with exactly 2 daily examples each.
 
 ## Deployment and package safety
 - Root misplaced source audit: passed

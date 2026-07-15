@@ -27642,7 +27642,18 @@ export const verbs: Verb[] = [
             "object": "the problem"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We discussed our summer trip over dinner.",
+            "ja": "私たちは夕食をとりながら夏の旅行について話し合いました。",
+            "focus": "discussed"
+          },
+          {
+            "en": "Let us discuss the problem before anyone gets upset.",
+            "ja": "誰かが腹を立てる前に、その問題を話し合いましょう。",
+            "focus": "discuss"
+          }
+        ]
       },
       {
         "id": "discuss-details",
@@ -27672,7 +27683,18 @@ export const verbs: Verb[] = [
             "object": "the conditions"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We discussed where to put the new sofa.",
+            "ja": "私たちは新しいソファをどこに置くか話し合いました。",
+            "focus": "discussed"
+          },
+          {
+            "en": "They discussed the details of the birthday party.",
+            "ja": "彼らは誕生日会の詳しい内容を話し合いました。",
+            "focus": "discussed"
+          }
+        ]
       },
       {
         "id": "discuss-plan",
@@ -27702,7 +27724,18 @@ export const verbs: Verb[] = [
             "object": "next month's visit schedule"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "My family discussed our plans for the weekend.",
+            "ja": "家族で週末の予定について話し合いました。",
+            "focus": "discussed"
+          },
+          {
+            "en": "We need to discuss how we will get to the airport.",
+            "ja": "空港までどう行くか話し合う必要があります。",
+            "focus": "discuss"
+          }
+        ]
       },
       {
         "id": "discuss-options",
@@ -27732,7 +27765,18 @@ export const verbs: Verb[] = [
             "object": "what information to include"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We discussed whether to cook or order dinner.",
+            "ja": "夕食を作るか注文するか話し合いました。",
+            "focus": "discussed"
+          },
+          {
+            "en": "Let us discuss the different ways to save space.",
+            "ja": "省スペースの方法をいくつか話し合いましょう。",
+            "focus": "discuss"
+          }
+        ]
       },
       {
         "id": "discuss-internally",
@@ -27762,7 +27806,18 @@ export const verbs: Verb[] = [
             "object": "the proposal"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We discussed the matter privately as a family.",
+            "ja": "その件を家族だけで内密に話し合いました。",
+            "focus": "discussed"
+          },
+          {
+            "en": "The parents discussed what to tell the children.",
+            "ja": "親たちは子どもに何を伝えるか話し合いました。",
+            "focus": "discussed"
+          }
+        ]
       }
     ],
     "collocations": [],
@@ -27789,7 +27844,18 @@ export const verbs: Verb[] = [
             "focus": "discuss with"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The problem was discussed with my brother.",
+            "ja": "その問題を兄と話し合いました。",
+            "focus": "discussed with"
+          },
+          {
+            "en": "The plan was discussed with our parents.",
+            "ja": "その計画を両親と話し合いました。",
+            "focus": "discussed with"
+          }
+        ]
       },
       {
         "phrase": "discuss among",
@@ -27813,7 +27879,18 @@ export const verbs: Verb[] = [
             "focus": "discuss among"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The choices were discussed among the children.",
+            "ja": "子どもたちは自分たちだけで選択肢を話し合いました。",
+            "focus": "discussed among"
+          },
+          {
+            "en": "The matter was discussed among the family members.",
+            "ja": "家族の間でその件を話し合いました。",
+            "focus": "discussed among"
+          }
+        ]
       },
       {
         "phrase": "discuss over",
@@ -27837,31 +27914,18 @@ export const verbs: Verb[] = [
             "focus": "discuss over"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "discuss together",
-        "ja": "一緒に話し合う",
-        "image": "同じ議題に向かって一緒に考える。",
-        "pattern": "discuss together",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "Let's discuss the next step together.",
-            "ja": "次の対応を一緒に話し合いましょう。",
-            "focus": "discuss together"
+            "en": "The trip was discussed over coffee.",
+            "ja": "コーヒーを飲みながら旅行について話し合いました。",
+            "focus": "discussed over"
           },
           {
-            "en": "We discussed the proposal together before the meeting.",
-            "ja": "私たちは会議前に提案内容を一緒に話し合いました。",
-            "focus": "discussed together"
-          },
-          {
-            "en": "The sales and technical teams should discuss this together.",
-            "ja": "営業チームと技術チームはこれを一緒に話し合うべきです。",
-            "focus": "discuss together"
+            "en": "The problem was discussed over lunch.",
+            "ja": "彼らは昼食をとりながら問題について話し合いました。",
+            "focus": "discussed over"
           }
-        ],
-        "dailyExamples": []
+        ]
       },
       {
         "phrase": "discuss in",
@@ -27885,7 +27949,18 @@ export const verbs: Verb[] = [
             "focus": "discuss in"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "This should be discussed in private.",
+            "ja": "これは内密に話し合いましょう。",
+            "focus": "discussed in"
+          },
+          {
+            "en": "The issue was discussed in the car.",
+            "ja": "車の中でその問題について話し合いました。",
+            "focus": "discussed in"
+          }
+        ]
       }
     ]
   },
@@ -27939,7 +28014,18 @@ export const verbs: Verb[] = [
             "object": "the installation requirements"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Please confirm the hotel address before we leave.",
+            "ja": "出発前にホテルの住所を確認してください。",
+            "focus": "confirm"
+          },
+          {
+            "en": "I confirmed the size and color of my order.",
+            "ja": "注文した商品のサイズと色を確認しました。",
+            "focus": "confirmed"
+          }
+        ]
       },
       {
         "id": "confirm-schedule",
@@ -27969,7 +28055,18 @@ export const verbs: Verb[] = [
             "object": "the visit schedule"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Can you confirm what time the movie starts?",
+            "ja": "映画が何時に始まるか確認してくれる？",
+            "focus": "confirm"
+          },
+          {
+            "en": "We confirmed the meeting time with our friends.",
+            "ja": "友人たちと待ち合わせ時間を確認しました。",
+            "focus": "confirmed"
+          }
+        ]
       },
       {
         "id": "confirm-order",
@@ -27999,7 +28096,18 @@ export const verbs: Verb[] = [
             "object": "the order"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I confirmed that we ordered two pizzas.",
+            "ja": "ピザを2枚注文したことを確認しました。",
+            "focus": "confirmed"
+          },
+          {
+            "en": "Please confirm the name on the reservation.",
+            "ja": "予約名を確認してください。",
+            "focus": "confirm"
+          }
+        ]
       },
       {
         "id": "confirm-if",
@@ -28029,7 +28137,18 @@ export const verbs: Verb[] = [
             "object": "that the file was attached"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I called to confirm whether the store was open.",
+            "ja": "店が開いているか確認するために電話しました。",
+            "focus": "confirm"
+          },
+          {
+            "en": "Can you confirm that the door is locked?",
+            "ja": "ドアに鍵がかかっているか確認してくれる？",
+            "focus": "confirm"
+          }
+        ]
       },
       {
         "id": "confirm-before",
@@ -28059,7 +28178,18 @@ export const verbs: Verb[] = [
             "object": "the final design"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Confirm the date before booking the tickets.",
+            "ja": "チケットを予約する前に日付を確認してください。",
+            "focus": "Confirm"
+          },
+          {
+            "en": "I confirmed everything before sending the message.",
+            "ja": "メッセージを送る前にすべて確認しました。",
+            "focus": "confirmed"
+          }
+        ]
       }
     ],
     "collocations": [],
@@ -28086,7 +28216,18 @@ export const verbs: Verb[] = [
             "focus": "confirmed with"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The time was confirmed with my friend.",
+            "ja": "友人に時間を確認しました。",
+            "focus": "confirmed with"
+          },
+          {
+            "en": "The address should be confirmed with the hotel.",
+            "ja": "ホテルに住所を確認してください。",
+            "focus": "confirmed with"
+          }
+        ]
       },
       {
         "phrase": "confirm by",
@@ -28110,103 +28251,18 @@ export const verbs: Verb[] = [
             "focus": "confirmed by"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "confirm in",
-        "ja": "〜で確認する",
-        "image": "文書・システム・会議の中で確認する。",
-        "pattern": "confirm in + document / system / meeting",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "Please confirm the change in the document.",
-            "ja": "資料内で変更点を確認してください。",
-            "focus": "confirm in"
+            "en": "The reservation was confirmed by email.",
+            "ja": "メールで予約を確認しました。",
+            "focus": "confirmed by"
           },
           {
-            "en": "We confirmed the quantity in the system.",
-            "ja": "私たちはシステム上で数量を確認しました。",
-            "focus": "confirmed in"
-          },
-          {
-            "en": "The final schedule was confirmed in the meeting.",
-            "ja": "最終スケジュールは会議で確認されました。",
-            "focus": "confirmed in"
+            "en": "Your attendance should be confirmed by text message.",
+            "ja": "参加するかどうかをメッセージで確認してください。",
+            "focus": "confirmed by"
           }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "confirm on",
-        "ja": "〜について確認する",
-        "image": "特定の件・日付・条件について確認する。",
-        "pattern": "confirm on + topic / date",
-        "examples": [
-          {
-            "en": "Please confirm on the delivery schedule.",
-            "ja": "納品スケジュールについて確認してください。",
-            "focus": "confirm on"
-          },
-          {
-            "en": "We need to confirm on the final price.",
-            "ja": "私たちは最終価格について確認する必要があります。",
-            "focus": "confirm on"
-          },
-          {
-            "en": "The team confirmed on the next action.",
-            "ja": "チームは次の対応について確認しました。",
-            "focus": "confirmed on"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "confirm through",
-        "ja": "〜を通して確認する",
-        "image": "人・システム・資料を通じて確認する。",
-        "pattern": "confirm through + channel",
-        "examples": [
-          {
-            "en": "We confirmed the order through the online system.",
-            "ja": "私たちはオンラインシステムを通して注文を確認しました。",
-            "focus": "confirmed through"
-          },
-          {
-            "en": "Please confirm the details through the sales representative.",
-            "ja": "営業担当者を通して詳細を確認してください。",
-            "focus": "confirm through"
-          },
-          {
-            "en": "The delivery status can be confirmed through the tracking page.",
-            "ja": "配送状況は追跡ページを通して確認できます。",
-            "focus": "confirmed through"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "confirm against",
-        "ja": "〜と照合して確認する",
-        "image": "基準・リスト・注文内容と照らし合わせる。",
-        "pattern": "confirm against + list / order / standard",
-        "examples": [
-          {
-            "en": "Please confirm the items against the order sheet.",
-            "ja": "注文書と照合して品目を確認してください。",
-            "focus": "confirm against"
-          },
-          {
-            "en": "We confirmed the shipment against the packing list.",
-            "ja": "私たちは梱包リストと照合して出荷内容を確認しました。",
-            "focus": "confirmed against"
-          },
-          {
-            "en": "Confirm the final design against the approved drawing.",
-            "ja": "承認済み図面と照合して最終デザインを確認してください。",
-            "focus": "Confirm against"
-          }
-        ],
-        "dailyExamples": []
+        ]
       }
     ]
   },
@@ -28260,7 +28316,18 @@ export const verbs: Verb[] = [
             "object": "a call"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I received a message from my sister this morning.",
+            "ja": "今朝、姉からメッセージを受け取りました。",
+            "focus": "received"
+          },
+          {
+            "en": "Did you receive the photo I sent you?",
+            "ja": "私が送った写真を受け取りましたか？",
+            "focus": "receive"
+          }
+        ]
       },
       {
         "id": "receive-order",
@@ -28290,7 +28357,18 @@ export const verbs: Verb[] = [
             "object": "the purchase order"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The restaurant received our online order.",
+            "ja": "レストランが私たちのオンライン注文を受け付けました。",
+            "focus": "received"
+          },
+          {
+            "en": "The hotel received our request for a quiet room.",
+            "ja": "ホテルが静かな部屋を希望する私たちの依頼を受け取りました。",
+            "focus": "received"
+          }
+        ]
       },
       {
         "id": "receive-document",
@@ -28320,7 +28398,18 @@ export const verbs: Verb[] = [
             "object": "the updated file"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I received the concert tickets by email.",
+            "ja": "コンサートのチケットをメールで受け取りました。",
+            "focus": "received"
+          },
+          {
+            "en": "We received a birthday card in the mail.",
+            "ja": "郵便で誕生日カードを受け取りました。",
+            "focus": "received"
+          }
+        ]
       },
       {
         "id": "receive-payment",
@@ -28350,7 +28439,18 @@ export const verbs: Verb[] = [
             "object": "the deposit"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I received a refund for the damaged item.",
+            "ja": "壊れていた商品の返金を受け取りました。",
+            "focus": "received"
+          },
+          {
+            "en": "She received the money for her old bicycle.",
+            "ja": "彼女は古い自転車の代金を受け取りました。",
+            "focus": "received"
+          }
+        ]
       },
       {
         "id": "receive-feedback",
@@ -28380,156 +28480,22 @@ export const verbs: Verb[] = [
             "object": "good reviews"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The restaurant received many positive reviews.",
+            "ja": "そのレストランは多くの良い口コミを受けました。",
+            "focus": "received"
+          },
+          {
+            "en": "I received helpful feedback on my cooking.",
+            "ja": "料理について役立つ感想をもらいました。",
+            "focus": "received"
+          }
+        ]
       }
     ],
     "collocations": [],
-    "phrasalVerbs": [
-      {
-        "phrase": "receive from",
-        "ja": "〜から受け取る",
-        "image": "受け取り元を示す。",
-        "pattern": "receive + O + from + 相手",
-        "examples": [
-          {
-            "en": "We received the order from the client.",
-            "ja": "私たちは顧客から注文を受けました。",
-            "focus": "receive from"
-          },
-          {
-            "en": "I received the file from the designer.",
-            "ja": "私はデザイナーからファイルを受け取りました。",
-            "focus": "received from"
-          },
-          {
-            "en": "Please check the sample we received from the supplier.",
-            "ja": "仕入先から受け取ったサンプルを確認してください。",
-            "focus": "received from"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "receive by",
-        "ja": "〜で受け取る・〜までに受け取る",
-        "image": "手段や期限を示す。",
-        "pattern": "receive by + method / date",
-        "examples": [
-          {
-            "en": "We received the confirmation by email.",
-            "ja": "私たちはメールで確認を受け取りました。",
-            "focus": "received by"
-          },
-          {
-            "en": "Can we receive the sample by Friday?",
-            "ja": "金曜日までにサンプルを受け取れますか？",
-            "focus": "receive by"
-          },
-          {
-            "en": "The order must be received by the end of the month.",
-            "ja": "その注文は月末までに受領される必要があります。",
-            "focus": "received by"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "receive into",
-        "ja": "〜に受け入れる",
-        "image": "人・物・情報を組織や場所の中に受け入れる。",
-        "pattern": "receive + O + into + 場所/組織",
-        "examples": [
-          {
-            "en": "The new data was received into the system.",
-            "ja": "新しいデータはシステムに取り込まれました。",
-            "focus": "received into"
-          },
-          {
-            "en": "The parts were received into inventory yesterday.",
-            "ja": "部品は昨日在庫に受け入れられました。",
-            "focus": "received into"
-          },
-          {
-            "en": "The visitor was received into the meeting room.",
-            "ja": "来客は会議室に案内されました。",
-            "focus": "received into"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "receive with",
-        "ja": "〜とともに受け取る・〜の態度で受け止める",
-        "image": "一緒に受け取る物や受け止め方を示す。",
-        "pattern": "receive + O + with + thing / attitude",
-        "examples": [
-          {
-            "en": "We received the product with the inspection report.",
-            "ja": "私たちは検査報告書と一緒に製品を受け取りました。",
-            "focus": "received with"
-          },
-          {
-            "en": "The proposal was received with interest.",
-            "ja": "その提案は関心を持って受け止められました。",
-            "focus": "received with"
-          },
-          {
-            "en": "The announcement was received with concern by the team.",
-            "ja": "その発表はチームに心配を持って受け止められました。",
-            "focus": "received with"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "receive through",
-        "ja": "〜を通して受け取る",
-        "image": "システム・窓口・人を通じて入ってくる。",
-        "pattern": "receive + O + through + channel",
-        "examples": [
-          {
-            "en": "We received the request through the website.",
-            "ja": "私たちはWebサイトを通して依頼を受けました。",
-            "focus": "received through"
-          },
-          {
-            "en": "The sales team received the information through the distributor.",
-            "ja": "営業チームは代理店を通してその情報を受け取りました。",
-            "focus": "received through"
-          },
-          {
-            "en": "You can receive updates through the system.",
-            "ja": "システムを通して更新情報を受け取れます。",
-            "focus": "receive through"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "receive at",
-        "ja": "〜で受け取る",
-        "image": "受け取り場所を示す。",
-        "pattern": "receive + O + at + place",
-        "examples": [
-          {
-            "en": "We received the package at the office.",
-            "ja": "私たちは会社で荷物を受け取りました。",
-            "focus": "received at"
-          },
-          {
-            "en": "The documents were received at the front desk.",
-            "ja": "資料は受付で受け取られました。",
-            "focus": "received at"
-          },
-          {
-            "en": "Please receive the sample at the warehouse.",
-            "ja": "倉庫でサンプルを受け取ってください。",
-            "focus": "receive at"
-          }
-        ],
-        "dailyExamples": []
-      }
-    ]
+    "phrasalVerbs": []
   },
   {
     "id": "deliver",
@@ -28580,6 +28546,18 @@ export const verbs: Verb[] = [
             "focus": "delivered",
             "object": "the parts"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The store delivered our new table this morning.",
+            "ja": "店が今朝、新しいテーブルを届けてくれました。",
+            "focus": "delivered"
+          },
+          {
+            "en": "They deliver groceries to our neighborhood.",
+            "ja": "その店は私たちの地域に食料品を配達しています。",
+            "focus": "deliver"
+          }
         ]
       },
       {
@@ -28608,6 +28586,18 @@ export const verbs: Verb[] = [
             "ja": "私たちは顧客に価値を提供する必要があります。",
             "focus": "deliver",
             "object": "value"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The new vacuum cleaner delivers good results.",
+            "ja": "新しい掃除機はよい効果を発揮します。",
+            "focus": "delivers"
+          },
+          {
+            "en": "This simple routine delivered the results I wanted.",
+            "ja": "この簡単な習慣で望んでいた結果が得られました。",
+            "focus": "delivered"
           }
         ]
       },
@@ -28638,6 +28628,18 @@ export const verbs: Verb[] = [
             "focus": "delivers",
             "object": "reliable service"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The hotel delivered excellent service during our stay.",
+            "ja": "そのホテルは滞在中すばらしいサービスを提供してくれました。",
+            "focus": "delivered"
+          },
+          {
+            "en": "The app delivers useful travel information.",
+            "ja": "そのアプリは役立つ旅行情報を提供します。",
+            "focus": "delivers"
+          }
         ]
       },
       {
@@ -28666,6 +28668,18 @@ export const verbs: Verb[] = [
             "ja": "彼は会議で分かりやすい報告をしました。",
             "focus": "delivered",
             "object": "a clear report"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She delivered the good news to the whole family.",
+            "ja": "彼女は家族全員にそのよい知らせを伝えました。",
+            "focus": "delivered"
+          },
+          {
+            "en": "He delivered a short speech at the wedding.",
+            "ja": "彼は結婚式で短いスピーチをしました。",
+            "focus": "delivered"
           }
         ]
       },
@@ -28696,6 +28710,18 @@ export const verbs: Verb[] = [
             "focus": "delivered",
             "object": "the replacement unit"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The restaurant delivered the wrong dinner order.",
+            "ja": "レストランが違う夕食を配達しました。",
+            "focus": "delivered"
+          },
+          {
+            "en": "Our package was delivered while we were out.",
+            "ja": "外出中に荷物が配達されました。",
+            "focus": "delivered"
+          }
         ]
       },
       {
@@ -28725,6 +28751,18 @@ export const verbs: Verb[] = [
             "focus": "deliver",
             "object": "measurable benefits"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The hotel promised a quiet room and delivered.",
+            "ja": "ホテルは静かな部屋を約束し、その約束を果たしました。",
+            "focus": "delivered"
+          },
+          {
+            "en": "The new phone really delivers on battery life.",
+            "ja": "その新しいスマホは電池持ちの面で本当に期待に応えています。",
+            "focus": "delivers"
+          }
         ]
       }
     ],
@@ -28752,7 +28790,18 @@ export const verbs: Verb[] = [
             "focus": "deliver to"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The sofa was delivered to our apartment.",
+            "ja": "彼らはソファを私たちの部屋まで届けました。",
+            "focus": "delivered to"
+          },
+          {
+            "en": "Can this card be delivered to my grandmother?",
+            "ja": "このカードを祖母に届けてもらえますか？",
+            "focus": "delivered to"
+          }
+        ]
       },
       {
         "phrase": "deliver by",
@@ -28776,7 +28825,18 @@ export const verbs: Verb[] = [
             "focus": "deliver by"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The package will be delivered by Friday.",
+            "ja": "荷物は金曜日までに配達されます。",
+            "focus": "delivered by"
+          },
+          {
+            "en": "Can the food be delivered by noon?",
+            "ja": "食事を正午までに届けてもらえますか？",
+            "focus": "delivered by"
+          }
+        ]
       },
       {
         "phrase": "deliver on",
@@ -28800,79 +28860,18 @@ export const verbs: Verb[] = [
             "focus": "delivered on"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "deliver for",
-        "ja": "〜のために成果を出す",
-        "image": "相手や組織のために期待される結果を出す。",
-        "pattern": "deliver for + 人/組織",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "We need to deliver for our key customer.",
-            "ja": "私たちは主要顧客のために成果を出す必要があります。",
-            "focus": "deliver for"
+            "en": "The hotel delivered on its promise of a quiet room.",
+            "ja": "ホテルは静かな部屋を用意するという約束を果たしました。",
+            "focus": "delivered on"
           },
           {
-            "en": "This team consistently delivers for the sales department.",
-            "ja": "このチームは営業部門のために継続的に成果を出しています。",
-            "focus": "delivers for"
-          },
-          {
-            "en": "The supplier failed to deliver for us this time.",
-            "ja": "その仕入先は今回、私たちの期待に応えられませんでした。",
-            "focus": "deliver for"
+            "en": "This battery really delivers on long life.",
+            "ja": "この電池は長持ちするという期待に本当に応えます。",
+            "focus": "delivers on"
           }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "deliver through",
-        "ja": "〜を通して届ける・提供する",
-        "image": "人・仕組み・経路を通して届ける。",
-        "pattern": "deliver + O + through + channel",
-        "examples": [
-          {
-            "en": "We deliver updates through the online portal.",
-            "ja": "私たちはオンラインポータルを通して更新情報を提供します。",
-            "focus": "deliver through"
-          },
-          {
-            "en": "The service is delivered through local partners.",
-            "ja": "そのサービスは地域の協力会社を通して提供されます。",
-            "focus": "delivered through"
-          },
-          {
-            "en": "The message was delivered through the project manager.",
-            "ja": "そのメッセージはプロジェクトマネージャーを通して伝えられました。",
-            "focus": "delivered through"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "deliver against",
-        "ja": "目標・計画に対して実績を出す",
-        "image": "設定された目標や計画と比べて成果を出す。",
-        "pattern": "deliver against + target/plan",
-        "examples": [
-          {
-            "en": "We need to deliver against this year’s sales target.",
-            "ja": "私たちは今年の売上目標に対して実績を出す必要があります。",
-            "focus": "deliver against"
-          },
-          {
-            "en": "The team delivered against all key milestones.",
-            "ja": "チームは主要なマイルストーンをすべて達成しました。",
-            "focus": "delivered against"
-          },
-          {
-            "en": "Please check whether we are delivering against the agreed plan.",
-            "ja": "合意した計画どおりに成果を出せているか確認してください。",
-            "focus": "delivering against"
-          }
-        ],
-        "dailyExamples": []
+        ]
       }
     ]
   },
@@ -28925,6 +28924,18 @@ export const verbs: Verb[] = [
             "focus": "solve",
             "object": "this error"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Restarting the router solved the Wi-Fi problem.",
+            "ja": "ルーターを再起動したらWi-Fiの問題が解決しました。",
+            "focus": "solved"
+          },
+          {
+            "en": "We solved the problem with the broken lock.",
+            "ja": "壊れた鍵の問題を解決しました。",
+            "focus": "solved"
+          }
         ]
       },
       {
@@ -28953,6 +28964,18 @@ export const verbs: Verb[] = [
             "ja": "顧客がどの問題を解決したいのか確認してください。",
             "focus": "solve",
             "object": "what problem"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The hotel quickly solved our room problem.",
+            "ja": "ホテルは部屋の問題をすぐに解決してくれました。",
+            "focus": "solved"
+          },
+          {
+            "en": "The shop solved the issue by replacing the item.",
+            "ja": "店は商品を交換して問題を解決しました。",
+            "focus": "solved"
           }
         ]
       },
@@ -28983,6 +29006,18 @@ export const verbs: Verb[] = [
             "focus": "solved",
             "object": "the wiring problem"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "My brother solved the phone problem for me.",
+            "ja": "兄が私のスマホの問題を解決してくれました。",
+            "focus": "solved"
+          },
+          {
+            "en": "Updating the app solved the error.",
+            "ja": "アプリを更新したらエラーが解決しました。",
+            "focus": "solved"
+          }
         ]
       },
       {
@@ -29011,6 +29046,18 @@ export const verbs: Verb[] = [
             "ja": "この提案で設置スペースの制約を解決できるかもしれません。",
             "focus": "solve",
             "object": "the space limitation"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We solved the storage problem by adding shelves.",
+            "ja": "棚を追加して収納の問題を解決しました。",
+            "focus": "solved"
+          },
+          {
+            "en": "A folding table solved our space problem.",
+            "ja": "折りたたみテーブルでスペースの問題が解決しました。",
+            "focus": "solved"
           }
         ]
       },
@@ -29041,6 +29088,18 @@ export const verbs: Verb[] = [
             "focus": "solve",
             "object": "this puzzle"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Can you solve this puzzle without a hint?",
+            "ja": "ヒントなしでこのパズルを解けますか？",
+            "focus": "solve"
+          },
+          {
+            "en": "My daughter solved the riddle before I did.",
+            "ja": "娘は私より先になぞなぞを解きました。",
+            "focus": "solved"
+          }
         ]
       },
       {
@@ -29070,6 +29129,18 @@ export const verbs: Verb[] = [
             "focus": "solve",
             "object": "the problem"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Replacing the old cable solved the problem permanently.",
+            "ja": "古いケーブルを交換して問題を根本的に解決しました。",
+            "focus": "solved"
+          },
+          {
+            "en": "We need to solve the leak, not just cover it up.",
+            "ja": "水漏れをごまかすのではなく、きちんと解決する必要があります。",
+            "focus": "solve"
+          }
         ]
       }
     ],
@@ -29097,7 +29168,18 @@ export const verbs: Verb[] = [
             "focus": "solve by"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The problem was solved by moving the table.",
+            "ja": "テーブルを動かして問題を解決しました。",
+            "focus": "solved by"
+          },
+          {
+            "en": "The issue was solved by restarting the phone.",
+            "ja": "スマホを再起動して問題が解決しました。",
+            "focus": "solved by"
+          }
+        ]
       },
       {
         "phrase": "solve with",
@@ -29121,7 +29203,18 @@ export const verbs: Verb[] = [
             "focus": "solved with"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The problem was solved with a small piece of tape.",
+            "ja": "小さなテープで問題を解決しました。",
+            "focus": "solved with"
+          },
+          {
+            "en": "The puzzle was solved with one final clue.",
+            "ja": "最後のヒント1つでパズルが解けました。",
+            "focus": "solved with"
+          }
+        ]
       },
       {
         "phrase": "solve for",
@@ -29145,31 +29238,18 @@ export const verbs: Verb[] = [
             "focus": "solved for"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "solve through",
-        "ja": "〜を通して解決する",
-        "image": "話し合い・協力・工程を通じて問題を解決する。",
-        "pattern": "solve + O + through + method",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "We solved the issue through close communication.",
-            "ja": "私たちは密なコミュニケーションを通して問題を解決しました。",
-            "focus": "solved through"
+            "en": "Can you solve for x in this equation?",
+            "ja": "この方程式でxを求められますか？",
+            "focus": "solve for"
           },
           {
-            "en": "The teams solved the conflict through discussion.",
-            "ja": "両チームは話し合いを通して対立を解決しました。",
-            "focus": "solved through"
-          },
-          {
-            "en": "The problem was solved through cooperation with the supplier.",
-            "ja": "その問題は仕入先との協力によって解決しました。",
-            "focus": "solved through"
+            "en": "My daughter learned how to solve for the missing number.",
+            "ja": "娘は未知の数を求める方法を学びました。",
+            "focus": "solve for"
           }
-        ],
-        "dailyExamples": []
+        ]
       }
     ]
   },
@@ -29222,6 +29302,18 @@ export const verbs: Verb[] = [
             "focus": "report",
             "object": "progress"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I reported that the package had arrived safely.",
+            "ja": "荷物が無事に届いたと報告しました。",
+            "focus": "reported"
+          },
+          {
+            "en": "Please report what you find after checking the room.",
+            "ja": "部屋を確認した後、分かったことを報告してください。",
+            "focus": "report"
+          }
         ]
       },
       {
@@ -29250,6 +29342,18 @@ export const verbs: Verb[] = [
             "ja": "顧客はシステムのエラーを報告しました。",
             "focus": "reported",
             "object": "an error"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We reported the broken streetlight to the city.",
+            "ja": "壊れた街灯を市に報告しました。",
+            "focus": "reported"
+          },
+          {
+            "en": "I reported the noisy air conditioner to the hotel.",
+            "ja": "うるさいエアコンについてホテルに報告しました。",
+            "focus": "reported"
           }
         ]
       },
@@ -29280,6 +29384,18 @@ export const verbs: Verb[] = [
             "focus": "reported",
             "object": "that the issue had been resolved"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The news reported that heavy rain was coming.",
+            "ja": "ニュースは大雨が近づいていると報じました。",
+            "focus": "reported"
+          },
+          {
+            "en": "She reported that her wallet was missing.",
+            "ja": "彼女は財布をなくしたと届け出ました。",
+            "focus": "reported"
+          }
         ]
       },
       {
@@ -29308,6 +29424,18 @@ export const verbs: Verb[] = [
             "ja": "遅延がいつ発生したか報告する必要があります。",
             "focus": "report",
             "object": "when the delay occurred"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Tell me exactly what happened so I can report it.",
+            "ja": "報告できるよう、何が起きたか正確に教えてください。",
+            "focus": "report"
+          },
+          {
+            "en": "The child reported what happened at school.",
+            "ja": "その子は学校で起きたことを話しました。",
+            "focus": "reported"
           }
         ]
       },
@@ -29338,6 +29466,18 @@ export const verbs: Verb[] = [
             "focus": "reports",
             "object": "its monthly figures"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "My fitness app reports how many steps I take.",
+            "ja": "私の健康アプリは歩数を表示します。",
+            "focus": "reports"
+          },
+          {
+            "en": "The weather app reported a temperature of thirty degrees.",
+            "ja": "天気アプリは気温30度と表示しました。",
+            "focus": "reported"
+          }
         ]
       },
       {
@@ -29367,6 +29507,18 @@ export const verbs: Verb[] = [
             "focus": "report",
             "object": "any safety concerns"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We reported the lost bag to the station staff.",
+            "ja": "なくしたバッグを駅員に届け出ました。",
+            "focus": "reported"
+          },
+          {
+            "en": "He reported the accident to the police.",
+            "ja": "彼は事故を警察に届け出ました。",
+            "focus": "reported"
+          }
         ]
       }
     ],
@@ -29394,7 +29546,18 @@ export const verbs: Verb[] = [
             "focus": "reports to"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The lost phone was reported to the station staff.",
+            "ja": "なくしたスマホを駅員に届け出ました。",
+            "focus": "reported to"
+          },
+          {
+            "en": "The problem should be reported to the event organizer.",
+            "ja": "その問題をイベント主催者に報告してください。",
+            "focus": "reported to"
+          }
+        ]
       },
       {
         "phrase": "report on",
@@ -29418,7 +29581,18 @@ export const verbs: Verb[] = [
             "focus": "reports on"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The news reported on the heavy rain.",
+            "ja": "ニュースは大雨について報じました。",
+            "focus": "reported on"
+          },
+          {
+            "en": "The app reports on my weekly activity.",
+            "ja": "そのアプリは毎週の活動について報告します。",
+            "focus": "reports on"
+          }
+        ]
       },
       {
         "phrase": "report back",
@@ -29442,55 +29616,18 @@ export const verbs: Verb[] = [
             "focus": "reported back"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "report into",
-        "ja": "〜の指揮・管轄下にある",
-        "image": "組織上、どの部門や責任者につながるかを示す。",
-        "pattern": "report into + department/leader",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "The regional team reports into the Asia sales division.",
-            "ja": "地域チームはアジア営業部門の管轄下にあります。",
-            "focus": "reports into"
+            "en": "Check the room and report back to me.",
+            "ja": "部屋を確認して、結果を私に知らせてください。",
+            "focus": "report back"
           },
           {
-            "en": "This role reports into the general manager.",
-            "ja": "この役職はゼネラルマネージャーの指揮下にあります。",
-            "focus": "reports into"
-          },
-          {
-            "en": "Both departments report into the same executive.",
-            "ja": "両部門は同じ役員の管轄下にあります。",
-            "focus": "report into"
+            "en": "She reported back after speaking to the hotel.",
+            "ja": "彼女はホテルと話した後、結果を知らせてくれました。",
+            "focus": "reported back"
           }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "report through",
-        "ja": "〜を通して報告する",
-        "image": "定められた人・経路・システムを通して報告する。",
-        "pattern": "report + O + through + channel",
-        "examples": [
-          {
-            "en": "Please report the request through the support system.",
-            "ja": "その依頼はサポートシステムを通して報告してください。",
-            "focus": "report through"
-          },
-          {
-            "en": "The issue was reported through the local distributor.",
-            "ja": "その問題は現地代理店を通して報告されました。",
-            "focus": "reported through"
-          },
-          {
-            "en": "Employees can report concerns through the anonymous form.",
-            "ja": "従業員は匿名フォームを通して懸念事項を報告できます。",
-            "focus": "report through"
-          }
-        ],
-        "dailyExamples": []
+        ]
       }
     ]
   },
@@ -29540,6 +29677,18 @@ export const verbs: Verb[] = [
             "ja": "最新の数字が変わったため、プレゼン資料を更新しました。",
             "focus": "updated"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I updated the family shopping list.",
+            "ja": "家族の買い物リストを更新しました。",
+            "focus": "updated"
+          },
+          {
+            "en": "Please update your address in the file.",
+            "ja": "ファイル内の住所を更新してください。",
+            "focus": "update"
+          }
         ]
       },
       {
@@ -29564,6 +29713,18 @@ export const verbs: Verb[] = [
           {
             "en": "The sales team updated the visit schedule for next week.",
             "ja": "営業チームは来週の訪問予定を更新しました。",
+            "focus": "updated"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We updated our weekend schedule after the rain started.",
+            "ja": "雨が降り始めたので週末の予定を更新しました。",
+            "focus": "updated"
+          },
+          {
+            "en": "I updated the calendar with our new appointment.",
+            "ja": "新しい予定をカレンダーに追加しました。",
             "focus": "updated"
           }
         ]
@@ -29592,6 +29753,18 @@ export const verbs: Verb[] = [
             "ja": "ITチームは昨夜ソフトウェアを更新しました。",
             "focus": "updated"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I updated the app to the latest version.",
+            "ja": "アプリを最新版に更新しました。",
+            "focus": "updated"
+          },
+          {
+            "en": "Your phone needs to update tonight.",
+            "ja": "あなたのスマホは今夜更新が必要です。",
+            "focus": "update"
+          }
         ]
       },
       {
@@ -29618,104 +29791,23 @@ export const verbs: Verb[] = [
             "ja": "今後の確認のために会議履歴を更新しました。",
             "focus": "updated"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Please update your contact information.",
+            "ja": "連絡先情報を更新してください。",
+            "focus": "update"
+          },
+          {
+            "en": "The delivery status updated this morning.",
+            "ja": "配達状況が今朝更新されました。",
+            "focus": "updated"
+          }
         ]
       }
     ],
     "collocations": [],
-    "phrasalVerbs": [
-      {
-        "phrase": "update on",
-        "ja": "〜について最新情報を伝える",
-        "image": "onで共有する話題を示す。",
-        "pattern": "update + 人 + on + 内容",
-        "examples": [
-          {
-            "en": "Please update me on the inspection result.",
-            "ja": "検査結果について最新情報を共有してください。",
-            "focus": "update on"
-          },
-          {
-            "en": "I updated the team on the new delivery date.",
-            "ja": "新しい納品日についてチームに共有しました。",
-            "focus": "updated on"
-          },
-          {
-            "en": "We need to update management on the issue.",
-            "ja": "その問題について経営陣に共有する必要があります。",
-            "focus": "update on"
-          }
-        ]
-      },
-      {
-        "phrase": "update with",
-        "ja": "〜を加えて更新する",
-        "image": "withで追加する新情報や内容を示す。",
-        "pattern": "update + 名詞 + with + 新情報",
-        "examples": [
-          {
-            "en": "Please update the proposal with the new design.",
-            "ja": "新しいデザインを加えて提案書を更新してください。",
-            "focus": "update with"
-          },
-          {
-            "en": "I updated the report with the latest sales numbers.",
-            "ja": "最新の売上数字を加えて報告書を更新しました。",
-            "focus": "updated with"
-          },
-          {
-            "en": "We should update the catalog with the new product images.",
-            "ja": "新しい商品画像を加えてカタログを更新するべきです。",
-            "focus": "update with"
-          }
-        ]
-      },
-      {
-        "phrase": "update in",
-        "ja": "〜上で更新する",
-        "image": "inで更新するシステムや管理場所を示す。",
-        "pattern": "update + 名詞 + in + system/tool",
-        "examples": [
-          {
-            "en": "Please update the customer information in Salesforce.",
-            "ja": "Salesforce上で顧客情報を更新してください。",
-            "focus": "update in"
-          },
-          {
-            "en": "I updated the order status in the system.",
-            "ja": "システム上で注文ステータスを更新しました。",
-            "focus": "updated in"
-          },
-          {
-            "en": "We need to update the schedule in the shared calendar.",
-            "ja": "共有カレンダー上で予定を更新する必要があります。",
-            "focus": "update in"
-          }
-        ]
-      },
-      {
-        "phrase": "update to",
-        "ja": "〜に更新する・新しい版へ切り替える",
-        "image": "toで更新後の状態やバージョンを示す。",
-        "pattern": "update + 名詞 + to + new version/state",
-        "examples": [
-          {
-            "en": "Please update the software to the latest version.",
-            "ja": "ソフトウェアを最新版に更新してください。",
-            "focus": "update to"
-          },
-          {
-            "en": "We updated the price list to reflect the new rates.",
-            "ja": "新料金を反映するように価格表を更新しました。",
-            "focus": "updated to"
-          },
-          {
-            "en": "The team updated the status to completed.",
-            "ja": "チームはステータスを完了に更新しました。",
-            "focus": "updated to"
-          }
-        ]
-      }
-    ]
+    "phrasalVerbs": []
   },
   {
     "id": "review",
@@ -29764,6 +29856,18 @@ export const verbs: Verb[] = [
             "ja": "契約書を慎重に確認する必要があります。",
             "focus": "review"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I reviewed the rental agreement before signing it.",
+            "ja": "署名前に賃貸契約書を確認しました。",
+            "focus": "reviewed"
+          },
+          {
+            "en": "Please review the message before you send it.",
+            "ja": "送信前にメッセージを確認してください。",
+            "focus": "review"
+          }
         ]
       },
       {
@@ -29790,6 +29894,18 @@ export const verbs: Verb[] = [
             "ja": "チームは工程表を見直し、作業を調整しました。",
             "focus": "reviewed"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We reviewed our travel plan the night before.",
+            "ja": "前夜に旅行計画を見直しました。",
+            "focus": "reviewed"
+          },
+          {
+            "en": "Let us review tomorrow's schedule after dinner.",
+            "ja": "夕食後に明日の予定を確認しましょう。",
+            "focus": "review"
+          }
         ]
       },
       {
@@ -29814,6 +29930,18 @@ export const verbs: Verb[] = [
           {
             "en": "Please review the performance before the next meeting.",
             "ja": "次の会議前に実績を確認してください。",
+            "focus": "review"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I reviewed my test results with my teacher.",
+            "ja": "先生とテスト結果を振り返りました。",
+            "focus": "reviewed"
+          },
+          {
+            "en": "We review our monthly spending together.",
+            "ja": "私たちは毎月の支出を一緒に見直します。",
             "focus": "review"
           }
         ]
@@ -29842,6 +29970,18 @@ export const verbs: Verb[] = [
             "ja": "退勤前に自分のタスクリストを見直してください。",
             "focus": "review"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "My son reviewed his answers before handing in the test.",
+            "ja": "息子はテストを提出する前に答えを見直しました。",
+            "focus": "reviewed"
+          },
+          {
+            "en": "I reviewed the photos and deleted the blurry ones.",
+            "ja": "写真を確認して、ぼやけたものを削除しました。",
+            "focus": "reviewed"
+          }
         ]
       },
       {
@@ -29868,81 +30008,23 @@ export const verbs: Verb[] = [
             "ja": "彼女は依頼内容を確認し、回答を準備しました。",
             "focus": "reviewed"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I reviewed the comments on my photo.",
+            "ja": "自分の写真へのコメントを確認しました。",
+            "focus": "reviewed"
+          },
+          {
+            "en": "We reviewed the restaurant reviews before booking.",
+            "ja": "予約前にそのレストランの口コミを確認しました。",
+            "focus": "reviewed"
+          }
         ]
       }
     ],
     "collocations": [],
-    "phrasalVerbs": [
-      {
-        "phrase": "review with",
-        "ja": "〜と一緒に確認する",
-        "image": "withで一緒に確認する相手を示す。",
-        "pattern": "review + 名詞 + with + 人",
-        "examples": [
-          {
-            "en": "Please review the proposal with the sales manager.",
-            "ja": "営業マネージャーと提案書を確認してください。",
-            "focus": "review with"
-          },
-          {
-            "en": "I reviewed the numbers with the accounting team.",
-            "ja": "経理チームと数字を確認しました。",
-            "focus": "reviewed with"
-          },
-          {
-            "en": "We need to review the design with the client.",
-            "ja": "顧客とデザインを確認する必要があります。",
-            "focus": "review with"
-          }
-        ]
-      },
-      {
-        "phrase": "review for",
-        "ja": "〜がないか確認する",
-        "image": "forで探すミス・不足・問題を示す。",
-        "pattern": "review + 名詞 + for + problem/error",
-        "examples": [
-          {
-            "en": "Please review the contract for missing information.",
-            "ja": "不足情報がないか契約書を確認してください。",
-            "focus": "review for"
-          },
-          {
-            "en": "I reviewed the report for calculation errors.",
-            "ja": "計算ミスがないか報告書を確認しました。",
-            "focus": "reviewed for"
-          },
-          {
-            "en": "We should review the design for safety issues.",
-            "ja": "安全上の問題がないかデザインを確認するべきです。",
-            "focus": "review for"
-          }
-        ]
-      },
-      {
-        "phrase": "review against",
-        "ja": "基準・条件に照らして確認する",
-        "image": "againstで判断に使う基準を示す。",
-        "pattern": "review + 名詞 + against + criteria/requirements",
-        "examples": [
-          {
-            "en": "Please review the proposal against the client requirements.",
-            "ja": "顧客要件に照らして提案書を確認してください。",
-            "focus": "review against"
-          },
-          {
-            "en": "We reviewed the results against the target.",
-            "ja": "目標に照らして結果を確認しました。",
-            "focus": "reviewed against"
-          },
-          {
-            "en": "The engineer reviewed the design against the safety standards.",
-            "ja": "技術者は安全基準に照らして設計を確認しました。",
-            "focus": "reviewed against"
-          }
-        ]
-      }
-    ]
+    "phrasalVerbs": []
   },
   {
     "id": "compare",
@@ -29991,6 +30073,18 @@ export const verbs: Verb[] = [
             "ja": "サンプルを承認済みデザインと比較しました。",
             "focus": "compared"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I compared the two jackets before choosing one.",
+            "ja": "どちらかを選ぶ前に2着のジャケットを比べました。",
+            "focus": "compared"
+          },
+          {
+            "en": "Do not compare yourself with other people.",
+            "ja": "自分を他人と比べないでください。",
+            "focus": "compare"
+          }
         ]
       },
       {
@@ -30017,6 +30111,18 @@ export const verbs: Verb[] = [
             "ja": "顧客は当社価格を競合の提案と比較しました。",
             "focus": "compared"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We compared prices at three supermarkets.",
+            "ja": "3つのスーパーの価格を比較しました。",
+            "focus": "compared"
+          },
+          {
+            "en": "Compare the hotel prices before booking.",
+            "ja": "予約前にホテルの価格を比べてください。",
+            "focus": "Compare"
+          }
         ]
       },
       {
@@ -30041,6 +30147,18 @@ export const verbs: Verb[] = [
           {
             "en": "Please compare the options and choose the best one.",
             "ja": "選択肢を比較して最適なものを選んでください。",
+            "focus": "compare"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I compared the battery life of the two phones.",
+            "ja": "2台のスマホの電池持ちを比較しました。",
+            "focus": "compared"
+          },
+          {
+            "en": "Let us compare the sizes of these boxes.",
+            "ja": "これらの箱の大きさを比べましょう。",
             "focus": "compare"
           }
         ]
@@ -30069,6 +30187,18 @@ export const verbs: Verb[] = [
             "ja": "上司はエリア別の売上実績を比較しました。",
             "focus": "compared"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We compared the photos before and after the renovation.",
+            "ja": "改装前後の写真を比較しました。",
+            "focus": "compared"
+          },
+          {
+            "en": "I compared this week's step count with last week's.",
+            "ja": "今週の歩数を先週と比較しました。",
+            "focus": "compared"
+          }
         ]
       },
       {
@@ -30094,6 +30224,18 @@ export const verbs: Verb[] = [
             "en": "The team compared the delivery time against the target.",
             "ja": "チームは納期を目標と比較しました。",
             "focus": "compared"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We compared the room size with the online description.",
+            "ja": "部屋の広さをオンラインの説明と照らし合わせました。",
+            "focus": "compared"
+          },
+          {
+            "en": "Compare the product with the safety instructions.",
+            "ja": "商品を安全上の説明と照合してください。",
+            "focus": "Compare"
           }
         ]
       },
@@ -30121,127 +30263,23 @@ export const verbs: Verb[] = [
             "ja": "同じ試験条件がないとサンプルを比較するのは難しいです。",
             "focus": "compare"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The two trips are hard to compare because they were so different.",
+            "ja": "2つの旅行は大きく異なるため比較しにくいです。",
+            "focus": "compare"
+          },
+          {
+            "en": "You cannot compare a small café with a large restaurant.",
+            "ja": "小さなカフェと大きなレストランは単純には比べられません。",
+            "focus": "compare"
+          }
         ]
       }
     ],
     "collocations": [],
-    "phrasalVerbs": [
-      {
-        "phrase": "compare with",
-        "ja": "〜と詳しく比較する",
-        "image": "withは違いと共通点を見る比較対象を示す。",
-        "pattern": "compare A with B",
-        "examples": [
-          {
-            "en": "Please compare this quote with the previous quote.",
-            "ja": "この見積を前回の見積と比較してください。",
-            "focus": "compare with"
-          },
-          {
-            "en": "We compared the new design with the original design.",
-            "ja": "新しいデザインを元のデザインと比較しました。",
-            "focus": "compared with"
-          },
-          {
-            "en": "Our proposal was compared with two other proposals.",
-            "ja": "当社の提案は他の2つの提案と比較されました。",
-            "focus": "compared with"
-          }
-        ]
-      },
-      {
-        "phrase": "compare to",
-        "ja": "〜と比べる・〜になぞらえる",
-        "image": "toは一般的な比較や、似たものへのたとえに使う。",
-        "pattern": "compare A to B",
-        "examples": [
-          {
-            "en": "Please compare the actual cost to the budget.",
-            "ja": "実際の費用を予算と比較してください。",
-            "focus": "compare to"
-          },
-          {
-            "en": "We compared this year's sales to last year's sales.",
-            "ja": "今年の売上を昨年の売上と比較しました。",
-            "focus": "compared to"
-          },
-          {
-            "en": "The report compares our service to the competitor's service.",
-            "ja": "その報告書は当社サービスを競合サービスと比較しています。",
-            "focus": "compares to"
-          }
-        ]
-      },
-      {
-        "phrase": "compare against",
-        "ja": "基準・目標に照らして比較する",
-        "image": "againstは目標、基準、見積との比較に向く。",
-        "pattern": "compare A against B",
-        "examples": [
-          {
-            "en": "We compared the result against the target.",
-            "ja": "結果を目標に照らして比較しました。",
-            "focus": "compared against"
-          },
-          {
-            "en": "Please compare the sample against the approved specification.",
-            "ja": "サンプルを承認済み仕様に照らして比較してください。",
-            "focus": "compare against"
-          },
-          {
-            "en": "The team compared the cost against the original estimate.",
-            "ja": "チームは費用を当初見積に照らして比較しました。",
-            "focus": "compared against"
-          }
-        ]
-      },
-      {
-        "phrase": "compare across",
-        "ja": "複数の範囲・グループにわたって比較する",
-        "image": "acrossで複数の地域、期間、製品群を横断する。",
-        "pattern": "compare + data/items + across + groups/periods",
-        "examples": [
-          {
-            "en": "We compared sales across all regions.",
-            "ja": "全地域にわたって売上を比較しました。",
-            "focus": "compared across"
-          },
-          {
-            "en": "Please compare the prices across the three suppliers.",
-            "ja": "3社の仕入先にわたって価格を比較してください。",
-            "focus": "compare across"
-          },
-          {
-            "en": "The report compares performance across different periods.",
-            "ja": "その報告書は異なる期間にわたって実績を比較しています。",
-            "focus": "compares across"
-          }
-        ]
-      },
-      {
-        "phrase": "compare by",
-        "ja": "基準・項目別に比較する",
-        "image": "byで比較に使う項目や分類方法を示す。",
-        "pattern": "compare + items + by + category/feature",
-        "examples": [
-          {
-            "en": "Please compare the products by price and brightness.",
-            "ja": "製品を価格と明るさの項目別に比較してください。",
-            "focus": "compare by"
-          },
-          {
-            "en": "We compared the proposals by cost, schedule, and risk.",
-            "ja": "提案を費用、日程、リスクの項目別に比較しました。",
-            "focus": "compared by"
-          },
-          {
-            "en": "The dashboard compares customers by sales volume.",
-            "ja": "ダッシュボードは顧客を売上規模別に比較します。",
-            "focus": "compares by"
-          }
-        ]
-      }
-    ]
+    "phrasalVerbs": []
   },
   {
     "id": "introduce",
@@ -30290,6 +30328,18 @@ export const verbs: Verb[] = [
             "ja": "彼女はプレゼンテーションの前にゲスト講演者を紹介しました。",
             "focus": "introduced"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I introduced my new neighbor to my family.",
+            "ja": "新しい近所の人を家族に紹介しました。",
+            "focus": "introduced"
+          },
+          {
+            "en": "Let me introduce you to my best friend.",
+            "ja": "親友を紹介させてください。",
+            "focus": "introduce"
+          }
         ]
       },
       {
@@ -30316,6 +30366,18 @@ export const verbs: Verb[] = [
             "ja": "顧客との打ち合わせでこの商品を紹介してください。",
             "focus": "introduce"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "My sister introduced me to a useful travel app.",
+            "ja": "姉が便利な旅行アプリを教えてくれました。",
+            "focus": "introduced"
+          },
+          {
+            "en": "The café introduced a new summer menu.",
+            "ja": "そのカフェは新しい夏メニューを導入しました。",
+            "focus": "introduced"
+          }
         ]
       },
       {
@@ -30340,6 +30402,18 @@ export const verbs: Verb[] = [
           {
             "en": "They introduced clear rules for handling customer complaints.",
             "ja": "彼らは顧客クレーム対応の明確なルールを導入しました。",
+            "focus": "introduced"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Our family introduced a new rule for screen time.",
+            "ja": "家族で画面を見る時間について新しいルールを取り入れました。",
+            "focus": "introduced"
+          },
+          {
+            "en": "The school introduced an online booking system.",
+            "ja": "学校はオンライン予約システムを導入しました。",
             "focus": "introduced"
           }
         ]
@@ -30368,6 +30442,18 @@ export const verbs: Verb[] = [
             "ja": "マネージャーは話し合いの中で別の方法を提示しました。",
             "focus": "introduced"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She introduced the idea of eating outside.",
+            "ja": "彼女は外で食べる案を出しました。",
+            "focus": "introduced"
+          },
+          {
+            "en": "I introduced a simpler way to organize the kitchen.",
+            "ja": "キッチンを整理するもっと簡単な方法を提案しました。",
+            "focus": "introduced"
+          }
         ]
       },
       {
@@ -30393,6 +30479,18 @@ export const verbs: Verb[] = [
             "en": "Please introduce the change gradually to avoid confusion.",
             "ja": "混乱を避けるため、その変更は段階的に導入してください。",
             "focus": "introduce"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We introduced a short walk into our morning routine.",
+            "ja": "朝の習慣に短い散歩を取り入れました。",
+            "focus": "introduced"
+          },
+          {
+            "en": "The restaurant introduced smaller portions.",
+            "ja": "そのレストランは少量サイズを導入しました。",
+            "focus": "introduced"
           }
         ]
       },
@@ -30420,6 +30518,18 @@ export const verbs: Verb[] = [
             "ja": "その報告書は重要なポイントを分かりやすく提示しています。",
             "focus": "introduces"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "He introduced the topic of moving house.",
+            "ja": "彼は引っ越しの話題を切り出しました。",
+            "focus": "introduced"
+          },
+          {
+            "en": "She introduced the dish as a family recipe.",
+            "ja": "彼女はその料理を家族のレシピとして紹介しました。",
+            "focus": "introduced"
+          }
         ]
       }
     ],
@@ -30446,6 +30556,18 @@ export const verbs: Verb[] = [
             "ja": "新入社員は研修中に社内ツールを紹介されます。",
             "focus": "introduced to"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "My friend was introduced to my parents.",
+            "ja": "友人を両親に紹介しました。",
+            "focus": "introduced to"
+          },
+          {
+            "en": "I was introduced to Japanese history through this book.",
+            "ja": "この本をきっかけに日本史を知りました。",
+            "focus": "introduced to"
+          }
         ]
       },
       {
@@ -30467,6 +30589,18 @@ export const verbs: Verb[] = [
           {
             "en": "This method will be introduced into the next training session.",
             "ja": "この方法は次回の研修に取り入れられます。",
+            "focus": "introduced into"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "More vegetables were introduced into our meals.",
+            "ja": "食事にもっと野菜を取り入れました。",
+            "focus": "introduced into"
+          },
+          {
+            "en": "Tablets were introduced into the classroom.",
+            "ja": "学校は教室にタブレットを導入しました。",
             "focus": "introduced into"
           }
         ]
@@ -30492,51 +30626,17 @@ export const verbs: Verb[] = [
             "ja": "この機能は大きな改善点として紹介されました。",
             "focus": "introduced as"
           }
-        ]
-      },
-      {
-        "phrase": "introduce through",
-        "ja": "〜を通して紹介・導入する",
-        "image": "代理店・研修・キャンペーンなどの経路を使う。",
-        "pattern": "introduce through",
-        "examples": [
+        ],
+        "dailyExamples": [
           {
-            "en": "The product was introduced through our distributor network.",
-            "ja": "その商品は販売代理店網を通して紹介されました。",
-            "focus": "introduced through"
+            "en": "He was introduced as her new partner.",
+            "ja": "彼女は彼を新しいパートナーとして紹介しました。",
+            "focus": "introduced as"
           },
           {
-            "en": "The new process was introduced through staff training.",
-            "ja": "新しい工程は社員研修を通して導入されました。",
-            "focus": "introduced through"
-          },
-          {
-            "en": "The service will be introduced through a customer seminar.",
-            "ja": "そのサービスは顧客向けセミナーを通して紹介されます。",
-            "focus": "introduced through"
-          }
-        ]
-      },
-      {
-        "phrase": "introduce by",
-        "ja": "〜することで紹介・導入する",
-        "image": "説明・実演・段階展開などの方法を示す。",
-        "pattern": "introduce by",
-        "examples": [
-          {
-            "en": "The new tool was introduced by giving a live demonstration.",
-            "ja": "新しいツールは実演することで紹介されました。",
-            "focus": "introduced by"
-          },
-          {
-            "en": "The policy was introduced by explaining its purpose first.",
-            "ja": "その方針は最初に目的を説明することで導入されました。",
-            "focus": "introduced by"
-          },
-          {
-            "en": "The change was introduced by starting with one department.",
-            "ja": "その変更は一つの部署から始めることで導入されました。",
-            "focus": "introduced by"
+            "en": "The drink was introduced as the cafe summer special.",
+            "ja": "そのカフェはその飲み物を夏の特別メニューとして紹介しました。",
+            "focus": "introduced as"
           }
         ]
       }

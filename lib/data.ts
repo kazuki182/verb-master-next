@@ -30689,6 +30689,18 @@ export const verbs: Verb[] = [
             "ja": "金曜日までに製品仕様書を依頼してください。",
             "focus": "request"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I requested a copy of my medical records.",
+            "ja": "診療記録のコピーを請求しました。",
+            "focus": "requested"
+          },
+          {
+            "en": "We requested more information about the tour.",
+            "ja": "そのツアーについて詳しい情報を求めました。",
+            "focus": "requested"
+          }
         ]
       },
       {
@@ -30713,6 +30725,18 @@ export const verbs: Verb[] = [
           {
             "en": "The team requested approval to revise the design.",
             "ja": "チームは設計を修正する承認を依頼しました。",
+            "focus": "requested"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She requested permission to leave school early.",
+            "ja": "彼女は学校を早退する許可を求めました。",
+            "focus": "requested"
+          },
+          {
+            "en": "I requested permission to use the community room.",
+            "ja": "地域の集会室を使う許可を申請しました。",
             "focus": "requested"
           }
         ]
@@ -30741,6 +30765,18 @@ export const verbs: Verb[] = [
             "ja": "担当部署に対応を依頼してください。",
             "focus": "request"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We requested a refund for the damaged item.",
+            "ja": "破損した商品の返金を依頼しました。",
+            "focus": "requested"
+          },
+          {
+            "en": "He requested help with his lost luggage.",
+            "ja": "彼は紛失した荷物について助けを求めました。",
+            "focus": "requested"
+          }
         ]
       },
       {
@@ -30767,6 +30803,18 @@ export const verbs: Verb[] = [
             "ja": "費用を確認してから変更を依頼してください。",
             "focus": "request"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I requested a quieter room at the hotel.",
+            "ja": "ホテルでもっと静かな部屋を希望しました。",
+            "focus": "requested"
+          },
+          {
+            "en": "She requested a change to her appointment time.",
+            "ja": "彼女は予約時間の変更を依頼しました。",
+            "focus": "requested"
+          }
         ]
       },
       {
@@ -30791,6 +30839,18 @@ export const verbs: Verb[] = [
           {
             "en": "Management requested that each team submit a report.",
             "ja": "経営陣は各チームに報告書を提出するよう依頼しました。",
+            "focus": "requested"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The school requested that parents arrive by nine.",
+            "ja": "学校は保護者に9時までに来るよう要請しました。",
+            "focus": "requested"
+          },
+          {
+            "en": "I requested that the package be left by the door.",
+            "ja": "荷物を玄関脇に置くよう依頼しました。",
             "focus": "requested"
           }
         ]
@@ -30819,104 +30879,23 @@ export const verbs: Verb[] = [
             "ja": "正式な申請フォームを使って許可を依頼してください。",
             "focus": "request"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We formally requested a copy of the contract.",
+            "ja": "契約書のコピーを正式に請求しました。",
+            "focus": "requested"
+          },
+          {
+            "en": "She formally requested a review of the decision.",
+            "ja": "彼女はその決定の見直しを正式に求めました。",
+            "focus": "requested"
+          }
         ]
       }
     ],
     "collocations": [],
-    "phrasalVerbs": [
-      {
-        "phrase": "request from",
-        "ja": "〜に依頼する・〜から求める",
-        "image": "依頼先や入手先を示す。",
-        "pattern": "request from",
-        "examples": [
-          {
-            "en": "The drawing was requested from the design team.",
-            "ja": "図面は設計チームに依頼されました。",
-            "focus": "requested from"
-          },
-          {
-            "en": "Additional data was requested from the supplier.",
-            "ja": "追加データは仕入先に依頼されました。",
-            "focus": "requested from"
-          },
-          {
-            "en": "Confirmation was requested from the client.",
-            "ja": "確認は顧客に依頼されました。",
-            "focus": "requested from"
-          }
-        ]
-      },
-      {
-        "phrase": "request through",
-        "ja": "〜を通して依頼する",
-        "image": "システム・担当者・正式な窓口を経由して依頼する。",
-        "pattern": "request through",
-        "examples": [
-          {
-            "en": "Technical support was requested through the online portal.",
-            "ja": "技術支援はオンライン窓口を通して依頼されました。",
-            "focus": "requested through"
-          },
-          {
-            "en": "The change was requested through the project manager.",
-            "ja": "その変更はプロジェクトマネージャーを通して依頼されました。",
-            "focus": "requested through"
-          },
-          {
-            "en": "Approval must be requested through the internal system.",
-            "ja": "承認は社内システムを通して依頼する必要があります。",
-            "focus": "requested through"
-          }
-        ]
-      },
-      {
-        "phrase": "request by",
-        "ja": "〜の方法で依頼する",
-        "image": "メール・電話・フォームなど、依頼方法を示す。",
-        "pattern": "request by",
-        "examples": [
-          {
-            "en": "The documents were requested by email.",
-            "ja": "書類はメールで依頼されました。",
-            "focus": "requested by"
-          },
-          {
-            "en": "A site visit was requested by phone.",
-            "ja": "現場訪問は電話で依頼されました。",
-            "focus": "requested by"
-          },
-          {
-            "en": "Samples can be requested by completing this form.",
-            "ja": "サンプルはこのフォームに記入することで依頼できます。",
-            "focus": "requested by"
-          }
-        ]
-      },
-      {
-        "phrase": "request on behalf of",
-        "ja": "〜を代表して依頼する",
-        "image": "顧客・部署・上司などの代わりに依頼する。",
-        "pattern": "request on behalf of",
-        "examples": [
-          {
-            "en": "The extension was requested on behalf of the client.",
-            "ja": "期限延長は顧客を代表して依頼されました。",
-            "focus": "requested on behalf of"
-          },
-          {
-            "en": "Additional support was requested on behalf of the sales team.",
-            "ja": "追加支援は営業チームを代表して依頼されました。",
-            "focus": "requested on behalf of"
-          },
-          {
-            "en": "The meeting was requested on behalf of management.",
-            "ja": "その会議は経営陣を代表して依頼されました。",
-            "focus": "requested on behalf of"
-          }
-        ]
-      }
-    ]
+    "phrasalVerbs": []
   },
   {
     "id": "suggest",
@@ -30965,6 +30944,18 @@ export const verbs: Verb[] = [
             "ja": "彼女は顧客導線を改善する案を提案しました。",
             "focus": "suggested"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I suggested a picnic in the park.",
+            "ja": "公園でのピクニックを提案しました。",
+            "focus": "suggested"
+          },
+          {
+            "en": "She suggested a small cafe near the station.",
+            "ja": "彼女は駅近くの小さなカフェを提案しました。",
+            "focus": "suggested"
+          }
         ]
       },
       {
@@ -30989,6 +30980,18 @@ export const verbs: Verb[] = [
           {
             "en": "I suggested that the team share updates every Friday.",
             "ja": "私はチームが毎週金曜に進捗を共有することを提案しました。",
+            "focus": "suggested"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I suggest that we leave before the traffic gets bad.",
+            "ja": "渋滞がひどくなる前に出発することを提案します。",
+            "focus": "suggest"
+          },
+          {
+            "en": "He suggested that I talk to my doctor.",
+            "ja": "彼は私に医師へ相談するよう勧めました。",
             "focus": "suggested"
           }
         ]
@@ -31017,6 +31020,18 @@ export const verbs: Verb[] = [
             "ja": "彼女は見積をもう一度確認することを提案しました。",
             "focus": "suggested"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She suggested taking a short break.",
+            "ja": "彼女は少し休憩することを提案しました。",
+            "focus": "suggested"
+          },
+          {
+            "en": "I suggest booking the tickets early.",
+            "ja": "早めにチケットを予約することを勧めます。",
+            "focus": "suggest"
+          }
         ]
       },
       {
@@ -31041,6 +31056,18 @@ export const verbs: Verb[] = [
           {
             "en": "We suggested a simple way to explain the product features.",
             "ja": "私たちは商品の特徴を説明する簡単な方法を提案しました。",
+            "focus": "suggested"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Can you suggest a better way to store these boxes?",
+            "ja": "この箱をもっと上手に収納する方法を提案してくれる？",
+            "focus": "suggest"
+          },
+          {
+            "en": "He suggested using the train instead of driving.",
+            "ja": "彼は車ではなく電車を使う方法を提案しました。",
             "focus": "suggested"
           }
         ]
@@ -31069,6 +31096,18 @@ export const verbs: Verb[] = [
             "ja": "仕入先はより安い代替案を提案しました。",
             "focus": "suggested"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The app suggested a different route home.",
+            "ja": "アプリは別の帰宅ルートを示しました。",
+            "focus": "suggested"
+          },
+          {
+            "en": "She suggested tea as an alternative to coffee.",
+            "ja": "彼女はコーヒーの代わりに紅茶を勧めました。",
+            "focus": "suggested"
+          }
         ]
       },
       {
@@ -31095,81 +31134,23 @@ export const verbs: Verb[] = [
             "ja": "その遅延はプロセスを見直す必要があることを示しています。",
             "focus": "suggests"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The dark clouds suggest that it may rain soon.",
+            "ja": "黒い雲はもうすぐ雨が降る可能性を示しています。",
+            "focus": "suggest"
+          },
+          {
+            "en": "His smile suggested that he liked the gift.",
+            "ja": "彼の笑顔はプレゼントを気に入ったことを示していました。",
+            "focus": "suggested"
+          }
         ]
       }
     ],
     "collocations": [],
-    "phrasalVerbs": [
-      {
-        "phrase": "suggest to",
-        "ja": "〜に提案する",
-        "image": "提案する相手をtoで示す。",
-        "pattern": "suggest to",
-        "examples": [
-          {
-            "en": "I suggested to the client that we test the sample first.",
-            "ja": "私は顧客に、まずサンプルを試すことを提案しました。",
-            "focus": "suggested to"
-          },
-          {
-            "en": "We suggested to management that the launch be delayed.",
-            "ja": "私たちは経営陣に発売を延期することを提案しました。",
-            "focus": "suggested to"
-          },
-          {
-            "en": "She suggested to the team that they use a simpler layout.",
-            "ja": "彼女はチームに、より簡単なレイアウトを使うことを提案しました。",
-            "focus": "suggested to"
-          }
-        ]
-      },
-      {
-        "phrase": "suggest as",
-        "ja": "〜として提案する",
-        "image": "役割・位置付け・選択肢として示す。",
-        "pattern": "suggest as",
-        "examples": [
-          {
-            "en": "This model was suggested as the best option for the project.",
-            "ja": "このモデルは案件に最適な選択肢として提案されました。",
-            "focus": "suggested as"
-          },
-          {
-            "en": "The meeting room was suggested as a temporary workspace.",
-            "ja": "その会議室は一時的な作業場所として提案されました。",
-            "focus": "suggested as"
-          },
-          {
-            "en": "A phased rollout was suggested as a safer approach.",
-            "ja": "段階的な展開がより安全な方法として提案されました。",
-            "focus": "suggested as"
-          }
-        ]
-      },
-      {
-        "phrase": "suggest for",
-        "ja": "〜向けに提案する",
-        "image": "用途・顧客・状況に合うものとして示す。",
-        "pattern": "suggest for",
-        "examples": [
-          {
-            "en": "This product is suggested for outdoor installations.",
-            "ja": "この製品は屋外設置向けとして提案されています。",
-            "focus": "suggested for"
-          },
-          {
-            "en": "The lower-cost option was suggested for the temporary display.",
-            "ja": "低価格の選択肢が仮設展示向けに提案されました。",
-            "focus": "suggested for"
-          },
-          {
-            "en": "A warmer color temperature was suggested for the restaurant.",
-            "ja": "より暖かい色温度がそのレストラン向けに提案されました。",
-            "focus": "suggested for"
-          }
-        ]
-      }
-    ]
+    "phrasalVerbs": []
   },
   {
     "id": "agree",
@@ -31217,6 +31198,18 @@ export const verbs: Verb[] = [
             "ja": "管理者たちは、その問題が緊急だという点で意見が一致しました。",
             "focus": "agreed"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We agreed that the room was too small.",
+            "ja": "その部屋は狭すぎるという点で意見が一致しました。",
+            "focus": "agreed"
+          },
+          {
+            "en": "I agree that we should leave earlier.",
+            "ja": "もっと早く出発すべきだという意見に賛成です。",
+            "focus": "agree"
+          }
         ]
       },
       {
@@ -31241,6 +31234,18 @@ export const verbs: Verb[] = [
           {
             "en": "The client agreed to wait until Friday.",
             "ja": "顧客は金曜日まで待つことに同意しました。",
+            "focus": "agreed"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She agreed to watch the children for an hour.",
+            "ja": "彼女は1時間子どもたちを見てくれることを承諾しました。",
+            "focus": "agreed"
+          },
+          {
+            "en": "I agreed to drive everyone home.",
+            "ja": "みんなを車で家まで送ることに同意しました。",
             "focus": "agreed"
           }
         ]
@@ -31269,6 +31274,18 @@ export const verbs: Verb[] = [
             "ja": "経営陣は新しい計画に基本合意しました。",
             "focus": "agreed"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We agreed in principle to share the repair cost.",
+            "ja": "修理費を分担することに基本的に合意しました。",
+            "focus": "agreed"
+          },
+          {
+            "en": "My parents agreed in principle to the trip.",
+            "ja": "両親はその旅行に基本的に賛成しました。",
+            "focus": "agreed"
+          }
         ]
       }
     ],
@@ -31295,6 +31312,18 @@ export const verbs: Verb[] = [
             "ja": "その数字は最新の報告書と一致していません。",
             "focus": "agree with"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I agree with you about the new sofa.",
+            "ja": "新しいソファについてあなたの意見に賛成です。",
+            "focus": "agree with"
+          },
+          {
+            "en": "She agreed with my idea for dinner.",
+            "ja": "彼女は夕食についての私の案に賛成しました。",
+            "focus": "agreed with"
+          }
         ]
       },
       {
@@ -31316,6 +31345,18 @@ export const verbs: Verb[] = [
           {
             "en": "Management agreed to the proposed change.",
             "ja": "経営陣は提案された変更を受け入れました。",
+            "focus": "agreed to"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We agreed to the new house rules.",
+            "ja": "私たちは新しい家のルールを受け入れました。",
+            "focus": "agreed to"
+          },
+          {
+            "en": "He agreed to the change in plans.",
+            "ja": "彼は予定変更を承諾しました。",
             "focus": "agreed to"
           }
         ]
@@ -31341,6 +31382,18 @@ export const verbs: Verb[] = [
             "ja": "チームはプロジェクト範囲について合意しました。",
             "focus": "agreed on"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We agreed on a time to meet.",
+            "ja": "会う時間を決めました。",
+            "focus": "agreed on"
+          },
+          {
+            "en": "The family agreed on where to go for dinner.",
+            "ja": "家族で夕食へ行く場所を決めました。",
+            "focus": "agreed on"
+          }
         ]
       },
       {
@@ -31363,6 +31416,18 @@ export const verbs: Verb[] = [
             "en": "We do not always agree about priorities.",
             "ja": "私たちは優先順位について、いつも意見が一致するとは限りません。",
             "focus": "agree about"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We agree about how much screen time the children should have.",
+            "ja": "子どもの画面利用時間について意見が一致しています。",
+            "focus": "agree about"
+          },
+          {
+            "en": "My sister and I agreed about the best route.",
+            "ja": "姉と私は一番よい道順について意見が一致しました。",
+            "focus": "agreed about"
           }
         ]
       }
@@ -31418,6 +31483,18 @@ export const verbs: Verb[] = [
             "focus": "arranged",
             "object": "an appointment"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I arranged dinner with an old friend.",
+            "ja": "昔の友人との夕食を手配しました。",
+            "focus": "arranged"
+          },
+          {
+            "en": "We arranged a family meeting for Sunday.",
+            "ja": "日曜日に家族会議を設定しました。",
+            "focus": "arranged"
+          }
         ]
       },
       {
@@ -31447,6 +31524,18 @@ export const verbs: Verb[] = [
             "focus": "arranged",
             "object": "the shipment"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She arranged a taxi to the airport.",
+            "ja": "彼女は空港までのタクシーを手配しました。",
+            "focus": "arranged"
+          },
+          {
+            "en": "I arranged redelivery for the missed package.",
+            "ja": "受け取れなかった荷物の再配達を手配しました。",
+            "focus": "arranged"
+          }
         ]
       },
       {
@@ -31471,6 +31560,18 @@ export const verbs: Verb[] = [
           {
             "en": "I arranged to speak with the client after lunch.",
             "ja": "私は昼食後に顧客と話す予定を組みました。",
+            "focus": "arranged"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We arranged to meet outside the theater.",
+            "ja": "劇場の外で会う段取りを決めました。",
+            "focus": "arranged"
+          },
+          {
+            "en": "I arranged to pick up the keys after work.",
+            "ja": "仕事後に鍵を受け取る段取りを整えました。",
             "focus": "arranged"
           }
         ]
@@ -31502,6 +31603,18 @@ export const verbs: Verb[] = [
             "focus": "arranged",
             "object": "the product samples"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She arranged the books by color.",
+            "ja": "彼女は本を色ごとに並べました。",
+            "focus": "arranged"
+          },
+          {
+            "en": "I arranged the chairs in a circle.",
+            "ja": "椅子を円形に並べました。",
+            "focus": "arranged"
+          }
         ]
       }
     ],
@@ -31528,97 +31641,17 @@ export const verbs: Verb[] = [
             "ja": "彼女は車が顧客を迎えに行くよう手配しました。",
             "focus": "arranged for"
           }
-        ]
-      },
-      {
-        "phrase": "arrange with",
-        "ja": "〜と相談して段取りを決める",
-        "image": "相手と連絡を取り、予定や方法を調整する。",
-        "pattern": "arrange with + 相手 + to do",
-        "examples": [
+        ],
+        "dailyExamples": [
           {
-            "en": "We arranged with the client to meet on Friday.",
-            "ja": "私たちは金曜日に会うことで顧客と調整しました。",
-            "focus": "arranged with"
+            "en": "I arranged for a taxi to pick us up.",
+            "ja": "タクシーに迎えに来てもらうよう手配しました。",
+            "focus": "arranged for"
           },
           {
-            "en": "I arranged with the warehouse to ship the goods tomorrow.",
-            "ja": "私は明日商品を出荷するよう倉庫と調整しました。",
-            "focus": "arranged with"
-          },
-          {
-            "en": "She arranged with the site manager to start at nine.",
-            "ja": "彼女は9時に開始することで現場責任者と調整しました。",
-            "focus": "arranged with"
-          }
-        ]
-      },
-      {
-        "phrase": "arrange by",
-        "ja": "基準・項目別に整理する",
-        "image": "決めた基準に沿って物や情報を並べ替える。",
-        "pattern": "arrange + 物 + by + 基準",
-        "examples": [
-          {
-            "en": "Please arrange the files by project name.",
-            "ja": "ファイルを案件名ごとに整理してください。",
-            "focus": "arrange by"
-          },
-          {
-            "en": "We arranged the products by size.",
-            "ja": "私たちは製品をサイズ別に並べました。",
-            "focus": "arranged by"
-          },
-          {
-            "en": "The data is arranged by month.",
-            "ja": "データは月別に整理されています。",
-            "focus": "arranged by"
-          }
-        ]
-      },
-      {
-        "phrase": "arrange in",
-        "ja": "形・順番に並べる",
-        "image": "物や情報を一定の形や順序に整える。",
-        "pattern": "arrange + 物 + in + 形/順番",
-        "examples": [
-          {
-            "en": "Please arrange the chairs in a circle.",
-            "ja": "椅子を円形に並べてください。",
-            "focus": "arrange in"
-          },
-          {
-            "en": "We arranged the steps in the correct order.",
-            "ja": "私たちは手順を正しい順番に並べました。",
-            "focus": "arranged in"
-          },
-          {
-            "en": "The samples were arranged in three rows.",
-            "ja": "サンプルは3列に並べられていました。",
-            "focus": "arranged in"
-          }
-        ]
-      },
-      {
-        "phrase": "arrange on",
-        "ja": "〜の上に並べる",
-        "image": "物を台・机・棚などの上に配置する。",
-        "pattern": "arrange + 物 + on + 場所",
-        "examples": [
-          {
-            "en": "Please arrange the samples on the table.",
-            "ja": "サンプルをテーブルの上に並べてください。",
-            "focus": "arrange on"
-          },
-          {
-            "en": "She arranged the brochures on the counter.",
-            "ja": "彼女はパンフレットをカウンターに並べました。",
-            "focus": "arranged on"
-          },
-          {
-            "en": "The products were arranged on the display shelf.",
-            "ja": "製品は展示棚に並べられていました。",
-            "focus": "arranged on"
+            "en": "We arranged for someone to feed the cat.",
+            "ja": "誰かに猫へ餌をあげてもらうよう手配しました。",
+            "focus": "arranged for"
           }
         ]
       }
@@ -31670,6 +31703,18 @@ export const verbs: Verb[] = [
             "focus": "attend",
             "object": "the exhibition"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We attended a wedding last weekend.",
+            "ja": "先週末、結婚式に出席しました。",
+            "focus": "attended"
+          },
+          {
+            "en": "I attended my daughter's school festival.",
+            "ja": "娘の学校祭に参加しました。",
+            "focus": "attended"
+          }
         ]
       },
       {
@@ -31698,6 +31743,18 @@ export const verbs: Verb[] = [
             "ja": "彼女はプロジェクト管理のオンライン講座に参加しました。",
             "focus": "attended",
             "object": "an online course"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She attends a yoga class every Tuesday.",
+            "ja": "彼女は毎週火曜日にヨガ教室へ通っています。",
+            "focus": "attends"
+          },
+          {
+            "en": "I attended a cooking class with my sister.",
+            "ja": "姉と料理教室に参加しました。",
+            "focus": "attended"
           }
         ]
       },
@@ -31728,6 +31785,18 @@ export const verbs: Verb[] = [
             "focus": "attended",
             "object": "the review session"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I attended the parent meeting online.",
+            "ja": "保護者会にオンラインで参加しました。",
+            "focus": "attended"
+          },
+          {
+            "en": "He attended the lesson from home.",
+            "ja": "彼は自宅からその授業に参加しました。",
+            "focus": "attended"
+          }
         ]
       },
       {
@@ -31757,6 +31826,18 @@ export const verbs: Verb[] = [
             "focus": "attend",
             "object": "the full session"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "All parents are required to attend the meeting.",
+            "ja": "保護者全員がその会議に出席する必要があります。",
+            "focus": "attend"
+          },
+          {
+            "en": "Students are required to attend the safety class.",
+            "ja": "生徒は安全講習への出席が必要です。",
+            "focus": "attend"
+          }
         ]
       },
       {
@@ -31781,6 +31862,18 @@ export const verbs: Verb[] = [
           {
             "en": "We attended the inspection as observers.",
             "ja": "私たちは立会人として検査に参加しました。",
+            "focus": "attended"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I attended the event as my mother's guest.",
+            "ja": "母の同伴者としてイベントに参加しました。",
+            "focus": "attended"
+          },
+          {
+            "en": "She attended the ceremony as a volunteer.",
+            "ja": "彼女はボランティアとして式典に参加しました。",
             "focus": "attended"
           }
         ]
@@ -31812,6 +31905,18 @@ export const verbs: Verb[] = [
             "focus": "attends",
             "object": "an English class"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "He attends the local book club regularly.",
+            "ja": "彼は地域の読書会に定期的に参加しています。",
+            "focus": "attends"
+          },
+          {
+            "en": "I regularly attend a weekend exercise class.",
+            "ja": "週末の運動教室に定期的に通っています。",
+            "focus": "attend"
+          }
         ]
       }
     ],
@@ -31837,6 +31942,18 @@ export const verbs: Verb[] = [
             "en": "We need to attend to every detail before launch.",
             "ja": "開始前にすべての細部に注意を払う必要があります。",
             "focus": "attend to"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I need to attend to the baby first.",
+            "ja": "まず赤ちゃんの世話をしなければなりません。",
+            "focus": "attend to"
+          },
+          {
+            "en": "The nurse attended to his injured hand.",
+            "ja": "看護師が彼のけがをした手の手当てをしました。",
+            "focus": "attended to"
           }
         ]
       }
@@ -31885,15 +32002,13 @@ export const verbs: Verb[] = [
         "dailyExamples": [
           {
             "en": "I contacted my friend after work.",
-            "ja": "私は仕事の後、友人に連絡しました。",
-            "focus": "contacted",
-            "object": "my friend"
+            "ja": "仕事の後、友人に連絡しました。",
+            "focus": "contacted"
           },
           {
             "en": "Please contact me when you arrive.",
-            "ja": "到着したら、私に連絡してください。",
-            "focus": "contact",
-            "object": "me"
+            "ja": "到着したら私に連絡してください。",
+            "focus": "contact"
           }
         ]
       },
@@ -31924,6 +32039,18 @@ export const verbs: Verb[] = [
             "focus": "contacted",
             "object": "support"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I contacted the hotel about changing my booking.",
+            "ja": "予約変更についてホテルへ連絡しました。",
+            "focus": "contacted"
+          },
+          {
+            "en": "She contacted the station about her lost bag.",
+            "ja": "彼女は紛失したバッグについて駅へ連絡しました。",
+            "focus": "contacted"
+          }
         ]
       },
       {
@@ -31952,6 +32079,18 @@ export const verbs: Verb[] = [
             "ja": "あなたはチャットでチームに連絡できますか。",
             "focus": "contact",
             "object": "the team"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "You can contact me by text or phone.",
+            "ja": "メッセージか電話で私に連絡できます。",
+            "focus": "contact"
+          },
+          {
+            "en": "He contacted the shop through its website.",
+            "ja": "彼は店のウェブサイトから連絡しました。",
+            "focus": "contacted"
           }
         ]
       },
@@ -31982,6 +32121,18 @@ export const verbs: Verb[] = [
             "focus": "contacted",
             "object": "IT"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We contacted the landlord to request a repair.",
+            "ja": "修理を依頼するため大家に連絡しました。",
+            "focus": "contacted"
+          },
+          {
+            "en": "I contacted the clinic to change my appointment.",
+            "ja": "予約を変更するためクリニックへ連絡しました。",
+            "focus": "contacted"
+          }
         ]
       },
       {
@@ -32010,6 +32161,18 @@ export const verbs: Verb[] = [
             "ja": "私はメーカーに直接連絡します。",
             "focus": "contact",
             "object": "the manufacturer"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Please contact her directly instead of messaging the group.",
+            "ja": "グループに送らず、彼女へ直接連絡してください。",
+            "focus": "contact"
+          },
+          {
+            "en": "I contacted the owner directly about the missing key.",
+            "ja": "なくした鍵について所有者へ直接連絡しました。",
+            "focus": "contacted"
           }
         ]
       }
@@ -32056,6 +32219,18 @@ export const verbs: Verb[] = [
             "focus": "share",
             "object": "the latest price list"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I shared the address with everyone in the group.",
+            "ja": "グループのみんなに住所を共有しました。",
+            "focus": "shared"
+          },
+          {
+            "en": "Can you share the recipe with me?",
+            "ja": "そのレシピを私にも教えてくれる？",
+            "focus": "share"
+          }
         ]
       },
       {
@@ -32084,6 +32259,18 @@ export const verbs: Verb[] = [
             "ja": "あなたは金曜日までに現在の状況を共有できますか。",
             "focus": "share",
             "object": "the current status"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She shared an update about her new job.",
+            "ja": "彼女は新しい仕事の近況を話してくれました。",
+            "focus": "shared"
+          },
+          {
+            "en": "I shared the travel news with my family.",
+            "ja": "旅行の知らせを家族に共有しました。",
+            "focus": "shared"
           }
         ]
       },
@@ -32114,6 +32301,18 @@ export const verbs: Verb[] = [
             "focus": "shared",
             "object": "a different view"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We shared our ideas for the children's party.",
+            "ja": "子どもたちのパーティーについて意見を出し合いました。",
+            "focus": "shared"
+          },
+          {
+            "en": "He shared his thoughts about the movie.",
+            "ja": "彼はその映画についての感想を話しました。",
+            "focus": "shared"
+          }
         ]
       },
       {
@@ -32142,6 +32341,18 @@ export const verbs: Verb[] = [
             "ja": "私たちは顧客対応の責任を共同で担っています。",
             "focus": "share",
             "object": "responsibility"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We share the housework equally.",
+            "ja": "私たちは家事を平等に分担しています。",
+            "focus": "share"
+          },
+          {
+            "en": "My sister and I shared the cost of the gift.",
+            "ja": "姉と私はプレゼント代を分担しました。",
+            "focus": "shared"
           }
         ]
       },
@@ -32172,6 +32383,18 @@ export const verbs: Verb[] = [
             "focus": "shared",
             "object": "a taxi"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The children share a bedroom.",
+            "ja": "子どもたちは寝室を共同で使っています。",
+            "focus": "share"
+          },
+          {
+            "en": "We shared one umbrella on the way home.",
+            "ja": "帰り道、1本の傘を一緒に使いました。",
+            "focus": "shared"
+          }
         ]
       }
     ],
@@ -32201,6 +32424,18 @@ export const verbs: Verb[] = [
             "focus": "shared out",
             "object": "the cost"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We shared out the snacks among the children.",
+            "ja": "お菓子を子どもたちに分けました。",
+            "focus": "shared out"
+          },
+          {
+            "en": "Let us share out the cleaning jobs.",
+            "ja": "掃除の担当を分けましょう。",
+            "focus": "share out"
+          }
         ]
       },
       {
@@ -32226,6 +32461,18 @@ export const verbs: Verb[] = [
             "ja": "新しいメンバーもその制度の恩恵を受けられます。",
             "focus": "share in",
             "object": "the benefits"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We all shared in their happiness.",
+            "ja": "私たちは皆、彼らの喜びを分かち合いました。",
+            "focus": "shared in"
+          },
+          {
+            "en": "I want everyone to share in the responsibility.",
+            "ja": "全員に責任を分かち合ってほしいです。",
+            "focus": "share in"
           }
         ]
       }
@@ -32270,6 +32517,18 @@ export const verbs: Verb[] = [
             "focus": "collected",
             "object": "enough information"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I collect stamps from different countries.",
+            "ja": "さまざまな国の切手を集めています。",
+            "focus": "collect"
+          },
+          {
+            "en": "She collected ideas for the family trip.",
+            "ja": "彼女は家族旅行の案を集めました。",
+            "focus": "collected"
+          }
         ]
       },
       {
@@ -32298,6 +32557,18 @@ export const verbs: Verb[] = [
             "ja": "彼女は受付で荷物を受け取りました。",
             "focus": "collected",
             "object": "the package"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I collected my clothes from the dry cleaner.",
+            "ja": "クリーニング店で服を受け取りました。",
+            "focus": "collected"
+          },
+          {
+            "en": "Can you collect the children from school today?",
+            "ja": "今日は学校へ子どもたちを迎えに行ってくれる？",
+            "focus": "collect"
           }
         ]
       },
@@ -32328,6 +32599,18 @@ export const verbs: Verb[] = [
             "focus": "collected",
             "object": "the outstanding balance"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We collected money for the teacher's gift.",
+            "ja": "先生へのプレゼント代を集めました。",
+            "focus": "collected"
+          },
+          {
+            "en": "She collected the dinner money from everyone.",
+            "ja": "彼女はみんなから夕食代を集めました。",
+            "focus": "collected"
+          }
         ]
       },
       {
@@ -32357,6 +32640,18 @@ export const verbs: Verb[] = [
             "focus": "collect",
             "object": "himself"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I took a moment to collect my thoughts.",
+            "ja": "考えを整理するため少し時間を取りました。",
+            "focus": "collect"
+          },
+          {
+            "en": "She collected herself before speaking.",
+            "ja": "彼女は話す前に気持ちを落ち着かせました。",
+            "focus": "collected"
+          }
         ]
       }
     ],
@@ -32385,6 +32680,18 @@ export const verbs: Verb[] = [
             "ja": "彼女は工具をまとめて回収し、保管場所へ戻しました。",
             "focus": "collected up",
             "object": "the tools"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Please collect up the toys before dinner.",
+            "ja": "夕食前におもちゃを全部集めてください。",
+            "focus": "collect up"
+          },
+          {
+            "en": "We collected up the empty bottles after the picnic.",
+            "ja": "ピクニック後に空き瓶をまとめて集めました。",
+            "focus": "collected up"
           }
         ]
       }
@@ -32429,6 +32736,18 @@ export const verbs: Verb[] = [
             "focus": "reduced",
             "object": "the delivery time"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We are trying to reduce our food bill.",
+            "ja": "食費を減らそうとしています。",
+            "focus": "reduce"
+          },
+          {
+            "en": "I reduced my screen time before bed.",
+            "ja": "寝る前の画面を見る時間を減らしました。",
+            "focus": "reduced"
+          }
         ]
       },
       {
@@ -32457,6 +32776,18 @@ export const verbs: Verb[] = [
             "ja": "私たちは混乱を減らすためにレイアウトを変更しました。",
             "focus": "reduce",
             "object": "confusion"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "A checklist can reduce the chance of forgetting something.",
+            "ja": "チェックリストは忘れ物の可能性を減らせます。",
+            "focus": "reduce"
+          },
+          {
+            "en": "Driving slowly reduces the risk of an accident.",
+            "ja": "ゆっくり運転すると事故の危険を減らせます。",
+            "focus": "reduces"
           }
         ]
       },
@@ -32487,6 +32818,18 @@ export const verbs: Verb[] = [
             "focus": "reduces",
             "object": "the load"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Sharing the chores reduced my workload.",
+            "ja": "家事を分担したことで私の負担が減りました。",
+            "focus": "reduced"
+          },
+          {
+            "en": "We need to reduce our water use this summer.",
+            "ja": "今年の夏は水の使用量を減らす必要があります。",
+            "focus": "reduce"
+          }
         ]
       },
       {
@@ -32515,6 +32858,18 @@ export const verbs: Verb[] = [
             "ja": "私たちはリードタイムを10日から7日まで短縮する必要があります。",
             "focus": "reduce",
             "object": "the lead time"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I reduced the volume by half.",
+            "ja": "音量を半分に下げました。",
+            "focus": "reduced"
+          },
+          {
+            "en": "She reduced the sugar to one spoonful.",
+            "ja": "彼女は砂糖をスプーン1杯まで減らしました。",
+            "focus": "reduced"
           }
         ]
       }
@@ -32561,6 +32916,18 @@ export const verbs: Verb[] = [
             "focus": "increased",
             "object": "production capacity"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I want to increase my daily step count.",
+            "ja": "1日の歩数を増やしたいです。",
+            "focus": "increase"
+          },
+          {
+            "en": "We increased the room temperature slightly.",
+            "ja": "部屋の温度を少し上げました。",
+            "focus": "increased"
+          }
         ]
       },
       {
@@ -32586,6 +32953,18 @@ export const verbs: Verb[] = [
             "en": "Demand for this product is increasing.",
             "ja": "この製品の需要は増えています。",
             "focus": "increasing"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Our travel costs increased this year.",
+            "ja": "今年は旅行費用が増えました。",
+            "focus": "increased"
+          },
+          {
+            "en": "My appetite increases after exercise.",
+            "ja": "運動後は食欲が増します。",
+            "focus": "increases"
           }
         ]
       },
@@ -32614,6 +32993,18 @@ export const verbs: Verb[] = [
             "focus": "increased",
             "object": "the output"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I increased my savings by ten thousand yen.",
+            "ja": "貯金額を1万円増やしました。",
+            "focus": "increased"
+          },
+          {
+            "en": "The temperature increased to thirty degrees.",
+            "ja": "気温が30度まで上がりました。",
+            "focus": "increased"
+          }
         ]
       },
       {
@@ -32641,6 +33032,18 @@ export const verbs: Verb[] = [
             "ja": "その会社は価格を段階的に引き上げる予定です。",
             "focus": "increase",
             "object": "prices"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Try to increase your water intake gradually.",
+            "ja": "水分摂取量を少しずつ増やしてみてください。",
+            "focus": "increase"
+          },
+          {
+            "en": "Her confidence increased gradually as she practiced.",
+            "ja": "練習するにつれて彼女の自信は少しずつ高まりました。",
+            "focus": "increased"
           }
         ]
       }
@@ -41595,7 +41998,7 @@ function fallbackDailyExamples(verb: Verb, title: string, focusText?: string): E
 }
 
 function attachPremiumDailyExamples() {
-  const premiumVerbs = new Set(["get", "take", "make", "give", "have", "go", "come", "put", "keep", "find", "see", "look", "watch", "hear", "listen", "think", "know", "feel", "work", "use", "start", "stop", "try", "help", "learn", "meet", "send", "pay", "buy", "sell", "choose", "follow", "create", "reach", "learn", "meet", "send", "pay", "buy", "sell", "choose", "follow", "create", "reach"]);
+  const premiumVerbs = new Set(["get", "take", "make", "give", "have", "go", "come", "put", "keep", "find", "see", "look", "watch", "hear", "listen", "think", "know", "feel", "work", "use", "start", "stop", "try", "help", "learn", "meet", "send", "pay", "buy", "sell", "choose", "follow", "create", "reach", "learn", "meet", "send", "pay", "buy", "sell", "choose", "follow", "create", "reach", "request", "suggest", "agree", "arrange", "attend", "contact", "share", "collect", "reduce", "increase"]);
   for (const verb of verbs) {
     if (!premiumVerbs.has(verb.id)) continue;
     for (const meaning of verb.meanings) {

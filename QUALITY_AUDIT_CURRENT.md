@@ -1,7 +1,7 @@
 # Quality Audit Current
 
 ## Current version
-Ver.169
+Ver.170
 
 ## Standard verb re-audit
 - Completed: 124 / 124 verbs
@@ -9,7 +9,7 @@ Ver.169
 - Verb ids and ranks: 124 unique entries
 
 ## Premium daily conversation re-audit
-- Completed: 70 / 124 verbs
+- Completed: 80 / 124 verbs
 - Completed batches:
   - GET / TAKE / MAKE / GIVE / HAVE / GO / COME / PUT / KEEP / FIND — 260 examples
   - SEE / LOOK / WATCH / HEAR / LISTEN / THINK / KNOW / FEEL / WORK / USE — 266 examples
@@ -18,18 +18,19 @@ Ver.169
   - LEARN / MEET / SEND / PAY / BUY / SELL / CHOOSE / FOLLOW / CREATE / REACH — 190 examples
   - RETURN / CHECK / DECIDE / EXPLAIN / IMPROVE / MANAGE / PREPARE / PLAN / OFFER / SUPPORT — 182 examples
   - DISCUSS / CONFIRM / RECEIVE / DELIVER / SOLVE / REPORT / UPDATE / REVIEW / COMPARE / INTRODUCE — 144 examples
-- Cumulative completed-batch total: 1,538 daily examples
+  - REQUEST / SUGGEST / AGREE / ARRANGE / ATTEND / CONTACT / SHARE / COLLECT / REDUCE / INCREASE — 112 examples
+- Cumulative completed-batch total: 1,650 daily examples
 - Every retained meaning and phrasal-expression block in completed batches: exactly 2 daily examples
 - Natural spoken English and Japanese translation reviewed
 - Basic focus: verb only
 - Phrasal focus: verb plus particle/preposition only
 - Objects excluded from focus
 
-## Ver.169 batch notes
-- Unnatural and duplicate preposition expressions were consolidated or removed.
-- All 144 examples contain their configured focus text.
+## Ver.170 batch notes
+- Ordinary preposition patterns were integrated into basic usage blocks where appropriate.
+- All 112 examples contain their configured focus text.
 - No duplicate English examples were found within the batch.
-- Retained blocks: 72, with exactly 2 daily examples each.
+- Retained blocks: 56, with exactly 2 daily examples each.
 
 ## Deployment and package safety
 - Root misplaced source audit: passed

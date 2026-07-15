@@ -29,6 +29,8 @@ import {
   saveDedicatedDisplayName,
   getCloudReadiness,
   getPendingAvatarForCloud,
+  getAvatarLocalCache,
+  saveAvatarLocalCache,
   hasCloudSession,
   restoreLearningDataFromSupabase,
   savePendingAvatarForCloud,
@@ -129,14 +131,16 @@ export default function ProfilePage() {
     let next = getCurrentProgress();
     const activeUsername = next?.username || getCurrentUsername() || "";
     const pendingAvatar = getPendingAvatarForCloud(activeUsername);
-    // Ver.139: 以前の保存不具合でprogress側の画像が空になっても、未送信画像から即復旧する。
-    if (next && !next.avatarDataUrl && !next.avatarUrl && pendingAvatar?.avatarDataUrl) {
+    const cachedAvatar = getAvatarLocalCache(activeUsername);
+    // Ver.175: progressが空でも、未送信キューまたは耐久キャッシュから非破壊で復旧する。
+    const localAvatar = pendingAvatar?.avatarDataUrl || cachedAvatar?.avatarUrl || cachedAvatar?.avatarDataUrl || "";
+    if (next && !next.avatarDataUrl && !next.avatarUrl && localAvatar) {
       next = updateUserProfile({
-        avatarDataUrl: pendingAvatar.avatarDataUrl,
-        avatarUrl: "",
-        avatarPath: "",
-        avatarUpdatedAt: pendingAvatar.savedAt,
-        avatarStorageProvider: "legacy-data-url",
+        avatarDataUrl: localAvatar,
+        avatarUrl: cachedAvatar?.avatarUrl || "",
+        avatarPath: cachedAvatar?.avatarPath || "",
+        avatarUpdatedAt: pendingAvatar?.savedAt || cachedAvatar?.updatedAt || new Date().toISOString(),
+        avatarStorageProvider: cachedAvatar?.avatarUrl || cachedAvatar?.avatarPath ? "supabase-storage" : "legacy-data-url",
       }) || next;
     }
     setProgress(next);
@@ -149,13 +153,18 @@ export default function ProfilePage() {
     if (!hasCloudSession(targetUsername)) return null;
     const result = await fetchDedicatedProfile(targetUsername);
     if (!result.ok || !result.profile) return result;
+    const current = getCurrentProgress();
+    const cachedAvatar = getAvatarLocalCache(targetUsername);
+    const hasRemoteAvatar = Boolean(result.profile.avatarUrl || result.profile.avatarPath);
     const verified = updateUserProfile({
       displayName: result.profile.displayName,
-      avatarDataUrl: result.profile.avatarUrl,
-      avatarUrl: result.profile.avatarUrl,
-      avatarPath: result.profile.avatarPath,
-      avatarUpdatedAt: result.profile.updatedAt,
-      avatarStorageProvider: result.profile.avatarUrl || result.profile.avatarPath ? "supabase-storage" : "none",
+      avatarDataUrl: hasRemoteAvatar
+        ? (result.profile.avatarUrl || current?.avatarDataUrl || cachedAvatar?.avatarDataUrl || "")
+        : (current?.avatarDataUrl || cachedAvatar?.avatarUrl || cachedAvatar?.avatarDataUrl || ""),
+      avatarUrl: hasRemoteAvatar ? result.profile.avatarUrl : (current?.avatarUrl || cachedAvatar?.avatarUrl || ""),
+      avatarPath: hasRemoteAvatar ? result.profile.avatarPath : (current?.avatarPath || cachedAvatar?.avatarPath || ""),
+      avatarUpdatedAt: hasRemoteAvatar ? result.profile.updatedAt : (current?.avatarUpdatedAt || cachedAvatar?.updatedAt || ""),
+      avatarStorageProvider: hasRemoteAvatar || current?.avatarUrl || cachedAvatar?.avatarUrl ? "supabase-storage" : (current?.avatarDataUrl || cachedAvatar?.avatarDataUrl ? "legacy-data-url" : "none"),
     });
     setProgress(verified);
     setDisplayNameDraft(result.profile.displayName || targetUsername);
@@ -223,8 +232,21 @@ export default function ProfilePage() {
         });
         setProgress(updated);
         const verified = await refreshDedicatedProfile(username);
-        setProfileMessage(verified?.ok ? "未送信だった画像を保存し、再確認しました" : "画像は保存されましたが、再確認に失敗しました");
-        setTimeout(() => setProfileMessage(""), 2600);
+        if (verified?.ok && verified.profile?.avatarPath === uploaded.path && verified.profile?.avatarUrl === uploaded.url) {
+          saveAvatarLocalCache(username, {
+            avatarDataUrl: pending.avatarDataUrl,
+            avatarUrl: uploaded.url,
+            avatarPath: uploaded.path,
+            updatedAt: String((uploaded as { updatedAt?: string }).updatedAt || new Date().toISOString()),
+            verifiedAt: new Date().toISOString(),
+          });
+          clearPendingAvatarForCloud(username);
+          setProfileMessage("未送信だった画像を保存し、再読込後の一致まで確認しました");
+          setTimeout(() => setProfileMessage(""), 2600);
+        } else {
+          pendingAvatarFlushRef.current = false;
+          setProfileMessage("画像は端末に保持しています。クラウド確認が一致しないため再送信待ちとして残しました。");
+        }
       } else {
         pendingAvatarFlushRef.current = false;
         setProfileMessage(uploaded.message || "未送信画像のクラウド保存に失敗しました。端末内画像は残しています。");
@@ -344,6 +366,7 @@ export default function ProfilePage() {
       });
       setProgress(localUpdated);
       savePendingAvatarForCloud(username, result);
+      saveAvatarLocalCache(username, { avatarDataUrl: result, updatedAt: new Date().toISOString() });
 
       if (!hasCloudSession(username)) {
         setProfileMessage("画像は端末に保存しました。クラウド保存には一度ログインし直してください。再ログイン後に自動保存します。");
@@ -356,7 +379,6 @@ export default function ProfilePage() {
         setProfileMessage((uploaded.message || "画像のクラウド保存に失敗しました。") + " 画像は端末に残し、次回ログイン後に再送信します。");
         return;
       }
-      clearPendingAvatarForCloud(username);
       const updated = updateUserProfile({
         avatarDataUrl: uploaded.url,
         avatarUrl: uploaded.url,
@@ -366,11 +388,19 @@ export default function ProfilePage() {
       });
       setProgress(updated);
       const verified = await refreshDedicatedProfile(username);
-      if (!verified?.ok || !verified.profile || verified.profile.avatarPath !== uploaded.path) {
-        setProfileMessage("画像の保存後確認に失敗しました。前の画像は削除していません。");
+      if (!verified?.ok || !verified.profile || verified.profile.avatarPath !== uploaded.path || verified.profile.avatarUrl !== uploaded.url) {
+        setProfileMessage("画像は端末に保持しています。クラウドの保存後確認が一致しないため、再送信待ちとして残しました。");
         return;
       }
-      setProfileMessage(uploaded.oldAvatarDeleted ? "画像保存・再確認OK：前の画像も削除済み" : "画像をクラウド保存し、再確認しました");
+      saveAvatarLocalCache(username, {
+        avatarDataUrl: result,
+        avatarUrl: uploaded.url,
+        avatarPath: uploaded.path,
+        updatedAt: uploaded.updatedAt || new Date().toISOString(),
+        verifiedAt: new Date().toISOString(),
+      });
+      clearPendingAvatarForCloud(username);
+      setProfileMessage("画像をクラウド保存し、再読込後の一致まで確認しました");
       setTimeout(() => setProfileMessage(""), 2800);
     } catch (error) {
       setProfileMessage(error instanceof Error ? error.message : "画像の保存に失敗しました");
@@ -418,7 +448,8 @@ export default function ProfilePage() {
   const restoreRecommended = backupComparison?.recommendation === "restore_remote";
 
   const pendingAvatar = getPendingAvatarForCloud(username);
-  const avatarSrc = progress.avatarDataUrl || progress.avatarUrl || pendingAvatar?.avatarDataUrl || "";
+  const cachedAvatar = getAvatarLocalCache(username);
+  const avatarSrc = progress.avatarDataUrl || progress.avatarUrl || pendingAvatar?.avatarDataUrl || cachedAvatar?.avatarUrl || cachedAvatar?.avatarDataUrl || "";
 
   return (
     <div className="space-y-5 pb-24">

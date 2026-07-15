@@ -3,7 +3,7 @@ import { getSupabaseAdminClient } from "@/lib/supabaseAdmin";
 
 export const runtime = "nodejs";
 
-const APP_VERSION = "v158-profile-source-of-truth";
+const APP_VERSION = "v175-profile-avatar-durable-source-of-truth";
 
 type ProfileRow = {
   username: string;
@@ -11,6 +11,12 @@ type ProfileRow = {
   avatar_url: string | null;
   avatar_path: string | null;
   updated_at: string;
+};
+
+type AssetRow = {
+  storage_path: string;
+  public_url: string | null;
+  uploaded_at: string;
 };
 
 function json(status: number, payload: Record<string, unknown>) {
@@ -50,6 +56,20 @@ async function getLegacyProfile(admin: Awaited<ReturnType<typeof authenticate>>,
   };
 }
 
+async function getLatestAvatarAsset(admin: Awaited<ReturnType<typeof authenticate>>, username: string) {
+  const selected = await admin
+    .from("user_profile_assets")
+    .select("storage_path,public_url,uploaded_at")
+    .eq("username", username)
+    .eq("asset_type", "avatar")
+    .in("status", ["active", "superseded"])
+    .order("uploaded_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (selected.error) return null;
+  return (selected.data || null) as AssetRow | null;
+}
+
 function profilePayload(row: ProfileRow) {
   return {
     username: row.username,
@@ -58,6 +78,28 @@ function profilePayload(row: ProfileRow) {
     avatarPath: row.avatar_path || "",
     updatedAt: row.updated_at,
   };
+}
+
+async function healMissingAvatar(
+  admin: Awaited<ReturnType<typeof authenticate>>,
+  row: ProfileRow,
+) {
+  if (row.avatar_url || row.avatar_path) return { row, healed: false };
+  const asset = await getLatestAvatarAsset(admin, row.username);
+  if (!asset?.storage_path || !asset.public_url) return { row, healed: false };
+  const healed = await admin
+    .from("user_profiles")
+    .update({
+      avatar_url: asset.public_url,
+      avatar_path: asset.storage_path,
+      updated_at: asset.uploaded_at || new Date().toISOString(),
+      app_version: APP_VERSION,
+    })
+    .eq("username", row.username)
+    .select("username,display_name,avatar_url,avatar_path,updated_at")
+    .single();
+  if (healed.error || !healed.data) return { row, healed: false };
+  return { row: healed.data as ProfileRow, healed: true };
 }
 
 export async function POST(request: NextRequest) {
@@ -71,22 +113,38 @@ export async function POST(request: NextRequest) {
     const admin = await authenticate(username, passwordHash);
 
     if (action === "get") {
-      const selected = await admin.from("user_profiles").select("username,display_name,avatar_url,avatar_path,updated_at").eq("username", username).maybeSingle();
+      const selected = await admin
+        .from("user_profiles")
+        .select("username,display_name,avatar_url,avatar_path,updated_at")
+        .eq("username", username)
+        .maybeSingle();
       if (selected.error) throw new Error(`プロフィール専用テーブルを取得できません: ${selected.error.message}`);
-      if (selected.data) return json(200, { ok: true, profile: profilePayload(selected.data as ProfileRow), source: "profile-table" });
+      if (selected.data) {
+        const healed = await healMissingAvatar(admin, selected.data as ProfileRow);
+        return json(200, {
+          ok: true,
+          profile: profilePayload(healed.row),
+          source: healed.healed ? "asset-ledger-recovered" : "profile-table",
+        });
+      }
 
       const legacy = await getLegacyProfile(admin, username, passwordHash);
+      const asset = await getLatestAvatarAsset(admin, username);
       const now = new Date().toISOString();
       const inserted = await admin.from("user_profiles").upsert({
         username,
         display_name: legacy?.displayName || username,
-        avatar_url: legacy?.avatarUrl || null,
-        avatar_path: legacy?.avatarPath || null,
-        updated_at: now,
+        avatar_url: asset?.public_url || legacy?.avatarUrl || null,
+        avatar_path: asset?.storage_path || legacy?.avatarPath || null,
+        updated_at: asset?.uploaded_at || now,
         app_version: APP_VERSION,
       }, { onConflict: "username" }).select("username,display_name,avatar_url,avatar_path,updated_at").single();
       if (inserted.error) throw new Error(`旧プロフィールの移行に失敗しました: ${inserted.error.message}`);
-      return json(200, { ok: true, profile: profilePayload(inserted.data as ProfileRow), source: "legacy-migrated" });
+      return json(200, {
+        ok: true,
+        profile: profilePayload(inserted.data as ProfileRow),
+        source: asset ? "asset-ledger-migrated" : "legacy-migrated",
+      });
     }
 
     if (action === "save-name") {

@@ -30,3 +30,7 @@ Premium daily conversation examples for MOVE / TURN / BRING / HOLD / SET / CHANG
 ## Ver.167 Premium daily-example audit
 
 Premium daily conversation examples were re-audited for LEARN / MEET / SEND / PAY / BUY / SELL / CHOOSE / FOLLOW / CREATE / REACH. The batch contains 190 examples across 95 retained usage blocks. Duplicate, low-frequency, and specialist expressions were consolidated or removed instead of being padded.
+
+## Ver.168 Premium daily-example audit
+
+Premium daily conversation examples were re-audited for RETURN / CHECK / DECIDE / EXPLAIN / IMPROVE / MANAGE / PREPARE / PLAN / OFFER / SUPPORT. The batch contains 182 examples across 91 retained usage blocks and brings Premium audit progress to 60 / 124 verbs. Duplicate, unnatural, specialist, and low-frequency expressions were consolidated or removed instead of being padded. See `docs/V168_PREMIUM_DAILY_RETURN_TO_SUPPORT_REAUDIT.md`.

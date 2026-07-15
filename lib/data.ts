@@ -23930,7 +23930,20 @@ export const verbs: Verb[] = [
             "object": "the demo unit"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I returned the library book this morning.",
+            "ja": "今朝、図書館の本を返しました。",
+            "focus": "returned",
+            "object": "the library book"
+          },
+          {
+            "en": "Please return my charger when you are finished.",
+            "ja": "使い終わったら充電器を返してください。",
+            "focus": "return",
+            "object": "my charger"
+          }
+        ]
       },
       {
         "id": "return-product",
@@ -23960,7 +23973,20 @@ export const verbs: Verb[] = [
             "object": "the unit"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I returned the shirt because it was too small.",
+            "ja": "小さすぎたので、そのシャツを返品しました。",
+            "focus": "returned",
+            "object": "the shirt"
+          },
+          {
+            "en": "Can I return these shoes without the box?",
+            "ja": "箱がなくてもこの靴を返品できますか？",
+            "focus": "return",
+            "object": "these shoes"
+          }
+        ]
       },
       {
         "id": "return-call",
@@ -23990,7 +24016,20 @@ export const verbs: Verb[] = [
             "object": "the call"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I will return your call after dinner.",
+            "ja": "夕食後に折り返し電話します。",
+            "focus": "return",
+            "object": "your call"
+          },
+          {
+            "en": "She returned my call while I was on the train.",
+            "ja": "彼女は私が電車に乗っている間に折り返し電話してくれました。",
+            "focus": "returned",
+            "object": "my call"
+          }
+        ]
       },
       {
         "id": "return-data",
@@ -24020,7 +24059,20 @@ export const verbs: Verb[] = [
             "object": "the latest sales data"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The app returned an error when I tried to log in.",
+            "ja": "ログインしようとしたら、アプリがエラーを返しました。",
+            "focus": "returned",
+            "object": "an error"
+          },
+          {
+            "en": "The search returned several nearby cafes.",
+            "ja": "検索すると近くのカフェがいくつか表示されました。",
+            "focus": "returned",
+            "object": "several nearby cafes"
+          }
+        ]
       },
       {
         "id": "return-normal",
@@ -24050,7 +24102,20 @@ export const verbs: Verb[] = [
             "object": "to normal"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "My sleep schedule finally returned to normal.",
+            "ja": "睡眠のリズムがようやく元に戻りました。",
+            "focus": "returned",
+            "object": "to normal"
+          },
+          {
+            "en": "The house returned to normal after the guests left.",
+            "ja": "来客が帰った後、家の中はいつもの状態に戻りました。",
+            "focus": "returned",
+            "object": "to normal"
+          }
+        ]
       }
     ],
     "collocations": [],
@@ -24068,7 +24133,20 @@ export const verbs: Verb[] = [
             "object": "the original schedule"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I returned to the gym after a long break.",
+            "ja": "長い休みの後、ジムに戻りました。",
+            "focus": "returned to",
+            "object": "the gym"
+          },
+          {
+            "en": "Let us return to this topic after lunch.",
+            "ja": "昼食後にこの話題へ戻りましょう。",
+            "focus": "return to",
+            "object": "this topic"
+          }
+        ]
       },
       {
         "phrase": "return from",
@@ -24083,7 +24161,20 @@ export const verbs: Verb[] = [
             "object": "the client site"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We returned from our trip on Sunday.",
+            "ja": "日曜日に旅行から戻りました。",
+            "focus": "returned from",
+            "object": "our trip"
+          },
+          {
+            "en": "She returned from the store with fresh bread.",
+            "ja": "彼女は焼きたてのパンを持って店から戻りました。",
+            "focus": "returned from",
+            "object": "the store"
+          }
+        ]
       },
       {
         "phrase": "return for",
@@ -24098,7 +24189,20 @@ export const verbs: Verb[] = [
             "object": "a final check"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I returned for the umbrella I had forgotten.",
+            "ja": "忘れた傘を取りに戻りました。",
+            "focus": "returned for",
+            "object": "the umbrella"
+          },
+          {
+            "en": "He returned for one more piece of cake.",
+            "ja": "彼はケーキをもう一切れ取りに戻りました。",
+            "focus": "returned for",
+            "object": "one more piece of cake"
+          }
+        ]
       },
       {
         "phrase": "return with",
@@ -24113,7 +24217,20 @@ export const verbs: Verb[] = [
             "object": "feedback"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "She returned with a bag of groceries.",
+            "ja": "彼女は食料品の袋を持って戻りました。",
+            "focus": "returned with",
+            "object": "a bag of groceries"
+          },
+          {
+            "en": "He returned with good news.",
+            "ja": "彼は良い知らせを持って戻りました。",
+            "focus": "returned with",
+            "object": "good news"
+          }
+        ]
       },
       {
         "phrase": "return by",
@@ -24128,7 +24245,20 @@ export const verbs: Verb[] = [
             "object": "Monday"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Please return by ten tonight.",
+            "ja": "今夜10時までに戻ってください。",
+            "focus": "return by",
+            "object": "ten tonight"
+          },
+          {
+            "en": "I need to return the book by Friday.",
+            "ja": "金曜日までに本を返す必要があります。",
+            "focus": "return",
+            "object": "the book"
+          }
+        ]
       }
     ]
   },
@@ -24183,7 +24313,20 @@ export const verbs: Verb[] = [
             "object": "the lead time"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I checked whether we had any milk left.",
+            "ja": "牛乳が残っているか確認しました。",
+            "focus": "checked",
+            "object": "whether we had any milk left"
+          },
+          {
+            "en": "Can you check the train times for tomorrow?",
+            "ja": "明日の電車の時間を確認してくれる？",
+            "focus": "check",
+            "object": "the train times"
+          }
+        ]
       },
       {
         "id": "check-file",
@@ -24213,7 +24356,20 @@ export const verbs: Verb[] = [
             "object": "the file"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I checked the recipe before I started cooking.",
+            "ja": "料理を始める前にレシピを確認しました。",
+            "focus": "checked",
+            "object": "the recipe"
+          },
+          {
+            "en": "Please check this message before I send it.",
+            "ja": "送る前にこのメッセージを確認してください。",
+            "focus": "check",
+            "object": "this message"
+          }
+        ]
       },
       {
         "id": "check-if",
@@ -24243,7 +24399,20 @@ export const verbs: Verb[] = [
             "object": "if this product fits the site conditions"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Let me check if the store is still open.",
+            "ja": "その店がまだ開いているか確認します。",
+            "focus": "check",
+            "object": "if the store is still open"
+          },
+          {
+            "en": "Can you check whether the door is locked?",
+            "ja": "ドアに鍵がかかっているか確認してくれる？",
+            "focus": "check",
+            "object": "whether the door is locked"
+          }
+        ]
       },
       {
         "id": "check-before",
@@ -24273,7 +24442,20 @@ export const verbs: Verb[] = [
             "object": "before confirming the order"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Check the weather before you leave.",
+            "ja": "出かける前に天気を確認してください。",
+            "focus": "Check",
+            "object": "the weather"
+          },
+          {
+            "en": "I always check my bag before a trip.",
+            "ja": "旅行前には必ずバッグの中を確認します。",
+            "focus": "check",
+            "object": "my bag"
+          }
+        ]
       },
       {
         "id": "check-for",
@@ -24303,7 +24485,20 @@ export const verbs: Verb[] = [
             "object": "for missing parts"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I checked the floor for broken glass.",
+            "ja": "床に割れたガラスがないか確認しました。",
+            "focus": "checked",
+            "object": "the floor"
+          },
+          {
+            "en": "Please check the soup for enough salt.",
+            "ja": "スープの塩加減を確認してください。",
+            "focus": "check",
+            "object": "the soup"
+          }
+        ]
       }
     ],
     "collocations": [],
@@ -24321,7 +24516,20 @@ export const verbs: Verb[] = [
             "object": "with the team"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We checked in at the hotel at three.",
+            "ja": "3時にホテルへチェックインしました。",
+            "focus": "checked in",
+            "object": "at the hotel"
+          },
+          {
+            "en": "Please check in online before the flight.",
+            "ja": "飛行機に乗る前にオンラインでチェックインしてください。",
+            "focus": "check in",
+            "object": "online"
+          }
+        ]
       },
       {
         "phrase": "check out",
@@ -24336,7 +24544,20 @@ export const verbs: Verb[] = [
             "object": "the new sample page"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Check out this new cafe near the station.",
+            "ja": "駅の近くにできた新しいカフェを見てみて。",
+            "focus": "Check out",
+            "object": "this new cafe"
+          },
+          {
+            "en": "We checked out of the hotel before noon.",
+            "ja": "正午前にホテルをチェックアウトしました。",
+            "focus": "checked out",
+            "object": "of the hotel"
+          }
+        ]
       },
       {
         "phrase": "check up on",
@@ -24351,7 +24572,20 @@ export const verbs: Verb[] = [
             "object": "the delivery status"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I called to check up on my grandmother.",
+            "ja": "祖母の様子を確認するために電話しました。",
+            "focus": "check up on",
+            "object": "my grandmother"
+          },
+          {
+            "en": "Can you check up on the dog while I am out?",
+            "ja": "外出中に犬の様子を見てくれる？",
+            "focus": "check up on",
+            "object": "the dog"
+          }
+        ]
       },
       {
         "phrase": "check with",
@@ -24366,7 +24600,20 @@ export const verbs: Verb[] = [
             "object": "the customer"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I will check with my family before I decide.",
+            "ja": "決める前に家族へ確認します。",
+            "focus": "check with",
+            "object": "my family"
+          },
+          {
+            "en": "Please check with the restaurant about allergies.",
+            "ja": "アレルギーについてレストランに確認してください。",
+            "focus": "check with",
+            "object": "the restaurant"
+          }
+        ]
       },
       {
         "phrase": "check into",
@@ -24381,7 +24628,20 @@ export const verbs: Verb[] = [
             "object": "the cause of the delay"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I will check into why the Wi-Fi is slow.",
+            "ja": "Wi-Fiが遅い原因を調べます。",
+            "focus": "check into",
+            "object": "why the Wi-Fi is slow"
+          },
+          {
+            "en": "The hotel checked into the missing bag.",
+            "ja": "ホテルは紛失したバッグについて調べました。",
+            "focus": "checked into",
+            "object": "the missing bag"
+          }
+        ]
       },
       {
         "phrase": "check over",
@@ -24396,7 +24656,20 @@ export const verbs: Verb[] = [
             "object": "the quotation"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Can you check over my message quickly?",
+            "ja": "私のメッセージをさっと確認してくれる？",
+            "focus": "check over",
+            "object": "my message"
+          },
+          {
+            "en": "I checked over the car before the drive.",
+            "ja": "出発前に車をざっと点検しました。",
+            "focus": "checked over",
+            "object": "the car"
+          }
+        ]
       },
       {
         "phrase": "check through",
@@ -24411,7 +24684,20 @@ export const verbs: Verb[] = [
             "object": "the list"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I checked through every drawer for the key.",
+            "ja": "鍵を探してすべての引き出しを順番に確認しました。",
+            "focus": "checked through",
+            "object": "every drawer"
+          },
+          {
+            "en": "She checked through the photos one by one.",
+            "ja": "彼女は写真を一枚ずつ確認しました。",
+            "focus": "checked through",
+            "object": "the photos"
+          }
+        ]
       },
       {
         "phrase": "check off",
@@ -24426,7 +24712,20 @@ export const verbs: Verb[] = [
             "object": "each item"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I checked off everything on my shopping list.",
+            "ja": "買い物リストの項目をすべてチェックしました。",
+            "focus": "checked off",
+            "object": "everything"
+          },
+          {
+            "en": "Check off each task when you finish it.",
+            "ja": "終わった作業に一つずつチェックを付けてください。",
+            "focus": "Check off",
+            "object": "each task"
+          }
+        ]
       },
       {
         "phrase": "check back",
@@ -24441,7 +24740,20 @@ export const verbs: Verb[] = [
             "object": "after the supplier replies"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Check back tomorrow for the updated hours.",
+            "ja": "営業時間の更新は明日もう一度確認してください。",
+            "focus": "Check back",
+            "object": "tomorrow"
+          },
+          {
+            "en": "I checked back later, but the tickets were still sold out.",
+            "ja": "あとで再確認しましたが、チケットはまだ売り切れでした。",
+            "focus": "checked back",
+            "object": "later"
+          }
+        ]
       },
       {
         "phrase": "check against",
@@ -24456,7 +24768,20 @@ export const verbs: Verb[] = [
             "object": "the purchase order"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I checked the address against the map.",
+            "ja": "住所を地図と照合しました。",
+            "focus": "checked",
+            "object": "the address"
+          },
+          {
+            "en": "Please check the receipt against what we bought.",
+            "ja": "レシートを買った物と照らし合わせてください。",
+            "focus": "check",
+            "object": "the receipt"
+          }
+        ]
       }
     ]
   },
@@ -24511,7 +24836,20 @@ export const verbs: Verb[] = [
             "object": "the meeting date"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We decided the time for dinner.",
+            "ja": "夕食の時間を決めました。",
+            "focus": "decided",
+            "object": "the time"
+          },
+          {
+            "en": "Have you decided the date for the trip?",
+            "ja": "旅行の日程は決めましたか？",
+            "focus": "decided",
+            "object": "the date"
+          }
+        ]
       },
       {
         "id": "decide-what",
@@ -24541,7 +24879,20 @@ export const verbs: Verb[] = [
             "object": "whether to visit the site tomorrow"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I cannot decide what to wear.",
+            "ja": "何を着るか決められません。",
+            "focus": "decide",
+            "object": "what to wear"
+          },
+          {
+            "en": "We decided where to meet.",
+            "ja": "どこで会うか決めました。",
+            "focus": "decided",
+            "object": "where to meet"
+          }
+        ]
       },
       {
         "id": "decide-not",
@@ -24571,7 +24922,20 @@ export const verbs: Verb[] = [
             "object": "not to send the quotation"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I decided not to buy the jacket.",
+            "ja": "そのジャケットは買わないことにしました。",
+            "focus": "decided",
+            "object": "not to buy the jacket"
+          },
+          {
+            "en": "We decided not to go out because of the rain.",
+            "ja": "雨なので外出しないことにしました。",
+            "focus": "decided",
+            "object": "not to go out"
+          }
+        ]
       },
       {
         "id": "decide-based",
@@ -24601,7 +24965,20 @@ export const verbs: Verb[] = [
             "object": "based on both price and quality"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I decided based on the reviews.",
+            "ja": "口コミを参考に決めました。",
+            "focus": "decided",
+            "object": "based on the reviews"
+          },
+          {
+            "en": "She decided based on the price and location.",
+            "ja": "彼女は値段と場所を基準に決めました。",
+            "focus": "decided",
+            "object": "based on the price and location"
+          }
+        ]
       },
       {
         "id": "decide-after",
@@ -24631,7 +25008,20 @@ export const verbs: Verb[] = [
             "object": "after reviewing the proposal"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I will decide after I try it on.",
+            "ja": "試着してから決めます。",
+            "focus": "decide",
+            "object": "after I try it on"
+          },
+          {
+            "en": "We decided after talking with the family.",
+            "ja": "家族と話し合ってから決めました。",
+            "focus": "decided",
+            "object": "after talking with the family"
+          }
+        ]
       }
     ],
     "collocations": [],
@@ -24649,7 +25039,20 @@ export const verbs: Verb[] = [
             "object": "the new supplier"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We decided on pasta for dinner.",
+            "ja": "夕食はパスタに決めました。",
+            "focus": "decided on",
+            "object": "pasta"
+          },
+          {
+            "en": "Have you decided on a hotel yet?",
+            "ja": "ホテルはもう決めましたか？",
+            "focus": "decided on",
+            "object": "a hotel"
+          }
+        ]
       },
       {
         "phrase": "decide between",
@@ -24664,7 +25067,20 @@ export const verbs: Verb[] = [
             "object": "these two models"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I cannot decide between the blue one and the black one.",
+            "ja": "青と黒のどちらにするか決められません。",
+            "focus": "decide between",
+            "object": "the blue one and the black one"
+          },
+          {
+            "en": "We are deciding between two apartments.",
+            "ja": "2つのアパートのどちらにするか検討しています。",
+            "focus": "deciding between",
+            "object": "two apartments"
+          }
+        ]
       },
       {
         "phrase": "decide against",
@@ -24679,37 +25095,20 @@ export const verbs: Verb[] = [
             "object": "changing the layout"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "decide for",
-        "ja": "〜に有利な判断をする・〜のために決める",
-        "image": "相手や条件に合わせて判断する。",
-        "pattern": "decide for",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "The committee decided for the safer option.",
-            "ja": "委員会はより安全な選択肢に決めました。",
-            "focus": "decided for",
-            "object": "the safer option"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "decide upon",
-        "ja": "〜に決める",
-        "image": "少し硬めに、正式に決定する。",
-        "pattern": "decide upon",
-        "examples": [
+            "en": "I decided against driving in the snow.",
+            "ja": "雪の中を運転するのはやめました。",
+            "focus": "decided against",
+            "object": "driving in the snow"
+          },
           {
-            "en": "We decided upon the final design after the review.",
-            "ja": "私たちは確認後、最終デザインに決めました。",
-            "focus": "decided upon",
-            "object": "the final design"
+            "en": "They decided against buying a bigger car.",
+            "ja": "彼らは大きな車を買わないことにしました。",
+            "focus": "decided against",
+            "object": "buying a bigger car"
           }
-        ],
-        "dailyExamples": []
+        ]
       }
     ]
   },
@@ -24764,7 +25163,20 @@ export const verbs: Verb[] = [
             "object": "the problem"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Can you explain the reason for the delay?",
+            "ja": "遅れた理由を説明してくれる？",
+            "focus": "explain",
+            "object": "the reason"
+          },
+          {
+            "en": "I explained why I was late.",
+            "ja": "遅れた理由を説明しました。",
+            "focus": "explained",
+            "object": "why I was late"
+          }
+        ]
       },
       {
         "id": "explain-change",
@@ -24794,7 +25206,20 @@ export const verbs: Verb[] = [
             "object": "the new schedule"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "She explained the change in our plans.",
+            "ja": "彼女は予定の変更について説明しました。",
+            "focus": "explained",
+            "object": "the change"
+          },
+          {
+            "en": "Please explain what changed in the app.",
+            "ja": "アプリの何が変わったのか説明してください。",
+            "focus": "explain",
+            "object": "what changed"
+          }
+        ]
       },
       {
         "id": "explain-how",
@@ -24824,7 +25249,20 @@ export const verbs: Verb[] = [
             "object": "how the controller connects to the lights"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Can you explain how this coffee maker works?",
+            "ja": "このコーヒーメーカーの使い方を説明してくれる？",
+            "focus": "explain",
+            "object": "how this coffee maker works"
+          },
+          {
+            "en": "He explained how to get to the station.",
+            "ja": "彼は駅への行き方を説明してくれました。",
+            "focus": "explained",
+            "object": "how to get to the station"
+          }
+        ]
       },
       {
         "id": "explain-why",
@@ -24854,7 +25292,20 @@ export const verbs: Verb[] = [
             "object": "why we need another approval"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "She explained why she changed her mind.",
+            "ja": "彼女はなぜ気が変わったのか説明しました。",
+            "focus": "explained",
+            "object": "why she changed her mind"
+          },
+          {
+            "en": "Can you explain why the bill is so high?",
+            "ja": "なぜ請求額がこんなに高いのか説明してくれる？",
+            "focus": "explain",
+            "object": "why the bill is so high"
+          }
+        ]
       },
       {
         "id": "explain-clearly",
@@ -24884,7 +25335,20 @@ export const verbs: Verb[] = [
             "object": "again"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Please explain it in simple words.",
+            "ja": "簡単な言葉で説明してください。",
+            "focus": "explain",
+            "object": "it"
+          },
+          {
+            "en": "He explained the rules clearly to the children.",
+            "ja": "彼は子どもたちにルールを分かりやすく説明しました。",
+            "focus": "explained",
+            "object": "the rules"
+          }
+        ]
       }
     ],
     "collocations": [],
@@ -24902,22 +25366,20 @@ export const verbs: Verb[] = [
             "object": "the client"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "explain about",
-        "ja": "〜について説明する",
-        "image": "テーマや内容について説明する。",
-        "pattern": "explain about",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "Can you explain about the new product line?",
-            "ja": "新しい製品ラインについて説明してもらえますか？",
-            "focus": "explain about",
-            "object": "the new product line"
+            "en": "I explained the game to my parents.",
+            "ja": "両親にそのゲームを説明しました。",
+            "focus": "explained",
+            "object": "the game"
+          },
+          {
+            "en": "Can you explain this message to me?",
+            "ja": "このメッセージの意味を説明してくれる？",
+            "focus": "explain",
+            "object": "this message"
           }
-        ],
-        "dailyExamples": []
+        ]
       },
       {
         "phrase": "explain away",
@@ -24932,37 +25394,20 @@ export const verbs: Verb[] = [
             "object": "the quality issue"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "explain through",
-        "ja": "〜を通して説明する",
-        "image": "資料や例を通して説明する。",
-        "pattern": "explain through",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "The trainer explained through a simple example.",
-            "ja": "講師は簡単な例を通して説明しました。",
-            "focus": "explained through",
-            "object": "a simple example"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "explain with",
-        "ja": "〜を使って説明する",
-        "image": "資料・図・データを使って説明する。",
-        "pattern": "explain with",
-        "examples": [
+            "en": "He tried to explain away the broken cup.",
+            "ja": "彼は割れたカップのことを言い訳で済ませようとしました。",
+            "focus": "explain away",
+            "object": "the broken cup"
+          },
           {
-            "en": "Please explain with the latest drawing.",
-            "ja": "最新の図面を使って説明してください。",
-            "focus": "explain with",
-            "object": "the latest drawing"
+            "en": "You cannot explain away every mistake.",
+            "ja": "すべての失敗を言い訳で済ませることはできません。",
+            "focus": "explain away",
+            "object": "every mistake"
           }
-        ],
-        "dailyExamples": []
+        ]
       }
     ]
   },
@@ -25016,7 +25461,20 @@ export const verbs: Verb[] = [
             "object": "how we handle orders"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I changed my morning routine to improve it.",
+            "ja": "朝の習慣を改善するために変えました。",
+            "focus": "improve",
+            "object": "it"
+          },
+          {
+            "en": "This small shelf improved the way we use the kitchen.",
+            "ja": "この小さな棚でキッチンの使い勝手が良くなりました。",
+            "focus": "improved",
+            "object": "the way we use the kitchen"
+          }
+        ]
       },
       {
         "id": "improve-quality",
@@ -25046,7 +25504,20 @@ export const verbs: Verb[] = [
             "object": "the performance of the app"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "A better camera improved the photo quality.",
+            "ja": "より良いカメラで写真の質が上がりました。",
+            "focus": "improved",
+            "object": "the photo quality"
+          },
+          {
+            "en": "Adding fresh herbs can improve the flavor.",
+            "ja": "新鮮なハーブを加えると風味が良くなります。",
+            "focus": "improve",
+            "object": "the flavor"
+          }
+        ]
       },
       {
         "id": "improve-results",
@@ -25075,7 +25546,20 @@ export const verbs: Verb[] = [
             "object": "the delivery success rate"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "My test results improved after I studied every day.",
+            "ja": "毎日勉強したらテストの結果が良くなりました。",
+            "focus": "improved",
+            "object": "after I studied every day"
+          },
+          {
+            "en": "Her running time improved this month.",
+            "ja": "今月、彼女のランニングタイムが良くなりました。",
+            "focus": "improved",
+            "object": "this month"
+          }
+        ]
       },
       {
         "id": "improve-skills",
@@ -25105,7 +25589,20 @@ export const verbs: Verb[] = [
             "object": "her presentation skills"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I want to improve my cooking skills.",
+            "ja": "料理の腕を上げたいです。",
+            "focus": "improve",
+            "object": "my cooking skills"
+          },
+          {
+            "en": "Reading aloud improved my pronunciation.",
+            "ja": "音読で発音が良くなりました。",
+            "focus": "improved",
+            "object": "my pronunciation"
+          }
+        ]
       },
       {
         "id": "improve-service",
@@ -25135,7 +25632,20 @@ export const verbs: Verb[] = [
             "object": "the follow-up process"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The cafe improved its service after the renovation.",
+            "ja": "そのカフェは改装後にサービスが良くなりました。",
+            "focus": "improved",
+            "object": "its service"
+          },
+          {
+            "en": "The new booking system improved the customer experience.",
+            "ja": "新しい予約システムで利用しやすくなりました。",
+            "focus": "improved",
+            "object": "the customer experience"
+          }
+        ]
       },
       {
         "id": "improve-communication",
@@ -25165,7 +25675,20 @@ export const verbs: Verb[] = [
             "object": "teamwork"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We improved our communication by having dinner together.",
+            "ja": "一緒に夕食を取ることで会話が増えました。",
+            "focus": "improved",
+            "object": "our communication"
+          },
+          {
+            "en": "Listening carefully can improve your relationship.",
+            "ja": "よく話を聞くことで関係を良くできます。",
+            "focus": "improve",
+            "object": "your relationship"
+          }
+        ]
       }
     ],
     "collocations": [],
@@ -25189,28 +25712,20 @@ export const verbs: Verb[] = [
             "object": "the previous design"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "improve upon",
-        "ja": "〜を改良する",
-        "image": "improve on より少し硬い表現。",
-        "pattern": "improve upon",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "The team improved upon the original plan.",
-            "ja": "チームは当初の計画を改良しました。",
-            "focus": "improved upon",
-            "object": "the original plan"
+            "en": "This recipe improves on the old one.",
+            "ja": "このレシピは以前のものより良くなっています。",
+            "focus": "improves on",
+            "object": "the old one"
           },
           {
-            "en": "We should improve upon the current quotation format.",
-            "ja": "現在の見積書フォーマットを改良すべきです。",
-            "focus": "improve upon",
-            "object": "the current quotation format"
+            "en": "I want to improve on my last running time.",
+            "ja": "前回のランニングタイムを上回りたいです。",
+            "focus": "improve on",
+            "object": "my last running time"
           }
-        ],
-        "dailyExamples": []
+        ]
       },
       {
         "phrase": "improve with",
@@ -25231,7 +25746,20 @@ export const verbs: Verb[] = [
             "object": "clearer charts"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "My mood improves with a short walk.",
+            "ja": "少し歩くと気分が良くなります。",
+            "focus": "improves with",
+            "object": "a short walk"
+          },
+          {
+            "en": "The soup improved with a little more salt.",
+            "ja": "塩を少し足したらスープがおいしくなりました。",
+            "focus": "improved with",
+            "object": "a little more salt"
+          }
+        ]
       },
       {
         "phrase": "improve by",
@@ -25252,7 +25780,20 @@ export const verbs: Verb[] = [
             "object": "ten percent"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "My score improved by ten points.",
+            "ja": "点数が10点上がりました。",
+            "focus": "improved by",
+            "object": "ten points"
+          },
+          {
+            "en": "You can improve your sleep by avoiding your phone at night.",
+            "ja": "夜にスマホを見ないことで睡眠を改善できます。",
+            "focus": "improve",
+            "object": "your sleep"
+          }
+        ]
       },
       {
         "phrase": "improve over",
@@ -25273,7 +25814,20 @@ export const verbs: Verb[] = [
             "object": "the next few months"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Her confidence improved over the summer.",
+            "ja": "夏の間に彼女の自信が高まりました。",
+            "focus": "improved over",
+            "object": "the summer"
+          },
+          {
+            "en": "The weather improved over the weekend.",
+            "ja": "週末にかけて天気が良くなりました。",
+            "focus": "improved over",
+            "object": "the weekend"
+          }
+        ]
       },
       {
         "phrase": "improve from",
@@ -25294,7 +25848,20 @@ export const verbs: Verb[] = [
             "object": "the first draft"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "My score improved from sixty to eighty.",
+            "ja": "点数が60点から80点に上がりました。",
+            "focus": "improved from",
+            "object": "sixty"
+          },
+          {
+            "en": "His health improved from last month.",
+            "ja": "彼の体調は先月より良くなりました。",
+            "focus": "improved from",
+            "object": "last month"
+          }
+        ]
       }
     ]
   },
@@ -25349,7 +25916,20 @@ export const verbs: Verb[] = [
             "object": "this account"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I managed the move with a simple checklist.",
+            "ja": "簡単なチェックリストで引っ越しを管理しました。",
+            "focus": "managed",
+            "object": "the move"
+          },
+          {
+            "en": "She manages all the family appointments.",
+            "ja": "彼女は家族全員の予定を管理しています。",
+            "focus": "manages",
+            "object": "all the family appointments"
+          }
+        ]
       },
       {
         "id": "manage-team",
@@ -25379,7 +25959,20 @@ export const verbs: Verb[] = [
             "object": "the team"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "He manages the local soccer team.",
+            "ja": "彼は地元のサッカーチームをまとめています。",
+            "focus": "manages",
+            "object": "the local soccer team"
+          },
+          {
+            "en": "She managed the volunteers at the festival.",
+            "ja": "彼女は祭りのボランティアをまとめました。",
+            "focus": "managed",
+            "object": "the volunteers"
+          }
+        ]
       },
       {
         "id": "manage-time",
@@ -25409,7 +26002,20 @@ export const verbs: Verb[] = [
             "object": "the workload"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I need to manage my time better.",
+            "ja": "もっと上手に時間を使う必要があります。",
+            "focus": "manage",
+            "object": "my time"
+          },
+          {
+            "en": "We managed our schedule around the children.",
+            "ja": "子どもたちに合わせて予定を調整しました。",
+            "focus": "managed",
+            "object": "our schedule"
+          }
+        ]
       },
       {
         "id": "manage-costs",
@@ -25439,7 +26045,20 @@ export const verbs: Verb[] = [
             "object": "the resources"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We manage our food budget carefully.",
+            "ja": "食費を慎重に管理しています。",
+            "focus": "manage",
+            "object": "our food budget"
+          },
+          {
+            "en": "She managed the trip on a small budget.",
+            "ja": "彼女は少ない予算で旅行をやりくりしました。",
+            "focus": "managed",
+            "object": "the trip"
+          }
+        ]
       },
       {
         "id": "manage-risk",
@@ -25469,7 +26088,20 @@ export const verbs: Verb[] = [
             "object": "the delay"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I managed the problem before it got worse.",
+            "ja": "問題が悪化する前に対処しました。",
+            "focus": "managed",
+            "object": "the problem"
+          },
+          {
+            "en": "He managed the icy road very carefully.",
+            "ja": "彼は凍った道をとても慎重に運転しました。",
+            "focus": "managed",
+            "object": "the icy road"
+          }
+        ]
       },
       {
         "id": "manage-to-do",
@@ -25499,7 +26131,20 @@ export const verbs: Verb[] = [
             "object": "to join the meeting"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I managed to catch the last train.",
+            "ja": "何とか終電に間に合いました。",
+            "focus": "managed",
+            "object": "to catch the last train"
+          },
+          {
+            "en": "She managed to open the jar by herself.",
+            "ja": "彼女は何とか自分で瓶を開けました。",
+            "focus": "managed",
+            "object": "to open the jar"
+          }
+        ]
       }
     ],
     "collocations": [],
@@ -25523,7 +26168,20 @@ export const verbs: Verb[] = [
             "object": "this budget"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We can manage with one car for now.",
+            "ja": "今のところ車1台で何とかやれます。",
+            "focus": "manage with",
+            "object": "one car"
+          },
+          {
+            "en": "I managed with the food already in the fridge.",
+            "ja": "冷蔵庫にある食材だけで何とかしました。",
+            "focus": "managed with",
+            "object": "the food"
+          }
+        ]
       },
       {
         "phrase": "manage without",
@@ -25544,7 +26202,20 @@ export const verbs: Verb[] = [
             "object": "the original file"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Can you manage without your phone for a day?",
+            "ja": "1日スマホなしで過ごせますか？",
+            "focus": "manage without",
+            "object": "your phone"
+          },
+          {
+            "en": "We managed without a car during the trip.",
+            "ja": "旅行中は車なしで何とか過ごしました。",
+            "focus": "managed without",
+            "object": "a car"
+          }
+        ]
       },
       {
         "phrase": "manage through",
@@ -25565,89 +26236,20 @@ export const verbs: Verb[] = [
             "object": "this shortage"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "manage around",
-        "ja": "〜を避けながら対応する",
-        "image": "制約をよけながら予定や作業を組む。",
-        "pattern": "manage around",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "We managed around the delivery delay.",
-            "ja": "私たちは納品遅延を避ける形で対応しました。",
-            "focus": "managed around",
-            "object": "the delivery delay"
+            "en": "We managed through a very busy week.",
+            "ja": "とても忙しい一週間を何とか乗り切りました。",
+            "focus": "managed through",
+            "object": "a very busy week"
           },
           {
-            "en": "Can we manage around his schedule?",
-            "ja": "彼の予定に合わせて何とか調整できますか？",
-            "focus": "manage around",
-            "object": "his schedule"
+            "en": "She managed through the winter on a tight budget.",
+            "ja": "彼女は少ない予算で冬を何とか乗り切りました。",
+            "focus": "managed through",
+            "object": "the winter"
           }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "manage down",
-        "ja": "抑える・減らす",
-        "image": "コストや期待値を下げて管理する。",
-        "pattern": "manage down",
-        "examples": [
-          {
-            "en": "We need to manage down unnecessary costs.",
-            "ja": "不要なコストを抑える必要があります。",
-            "focus": "manage down",
-            "object": "unnecessary costs"
-          },
-          {
-            "en": "Please manage down expectations until we confirm the schedule.",
-            "ja": "スケジュールを確認するまで期待値を抑えてください。",
-            "focus": "manage down",
-            "object": "expectations"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "manage up",
-        "ja": "上司や上位者をうまく動かす",
-        "image": "上の立場の人に必要な情報を出し、判断しやすくする。",
-        "pattern": "manage up",
-        "examples": [
-          {
-            "en": "She knows how to manage up during a difficult project.",
-            "ja": "彼女は難しい案件で上司をうまく動かす方法を知っています。",
-            "focus": "manage up"
-          },
-          {
-            "en": "We need to manage up by giving clear updates.",
-            "ja": "明確な共有をして上司が判断しやすいようにする必要があります。",
-            "focus": "manage up"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "manage across",
-        "ja": "部門をまたいで管理する",
-        "image": "複数のチームや部門にまたがって進める。",
-        "pattern": "manage across",
-        "examples": [
-          {
-            "en": "He manages across sales and operations.",
-            "ja": "彼は営業と業務部門をまたいで管理しています。",
-            "focus": "manages across",
-            "object": "sales and operations"
-          },
-          {
-            "en": "This role requires you to manage across teams.",
-            "ja": "この役割では複数チームをまたいで管理する必要があります。",
-            "focus": "manage across",
-            "object": "teams"
-          }
-        ],
-        "dailyExamples": []
+        ]
       }
     ]
   },
@@ -25702,7 +26304,20 @@ export const verbs: Verb[] = [
             "object": "a short report"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I prepared the travel documents last night.",
+            "ja": "昨夜、旅行の書類を準備しました。",
+            "focus": "prepared",
+            "object": "the travel documents"
+          },
+          {
+            "en": "Please prepare your ID before we leave.",
+            "ja": "出発前に身分証明書を用意してください。",
+            "focus": "prepare",
+            "object": "your ID"
+          }
+        ]
       },
       {
         "id": "prepare-meeting",
@@ -25732,7 +26347,20 @@ export const verbs: Verb[] = [
             "object": "your questions"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We prepared for the family meeting after dinner.",
+            "ja": "夕食後の家族会議に備えました。",
+            "focus": "prepared",
+            "object": "for the family meeting"
+          },
+          {
+            "en": "I prepared a few questions before the appointment.",
+            "ja": "予約の前にいくつか質問を用意しました。",
+            "focus": "prepared",
+            "object": "a few questions"
+          }
+        ]
       },
       {
         "id": "prepare-samples",
@@ -25762,7 +26390,20 @@ export const verbs: Verb[] = [
             "object": "demo units"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I prepared snacks for the road trip.",
+            "ja": "ドライブ旅行のおやつを用意しました。",
+            "focus": "prepared",
+            "object": "snacks"
+          },
+          {
+            "en": "She prepared lunch for the children.",
+            "ja": "彼女は子どもたちの昼食を用意しました。",
+            "focus": "prepared",
+            "object": "lunch"
+          }
+        ]
       },
       {
         "id": "prepare-team",
@@ -25792,7 +26433,20 @@ export const verbs: Verb[] = [
             "object": "everyone"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We prepared the children for their first day of school.",
+            "ja": "子どもたちを初登校に向けて準備させました。",
+            "focus": "prepared",
+            "object": "the children"
+          },
+          {
+            "en": "The coach prepared us for the long hike.",
+            "ja": "コーチは長いハイキングに備えて私たちを準備させました。",
+            "focus": "prepared",
+            "object": "us"
+          }
+        ]
       },
       {
         "id": "prepare-before",
@@ -25822,7 +26476,20 @@ export const verbs: Verb[] = [
             "object": "the day before a presentation"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I prepare my clothes the night before.",
+            "ja": "前の晩に服を準備します。",
+            "focus": "prepare",
+            "object": "my clothes"
+          },
+          {
+            "en": "She prepared everything before the guests arrived.",
+            "ja": "来客が到着する前にすべて準備しました。",
+            "focus": "prepared",
+            "object": "everything"
+          }
+        ]
       },
       {
         "id": "prepare-to-do",
@@ -25852,7 +26519,20 @@ export const verbs: Verb[] = [
             "object": "to answer questions"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We prepared to leave early.",
+            "ja": "早く出発する準備をしました。",
+            "focus": "prepared",
+            "object": "to leave early"
+          },
+          {
+            "en": "He prepared to speak in front of the class.",
+            "ja": "彼はクラスの前で話す準備をしました。",
+            "focus": "prepared",
+            "object": "to speak"
+          }
+        ]
       }
     ],
     "collocations": [],
@@ -25876,13 +26556,26 @@ export const verbs: Verb[] = [
             "object": "possible questions"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I am preparing for a weekend trip.",
+            "ja": "週末の旅行に備えています。",
+            "focus": "preparing for",
+            "object": "a weekend trip"
+          },
+          {
+            "en": "We prepared for the storm by buying water.",
+            "ja": "水を買って嵐に備えました。",
+            "focus": "prepared for",
+            "object": "the storm"
+          }
+        ]
       },
       {
-        "phrase": "prepare ahead",
+        "phrase": "prepare ahead of time",
         "ja": "前もって準備する",
         "image": "必要になるより前に整えておく。",
-        "pattern": "prepare ahead",
+        "pattern": "prepare ahead of time",
         "examples": [
           {
             "en": "We prepared ahead for the exhibition.",
@@ -25896,49 +26589,18 @@ export const verbs: Verb[] = [
             "focus": "prepare ahead"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "prepare in advance",
-        "ja": "事前に準備する",
-        "image": "先に準備しておき、直前に慌てないようにする。",
-        "pattern": "prepare in advance",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "We prepared in advance for the audit.",
-            "ja": "私たちは監査に向けて事前に準備しました。",
-            "focus": "prepared in advance",
-            "object": "for the audit"
+            "en": "I prepared ahead of time so the morning was easy.",
+            "ja": "事前に準備したので朝が楽でした。",
+            "focus": "prepared ahead of time"
           },
           {
-            "en": "Please prepare in advance for the client visit.",
-            "ja": "顧客訪問に向けて事前に準備してください。",
-            "focus": "prepare in advance",
-            "object": "for the client visit"
+            "en": "Prepare ahead of time if you are traveling with children.",
+            "ja": "子どもと旅行するなら前もって準備してください。",
+            "focus": "Prepare ahead of time"
           }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "prepare with",
-        "ja": "〜を使って準備する",
-        "image": "資料・情報・道具を使って整える。",
-        "pattern": "prepare with",
-        "examples": [
-          {
-            "en": "She prepared with the latest sales data.",
-            "ja": "彼女は最新の売上データを使って準備しました。",
-            "focus": "prepared with",
-            "object": "the latest sales data"
-          },
-          {
-            "en": "We prepared with a checklist to avoid mistakes.",
-            "ja": "私たちはミスを避けるためにチェックリストを使って準備しました。",
-            "focus": "prepared with",
-            "object": "a checklist"
-          }
-        ],
-        "dailyExamples": []
+        ]
       },
       {
         "phrase": "prepare by",
@@ -25959,28 +26621,20 @@ export const verbs: Verb[] = [
             "object": "reviewing the proposal"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "prepare against",
-        "ja": "〜に備える",
-        "image": "リスクや悪い状況に備える。少し硬い表現。",
-        "pattern": "prepare against",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "We prepared against possible delivery delays.",
-            "ja": "納品遅延の可能性に備えました。",
-            "focus": "prepared against",
-            "object": "possible delivery delays"
+            "en": "I prepared for the test by reviewing my notes.",
+            "ja": "ノートを見直してテストに備えました。",
+            "focus": "prepared",
+            "object": "for the test"
           },
           {
-            "en": "The company prepared against supply shortages.",
-            "ja": "会社は供給不足に備えました。",
-            "focus": "prepared against",
-            "object": "supply shortages"
+            "en": "She prepared for the hike by walking every day.",
+            "ja": "毎日歩いてハイキングに備えました。",
+            "focus": "prepared",
+            "object": "for the hike"
           }
-        ],
-        "dailyExamples": []
+        ]
       }
     ]
   },
@@ -26034,7 +26688,20 @@ export const verbs: Verb[] = [
             "object": "a visit"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We planned the weekend together.",
+            "ja": "週末の予定を一緒に立てました。",
+            "focus": "planned",
+            "object": "the weekend"
+          },
+          {
+            "en": "I am planning our summer trip.",
+            "ja": "夏の旅行を計画しています。",
+            "focus": "planning",
+            "object": "our summer trip"
+          }
+        ]
       },
       {
         "id": "plan-next-step",
@@ -26064,7 +26731,20 @@ export const verbs: Verb[] = [
             "object": "the follow-up"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "Let us plan what to do next.",
+            "ja": "次に何をするか考えましょう。",
+            "focus": "plan",
+            "object": "what to do next"
+          },
+          {
+            "en": "We planned the next step after dinner.",
+            "ja": "夕食後に次の手順を考えました。",
+            "focus": "planned",
+            "object": "the next step"
+          }
+        ]
       },
       {
         "id": "plan-production",
@@ -26094,7 +26774,20 @@ export const verbs: Verb[] = [
             "object": "the delivery route"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I planned the cooking so everything would be ready at six.",
+            "ja": "6時に全部できるよう料理の段取りを決めました。",
+            "focus": "planned",
+            "object": "the cooking"
+          },
+          {
+            "en": "She planned the cleaning room by room.",
+            "ja": "彼女は部屋ごとに掃除の計画を立てました。",
+            "focus": "planned",
+            "object": "the cleaning"
+          }
+        ]
       },
       {
         "id": "plan-to-do",
@@ -26124,7 +26817,20 @@ export const verbs: Verb[] = [
             "object": "to review the design"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We plan to visit my parents this weekend.",
+            "ja": "今週末、両親を訪ねる予定です。",
+            "focus": "plan",
+            "object": "to visit my parents"
+          },
+          {
+            "en": "I am planning to start running again.",
+            "ja": "また走り始める予定です。",
+            "focus": "planning",
+            "object": "to start running again"
+          }
+        ]
       },
       {
         "id": "plan-carefully",
@@ -26154,7 +26860,20 @@ export const verbs: Verb[] = [
             "object": "early"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We planned the trip carefully because of the children.",
+            "ja": "子どもたちのために旅行を慎重に計画しました。",
+            "focus": "planned",
+            "object": "the trip"
+          },
+          {
+            "en": "I carefully planned where to put the furniture.",
+            "ja": "家具をどこに置くか慎重に考えました。",
+            "focus": "planned",
+            "object": "where to put the furniture"
+          }
+        ]
       }
     ],
     "collocations": [],
@@ -26178,7 +26897,20 @@ export const verbs: Verb[] = [
             "object": "the product launch"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We planned for rain and brought umbrellas.",
+            "ja": "雨を想定して傘を持っていきました。",
+            "focus": "planned for",
+            "object": "rain"
+          },
+          {
+            "en": "You should plan for extra travel time.",
+            "ja": "移動時間に余裕を見ておいた方がいいです。",
+            "focus": "plan for",
+            "object": "extra travel time"
+          }
+        ]
       },
       {
         "phrase": "plan ahead",
@@ -26197,7 +26929,18 @@ export const verbs: Verb[] = [
             "focus": "planned ahead"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We plan ahead before every family trip.",
+            "ja": "家族旅行の前にはいつも早めに計画します。",
+            "focus": "plan ahead"
+          },
+          {
+            "en": "Planning ahead makes busy mornings easier.",
+            "ja": "前もって計画すると忙しい朝が楽になります。",
+            "focus": "Planning ahead"
+          }
+        ]
       },
       {
         "phrase": "plan out",
@@ -26218,7 +26961,20 @@ export const verbs: Verb[] = [
             "object": "the schedule"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I planned out every meal for the week.",
+            "ja": "一週間分の食事を細かく計画しました。",
+            "focus": "planned out",
+            "object": "every meal"
+          },
+          {
+            "en": "Let us plan out the route before we leave.",
+            "ja": "出発前に道順を詳しく決めましょう。",
+            "focus": "plan out",
+            "object": "the route"
+          }
+        ]
       },
       {
         "phrase": "plan around",
@@ -26239,7 +26995,20 @@ export const verbs: Verb[] = [
             "object": "the delivery schedule"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We planned the trip around the school holidays.",
+            "ja": "学校の休みに合わせて旅行を計画しました。",
+            "focus": "planned",
+            "object": "the trip"
+          },
+          {
+            "en": "I plan my errands around the weather.",
+            "ja": "天気に合わせて用事の予定を立てます。",
+            "focus": "plan",
+            "object": "my errands"
+          }
+        ]
       },
       {
         "phrase": "plan on",
@@ -26260,28 +27029,20 @@ export const verbs: Verb[] = [
             "object": "joining the meeting"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "plan with",
-        "ja": "〜と一緒に計画する",
-        "image": "相手と一緒に流れを組み立てる。",
-        "pattern": "plan with",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "We planned with the production team before confirming the date.",
-            "ja": "私たちは日程を確定する前に製造チームと一緒に計画しました。",
-            "focus": "planned with",
-            "object": "the production team"
+            "en": "I plan on staying home tonight.",
+            "ja": "今夜は家にいるつもりです。",
+            "focus": "plan on",
+            "object": "staying home"
           },
           {
-            "en": "Please plan with the client before changing the layout.",
-            "ja": "レイアウトを変更する前に顧客と一緒に計画してください。",
-            "focus": "plan with",
-            "object": "the client"
+            "en": "We are planning on leaving early.",
+            "ja": "早めに出発する予定です。",
+            "focus": "planning on",
+            "object": "leaving early"
           }
-        ],
-        "dailyExamples": []
+        ]
       }
     ]
   },
@@ -26332,7 +27093,20 @@ export const verbs: Verb[] = [
             "object": "a lower price"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The store offered a discount on winter coats.",
+            "ja": "その店は冬物コートを値引きしていました。",
+            "focus": "offered",
+            "object": "a discount"
+          },
+          {
+            "en": "They offered me a lower price for the damaged box.",
+            "ja": "箱が傷んでいたので安い価格を提示してくれました。",
+            "focus": "offered",
+            "object": "me a lower price"
+          }
+        ]
       },
       {
         "id": "offer-support",
@@ -26362,7 +27136,20 @@ export const verbs: Verb[] = [
             "object": "help"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "My neighbor offered help with the heavy boxes.",
+            "ja": "近所の人が重い箱を運ぶのを手伝うと申し出てくれました。",
+            "focus": "offered",
+            "object": "help"
+          },
+          {
+            "en": "She offered some useful advice about the trip.",
+            "ja": "彼女は旅行について役立つ助言をくれました。",
+            "focus": "offered",
+            "object": "some useful advice"
+          }
+        ]
       },
       {
         "id": "offer-solution",
@@ -26392,7 +27179,20 @@ export const verbs: Verb[] = [
             "object": "an alternative plan"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "He offered a simple solution to the problem.",
+            "ja": "彼はその問題に簡単な解決策を提案しました。",
+            "focus": "offered",
+            "object": "a simple solution"
+          },
+          {
+            "en": "The hotel offered another room.",
+            "ja": "ホテルは別の部屋を提案してくれました。",
+            "focus": "offered",
+            "object": "another room"
+          }
+        ]
       },
       {
         "id": "offer-sample",
@@ -26422,7 +27222,20 @@ export const verbs: Verb[] = [
             "object": "a trial version"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The bakery offered free samples.",
+            "ja": "そのパン屋は無料の試食を提供していました。",
+            "focus": "offered",
+            "object": "free samples"
+          },
+          {
+            "en": "She offered me a seat by the window.",
+            "ja": "彼女は窓側の席を譲ってくれました。",
+            "focus": "offered",
+            "object": "me a seat"
+          }
+        ]
       },
       {
         "id": "offer-to-help",
@@ -26452,32 +27265,24 @@ export const verbs: Verb[] = [
             "object": "to explain the details"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I offered to drive everyone home.",
+            "ja": "みんなを車で家まで送ると申し出ました。",
+            "focus": "offered",
+            "object": "to drive everyone home"
+          },
+          {
+            "en": "He offered to wash the dishes.",
+            "ja": "彼は皿を洗うと申し出ました。",
+            "focus": "offered",
+            "object": "to wash the dishes"
+          }
+        ]
       }
     ],
     "collocations": [],
     "phrasalVerbs": [
-      {
-        "phrase": "offer to",
-        "ja": "〜すると申し出る",
-        "image": "自分から行動を相手に差し出す。",
-        "pattern": "offer to",
-        "examples": [
-          {
-            "en": "She offered to call the client for us.",
-            "ja": "彼女は私たちの代わりに顧客へ電話すると申し出ました。",
-            "focus": "offered to",
-            "object": "call the client"
-          },
-          {
-            "en": "We offered to replace the sample.",
-            "ja": "私たちはサンプルを交換すると申し出ました。",
-            "focus": "offered to",
-            "object": "replace the sample"
-          }
-        ],
-        "dailyExamples": []
-      },
       {
         "phrase": "offer up",
         "ja": "差し出す・提供する",
@@ -26497,70 +27302,20 @@ export const verbs: Verb[] = [
             "object": "his time"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "offer for",
-        "ja": "〜向けに提供する",
-        "image": "特定の目的や相手に向けて差し出す。",
-        "pattern": "offer for",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "The supplier offered samples for testing.",
-            "ja": "仕入先は試験用にサンプルを提供しました。",
-            "focus": "offered for",
-            "object": "testing"
+            "en": "He offered up his seat to an older passenger.",
+            "ja": "彼は年配の乗客に席を譲りました。",
+            "focus": "offered up",
+            "object": "his seat"
           },
           {
-            "en": "We offered a special plan for new customers.",
-            "ja": "私たちは新規顧客向けに特別プランを提供しました。",
-            "focus": "offered for",
-            "object": "new customers"
+            "en": "She offered up her spare room for the weekend.",
+            "ja": "彼女は週末に空き部屋を使わせてくれました。",
+            "focus": "offered up",
+            "object": "her spare room"
           }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "offer with",
-        "ja": "〜付きで提供する",
-        "image": "別の条件やサービスを添えて提供する。",
-        "pattern": "offer with",
-        "examples": [
-          {
-            "en": "We offered the product with installation support.",
-            "ja": "私たちは設置サポート付きでその製品を提供しました。",
-            "focus": "offered with",
-            "object": "installation support"
-          },
-          {
-            "en": "The plan is offered with a one-year warranty.",
-            "ja": "そのプランは1年保証付きで提供されています。",
-            "focus": "offered with",
-            "object": "a one-year warranty"
-          }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "offer as",
-        "ja": "〜として提供する",
-        "image": "役割や位置づけを付けて差し出す。",
-        "pattern": "offer as",
-        "examples": [
-          {
-            "en": "We offered the unit as a temporary replacement.",
-            "ja": "私たちはその機器を一時的な代替品として提供しました。",
-            "focus": "offered as",
-            "object": "a temporary replacement"
-          },
-          {
-            "en": "The service was offered as part of the package.",
-            "ja": "そのサービスはパッケージの一部として提供されました。",
-            "focus": "offered as",
-            "object": "part of the package"
-          }
-        ],
-        "dailyExamples": []
+        ]
       }
     ]
   },
@@ -26611,7 +27366,20 @@ export const verbs: Verb[] = [
             "object": "the customer"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "I supported my friend during a difficult week.",
+            "ja": "大変な一週間を過ごした友人を支えました。",
+            "focus": "supported",
+            "object": "my friend"
+          },
+          {
+            "en": "Her family supports her decision.",
+            "ja": "家族は彼女の決断を応援しています。",
+            "focus": "supports",
+            "object": "her decision"
+          }
+        ]
       },
       {
         "id": "support-project",
@@ -26641,7 +27409,20 @@ export const verbs: Verb[] = [
             "object": "faster delivery"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We supported the school festival by helping on Saturday.",
+            "ja": "土曜日に手伝って学校祭を支援しました。",
+            "focus": "supported",
+            "object": "the school festival"
+          },
+          {
+            "en": "The neighbors supported the park cleanup.",
+            "ja": "近所の人たちは公園の清掃活動を応援しました。",
+            "focus": "supported",
+            "object": "the park cleanup"
+          }
+        ]
       },
       {
         "id": "support-system",
@@ -26671,7 +27452,20 @@ export const verbs: Verb[] = [
             "object": "DALI control"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "This phone supports wireless charging.",
+            "ja": "このスマホはワイヤレス充電に対応しています。",
+            "focus": "supports",
+            "object": "wireless charging"
+          },
+          {
+            "en": "The app supports several languages.",
+            "ja": "そのアプリは複数の言語に対応しています。",
+            "focus": "supports",
+            "object": "several languages"
+          }
+        ]
       },
       {
         "id": "support-claim",
@@ -26701,7 +27495,20 @@ export const verbs: Verb[] = [
             "object": "your explanation"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "The photos support his story.",
+            "ja": "その写真は彼の話を裏付けています。",
+            "focus": "support",
+            "object": "his story"
+          },
+          {
+            "en": "The receipt supports my refund request.",
+            "ja": "そのレシートは返金の申し出の根拠になります。",
+            "focus": "supports",
+            "object": "my refund request"
+          }
+        ]
       },
       {
         "id": "support-each-other",
@@ -26731,32 +27538,24 @@ export const verbs: Verb[] = [
             "object": "each other"
           }
         ],
-        "dailyExamples": []
+        "dailyExamples": [
+          {
+            "en": "We support each other when life gets busy.",
+            "ja": "忙しい時はお互いに支え合っています。",
+            "focus": "support",
+            "object": "each other"
+          },
+          {
+            "en": "Good friends support each other through hard times.",
+            "ja": "良い友人はつらい時にお互いを支えます。",
+            "focus": "support",
+            "object": "each other"
+          }
+        ]
       }
     ],
     "collocations": [],
     "phrasalVerbs": [
-      {
-        "phrase": "support with",
-        "ja": "〜で支援する",
-        "image": "道具・情報・作業などを使って支える。",
-        "pattern": "support with",
-        "examples": [
-          {
-            "en": "We supported the client with technical documents.",
-            "ja": "私たちは技術資料で顧客を支援しました。",
-            "focus": "supported with",
-            "object": "technical documents"
-          },
-          {
-            "en": "Can you support the team with the report?",
-            "ja": "あなたは報告書の件でチームを支援できますか？",
-            "focus": "support with",
-            "object": "the report"
-          }
-        ],
-        "dailyExamples": []
-      },
       {
         "phrase": "support through",
         "ja": "〜を通して支援する",
@@ -26776,49 +27575,20 @@ export const verbs: Verb[] = [
             "object": "the difficult project"
           }
         ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "support in",
-        "ja": "〜において支援する",
-        "image": "分野・場面・作業で支える。",
-        "pattern": "support in",
-        "examples": [
+        "dailyExamples": [
           {
-            "en": "She supported us in preparing the quotation.",
-            "ja": "彼女は見積書の準備で私たちを支援しました。",
-            "focus": "supported in",
-            "object": "preparing the quotation"
+            "en": "My family supported me through a difficult move.",
+            "ja": "家族は大変な引っ越しを乗り切れるよう支えてくれました。",
+            "focus": "supported",
+            "object": "me"
           },
           {
-            "en": "We support customers in choosing the right product.",
-            "ja": "私たちは適切な製品選定で顧客を支援します。",
-            "focus": "support in",
-            "object": "choosing the right product"
+            "en": "She supported her friend through the breakup.",
+            "ja": "彼女は別れを経験した友人を支えました。",
+            "focus": "supported",
+            "object": "her friend"
           }
-        ],
-        "dailyExamples": []
-      },
-      {
-        "phrase": "support by",
-        "ja": "〜によって支援する",
-        "image": "具体的な方法を使って支える。",
-        "pattern": "support by",
-        "examples": [
-          {
-            "en": "We supported the proposal by adding clear data.",
-            "ja": "私たちは明確なデータを加えて提案を裏付けました。",
-            "focus": "supported by",
-            "object": "adding clear data"
-          },
-          {
-            "en": "The system supports users by reducing manual work.",
-            "ja": "そのシステムは手作業を減らしてユーザーを支援します。",
-            "focus": "supports by",
-            "object": "reducing manual work"
-          }
-        ],
-        "dailyExamples": []
+        ]
       }
     ]
   },

@@ -1,1 +1,5 @@
-Ver.167
+Ver.168
+Premium daily-example re-audit: RETURN / CHECK / DECIDE / EXPLAIN / IMPROVE / MANAGE / PREPARE / PLAN / OFFER / SUPPORT
+Premium progress: 60 / 124 verbs
+Batch examples: 182
+Cumulative completed-batch examples: 1,394

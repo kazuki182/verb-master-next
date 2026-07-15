@@ -1,5 +1,5 @@
-Ver.170
-Premium daily-example re-audit: REQUEST / SUGGEST / AGREE / ARRANGE / ATTEND / CONTACT / SHARE / COLLECT / REDUCE / INCREASE
-Premium progress: 80 / 124 verbs
-Batch examples: 112
-Cumulative completed-batch examples: 1,650
+Ver.172
+Premium daily-example re-audit: ACHIEVE / SCHEDULE / SUBMIT / CANCEL / CONNECT / RESPOND / CONTROL / HANDLE / ORGANIZE / INFORM
+Premium progress: 100 / 124 verbs
+Batch examples: 106
+Cumulative completed-batch examples: 1,850

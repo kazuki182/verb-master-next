@@ -55,6 +55,7 @@ export type CloudBackupComparison = {
 
 const CLOUD_CREDENTIAL_KEY = "verbMaster.cloudCredentials";
 const PENDING_AVATAR_KEY = "verbMaster.pendingAvatarUploads";
+const AVATAR_CACHE_KEY = "verbMaster.avatarDurableCache.v2";
 const CLOUD_SQL_HINT = "Supabase SQLが未実行、または保存用RPCが見つかりません。supabase/V143_DEPLOY_SAFE_PERSISTENCE_SYSTEM.sql をSupabase SQL Editorで実行してください。";
 
 export function isCloudConfigured() {
@@ -64,6 +65,14 @@ export function isCloudConfigured() {
 
 type CloudCredentialMap = Record<string, { passwordHash: string; savedAt: string }>;
 type PendingAvatarMap = Record<string, { avatarDataUrl: string; savedAt: string }>;
+export type AvatarLocalCacheEntry = {
+  avatarDataUrl: string;
+  avatarUrl: string;
+  avatarPath: string;
+  updatedAt: string;
+  verifiedAt?: string;
+};
+type AvatarLocalCacheMap = Record<string, AvatarLocalCacheEntry>;
 type BackupRow = {
   progress_json?: Partial<UserProgress> | null;
   settings_json?: ClientStudySettingsSnapshot | null;
@@ -188,15 +197,23 @@ export async function saveDedicatedDisplayName(username: string, displayName: st
 
 function applyDedicatedProfile(progress: UserProgress, profile?: DedicatedProfile | null) {
   if (!profile) return progress;
+  const hasRemoteAvatar = Boolean(profile.avatarUrl || profile.avatarPath);
+  const cached = getAvatarLocalCache(progress.username);
+  const fallbackDataUrl = cached?.avatarDataUrl || progress.avatarDataUrl || "";
+  const fallbackUrl = cached?.avatarUrl || progress.avatarUrl || "";
+  const fallbackPath = cached?.avatarPath || progress.avatarPath || "";
   return {
     ...progress,
-    displayName: profile.displayName || progress.username,
-    avatarUrl: profile.avatarUrl || "",
-    avatarDataUrl: profile.avatarUrl || "",
-    avatarPath: profile.avatarPath || "",
-    avatarUpdatedAt: profile.updatedAt || progress.avatarUpdatedAt,
+    displayName: profile.displayName || progress.displayName || progress.username,
+    // Never erase a known avatar because a profile read returned an empty/stale row.
+    avatarUrl: hasRemoteAvatar ? (profile.avatarUrl || fallbackUrl) : fallbackUrl,
+    avatarDataUrl: hasRemoteAvatar ? (profile.avatarUrl || fallbackDataUrl) : fallbackDataUrl,
+    avatarPath: hasRemoteAvatar ? (profile.avatarPath || fallbackPath) : fallbackPath,
+    avatarUpdatedAt: hasRemoteAvatar ? (profile.updatedAt || progress.avatarUpdatedAt) : (cached?.updatedAt || progress.avatarUpdatedAt),
     profileUpdatedAt: profile.updatedAt || progress.profileUpdatedAt,
-    avatarStorageProvider: profile.avatarUrl || profile.avatarPath ? "supabase-storage" as const : "none" as const,
+    avatarStorageProvider: hasRemoteAvatar || fallbackPath || fallbackUrl
+      ? "supabase-storage" as const
+      : (isInlineAvatar(fallbackDataUrl) ? "legacy-data-url" as const : "none" as const),
   };
 }
 
@@ -230,11 +247,47 @@ function savePendingAvatarMap(map: PendingAvatarMap) {
   localStorage.setItem(PENDING_AVATAR_KEY, JSON.stringify(map));
 }
 
+function avatarLocalCacheMap(): AvatarLocalCacheMap {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(localStorage.getItem(AVATAR_CACHE_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function saveAvatarLocalCacheMap(map: AvatarLocalCacheMap) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(AVATAR_CACHE_KEY, JSON.stringify(map));
+}
+
+export function saveAvatarLocalCache(username: string, entry: Partial<AvatarLocalCacheEntry> & { avatarDataUrl: string }) {
+  if (!username || !entry.avatarDataUrl || typeof window === "undefined") return;
+  const map = avatarLocalCacheMap();
+  const previous = map[username];
+  map[username] = {
+    avatarDataUrl: entry.avatarDataUrl || previous?.avatarDataUrl || "",
+    avatarUrl: entry.avatarUrl ?? previous?.avatarUrl ?? "",
+    avatarPath: entry.avatarPath ?? previous?.avatarPath ?? "",
+    updatedAt: entry.updatedAt || previous?.updatedAt || nowText(),
+    verifiedAt: entry.verifiedAt ?? previous?.verifiedAt,
+  };
+  saveAvatarLocalCacheMap(map);
+}
+
+export function getAvatarLocalCache(username?: string | null) {
+  if (!username) return null;
+  return avatarLocalCacheMap()[username] || null;
+}
+
 export function savePendingAvatarForCloud(username: string, avatarDataUrl: string) {
   if (!username || !avatarDataUrl || typeof window === "undefined") return;
+  const savedAt = nowText();
   const map = pendingAvatarMap();
-  map[username] = { avatarDataUrl, savedAt: nowText() };
+  map[username] = { avatarDataUrl, savedAt };
   savePendingAvatarMap(map);
+  // Keep a second durable local copy even after a successful cloud upload.
+  saveAvatarLocalCache(username, { avatarDataUrl, updatedAt: savedAt });
 }
 
 export function getPendingAvatarForCloud(username?: string | null) {
@@ -331,24 +384,15 @@ function summarizeProgress(progress: Partial<UserProgress> | null | undefined): 
 function mergeRemoteLearningWithLocalProfile(local: UserProgress, remote?: Partial<UserProgress> | null): UserProgress {
   if (!remote) return local;
   const remoteProgress = remote as UserProgress;
-  const localProfileWins = localIsNewer(local.profileUpdatedAt, remoteProgress.profileUpdatedAt) || !remoteHasProfile(remoteProgress);
+  // Learning backup never decides profile ownership. Dedicated profile API + durable local cache do.
   const localSettingsWins = localIsNewer(local.settingsUpdatedAt, remoteProgress.settingsUpdatedAt) || !remoteHasSettings(remoteProgress);
 
-  const displayName = localProfileWins
-    ? (local.displayName || remoteProgress.displayName || local.username)
-    : (remoteProgress.displayName || local.displayName || local.username);
-  const avatarUrl = localProfileWins
-    ? (avatarUrlOf(local) || avatarUrlOf(remoteProgress) || "")
-    : (avatarUrlOf(remoteProgress) || avatarUrlOf(local) || "");
-  const avatarDataUrl = avatarUrl || (localProfileWins
-    ? (local.avatarDataUrl || remoteProgress.avatarDataUrl || "")
-    : (remoteProgress.avatarDataUrl || local.avatarDataUrl || ""));
-  const avatarPath = localProfileWins
-    ? (local.avatarPath || remoteProgress.avatarPath || "")
-    : (remoteProgress.avatarPath || local.avatarPath || "");
-  const avatarUpdatedAt = localProfileWins
-    ? (local.avatarUpdatedAt || remoteProgress.avatarUpdatedAt || "")
-    : (remoteProgress.avatarUpdatedAt || local.avatarUpdatedAt || "");
+  const cachedAvatar = getAvatarLocalCache(local.username);
+  const displayName = local.displayName || local.username;
+  const avatarUrl = local.avatarUrl || cachedAvatar?.avatarUrl || "";
+  const avatarDataUrl = local.avatarDataUrl || cachedAvatar?.avatarDataUrl || avatarUrl || "";
+  const avatarPath = local.avatarPath || cachedAvatar?.avatarPath || "";
+  const avatarUpdatedAt = local.avatarUpdatedAt || cachedAvatar?.updatedAt || "";
 
   const merged: UserProgress = {
     ...local,
@@ -381,7 +425,7 @@ function mergeRemoteLearningWithLocalProfile(local: UserProgress, remote?: Parti
     targetStartDate: localSettingsWins ? (local.targetStartDate || remoteProgress.targetStartDate) : (remoteProgress.targetStartDate || local.targetStartDate),
     studyDays: localSettingsWins ? (local.studyDays || remoteProgress.studyDays) : (remoteProgress.studyDays || local.studyDays),
     studyPace: localSettingsWins ? (local.studyPace || remoteProgress.studyPace) : (remoteProgress.studyPace || local.studyPace),
-    profileUpdatedAt: localProfileWins ? (local.profileUpdatedAt || remoteProgress.profileUpdatedAt) : (remoteProgress.profileUpdatedAt || local.profileUpdatedAt),
+    profileUpdatedAt: local.profileUpdatedAt || remoteProgress.profileUpdatedAt,
     settingsUpdatedAt: localSettingsWins ? (local.settingsUpdatedAt || remoteProgress.settingsUpdatedAt) : (remoteProgress.settingsUpdatedAt || local.settingsUpdatedAt),
     cloudRestoredAt: nowText(),
     unlockedVerbCount: Math.max(Number(local.unlockedVerbCount || 0), Number(remoteProgress.unlockedVerbCount || 0)),
@@ -608,6 +652,17 @@ export async function restoreLearningDataFromSupabase(username: string): Promise
     let merged = mergeRemoteLearningWithLocalProfile(local, remote);
     if (backup.settings_json) applyClientStudySettingsSnapshot(backup.settings_json, merged);
     applyClientStudySettingsSnapshot(remote as ClientStudySettingsSnapshot, merged);
+    const cachedAvatar = getAvatarLocalCache(username);
+    if (!merged.avatarDataUrl && cachedAvatar?.avatarDataUrl) {
+      merged = {
+        ...merged,
+        avatarDataUrl: cachedAvatar.avatarUrl || cachedAvatar.avatarDataUrl,
+        avatarUrl: cachedAvatar.avatarUrl || "",
+        avatarPath: cachedAvatar.avatarPath || "",
+        avatarUpdatedAt: cachedAvatar.updatedAt,
+        avatarStorageProvider: cachedAvatar.avatarUrl || cachedAvatar.avatarPath ? "supabase-storage" : "legacy-data-url",
+      };
+    }
     const dedicated = await fetchDedicatedProfile(username);
     if (dedicated.ok && dedicated.profile) merged = applyDedicatedProfile(merged, dedicated.profile);
     saveProgress(merged);
@@ -695,13 +750,22 @@ export async function uploadAvatarToSupabase(username: string, avatarDataUrl?: s
     if (!response.ok || payload?.ok === false) {
       return { ok: false, url: "", path: "", message: payload?.message || "画像のクラウド保存に失敗しました。前の画像は維持されています。" };
     }
+    const url = String(payload.url || "");
+    const path = String(payload.path || "");
+    const updatedAt = String(payload.updatedAt || nowText());
+    saveAvatarLocalCache(username, {
+      avatarDataUrl,
+      avatarUrl: url,
+      avatarPath: path,
+      updatedAt,
+    });
     return {
       ok: true,
-      url: String(payload.url || ""),
-      path: String(payload.path || ""),
+      url,
+      path,
       message: payload.message || "画像をStorageへ保存しました。",
       oldAvatarDeleted: Boolean(payload.oldAvatarDeleted),
-      updatedAt: String(payload.updatedAt || ""),
+      updatedAt,
     };
   } catch (error) {
     return { ok: false, url: "", path: "", message: error instanceof Error ? error.message : "画像のクラウド保存に失敗しました。前の画像は維持されています。" };
@@ -714,7 +778,7 @@ export async function flushPendingAvatarToCloud(username: string) {
     return { ok: false, url: "", path: "", message: "未送信の画像はありません。" };
   }
   const result = await uploadAvatarToSupabase(username, pending.avatarDataUrl);
-  if (result.ok) clearPendingAvatarForCloud(username);
+  // The caller clears the pending item only after a second profile read verifies URL and path.
   return { ...result, pendingSavedAt: pending.savedAt };
 }
 

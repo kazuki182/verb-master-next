@@ -1,5 +1,1 @@
-Ver.173
-Premium daily-example re-audit: ADJUST / APPLY / APPROVE / BORROW / VERIFY / GATHER / COMMUNICATE / DESCRIBE / EARN / ESTIMATE
-Premium progress: 110 / 124 verbs
-Batch examples: 104
-Cumulative completed-batch examples: 1,954
+v175-profile-avatar-durable-source-of-truth

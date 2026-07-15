@@ -33486,7 +33486,7 @@ export const verbs: Verb[] = [
     "transitivity": "自動詞",
     "importance": "★★★☆☆ 基本",
     "core": "結果や判断が別の条件に支えられて決まる",
-    "coreDetail": "DEPENDは通常、depend onの形で「〜次第である」「〜に頼る」を表します。depend uponは少し硬い同義表現です。単独ではほとんど使いません。",
+    "coreDetail": "DEPENDは通常、depend onの形で「〜次第である」「〜に頼る」を表します。depend uponはより正式な同義表現ですが、Premium日常例文ではdepend onに統一します。単独ではほとんど使いません。",
     "meanings": [
       {
         "id": "depend-basic",
@@ -33551,35 +33551,9 @@ export const verbs: Verb[] = [
           },
           {
             "en": "Children depend on adults for support.",
-            "ja": "子どもは支援を大人に頼っています。",
+            "ja": "子どもは大人の助けに頼っています。",
             "focus": "depend on",
             "object": "adults"
-          }
-        ]
-      },
-      {
-        "phrase": "depend upon",
-        "ja": "〜次第である・〜に依存する",
-        "image": "depend onと同じ意味だが、少し硬く改まった響きがある。",
-        "pattern": "DEPEND UPON + 条件/人/物",
-        "examples": [
-          {
-            "en": "Approval will depend upon the final test results.",
-            "ja": "承認は最終試験結果次第です。",
-            "focus": "depend upon",
-            "object": "the final test results"
-          },
-          {
-            "en": "The decision depends upon the available budget.",
-            "ja": "その決定は利用可能な予算によって決まります。",
-            "focus": "depends upon",
-            "object": "the available budget"
-          },
-          {
-            "en": "Success depends upon careful preparation.",
-            "ja": "成功は慎重な準備にかかっています。",
-            "focus": "depends upon",
-            "object": "careful preparation"
           }
         ]
       }
@@ -33850,7 +33824,7 @@ export const verbs: Verb[] = [
           },
           {
             "en": "I replied with my available dates.",
-            "ja": "私は都合のよい日程を伝えて返事をしました。",
+            "ja": "空いている日を伝えて返信しました。",
             "focus": "replied",
             "jaFocus": "私は都合のよい日程を伝えて返事をしました"
           }
@@ -33929,10 +33903,10 @@ export const verbs: Verb[] = [
         ],
         "dailyExamples": [
           {
-            "en": "I replied honestly.",
-            "ja": "私は正直に返答しました。",
+            "en": "I replied honestly when she asked how I felt.",
+            "ja": "彼女にどう感じているか聞かれたので、正直に答えました。",
             "focus": "replied",
-            "jaFocus": "正直に返答する"
+            "jaFocus": "正直に答えました"
           },
           {
             "en": "He replied politely.",
@@ -34496,10 +34470,10 @@ export const verbs: Verb[] = [
             "jaFocus": "私は時間に気づきませんでした"
           },
           {
-            "en": "He failed to notice my message.",
-            "ja": "彼は私のメッセージを見落としました。",
+            "en": "He did not notice my message until later.",
+            "ja": "彼は後になるまで私のメッセージに気づきませんでした。",
             "focus": "notice",
-            "jaFocus": "彼は私のメッセージを見落としました"
+            "jaFocus": "気づきませんでした"
           }
         ]
       }
@@ -41986,6 +41960,92 @@ const dailyMeaningExamples
       { en: "I had a great time at the concert.", ja: "コンサートで楽しい時間を過ごした。", focus: "had", jaFocus: "過ごした" },
       { en: "We had fun at the event.", ja: "イベントで楽しく過ごした。", focus: "had", jaFocus: "過ごした" }
     ]
+  },
+  accept: {
+    "accept-offer": [
+      { en: "I accepted my friend's invitation to dinner.", ja: "友人からの夕食の誘いを受けました。", focus: "accepted", object: "my friend's invitation", jaFocus: "誘いを受けました" },
+      { en: "She accepted the help without hesitation.", ja: "彼女はためらわずに助けを受け入れました。", focus: "accepted", object: "the help", jaFocus: "受け入れました" }
+    ],
+    "accept-responsibility": [
+      { en: "I accepted responsibility for breaking the cup.", ja: "コップを割った責任を認めました。", focus: "accepted", object: "responsibility", jaFocus: "責任を認めました" },
+      { en: "He accepted the role of team captain.", ja: "彼はチームのキャプテン役を引き受けました。", focus: "accepted", object: "the role", jaFocus: "役を引き受けました" }
+    ],
+    "accept-fact": [
+      { en: "I had to accept that the trip was canceled.", ja: "旅行が中止になったことを受け入れなければなりませんでした。", focus: "accept", object: "that the trip was canceled", jaFocus: "受け入れなければなりませんでした" },
+      { en: "She finally accepted the result.", ja: "彼女はようやくその結果を受け入れました。", focus: "accepted", object: "the result", jaFocus: "受け入れました" }
+    ],
+    "accept-payment-order": [
+      { en: "This shop accepts mobile payments.", ja: "この店ではスマホ決済が使えます。", focus: "accepts", object: "mobile payments", jaFocus: "使えます" },
+      { en: "The restaurant does not accept reservations on weekends.", ja: "そのレストランは週末の予約を受け付けていません。", focus: "accept", object: "reservations", jaFocus: "受け付けていません" }
+    ],
+    "accept-apology": [
+      { en: "I accepted his apology.", ja: "彼の謝罪を受け入れました。", focus: "accepted", object: "his apology", jaFocus: "謝罪を受け入れました" },
+      { en: "She accepted the invitation to the wedding.", ja: "彼女は結婚式への招待を受けました。", focus: "accepted", object: "the invitation", jaFocus: "招待を受けました" }
+    ]
+  },
+  avoid: {
+    "avoid-problem": [
+      { en: "We left early to avoid the traffic.", ja: "渋滞を避けるため早めに出発しました。", focus: "avoid", object: "the traffic", jaFocus: "避ける" },
+      { en: "I use a case to avoid scratches on my phone.", ja: "スマホに傷がつくのを避けるためケースを使っています。", focus: "avoid", object: "scratches", jaFocus: "避ける" }
+    ],
+    "avoid-mistake": [
+      { en: "I make a list to avoid forgetting anything.", ja: "忘れ物をしないようにリストを作ります。", focus: "avoid", object: "forgetting anything", jaFocus: "忘れ物をしないように" },
+      { en: "We talked calmly to avoid a misunderstanding.", ja: "誤解を避けるため落ち着いて話しました。", focus: "avoid", object: "a misunderstanding", jaFocus: "誤解を避ける" }
+    ],
+    "avoid-doing": [
+      { en: "I avoid drinking coffee late at night.", ja: "夜遅くにコーヒーを飲むのは避けています。", focus: "avoid", object: "drinking coffee", jaFocus: "避けています" },
+      { en: "Try to avoid checking your phone before bed.", ja: "寝る前にスマホを見るのはなるべく避けてください。", focus: "avoid", object: "checking your phone", jaFocus: "避けてください" }
+    ],
+    "avoid-person-place": [
+      { en: "I avoid that road at night.", ja: "夜はその道を避けています。", focus: "avoid", object: "that road", jaFocus: "避けています" },
+      { en: "He has been avoiding his neighbor since the argument.", ja: "彼は口論以来、近所の人を避けています。", focus: "avoiding", object: "his neighbor", jaFocus: "避けています" }
+    ]
+  },
+  consider: {
+    "consider-option": [
+      { en: "We are considering a move to a bigger apartment.", ja: "もっと広い部屋への引っ越しを検討しています。", focus: "considering", object: "a move", jaFocus: "検討しています" },
+      { en: "I am considering a new phone.", ja: "新しいスマホの購入を検討しています。", focus: "considering", object: "a new phone", jaFocus: "検討しています" }
+    ],
+    "consider-doing": [
+      { en: "Have you considered taking the train?", ja: "電車で行くことは考えましたか。", focus: "considered", object: "taking the train", jaFocus: "考えましたか" },
+      { en: "I am considering joining a gym.", ja: "ジムに入会することを検討しています。", focus: "considering", object: "joining a gym", jaFocus: "検討しています" }
+    ],
+    "consider-factor": [
+      { en: "We should consider the price before buying it.", ja: "買う前に値段を考慮すべきです。", focus: "consider", object: "the price", jaFocus: "考慮すべきです" },
+      { en: "Please consider the children's schedule.", ja: "子どもたちの予定も考慮してください。", focus: "consider", object: "the children's schedule", jaFocus: "考慮してください" }
+    ],
+    "consider-as": [
+      { en: "I consider her a close friend.", ja: "彼女を親しい友人だと思っています。", focus: "consider", object: "her", jaFocus: "友人だと思っています" },
+      { en: "Many people consider this park safe for children.", ja: "多くの人がこの公園は子どもにも安全だと考えています。", focus: "consider", object: "this park", jaFocus: "安全だと考えています" }
+    ]
+  },
+  depend: {
+    "depend-basic": [
+      { en: "It depends on how much time we have.", ja: "どれくらい時間があるかによります。", focus: "depends", jaFocus: "よります" },
+      { en: "The price depends on the size.", ja: "値段はサイズによって変わります。", focus: "depends", jaFocus: "変わります" }
+    ]
+  },
+  expect: {
+    "expect-noun": [
+      { en: "I am expecting a package this afternoon.", ja: "今日の午後、荷物が届く予定です。", focus: "expecting", object: "a package", jaFocus: "届く予定です" },
+      { en: "We expect heavy traffic this evening.", ja: "今夜はひどい渋滞を予想しています。", focus: "expect", object: "heavy traffic", jaFocus: "予想しています" }
+    ],
+    "expect-to": [
+      { en: "I expect to be home by seven.", ja: "7時までには帰宅できると思います。", focus: "expect", object: "to be home", jaFocus: "帰宅できると思います" },
+      { en: "She expects to finish the book tonight.", ja: "彼女は今夜その本を読み終えるつもりです。", focus: "expects", object: "to finish the book", jaFocus: "読み終えるつもりです" }
+    ],
+    "expect-person": [
+      { en: "I expect everyone to arrive on time.", ja: "全員が時間どおりに来ると思っています。", focus: "expect", object: "everyone", jaFocus: "来ると思っています" },
+      { en: "We expect the children to clean their room.", ja: "子どもたちには自分の部屋を片づけてほしいと思っています。", focus: "expect", object: "the children", jaFocus: "片づけてほしい" }
+    ],
+    "expect-that": [
+      { en: "I expect that the store will be busy today.", ja: "今日はその店が混むと思います。", focus: "expect", object: "that the store will be busy", jaFocus: "混むと思います" },
+      { en: "She expects that her family will join us.", ja: "彼女は家族も参加すると思っています。", focus: "expects", object: "that her family will join us", jaFocus: "参加すると思っています" }
+    ],
+    "expect-from": [
+      { en: "I expect good service from this hotel.", ja: "このホテルには良いサービスを期待しています。", focus: "expect", object: "good service", jaFocus: "期待しています" },
+      { en: "Do not expect perfection from yourself.", ja: "自分に完璧を求めすぎないでください。", focus: "expect", object: "perfection", jaFocus: "求めすぎないでください" }
+    ]
   }
 };
 
@@ -41998,7 +42058,7 @@ function fallbackDailyExamples(verb: Verb, title: string, focusText?: string): E
 }
 
 function attachPremiumDailyExamples() {
-  const premiumVerbs = new Set(["get", "take", "make", "give", "have", "go", "come", "put", "keep", "find", "see", "look", "watch", "hear", "listen", "think", "know", "feel", "work", "use", "start", "stop", "try", "help", "learn", "meet", "send", "pay", "buy", "sell", "choose", "follow", "create", "reach", "learn", "meet", "send", "pay", "buy", "sell", "choose", "follow", "create", "reach", "request", "suggest", "agree", "arrange", "attend", "contact", "share", "collect", "reduce", "increase"]);
+  const premiumVerbs = new Set(["get", "take", "make", "give", "have", "go", "come", "put", "keep", "find", "see", "look", "watch", "hear", "listen", "think", "know", "feel", "work", "use", "start", "stop", "try", "help", "learn", "meet", "send", "pay", "buy", "sell", "choose", "follow", "create", "reach", "learn", "meet", "send", "pay", "buy", "sell", "choose", "follow", "create", "reach", "request", "suggest", "agree", "arrange", "attend", "contact", "share", "collect", "reduce", "increase", "accept", "avoid", "consider", "depend", "expect", "reply", "include", "notice", "prefer", "recommend"]);
   for (const verb of verbs) {
     if (!premiumVerbs.has(verb.id)) continue;
     for (const meaning of verb.meanings) {

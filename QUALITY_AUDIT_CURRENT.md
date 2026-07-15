@@ -41,3 +41,5 @@ Ver.170
 - `npm run build`: passed
 - Static pages: 28 / 28
 - ZIP re-extraction build: passed before release
+
+- V171: Premium daily examples audited through RECOMMEND (90 / 124 verbs).

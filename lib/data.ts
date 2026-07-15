@@ -39802,6 +39802,20 @@ export const verbs: Verb[] = [
             "focus": "focus",
             "jaFocus": "向けてください"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I focused my attention on the instructions.",
+            "ja": "説明に注意を集中しました。",
+            "focus": "focused",
+            "jaFocus": "集中しました"
+          },
+          {
+            "en": "She focuses her energy on one task at a time.",
+            "ja": "彼女は一度に一つの作業へ力を集中します。",
+            "focus": "focuses",
+            "jaFocus": "集中します"
+          }
         ]
       },
       {
@@ -39824,6 +39838,20 @@ export const verbs: Verb[] = [
             "ja": "目の焦点が合うまで少し時間がかかりました。",
             "focus": "focus",
             "jaFocus": "焦点が合う"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I focused the camera before taking the picture.",
+            "ja": "写真を撮る前にカメラのピントを合わせました。",
+            "focus": "focused",
+            "jaFocus": "ピントを合わせました"
+          },
+          {
+            "en": "My eyes slowly focused in the dark room.",
+            "ja": "暗い部屋で目の焦点がゆっくり合いました。",
+            "focus": "focused",
+            "jaFocus": "焦点が合いました"
           }
         ]
       },
@@ -39848,6 +39876,20 @@ export const verbs: Verb[] = [
             "focus": "focuses",
             "jaFocus": "絞っています"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We focused the conversation on the travel plan.",
+            "ja": "私たちは話題を旅行計画に絞りました。",
+            "focus": "focused",
+            "jaFocus": "絞りました"
+          },
+          {
+            "en": "Let us focus the discussion on what we can do today.",
+            "ja": "今日できることに話し合いの焦点を絞りましょう。",
+            "focus": "focus",
+            "jaFocus": "焦点を絞りましょう"
+          }
         ]
       }
     ],
@@ -39871,25 +39913,19 @@ export const verbs: Verb[] = [
             "focus": "focus on",
             "jaFocus": "集中してください"
           }
-        ]
-      },
-      {
-        "phrase": "focus in on",
-        "ja": "〜へ注意を絞り込む",
-        "image": "広い範囲から特定の点へ焦点を狭める",
-        "pattern": "FOCUS IN ON + 対象",
-        "examples": [
+        ],
+        "dailyExamples": [
           {
-            "en": "The discussion focused in on the delivery issue.",
-            "ja": "議論は納期の問題に絞られました。",
-            "focus": "focused in on",
-            "jaFocus": "絞られました"
+            "en": "I need to focus on my homework tonight.",
+            "ja": "今夜は宿題に集中する必要があります。",
+            "focus": "focus on",
+            "jaFocus": "集中する必要があります"
           },
           {
-            "en": "Let us focus in on the main cause.",
-            "ja": "主な原因に焦点を絞りましょう。",
-            "focus": "focus in on",
-            "jaFocus": "焦点を絞りましょう"
+            "en": "Please focus on what she is saying.",
+            "ja": "彼女が話していることに集中してください。",
+            "focus": "focus on",
+            "jaFocus": "集中してください"
           }
         ]
       }
@@ -39943,6 +39979,20 @@ export const verbs: Verb[] = [
             "focus": "identified",
             "jaFocus": "特定しました"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The doctor identified the cause of my cough.",
+            "ja": "医師は私のせきの原因を特定しました。",
+            "focus": "identified",
+            "jaFocus": "特定しました"
+          },
+          {
+            "en": "We identified where the strange noise was coming from.",
+            "ja": "私たちは異音がどこから出ているか突き止めました。",
+            "focus": "identified",
+            "jaFocus": "突き止めました"
+          }
         ]
       },
       {
@@ -39965,6 +40015,20 @@ export const verbs: Verb[] = [
             "ja": "その調査は顧客ニーズの特定に役立ちました。",
             "focus": "identify",
             "jaFocus": "特定する"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The checklist helped me identify possible problems.",
+            "ja": "チェックリストで起こりそうな問題を見つけられました。",
+            "focus": "identify",
+            "jaFocus": "見つけられました"
+          },
+          {
+            "en": "She identified what her child needed most.",
+            "ja": "彼女は子どもが最も必要としているものを見極めました。",
+            "focus": "identified",
+            "jaFocus": "見極めました"
           }
         ]
       },
@@ -39989,6 +40053,20 @@ export const verbs: Verb[] = [
             "focus": "identified",
             "jaFocus": "特定しました"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I identified my bag by the red tag.",
+            "ja": "赤いタグで自分のバッグを見分けました。",
+            "focus": "identified",
+            "jaFocus": "見分けました"
+          },
+          {
+            "en": "Can you identify the person in this photo?",
+            "ja": "この写真の人物が誰か分かりますか。",
+            "focus": "identify",
+            "jaFocus": "分かりますか"
+          }
         ]
       },
       {
@@ -40009,6 +40087,20 @@ export const verbs: Verb[] = [
           {
             "en": "We identified several differences between the samples.",
             "ja": "私たちはサンプル間のいくつかの違いを見つけました。",
+            "focus": "identified",
+            "jaFocus": "見つけました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I identified a pattern in my spending habits.",
+            "ja": "自分の支出習慣に一定の傾向を見つけました。",
+            "focus": "identified",
+            "jaFocus": "見つけました"
+          },
+          {
+            "en": "The teacher identified a common mistake in our answers.",
+            "ja": "先生は私たちの解答に共通する間違いを見つけました。",
             "focus": "identified",
             "jaFocus": "見つけました"
           }
@@ -40035,6 +40127,20 @@ export const verbs: Verb[] = [
             "focus": "identified",
             "jaFocus": "特定されました"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The plant was identified as a type of herb.",
+            "ja": "その植物はハーブの一種だと特定されました。",
+            "focus": "identified",
+            "jaFocus": "特定されました"
+          },
+          {
+            "en": "Police identified the lost item as mine.",
+            "ja": "警察はその落とし物が私のものだと確認しました。",
+            "focus": "identified",
+            "jaFocus": "確認しました"
+          }
         ]
       }
     ],
@@ -40057,6 +40163,20 @@ export const verbs: Verb[] = [
             "ja": "私は新任マネージャーとしての彼の経験に共感しました。",
             "focus": "identified with",
             "jaFocus": "共感しました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I identified with the main character in the movie.",
+            "ja": "その映画の主人公に自分を重ねました。",
+            "focus": "identified with",
+            "jaFocus": "自分を重ねました"
+          },
+          {
+            "en": "Many parents identify with her worries.",
+            "ja": "多くの親が彼女の悩みに共感します。",
+            "focus": "identify with",
+            "jaFocus": "共感します"
           }
         ]
       }
@@ -40114,6 +40234,20 @@ export const verbs: Verb[] = [
             "focus": "proposed",
             "jaFocus": "提案しました"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I proposed a weekend trip to the family.",
+            "ja": "家族に週末旅行を提案しました。",
+            "focus": "proposed",
+            "jaFocus": "提案しました"
+          },
+          {
+            "en": "She proposed a different meeting place.",
+            "ja": "彼女は別の集合場所を提案しました。",
+            "focus": "proposed",
+            "jaFocus": "提案しました"
+          }
         ]
       },
       {
@@ -40136,6 +40270,20 @@ export const verbs: Verb[] = [
             "ja": "彼らは部品数を減らすことを提案しました。",
             "focus": "proposed",
             "jaFocus": "提案しました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "He proposed eating outside while the weather was nice.",
+            "ja": "彼は天気がよいうちに外で食べることを提案しました。",
+            "focus": "proposed",
+            "jaFocus": "提案しました"
+          },
+          {
+            "en": "I propose leaving a little earlier tomorrow.",
+            "ja": "明日は少し早く出発することを提案します。",
+            "focus": "propose",
+            "jaFocus": "提案します"
           }
         ]
       },
@@ -40160,6 +40308,20 @@ export const verbs: Verb[] = [
             "focus": "proposed",
             "jaFocus": "提案しました"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She proposed that we take the train.",
+            "ja": "彼女は電車で行こうと提案しました。",
+            "focus": "proposed",
+            "jaFocus": "提案しました"
+          },
+          {
+            "en": "I propose that everyone bring one dish.",
+            "ja": "全員が料理を一品ずつ持ち寄ることを提案します。",
+            "focus": "propose",
+            "jaFocus": "提案します"
+          }
         ]
       },
       {
@@ -40182,6 +40344,20 @@ export const verbs: Verb[] = [
             "ja": "彼はプロジェクトリーダーの候補として提案されました。",
             "focus": "proposed",
             "jaFocus": "提案されました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We proposed the park as our meeting place.",
+            "ja": "私たちは公園を集合場所として提案しました。",
+            "focus": "proposed",
+            "jaFocus": "提案しました"
+          },
+          {
+            "en": "He proposed Sunday as the best day for the party.",
+            "ja": "彼は日曜日がパーティーに最適だと提案しました。",
+            "focus": "proposed",
+            "jaFocus": "提案しました"
           }
         ]
       },
@@ -40206,6 +40382,20 @@ export const verbs: Verb[] = [
             "focus": "proposed",
             "jaFocus": "提出しました"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Residents proposed a change to the neighborhood rules.",
+            "ja": "住民は地域ルールの変更を正式に提案しました。",
+            "focus": "proposed",
+            "jaFocus": "正式に提案しました"
+          },
+          {
+            "en": "She proposed a new rule at the parents meeting.",
+            "ja": "彼女は保護者会で新しいルールを提案しました。",
+            "focus": "proposed",
+            "jaFocus": "提案しました"
+          }
         ]
       }
     ],
@@ -40228,6 +40418,20 @@ export const verbs: Verb[] = [
             "ja": "彼女は来月、彼に結婚を申し込む予定です。",
             "focus": "propose to",
             "jaFocus": "結婚を申し込む予定です"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "He proposed to her at their favorite restaurant.",
+            "ja": "彼はお気に入りのレストランで彼女に結婚を申し込みました。",
+            "focus": "proposed to",
+            "jaFocus": "結婚を申し込みました"
+          },
+          {
+            "en": "She was surprised when he proposed to her.",
+            "ja": "彼が結婚を申し込んだとき、彼女は驚きました。",
+            "focus": "proposed to",
+            "jaFocus": "結婚を申し込んだ"
           }
         ]
       }
@@ -40289,6 +40493,20 @@ export const verbs: Verb[] = [
             "focus": "join",
             "jaFocus": "参加できますか"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I joined my friends for dinner.",
+            "ja": "友人たちとの夕食に参加しました。",
+            "focus": "joined",
+            "jaFocus": "参加しました"
+          },
+          {
+            "en": "She joined an online cooking class.",
+            "ja": "彼女はオンライン料理教室に参加しました。",
+            "focus": "joined",
+            "jaFocus": "参加しました"
+          }
         ]
       },
       {
@@ -40311,6 +40529,20 @@ export const verbs: Verb[] = [
             "ja": "2人の技術者がその案件に加わります。",
             "focus": "join",
             "jaFocus": "加わります"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "My son joined the local soccer club.",
+            "ja": "息子は地元のサッカークラブに入りました。",
+            "focus": "joined",
+            "jaFocus": "入りました"
+          },
+          {
+            "en": "I joined a community volunteer group.",
+            "ja": "地域のボランティア団体に加わりました。",
+            "focus": "joined",
+            "jaFocus": "加わりました"
           }
         ]
       },
@@ -40335,6 +40567,20 @@ export const verbs: Verb[] = [
             "focus": "join",
             "jaFocus": "加わってください"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We joined our family at the hotel.",
+            "ja": "私たちはホテルで家族に合流しました。",
+            "focus": "joined",
+            "jaFocus": "合流しました"
+          },
+          {
+            "en": "Can I join you for the walk?",
+            "ja": "散歩にご一緒してもいいですか。",
+            "focus": "join",
+            "jaFocus": "ご一緒してもいいですか"
+          }
         ]
       },
       {
@@ -40357,6 +40603,20 @@ export const verbs: Verb[] = [
             "ja": "この道路は2つの町を結んでいます。",
             "focus": "joins",
             "jaFocus": "結んでいます"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I joined the two pieces of paper with tape.",
+            "ja": "2枚の紙をテープでつなぎました。",
+            "focus": "joined",
+            "jaFocus": "つなぎました"
+          },
+          {
+            "en": "This cable joins the speaker to the television.",
+            "ja": "このケーブルはスピーカーとテレビをつなぎます。",
+            "focus": "joins",
+            "jaFocus": "つなぎます"
           }
         ]
       },
@@ -40381,6 +40641,20 @@ export const verbs: Verb[] = [
             "focus": "join",
             "jaFocus": "一緒に飲みませんか"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Please join us for lunch tomorrow.",
+            "ja": "明日の昼食にぜひご一緒ください。",
+            "focus": "join",
+            "jaFocus": "ご一緒ください"
+          },
+          {
+            "en": "Everyone is welcome to join the game.",
+            "ja": "誰でもそのゲームに参加できます。",
+            "focus": "join",
+            "jaFocus": "参加できます"
+          }
         ]
       }
     ],
@@ -40404,65 +40678,19 @@ export const verbs: Verb[] = [
             "focus": "join in",
             "jaFocus": "参加できます"
           }
-        ]
-      },
-      {
-        "phrase": "join up",
-        "ja": "加入する・つなぎ合わせる",
-        "image": "組織へ加入する、または複数の物を接続する",
-        "pattern": "JOIN UP",
-        "examples": [
+        ],
+        "dailyExamples": [
           {
-            "en": "The two teams joined up for the project.",
-            "ja": "2つのチームはその案件のために合流しました。",
-            "focus": "joined up",
-            "jaFocus": "合流しました"
+            "en": "The children asked me to join in the game.",
+            "ja": "子どもたちは私にもゲームへ加わるよう言いました。",
+            "focus": "join in",
+            "jaFocus": "加わるよう言いました"
           },
           {
-            "en": "We joined up the two sections of cable.",
-            "ja": "私たちは2本のケーブル部分をつなぎ合わせました。",
-            "focus": "joined up",
-            "jaFocus": "つなぎ合わせました"
-          }
-        ]
-      },
-      {
-        "phrase": "join with",
-        "ja": "〜と協力する・結合する",
-        "image": "別の人や組織と力を合わせる",
-        "pattern": "JOIN WITH + 人・組織",
-        "examples": [
-          {
-            "en": "We joined with a local company to develop the product.",
-            "ja": "私たちは製品開発のために地元企業と協力しました。",
-            "focus": "joined with",
-            "jaFocus": "協力しました"
-          },
-          {
-            "en": "The two departments joined with each other on the event.",
-            "ja": "2つの部署はそのイベントで協力しました。",
-            "focus": "joined with",
-            "jaFocus": "協力しました"
-          }
-        ]
-      },
-      {
-        "phrase": "join together",
-        "ja": "一緒になる・結合する",
-        "image": "複数の人や物が一つになる",
-        "pattern": "JOIN TOGETHER",
-        "examples": [
-          {
-            "en": "The teams joined together to solve the problem.",
-            "ja": "各チームは問題解決のために協力しました。",
-            "focus": "joined together",
-            "jaFocus": "協力しました"
-          },
-          {
-            "en": "These parts join together easily.",
-            "ja": "これらの部品は簡単に組み合わさります。",
-            "focus": "join together",
-            "jaFocus": "組み合わさります"
+            "en": "She joined in when everyone started singing.",
+            "ja": "みんなが歌い始めると、彼女も加わりました。",
+            "focus": "joined in",
+            "jaFocus": "加わりました"
           }
         ]
       }
@@ -40520,6 +40748,20 @@ export const verbs: Verb[] = [
             "focus": "led",
             "jaFocus": "率いました"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She led the group during the school event.",
+            "ja": "彼女は学校行事でグループをまとめました。",
+            "focus": "led",
+            "jaFocus": "まとめました"
+          },
+          {
+            "en": "I led our family team in the quiz.",
+            "ja": "家族対抗クイズで私がチームを率いました。",
+            "focus": "led",
+            "jaFocus": "率いました"
+          }
         ]
       },
       {
@@ -40542,6 +40784,20 @@ export const verbs: Verb[] = [
             "ja": "彼女は落ち着いて議論を進行しました。",
             "focus": "led",
             "jaFocus": "進行しました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "He led the family discussion calmly.",
+            "ja": "彼は家族の話し合いを落ち着いて進めました。",
+            "focus": "led",
+            "jaFocus": "進めました"
+          },
+          {
+            "en": "She will lead the parents meeting tonight.",
+            "ja": "今夜の保護者会は彼女が進行します。",
+            "focus": "lead",
+            "jaFocus": "進行します"
           }
         ]
       },
@@ -40566,6 +40822,20 @@ export const verbs: Verb[] = [
             "focus": "leading",
             "jaFocus": "リードしています"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Our team led by two points at halftime.",
+            "ja": "私たちのチームは前半終了時に2点リードしていました。",
+            "focus": "led",
+            "jaFocus": "リードしていました"
+          },
+          {
+            "en": "She is leading the race now.",
+            "ja": "彼女は今レースで先頭に立っています。",
+            "focus": "leading",
+            "jaFocus": "先頭に立っています"
+          }
         ]
       },
       {
@@ -40588,6 +40858,20 @@ export const verbs: Verb[] = [
             "ja": "彼女は来訪者をショールーム内へ案内しました。",
             "focus": "led",
             "jaFocus": "案内しました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The staff member led us to our seats.",
+            "ja": "スタッフが私たちを席まで案内しました。",
+            "focus": "led",
+            "jaFocus": "案内しました"
+          },
+          {
+            "en": "This path leads visitors to the garden.",
+            "ja": "この道を進むと庭へ着きます。",
+            "focus": "leads",
+            "jaFocus": "庭へ着きます"
           }
         ]
       },
@@ -40612,6 +40896,20 @@ export const verbs: Verb[] = [
             "focus": "lead",
             "jaFocus": "送りたいと考えています"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "My grandparents lead a quiet life in the country.",
+            "ja": "祖父母は田舎で穏やかな生活を送っています。",
+            "focus": "lead",
+            "jaFocus": "送っています"
+          },
+          {
+            "en": "She leads a healthy and active life.",
+            "ja": "彼女は健康的で活動的な生活を送っています。",
+            "focus": "leads",
+            "jaFocus": "送っています"
+          }
         ]
       }
     ],
@@ -40635,45 +40933,19 @@ export const verbs: Verb[] = [
             "focus": "led to",
             "jaFocus": "つながりました"
           }
-        ]
-      },
-      {
-        "phrase": "lead into",
-        "ja": "〜へ導く・話題へつなぐ",
-        "image": "人や話を次の場所・内容へ移す",
-        "pattern": "LEAD INTO + 場所・話題",
-        "examples": [
+        ],
+        "dailyExamples": [
           {
-            "en": "This question leads into the next topic.",
-            "ja": "この質問は次の話題につながります。",
-            "focus": "leads into",
-            "jaFocus": "つながります"
+            "en": "Not getting enough sleep can lead to poor concentration.",
+            "ja": "睡眠不足は集中力低下につながることがあります。",
+            "focus": "lead to",
+            "jaFocus": "つながることがあります"
           },
           {
-            "en": "The guide led us into the main hall.",
-            "ja": "案内係が私たちをメインホールへ導きました。",
-            "focus": "led into",
-            "jaFocus": "導きました"
-          }
-        ]
-      },
-      {
-        "phrase": "lead with",
-        "ja": "〜を最初に示す・始める",
-        "image": "重要な情報や強みを最初に出す",
-        "pattern": "LEAD WITH + 内容",
-        "examples": [
-          {
-            "en": "Lead with the main benefit in your presentation.",
-            "ja": "プレゼンでは主な利点から話し始めてください。",
-            "focus": "Lead with",
-            "jaFocus": "話し始めてください"
-          },
-          {
-            "en": "The email led with a clear apology.",
-            "ja": "そのメールは明確な謝罪から始まっていました。",
-            "focus": "led with",
-            "jaFocus": "始まっていました"
+            "en": "One small mistake led to a long delay.",
+            "ja": "一つの小さなミスが長い遅れにつながりました。",
+            "focus": "led to",
+            "jaFocus": "つながりました"
           }
         ]
       },
@@ -40695,6 +40967,20 @@ export const verbs: Verb[] = [
             "focus": "leads up to",
             "jaFocus": "つながります"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We were busy in the days leading up to the festival.",
+            "ja": "祭りまでの数日間は忙しく過ごしました。",
+            "focus": "leading up to",
+            "jaFocus": "までの"
+          },
+          {
+            "en": "He explained what happened leading up to the accident.",
+            "ja": "彼は事故に至るまでに何が起きたか説明しました。",
+            "focus": "leading up to",
+            "jaFocus": "至るまでに"
+          }
         ]
       },
       {
@@ -40714,6 +41000,20 @@ export const verbs: Verb[] = [
             "ja": "彼は会社に期待を持たされていたと感じました。",
             "focus": "led on",
             "jaFocus": "期待を持たされていました"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She felt led on by him.",
+            "ja": "彼女は彼に期待を持たされたと感じました。",
+            "focus": "led on",
+            "jaFocus": "期待を持たされた"
+          },
+          {
+            "en": "No one should be led on when there is no real interest.",
+            "ja": "本気でないのに相手へ期待を持たせるべきではありません。",
+            "focus": "led on",
+            "jaFocus": "期待を持たせて"
           }
         ]
       }
@@ -40783,15 +41083,15 @@ export const verbs: Verb[] = [
         "dailyExamples": [
           {
             "en": "I try to maintain a regular sleep schedule.",
-            "ja": "私は規則正しい睡眠時間を保つようにしています。",
+            "ja": "規則正しい睡眠時間を保つようにしています。",
             "focus": "maintain",
-            "jaFocus": "私は規則正しい睡眠時間を保つようにしています。"
+            "jaFocus": "保つようにしています"
           },
           {
             "en": "She maintains a healthy balance between work and family.",
             "ja": "彼女は仕事と家庭の健全なバランスを保っています。",
             "focus": "maintains",
-            "jaFocus": "彼女は仕事と家庭の健全なバランスを保っています。"
+            "jaFocus": "保っています"
           }
         ]
       },
@@ -40822,6 +41122,20 @@ export const verbs: Verb[] = [
             "focus": "maintained",
             "jaFocus": "彼女は仕入先との密な連絡を保ちました。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We maintain a close relationship with our neighbors.",
+            "ja": "私たちは近所の人と親しい関係を保っています。",
+            "focus": "maintain",
+            "jaFocus": "保っています"
+          },
+          {
+            "en": "It takes effort to maintain old friendships.",
+            "ja": "昔からの友情を保つには努力が必要です。",
+            "focus": "maintain",
+            "jaFocus": "保つには"
+          }
         ]
       },
       {
@@ -40850,6 +41164,20 @@ export const verbs: Verb[] = [
             "ja": "適切な清掃は製品性能の維持に役立ちます。",
             "focus": "maintain",
             "jaFocus": "適切な清掃は製品性能の維持に役立ちます。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I maintain my bicycle by checking it every month.",
+            "ja": "毎月点検して自転車を手入れしています。",
+            "focus": "maintain",
+            "jaFocus": "手入れしています"
+          },
+          {
+            "en": "The air conditioner is maintained once a year.",
+            "ja": "そのエアコンは年に一度点検整備されています。",
+            "focus": "maintained",
+            "jaFocus": "点検整備されています"
           }
         ]
       },
@@ -40880,6 +41208,20 @@ export const verbs: Verb[] = [
             "focus": "maintains",
             "jaFocus": "その設計はコストと品質のバランスを保っています。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "This bottle maintains the temperature of the water.",
+            "ja": "このボトルは水の温度を保ちます。",
+            "focus": "maintains",
+            "jaFocus": "保ちます"
+          },
+          {
+            "en": "Regular exercise helps maintain good health.",
+            "ja": "定期的な運動は健康維持に役立ちます。",
+            "focus": "maintain",
+            "jaFocus": "健康維持に"
+          }
         ]
       },
       {
@@ -40908,6 +41250,20 @@ export const verbs: Verb[] = [
             "ja": "私たちは圧力があっても方針を維持しました。",
             "focus": "maintained",
             "jaFocus": "私たちは圧力があっても方針を維持しました。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "He maintained that he had told the truth.",
+            "ja": "彼は本当のことを話したと主張し続けました。",
+            "focus": "maintained",
+            "jaFocus": "主張し続けました"
+          },
+          {
+            "en": "She still maintains her original opinion.",
+            "ja": "彼女は今も最初の意見を変えていません。",
+            "focus": "maintains",
+            "jaFocus": "変えていません"
           }
         ]
       }
@@ -40973,6 +41329,20 @@ export const verbs: Verb[] = [
             "focus": "mentioned",
             "jaFocus": "顧客はコネクターの問題に触れました。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "He mentioned a good cafe near the station.",
+            "ja": "彼は駅の近くにある良いカフェのことに触れました。",
+            "focus": "mentioned",
+            "jaFocus": "触れました"
+          },
+          {
+            "en": "Did she mention the extra fee?",
+            "ja": "彼女は追加料金について話しましたか。",
+            "focus": "mention",
+            "jaFocus": "話しましたか"
+          }
         ]
       },
       {
@@ -41001,6 +41371,20 @@ export const verbs: Verb[] = [
             "ja": "彼らは新モデルが間もなく出ることに触れました。",
             "focus": "mentioned",
             "jaFocus": "彼らは新モデルが間もなく出ることに触れました。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I mentioned that I would be home late.",
+            "ja": "帰宅が遅くなると伝えました。",
+            "focus": "mentioned",
+            "jaFocus": "伝えました"
+          },
+          {
+            "en": "She mentioned that the store closes early.",
+            "ja": "彼女はその店が早く閉まると言いました。",
+            "focus": "mentioned",
+            "jaFocus": "言いました"
           }
         ]
       },
@@ -41031,6 +41415,20 @@ export const verbs: Verb[] = [
             "focus": "mentioning",
             "jaFocus": "私は先週この問題に触れたことを覚えています。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "He mentioned meeting her before.",
+            "ja": "彼は以前彼女に会ったことがあると話しました。",
+            "focus": "mentioned",
+            "jaFocus": "話しました"
+          },
+          {
+            "en": "I mentioned visiting that town as a child.",
+            "ja": "子どもの頃にその町を訪れたことに触れました。",
+            "focus": "mentioned",
+            "jaFocus": "触れました"
+          }
         ]
       },
       {
@@ -41060,6 +41458,20 @@ export const verbs: Verb[] = [
             "focus": "mention",
             "jaFocus": "この依頼について設計チームに伝えてください。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I mentioned the change to my family.",
+            "ja": "家族にその変更について伝えました。",
+            "focus": "mentioned",
+            "jaFocus": "伝えました"
+          },
+          {
+            "en": "She mentioned the allergy to the waiter.",
+            "ja": "彼女は店員にアレルギーについて伝えました。",
+            "focus": "mentioned",
+            "jaFocus": "伝えました"
+          }
         ]
       },
       {
@@ -41088,6 +41500,20 @@ export const verbs: Verb[] = [
             "ja": "彼は仕様が変わったことを伝え忘れました。",
             "focus": "mention",
             "jaFocus": "彼は仕様が変わったことを伝え忘れました。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "He forgot to mention the meeting time.",
+            "ja": "彼は集合時間を伝え忘れました。",
+            "focus": "mention",
+            "jaFocus": "伝え忘れました"
+          },
+          {
+            "en": "The message did not mention where to meet.",
+            "ja": "そのメッセージには集合場所が書かれていませんでした。",
+            "focus": "mention",
+            "jaFocus": "書かれていませんでした"
           }
         ]
       }
@@ -41153,6 +41579,20 @@ export const verbs: Verb[] = [
             "focus": "protected",
             "jaFocus": "その手すりは彼が転落するのを防ぎました。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "A helmet protects your head.",
+            "ja": "ヘルメットは頭を守ります。",
+            "focus": "protects",
+            "jaFocus": "守ります"
+          },
+          {
+            "en": "Parents try to protect their children.",
+            "ja": "親は子どもを守ろうとします。",
+            "focus": "protect",
+            "jaFocus": "守ろうとします"
+          }
         ]
       },
       {
@@ -41181,6 +41621,20 @@ export const verbs: Verb[] = [
             "ja": "強力なパスワードは会社のアカウントを守ります。",
             "focus": "protect",
             "jaFocus": "強力なパスワードは会社のアカウントを守ります。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "A strong password protects your personal information.",
+            "ja": "強いパスワードは個人情報を守ります。",
+            "focus": "protects",
+            "jaFocus": "守ります"
+          },
+          {
+            "en": "I changed the settings to protect my privacy.",
+            "ja": "プライバシーを守るため設定を変更しました。",
+            "focus": "protect",
+            "jaFocus": "守るため"
           }
         ]
       },
@@ -41211,6 +41665,20 @@ export const verbs: Verb[] = [
             "focus": "protects",
             "jaFocus": "そのコーティングは金属を腐食から守ります。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "This case protects my phone from scratches.",
+            "ja": "このケースはスマホを傷から守ります。",
+            "focus": "protects",
+            "jaFocus": "守ります"
+          },
+          {
+            "en": "Wear a hat to protect yourself from the sun.",
+            "ja": "日差しから身を守るため帽子をかぶってください。",
+            "focus": "protect",
+            "jaFocus": "身を守るため"
+          }
         ]
       },
       {
@@ -41240,6 +41708,20 @@ export const verbs: Verb[] = [
             "focus": "protect",
             "jaFocus": "回路を過負荷から守るためヒューズを追加しました。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Vaccines can protect against serious illness.",
+            "ja": "ワクチンは重い病気の予防に役立ちます。",
+            "focus": "protect",
+            "jaFocus": "予防に役立ちます"
+          },
+          {
+            "en": "Insurance protects us against large financial losses.",
+            "ja": "保険は大きな金銭的損失に備えて私たちを守ります。",
+            "focus": "protects",
+            "jaFocus": "守ります"
+          }
         ]
       },
       {
@@ -41268,6 +41750,20 @@ export const verbs: Verb[] = [
             "ja": "すべてのファイルはアクセス制御で保護されています。",
             "focus": "protected",
             "jaFocus": "すべてのファイルはアクセス制御で保護されています。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The package was protected by a waterproof cover.",
+            "ja": "荷物は防水カバーで守られていました。",
+            "focus": "protected",
+            "jaFocus": "守られていました"
+          },
+          {
+            "en": "This area is protected as a nature reserve.",
+            "ja": "この地域は自然保護区として保護されています。",
+            "focus": "protected",
+            "jaFocus": "保護されています"
           }
         ]
       }
@@ -41333,6 +41829,20 @@ export const verbs: Verb[] = [
             "focus": "replace",
             "jaFocus": "工場は不良モジュールを交換します。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I replaced the dead battery in the remote.",
+            "ja": "リモコンの切れた電池を交換しました。",
+            "focus": "replaced",
+            "jaFocus": "交換しました"
+          },
+          {
+            "en": "We need to replace the broken light bulb.",
+            "ja": "切れた電球を交換する必要があります。",
+            "focus": "replace",
+            "jaFocus": "交換する必要があります"
+          }
         ]
       },
       {
@@ -41361,6 +41871,20 @@ export const verbs: Verb[] = [
             "ja": "この画像を最新版に差し替えてください。",
             "focus": "replace",
             "jaFocus": "この画像を最新版に差し替えてください。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I replaced regular milk with soy milk.",
+            "ja": "普通の牛乳を豆乳に置き換えました。",
+            "focus": "replaced",
+            "jaFocus": "置き換えました"
+          },
+          {
+            "en": "She replaced the old chair with a new one.",
+            "ja": "彼女は古い椅子を新しいものに替えました。",
+            "focus": "replaced",
+            "jaFocus": "替えました"
           }
         ]
       },
@@ -41391,6 +41915,20 @@ export const verbs: Verb[] = [
             "focus": "replacing",
             "jaFocus": "デジタルサインが印刷された案内に取って代わりつつあります。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The app has replaced our paper tickets.",
+            "ja": "そのアプリは紙のチケットに取って代わりました。",
+            "focus": "replaced",
+            "jaFocus": "取って代わりました"
+          },
+          {
+            "en": "Video calls sometimes replace face-to-face meetings.",
+            "ja": "ビデオ通話が対面の集まりの代わりになることがあります。",
+            "focus": "replace",
+            "jaFocus": "代わりになることがあります"
+          }
         ]
       },
       {
@@ -41420,6 +41958,20 @@ export const verbs: Verb[] = [
             "focus": "replace",
             "jaFocus": "会社はその技術者の後任をまだ見つけていません。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I replaced my sister at the school event.",
+            "ja": "学校行事で姉の代わりを務めました。",
+            "focus": "replaced",
+            "jaFocus": "代わりを務めました"
+          },
+          {
+            "en": "Can you replace me for an hour?",
+            "ja": "1時間だけ私の代わりをしてもらえますか。",
+            "focus": "replace",
+            "jaFocus": "代わりをしてもらえますか"
+          }
         ]
       },
       {
@@ -41448,6 +42000,20 @@ export const verbs: Verb[] = [
             "ja": "破損したパネルは交換しなければなりません。",
             "focus": "replaced",
             "jaFocus": "破損したパネルは交換しなければなりません。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The old sofa was replaced last week.",
+            "ja": "古いソファは先週交換されました。",
+            "focus": "replaced",
+            "jaFocus": "交換されました"
+          },
+          {
+            "en": "Several streetlights are being replaced.",
+            "ja": "いくつかの街灯が交換されています。",
+            "focus": "replaced",
+            "jaFocus": "交換されています"
           }
         ]
       }
@@ -41513,6 +42079,20 @@ export const verbs: Verb[] = [
             "focus": "trained",
             "jaFocus": "仕入先は新しいコントローラーについて当社技術者を研修しました。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "We trained our dog to wait by the door.",
+            "ja": "犬に玄関で待つようしつけました。",
+            "focus": "trained",
+            "jaFocus": "しつけました"
+          },
+          {
+            "en": "She trains new volunteers at the community center.",
+            "ja": "彼女は地域センターで新しいボランティアを指導します。",
+            "focus": "trains",
+            "jaFocus": "指導します"
+          }
         ]
       },
       {
@@ -41541,6 +42121,20 @@ export const verbs: Verb[] = [
             "ja": "彼らは技術者に製品の設置方法を研修しています。",
             "focus": "training",
             "jaFocus": "彼らは技術者に製品の設置方法を研修しています。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I trained my son to ride a bicycle safely.",
+            "ja": "息子に安全な自転車の乗り方を教えました。",
+            "focus": "trained",
+            "jaFocus": "教えました"
+          },
+          {
+            "en": "The guide trained us to use the equipment correctly.",
+            "ja": "案内役が器具の正しい使い方を教えてくれました。",
+            "focus": "trained",
+            "jaFocus": "教えてくれました"
           }
         ]
       },
@@ -41571,6 +42165,20 @@ export const verbs: Verb[] = [
             "focus": "trained",
             "jaFocus": "チームは昨日屋外で練習しました。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I train three times a week for the marathon.",
+            "ja": "マラソンに向けて週3回練習しています。",
+            "focus": "train",
+            "jaFocus": "練習しています"
+          },
+          {
+            "en": "She is training for next month's tennis match.",
+            "ja": "彼女は来月のテニス試合に向けて練習しています。",
+            "focus": "training",
+            "jaFocus": "練習しています"
+          }
         ]
       },
       {
@@ -41599,6 +42207,20 @@ export const verbs: Verb[] = [
             "ja": "システムを正確に学習させるには、より多くの例が必要です。",
             "focus": "train",
             "jaFocus": "システムを正確に学習させるには、より多くの例が必要です。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The photo app was trained using thousands of images.",
+            "ja": "その写真アプリは何千枚もの画像を使って学習されました。",
+            "focus": "trained",
+            "jaFocus": "学習されました"
+          },
+          {
+            "en": "Developers train the system to recognize faces.",
+            "ja": "開発者は顔を認識できるようシステムを学習させます。",
+            "focus": "train",
+            "jaFocus": "学習させます"
           }
         ]
       },
@@ -41629,37 +42251,25 @@ export const verbs: Verb[] = [
             "focus": "trained",
             "jaFocus": "練習によって私はプレッシャー下でも冷静でいられるようになりました。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "These exercises train your balance.",
+            "ja": "これらの運動はバランス感覚を鍛えます。",
+            "focus": "train",
+            "jaFocus": "鍛えます"
+          },
+          {
+            "en": "Reading every day trains the mind.",
+            "ja": "毎日の読書は思考力を鍛えます。",
+            "focus": "trains",
+            "jaFocus": "鍛えます"
+          }
         ]
       }
     ],
     "collocations": [],
     "phrasalVerbs": [
-      {
-        "phrase": "train for",
-        "ja": "〜に備えて練習・訓練する",
-        "image": "試合・資格・仕事などの目標へ向けて準備する",
-        "pattern": "TRAIN FOR + 目標",
-        "examples": [
-          {
-            "en": "She is training for a marathon.",
-            "ja": "彼女はマラソンに向けて練習しています。",
-            "focus": "training for",
-            "jaFocus": "彼女はマラソンに向けて練習しています。"
-          },
-          {
-            "en": "We trained for the emergency drill.",
-            "ja": "私たちは緊急訓練に備えて練習しました。",
-            "focus": "trained for",
-            "jaFocus": "私たちは緊急訓練に備えて練習しました。"
-          },
-          {
-            "en": "He is training for a management position.",
-            "ja": "彼は管理職に向けて訓練を受けています。",
-            "focus": "training for",
-            "jaFocus": "彼は管理職に向けて訓練を受けています。"
-          }
-        ]
-      },
       {
         "phrase": "train as",
         "ja": "〜になるため訓練する",
@@ -41683,6 +42293,20 @@ export const verbs: Verb[] = [
             "ja": "私はこの会社に入る前、電気技師として訓練を受けました。",
             "focus": "trained as",
             "jaFocus": "私はこの会社に入る前、電気技師として訓練を受けました。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She trained as a nurse before moving abroad.",
+            "ja": "彼女は海外へ移る前に看護師として訓練を受けました。",
+            "focus": "trained as",
+            "jaFocus": "訓練を受けました"
+          },
+          {
+            "en": "He is training as a chef at a small restaurant.",
+            "ja": "彼は小さなレストランで料理人になるため修業中です。",
+            "focus": "training as",
+            "jaFocus": "修業中です"
           }
         ]
       }
@@ -41746,6 +42370,20 @@ export const verbs: Verb[] = [
             "focus": "negotiated",
             "jaFocus": "彼女は案件のためにより良い値引きを交渉しました。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I negotiated the price at the flea market.",
+            "ja": "フリーマーケットで値段を交渉しました。",
+            "focus": "negotiated",
+            "jaFocus": "交渉しました"
+          },
+          {
+            "en": "We negotiated a later checkout time with the hotel.",
+            "ja": "ホテルと遅めのチェックアウト時間を交渉しました。",
+            "focus": "negotiated",
+            "jaFocus": "交渉しました"
+          }
         ]
       },
       {
@@ -41774,6 +42412,20 @@ export const verbs: Verb[] = [
             "ja": "両社は新しい取引条件を交渉しました。",
             "focus": "negotiated",
             "jaFocus": "両社は新しい取引条件を交渉しました。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She negotiated the rent with her landlord.",
+            "ja": "彼女は家主と家賃について交渉しました。",
+            "focus": "negotiated",
+            "jaFocus": "交渉しました"
+          },
+          {
+            "en": "They negotiated the terms before signing the agreement.",
+            "ja": "彼らは合意書に署名する前に条件を話し合いました。",
+            "focus": "negotiated",
+            "jaFocus": "話し合いました"
           }
         ]
       },
@@ -41804,6 +42456,20 @@ export const verbs: Verb[] = [
             "focus": "negotiated",
             "jaFocus": "チームは期限延長を交渉しました。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Our family negotiated the dates for the trip.",
+            "ja": "家族で旅行の日程を調整しました。",
+            "focus": "negotiated",
+            "jaFocus": "調整しました"
+          },
+          {
+            "en": "I negotiated an extra day off with my manager.",
+            "ja": "上司と交渉して休みをもう1日取りました。",
+            "focus": "negotiated",
+            "jaFocus": "交渉して"
+          }
         ]
       },
       {
@@ -41832,6 +42498,20 @@ export const verbs: Verb[] = [
             "ja": "彼女は難しい話し合いを冷静に進めました。",
             "focus": "negotiated",
             "jaFocus": "彼女は難しい話し合いを冷静に進めました。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "He carefully negotiated the narrow parking space.",
+            "ja": "彼は狭い駐車スペースを慎重に通り抜けました。",
+            "focus": "negotiated",
+            "jaFocus": "通り抜けました"
+          },
+          {
+            "en": "We negotiated our way through the crowded market.",
+            "ja": "私たちは混雑した市場をうまく進みました。",
+            "focus": "negotiated",
+            "jaFocus": "うまく進みました"
           }
         ]
       },
@@ -41862,90 +42542,25 @@ export const verbs: Verb[] = [
             "focus": "negotiated",
             "jaFocus": "弁護士は和解を交渉でまとめました。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She negotiated a lower price for the used bicycle.",
+            "ja": "彼女は交渉して中古自転車を安く買いました。",
+            "focus": "negotiated",
+            "jaFocus": "交渉して"
+          },
+          {
+            "en": "He negotiated more time to finish the work.",
+            "ja": "彼は交渉して作業時間を延ばしてもらいました。",
+            "focus": "negotiated",
+            "jaFocus": "交渉して"
+          }
         ]
       }
     ],
     "collocations": [],
-    "phrasalVerbs": [
-      {
-        "phrase": "negotiate with",
-        "ja": "〜と交渉する",
-        "image": "交渉相手と条件を調整する",
-        "pattern": "NEGOTIATE WITH + 人・組織",
-        "examples": [
-          {
-            "en": "We negotiated with the client about the price.",
-            "ja": "私たちは価格について顧客と交渉しました。",
-            "focus": "negotiated with",
-            "jaFocus": "私たちは価格について顧客と交渉しました。"
-          },
-          {
-            "en": "She is negotiating with three suppliers.",
-            "ja": "彼女は3社の仕入先と交渉中です。",
-            "focus": "negotiating with",
-            "jaFocus": "彼女は3社の仕入先と交渉中です。"
-          },
-          {
-            "en": "The union negotiated with management.",
-            "ja": "組合は経営側と交渉しました。",
-            "focus": "negotiated with",
-            "jaFocus": "組合は経営側と交渉しました。"
-          }
-        ]
-      },
-      {
-        "phrase": "negotiate for",
-        "ja": "〜を得るため交渉する",
-        "image": "必要な条件・権利を得る目的で交渉する",
-        "pattern": "NEGOTIATE FOR + 条件・権利",
-        "examples": [
-          {
-            "en": "We negotiated for a lower price.",
-            "ja": "私たちはより低い価格を得るため交渉しました。",
-            "focus": "negotiated for",
-            "jaFocus": "私たちはより低い価格を得るため交渉しました。"
-          },
-          {
-            "en": "He negotiated for more time.",
-            "ja": "彼はより多くの時間を得るため交渉しました。",
-            "focus": "negotiated for",
-            "jaFocus": "彼はより多くの時間を得るため交渉しました。"
-          },
-          {
-            "en": "The customer negotiated for free delivery.",
-            "ja": "顧客は無料配送を得るため交渉しました。",
-            "focus": "negotiated for",
-            "jaFocus": "顧客は無料配送を得るため交渉しました。"
-          }
-        ]
-      },
-      {
-        "phrase": "negotiate over",
-        "ja": "〜について交渉する",
-        "image": "争点や条件をテーマとして交渉する",
-        "pattern": "NEGOTIATE OVER + 議題",
-        "examples": [
-          {
-            "en": "The companies negotiated over the contract terms.",
-            "ja": "両社は契約条件について交渉しました。",
-            "focus": "negotiated over",
-            "jaFocus": "両社は契約条件について交渉しました。"
-          },
-          {
-            "en": "We are still negotiating over the final price.",
-            "ja": "私たちは最終価格についてまだ交渉中です。",
-            "focus": "negotiating over",
-            "jaFocus": "私たちは最終価格についてまだ交渉中です。"
-          },
-          {
-            "en": "They negotiated over who would pay the additional cost.",
-            "ja": "追加費用を誰が負担するかについて交渉しました。",
-            "focus": "negotiated over",
-            "jaFocus": "追加費用を誰が負担するかについて交渉しました。"
-          }
-        ]
-      }
-    ]
+    "phrasalVerbs": []
   },
   {
     "id": "remind",
@@ -42005,6 +42620,20 @@ export const verbs: Verb[] = [
             "focus": "remind",
             "jaFocus": "顧客訪問について彼に念押ししてもらえますか。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Please remind me about the dentist appointment.",
+            "ja": "歯医者の予約について忘れないよう言ってください。",
+            "focus": "remind",
+            "jaFocus": "忘れないよう言ってください"
+          },
+          {
+            "en": "I reminded him about his mother's birthday.",
+            "ja": "私は彼にお母さんの誕生日を念押ししました。",
+            "focus": "reminded",
+            "jaFocus": "念押ししました"
+          }
         ]
       },
       {
@@ -42033,6 +42662,20 @@ export const verbs: Verb[] = [
             "ja": "彼女は私たちに在庫を確認するよう念押ししました。",
             "focus": "reminded",
             "jaFocus": "彼女は私たちに在庫を確認するよう念押ししました。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Remind me to buy milk on the way home.",
+            "ja": "帰りに牛乳を買うよう私に言ってください。",
+            "focus": "Remind",
+            "jaFocus": "言ってください"
+          },
+          {
+            "en": "She reminded the children to take their keys.",
+            "ja": "彼女は子どもたちに鍵を持つよう念を押しました。",
+            "focus": "reminded",
+            "jaFocus": "念を押しました"
           }
         ]
       },
@@ -42063,6 +42706,20 @@ export const verbs: Verb[] = [
             "focus": "reminded",
             "jaFocus": "彼女はその設計が機密であることを私たちに再確認しました。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I reminded everyone that we were meeting at nine.",
+            "ja": "9時集合だと全員に念を押しました。",
+            "focus": "reminded",
+            "jaFocus": "念を押しました"
+          },
+          {
+            "en": "Please remind him that the store closes early.",
+            "ja": "店が早く閉まると彼にもう一度伝えてください。",
+            "focus": "remind",
+            "jaFocus": "もう一度伝えてください"
+          }
         ]
       },
       {
@@ -42092,6 +42749,20 @@ export const verbs: Verb[] = [
             "focus": "reminds",
             "jaFocus": "あなたの説明を聞くと最初の案件を思い出します。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "This smell reminds me of my grandmother's kitchen.",
+            "ja": "この香りをかぐと祖母の台所を思い出します。",
+            "focus": "reminds",
+            "jaFocus": "思い出します"
+          },
+          {
+            "en": "That photo reminded us of our first trip together.",
+            "ja": "その写真を見て私たちは初めての旅行を思い出しました。",
+            "focus": "reminded",
+            "jaFocus": "思い出しました"
+          }
         ]
       },
       {
@@ -42120,6 +42791,20 @@ export const verbs: Verb[] = [
             "ja": "私たちは身分証明書を持参するよう念押しされました。",
             "focus": "reminded",
             "jaFocus": "私たちは身分証明書を持参するよう念押しされました。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I was reminded of the payment date by the app.",
+            "ja": "アプリの通知で支払日を思い出しました。",
+            "focus": "reminded",
+            "jaFocus": "思い出しました"
+          },
+          {
+            "en": "She was reminded to bring her passport.",
+            "ja": "彼女はパスポートを持つよう念を押されました。",
+            "focus": "reminded",
+            "jaFocus": "念を押されました"
           }
         ]
       }
@@ -42181,6 +42866,20 @@ export const verbs: Verb[] = [
             "focus": "require",
             "jaFocus": "顧客は追加見積を必要とする可能性があります。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The application requires a photo ID.",
+            "ja": "その申込みには写真付き身分証明書が必要です。",
+            "focus": "requires",
+            "jaFocus": "必要です"
+          },
+          {
+            "en": "This recipe requires a special type of flour.",
+            "ja": "このレシピには特別な種類の小麦粉が必要です。",
+            "focus": "requires",
+            "jaFocus": "必要です"
+          }
         ]
       },
       {
@@ -42209,6 +42908,20 @@ export const verbs: Verb[] = [
             "ja": "会社方針は社員に事故報告を義務づけています。",
             "focus": "requires",
             "jaFocus": "会社方針は社員に事故報告を義務づけています。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The school requires parents to sign this form.",
+            "ja": "学校は保護者にこの用紙への署名を求めています。",
+            "focus": "requires",
+            "jaFocus": "求めています"
+          },
+          {
+            "en": "The building requires visitors to show identification.",
+            "ja": "その建物では訪問者に身分証明書の提示を求めています。",
+            "focus": "requires",
+            "jaFocus": "求めています"
           }
         ]
       },
@@ -42239,6 +42952,20 @@ export const verbs: Verb[] = [
             "focus": "requires",
             "jaFocus": "規則では来訪者が身分証を着用する必要があります。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The rules require that all guests register first.",
+            "ja": "規則ではすべての利用者が最初に登録する必要があります。",
+            "focus": "require",
+            "jaFocus": "必要があります"
+          },
+          {
+            "en": "The clinic requires that appointments be made in advance.",
+            "ja": "その診療所では事前予約が必要です。",
+            "focus": "requires",
+            "jaFocus": "必要です"
+          }
         ]
       },
       {
@@ -42268,6 +42995,20 @@ export const verbs: Verb[] = [
             "focus": "required",
             "jaFocus": "その依頼を処理するには、この書類が必要です。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "A reservation is required on weekends.",
+            "ja": "週末は予約が必要です。",
+            "focus": "required",
+            "jaFocus": "必要です"
+          },
+          {
+            "en": "Children are required to wear helmets here.",
+            "ja": "ここでは子どもはヘルメットを着用する必要があります。",
+            "focus": "required",
+            "jaFocus": "必要があります"
+          }
         ]
       },
       {
@@ -42296,6 +43037,20 @@ export const verbs: Verb[] = [
             "ja": "この製品の取り扱いには細心の注意が必要です。",
             "focus": "requires",
             "jaFocus": "この製品の取り扱いには細心の注意が必要です。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "This repair requires time and patience.",
+            "ja": "この修理には時間と根気が必要です。",
+            "focus": "requires",
+            "jaFocus": "必要です"
+          },
+          {
+            "en": "Learning a language requires regular practice.",
+            "ja": "語学の習得には継続的な練習が必要です。",
+            "focus": "requires",
+            "jaFocus": "必要です"
           }
         ]
       }
@@ -42361,6 +43116,20 @@ export const verbs: Verb[] = [
             "focus": "selected",
             "jaFocus": "顧客はより低価格の選択肢を選びました。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "I selected the vegetarian meal.",
+            "ja": "ベジタリアン向けの食事を選びました。",
+            "focus": "selected",
+            "jaFocus": "選びました"
+          },
+          {
+            "en": "Please select a payment method.",
+            "ja": "支払い方法を選択してください。",
+            "focus": "select",
+            "jaFocus": "選択してください"
+          }
         ]
       },
       {
@@ -42389,6 +43158,20 @@ export const verbs: Verb[] = [
             "ja": "メニューから色を選択できます。",
             "focus": "select",
             "jaFocus": "メニューから色を選択できます。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "She selected three photos from the album.",
+            "ja": "彼女はアルバムから写真を3枚選びました。",
+            "focus": "selected",
+            "jaFocus": "選びました"
+          },
+          {
+            "en": "You can select a drink from this list.",
+            "ja": "この一覧から飲み物を選べます。",
+            "focus": "select",
+            "jaFocus": "選べます"
           }
         ]
       },
@@ -42419,6 +43202,20 @@ export const verbs: Verb[] = [
             "focus": "selected",
             "jaFocus": "私たちは現場訪問のため技術者を2名選びました。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "The class selected him as its representative.",
+            "ja": "クラスは彼を代表に選びました。",
+            "focus": "selected",
+            "jaFocus": "選びました"
+          },
+          {
+            "en": "They selected two children for the final round.",
+            "ja": "彼らは最終選考に進む子どもを2人選びました。",
+            "focus": "selected",
+            "jaFocus": "選びました"
+          }
         ]
       },
       {
@@ -42448,6 +43245,20 @@ export const verbs: Verb[] = [
             "focus": "select",
             "jaFocus": "希望する言語を選択してください。"
           }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Select the date on the screen.",
+            "ja": "画面で日付を選択してください。",
+            "focus": "Select",
+            "jaFocus": "選択してください"
+          },
+          {
+            "en": "I selected the wrong language in the app.",
+            "ja": "アプリで間違った言語を選択しました。",
+            "focus": "selected",
+            "jaFocus": "選択しました"
+          }
         ]
       },
       {
@@ -42476,6 +43287,20 @@ export const verbs: Verb[] = [
             "ja": "3つのデザインが最終審査用に選ばれました。",
             "focus": "selected",
             "jaFocus": "3つのデザインが最終審査用に選ばれました。"
+          }
+        ],
+        "dailyExamples": [
+          {
+            "en": "Her painting was selected for the exhibition.",
+            "ja": "彼女の絵は展覧会への出品作品に選ばれました。",
+            "focus": "selected",
+            "jaFocus": "選ばれました"
+          },
+          {
+            "en": "My son was selected for the school team.",
+            "ja": "息子は学校のチームに選ばれました。",
+            "focus": "selected",
+            "jaFocus": "選ばれました"
           }
         ]
       }
@@ -42714,7 +43539,7 @@ function fallbackDailyExamples(verb: Verb, title: string, focusText?: string): E
 }
 
 function attachPremiumDailyExamples() {
-  const premiumVerbs = new Set(["get","take","make","give","have","go","come","put","keep","find","see","look","watch","hear","listen","think","know","feel","work","use","start","stop","try","help","learn","meet","send","pay","buy","sell","choose","follow","create","reach","learn","meet","send","pay","buy","sell","choose","follow","create","reach","request","suggest","agree","arrange","attend","contact","share","collect","reduce","increase","accept","avoid","consider","depend","expect","reply","include","notice","prefer","recommend","achieve","schedule","submit","cancel","connect","respond","control","handle","organize","inform","adjust","apply","approve","borrow","verify","gather","communicate","describe","earn","estimate"]);
+  const premiumVerbs = new Set(["get","take","make","give","have","go","come","put","keep","find","see","look","watch","hear","listen","think","know","feel","work","use","start","stop","try","help","learn","meet","send","pay","buy","sell","choose","follow","create","reach","learn","meet","send","pay","buy","sell","choose","follow","create","reach","request","suggest","agree","arrange","attend","contact","share","collect","reduce","increase","accept","avoid","consider","depend","expect","reply","include","notice","prefer","recommend","achieve","schedule","submit","cancel","connect","respond","control","handle","organize","inform","adjust","apply","approve","borrow","verify","gather","communicate","describe","earn","estimate","focus","identify","propose","join","lead","maintain","mention","protect","replace","train","negotiate","remind","require","select"]);
   for (const verb of verbs) {
     if (!premiumVerbs.has(verb.id)) continue;
     for (const meaning of verb.meanings) {

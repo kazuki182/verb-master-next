@@ -1,7 +1,7 @@
 # Quality Audit Current
 
 ## Current version
-Ver.173
+Ver.174
 
 ## Standard verb re-audit
 - Completed: 124 / 124 verbs
@@ -9,7 +9,7 @@ Ver.173
 - Verb ids and ranks: 124 unique entries
 
 ## Premium daily conversation re-audit
-- Completed: 110 / 124 verbs
+- Completed: 124 / 124 verbs
 - Completed batches:
   - GET / TAKE / MAKE / GIVE / HAVE / GO / COME / PUT / KEEP / FIND — 260 examples
   - SEE / LOOK / WATCH / HEAR / LISTEN / THINK / KNOW / FEEL / WORK / USE — 266 examples
@@ -29,7 +29,7 @@ Ver.173
 - Phrasal focus: verb plus particle/preposition only
 - Objects excluded from focus
 
-## Ver.173 batch notes
+## Ver.174 batch notes
 - Ordinary preposition patterns were integrated into basic usage blocks where appropriate.
 - Retained expression blocks: `adjust to`, `apply for`, `apply to`, `approve of`, `gather around`, `gather up`, and `communicate with`.
 - Removed or integrated expression blocks: `adjust for`, `apply as`, `apply through`, `gather together`, and `communicate through`.
@@ -44,3 +44,9 @@ Ver.173
 - `npm run verify:deploy`: passed
 - `npx tsc --noEmit`: passed
 - `npm run build`: passed; static pages 28 / 28
+
+
+## Premium daily examples final batch
+- FOCUS / IDENTIFY / PROPOSE / JOIN / LEAD / MAINTAIN / MENTION / PROTECT / REPLACE / TRAIN / NEGOTIATE / REMIND / REQUIRE / SELECT
+- 152 examples across 76 retained usages
+- Premium audit complete: 124 / 124 verbs

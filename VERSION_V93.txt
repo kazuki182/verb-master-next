@@ -1,4 +1,0 @@
-Ver.93 HOME level card fine-tuning
-- Reduced Lv text size for a cleaner adult UI.
-- Kept profile image size and badge layout from Ver.90-Ver.92.
-- No verb data changes in this patch.

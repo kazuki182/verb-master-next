@@ -1,1 +1,3 @@
-registry=https://registry.npmjs.org/
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+module.exports = nextConfig;

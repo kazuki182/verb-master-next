@@ -3,7 +3,6 @@ import { getVerb } from "@/lib/data";
 import SpeakButton from "@/components/SpeechButton";
 import ExampleCard from "@/components/ExampleCard";
 import PremiumExamples from "@/components/PremiumExamples";
-import AutoBookmark from "@/components/AutoBookmark";
 import BookmarkButton from "@/components/BookmarkButton";
 import VerbProgressPanel from "@/components/VerbProgressPanel";
 import VerbAccessGuard from "@/components/VerbAccessGuard";
@@ -47,8 +46,6 @@ export default async function VerbDetail({ params }: { params: Promise<{ id: str
           </div>
         </div>
       </header>
-
-      <AutoBookmark verbId={verb.id} section="basic" label={`${verb.word} 基本`} href={`/verbs/${verb.id}`} />
 
 
       <section className="card p-5 sm:p-6">

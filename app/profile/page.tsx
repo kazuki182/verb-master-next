@@ -743,6 +743,7 @@ export default function ProfilePage() {
         <h2 className="text-xl font-bold">設定</h2>
         <div className="mt-4 grid gap-3">
           <Link className="rounded-2xl bg-paper p-4 font-bold" href="/#target-settings">学習ペース設定</Link>
+          <Link className="rounded-2xl bg-paper p-4 font-bold" href="/contact">お問い合わせ・ご意見</Link>
           <button
             className="rounded-2xl bg-paper p-4 text-left font-bold"
             type="button"

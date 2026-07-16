@@ -3,7 +3,6 @@ import { getVerb } from "@/lib/data";
 import SpeakButton from "@/components/SpeechButton";
 import ExampleCard from "@/components/ExampleCard";
 import PremiumExamples from "@/components/PremiumExamples";
-import AutoBookmark from "@/components/AutoBookmark";
 import BookmarkButton from "@/components/BookmarkButton";
 import VerbAccessGuard from "@/components/VerbAccessGuard";
 import { naturalPatternText } from "@/lib/display";
@@ -26,8 +25,6 @@ export default async function VerbPhrasalPage({ params }: { params: Promise<{ id
           <BookmarkButton verbId={verb.id} section="phrasal" label={`${verb.word} 句動詞`} href={`/verbs/${verb.id}/phrasal`} compact />
         </div>
       </header>
-
-      <AutoBookmark verbId={verb.id} section="phrasal" label={`${verb.word} 句動詞`} href={`/verbs/${verb.id}/phrasal`} />
 
       {items.length > 0 ? (
         <section className="space-y-5">

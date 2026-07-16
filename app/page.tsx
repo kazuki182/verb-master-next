@@ -108,30 +108,18 @@ export default function Home() {
     learningTargetIds.has(verbId),
   ).length;
   const plan = getLearningPlan(unlockedVerbTotal, completed);
-  const testVerb = testSession ? getVerb(testSession.verbId) : null;
   const bookmarkVerb = bookmark ? getVerb(bookmark.verbId) : null;
-  const activeVerb =
-    testVerb ||
+  const learningVerb =
     bookmarkVerb ||
     learningTargetVerbs.find((verb) => !progress.studiedVerbIds.includes(verb.id)) ||
     learningTargetVerbs[0] ||
     verbs[0];
-  const activeBookmark = testSession
-    ? {
-        verbId: testSession.verbId,
-        section: "test" as const,
-        label: `${activeVerb.word} ${getTestSectionLabel(testSession.section)}`,
-        href: getTestSessionHref(testSession),
-        itemTitle: `${Math.min(testSession.index + 1, testSession.itemIds.length)} / ${testSession.itemIds.length}問目`,
-        itemIndex: testSession.index + 1,
-        savedAt: testSession.updatedAt,
-      }
-    : bookmark;
-  const activeProgress = getTotalVerbProgress(
-    activeVerb,
+  const learningProgress = getTotalVerbProgress(
+    learningVerb,
     progress,
-    activeBookmark,
+    bookmark,
   );
+  const testVerb = testSession ? getVerb(testSession.verbId) : null;
   const targetParts = splitTarget(plan.targetDate);
   const updateTarget = (value: string) => {
     setTarget(value);
@@ -353,57 +341,67 @@ export default function Home() {
       <section className="resume-card p-5">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <p className="text-sm font-bold text-cyan-200">現在攻略中</p>
+            <p className="text-sm font-bold text-cyan-200">📖 続きから学習</p>
             <p className="mt-1 text-3xl font-extrabold uppercase">
-              {activeVerb.word}
+              {learningVerb.word}
             </p>
             <p className="mt-1 text-sm text-slate-300">
-              基本・句動詞の進捗を合算
+              {bookmark
+                ? `${getBookmarkSectionLabel(bookmark.section)}${bookmark.itemTitle ? ` / ${bookmark.itemTitle}` : ""}`
+                : "しおりを挟むと、ここから同じ場所へ戻れます。"}
             </p>
           </div>
           <Link
             className="shrink-0 rounded-full bg-cyan-300 px-4 py-2 text-sm font-bold text-slate-950"
-            href={activeBookmark?.href ?? `/verbs/${activeVerb.id}`}
+            href={bookmark?.href ?? `/verbs/${learningVerb.id}`}
           >
-            {testSession ? "テスト再開" : activeBookmark ? "続きから" : "開く"}
+            {bookmark ? "しおりへ戻る" : "学習を開く"}
           </Link>
         </div>
 
         <div className="mt-4">
           <VerbProgressPanel
-            verb={activeVerb}
+            verb={learningVerb}
             compact
-            bookmarkOverride={activeBookmark}
+            bookmarkOverride={bookmark}
           />
         </div>
 
-        <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-slate-950/60 p-3">
-          <div className="flex items-center justify-between gap-3">
-            <div className="min-w-0">
-              <p className="text-xs font-bold tracking-[0.16em] text-cyan-200">
-                前回の続き
-              </p>
-              {activeBookmark ? (
-                <p className="mt-1 truncate text-sm text-slate-300">
-                  {testSession
-                    ? getTestSectionLabel(testSession.section)
-                    : getBookmarkSectionLabel(activeBookmark.section)}
-                  {activeBookmark.itemTitle
-                    ? ` / ${activeBookmark.itemTitle}`
-                    : ""}
-                </p>
-              ) : (
-                <p className="mt-1 text-sm text-slate-300">
-                  まだしおりはありません。
-                </p>
-              )}
-            </div>
-            <p className="shrink-0 text-right text-sm font-bold text-cyan-100">
-              達成率 {activeProgress}%
+        <div className="mt-4 flex items-center justify-between gap-3 rounded-2xl border border-cyan-300/20 bg-slate-950/60 p-3">
+          <div className="min-w-0">
+            <p className="text-xs font-bold tracking-[0.16em] text-cyan-200">最後に挟んだしおり</p>
+            <p className="mt-1 truncate text-sm text-slate-300">
+              {bookmark ? bookmark.label : "まだしおりはありません。"}
             </p>
           </div>
+          <p className="shrink-0 text-right text-sm font-bold text-cyan-100">
+            達成率 {learningProgress}%
+          </p>
         </div>
       </section>
+
+      {testSession && testVerb && (
+        <section className="card border border-violet-300/20 p-5">
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <p className="text-sm font-bold text-violet-200">📝 テストを再開</p>
+              <p className="mt-1 text-2xl font-extrabold uppercase">{testVerb.word}</p>
+              <p className="mt-1 text-sm text-slate-300">
+                {getTestSectionLabel(testSession.section)} / {Math.min(testSession.index + 1, testSession.itemIds.length)} / {testSession.itemIds.length}問目
+              </p>
+              <p className="mt-1 text-xs text-slate-400">
+                正解 {testSession.correct}問・不正解 {testSession.wrong}問
+              </p>
+            </div>
+            <Link
+              className="shrink-0 rounded-full bg-violet-300 px-4 py-2 text-sm font-bold text-slate-950"
+              href={getTestSessionHref(testSession)}
+            >
+              テスト再開
+            </Link>
+          </div>
+        </section>
+      )}
 
       <section className="digital-card p-5">
         <div className="flex items-start justify-between gap-3">

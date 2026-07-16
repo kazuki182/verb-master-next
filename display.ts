@@ -1,0 +1,817 @@
+import { supabase } from "@/lib/supabase";
+import {
+  applyClientStudySettingsSnapshot,
+  ensureProgress,
+  getClientStudySettingsSnapshot,
+  getLocalRecoverySnapshots,
+  restorePremiumEntitlement,
+  saveProgress,
+  setCurrentUser,
+  type Account,
+  type ClientStudySettingsSnapshot,
+  type UserProgress,
+} from "@/lib/account";
+
+export const CLOUD_SYNC_EVENT = "verbmaster:cloud-sync-status";
+
+export type CloudSyncEventDetail = {
+  phase: "syncing" | "saved" | "restored" | "error" | "idle";
+  reason?: string;
+  message: string;
+  updatedAt: string;
+  status?: CloudSyncStatus;
+};
+
+export type CloudSyncStatus = {
+  configured: boolean;
+  profile: "idle" | "saved" | "error";
+  avatar: "idle" | "saved" | "error" | "local-only" | "storage";
+  premium: "idle" | "saved" | "error";
+  stats: "idle" | "saved" | "error";
+  message: string;
+  updatedAt?: string;
+};
+
+export type CloudBackupSummary = {
+  xp: number;
+  level: number;
+  studied: number;
+  totalStudied: number;
+  tests: number;
+  weak: number;
+  reviews: number;
+  savedPhrases: number;
+  score: number;
+};
+
+export type CloudBackupComparison = {
+  ok: boolean;
+  message: string;
+  recommendation: "restore_remote" | "save_local" | "same" | "no_remote" | "unknown";
+  local: CloudBackupSummary;
+  remote: CloudBackupSummary | null;
+  remoteUpdatedAt?: string;
+};
+
+const CLOUD_CREDENTIAL_KEY = "verbMaster.cloudCredentials";
+const PENDING_AVATAR_KEY = "verbMaster.pendingAvatarUploads";
+const AVATAR_CACHE_KEY = "verbMaster.avatarDurableCache.v2";
+const CLOUD_SQL_HINT = "Supabase SQLが未実行、または保存用RPCが見つかりません。supabase/V143_DEPLOY_SAFE_PERSISTENCE_SYSTEM.sql をSupabase SQL Editorで実行してください。";
+
+export function isCloudConfigured() {
+  return Boolean(supabase);
+}
+
+
+type CloudCredentialMap = Record<string, { passwordHash: string; savedAt: string }>;
+type PendingAvatarMap = Record<string, { avatarDataUrl: string; savedAt: string }>;
+export type AvatarLocalCacheEntry = {
+  avatarDataUrl: string;
+  avatarUrl: string;
+  avatarPath: string;
+  updatedAt: string;
+  verifiedAt?: string;
+};
+type AvatarLocalCacheMap = Record<string, AvatarLocalCacheEntry>;
+type BackupRow = {
+  progress_json?: Partial<UserProgress> | null;
+  settings_json?: ClientStudySettingsSnapshot | null;
+  updated_at?: string | null;
+};
+
+function nowText() {
+  return new Date().toISOString();
+}
+
+function timestampMs(value?: string | null) {
+  if (!value) return 0;
+  const parsed = Date.parse(value);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function localIsNewer(localStamp?: string, remoteStamp?: string) {
+  const local = timestampMs(localStamp);
+  const remote = timestampMs(remoteStamp);
+  return local > 0 && local >= remote;
+}
+
+function isInlineAvatar(value?: string | null) {
+  return Boolean(value && value.startsWith("data:image/"));
+}
+
+function avatarUrlOf(progress?: Partial<UserProgress> | null) {
+  if (!progress) return "";
+  const dataUrl = progress.avatarDataUrl || "";
+  return progress.avatarUrl || (!isInlineAvatar(dataUrl) ? dataUrl : "");
+}
+
+function avatarSaved(progress?: Partial<UserProgress> | null) {
+  return Boolean(progress?.avatarPath || avatarUrlOf(progress) || progress?.avatarDataUrl);
+}
+
+function remoteHasProfile(remote?: Partial<UserProgress> | null) {
+  return Boolean(remote?.displayName || remote?.avatarPath || remote?.avatarUrl || remote?.avatarDataUrl || remote?.profileUpdatedAt);
+}
+
+function remoteHasSettings(remote?: Partial<UserProgress> | null) {
+  return Boolean(remote?.targetDate || remote?.studyDays || remote?.studyPace || remote?.settingsUpdatedAt);
+}
+
+function baseStatus(message: string): CloudSyncStatus {
+  return {
+    configured: Boolean(supabase),
+    profile: "idle",
+    avatar: "idle",
+    premium: "idle",
+    stats: "idle",
+    message,
+    updatedAt: nowText(),
+  };
+}
+
+function credentialMap(): CloudCredentialMap {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(localStorage.getItem(CLOUD_CREDENTIAL_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+export function saveCloudCredential(username: string, passwordHash: string) {
+  if (typeof window === "undefined") return;
+  const name = username.trim();
+  if (!name || !passwordHash) return;
+  const map = credentialMap();
+  map[name] = { passwordHash, savedAt: nowText() };
+  localStorage.setItem(CLOUD_CREDENTIAL_KEY, JSON.stringify(map));
+}
+
+export async function rememberCloudCredentialFromPassword(username: string, password: string) {
+  const name = username.trim();
+  if (!name || !password) return false;
+  const passwordHash = await hashPassword(password);
+  saveCloudCredential(name, passwordHash);
+  return true;
+}
+
+function getCloudPasswordHash(username: string) {
+  return credentialMap()[username]?.passwordHash || "";
+}
+
+
+export type DedicatedProfile = {
+  username: string;
+  displayName: string;
+  avatarUrl: string;
+  avatarPath: string;
+  updatedAt: string;
+};
+
+async function callProfileApi(username: string, action: "get" | "save-name", extra: Record<string, unknown> = {}) {
+  const passwordHash = getCloudPasswordHash(username);
+  if (!passwordHash) return { ok: false as const, message: "プロフィールのクラウド保存には再ログインが必要です。" };
+  try {
+    const response = await fetch("/api/profile", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, passwordHash, action, ...extra }),
+    });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok || payload?.ok === false) {
+      return { ok: false as const, message: String(payload?.message || "プロフィール専用保存に失敗しました。") };
+    }
+    return { ok: true as const, message: String(payload?.message || "プロフィールを確認しました。"), profile: payload.profile as DedicatedProfile, verified: Boolean(payload.verified), source: String(payload.source || "") };
+  } catch (error) {
+    return { ok: false as const, message: error instanceof Error ? error.message : "プロフィール専用保存に失敗しました。" };
+  }
+}
+
+export async function fetchDedicatedProfile(username: string) {
+  return callProfileApi(username, "get");
+}
+
+export async function saveDedicatedDisplayName(username: string, displayName: string) {
+  return callProfileApi(username, "save-name", { displayName });
+}
+
+function applyDedicatedProfile(progress: UserProgress, profile?: DedicatedProfile | null) {
+  if (!profile) return progress;
+  const hasRemoteAvatar = Boolean(profile.avatarUrl || profile.avatarPath);
+  const cached = getAvatarLocalCache(progress.username);
+  const fallbackDataUrl = cached?.avatarDataUrl || progress.avatarDataUrl || "";
+  const fallbackUrl = cached?.avatarUrl || progress.avatarUrl || "";
+  const fallbackPath = cached?.avatarPath || progress.avatarPath || "";
+  return {
+    ...progress,
+    displayName: profile.displayName || progress.displayName || progress.username,
+    // Never erase a known avatar because a profile read returned an empty/stale row.
+    avatarUrl: hasRemoteAvatar ? (profile.avatarUrl || fallbackUrl) : fallbackUrl,
+    avatarDataUrl: hasRemoteAvatar ? (profile.avatarUrl || fallbackDataUrl) : fallbackDataUrl,
+    avatarPath: hasRemoteAvatar ? (profile.avatarPath || fallbackPath) : fallbackPath,
+    avatarUpdatedAt: hasRemoteAvatar ? (profile.updatedAt || progress.avatarUpdatedAt) : (cached?.updatedAt || progress.avatarUpdatedAt),
+    profileUpdatedAt: profile.updatedAt || progress.profileUpdatedAt,
+    avatarStorageProvider: hasRemoteAvatar || fallbackPath || fallbackUrl
+      ? "supabase-storage" as const
+      : (isInlineAvatar(fallbackDataUrl) ? "legacy-data-url" as const : "none" as const),
+  };
+}
+
+export function hasCloudSession(username?: string | null) {
+  if (!username) return false;
+  return Boolean(getCloudPasswordHash(username));
+}
+
+export function getCloudSessionState(username?: string | null) {
+  if (!supabase) return { configured: false, hasCredential: false, mode: "local-only" as const };
+  if (!username) return { configured: true, hasCredential: false, mode: "signed-out" as const };
+  const hasCredential = hasCloudSession(username);
+  return {
+    configured: true,
+    hasCredential,
+    mode: hasCredential ? ("cloud-ready" as const) : ("needs-reauth" as const),
+  };
+}
+
+function pendingAvatarMap(): PendingAvatarMap {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(localStorage.getItem(PENDING_AVATAR_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function savePendingAvatarMap(map: PendingAvatarMap) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(PENDING_AVATAR_KEY, JSON.stringify(map));
+}
+
+function avatarLocalCacheMap(): AvatarLocalCacheMap {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(localStorage.getItem(AVATAR_CACHE_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function saveAvatarLocalCacheMap(map: AvatarLocalCacheMap) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(AVATAR_CACHE_KEY, JSON.stringify(map));
+}
+
+export function saveAvatarLocalCache(username: string, entry: Partial<AvatarLocalCacheEntry> & { avatarDataUrl: string }) {
+  if (!username || !entry.avatarDataUrl || typeof window === "undefined") return;
+  const map = avatarLocalCacheMap();
+  const previous = map[username];
+  map[username] = {
+    avatarDataUrl: entry.avatarDataUrl || previous?.avatarDataUrl || "",
+    avatarUrl: entry.avatarUrl ?? previous?.avatarUrl ?? "",
+    avatarPath: entry.avatarPath ?? previous?.avatarPath ?? "",
+    updatedAt: entry.updatedAt || previous?.updatedAt || nowText(),
+    verifiedAt: entry.verifiedAt ?? previous?.verifiedAt,
+  };
+  saveAvatarLocalCacheMap(map);
+}
+
+export function getAvatarLocalCache(username?: string | null) {
+  if (!username) return null;
+  return avatarLocalCacheMap()[username] || null;
+}
+
+export function savePendingAvatarForCloud(username: string, avatarDataUrl: string) {
+  if (!username || !avatarDataUrl || typeof window === "undefined") return;
+  const savedAt = nowText();
+  const map = pendingAvatarMap();
+  map[username] = { avatarDataUrl, savedAt };
+  savePendingAvatarMap(map);
+  // Keep a second durable local copy even after a successful cloud upload.
+  saveAvatarLocalCache(username, { avatarDataUrl, updatedAt: savedAt });
+}
+
+export function getPendingAvatarForCloud(username?: string | null) {
+  if (!username) return null;
+  return pendingAvatarMap()[username] || null;
+}
+
+export function clearPendingAvatarForCloud(username?: string | null) {
+  if (!username || typeof window === "undefined") return;
+  const map = pendingAvatarMap();
+  if (map[username]) {
+    delete map[username];
+    savePendingAvatarMap(map);
+  }
+}
+
+function missingCredentialStatus(): CloudSyncStatus {
+  return {
+    configured: Boolean(supabase),
+    profile: "idle",
+    avatar: "idle",
+    premium: "idle",
+    stats: "idle",
+    message: "端末内には保存済みです。クラウド保存には一度ログインし直してください。",
+    updatedAt: nowText(),
+  };
+}
+
+function sqlErrorStatus(message?: string): CloudSyncStatus {
+  return {
+    configured: Boolean(supabase),
+    profile: "error",
+    avatar: "error",
+    premium: "error",
+    stats: "error",
+    message: message ? `${message} / ${CLOUD_SQL_HINT}` : CLOUD_SQL_HINT,
+    updatedAt: nowText(),
+  };
+}
+
+export function getCloudReadiness(): CloudSyncStatus {
+  if (!supabase) {
+    return baseStatus("Supabase環境変数が未設定です。VercelにNEXT_PUBLIC_SUPABASE_URLとNEXT_PUBLIC_SUPABASE_ANON_KEYを設定してください。");
+  }
+  return baseStatus("Supabase連携は有効です。保存用SQLが入っていればクラウド保存できます。");
+}
+
+function asRpcResult(data: unknown): { ok?: boolean; message?: string; username?: string; role?: string } {
+  if (!data || typeof data !== "object") return {};
+  return data as { ok?: boolean; message?: string; username?: string; role?: string };
+}
+
+function normalizeSupabaseError(error: unknown) {
+  const message = error instanceof Error ? error.message : String(error || "Supabaseエラー");
+  if (message.includes("Could not find the function") || message.includes("schema cache") || message.includes("does not exist")) {
+    return CLOUD_SQL_HINT;
+  }
+  return message;
+}
+
+export async function hashPassword(password: string) {
+  const text = `verb-master-v63:${password}`;
+  const data = new TextEncoder().encode(text);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(digest)).map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+function progressScore(progress: Partial<UserProgress> | null | undefined) {
+  if (!progress) return 0;
+  return (Number(progress.xp || 0) * 2) +
+    (Number(progress.totalStudied || 0) * 20) +
+    ((progress.studiedVerbIds || []).length * 100) +
+    (Number(progress.testCorrect || 0) * 10) +
+    (Number(progress.testWrong || 0) * 6) +
+    ((progress.weakItems || []).length * 5) +
+    (Object.keys(progress.reviewItems || {}).length * 8) +
+    ((progress.savedPhrases || []).length * 8);
+}
+
+function summarizeProgress(progress: Partial<UserProgress> | null | undefined): CloudBackupSummary {
+  return {
+    xp: Number(progress?.xp || 0),
+    level: Number(progress?.level || 1),
+    studied: (progress?.studiedVerbIds || []).length,
+    totalStudied: Number(progress?.totalStudied || 0),
+    tests: Number(progress?.testCorrect || 0) + Number(progress?.testWrong || 0),
+    weak: (progress?.weakItems || []).length,
+    reviews: Object.keys(progress?.reviewItems || {}).length,
+    savedPhrases: (progress?.savedPhrases || []).length,
+    score: progressScore(progress),
+  };
+}
+
+function mergeRemoteLearningWithLocalProfile(local: UserProgress, remote?: Partial<UserProgress> | null): UserProgress {
+  if (!remote) return local;
+  const remoteProgress = remote as UserProgress;
+  // Learning backup never decides profile ownership. Dedicated profile API + durable local cache do.
+  const localSettingsWins = localIsNewer(local.settingsUpdatedAt, remoteProgress.settingsUpdatedAt) || !remoteHasSettings(remoteProgress);
+
+  const cachedAvatar = getAvatarLocalCache(local.username);
+  const displayName = local.displayName || local.username;
+  const avatarUrl = local.avatarUrl || cachedAvatar?.avatarUrl || "";
+  const avatarDataUrl = local.avatarDataUrl || cachedAvatar?.avatarDataUrl || avatarUrl || "";
+  const avatarPath = local.avatarPath || cachedAvatar?.avatarPath || "";
+  const avatarUpdatedAt = local.avatarUpdatedAt || cachedAvatar?.updatedAt || "";
+
+  const merged: UserProgress = {
+    ...local,
+    ...remoteProgress,
+    username: local.username,
+    xp: Math.max(Number(local.xp || 0), Number(remoteProgress.xp || 0)),
+    level: Math.max(Number(local.level || 1), Number(remoteProgress.level || 1)),
+    currentStreak: Math.max(Number(local.currentStreak || 0), Number(remoteProgress.currentStreak || 0)),
+    longestStreak: Math.max(Number(local.longestStreak || 0), Number(remoteProgress.longestStreak || 0)),
+    totalStudied: Math.max(Number(local.totalStudied || 0), Number(remoteProgress.totalStudied || 0)),
+    currentRound: Math.max(Number(local.currentRound || 1), Number(remoteProgress.currentRound || 1)),
+    studiedVerbIds: Array.from(new Set([...(remoteProgress.studiedVerbIds || []), ...(local.studiedVerbIds || [])])),
+    weakItems: Array.from(new Set([...(remoteProgress.weakItems || []), ...(local.weakItems || [])])),
+    reviewItems: { ...(remoteProgress.reviewItems || {}), ...(local.reviewItems || {}) },
+    savedPhrases: (local.savedPhrases?.length ? local.savedPhrases : remoteProgress.savedPhrases) || [],
+    bookmark: (() => {
+      const localStamp = Date.parse(local.bookmark?.savedAt || "") || 0;
+      const remoteStamp = Date.parse(remoteProgress.bookmark?.savedAt || "") || 0;
+      return localStamp >= remoteStamp ? local.bookmark : remoteProgress.bookmark;
+    })(),
+    testSessions: (() => {
+      const merged = { ...(remoteProgress.testSessions || {}) };
+      for (const [key, candidate] of Object.entries(local.testSessions || {})) {
+        const current = merged[key];
+        const candidateStamp = Date.parse(candidate.updatedAt || "") || 0;
+        const currentStamp = Date.parse(current?.updatedAt || "") || 0;
+        if (!current || candidateStamp >= currentStamp) merged[key] = candidate;
+      }
+      return merged;
+    })(),
+    testItemStats: { ...(remoteProgress.testItemStats || {}), ...(local.testItemStats || {}) },
+    weeklyStats: { ...(remoteProgress.weeklyStats || {}), ...(local.weeklyStats || {}) },
+    displayName,
+    avatarDataUrl,
+    avatarUrl,
+    avatarPath,
+    avatarUpdatedAt,
+    avatarStorageProvider: avatarPath || avatarUrl ? "supabase-storage" : (isInlineAvatar(avatarDataUrl) ? "legacy-data-url" : "none"),
+    notificationsEnabled: localSettingsWins
+      ? (typeof local.notificationsEnabled === "boolean" ? local.notificationsEnabled : remoteProgress.notificationsEnabled)
+      : (typeof remoteProgress.notificationsEnabled === "boolean" ? remoteProgress.notificationsEnabled : local.notificationsEnabled),
+    voiceSettings: localSettingsWins ? (local.voiceSettings || remoteProgress.voiceSettings) : (remoteProgress.voiceSettings || local.voiceSettings),
+    targetDate: localSettingsWins ? (local.targetDate || remoteProgress.targetDate) : (remoteProgress.targetDate || local.targetDate),
+    targetStartDate: localSettingsWins ? (local.targetStartDate || remoteProgress.targetStartDate) : (remoteProgress.targetStartDate || local.targetStartDate),
+    studyDays: localSettingsWins ? (local.studyDays || remoteProgress.studyDays) : (remoteProgress.studyDays || local.studyDays),
+    studyPace: localSettingsWins ? (local.studyPace || remoteProgress.studyPace) : (remoteProgress.studyPace || local.studyPace),
+    profileUpdatedAt: local.profileUpdatedAt || remoteProgress.profileUpdatedAt,
+    settingsUpdatedAt: localSettingsWins ? (local.settingsUpdatedAt || remoteProgress.settingsUpdatedAt) : (remoteProgress.settingsUpdatedAt || local.settingsUpdatedAt),
+    cloudRestoredAt: nowText(),
+    unlockedVerbCount: Math.max(Number(local.unlockedVerbCount || 0), Number(remoteProgress.unlockedVerbCount || 0)),
+    purchaseTotalYen: Math.max(Number(local.purchaseTotalYen || 0), Number(remoteProgress.purchaseTotalYen || 0)),
+    premiumSource: local.premiumSource || remoteProgress.premiumSource,
+    premiumUpdatedAt: local.premiumUpdatedAt || remoteProgress.premiumUpdatedAt,
+  };
+  return merged;
+}
+
+
+function prepareBackupProgress(progress: UserProgress, existing?: Partial<UserProgress> | null): UserProgress {
+  const existingProgress = existing as UserProgress | undefined;
+  const localProfileWins = localIsNewer(progress.profileUpdatedAt, existingProgress?.profileUpdatedAt) || !remoteHasProfile(existingProgress);
+  const localSettingsWins = localIsNewer(progress.settingsUpdatedAt, existingProgress?.settingsUpdatedAt) || !remoteHasSettings(existingProgress);
+  const now = nowText();
+  const currentName = progress.displayName && progress.displayName !== progress.username ? progress.displayName : progress.username;
+
+  return {
+    ...progress,
+    displayName: localProfileWins ? currentName : (existingProgress?.displayName || currentName),
+    avatarUrl: localProfileWins ? (avatarUrlOf(progress) || avatarUrlOf(existingProgress) || "") : (avatarUrlOf(existingProgress) || avatarUrlOf(progress) || ""),
+    avatarPath: localProfileWins ? (progress.avatarPath || existingProgress?.avatarPath || "") : (existingProgress?.avatarPath || progress.avatarPath || ""),
+    avatarUpdatedAt: localProfileWins ? (progress.avatarUpdatedAt || existingProgress?.avatarUpdatedAt || "") : (existingProgress?.avatarUpdatedAt || progress.avatarUpdatedAt || ""),
+    avatarStorageProvider: localProfileWins ? (progress.avatarStorageProvider || existingProgress?.avatarStorageProvider || "none") : (existingProgress?.avatarStorageProvider || progress.avatarStorageProvider || "none"),
+    avatarDataUrl: localProfileWins
+      ? (avatarUrlOf(progress) || (!isInlineAvatar(progress.avatarDataUrl) ? progress.avatarDataUrl : existingProgress?.avatarDataUrl || "") || avatarUrlOf(existingProgress) || "")
+      : (avatarUrlOf(existingProgress) || (!isInlineAvatar(existingProgress?.avatarDataUrl) ? existingProgress?.avatarDataUrl || "" : progress.avatarDataUrl || "") || avatarUrlOf(progress) || ""),
+    profileUpdatedAt: localProfileWins ? (progress.profileUpdatedAt || existingProgress?.profileUpdatedAt || now) : (existingProgress?.profileUpdatedAt || progress.profileUpdatedAt),
+    notificationsEnabled: typeof progress.notificationsEnabled === "boolean" ? progress.notificationsEnabled : existingProgress?.notificationsEnabled ?? true,
+    voiceSettings: progress.voiceSettings || existingProgress?.voiceSettings || { gender: "female", lang: "en-US" },
+    targetDate: localSettingsWins ? (progress.targetDate || existingProgress?.targetDate) : (existingProgress?.targetDate || progress.targetDate),
+    targetStartDate: localSettingsWins ? (progress.targetStartDate || existingProgress?.targetStartDate) : (existingProgress?.targetStartDate || progress.targetStartDate),
+    studyDays: localSettingsWins ? (progress.studyDays || existingProgress?.studyDays) : (existingProgress?.studyDays || progress.studyDays),
+    studyPace: localSettingsWins ? (progress.studyPace || existingProgress?.studyPace) : (existingProgress?.studyPace || progress.studyPace),
+    settingsUpdatedAt: localSettingsWins ? (progress.settingsUpdatedAt || existingProgress?.settingsUpdatedAt || now) : (existingProgress?.settingsUpdatedAt || progress.settingsUpdatedAt),
+    cloudSyncedAt: now,
+  };
+}
+
+
+async function rpcFetchBackup(username: string, passwordHash: string): Promise<BackupRow | null> {
+  if (!supabase) return null;
+  const { data, error } = await supabase.rpc("vm_fetch_progress_backup", { p_username: username, p_password_hash: passwordHash });
+  if (error) throw new Error(normalizeSupabaseError(error));
+  const row = Array.isArray(data) ? data[0] : data;
+  return (row || null) as BackupRow | null;
+}
+
+async function rpcUpsertBackup(progress: UserProgress, passwordHash: string) {
+  if (!supabase) return;
+  const settings = getClientStudySettingsSnapshot(progress);
+  const { data, error } = await supabase.rpc("vm_upsert_progress_backup", {
+    p_username: progress.username,
+    p_password_hash: passwordHash,
+    p_progress_json: progress,
+    p_settings_json: settings,
+    p_app_version: "v143-deploy-safe-persistence-system",
+  });
+  if (error) throw new Error(normalizeSupabaseError(error));
+  const result = asRpcResult(data);
+  if (result.ok === false) throw new Error(result.message || "クラウドバックアップ保存に失敗しました。");
+}
+
+export async function registerCloudAccount(username: string, password: string) {
+  if (!supabase) return { ok: false, message: "Supabase未設定のため端末内登録のみになります。" };
+  const name = username.trim();
+  if (!name) return { ok: false, message: "ユーザー名を入力してください。" };
+  if (password.length < 4) return { ok: false, message: "パスワードは4文字以上にしてください。" };
+  try {
+    const passwordHash = await hashPassword(password);
+    const { data, error } = await supabase.rpc("vm_register_cloud_account", { p_username: name, p_password_hash: passwordHash });
+    if (error) throw new Error(normalizeSupabaseError(error));
+    const result = asRpcResult(data);
+    if (result.ok === false) return { ok: false, message: result.message || "クラウド登録に失敗しました。" };
+    saveCloudCredential(name, passwordHash);
+    setCurrentUser(name);
+    const progress = ensureProgress(name);
+    await syncCurrentUserToSupabase(progress, { allowEmptyOverwrite: true });
+    return { ok: true, message: result.message || "クラウドアカウントを作成しました。" };
+  } catch (error) {
+    return { ok: false, message: error instanceof Error ? error.message : "クラウド登録に失敗しました。" };
+  }
+}
+
+export async function loginCloudAccount(username: string, password: string) {
+  if (!supabase) return { ok: false, cloudUnavailable: true, message: "Supabase未設定のため端末内ログインのみになります。" };
+  const name = username.trim();
+  try {
+    const passwordHash = await hashPassword(password);
+    const { data, error } = await supabase.rpc("vm_login_cloud_account", { p_username: name, p_password_hash: passwordHash });
+    if (error) throw new Error(normalizeSupabaseError(error));
+    const result = asRpcResult(data);
+    if (result.ok === false) {
+      return {
+        ok: false,
+        cloudUnavailable: false,
+        message: result.message || "ユーザー名またはパスワードが違います。",
+      };
+    }
+    saveCloudCredential(name, passwordHash);
+    setCurrentUser(name);
+    const restored = await restoreLearningDataFromSupabase(name).catch((error) => ({
+      ok: false,
+      changed: false,
+      message: error instanceof Error ? error.message : "クラウド復元に失敗しました。",
+      status: sqlErrorStatus(error instanceof Error ? error.message : "クラウド復元に失敗しました。"),
+    }));
+
+    // V145: authentication and restoration are related, but they must not be the same gate.
+    // A correct cloud password should open the app and keep the credential. If restore fails
+    // because SQL/RPC/network is temporarily unavailable, the app enters safe recovery mode:
+    // local cache can be shown, but empty data must not overwrite cloud data.
+    return {
+      ok: true,
+      message: restored.ok
+        ? (restored.message || result.message || "クラウドログインしました。")
+        : `ログインは成功しました。クラウド復元は保留です: ${restored.message || "復元に失敗しました。"}`,
+      restored: Boolean(restored.ok && restored.changed),
+      restoreOk: Boolean(restored.ok),
+      recoveryMode: !restored.ok,
+      account: { username: name, password: "", role: result.role === "admin" ? "admin" : "user", createdAt: nowText() } as Account,
+    };
+  } catch (error) {
+    return {
+      ok: false,
+      cloudUnavailable: false,
+      message: error instanceof Error ? error.message : "クラウドログインに失敗しました。",
+    };
+  }
+}
+
+export async function syncCurrentUserToSupabase(progress: UserProgress, options: { allowEmptyOverwrite?: boolean } = {}): Promise<CloudSyncStatus> {
+  if (!supabase) return getCloudReadiness();
+  const passwordHash = getCloudPasswordHash(progress.username);
+  if (!passwordHash) return missingCredentialStatus();
+
+  const status: CloudSyncStatus = {
+    configured: true,
+    profile: "idle",
+    avatar: avatarSaved(progress) ? "saved" : "idle",
+    premium: "idle",
+    stats: "idle",
+    message: "クラウド保存中です...",
+    updatedAt: nowText(),
+  };
+
+  try {
+    const existingBackup = await rpcFetchBackup(progress.username, passwordHash);
+    const localScore = progressScore(progress);
+    const remoteScore = progressScore(existingBackup?.progress_json);
+    let safeProgress = progress;
+
+    // V143: クラウドを本命にする。ローカルが空、またはクラウドより明らかに少ない時は、
+    // 先にクラウドを端末へ戻してから保存する。ZIP更新後の0/124上書きを防ぐ。
+    if (!options.allowEmptyOverwrite && remoteScore > localScore) {
+      safeProgress = mergeRemoteLearningWithLocalProfile(progress, existingBackup?.progress_json);
+      saveProgress(safeProgress);
+    }
+
+    // V143: 端末にだけ残った復旧スナップショットが現在データより多い場合は採用する。
+    // 同一ドメイン内の事故復旧用。クラウドがある場合は上のremote優先が先に働く。
+    const recovery = getLocalRecoverySnapshots(progress.username)
+      .sort((a, b) => progressScore(b) - progressScore(a))[0];
+    if (recovery && progressScore(recovery) > progressScore(safeProgress) && progressScore(recovery) >= remoteScore) {
+      safeProgress = recovery;
+      saveProgress(safeProgress);
+    }
+
+    const backupProgress = prepareBackupProgress(safeProgress, existingBackup?.progress_json);
+    await rpcUpsertBackup(backupProgress, passwordHash);
+    status.stats = "saved";
+    status.profile = "idle";
+    status.avatar = avatarSaved(backupProgress) ? "storage" : "idle";
+    status.premium = "saved";
+    status.message = "目標日・学習記録をクラウド保存しました。ニックネームと画像はプロフィール専用保存で管理します。";
+    status.updatedAt = nowText();
+    return status;
+  } catch (error) {
+    return sqlErrorStatus(error instanceof Error ? error.message : "Supabase保存に失敗しました。");
+  }
+}
+
+export async function restoreLearningDataFromSupabase(username: string): Promise<{ ok: boolean; changed: boolean; message: string; status: CloudSyncStatus }> {
+  if (!supabase) {
+    const readiness = getCloudReadiness();
+    return { ok: false, changed: false, message: readiness.message, status: readiness };
+  }
+  const passwordHash = getCloudPasswordHash(username);
+  if (!passwordHash) {
+    const status = missingCredentialStatus();
+    return { ok: false, changed: false, message: status.message, status };
+  }
+
+  const status: CloudSyncStatus = {
+    configured: true,
+    profile: "idle",
+    avatar: "idle",
+    premium: "idle",
+    stats: "idle",
+    message: "クラウド復元を確認中です...",
+    updatedAt: nowText(),
+  };
+
+  try {
+    const backup = await rpcFetchBackup(username, passwordHash);
+    const local = ensureProgress(username);
+    if (!backup?.progress_json) {
+      const recovery = getLocalRecoverySnapshots(username)
+        .sort((a, b) => progressScore(b) - progressScore(a))[0];
+      if (recovery && progressScore(recovery) > progressScore(local)) {
+        saveProgress(recovery);
+        status.stats = "saved";
+        status.profile = "saved";
+        status.avatar = avatarSaved(recovery) ? "saved" : "idle";
+        status.message = "クラウドバックアップは未作成ですが、端末の復旧スナップショットから復元しました。続けてクラウド保存してください。";
+        return { ok: true, changed: true, message: status.message, status };
+      }
+      status.message = "クラウドバックアップはまだありません。端末データを保存できます。";
+      return { ok: true, changed: false, message: status.message, status };
+    }
+
+    const remote = backup.progress_json as UserProgress;
+    let merged = mergeRemoteLearningWithLocalProfile(local, remote);
+    if (backup.settings_json) applyClientStudySettingsSnapshot(backup.settings_json, merged);
+    applyClientStudySettingsSnapshot(remote as ClientStudySettingsSnapshot, merged);
+    const cachedAvatar = getAvatarLocalCache(username);
+    if (!merged.avatarDataUrl && cachedAvatar?.avatarDataUrl) {
+      merged = {
+        ...merged,
+        avatarDataUrl: cachedAvatar.avatarUrl || cachedAvatar.avatarDataUrl,
+        avatarUrl: cachedAvatar.avatarUrl || "",
+        avatarPath: cachedAvatar.avatarPath || "",
+        avatarUpdatedAt: cachedAvatar.updatedAt,
+        avatarStorageProvider: cachedAvatar.avatarUrl || cachedAvatar.avatarPath ? "supabase-storage" : "legacy-data-url",
+      };
+    }
+    const dedicated = await fetchDedicatedProfile(username);
+    if (dedicated.ok && dedicated.profile) merged = applyDedicatedProfile(merged, dedicated.profile);
+    saveProgress(merged);
+
+    status.stats = "saved";
+    status.profile = "saved";
+    status.avatar = avatarSaved(merged) ? "saved" : "idle";
+    status.premium = "saved";
+    status.message = "クラウドからプロフィール・画像・目標日・学習記録を復元しました。";
+    status.updatedAt = backup.updated_at || nowText();
+    return { ok: true, changed: true, message: status.message, status };
+  } catch (error) {
+    const err = sqlErrorStatus(error instanceof Error ? error.message : "Supabase復元に失敗しました。");
+    return { ok: false, changed: false, message: err.message, status: err };
+  }
+}
+
+export async function getCloudBackupComparison(username: string): Promise<CloudBackupComparison> {
+  const localProgress = ensureProgress(username);
+  const local = summarizeProgress(localProgress);
+  if (!supabase) {
+    return { ok: false, message: "Supabase未設定のため、端末データのみ確認できます。", recommendation: "unknown", local, remote: null };
+  }
+  const passwordHash = getCloudPasswordHash(username);
+  if (!passwordHash) {
+    return { ok: false, message: "クラウド比較には再ログインが必要です。端末データは保存されています。", recommendation: "unknown", local, remote: null };
+  }
+  try {
+    const backup = await rpcFetchBackup(username, passwordHash);
+    if (!backup?.progress_json) {
+      return { ok: true, message: "クラウドバックアップはまだありません。端末データを保存できます。", recommendation: local.score > 0 ? "save_local" : "no_remote", local, remote: null };
+    }
+    const remote = summarizeProgress(backup.progress_json);
+    let recommendation: CloudBackupComparison["recommendation"] = "same";
+    let message = "端末データとクラウドデータは大きな差がありません。";
+    if (remote.score > local.score) {
+      recommendation = "restore_remote";
+      message = "クラウド側により多くの学習データがあります。先に復元するのがおすすめです。";
+    } else if (local.score > remote.score) {
+      recommendation = "save_local";
+      message = "端末側に新しい学習データがあります。クラウド保存がおすすめです。";
+    }
+    return { ok: true, message, recommendation, local, remote, remoteUpdatedAt: backup.updated_at || "" };
+  } catch (error) {
+    return { ok: false, message: error instanceof Error ? error.message : "クラウド比較に失敗しました。", recommendation: "unknown", local, remote: null };
+  }
+}
+
+export async function verifyCloudBackup(username: string) {
+  if (!supabase) return { ok: false, message: "Supabase未設定です。", updatedAt: "", summary: null as null | { xp: number; studied: number; savedPhrases: number; tests: number; targetDate?: string; displayName?: string; avatarSaved?: boolean } };
+  const passwordHash = getCloudPasswordHash(username);
+  if (!passwordHash) return { ok: false, message: "クラウド確認には再ログインが必要です。", updatedAt: "", summary: null };
+  try {
+    const backup = await rpcFetchBackup(username, passwordHash);
+    if (!backup?.progress_json) return { ok: false, message: "クラウドバックアップがまだ見つかりません。先に保存してください。", updatedAt: "", summary: null };
+    const progress = backup.progress_json as Partial<UserProgress>;
+    const summary = {
+      xp: Number(progress.xp || 0),
+      studied: (progress.studiedVerbIds || []).length,
+      savedPhrases: (progress.savedPhrases || []).length,
+      tests: Number(progress.testCorrect || 0) + Number(progress.testWrong || 0),
+      targetDate: progress.targetDate || "",
+      displayName: progress.displayName || "",
+      avatarSaved: avatarSaved(progress),
+    };
+    return { ok: true, message: "クラウドバックアップを確認できました。", updatedAt: backup.updated_at || "", summary };
+  } catch (error) {
+    return { ok: false, message: error instanceof Error ? error.message : "クラウドバックアップ確認に失敗しました。", updatedAt: "", summary: null };
+  }
+}
+
+export async function uploadAvatarToSupabase(username: string, avatarDataUrl?: string) {
+  if (!avatarDataUrl) return { ok: false, url: "", path: "", message: "画像が選択されていません。" };
+  const passwordHash = getCloudPasswordHash(username);
+  if (!passwordHash) {
+    return { ok: false, url: "", path: "", message: "画像のクラウド保存には再ログインが必要です。前の画像は消しません。" };
+  }
+  try {
+    const response = await fetch("/api/profile/avatar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, passwordHash, avatarDataUrl }),
+    });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok || payload?.ok === false) {
+      return { ok: false, url: "", path: "", message: payload?.message || "画像のクラウド保存に失敗しました。前の画像は維持されています。" };
+    }
+    const url = String(payload.url || "");
+    const path = String(payload.path || "");
+    const updatedAt = String(payload.updatedAt || nowText());
+    saveAvatarLocalCache(username, {
+      avatarDataUrl,
+      avatarUrl: url,
+      avatarPath: path,
+      updatedAt,
+    });
+    return {
+      ok: true,
+      url,
+      path,
+      message: payload.message || "画像をStorageへ保存しました。",
+      oldAvatarDeleted: Boolean(payload.oldAvatarDeleted),
+      updatedAt,
+    };
+  } catch (error) {
+    return { ok: false, url: "", path: "", message: error instanceof Error ? error.message : "画像のクラウド保存に失敗しました。前の画像は維持されています。" };
+  }
+}
+
+export async function flushPendingAvatarToCloud(username: string) {
+  const pending = getPendingAvatarForCloud(username);
+  if (!pending?.avatarDataUrl) {
+    return { ok: false, url: "", path: "", message: "未送信の画像はありません。" };
+  }
+  const result = await uploadAvatarToSupabase(username, pending.avatarDataUrl);
+  // The caller clears the pending item only after a second profile read verifies URL and path.
+  return { ...result, pendingSavedAt: pending.savedAt };
+}
+
+export async function restorePremiumFromSupabase(username: string) {
+  if (!supabase) return { ok: false, message: "Supabase環境変数が未設定です。Vercelの環境変数を確認してください。" };
+  const passwordHash = getCloudPasswordHash(username);
+  if (!passwordHash) return { ok: false, message: "購入状態の復元には再ログインが必要です。" };
+  try {
+    const backup = await rpcFetchBackup(username, passwordHash);
+    const progress = backup?.progress_json as Partial<UserProgress> | undefined;
+    if (!progress) return { ok: false, message: "クラウドバックアップが見つかりませんでした。" };
+    restorePremiumEntitlement(
+      username,
+      Number(progress.unlockedVerbCount || 0),
+      Number(progress.purchaseTotalYen || 0),
+      "クラウドバックアップから購入状態を復元しました。",
+    );
+    return { ok: true, message: `購入状態を復元しました：${Number(progress.unlockedVerbCount || 0)}動詞解放`, updatedAt: backup?.updated_at || nowText() };
+  } catch (error) {
+    return { ok: false, message: error instanceof Error ? error.message : "購入状態の復元に失敗しました。" };
+  }
+}

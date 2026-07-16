@@ -1,208 +1,36 @@
-"use client";
+# Verb Master Ver.138 プロフィール画像保存・再送信設計
 
-import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
-import {
-  FREE_VERB_LIMIT,
-  TOTAL_VERB_TARGET,
-  getAccounts,
-  getCurrentUsername,
-  getPurchasePlanSummary,
-  grantThirtyVerbPack,
-  hasLyricsEnglishAccess,
-  setUserUnlockLevel,
-} from "@/lib/account";
-import { PAYMENT_PLANS } from "@/lib/paymentConfig";
+## 目的
 
-type PlanSummary = ReturnType<typeof getPurchasePlanSummary>;
+プロフィール画像がクラウド保存に失敗しても、画面更新で画像が消えないようにする。
+課金アプリ運用を前提に、画像変更時は端末へ先に安全保存し、クラウド保存は再ログイン後に自動再送信する。
 
-const displayPlans = [
-  { count: 0, label: "無料", price: 0, range: `1〜${FREE_VERB_LIMIT}`, note: "基本動詞をしっかり試せる範囲" },
-  ...PAYMENT_PLANS.map((plan) => ({ count: plan.count, label: plan.label, price: plan.price, range: plan.range, note: plan.recommend })),
-];
+## 変更点
 
-function isAdminUser(username: string | null) {
-  if (!username) return false;
-  return getAccounts().some((account) => account.username === username && account.role === "admin");
-}
+- 画像選択直後に、圧縮済み画像を端末側プロフィールへ反映
+- クラウド保存に必要な認証情報がない場合、画像を `verbMaster.pendingAvatarUploads` に保留
+- 再ログイン後、マイページ表示時に保留画像を自動でSupabase Storageへ送信
+- Storage保存成功後のみ、DBの `avatarPath / avatarUrl` を更新
+- DB更新成功後のみ、古いStorage画像を削除
+- Storage保存に失敗した場合も、端末内画像と保留データは残す
 
-function getNextPlan(unlocked: number) {
-  return PAYMENT_PLANS.find((plan) => plan.count > Math.max(FREE_VERB_LIMIT, unlocked)) || PAYMENT_PLANS[PAYMENT_PLANS.length - 1];
-}
+## 保存順序
 
-export default function UpgradePage() {
-  const [username, setUsername] = useState<string | null>(null);
-  const [summary, setSummary] = useState<PlanSummary | null>(null);
-  const [message, setMessage] = useState("");
+1. 画像を端末に即時保存
+2. 未送信キューに保存
+3. クラウド認証情報があればStorageへ保存
+4. DB更新成功後、未送信キューを削除
+5. 古い画像は新画像保存・DB更新成功後に削除
 
-  const refresh = () => setSummary(getPurchasePlanSummary());
+## 運用確認
 
-  useEffect(() => {
-    const user = getCurrentUsername();
-    if (!user) {
-      window.location.href = "/login";
-      return;
-    }
-    setUsername(user);
-    setSummary(getPurchasePlanSummary());
-  }, []);
+1. 画像を変更
+2. 画面更新して画像が残ることを確認
+3. ログアウト・再ログイン
+4. マイページで「未送信だった画像をクラウド保存しました」が出ることを確認
+5. 再度画面更新・再ログインして画像が残ることを確認
 
-  const nextPlan = useMemo(() => summary ? getNextPlan(summary.rawUnlocked) : null, [summary]);
+## 注意
 
-  if (!username || !summary || !nextPlan) return <p className="text-muted">読み込み中...</p>;
-
-  const isAdmin = isAdminUser(username);
-  const lyricsUnlocked = hasLyricsEnglishAccess();
-  const progressPercent = Math.min(100, Math.round((summary.unlocked / TOTAL_VERB_TARGET) * 100));
-
-  const simulatePremium = () => {
-    grantThirtyVerbPack(username);
-    refresh();
-    setMessage("開発確認用：Premium範囲を反映しました。正式版では決済後に自動反映します。");
-  };
-
-  const setLevel = (count: number) => {
-    setUserUnlockLevel(username, count);
-    refresh();
-    setMessage(count === 0 ? "開発確認用：無料状態に戻しました。" : `開発確認用：${count}動詞解放に変更しました。`);
-  };
-
-  return (
-    <div className="space-y-5 pb-24">
-      <header className="card p-5">
-        <p className="text-sm font-bold text-cyan-200">UPGRADE / PREMIUM</p>
-        <h1 className="mt-2 text-3xl font-black">Premium</h1>
-        <p className="mt-2 text-sm text-slate-300">
-          30・60・90・120の段階課金に合わせて、仕事で使う基本動詞を124語まで学習できます。
-          91番以降は、120語パック対象として学習できます。
-        </p>
-      </header>
-
-      <section className="digital-card p-5">
-        <div className="flex items-center justify-between gap-3">
-          <div>
-            <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">CURRENT PLAN</p>
-            <h2 className="mt-2 text-2xl font-black">{summary.unlocked} / {TOTAL_VERB_TARGET} 動詞 解放中</h2>
-          </div>
-          <span className="rounded-full bg-cyan-300 px-3 py-1 text-xs font-black text-slate-950">
-            {summary.hasPremium ? `Step ${summary.paidPacks}` : "Free 3"}
-          </span>
-        </div>
-        <div className="mt-4 h-3 overflow-hidden rounded-full bg-slate-950">
-          <div className="h-full rounded-full bg-cyan-300" style={{ width: `${progressPercent}%` }} />
-        </div>
-        <p className="mt-2 text-xs text-muted">無料：1〜{FREE_VERB_LIMIT} / Step1：30 / Step2：60 / Step3：90 / Step4：120（91〜120を解放）</p>
-
-        {summary.unlocked >= TOTAL_VERB_TARGET ? (
-          <div className="mt-4 rounded-2xl bg-emerald-950/30 p-4 text-sm font-bold text-emerald-100">全動詞が解放されています。</div>
-        ) : (
-          <div className="mt-5 rounded-3xl border border-amber-300/25 bg-amber-950/20 p-5">
-            <p className="text-sm font-bold text-amber-100">おすすめ</p>
-            <p className="mt-1 text-3xl font-black">{nextPlan.label}</p>
-            <p className="mt-1 text-2xl font-black">¥{nextPlan.price.toLocaleString()}</p>
-            <p className="mt-2 text-sm text-amber-100/80">{nextPlan.range}動詞まで解放。追加範囲：{nextPlan.addRange}。{nextPlan.recommend}</p>
-            <Link className="btn btn-primary mt-4 block text-center" href={`/checkout?plan=${nextPlan.count}`}>購入確認へ進む</Link>
-          </div>
-        )}
-        {message && <p className="mt-3 rounded-2xl bg-slate-950/50 p-3 text-sm font-bold text-cyan-100">{message}</p>}
-      </section>
-
-
-
-      <section className="card p-5">
-        <h2 className="text-xl font-bold">解放ステップ</h2>
-        <div className="mt-4 grid gap-3 text-sm">
-          <div className="rounded-2xl bg-paper p-4"><b>無料</b><br />1〜3番：まず試せる基本動詞</div>
-          <div className="rounded-2xl bg-paper p-4"><b>Step 1</b><br />4〜30番：最初の課金で残り27動詞を解放</div>
-          <div className="rounded-2xl bg-paper p-4"><b>Step 2</b><br />31〜60番：仕事と日常で使う基本動詞を拡張</div>
-          <div className="rounded-2xl bg-paper p-4"><b>Step 3</b><br />61〜90番：主要動詞90語まで解放</div>
-          <div className="rounded-2xl border border-amber-300/25 bg-amber-950/20 p-4 text-amber-100"><b>Step 4</b><br />91番以降：120語パック対象。124語まで確認できます。</div>
-        </div>
-      </section>
-
-      <section className="card p-5">
-        <h2 className="text-xl font-bold">無料とPremiumの違い</h2>
-        <div className="mt-4 grid gap-3 text-sm">
-          <div className="rounded-2xl bg-paper p-4">
-            <p className="font-black text-white">無料</p>
-            <p className="mt-1 text-muted">1〜{FREE_VERB_LIMIT}番の基本動詞、基本学習、10問テスト、通常音声を利用できます。</p>
-          </div>
-          <div className="rounded-2xl border border-cyan-300/20 bg-cyan-950/20 p-4">
-            <p className="font-black text-cyan-100">Premium</p>
-            <p className="mt-1 text-slate-300">課金ごとに30→60→90→120動詞へ段階解放。91番以降は120語パック対象です。日常例文、0.5倍速音声、フレーズ保存、シャッフルテスト、復習強化、クラウド保存・復元を利用できます。</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-bold">プラン</h2>
-        {displayPlans.map((plan) => {
-          const active = plan.count === 0 ? summary.rawUnlocked <= FREE_VERB_LIMIT : summary.rawUnlocked >= plan.count;
-          const targetCount = plan.count || FREE_VERB_LIMIT;
-          return (
-            <article key={plan.count} className={`card p-5 ${active ? "border-cyan-300/50" : ""}`}>
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="text-sm font-bold text-cyan-200">{plan.label}</p>
-                  <p className="mt-1 text-3xl font-black">{plan.price === 0 ? "無料" : `¥${plan.price.toLocaleString()}`}</p>
-                  <p className="mt-2 text-sm text-muted">{plan.range}動詞 / {plan.note}</p>
-                  {plan.count === 120 && <p className="mt-2 rounded-xl border border-amber-300/25 bg-amber-950/20 p-2 text-xs font-bold text-amber-100">91番以降も学習できます。120語パックで現在の全動詞を解放します。</p>}
-                </div>
-                <div className="text-right">
-                  <p className="text-2xl font-black text-white">{targetCount}</p>
-                  <p className="text-xs font-bold text-cyan-200">動詞</p>
-                  {active && <p className="mt-2 rounded-full bg-cyan-300 px-3 py-1 text-xs font-bold text-slate-950">解放中</p>}
-                </div>
-              </div>
-              {plan.count > 0 && !active && (
-                <Link className="btn btn-primary mt-4 block text-center" href={`/checkout?plan=${plan.count}`}>
-                  このプランを購入確認
-                </Link>
-              )}
-            </article>
-          );
-        })}
-      </section>
-
-      <section className="card p-5">
-        <h2 className="text-xl font-bold">有料パックで解放される機能</h2>
-        <div className="mt-4 grid gap-3 text-sm">
-          {["🐢 0.5倍速音声", "🏠 日常例文", "⭐ フレーズ登録帳", "🔀 シャッフルテスト", "📘 構造 / Pattern表示", "📈 復習強化機能", "☁️ クラウド保存・復元"].map((item) => (
-            <div key={item} className="rounded-2xl bg-paper p-3 font-bold">{item}</div>
-          ))}
-        </div>
-      </section>
-
-      <section className="card p-5">
-        <h2 className="text-xl font-bold">Lyrics English</h2>
-        {lyricsUnlocked ? (
-          <div className="mt-3">
-            <p className="text-sm text-slate-300">120語パックが解放済みのため、Lyrics Englishリンクを表示しています。</p>
-            <a className="btn btn-primary mt-4 block text-center" href="#" onClick={(e) => e.preventDefault()}>Lyrics Englishを開く</a>
-            <p className="mt-2 text-xs text-muted">正式URL設定後にリンクを接続します。</p>
-          </div>
-        ) : (
-          <p className="mt-3 text-sm text-slate-300">🔒 120語パックまで解放すると、Lyrics Englishリンクが表示されます。</p>
-        )}
-      </section>
-
-      {isAdmin && (
-        <section className="card p-5">
-          <h2 className="text-xl font-bold">管理者用テスト操作</h2>
-          <p className="mt-2 text-sm text-muted">正式決済前の表示確認用です。通常ユーザーには表示されません。</p>
-          <button className="btn btn-primary mt-4 block w-full" onClick={simulatePremium}>次の段階を反映</button>
-          <div className="mt-3 grid grid-cols-5 gap-2">
-            {[0, 30, 60, 90, 120].map((count) => (
-              <button key={count} className="rounded-xl bg-paper px-3 py-2 text-sm font-bold" onClick={() => setLevel(count)}>{count === 0 ? "無料" : count}</button>
-            ))}
-          </div>
-        </section>
-      )}
-
-      <div className="grid gap-3">
-        <Link href="/purchases" className="btn btn-soft block text-center">購入履歴・復元を見る</Link>
-        <Link href="/profile" className="btn btn-soft block text-center">マイページへ戻る</Link>
-      </div>
-    </div>
-  );
-}
+Supabase Storageへの本保存にはVercel環境変数 `SUPABASE_SERVICE_ROLE_KEY` が必要。
+未設定でも端末保存と再送信キューは動くが、クラウド本保存は完了しない。

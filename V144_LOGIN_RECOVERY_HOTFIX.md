@@ -1,165 +1,67 @@
-import Link from "next/link";
-import { getVerb } from "@/lib/data";
-import SpeakButton from "@/components/SpeakButton";
-import ExampleCard from "@/components/ExampleCard";
-import PremiumExamples from "@/components/PremiumExamples";
-import AutoBookmark from "@/components/AutoBookmark";
-import BookmarkButton from "@/components/BookmarkButton";
-import VerbProgressPanel from "@/components/VerbProgressPanel";
-import VerbAccessGuard from "@/components/VerbAccessGuard";
-import { naturalPatternText } from "@/lib/display";
+# Verb Master Ver.143 デプロイ更新に強い保存基盤設計
 
-function coreItemIcon(item: string) {
-  if (/メール|連絡|message|email/i.test(item)) return "✉️";
-  if (/資料|書類|document|file/i.test(item)) return "📄";
-  if (/顧客|相手|client|customer/i.test(item)) return "👤";
-  if (/商品|部品|sample|parts|product/i.test(item)) return "📦";
-  if (/予定|時間|schedule|time/i.test(item)) return "🗓️";
-  if (/承認|許可|approval|permission/i.test(item)) return "✅";
-  if (/支払い|価格|payment|price|money/i.test(item)) return "💰";
-  if (/目標|成果|結果|result|goal/i.test(item)) return "🎯";
-  if (/情報|idea|data/i.test(item)) return "💡";
-  return "●";
-}
+## 目的
+ZIP更新、Vercel再デプロイ、Preview URL変更、端末キャッシュ消失が起きても、課金者のプロフィール・目標日・学習記録が 0/124 に戻らないようにする。
 
-export default async function VerbDetail({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
-  const verb = getVerb(id);
+## 基本方針
 
-  return (
-    <VerbAccessGuard rank={verb.rank} verbWord={verb.word}>
-    <div className="space-y-5 pb-4">
-      <header className="card verb-hero-compact">
-        <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            <p className="text-xs font-bold tracking-[0.14em] text-cyan-200">No.{String(verb.rank).padStart(2, "0")} / STEP 1 基本動詞</p>
-            <h1 className="mt-1 verb-title-compact verb-red">{verb.word}</h1>
-            <div className="verb-meta-row">
-              <span className="verb-meta-chip">音節 {verb.syllable}</span>
-              <span className="verb-meta-chip">発音 {verb.ipa}</span>
-              <span className="verb-meta-chip">読み {verb.kana}</span>
-              <span className="verb-meta-chip">{verb.transitivity}</span>
-            </div>
-          </div>
-          <div className="flex shrink-0 flex-col gap-2">
-            <SpeakButton text={verb.word.toLowerCase()} label="通常" />
-            <BookmarkButton verbId={verb.id} section="basic" label={`${verb.word} 基本`} href={`/verbs/${verb.id}`} compact />
-          </div>
-        </div>
-      </header>
+- `user_progress_backups` を本命データにする。
+- `localStorage` は一時キャッシュとして扱う。
+- 空または少ない端末データでクラウドを上書きしない。
+- 保存は単純上書きではなく、クラウド既存値と端末値を安全マージする。
+- すべての保存は `user_progress_backup_events` に履歴を残す。
+- 端末側にも復旧用スナップショットを最大12件残す。
 
-      <AutoBookmark verbId={verb.id} section="basic" label={`${verb.word} 基本`} href={`/verbs/${verb.id}`} />
+## 防御レイヤー
 
+### 1. 起動時防御
+アプリ起動時はクラウド復元を先に行う。復元に失敗した場合は、空データを保存しない。
 
-      <section className="card p-5 sm:p-6">
-        <h2 className="text-xl font-bold">コアイメージ</h2>
-        <p className="mt-3 text-2xl font-bold leading-snug">「{verb.core}」</p>
-        {verb.coreVisual && (
-          <div className="core-diagram-card mt-4">
-            <p className="text-xs font-bold tracking-[0.2em] text-cyan-200">CORE IMAGE</p>
-            <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
-              <div className="flex flex-wrap gap-2">
-                {verb.coreVisual.from.map((item) => (
-                  <span key={item} className="core-icon-chip">
-                    <span aria-hidden="true">{coreItemIcon(item)}</span>
-                    <span>{item}</span>
-                  </span>
-                ))}
-              </div>
-              <div className="core-arrow" aria-hidden="true">→</div>
-              <div className="core-target-box">
-                <span className="mr-1" aria-hidden="true">🎯</span>{verb.coreVisual.to}
-              </div>
-            </div>
-            <p className="mt-3 text-sm font-bold text-cyan-100">{verb.coreVisual.label}</p>
-          </div>
-        )}
-        <p className="mt-3 leading-relaxed text-muted">{verb.coreDetail}</p>
-      </section>
+### 2. ログイン時防御
+クラウドログインできても復元に失敗した場合は、データ保護のためログイン完了扱いにしない。
 
-      <VerbProgressPanel verb={verb} />
+### 3. 端末側防御
+`saveProgress()` のたびに、意味のあるデータだけをローカル復旧スナップショットへ保存する。
 
-      <section className="card p-5 sm:p-6">
-        <h2 className="text-xl font-bold">{verb.word}攻略フロー</h2>
-        <div className="mt-4 grid grid-cols-2 gap-2 text-center text-sm">
-          <div className="rounded-2xl bg-cyan-400/10 p-3 font-bold text-cyan-100">1<br />基本</div>
-          <Link href={`/verbs/${verb.id}/phrasal`} className="rounded-2xl bg-white/5 p-3 font-bold text-muted">2<br />句動詞</Link>
-        </div>
-      </section>
+### 4. 同期防御
+クラウド側のスコアが端末より高い場合は、先にクラウドを端末へ戻してから保存する。
 
-      {verb.meanings.length > 0 ? (
-        <section className="space-y-5">
-          <h2 className="px-1 text-xl font-bold">基本</h2>
-          {verb.meanings.map((meaning, index) => (
-            <article key={meaning.id} id={`meaning-${index + 1}`} className="card scroll-mt-24 p-5 sm:p-6">
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="text-2xl font-bold leading-tight">{meaning.title}</h3>
-                <BookmarkButton verbId={verb.id} section="basic" label={`${verb.word} 基本`} href={`/verbs/${verb.id}#meaning-${index + 1}`} itemTitle={meaning.title} itemIndex={index + 1} compact />
-              </div>
+### 5. DB側防御
+`vm_upsert_progress_backup()` は単純上書きしない。既存クラウドと新規端末データをマージし、学習記録は後退させない。
 
-              <div className="type-card mt-4">
-                <p className="text-xs font-bold uppercase tracking-wide text-muted">型</p>
-                <p className="mt-1 text-2xl font-extrabold leading-tight">{naturalPatternText(meaning.pattern)}</p>
-                <p className="mt-2 text-sm text-muted">{meaning.structure}</p>
-                <p className="mt-1 text-sm text-muted">{meaning.transitivity}</p>
-              </div>
+## DBマージルール
 
-              <div className="mt-4 rounded-2xl bg-paper p-4">
-                <p className="font-bold">意味のつながり</p>
-                <p className="mt-2 leading-relaxed text-muted">{meaning.image}</p>
-              </div>
+| 項目 | 採用ルール |
+|---|---|
+| XP / level / streak / totalStudied / test数 | 大きい方 |
+| studiedVerbIds / weakItems / sectionClearIds | 和集合 |
+| reviewItems / testSessions / weeklyStats | マージ |
+| savedPhrases | 件数が多い方 |
+| displayName / avatar | profileUpdatedAt が新しい方。ただし空値では消さない |
+| targetDate / studyPace / studyDays | settingsUpdatedAt が新しい方。ただし空値では消さない |
+| premium / unlockedVerbCount | 大きい方 |
 
-              <div className="point-card mt-4">
-                <p className="font-bold">💡 ポイント</p>
-                <p className="mt-2 leading-relaxed">{meaning.point}</p>
-              </div>
+## 必須SQL
+Supabase SQL Editorで以下を実行する。
 
-              <div className="mt-4 space-y-3">
-                <div className="rounded-full border border-cyan-300/20 bg-slate-950/50 px-3 py-2 text-sm font-bold text-cyan-100">💼 仕事例文（標準）</div>
-                {meaning.examples.slice(0, 3).map((example, exampleIndex) => (
-                  <ExampleCard
-                    key={example.en}
-                    example={example}
-                    verbPattern={naturalPatternText(meaning.pattern)}
-                    sentenceStructure={meaning.structure}
-                    phrase={{
-                      id: `${verb.id}:basic:${meaning.id}:${exampleIndex}`,
-                      verbId: verb.id,
-                      section: "basic",
-                      meaningTitle: meaning.title,
-                      pattern: naturalPatternText(meaning.pattern),
-                      en: example.en,
-                      ja: example.ja
-                    }}
-                  />
-                ))}
-              </div>
-              <PremiumExamples
-                examples={meaning.dailyExamples}
-                phraseBase={{
-                  idPrefix: `${verb.id}:basic:${meaning.id}`,
-                  verbId: verb.id,
-                  section: "basic",
-                  meaningTitle: meaning.title,
-                  pattern: naturalPatternText(meaning.pattern)
-                }}
-              />
-            </article>
-          ))}
-        </section>
-      ) : (
-        <section className="card p-5">
-          <p className="text-muted">この動詞の詳細データは追加予定です。</p>
-        </section>
-      )}
+```text
+supabase/V143_DEPLOY_SAFE_PERSISTENCE_SYSTEM.sql
+```
 
-      <section className="card p-5 text-center sm:p-6">
-        <h2 className="text-xl font-bold">STEP 1 完了</h2>
-        <p className="mt-2 text-muted">まず基本をテストしてから、句動詞へ進みます。</p>
-        <Link href={`/tests/${verb.id}/basic`} className="btn btn-primary mt-5 block">基本テストへ</Link>
-        <Link href={`/verbs/${verb.id}/phrasal`} className="btn btn-soft mt-3 block">テストせず句動詞へ進む</Link>
-      </section>
-    </div>
-    </VerbAccessGuard>
-  );
-}
+## ZIP更新時の運用
+
+1. 新ZIPをGitHubへ上書き
+2. Vercel Ready確認
+3. 既存ユーザーでログイン
+4. クラウド復元後に画面表示
+5. 0/124になった場合は保存せず、ログイン・SQL・環境変数を確認
+
+## 環境変数
+
+```text
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY
+```
+
+`SUPABASE_SERVICE_ROLE_KEY` は画像Storage用。絶対に `NEXT_PUBLIC_` を付けない。

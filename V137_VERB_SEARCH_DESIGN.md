@@ -1,87 +1,175 @@
-"use client";
+# Verb Master V136 保存設計・運用設計書
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { getVerb, verbs } from "@/lib/data";
-import { getEffectiveUnlockedVerbCount, getLatestTestSession, type TestSession } from "@/lib/account";
+## 目的
 
-function testPackLabel(index: number) {
-  if (index <= 30) return "🔒 30語パック";
-  if (index <= 60) return "🔒 60語パック";
-  if (index <= 90) return "🔒 90語パック";
-  return "🔒 120語パック";
-}
+課金アプリとして、ユーザーが増えても以下のデータを安全に保存・復元できる状態にする。
 
-export default function TestsPage() {
-  const [unlockedCount, setUnlockedCount] = useState(3);
-  const [latestSession, setLatestSession] = useState<TestSession | null>(null);
+- プロフィール画像
+- ニックネーム / 表示名
+- 目標日
+- 学習ペース / 学習曜日
+- XP / level / streak
+- premium状態 / 解放済み動詞数 / 購入履歴
+- 学習履歴 / テスト履歴 / 復習履歴 / 保存フレーズ
 
-  useEffect(() => {
-    setUnlockedCount(getEffectiveUnlockedVerbCount());
-    const latest = getLatestTestSession();
-    setLatestSession(latest && latest.verbId !== "phrase-book" ? latest : null);
-  }, []);
+## V136での大きな変更
 
-  const latestVerb = latestSession ? getVerb(latestSession.verbId) : null;
-  const latestHref = latestSession
-    ? latestSession.section === "all"
-      ? `/tests/${latestSession.verbId}`
-      : `/tests/${latestSession.verbId}/${latestSession.section}`
-    : "";
+V135までは画像を `user_progress_backups.progress_json.avatarDataUrl` に保存する設計だった。これは少人数では動くが、ユーザーが増えるとDBのJSONが大きくなり、保存・復元・通信量の面で不利になる。
 
-  return (
-    <div className="space-y-5 pb-24">
-      <header>
-        <p className="text-muted">瞬発英作文</p>
-        <h1 className="text-3xl font-bold">単語別テスト</h1>
-        <p className="mt-2 text-muted">基本・句動詞を分けて復習できます。未解放の動詞はアップグレードへ移動します。</p>
-      </header>
-      {latestSession && latestVerb && (
-        <section className="card border border-cyan-300/30 bg-cyan-950/20 p-5">
-          <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">途中保存</p>
-          <h2 className="mt-2 text-xl font-bold">{latestVerb.word} のテストを続きから再開できます</h2>
-          <p className="mt-2 text-sm text-muted">{latestSession.index + 1}問目 / {latestSession.itemIds.length}問中・できた {latestSession.correct} / だめ {latestSession.wrong}</p>
-          <Link href={latestHref} className="btn btn-primary mt-4 block text-center">途中から再開する</Link>
-        </section>
-      )}
+V136では、画像本体はSupabase Storageへ分離する。
 
-      <section className="digital-card p-5">
-        <p className="text-xs font-bold tracking-[0.25em] text-cyan-200">TEST ACCESS</p>
-        <div className="mt-4 grid grid-cols-2 gap-3 text-center">
-          <div className="digital-panel">
-            <p className="digital-label">解放済み</p>
-            <p className="digital-number text-3xl">{unlockedCount}</p>
-          </div>
-          <div className="digital-panel">
-            <p className="digital-label">未解放</p>
-            <p className="digital-number text-3xl">{Math.max(0, verbs.length - unlockedCount)}</p>
-          </div>
-        </div>
-      </section>
-      <section className="space-y-3">
-        {verbs.map((verb, index) => {
-          const locked = index + 1 > unlockedCount;
-          const href = locked ? "/upgrade" : `/tests/${verb.id}`;
-          return (
-            <div key={verb.id} className={`card p-5 ${locked ? "opacity-75" : ""}`}>
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="text-xs font-bold text-cyan-100">No.{String(index + 1).padStart(2, "0")}</p>
-                  <p className="text-2xl font-bold verb-red">{verb.word}</p>
-                  <p className="mt-1 text-sm text-muted">{locked ? testPackLabel(index + 1) : verb.core}</p>
-                </div>
-                <Link className={locked ? "rounded-full bg-amber-300 px-3 py-2 text-sm font-bold text-slate-950" : "rounded-full bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950"} href={href}>
-                  {locked ? "解放" : "総合"}
-                </Link>
-              </div>
-              <div className="mt-4 grid grid-cols-2 gap-2 text-center text-sm font-bold">
-                <Link className="rounded-2xl bg-white/5 px-2 py-3" href={locked ? "/upgrade" : `/tests/${verb.id}/basic`}>基本</Link>
-                <Link className="rounded-2xl bg-white/5 px-2 py-3" href={locked ? "/upgrade" : `/tests/${verb.id}/phrasal`}>句動詞</Link>
-              </div>
-            </div>
-          );
-        })}
-      </section>
-    </div>
-  );
-}
+```text
+画像本体              → Supabase Storage avatars bucket
+画像の保存場所        → user_progress_backups.progress_json.avatarPath / avatarUrl
+目標日・ニックネーム  → user_progress_backups.progress_json
+学習記録              → user_progress_backups.progress_json
+保存履歴              → user_progress_backup_events
+画像履歴              → user_profile_assets
+```
+
+## 保存先の役割
+
+| 保存先 | 役割 |
+|---|---|
+| `user_progress_backups` | 現在の正データ。復元の中心 |
+| `user_progress_backup_events` | 自動保存履歴。事故時の確認・ロールバック用 |
+| `storage.buckets: avatars` | プロフィール画像本体 |
+| `user_profile_assets` | 画像ファイルの履歴。新旧画像の確認・削除確認用 |
+
+## 画像保存の安全な処理順
+
+画像変更時は、絶対に先に古い画像を消さない。
+
+```text
+1. 現在のavatarPathを取得
+2. 新しい画像をStorageへアップロード
+3. user_progress_backups.progress_json の avatarPath / avatarUrl を更新
+4. DB更新成功を確認
+5. 古いavatarPathの画像をStorageから削除
+6. user_profile_assetsで旧画像をdeletedに更新
+```
+
+この順番により、新画像アップロードやDB更新に失敗しても、前の画像は残る。
+
+## 自動保存の方針
+
+自動保存は必要だが、毎入力ごとに即DB保存し続けると負荷が増える。V136では以下の方針を維持する。
+
+```text
+学習データ変更       → debounce後に保存
+30秒ごと             → 保険として自動確認
+画面復帰時           → クラウド復元確認 → 保存
+オンライン復帰時     → クラウド復元確認 → 保存
+画面を閉じる前       → 保存確認
+プロフィール変更     → 変更直後に保存
+目標日変更           → 変更直後に保存
+```
+
+## 上書き事故防止
+
+次のタイムスタンプで新旧を判断する。
+
+| 項目 | 判定キー |
+|---|---|
+| ニックネーム・画像 | `profileUpdatedAt` |
+| 目標日・学習ペース | `settingsUpdatedAt` |
+| 学習量 | XP / 学習語数 / テスト数 / 復習数 / 保存フレーズ数 |
+
+端末側が空データ、クラウド側に学習データがある場合は、空データでクラウドを上書きしない。
+
+## 画像ファイルの命名
+
+ユーザー名をそのままStorageパスに出さない。Next.js API側でユーザー名をSHA-256化してパスを作る。
+
+```text
+avatars/{hashedUserKey}/avatar-{timestamp}-{random}.jpg
+```
+
+## 必要な環境変数
+
+Vercelに以下を設定する。
+
+```text
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY
+```
+
+`SUPABASE_SERVICE_ROLE_KEY` はStorageへのアップロード・削除に使う。ブラウザには出さない。Next.js API routeだけで使用する。
+
+## Supabase SQL
+
+V136では以下を実行する。
+
+```text
+supabase/V136_SCALABLE_SAVE_STORAGE.sql
+```
+
+このSQLで行うこと。
+
+- `avatars` bucketを作成
+- 画像はpublic read、write/deleteはserver APIのみ
+- `user_profile_assets` を作成
+- `user_progress_backups` に `avatar_path / avatar_url / avatar_updated_at` を追加
+- progress_jsonからavatar列へ同期するtriggerを追加
+
+## 運用チェック手順
+
+### 初回導入
+
+1. ZIPをGitHubへ上書きアップロード
+2. VercelでReady確認
+3. Vercel環境変数に `SUPABASE_SERVICE_ROLE_KEY` を追加
+4. Supabase SQL Editorで `V136_SCALABLE_SAVE_STORAGE.sql` を実行
+5. アプリからログアウト
+6. 再ログイン
+7. ニックネーム変更
+8. 目標日変更
+9. プロフィール画像変更
+10. 画面更新
+11. ログアウト → 再ログイン
+12. 画像・ニックネーム・目標日が残るか確認
+
+### 画像削除確認
+
+Supabase SQL Editorで確認。
+
+```sql
+select username, storage_path, status, uploaded_at, deleted_at
+from public.user_profile_assets
+order by uploaded_at desc
+limit 20;
+```
+
+同じユーザーが画像を変更した場合、古い画像は `deleted` になる。
+
+### 現在の保存確認
+
+```sql
+select username, avatar_path, avatar_url, updated_at
+from public.user_progress_backups
+order by updated_at desc
+limit 20;
+```
+
+## 旧データの扱い
+
+過去に `avatarDataUrl` としてDBに入った画像は、復元用として表示できる場合がある。ただし、新しく画像を変更したタイミングでStorage保存へ移行し、以降はDBに画像本体を持たない。
+
+## 失敗時の方針
+
+| 失敗箇所 | 挙動 |
+|---|---|
+| 新画像アップロード失敗 | 旧画像を維持 |
+| DB更新失敗 | 新画像を削除し、旧画像を維持 |
+| 旧画像削除失敗 | 新画像は使う。旧画像はasset履歴で確認して後で削除 |
+| 再ログイン不足 | 旧画像を維持し、再ログインを促す |
+| `SUPABASE_SERVICE_ROLE_KEY` 未設定 | 画像Storage保存不可。旧画像を維持 |
+
+## 今後の固定ルール
+
+- 画像本体をDB JSONへ戻さない
+- 画像変更時は「新画像保存 → DB更新 → 旧画像削除」の順序を守る
+- 目標日・ニックネームは `user_progress_backups` に保存する
+- 空データでクラウドを上書きしない
+- 保存基盤変更時は必ず設計書とSQLを更新する

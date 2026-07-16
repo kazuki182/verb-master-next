@@ -1,14 +1,25 @@
-import { verbs } from "@/lib/data";
-import VerbSearchList from "@/components/VerbSearchList";
+# Verb Master Ver.144 Login Recovery Hotfix
 
-export default function VerbsPage() {
-  return (
-    <div className="space-y-5">
-      <header>
-        <h1 className="text-3xl font-bold">動詞一覧</h1>
-        <p className="mt-2 text-muted">番号・検索・進捗を確認しながら、基本動詞を学習できます。</p>
-      </header>
-      <VerbSearchList verbs={verbs} />
-    </div>
-  );
-}
+## Purpose
+
+Ver.143 made Supabase cloud data the source of truth to prevent ZIP updates from overwriting real user data with empty local data. However, it also blocked login when the Supabase cloud account password/RPC state did not match the local account, even when the local username and password were correct.
+
+Ver.144 fixes that lockout.
+
+## Login policy
+
+1. Try cloud login first.
+2. If cloud login succeeds, restore cloud data and continue.
+3. If cloud login fails but the local account password is correct, allow login in recovery mode.
+4. If both cloud and local passwords fail, block login.
+
+## Data safety
+
+- This does not remove Ver.143 cloud source-of-truth protection.
+- A valid local user is no longer locked out by a cloud mismatch.
+- Local fallback does not blindly overwrite cloud data.
+- Cloud sync still requires a valid cloud credential/session.
+
+## Operator note
+
+If local login succeeds but cloud login fails, the operator should verify the Supabase cloud account/password state and SQL installation. This hotfix prevents immediate lockout while keeping the save foundation intact.

@@ -407,15 +407,6 @@ export default function ProfilePage() {
     }
   };
 
-  const toggleNotification = () => {
-    if (!progress) return;
-    const updated = updateUserProfile({
-      notificationsEnabled: !progress.notificationsEnabled,
-    });
-    setProgress(updated);
-    if (updated) void syncToSupabase(updated);
-  };
-
   const stats = useMemo(() => {
     if (!progress) return null;
     const totalTests = (progress.testCorrect || 0) + (progress.testWrong || 0);
@@ -742,16 +733,7 @@ export default function ProfilePage() {
       <section className="card p-5">
         <h2 className="text-xl font-bold">設定</h2>
         <div className="mt-4 grid gap-3">
-          <Link className="rounded-2xl bg-paper p-4 font-bold" href="/#target-settings">学習ペース設定</Link>
           <Link className="rounded-2xl bg-paper p-4 font-bold" href="/contact">お問い合わせ・ご意見</Link>
-          <button
-            className="rounded-2xl bg-paper p-4 text-left font-bold"
-            type="button"
-            onClick={toggleNotification}
-          >
-            通知設定：{progress.notificationsEnabled ? "ON" : "OFF"}
-            <p className="mt-1 text-sm font-normal text-muted">通知機能は今後の実装準備です。</p>
-          </button>
           {isAdmin && <DataBackupPanel />}
           {isAdmin && <Link className="rounded-2xl bg-paper p-4 font-bold" href="/admin">管理画面</Link>}
         </div>

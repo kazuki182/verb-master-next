@@ -70,7 +70,7 @@ export default function TestsPage() {
                   <p className="text-2xl font-bold verb-red">{verb.word}</p>
                   <p className="mt-1 text-sm text-muted">{locked ? testPackLabel(index + 1) : verb.core}</p>
                 </div>
-                <Link className={locked ? "rounded-full bg-amber-300 px-3 py-2 text-sm font-bold text-slate-950" : "rounded-full bg-cyan-400 px-3 py-2 text-sm font-bold text-slate-950"} href={href}>
+                <Link className={locked ? "flex h-16 w-16 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-amber-300 text-sm font-bold text-slate-950" : "flex h-16 w-16 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-cyan-400 text-sm font-bold text-slate-950"} href={href}>
                   {locked ? "解放" : "総合"}
                 </Link>
               </div>

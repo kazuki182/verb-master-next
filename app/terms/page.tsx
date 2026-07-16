@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function TermsPage(){return <div className="space-y-5 pb-24"><header className="card p-5"><h1 className="text-3xl font-black">利用規約</h1><p className="mt-2 text-sm text-muted">公開前の確認用ページです。正式公開前に運営者情報と提供条件を確定します。</p></header><section className="card p-5 text-sm leading-7 text-slate-300"><h2 className="text-xl font-black text-white">主な内容</h2><p className="mt-3">アカウント利用、禁止事項、デジタルコンテンツの提供、免責、サービス変更、問い合わせ方法を記載する予定です。</p></section><Link className="btn btn-soft block text-center" href="/upgrade">Premiumへ戻る</Link></div>}

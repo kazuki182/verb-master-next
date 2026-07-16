@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function RefundPolicyPage(){return <div className="space-y-5 pb-24"><header className="card p-5"><h1 className="text-3xl font-black">返金・キャンセル</h1><p className="mt-2 text-sm text-muted">公開前の確認用ページです。</p></header><section className="card p-5 text-sm leading-7 text-slate-300"><p>デジタルコンテンツの性質上、提供開始後の返金条件、重複決済やシステム障害時の対応、問い合わせ手順を正式公開前に明記します。</p></section><Link className="btn btn-soft block text-center" href="/upgrade">Premiumへ戻る</Link></div>}

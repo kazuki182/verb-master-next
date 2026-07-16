@@ -159,6 +159,10 @@ function getCloudPasswordHash(username: string) {
   return credentialMap()[username]?.passwordHash || "";
 }
 
+export function getCurrentCloudPasswordHash(username: string) {
+  return getCloudPasswordHash(username);
+}
+
 
 export type DedicatedProfile = {
   username: string;
@@ -408,7 +412,21 @@ function mergeRemoteLearningWithLocalProfile(local: UserProgress, remote?: Parti
     weakItems: Array.from(new Set([...(remoteProgress.weakItems || []), ...(local.weakItems || [])])),
     reviewItems: { ...(remoteProgress.reviewItems || {}), ...(local.reviewItems || {}) },
     savedPhrases: (local.savedPhrases?.length ? local.savedPhrases : remoteProgress.savedPhrases) || [],
-    testSessions: { ...(remoteProgress.testSessions || {}), ...(local.testSessions || {}) },
+    bookmark: (() => {
+      const localStamp = Date.parse(local.bookmark?.savedAt || "") || 0;
+      const remoteStamp = Date.parse(remoteProgress.bookmark?.savedAt || "") || 0;
+      return localStamp >= remoteStamp ? local.bookmark : remoteProgress.bookmark;
+    })(),
+    testSessions: (() => {
+      const merged = { ...(remoteProgress.testSessions || {}) };
+      for (const [key, candidate] of Object.entries(local.testSessions || {})) {
+        const current = merged[key];
+        const candidateStamp = Date.parse(candidate.updatedAt || "") || 0;
+        const currentStamp = Date.parse(current?.updatedAt || "") || 0;
+        if (!current || candidateStamp >= currentStamp) merged[key] = candidate;
+      }
+      return merged;
+    })(),
     testItemStats: { ...(remoteProgress.testItemStats || {}), ...(local.testItemStats || {}) },
     weeklyStats: { ...(remoteProgress.weeklyStats || {}), ...(local.weeklyStats || {}) },
     displayName,

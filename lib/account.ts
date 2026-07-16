@@ -173,12 +173,71 @@ const ACCOUNTS_KEY = "verbMaster.accounts";
 const CURRENT_USER_KEY = "verbMaster.currentUser";
 const PROGRESS_KEY = "verbMaster.progress";
 const LOCAL_RECOVERY_KEY = "verbMaster.localRecoverySnapshots";
+const BOOKMARK_DURABLE_KEY = "verbMaster.studyBookmark.v176";
+const TEST_SESSION_DURABLE_KEY = "verbMaster.testSessions.v176";
 const MAX_LOCAL_RECOVERY_SNAPSHOTS = 12;
 export const PROGRESS_SAVED_EVENT = "verbmaster:progress-saved";
 
 function emitProgressSaved(username: string) {
   if (typeof window === "undefined") return;
   window.dispatchEvent(new CustomEvent(PROGRESS_SAVED_EVENT, { detail: { username, at: new Date().toISOString() } }));
+}
+
+
+function scopedDurableKey(base: string, username?: string | null) {
+  const current = username || getCurrentUsername();
+  return current ? `${base}:${current}` : base;
+}
+
+function readDurableBookmark(username?: string | null): StudyBookmark | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = localStorage.getItem(scopedDurableKey(BOOKMARK_DURABLE_KEY, username));
+    return raw ? (JSON.parse(raw) as StudyBookmark) : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeDurableBookmark(bookmark: StudyBookmark | null, username?: string | null) {
+  if (typeof window === "undefined") return;
+  const key = scopedDurableKey(BOOKMARK_DURABLE_KEY, username);
+  if (bookmark) localStorage.setItem(key, JSON.stringify(bookmark));
+  else localStorage.removeItem(key);
+}
+
+function readDurableTestSessions(username?: string | null): Record<string, TestSession> {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(localStorage.getItem(scopedDurableKey(TEST_SESSION_DURABLE_KEY, username)) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function writeDurableTestSessions(sessions: Record<string, TestSession>, username?: string | null) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(scopedDurableKey(TEST_SESSION_DURABLE_KEY, username), JSON.stringify(sessions));
+}
+
+function newerBookmark(a?: StudyBookmark | null, b?: StudyBookmark | null) {
+  if (!a) return b || null;
+  if (!b) return a;
+  return timestampMs(a.savedAt) >= timestampMs(b.savedAt) ? a : b;
+}
+
+function mergeTestSessionsByUpdatedAt(
+  first?: Record<string, TestSession> | null,
+  second?: Record<string, TestSession> | null,
+) {
+  const merged: Record<string, TestSession> = { ...(first || {}) };
+  for (const [key, candidate] of Object.entries(second || {})) {
+    const current = merged[key];
+    if (!current || timestampMs(candidate.updatedAt) >= timestampMs(current.updatedAt)) {
+      merged[key] = candidate;
+    }
+  }
+  return merged;
 }
 
 export const TOTAL_VERB_TARGET = 124;
@@ -668,6 +727,8 @@ export function saveProgress(progress: UserProgress) {
   progress.level = Math.max(1, Math.floor(progress.xp / 100) + 1);
   progress.updatedAt = nowText();
   map[progress.username] = normalizeProgress(progress);
+  writeDurableBookmark(map[progress.username].bookmark || null, progress.username);
+  writeDurableTestSessions(map[progress.username].testSessions || {}, progress.username);
   saveLocalRecoverySnapshot(map[progress.username]);
   saveProgressMap(map);
   emitProgressSaved(progress.username);
@@ -1501,20 +1562,29 @@ export function recordTestCompletion(section: string, xp = 10) {
 export function saveBookmark(bookmark: Omit<StudyBookmark, "savedAt">) {
   const progress = getCurrentProgress();
   if (!progress) return null;
-  progress.bookmark = { ...bookmark, savedAt: nowText() };
+  const saved: StudyBookmark = { ...bookmark, savedAt: nowText() };
+  progress.bookmark = saved;
+  writeDurableBookmark(saved, progress.username);
   saveProgress(progress);
-  return progress.bookmark;
+  return saved;
 }
 
 export function getCurrentBookmark() {
   const progress = getCurrentProgress();
-  return progress?.bookmark ?? null;
+  const durable = readDurableBookmark(progress?.username);
+  const latest = newerBookmark(progress?.bookmark, durable);
+  if (progress && latest && progress.bookmark?.savedAt !== latest.savedAt) {
+    progress.bookmark = latest;
+    saveProgress(progress);
+  }
+  return latest;
 }
 
 export function clearBookmark() {
   const progress = getCurrentProgress();
   if (!progress) return null;
   delete progress.bookmark;
+  writeDurableBookmark(null, progress.username);
   saveProgress(progress);
   return progress;
 }
@@ -1567,32 +1637,51 @@ export function clearSavedPhrases() {
 export function saveTestSession(session: Omit<TestSession, "updatedAt">) {
   const progress = getCurrentProgress();
   if (!progress) return null;
-  progress.testSessions = progress.testSessions || {};
-  progress.testSessions[session.key] = { ...session, updatedAt: nowText() };
+  const saved: TestSession = { ...session, updatedAt: nowText() };
+  progress.testSessions = mergeTestSessionsByUpdatedAt(
+    progress.testSessions,
+    readDurableTestSessions(progress.username),
+  );
+  progress.testSessions[session.key] = saved;
+  writeDurableTestSessions(progress.testSessions, progress.username);
   saveProgress(progress);
-  return progress.testSessions[session.key];
+  return saved;
 }
 
 export function getTestSession(key: string) {
   const progress = getCurrentProgress();
   if (!progress) return null;
-  return progress.testSessions?.[key] ?? null;
+  const sessions = mergeTestSessionsByUpdatedAt(
+    progress.testSessions,
+    readDurableTestSessions(progress.username),
+  );
+  progress.testSessions = sessions;
+  return sessions[key] ?? null;
 }
 
 export function clearTestSession(key: string) {
   const progress = getCurrentProgress();
   if (!progress) return null;
-  if (progress.testSessions?.[key]) {
-    delete progress.testSessions[key];
-    saveProgress(progress);
-  }
-  return progress.testSessions ?? {};
+  const sessions = mergeTestSessionsByUpdatedAt(
+    progress.testSessions,
+    readDurableTestSessions(progress.username),
+  );
+  delete sessions[key];
+  progress.testSessions = sessions;
+  writeDurableTestSessions(sessions, progress.username);
+  saveProgress(progress);
+  return sessions;
 }
 
 export function getLatestTestSession() {
   const progress = getCurrentProgress();
-  if (!progress?.testSessions) return null;
-  const sessions = Object.values(progress.testSessions)
+  if (!progress) return null;
+  const merged = mergeTestSessionsByUpdatedAt(
+    progress.testSessions,
+    readDurableTestSessions(progress.username),
+  );
+  progress.testSessions = merged;
+  const sessions = Object.values(merged)
     .filter((session) => session.index < session.itemIds.length)
     .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
   return sessions[0] ?? null;

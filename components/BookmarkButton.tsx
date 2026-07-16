@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { saveBookmark, type BookmarkSection } from "@/lib/account";
+import { useEffect, useState } from "react";
+import { getCurrentBookmark, saveBookmark, type BookmarkSection } from "@/lib/account";
 
 type Props = {
   verbId: string;
@@ -15,11 +15,19 @@ type Props = {
 
 export default function BookmarkButton({ verbId, section, label, href, itemTitle, itemIndex, compact = false }: Props) {
   const [saved, setSaved] = useState(false);
+  const [message, setMessage] = useState(false);
+
+  useEffect(() => {
+    const current = getCurrentBookmark();
+    setSaved(Boolean(current && current.verbId === verbId && current.section === section && current.href === href));
+  }, [verbId, section, href]);
 
   const handleSave = () => {
-    saveBookmark({ verbId, section, label, href, itemTitle, itemIndex });
+    const result = saveBookmark({ verbId, section, label, href, itemTitle, itemIndex });
+    if (!result) return;
     setSaved(true);
-    window.setTimeout(() => setSaved(false), 1600);
+    setMessage(true);
+    window.setTimeout(() => setMessage(false), 1800);
   };
 
   return (
@@ -28,8 +36,9 @@ export default function BookmarkButton({ verbId, section, label, href, itemTitle
       onClick={handleSave}
       className={compact ? "bookmark-mini" : "bookmark-button"}
       aria-label="この位置をしおりに保存"
+      aria-pressed={saved}
     >
-      {saved ? "保存しました" : "🔖 しおり"}
+      {message ? "保存しました" : saved ? "🔖 しおり済み" : "🔖 しおり"}
     </button>
   );
 }

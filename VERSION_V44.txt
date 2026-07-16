@@ -1,9 +1,0 @@
-Version 44
-Repository: verb-master-next
-Theme: Premium upgrade groundwork and mobile tab cleanup
-Checks:
-- Bottom tab reduced to 5 items for iPhone
-- /upgrade Premium page added
-- Free / 30 / 60 / 90 / 120 plan display added
-- My page links to upgrade
-- Existing user data keys preserved

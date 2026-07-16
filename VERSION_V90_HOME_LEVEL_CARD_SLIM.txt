@@ -1,6 +1,0 @@
-Ver.90 HOME level card slim fix
-- Enlarged only the profile image in the HOME level card.
-- Slimmed down the overall level card layout.
-- Removed the heavy XP inner box.
-- Kept XP and next-level XP as lightweight text.
-- Kept badge count in the level card as a small tappable pill.

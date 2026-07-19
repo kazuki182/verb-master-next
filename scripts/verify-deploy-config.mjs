@@ -40,14 +40,13 @@ if (missingEntries.length > 0) {
 
 /**
  * リポジトリ直下に置いてよいもの
- *
- * .vercel はVercelのビルド環境で一時的に作られる場合があるため、
- * ZIPには含めない一方、ビルド監査では無視します。
  */
 const allowedRootEntries = new Set([
   ".github",
   ".gitignore",
   ".npmrc",
+
+  "README.md",
 
   "app",
   "components",
@@ -67,6 +66,9 @@ const allowedRootEntries = new Set([
   "vercel.json",
 ]);
 
+/**
+ * ビルド時に生成されるため、監査対象から除外するもの
+ */
 const ignoredRootEntries = new Set([
   ".git",
   ".next",
@@ -92,7 +94,7 @@ if (unexpectedRootEntries.length > 0) {
   }
 
   console.error(
-    "\nコードはapp・components・lib・scripts配下へ置き、説明書はdocs配下の.mdにしてください。",
+    "\nコードはapp・components・lib・scripts配下へ置き、説明書はdocs配下へ置いてください。",
   );
 
   process.exit(1);

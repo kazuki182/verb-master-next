@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { FREE_VERB_LIMIT, TOTAL_VERB_TARGET, getCurrentUsername, getPurchasePlanSummary } from "@/lib/account";
+import { FREE_VERB_LIMIT, TOTAL_VERB_TARGET, getCurrentUsername, getPurchasePlanSummary, isCurrentUserAdmin } from "@/lib/account";
 import { PAYMENT_PLANS, getNextPaymentPlan } from "@/lib/paymentConfig";
 
 export default function UpgradePage() {
   const [ready, setReady] = useState(false);
   const [summary, setSummary] = useState(getPurchasePlanSummary());
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     if (!getCurrentUsername()) {
@@ -15,6 +16,7 @@ export default function UpgradePage() {
       return;
     }
     setSummary(getPurchasePlanSummary());
+    setIsAdmin(isCurrentUserAdmin());
     setReady(true);
   }, []);
 
@@ -47,7 +49,9 @@ export default function UpgradePage() {
         <div className="mt-4 h-3 overflow-hidden rounded-full bg-slate-950">
           <div className="h-full rounded-full bg-cyan-300" style={{ width: `${progress}%` }} />
         </div>
-        {nextPlan ? (
+        {isAdmin ? (
+          <p className="mt-5 rounded-2xl bg-cyan-950/30 p-4 text-center font-bold text-cyan-100">管理者アカウント：全機能を確認できます。購入は不要です。</p>
+        ) : nextPlan ? (
           <Link href={`/checkout?plan=${nextPlan.count}`} className="btn btn-primary mt-5 block text-center">
             次の{nextPlan.label}を確認する
           </Link>
@@ -75,7 +79,7 @@ export default function UpgradePage() {
           <p className="text-xs font-black tracking-[0.24em] text-cyan-200">ONE-TIME PURCHASE</p>
           <h2 className="mt-1 text-2xl font-black">買い切り4段階</h2>
         </div>
-        {PAYMENT_PLANS.map((plan, index) => {
+        {!isAdmin && PAYMENT_PLANS.map((plan, index) => {
           const purchased = summary.rawUnlocked >= plan.count;
           const available = nextPlan?.count === plan.count;
           return (

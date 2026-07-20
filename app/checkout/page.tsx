@@ -8,7 +8,7 @@ import { getNextPaymentPlan, getPaymentMode, getPaymentPlan } from "@/lib/paymen
 function planFromQuery() {
   if (typeof window === "undefined") return 30;
   const value = Number(new URLSearchParams(window.location.search).get("plan") || "30");
-  return [30, 60, 90, 120].includes(value) ? value : 30;
+  return [30, 60, 90, 124].includes(value) ? value : 30;
 }
 
 export default function CheckoutPage() {
@@ -64,7 +64,7 @@ export default function CheckoutPage() {
           <div className="flex justify-between gap-4 rounded-2xl bg-paper p-4"><dt className="text-muted">現在</dt><dd className="text-right font-bold">{currentAccess}</dd></div>
           <div className="flex justify-between gap-4 rounded-2xl bg-paper p-4"><dt className="text-muted">購入商品</dt><dd className="text-right font-bold">{plan.label}</dd></div>
           <div className="flex justify-between gap-4 rounded-2xl bg-paper p-4"><dt className="text-muted">追加範囲</dt><dd className="text-right font-bold">{plan.addRange}</dd></div>
-          <div className="flex justify-between gap-4 rounded-2xl bg-paper p-4"><dt className="text-muted">支払方法</dt><dd className="text-right font-bold">Stripe Checkout予定</dd></div>
+          <div className="flex justify-between gap-4 rounded-2xl bg-paper p-4"><dt className="text-muted">支払方法</dt><dd className="text-right font-bold">クレジットカード・PayPay（Stripe）</dd></div>
           <div className="flex justify-between gap-4 rounded-2xl bg-paper p-4"><dt className="text-muted">提供時期</dt><dd className="text-right font-bold">決済確認後、原則即時</dd></div>
           <div className="flex justify-between gap-4 rounded-2xl border border-cyan-300/20 bg-cyan-950/20 p-4"><dt className="font-black text-cyan-100">お支払い合計</dt><dd className="text-right text-xl font-black text-white">¥{plan.price.toLocaleString()}</dd></div>
         </dl>
@@ -97,11 +97,11 @@ export default function CheckoutPage() {
             <span><Link className="font-bold text-cyan-200" href="/terms">利用規約</Link>、<Link className="font-bold text-cyan-200" href="/refund-policy">返金・キャンセル条件</Link>、提供内容を確認し、同意します。</span>
           </label>
           {paymentMode === "stripe" ? (
-            <Link href={`/checkout/processing?plan=${plan.count}`} aria-disabled={!agreed} className={`btn btn-primary mt-4 block text-center ${agreed ? "" : "pointer-events-none opacity-40"}`}>Stripeテスト決済へ進む</Link>
+            <Link href={`/checkout/processing?plan=${plan.count}`} aria-disabled={!agreed} className={`btn btn-primary mt-4 block text-center ${agreed ? "" : "pointer-events-none opacity-40"}`}>カード・PayPayで決済へ進む</Link>
           ) : (
             <Link href={`/checkout/processing?plan=${plan.count}`} aria-disabled={!agreed} className={`btn btn-primary mt-4 block text-center ${agreed ? "" : "pointer-events-none opacity-40"}`}>決済画面の動作確認へ進む</Link>
           )}
-          <p className="mt-3 text-center text-xs text-muted">Ver.179では画面と購入導線を確認します。本物の決済接続は次の工程です。</p>
+          <p className="mt-3 text-center text-xs text-muted">決済完了はStripe Webhookで確認し、確認後にPremiumを解放します。</p>
         </section>
       )}
 

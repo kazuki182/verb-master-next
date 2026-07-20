@@ -4,7 +4,7 @@ import { PAYMENT_PLANS } from "@/lib/paymentConfig";
 export async function POST(request: Request) {
   try {
     const body = await request.json().catch(() => ({}));
-    const planCount = Number(body.plan || 90);
+    const planCount = Number(body.plan || 30);
     const username = String(body.username || "guest");
     const plan = PAYMENT_PLANS.find((item) => item.count === planCount) || PAYMENT_PLANS[0];
 
@@ -26,6 +26,7 @@ export async function POST(request: Request) {
     const origin = new URL(request.url).origin;
     const params = new URLSearchParams();
     params.set("mode", "payment");
+    params.set("automatic_payment_methods[enabled]", "true");
     params.set("line_items[0][price]", priceId);
     params.set("line_items[0][quantity]", "1");
     params.set("success_url", `${origin}/checkout/complete?plan=${plan.count}&mode=stripe&session_id={CHECKOUT_SESSION_ID}`);
@@ -33,6 +34,7 @@ export async function POST(request: Request) {
     params.set("metadata[username]", username);
     params.set("metadata[plan_id]", plan.planId);
     params.set("metadata[unlocked_verb_count]", String(plan.count));
+    params.set("client_reference_id", username);
 
     const stripeResponse = await fetch("https://api.stripe.com/v1/checkout/sessions", {
       method: "POST",

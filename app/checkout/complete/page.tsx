@@ -14,7 +14,7 @@ import { getPaymentPlan } from "@/lib/paymentConfig";
 function planFromQuery() {
   if (typeof window === "undefined") return 30;
   const value = Number(new URLSearchParams(window.location.search).get("plan") || "30");
-  return [30, 60, 90, 120].includes(value) ? value : 30;
+  return [30, 60, 90, 124].includes(value) ? value : 30;
 }
 
 function modeFromQuery() {

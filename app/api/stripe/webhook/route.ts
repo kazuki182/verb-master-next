@@ -46,7 +46,7 @@ function planLabelForCount(count: number) {
 }
 
 function totalForCount(count: number) {
-  const normalized = Math.max(0, Math.min(120, Math.floor(count)));
+  const normalized = Math.max(0, Math.min(124, Math.floor(count)));
   if (normalized <= 3) return 0;
   if (normalized <= 30) return 500;
   if (normalized <= 60) return 1000;
@@ -55,7 +55,7 @@ function totalForCount(count: number) {
 }
 
 function planName(count: number) {
-  if (count >= 120) return "all_access";
+  if (count >= 124) return "all_access";
   if (count >= 90) return "premium_90";
   if (count >= 60) return "premium_60";
   if (count >= 30) return "premium_30";
@@ -76,10 +76,23 @@ async function recordCheckoutCompleted(event: StripeEvent) {
   if (!username || !unlockedVerbCount) {
     return { ok: false, message: "metadata.username または unlocked_verb_count が不足しています。" };
   }
+  if (paymentStatus !== "paid" && paymentStatus !== "no_payment_required") {
+    return { ok: false, message: `支払い未完了のため解放しません。status=${paymentStatus}` };
+  }
 
   const supabase = getServerSupabase();
   if (!supabase) {
     return { ok: false, message: "Supabase環境変数が未設定です。" };
+  }
+
+  const { data: existingEvent } = await supabase
+    .from("payment_events")
+    .select("stripe_session_id")
+    .eq("stripe_session_id", stripeSessionId)
+    .eq("status", "checkout.session.completed")
+    .maybeSingle();
+  if (existingEvent) {
+    return { ok: true, message: "処理済みの決済です。重複解放は行いません。" };
   }
 
   const premiumPayload = {
@@ -87,7 +100,7 @@ async function recordCheckoutCompleted(event: StripeEvent) {
     plan: planName(unlockedVerbCount),
     unlocked_verb_count: unlockedVerbCount,
     purchase_total_yen: amountYen,
-    lyrics_english_access: unlockedVerbCount >= 120,
+    lyrics_english_access: unlockedVerbCount >= 124,
     provider: "stripe",
     source: "stripe_webhook",
     stripe_session_id: stripeSessionId,

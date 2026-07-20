@@ -242,10 +242,10 @@ function mergeTestSessionsByUpdatedAt(
 
 export const TOTAL_VERB_TARGET = 124;
 export const FREE_VERB_LIMIT = 3;
-export const PREMIUM_FULL_ACCESS_COUNT = 120;
+export const PREMIUM_FULL_ACCESS_COUNT = 124;
 export const VERB_PACK_SIZE = 30;
 export const VERB_PACK_PRICE_YEN = 500;
-export const PREMIUM_UNLOCK_STEPS = [30, 60, 90, 120] as const;
+export const PREMIUM_UNLOCK_STEPS = [30, 60, 90, 124] as const;
 
 export function purchaseTotalForUnlockCount(count: number) {
   const normalized = Math.max(0, Math.min(TOTAL_VERB_TARGET, Math.floor(count)));
@@ -532,6 +532,12 @@ export function getCurrentUsername() {
 
 export function logout() {
   localStorage.removeItem(CURRENT_USER_KEY);
+}
+
+export function isCurrentUserAdmin() {
+  const username = getCurrentUsername();
+  if (!username) return false;
+  return getAccounts().some((item) => item.username === username && item.role === "admin");
 }
 
 function progressMap(): Record<string, UserProgress> {
@@ -1758,7 +1764,7 @@ export function canAccessVerbByIndex(index: number) {
 }
 
 function planLabelForCount(count: number) {
-  if (count >= PREMIUM_FULL_ACCESS_COUNT) return "Step 4：120動詞パック";
+  if (count >= PREMIUM_FULL_ACCESS_COUNT) return "Step 4：124動詞パック";
   if (count >= 90) return "Step 3：90動詞パック";
   if (count >= 60) return "Step 2：60動詞パック";
   if (count >= 30) return "Step 1：30動詞パック";

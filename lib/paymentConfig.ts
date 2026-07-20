@@ -1,8 +1,8 @@
 export type PaymentMode = "mock" | "stripe";
 
 export type PaymentPlan = {
-  count: 30 | 60 | 90 | 120;
-  planId: "verb_30" | "verb_60" | "verb_90" | "verb_120";
+  count: 30 | 60 | 90 | 124;
+  planId: "verb_30" | "verb_60" | "verb_90" | "verb_124";
   shortName: "Starter" | "Standard" | "Advanced" | "Complete";
   label: string;
   price: number;
@@ -55,8 +55,8 @@ export const PAYMENT_PLANS: PaymentPlan[] = [
     stripePriceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_90,
   },
   {
-    count: 120,
-    planId: "verb_120",
+    count: 124,
+    planId: "verb_124",
     shortName: "Complete",
     label: "Complete Pack",
     price: 500,
@@ -64,17 +64,17 @@ export const PAYMENT_PLANS: PaymentPlan[] = [
     range: "1〜124番",
     addRange: "91〜124番",
     recommend: "残りの動詞をすべて解放し、124動詞を学べる完成パックです。",
-    stripePriceEnvName: "NEXT_PUBLIC_STRIPE_PRICE_120",
-    stripePriceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_120,
+    stripePriceEnvName: "NEXT_PUBLIC_STRIPE_PRICE_124",
+    stripePriceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_124 || process.env.NEXT_PUBLIC_STRIPE_PRICE_120,
   },
 ];
 
 export function getPaymentMode(): PaymentMode {
-  return process.env.NEXT_PUBLIC_PAYMENT_MODE === "stripe" ? "stripe" : "mock";
+  return process.env.NEXT_PUBLIC_PAYMENT_MODE === "mock" ? "mock" : "stripe";
 }
 
 export function getPaymentModeLabel(mode = getPaymentMode()) {
-  return mode === "stripe" ? "Stripeテスト決済" : "画面確認モード";
+  return mode === "stripe" ? "Stripe決済" : "画面確認モード";
 }
 
 export function getPaymentPlan(count: number) {

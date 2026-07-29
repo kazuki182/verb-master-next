@@ -7906,7 +7906,7 @@ function saAddStyles(){if(document.getElementById('signAssemblyStyles'))return;c
 #signAssemblyOverlay{overflow-x:hidden}
 #signAssemblyOverlay .sa-card,#signAssemblyOverlay .sa-products,#signAssemblyOverlay .sa-product{max-width:100%;min-width:0;overflow:hidden}
 #signAssemblyOverlay .sa-product .sa-field,#signAssemblyOverlay .sa-product input,#signAssemblyOverlay .sa-product select{min-width:0;max-width:100%}
-@media(max-width:1900px){#signAssemblyOverlay .sa-grid{grid-template-columns:1fr!important}#signAssemblyOverlay .sa-summary{position:static}#signAssemblyOverlay .sa-row,#signAssemblyOverlay .sa-row.two{grid-template-columns:1fr 1fr}}
+@media(max-width:899px){#signAssemblyOverlay .sa-grid{grid-template-columns:1fr!important}#signAssemblyOverlay .sa-summary{position:static}#signAssemblyOverlay .sa-row,#signAssemblyOverlay .sa-row.two{grid-template-columns:1fr 1fr}}
 @media(max-width:1200px){#signAssemblyOverlay .sa-product{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-areas:'name name code code' 'actual unit quote price' 'total total remove remove'}#signAssemblyOverlay .sa-product .sa-remove{width:100%}}
 @media(max-width:900px){#signAssemblyOverlay .sa-shell{padding:10px 10px 100px}#signAssemblyOverlay .sa-row,#signAssemblyOverlay .sa-row.two{grid-template-columns:1fr 1fr}#signAssemblyOverlay .sa-actions{position:sticky;bottom:0;background:#15191f;padding:10px 0;z-index:4}}
 @media(max-width:620px){#signAssemblyOverlay .sa-panel-auto{grid-template-columns:1fr 1fr}#signAssemblyOverlay .sa-row,#signAssemblyOverlay .sa-row.two{grid-template-columns:1fr}#signAssemblyOverlay .sa-product{grid-template-columns:1fr 1fr;grid-template-areas:'name name' 'code code' 'actual unit' 'quote price' 'total total' 'remove remove'}}
@@ -8039,6 +8039,8 @@ function assemblyAddMobileStyles(){
     #signAssemblyOverlay .sa-grid{display:grid!important;grid-template-columns:minmax(0,7fr) minmax(340px,3fr)!important;gap:18px!important;align-items:start!important;min-width:0!important}
     #autAssemblyOverlay .sa-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;min-width:0!important}
     #signAssemblyOverlay .sa-grid>*, #autAssemblyOverlay .sa-grid>*{min-width:0!important}
+    #signAssemblyOverlay .sa-grid>main{width:100%!important;max-width:none!important}
+    #signAssemblyOverlay .sa-grid>aside{width:100%!important;max-width:none!important}
     #signAssemblyOverlay .sa-card, #autAssemblyOverlay .sa-card{min-width:0!important;max-width:100%!important;box-sizing:border-box!important;overflow:hidden}
     #signAssemblyOverlay input,#signAssemblyOverlay select,#signAssemblyOverlay button,
     #autAssemblyOverlay input,#autAssemblyOverlay select,#autAssemblyOverlay button{max-width:100%!important;box-sizing:border-box!important}
@@ -8048,7 +8050,7 @@ function assemblyAddMobileStyles(){
     #signAssemblyOverlay .sa-summary{position:sticky!important;top:74px!important;max-height:calc(100vh - 92px)!important;overflow-y:auto!important;overscroll-behavior:contain}
     #autAssemblyOverlay .sa-summary{position:static!important}
 
-    @media (max-width: 1279px){
+    @media (max-width: 899px), (hover:none), (pointer:coarse){
       #signAssemblyOverlay .sa-grid,#autAssemblyOverlay .sa-grid{grid-template-columns:minmax(0,1fr)!important}
       #signAssemblyOverlay aside,#autAssemblyOverlay aside{width:100%!important;max-width:none!important}
       #signAssemblyOverlay .sa-summary,#autAssemblyOverlay .sa-summary{position:static!important;max-height:none!important;overflow:visible!important}
@@ -8089,8 +8091,9 @@ function assemblyAddMobileStyles(){
 
     #signAssemblyOverlay .sa-summary-toggle{display:none;width:100%;margin-top:10px}
     #signAssemblyOverlay .sa-mobile-total-bar{display:none}
-    @media (min-width:1280px){
-      #signAssemblyOverlay .sa-grid{grid-template-columns:minmax(0,7fr) minmax(340px,3fr)!important}
+    @media (min-width:900px) and (hover:hover) and (pointer:fine){
+      #signAssemblyOverlay .sa-shell{width:calc(100% - 24px)!important;max-width:1800px!important}
+      #signAssemblyOverlay .sa-grid{display:grid!important;grid-template-columns:minmax(0,7fr) minmax(320px,3fr)!important}
       #signAssemblyOverlay .sa-summary{position:sticky!important;top:74px!important;max-height:calc(100vh - 92px)!important;overflow-y:auto!important}
     }
     @media (max-width:620px){

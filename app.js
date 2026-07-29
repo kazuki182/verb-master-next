@@ -8045,71 +8045,58 @@ function assemblyAddMobileStyles(){
   const style=document.createElement('style');
   style.id='assemblyMobileStyles';
   style.textContent=`
-    #signAssemblyOverlay, #autAssemblyOverlay{position:fixed!important;inset:0!important;background:#0b0d10!important;z-index:10000!important;overflow-y:auto!important;overflow-x:hidden!important;color:#eef1f5!important;font-family:inherit!important;overscroll-behavior:contain}
-    #signAssemblyOverlay .sa-shell{width:min(100%,1700px)!important;max-width:1700px!important;margin:0 auto!important;box-sizing:border-box!important}
-    #autAssemblyOverlay .sa-shell{width:min(100%,1500px)!important;max-width:1500px!important;margin:0 auto!important;box-sizing:border-box!important}
-    #signAssemblyOverlay .sa-grid{display:grid!important;grid-template-columns:minmax(0,7fr) minmax(340px,3fr)!important;gap:18px!important;align-items:start!important;min-width:0!important}
-    #autAssemblyOverlay .sa-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;min-width:0!important}
-    #signAssemblyOverlay .sa-grid>*, #autAssemblyOverlay .sa-grid>*{min-width:0!important}
-    #signAssemblyOverlay .sa-grid>main{width:100%!important;max-width:none!important}
-    #signAssemblyOverlay .sa-grid>aside{width:100%!important;max-width:none!important}
-    #signAssemblyOverlay .sa-card, #autAssemblyOverlay .sa-card{min-width:0!important;max-width:100%!important;box-sizing:border-box!important;overflow:hidden}
-    #signAssemblyOverlay input,#signAssemblyOverlay select,#signAssemblyOverlay button,
-    #autAssemblyOverlay input,#autAssemblyOverlay select,#autAssemblyOverlay button{max-width:100%!important;box-sizing:border-box!important}
+    #signAssemblyOverlay,#autAssemblyOverlay{position:fixed!important;inset:0!important;background:#0b0d10!important;z-index:10000!important;overflow-y:auto!important;overflow-x:hidden!important;color:#eef1f5!important;font-family:inherit!important;overscroll-behavior:contain}
+    #signAssemblyOverlay *,#autAssemblyOverlay *{box-sizing:border-box}
+    #signAssemblyOverlay .sa-shell{width:calc(100% - 24px)!important;max-width:1800px!important;margin:0 auto!important;padding:14px 16px 80px!important}
+    #autAssemblyOverlay .sa-shell{width:calc(100% - 24px)!important;max-width:1500px!important;margin:0 auto!important;padding:14px 16px 80px!important}
+    #signAssemblyOverlay .sa-grid,#autAssemblyOverlay .sa-grid{min-width:0!important;align-items:start!important;gap:18px!important}
+    #signAssemblyOverlay .sa-grid>*,#autAssemblyOverlay .sa-grid>*{min-width:0!important;max-width:100%!important}
+    #signAssemblyOverlay .sa-card,#autAssemblyOverlay .sa-card{min-width:0!important;max-width:100%!important}
+    #signAssemblyOverlay input,#signAssemblyOverlay select,#signAssemblyOverlay button,#autAssemblyOverlay input,#autAssemblyOverlay select,#autAssemblyOverlay button{max-width:100%!important}
     #signAssemblyOverlay .sa-field,#autAssemblyOverlay .sa-field{min-width:0!important}
-    #signAssemblyOverlay .sa-field input,#signAssemblyOverlay .sa-field select,
-    #autAssemblyOverlay .sa-field input,#autAssemblyOverlay .sa-field select{width:100%!important;min-width:0!important}
-    #signAssemblyOverlay .sa-summary{position:sticky!important;top:74px!important;max-height:calc(100vh - 92px)!important;overflow-y:auto!important;overscroll-behavior:contain}
-    #autAssemblyOverlay .sa-summary{position:static!important}
+    #signAssemblyOverlay .sa-field input,#signAssemblyOverlay .sa-field select,#autAssemblyOverlay .sa-field input,#autAssemblyOverlay .sa-field select{width:100%!important;min-width:0!important}
 
-    @media (max-width: 899px), (hover:none), (pointer:coarse){
-      #signAssemblyOverlay .sa-grid,#autAssemblyOverlay .sa-grid{grid-template-columns:minmax(0,1fr)!important}
-      #signAssemblyOverlay aside,#autAssemblyOverlay aside{width:100%!important;max-width:none!important}
+    #signAssemblyOverlay .sa-summary-toggle{display:none}
+    #signAssemblyOverlay .sa-mobile-total-bar{display:none}
+
+    /* PC: only viewport width controls the two-column layout. */
+    @media (min-width:1200px){
+      #signAssemblyOverlay .sa-grid{display:grid!important;grid-template-columns:minmax(0,7fr) minmax(340px,3fr)!important;gap:18px!important}
+      #signAssemblyOverlay .sa-grid>main{grid-column:1!important;grid-row:1!important;width:100%!important;order:0!important}
+      #signAssemblyOverlay .sa-grid>aside{grid-column:2!important;grid-row:1!important;width:100%!important;order:0!important}
+      #signAssemblyOverlay .sa-summary{position:sticky!important;top:74px!important;max-height:calc(100vh - 92px)!important;overflow-y:auto!important;overscroll-behavior:contain}
+      #autAssemblyOverlay .sa-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
+      #autAssemblyOverlay .sa-summary{position:static!important}
+    }
+
+    /* Tablet: single column, inputs first and result below. */
+    @media (min-width:621px) and (max-width:1199px){
+      #signAssemblyOverlay .sa-grid,#autAssemblyOverlay .sa-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
+      #signAssemblyOverlay .sa-grid>main,#autAssemblyOverlay .sa-grid>main{grid-column:1!important;grid-row:1!important;order:0!important}
+      #signAssemblyOverlay .sa-grid>aside,#autAssemblyOverlay .sa-grid>aside{grid-column:1!important;grid-row:2!important;order:0!important;width:100%!important}
       #signAssemblyOverlay .sa-summary,#autAssemblyOverlay .sa-summary{position:static!important;max-height:none!important;overflow:visible!important}
     }
-    @media (max-width: 900px){
-      #signAssemblyOverlay .sa-shell,#autAssemblyOverlay .sa-shell{padding:12px!important}
-      #signAssemblyOverlay .sa-top,#autAssemblyOverlay .sa-top{align-items:flex-start!important;gap:10px!important;padding:4px 0 12px!important}
-      #signAssemblyOverlay .sa-top h1,#autAssemblyOverlay .sa-top h1{font-size:22px!important;line-height:1.25!important}
-      #signAssemblyOverlay .sa-top .sa-note,#autAssemblyOverlay .sa-top .sa-note{font-size:12px!important}
-      #signAssemblyOverlay .sa-card,#autAssemblyOverlay .sa-card{padding:14px!important;border-radius:14px!important}
-      #signAssemblyOverlay .sa-card h2,#autAssemblyOverlay .sa-card h2{font-size:17px!important;margin-bottom:12px!important}
-      #signAssemblyOverlay .sa-row,#autAssemblyOverlay .sa-row{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
-      #signAssemblyOverlay .sa-field label,#autAssemblyOverlay .sa-field label{font-size:12px!important}
-      #signAssemblyOverlay input,#signAssemblyOverlay select,#autAssemblyOverlay input,#autAssemblyOverlay select{font-size:16px!important;min-height:44px!important;padding:10px 12px!important}
-      #signAssemblyOverlay .sa-actions,#autAssemblyOverlay .sa-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
-      #signAssemblyOverlay .sa-actions .sa-btn,#autAssemblyOverlay .sa-actions .sa-btn{width:100%!important;min-height:44px!important}
-      #signAssemblyOverlay .sa-total,#autAssemblyOverlay .sa-total{font-size:28px!important}
-      #signAssemblyOverlay pre,#autAssemblyOverlay pre{font-size:11px!important;overflow-wrap:anywhere!important;white-space:pre-wrap!important}
-    }
-    @media (max-width: 620px){
-      #signAssemblyOverlay .sa-shell,#autAssemblyOverlay .sa-shell{padding:8px!important}
-      #signAssemblyOverlay .sa-top,#autAssemblyOverlay .sa-top{position:sticky!important;top:0!important;z-index:20!important;background:#0b0f14!important;padding:8px 2px!important}
-      #signAssemblyOverlay .sa-top h1,#autAssemblyOverlay .sa-top h1{font-size:19px!important}
+
+    /* Phone: result first, then all inputs. */
+    @media (max-width:620px){
+      #signAssemblyOverlay .sa-shell,#autAssemblyOverlay .sa-shell{width:100%!important;padding:8px 8px 92px!important}
+      #signAssemblyOverlay .sa-top,#autAssemblyOverlay .sa-top{position:sticky!important;top:0!important;z-index:30!important;background:#0b0d10!important;padding:8px 2px!important;align-items:flex-start!important;gap:8px!important}
+      #signAssemblyOverlay .sa-top h1,#autAssemblyOverlay .sa-top h1{font-size:19px!important;line-height:1.25!important}
       #signAssemblyOverlay .sa-top .sa-note,#autAssemblyOverlay .sa-top .sa-note{display:none!important}
-      #signAssemblyOverlay .sa-top .sa-btn,#autAssemblyOverlay .sa-top .sa-btn{min-width:72px!important;min-height:42px!important;padding:8px 12px!important}
       #signAssemblyOverlay .sa-grid{display:flex!important;flex-direction:column!important;gap:10px!important}
       #signAssemblyOverlay .sa-grid>aside{order:-1!important;width:100%!important}
       #signAssemblyOverlay .sa-grid>main{order:0!important;width:100%!important}
-      #signAssemblyOverlay .sa-summary{position:static!important;max-height:none!important;overflow:visible!important}
+      #autAssemblyOverlay .sa-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
+      #signAssemblyOverlay .sa-summary,#autAssemblyOverlay .sa-summary{position:static!important;max-height:none!important;overflow:visible!important}
       #signAssemblyOverlay .sa-card,#autAssemblyOverlay .sa-card{padding:12px!important;border-radius:12px!important}
-      #signAssemblyOverlay .sa-row,#autAssemblyOverlay .sa-row{grid-template-columns:minmax(0,1fr)!important;gap:9px!important}
-      #signAssemblyOverlay .sa-actions,#autAssemblyOverlay .sa-actions{grid-template-columns:minmax(0,1fr)!important}
+      #signAssemblyOverlay .sa-row,#signAssemblyOverlay .sa-row.two,#autAssemblyOverlay .sa-row,#autAssemblyOverlay .sa-row.two{grid-template-columns:minmax(0,1fr)!important;gap:9px!important}
+      #signAssemblyOverlay input,#signAssemblyOverlay select,#autAssemblyOverlay input,#autAssemblyOverlay select{font-size:16px!important;min-height:44px!important;padding:10px 12px!important}
+      #signAssemblyOverlay .sa-actions,#autAssemblyOverlay .sa-actions{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:8px!important}
+      #signAssemblyOverlay .sa-actions .sa-btn,#autAssemblyOverlay .sa-actions .sa-btn{width:100%!important;min-height:44px!important}
       #signAssemblyOverlay .sa-line,#autAssemblyOverlay .sa-line{gap:12px!important;align-items:flex-start!important}
       #signAssemblyOverlay .sa-line span,#autAssemblyOverlay .sa-line span{min-width:0!important;overflow-wrap:anywhere!important}
       #signAssemblyOverlay .sa-line strong,#autAssemblyOverlay .sa-line strong{white-space:nowrap!important}
-      #signAssemblyOverlay .sa-suggest,#autAssemblyOverlay .sa-suggest{position:fixed!important;left:8px!important;right:8px!important;top:120px!important;max-height:50vh!important;width:auto!important;z-index:100!important}
-    }
-
-    #signAssemblyOverlay .sa-summary-toggle{display:none;width:100%;margin-top:10px}
-    #signAssemblyOverlay .sa-mobile-total-bar{display:none}
-    @media (min-width:900px) and (hover:hover) and (pointer:fine){
-      #signAssemblyOverlay .sa-shell{width:calc(100% - 24px)!important;max-width:1800px!important}
-      #signAssemblyOverlay .sa-grid{display:grid!important;grid-template-columns:minmax(0,7fr) minmax(320px,3fr)!important}
-      #signAssemblyOverlay .sa-summary{position:sticky!important;top:74px!important;max-height:calc(100vh - 92px)!important;overflow-y:auto!important}
-    }
-    @media (max-width:620px){
-      #signAssemblyOverlay .sa-summary-toggle{display:block!important}
+      #signAssemblyOverlay .sa-summary-toggle{display:block!important;width:100%!important;margin-top:10px!important}
       #signAssemblyOverlay .sa-summary-detail{display:none}
       #signAssemblyOverlay .sa-summary-detail.is-open{display:block}
       #signAssemblyOverlay .sa-summary .sa-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}
@@ -8118,35 +8105,12 @@ function assemblyAddMobileStyles(){
       #signAssemblyOverlay .sa-mobile-total-bar.is-visible{display:flex}
       #signAssemblyOverlay .sa-mobile-total-bar strong{font-size:17px;white-space:nowrap}
       #signAssemblyOverlay .sa-mobile-total-bar .sa-btn{min-height:40px!important;width:auto!important;white-space:nowrap}
-      #signAssemblyOverlay .sa-summary{scroll-margin-top:72px}
     }
-    /* Stable DOM-order layout: DOM is always main then aside. PC uses columns; mobile reorders visually. */
-    @media (min-width:900px) and (hover:hover) and (pointer:fine){
-      #signAssemblyOverlay .sa-grid>main{grid-column:1!important;grid-row:1!important;order:0!important}
-      #signAssemblyOverlay .sa-grid>aside{grid-column:2!important;grid-row:1!important;order:0!important}
-    }
-    @media (max-width:899px), (hover:none), (pointer:coarse){
-      #signAssemblyOverlay .sa-grid>aside{order:-1!important}
-      #signAssemblyOverlay .sa-grid>main{order:0!important}
-    }
-    /* Customer suggestions must open directly below the search field and never be clipped. */
+
     #signAssemblyOverlay .sa-customer-card{overflow:visible!important;position:relative!important;z-index:10!important}
     #signAssemblyOverlay .sa-customer-card .sa-row.two{position:relative!important;z-index:20!important}
     #signAssemblyOverlay #saCustomerSuggest{position:absolute!important;left:0!important;right:0!important;top:calc(100% + 6px)!important;width:100%!important;max-height:min(320px,50vh)!important;z-index:10020!important;box-shadow:0 14px 32px rgba(0,0,0,.45)!important}
     #signAssemblyOverlay #saCustomerSuggest button{min-height:48px!important;white-space:normal!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important}
-    @media (max-width:620px){
-      #signAssemblyOverlay .sa-grid{display:flex!important;flex-direction:column!important}
-      #signAssemblyOverlay .sa-grid>aside{order:-1!important}
-      #signAssemblyOverlay .sa-grid>main{order:0!important}
-      #signAssemblyOverlay #saCustomerSuggest{position:absolute!important;left:0!important;right:0!important;top:calc(100% + 6px)!important;width:100%!important;max-height:42vh!important;z-index:10020!important}
-    }
-
-    @media (max-width: 390px){
-      #signAssemblyOverlay .sa-shell,#autAssemblyOverlay .sa-shell{padding:6px!important}
-      #signAssemblyOverlay .sa-card,#autAssemblyOverlay .sa-card{padding:10px!important}
-      #signAssemblyOverlay .sa-top h1,#autAssemblyOverlay .sa-top h1{font-size:17px!important}
-      #signAssemblyOverlay .sa-total,#autAssemblyOverlay .sa-total{font-size:24px!important}
-    }
   `;
   document.head.appendChild(style);
 }

@@ -7912,7 +7912,7 @@ function saAddStyles(){if(document.getElementById('signAssemblyStyles'))return;c
 @media(max-width:620px){#signAssemblyOverlay .sa-panel-auto{grid-template-columns:1fr 1fr}#signAssemblyOverlay .sa-row,#signAssemblyOverlay .sa-row.two{grid-template-columns:1fr}#signAssemblyOverlay .sa-product{grid-template-columns:1fr 1fr;grid-template-areas:'name name' 'code code' 'actual unit' 'quote price' 'total total' 'remove remove'}}
 @media(max-width:480px){#signAssemblyOverlay .sa-row,#signAssemblyOverlay .sa-row.two{grid-template-columns:1fr}#signAssemblyOverlay .sa-product{grid-template-columns:1fr;grid-template-areas:'name' 'code' 'actual' 'unit' 'quote' 'price' 'total' 'remove'}#signAssemblyOverlay .sa-top h1{font-size:19px}}
 `;document.head.appendChild(s)}
-function saOpen(){assemblyActivateHomeContext();saAddStyles();assemblyAddMobileStyles();if(document.getElementById('signAssemblyOverlay'))return;const m=saLoadMaster();const prefs=Object.keys(signAssemblyShippingMaster.prefectures).map(x=>`<option value="${saEsc(x)}" ${x==='東京都'?'selected':''}>${saEsc(x)}</option>`).join('');const o=document.createElement('div');o.id='signAssemblyOverlay';o.innerHTML=`<div class="sa-shell"><header class="sa-top"><div><h1 id="saPageTitle">サイン 組み込み自動計算</h1><div class="sa-note">PC・スマホ共通／金額は1円単位切り上げ</div></div><button class="sa-btn secondary" id="saClose">閉じる</button></header><div class="sa-grid"><main>
+function saOpen(){assemblyActivateHomeContext();saAddStyles();assemblyAddMobileStyles();saAddFinalLayoutStyles();if(document.getElementById('signAssemblyOverlay'))return;const m=saLoadMaster();const prefs=Object.keys(signAssemblyShippingMaster.prefectures).map(x=>`<option value="${saEsc(x)}" ${x==='東京都'?'selected':''}>${saEsc(x)}</option>`).join('');const o=document.createElement('div');o.id='signAssemblyOverlay';o.innerHTML=`<div class="sa-shell"><header class="sa-top"><div><h1 id="saPageTitle">サイン 組み込み自動計算</h1><div class="sa-note">PC・スマホ共通／金額は1円単位切り上げ</div></div><button class="sa-btn secondary" id="saClose">閉じる</button></header><div class="sa-grid"><main>
 <section class="sa-card sa-customer-card"><h2>顧客・製品</h2><div class="sa-row"><div class="sa-field"><label>計算区分</label><select id="saCalcType"><option value="sign">サイン</option><option value="building">建築</option></select></div><div class="sa-field"><label id="saBlockNameLabel">サイン名</label><input id="saSignName" value="サイン①" placeholder="サイン①"></div><div class="sa-field"><label>登録状態</label><input id="saBlockStatus" readonly value="新規ブロック"></div></div><div class="sa-row two"><div class="sa-field sa-relative"><label>顧客名検索</label><input id="saCustomer" autocomplete="off" placeholder="顧客名を入力"><div id="saCustomerSuggest" class="sa-suggest sa-hidden"></div></div><div class="sa-field"><label id="saRankLabel">価格ランク</label><input id="saRank" list="saRankOptions" placeholder="顧客選択で自動反映"><datalist id="saRankOptions"></datalist></div></div><div class="assembly-link-status"><div id="saPriceLinkStatus"></div><button type="button" class="sa-btn secondary assembly-recheck-btn" id="saRecheckPrice">価格表を再確認</button></div><div id="saProducts" class="sa-products"></div><button class="sa-btn secondary" id="saAddProduct">＋ 製品を追加</button></section>
 <section class="sa-card sa-assembly-card"><h2>組み込み条件</h2><div class="sa-row"><div class="sa-field"><label>形状</label><select id="saShape"><option value="lantern">行灯形</option><option value="irregular">異形</option></select></div><div class="sa-field"><label>光源</label><select id="saLight"><option value="single">単色</option><option value="tn">TN・RGB</option></select></div><div class="sa-field"><label>モジュール数量</label><input id="saLedQty" inputmode="numeric" type="number" min="0"><div class="sa-note" id="saLedQtyLinkNote">先頭製品の数量と連動します。ここへ直接入力すると手入力を優先します。</div><button type="button" class="sa-btn secondary sa-hidden" id="saUseProductQty" style="margin-top:6px;padding:7px 10px">製品数量に戻す</button></div><div class="sa-field"><label>ピッチ（mm）</label><input id="saPitch" inputmode="numeric" type="number" min="0"></div></div><div class="sa-row"><div class="sa-field"><label>電源方式</label><select id="saPowerMode"><option value="100v">100V</option><option value="power">電源あり</option></select></div><div class="sa-field" id="sa100vWrap"><label>100V：アルミ複合板枚数</label><input id="sa100vPanels" inputmode="numeric" type="number" min="0"></div><div class="sa-field sa-hidden" id="saPowerWrap"><label>電源台数</label><input id="saPowerQty" inputmode="numeric" type="number" min="0"></div><div class="sa-field"><label>電源ケーブル穴</label><input id="saCableHoles" inputmode="numeric" type="number" min="0"></div></div><div class="sa-row"><div class="sa-field"><label>アンカー穴</label><input id="saAnchorHoles" inputmode="numeric" type="number" min="0"></div><div class="sa-field sa-hidden" id="saReceiverTypeWrap"><label>受信器（任意・1種類のみ）</label><select id="saReceiverType"><option value="">追加しない</option><option>PWM受信器</option><option>DMX受信器</option><option>SMA受信器</option></select></div><div class="sa-field sa-hidden" id="saReceiverQtyWrap"><label>受信器台数</label><input id="saReceiverQty" inputmode="numeric" type="number" min="0"></div><div class="sa-field sa-hidden" id="saPanelBuildWrap"><label>簡易電源盤</label><select id="saPanelBuild"><option value="yes">作成する</option><option value="no">作成しない</option></select></div></div></section>
 <section class="sa-card sa-panel-card"><h2>アルミ複合板・加工</h2><div class="sa-row">${Object.entries(signAssemblyPanelMaster).map(([k,v])=>`<div class="sa-field"><label>${v.label}（${v.size}）</label><input id="saBoard_${k}" data-board="${k}" inputmode="numeric" type="number" min="0"></div>`).join('')}</div><div class="sa-note">板種ごとに4枚梱包を優先し、余りを3枚・1～2枚梱包へ割り振ります。</div></section>
@@ -7935,17 +7935,80 @@ function saNormalizeLayoutDom(root){
 
 function saApplyResponsiveLayout(root=document.getElementById('signAssemblyOverlay')){
   if(!root)return;
-  const uaMobile=typeof navigator.userAgentData?.mobile==='boolean'
-    ? navigator.userAgentData.mobile
-    : /Android|iPhone|iPad|iPod|Mobile|Tablet/i.test(navigator.userAgent||'');
-  // 固定判定: 非モバイル端末は画面幅・拡大率に関係なく必ずPC 70:30。
-  const desktop=!uaMobile;
-  const phone=uaMobile && window.innerWidth<=620;
-  const tablet=uaMobile && !phone;
-  root.classList.toggle('sa-desktop-layout',desktop);
-  root.classList.toggle('sa-phone-layout',phone);
-  root.classList.toggle('sa-tablet-layout',tablet);
-  root.dataset.layoutMode=desktop?'desktop':phone?'phone':'tablet';
+  // レイアウトはCSSの画面幅だけで決定する。端末種別・hover・pointer・UA判定は使わない。
+  root.classList.remove('sa-desktop-layout','sa-phone-layout','sa-tablet-layout');
+  root.dataset.layoutMode=window.matchMedia('(max-width:700px)').matches?'mobile':'desktop';
+}
+
+function saAddFinalLayoutStyles(){
+  const old=document.getElementById('saFinalLayoutStyles');
+  if(old)old.remove();
+  const style=document.createElement('style');
+  style.id='saFinalLayoutStyles';
+  style.textContent=`
+    /* 最終固定仕様: PCは左70%/右30%、スマホだけ結果を先頭。ここ以外でレイアウト判定しない。 */
+    #signAssemblyOverlay .sa-shell{
+      width:100%!important;
+      max-width:1800px!important;
+      margin:0 auto!important;
+    }
+    #signAssemblyOverlay .sa-grid{
+      display:grid!important;
+      grid-template-columns:minmax(0,7fr) minmax(340px,3fr)!important;
+      gap:18px!important;
+      align-items:start!important;
+      width:100%!important;
+      max-width:none!important;
+      margin-left:0!important;
+      margin-right:0!important;
+    }
+    #signAssemblyOverlay .sa-grid>main{
+      grid-column:1!important;
+      grid-row:1!important;
+      order:0!important;
+      width:100%!important;
+      max-width:none!important;
+      min-width:0!important;
+      margin:0!important;
+    }
+    #signAssemblyOverlay .sa-grid>aside{
+      grid-column:2!important;
+      grid-row:1!important;
+      order:0!important;
+      width:100%!important;
+      max-width:none!important;
+      min-width:0!important;
+      margin:0!important;
+    }
+    #signAssemblyOverlay .sa-summary{
+      position:sticky!important;
+      top:74px!important;
+      width:100%!important;
+      max-height:calc(100vh - 92px)!important;
+      overflow-y:auto!important;
+    }
+    @media (max-width:700px){
+      #signAssemblyOverlay .sa-grid{
+        display:flex!important;
+        flex-direction:column!important;
+        gap:10px!important;
+      }
+      #signAssemblyOverlay .sa-grid>aside{
+        order:-1!important;
+        width:100%!important;
+      }
+      #signAssemblyOverlay .sa-grid>main{
+        order:0!important;
+        width:100%!important;
+      }
+      #signAssemblyOverlay .sa-summary{
+        position:static!important;
+        max-height:none!important;
+        overflow:visible!important;
+      }
+    }
+  `;
+  document.head.appendChild(style);
 }
 
 function saHandleResponsiveResize(){saApplyResponsiveLayout()}

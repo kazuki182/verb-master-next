@@ -7919,7 +7919,7 @@ function saOpen(){assemblyActivateHomeContext();saAddStyles();assemblyAddMobileS
 <section class="sa-card"><h2>配送</h2><div class="sa-row"><div class="sa-field"><label>都道府県</label><select id="saPref">${prefs}</select></div><div class="sa-field"><label>送料表外の任意送料（原価）</label><input id="saManualFreight" inputmode="numeric" type="number" min="0" placeholder="表外の場合のみ"></div><div class="sa-field"><label>任意送料の理由</label><input id="saManualReason" placeholder="重量上限超過など"></div></div><div id="saFreightError"></div></section>
 <details class="sa-card"><summary>建築 組み込み単価の参照条件</summary><div class="sa-note" style="margin-top:10px">Excel「組込単価参照元」タブの建築単価を登録済みです。形状（行灯形／異形・CH）、光源（単色／TN・RGB）、数量帯、ピッチ帯をクロスして自動参照します。簡易電源盤単価はサイン・建築共通です。</div></details>
 <details class="sa-card"><summary>簡易電源盤 自動算出数量</summary><div class="sa-note" style="margin-top:10px">サイン／AUT組み込み計算時のみ使用します。単価は固定値で内部計算し、価格表とは連動しません。</div><div class="sa-note" id="saPanelPriceMode" style="margin-top:6px">現在の適用価格：単色用</div><div class="sa-panel-auto"><div>1台用<strong id="saPanelQty1">0セット</strong></div><div>2台用<strong id="saPanelQty2">0セット</strong></div><div>3台用<strong id="saPanelQty3">0セット</strong></div><div>4台用<strong id="saPanelQty4">0セット</strong></div></div><div class="sa-note" id="saPanelTargetSummary">電源・受信器台数を入力すると自動算出します。</div></details>
-</main><aside><section class="sa-card sa-summary" id="saSummaryCard"><h2>見積結果</h2><div id="saCustomerResult" class="sa-note"></div><div class="sa-total" id="saGrandTotal">0円</div><div id="saBreakdown" class="sa-breakdown"></div><div class="sa-actions"><button class="sa-btn primary" id="saAddBlock">＋ このブロックを追加</button><button class="sa-btn secondary" id="saCopyResult">結果コピー</button><button class="sa-btn secondary" id="saCopyExcel">Excel貼り付け</button><button class="sa-btn secondary" id="saSms">SMS</button><button class="sa-btn secondary" id="saMail">メール</button></div><button class="sa-btn secondary sa-summary-toggle" id="saToggleSummaryDetail" type="button">詳細を開く</button><div id="saSummaryDetail" class="sa-summary-detail"><div class="sa-note" style="margin-top:10px">サインはサイン①・②、建築は光膜①・②として追加し、Excel貼り付け時にブロック間へ空白行を入れます。</div><div id="saBlockList" class="sa-block-list"></div><details style="margin-top:16px"><summary>計算根拠</summary><pre id="saTrace" style="white-space:pre-wrap;font-size:12px;color:#b7c0cb"></pre></details></div></section></aside></div><div id="saMobileTotalBar" class="sa-mobile-total-bar"><strong id="saMobileGrandTotal">合計 0円</strong><button class="sa-btn secondary" id="saMobileShowResult" type="button">結果を見る</button></div></div>`;document.body.appendChild(o);saNormalizeLayoutDom(o);saBind();saAddProductRow();saUpdateLedQtyLinkUi();saCalculate();saRenderBlocks();saSetupMobileResultBar()}
+</main><aside><section class="sa-card sa-summary" id="saSummaryCard"><h2>見積結果</h2><div id="saCustomerResult" class="sa-note"></div><div class="sa-total" id="saGrandTotal">0円</div><div id="saBreakdown" class="sa-breakdown"></div><div class="sa-actions"><button class="sa-btn primary" id="saAddBlock">＋ このブロックを追加</button><button class="sa-btn secondary" id="saCopyResult">結果コピー</button><button class="sa-btn secondary" id="saCopyExcel">Excel貼り付け</button><button class="sa-btn secondary" id="saSms">SMS</button><button class="sa-btn secondary" id="saMail">メール</button></div><button class="sa-btn secondary sa-summary-toggle" id="saToggleSummaryDetail" type="button">詳細を開く</button><div id="saSummaryDetail" class="sa-summary-detail"><div class="sa-note" style="margin-top:10px">サインはサイン①・②、建築は光膜①・②として追加し、Excel貼り付け時にブロック間へ空白行を入れます。</div><div id="saBlockList" class="sa-block-list"></div><details style="margin-top:16px"><summary>計算根拠</summary><pre id="saTrace" style="white-space:pre-wrap;font-size:12px;color:#b7c0cb"></pre></details></div></section></aside></div><div id="saMobileTotalBar" class="sa-mobile-total-bar"><strong id="saMobileGrandTotal">合計 0円</strong><button class="sa-btn secondary" id="saMobileShowResult" type="button">結果を見る</button></div></div>`;document.body.appendChild(o);saNormalizeLayoutDom(o);window.addEventListener('resize',saHandleResponsiveResize);saBind();saAddProductRow();saUpdateLedQtyLinkUi();saCalculate();saRenderBlocks();saSetupMobileResultBar()}
 function saNormalizeLayoutDom(root){
   const grid=root?.querySelector('.sa-grid');
   const main=grid?.querySelector(':scope > main');
@@ -7930,9 +7930,24 @@ function saNormalizeLayoutDom(root){
     grid.append(main,aside);
   }
   grid.dataset.layoutStructure='main-aside';
+  saApplyResponsiveLayout(root);
 }
 
-function saClose(){document.getElementById('signAssemblyOverlay')?.remove();if(location.hash==='#sign-assembly-calc'){history.replaceState(null,'',location.pathname+location.search+'#tools');assemblyActivateHomeContext()}}
+function saApplyResponsiveLayout(root=document.getElementById('signAssemblyOverlay')){
+  if(!root)return;
+  const uaMobile=typeof navigator.userAgentData?.mobile==='boolean'
+    ? navigator.userAgentData.mobile
+    : /Android|iPhone|iPad|iPod|Mobile|Tablet/i.test(navigator.userAgent||'');
+  // PCのブラウザ拡大率でinnerWidthが1200px未満になっても、実画面幅が十分ならPCレイアウトを維持する。
+  const desktop=!uaMobile && (window.innerWidth>=900 || (window.screen?.width||0)>=1200);
+  const phone=uaMobile && window.innerWidth<=620;
+  root.classList.toggle('sa-desktop-layout',desktop);
+  root.classList.toggle('sa-phone-layout',phone);
+  root.dataset.layoutMode=desktop?'desktop':phone?'phone':'tablet';
+}
+
+function saHandleResponsiveResize(){saApplyResponsiveLayout()}
+function saClose(){window.removeEventListener('resize',saHandleResponsiveResize);document.getElementById('signAssemblyOverlay')?.remove();if(location.hash==='#sign-assembly-calc'){history.replaceState(null,'',location.pathname+location.search+'#tools');assemblyActivateHomeContext()}}
 function saBind(){document.getElementById('saClose').onclick=saClose;document.getElementById('saRecheckPrice').onclick=()=>assemblyRecheckPriceLink('sa');document.getElementById('saAddProduct').onclick=()=>saAddProductRow();document.getElementById('saAddBlock').onclick=saSaveCurrentBlock;document.getElementById('saSaveMaster')?.addEventListener('click',saSaveMaster);document.getElementById('saSaveBuildingMaster')?.addEventListener('click',saSaveBuildingAssemblyMaster);document.getElementById('saUseProductQty').onclick=()=>{signAssemblyLedQtyManual=false;saSyncLedQtyFromProducts(true);saCalculate()};document.getElementById('signAssemblyOverlay').addEventListener('input',e=>{if(e.target.id==='saCustomer'){saLinkedCustomer=null;saCustomerSuggest();saUpdatePriceLinkStatus()}if(e.target.id==='saRank'){saLinkedCustomer=null;saUpdatePriceLinkStatus()}if(e.target.id==='saLedQty'&&!signAssemblyLedQtySyncing){signAssemblyLedQtyManual=true;saUpdateLedQtyLinkUi()}if(e.target.classList?.contains('sa-product-qty'))saSyncLedQtyFromProducts();saCalculate()});document.getElementById('signAssemblyOverlay').addEventListener('change',e=>{if(e.target.id==='saCalcType'){saLinkedCustomer=null;saApplyCalcTypeChange();saUpdatePriceLinkStatus()}saTogglePower();saCalculate()});document.getElementById('saCopyResult').onclick=e=>saCopy(saShareText(),'見積結果',e.currentTarget);document.getElementById('saCopyExcel').onclick=e=>saCopy(saExcelText(),'Excel貼り付け用',e.currentTarget);document.getElementById('saSms').onclick=()=>{const t=saShareText(true);saCopy(t,'SMS本文');location.href='sms:?&body='+encodeURIComponent(t)};document.getElementById('saMail').onclick=()=>{const t=saShareText();location.href='mailto:?subject='+encodeURIComponent('組み込み概算見積')+'&body='+encodeURIComponent(t)};document.getElementById('saToggleSummaryDetail')?.addEventListener('click',saToggleSummaryDetail);document.getElementById('saMobileShowResult')?.addEventListener('click',()=>document.getElementById('saSummaryCard')?.scrollIntoView({behavior:'smooth',block:'start'}));saApplyCalcTypeUi(false);saTogglePower();saUpdatePriceLinkStatus()}
 
 function saCalcType(){return document.getElementById('saCalcType')?.value==='building'?'building':'sign'}
@@ -8106,6 +8121,12 @@ function assemblyAddMobileStyles(){
       #signAssemblyOverlay .sa-mobile-total-bar strong{font-size:17px;white-space:nowrap}
       #signAssemblyOverlay .sa-mobile-total-bar .sa-btn{min-height:40px!important;width:auto!important;white-space:nowrap}
     }
+
+    /* Runtime desktop guard: keeps the PC 70/30 layout even when browser zoom reduces CSS viewport width. */
+    #signAssemblyOverlay.sa-desktop-layout .sa-grid{display:grid!important;grid-template-columns:minmax(0,7fr) minmax(340px,3fr)!important;gap:18px!important;align-items:start!important}
+    #signAssemblyOverlay.sa-desktop-layout .sa-grid>main{grid-column:1!important;grid-row:1!important;order:0!important;width:100%!important;max-width:none!important;margin:0!important}
+    #signAssemblyOverlay.sa-desktop-layout .sa-grid>aside{grid-column:2!important;grid-row:1!important;order:0!important;width:100%!important;max-width:none!important;margin:0!important}
+    #signAssemblyOverlay.sa-desktop-layout .sa-summary{position:sticky!important;top:74px!important;max-height:calc(100vh - 92px)!important;overflow-y:auto!important}
 
     #signAssemblyOverlay .sa-customer-card{overflow:visible!important;position:relative!important;z-index:10!important}
     #signAssemblyOverlay .sa-customer-card .sa-row.two{position:relative!important;z-index:20!important}

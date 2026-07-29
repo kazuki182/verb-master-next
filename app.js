@@ -7919,7 +7919,7 @@ function saOpen(){assemblyActivateHomeContext();saAddStyles();assemblyAddMobileS
 <section class="sa-card"><h2>配送</h2><div class="sa-row"><div class="sa-field"><label>都道府県</label><select id="saPref">${prefs}</select></div><div class="sa-field"><label>送料表外の任意送料（原価）</label><input id="saManualFreight" inputmode="numeric" type="number" min="0" placeholder="表外の場合のみ"></div><div class="sa-field"><label>任意送料の理由</label><input id="saManualReason" placeholder="重量上限超過など"></div></div><div id="saFreightError"></div></section>
 <details class="sa-card"><summary>建築 組み込み単価の参照条件</summary><div class="sa-note" style="margin-top:10px">Excel「組込単価参照元」タブの建築単価を登録済みです。形状（行灯形／異形・CH）、光源（単色／TN・RGB）、数量帯、ピッチ帯をクロスして自動参照します。簡易電源盤単価はサイン・建築共通です。</div></details>
 <details class="sa-card"><summary>簡易電源盤 自動算出数量</summary><div class="sa-note" style="margin-top:10px">サイン／AUT組み込み計算時のみ使用します。単価は固定値で内部計算し、価格表とは連動しません。</div><div class="sa-note" id="saPanelPriceMode" style="margin-top:6px">現在の適用価格：単色用</div><div class="sa-panel-auto"><div>1台用<strong id="saPanelQty1">0セット</strong></div><div>2台用<strong id="saPanelQty2">0セット</strong></div><div>3台用<strong id="saPanelQty3">0セット</strong></div><div>4台用<strong id="saPanelQty4">0セット</strong></div></div><div class="sa-note" id="saPanelTargetSummary">電源・受信器台数を入力すると自動算出します。</div></details>
-</main><aside><section class="sa-card sa-summary" id="saSummaryCard"><h2>見積結果</h2><div id="saCustomerResult" class="sa-note"></div><div class="sa-total" id="saGrandTotal">0円</div><div id="saBreakdown" class="sa-breakdown"></div><div class="sa-actions"><button class="sa-btn primary" id="saAddBlock">＋ このブロックを追加</button><button class="sa-btn secondary" id="saCopyResult">結果コピー</button><button class="sa-btn secondary" id="saCopyExcel">Excel貼り付け</button><button class="sa-btn secondary" id="saSms">SMS</button><button class="sa-btn secondary" id="saMail">メール</button></div><button class="sa-btn secondary sa-summary-toggle" id="saToggleSummaryDetail" type="button">詳細を開く</button><div id="saSummaryDetail" class="sa-summary-detail"><div class="sa-note" style="margin-top:10px">サインはサイン①・②、建築は光膜①・②として追加し、Excel貼り付け時にブロック間へ空白行を入れます。</div><div id="saBlockList" class="sa-block-list"></div><details style="margin-top:16px"><summary>計算根拠</summary><pre id="saTrace" style="white-space:pre-wrap;font-size:12px;color:#b7c0cb"></pre></details></div></section></aside></div><div id="saMobileTotalBar" class="sa-mobile-total-bar"><strong id="saMobileGrandTotal">合計 0円</strong><button class="sa-btn secondary" id="saMobileShowResult" type="button">結果を見る</button></div></div>`;document.body.appendChild(o);saNormalizeLayoutDom(o);window.addEventListener('resize',saHandleResponsiveResize);saBind();saAddProductRow();saUpdateLedQtyLinkUi();saCalculate();saRenderBlocks();saSetupMobileResultBar()}
+</main><aside><section class="sa-card sa-summary" id="saSummaryCard"><h2>見積結果</h2><div id="saCustomerResult" class="sa-note"></div><div class="sa-total" id="saGrandTotal">0円</div><div id="saBreakdown" class="sa-breakdown"></div><div class="sa-actions"><button class="sa-btn primary" id="saAddBlock">＋ このブロックを追加</button><button class="sa-btn secondary" id="saCopyResult">結果コピー</button><button class="sa-btn secondary" id="saCopyExcel">Excel貼り付け</button><button class="sa-btn secondary" id="saSms">SMS</button><button class="sa-btn secondary" id="saMail">メール</button></div><button class="sa-btn secondary sa-summary-toggle" id="saToggleSummaryDetail" type="button">詳細を開く</button><div id="saSummaryDetail" class="sa-summary-detail"><div class="sa-note" style="margin-top:10px">サインはサイン①・②、建築は光膜①・②として追加し、Excel貼り付け時にブロック間へ空白行を入れます。</div><div id="saBlockList" class="sa-block-list"></div><details style="margin-top:16px"><summary>計算根拠</summary><pre id="saTrace" style="white-space:pre-wrap;font-size:12px;color:#b7c0cb"></pre></details></div></section></aside></div><div id="saMobileTotalBar" class="sa-mobile-total-bar"><strong id="saMobileGrandTotal">合計 0円</strong><button class="sa-btn secondary" id="saMobileShowResult" type="button">結果を見る</button></div></div>`;document.body.appendChild(o);saNormalizeLayoutDom(o);window.addEventListener('resize',saHandleResponsiveResize);saBind();saAddProductRow();saUpdateLedQtyLinkUi();saCalculate();saRenderBlocks();saSetupMobileResultBar();requestAnimationFrame(()=>saApplyResponsiveLayout(o));setTimeout(()=>saApplyResponsiveLayout(o),120)}
 function saNormalizeLayoutDom(root){
   const grid=root?.querySelector('.sa-grid');
   const main=grid?.querySelector(':scope > main');
@@ -7935,9 +7935,76 @@ function saNormalizeLayoutDom(root){
 
 function saApplyResponsiveLayout(root=document.getElementById('signAssemblyOverlay')){
   if(!root)return;
-  // レイアウトはCSSの画面幅だけで決定する。端末種別・hover・pointer・UA判定は使わない。
-  root.classList.remove('sa-desktop-layout','sa-phone-layout','sa-tablet-layout');
-  root.dataset.layoutMode=window.matchMedia('(max-width:700px)').matches?'mobile':'desktop';
+  const grid=root.querySelector('.sa-grid');
+  const main=grid?.querySelector(':scope > main');
+  const aside=grid?.querySelector(':scope > aside');
+  const summary=aside?.querySelector('.sa-summary');
+  if(!grid||!main||!aside)return;
+
+  // CSS競合を受けないよう、最終レイアウトはDOM直下へ!important付きで適用する。
+  // phoneのみ結果を先頭、tabletは入力→結果、desktopは左70%／右30%。
+  const ua=String(navigator.userAgent||'');
+  const isPhone=/iPhone|iPod|Windows Phone|Android.+Mobile/i.test(ua);
+  const isTablet=/iPad|Tablet|Android(?!.*Mobile)/i.test(ua);
+  const mode=isPhone?'phone':(isTablet?'tablet':'desktop');
+  root.dataset.layoutMode=mode;
+  root.dataset.layoutVersion='20260729-pc7030-direct';
+
+  const set=(el,name,value)=>el.style.setProperty(name,value,'important');
+  if(mode==='desktop'){
+    set(grid,'display','grid');
+    set(grid,'grid-template-columns','minmax(0, 7fr) minmax(340px, 3fr)');
+    set(grid,'gap','18px');
+    set(grid,'align-items','start');
+    set(grid,'width','100%');
+    set(main,'grid-column','1');
+    set(main,'grid-row','1');
+    set(main,'order','0');
+    set(main,'width','100%');
+    set(main,'max-width','none');
+    set(main,'margin','0');
+    set(aside,'grid-column','2');
+    set(aside,'grid-row','1');
+    set(aside,'order','0');
+    set(aside,'width','100%');
+    set(aside,'max-width','none');
+    set(aside,'margin','0');
+    if(summary){
+      set(summary,'position','sticky');
+      set(summary,'top','74px');
+      set(summary,'max-height','calc(100vh - 92px)');
+      set(summary,'overflow-y','auto');
+    }
+  }else if(mode==='tablet'){
+    set(grid,'display','grid');
+    set(grid,'grid-template-columns','minmax(0, 1fr)');
+    set(grid,'gap','14px');
+    set(main,'grid-column','1');
+    set(main,'grid-row','1');
+    set(main,'order','0');
+    set(aside,'grid-column','1');
+    set(aside,'grid-row','2');
+    set(aside,'order','0');
+    set(aside,'width','100%');
+    if(summary){
+      set(summary,'position','static');
+      set(summary,'max-height','none');
+      set(summary,'overflow','visible');
+    }
+  }else{
+    set(grid,'display','flex');
+    set(grid,'flex-direction','column');
+    set(grid,'gap','10px');
+    set(aside,'order','-1');
+    set(aside,'width','100%');
+    set(main,'order','0');
+    set(main,'width','100%');
+    if(summary){
+      set(summary,'position','static');
+      set(summary,'max-height','none');
+      set(summary,'overflow','visible');
+    }
+  }
 }
 
 function saAddFinalLayoutStyles(){

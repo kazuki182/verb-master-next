@@ -7938,11 +7938,13 @@ function saApplyResponsiveLayout(root=document.getElementById('signAssemblyOverl
   const uaMobile=typeof navigator.userAgentData?.mobile==='boolean'
     ? navigator.userAgentData.mobile
     : /Android|iPhone|iPad|iPod|Mobile|Tablet/i.test(navigator.userAgent||'');
-  // PCのブラウザ拡大率でinnerWidthが1200px未満になっても、実画面幅が十分ならPCレイアウトを維持する。
-  const desktop=!uaMobile && (window.innerWidth>=900 || (window.screen?.width||0)>=1200);
+  // 固定判定: 非モバイル端末は画面幅・拡大率に関係なく必ずPC 70:30。
+  const desktop=!uaMobile;
   const phone=uaMobile && window.innerWidth<=620;
+  const tablet=uaMobile && !phone;
   root.classList.toggle('sa-desktop-layout',desktop);
   root.classList.toggle('sa-phone-layout',phone);
+  root.classList.toggle('sa-tablet-layout',tablet);
   root.dataset.layoutMode=desktop?'desktop':phone?'phone':'tablet';
 }
 
@@ -8127,6 +8129,11 @@ function assemblyAddMobileStyles(){
     #signAssemblyOverlay.sa-desktop-layout .sa-grid>main{grid-column:1!important;grid-row:1!important;order:0!important;width:100%!important;max-width:none!important;margin:0!important}
     #signAssemblyOverlay.sa-desktop-layout .sa-grid>aside{grid-column:2!important;grid-row:1!important;order:0!important;width:100%!important;max-width:none!important;margin:0!important}
     #signAssemblyOverlay.sa-desktop-layout .sa-summary{position:sticky!important;top:74px!important;max-height:calc(100vh - 92px)!important;overflow-y:auto!important}
+
+    #signAssemblyOverlay.sa-tablet-layout .sa-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
+    #signAssemblyOverlay.sa-tablet-layout .sa-grid>main{grid-column:1!important;grid-row:1!important;order:0!important;width:100%!important}
+    #signAssemblyOverlay.sa-tablet-layout .sa-grid>aside{grid-column:1!important;grid-row:2!important;order:0!important;width:100%!important}
+    #signAssemblyOverlay.sa-tablet-layout .sa-summary{position:static!important;max-height:none!important;overflow:visible!important}
 
     #signAssemblyOverlay .sa-customer-card{overflow:visible!important;position:relative!important;z-index:10!important}
     #signAssemblyOverlay .sa-customer-card .sa-row.two{position:relative!important;z-index:20!important}
